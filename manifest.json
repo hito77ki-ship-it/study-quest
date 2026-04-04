@@ -1,0 +1,19 @@
+{
+  "name": "資格クエスト",
+  "short_name": "資格クエスト",
+  "description": "RPG風資格勉強トラッカー",
+  "start_url": "/shikaku-quest/",
+  "scope": "/shikaku-quest/",
+  "display": "standalone",
+  "background_color": "#F8F9FA",
+  "theme_color": "#8CC63F",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
