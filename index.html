@@ -5892,7 +5892,7 @@ function getWeekSunday(){
   d.setHours(0,0,0,0);
   const day = d.getDay(); // 0=日
   d.setDate(d.getDate() + (day===0 ? 0 : 7 - day)); // 今週日曜
-  return d.toISOString().slice(0,10);
+  return toLocalDateStr(d);
 }
 
 // 今週の目標（設定済みなら時間数、なければ0）
@@ -5913,9 +5913,9 @@ function getWeekDailyMins(){
   const ws = getWeekStart();
   const result = [];
   for(let i=0;i<7;i++){
-    const d = new Date(ws);
+    const d = new Date(ws+'T00:00:00');
     d.setDate(d.getDate()+i);
-    const ds = d.toISOString().slice(0,10);
+    const ds = toLocalDateStr(d);
     result.push({
       date: ds,
       day:  ['月','火','水','木','金','土','日'][i],
@@ -5934,11 +5934,12 @@ function getThisWeekTotalMins(){
 }
 
 /* ── 集計ヘルパー ── */
-function getTodayStr(){ return new Date().toISOString().slice(0,10); }
+function toLocalDateStr(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+function getTodayStr(){ return toLocalDateStr(new Date()); }
 function getWeekStart(){
   const d=new Date(); d.setHours(0,0,0,0);
   const day=d.getDay(); const diff=day===0?-6:1-day; // 月曜始まり
-  d.setDate(d.getDate()+diff); return d.toISOString().slice(0,10);
+  d.setDate(d.getDate()+diff); return toLocalDateStr(d);
 }
 function getMonthStr(){ return new Date().toISOString().slice(0,7); }
 
