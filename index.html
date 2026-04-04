@@ -3036,7 +3036,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           </div>
           <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:4px;">
             <button class="pomo-break-skip" onclick="skipBreak()">スキップして次のセットへ ▶</button>
-            <button class="pomo-break-skip" id="pomoTweetBtn" onclick="tweetPomo()" style="border-color:#1d9bf0;color:#1d9bf0;">𝕏 シェア</button>
+            <button class="pomo-break-skip" id="pomoTweetBtn" onclick="tweetPomo()" style="border-color:#1d9bf0;color:#1d9bf0;">📤 シェア</button>
           </div>
         </div>
       </div>
@@ -5277,8 +5277,19 @@ function startPomoBreak(){
   }, 1000);
 }
 
-function tweetPomo(){
-  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅 今日も資格勉強がんばった💪\n#資格クエスト #CPA試験\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
+async function tweetPomo(){
+  const smins = studyMins(sessions);
+  const lv = getLevelProgress(smins).level;
+  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(smins/60)}時間\n今日も資格勉強がんばった💪\n#資格クエスト #CPA試験\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ text });
+      return;
+    } catch(e) {
+      if (e.name === 'AbortError') return;
+    }
+  }
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
 
