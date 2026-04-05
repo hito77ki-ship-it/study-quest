@@ -3947,6 +3947,38 @@ const JOBS = [
 
 
   /* ══════════════════════════════
+     【受験ギルド】
+  ══════════════════════════════ */
+
+  {
+    id:'highschool', name:'高校受験', icon:'🏫', tag:'受験の勇者',
+    category:'受験ギルド', rpgClass:'受験の勇者',
+    desc:'志望校合格を目指して5教科を攻略。中学生の大きな冒険の第一歩。',
+    color:'#06B6D4', avgHours:500, maxHours:1000,
+    subjects:[
+      {key:'hs_math',   name:'数学', desc:'方程式・関数・図形・確率',   color:'#06B6D4',avgH:130,maxH:250,attrs:{atk:.7,dex:.3}},
+      {key:'hs_eng',    name:'英語', desc:'文法・読解・英作文・リスニング', color:'#3B82F6',avgH:130,maxH:250,attrs:{int:.6,dex:.4}},
+      {key:'hs_jpn',    name:'国語', desc:'現代文・古文・漢字・作文',   color:'#EF4444',avgH:100,maxH:200,attrs:{int:.7,spi:.3}},
+      {key:'hs_sci',    name:'理科', desc:'物理・化学・生物・地学',     color:'#10B981',avgH:80, maxH:160,attrs:{int:.6,atk:.4}},
+      {key:'hs_soc',    name:'社会', desc:'地理・歴史・公民',           color:'#F59E0B',avgH:80, maxH:160,attrs:{int:.5,spi:.5}},
+    ]
+  },
+  {
+    id:'univ', name:'大学受験', icon:'🎓', tag:'大学への挑戦者',
+    category:'受験ギルド', rpgClass:'大学への挑戦者',
+    desc:'志望大学合格を目指す最大の冒険。共通テスト＋二次試験を突破せよ。',
+    color:'#8B5CF6', avgHours:1500, maxHours:3000,
+    subjects:[
+      {key:'univ_math',  name:'数学',     desc:'数ⅠA・数ⅡB・数Ⅲ（理系）',   color:'#06B6D4',avgH:350,maxH:700,attrs:{atk:.7,dex:.3}},
+      {key:'univ_eng',   name:'英語',     desc:'読解・英作文・リスニング',      color:'#3B82F6',avgH:350,maxH:700,attrs:{int:.6,dex:.4}},
+      {key:'univ_jpn',   name:'国語',     desc:'現代文・古文・漢文',            color:'#EF4444',avgH:200,maxH:400,attrs:{int:.7,spi:.3}},
+      {key:'univ_sci',   name:'理科',     desc:'物理・化学・生物・地学から選択',color:'#10B981',avgH:250,maxH:500,attrs:{int:.6,atk:.4}},
+      {key:'univ_soc',   name:'社会',     desc:'地理・日本史・世界史・政経から選択',color:'#F59E0B',avgH:200,maxH:400,attrs:{int:.5,spi:.5}},
+      {key:'univ_common',name:'共通テスト対策', desc:'マーク式・全教科横断',   color:'#8B5CF6',avgH:150,maxH:300,attrs:{dex:.6,int:.4}},
+    ]
+  },
+
+  /* ══════════════════════════════
      【追加ジョブ：大阪経済大学×大原提携】
   ══════════════════════════════ */
 
@@ -4599,6 +4631,7 @@ function buildJobGrid(){
     'ITギルド':'💻',
     '国際ギルド':'🌐',
     'スキルギルド':'🎨',
+    '受験ギルド':'🎓',
     'その他':'📚',
   };
 
@@ -10217,6 +10250,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260405_juken',
+    date: '2026-04-05',
+    type: 'feature',
+    title: '🎓 高校受験・大学受験を追加',
+    desc: '高校受験（5教科）・大学受験（共通テスト＋二次試験対応）を追加しました。中学生・高校生の方もスタディクエストをご利用いただけます。ジョブ選択画面の「受験ギルド」からご利用ください。'
+  },
   {
     id: 'v20260405_eiken_kanken_toeic',
     date: '2026-04-05',
