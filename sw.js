@@ -1,7 +1,7 @@
-const CACHE_NAME = 'shikaku-quest-v1';
+const CACHE_NAME = 'study-quest-v1';
 const URLS_TO_CACHE = [
-  '/shikaku-quest/',
-  '/shikaku-quest/index.html'
+  '/study-quest/',
+  '/study-quest/index.html'
 ];
 
 self.addEventListener('install', event => {
@@ -28,7 +28,7 @@ self.addEventListener('fetch', event => {
     caches.match(event.request).then(cached => {
       return cached || fetch(event.request).then(response => {
         // index.htmlだけキャッシュを更新
-        if (event.request.url.includes('index.html') || event.request.url.endsWith('/shikaku-quest/')) {
+        if (event.request.url.includes('index.html') || event.request.url.endsWith('/study-quest/')) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         }

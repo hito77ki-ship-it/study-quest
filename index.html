@@ -13,17 +13,17 @@
 <link rel="apple-touch-icon" href="icons/icon.svg">
 <!-- OGP -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://hito77ki-ship-it.github.io/shikaku-quest/">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/">
 <meta property="og:title" content="スタディクエスト｜RPG風資格勉強トラッカー">
 <meta property="og:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
-<meta property="og:image" content="https://hito77ki-ship-it.github.io/shikaku-quest/screenshots/screen1.png">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/screen1.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="スタディクエスト">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="スタディクエスト｜RPG風資格勉強トラッカー">
 <meta name="twitter:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
-<meta name="twitter:image" content="https://hito77ki-ship-it.github.io/shikaku-quest/screenshots/screen1.png">
+<meta name="twitter:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/screen1.png">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5KSKG1JK"></script>
 <script>
@@ -4280,7 +4280,7 @@ async function signInWithGoogle(){
   try {
     const { error } = await sb.auth.signInWithOAuth({
       provider:'google',
-      options:{redirectTo: 'https://hito77ki-ship-it.github.io/shikaku-quest/'}
+      options:{redirectTo: 'https://hito77ki-ship-it.github.io/study-quest/'}
     });
     if(error) throw error;
   } catch(e) {
@@ -4293,7 +4293,7 @@ async function signInWithTwitter(){
   try {
     const { error } = await sb.auth.signInWithOAuth({
       provider:'twitter',
-      options:{redirectTo: 'https://hito77ki-ship-it.github.io/shikaku-quest/'}
+      options:{redirectTo: 'https://hito77ki-ship-it.github.io/study-quest/'}
     });
     if(error) throw error;
   } catch(e) {
@@ -5418,7 +5418,7 @@ function startPomoBreak(){
 async function tweetPomo(){
   const smins = studyMins(sessions);
   const lv = getLevelProgress(smins).level;
-  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(smins/60)}時間\n今日も勉強がんばった💪\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
+  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(smins/60)}時間\n今日も勉強がんばった💪\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
 
   if (navigator.share) {
     try {
@@ -8472,7 +8472,7 @@ function sharePostToX(postId){
     `${post.rpg_log}\n\n` +
     `📚 ${post.subject_name} ${timeStr} +${post.exp}EXP\n` +
     `Lv.${post.user_level} | #study_quest #資格勉強\n` +
-    `https://hito77ki-ship-it.github.io/shikaku-quest/`
+    `https://hito77ki-ship-it.github.io/study-quest/`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
 }
@@ -8623,7 +8623,7 @@ function roundRect(ctx, x, y, w, h, r){
 function downloadShareCard(){
   const canvas = document.getElementById('shareCanvas');
   const a = document.createElement('a');
-  a.download = `shikaku-quest-${new Date().toISOString().slice(0,10)}.png`;
+  a.download = `study-quest-${new Date().toISOString().slice(0,10)}.png`;
   a.href = canvas.toDataURL('image/png');
   a.click();
 }
@@ -8637,7 +8637,7 @@ async function shareToX(){
   const h = Math.floor(todayMins/60), m = todayMins%60;
   const timeStr = h>0 ? `${h}時間${m>0?m+'分':''}` : `${m}分`;
   const lv = getLevelProgress(smins).level;
-  const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(smins/60)}時間\n\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
+  const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(smins/60)}時間\n\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
 
   // Web Share API：画像付きネイティブシェア（スマホ対応）
   if (navigator.share) {
@@ -9666,7 +9666,7 @@ function shareAchieveToX(id){
     `${scoreStr}${rateStr}\n` +
     `${a.comment ? a.comment + '\n' : ''}` +
     `\n#study_quest #資格勉強\n` +
-    `https://hito77ki-ship-it.github.io/shikaku-quest/`
+    `https://hito77ki-ship-it.github.io/study-quest/`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
 }
@@ -10873,7 +10873,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/shikaku-quest/sw.js', { scope: '/shikaku-quest/' });
+    navigator.serviceWorker.register('/study-quest/sw.js', { scope: '/study-quest/' });
   });
 }
 </script>
