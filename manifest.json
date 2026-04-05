@@ -1,6 +1,6 @@
 {
-  "name": "資格クエスト",
-  "short_name": "資格クエスト",
+  "name": "スタディクエスト",
+  "short_name": "スタディクエスト",
   "description": "RPG風資格勉強トラッカー",
   "start_url": "/shikaku-quest/",
   "scope": "/shikaku-quest/",

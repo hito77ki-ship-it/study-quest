@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>SHIKAKU QUEST</title>
+<title>STUDY QUEST</title>
 <!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#8CC63F">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="資格クエスト">
+<meta name="apple-mobile-web-app-title" content="スタディクエスト">
 <link rel="apple-touch-icon" href="icons/icon.svg">
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hito77ki-ship-it.github.io/shikaku-quest/">
-<meta property="og:title" content="資格クエスト｜RPG風資格勉強トラッカー">
+<meta property="og:title" content="スタディクエスト｜RPG風資格勉強トラッカー">
 <meta property="og:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
 <meta property="og:image" content="https://hito77ki-ship-it.github.io/shikaku-quest/screenshots/screen1.png">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:site_name" content="資格クエスト">
+<meta property="og:site_name" content="スタディクエスト">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="資格クエスト｜RPG風資格勉強トラッカー">
+<meta name="twitter:title" content="スタディクエスト｜RPG風資格勉強トラッカー">
 <meta name="twitter:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
 <meta name="twitter:image" content="https://hito77ki-ship-it.github.io/shikaku-quest/screenshots/screen1.png">
 <!-- Google Analytics -->
@@ -2645,8 +2645,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 <!-- ════ PC サイドバー（1024px以上で表示） ════ -->
 <aside class="pc-sidebar" id="pcSidebar">
   <div class="pc-sidebar-logo">
-    <div class="pc-sidebar-logo-title" id="secretLogo" onclick="secretTap()" style="cursor:default;user-select:none;">⚔ SHIKAKU QUEST</div>
-    <div class="pc-sidebar-logo-sub">資格クエスト</div>
+    <div class="pc-sidebar-logo-title" id="secretLogo" onclick="secretTap()" style="cursor:default;user-select:none;">⚔ STUDY QUEST</div>
+    <div class="pc-sidebar-logo-sub">スタディクエスト</div>
   </div>
   <nav class="pc-sidebar-nav">
     <div class="pc-sidebar-section-label">メニュー</div>
@@ -2696,7 +2696,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   <div class="auth-inner">
     <div class="logo-area">
       <div class="logo-en">Shikaku Quest</div>
-      <div class="logo-jp">⚔ 資格クエスト ⚔</div>
+      <div class="logo-jp">⚔ スタディクエスト ⚔</div>
     </div>
     <div class="auth-card">
       <div class="auth-title">ADVENTURER LOGIN</div>
@@ -2719,7 +2719,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 <div class="screen" id="screen-job">
   <div class="logo-area">
     <div class="logo-en">Shikaku Quest</div>
-    <div class="logo-jp">⚔ 資格クエスト ⚔</div>
+    <div class="logo-jp">⚔ スタディクエスト ⚔</div>
   </div>
   <div class="section">
     <div class="step-header">
@@ -2735,7 +2735,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 <div class="screen" id="screen-subj">
   <div class="logo-area">
     <div class="logo-en">Shikaku Quest</div>
-    <div class="logo-jp">⚔ 資格クエスト ⚔</div>
+    <div class="logo-jp">⚔ スタディクエスト ⚔</div>
   </div>
   <div class="section">
     <div class="step-header">
@@ -2757,7 +2757,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 <div class="screen" id="screen-dash">
 <!-- ════ グローバルナビゲーションバー ════ -->
 <nav class="gnav" id="gnav" style="display:none;">
-  <div class="gnav-logo">SHIKAKU QUEST <span>⚔</span></div>
+  <div class="gnav-logo">STUDY QUEST <span>⚔</span></div>
   <div class="gnav-right">
     <button class="news-btn" onclick="toggleNewsModal()" title="お知らせ" id="newsBtn">
       🔔
@@ -2856,7 +2856,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <div class="logo-area" style="display:none;">
     <div class="logo-en">Shikaku Quest</div>
-    <div class="logo-jp">⚔ 資格クエスト ⚔</div>
+    <div class="logo-jp">⚔ スタディクエスト ⚔</div>
   </div>
 
   <!-- USER BAR -->
@@ -4134,7 +4134,7 @@ async function loadAll(){
 }
 function exportData(){
   const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),char,sessions,selectedJobIds,selectedSubjectKeys,bosses,examGoals},null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='shikaku_quest_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='study_quest_'+new Date().toISOString().slice(0,10)+'.json';a.click();
 }
 function importData(){
   const input=document.createElement('input');input.type='file';input.accept='.json';
@@ -5384,7 +5384,7 @@ function startPomoBreak(){
 async function tweetPomo(){
   const smins = studyMins(sessions);
   const lv = getLevelProgress(smins).level;
-  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(smins/60)}時間\n今日も資格勉強がんばった💪\n#資格クエスト #CPA試験\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
+  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(smins/60)}時間\n今日も資格勉強がんばった💪\n#スタディクエスト #CPA試験\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
 
   if (navigator.share) {
     try {
@@ -5655,7 +5655,7 @@ function renderScoreBossCard(record, prev){
   const shareText = `【${record.name} 結果報告⚔】\n\n`+
     `合計：${totalScore}/${totalMax}点（${rate}%）\n`+
     (prev?`前回比：${totalScore-Object.values(prev.scores).reduce((a,v)=>a+v.score,0)>=0?'+':''}${totalScore-Object.values(prev.scores).reduce((a,v)=>a+v.score,0)}点\n`:'')+
-    `\nまだまだ修行が足りぬ…次は倒す！\n\n#${jobName.replace(/[（）()]/g,'')} #資格クエスト #勉強垢`;
+    `\nまだまだ修行が足りぬ…次は倒す！\n\n#${jobName.replace(/[（）()]/g,'')} #スタディクエスト #勉強垢`;
 
   card.style.display='';
   card.innerHTML=`<div class="score-boss-card">
@@ -6622,7 +6622,7 @@ function shareDeclToX(){
     (subjLines ? subjLines+'\n\n' : '') +
     `合計目標：${goalStr}\n\n` +
     `達成したら報告します💪\n\n` +
-    `#${jobName.replace(/[（）()]/g,'')} #勉強垢 #資格クエスト\n` +
+    `#${jobName.replace(/[（）()]/g,'')} #勉強垢 #スタディクエスト\n` +
     `${location.href}`;
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
 }
@@ -6647,7 +6647,7 @@ function shareDeclResultToX(){
   const text = `${emoji} 今日の勉強記録\n\n` +
     (subjLines ? subjLines+'\n\n' : '') +
     `合計：${doneStr}（目標達成率 ${pct}%）\n\n` +
-    `#${jobName.replace(/[（）()]/g,'')} #勉強垢 #資格クエスト`;
+    `#${jobName.replace(/[（）()]/g,'')} #勉強垢 #スタディクエスト`;
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
 }
 
@@ -7510,7 +7510,7 @@ function notifyGoalReached(){
   // ブラウザ通知
   if(notifGranted){
     try{
-      new Notification('🎉 SHIKAKU QUEST — 目標達成！',{
+      new Notification('🎉 STUDY QUEST — 目標達成！',{
         body:`目標 ${timeStr} の学習を完了しました！\n記録を保存してください。`,
         icon:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><text y="26" font-size="28">⚔</text></svg>',
         tag:'sq-goal'
@@ -7562,7 +7562,7 @@ const HELP_CONTENT = {
       const intro = `<div style="background:linear-gradient(135deg,rgba(124,77,255,.1),rgba(224,64,251,.06));border:1px solid rgba(124,77,255,.25);border-radius:8px;padding:16px;margin-bottom:18px;">
         <div style="font-size:14px;font-weight:700;color:var(--exp2);margin-bottom:8px;">🎮 勉強、RPGにしてみました。</div>
         <div style="font-size:11px;color:var(--muted);line-height:1.8;">
-          資格クエストは、資格勉強を<strong style="color:var(--text)">ドラクエ風RPG</strong>に変換するアプリです。<br>
+          スタディクエストは、資格勉強を<strong style="color:var(--text)">ドラクエ風RPG</strong>に変換するアプリです。<br>
           1分勉強すると1EXP、レベルが上がり、称号が解放されます。<br>
           「なんか知らんけどモチベ出る」が設計思想です。<br><br>
           <strong style="color:var(--gold)">模試や答練のカウントダウン</strong>は「ボス戦」として設定でき、<br>
@@ -7684,7 +7684,7 @@ const HELP_CONTENT = {
         { icon:'⚔', name:'RPGゲーム',  desc:'ドラクエ風マップ探索・バトル・呪文システム・セーブ/ロード（game.htmlで起動）' },
       ];
       return `<div style="font-size:11px;color:var(--muted);margin-bottom:14px;">
-        資格クエストで使える全機能の一覧です。タブ名と機能が一致するようになっています。
+        スタディクエストで使える全機能の一覧です。タブ名と機能が一致するようになっています。
       </div>`
       + features.map(f=>`
         <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);">
@@ -8437,7 +8437,7 @@ function sharePostToX(postId){
   const text = encodeURIComponent(
     `${post.rpg_log}\n\n` +
     `📚 ${post.subject_name} ${timeStr} +${post.exp}EXP\n` +
-    `Lv.${post.user_level} | #shikaku_quest #資格勉強\n` +
+    `Lv.${post.user_level} | #study_quest #資格勉強\n` +
     `https://hito77ki-ship-it.github.io/shikaku-quest/`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
@@ -8491,7 +8491,7 @@ function generateShareCard(){
   // ロゴ
   ctx.fillStyle = '#8CC63F';
   ctx.font = 'bold 14px "Share Tech Mono", monospace';
-  ctx.fillText('⚔ SHIKAKU QUEST', 28, 40);
+  ctx.fillText('⚔ STUDY QUEST', 28, 40);
 
   // 日付
   const today = new Date().toLocaleDateString('ja-JP', {year:'numeric',month:'long',day:'numeric'});
@@ -8567,7 +8567,7 @@ function generateShareCard(){
   // 下部テキスト
   ctx.fillStyle = '#4A5568';
   ctx.font = '10px "Share Tech Mono", monospace';
-  ctx.fillText('#shikaku_quest  #資格勉強  #公認会計士', 28, 282);
+  ctx.fillText('#study_quest  #資格勉強  #公認会計士', 28, 282);
 
   overlay.classList.add('show');
 }
@@ -8603,7 +8603,7 @@ async function shareToX(){
   const h = Math.floor(todayMins/60), m = todayMins%60;
   const timeStr = h>0 ? `${h}時間${m>0?m+'分':''}` : `${m}分`;
   const lv = getLevelProgress(smins).level;
-  const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(smins/60)}時間\n\n#shikaku_quest #資格勉強 #公認会計士\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
+  const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(smins/60)}時間\n\n#study_quest #資格勉強 #公認会計士\nhttps://hito77ki-ship-it.github.io/shikaku-quest/`;
 
   // Web Share API：画像付きネイティブシェア（スマホ対応）
   if (navigator.share) {
@@ -9631,7 +9631,7 @@ function shareAchieveToX(id){
     `【達成報告】${a.title}\n` +
     `${scoreStr}${rateStr}\n` +
     `${a.comment ? a.comment + '\n' : ''}` +
-    `\n#shikaku_quest #資格勉強\n` +
+    `\n#study_quest #資格勉強\n` +
     `https://hito77ki-ship-it.github.io/shikaku-quest/`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
@@ -10313,7 +10313,7 @@ const NEWS_ITEMS = [
     date: '2026/03/30',
     type: 'feature',
     title: '📂 過去の記録引き継ぎ機能',
-    desc: '他のアプリで積み上げた勉強時間を資格クエストに引き継げるようになりました！プロフィール→「過去の記録を引き継ぐ」で科目別に入力するだけ。EXP・レベルに反映されます（ランキングは新規記録のみ対象）。'
+    desc: '他のアプリで積み上げた勉強時間をスタディクエストに引き継げるようになりました！プロフィール→「過去の記録を引き継ぐ」で科目別に入力するだけ。EXP・レベルに反映されます（ランキングは新規記録のみ対象）。'
   },
   {
     id: 'v20260330_ai_removed',
