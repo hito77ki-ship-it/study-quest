@@ -36,28 +36,48 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero h1{font-family:'Cinzel',serif;font-size:clamp(28px,5vw,52px);color:var(--text);line-height:1.25;margin-bottom:20px;letter-spacing:.04em;}
 .hero h1 em{color:var(--green);font-style:normal;}
 .hero-sub{font-size:clamp(14px,2vw,18px);color:var(--muted);max-width:560px;margin:0 auto 36px;line-height:1.8;}
-.hero-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:56px;}
+.hero-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
 .btn-primary{background:var(--green);color:#fff;font-size:16px;font-weight:700;padding:16px 36px;border-radius:100px;box-shadow:0 4px 20px rgba(140,198,63,.4);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
 .btn-primary:hover{background:var(--green2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(140,198,63,.45);}
 .btn-secondary{color:var(--muted);font-size:14px;padding:16px 24px;border-radius:100px;border:1px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
 .btn-secondary:hover{border-color:var(--green);color:var(--green);}
-.hero-note{font-size:12px;color:var(--muted);}
+.hero-note{font-size:12px;color:var(--muted);margin-bottom:56px;}
 
-/* MOCKUP */
-.hero-mockup{max-width:800px;margin:0 auto;position:relative;}
-.mockup-frame{background:#1A1D2E;border-radius:20px;padding:16px;box-shadow:0 24px 80px rgba(0,0,0,.18);}
-.mockup-bar{display:flex;gap:6px;margin-bottom:12px;}
-.mockup-bar span{width:10px;height:10px;border-radius:50%;}
-.mockup-bar span:nth-child(1){background:#FF5F57;}
-.mockup-bar span:nth-child(2){background:#FEBC2E;}
-.mockup-bar span:nth-child(3){background:#28C840;}
-.mockup-screen{background:#F8F9FA;border-radius:12px;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;}
-.mockup-placeholder{text-align:center;color:#aaa;}
-.mockup-placeholder .icon{font-size:48px;margin-bottom:12px;}
-.mockup-placeholder p{font-size:13px;}
+/* PHONE FRAME */
+.phone-wrap{display:flex;justify-content:center;gap:20px;align-items:flex-end;margin-top:8px;}
+.phone{position:relative;flex-shrink:0;}
+.phone-frame{
+  width:200px;
+  background:#1A1D2E;
+  border-radius:36px;
+  padding:12px 10px;
+  box-shadow:0 32px 80px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.08) inset;
+  position:relative;
+}
+.phone-frame::before{
+  content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  width:60px;height:6px;background:#0d0f1a;border-radius:100px;z-index:2;
+}
+.phone-screen{
+  background:#F8F9FA;border-radius:26px;overflow:hidden;
+  aspect-ratio:9/19;display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.phone-placeholder{text-align:center;padding:20px;color:#aaa;}
+.phone-placeholder .ph-icon{font-size:32px;margin-bottom:8px;}
+.phone-placeholder p{font-size:10px;line-height:1.5;}
+.phone.main .phone-frame{width:240px;box-shadow:0 40px 100px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.1) inset;}
+.phone.side{opacity:.7;transform:scale(.88);}
+.phone.side-left{transform:scale(.88) translateX(20px);}
+.phone.side-right{transform:scale(.88) translateX(-20px);}
+@media(max-width:600px){
+  .phone.side{display:none;}
+  .phone.main .phone-frame{width:200px;}
+}
 
 /* STATS */
-.stats{background:var(--bg);padding:48px 24px;}
+.stats{background:var(--bg);padding:56px 24px;}
 .stats-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;}
 .stat-num{font-family:'Cinzel',serif;font-size:36px;color:var(--green);font-weight:900;}
 .stat-label{font-size:13px;color:var(--muted);margin-top:4px;}
@@ -67,17 +87,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .section-label{text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.3em;color:var(--green2);margin-bottom:12px;}
 .section-title{text-align:center;font-size:clamp(20px,3vw,32px);font-weight:700;margin-bottom:8px;}
 .section-sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:56px;}
-.features-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;}
-.feature-card{background:#fff;border-radius:var(--radius);padding:32px 28px;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;}
+.features-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.feature-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
 .feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.1);}
-.feature-icon{width:52px;height:52px;background:var(--green-light);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;}
-.feature-title{font-size:18px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.feature-rpg{font-family:'Cinzel',serif;font-size:10px;color:var(--green2);background:var(--green-light);padding:2px 8px;border-radius:100px;letter-spacing:.1em;}
-.feature-desc{font-size:14px;color:var(--muted);line-height:1.8;}
+.feature-phone-wrap{background:linear-gradient(135deg,#1A1D2E,#2a2d45);padding:24px 24px 0;display:flex;justify-content:center;}
+.feature-mini-phone{width:100px;background:#0d0f1a;border-radius:20px;padding:6px 5px;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+.feature-mini-phone::before{display:none;}
+.feature-mini-screen{background:#F8F9FA;border-radius:14px;aspect-ratio:9/18;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.feature-mini-screen img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.feature-mini-placeholder{text-align:center;padding:8px;color:#bbb;font-size:8px;}
+.feature-body{padding:24px;}
+.feature-icon{font-size:22px;margin-bottom:10px;}
+.feature-title{font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.feature-rpg{font-family:'Cinzel',serif;font-size:9px;color:var(--green2);background:var(--green-light);padding:2px 7px;border-radius:100px;letter-spacing:.1em;}
+.feature-desc{font-size:13px;color:var(--muted);line-height:1.8;}
 
 /* HOW IT WORKS */
 .how{padding:80px 24px;background:#fff;}
-.steps{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:0;}
+.steps{max-width:680px;margin:0 auto;display:flex;flex-direction:column;}
 .step{display:flex;gap:24px;position:relative;padding-bottom:40px;}
 .step:last-child{padding-bottom:0;}
 .step:not(:last-child)::after{content:'';position:absolute;left:23px;top:48px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--green),var(--border));}
@@ -95,6 +122,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .testimonial-author{font-size:12px;color:var(--muted);font-weight:700;}
 .stars{color:var(--green);font-size:13px;margin-bottom:10px;}
 
+/* ROADMAP */
+.roadmap{padding:80px 24px;background:#0F1117;}
+.roadmap .section-label{color:#4A9C2A;}
+.roadmap .section-title{color:#fff;}
+.roadmap .section-sub{color:#6B7280;}
+.roadmap-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.roadmap-card{border-radius:var(--radius);padding:24px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
+.roadmap-card.done{background:rgba(140,198,63,.08);border-color:rgba(140,198,63,.2);}
+.roadmap-card.next{background:rgba(255,200,60,.05);border-color:rgba(255,200,60,.2);}
+.roadmap-card.future{background:rgba(100,120,255,.05);border-color:rgba(100,120,255,.15);}
+.roadmap-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.15em;padding:3px 10px;border-radius:100px;margin-bottom:14px;}
+.roadmap-card.done .roadmap-tag{background:rgba(140,198,63,.15);color:#8CC63F;}
+.roadmap-card.next .roadmap-tag{background:rgba(255,200,60,.15);color:#FFC83C;}
+.roadmap-card.future .roadmap-tag{background:rgba(100,120,255,.15);color:#7C8FFF;}
+.roadmap-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;}
+.roadmap-items{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.roadmap-items li{font-size:13px;color:#9CA3AF;display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.roadmap-items li::before{content:'▸';color:#4B5563;flex-shrink:0;margin-top:1px;}
+.roadmap-card.done .roadmap-items li::before{content:'✓';color:#8CC63F;}
+.roadmap-card.next .roadmap-items li::before{content:'◆';color:#FFC83C;}
+.roadmap-card.future .roadmap-items li::before{content:'✦';color:#7C8FFF;}
+
 /* CTA */
 .cta{padding:100px 24px;text-align:center;background:#1A202C;}
 .cta h2{font-family:'Cinzel',serif;font-size:clamp(22px,4vw,40px);color:#fff;margin-bottom:16px;letter-spacing:.04em;}
@@ -105,17 +154,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 /* FOOTER */
 footer{background:#111827;padding:32px 24px;text-align:center;}
 .footer-logo{font-family:'Cinzel',serif;font-size:14px;color:#4A5568;margin-bottom:12px;}
-.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap;}
 .footer-links a{font-size:12px;color:#4A5568;transition:color .2s;}
 .footer-links a:hover{color:#8CC63F;}
 .footer-copy{font-size:11px;color:#2D3748;}
 
-/* RESPONSIVE */
 @media(max-width:640px){
-  .stats-inner{grid-template-columns:repeat(3,1fr);gap:12px;}
+  .stats-inner{gap:12px;}
   .stat-num{font-size:26px;}
   .hero{padding:90px 20px 60px;}
   .step::after{left:23px;}
+  .roadmap-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -140,15 +189,29 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
   </div>
   <p class="hero-note">✓ 登録無料 &nbsp;✓ アプリインストール不要 &nbsp;✓ スマホ対応</p>
 
-  <div class="hero-mockup" style="margin-top:48px;">
-    <div class="mockup-frame">
-      <div class="mockup-bar">
-        <span></span><span></span><span></span>
+  <!-- スマホフレーム3台 -->
+  <div class="phone-wrap">
+    <div class="phone side side-left">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <img src="screenshots/screen2.png" alt="QUESTタブ" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="phone-placeholder" style="display:none"><div class="ph-icon">⏱</div><p>QUESTタブ</p></div>
+        </div>
       </div>
-      <div class="mockup-screen">
-        <div class="mockup-placeholder">
-          <div class="icon">📱</div>
-          <p>スクリーンショット準備中</p>
+    </div>
+    <div class="phone main">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <img src="screenshots/screen1.png" alt="STATUSタブ" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="phone-placeholder" style="display:none"><div class="ph-icon">⚔</div><p>STATUSタブ</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="phone side side-right">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <img src="screenshots/screen3.png" alt="タイムライン" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="phone-placeholder" style="display:none"><div class="ph-icon">🌐</div><p>タイムライン</p></div>
         </div>
       </div>
     </div>
@@ -176,24 +239,74 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="section-label">FEATURES</div>
-  <h2 class="section-title">3つの特徴</h2>
+  <h2 class="section-title">4つの特徴</h2>
   <p class="section-sub">勉強が続かない理由を、ゲームの仕組みで解決します。</p>
   <div class="features-grid">
+
     <div class="feature-card">
-      <div class="feature-icon">⏱</div>
-      <div class="feature-title">継続 <span class="feature-rpg">QUEST</span></div>
-      <p class="feature-desc">25分の集中が「クエスト」になる。ポモドーロ・テクニックで勉強を小さなミッションに分割。毎日のストリークがモチベーションを維持します。</p>
+      <div class="feature-phone-wrap">
+        <div class="feature-mini-phone">
+          <div class="feature-mini-screen">
+            <img src="screenshots/screen1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="feature-mini-placeholder" style="display:none">STATUS</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-body">
+        <div class="feature-icon">⚔</div>
+        <div class="feature-title">かんたん設定 <span class="feature-rpg">SETUP</span></div>
+        <p class="feature-desc">ジョブ（資格）を選ぶだけで、科目設定が自動で完了。公認会計士・簿記・宅建など8種類以上に対応しています。</p>
+      </div>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon">📈</div>
-      <div class="feature-title">成長 <span class="feature-rpg">LEVEL UP</span></div>
-      <p class="feature-desc">勉強の成果がレベル・EXP・スキルとして可視化。科目別の進捗をHPバーで確認でき、自分の成長が数字でわかります。</p>
+      <div class="feature-phone-wrap">
+        <div class="feature-mini-phone">
+          <div class="feature-mini-screen">
+            <img src="screenshots/screen2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="feature-mini-placeholder" style="display:none">QUEST</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-body">
+        <div class="feature-icon">⏱</div>
+        <div class="feature-title">継続 <span class="feature-rpg">QUEST</span></div>
+        <p class="feature-desc">25分の集中が「クエスト」になる。ポモドーロ・テクニックで勉強を小さなミッションに分割。毎日のストリークがモチベーションを維持します。</p>
+      </div>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon">🌐</div>
-      <div class="feature-title">共闘 <span class="feature-rpg">GUILD</span></div>
-      <p class="feature-desc">タイムラインで仲間の冒険をチェック。ランキングで切磋琢磨。一人じゃないから頑張れる、勉強仲間との繋がりを作ります。</p>
+      <div class="feature-phone-wrap">
+        <div class="feature-mini-phone">
+          <div class="feature-mini-screen">
+            <img src="screenshots/screen1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="feature-mini-placeholder" style="display:none">STATUS</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-body">
+        <div class="feature-icon">📈</div>
+        <div class="feature-title">成長 <span class="feature-rpg">LEVEL UP</span></div>
+        <p class="feature-desc">勉強の成果がレベル・EXP・スキルとして可視化。科目別の進捗をHPバーで確認でき、自分の成長が数字でわかります。</p>
+      </div>
     </div>
+
+    <div class="feature-card">
+      <div class="feature-phone-wrap">
+        <div class="feature-mini-phone">
+          <div class="feature-mini-screen">
+            <img src="screenshots/screen3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="feature-mini-placeholder" style="display:none">GUILD</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-body">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-title">共闘 <span class="feature-rpg">GUILD</span></div>
+        <p class="feature-desc">タイムラインで仲間の冒険をチェック。ランキングで切磋琢磨。一人じゃないから頑張れる、勉強仲間との繋がりを作ります。</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -207,7 +320,7 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
       <div class="step-num">1</div>
       <div class="step-body">
         <div class="step-title">ジョブを選ぶ</div>
-        <p class="step-desc">公認会計士・簿記・宅建など8種類以上のジョブ（資格）から目指すものを選択。科目が自動でセットされます。</p>
+        <p class="step-desc">公認会計士・簿記・宅建など8種類以上のジョブ（資格）から目指すものを選択。科目が<strong>自動でセット</strong>されるので設定ゼロ。</p>
       </div>
     </div>
     <div class="step">
@@ -249,6 +362,51 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
         <div class="testimonial-author">宅建受験生・大学3年</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap">
+  <div class="section-label">ROADMAP</div>
+  <h2 class="section-title" style="margin-bottom:8px;">開発ロードマップ</h2>
+  <p class="section-sub" style="margin-bottom:48px;">資格クエストはまだまだ進化します。</p>
+  <div class="roadmap-grid">
+
+    <div class="roadmap-card done">
+      <div class="roadmap-tag">✓ 実装済み</div>
+      <div class="roadmap-title">現在の冒険</div>
+      <ul class="roadmap-items">
+        <li>ポモドーロタイマー・クエスト記録</li>
+        <li>EXP・レベルアップシステム</li>
+        <li>タイムライン・ランキング</li>
+        <li>ヒートマップ・レーダーチャート</li>
+        <li>PWA対応（ホーム画面に追加）</li>
+        <li>β版限定称号「第1世代勇者」</li>
+      </ul>
+    </div>
+
+    <div class="roadmap-card next">
+      <div class="roadmap-tag">◆ 近日実装予定</div>
+      <div class="roadmap-title">次の章</div>
+      <ul class="roadmap-items">
+        <li>装備システム（参考書・道具を装備）</li>
+        <li>新ジョブ追加（FP・TOEIC・ITパスポート）</li>
+        <li>X（Twitter）アカウントでのログイン</li>
+        <li>仲間と一緒に挑むギルドクエスト</li>
+      </ul>
+    </div>
+
+    <div class="roadmap-card future">
+      <div class="roadmap-tag">✦ 将来の構想</div>
+      <div class="roadmap-title">大陸の彼方へ</div>
+      <ul class="roadmap-items">
+        <li>Google Play / App Store 配信</li>
+        <li>AI賢者による学習アドバイス</li>
+        <li>資格スクールとの連携・特典</li>
+        <li>合格者インタビュー・攻略コンテンツ</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
