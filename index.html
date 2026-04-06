@@ -8788,6 +8788,23 @@ function loadMoreTimeline(){
   renderTlPage(tlPage);
 }
 
+async function deleteTlPost(postId, btn){
+  if(!confirm('この投稿を削除しますか？')) return;
+  // ローカルから削除
+  const posts = loadLocalPosts();
+  const filtered = posts.filter(p => p.id !== postId);
+  saveLocalPosts(filtered);
+  // Supabaseからも削除（ログイン中のみ）
+  if(currentUser){
+    try {
+      await sb.from('timeline_posts').delete().eq('id', postId).eq('user_id', currentUser.id);
+    } catch(e){ console.warn('TL delete failed:', e); }
+  }
+  // DOM から即削除
+  const postEl = document.getElementById('tl-post-' + postId);
+  if(postEl) postEl.remove();
+}
+
 /* ── 投稿カードHTML生成 ── */
 function renderPostHTML(post, likes){
   const liked = likes[post.id] || (post.from_cloud && tlLikedSet && tlLikedSet.has(post.id));
@@ -8869,6 +8886,10 @@ function renderPostHTML(post, likes){
         style="background:none;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:10px;color:var(--muted);cursor:pointer;margin-left:auto;">
         𝕏 シェア
       </button>
+      ${isOwn ? `<button onclick="deleteTlPost('${post.id}', this)"
+        style="background:none;border:1px solid rgba(239,68,68,.4);border-radius:20px;padding:4px 10px;font-size:10px;color:#EF4444;cursor:pointer;">
+        🗑
+      </button>` : ''}
     </div>
   </div>`;
 }
