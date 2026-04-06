@@ -10074,17 +10074,19 @@ async function submitAchievement(){
   if(currentUser){
     try {
       await sb.from('timeline_posts').insert({
-        user_id:      currentUser.id,
-        user_name:    char.name || '冒険者',
-        user_level:   char.level || 1,
-        job_ids:      selectedJobIds,
-        subject_name: title,
-        minutes:      0,
-        note:         comment,
-        rpg_log:      tlPost.rpg_log,
-        exp:          0,
-        likes_count:  0,
-        created_at:   achievement.created_at,
+        user_id:          currentUser.id,
+        user_name:        char.name || '冒険者',
+        user_level:       char.level || 1,
+        job_ids:          selectedJobIds,
+        subject_name:     title,
+        minutes:          0,
+        note:             comment,
+        rpg_log:          tlPost.rpg_log,
+        exp:              0,
+        likes_count:      0,
+        is_achievement:   true,
+        achievement_data: JSON.stringify(achievement),
+        created_at:       achievement.created_at,
       });
     } catch(e){ console.warn('Achievement Supabase post:', e); }
   }
@@ -10095,6 +10097,10 @@ async function submitAchievement(){
   // 通知
   showNotifToast('🏆', '達成報告を投稿しました！', title);
   spawnDmgNumber('🏆 達成報告！', '#8CC63F', true);
+
+  // タイムラインを更新（タブが開いていなくてもデータは反映済み）
+  const tlPanel = document.getElementById('panel-timeline');
+  if(tlPanel && tlPanel.style.display === 'block') loadTimeline();
 
   // バッジ解放チェック
   renderAll();
