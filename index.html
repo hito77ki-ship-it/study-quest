@@ -3598,6 +3598,45 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   </div><!-- /panel-profile -->
 
+  <!-- ════ TIMELINE PANEL ════ -->
+  <div id="panel-timeline" style="display:none;">
+
+    <!-- フィルターバー -->
+    <div class="tl-filter-bar">
+      <button class="tl-filter-btn active" onclick="setTlFilter('all',this)">全員</button>
+      <button class="tl-filter-btn" onclick="setTlFilter('me',this)">自分</button>
+      <button class="tl-filter-btn" onclick="setTlFilter('goal',this)">同ジョブ</button>
+      <button class="tl-filter-btn" onclick="setTlFilter('top',this)">人気</button>
+    </div>
+
+    <!-- 未ログイン案内 -->
+    <div id="tlLoginHint" style="display:none;text-align:center;padding:12px;font-size:12px;color:var(--muted);background:var(--panel);border-radius:8px;margin-bottom:10px;">
+      ログインするとみんなの投稿が見られます
+    </div>
+
+    <!-- 投稿エリア -->
+    <div id="tlComposeToggle" style="display:none;">
+      <div class="tl-compose">
+        <textarea class="tl-compose-input" id="tlInput" rows="2" placeholder="一言メモを投稿…（任意）"></textarea>
+        <div class="tl-compose-footer">
+          <button class="tl-post-btn" onclick="manualPost()">投稿</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- フィード -->
+    <div id="tlFeed">
+      <div style="text-align:center;padding:30px;color:var(--muted);font-size:13px;">読み込み中...</div>
+    </div>
+
+    <!-- もっと見る -->
+    <button id="tlLoadMore" onclick="loadMoreTimeline()"
+      style="display:none;width:100%;padding:10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:12px;cursor:pointer;margin-top:8px;">
+      もっと見る
+    </button>
+
+  </div><!-- /panel-timeline -->
+
 </div><!-- /screen-dash -->
 </div><!-- /wrap -->
 </div><!-- /pc-main-area -->
