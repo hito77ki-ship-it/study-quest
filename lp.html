@@ -111,12 +111,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .features-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
 .feature-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
 .feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.1);}
-.feature-phone-wrap{background:linear-gradient(135deg,#1A1D2E,#2a2d45);padding:24px 24px 0;display:flex;justify-content:center;}
-.feature-mini-phone{width:160px;background:#0d0f1a;border-radius:24px;padding:8px 7px;box-shadow:0 8px 24px rgba(0,0,0,.4);}
-.feature-mini-phone::before{display:none;}
-.feature-mini-screen{background:#F8F9FA;border-radius:14px;aspect-ratio:9/18;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.feature-mini-screen img{width:100%;height:100%;object-fit:cover;object-position:top;}
-.feature-mini-placeholder{text-align:center;padding:8px;color:#bbb;font-size:8px;}
+.feature-img-wrap{background:#F1F5F9;border-bottom:1px solid var(--border);overflow:hidden;aspect-ratio:16/10;display:flex;align-items:flex-start;justify-content:center;}
+.feature-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.feature-img-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#94A3B8;font-size:12px;}
 .feature-body{padding:24px;}
 .feature-icon{font-size:22px;margin-bottom:10px;}
 .feature-title{font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
@@ -144,25 +141,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .stars{color:var(--green);font-size:13px;margin-bottom:10px;}
 
 /* ROADMAP */
-.roadmap{padding:80px 24px;background:#0F1117;}
-.roadmap .section-label{color:#4A9C2A;}
-.roadmap .section-title{color:#fff;}
-.roadmap .section-sub{color:#6B7280;}
+.roadmap{padding:80px 24px;background:#FAFAFA;}
+.roadmap .section-label{color:var(--green2);}
+.roadmap .section-title{color:var(--text);}
+.roadmap .section-sub{color:var(--muted);}
 .roadmap-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
-.roadmap-card{border-radius:var(--radius);padding:24px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
-.roadmap-card.done{background:rgba(140,198,63,.08);border-color:rgba(140,198,63,.2);}
-.roadmap-card.next{background:rgba(255,200,60,.05);border-color:rgba(255,200,60,.2);}
-.roadmap-card.future{background:rgba(100,120,255,.05);border-color:rgba(100,120,255,.15);}
+.roadmap-card{border-radius:var(--radius);padding:24px;position:relative;overflow:hidden;border:1px solid var(--border);background:#fff;}
+.roadmap-card.done{background:#F7FDF0;border-color:#C6E8A0;}
+.roadmap-card.next{background:#FFFBEF;border-color:#FFE08A;}
+.roadmap-card.future{background:#F5F5FF;border-color:#C7C9F5;}
 .roadmap-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.15em;padding:3px 10px;border-radius:100px;margin-bottom:14px;}
-.roadmap-card.done .roadmap-tag{background:rgba(140,198,63,.15);color:#8CC63F;}
-.roadmap-card.next .roadmap-tag{background:rgba(255,200,60,.15);color:#FFC83C;}
-.roadmap-card.future .roadmap-tag{background:rgba(100,120,255,.15);color:#7C8FFF;}
-.roadmap-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;}
+.roadmap-card.done .roadmap-tag{background:rgba(140,198,63,.15);color:#5A9E1A;}
+.roadmap-card.next .roadmap-tag{background:rgba(255,200,60,.15);color:#B8860B;}
+.roadmap-card.future .roadmap-tag{background:rgba(100,120,255,.15);color:#5560DD;}
+.roadmap-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:10px;}
 .roadmap-items{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.roadmap-items li{font-size:13px;color:#9CA3AF;display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
-.roadmap-items li::before{content:'▸';color:#4B5563;flex-shrink:0;margin-top:1px;}
+.roadmap-items li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.roadmap-items li::before{content:'▸';color:#CBD5E0;flex-shrink:0;margin-top:1px;}
 .roadmap-card.done .roadmap-items li::before{content:'✓';color:#8CC63F;}
-.roadmap-card.next .roadmap-items li::before{content:'◆';color:#FFC83C;}
+.roadmap-card.next .roadmap-items li::before{content:'◆';color:#F6A600;}
 .roadmap-card.future .roadmap-items li::before{content:'✦';color:#7C8FFF;}
 
 /* FAQ */
@@ -178,11 +175,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .faq-item.open .faq-a{display:block;}
 
 /* CTA */
-.cta{padding:100px 24px;text-align:center;background:#1A202C;}
-.cta h2{font-family:'Cinzel',serif;font-size:clamp(22px,4vw,40px);color:#fff;margin-bottom:16px;letter-spacing:.04em;}
-.cta p{color:#A0AEC0;font-size:15px;margin-bottom:40px;}
+.cta{padding:100px 24px;text-align:center;background:linear-gradient(135deg,#F7FDF0,#EDF7D6);}
+.cta h2{font-family:'Cinzel',serif;font-size:clamp(22px,4vw,40px);color:var(--text);margin-bottom:16px;letter-spacing:.04em;}
+.cta p{color:var(--muted);font-size:15px;margin-bottom:40px;}
 .cta .btn-primary{font-size:18px;padding:18px 48px;}
-.cta-note{color:#718096;font-size:12px;margin-top:20px;}
+.cta-note{color:var(--muted);font-size:12px;margin-top:20px;}
 
 /* FOOTER */
 footer{background:#111827;padding:32px 24px;text-align:center;}
@@ -277,13 +274,9 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
   <div class="features-grid">
 
     <div class="feature-card">
-      <div class="feature-phone-wrap">
-        <div class="feature-mini-phone">
-          <div class="feature-mini-screen">
-            <img src="screenshots/screen1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="feature-mini-placeholder" style="display:none">STATUS</div>
-          </div>
-        </div>
+      <div class="feature-img-wrap">
+        <img src="screenshots/screen1.png" alt="かんたん設定" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="feature-img-placeholder" style="display:none">⚔ STATUS</div>
       </div>
       <div class="feature-body">
         <div class="feature-icon">⚔</div>
@@ -293,13 +286,9 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
     </div>
 
     <div class="feature-card">
-      <div class="feature-phone-wrap">
-        <div class="feature-mini-phone">
-          <div class="feature-mini-screen">
-            <img src="screenshots/screen2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="feature-mini-placeholder" style="display:none">QUEST</div>
-          </div>
-        </div>
+      <div class="feature-img-wrap">
+        <img src="screenshots/screen2.png" alt="継続" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="feature-img-placeholder" style="display:none">⏱ QUEST</div>
       </div>
       <div class="feature-body">
         <div class="feature-icon">⏱</div>
@@ -309,13 +298,9 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
     </div>
 
     <div class="feature-card">
-      <div class="feature-phone-wrap">
-        <div class="feature-mini-phone">
-          <div class="feature-mini-screen">
-            <img src="screenshots/screen1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="feature-mini-placeholder" style="display:none">STATUS</div>
-          </div>
-        </div>
+      <div class="feature-img-wrap">
+        <img src="screenshots/screen1.png" alt="成長" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="feature-img-placeholder" style="display:none">📈 LEVEL UP</div>
       </div>
       <div class="feature-body">
         <div class="feature-icon">📈</div>
@@ -325,13 +310,9 @@ footer{background:#111827;padding:32px 24px;text-align:center;}
     </div>
 
     <div class="feature-card">
-      <div class="feature-phone-wrap">
-        <div class="feature-mini-phone">
-          <div class="feature-mini-screen">
-            <img src="screenshots/screen3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="feature-mini-placeholder" style="display:none">GUILD</div>
-          </div>
-        </div>
+      <div class="feature-img-wrap">
+        <img src="screenshots/screen3.png" alt="共闘" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="feature-img-placeholder" style="display:none">🌐 GUILD</div>
       </div>
       <div class="feature-body">
         <div class="feature-icon">🌐</div>
