@@ -2726,6 +2726,11 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <div class="step-label">STEP 1 / 2 — JOB SELECT</div>
       <div class="step-title">目指す資格を選んでください（複数可）</div>
     </div>
+    <div style="position:relative;margin-bottom:14px;">
+      <input type="text" id="jobSearch" placeholder="🔍 資格名で検索…" oninput="buildJobGrid()"
+        style="width:100%;padding:10px 14px 10px 36px;border:1px solid var(--border);border-radius:100px;background:var(--panel);color:var(--text);font-size:13px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color .2s;">
+      <span style="position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;">🔍</span>
+    </div>
     <div class="job-grid" id="jobGrid"></div>
     <button class="step-btn" onclick="goStep2()">次へ：科目を選ぶ →</button>
     <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:12px;">利用を開始することで<a href="terms.html" target="_blank" style="color:var(--gold2);text-decoration:underline;">利用規約</a>および<a href="privacy.html" target="_blank" style="color:var(--gold2);text-decoration:underline;">プライバシーポリシー</a>に同意したものとみなします。</p>
@@ -4067,6 +4072,68 @@ const JOBS = [
     ]
   },
 
+  /* ══════════════════════════════
+     【福祉・医療ギルド】
+  ══════════════════════════════ */
+  {
+    id:'nurse', name:'看護師', icon:'💉', tag:'白衣の戦士',
+    category:'福祉・医療ギルド', rpgClass:'白衣の戦士',
+    desc:'国家資格。医療現場の中核を担う。合格率約90%だが範囲が広い。',
+    color:'#F472B6', avgHours:1000, maxHours:1500,
+    subjects:[
+      {key:'ns_kiso',   name:'基礎看護学',       desc:'看護の基本・ヘルスアセスメント',  color:'#F472B6',avgH:200,maxH:300,attrs:{int:.6,spi:.4}},
+      {key:'ns_naika',  name:'成人・老年看護学', desc:'内科・外科・慢性疾患の看護',       color:'#4db8ff',avgH:300,maxH:450,attrs:{int:.7,mag:.3}},
+      {key:'ns_boshi',  name:'母性・小児看護学', desc:'周産期・小児の看護',               color:'#ff9e9e',avgH:200,maxH:300,attrs:{spi:.6,int:.4}},
+      {key:'ns_seishin',name:'精神看護学',        desc:'精神疾患・コミュニケーション',     color:'#c97cff',avgH:150,maxH:220,attrs:{spi:.7,int:.3}},
+      {key:'ns_zaiti',  name:'在宅・地域看護学', desc:'訪問看護・公衆衛生',               color:'#7cff6e',avgH:150,maxH:230,attrs:{int:.5,spi:.5}},
+    ]
+  },
+  {
+    id:'kaigo', name:'介護福祉士', icon:'🤲', tag:'癒しの守護者',
+    category:'福祉・医療ギルド', rpgClass:'癒しの守護者',
+    desc:'介護の国家資格。実務経験3年＋研修で受験資格。',
+    color:'#34D399', avgHours:250, maxHours:400,
+    subjects:[
+      {key:'kg_ningen',  name:'人間と社会',       desc:'人間の尊厳・社会の理解・介護理念', color:'#34D399',avgH:60,maxH:90,attrs:{spi:.7,int:.3}},
+      {key:'kg_kaigo',   name:'介護の基本技術',   desc:'移乗・食事・入浴・排泄介助',       color:'#4db8ff',avgH:100,maxH:160,attrs:{dex:.6,spi:.4}},
+      {key:'kg_iryou',   name:'こころとからだ',   desc:'発達・老化・認知症・医療的ケア',   color:'#ff9e4d',avgH:90,maxH:150,attrs:{int:.6,mag:.4}},
+    ]
+  },
+  {
+    id:'careman', name:'ケアマネージャー', icon:'🏥', tag:'介護の軍師',
+    category:'福祉・医療ギルド', rpgClass:'介護の軍師',
+    desc:'介護支援専門員。合格率約20%。実務経験5年が必要。',
+    color:'#60A5FA', avgHours:350, maxHours:550,
+    subjects:[
+      {key:'cm_kaigo',  name:'介護支援分野',       desc:'ケアマネジメント・給付管理',       color:'#60A5FA',avgH:150,maxH:230,attrs:{int:.7,dex:.3}},
+      {key:'cm_hoken',  name:'保健医療サービス', desc:'医療・看護・リハビリの知識',         color:'#4db8ff',avgH:100,maxH:160,attrs:{int:.6,mag:.4}},
+      {key:'cm_fukushi',name:'福祉サービス分野', desc:'社会福祉・施設サービス',             color:'#7cff6e',avgH:100,maxH:160,attrs:{int:.5,spi:.5}},
+    ]
+  },
+  {
+    id:'shakaifukushi', name:'社会福祉士', icon:'👥', tag:'社会の守護者',
+    category:'福祉・医療ギルド', rpgClass:'社会の守護者',
+    desc:'福祉の相談援助の国家資格。合格率約30%。',
+    color:'#A78BFA', avgHours:400, maxHours:600,
+    subjects:[
+      {key:'sf_shakai',  name:'社会理論・制度',     desc:'社会学・福祉政策・法制度',         color:'#A78BFA',avgH:130,maxH:200,attrs:{int:.7,mag:.3}},
+      {key:'sf_enjo',    name:'相談援助の理論',     desc:'ソーシャルワーク・面接技術',       color:'#7cff6e',avgH:150,maxH:230,attrs:{spi:.6,int:.4}},
+      {key:'sf_jissen',  name:'相談援助の実践',     desc:'事例問題・地域福祉',               color:'#ff9e4d',avgH:120,maxH:170,attrs:{spi:.7,dex:.3}},
+    ]
+  },
+  {
+    id:'hoikushi', name:'保育士', icon:'👶', tag:'子育ての賢者',
+    category:'福祉・医療ギルド', rpgClass:'子育ての賢者',
+    desc:'国家資格。子どもの成長・発達を支える専門職。合格率約25%。',
+    color:'#FBBF24', avgHours:300, maxHours:500,
+    subjects:[
+      {key:'ho_hoken',   name:'子どもの保健',       desc:'小児保健・疾病・発育',             color:'#FBBF24',avgH:70,maxH:110,attrs:{int:.6,spi:.4}},
+      {key:'ho_syokuji', name:'子どもの食と栄養',   desc:'栄養・食育・アレルギー',           color:'#7cff6e',avgH:60,maxH:90,attrs:{int:.5,dex:.5}},
+      {key:'ho_hoiku',   name:'保育の心理学・原理', desc:'発達心理・保育理念・環境',         color:'#4db8ff',avgH:100,maxH:160,attrs:{spi:.6,int:.4}},
+      {key:'ho_jissen',  name:'保育実習・技術',     desc:'ピアノ・絵画・言語表現',           color:'#ff9e4d',avgH:70,maxH:140,attrs:{dex:.6,spi:.4}},
+    ]
+  },
+
   /* ── 公務員ギルド追加 ── */
   {
     id:'shiyakusho', name:'市役所（教養のみ）', icon:'🏙', tag:'地域の騎士',
@@ -4634,15 +4701,23 @@ async function loadWeeklyRanking(){
 function buildJobGrid(){
   const grid = document.getElementById('jobGrid');
   grid.innerHTML = '';
-  grid.style.display = 'block'; // グリッドをブロック表示に変更
+  grid.style.display = 'block';
 
-  // カテゴリでグループ化
+  const q = (document.getElementById('jobSearch')?.value || '').trim().toLowerCase();
+
+  // カテゴリでグループ化（検索フィルター適用）
   const categories = {};
   JOBS.forEach(j => {
+    if(q && !j.name.toLowerCase().includes(q) && !j.desc.toLowerCase().includes(q) && !(j.tag||'').toLowerCase().includes(q)) return;
     const cat = j.category || 'その他';
     if(!categories[cat]) categories[cat] = [];
     categories[cat].push(j);
   });
+
+  if(Object.keys(categories).length === 0){
+    grid.innerHTML = '<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;">該当する資格が見つかりません</div>';
+    return;
+  }
 
   // カテゴリ別アイコン
   const catIcons = {
@@ -4653,6 +4728,7 @@ function buildJobGrid(){
     '国際ギルド':'🌐',
     'スキルギルド':'🎨',
     '受験ギルド':'🎓',
+    '福祉・医療ギルド':'🏥',
     'その他':'📚',
   };
 
