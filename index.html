@@ -3295,6 +3295,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <button class="rpt-htab active" id="rht-record" onclick="switchReportSubTab('record')">記録</button>
         <button class="rpt-htab" id="rht-analysis" onclick="switchReportSubTab('analysis')">分析</button>
         <button class="rpt-htab" id="rht-heatmap" onclick="switchReportSubTab('heatmap')">🗓 草</button>
+        <button class="rpt-htab" id="rht-timeblock" onclick="switchReportSubTab('timeblock')">🕐 時間割</button>
       </div>
 
       <!-- ── 記録サブタブ ── -->
@@ -3452,6 +3453,32 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           </div>
           <!-- 月間サマリー -->
           <div class="heatmap-month-summary" id="heatmapMonthSummary"></div>
+        </div>
+      </div>
+
+      <!-- ── 時間割サブタブ ── -->
+      <div id="rpt-sub-timeblock" style="display:none;">
+        <div class="rpt-section">
+          <div class="rpt-section-title" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span>🕐 タイムブロック</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button onclick="tbPrevDay()" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--muted);cursor:pointer;font-size:12px;">◀</button>
+              <span id="tbDateLabel" style="font-size:13px;font-weight:700;font-family:'Share Tech Mono',monospace;"></span>
+              <button onclick="tbNextDay()" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--muted);cursor:pointer;font-size:12px;">▶</button>
+            </div>
+          </div>
+          <!-- 合計時間 -->
+          <div id="tbTotalTime" style="font-size:22px;font-weight:700;font-family:'Share Tech Mono',monospace;color:var(--accent2);margin:8px 0 12px;"></div>
+          <!-- 科目リスト -->
+          <div id="tbSubjectList" style="margin-bottom:16px;display:flex;flex-direction:column;gap:6px;"></div>
+          <!-- グリッド -->
+          <div style="display:flex;gap:0;">
+            <!-- 時刻ラベル -->
+            <div id="tbHourLabels" style="display:flex;flex-direction:column;flex-shrink:0;width:28px;"></div>
+            <!-- ブロックグリッド -->
+            <div id="tbGrid" style="flex:1;display:flex;flex-direction:column;"></div>
+          </div>
+          <div id="tbNoData" style="display:none;text-align:center;padding:30px;color:var(--muted);font-size:13px;">この日の記録はありません<br><span style="font-size:11px;">タイマーで勉強すると記録されます</span></div>
         </div>
       </div>
 
@@ -4526,6 +4553,7 @@ let timerSeconds = 0;
 let timerRunning = false;
 let pomoCount = 0;      // 完了セット数
 let pomoPhase = 'study'; // 'study' | 'break'
+let timerStartedAt = null; // タイマー開始時刻
 const POMO_STUDY = 25 * 60;
 const POMO_BREAK = 5 * 60;
 const POMO_SETS = 4;
@@ -5454,7 +5482,9 @@ async function addQuest(){
     char.lastLoginDate=today;
   }
   char.totalEXP+=exp;
-  sessions.push({date,subject,type:currentType,amount,exp,note});
+  const endedAt = new Date().toISOString();
+  sessions.push({date,subject,type:currentType,amount,exp,note,startedAt:timerStartedAt||endedAt,endedAt});
+  timerStartedAt = null;
   const smins1=studyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
   await saveAll();renderAll();
@@ -5714,6 +5744,7 @@ function toggleTimer(){
 
 function startTimer(){
   timerRunning=true;
+  if(!timerStartedAt) timerStartedAt = new Date().toISOString();
   const btn=document.getElementById('timerStartBtn');
   const stopBtn=document.getElementById('timerStopBtn');
   if(btn){btn.textContent='⏸ 一時停止';btn.classList.add('running');}
@@ -6889,7 +6920,7 @@ function renderStreakCard(){
 
 /* サブタブ切り替え */
 function switchReportSubTab(sub){
-  ['record','analysis','heatmap'].forEach(s=>{
+  ['record','analysis','heatmap','timeblock'].forEach(s=>{
     const el=document.getElementById('rpt-sub-'+s);
     const btn=document.getElementById('rht-'+s);
     if(el) el.style.display=s===sub?'':'none';
@@ -6897,6 +6928,155 @@ function switchReportSubTab(sub){
   });
   if(sub==='analysis') renderAnalysisTab();
   if(sub==='heatmap')  renderHeatmap();
+  if(sub==='timeblock') renderTimeBlock(tbCurrentDate || getTodayStr());
+}
+
+/* ════════════════════════════════════════
+   タイムブロックグラフ
+════════════════════════════════════════ */
+let tbCurrentDate = null;
+
+// 科目ごとの色を固定割り当て
+const TB_COLORS = ['#4CAF50','#2196F3','#FF9800','#E91E63','#9C27B0','#00BCD4','#FF5722','#3F51B5','#8BC34A','#FFC107'];
+const tbColorMap = {};
+let tbColorIdx = 0;
+function tbColor(subject){
+  if(!tbColorMap[subject]){
+    tbColorMap[subject] = TB_COLORS[tbColorIdx % TB_COLORS.length];
+    tbColorIdx++;
+  }
+  return tbColorMap[subject];
+}
+
+function tbPrevDay(){
+  const d = new Date(tbCurrentDate + 'T00:00:00');
+  d.setDate(d.getDate()-1);
+  tbCurrentDate = d.toISOString().slice(0,10);
+  renderTimeBlock(tbCurrentDate);
+}
+function tbNextDay(){
+  const d = new Date(tbCurrentDate + 'T00:00:00');
+  d.setDate(d.getDate()+1);
+  const today = getTodayStr();
+  if(tbCurrentDate >= today) return; // 未来には進まない
+  tbCurrentDate = d.toISOString().slice(0,10);
+  renderTimeBlock(tbCurrentDate);
+}
+
+function renderTimeBlock(dateStr){
+  tbCurrentDate = dateStr;
+  const label = document.getElementById('tbDateLabel');
+  const d = new Date(dateStr+'T00:00:00');
+  const dow = ['日','月','火','水','木','金','土'][d.getDay()];
+  if(label) label.textContent = dateStr.slice(5).replace('-','/') + '（' + dow + '）';
+
+  // その日のセッションを抽出（startedAt/endedAtがあるもの）
+  const daySessions = (sessions||[]).filter(s=>s.date===dateStr && s.startedAt && s.endedAt);
+
+  const noData = document.getElementById('tbNoData');
+  const grid   = document.getElementById('tbGrid');
+  const labels = document.getElementById('tbHourLabels');
+  const subList= document.getElementById('tbSubjectList');
+  const total  = document.getElementById('tbTotalTime');
+
+  if(daySessions.length===0){
+    if(noData) noData.style.display='';
+    if(grid)   grid.innerHTML='';
+    if(labels) labels.innerHTML='';
+    if(subList)subList.innerHTML='';
+    if(total)  total.textContent='';
+    return;
+  }
+  if(noData) noData.style.display='none';
+
+  // 合計時間
+  let totalMin = 0;
+  daySessions.forEach(s=>{
+    const ms = new Date(s.endedAt)-new Date(s.startedAt);
+    totalMin += ms/60000;
+  });
+  if(total) total.textContent = Math.floor(totalMin/60)+'h '+Math.round(totalMin%60)+'m';
+
+  // 科目ごとの集計
+  const subMap = {};
+  daySessions.forEach(s=>{
+    const min = (new Date(s.endedAt)-new Date(s.startedAt))/60000;
+    if(!subMap[s.subject]) subMap[s.subject]=0;
+    subMap[s.subject]+=min;
+  });
+
+  // 科目リスト
+  if(subList){
+    subList.innerHTML = Object.entries(subMap).sort((a,b)=>b[1]-a[1]).map(([sub,min])=>`
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${tbColor(sub)};flex-shrink:0;"></span>
+        <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${sub}</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--muted);">${Math.floor(min/60)?Math.floor(min/60)+'h ':''} ${Math.round(min%60)}m</span>
+      </div>`).join('');
+  }
+
+  // グリッド構築（24時間 × 6ブロック/時 = 10分単位）
+  // 表示範囲を実際の最小〜最大時刻に絞る
+  let minH = 23, maxH = 0;
+  daySessions.forEach(s=>{
+    const sh = new Date(s.startedAt).getHours();
+    const eh = new Date(s.endedAt).getHours();
+    if(sh < minH) minH = sh;
+    if(eh > maxH) maxH = eh;
+  });
+  // 余白を1時間ずつ
+  minH = Math.max(0, minH-1);
+  maxH = Math.min(23, maxH+1);
+
+  // 各10分スロットに科目を割り当て (最初に開始したセッション優先)
+  // slot[h][m6] = subject or null
+  const SLOT_MIN = 10;
+  const slots = {}; // key: "HH:MM6slot"
+  daySessions.forEach(s=>{
+    const start = new Date(s.startedAt);
+    const end   = new Date(s.endedAt);
+    let cur = new Date(start);
+    // 最初のスロット開始に丸める
+    cur.setSeconds(0,0);
+    const startSlot = Math.floor(cur.getMinutes()/SLOT_MIN)*SLOT_MIN;
+    cur.setMinutes(startSlot);
+    while(cur < end){
+      const key = cur.getHours()+':'+cur.getMinutes();
+      if(!slots[key]) slots[key] = s.subject;
+      cur = new Date(cur.getTime() + SLOT_MIN*60000);
+    }
+  });
+
+  // ラベルとグリッド描画
+  if(labels) labels.innerHTML='';
+  if(grid)   grid.innerHTML='';
+
+  for(let h=minH; h<=maxH; h++){
+    // 時刻ラベル
+    if(labels){
+      const lbl = document.createElement('div');
+      lbl.style.cssText='height:24px;font-size:9px;color:var(--muted);display:flex;align-items:center;justify-content:flex-end;padding-right:4px;flex-shrink:0;font-family:"Share Tech Mono",monospace;';
+      lbl.textContent = String(h).padStart(2,'0');
+      labels.appendChild(lbl);
+    }
+    // 1行（その時間の6スロット）
+    if(grid){
+      const row = document.createElement('div');
+      row.style.cssText='display:flex;height:24px;border-bottom:1px solid var(--border);';
+      for(let m=0;m<60;m+=SLOT_MIN){
+        const cell = document.createElement('div');
+        cell.style.cssText='flex:1;border-right:1px solid var(--border);';
+        const sub = slots[h+':'+m];
+        if(sub){
+          cell.style.background = tbColor(sub);
+          cell.style.opacity = '0.85';
+          cell.title = sub;
+        }
+        row.appendChild(cell);
+      }
+      grid.appendChild(row);
+    }
+  }
 }
 
 /* ════════════════════════════════════════
