@@ -1,0 +1,3 @@
+# GitHub Pages: .well-known フォルダを公開する（Digital Asset Links用）
+include:
+  - .well-known
