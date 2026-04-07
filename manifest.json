@@ -5,6 +5,7 @@
   "start_url": "/study-quest/",
   "scope": "/study-quest/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#F8F9FA",
   "theme_color": "#8CC63F",
   "lang": "ja",
@@ -13,13 +14,19 @@
       "src": "icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "icons/app-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "icons/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

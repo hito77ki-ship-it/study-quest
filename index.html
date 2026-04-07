@@ -953,6 +953,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
   display:flex;align-items:center;justify-content:space-between;
   background:rgba(255,255,255,.95);
   backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   box-shadow:0 2px 12px rgba(0,0,0,.06);
   padding:0 14px;
@@ -2344,6 +2345,8 @@ body[data-theme="dark"] .achieve-x-btn{background:#333;}
 ════════════════════════════════════════ */
 * { -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
+/* Android Chrome: プルダウンリフレッシュ・オーバースクロール防止 */
+body { overscroll-behavior-y: contain; }
 
 /* ════════════════════════════════════════
    モバイル固定底部タブバー
@@ -8368,6 +8371,17 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(profileAvatarData){
     const ub=document.getElementById('userAvatar');
     if(ub){ub.src=profileAvatarData;ub.style.display='';}
+  }
+  // Android Chrome: 仮想キーボード出現時に底部タブバーを隠す
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',()=>{
+      const bar=document.getElementById('mobileTabBar');
+      if(!bar||window.innerWidth>600) return;
+      // ビューポート高さが元の75%未満 → キーボード表示中
+      const keyboardOpen = window.visualViewport.height < window.innerHeight * 0.75;
+      bar.style.transform = keyboardOpen ? 'translateY(100%)' : '';
+      bar.style.transition = 'transform .2s ease';
+    });
   }
 });
 
