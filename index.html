@@ -177,11 +177,52 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .change-job-btn:hover{border-color:var(--muted);color:var(--text);}
 .tabs{display:flex;margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;box-shadow:var(--shadow);padding:4px;gap:2px;}
 .tabs::-webkit-scrollbar{display:none;}
-.tab-btn{flex:1 1 0;min-width:56px;max-width:100px;background:transparent;border:none;color:var(--muted);font-family:'Cinzel',serif;font-size:7px;letter-spacing:.08em;padding:10px 6px;cursor:pointer;border-right:none;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:4px;border-radius:var(--radius-sm);}
+.tab-btn{flex:1 1 0;min-width:52px;max-width:100px;background:transparent;border:none;color:var(--muted);font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.06em;padding:10px 4px 9px;cursor:pointer;border-right:none;transition:all .18s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center;gap:3px;border-radius:var(--radius-sm);position:relative;}
 
-.tab-icon{font-size:16px;line-height:1;}
-.tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(140,198,63,.3);}
-.tab-btn:hover:not(.active){color:var(--text);}
+.tab-icon{font-size:18px;line-height:1;transition:transform .18s cubic-bezier(.34,1.56,.64,1);}
+.tab-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 3px 12px rgba(140,198,63,.4);transform:translateY(-1px);}
+.tab-btn.active .tab-icon{transform:scale(1.15);}
+.tab-btn:hover:not(.active){color:var(--text);background:var(--panel2);}
+.tab-btn.active::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:20px;height:3px;background:var(--accent);border-radius:2px;opacity:0;}
+
+/* Weekly plan styles */
+.plan-week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:10px 0;}
+.plan-day-col{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.plan-day-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.05em;}
+.plan-day-label.today{color:var(--accent);font-weight:700;}
+.plan-day-dot{width:8px;height:8px;border-radius:50%;background:var(--border);}
+.plan-day-dot.has-plan{background:var(--accent);}
+.plan-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px;background:var(--panel);transition:all .2s;}
+.plan-item:hover{border-color:var(--accent);}
+.plan-item-subject{flex:1;font-size:13px;font-weight:600;}
+.plan-item-days{font-size:10px;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.plan-item-target{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--accent2);}
+.plan-del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:2px 4px;}
+.plan-del-btn:hover{color:#EF4444;}
+/* Today plan on status */
+.today-plan-card{background:var(--panel);border:1px solid var(--border);border-left:4px solid #3B82F6;border-radius:var(--radius);padding:14px 16px;margin-bottom:14px;box-shadow:var(--shadow);}
+.today-plan-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;color:#3B82F6;margin-bottom:10px;}
+.today-plan-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.today-plan-row:last-child{border-bottom:none;padding-bottom:0;}
+.today-plan-check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:9px;cursor:pointer;flex-shrink:0;transition:all .2s;}
+.today-plan-check.done{background:var(--accent);border-color:var(--accent);color:#fff;}
+/* QR section */
+.qr-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px 0;}
+.qr-img{width:140px;height:140px;border-radius:10px;border:1px solid var(--border);background:#fff;image-rendering:pixelated;}
+.qr-dl-btn{background:var(--accent);color:#fff;border:none;border-radius:100px;padding:9px 24px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Noto Serif JP',serif;}
+.qr-dl-btn:hover{background:var(--accent2);transform:translateY(-1px);}
+.plan-dow-btn{background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:7px 4px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;color:var(--muted);font-family:'Noto Serif JP',serif;}
+.plan-dow-btn.selected{background:var(--accent);border-color:var(--accent2);color:#fff;}
+/* Profile quick actions */
+.prof-quick-actions{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.prof-quick-btn{flex:1;min-width:120px;padding:11px 14px;border-radius:var(--radius-sm);border:none;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Noto Serif JP',serif;display:flex;align-items:center;justify-content:center;gap:6px;}
+.prof-quick-btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 12px rgba(140,198,63,.3);}
+.prof-quick-btn.primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(140,198,63,.4);}
+.prof-quick-btn.secondary{background:var(--panel);border:1px solid var(--border);color:var(--text);}
+.prof-quick-btn.secondary:hover{border-color:var(--accent);color:var(--accent2);}
+/* Panel slide-in animation */
+@keyframes panelFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.panel-anim{animation:panelFadeIn .22s ease-out;}
 
 /* SUBJECT HP BARS */
 .subj-stat-row{margin-bottom:18px;}
@@ -2944,6 +2985,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     </div>
     <!-- 試験カウントダウン（ミニ表示） -->
     <div id="statusExamMini"></div>
+    <!-- 今日のスケジュール -->
+    <div id="todayPlanCard" style="display:none;" class="today-plan-card"></div>
     <!-- 統合：全体進捗 + 科目HP -->
     <div class="section" id="overallProgressSection"></div>
     <div id="dqStatusCard" style="display:none;"></div>
@@ -3519,6 +3562,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       </div>
     </div>
 
+    <!-- ─── クイックアクション ─── -->
+    <div class="prof-quick-actions">
+      <button class="prof-quick-btn primary" onclick="switchTab('score');openAchieveModal()">📣 達成報告を投稿</button>
+      <button class="prof-quick-btn secondary" onclick="openProfileQRModal()">📲 QRをシェア</button>
+    </div>
+
     <!-- ─── RPGステータス（冒険の証） ─── -->
     <div class="section">
       <div class="sec-title">⚔ 冒険の証</div>
@@ -3623,7 +3672,82 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       </div>
     </div>
 
+    <!-- ─── 週間学習スケジュール ─── -->
+    <div class="section" id="weekPlanSection">
+      <div class="sec-title" style="justify-content:space-between;">
+        <span>📅 週間学習スケジュール</span>
+        <button onclick="openAddPlanModal()" style="background:var(--accent);color:#fff;border:none;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;cursor:pointer;">＋ 追加</button>
+      </div>
+      <!-- 週間ドット -->
+      <div class="plan-week-grid" id="planWeekGrid"></div>
+      <!-- プラン一覧 -->
+      <div id="planList"><div style="font-size:12px;color:var(--muted);text-align:center;padding:10px;">まだ予定がありません。追加してみましょう！</div></div>
+    </div>
+
+    <!-- ─── プロフィールQRコード ─── -->
+    <div class="section">
+      <div class="sec-title">📲 アプリをシェア</div>
+      <div class="qr-wrap">
+        <img id="profileQRImg" class="qr-img" src="" alt="QR Code" loading="lazy">
+        <div style="text-align:center;">
+          <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">友達にスタディクエストを紹介しよう！<br>QRコードを読み取るとアプリが開きます。</p>
+          <button class="qr-dl-btn" onclick="downloadProfileQR()">💾 QRコードを保存</button>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /panel-profile -->
+
+  <!-- QRモーダル -->
+  <div id="qrModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;" onclick="if(event.target===this)closeQRModal()">
+    <div style="background:var(--panel);border-radius:var(--radius);padding:28px 24px;text-align:center;max-width:320px;width:90%;box-shadow:var(--shadow-md);">
+      <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:.2em;color:var(--accent2);margin-bottom:16px;">SHARE QR CODE</div>
+      <img id="qrModalImg" src="" style="width:200px;height:200px;border-radius:8px;border:1px solid var(--border);" alt="QR">
+      <p style="font-size:11px;color:var(--muted);margin:12px 0;">スタディクエストのリンクQRコード</p>
+      <div style="display:flex;gap:10px;justify-content:center;">
+        <button class="qr-dl-btn" onclick="downloadProfileQR()">💾 保存</button>
+        <button onclick="closeQRModal()" style="padding:9px 24px;border-radius:100px;border:1px solid var(--border);background:none;font-size:13px;cursor:pointer;color:var(--muted);">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 学習スケジュール追加モーダル -->
+  <div id="addPlanModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;" onclick="if(event.target===this)closeAddPlanModal()">
+    <div style="background:var(--panel);border-radius:var(--radius);padding:24px;max-width:380px;width:90%;box-shadow:var(--shadow-md);">
+      <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:.2em;color:var(--accent2);margin-bottom:16px;">ADD STUDY PLAN</div>
+      <div style="margin-bottom:14px;">
+        <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:5px;">科目・内容</label>
+        <input id="planSubjectInput" type="text" placeholder="例：簿記3級 テキスト読み" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:'Noto Serif JP',serif;outline:none;background:var(--panel);">
+      </div>
+      <div style="margin-bottom:14px;">
+        <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:8px;">曜日（複数選択可）</label>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">
+          <button class="plan-dow-btn" data-dow="1" onclick="togglePlanDow(this)">月</button>
+          <button class="plan-dow-btn" data-dow="2" onclick="togglePlanDow(this)">火</button>
+          <button class="plan-dow-btn" data-dow="3" onclick="togglePlanDow(this)">水</button>
+          <button class="plan-dow-btn" data-dow="4" onclick="togglePlanDow(this)">木</button>
+          <button class="plan-dow-btn" data-dow="5" onclick="togglePlanDow(this)">金</button>
+          <button class="plan-dow-btn" data-dow="6" onclick="togglePlanDow(this)">土</button>
+          <button class="plan-dow-btn" data-dow="0" onclick="togglePlanDow(this)">日</button>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:5px;">目標時間</label>
+        <select id="planTargetSelect" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:'Noto Serif JP',serif;outline:none;background:var(--panel);">
+          <option value="30">30分</option>
+          <option value="60" selected>1時間</option>
+          <option value="90">1時間30分</option>
+          <option value="120">2時間</option>
+          <option value="180">3時間</option>
+          <option value="240">4時間</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button onclick="saveNewPlan()" style="flex:1;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);padding:11px;font-size:13px;font-weight:700;cursor:pointer;">追加する</button>
+        <button onclick="closeAddPlanModal()" style="padding:11px 20px;border:1px solid var(--border);background:none;border-radius:var(--radius-sm);font-size:13px;cursor:pointer;color:var(--muted);">キャンセル</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ════ TIMELINE PANEL ════ -->
   <div id="panel-timeline" style="display:none;">
@@ -5344,7 +5468,8 @@ function renderAll(){
   const profPanel=document.getElementById('panel-profile');
   if(rptPanel&&rptPanel.style.display==='block') requestAnimationFrame(()=>renderReportTab());
   updatePcSidebar();
-  if(profPanel&&profPanel.style.display==='block') requestAnimationFrame(()=>{ renderProfileTab&&renderProfileTab(); });
+  if(profPanel&&profPanel.style.display==='block') requestAnimationFrame(()=>{ renderProfileTab&&renderProfileTab(); renderWeekPlan&&renderWeekPlan(); });
+  renderTodayPlan&&renderTodayPlan();
 }
 
 function renderOverallProgress(smins,subjs){
@@ -5533,7 +5658,11 @@ function switchTab(tab){
   ['status','quest','materials','titles','boss','ranking','score','report','profile','timeline'].forEach(t=>{
     const p=document.getElementById('panel-'+t);
     const b=document.getElementById('tab-'+t);
-    if(p) p.style.display=t===tab?'block':'none';
+    if(p){
+      const showing = t===tab;
+      p.style.display=showing?'block':'none';
+      if(showing){ p.classList.remove('panel-anim'); void p.offsetWidth; p.classList.add('panel-anim'); }
+    }
     if(b) b.classList.toggle('active',t===tab);
   });
   if(tab==='ranking') { if(typeof currentRankTab!=='undefined'&&currentRankTab==='weekly') loadWeeklyRanking(); else loadRanking(); }
@@ -5541,7 +5670,8 @@ function switchTab(tab){
   if(tab==='quest')    { renderQuestLogStats&&renderQuestLogStats(); renderSessions&&renderSessions(allSelectedSubjects()); renderDeclCard&&renderDeclCard(); }
   if(tab==='timeline') requestAnimationFrame(()=>loadTimeline());
   if(tab==='report')  requestAnimationFrame(()=>renderReportTab());
-  if(tab==='profile') requestAnimationFrame(()=>renderProfileTab());
+  if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); });
+  if(tab==='status')  requestAnimationFrame(()=>renderTodayPlan());
   const activeBtn=document.getElementById('tab-'+tab);
   if(activeBtn) activeBtn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
 }
@@ -7077,6 +7207,170 @@ function renderTimeBlock(dateStr){
       grid.appendChild(row);
     }
   }
+}
+
+/* ════════════════════════════════════════
+   プロフィールQRコード
+════════════════════════════════════════ */
+const APP_URL = 'https://hito77ki-ship-it.github.io/study-quest/';
+function getQRSrc(size){
+  return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(APP_URL)}&bgcolor=FFFFFF&color=1A202C&margin=12`;
+}
+function initProfileQR(){
+  const img = document.getElementById('profileQRImg');
+  if(img && !img.src.includes('qrserver')) img.src = getQRSrc(280);
+}
+function openProfileQRModal(){
+  const el = document.getElementById('qrModal');
+  if(!el) return;
+  const mi = document.getElementById('qrModalImg');
+  if(mi) mi.src = getQRSrc(400);
+  el.style.display = 'flex';
+}
+function closeQRModal(){
+  const el = document.getElementById('qrModal');
+  if(el) el.style.display = 'none';
+}
+function downloadProfileQR(){
+  const a = document.createElement('a');
+  a.href = getQRSrc(600);
+  a.target = '_blank';
+  a.download = 'study-quest-qr.png';
+  a.click();
+}
+
+/* ════════════════════════════════════════
+   週間学習スケジュール（繰り返し予定）
+════════════════════════════════════════ */
+const PLAN_KEY = 'sq2_weekly_plan';
+const DOW_LABELS = ['日','月','火','水','木','金','土'];
+
+function loadPlans(){
+  try{ return JSON.parse(localStorage.getItem(PLAN_KEY)||'[]'); }catch(e){ return []; }
+}
+function savePlans(arr){
+  try{ localStorage.setItem(PLAN_KEY, JSON.stringify(arr)); }catch(e){}
+}
+
+function renderWeekPlan(){
+  const plans = loadPlans();
+  const today = new Date().getDay(); // 0=日
+
+  // 週ドット（月〜日）
+  const grid = document.getElementById('planWeekGrid');
+  if(grid){
+    grid.innerHTML = [1,2,3,4,5,6,0].map(d=>{
+      const hasP = plans.some(p=>p.days.includes(d));
+      const isToday = d === today;
+      return `<div class="plan-day-col">
+        <span class="plan-day-label${isToday?' today':''}">${DOW_LABELS[d]}</span>
+        <span class="plan-day-dot${hasP?' has-plan':''}"></span>
+      </div>`;
+    }).join('');
+  }
+
+  // プラン一覧
+  const list = document.getElementById('planList');
+  if(!list) return;
+  if(plans.length===0){
+    list.innerHTML='<div style="font-size:12px;color:var(--muted);text-align:center;padding:10px;">まだ予定がありません。追加してみましょう！</div>';
+    return;
+  }
+  list.innerHTML = plans.map(p=>`
+    <div class="plan-item">
+      <span style="font-size:16px;">${p.icon||'📖'}</span>
+      <div style="flex:1;min-width:0;">
+        <div class="plan-item-subject">${p.subject}</div>
+        <div class="plan-item-days">${p.days.map(d=>DOW_LABELS[d]).join('・')} ／ ${p.targetMin>=60?Math.floor(p.targetMin/60)+'時間'+(p.targetMin%60?p.targetMin%60+'分':''):p.targetMin+'分'}</div>
+      </div>
+      <button class="plan-del-btn" onclick="deletePlan('${p.id}')">🗑</button>
+    </div>`).join('');
+}
+
+function deletePlan(id){
+  const plans = loadPlans().filter(p=>p.id!==id);
+  savePlans(plans);
+  renderWeekPlan();
+  renderTodayPlan();
+}
+
+// 追加モーダル
+let _selectedDows = new Set();
+function openAddPlanModal(){
+  _selectedDows = new Set();
+  document.querySelectorAll('.plan-dow-btn').forEach(b=>b.classList.remove('selected'));
+  const inp = document.getElementById('planSubjectInput');
+  if(inp) inp.value='';
+  const sel = document.getElementById('planTargetSelect');
+  if(sel) sel.value='60';
+  const el = document.getElementById('addPlanModal');
+  if(el){ el.style.display='flex'; }
+}
+function closeAddPlanModal(){
+  const el = document.getElementById('addPlanModal');
+  if(el) el.style.display='none';
+}
+function togglePlanDow(btn){
+  const d = parseInt(btn.dataset.dow);
+  if(_selectedDows.has(d)){
+    _selectedDows.delete(d);
+    btn.classList.remove('selected');
+  } else {
+    _selectedDows.add(d);
+    btn.classList.add('selected');
+  }
+}
+function saveNewPlan(){
+  const subject = (document.getElementById('planSubjectInput')?.value||'').trim();
+  if(!subject){ alert('科目・内容を入力してください'); return; }
+  if(_selectedDows.size===0){ alert('曜日を選択してください'); return; }
+  const targetMin = parseInt(document.getElementById('planTargetSelect')?.value||60);
+  const plan = {
+    id: Date.now().toString(),
+    subject,
+    days: [..._selectedDows],
+    targetMin,
+    icon: '📖',
+    repeat: true
+  };
+  const plans = loadPlans();
+  plans.push(plan);
+  savePlans(plans);
+  closeAddPlanModal();
+  renderWeekPlan();
+  renderTodayPlan();
+}
+
+// ステータス画面の「今日の予定」カード
+function renderTodayPlan(){
+  const plans = loadPlans();
+  const dow = new Date().getDay();
+  const todayPlans = plans.filter(p=>p.days.includes(dow));
+  const card = document.getElementById('todayPlanCard');
+  if(!card) return;
+  if(todayPlans.length===0){ card.style.display='none'; return; }
+
+  // 完了フラグ（localStorageで今日分だけ管理）
+  const dateKey = 'sq2_plan_done_'+getTodayStr();
+  let done = {};
+  try{ done = JSON.parse(localStorage.getItem(dateKey)||'{}'); }catch(e){}
+
+  card.style.display='';
+  card.innerHTML = `<div class="today-plan-title">📅 今日の学習スケジュール</div>` +
+    todayPlans.map(p=>`
+      <div class="today-plan-row">
+        <div class="today-plan-check${done[p.id]?' done':''}" onclick="togglePlanDone('${p.id}','${dateKey}',this)">${done[p.id]?'✓':''}</div>
+        <span style="flex:1;">${p.subject}</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--muted);">${p.targetMin>=60?Math.floor(p.targetMin/60)+'h'+(p.targetMin%60?p.targetMin%60+'m':''):p.targetMin+'m'}</span>
+      </div>`).join('');
+}
+function togglePlanDone(planId, dateKey, el){
+  let done = {};
+  try{ done = JSON.parse(localStorage.getItem(dateKey)||'{}'); }catch(e){}
+  done[planId] = !done[planId];
+  try{ localStorage.setItem(dateKey, JSON.stringify(done)); }catch(e){}
+  el.classList.toggle('done', done[planId]);
+  el.textContent = done[planId]?'✓':'';
 }
 
 /* ════════════════════════════════════════
