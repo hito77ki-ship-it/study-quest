@@ -2929,6 +2929,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="pc-nav-item" onclick="switchTab('score');pcNavSwitch('score');openAchieveModal()"><span class="pc-nav-icon">🏆</span>達成報告</div>
     <div class="pc-nav-item" onclick="openFeedback()"><span class="pc-nav-icon">💬</span>改善要望</div>
     <div class="pc-nav-item" onclick="openHelp('guide')"><span class="pc-nav-icon">❓</span>ヘルプ</div>
+    <div class="pc-nav-item" onclick="restartTutorial()"><span class="pc-nav-icon">🎓</span>チュートリアル</div>
 
   </nav>
   <div class="pc-sidebar-bottom">
@@ -8857,6 +8858,16 @@ const HELP_CONTENT = {
           tip:'棒グラフで日別達成状況が一目でわかります'
         },
       ];
+      const tutBtn = `<div style="margin-top:20px;text-align:center;">
+        <button onclick="restartTutorial()" style="
+          background:linear-gradient(135deg,#8CC63F,#5C9A1A);
+          color:#fff;border:none;border-radius:12px;
+          padding:12px 28px;font-size:13px;font-weight:700;
+          cursor:pointer;box-shadow:0 4px 14px rgba(140,198,63,.4);
+          width:100%;">
+          ⚔ チュートリアルをもう一度見る
+        </button>
+      </div>`;
       return intro + steps.map(s=>`
         <div class="guide-step">
           <div class="guide-num">${s.n}</div>
@@ -8865,7 +8876,7 @@ const HELP_CONTENT = {
             <div class="guide-desc">${s.desc}</div>
             <span class="guide-tip">💡 ${s.tip}</span>
           </div>
-        </div>`).join('');
+        </div>`).join('') + tutBtn;
     }
   },
 
@@ -12416,6 +12427,15 @@ function closeTutorial() {
   document.getElementById('tutDim').classList.add('hidden');
   document.getElementById('tutSpotlight').classList.add('hidden');
   document.getElementById('tutCard').classList.add('hidden');
+}
+
+function restartTutorial() {
+  closeHelp();
+  localStorage.removeItem('sq_tutorial_done');
+  tutStep = 0;
+  document.getElementById('tutDim').classList.remove('hidden');
+  document.getElementById('tutCard').classList.remove('hidden');
+  renderTutStep();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
