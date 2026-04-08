@@ -11036,22 +11036,7 @@ function openMaterialForm(editId){
     '<div style="font-size:28px;color:var(--muted);">📖</div>' +
     '<div style="font-size:10px;color:var(--muted);margin-top:4px;">表紙写真</div>';
 
-  if(editId){
-    const m = materials.find(x => x.id === editId);
-    if(m){
-      document.getElementById('materialName').value = m.name;
-      document.getElementById('materialAuthor').value = m.author || '';
-      document.getElementById('materialPages').value = m.pages || '';
-      document.getElementById('materialSubject').value = m.subjectKey || '';
-      if(m.cover){
-        materialCoverData = m.cover;
-        document.getElementById('materialCoverPreview').innerHTML =
-          `<img src="${m.cover}" alt="">`;
-      }
-    }
-  }
-
-  // 科目セレクト更新
+  // 科目セレクト更新（先に選択肢を構築する）
   const sel = document.getElementById('materialSubject');
   sel.innerHTML = '<option value="">科目を選択</option>';
   allSelectedSubjects().forEach(s => {
@@ -11059,6 +11044,25 @@ function openMaterialForm(editId){
     opt.value = s.key; opt.textContent = s.name;
     sel.appendChild(opt);
   });
+
+  const confirmBtn = document.querySelector('#materialModal .modal-btn.confirm');
+  if(editId){
+    const m = materials.find(x => x.id === editId);
+    if(m){
+      document.getElementById('materialName').value = m.name;
+      document.getElementById('materialAuthor').value = m.author || '';
+      document.getElementById('materialPages').value = m.pages || '';
+      sel.value = m.subjectKey || '';  // 選択肢構築後にセット
+      if(m.cover){
+        materialCoverData = m.cover;
+        document.getElementById('materialCoverPreview').innerHTML =
+          `<img src="${m.cover}" alt="">`;
+      }
+    }
+    if(confirmBtn) confirmBtn.textContent = '💾 更新する';
+  } else {
+    if(confirmBtn) confirmBtn.textContent = '📚 追加する';
+  }
 
   document.getElementById('materialModal').classList.add('show');
 }
@@ -11123,7 +11127,7 @@ function saveMaterial(){
   document.getElementById('materialModal').classList.remove('show');
   renderMaterials();
   updateTimerMaterialSelect();
-  showNotifToast('📚', '教材を追加しました', name);
+  showNotifToast('📚', editId ? '教材を更新しました' : '教材を追加しました', name);
 }
 
 /* ── 教材を削除 ── */
