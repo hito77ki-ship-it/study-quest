@@ -3371,6 +3371,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted)" id="pomoLabel">25分×4セット</span>
       </div>
       <div class="break-banner" id="breakBanner">⚔ 小休憩！次のセットまで5分休め ⚔</div>
+      <!-- オーバータイムバナー -->
+      <div id="pomoOvertimeBanner" style="display:none;background:linear-gradient(135deg,#1a0a00,#2a1200);border:1px solid #ff6b00;border-left:3px solid #ff9e4d;border-radius:8px;padding:12px 16px;margin-bottom:10px;font-family:'Share Tech Mono',monospace;font-size:12px;color:#ff9e4d;text-align:center;">
+        <div style="font-size:13px;font-weight:700;margin-bottom:6px;">🍅 25分達成！ 超過中…</div>
+        <div style="font-size:22px;color:#ffcc80;margin-bottom:10px;" id="pomoOvertimeCount">+0秒</div>
+        <button onclick="manualStartBreak()" style="background:#ff6b00;border:none;color:#fff;border-radius:20px;padding:8px 20px;font-size:12px;font-family:'Share Tech Mono',monospace;cursor:pointer;letter-spacing:.05em;">🛌 休憩を開始する</button>
+      </div>
       <!-- ポモドーロ休憩モーダル -->
       <div class="pomo-break-overlay" id="pomoBreakOverlay">
         <div class="pomo-break-box">
@@ -6316,18 +6322,30 @@ const POMO_HINTS = [
 
 let pomoBreakInterval = null;
 let pomoBreakSecs = 0;
+let pomoOvertimeSecs = 0;
+let pomoOvertimeMode = false;
 
 function checkPomodoro(){
+  // オーバータイム中は超過秒数をカウントするだけ
+  if(pomoOvertimeMode){
+    pomoOvertimeSecs++;
+    updateOvertimeDisplay();
+    return;
+  }
+
   const pomoSecs = timerSeconds % (POMO_STUDY + POMO_BREAK);
   if(pomoSecs === POMO_STUDY && pomoPhase==='study'){
-    pomoPhase='break';
     pomoCount=Math.min(pomoCount+1, POMO_SETS);
     renderPomoDots();
     spawnDmgNumber('🍅 +1 SET!', '#e040fb', true);
     if(pomoCount>=POMO_SETS){ pomoCount=0; renderPomoDots(); }
-    // タイマーを一時停止して休憩オーバーレイを表示
-    pauseTimer();
-    startPomoBreak();
+    // タイマーは止めず、オーバータイムモードへ
+    pomoOvertimeMode = true;
+    pomoOvertimeSecs = 0;
+    showOvertimeBanner();
+    if(Notification?.permission==='granted'){
+      new Notification('🍅 25分達成！', {body:`セット ${pomoCount}/${POMO_SETS} 完了！気づいたら休憩を開始してください。`});
+    }
     return;
   }
   if(pomoSecs === 0 && pomoPhase==='break'){
@@ -6339,6 +6357,33 @@ function checkPomodoro(){
     spawnDmgNumber('-'+dmg+' DMG', '#ff9e4d');
     shakeEnemy();
   }
+}
+
+function showOvertimeBanner(){
+  const el = document.getElementById('pomoOvertimeBanner');
+  if(el) el.style.display = '';
+  updateOvertimeDisplay();
+}
+
+function hideOvertimeBanner(){
+  const el = document.getElementById('pomoOvertimeBanner');
+  if(el) el.style.display = 'none';
+}
+
+function updateOvertimeDisplay(){
+  const el = document.getElementById('pomoOvertimeCount');
+  if(!el) return;
+  const m = Math.floor(pomoOvertimeSecs/60);
+  const s = pomoOvertimeSecs % 60;
+  el.textContent = m > 0 ? `+${m}分${s > 0 ? s+'秒' : ''}` : `+${s}秒`;
+}
+
+function manualStartBreak(){
+  pomoOvertimeMode = false;
+  pomoPhase = 'break';
+  hideOvertimeBanner();
+  pauseTimer();
+  startPomoBreak();
 }
 
 function startPomoBreak(){
