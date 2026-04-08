@@ -615,6 +615,19 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .auth-divider span{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.2em;}
 .guest-badge{background:var(--panel2);border:1px solid var(--border);padding:3px 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);margin-left:auto;}
 .guest-badge.active{border-color:rgba(106,106,144,.5);color:var(--muted);}
+.email-auth-form{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+.email-auth-input{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:11px 14px;color:var(--text);font-size:13px;width:100%;box-sizing:border-box;outline:none;}
+.email-auth-input:focus{border-color:var(--accent);}
+.email-auth-btn{background:linear-gradient(135deg,#8CC63F,#5C9A1A);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:700;padding:12px;cursor:pointer;width:100%;}
+.email-auth-btn:hover{opacity:.9;}
+.email-auth-toggle{font-size:11px;color:var(--muted);text-align:center;margin-top:4px;cursor:pointer;}
+.email-auth-toggle span{color:var(--accent2);text-decoration:underline;}
+.email-auth-msg{font-size:11px;text-align:center;padding:6px 0;min-height:18px;}
+.email-auth-msg.error{color:#EF4444;}
+.email-auth-msg.success{color:#8CC63F;}
+.auth-mode-tabs{display:flex;gap:0;margin-bottom:12px;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.auth-mode-tab{flex:1;padding:9px;font-size:12px;font-weight:600;background:transparent;border:none;color:var(--muted);cursor:pointer;}
+.auth-mode-tab.active{background:var(--accent);color:#fff;}
 
 /* ── SCORE TAB ── */
 .score-form-grid{display:grid;gap:12px;}
@@ -2971,6 +2984,21 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       </button>
 
       <div class="auth-note">※ ログイン情報はランキング表示にのみ使用されます</div>
+
+      <div class="auth-divider"><span>または メールアドレスで</span></div>
+
+      <div class="auth-mode-tabs">
+        <button class="auth-mode-tab active" id="tabLogin" onclick="switchAuthMode('login')">ログイン</button>
+        <button class="auth-mode-tab" id="tabSignup" onclick="switchAuthMode('signup')">新規登録</button>
+      </div>
+      <div class="email-auth-form">
+        <input class="email-auth-input" id="authEmail" type="email" placeholder="メールアドレス" autocomplete="email">
+        <input class="email-auth-input" id="authPassword" type="password" placeholder="パスワード（6文字以上）" autocomplete="current-password">
+        <input class="email-auth-input" id="authPasswordConfirm" type="password" placeholder="パスワード（確認）" autocomplete="new-password" style="display:none;">
+        <div class="email-auth-msg" id="authMsg"></div>
+        <button class="email-auth-btn" id="authSubmitBtn" onclick="submitEmailAuth()">ログイン</button>
+      </div>
+
       <div class="auth-divider"><span>または</span></div>
       <button class="guest-btn" onclick="continueAsGuest()">
         👤 ゲストとして続ける（ランキング非参加）
@@ -5102,6 +5130,63 @@ function computeAttrs(){
 }
 
 /* ═══════════════ SUPABASE AUTH ═══════════════ */
+/* ── メール認証モード切替 ── */
+let authMode = 'login';
+function switchAuthMode(mode){
+  authMode = mode;
+  document.getElementById('tabLogin').classList.toggle('active', mode==='login');
+  document.getElementById('tabSignup').classList.toggle('active', mode==='signup');
+  document.getElementById('authPasswordConfirm').style.display = mode==='signup' ? '' : 'none';
+  document.getElementById('authSubmitBtn').textContent = mode==='login' ? 'ログイン' : '新規登録';
+  document.getElementById('authMsg').textContent = '';
+  document.getElementById('authMsg').className = 'email-auth-msg';
+}
+
+/* ── メール認証実行 ── */
+async function submitEmailAuth(){
+  const email = document.getElementById('authEmail').value.trim();
+  const password = document.getElementById('authPassword').value;
+  const confirm = document.getElementById('authPasswordConfirm').value;
+  const msg = document.getElementById('authMsg');
+
+  if(!email || !password){ setAuthMsg('メールアドレスとパスワードを入力してください', 'error'); return; }
+  if(password.length < 6){ setAuthMsg('パスワードは6文字以上で設定してください', 'error'); return; }
+  if(authMode==='signup' && password !== confirm){ setAuthMsg('パスワードが一致しません', 'error'); return; }
+
+  document.getElementById('authSubmitBtn').textContent = '処理中...';
+  document.getElementById('authSubmitBtn').disabled = true;
+
+  try {
+    if(authMode === 'login'){
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+      if(error) throw error;
+    } else {
+      const { error } = await sb.auth.signUp({ email, password });
+      if(error) throw error;
+      setAuthMsg('確認メールを送りました。メールのリンクをクリックしてからログインしてください。', 'success');
+      switchAuthMode('login');
+      document.getElementById('authSubmitBtn').disabled = false;
+      document.getElementById('authSubmitBtn').textContent = 'ログイン';
+      return;
+    }
+  } catch(e) {
+    const errMap = {
+      'Invalid login credentials': 'メールアドレスまたはパスワードが正しくありません',
+      'Email not confirmed': 'メールアドレスの確認が完了していません。届いたメールのリンクをクリックしてください。',
+      'User already registered': 'このメールアドレスはすでに登録されています',
+    };
+    setAuthMsg(errMap[e.message] || e.message, 'error');
+    document.getElementById('authSubmitBtn').disabled = false;
+    document.getElementById('authSubmitBtn').textContent = authMode==='login' ? 'ログイン' : '新規登録';
+  }
+}
+
+function setAuthMsg(text, type){
+  const el = document.getElementById('authMsg');
+  el.textContent = text;
+  el.className = 'email-auth-msg ' + type;
+}
+
 async function signInWithGoogle(){
   try {
     const { error } = await sb.auth.signInWithOAuth({
