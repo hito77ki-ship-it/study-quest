@@ -8064,7 +8064,7 @@ function shareDeclResultToX(){
   const pct = Math.min(100, Math.round(doneMins/decl.totalMins*100));
   const subjs = allSelectedSubjects().filter(s=>decl.subjects[s.key]);
   const subjLines = subjs.map(s=>{
-    const dm = sessions.filter(x=>x.type==='study'&&x.date===today&&x.subject===s.key).reduce((a,x)=>a+x.amount,0);
+    const dm = sessions.filter(x=>isStudyType(x)&&x.date===today&&x.subject===s.key).reduce((a,x)=>a+x.amount,0);
     const str = dm>=60?Math.floor(dm/60)+'時間'+(dm%60?dm%60+'分':''):dm+'分';
     return `✅ ${s.name} ${str}`;
   }).join('\n');
@@ -8315,7 +8315,7 @@ function renderHeatmap(){
 
   // 日付ごとの学習分数マップ
   const dayMap = {};
-  sessions.filter(s => s.type==='study' && s.date).forEach(s => {
+  sessions.filter(s => isStudyType(s) && s.date).forEach(s => {
     dayMap[s.date] = (dayMap[s.date]||0) + s.amount;
   });
 
@@ -8413,7 +8413,7 @@ function renderHeatmap(){
   // ── 月間サマリー（直近12ヶ月）──
   if(summaryEl){
     const monthSummary = {};
-    sessions.filter(s=>s.type==='study'&&s.date).forEach(s=>{
+    sessions.filter(s=>isStudyType(s)&&s.date).forEach(s=>{
       const ym = s.date.slice(0,7);
       monthSummary[ym] = (monthSummary[ym]||0) + s.amount;
     });
@@ -10146,7 +10146,7 @@ function generateShareCard(){
 
   // 大きな学習時間表示
   const todayMins = sessions
-    .filter(s => s.type==='study' && s.date===new Date().toISOString().slice(0,10))
+    .filter(s => isStudyType(s) && s.date===new Date().toISOString().slice(0,10))
     .reduce((a,s) => a+s.amount, 0);
   const h = Math.floor(todayMins/60), m = todayMins%60;
   const timeStr = h > 0 ? `${h}時間${m>0?m+'分':''}` : `${m}分`;
@@ -10327,7 +10327,7 @@ async function renderRaidBoss(){
   // ローカルのsessionsから自分の貢献量（今週分）
   const weekAgo = new Date(Date.now() - 7*24*3600*1000).toISOString().slice(0,10);
   const myMins = sessions
-    .filter(s => s.type==='study' && s.date >= weekAgo)
+    .filter(s => isStudyType(s) && s.date >= weekAgo)
     .reduce((a,s) => a+s.amount, 0);
   myRaidContrib = myMins;
 
