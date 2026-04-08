@@ -6153,7 +6153,8 @@ function startTimer(){
     updateTimerDisplay();
     updateDmgBar();
     checkPomodoro();
-    if(timerSeconds%60===0){ saveBgTimerState(); showAutosaveToast(); updateBgBadge(); }
+    if(timerSeconds%10===0){ saveBgTimerState(); updateBgBadge(); }  // 10秒ごとに保存
+    if(timerSeconds%300===0){ showAutosaveToast(); }               // トーストは5分ごと
     if(timerGoalMins>0 && timerSeconds===timerGoalMins*60) notifyGoalReached();
   },1000);
   showBgBadge(false);
@@ -8779,6 +8780,13 @@ function notifyGoalReached(){
   else run();
 })();
 
+/* タイマー動作中にブラウザを閉じようとしたとき警告 */
+window.addEventListener('beforeunload', e => {
+  if(timerRunning){
+    e.preventDefault();
+    e.returnValue = 'タイマーが動作中です。ページを閉じると記録が失われる可能性があります。';
+  }
+});
 
 /* ════════════════════════════════════════
    グローバルナビ・ドロワー・ヘルプシステム
