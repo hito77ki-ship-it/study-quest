@@ -3251,14 +3251,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <!-- STATUS -->
   <div id="panel-status">
-    <!-- 石化バナー（未ログイン3日以上） -->
-    <div class="petrified-banner" id="petrifiedBanner" style="display:none;">
-      <div class="petrified-days" id="petrifiedDays">3</div>
-      <div>
-        <div style="font-weight:700;color:#A0A0FF;margin-bottom:2px;">⚠ キャラが石化しています</div>
-        <div style="font-size:11px;">学習を再開してリザレクションを発動しよう！</div>
-      </div>
-    </div>
     <!-- 試験カウントダウン（ミニ表示） -->
     <div id="statusExamMini"></div>
     <!-- 今日のスケジュール -->
@@ -3428,7 +3420,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           <label class="form-label">クエスト種別</label>
           <div class="type-btns">
             <button class="type-btn active" data-type="study" onclick="selectType('study')"><span class="type-icon">📖</span>勉強時間<span class="type-exp">1分=1EXP</span></button>
-            <button class="type-btn" data-type="exam" onclick="selectType('exam')"><span class="type-icon">⚔</span>答練・模試<span class="type-exp">500EXP</span></button>
+            <button class="type-btn" data-type="exam" onclick="selectType('exam')"><span class="type-icon">⚔</span>答練・模試<span class="type-exp">1分=1EXP</span></button>
           </div>
         </div>
         <div class="form-row-2">
@@ -5800,7 +5792,6 @@ async function startAdventure(){
 function initDashboard(){
   updateGnavVisibility();
   applyChartDarkDefaults();
-  checkResurrection();
   const pw=document.getElementById('jobPills');pw.innerHTML='';
   JOBS.filter(j=>selectedJobIds.includes(j.id)).forEach(j=>{
     const p=document.createElement('span');p.className='job-pill';p.style.borderColor=j.color+'44';p.style.color=j.color;p.textContent=j.icon+' '+j.name;pw.appendChild(p);
@@ -5849,7 +5840,6 @@ function renderAll(){
   if(typeof bosses!=='undefined') renderBoss();
   if(typeof examGoals!=='undefined') renderExamBanner();
   renderEquipBadge(smins);
-  checkPetrifiedState();
   renderRaidBoss();
   renderStatusExamMini();
   // レポート/プロフィールタブが開いていれば即更新
@@ -5973,9 +5963,7 @@ function renderTitles(){
 function selectType(type){
   currentType=type;
   document.querySelectorAll('.type-btn').forEach(b=>b.classList.toggle('active',b.dataset.type===type));
-  document.getElementById('amountLabel').textContent={study:'時間',exam:'（自動）'}[type];
-  document.getElementById('questAmount').disabled=type==='exam';
-  if(type==='exam')document.getElementById('questAmount').value='';
+  document.getElementById('amountLabel').textContent={study:'時間',exam:'時間'}[type];
   // 答練・模試のみタイムライン投稿オプションを表示
   const examOpt = document.getElementById('examPostOption');
   if(examOpt) examOpt.style.display = type==='exam' ? '' : 'none';
@@ -5988,8 +5976,7 @@ async function addQuest(){
   const qm=parseInt(document.getElementById('questAmountMin')?.value)||0;
   let amount=qh*60+qm;
   let exp=0;
-  if(currentType==='study'){if(amount<=0){alert('時間または分を入力してください');return;}exp=Math.round(amount);}
-  else{exp=500;amount=1;}
+  if(amount<=0){alert('時間または分を入力してください');return;}exp=Math.round(amount);
   const smins0=studyMins(sessions),lv0=computeLevel(smins0);
   const today=new Date().toISOString().slice(0,10);
   if(char.lastLoginDate!==today){
@@ -10314,68 +10301,6 @@ function renderEquipBadge(smins){
 }
 
 /* ════════════════════════════════════════
-   リザレクション（復活）システム
-   - 3日以上未学習 → 石化状態
-   - 再開時に復活演出 + ボーナスEXP
-════════════════════════════════════════ */
-const RESURRECT_KEY = 'sq2_resurrect_shown';
-
-function checkResurrection(){
-  if(!char.lastLoginDate) return;
-  const last = new Date(char.lastLoginDate);
-  last.setHours(0,0,0,0);
-  const today = new Date(); today.setHours(0,0,0,0);
-  const diffDays = Math.round((today - last) / 86400000);
-
-  if(diffDays >= 3){
-    // 石化状態
-    checkPetrifiedState();
-    // 既に表示済みなら再表示しない
-    const shownKey = RESURRECT_KEY + '_' + char.lastLoginDate;
-    if(sessionStorage.getItem(shownKey)) return;
-    sessionStorage.setItem(shownKey, '1');
-
-    // ボーナスEXP（空白日数 × 5、最大100）
-    const bonus = Math.min(100, diffDays * 5);
-    const msgEl = document.getElementById('resurrectMsg');
-    if(msgEl) msgEl.innerHTML =
-      `<span style="color:#A0A0CC">${diffDays}日間</span>の修練期間を経て、勇者が目覚めた！<br><br>` +
-      `石化状態から解放され、<br>` +
-      `<span style="color:#8CC63F;font-size:18px;font-weight:700">+${bonus} ボーナスEXP</span> を獲得！`;
-
-    // ボーナスEXP付与
-    char.totalEXP += bonus;
-    char.streak = 1;
-    char.lastLoginDate = new Date().toISOString().slice(0,10);
-    saveAll();
-    setTimeout(()=>document.getElementById('resurrectOverlay')?.classList.add('show'), 600);
-  }
-}
-
-function closeResurrection(){
-  document.getElementById('resurrectOverlay')?.classList.remove('show');
-  renderAll();
-  spawnDmgNumber('⚡ 復活！+ボーナスEXP', '#8CC63F', true);
-}
-
-function checkPetrifiedState(){
-  const banner = document.getElementById('petrifiedBanner');
-  const daysEl = document.getElementById('petrifiedDays');
-  if(!banner || !char.lastLoginDate) return;
-
-  const last = new Date(char.lastLoginDate); last.setHours(0,0,0,0);
-  const today = new Date(); today.setHours(0,0,0,0);
-  const diffDays = Math.round((today - last) / 86400000);
-
-  if(diffDays >= 3){
-    banner.style.display = 'flex';
-    if(daysEl) daysEl.textContent = diffDays;
-  } else {
-    banner.style.display = 'none';
-  }
-}
-
-/* ════════════════════════════════════════
    共闘レイドボス
    - 全ユーザーの累計ダメージでボスHP削減
    - Supabase raid_events テーブル利用
@@ -12402,21 +12327,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="share-x-btn" onclick="shareToX()">📤 シェア</button>
       <button class="share-close-btn" onclick="document.getElementById('shareCardOverlay').classList.remove('show')">閉じる</button>
     </div>
-  </div>
-</div>
-
-<!-- リザレクション -->
-<div class="resurrect-overlay" id="resurrectOverlay">
-  <div class="resurrect-box">
-    <div class="resurrect-title">💎✨💎</div>
-    <div class="resurrect-sub">RESURRECTION SUCCESS</div>
-    <div class="resurrect-msg" id="resurrectMsg">
-      3日間の修練を終え、勇者が目覚めた！<br>
-      石化状態から解放され、ボーナスEXPを獲得！
-    </div>
-    <button class="resurrect-btn" onclick="closeResurrection()">
-      ⚔ 冒険を再開する
-    </button>
   </div>
 </div>
 
