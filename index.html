@@ -6503,6 +6503,8 @@ async function finishTimer(){
   // 宣言カードの達成率を更新
   const declData = loadDecl();
   if(declData && declData.date===getTodayStr()) updateDeclDisplay(declData);
+  clearBgTimerState();
+  showBgBadge(false);
 }
 let scoreRecords = []; // [{id, name, date, scores:{key:{score,max}}}]
 let scoreChartInstances = {};
@@ -8768,12 +8770,7 @@ document.addEventListener('visibilitychange', ()=>{
 /* startTimerのオートセーブ・バッジ・目標チェックは startTimer 本体に統合済み */
 
 /* finishTimer 後にクリア */
-const _origFinishTimer = finishTimer;
-async function finishTimer(){
-  await _origFinishTimer();
-  clearBgTimerState();
-  showBgBadge(false);
-}
+/* finishTimerのbgTimer処理はfinishTimer本体に統合済み */
 
 /* ── バックグラウンドバッジ ── */
 function showBgBadge(bg){
