@@ -5141,8 +5141,8 @@ function allSelectedSubjects(){
   });
   return out;
 }
-function studyMins(sess){return sess.filter(s=>s.type==='study').reduce((a,s)=>a+s.amount,0);}
-function subjStudyMins(sess,key){return sess.filter(s=>s.subject===key&&s.type==='study').reduce((a,s)=>a+s.amount,0);}
+function studyMins(sess){return sess.filter(s=>s.type==='study'||s.type==='exam').reduce((a,s)=>a+s.amount,0);}
+function subjStudyMins(sess,key){return sess.filter(s=>s.subject===key&&(s.type==='study'||s.type==='exam')).reduce((a,s)=>a+s.amount,0);}
 function formatHM(mins){return `${Math.floor(mins/60)}h ${Math.round(mins%60)}m`;}
 function computeAttrs(){
   const vals={atk:0,int:0,dex:0,mag:0,spi:0};
