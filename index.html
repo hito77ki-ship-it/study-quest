@@ -7566,17 +7566,19 @@ function tbColor(subject){
 }
 
 function tbPrevDay(){
+  if(!tbCurrentDate) tbCurrentDate = getTodayStr();
   const d = new Date(tbCurrentDate + 'T00:00:00');
   d.setDate(d.getDate()-1);
-  tbCurrentDate = d.toISOString().slice(0,10);
+  tbCurrentDate = toLocalDateStr(d);
   renderTimeBlock(tbCurrentDate);
 }
 function tbNextDay(){
-  const d = new Date(tbCurrentDate + 'T00:00:00');
-  d.setDate(d.getDate()+1);
+  if(!tbCurrentDate) tbCurrentDate = getTodayStr();
   const today = getTodayStr();
   if(tbCurrentDate >= today) return; // 未来には進まない
-  tbCurrentDate = d.toISOString().slice(0,10);
+  const d = new Date(tbCurrentDate + 'T00:00:00');
+  d.setDate(d.getDate()+1);
+  tbCurrentDate = toLocalDateStr(d);
   renderTimeBlock(tbCurrentDate);
 }
 
