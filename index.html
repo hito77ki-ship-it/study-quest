@@ -6153,7 +6153,10 @@ function startTimer(){
     updateTimerDisplay();
     updateDmgBar();
     checkPomodoro();
+    if(timerSeconds%60===0){ saveBgTimerState(); showAutosaveToast(); updateBgBadge(); }
+    if(timerGoalMins>0 && timerSeconds===timerGoalMins*60) notifyGoalReached();
   },1000);
+  showBgBadge(false);
 }
 
 function pauseTimer(){
@@ -8676,24 +8679,7 @@ document.addEventListener('visibilitychange', ()=>{
   }
 });
 
-/* ── startTimer をオーバーライド（オートセーブ・バッジを組み込む）── */
-const _origStartTimer = startTimer;
-function startTimer(){
-  _origStartTimer();
-  // オリジナルのsetIntervalに毎分セーブを追加（上書き）
-  clearInterval(timerInterval);
-  timerInterval = setInterval(()=>{
-    timerSeconds++;
-    updateTimerDisplay(); updateDmgBar(); checkPomodoro();
-    if(timerSeconds%60===0){
-      saveBgTimerState();
-      showAutosaveToast();
-      updateBgBadge();
-    }
-    if(timerGoalMins>0 && timerSeconds===timerGoalMins*60) notifyGoalReached();
-  }, 1000);
-  showBgBadge(false);
-}
+/* startTimerのオートセーブ・バッジ・目標チェックは startTimer 本体に統合済み */
 
 /* finishTimer 後にクリア */
 const _origFinishTimer = finishTimer;
