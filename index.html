@@ -7986,7 +7986,7 @@ function updateDeclDisplay(decl){
   if(!decl) return;
   // 今日の学習済み時間
   const today = getTodayStr();
-  const doneMins = sessions.filter(s=>s.type==='study'&&s.date===today).reduce((a,s)=>a+s.amount,0);
+  const doneMins = sessions.filter(s=>(s.type==='study'||s.type==='exam')&&s.date===today).reduce((a,s)=>a+s.amount,0);
   const pct = Math.min(100, Math.round(doneMins/decl.totalMins*100));
 
   // 日付表示
@@ -8009,7 +8009,7 @@ function updateDeclDisplay(decl){
   if(subjs.length){
     subjList.innerHTML = subjs.map(s=>{
       const goalM = decl.subjects[s.key];
-      const doneM = sessions.filter(x=>x.type==='study'&&x.date===today&&x.subject===s.key).reduce((a,x)=>a+x.amount,0);
+      const doneM = sessions.filter(x=>(x.type==='study'||x.type==='exam')&&x.date===today&&x.subject===s.key).reduce((a,x)=>a+x.amount,0);
       const sPct = Math.min(100,Math.round(doneM/goalM*100));
       const gStr = goalM>=60?Math.floor(goalM/60)+'h'+(goalM%60?goalM%60+'m':''):goalM+'m';
       const dStr = doneM>=60?Math.floor(doneM/60)+'h'+(doneM%60?doneM%60+'m':''):doneM+'m';
@@ -8057,7 +8057,7 @@ function shareDeclResultToX(){
   const decl = loadDecl();
   if(!decl) return;
   const today = getTodayStr();
-  const doneMins = sessions.filter(s=>s.type==='study'&&s.date===today).reduce((a,s)=>a+s.amount,0);
+  const doneMins = sessions.filter(s=>(s.type==='study'||s.type==='exam')&&s.date===today).reduce((a,s)=>a+s.amount,0);
   const doneH = Math.floor(doneMins/60), doneM = doneMins%60;
   const doneStr = doneH ? `${doneH}時間${doneM?doneM+'分':''}` : `${doneM}分`;
   const pct = Math.min(100, Math.round(doneMins/decl.totalMins*100));
