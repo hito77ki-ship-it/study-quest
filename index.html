@@ -3950,6 +3950,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <div id="importPastMsg" style="display:none;margin-top:8px;font-size:12px;color:var(--accent2);font-family:'Share Tech Mono',monospace;"></div>
     </div>
 
+    <!-- ─── アカウント連携 ─── -->
+    <div class="section" id="linkAccountSection" style="display:none;">
+      <div class="sec-title">🔗 アカウント連携</div>
+      <div id="linkAccountContent"></div>
+    </div>
+
     <!-- ─── データ管理 ─── -->
     <div class="section">
       <div class="sec-title">💾 データ管理</div>
@@ -8415,6 +8421,59 @@ function renderProfileTab(){
   // ── 表示名入力欄 (旧) ──
   const nameInp = document.getElementById('profDisplayName');
   if(nameInp) nameInp.value = char.name || '';
+
+  // ── アカウント連携セクション ──
+  renderLinkAccountSection();
+}
+
+async function renderLinkAccountSection(){
+  const section = document.getElementById('linkAccountSection');
+  const content = document.getElementById('linkAccountContent');
+  if(!section || !content || !currentUser) return;
+
+  section.style.display = '';
+  const { data: { user } } = await sb.auth.getUser();
+  if(!user){ section.style.display = 'none'; return; }
+
+  const identities = user.identities || [];
+  const hasGoogle = identities.some(i => i.provider === 'google');
+  const hasEmail  = identities.some(i => i.provider === 'email');
+
+  content.innerHTML = `
+    <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">
+      複数のログイン方法を連携すると、どちらでもログインできます。
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--panel2);border-radius:8px;border:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="16" height="16" viewBox="0 0 18 18"><path fill="#4285F4" d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z"/><path fill="#34A853" d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z"/><path fill="#FBBC05" d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z"/><path fill="#EA4335" d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z"/></svg>
+          <span style="font-size:12px;font-weight:600;color:var(--text);">Google</span>
+        </div>
+        ${hasGoogle
+          ? '<span style="font-size:11px;color:#8CC63F;font-weight:600;">✓ 連携済み</span>'
+          : '<button onclick="linkGoogle()" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:5px 14px;font-size:11px;font-weight:700;cursor:pointer;">連携する</button>'
+        }
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--panel2);border-radius:8px;border:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:16px;">✉️</span>
+          <span style="font-size:12px;font-weight:600;color:var(--text);">メールアドレス</span>
+        </div>
+        ${hasEmail
+          ? '<span style="font-size:11px;color:#8CC63F;font-weight:600;">✓ 連携済み</span>'
+          : '<span style="font-size:11px;color:var(--muted);">ログイン画面から登録</span>'
+        }
+      </div>
+    </div>`;
+}
+
+async function linkGoogle(){
+  try {
+    const { error } = await sb.auth.linkIdentity({ provider: 'google', options: { redirectTo: location.href } });
+    if(error) throw error;
+  } catch(e) {
+    alert('Google連携に失敗しました: ' + e.message);
+  }
 }
 
 /* ── プロフィール基本情報 localStorage ── */
