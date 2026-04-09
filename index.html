@@ -416,6 +416,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .lu-study-hours{font-size:11px;color:var(--muted);margin-bottom:22px;font-family:'Share Tech Mono',monospace;}
 .lu-close{background:var(--accent);border:none;color:#fff;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.25em;padding:9px 28px;cursor:pointer;transition:all .2s;border-radius:20px;}
 .lu-close:hover{background:rgba(201,168,76,.1);}
+.lu-share-btn{background:none;border:1.5px solid #1d9bf0;color:#1d9bf0;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.15em;padding:9px 22px;cursor:pointer;transition:all .2s;border-radius:20px;}
+.lu-share-btn:hover{background:rgba(29,155,240,.12);}
 
 .data-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);}
 ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:var(--border);}
@@ -3042,7 +3044,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     </div>
     <div class="name-group">
       <label class="name-label">冒険者の名前</label>
-      <input class="name-input" id="nameInput" type="text" placeholder="名前を入力...">
+      <input class="name-input" id="nameInput" type="text" placeholder="名前を入力..." maxlength="20">
     </div>
     <div id="subjSelectBlocks"></div>
     <div id="startErrorMsg" style="display:none;background:#2a0808;border:1px solid #ff4444;border-left:3px solid #ff4444;color:#ff9e9e;font-size:12px;padding:10px 14px;margin-bottom:10px;"></div>
@@ -3405,7 +3407,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         </div>
       </div>
       <!-- メモ -->
-      <input class="timer-session-note" id="timerNote" type="text" placeholder="今日の学習内容（任意）...">
+      <input class="timer-session-note" id="timerNote" type="text" placeholder="今日の学習内容（任意）..." maxlength="100">
       <!-- ボタン -->
       <div class="timer-btns" style="margin-top:12px;">
         <button class="timer-start-btn" id="timerStartBtn" onclick="toggleTimer()">▶ 攻撃開始</button>
@@ -3503,7 +3505,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <div class="sec-title" id="bossFormTitle">ADD BOSS</div>
       <div class="form-grid">
         <input type="hidden" id="bossEditId" value="">
-        <div class="form-group"><label class="form-label">模試・答練名</label><input class="form-input" id="bossName" type="text" placeholder="第○回 公開模試"></div>
+        <div class="form-group"><label class="form-label">模試・答練名</label><input class="form-input" id="bossName" type="text" placeholder="第○回 公開模試" maxlength="50"></div>
         <div class="form-row-2">
           <div class="form-group"><label class="form-label">実施日</label><input class="form-input" id="bossDate" type="date"></div>
           <div class="form-group"><label class="form-label">目標勉強時間（h）</label><input class="form-input" id="bossTargetHours" type="number" min="1" placeholder="100"></div>
@@ -3598,7 +3600,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <div class="form-row-2">
           <div class="form-group">
             <label class="form-label">試験名</label>
-            <input class="form-input" id="scoreExamName" type="text" placeholder="第○回 短答式模試" list="examNameList" autocomplete="off">
+            <input class="form-input" id="scoreExamName" type="text" placeholder="第○回 短答式模試" list="examNameList" autocomplete="off" maxlength="50">
             <datalist id="examNameList"></datalist>
           </div>
           <div class="form-group">
@@ -4177,7 +4179,10 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="lu-title" id="luTitle">短答式受験生</div>
     <div class="lu-log" id="luLog">全科目の魔力が微増した！</div>
     <div class="lu-study-hours" id="luStudyHours"></div>
-    <button class="lu-close" onclick="closeLevelUp()">CONTINUE →</button>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button class="lu-share-btn" onclick="shareLevelUpToX()" id="luShareBtn">𝕏 シェアする</button>
+      <button class="lu-close" onclick="closeLevelUp()">CONTINUE →</button>
+    </div>
   </div>
 </div>
 
@@ -5368,6 +5373,7 @@ async function restoreFromCloud(){
     let restored = false;
     if(data.sessions_backup){
       const s = JSON.parse(data.sessions_backup);
+      // クラウドのセッション数がローカルより多ければ復元（新デバイスで確実にデータを引き継ぐ）
       if(s && s.length > sessions.length){ sessions = s; restored = true; }
     }
     if(data.bosses_backup){
@@ -5380,13 +5386,20 @@ async function restoreFromCloud(){
     }
     if(data.char_backup){
       const ch = JSON.parse(data.char_backup);
-      if(ch && ch.name){ char = {...char, ...ch}; restored = true; }
+      // ローカルに名前がない場合はクラウドのキャラデータを復元
+      if(ch && ch.name && !char.name){ char = {...char, ...ch}; restored = true; }
     }
-    if(data.subjects_backup && selectedSubjectKeys.length === 0){
-      selectedSubjectKeys = JSON.parse(data.subjects_backup);
+    if(data.subjects_backup){
+      const skeys = JSON.parse(data.subjects_backup);
+      if(skeys && skeys.length > 0 && selectedSubjectKeys.length === 0){
+        selectedSubjectKeys = skeys; restored = true;
+      }
     }
-    if(data.jobs_backup && selectedJobIds.length === 0){
-      selectedJobIds = JSON.parse(data.jobs_backup);
+    if(data.jobs_backup){
+      const jids = JSON.parse(data.jobs_backup);
+      if(jids && jids.length > 0 && selectedJobIds.length === 0){
+        selectedJobIds = jids; restored = true;
+      }
     }
     if(restored) await saveAll();
     return restored;
@@ -5428,7 +5441,7 @@ async function loadRanking(){
     const bars=topSubjs.map(([k,s])=>`<div class="rank-bar-row"><span class="rank-bar-label">${(s.name||k).slice(0,4)}</span><div class="rank-bar-track"><div class="rank-bar-fill" style="width:${s.pct||0}%;background:${SCOLORS[k]||'#c9a84c'}"></div></div></div>`).join('');
     const item=document.createElement('div');
     item.className='ranking-item'+(isMe?' me':'');
-    item.innerHTML=`<div class="rank-pos ${posClass}">${posDisp}</div><div class="rank-avatar">${p.avatar_emoji||'📚'}</div><div class="rank-info"><div class="rank-name">${p.display_name||'名無し'}${isMe?' <span style="font-size:9px;color:var(--gold)">← YOU</span>':''}</div><div class="rank-title-text">${p.char_title||'—'}</div>${bars?`<div class="rank-bars">${bars}</div>`:''}</div><div class="rank-right"><div class="rank-level">Lv.${p.level||1}</div><div class="rank-hours">${hours}h</div><div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted)">🔥${p.streak||0}日</div></div>`;
+    item.innerHTML=`<div class="rank-pos ${posClass}">${posDisp}</div><div class="rank-avatar">${escHtml(p.avatar_emoji||'📚')}</div><div class="rank-info"><div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--gold)">← YOU</span>':''}</div><div class="rank-title-text">${escHtml(p.char_title||'—')}</div>${bars?`<div class="rank-bars">${bars}</div>`:''}</div><div class="rank-right"><div class="rank-level">Lv.${p.level||1}</div><div class="rank-hours">${hours}h</div><div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted)">🔥${p.streak||0}日</div></div>`;
     listEl.appendChild(item);
   });
   if(!data.find(p=>currentUser&&p.id===currentUser.id)){
@@ -5508,7 +5521,7 @@ async function loadWeeklyRanking(){
     item.className = 'ranking-item' + (isMe?' me':'');
     item.innerHTML = `
       <div class="rank-pos ${posClass}">${posDisp}</div>
-      <div class="rank-avatar">${p.avatar_emoji||'📚'}</div>
+      <div class="rank-avatar">${escHtml(p.avatar_emoji||'📚')}</div>
       <div class="rank-info">
         <div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--accent)">← YOU</span>':''}<span style="font-size:9px;color:var(--muted);margin-left:4px;">${job}</span></div>
         <div class="rank-title-text">${escHtml(p.char_title||'—')}</div>
@@ -6079,6 +6092,8 @@ function showLevelUp(lv,smins){
   document.getElementById('luTitle').textContent=ti.emoji+' '+ti.title;
   document.getElementById('luLog').textContent=log;
   document.getElementById('luStudyHours').textContent=`累計 ${Math.floor(smins/60)}h / 平均 ${Math.floor(getAvgMins()/60)}h / MAX ${Math.floor(getMaxMins()/60)}h`;
+  const btn=document.getElementById('luShareBtn');
+  if(btn){btn.textContent='𝕏 シェアする';btn.style.borderColor='#1d9bf0';btn.style.color='#1d9bf0';btn.disabled=false;}
   document.getElementById('luOverlay').classList.add('show');
 }
 function closeLevelUp(){
@@ -6086,6 +6101,24 @@ function closeLevelUp(){
   // Open DQ allocation after level up dismissed
   const sp = SP_PER_LEVEL;
   if(sp>0) setTimeout(()=>openDqAlloc(sp),300);
+}
+async function shareLevelUpToX(){
+  const smins = studyMins(sessions);
+  const lv = getLevelProgress(smins).level;
+  const ti = getTitleInfo(lv);
+  const totalH = Math.floor(smins/60);
+  const phrases = [
+    `${ti.emoji} レベルアップ！ Lv.${lv}「${ti.title}」に到達した。`,
+    `累計${totalH}時間の積み重ねが、今ここで報われた。`,
+    `まだ終わらない。次のレベルへ。`,
+  ];
+  const text = phrases.join('\n') + `\n\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
+  const btn = document.getElementById('luShareBtn');
+  if(btn){ btn.textContent='シェア済み ✓'; btn.style.borderColor='#8CC63F'; btn.style.color='#8CC63F'; btn.disabled=true; }
+  if(navigator.share){
+    try{ await navigator.share({text}); return; }catch(e){ if(e.name==='AbortError') return; }
+  }
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
 }
 // closeLevelUp defined above with DQ alloc trigger
 function resetConfirm(){
@@ -6559,8 +6592,6 @@ async function finishTimer(){
   spawnDmgNumber(`+${exp} EXP`, '#e040fb', true);
   spawnDmgNumber(`📖 ${minutes}分 記録完了！`, '#7cff6e', true);
   if(lv1>lv0){setTimeout(()=>showLevelUp(lv1,smins1),800); checkClassChange(lv0,lv1,smins1);}
-  // シェアカードをトースト的に促す（3秒後に自動生成）
-  setTimeout(()=>generateShareCard(), 2500);
   if(currentUser) syncToCloud().catch(()=>{});
 
   // タイムラインに自動投稿
@@ -6873,7 +6904,7 @@ function renderScoreRecordList(){
     const item=document.createElement('div');item.className='score-record-item';
     item.innerHTML=`<div style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span class="score-record-name">${r.name}</span>
+        <span class="score-record-name">${escHtml(r.name)}</span>
         <span class="score-record-date">${r.date}</span>
         <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--gold)">${totalScore}/${totalMax} (${rate}%)</span>
       </div>
@@ -6937,6 +6968,9 @@ async function init(){
         // クラウドからデータ復元を試みてからルーティング
         restoreFromCloud().then(restored=>{
           if(restored) console.log('[auth] data restored from cloud');
+          // ログイン後にローカルデータを即座にクラウドへ同期
+          // （PCでゲスト利用後にログインした場合もデータが引き継がれる）
+          syncToCloud().catch(()=>{});
           if(selectedJobIds.length>0 && selectedSubjectKeys.length>0 && char.name){
             initDashboard(); showScreen('screen-dash');
           } else {
@@ -8800,7 +8834,7 @@ function renderSessions(subjs){
       <button class="session-delete-btn" onclick="confirmDeleteSession(${realIdx})" title="削除">🗑</button>
       <span class="session-date">${s.date||'—'}</span>
       <span class="session-subj" style="color:${sub.color}">${sub.name}</span>
-      <span class="session-desc">${tl}${s.note?' · '+s.note:''}</span>
+      <span class="session-desc">${tl}${s.note?' · '+escHtml(s.note):''}</span>
       <span class="session-exp">+${s.exp} EXP</span>`;
     list.appendChild(item);
   });
@@ -9335,7 +9369,7 @@ function renderBoss(){
     <div class="boss-card">
       <div class="boss-card-icon">💀</div>
       <div class="boss-card-body">
-        <div class="boss-card-name">${b.name}</div>
+        <div class="boss-card-name">${escHtml(b.name)}</div>
         <div class="boss-card-sub">${passed?'終了済み':'— 中ボス戦まで —'}</div>
         <div class="boss-card-countdown">
           <div>
