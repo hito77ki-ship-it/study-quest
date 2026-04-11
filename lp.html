@@ -140,6 +140,38 @@ nav.scrolled{
     radial-gradient(ellipse 90% 55% at 50% 0%,rgba(140,198,63,.11) 0%,transparent 65%),
     var(--bg);
   position:relative;
+  overflow:hidden;
+}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.hero>*:not(#heroCanvas):not(.hero-symbols){position:relative;z-index:1;}
+.hero-symbols{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.hero-symbol{
+  position:absolute;font-size:clamp(18px,3vw,32px);
+  opacity:0;animation:floatSymbol linear infinite;
+  filter:blur(0px);
+}
+@keyframes floatSymbol{
+  0%  {transform:translateY(0) rotate(0deg) scale(1);opacity:0;}
+  10% {opacity:.18;}
+  80% {opacity:.12;}
+  100%{transform:translateY(-110vh) rotate(360deg) scale(1.2);opacity:0;}
+}
+/* スクロールフェードイン強化 */
+.fi{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.25,1,.5,1),transform .7s cubic-bezier(.25,1,.5,1);}
+.fi.vis{opacity:1;transform:translateY(0);}
+/* カウントアップ */
+.stat-n{transition:color .3s;}
+/* CTAグロー */
+.btn-hero{position:relative;overflow:hidden;}
+.btn-hero::after{
+  content:'';position:absolute;inset:-2px;border-radius:100px;
+  background:linear-gradient(135deg,rgba(140,198,63,.4),rgba(92,154,26,.4));
+  filter:blur(12px);z-index:-1;
+  animation:ctaGlow 2.5s ease-in-out infinite alternate;
+}
+@keyframes ctaGlow{
+  0%{opacity:.6;transform:scale(1);}
+  100%{opacity:1;transform:scale(1.08);}
 }
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:7px;
@@ -572,6 +604,8 @@ footer{background:#091505;padding:48px 24px 40px;}
 
 <!-- HERO -->
 <section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-symbols" id="heroSymbols"></div>
   <img src="screenshots/ogp_icon.png" alt="スタディクエスト アプリアイコン" style="width:96px;height:96px;border-radius:22px;margin-bottom:18px;box-shadow:0 8px 32px rgba(0,0,0,.4);">
   <div class="hero-eyebrow">⚔ β版公開中・完全無料</div>
   <h1>すべての勉強を、<br><em>終わらない冒険に。</em></h1>
@@ -1012,6 +1046,139 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
 document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+// ── HERO CANVAS 星空アニメーション ──
+(function(){
+  const canvas = document.getElementById('heroCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, stars = [], meteors = [];
+
+  function resize(){
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+
+  function rand(min, max){ return Math.random()*(max-min)+min; }
+
+  // 星を生成
+  function initStars(){
+    stars = Array.from({length:120}, ()=>({
+      x: rand(0,W), y: rand(0,H),
+      r: rand(0.5,2.2),
+      alpha: rand(0.3,1),
+      speed: rand(0.002,0.006),
+      phase: rand(0,Math.PI*2),
+      color: Math.random()<.2 ? '#8CC63F' : '#ffffff'
+    }));
+  }
+  initStars();
+
+  // 流れ星
+  function addMeteor(){
+    if(meteors.length > 3) return;
+    meteors.push({
+      x: rand(W*0.2, W),
+      y: rand(0, H*0.4),
+      len: rand(80,180),
+      speed: rand(6,12),
+      alpha: 1,
+      angle: Math.PI/6 + rand(-0.2,0.2)
+    });
+  }
+  setInterval(addMeteor, 3000);
+
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+
+    // 星を描画
+    stars.forEach(s=>{
+      const a = s.alpha * (0.6 + 0.4*Math.sin(t*s.speed + s.phase));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = s.color === '#8CC63F'
+        ? `rgba(140,198,63,${a})`
+        : `rgba(255,255,255,${a})`;
+      ctx.fill();
+    });
+
+    // 流れ星
+    meteors = meteors.filter(m=>{
+      m.x += Math.cos(m.angle)*m.speed;
+      m.y += Math.sin(m.angle)*m.speed;
+      m.alpha -= 0.015;
+      if(m.alpha <= 0) return false;
+      const grd = ctx.createLinearGradient(
+        m.x - Math.cos(m.angle)*m.len, m.y - Math.sin(m.angle)*m.len,
+        m.x, m.y
+      );
+      grd.addColorStop(0,'rgba(140,198,63,0)');
+      grd.addColorStop(1,`rgba(140,198,63,${m.alpha})`);
+      ctx.beginPath();
+      ctx.moveTo(m.x - Math.cos(m.angle)*m.len, m.y - Math.sin(m.angle)*m.len);
+      ctx.lineTo(m.x, m.y);
+      ctx.strokeStyle = grd;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      return true;
+    });
+
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+
+// ── 浮遊RPGシンボル ──
+(function(){
+  const wrap = document.getElementById('heroSymbols');
+  if(!wrap) return;
+  const symbols = ['⚔','⭐','📚','✨','🔥','💡','🗡','🏆','📖','⚡'];
+  function spawnSymbol(){
+    const el = document.createElement('div');
+    el.className = 'hero-symbol';
+    el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left = Math.random()*100 + '%';
+    el.style.bottom = '-60px';
+    const dur = 8 + Math.random()*12;
+    const delay = Math.random()*4;
+    el.style.animation = `floatSymbol ${dur}s ${delay}s linear forwards`;
+    wrap.appendChild(el);
+    setTimeout(()=>el.remove(), (dur+delay)*1000+500);
+  }
+  // 初回いくつか即生成
+  for(let i=0;i<6;i++){
+    setTimeout(spawnSymbol, i*800);
+  }
+  setInterval(spawnSymbol, 2000);
+})();
+
+// ── 統計カウントアップ ──
+(function(){
+  const statEls = document.querySelectorAll('.stat-n');
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const text = el.textContent;
+      const num = parseInt(text);
+      if(isNaN(num)){ observer.unobserve(el); return; }
+      const suffix = text.replace(num,'');
+      let start = 0, duration = 1200;
+      const step = ts => {
+        if(!start) start = ts;
+        const p = Math.min((ts-start)/duration, 1);
+        const ease = 1-Math.pow(1-p, 3);
+        el.textContent = Math.round(ease*num) + suffix;
+        if(p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      observer.unobserve(el);
+    });
+  }, {threshold:0.5});
+  statEls.forEach(el=>observer.observe(el));
+})();
 </script>
 </body>
 </html>

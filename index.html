@@ -158,6 +158,29 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .char-title-text{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);}
 .streak-badge{font-family:'Share Tech Mono',monospace;font-size:11px;color:#F59E0B;border:1px solid rgba(245,158,11,.3);padding:2px 9px;background:rgba(245,158,11,.08);border-radius:20px;}
 .gold-badge{font-family:'Share Tech Mono',monospace;font-size:11px;color:#c9a84c;border:1px solid rgba(201,168,76,.3);padding:2px 9px;background:rgba(201,168,76,.08);border-radius:20px;}
+.shop-btn{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--border);padding:2px 9px;background:var(--panel2);border-radius:20px;cursor:pointer;transition:all .2s;}
+.shop-btn:hover{border-color:var(--accent);color:var(--accent);}
+/* ════ SHOP MODAL ════ */
+.shop-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;pointer-events:none;transition:opacity .2s;}
+.shop-overlay.show{opacity:1;pointer-events:all;}
+.shop-modal{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;width:min(92vw,420px);max-height:80vh;overflow-y:auto;position:relative;}
+.shop-modal-title{font-family:'Cinzel',serif;font-size:16px;color:var(--accent2);letter-spacing:.1em;margin-bottom:4px;}
+.shop-gold-disp{font-family:'Share Tech Mono',monospace;font-size:12px;color:#c9a84c;margin-bottom:16px;}
+.shop-section-title{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin:14px 0 8px;}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px;margin-bottom:4px;}
+.shop-item{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;cursor:pointer;transition:all .2s;position:relative;}
+.shop-item:hover{border-color:var(--accent);}
+.shop-item.owned{border-color:rgba(140,198,63,.4);background:rgba(140,198,63,.05);}
+.shop-item.equipped{border-color:var(--accent2);background:rgba(201,168,76,.08);}
+.shop-item.locked{opacity:.5;cursor:not-allowed;}
+.shop-item-icon{font-size:24px;display:block;margin-bottom:4px;}
+.shop-item-name{font-size:10px;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.shop-item-price{font-family:'Share Tech Mono',monospace;font-size:10px;color:#c9a84c;}
+.shop-item.owned .shop-item-price{color:var(--accent);}
+.shop-item.equipped .shop-item-price{color:var(--accent2);}
+.shop-item-badge{position:absolute;top:4px;right:4px;font-size:8px;background:var(--accent2);color:#000;padding:1px 4px;border-radius:4px;font-family:'Share Tech Mono',monospace;}
+.shop-frame-preview{width:36px;height:36px;border-radius:50%;margin:0 auto 4px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.shop-close-btn{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;}
 .char-meta{display:flex;gap:14px;flex-wrap:wrap;}
 .meta-item{display:flex;flex-direction:column;gap:1px;}
 .meta-label{font-size:8px;letter-spacing:.2em;color:var(--muted);font-family:'Share Tech Mono',monospace;text-transform:uppercase;}
@@ -3249,7 +3272,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <div class="char-compact-top">
           <span class="char-name-disp" id="charNameDisp" style="font-size:16px;">—</span>
           <span class="streak-badge" id="streakBadge">🔥 0日連続</span>
-          <span class="gold-badge" id="goldBadge">💰 0G</span>
+          <span class="gold-badge" id="goldBadge" onclick="openShop()" style="cursor:pointer;">💰 0G</span>
+          <button class="shop-btn" onclick="openShop()">🛒 ショップ</button>
         </div>
         <div class="char-compact-sub">
           <span class="char-title-text" id="charTitleText" style="font-size:11px;">見習い冒険者</span>
@@ -4217,6 +4241,16 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 </div>
 
 <!-- LEVEL UP -->
+<!-- ショップモーダル -->
+<div class="shop-overlay" id="shopOverlay" onclick="closeShop(event)">
+  <div class="shop-modal">
+    <button class="shop-close-btn" onclick="closeShop()">✕</button>
+    <div class="shop-modal-title">🛒 アバターショップ</div>
+    <div class="shop-gold-disp" id="shopGoldDisp">💰 0G</div>
+    <div id="shopContent"></div>
+  </div>
+</div>
+
 <div class="lu-overlay" id="luOverlay">
   <div class="lu-box">
     <div class="lu-stars">✦ ✦ ✦</div>
@@ -5038,7 +5072,7 @@ const BADGES = [
 /* ═══════════════ STATE ═══════════════ */
 let selectedJobIds = [];
 let selectedSubjectKeys = [];
-let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0};
+let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:''};
 let sessions = [];
 let bosses = [];  // [{id,name,date,targetHours}, ...]
 let examGoals = []; // [{id,title,date,startDate}, ...]
@@ -5878,14 +5912,24 @@ function renderAll(){
     aeEl.style.borderRadius='50%';
     aeEl.style.width='100%';aeEl.style.height='100%';
   } else {
-    aeEl.textContent=ti.emoji;
+    const shopAv = char.equippedAvatar ? SHOP_ITEMS.avatars.find(a=>a.id===char.equippedAvatar) : null;
+    aeEl.textContent = shopAv ? shopAv.icon : ti.emoji;
     aeEl.style.background='';
+  }
+  // アバター枠
+  const charAvatarEl = document.querySelector('.char-avatar');
+  if(charAvatarEl){
+    const frItem = char.equippedFrame ? SHOP_ITEMS.frames.find(f=>f.id===char.equippedFrame) : null;
+    charAvatarEl.style.borderColor = frItem ? frItem.color : 'var(--gold)';
+    charAvatarEl.style.borderWidth = frItem && frItem.id !== 'fr_none' ? '3px' : '';
   }
   document.getElementById('levelNum').textContent=lp.level;
   document.getElementById('charNameDisp').textContent=char.name||'—';
   const gnavName=document.getElementById('gnavUserName');
   if(gnavName&&char.name){gnavName.textContent=char.name;gnavName.style.display='';}
-  document.getElementById('charTitleText').textContent=ti.title;
+  // 称号（特別称号優先）
+  const shopTitle = char.equippedTitle ? SHOP_ITEMS.titles.find(t=>t.id===char.equippedTitle) : null;
+  document.getElementById('charTitleText').textContent = shopTitle ? '「'+shopTitle.name+'」' : ti.title;
   document.getElementById('streakBadge').textContent='🔥 '+char.streak+'日連続';
   const goldEl=document.getElementById('goldBadge'); if(goldEl) goldEl.textContent='💰 '+(char.gold||0)+'G';
   document.getElementById('levelDispMeta').textContent=lp.level+' / 100';
@@ -8378,6 +8422,127 @@ function renderDailyMissions(){
     </div>
     ${allDone?'<div class="dm-all-done">🎉 全ミッション達成！ ボーナス +50G</div>':''}
   </div>`;
+}
+
+/* ════════════════════════════════════════
+   アバターショップ
+════════════════════════════════════════ */
+const SHOP_ITEMS = {
+  avatars: [
+    { id:'av_book',   icon:'📚', name:'本の使い手',   price:0,   minLv:1  },
+    { id:'av_sword',  icon:'⚔',  name:'剣士',         price:50,  minLv:1  },
+    { id:'av_mage',   icon:'🧙', name:'魔法使い',     price:50,  minLv:1  },
+    { id:'av_fire',   icon:'🔥', name:'炎の戦士',     price:80,  minLv:10 },
+    { id:'av_star',   icon:'⭐', name:'星の勇者',     price:80,  minLv:10 },
+    { id:'av_crown',  icon:'👑', name:'王様',         price:200, minLv:30 },
+    { id:'av_dragon', icon:'🐉', name:'龍使い',       price:300, minLv:50 },
+    { id:'av_gem',    icon:'💎', name:'宝石の覇者',   price:500, minLv:70 },
+  ],
+  frames: [
+    { id:'fr_none',   color:'var(--gold)', name:'デフォルト', price:0,   minLv:1  },
+    { id:'fr_blue',   color:'#4db8ff',     name:'ブルー枠',   price:80,  minLv:1  },
+    { id:'fr_red',    color:'#ef4444',     name:'レッド枠',   price:80,  minLv:1  },
+    { id:'fr_purple', color:'#a855f7',     name:'パープル枠', price:80,  minLv:1  },
+    { id:'fr_gold',   color:'#ffd700',     name:'ゴールド枠', price:150, minLv:20 },
+    { id:'fr_rainbow',color:'linear-gradient(135deg,#ff6b6b,#ffd700,#4db8ff,#a855f7)', name:'レインボー枠', price:400, minLv:50 },
+  ],
+  titles: [
+    { id:'ti_night',  name:'深夜の勇者',     price:30,  minLv:1  },
+    { id:'ti_lonely', name:'孤独な受験生',   price:30,  minLv:1  },
+    { id:'ti_beast',  name:'学習の獣',       price:50,  minLv:10 },
+    { id:'ti_legend', name:'伝説の始まり',   price:100, minLv:25 },
+    { id:'ti_god',    name:'合格の神',       price:300, minLv:50 },
+  ]
+};
+
+function openShop(){
+  if(!char.unlockedItems) char.unlockedItems = [];
+  renderShopContent();
+  document.getElementById('shopOverlay').classList.add('show');
+}
+function closeShop(e){
+  if(e && e.target !== document.getElementById('shopOverlay')) return;
+  document.getElementById('shopOverlay').classList.remove('show');
+}
+
+function renderShopContent(){
+  const gold = char.gold || 0;
+  document.getElementById('shopGoldDisp').textContent = '💰 ' + gold + 'G';
+  const unlocked = char.unlockedItems || [];
+  const lv = char.level || 1;
+
+  function itemStatus(item){
+    if(item.id === 'av_book' || item.id === 'fr_none') return 'owned';
+    if(unlocked.includes(item.id)) return 'owned';
+    if(lv < item.minLv) return 'locked';
+    return 'buy';
+  }
+
+  function isEquipped(category, item){
+    if(category === 'avatars') return (char.equippedAvatar||'av_book') === item.id;
+    if(category === 'frames')  return (char.equippedFrame||'fr_none') === item.id;
+    if(category === 'titles')  return char.equippedTitle === item.id;
+    return false;
+  }
+
+  function renderSection(title, items, category){
+    return `<div class="shop-section-title">${title}</div>
+    <div class="shop-grid">
+      ${items.map(item => {
+        const st = itemStatus(item);
+        const eq = isEquipped(category, item);
+        const cls = eq ? 'equipped' : st === 'owned' ? 'owned' : st === 'locked' ? 'locked' : '';
+        const priceText = st === 'owned' ? (eq ? '装備中' : '装備する') : st === 'locked' ? `Lv${item.minLv}〜` : item.price + 'G';
+        const onclick = st === 'locked' ? '' : `onclick="shopAction('${category}','${item.id}','${st}')"`;
+
+        if(category === 'avatars'){
+          return `<div class="shop-item ${cls}" ${onclick}>
+            <span class="shop-item-icon">${item.icon}</span>
+            <div class="shop-item-name">${item.name}</div>
+            <div class="shop-item-price">${priceText}</div>
+            ${eq ? '<div class="shop-item-badge">ON</div>' : ''}
+          </div>`;
+        } else if(category === 'frames'){
+          return `<div class="shop-item ${cls}" ${onclick}>
+            <div class="shop-frame-preview" style="border:3px solid ${item.color};background:var(--panel);">👤</div>
+            <div class="shop-item-name">${item.name}</div>
+            <div class="shop-item-price">${priceText}</div>
+            ${eq ? '<div class="shop-item-badge">ON</div>' : ''}
+          </div>`;
+        } else {
+          return `<div class="shop-item ${cls}" ${onclick} style="grid-column:span 2;">
+            <div class="shop-item-name" style="font-size:12px;">「${item.name}」</div>
+            <div class="shop-item-price">${priceText}</div>
+            ${eq ? '<div class="shop-item-badge">ON</div>' : ''}
+          </div>`;
+        }
+      }).join('')}
+    </div>`;
+  }
+
+  document.getElementById('shopContent').innerHTML =
+    renderSection('👤 アバター絵文字', SHOP_ITEMS.avatars, 'avatars') +
+    renderSection('🔵 アバター枠', SHOP_ITEMS.frames, 'frames') +
+    renderSection('🏅 特別称号', SHOP_ITEMS.titles, 'titles');
+}
+
+function shopAction(category, itemId, status){
+  if(!char.unlockedItems) char.unlockedItems = [];
+  if(status === 'buy'){
+    const item = [...SHOP_ITEMS.avatars, ...SHOP_ITEMS.frames, ...SHOP_ITEMS.titles].find(i => i.id === itemId);
+    if(!item) return;
+    if((char.gold||0) < item.price){ alert('ゴールドが不足しています'); return; }
+    char.gold = (char.gold||0) - item.price;
+    char.unlockedItems.push(itemId);
+    status = 'owned';
+  }
+  // 装備
+  if(category === 'avatars') char.equippedAvatar = itemId;
+  else if(category === 'frames') char.equippedFrame = itemId;
+  else if(category === 'titles') char.equippedTitle = (char.equippedTitle === itemId ? '' : itemId);
+  saveAll();
+  renderAll();
+  renderShopContent();
 }
 
 function renderPaceDiag(){
