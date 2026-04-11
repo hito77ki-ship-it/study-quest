@@ -697,19 +697,80 @@ async function submitNewPassword() {
   }, 2000);
 }
 
+/* ── ブルートフォース対策 ── */
+const LOCK_KEY   = 'sq_admin_lock';
+const FAIL_KEY   = 'sq_admin_fails';
+const MAX_FAILS  = 5;
+const LOCK_MINS  = 15;
+const ADMIN_EMAILS = ['hitoki2477@yahoo.co.jp'];
+
+function getLockState() {
+  try {
+    const v = JSON.parse(localStorage.getItem(LOCK_KEY) || 'null');
+    if (!v) return null;
+    if (Date.now() > v.until) { localStorage.removeItem(LOCK_KEY); localStorage.removeItem(FAIL_KEY); return null; }
+    return v;
+  } catch { return null; }
+}
+function getFailCount() {
+  return parseInt(localStorage.getItem(FAIL_KEY) || '0');
+}
+function recordFail() {
+  const count = getFailCount() + 1;
+  localStorage.setItem(FAIL_KEY, count);
+  if (count >= MAX_FAILS) {
+    const until = Date.now() + LOCK_MINS * 60 * 1000;
+    localStorage.setItem(LOCK_KEY, JSON.stringify({ until }));
+  }
+  return count;
+}
+function clearFails() {
+  localStorage.removeItem(LOCK_KEY);
+  localStorage.removeItem(FAIL_KEY);
+}
+function showError(msg) {
+  const el = document.getElementById('loginError');
+  el.textContent = msg;
+  el.style.display = 'block';
+  el.classList.add('show');
+}
+
 async function handleLogin(e) {
   e.preventDefault();
   const email  = document.getElementById('adminEmail').value.trim();
   const pw     = document.getElementById('adminPw').value;
-  const errEl  = document.getElementById('loginError');
-  errEl.classList.remove('show');
+  document.getElementById('loginError').classList.remove('show');
 
-  const { error } = await sb.auth.signInWithPassword({ email, password: pw });
-  if (error) {
-    errEl.classList.add('show');
+  // ロック確認
+  const lock = getLockState();
+  if (lock) {
+    const rem = Math.ceil((lock.until - Date.now()) / 60000);
+    showError(`ログインがロックされています。${rem}分後に再試行してください。`);
+    return;
+  }
+
+  // 管理者メールホワイトリスト確認
+  if (!ADMIN_EMAILS.includes(email)) {
+    recordFail();
+    showError('このアカウントには管理者権限がありません。');
     document.getElementById('adminPw').value = '';
     return;
   }
+
+  const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+  if (error) {
+    const count = recordFail();
+    const rem = MAX_FAILS - count;
+    if (rem <= 0) {
+      showError(`ログインをロックしました。${LOCK_MINS}分後に再試行してください。`);
+    } else {
+      showError(`メールアドレスまたはパスワードが正しくありません。（残り${rem}回）`);
+    }
+    document.getElementById('adminPw').value = '';
+    return;
+  }
+
+  clearFails();
   showAdminScreen();
 }
 
