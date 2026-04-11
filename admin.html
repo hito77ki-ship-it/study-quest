@@ -479,6 +479,27 @@ body {
 <body>
 
 <!-- ══════════ ログイン画面 ══════════ -->
+<!-- パスワードリセット画面 -->
+<div id="screen-reset" style="display:none;">
+  <div class="login-card">
+    <div class="login-logo">
+      <span class="login-logo-icon">🔑</span>
+      <div class="login-logo-title">パスワード再設定</div>
+      <div class="login-logo-sub">新しいパスワードを入力してください</div>
+    </div>
+    <div class="input-group">
+      <label class="input-label">新しいパスワード</label>
+      <input class="input-field" id="newPw" type="password" placeholder="••••••••" minlength="6">
+    </div>
+    <div class="input-group">
+      <label class="input-label">確認</label>
+      <input class="input-field" id="newPwConfirm" type="password" placeholder="••••••••">
+    </div>
+    <div id="resetMsg" style="font-size:12px;text-align:center;padding:6px 0;min-height:18px;color:#ef4444;"></div>
+    <button class="login-btn" onclick="submitNewPassword()">🔐 パスワードを更新</button>
+  </div>
+</div>
+
 <div id="screen-login">
   <div class="login-card">
     <div class="login-logo">
@@ -649,8 +670,31 @@ function showAdminScreen() {
 
 // ページ読み込み時に既存セッションを確認
 async function initAuth() {
+  // パスワードリセットリンクからのアクセスを検出
+  const hash = window.location.hash;
+  if (hash.includes('type=recovery')) {
+    document.getElementById('screen-login').style.display = 'none';
+    document.getElementById('screen-reset').style.display = 'flex';
+    return;
+  }
   const { data: { session } } = await sb.auth.getSession();
   if (session) showAdminScreen();
+}
+
+async function submitNewPassword() {
+  const pw      = document.getElementById('newPw').value;
+  const confirm = document.getElementById('newPwConfirm').value;
+  const msgEl   = document.getElementById('resetMsg');
+  if (pw.length < 6) { msgEl.textContent = 'パスワードは6文字以上にしてください'; return; }
+  if (pw !== confirm) { msgEl.textContent = 'パスワードが一致しません'; return; }
+  const { error } = await sb.auth.updateUser({ password: pw });
+  if (error) { msgEl.textContent = '失敗: ' + error.message; return; }
+  msgEl.style.color = '#8CC63F';
+  msgEl.textContent = '✅ パスワードを更新しました。ログイン画面に移動します…';
+  setTimeout(() => {
+    document.getElementById('screen-reset').style.display = 'none';
+    document.getElementById('screen-login').style.display = 'flex';
+  }, 2000);
 }
 
 async function handleLogin(e) {
