@@ -3319,14 +3319,15 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <!-- STATUS -->
   <div id="panel-status">
-    <!-- 試験カウントダウン（ミニ表示） -->
-    <div id="statusExamMini"></div>
+    <!-- 左カラム：試験カウントダウン＋今日のスケジュール -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div id="statusExamMini"></div>
+      <div id="todayPlanCard" style="display:none;" class="today-plan-card"></div>
+    </div>
     <!-- 合格ペース診断 -->
     <div id="paceDiagCard"></div>
     <!-- デイリーミッション -->
     <div id="dailyMissionCard"></div>
-    <!-- 今日のスケジュール -->
-    <div id="todayPlanCard" style="display:none;" class="today-plan-card"></div>
     <!-- 統合：全体進捗 + 科目HP -->
     <div class="section" id="overallProgressSection"></div>
     <div id="dqStatusCard" style="display:none;"></div>
