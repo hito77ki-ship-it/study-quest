@@ -190,9 +190,15 @@ nav.scrolled{
 }
 .hero h1 em{
   font-style:normal;
-  background:linear-gradient(135deg,#8CC63F 10%,#5DB52A 90%);
+  background:linear-gradient(90deg,#5DB52A 20%,#8CC63F 40%,#c8ff80 50%,#8CC63F 60%,#5DB52A 80%);
+  background-size:250% auto;
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
+  animation:shimmerText 3s linear infinite;
+}
+@keyframes shimmerText{
+  0%{background-position:150% center;}
+  100%{background-position:-150% center;}
 }
 .hero-sub{
   font-size:clamp(15px,2vw,18px);
@@ -1051,6 +1057,43 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
 document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+// ── タイピングアニメーション ──
+(function(){
+  const h1 = document.querySelector('.hero h1');
+  if(!h1) return;
+  const line1 = 'すべての勉強を、';
+  const line2 = '終わらない冒険に。';
+  h1.innerHTML = '';
+  h1.style.visibility = 'visible';
+
+  let i = 0;
+  const span1 = document.createElement('span');
+  h1.appendChild(span1);
+
+  function typeLine1(){
+    if(i < line1.length){
+      span1.textContent += line1[i++];
+      setTimeout(typeLine1, 80);
+    } else {
+      h1.appendChild(document.createElement('br'));
+      setTimeout(typeLine2, 200);
+    }
+  }
+
+  let j = 0;
+  const em = document.createElement('em');
+  function typeLine2(){
+    if(j < line2.length){
+      em.textContent += line2[j++];
+      if(j === 1) h1.appendChild(em);
+      setTimeout(typeLine2, 80);
+    }
+  }
+
+  // ページ読み込み後に少し待ってから開始
+  setTimeout(typeLine1, 400);
+})();
 
 // ── HERO CANVAS 星空アニメーション ──
 (function(){
