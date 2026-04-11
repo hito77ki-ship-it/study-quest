@@ -13308,8 +13308,33 @@ function restartTutorial() {
     ]},
   ];
 
+  function getWeekPct(){
+    if(typeof getThisWeekGoalHours === 'undefined') return null;
+    const goalHours = getThisWeekGoalHours();
+    if(!goalHours) return null;
+    const goalMins = goalHours * 60;
+    const weekMins = typeof getWeekDailyMins === 'function'
+      ? getWeekDailyMins().reduce((a,d)=>a+d.mins, 0)
+      : 0;
+    return { pct: Math.floor(weekMins / goalMins * 100), goalHours, weekMins };
+  }
+
   function getMsg(){
     const mins = getTodayMins ? getTodayMins() : 0;
+    const week = getWeekPct();
+
+    // 週間目標が設定されていれば割合メッセージを優先（25%刻み）
+    if(week){
+      const { pct, goalHours, weekMins } = week;
+      const doneH = Math.floor(weekMins / 60);
+      const remH  = Math.max(0, goalHours - doneH);
+      if(pct >= 100) return `週間目標${goalHours}h達成！最高だよ！`;
+      if(pct >= 75)  return `週間目標の75%超え！残り${remH}hだよ！`;
+      if(pct >= 50)  return `週間目標50%超え！あと半分だよ！`;
+      if(pct >= 25)  return `週間目標の25%達成！いいペースだよ！`;
+    }
+
+    // 週間目標未設定 or 25%未満 → 今日の時間ベース
     const stage = MESSAGES.find(s => mins >= s.min && mins <= s.max) || MESSAGES[0];
     return stage.pool[Math.floor(Math.random() * stage.pool.length)];
   }
