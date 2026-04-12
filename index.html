@@ -2252,11 +2252,11 @@ body[data-theme="light"] .medal-item{background:var(--panel2);border-color:var(-
   .sec-title { font-size: 10px !important; margin-bottom: 12px !important; }
 
   /* ── 試験カウントダウンチップ ── */
-  .status-exam-mini { gap: 10px !important; }
-  .status-exam-chip { padding: 10px 14px !important; border-radius: 10px !important; }
-  .status-exam-days { font-size: 22px !important; min-width: 36px !important; }
-  .status-exam-name { font-size: 11px !important; }
-  .status-exam-label { font-size: 9px !important; }
+  .status-exam-mini { gap: 8px !important; flex-direction: column !important; width: 100% !important; }
+  .status-exam-chip { width: 100% !important; padding: 12px 16px !important; border-radius: 10px !important; }
+  .status-exam-days { font-size: 26px !important; min-width: 44px !important; }
+  .status-exam-name { font-size: 12px !important; }
+  .status-exam-label { font-size: 10px !important; }
 
   /* ── 合格ペース診断カード ── */
   .pd-card { padding: 16px !important; border-radius: 10px !important; }
@@ -2835,24 +2835,38 @@ body[data-theme="dark"] #mobileTabBar {
 .char-compact-sub{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
 /* STATUS ミニ試験カウントダウン */
 .status-exam-mini{
-  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;
+  display:flex;flex-direction:column;gap:8px;width:100%;margin-bottom:10px;
 }
 .status-exam-chip{
-  display:flex;align-items:center;gap:8px;
+  display:flex;align-items:center;gap:12px;
   background:var(--panel);border:1px solid var(--border);
-  border-radius:var(--radius-sm);padding:8px 14px;flex:1;min-width:140px;
-  border-left:3px solid var(--accent);cursor:pointer;transition:all .15s;
+  border-radius:var(--radius-sm);padding:12px 16px;
+  width:100%;box-sizing:border-box;
+  border-left:4px solid var(--accent);cursor:pointer;transition:all .15s;
+  box-shadow:var(--shadow);
 }
-.status-exam-chip.urgent{border-left-color:#ef4444;}
-.status-exam-chip.warn{border-left-color:#F59E0B;}
-.status-exam-chip.done{border-left-color:#9CA3AF;opacity:.6;}
-.status-exam-chip:hover{border-color:var(--accent);}
-.status-exam-days{font-family:'Cinzel',serif;font-size:26px;color:var(--accent2);line-height:1;min-width:36px;text-align:center;}
-.status-exam-chip.urgent .status-exam-days{color:#ef4444;}
-.status-exam-chip.warn .status-exam-days{color:#F59E0B;}
+.status-exam-chip.urgent{border-left-color:var(--color-danger);}
+.status-exam-chip.warn{border-left-color:var(--color-warning);}
+.status-exam-chip.done{border-left-color:#9CA3AF;opacity:.7;}
+.status-exam-chip:hover{border-color:var(--accent);box-shadow:var(--shadow-md);}
+.status-exam-days{
+  font-family:'Cinzel',serif;font-size:28px;font-weight:700;
+  color:var(--accent2);line-height:1;
+  min-width:48px;text-align:center;flex-shrink:0;
+}
+.status-exam-chip.urgent .status-exam-days{color:var(--color-danger);}
+.status-exam-chip.warn .status-exam-days{color:var(--color-warning);}
 .status-exam-info{flex:1;min-width:0;}
-.status-exam-name{font-size:11px;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.status-exam-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);}
+.status-exam-name{font-size:12px;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:3px;}
+.status-exam-label{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.04em;}
+.status-exam-badge{
+  flex-shrink:0;font-family:'Share Tech Mono',monospace;font-size:9px;
+  padding:3px 8px;border-radius:20px;
+  background:var(--accent-subtle);color:var(--accent2);border:1px solid var(--accent-border);
+  white-space:nowrap;
+}
+.status-exam-chip.urgent .status-exam-badge{background:rgba(239,68,68,.08);color:var(--color-danger);border-color:rgba(239,68,68,.2);}
+.status-exam-chip.warn .status-exam-badge{background:rgba(245,158,11,.08);color:var(--color-warning);border-color:rgba(245,158,11,.2);}
 /* 統合セクションの科目HP */
 .subj-stat-rows-wrap{margin-top:14px;border-top:1px solid var(--border);padding-top:12px;}
 /* ════ 今日の宣言 ════ */
@@ -6158,12 +6172,15 @@ function renderStatusExamMini(){
     const days = Math.round((d-today)/86400000);
     const isPast = days < 0;
     const cls = isPast ? 'done' : days <= 7 ? 'urgent' : days <= 30 ? 'warn' : '';
+    const badgeLabel = isPast ? '終了' : days <= 7 ? '直前' : days <= 30 ? '1ヶ月以内' : '準備期間';
+    const dateStr = d.toLocaleDateString('ja-JP',{month:'short',day:'numeric'});
     return `<div class="status-exam-chip ${cls}" onclick="switchTab('boss')">
       <div class="status-exam-days">${isPast?'✓':days}</div>
       <div class="status-exam-info">
         <div class="status-exam-name">${escHtml(eg.title||'試験日')}</div>
-        <div class="status-exam-label">${isPast?'終了':'日後 '+d.toLocaleDateString('ja-JP',{month:'short',day:'numeric'})}</div>
+        <div class="status-exam-label">${isPast?'試験終了':days+'日後 · '+dateStr}</div>
       </div>
+      <div class="status-exam-badge">${badgeLabel}</div>
     </div>`;
   }).join('')}</div>`;
 }
