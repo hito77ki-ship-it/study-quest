@@ -199,6 +199,26 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .gold-badge{font-family:'Share Tech Mono',monospace;font-size:11px;color:#c9a84c;border:1px solid rgba(201,168,76,.3);padding:2px 9px;background:rgba(201,168,76,.08);border-radius:20px;}
 .shop-btn{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--border);padding:2px 9px;background:var(--panel2);border-radius:20px;cursor:pointer;transition:all .2s;}
 .shop-btn:hover{border-color:var(--accent);color:var(--accent);}
+/* ════ AVATAR PICKER MODAL ════ */
+.av-picker-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:2100;}
+.av-picker-overlay.show{display:flex;}
+.av-picker-modal{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;width:min(92vw,400px);max-height:82vh;overflow-y:auto;position:relative;}
+.av-picker-title{font-family:'Cinzel',serif;font-size:15px;color:var(--accent2);letter-spacing:.08em;margin-bottom:14px;}
+.av-picker-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;}
+.av-picker-tabs{display:flex;gap:8px;margin-bottom:14px;}
+.av-picker-tab{flex:1;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--panel2);color:var(--muted);font-size:12px;cursor:pointer;transition:all .15s;}
+.av-picker-tab.active{background:rgba(140,198,63,.12);border-color:var(--accent);color:var(--accent2);}
+.av-emoji-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:16px;}
+.av-emoji-btn{aspect-ratio:1;border-radius:10px;border:2px solid var(--border);background:var(--panel2);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.av-emoji-btn:hover,.av-emoji-btn.selected{border-color:var(--accent);background:rgba(140,198,63,.12);}
+.av-photo-area{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px 0;}
+.av-photo-preview{width:80px;height:80px;border-radius:50%;border:3px solid var(--border);background:var(--panel2);display:flex;align-items:center;justify-content:center;font-size:32px;overflow:hidden;}
+.av-photo-preview img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.av-photo-upload-btn{background:rgba(140,198,63,.1);border:1px solid var(--accent-border);color:var(--accent2);border-radius:8px;padding:10px 20px;font-size:13px;cursor:pointer;}
+.av-photo-clear-btn{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:var(--color-danger);border-radius:8px;padding:8px 16px;font-size:12px;cursor:pointer;}
+.av-picker-avatar-wrap{position:relative;display:inline-block;cursor:pointer;}
+.av-picker-avatar-wrap::after{content:'📷';position:absolute;bottom:0;right:0;background:var(--accent);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid var(--panel);}
+
 /* ════ SHOP MODAL ════ */
 .shop-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;pointer-events:none;transition:opacity .2s;}
 .shop-overlay.show{opacity:1;pointer-events:all;}
@@ -395,7 +415,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .rank-pos.gold{color:#ffd700;}
 .rank-pos.silver{color:#c0c0c0;}
 .rank-pos.bronze{color:#cd7f32;}
-.rank-avatar{font-size:24px;flex-shrink:0;}
+.rank-avatar{font-size:24px;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .rank-info{flex:1;min-width:0;}
 .rank-name{font-size:13px;color:var(--text);font-weight:700;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .rank-title-text{font-size:10px;color:var(--muted);}
@@ -4052,7 +4072,9 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       </div>
       <div class="player-card-body">
         <div class="player-card-avatar-row">
-          <div class="player-card-avatar" id="profCardAvatar">📚</div>
+          <div class="av-picker-avatar-wrap" onclick="openAvatarPicker()" title="アイコンを変更">
+            <div class="player-card-avatar" id="profCardAvatar">📚</div>
+          </div>
           <div class="player-card-name-area">
             <div class="player-card-name" id="profCardName">—</div>
             <div class="player-card-bio" id="profCardBio"></div>
@@ -4393,6 +4415,34 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="dq-btns">
       <button class="dq-btn" onclick="resetDqAlloc()">もとにもどす</button>
       <button class="dq-btn primary" onclick="confirmDqAlloc()">けってい！</button>
+    </div>
+  </div>
+</div>
+
+<!-- AVATAR PICKER MODAL -->
+<div class="av-picker-overlay" id="avPickerOverlay" onclick="if(event.target===this)closeAvatarPicker()">
+  <div class="av-picker-modal">
+    <button class="av-picker-close" onclick="closeAvatarPicker()">✕</button>
+    <div class="av-picker-title">アイコンを選択</div>
+    <div class="av-picker-tabs">
+      <button class="av-picker-tab active" id="avTabBtnEmoji" onclick="switchAvatarTab('emoji')">😊 絵文字</button>
+      <button class="av-picker-tab" id="avTabBtnPhoto" onclick="switchAvatarTab('photo')">📷 写真</button>
+    </div>
+    <!-- 絵文字タブ -->
+    <div id="avTabEmoji">
+      <div class="av-emoji-grid" id="avEmojiGrid"></div>
+    </div>
+    <!-- 写真タブ -->
+    <div id="avTabPhoto" style="display:none;">
+      <div class="av-photo-area">
+        <div class="av-photo-preview" id="avPhotoPreview">📚</div>
+        <p style="font-size:11px;color:var(--muted);text-align:center;margin:0;">写真は円形にトリミングされます</p>
+        <label class="av-photo-upload-btn">
+          📁 写真を選択
+          <input type="file" id="avPhotoInput" accept="image/*" style="display:none;" onchange="handleAvatarPhotoChange(this)">
+        </label>
+        <button class="av-photo-clear-btn" id="avPhotoClearBtn" onclick="clearAvatarPhoto()" style="display:none;">🗑 写真を削除</button>
+      </div>
     </div>
   </div>
 </div>
@@ -5229,7 +5279,7 @@ const BADGES = [
 /* ═══════════════ STATE ═══════════════ */
 let selectedJobIds = [];
 let selectedSubjectKeys = [];
-let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:''};
+let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:'',profileIconEmoji:null};
 let sessions = [];
 let bosses = [];  // [{id,name,date,targetHours}, ...]
 let examGoals = []; // [{id,title,date,startDate}, ...]
@@ -5571,7 +5621,8 @@ async function syncToCloud(){
     subject_keys: selectedSubjectKeys,
     subject_stats: subjStats,
     char_title: ti.title,
-    avatar_emoji: ti.emoji,
+    avatar_emoji: char.profileIconEmoji || ti.emoji,
+    avatar_url: profileAvatarData || null,
     week_start: getWeekStart(),
     week_study_mins: getThisWeekTotalMins(),
     updated_at: new Date().toISOString()
@@ -5605,7 +5656,7 @@ async function restoreFromCloud(){
   if(!currentUser || isGuest) return false;
   try {
     const {data, error} = await sb.from('profiles')
-      .select('sessions_backup,bosses_backup,exams_backup,char_backup,subjects_backup,jobs_backup,updated_at')
+      .select('sessions_backup,bosses_backup,exams_backup,char_backup,subjects_backup,jobs_backup,updated_at,avatar_url')
       .eq('id', currentUser.id)
       .single();
     if(error || !data) return false;
@@ -5655,6 +5706,11 @@ async function restoreFromCloud(){
         selectedJobIds = jids; restored = true;
       }
     }
+    // アバター画像をクラウドから復元
+    if(data.avatar_url && (cloudIsNewer || !profileAvatarData)){
+      profileAvatarData = data.avatar_url;
+      saveReportState();
+    }
     if(restored) await saveAll();
     return restored;
   } catch(e) {
@@ -5695,7 +5751,7 @@ async function loadRanking(){
     const bars=topSubjs.map(([k,s])=>`<div class="rank-bar-row"><span class="rank-bar-label">${(s.name||k).slice(0,4)}</span><div class="rank-bar-track"><div class="rank-bar-fill" style="width:${s.pct||0}%;background:${SCOLORS[k]||'#c9a84c'}"></div></div></div>`).join('');
     const item=document.createElement('div');
     item.className='ranking-item'+(isMe?' me':'');
-    item.innerHTML=`<div class="rank-pos ${posClass}">${posDisp}</div><div class="rank-avatar">${escHtml(p.avatar_emoji||'📚')}</div><div class="rank-info"><div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--gold)">← YOU</span>':''}</div><div class="rank-title-text">${escHtml(p.char_title||'—')}</div>${bars?`<div class="rank-bars">${bars}</div>`:''}</div><div class="rank-right"><div class="rank-level">Lv.${p.level||1}</div><div class="rank-hours">${hours}h</div><div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted)">🔥${p.streak||0}日</div></div>`;
+    item.innerHTML=`<div class="rank-pos ${posClass}">${posDisp}</div><div class="rank-avatar">${p.avatar_url?`<img src="${p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" alt="">`:escHtml(p.avatar_emoji||'📚')}</div><div class="rank-info"><div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--gold)">← YOU</span>':''}</div><div class="rank-title-text">${escHtml(p.char_title||'—')}</div>${bars?`<div class="rank-bars">${bars}</div>`:''}</div><div class="rank-right"><div class="rank-level">Lv.${p.level||1}</div><div class="rank-hours">${hours}h</div><div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted)">🔥${p.streak||0}日</div></div>`;
     listEl.appendChild(item);
   });
   if(!data.find(p=>currentUser&&p.id===currentUser.id)){
@@ -5775,7 +5831,7 @@ async function loadWeeklyRanking(){
     item.className = 'ranking-item' + (isMe?' me':'');
     item.innerHTML = `
       <div class="rank-pos ${posClass}">${posDisp}</div>
-      <div class="rank-avatar">${escHtml(p.avatar_emoji||'📚')}</div>
+      <div class="rank-avatar">${p.avatar_url ? `<img src="${p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" alt="">` : escHtml(p.avatar_emoji||'📚')}</div>
       <div class="rank-info">
         <div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--accent)">← YOU</span>':''}<span style="font-size:9px;color:var(--muted);margin-left:4px;">${job}</span></div>
         <div class="rank-title-text">${escHtml(p.char_title||'—')}</div>
@@ -7792,6 +7848,7 @@ async function postWeeklyGoalToTimeline(hours, d1, d2){
         rpg_log:      post.rpg_log,
         exp:          0,
         likes_count:  0,
+        avatar_url:   profileAvatarData || null,
         created_at:   post.created_at,
       });
     } catch(e){ console.warn('Weekly goal TL post failed:', e); }
@@ -8647,6 +8704,114 @@ const SHOP_ITEMS = {
     { id:'ti_god',    name:'合格の神',       price:300, minLv:50 },
   ]
 };
+
+/* ════════════════════════════════════════
+   アバターピッカー
+════════════════════════════════════════ */
+const AVATAR_PICKER_EMOJIS = [
+  '📚','✏️','🎓','📝','💡','🔬','💻','📊',
+  '⚔','🧙','🔥','⭐','👑','🐉','💎','🛡️',
+  '🐱','🐶','🦊','🐼','🐻','🦁','🐯','🐸',
+  '🧑‍💻','🧑‍🎓','🦸','🥷','🌟','💫','🎯','🏆',
+  '🌙','☀️','🌈','🎮','📖','🖊️','🏅','⚡',
+];
+
+function openAvatarPicker(){
+  renderAvatarPickerEmoji();
+  updateAvatarPickerPhoto();
+  document.getElementById('avPickerOverlay').classList.add('show');
+}
+function closeAvatarPicker(){
+  document.getElementById('avPickerOverlay').classList.remove('show');
+}
+function switchAvatarTab(tab){
+  document.getElementById('avTabEmoji').style.display = tab==='emoji' ? '' : 'none';
+  document.getElementById('avTabPhoto').style.display = tab==='photo' ? '' : 'none';
+  document.getElementById('avTabBtnEmoji').classList.toggle('active', tab==='emoji');
+  document.getElementById('avTabBtnPhoto').classList.toggle('active', tab==='photo');
+}
+function renderAvatarPickerEmoji(){
+  const current = char.profileIconEmoji || (char.equippedAvatar ? (SHOP_ITEMS.avatars.find(a=>a.id===char.equippedAvatar)||{}).icon : null);
+  document.getElementById('avEmojiGrid').innerHTML = AVATAR_PICKER_EMOJIS.map(e=>`
+    <button class="av-emoji-btn${e===current?' selected':''}" onclick="selectAvatarEmoji('${e}')">${e}</button>
+  `).join('');
+}
+function selectAvatarEmoji(emoji){
+  profileAvatarData = null;
+  char.profileIconEmoji = emoji;
+  saveAll();
+  saveReportState();
+  updateAllAvatarDisplays();
+  syncToCloud();
+  closeAvatarPicker();
+}
+function updateAvatarPickerPhoto(){
+  const prev = document.getElementById('avPhotoPreview');
+  if(profileAvatarData){
+    prev.innerHTML = `<img src="${profileAvatarData}" alt="">`;
+    document.getElementById('avPhotoClearBtn').style.display = '';
+  } else {
+    const smins = studyMins(sessions);
+    const lp = getLevelProgress(smins);
+    const ti = getTitleInfo(lp.level);
+    prev.innerHTML = char.profileIconEmoji || ti.emoji;
+    document.getElementById('avPhotoClearBtn').style.display = 'none';
+  }
+}
+function handleAvatarPhotoChange(input){
+  if(!input.files||!input.files[0]) return;
+  const file = input.files[0];
+  const reader = new FileReader();
+  reader.onload = e => {
+    cropCircle(e.target.result, 200, dataUrl => {
+      profileAvatarData = dataUrl;
+      char.profileIconEmoji = null;
+      saveAll();
+      saveReportState();
+      updateAllAvatarDisplays();
+      syncToCloud();
+      updateAvatarPickerPhoto();
+      closeAvatarPicker();
+    });
+  };
+  reader.readAsDataURL(file);
+}
+function clearAvatarPhoto(){
+  profileAvatarData = null;
+  saveReportState();
+  updateAllAvatarDisplays();
+  syncToCloud();
+  updateAvatarPickerPhoto();
+}
+function updateAllAvatarDisplays(){
+  const smins = studyMins(sessions);
+  const lp = getLevelProgress(smins);
+  const ti = getTitleInfo(lp.level);
+  const emoji = char.profileIconEmoji || (char.equippedAvatar ? (SHOP_ITEMS.avatars.find(a=>a.id===char.equippedAvatar)||{}).icon : null) || ti.emoji;
+
+  // ステータスバーアイコン
+  const ub = document.getElementById('userAvatar');
+  if(ub){ if(profileAvatarData){ ub.src=profileAvatarData; ub.style.display=''; } else { ub.src=''; ub.style.display='none'; } }
+
+  // ダッシュボードのアバター絵文字
+  const aeEl = document.getElementById('avatarEmoji');
+  if(aeEl){
+    if(profileAvatarData){
+      aeEl.textContent='';
+      aeEl.style.background=`url(${profileAvatarData}) center/cover`;
+      aeEl.style.borderRadius='50%';aeEl.style.width='100%';aeEl.style.height='100%';
+    } else {
+      aeEl.textContent=emoji; aeEl.style.background='';
+    }
+  }
+
+  // プロフィールカードアバター
+  const pa = document.getElementById('profCardAvatar');
+  if(pa){
+    if(profileAvatarData){ pa.innerHTML=`<img src="${profileAvatarData}" alt="">`; }
+    else { pa.innerHTML=emoji; }
+  }
+}
 
 function openShop(){
   if(!char.unlockedItems) char.unlockedItems = [];
@@ -10335,6 +10500,7 @@ async function autoPostToTimeline({ subject, minutes, note, exp, lv, name, mater
         rpg_log:      post.rpg_log,
         exp:          post.exp,
         likes_count:  0,
+        avatar_url:   profileAvatarData || null,
         created_at:   post.created_at,
       });
     } catch(e) { console.warn('Timeline cloud post failed:', e); }
@@ -10549,11 +10715,15 @@ function renderPostHTML(post, likes){
   const timeStudy = h > 0 ? `${h}h${m > 0 ? m+'m' : ''}` : `${m}分`;
   const expColor = (post.exp || 0) > 60 ? '#8CC63F' : '#718096';
 
+  const avatarHtml = post.avatar_url
+    ? `<div class="tl-avatar" style="background:none;padding:0;"><img src="${post.avatar_url}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>`
+    : `<div class="tl-avatar" style="background:${avatarColor(post.user_name)}">${avatarChar}</div>`;
+
   return `
   <div class="timeline-post" id="tl-post-${post.id}">
     <!-- ヘッダー -->
     <div class="tl-post-header">
-      <div class="tl-avatar" style="background:${avatarColor(post.user_name)}">${avatarChar}</div>
+      ${avatarHtml}
       <div class="tl-post-meta">
         <div class="tl-post-name">
           ${escHtml(post.user_name || '名無し')}
@@ -11821,6 +11991,7 @@ async function submitAchievement(){
         likes_count:      0,
         is_achievement:   true,
         achievement_data: JSON.stringify(achievement),
+        avatar_url:       profileAvatarData || null,
         created_at:       achievement.created_at,
       });
     } catch(e){ console.warn('Achievement Supabase post:', e); }
