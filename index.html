@@ -2252,8 +2252,8 @@ body[data-theme="light"] .medal-item{background:var(--panel2);border-color:var(-
   .sec-title { font-size: 10px !important; margin-bottom: 12px !important; }
 
   /* ── 試験カウントダウンチップ ── */
-  .status-exam-mini { gap: 8px !important; flex-direction: column !important; width: 100% !important; }
-  .status-exam-chip { width: 100% !important; padding: 12px 16px !important; border-radius: 10px !important; }
+  .status-exam-mini { display:grid !important; grid-template-columns:1fr !important; gap: 8px !important; width: 100% !important; }
+  .status-exam-chip { width: 100% !important; box-sizing: border-box !important; padding: 12px 16px !important; border-radius: 10px !important; }
   .status-exam-days { font-size: 26px !important; min-width: 44px !important; }
   .status-exam-name { font-size: 12px !important; }
   .status-exam-label { font-size: 10px !important; }
@@ -2274,7 +2274,10 @@ body[data-theme="light"] .medal-item{background:var(--panel2);border-color:var(-
   .pc-sidebar { width: 248px; min-width: 248px; }
   .wrap { padding: 24px 32px 80px !important; }
 
-  #panel-status { grid-template-columns: 1fr 1fr 1fr; }
+  /* 3列をやめ → 2列固定（3列目が空になる問題を解消） */
+  #panel-status { grid-template-columns: 1fr 1fr; }
+  /* 試験カードは列内でauto-fill → 幅が確保できれば2列に自動展開 */
+  .status-exam-mini { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important; }
 }
 
 /* ════════════════════════════════════════
@@ -2835,7 +2838,7 @@ body[data-theme="dark"] #mobileTabBar {
 .char-compact-sub{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
 /* STATUS ミニ試験カウントダウン */
 .status-exam-mini{
-  display:flex;flex-direction:column;gap:8px;width:100%;margin-bottom:10px;
+  display:grid;grid-template-columns:1fr;gap:8px;width:100%;margin-bottom:10px;
 }
 .status-exam-chip{
   display:flex;align-items:center;gap:12px;
@@ -3458,7 +3461,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   <!-- STATUS -->
   <div id="panel-status">
     <!-- 左カラム：試験カウントダウン＋今日のスケジュール -->
-    <div style="display:flex;flex-direction:column;gap:14px;">
+    <div style="display:flex;flex-direction:column;gap:14px;width:100%;min-width:0;">
       <div id="statusExamMini"></div>
       <div id="todayPlanCard" style="display:none;" class="today-plan-card"></div>
     </div>
