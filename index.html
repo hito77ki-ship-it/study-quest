@@ -2993,7 +2993,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   <nav class="pc-sidebar-nav">
     <div class="pc-sidebar-section-label">メニュー</div>
     <div class="pc-nav-item active" id="pcnav-status" onclick="pcNavSwitch('status')"><span class="pc-nav-icon">⚔</span>STATUS</div>
-    <div class="pc-nav-item" id="pcnav-quest" onclick="pcNavSwitch('quest')"><span class="pc-nav-icon">📋</span>QUEST / タイマー</div>
+    <div class="pc-nav-item" id="pcnav-quest" onclick="pcNavSwitch('quest')"><span class="pc-nav-icon">📋</span>タイマー / 記録</div>
     <div class="pc-nav-item" id="pcnav-materials" onclick="pcNavSwitch('materials')"><span class="pc-nav-icon">📚</span>教材・参考書</div>
     <div class="pc-nav-item" id="pcnav-timeline" onclick="pcNavSwitch('timeline')"><span class="pc-nav-icon">📱</span>タイムライン</div>
     <div class="pc-nav-item" id="pcnav-score" onclick="pcNavSwitch('score')"><span class="pc-nav-icon">📊</span>SCORE</div>
@@ -3442,7 +3442,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
             <div class="pomo-break-bar" id="pomoBreakBar" style="width:100%"></div>
           </div>
           <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:4px;">
-            <button class="pomo-break-skip" onclick="skipBreak()">スキップして次のセットへ ▶</button>
+            <button class="pomo-break-skip" onclick="skipBreak()">勉強を再開する ▶</button>
             <button class="pomo-break-skip" id="pomoTweetBtn" onclick="tweetPomo()" style="border-color:#1d9bf0;color:#1d9bf0;">📤 シェア</button>
           </div>
         </div>
@@ -3470,6 +3470,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <button class="timer-start-btn" id="timerStartBtn" onclick="toggleTimer()">▶ 攻撃開始</button>
         <button class="timer-stop-btn" id="timerStopBtn" onclick="finishTimer()" style="display:none;">✓ 記録して終了</button>
       </div>
+      <button id="manualBreakBtn" onclick="manualStartBreak()"
+        style="display:none;width:100%;margin-top:8px;padding:9px;background:transparent;border:1px solid #2a4a2a;color:#7cff6e;border-radius:8px;font-family:'Share Tech Mono',monospace;font-size:11px;cursor:pointer;letter-spacing:.08em;transition:all .2s;"
+        onmouseover="this.style.borderColor='#7cff6e';this.style.background='rgba(124,255,110,.06)'"
+        onmouseout="this.style.borderColor='#2a4a2a';this.style.background='transparent'">
+        🛌 5分休憩を取る
+      </button>
     </div>
 
     <div class="section">
@@ -5416,6 +5422,9 @@ async function syncToCloud(){
 
   // ── 全データをバックアップ用カラムに保存 ──
   if(!error){
+    const syncAt = new Date().toISOString();
+    char.lastSyncAt = syncAt;
+    localStorage.setItem('sq2_char', JSON.stringify(char));
     await sb.from('profiles').upsert({
       id: currentUser.id,
       sessions_backup: JSON.stringify(sessions),
@@ -5439,39 +5448,53 @@ async function restoreFromCloud(){
   if(!currentUser || isGuest) return false;
   try {
     const {data, error} = await sb.from('profiles')
-      .select('sessions_backup,bosses_backup,exams_backup,char_backup,subjects_backup,jobs_backup')
+      .select('sessions_backup,bosses_backup,exams_backup,char_backup,subjects_backup,jobs_backup,updated_at')
       .eq('id', currentUser.id)
       .single();
     if(error || !data) return false;
 
+    // クラウドの更新日時とローカルの更新日時を比較
+    const cloudUpdatedAt = data.updated_at ? new Date(data.updated_at).getTime() : 0;
+    const localUpdatedAt = char.lastSyncAt ? new Date(char.lastSyncAt).getTime() : 0;
+    // クラウドが新しい、またはローカルにデータがない場合はクラウドを優先
+    const cloudIsNewer = cloudUpdatedAt > localUpdatedAt;
+
     let restored = false;
+
     if(data.sessions_backup){
       const s = JSON.parse(data.sessions_backup);
-      // クラウドのセッション数がローカルより多ければ復元（新デバイスで確実にデータを引き継ぐ）
-      if(s && s.length > sessions.length){ sessions = s; restored = true; }
+      // クラウドが新しい or クラウドのセッション数がローカルより多い場合に復元
+      if(s && (cloudIsNewer ? s.length >= sessions.length : s.length > sessions.length)){
+        sessions = s; restored = true;
+      }
     }
     if(data.bosses_backup){
       const b = JSON.parse(data.bosses_backup);
-      if(b && b.length > 0 && bosses.length === 0){ bosses = b; restored = true; }
+      if(b && b.length > 0 && (bosses.length === 0 || cloudIsNewer)){
+        bosses = b; restored = true;
+      }
     }
     if(data.exams_backup){
       const e = JSON.parse(data.exams_backup);
-      if(e && e.length > 0 && examGoals.length === 0){ examGoals = e; restored = true; }
+      if(e && e.length > 0 && (examGoals.length === 0 || cloudIsNewer)){
+        examGoals = e; restored = true;
+      }
     }
     if(data.char_backup){
       const ch = JSON.parse(data.char_backup);
-      // ローカルに名前がない場合はクラウドのキャラデータを復元
-      if(ch && ch.name && !char.name){ char = {...char, ...ch}; restored = true; }
+      if(ch && ch.name && (!char.name || cloudIsNewer)){
+        char = {...char, ...ch}; restored = true;
+      }
     }
     if(data.subjects_backup){
       const skeys = JSON.parse(data.subjects_backup);
-      if(skeys && skeys.length > 0 && selectedSubjectKeys.length === 0){
+      if(skeys && skeys.length > 0 && (selectedSubjectKeys.length === 0 || cloudIsNewer)){
         selectedSubjectKeys = skeys; restored = true;
       }
     }
     if(data.jobs_backup){
       const jids = JSON.parse(data.jobs_backup);
-      if(jids && jids.length > 0 && selectedJobIds.length === 0){
+      if(jids && jids.length > 0 && (selectedJobIds.length === 0 || cloudIsNewer)){
         selectedJobIds = jids; restored = true;
       }
     }
@@ -6151,9 +6174,11 @@ function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const target = document.getElementById(id);
   if(target) target.classList.add('active');
-  // gnav はダッシュボード画面のみ表示
+  // gnav・pcSidebar はダッシュボード画面のみ表示
   const gnav=document.getElementById('gnav');
   if(gnav) gnav.style.display=id==='screen-dash'?'':'none';
+  const pcSidebar=document.getElementById('pcSidebar');
+  if(pcSidebar) pcSidebar.style.display=id==='screen-dash'?'':'none';
 }
 function switchTab(tab){
   ['status','quest','materials','titles','boss','ranking','score','report','profile','timeline'].forEach(t=>{
@@ -6399,8 +6424,10 @@ function startTimer(){
   if(!timerStartedAt) timerStartedAt = new Date().toISOString();
   const btn=document.getElementById('timerStartBtn');
   const stopBtn=document.getElementById('timerStopBtn');
+  const breakBtn=document.getElementById('manualBreakBtn');
   if(btn){btn.textContent='⏸ 一時停止';btn.classList.add('running');}
   if(stopBtn)stopBtn.style.display='';
+  if(breakBtn)breakBtn.style.display='';
   const sel=document.getElementById('timerSubject');
   if(sel)sel.disabled=true;
   timerInterval=setInterval(()=>{
@@ -6419,7 +6446,9 @@ function pauseTimer(){
   timerRunning=false;
   clearInterval(timerInterval);
   const btn=document.getElementById('timerStartBtn');
+  const breakBtn=document.getElementById('manualBreakBtn');
   if(btn){btn.textContent='▶ 再開';btn.classList.remove('running');}
+  if(breakBtn)breakBtn.style.display='none';
 }
 
 function updateTimerDisplay(){
@@ -7080,12 +7109,17 @@ async function init(){
   console.log('[init] session:', !!session, 'savedGuest was handled above');
   if(session){
     _routedByAuth = true;
-    console.log('[init] has session, routing to dash or job');
-    if(selectedJobIds.length>0 && selectedSubjectKeys.length>0 && char.name){
-      initDashboard(); showScreen('screen-dash');
-    } else {
-      buildJobGrid(); showScreen('screen-job');
-    }
+    console.log('[init] has session, restoring from cloud then routing');
+    // 既存セッションでも必ずクラウドからデータ復元してからルーティング
+    restoreFromCloud().then(restored => {
+      if(restored) console.log('[init] data restored from cloud');
+      syncToCloud().catch(()=>{});
+      if(selectedJobIds.length>0 && selectedSubjectKeys.length>0 && char.name){
+        initDashboard(); showScreen('screen-dash');
+      } else {
+        buildJobGrid(); showScreen('screen-job');
+      }
+    });
   } else {
     console.log('[init] no session, showing auth screen');
     showScreen('screen-auth');
@@ -9359,26 +9393,38 @@ function clearBgTimerState(){
   try{localStorage.removeItem(BG_TIMER_KEY);}catch(e){}
 }
 
-/* ── 起動時：クラッシュ回復チェック ── */
+/* ── 起動時：タイマー回復チェック（リロード・クラッシュ共通） ── */
 function checkBgTimerRecovery(){
   try{
     const raw = localStorage.getItem(BG_TIMER_KEY);
     if(!raw) return;
     const d = JSON.parse(raw);
     const elapsed = Math.floor((Date.now() - d.savedAt) / 1000);
-    // 30秒以内のセーブならクラッシュではなく通常ロード
-    if(elapsed < 30){ localStorage.removeItem(BG_TIMER_KEY); return; }
-    // バックグラウンド経過秒を加算して復元提案
-    const recoveredSecs = d.seconds + elapsed;
-    const recMins = Math.floor(recoveredSecs/60);
+    // クラッシュ時は経過時間を加算、リロード時はelapsed≈0なのでそのまま
+    const recoveredSecs = d.seconds + Math.max(0, elapsed);
+    const recMins = Math.floor(recoveredSecs / 60);
+    // 1分未満は無視
     if(recMins < 1){ localStorage.removeItem(BG_TIMER_KEY); return; }
-    if(confirm(`⚡ クラッシュ回復\n\n前回の計測を検出しました。\n計測時間: ${Math.floor(recoveredSecs/3600)}h ${Math.floor(recoveredSecs%3600/60)}m\n\n記録に追加しますか？`)){
+    const h = Math.floor(recoveredSecs / 3600);
+    const m = Math.floor(recoveredSecs % 3600 / 60);
+    const timeStr = h > 0 ? `${h}時間${m}分` : `${m}分`;
+    if(confirm(`⏱ タイマー回復\n\n計測中のタイマーを検出しました。\n計測時間: ${timeStr}\n\n続きから再開しますか？`)){
       timerSeconds = recoveredSecs;
       updateTimerDisplay();
+      // 科目・メモを復元
+      const sel = document.getElementById('timerSubject');
+      const note = document.getElementById('timerNote');
+      if(sel && d.subject) sel.value = d.subject;
+      if(note && d.note) note.value = d.note;
     }
     localStorage.removeItem(BG_TIMER_KEY);
   }catch(e){}
 }
+
+/* ── ページ離脱直前にも保存（リロード・タブ閉じ対応） ── */
+window.addEventListener('beforeunload', () => {
+  if(timerRunning) saveBgTimerState();
+});
 
 /* ── Page Visibility API ── */
 document.addEventListener('visibilitychange', ()=>{

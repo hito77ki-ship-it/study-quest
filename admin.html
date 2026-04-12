@@ -6,6 +6,7 @@
 <title>SHIKAKU QUEST — 管理者ダッシュボード</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 /*
@@ -373,6 +374,42 @@ body {
   white-space: nowrap;
 }
 .export-btn:hover { background: #059669; box-shadow: 0 4px 12px rgba(16,185,129,.3); }
+.gs-panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  border-left: 4px solid #34A853;
+}
+.gs-panel-inner { padding: 20px 24px; }
+.gs-sync-btn {
+  background: #34A853;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.gs-sync-btn:hover { background: #2d9146; box-shadow: 0 4px 12px rgba(52,168,83,.3); }
+.gs-sync-btn:disabled { background: var(--muted); cursor: not-allowed; box-shadow: none; }
+
+.export-btn-excel {
+  background: #1D6F42;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.export-btn-excel:hover { background: #155232; box-shadow: 0 4px 12px rgba(29,111,66,.3); }
 
 .data-table {
   width: 100%;
@@ -608,6 +645,41 @@ body {
         </div>
       </div>
 
+      <!-- ── Googleスプレッドシート連携 ── -->
+      <div class="section-label">Googleスプレッドシート連携</div>
+      <div class="gs-panel">
+        <div class="gs-panel-inner">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <span style="font-size:22px;">📗</span>
+            <div>
+              <div style="font-weight:700;font-size:14px;">スプレッドシートへ同期</div>
+              <div style="font-size:11px;color:var(--muted);">ボタン1クリックで全ユーザーデータをGoogleスプレッドシートに書き込みます</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <input id="gasUrlInput" class="filter-input" type="text"
+              placeholder="Google Apps Script の URL を貼り付け..."
+              style="flex:1;min-width:260px;font-size:12px;"
+              oninput="saveGasUrl()">
+            <button class="gs-sync-btn" onclick="syncToGoogleSheets()">
+              <span id="syncBtnText">🔄 スプレッドシートに同期</span>
+            </button>
+          </div>
+          <div id="syncStatus" style="margin-top:8px;font-size:12px;min-height:18px;"></div>
+          <div style="margin-top:10px;padding:10px;background:var(--panel2);border-radius:8px;border:1px solid var(--border);">
+            <div style="font-size:11px;color:var(--muted);line-height:1.8;">
+              ⚙️ <b>初回セットアップ：</b>
+              <a href="https://script.google.com/home/projects/create" target="_blank"
+                style="color:var(--blue);">Google Apps Script</a> を開き、
+              下の「スクリプトをコピー」ボタンでコードを貼り付け → デプロイ → URLをここに貼ってください
+            </div>
+            <button onclick="copyGasScript()" style="margin-top:8px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;">
+              📋 スクリプトをコピー
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- ── ユーザーテーブル ── -->
       <div class="section-label">ユーザー一覧</div>
       <div class="filter-bar">
@@ -627,7 +699,10 @@ body {
             <div class="table-title">全ユーザーデータ</div>
             <div class="table-sub" id="tableCount">— 件</div>
           </div>
-          <button class="export-btn" onclick="exportCSV()">📥 CSVエクスポート</button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="export-btn" onclick="exportCSV()">📥 CSVエクスポート</button>
+            <button class="export-btn-excel" onclick="exportExcel()">📊 Excelエクスポート</button>
+          </div>
         </div>
         <div style="overflow-x:auto;">
           <table class="data-table">
@@ -641,7 +716,6 @@ body {
                 <th>称号</th>
                 <th>資格</th>
                 <th>最終更新</th>
-                <th>操作</th>
               </tr>
             </thead>
             <tbody id="userTableBody"></tbody>
@@ -659,6 +733,7 @@ body {
  * ════════════════════════════════════════ */
 
 function showAdminScreen() {
+  loadGasUrl();
   const login = document.getElementById('screen-login');
   const dash  = document.getElementById('screen-dashboard');
   if(login) login.style.display = 'none';
@@ -990,12 +1065,6 @@ function renderTable(data) {
       <td style="font-size:12px;color:var(--muted)">${escHtml(u.char_title || '—')}</td>
       <td style="font-size:11px;color:var(--muted)">${escHtml(jobs)}</td>
       <td style="font-size:11px;color:var(--muted)">${date}</td>
-      <td>
-        <button onclick="confirmDeleteUser('${u.id}','${escHtml(u.display_name||'名無し')}')"
-          style="background:#ef4444;color:#fff;border:none;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-weight:700;">
-          削除
-        </button>
-      </td>
     `;
     tbody.appendChild(tr);
   });
@@ -1062,48 +1131,281 @@ function exportCSV() {
   a.click();
 }
 
+/* ── Googleスプレッドシート連携 ── */
+const GAS_URL_KEY = 'sq_admin_gas_url';
+
+function saveGasUrl() {
+  const url = document.getElementById('gasUrlInput').value.trim();
+  localStorage.setItem(GAS_URL_KEY, url);
+}
+
+function loadGasUrl() {
+  const url = localStorage.getItem(GAS_URL_KEY) || '';
+  document.getElementById('gasUrlInput').value = url;
+}
+
+async function syncToGoogleSheets() {
+  const url = document.getElementById('gasUrlInput').value.trim();
+  if (!url) {
+    setSyncStatus('❌ GASのURLを入力してください', 'var(--red)');
+    return;
+  }
+  if (!allUsers || !allUsers.length) {
+    setSyncStatus('❌ データがありません。先にデータを読み込んでください', 'var(--red)');
+    return;
+  }
+
+  const btn = document.querySelector('.gs-sync-btn');
+  btn.disabled = true;
+  document.getElementById('syncBtnText').textContent = '⏳ 同期中...';
+  setSyncStatus('データを送信中...', 'var(--muted)');
+
+  // 全科目キーを収集
+  const subjectKeyMap = {};
+  allUsers.forEach(u => {
+    Object.entries(u.subject_stats || {}).forEach(([key, s]) => {
+      if (!subjectKeyMap[key]) subjectKeyMap[key] = s.name || key;
+    });
+  });
+  const subjectKeys = Object.keys(subjectKeyMap);
+
+  // ヘッダー
+  const header = [
+    '#', 'ユーザーID', '名前', 'レベル',
+    '累計学習時間(h)', '連続日数(日)', '称号',
+    '保有資格', '科目数', '登録日', '最終更新日',
+    ...subjectKeys.map(k => `[科目]${subjectKeyMap[k]}(h)`)
+  ];
+
+  // データ行
+  const rows = allUsers.map((u, i) => {
+    const hours = parseFloat(((u.total_study_mins || 0) / 60).toFixed(2));
+    const stats = u.subject_stats || {};
+    return [
+      i + 1,
+      u.id || '',
+      u.display_name || '名無し',
+      u.level || 1,
+      hours,
+      u.streak || 0,
+      u.char_title || '',
+      (u.job_ids || []).join(', '),
+      Object.keys(stats).length,
+      u.created_at ? new Date(u.created_at).toLocaleDateString('ja-JP') : '',
+      u.updated_at ? new Date(u.updated_at).toLocaleDateString('ja-JP') : '',
+      ...subjectKeys.map(key => parseFloat(((stats[key]?.hours) || 0).toFixed(2)))
+    ];
+  });
+
+  const payload = {
+    header,
+    rows,
+    exportedAt: new Date().toLocaleString('ja-JP'),
+    totalUsers: allUsers.length
+  };
+
+  try {
+    // GASはCORS対応のためno-corsで送信（レスポンスは受け取れない）
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    setSyncStatus(`✅ ${allUsers.length}件のデータを送信しました（${new Date().toLocaleTimeString('ja-JP')}）`, 'var(--green)');
+  } catch (e) {
+    setSyncStatus(`❌ 送信失敗: ${e.message}`, 'var(--red)');
+  } finally {
+    btn.disabled = false;
+    document.getElementById('syncBtnText').textContent = '🔄 スプレッドシートに同期';
+  }
+}
+
+function setSyncStatus(msg, color) {
+  const el = document.getElementById('syncStatus');
+  el.textContent = msg;
+  el.style.color = color;
+}
+
+function copyGasScript() {
+  const script = `// Study Quest — Googleスプレッドシート同期スクリプト
+// 使い方: このスクリプトをGASエディタに貼り付けて「デプロイ」→「新しいデプロイ」
+// 種類: ウェブアプリ / アクセス: 全員
+
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    // ── シート1: ユーザー一覧 ──
+    let sheet = ss.getSheetByName('ユーザー一覧');
+    if (!sheet) sheet = ss.insertSheet('ユーザー一覧');
+    sheet.clearContents();
+
+    // ヘッダー書き込み
+    sheet.getRange(1, 1, 1, data.header.length).setValues([data.header]);
+    const headerRange = sheet.getRange(1, 1, 1, data.header.length);
+    headerRange.setBackground('#34A853');
+    headerRange.setFontColor('#FFFFFF');
+    headerRange.setFontWeight('bold');
+
+    // データ書き込み
+    if (data.rows.length > 0) {
+      sheet.getRange(2, 1, data.rows.length, data.header.length).setValues(data.rows);
+    }
+
+    // 列幅自動調整
+    sheet.autoResizeColumns(1, data.header.length);
+
+    // ── シート2: サマリー ──
+    let summary = ss.getSheetByName('サマリー');
+    if (!summary) summary = ss.insertSheet('サマリー');
+    summary.clearContents();
+
+    const summaryData = [
+      ['項目', '値'],
+      ['エクスポート日時', data.exportedAt],
+      ['総ユーザー数', data.totalUsers],
+    ];
+    summary.getRange(1, 1, summaryData.length, 2).setValues(summaryData);
+    summary.getRange(1, 1, 1, 2).setBackground('#4285F4').setFontColor('#FFFFFF').setFontWeight('bold');
+    summary.autoResizeColumns(1, 2);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'ok', updated: data.totalUsers }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'error', message: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}`;
+
+  navigator.clipboard.writeText(script).then(() => {
+    alert('✅ スクリプトをコピーしました！\n\nGoogle Apps Script エディタに貼り付けてデプロイしてください。');
+  }).catch(() => {
+    // フォールバック
+    const ta = document.createElement('textarea');
+    ta.value = script;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('✅ スクリプトをコピーしました！');
+  });
+}
+
+/* ── Excelエクスポート（詳細版） ── */
+function exportExcel() {
+  if (!allUsers || !allUsers.length) { alert('データがありません'); return; }
+
+  // 全ユーザーの科目名を収集（列順を決める）
+  const subjectKeyMap = {}; // subject_key -> 表示名
+  allUsers.forEach(u => {
+    const stats = u.subject_stats || {};
+    Object.entries(stats).forEach(([key, s]) => {
+      if (!subjectKeyMap[key]) subjectKeyMap[key] = s.name || key;
+    });
+  });
+  const subjectKeys = Object.keys(subjectKeyMap);
+
+  // ヘッダー行
+  const header = [
+    '#', 'ユーザーID', '名前', 'レベル',
+    '累計学習時間(h)', '連続日数(日)', '称号',
+    '保有資格', '科目数', '登録日', '最終更新日',
+    ...subjectKeys.map(k => `[科目]${subjectKeyMap[k]}(h)`)
+  ];
+
+  // データ行
+  const rows = allUsers.map((u, i) => {
+    const hours = parseFloat(((u.total_study_mins || 0) / 60).toFixed(2));
+    const jobs = (u.job_ids || []).join(', ');
+    const stats = u.subject_stats || {};
+    const subjCount = Object.keys(stats).length;
+    const createdAt = u.created_at ? new Date(u.created_at).toLocaleDateString('ja-JP') : '';
+    const updatedAt = u.updated_at ? new Date(u.updated_at).toLocaleDateString('ja-JP') : '';
+
+    const subjectHours = subjectKeys.map(key => {
+      const s = stats[key];
+      return s ? parseFloat((s.hours || 0).toFixed(2)) : 0;
+    });
+
+    return [
+      i + 1,
+      u.id || '',
+      u.display_name || '名無し',
+      u.level || 1,
+      hours,
+      u.streak || 0,
+      u.char_title || '',
+      jobs,
+      subjCount,
+      createdAt,
+      updatedAt,
+      ...subjectHours
+    ];
+  });
+
+  // ワークブック作成
+  const wb = XLSX.utils.book_new();
+
+  // --- シート1: ユーザー一覧 ---
+  const ws1 = XLSX.utils.aoa_to_sheet([header, ...rows]);
+
+  // 列幅設定
+  const colWidths = [
+    { wch: 4 },   // #
+    { wch: 38 },  // ユーザーID
+    { wch: 18 },  // 名前
+    { wch: 8 },   // レベル
+    { wch: 16 },  // 累計学習時間
+    { wch: 12 },  // 連続日数
+    { wch: 16 },  // 称号
+    { wch: 24 },  // 保有資格
+    { wch: 8 },   // 科目数
+    { wch: 14 },  // 登録日
+    { wch: 14 },  // 最終更新日
+    ...subjectKeys.map(() => ({ wch: 18 }))
+  ];
+  ws1['!cols'] = colWidths;
+
+  XLSX.utils.book_append_sheet(wb, ws1, 'ユーザー一覧');
+
+  // --- シート2: サマリー ---
+  const total = allUsers.length;
+  const avgHours = allUsers.reduce((a, u) => a + (u.total_study_mins || 0), 0) / total / 60;
+  const avgLv = allUsers.reduce((a, u) => a + (u.level || 1), 0) / total;
+  const avgStreak = allUsers.reduce((a, u) => a + (u.streak || 0), 0) / total;
+  const maxLv = Math.max(...allUsers.map(u => u.level || 1));
+  const maxHours = Math.max(...allUsers.map(u => (u.total_study_mins || 0) / 60));
+
+  const summaryData = [
+    ['項目', '値'],
+    ['エクスポート日時', new Date().toLocaleString('ja-JP')],
+    ['総ユーザー数', total],
+    ['平均レベル', parseFloat(avgLv.toFixed(1))],
+    ['平均累計学習時間(h)', parseFloat(avgHours.toFixed(1))],
+    ['平均連続日数(日)', parseFloat(avgStreak.toFixed(1))],
+    ['最高レベル', maxLv],
+    ['最大累計学習時間(h)', parseFloat(maxHours.toFixed(1))],
+    ['科目種類数', subjectKeys.length],
+  ];
+  const ws2 = XLSX.utils.aoa_to_sheet(summaryData);
+  ws2['!cols'] = [{ wch: 28 }, { wch: 20 }];
+  XLSX.utils.book_append_sheet(wb, ws2, 'サマリー');
+
+  // ダウンロード
+  const now = new Date().toISOString().slice(0, 10);
+  XLSX.writeFile(wb, `study-quest-users-${now}.xlsx`);
+}
+
 /* ── ユーティリティ ── */
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ── ユーザー削除 ── */
-function confirmDeleteUser(userId, userName) {
-  const modal = document.getElementById('deleteConfirmModal');
-  document.getElementById('deleteTargetName').textContent = userName;
-  document.getElementById('deleteConfirmBtn').onclick = () => deleteUser(userId, userName);
-  modal.style.display = 'flex';
-}
-function closeDeleteModal() {
-  document.getElementById('deleteConfirmModal').style.display = 'none';
-}
-async function deleteUser(userId, userName) {
-  closeDeleteModal();
-  try {
-    const { error } = await sb.from('profiles').delete().eq('id', userId);
-    if (error) throw error;
-    alert(`✅ ${userName} のデータを削除しました。`);
-    allUsers = allUsers.filter(u => u.id !== userId);
-    renderAll(allUsers);
-  } catch(e) {
-    alert(`❌ 削除失敗: ${e.message}`);
-  }
-}
 </script>
-
-<!-- 削除確認モーダル -->
-<div id="deleteConfirmModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:#1e2330;border:1px solid #ef4444;border-radius:16px;padding:28px;width:90%;max-width:360px;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">⚠️</div>
-    <div style="font-size:16px;font-weight:700;color:#ef4444;margin-bottom:8px;">本当に削除しますか？</div>
-    <div style="font-size:13px;color:#aaa;margin-bottom:20px;">
-      <b id="deleteTargetName" style="color:#fff;"></b> のアカウントとデータを完全に削除します。<br>この操作は取り消せません。
-    </div>
-    <div style="display:flex;gap:10px;">
-      <button onclick="closeDeleteModal()" style="flex:1;padding:11px;border:1px solid #555;background:transparent;color:#aaa;border-radius:8px;font-size:13px;cursor:pointer;">キャンセル</button>
-      <button id="deleteConfirmBtn" style="flex:1;padding:11px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">削除する</button>
-    </div>
-  </div>
-</div>
 </body>
 </html>
