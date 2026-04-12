@@ -4333,6 +4333,13 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       </div>
     </div>
 
+    <!-- 新着通知バナー -->
+    <div id="tlNewBanner" style="display:none;background:rgba(140,198,63,.12);border:1px solid var(--accent-border);border-radius:8px;padding:10px 14px;margin-bottom:10px;display:none;text-align:center;">
+      <button onclick="applyTlNewPosts()" style="background:none;border:none;color:var(--accent2);font-size:12px;cursor:pointer;font-family:'Share Tech Mono',monospace;">
+        ↑ <span id="tlNewCount">0</span>件の新着投稿があります — タップして更新
+      </button>
+    </div>
+
     <!-- フィード -->
     <div id="tlFeed">
       <div style="text-align:center;padding:30px;color:var(--muted);font-size:13px;">読み込み中...</div>
@@ -6410,7 +6417,8 @@ function switchTab(tab){
   if(tab==='ranking') { if(typeof currentRankTab!=='undefined'&&currentRankTab==='weekly') loadWeeklyRanking(); else loadRanking(); }
   if(tab==='score')   renderScoreTab();
   if(tab==='quest')    { renderQuestLogStats&&renderQuestLogStats(); renderSessions&&renderSessions(allSelectedSubjects()); renderDeclCard&&renderDeclCard(); }
-  if(tab==='timeline') requestAnimationFrame(()=>loadTimeline());
+  if(tab==='timeline') requestAnimationFrame(()=>{ loadTimeline(); subscribeTlRealtime(); });
+  else unsubscribeTlRealtime();
   if(tab==='report')  requestAnimationFrame(()=>renderReportTab());
   if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); });
   if(tab==='status')  requestAnimationFrame(()=>{ renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); });
@@ -10565,12 +10573,65 @@ let tlCurrentFilter = 'all';
 let tlPage = 0;
 const TL_PAGE_SIZE = 15;
 let tlAllPosts = [];
+let tlRealtimeChannel = null;
+let tlPendingPosts = [];   // Realtimeで受信した未表示の新着
+
+/* ── Realtime購読：タイムライン ── */
+function subscribeTlRealtime(){
+  if(!currentUser || tlRealtimeChannel) return;
+  tlRealtimeChannel = sb
+    .channel('tl-realtime')
+    .on('postgres_changes', {
+      event: 'INSERT',
+      schema: 'public',
+      table: 'timeline_posts'
+    }, payload => {
+      const post = payload.new;
+      // 自分の投稿は無視（既に表示済み）
+      if(post.user_id === currentUser.id) return;
+      // フィルターチェック
+      if(tlCurrentFilter === 'me') return;
+      if(tlCurrentFilter === 'goal'){
+        const overlap = (post.job_ids||[]).some(j => selectedJobIds.includes(j));
+        if(!overlap) return;
+      }
+      tlPendingPosts.unshift({...post, from_cloud:true});
+      showTlNewBanner(tlPendingPosts.length);
+    })
+    .subscribe();
+}
+
+function unsubscribeTlRealtime(){
+  if(tlRealtimeChannel){
+    sb.removeChannel(tlRealtimeChannel);
+    tlRealtimeChannel = null;
+  }
+  tlPendingPosts = [];
+  hideTlNewBanner();
+}
+
+function showTlNewBanner(count){
+  const banner = document.getElementById('tlNewBanner');
+  const countEl = document.getElementById('tlNewCount');
+  if(banner){ banner.style.display = ''; }
+  if(countEl){ countEl.textContent = count; }
+}
+function hideTlNewBanner(){
+  const banner = document.getElementById('tlNewBanner');
+  if(banner) banner.style.display = 'none';
+  tlPendingPosts = [];
+}
+function applyTlNewPosts(){
+  hideTlNewBanner();
+  loadTimeline();
+}
 
 function switchTlFilter(filter, btn){
   tlCurrentFilter = filter;
   tlPage = 0;
   document.querySelectorAll('.tl-filter-btn').forEach(b => b.classList.remove('active'));
   if(btn) btn.classList.add('active');
+  hideTlNewBanner();
   loadTimeline();
 }
 
@@ -10592,35 +10653,33 @@ async function loadTimeline(){
   // ローカルデータ
   let localPosts = loadLocalPosts().reverse(); // 新しい順
 
-  // Supabaseデータ
+  // Supabaseデータ（ログイン・ゲスト問わず全員取得）
   let cloudPosts = [];
-  if(currentUser){
-    try {
-      let query = sb.from('timeline_posts')
+  try {
+    let query = sb.from('timeline_posts')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(100);
+
+    if(tlCurrentFilter === 'goal' && selectedJobIds.length){
+      query = sb.from('timeline_posts')
         .select('*')
+        .overlaps('job_ids', selectedJobIds)
         .order('created_at', { ascending: false })
         .limit(100);
+    }
+    if(tlCurrentFilter === 'top'){
+      const weekAgo = new Date(Date.now() - 7*24*3600*1000).toISOString();
+      query = sb.from('timeline_posts')
+        .select('*')
+        .gte('created_at', weekAgo)
+        .order('likes_count', { ascending: false })
+        .limit(50);
+    }
 
-      if(tlCurrentFilter === 'goal' && selectedJobIds.length){
-        query = sb.from('timeline_posts')
-          .select('*')
-          .overlaps('job_ids', selectedJobIds)
-          .order('created_at', { ascending: false })
-          .limit(100);
-      }
-      if(tlCurrentFilter === 'top'){
-        const weekAgo = new Date(Date.now() - 7*24*3600*1000).toISOString();
-        query = sb.from('timeline_posts')
-          .select('*')
-          .gte('created_at', weekAgo)
-          .order('likes_count', { ascending: false })
-          .limit(50);
-      }
-
-      const { data } = await query;
-      if(data) cloudPosts = data.map(p => ({...p, from_cloud: true}));
-    } catch(e){ console.warn('Cloud TL load:', e); }
-  }
+    const { data } = await query;
+    if(data) cloudPosts = data.map(p => ({...p, from_cloud: true}));
+  } catch(e){ console.warn('Cloud TL load:', e); }
 
   // ローカルと結合・脱複（id基準）
   const seen = new Set();
