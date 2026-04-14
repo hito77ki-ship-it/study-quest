@@ -3517,9 +3517,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <button class="user-bar-btn" onclick="signOut()">ログアウト</button>
   </div>
 
-  <!-- EXAM COUNTDOWN -->
-  <div id="examBannerWrap"></div>
-
   <!-- CHAR CARD (コンパクト版) -->
   <div class="char-card char-card-compact">
     <div class="char-compact-row">
@@ -3578,9 +3575,10 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <!-- STATUS -->
   <div id="panel-status">
-    <!-- 左カラム：試験カウントダウン＋今日のスケジュール -->
+    <!-- 試験カウントダウン（全幅） -->
+    <div id="examBannerWrap" style="grid-column:1/-1;"></div>
+    <!-- 左カラム：今日のスケジュール -->
     <div style="display:flex;flex-direction:column;gap:14px;width:100%;min-width:0;">
-      <div id="statusExamMini"></div>
       <div id="todayPlanCard" style="display:none;" class="today-plan-card"></div>
     </div>
     <!-- 右カラム：デイリーミッション -->
@@ -3710,6 +3708,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <span>⏰ 目標時間達成を通知で受け取る</span>
         <button class="notif-allow-btn" onclick="requestNotifPerm()">通知を許可する</button>
       </div>
+      <!-- 試験残日数（ミニ表示） -->
+      <div id="timerExamMini" style="text-align:right;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:6px;letter-spacing:.04em;"></div>
       <!-- 目標時間設定 -->
       <div class="timer-goal-row">
         <span style="color:var(--muted)">目標</span>
@@ -6443,10 +6443,9 @@ function renderAll(){
   renderDqStatusCard();
   renderSessions(subjs);renderQuestLogStats&&renderQuestLogStats();renderTitles();
   if(typeof bosses!=='undefined') renderBoss();
-  if(typeof examGoals!=='undefined') renderExamBanner();
+  if(typeof examGoals!=='undefined'){ renderExamBanner(); renderTimerExamMini(); }
   renderEquipBadge(smins);
   renderRaidBoss();
-  renderStatusExamMini();
   renderPaceDiag();
   renderDailyMissions();
   // レポート/プロフィールタブが開いていれば即更新
@@ -6485,30 +6484,20 @@ function renderOverallProgress(smins,subjs){
   renderSubjStats(subjs);
 }
 
-/* STATUS ミニ試験カウントダウン */
-function renderStatusExamMini(){
-  const wrap = document.getElementById('statusExamMini');
-  if(!wrap) return;
+/* タイマー画面 ミニ試験残日数テキスト */
+function renderTimerExamMini(){
+  const el = document.getElementById('timerExamMini');
+  if(!el) return;
   const goals = (typeof examGoals !== 'undefined') ? examGoals : [];
-  if(!goals.length){ wrap.innerHTML=''; return; }
   const today = new Date(); today.setHours(0,0,0,0);
-  const sorted = [...goals].sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(0,3);
-  wrap.innerHTML = `<div class="status-exam-mini">${sorted.map(eg=>{
-    const d = new Date(eg.date); d.setHours(0,0,0,0);
-    const days = Math.round((d-today)/86400000);
-    const isPast = days < 0;
-    const cls = isPast ? 'done' : days <= 7 ? 'urgent' : days <= 30 ? 'warn' : '';
-    const badgeLabel = isPast ? '終了' : days <= 7 ? '直前' : days <= 30 ? '1ヶ月以内' : '準備期間';
-    const dateStr = d.toLocaleDateString('ja-JP',{month:'short',day:'numeric'});
-    return `<div class="status-exam-chip ${cls}" onclick="switchTab('boss')">
-      <div class="status-exam-days">${isPast?'✓':days}</div>
-      <div class="status-exam-info">
-        <div class="status-exam-name">${escHtml(eg.title||'試験日')}</div>
-        <div class="status-exam-label">${isPast?'試験終了':days+'日後 · '+dateStr}</div>
-      </div>
-      <div class="status-exam-badge">${badgeLabel}</div>
-    </div>`;
-  }).join('')}</div>`;
+  const upcoming = goals
+    .map(eg=>({ ...eg, days: Math.round((new Date(eg.date).setHours(0,0,0,0) - today) / 86400000) }))
+    .filter(eg=>eg.days >= 0)
+    .sort((a,b)=>a.days - b.days);
+  if(!upcoming.length){ el.textContent=''; return; }
+  const nearest = upcoming[0];
+  const urgentColor = nearest.days <= 30 ? 'var(--color-danger)' : nearest.days <= 60 ? 'var(--color-warning)' : 'var(--muted)';
+  el.innerHTML = `<span style="color:${urgentColor}">📅 ${escHtml(nearest.title||'試験')} まであと <strong>${nearest.days}</strong> 日</span>`;
 }
 
 function renderSubjStats(subjs){
@@ -6675,7 +6664,7 @@ function switchTab(tab){
   });
   if(tab==='ranking') { if(typeof currentRankTab!=='undefined'&&currentRankTab==='weekly') loadWeeklyRanking(); else loadRanking(); }
   if(tab==='score')   renderScoreTab();
-  if(tab==='quest')    { renderQuestLogStats&&renderQuestLogStats(); renderSessions&&renderSessions(allSelectedSubjects()); renderDeclCard&&renderDeclCard(); checkNoMaterialBanner();
+  if(tab==='quest')    { renderQuestLogStats&&renderQuestLogStats(); renderSessions&&renderSessions(allSelectedSubjects()); renderDeclCard&&renderDeclCard(); checkNoMaterialBanner(); renderTimerExamMini&&renderTimerExamMini();
     // モバイル：タイマー未実行なら教材グリッド表示
     if(window.innerWidth <= 600 && !timerRunning){
       document.getElementById('panel-quest')?.classList.remove('show-timer');
@@ -6688,7 +6677,7 @@ function switchTab(tab){
   else unsubscribeTlRealtime();
   if(tab==='report')  requestAnimationFrame(()=>renderReportTab());
   if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); });
-  if(tab==='status')  requestAnimationFrame(()=>{ renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); });
+  if(tab==='status')  requestAnimationFrame(()=>{ renderExamBanner(); renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); });
   // モバイルタブバーも同期
   document.querySelectorAll('.m-tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   const activeBtn=document.getElementById('tab-'+tab);
@@ -10873,14 +10862,14 @@ async function saveExamGoal(){
   if(existIdx>=0) examGoals[existIdx]=entry;
   else examGoals.push(entry);
   await saveAll();
-  renderExamBanner();
+  renderExamBanner(); renderTimerExamMini();
   closeExamModal();
 }
 async function deleteExamGoal(id){
   if(!confirm('この試験日を削除しますか？'))return;
   examGoals=examGoals.filter(e=>e.id!==id);
   await saveAll();
-  renderExamBanner();
+  renderExamBanner(); renderTimerExamMini();
   closeExamModal();
   setTimeout(openExamModal,100); // リストを再表示
 }
@@ -10889,7 +10878,7 @@ async function clearExamGoal(){
   if(!confirm('すべての試験日設定を削除しますか？'))return;
   examGoals=[];
   localStorage.removeItem('sq2_exams');
-  renderExamBanner();
+  renderExamBanner(); renderTimerExamMini();
   closeExamModal();
 }
 
