@@ -5843,12 +5843,14 @@ async function syncToCloud(){
       scores_backup:        scoresJson,
       plan_backup:          planJson,
       profile_info_backup:  profileInfoJson,
+      report_backup:        JSON.stringify(weeklyGoalData || {}),
     }, {onConflict:'id'});
 
     console.log('[SQ] syncToCloud 完了:', {
       sessions: sessions.length,
       materials: materials.length,
       scores: scoreRecords.length,
+      weeklyGoalWeeks: Object.keys(weeklyGoalData||{}).length,
     });
   }
 
@@ -5970,6 +5972,23 @@ async function restoreFromCloud(){
         localStorage.setItem('sq2_profile_info', JSON.stringify(pi));
         restored = true;
         console.log('[SQ] プロフィール詳細をクラウドから復元');
+      }
+    }
+    // ── 週間目標データ ──
+    if(data.report_backup){
+      const cloudGoal = JSON.parse(data.report_backup);
+      const localGoalKeys = Object.keys(weeklyGoalData || {});
+      const cloudGoalKeys = Object.keys(cloudGoal || {});
+      if(cloudGoal && cloudGoalKeys.length > 0 && (localGoalKeys.length === 0 || cloudIsNewer)){
+        weeklyGoalData = cloudGoal;
+        // localStorageにも書き戻し（avatarDataは現状維持）
+        const current = JSON.parse(localStorage.getItem('sq2_report') || '{}');
+        localStorage.setItem('sq2_report', JSON.stringify({
+          ...current,
+          weeklyGoalData: cloudGoal,
+        }));
+        restored = true;
+        console.log('[SQ] 週間目標をクラウドから復元:', cloudGoalKeys.length, '週分');
       }
     }
 
@@ -7670,6 +7689,14 @@ function saveReportState(){
       avatarData: profileAvatarData,
     }));
   }catch{}
+  // ログイン中は weeklyGoalData をクラウドにも即時反映
+  if(typeof currentUser !== 'undefined' && currentUser && !isGuest){
+    sb.from('profiles').upsert({
+      id: currentUser.id,
+      report_backup: JSON.stringify(weeklyGoalData),
+      updated_at: new Date().toISOString(),
+    }, {onConflict:'id'}).then(()=>{}, ()=>{});
+  }
 }
 
 /* ── 週間目標ヘルパー ── */
