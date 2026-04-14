@@ -3385,6 +3385,10 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   <!-- モバイル専用: 追加タブナビ -->
   <div class="gnav-drawer-section mobile-nav-section" style="display:none;">
     <div class="gnav-drawer-section-title">MORE TABS</div>
+    <div class="gnav-item" onclick="closeDrawer();switchTab('status')">
+      <span class="gnav-item-icon">⚔</span>
+      <div class="gnav-item-body"><div class="gnav-item-label">STATUS</div><div class="gnav-item-desc">キャラ・宣言・ミッション</div></div>
+    </div>
     <div class="gnav-item" onclick="closeDrawer();switchTab('ranking')">
       <span class="gnav-item-icon">🏆</span>
       <div class="gnav-item-body"><div class="gnav-item-label">RANKING</div><div class="gnav-item-desc">週間・全体ランキング</div></div>
@@ -3392,10 +3396,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="gnav-item" onclick="closeDrawer();switchTab('report')">
       <span class="gnav-item-icon">📈</span>
       <div class="gnav-item-body"><div class="gnav-item-label">レポート</div><div class="gnav-item-desc">分析・時間割グラフ</div></div>
-    </div>
-    <div class="gnav-item" onclick="closeDrawer();switchTab('materials')">
-      <span class="gnav-item-icon">📚</span>
-      <div class="gnav-item-body"><div class="gnav-item-label">教材・参考書</div><div class="gnav-item-desc">使用中の教材を管理</div></div>
     </div>
     <div class="gnav-item" onclick="closeDrawer();switchTab('boss')">
       <span class="gnav-item-icon">💀</span>
@@ -4458,9 +4458,9 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
 <!-- ════ モバイル固定底部タブバー ════ -->
 <nav id="mobileTabBar">
-  <button class="m-tab-btn active" data-tab="status" onclick="switchTab('status')">
-    <span class="m-tab-icon">⚔</span>
-    <span class="m-tab-label">STATUS</span>
+  <button class="m-tab-btn" data-tab="materials" onclick="switchTab('materials')">
+    <span class="m-tab-icon">📚</span>
+    <span class="m-tab-label">教材</span>
   </button>
   <button class="m-tab-btn" data-tab="quest" onclick="switchTab('quest')">
     <span class="m-tab-icon">📋</span>
