@@ -9832,7 +9832,7 @@ function saveProfileInfo(){
   try{ localStorage.setItem(PROF_INFO_KEY, JSON.stringify(info)); }catch{}
   // Supabaseにも反映
   if(currentUser){
-    sb.from('profiles').upsert({ id: currentUser.id, is_public: info.isPublic }).catch(()=>{});
+    sb.from('profiles').upsert({ id: currentUser.id, is_public: info.isPublic }).then(()=>{}, ()=>{});
   }
   // タグを即時更新
   renderProfileTab();
