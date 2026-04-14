@@ -5738,6 +5738,7 @@ async function syncToCloud(){
   const {error} = await sb.from('profiles').upsert({
     id: currentUser.id,
     display_name: char.name,
+    email: currentUser.email || null,
     level: lp.level,
     total_study_mins: smins,
     streak: char.streak,
