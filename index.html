@@ -2800,37 +2800,59 @@ body[data-theme="dark"] #mobileTabBar {
   /* タブレット・モバイル共通: inputズーム防止 */
   .timer-goal-input { font-size: 16px !important; }
 
-  /* ── モバイル記録タブ 2ステート ── */
-  /* デフォルト（教材グリッド表示）: timer-panel と余計な要素を隠す */
+  /* ── モバイル記録タブ：デフォルト（教材グリッド表示）──  */
+  /* timer-panel と余計な要素を隠す */
   #panel-quest:not(.show-timer) .timer-panel { display: none !important; }
   #panel-quest:not(.show-timer) #quickMaterialSelect { display: none !important; }
   #panel-quest:not(.show-timer) #noMaterialBanner { display: none !important; }
   #panel-quest:not(.show-timer) .decl-card { display: none !important; }
   #panel-quest:not(.show-timer) > .section { display: none !important; }
-  /* タイマー表示状態: mobileQuestMaterials を隠し、timer-panel も隠して mobileRecordUI に置き換え */
-  #panel-quest.show-timer #mobileQuestMaterials { display: none !important; }
-  #panel-quest.show-timer .timer-panel { display: none !important; }
   /* ナビ・グリッド表示 */
   #mobileQuestMaterials { display: block; }
 }
 
-/* ════ モバイル記録UI（2タブ：手動入力 / ストップウォッチ）════ */
+/* ────────────────────────────────────────────
+   show-timer アクティブ時：全画面サイズ共通の隠しルール
+   ──────────────────────────────────────────── */
+#panel-quest.show-timer #mobileQuestMaterials  { display: none !important; }
+#panel-quest.show-timer .timer-panel           { display: none !important; }
+#panel-quest.show-timer #quickMaterialSelect   { display: none !important; }
+#panel-quest.show-timer .decl-card             { display: none !important; }
+#panel-quest.show-timer > .section             { display: none !important; }
+
+/* ════ 記録UI（2タブ：手動入力 / ストップウォッチ）全デバイス共通 ════ */
 #mobileRecordUI { display: none; flex-direction: column; }
 
-/* show-timer時の基本表示（タブレット以上フォールバック） */
-#panel-quest.show-timer #mobileRecordUI {
-  display: flex !important;
-  flex-direction: column;
-  min-height: calc(100dvh - 160px);
+/* show-timer時：全サイズで表示 */
+#panel-quest.show-timer #mobileRecordUI { display: flex !important; flex-direction: column; }
+
+/* ── PC / タブレット（601px 以上）：カードパネル ── */
+@media (min-width: 601px) {
+  #panel-quest.show-timer #mobileRecordUI {
+    max-width: 560px;
+    min-height: 520px;
+    margin: 8px auto 24px;
+    background: var(--panel);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    overflow: hidden;
+  }
+  /* PC ではフォーム行を少し高く */
+  .mrec-row { min-height: 60px; }
+  .mrec-tab-btn { font-size: 15px; padding: 13px 8px; }
+  .mrec-timer-display { font-size: 80px; }
+  .mrec-action-btn { font-size: 16px; padding: 16px; min-height: 52px; }
 }
-/* ── スマホ：キーボードでも崩れないfixedオーバーレイ ── */
+
+/* ── スマホ（600px 以下）：キーボード対応の fixed 全画面オーバーレイ ── */
 @media (max-width: 600px) {
   #panel-quest.show-timer #mobileRecordUI {
     position: fixed;
     top: 48px; left: 0; right: 0; bottom: 0;
     padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
     z-index: 200; background: var(--bg);
-    overflow: hidden; min-height: unset;
+    overflow: hidden;
   }
 }
 /* ── ヘッダー ── */
@@ -7462,14 +7484,16 @@ async function finishTimer(){
   clearBgTimerState();
   showBgBadge(false);
   mrecReleaseWakeLock();
-  // モバイル：記録完了後に教材グリッドへ戻る
-  if(window.innerWidth <= 600){
-    setTimeout(()=>{
-      document.getElementById('panel-quest')?.classList.remove('show-timer');
+  // 記録完了後：全デバイスで元の画面に戻る
+  setTimeout(()=>{
+    document.getElementById('panel-quest')?.classList.remove('show-timer');
+    if(window.innerWidth <= 600){
       renderMobileQuestMaterials && renderMobileQuestMaterials();
-      window.scrollTo(0,0);
-    }, 1200);
-  }
+    } else {
+      renderQuickMaterialSelect && renderQuickMaterialSelect();
+    }
+    window.scrollTo(0,0);
+  }, 1200);
 }
 let scoreRecords = []; // [{id, name, date, scores:{key:{score,max}}}]
 let scoreChartInstances = {};
@@ -13249,10 +13273,12 @@ function renderQuickMaterialSelect(){
 }
 
 function quickSelectMaterial(materialId){
+  // 新しい2タブ記録UIを起動（全デバイス共通）
   const sel = document.getElementById('timerMaterial');
   if(sel){ sel.value = materialId; updateTimerMaterial(); }
-  renderQuickMaterialSelect(); // 選択状態を更新
-  document.querySelector('.timer-panel')?.scrollIntoView({behavior:'smooth', block:'start'});
+  document.getElementById('panel-quest')?.classList.add('show-timer');
+  initMrecUI(materialId);
+  window.scrollTo(0, 0);
 }
 
 /* ─────────────────────────────────────────────
@@ -13323,12 +13349,8 @@ function renderMobileQuestMaterials(){
 }
 
 function mobileStartRecord(materialId){
-  if(window.innerWidth > 600){ quickSelectMaterial(materialId); return; }
-  const sel = document.getElementById('timerMaterial');
-  if(sel){ sel.value = materialId; updateTimerMaterial(); }
-  document.getElementById('panel-quest')?.classList.add('show-timer');
-  initMrecUI(materialId);
-  window.scrollTo(0, 0);
+  // モバイル・PCどちらからでも同じUIを起動
+  quickSelectMaterial(materialId);
 }
 
 /* ─────────────────────────────────────────────
@@ -13441,12 +13463,14 @@ async function mrecSubmitManual(){
   if(document.getElementById('mrecHour')) document.getElementById('mrecHour').value = '';
   if(document.getElementById('mrecMin'))  document.getElementById('mrecMin').value  = '';
   if(document.getElementById('mrecNote')) document.getElementById('mrecNote').value = '';
-  // モバイルなら教材グリッドへ戻る
+  // 記録後：全デバイスで元の画面へ戻る
+  document.getElementById('panel-quest')?.classList.remove('show-timer');
   if(window.innerWidth <= 600){
-    document.getElementById('panel-quest')?.classList.remove('show-timer');
     renderMobileQuestMaterials && renderMobileQuestMaterials();
-    window.scrollTo(0, 0);
+  } else {
+    renderQuickMaterialSelect && renderQuickMaterialSelect();
   }
+  window.scrollTo(0, 0);
 }
 
 function updateMrecDisplay(){
@@ -13490,7 +13514,11 @@ function exitMobileTimerMode(){
     pauseTimer();
   }
   document.getElementById('panel-quest')?.classList.remove('show-timer');
-  renderMobileQuestMaterials();
+  if(window.innerWidth <= 600){
+    renderMobileQuestMaterials();
+  } else {
+    renderQuickMaterialSelect();
+  }
   window.scrollTo(0, 0);
 }
 
