@@ -12247,7 +12247,7 @@ async function openUserCard(userId, userName, level, avatarUrl, jobIdsStr){
   if(currentUser){
     try {
       const { data: followRow, error: ferr } = await sb.from('follows')
-        .select('id').eq('follower_id', currentUser.id).eq('following_id', userId).maybeSingle();
+        .select('id').eq('follower_id', currentUser.id).eq('followed_id', userId).maybeSingle();
       if(!ferr) isFollowing = !!followRow;
       else console.warn('follows select error:', ferr);
     } catch(e){ console.warn('follows fetch error:', e); }
@@ -12289,7 +12289,6 @@ async function openUserCard(userId, userName, level, avatarUrl, jobIdsStr){
       <div style="font-size:15px;font-weight:700;color:var(--text);">${escHtml(userName)}</div>
       ${isPublic || isOwn ? `<div style="font-size:11px;color:var(--muted);">Lv.${level}</div>` : ''}
       ${isPublic || isOwn ? `<div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:4px;">${jobLabels}</div>` : ''}
-      ${bio && (isPublic || isOwn) ? `<div style="font-size:11px;color:var(--muted);margin-top:4px;">${escHtml(bio)}</div>` : ''}
       ${privateNotice}
       ${followBtn}
     </div>`;
@@ -12307,7 +12306,7 @@ async function followToggleFromCard(userId, userName, btn){
   try {
     if(isNowFollowing){
       const { error } = await sb.from('follows').delete()
-        .eq('follower_id', currentUser.id).eq('following_id', userId);
+        .eq('follower_id', currentUser.id).eq('followed_id', userId);
       if(error) throw new Error(error.message || JSON.stringify(error));
       btn.textContent = 'フォローする';
       btn.style.background = 'var(--accent)';
@@ -12317,7 +12316,7 @@ async function followToggleFromCard(userId, userName, btn){
     } else {
       const { error } = await sb.from('follows').insert({
         follower_id: currentUser.id,
-        following_id: userId
+        followed_id: userId
       });
       if(error) throw new Error(error.message || JSON.stringify(error));
       btn.textContent = 'フォロー中';
@@ -12347,7 +12346,7 @@ async function loadFollowCountsFromSupabase(){
   try {
     const [{ data: followingData }, { data: followerData }] = await Promise.all([
       sb.from('follows').select('id').eq('follower_id', currentUser.id),
-      sb.from('follows').select('id').eq('following_id', currentUser.id),
+      sb.from('follows').select('id').eq('followed_id', currentUser.id),
     ]);
     const followCountEl = document.getElementById('profFollowCount');
     const followerCountEl = document.getElementById('profFollowerCount');
