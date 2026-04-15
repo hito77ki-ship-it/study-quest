@@ -317,7 +317,9 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .tabs::-webkit-scrollbar{display:none;}
 .tab-btn{flex:1 1 0;min-width:52px;max-width:100px;background:transparent;border:none;color:var(--muted);font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.06em;padding:10px 4px 9px;cursor:pointer;border-right:none;transition:all .18s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center;gap:3px;border-radius:var(--radius-sm);position:relative;}
 
-.tab-icon{font-size:18px;line-height:1;transition:transform .18s cubic-bezier(.34,1.56,.64,1);}
+.tab-icon{font-size:18px;line-height:1;transition:transform .18s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center;}
+.tab-icon .nav-icon{font-size:15px;}
+.tab-btn.active .tab-icon .nav-icon{color:#fff;}
 .tab-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 3px 12px rgba(140,198,63,.4);transform:translateY(-1px);}
 .tab-btn.active .tab-icon{transform:scale(1.15);}
 .tab-btn:hover:not(.active){color:var(--text);background:var(--panel2);}
@@ -2743,8 +2745,10 @@ body[data-theme="dark"] #mobileTabBar {
 .m-tab-icon {
   font-size: 22px; line-height: 1;
   transition: transform .2s cubic-bezier(.34,1.56,.64,1);
-  display: block;
+  display: flex; align-items: center; justify-content: center;
 }
+.m-tab-icon .nav-icon { font-size: 18px; }
+.m-tab-btn.active .m-tab-icon .nav-icon { color: var(--accent2); }
 .m-tab-label {
   font-family: 'Cinzel', serif;
   font-size: 10px; letter-spacing: .04em; line-height: 1;
@@ -3775,16 +3779,16 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <!-- TABS -->
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('status')" id="tab-status"><span class="tab-icon">⚔</span>STATUS</button>
-    <button class="tab-btn" onclick="switchTab('quest')" id="tab-quest"><span class="tab-icon">📋</span>記録</button>
-    <button class="tab-btn" onclick="switchTab('materials')" id="tab-materials"><span class="tab-icon">📚</span>教材</button>
-    <button class="tab-btn" onclick="switchTab('score')" id="tab-score"><span class="tab-icon">📊</span>SCORE</button>
-    <button class="tab-btn" onclick="switchTab('boss')" id="tab-boss"><span class="tab-icon">💀</span>BOSS</button>
-    <button class="tab-btn" onclick="switchTab('titles')" id="tab-titles"><span class="tab-icon">🏅</span>TITLES</button>
-    <button class="tab-btn" onclick="switchTab('ranking')" id="tab-ranking"><span class="tab-icon">🏆</span>RANK</button>
-    <button class="tab-btn" onclick="switchTab('report')" id="tab-report"><span class="tab-icon">📈</span>レポート</button>
-    <button class="tab-btn" onclick="switchTab('profile')" id="tab-profile"><span class="tab-icon">👤</span>プロフ</button>
-    <button class="tab-btn" onclick="switchTab('timeline')" id="tab-timeline"><span class="tab-icon">📱</span>TL</button>
+    <button class="tab-btn active" onclick="switchTab('status')" id="tab-status"><span class="tab-icon"><i class="fa-solid fa-shield-halved nav-icon"></i></span>STATUS</button>
+    <button class="tab-btn" onclick="switchTab('quest')" id="tab-quest"><span class="tab-icon"><i class="fa-solid fa-stopwatch nav-icon"></i></span>記録</button>
+    <button class="tab-btn" onclick="switchTab('materials')" id="tab-materials"><span class="tab-icon"><i class="fa-solid fa-book-open nav-icon"></i></span>教材</button>
+    <button class="tab-btn" onclick="switchTab('score')" id="tab-score"><span class="tab-icon"><i class="fa-solid fa-chart-bar nav-icon"></i></span>SCORE</button>
+    <button class="tab-btn" onclick="switchTab('boss')" id="tab-boss"><span class="tab-icon"><i class="fa-solid fa-skull nav-icon"></i></span>BOSS</button>
+    <button class="tab-btn" onclick="switchTab('titles')" id="tab-titles"><span class="tab-icon"><i class="fa-solid fa-medal nav-icon"></i></span>TITLES</button>
+    <button class="tab-btn" onclick="switchTab('ranking')" id="tab-ranking"><span class="tab-icon"><i class="fa-solid fa-ranking-star nav-icon"></i></span>RANK</button>
+    <button class="tab-btn" onclick="switchTab('report')" id="tab-report"><span class="tab-icon"><i class="fa-solid fa-chart-line nav-icon"></i></span>レポート</button>
+    <button class="tab-btn" onclick="switchTab('profile')" id="tab-profile"><span class="tab-icon"><i class="fa-solid fa-user nav-icon"></i></span>プロフ</button>
+    <button class="tab-btn" onclick="switchTab('timeline')" id="tab-timeline"><span class="tab-icon"><i class="fa-solid fa-timeline nav-icon"></i></span>TL</button>
   </div>
 
   <!-- STATUS -->
@@ -4195,10 +4199,10 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <!-- タブ -->
       <div class="rank-tab-bar">
         <button class="rank-tab active" id="rankTab-total" onclick="switchRankTab('total')">
-          <span class="rank-tab-icon">🏆</span>累計
+          <span class="rank-tab-icon"><i class="fa-solid fa-trophy nav-icon"></i></span>累計
         </button>
         <button class="rank-tab" id="rankTab-weekly" onclick="switchRankTab('weekly')">
-          <span class="rank-tab-icon">📅</span>今週
+          <span class="rank-tab-icon"><i class="fa-solid fa-calendar-week nav-icon"></i></span>今週
         </button>
       </div>
       <!-- 累計リスト -->
@@ -4815,23 +4819,23 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 <!-- ════ モバイル固定底部タブバー ════ -->
 <nav id="mobileTabBar">
   <button class="m-tab-btn" data-tab="status" onclick="switchTab('status')">
-    <span class="m-tab-icon">⚔</span>
+    <span class="m-tab-icon"><i class="fa-solid fa-shield-halved nav-icon"></i></span>
     <span class="m-tab-label">STATUS</span>
   </button>
   <button class="m-tab-btn" data-tab="quest" onclick="switchTab('quest')">
-    <span class="m-tab-icon">📋</span>
+    <span class="m-tab-icon"><i class="fa-solid fa-stopwatch nav-icon"></i></span>
     <span class="m-tab-label">記録</span>
   </button>
   <button class="m-tab-btn" data-tab="report" onclick="switchTab('report')">
-    <span class="m-tab-icon">📈</span>
+    <span class="m-tab-icon"><i class="fa-solid fa-chart-line nav-icon"></i></span>
     <span class="m-tab-label">レポート</span>
   </button>
   <button class="m-tab-btn" data-tab="timeline" onclick="switchTab('timeline')">
-    <span class="m-tab-icon">📱</span>
+    <span class="m-tab-icon"><i class="fa-solid fa-timeline nav-icon"></i></span>
     <span class="m-tab-label">TL</span>
   </button>
   <button class="m-tab-btn" data-tab="profile" onclick="switchTab('profile')">
-    <span class="m-tab-icon">👤</span>
+    <span class="m-tab-icon"><i class="fa-solid fa-user nav-icon"></i></span>
     <span class="m-tab-label">プロフ</span>
   </button>
 </nav>
