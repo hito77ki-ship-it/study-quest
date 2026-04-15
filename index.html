@@ -11889,7 +11889,10 @@ function renderPostHTML(post, likes){
         ${ach.comment ? `<div style="margin-top:8px;font-size:12px;color:var(--muted);">${escHtml(ach.comment)}</div>` : ''}
       </div>`;
     })() : `<div class="tl-post-card">
-      <div class="tl-post-card-icon"><i class="fa-solid fa-book-open tl-icon"></i></div>
+      <div class="tl-post-card-icon">${post.material_cover
+        ? `<img src="${post.material_cover}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">`
+        : `<i class="fa-solid fa-book-open tl-icon"></i>`
+      }</div>
       <div class="tl-post-card-info">
         <div class="tl-post-card-title">${escHtml(post.subject_name || '学習')}</div>
         ${post.note ? `<div class="tl-post-card-sub">${escHtml(post.note)}</div>` : ''}
@@ -14016,8 +14019,8 @@ renderPostHTML = function(post, likes){
   if(!post.material_name) return baseHtml;
   // 教材カードを RPGログの下に挿入
   const coverHtml = post.material_cover
-    ? `<img src="${post.material_cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`
-    : '📖';
+    ? `<img src="${post.material_cover}" alt="${escHtml(post.material_name||'')}" style="width:100%;height:100%;object-fit:cover;">`
+    : `<i class="fa-solid fa-book-open nav-icon" style="font-size:18px;"></i>`;
   const materialCard = `
     <div class="tl-material-card">
       <div class="tl-material-thumb">${coverHtml}</div>
