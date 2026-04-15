@@ -26,6 +26,16 @@
 <meta name="twitter:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
 <meta name="twitter:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/screen1.png">
 <!-- Google Analytics -->
+<!-- テーマ先行適用：FOUCを防ぐため <head> 内で即時実行 -->
+<script>
+(function(){
+  var saved  = localStorage.getItem('sq2_theme');
+  var manual = localStorage.getItem('sq2_theme_manual');
+  var osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var theme  = (saved && manual) ? saved : (osDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5KSKG1JK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -516,9 +526,9 @@ body[data-theme="dark"] .exam-banner:hover{border-color:#68d391;box-shadow:0 4px
 body[data-theme="dark"] .exam-banner::before{background:radial-gradient(ellipse 60% 80% at 0% 50%,rgba(104,211,145,.08),transparent 60%);}
 body[data-theme="dark"] .exam-banner.urgent{background:#742a2a;border-color:#fc8181;border-left-color:#fc8181;}
 body[data-theme="dark"] .exam-banner.passed{background:#1a202c;border-color:#4a5568;border-left-color:#718096;}
-body[data-theme="dark"] .eb-label{color:#9ae6b4;text-shadow:1px 1px 0 rgba(0,0,0,.9);}
-body[data-theme="dark"] .eb-name{color:#F7FAFC;text-shadow:1px 1px 0 rgba(0,0,0,.9);}
-body[data-theme="dark"] .eb-date{color:#e2e8f0;text-shadow:1px 1px 0 rgba(0,0,0,.9);}
+body[data-theme="dark"] .eb-label{color:#86efac;text-shadow:1px 1px 0 rgba(0,0,0,.8);}
+body[data-theme="dark"] .eb-name{color:#EDF2F7;text-shadow:1px 1px 0 rgba(0,0,0,.8);}  /* 純白より少し柔らかく（OLED対応） */
+body[data-theme="dark"] .eb-date{color:#CBD5E0;text-shadow:1px 1px 0 rgba(0,0,0,.8);}
 .eb-days{text-align:right;flex-shrink:0;}
 .eb-days-num{font-family:'Cinzel',serif;font-size:38px;color:#276749;line-height:1;text-shadow:none;}
 body[data-theme="dark"] .eb-days-num{color:#68d391;}
@@ -1422,6 +1432,9 @@ body[data-theme="dark"] .wg-lock-note{color:var(--muted);}
 .exam-modal-list-item-del:hover{color:#ff6e6e;}
 
 /* ── ダークモード ── */
+/* FOUCブリッジ: <head>スクリプトが html[data-theme="dark"] を先行設定した時点で
+   CSS変数を適用し、body の data-theme が付く前の一瞬の白フラッシュを防ぐ */
+html[data-theme="dark"] body,
 body[data-theme="dark"] {
   /* ── サーフェス ── */
   --bg:#0F1117;
@@ -11279,11 +11292,30 @@ function toggleTheme(){
   const isDark = document.body.getAttribute('data-theme') === 'dark';
   const newTheme = isDark ? 'light' : 'dark';
   document.body.setAttribute('data-theme', newTheme);
+  document.documentElement.setAttribute('data-theme', newTheme);
+  // 手動で切り替えた場合はユーザー設定として保存（OS設定より優先）
   localStorage.setItem('sq2_theme', newTheme);
+  localStorage.setItem('sq2_theme_manual', '1');
 }
 (function initTheme(){
-  const saved = localStorage.getItem('sq2_theme') || 'light';
-  document.body.setAttribute('data-theme', saved);
+  const saved   = localStorage.getItem('sq2_theme');
+  const manual  = localStorage.getItem('sq2_theme_manual');
+  const osDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // 優先順位: ① 手動設定あり → 保存値  ② 未設定 → OS設定に従う
+  const theme = (saved && manual) ? saved : (osDark ? 'dark' : 'light');
+  // body と html 両方に設定（既存CSSとFOUCブリッジの両方が確実に動作する）
+  document.body.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', theme);
+
+  // OS設定が変わった場合、手動設定がなければ自動追従（夜→昼も即反映）
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if(!localStorage.getItem('sq2_theme_manual')){
+      const t = e.matches ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', t);
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  });
 })();
 
 /* ════════════════════════════════════════
