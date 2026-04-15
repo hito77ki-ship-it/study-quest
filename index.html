@@ -8642,17 +8642,23 @@ async function checkWeeklyGoalMilestones(){
 }
 
 async function postGoalMilestoneToTimeline(milestone, weekMins, goalHours){
-  const name   = char.name || '冒険者';
-  const doneH  = Math.floor(weekMins/60);
-  const doneM  = weekMins % 60;
-  const doneStr= doneH ? `${doneH}h${doneM?doneM+'m':''}` : `${doneM}m`;
-  const emoji  = milestone >= 100 ? '🎉' : milestone >= 90 ? '🔥' : milestone >= 50 ? '💪' : '📚';
-  const noteStr= milestone >= 100
-    ? `週間目標 ${goalHours}時間 を完全達成！ ${emoji}`
-    : `週間目標の ${milestone}% に到達！ ${emoji} ${doneStr} / ${goalHours}h`;
-  const rpgLog = milestone >= 100
-    ? `${name} は今週の目標 ${goalHours}時間 を完全に達成した！🎉`
-    : `${name} は週間目標の ${milestone}% に到達した！ ${emoji}`;
+  const name    = char.name || '冒険者';
+  const doneH   = Math.floor(weekMins/60);
+  const doneM   = weekMins % 60;
+  const goalH   = Number(goalHours) || 0;  // undefined/NaN を防ぐ
+  const doneStr = doneH ? `${doneH}時間${doneM ? doneM+'分' : ''}` : `${doneM}分`;
+  const goalStr = `${goalH}時間`;
+  const emoji   = milestone >= 100 ? '🎉' : milestone >= 90 ? '🔥' : milestone >= 50 ? '💪' : '📚';
+
+  const noteStr = milestone >= 100
+    ? `週間目標（${goalStr}）を完全達成！ ${emoji} 合計学習時間：${doneStr}`
+    : `週間目標（${goalStr}）の${milestone}%に到達！ ${emoji} 現在の合計学習時間：${doneStr}`;
+  const rpgLog  = milestone >= 100
+    ? `${name} は今週の目標 ${goalStr} を完全に達成した！ 合計：${doneStr} 🎉`
+    : `${name} は週間目標（${goalStr}）の${milestone}%に到達した！ ${emoji} 現在：${doneStr}`;
+  const titleStr = milestone >= 100
+    ? `週間目標 ${goalStr} 完全達成！`
+    : `週間目標 ${milestone}% 達成（${goalStr}）`;
 
   const smins = studyMins(sessions);
   const lv    = computeLevel(smins);
@@ -8668,7 +8674,7 @@ async function postGoalMilestoneToTimeline(milestone, weekMins, goalHours){
     rpg_log:      rpgLog,
     exp:          0,
     is_achievement: true,
-    achievement_data: JSON.stringify({ type:'goal_progress', pct:milestone, goalHours, weekMins }),
+    achievement_data: JSON.stringify({ type:'goal_progress', pct:milestone, goalHours:goalH, weekMins, title:titleStr, doneStr, goalStr }),
     created_at:   new Date().toISOString(),
     is_own:       true,
   };
@@ -11824,7 +11830,27 @@ function renderPostHTML(post, likes){
       <div class="tl-post-card-hours">${post.goal_hours||0}h</div>
     </div>` : post.is_achievement ? (() => {
       const ach = post.achievement_data ? (()=>{try{return JSON.parse(post.achievement_data);}catch{return {};}})() : {};
-      const typeLabel = {pass:'🎓 資格合格',exam:'📝 模試・答練',hours:'⏱ 時間達成',other:'✨ その他'}[ach.type||'other'];
+      const typeLabel = {pass:'🎓 資格合格',exam:'📝 模試・答練',hours:'⏱ 時間達成',goal_progress:'🎯 週間目標',other:'✨ その他'}[ach.type||'other'];
+      // 週間目標マイルストーン専用カード
+      if(ach.type === 'goal_progress'){
+        const pct     = ach.pct || 0;
+        const emoji   = pct >= 100 ? '🎉' : pct >= 90 ? '🔥' : pct >= 50 ? '💪' : '📚';
+        const barColor= pct >= 100 ? '#F59E0B' : pct >= 90 ? '#EF4444' : '#8CC63F';
+        const doneStr = ach.doneStr || (()=>{ const h=Math.floor((ach.weekMins||0)/60),m=(ach.weekMins||0)%60; return h?`${h}時間${m?m+'分':''}`:`${m}分`; })();
+        const goalStr = ach.goalStr || (ach.goalHours ? `${ach.goalHours}時間` : '目標未設定');
+        return `<div class="tl-achieve-card" style="background:rgba(140,198,63,.06);border-color:rgba(140,198,63,.3);">
+          <div class="tl-achieve-badge" style="background:rgba(140,198,63,.15);color:#3a7d00;">${typeLabel}</div>
+          <div class="tl-achieve-title" style="font-size:14px;">${escHtml(ach.title||`週間目標 ${pct}% 達成`)} ${emoji}</div>
+          <div style="margin:8px 0 4px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);">
+            <span>目標：${escHtml(goalStr)}</span>
+            <span>達成：${escHtml(doneStr)}</span>
+          </div>
+          <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+            <div style="height:100%;width:${Math.min(pct,100)}%;background:${barColor};border-radius:3px;transition:width .6s;"></div>
+          </div>
+          <div style="text-align:right;font-size:10px;color:var(--muted);margin-top:3px;font-family:'Share Tech Mono',monospace;">${pct}%</div>
+        </div>`;
+      }
       const scoreStr = (ach.score != null && ach.maxScore != null)
         ? `<div class="tl-achieve-score">${ach.score} <span style="font-size:14px;color:var(--muted);">/ ${ach.maxScore} 点</span></div>`
         : ach.score != null ? `<div class="tl-achieve-score">${ach.score} 点</div>` : '';
