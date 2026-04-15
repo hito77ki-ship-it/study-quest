@@ -3919,22 +3919,22 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
       <!-- タブ（2つ） -->
       <div class="mrec-tabs">
-        <button class="mrec-tab-btn active" id="mrecTab-manual"    onclick="switchMrecTab('manual')">✏️ 手動入力</button>
-        <button class="mrec-tab-btn"        id="mrecTab-stopwatch" onclick="switchMrecTab('stopwatch')">⏱ ストップウォッチ</button>
+        <button class="mrec-tab-btn active" id="mrecTab-manual"    onclick="switchMrecTab('manual')"><i class="fa-solid fa-pen nav-icon" style="font-size:12px;"></i> 手動入力</button>
+        <button class="mrec-tab-btn"        id="mrecTab-stopwatch" onclick="switchMrecTab('stopwatch')"><i class="fa-solid fa-stopwatch nav-icon" style="font-size:12px;"></i> ストップウォッチ</button>
       </div>
 
       <!-- ── 手動入力 ── -->
       <div id="mrecPane-manual" class="mrec-pane">
         <div class="mrec-form-scroll">
           <div class="mrec-row">
-            <span class="mrec-row-icon">📅</span>
+            <span class="mrec-row-icon"><i class="fa-solid fa-calendar-days nav-icon"></i></span>
             <span class="mrec-row-label">日付</span>
             <div class="mrec-row-value">
               <input type="date" id="mrecDate" class="mrec-select" style="font-size:15px;width:auto;color:var(--text);">
             </div>
           </div>
           <div class="mrec-row">
-            <span class="mrec-row-icon">⏱</span>
+            <span class="mrec-row-icon"><i class="fa-solid fa-clock nav-icon"></i></span>
             <span class="mrec-row-label">時間</span>
             <div class="mrec-row-value">
               <input type="number" id="mrecHour" class="mrec-input" min="0" max="23" placeholder="0" inputmode="numeric">
@@ -3944,14 +3944,14 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
             </div>
           </div>
           <div class="mrec-row">
-            <span class="mrec-row-icon">📖</span>
+            <span class="mrec-row-icon"><i class="fa-solid fa-book nav-icon"></i></span>
             <span class="mrec-row-label">科目</span>
             <div class="mrec-row-value">
               <select id="mrecSubject" class="mrec-select"></select>
             </div>
           </div>
           <div class="mrec-row" style="border-bottom:none;min-height:52px;">
-            <span class="mrec-row-icon">✏️</span>
+            <span class="mrec-row-icon"><i class="fa-solid fa-pen nav-icon"></i></span>
             <input type="text" id="mrecNote" placeholder="メモ（任意）" maxlength="100"
               style="flex:1;background:transparent;border:none;font-size:14px;color:var(--text);padding:0;"
               onfocus="this.style.outline='none'">
@@ -4091,8 +4091,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <div class="form-group">
           <label class="form-label">クエスト種別</label>
           <div class="type-btns">
-            <button class="type-btn active" data-type="study" onclick="selectType('study')"><span class="type-icon">📖</span>勉強時間<span class="type-exp">1分=1EXP</span></button>
-            <button class="type-btn" data-type="exam" onclick="selectType('exam')"><span class="type-icon">⚔</span>答練・模試<span class="type-exp">1分=1EXP</span></button>
+            <button class="type-btn active" data-type="study" onclick="selectType('study')"><span class="type-icon"><i class="fa-solid fa-book-open nav-icon"></i></span>勉強時間<span class="type-exp">1分=1EXP</span></button>
+            <button class="type-btn" data-type="exam" onclick="selectType('exam')"><span class="type-icon"><i class="fa-solid fa-pencil nav-icon"></i></span>答練・模試<span class="type-exp">1分=1EXP</span></button>
           </div>
         </div>
         <div class="form-row-2">
