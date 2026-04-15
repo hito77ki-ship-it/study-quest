@@ -6081,7 +6081,10 @@ async function syncToCloud(){
       scores_backup:        scoresJson,
       plan_backup:          planJson,
       profile_info_backup:  profileInfoJson,
-      report_backup:        JSON.stringify(weeklyGoalData || {}),
+      // weeklyGoalData が空の場合は上書きしない（他デバイスのデータを消さない）
+      ...(Object.keys(weeklyGoalData || {}).length > 0
+        ? { report_backup: JSON.stringify(weeklyGoalData) }
+        : {}),
     }, {onConflict:'id'});
 
     console.log('[SQ] syncToCloud 完了:', {
@@ -7941,8 +7944,9 @@ function saveReportState(){
       avatarData: profileAvatarData,
     }));
   }catch{}
-  // ログイン中は weeklyGoalData をクラウドにも即時反映
-  if(typeof currentUser !== 'undefined' && currentUser && !isGuest){
+  // ログイン中は weeklyGoalData をクラウドにも即時反映（データがある場合のみ）
+  if(typeof currentUser !== 'undefined' && currentUser && !isGuest
+     && Object.keys(weeklyGoalData || {}).length > 0){
     sb.from('profiles').upsert({
       id: currentUser.id,
       report_backup: JSON.stringify(weeklyGoalData),
