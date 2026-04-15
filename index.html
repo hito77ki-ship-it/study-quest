@@ -814,6 +814,24 @@ body[data-theme="dark"] .timer-dmg-track{background:rgba(255,255,255,.04);}
 /* タブボタン（レポート・自分）*/
 .rpt-tab{font-size:6.5px!important;}
 
+/* 広告プレースホルダー */
+.ad-placeholder{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--panel2);border:1px dashed var(--border);
+  border-radius:8px;margin:16px 14px 4px;padding:18px 12px;
+  flex-direction:column;gap:6px;min-height:72px;
+  opacity:.55;pointer-events:none;user-select:none;
+}
+.ad-placeholder-label{
+  font-size:8px;letter-spacing:.2em;color:var(--muted);
+  font-family:'Share Tech Mono',monospace;text-transform:uppercase;
+}
+.ad-placeholder-inner{
+  font-size:11px;color:var(--muted);
+  border:1px solid var(--border);border-radius:4px;
+  padding:4px 14px;font-family:'Share Tech Mono',monospace;
+}
+
 /* レポート外枠 */
 .rpt-shell{background:var(--panel);border-radius:8px;padding:0 0 20px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic UI',sans-serif;border:1px solid var(--border);}
 
@@ -3742,6 +3760,11 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div style="display:none;" id="attrSection">
       <div id="attrRows"></div>
     </div>
+    <!-- 広告スペース（将来のAdSense用） -->
+    <div class="ad-placeholder" style="grid-column:1/-1;" aria-hidden="true">
+      <div class="ad-placeholder-label">Sponsored</div>
+      <div class="ad-placeholder-inner">広告スペース — 320×50</div>
+    </div>
   </div>
 
   <!-- MATERIALS (教材) -->
@@ -4432,6 +4455,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           <div id="tbNoData" style="display:none;text-align:center;padding:30px;color:var(--muted);font-size:13px;">この日の記録はありません<br><span style="font-size:11px;">タイマーで勉強すると記録されます</span></div>
         </div>
       </div>
+
+    <!-- 広告スペース（将来のAdSense用） -->
+    <div class="ad-placeholder" aria-hidden="true">
+      <div class="ad-placeholder-label">Sponsored</div>
+      <div class="ad-placeholder-inner">広告スペース — 320×50</div>
+    </div>
 
     </div>
   </div>

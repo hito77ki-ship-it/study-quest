@@ -443,6 +443,35 @@ nav.scrolled{
 }
 .founder-link:hover{border-color:var(--green);color:var(--green);}
 
+/* ─── BENEFIT ─── */
+.benefit{padding:128px 24px;}
+.benefit-inner{max-width:1020px;margin:0 auto;}
+.benefit-grid{
+  margin-top:64px;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+@media(max-width:768px){.benefit-grid{grid-template-columns:1fr;gap:32px;}}
+.benefit-card{
+  padding:32px 28px;
+  border-radius:var(--r);
+  border:1px solid var(--border);
+  background:var(--card-bg);
+  display:flex;flex-direction:column;gap:14px;
+}
+.benefit-icon{font-size:28px;}
+.benefit-title{font-size:16px;font-weight:700;color:var(--ink);line-height:1.4;}
+.benefit-desc{font-size:14px;color:var(--ink3);line-height:1.9;}
+
+/* ─── STORY ─── */
+.story{padding:128px 24px;background:var(--surface);}
+.story-inner{max-width:720px;margin:0 auto;}
+.story-body p{
+  font-size:15px;color:var(--ink2);line-height:2;
+  margin-bottom:24px;
+}
+.story-body p:last-child{margin-bottom:0;}
+
 /* ─── ROADMAP ─── */
 .roadmap{
   padding:80px 24px 120px;
@@ -863,6 +892,31 @@ footer{background:#091505;padding:48px 24px 40px;}
   </div>
 </section>
 
+<!-- BENEFIT -->
+<section class="benefit" id="benefit">
+  <div class="benefit-inner">
+    <div class="sec-label">WHAT YOU GAIN</div>
+    <h2 class="sec-title">このアプリで、<br>あなたの学習が変わる。</h2>
+    <div class="benefit-grid">
+      <div class="benefit-card fi">
+        <div class="benefit-icon">📈</div>
+        <h3 class="benefit-title">継続率が劇的に上がる</h3>
+        <p class="benefit-desc">レベルアップ・称号獲得・ボス討伐など、ゲームの報酬設計をそのまま学習に適用。「今日もやらないと」ではなく「今日もやりたい」という感覚に変わります。毎日のログインが習慣になり、気づけば数ヶ月連続記録が当たり前になっていきます。</p>
+      </div>
+      <div class="benefit-card fi">
+        <div class="benefit-icon">🎯</div>
+        <h3 class="benefit-title">試験日から逆算した計画が立てられる</h3>
+        <p class="benefit-desc">試験日を設定するだけで、今日必要な学習時間を自動計算。「合格ペース診断」で毎日の進捗を緑・黄・赤で可視化します。漠然とした不安が、具体的なアクションに変わるため、試験直前のパニックを防げます。</p>
+      </div>
+      <div class="benefit-card fi">
+        <div class="benefit-icon">🏆</div>
+        <h3 class="benefit-title">仲間の存在が頑張りを後押し</h3>
+        <p class="benefit-desc">タイムラインでは同じ資格を目指す受験生のリアルタイムな記録が流れてきます。誰かが深夜に「3時間学習！」と投稿すれば、それだけで自分も机に向かえる。独学の孤独感を解消し、見えない仲間と一緒に試験合格を目指せます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- VOICES -->
 <section class="voices">
   <div class="voices-inner">
@@ -906,6 +960,20 @@ footer{background:#091505;padding:48px 24px 40px;}
     <a href="https://x.com/ichiro_cpa_st" target="_blank" rel="noopener" class="founder-link">
       𝕏 @ichiro_cpa_st
     </a>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="sec-label">OUR STORY</div>
+    <h2 class="sec-title" style="margin-bottom:48px;">なぜ、このアプリを<br>作ったのか。</h2>
+    <div class="story-body fi">
+      <p>公認会計士試験は、合格までに平均3,000〜5,000時間の学習が必要と言われています。毎日8時間勉強しても、完走まで2年近くかかる計算です。わたし自身、勉強を始めたばかりの頃は「どれだけやれば合格できるのか」が見えず、ただ不安だけが積み重なっていきました。</p>
+      <p>スタディプラスで記録をつけてみたものの、続かない。Notionで計画を立ててみたけれど、見返さない。どのツールも「記録するだけ」で、学習を続ける動機にはなりませんでした。</p>
+      <p>そのとき気づいたのは、ゲームはなぜあんなに続けられるのかという単純な疑問です。ドラクエをやっていると、レベルが上がる・装備が強くなる・ボスを倒す、というサイクルが自然に「次もやろう」という気持ちを生み出します。この仕組みを、そのまま資格勉強に移植できないか——それがスタディクエスト誕生のきっかけです。</p>
+      <p>開発は完全に個人で行っており、毎日の勉強と並行しながらコードを書き続けています。使う人に「本当に役立った」と言ってもらえることを唯一の指標に、機能の追加と削除を繰り返しています。まだ荒削りな部分もありますが、同じ悩みを持つすべての受験生に届けたいという気持ちは、最初の日から変わっていません。</p>
+    </div>
   </div>
 </section>
 
