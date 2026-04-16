@@ -4320,9 +4320,16 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         <div class="form-group">
           <label class="form-label">試験テンプレート（任意）</label>
           <div class="score-template-bar" id="scoreTemplateBar">
-            <button class="score-tmpl-btn" onclick="applyScoreTemplate('boki1')">簿記1級</button>
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('cpa_tanto')">CPA短答</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('boki1')">簿記1級</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('boki2')">簿記2級</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('boki3')">簿記3級</button>
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('toeic')">TOEIC</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('takken')">宅建</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('funda')">基本情報</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('itpass')">ITPスポ</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('fp2')">FP2級</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('gyosei')">行政書士</button>
             <button class="score-tmpl-btn active" onclick="applyScoreTemplate('custom')">カスタム</button>
           </div>
         </div>
@@ -7740,6 +7747,58 @@ const EXAM_PRESETS = {
       {key:'toeic_p7',  name:'Part7（読解）',     max:54, section:'R'},
     ]
   },
+  boki2: {
+    name: '簿記2級',
+    subjects: [
+      {key:'boki2_sho',  name:'商業簿記', max:40},
+      {key:'boki2_koji', name:'工業簿記', max:30},
+    ]
+  },
+  boki3: {
+    name: '簿記3級',
+    subjects: [
+      {key:'boki3_sho', name:'商業簿記', max:100},
+    ]
+  },
+  takken: {
+    name: '宅地建物取引士',
+    subjects: [
+      {key:'tk_minpo', name:'権利関係',     max:14},
+      {key:'tk_houki', name:'法令上の制限', max:8},
+      {key:'tk_gyoho', name:'宅建業法',     max:20},
+      {key:'tk_zei',   name:'税・価格評定', max:8},
+    ]
+  },
+  funda: {
+    name: '基本情報技術者',
+    subjects: [
+      {key:'funda_am', name:'午前（科目A）', max:100},
+      {key:'funda_pm', name:'午後（科目B）', max:100},
+    ]
+  },
+  itpass: {
+    name: 'ITパスポート',
+    subjects: [
+      {key:'itp_strat', name:'ストラテジ系',   max:1000},
+      {key:'itp_mgmt',  name:'マネジメント系', max:1000},
+      {key:'itp_tech',  name:'テクノロジ系',   max:1000},
+    ]
+  },
+  fp2: {
+    name: 'FP2級',
+    subjects: [
+      {key:'fp2_gakka',   name:'学科試験', max:60},
+      {key:'fp2_jitsumu', name:'実技試験', max:100},
+    ]
+  },
+  gyosei: {
+    name: '行政書士',
+    subjects: [
+      {key:'gs_houki',   name:'法令科目（択一）', max:160},
+      {key:'gs_kizyutsu',name:'法令科目（記述）', max:60},
+      {key:'gs_ippan',   name:'一般知識',         max:56},
+    ]
+  },
   custom: { name: 'カスタム', subjects: [] }
 };
 
@@ -8014,6 +8073,16 @@ async function deleteScoreRecord(id){
 }
 
 function renderScoreTab(){
+  // selectedJobIdsからテンプレートを自動選択（手動変更がない場合のみ）
+  if(currentScoreTemplate === 'custom'){
+    const detected = detectScorePresetFromJobs();
+    if(detected !== 'custom'){
+      currentScoreTemplate = detected;
+      document.querySelectorAll('.score-tmpl-btn').forEach(b=>{
+        b.classList.toggle('active', b.getAttribute('onclick')===`applyScoreTemplate('${detected}')`);
+      });
+    }
+  }
   // 試験名のdatalistを更新
   const dl = document.getElementById('examNameList');
   if(dl){
@@ -11865,10 +11934,266 @@ const RPG_LOG_TEMPLATES = [
   '勇者{name}は{subject}に{time}のダメージを与えた！',
 ];
 
+/* ────────────────────────────────────────────
+   QUAL_MASTER — 全資格の統合マスターデータ
+   jobId → {scorePreset, pass, coeff, rpgTemplates, wakabaMessages}
+──────────────────────────────────────────── */
+const QUAL_MASTER = {
+  cpa: {
+    scorePreset: 'cpa_tanto',
+    pass: { total: 350, totalMax: 500, minPerSubj: 40, note: '各科目40%以上かつ総合70%以上' },
+    coeff: { perPoint: 10, unit: '点', maxScore: 500 },
+    rpgTemplates: [
+      '{name}は{subject}の財務諸表を{time}読み解いた！',
+      '{name}は{subject}の仕訳という魔法を{time}詠唱した！',
+      '聖騎士{name}は{subject}の試練と{time}向き合った！',
+      '{name}は{subject}の概念フレームワークを{time}紐解いた！',
+    ],
+    wakabaMessages: [
+      '仕訳の修行、順調だね！！',
+      '財務会計を制す者が試験を制す！',
+      '監査論、難しいよね。でも絶対できる！',
+      'CPAへの道、一緒に歩もう！',
+      '管理会計の計算、着実に積み上がってるよ！',
+    ],
+  },
+  zeirishi: {
+    scorePreset: null,
+    pass: { total: 60, totalMax: 100, note: '各科目60%以上（科目合格制）' },
+    coeff: { perPoint: 8, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '魔導会計士{name}は{subject}の税法を{time}習得した！',
+      '{name}は{subject}の申告書を{time}作成した！',
+    ],
+    wakabaMessages: [
+      '税法の修行、コツコツ積み上げよう！',
+      '科目合格制、一つ一つ確実にね！',
+      '租税法攻略、着実に進んでるよ！',
+    ],
+  },
+  boki1: {
+    scorePreset: 'boki1',
+    pass: { total: 70, totalMax: 100, minPerSubj: 10, note: '各科目10/25以上かつ合計70/100以上' },
+    coeff: { perPoint: 3, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '上級戦士{name}は{subject}の仕訳を{time}斬り続けた！',
+      '{name}は{subject}の原価計算と{time}格闘した！',
+      '{name}は{subject}の連結精算表を{time}で仕上げた！',
+    ],
+    wakabaMessages: [
+      '仕訳、積み重ねてるね！1級まであと少し！',
+      '工業簿記の計算、バッチリ！',
+      '会計学の理論、難しいけど応援してるよ！',
+      '1級合格したらかっこいいよね！一緒に頑張ろう！',
+    ],
+  },
+  boki2: {
+    scorePreset: 'boki2',
+    pass: { total: 70, totalMax: 100, note: '商業簿記40点・工業簿記30点' },
+    coeff: { perPoint: 2, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '{name}は{subject}の仕訳を{time}完璧にこなした！',
+      '戦士{name}は{subject}と{time}勝負した！',
+    ],
+    wakabaMessages: [
+      '簿記2級、もう少し！一緒に頑張ろう！',
+      '工業簿記の原価計算、完璧になってきてるよ！',
+      '仕訳が速くなってきてるね！',
+    ],
+  },
+  boki3: {
+    scorePreset: 'boki3',
+    pass: { total: 70, totalMax: 100, note: '合計70点以上' },
+    coeff: { perPoint: 1.5, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '見習い{name}は{subject}の基礎を{time}学んだ！',
+    ],
+    wakabaMessages: [
+      '最初の一歩！仕訳覚えると楽しくなるよ！',
+      '簿記3級、着実に身についてるね！',
+    ],
+  },
+  takken: {
+    scorePreset: 'takken',
+    pass: { total: 34, totalMax: 50, note: '例年34〜38点が合格ライン（変動あり）' },
+    coeff: { perPoint: 4, unit: '点', maxScore: 50 },
+    rpgTemplates: [
+      '召喚師{name}は{subject}の権利関係を{time}解読した！',
+      '{name}は{subject}の宅建業法を{time}暗記した！',
+    ],
+    wakabaMessages: [
+      '宅建、一発合格目指そう！',
+      '権利関係、難しいよね。でも絶対できる！',
+      '業法の暗記、積み上がってるよ！',
+    ],
+  },
+  gyosei: {
+    scorePreset: null,
+    pass: { total: 180, totalMax: 300, note: '法令等122点以上かつ総合180点以上' },
+    coeff: { perPoint: 4, unit: '点', maxScore: 300 },
+    rpgTemplates: [
+      '賢者{name}は{subject}の法令を{time}習得した！',
+    ],
+    wakabaMessages: [
+      '行政書士、かっこいい！着実に進んでるよ！',
+      '行政法の理解、深まってきてるね！',
+    ],
+  },
+  toeic: {
+    scorePreset: 'toeic',
+    pass: null,
+    coeff: { perPoint: 2.5, unit: '点', maxScore: 990 },
+    rpgTemplates: [
+      '風の伝道師{name}は{subject}を{time}聴き込んだ！',
+      '{name}は{subject}の長文を{time}読み解いた！',
+      '{name}は英語の呪文を{time}詠唱した！',
+    ],
+    wakabaMessages: [
+      'リスニング、耳が鍛えられてるよ！',
+      '英語の修行、着実に積み上がってる！',
+      'Part7の長文、速読力ついてきたね！',
+      'TOEIC目標スコアまであと少し！',
+    ],
+  },
+  eiken: {
+    scorePreset: null,
+    pass: { note: '一次試験合格後に二次試験（面接）あり' },
+    coeff: { perPoint: 20, unit: '級', maxScore: 7 },
+    rpgTemplates: [
+      '英語の冒険者{name}は{subject}の英文を{time}読み解いた！',
+    ],
+    wakabaMessages: [
+      '英検、一緒に突破しよう！',
+      '語彙力が上がってきてるね！',
+    ],
+  },
+  funda: {
+    scorePreset: 'funda',
+    pass: { total: 60, totalMax: 100, note: '午前・午後それぞれ60点以上' },
+    coeff: { perPoint: 2, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '魔工技師{name}は{subject}のアルゴリズムを{time}解析した！',
+      '{name}は{subject}のプログラムを{time}デバッグした！',
+    ],
+    wakabaMessages: [
+      'アルゴリズム、解けてきてるね！',
+      '基本情報、IT業界への第一歩！一緒に頑張ろう！',
+      'プログラミング問題、着実に慣れてきてるよ！',
+    ],
+  },
+  itpass: {
+    scorePreset: 'itpass',
+    pass: { total: 600, totalMax: 1000, note: '総合600点以上（各分野300点以上推奨）' },
+    coeff: { perPoint: 1, unit: '点', maxScore: 1000 },
+    rpgTemplates: [
+      '機工士見習い{name}は{subject}のIT知識を{time}習得した！',
+    ],
+    wakabaMessages: [
+      'ITパスポート、社会人の必須スキル！頑張って！',
+      '3分野まんべんなく、バランスよく進んでるよ！',
+    ],
+  },
+  shoshi: {
+    scorePreset: null,
+    pass: { note: '午前・午後・記述式の総合評価' },
+    coeff: { perPoint: 15, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '大賢者{name}は{subject}の登記申請書を{time}作成した！',
+    ],
+    wakabaMessages: [
+      '司法書士、難関だけど絶対できる！',
+      '民法の理解、深まってきてるね！',
+    ],
+  },
+  fp2: {
+    scorePreset: 'fp2',
+    pass: { total: 60, totalMax: 100, note: '学科・実技それぞれ60点以上' },
+    coeff: { perPoint: 2, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '{name}は{subject}のライフプランニングを{time}学んだ！',
+    ],
+    wakabaMessages: [
+      'FP、人生設計の知識がつくね！', '6分野まんべんなく学んで！',
+    ],
+  },
+  koumuin_koku: {
+    scorePreset: null,
+    pass: { note: '教養・専門・論文の総合評価' },
+    coeff: { perPoint: 3, unit: '点', maxScore: 100 },
+    rpgTemplates: [
+      '王宮守護兵{name}は{subject}を{time}鍛錬した！',
+    ],
+    wakabaMessages: [
+      '公務員試験、安定した未来への一歩！', '数的推理、解けるようになってきたね！',
+    ],
+  },
+  highschool: {
+    scorePreset: null,
+    pass: { note: '内申点と本番点の総合評価（学校・地域による）' },
+    coeff: { perPoint: 3, unit: '点', maxScore: 500 },
+    rpgTemplates: [
+      '受験の勇者{name}は{subject}を{time}猛特訓した！',
+      '{name}は{subject}の問題と{time}格闘した！',
+    ],
+    wakabaMessages: [
+      '高校受験、応援してるよ！今の努力が未来を作る！',
+      '5教科バランスよく！着実に伸びてるね！',
+      'もう少し！一緒に志望校合格目指そう！',
+    ],
+  },
+  univ: {
+    scorePreset: null,
+    pass: { note: '共通テスト＋二次試験の総合評価（大学・学部による）' },
+    coeff: { perPoint: 5, unit: '点', maxScore: 900 },
+    rpgTemplates: [
+      '大学への挑戦者{name}は{subject}と{time}向き合った！',
+      '{name}は共通テスト対策を{time}積み重ねた！',
+    ],
+    wakabaMessages: [
+      '大学受験、今の積み重ねが本番に活きるよ！',
+      '共通テスト対策、コツコツ進めてるね！',
+      '志望校合格まで、一緒に走ろう！',
+    ],
+  },
+};
+
+/* selectedJobIdsからスコアフォームテンプレートを自動検出 */
+function detectScorePresetFromJobs(){
+  if(typeof selectedJobIds === 'undefined') return 'custom';
+  for(const jid of selectedJobIds){
+    const qm = QUAL_MASTER[jid];
+    if(qm?.scorePreset && EXAM_PRESETS[qm.scorePreset]) return qm.scorePreset;
+  }
+  return 'custom';
+}
+
+/* 選択中の資格から資格別RPGログを取得 */
+function getQualRpgTemplates(){
+  if(typeof selectedJobIds !== 'undefined'){
+    for(const jid of selectedJobIds){
+      const t = QUAL_MASTER[jid]?.rpgTemplates;
+      if(t && t.length) return t;
+    }
+  }
+  return RPG_LOG_TEMPLATES;
+}
+
+/* 選択中の資格から若葉ちゃんの資格別メッセージを取得 */
+function getQualWakabaMessages(){
+  if(typeof selectedJobIds !== 'undefined'){
+    for(const jid of selectedJobIds){
+      const m = QUAL_MASTER[jid]?.wakabaMessages;
+      if(m && m.length) return m;
+    }
+  }
+  return null;
+}
+
 function generateRpgLog(name, subjectName, minutes){
   const h = Math.floor(minutes/60), m = minutes%60;
   const timeStr = h > 0 ? `${h}時間${m > 0 ? m+'分' : ''}` : `${m}分`;
-  const tmpl = RPG_LOG_TEMPLATES[Math.floor(Math.random() * RPG_LOG_TEMPLATES.length)];
+  const templates = getQualRpgTemplates();
+  const tmpl = templates[Math.floor(Math.random() * templates.length)];
   return tmpl
     .replace('{name}', name || '勇者')
     .replace('{subject}', subjectName || '謎の科目')
@@ -15971,7 +16296,15 @@ function restartTutorial() {
       if(pct >= 25)  return `週間目標の25%達成！いいペースだよ！`;
     }
 
-    // 週間目標未設定 or 25%未満 → 今日の時間ベース
+    // 30%の確率で資格別の応援メッセージを挟む
+    if(mins > 0 && Math.random() < 0.3){
+      const qualMsgs = typeof getQualWakabaMessages === 'function' ? getQualWakabaMessages() : null;
+      if(qualMsgs && qualMsgs.length){
+        return qualMsgs[Math.floor(Math.random() * qualMsgs.length)];
+      }
+    }
+
+    // 今日の時間ベース
     const stage = MESSAGES.find(s => mins >= s.min && mins <= s.max) || MESSAGES[0];
     return stage.pool[Math.floor(Math.random() * stage.pool.length)];
   }
