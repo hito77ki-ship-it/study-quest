@@ -812,6 +812,18 @@ body[data-theme="dark"] .timer-dmg-track{background:rgba(255,255,255,.04);}
 .score-boss-share-btn:hover{border-color:#888;}
 .score-subj-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 @media(min-width:500px){.score-subj-grid{grid-template-columns:repeat(3,1fr);}}
+/* テンプレート選択 */
+.score-template-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px;}
+.score-tmpl-btn{background:none;border:1px solid var(--border);color:var(--muted);font-size:11px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.score-tmpl-btn.active{background:rgba(140,198,63,.15);border-color:var(--accent);color:var(--accent2);font-weight:700;}
+/* 合計表示 */
+.score-total-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0 4px;border-top:1px solid var(--border);margin-top:4px;}
+.score-total-label{font-size:11px;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.score-total-val{font-size:18px;font-weight:700;color:var(--accent2);font-family:'Share Tech Mono',monospace;}
+/* TOEICトグル */
+.score-detail-toggle{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);margin:6px 0;cursor:pointer;}
+.score-detail-toggle input{accent-color:var(--accent);}
+.score-detail-section{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-top:6px;}
 .score-subj-item{background:var(--panel2);border:1px solid var(--border);padding:10px;display:flex;flex-direction:column;gap:5px;}
 .score-subj-label{font-size:10px;font-weight:700;margin-bottom:2px;}
 .score-input-pair{display:flex;align-items:center;gap:4px;}
@@ -4306,8 +4318,30 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           </div>
         </div>
         <div class="form-group">
+          <label class="form-label">試験テンプレート（任意）</label>
+          <div class="score-template-bar" id="scoreTemplateBar">
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('boki1')">簿記1級</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('cpa_tanto')">CPA短答</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('toeic')">TOEIC</button>
+            <button class="score-tmpl-btn active" onclick="applyScoreTemplate('custom')">カスタム</button>
+          </div>
+        </div>
+        <div class="form-group">
           <label class="form-label">科目別スコア（点数 / 満点）</label>
           <div class="score-subj-grid" id="scoreSubjInputs"></div>
+          <!-- TOEIC詳細モード -->
+          <div id="scoreToeicDetail" style="display:none;">
+            <label class="score-detail-toggle">
+              <input type="checkbox" id="toeicDetailMode" onchange="toggleToeicDetail()">
+              Part別詳細を記録する（任意）
+            </label>
+            <div id="toeicDetailInputs" class="score-detail-section" style="display:none;"></div>
+          </div>
+          <!-- 合計 -->
+          <div class="score-total-row" id="scoreTotalRow" style="display:none;">
+            <span class="score-total-label">合計</span>
+            <span class="score-total-val" id="scoreTotalVal">0 / 0</span>
+          </div>
         </div>
         <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:var(--muted);margin-bottom:10px;">
           <input type="checkbox" id="scorePostToTl" style="width:16px;height:16px;accent-color:var(--accent);">
@@ -7652,35 +7686,193 @@ async function loadScores(){
   try{const v=localStorage.getItem('sq2_scores');if(v)scoreRecords=JSON.parse(v);}catch{}
 }
 
+/* ── 試験テンプレート定義 ── */
+const EXAM_PRESETS = {
+  boki1: {
+    name: '簿記1級',
+    subjects: [
+      {key:'boki1_shogyo', name:'商業簿記', max:25},
+      {key:'boki1_kaikei', name:'会計学',   max:25},
+      {key:'boki1_kogyo',  name:'工業簿記', max:25},
+      {key:'boki1_genka',  name:'原価計算', max:25},
+    ]
+  },
+  cpa_tanto: {
+    name: '公認会計士（短答）',
+    subjects: [
+      {key:'cpa_zaimu', name:'財務会計論', max:200},
+      {key:'cpa_kanri', name:'管理会計論', max:100},
+      {key:'cpa_kansa', name:'監査論',     max:100},
+      {key:'cpa_kigyou',name:'企業法',     max:100},
+    ]
+  },
+  toeic: {
+    name: 'TOEIC L&R',
+    subjects: [
+      {key:'toeic_listening', name:'リスニング',   max:495},
+      {key:'toeic_reading',   name:'リーディング', max:495},
+    ],
+    detail: [
+      {key:'toeic_p1',  name:'Part1（写真描写）', max:6,  section:'L'},
+      {key:'toeic_p2',  name:'Part2（応答問題）', max:25, section:'L'},
+      {key:'toeic_p3',  name:'Part3（会話問題）', max:39, section:'L'},
+      {key:'toeic_p4',  name:'Part4（説明文）',   max:30, section:'L'},
+      {key:'toeic_p56', name:'Part5・6（文法）',  max:46, section:'R'},
+      {key:'toeic_p7',  name:'Part7（読解）',     max:54, section:'R'},
+    ]
+  },
+  custom: { name: 'カスタム', subjects: [] }
+};
+
+let currentScoreTemplate = 'custom';
+
+function applyScoreTemplate(tmplKey){
+  currentScoreTemplate = tmplKey;
+  // ボタンのactive切替
+  document.querySelectorAll('.score-tmpl-btn').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('onclick')===`applyScoreTemplate('${tmplKey}')`);
+  });
+  // 試験名を自動セット
+  const nameEl = document.getElementById('scoreExamName');
+  if(nameEl && tmplKey !== 'custom' && !nameEl.value){
+    nameEl.value = EXAM_PRESETS[tmplKey]?.name || '';
+  }
+  buildScoreSubjInputs();
+}
+
 function buildScoreSubjInputs(){
-  const grid=document.getElementById('scoreSubjInputs');
-  if(!grid)return;
-  grid.innerHTML='';
-  allSelectedSubjects().forEach(s=>{
-    const item=document.createElement('div');item.className='score-subj-item';
-    item.innerHTML=`<div class="score-subj-label" style="color:${s.color}">${s.name}</div>
+  const grid = document.getElementById('scoreSubjInputs');
+  if(!grid) return;
+  grid.innerHTML = '';
+
+  const tmpl = EXAM_PRESETS[currentScoreTemplate];
+  const subjects = (tmpl && tmpl.subjects.length > 0)
+    ? tmpl.subjects
+    : allSelectedSubjects().map(s=>({key:s.key, name:s.name, max: s.maxH>500?200:100, color:s.color}));
+
+  subjects.forEach(s=>{
+    const item = document.createElement('div');
+    item.className = 'score-subj-item';
+    item.innerHTML = `
+      <div class="score-subj-label" style="color:${s.color||'var(--accent2)'}">${s.name}</div>
       <div class="score-input-pair">
-        <input type="number" min="0" id="sscore_${s.key}" placeholder="点数">
+        <input type="number" min="0" max="${s.max}" id="sscore_${s.key}"
+          placeholder="点数" oninput="updateScoreTotal()">
         <span>/</span>
-        <input type="number" min="1" id="smax_${s.key}" placeholder="満点" value="${s.maxH>500?200:100}">
+        <input type="number" min="1" id="smax_${s.key}"
+          value="${s.max}" ${tmpl && tmpl.subjects.length ? 'readonly style="background:transparent;color:var(--muted)"' : ''}>
       </div>`;
     grid.appendChild(item);
   });
+
+  // TOEICの詳細モード表示切替
+  const detailWrap = document.getElementById('scoreToeicDetail');
+  if(detailWrap) detailWrap.style.display = currentScoreTemplate === 'toeic' ? 'block' : 'none';
+  if(currentScoreTemplate !== 'toeic'){
+    const cb = document.getElementById('toeicDetailMode');
+    if(cb){ cb.checked = false; }
+    const di = document.getElementById('toeicDetailInputs');
+    if(di){ di.style.display = 'none'; }
+  }
+
+  // 合計行表示
+  const totalRow = document.getElementById('scoreTotalRow');
+  if(totalRow) totalRow.style.display = subjects.length > 1 ? 'flex' : 'none';
+
+  updateScoreTotal();
+}
+
+function updateScoreTotal(){
+  const tmpl = EXAM_PRESETS[currentScoreTemplate];
+  const subjects = (tmpl && tmpl.subjects.length > 0)
+    ? tmpl.subjects
+    : allSelectedSubjects().map(s=>({key:s.key, max: s.maxH>500?200:100}));
+
+  let total = 0, maxTotal = 0;
+  subjects.forEach(s=>{
+    const sv = parseFloat(document.getElementById('sscore_'+s.key)?.value) || 0;
+    const mv = parseFloat(document.getElementById('smax_'+s.key)?.value) || s.max || 0;
+    total += sv; maxTotal += mv;
+  });
+
+  const valEl = document.getElementById('scoreTotalVal');
+  if(valEl) valEl.textContent = `${total} / ${maxTotal}`;
+}
+
+function toggleToeicDetail(){
+  const on = document.getElementById('toeicDetailMode')?.checked;
+  const wrap = document.getElementById('toeicDetailInputs');
+  if(!wrap) return;
+  if(on){
+    wrap.style.display = 'block';
+    wrap.innerHTML = '';
+    const detail = EXAM_PRESETS.toeic.detail;
+    // Lセクション
+    const lLabel = document.createElement('div');
+    lLabel.innerHTML = '<div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:6px;font-family:\'Share Tech Mono\',monospace;">LISTENING</div>';
+    wrap.appendChild(lLabel);
+    const lGrid = document.createElement('div');
+    lGrid.className = 'score-subj-grid';
+    detail.filter(p=>p.section==='L').forEach(p=>{ lGrid.appendChild(buildDetailItem(p)); });
+    wrap.appendChild(lGrid);
+    // Rセクション
+    const rLabel = document.createElement('div');
+    rLabel.innerHTML = '<div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin:8px 0 6px;font-family:\'Share Tech Mono\',monospace;">READING</div>';
+    wrap.appendChild(rLabel);
+    const rGrid = document.createElement('div');
+    rGrid.className = 'score-subj-grid';
+    detail.filter(p=>p.section==='R').forEach(p=>{ rGrid.appendChild(buildDetailItem(p)); });
+    wrap.appendChild(rGrid);
+  } else {
+    wrap.style.display = 'none';
+  }
+}
+
+function buildDetailItem(p){
+  const item = document.createElement('div');
+  item.className = 'score-subj-item';
+  item.innerHTML = `
+    <div class="score-subj-label" style="font-size:10px;color:var(--muted)">${p.name}</div>
+    <div class="score-input-pair">
+      <input type="number" min="0" max="${p.max}" id="sscore_${p.key}" placeholder="正答数">
+      <span>/</span>
+      <input type="number" value="${p.max}" readonly style="background:transparent;color:var(--muted)" id="smax_${p.key}">
+    </div>`;
+  return item;
 }
 
 async function addScoreRecord(){
   const name=document.getElementById('scoreExamName').value.trim();
   const date=document.getElementById('scoreExamDate').value;
   if(!name||!date){alert('試験名と日付を入力してください');return;}
-  const subjs=allSelectedSubjects();
+
+  const tmpl = EXAM_PRESETS[currentScoreTemplate];
+  const subjs = (tmpl && tmpl.subjects.length > 0)
+    ? tmpl.subjects
+    : allSelectedSubjects().map(s=>({key:s.key, name:s.name, max:s.maxH>500?200:100}));
+
   const scores={};let hasAny=false;
   subjs.forEach(s=>{
     const sv=parseFloat(document.getElementById('sscore_'+s.key)?.value);
-    const mv=parseFloat(document.getElementById('smax_'+s.key)?.value);
-    if(!isNaN(sv)&&!isNaN(mv)&&mv>0){scores[s.key]={score:sv,max:mv};hasAny=true;}
+    const mv=parseFloat(document.getElementById('smax_'+s.key)?.value)||s.max;
+    if(!isNaN(sv)&&mv>0){scores[s.key]={score:sv,max:mv,name:s.name};hasAny=true;}
   });
   if(!hasAny){alert('少なくとも1科目の点数を入力してください');return;}
-  const newRecord={id:Date.now(),name,date,scores};
+
+  // TOEIC詳細モードのデータも収集
+  const breakdown={};
+  if(currentScoreTemplate==='toeic' && document.getElementById('toeicDetailMode')?.checked){
+    EXAM_PRESETS.toeic.detail.forEach(p=>{
+      const sv=parseFloat(document.getElementById('sscore_'+p.key)?.value);
+      if(!isNaN(sv)) breakdown[p.key]={score:sv,max:p.max,name:p.name,section:p.section};
+    });
+  }
+
+  const newRecord={
+    id:Date.now(), name, date, scores,
+    template: currentScoreTemplate,
+    breakdown: Object.keys(breakdown).length ? breakdown : undefined,
+  };
   const prevRecord=scoreRecords.length>0?scoreRecords[scoreRecords.length-1]:null;
   scoreRecords.push(newRecord);
   scoreRecords.sort((a,b)=>a.date.localeCompare(b.date));
@@ -7711,6 +7903,14 @@ async function addScoreRecord(){
     const el=document.getElementById('sscore_'+s.key);
     if(el)el.value='';
   });
+  // TOEIC詳細もリセット
+  if(currentScoreTemplate==='toeic'){
+    EXAM_PRESETS.toeic.detail.forEach(p=>{
+      const el=document.getElementById('sscore_'+p.key);
+      if(el)el.value='';
+    });
+  }
+  updateScoreTotal();
 }
 
 function renderScoreBossCard(record, prev){
