@@ -548,6 +548,18 @@ body[data-theme="dark"] .eb-prog-fill{background:linear-gradient(to right,#27674
 .eb-prog-labels{display:flex;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:8px;color:#4a5568;margin-top:3px;}
 body[data-theme="dark"] .eb-prog-labels{color:#9ae6b4;}
 .eb-set-hint{font-size:11px;color:var(--muted);text-align:center;padding:14px;border:1px dashed var(--border);margin-bottom:14px;cursor:pointer;transition:all .2s;}
+/* ── コンディション選択 ── */
+.condition-bar{display:flex;gap:6px;margin:8px 0 4px;}
+.cond-btn{flex:1;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:8px 4px;cursor:pointer;font-size:18px;text-align:center;transition:all .18s;min-height:48px;display:flex;flex-direction:column;align-items:center;gap:2px;}
+.cond-btn span{font-size:9px;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.cond-btn.active{border-color:var(--accent);background:rgba(140,198,63,.12);transform:scale(1.05);}
+/* ── クイック記録ボタン ── */
+.quick-rec-wrap{padding:12px 0 0;border-top:1px solid var(--border);margin-top:8px;}
+.quick-rec-label{font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.15em;font-family:'Share Tech Mono',monospace;margin-bottom:8px;}
+.quick-rec-btns{display:flex;gap:6px;flex-wrap:wrap;}
+.quick-rec-btn{flex:1;min-width:56px;background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:8px 4px;cursor:pointer;font-size:11px;font-weight:700;color:var(--text);font-family:'Share Tech Mono',monospace;transition:all .18s;text-align:center;}
+.quick-rec-btn:hover{background:rgba(140,198,63,.12);border-color:var(--accent);color:var(--accent2);}
+.quick-rec-btn:active{transform:scale(.95);}
 /* フェーズバッジ */
 .eb-phase-badge{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:20px;margin-bottom:3px;font-family:'Share Tech Mono',monospace;}
 .eb-phase-tanto{background:rgba(201,168,76,.15);color:#c9a84c;}
@@ -3873,6 +3885,17 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div style="display:none;" id="attrSection">
       <div id="attrRows"></div>
     </div>
+    <!-- クイック記録 -->
+    <div class="section" style="grid-column:1/-1;">
+      <div class="quick-rec-label">⚡ QUICK RECORD</div>
+      <div class="quick-rec-btns">
+        <button class="quick-rec-btn" onclick="quickRecord(5)">+5分</button>
+        <button class="quick-rec-btn" onclick="quickRecord(15)">+15分</button>
+        <button class="quick-rec-btn" onclick="quickRecord(30)">+30分</button>
+        <button class="quick-rec-btn" onclick="quickRecord(60)">+1時間</button>
+      </div>
+      <div id="quickRecResult" style="font-size:10px;color:var(--accent2);font-family:'Share Tech Mono',monospace;margin-top:6px;min-height:16px;"></div>
+    </div>
     <!-- 広告スペース（将来のAdSense用） -->
     <div class="ad-placeholder" style="grid-column:1/-1;" aria-hidden="true">
       <div class="ad-placeholder-label">Sponsored</div>
@@ -4020,6 +4043,16 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
               style="flex:1;background:transparent;border:none;font-size:14px;color:var(--text);padding:0;"
               onfocus="this.style.outline='none'">
           </div>
+          <!-- コンディション -->
+          <div style="padding:10px 0 4px;">
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.1em;font-family:'Share Tech Mono',monospace;margin-bottom:6px;">今日のコンディション</div>
+            <div class="condition-bar">
+              <button type="button" class="cond-btn" id="cond-0" onclick="selectCondition(0)">😴<span>疲れた</span></button>
+              <button type="button" class="cond-btn active" id="cond-1" onclick="selectCondition(1)">😊<span>普通</span></button>
+              <button type="button" class="cond-btn" id="cond-2" onclick="selectCondition(2)">🔥<span>絶好調</span></button>
+            </div>
+          </div>
+          <input type="hidden" id="mrecCondition" value="1">
         </div>
         <div class="mrec-btn-area">
           <button class="mrec-action-btn" onclick="mrecSubmitManual()">記録する</button>
@@ -7116,7 +7149,8 @@ async function addQuest(){
       startedAt = new Date(Date.now() - amount * 60000).toISOString();
     }
   }
-  sessions.push({date,subject,type:currentType,amount,exp,note,startedAt,endedAt});
+  const condition = parseInt(document.getElementById('mrecCondition')?.value ?? 1);
+  sessions.push({date,subject,type:currentType,amount,exp,note,startedAt,endedAt,condition});
   timerStartedAt = null;
   const smins1=studyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
@@ -12434,6 +12468,65 @@ function generateRpgLog(name, subjectName, minutes){
     .replace('{time}', timeStr);
 }
 
+/* ────────────────────────────────────────
+   コンディション選択
+──────────────────────────────────────── */
+function selectCondition(val){
+  document.getElementById('mrecCondition').value = val;
+  [0,1,2].forEach(i => document.getElementById('cond-'+i)?.classList.toggle('active', i===val));
+}
+
+function getTodayCondition(){
+  // 今日の最新セッションのコンディションを返す
+  const today = getTodayStr();
+  const todaySessions = sessions.filter(s => s.date === today && isStudyType(s));
+  if(!todaySessions.length) return 1; // default: 普通
+  return todaySessions[todaySessions.length-1].condition ?? 1;
+}
+
+/* ────────────────────────────────────────
+   クイック記録（5/15/30/60分）
+──────────────────────────────────────── */
+async function quickRecord(mins){
+  const today = getTodayStr();
+  const subjs = allSelectedSubjects();
+  if(!subjs.length){ alert('科目が設定されていません。まず資格を選択してください。'); return; }
+  const subj = subjs[0]; // 第1科目に記録
+  const exp = mins;
+  const smins0 = studyMins(sessions), lv0 = computeLevel(smins0);
+
+  // streak更新
+  const yesterday = toLocalDateStr(new Date(Date.now()-86400000));
+  if(char.lastLoginDate !== today){
+    char.streak = (char.lastLoginDate === yesterday) ? char.streak+1 : 1;
+    char.lastLoginDate = today;
+  }
+  char.totalEXP += exp;
+
+  const now = new Date();
+  const endedAt = now.toISOString();
+  const startedAt = new Date(Date.now() - mins*60000).toISOString();
+  const condition = getTodayCondition();
+
+  sessions.push({ date:today, subject:subj.key, type:'study', amount:mins, exp, note:'⚡ クイック記録', startedAt, endedAt, condition });
+
+  const smins1 = studyMins(sessions), lv1 = computeLevel(smins1);
+  char.level = lv1;
+  await saveAll(); renderAll();
+  if(lv1 > lv0){ showLevelUp(lv1, smins1); checkClassChange(lv0, lv1, smins1); }
+  if(currentUser) syncToCloud().catch(()=>{});
+  checkWeeklyGoalMilestones().catch(()=>{});
+
+  autoPostToTimeline({ subject:subj.key, minutes:mins, note:`⚡ ${mins}分のスキマ学習！`, exp, lv:char.level, name:char.name });
+
+  // フィードバック表示
+  const resultEl = document.getElementById('quickRecResult');
+  if(resultEl){
+    resultEl.textContent = `✓ ${subj.name} +${mins}分 +${exp}EXP 記録完了！`;
+    setTimeout(()=>{ if(resultEl) resultEl.textContent=''; }, 3000);
+  }
+}
+
 /* ── ローカルタイムライン（localStorage） ── */
 const TL_KEY = 'sq2_timeline';
 const TL_LIKES_KEY = 'sq2_tl_likes';
@@ -16515,6 +16608,30 @@ function restartTutorial() {
     const noStudyDays = getNoStudyDays();
     if(noStudyDays >= 2){
       return MESSAGES_WORRY[Math.floor(Math.random() * MESSAGES_WORRY.length)];
+    }
+
+    // ストリーク途切れリマインダー（18時以降で今日未記録かつstreakが3以上）
+    const hour = new Date().getHours();
+    const streak = typeof char !== 'undefined' ? (char.streak || 0) : 0;
+    if(hour >= 18 && mins === 0 && streak >= 3){
+      const msgs = [
+        `🔥 ${streak}日連続が途切れそう！今日もちょっとだけやろう！`,
+        `ストリーク${streak}日、今日で途切れちゃうよ！5分だけでも！`,
+        `${streak}日間、ずっと頑張ってきたんだよ。今日も続けよう！`,
+      ];
+      return msgs[Math.floor(Math.random()*msgs.length)];
+    }
+
+    // コンディション低下時は優しいメッセージ
+    const cond = typeof getTodayCondition === 'function' ? getTodayCondition() : 1;
+    if(cond === 0 && mins > 0){
+      const tiredMsgs = [
+        '疲れてる中、よく頑張ったよ。今日はここまでにしよ！',
+        '体調が悪い中でも記録してくれてありがとう。無理しないでね！',
+        'コンディション低くても動けた、それだけで十分すごいよ！',
+        '今日は早めに休んで、明日また一緒に頑張ろう！',
+      ];
+      return tiredMsgs[Math.floor(Math.random()*tiredMsgs.length)];
     }
 
     const week = getWeekPct();
