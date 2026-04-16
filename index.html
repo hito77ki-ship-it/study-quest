@@ -4957,9 +4957,28 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <!-- 追加フォーム -->
       <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.15em;color:var(--muted);margin-bottom:10px;" id="examFormLabel">＋ 新しい試験日を追加</div>
       <input type="hidden" id="examEditId" value="">
-      <div class="form-group"><label class="form-label">試験名</label><input class="form-input" id="examTitle" type="text" placeholder="公認会計士 第〇回短答式試験"></div>
+      <div class="form-group"><label class="form-label">試験名</label><input class="form-input" id="examTitle" type="text" placeholder="公認会計士 第〇回短答式試験" oninput="calcExamTargetHours()"></div>
       <div class="form-group"><label class="form-label">試験日</label><input class="form-input" id="examTargetDate" type="date"></div>
       <div class="form-group"><label class="form-label">勉強開始日（任意）</label><input class="form-input" id="examStartDate" type="date"></div>
+      <!-- 現在地・目標スコア（パーソナライズ計算用） -->
+      <div style="border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.15em;margin-bottom:10px;">現在地から必要時間を計算（任意）</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div class="form-group" style="margin:0;">
+            <label class="form-label">現在のスコア</label>
+            <input class="form-input" id="examCurrentScore" type="number" min="0" placeholder="例: 400" oninput="calcExamTargetHours()">
+          </div>
+          <div class="form-group" style="margin:0;">
+            <label class="form-label">目標スコア</label>
+            <input class="form-input" id="examTargetScore" type="number" min="0" placeholder="例: 700" oninput="calcExamTargetHours()">
+          </div>
+        </div>
+        <div id="examCalcResult" style="display:none;background:rgba(140,198,63,.08);border:1px solid rgba(140,198,63,.25);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--text);line-height:1.8;"></div>
+        <div class="form-group" style="margin-top:8px;">
+          <label class="form-label">目標学習時間（h）<span style="color:var(--muted);font-size:10px;"> ←上記から自動計算 または手動入力</span></label>
+          <input class="form-input" id="examTargetHours" type="number" min="0" placeholder="例: 300">
+        </div>
+      </div>
       <div class="modal-btns">
         <button class="modal-btn" onclick="closeExamModal()">閉じる</button>
         <button class="modal-btn confirm" onclick="saveExamGoal()">◆ 追加する</button>
@@ -11624,8 +11643,67 @@ function renderExamBanner(){
   </div>`;
 }
 
+/* 試験種別ごとの必要時間係数
+   (100点アップあたりの必要時間。スコア差×係数=概算時間) */
+const EXAM_SCORE_COEFFS = {
+  toeic:    { label:'TOEIC', perPoint: 2.5,  unit:'点', maxScore:990 },  // 100点上げるのに約250h
+  eiken:    { label:'英検',   perPoint:30,    unit:'級', maxScore:1  },   // 1級差=約30h（参考値）
+  boki1:    { label:'簿記1級',perPoint: 3,    unit:'点', maxScore:100 },  // 合格点70点
+  boki2:    { label:'簿記2級',perPoint: 1.5,  unit:'点', maxScore:100 },
+  cpa:      { label:'公認会計士', perPoint:10, unit:'点', maxScore:500 }, // 短答500点満点
+  fp2:      { label:'FP2級',  perPoint: 2,    unit:'点', maxScore:120 },
+  takken:   { label:'宅建',   perPoint: 3,    unit:'点', maxScore:50  },
+  default:  { label:'試験',   perPoint: 5,    unit:'点', maxScore:100 },
+};
+
+function detectExamCoeff(title){
+  const t = (title||'').toLowerCase();
+  if(t.includes('toeic'))      return EXAM_SCORE_COEFFS.toeic;
+  if(t.includes('英検'))        return EXAM_SCORE_COEFFS.eiken;
+  if(t.includes('簿記1') || t.includes('1級')) return EXAM_SCORE_COEFFS.boki1;
+  if(t.includes('簿記2') || t.includes('2級')) return EXAM_SCORE_COEFFS.boki2;
+  if(t.includes('会計士') || t.includes('cpa')) return EXAM_SCORE_COEFFS.cpa;
+  if(t.includes('fp'))          return EXAM_SCORE_COEFFS.fp2;
+  if(t.includes('宅建'))        return EXAM_SCORE_COEFFS.takken;
+  return EXAM_SCORE_COEFFS.default;
+}
+
+function calcExamTargetHours(){
+  const cur  = parseFloat(document.getElementById('examCurrentScore')?.value);
+  const tgt  = parseFloat(document.getElementById('examTargetScore')?.value);
+  const title= document.getElementById('examTitle')?.value || '';
+  const resultEl = document.getElementById('examCalcResult');
+  const hoursEl  = document.getElementById('examTargetHours');
+  if(!resultEl || !hoursEl) return;
+
+  if(isNaN(cur) || isNaN(tgt) || tgt <= cur){
+    resultEl.style.display = 'none';
+    return;
+  }
+
+  const coeff = detectExamCoeff(title);
+  const diff  = tgt - cur;
+  const hours = Math.round(diff * coeff.perPoint);
+
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <span style="color:var(--muted);font-size:11px;">現在 </span><strong>${cur}${coeff.unit}</strong>
+        <span style="color:var(--muted);margin:0 6px;">→</span>
+        <span style="color:var(--muted);font-size:11px;">目標 </span><strong style="color:var(--accent2)">${tgt}${coeff.unit}</strong>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:16px;color:var(--gold2);font-weight:700;">${hours}h</div>
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:4px;">
+      差分 +${diff}${coeff.unit} × ${coeff.perPoint}h/${coeff.unit} ≈ 残り必要時間 <strong>${hours}時間</strong>
+    </div>`;
+
+  // 目標時間欄に自動セット
+  hoursEl.value = hours;
+}
+
 function openExamModal(){
-  // モーダル内のリスト更新
   const listEl = document.getElementById('examModalList');
   if(listEl){
     if(examGoals.length){
@@ -11634,7 +11712,7 @@ function openExamModal(){
         <div class="exam-modal-list-item">
           <div class="exam-modal-list-item-body">
             <div style="font-size:12px;font-weight:600;color:var(--text)">${eg.title||'試験日'}</div>
-            <div style="font-size:10px;color:var(--muted)">${eg.date}</div>
+            <div style="font-size:10px;color:var(--muted)">${eg.date}${eg.targetHours?` · 目標${eg.targetHours}h`:''}${eg.currentScore!=null?` · 現在${eg.currentScore}→目標${eg.targetScore}`:''}</div>
           </div>
           <button class="exam-modal-list-item-del" onclick="deleteExamGoal('${eg.id}')">🗑</button>
         </div>`).join('');
@@ -11642,11 +11720,15 @@ function openExamModal(){
       listEl.innerHTML='';
     }
   }
-  // フォームをリセット
   document.getElementById('examEditId').value='';
   document.getElementById('examTitle').value='';
   document.getElementById('examTargetDate').value='';
   document.getElementById('examStartDate').value='';
+  document.getElementById('examCurrentScore').value='';
+  document.getElementById('examTargetScore').value='';
+  document.getElementById('examTargetHours').value='';
+  const resultEl = document.getElementById('examCalcResult');
+  if(resultEl) resultEl.style.display='none';
   const lbl=document.getElementById('examFormLabel');
   if(lbl) lbl.textContent='＋ 新しい試験日を追加';
   document.getElementById('examModal').classList.add('show');
@@ -11656,11 +11738,17 @@ function closeExamModal(){document.getElementById('examModal').classList.remove(
 async function saveExamGoal(){
   const date=document.getElementById('examTargetDate').value;
   if(!date){alert('試験日を入力してください');return;}
+  const curScore = parseFloat(document.getElementById('examCurrentScore')?.value);
+  const tgtScore = parseFloat(document.getElementById('examTargetScore')?.value);
+  const tgtHours = parseFloat(document.getElementById('examTargetHours')?.value);
   const entry={
     id: document.getElementById('examEditId').value || genId(),
     title: document.getElementById('examTitle').value.trim()||'試験日',
     date,
-    startDate: document.getElementById('examStartDate').value
+    startDate:    document.getElementById('examStartDate').value,
+    targetHours:  isNaN(tgtHours) ? 0 : tgtHours,
+    currentScore: isNaN(curScore) ? null : curScore,
+    targetScore:  isNaN(tgtScore) ? null : tgtScore,
   };
   const existIdx=examGoals.findIndex(e=>e.id===entry.id);
   if(existIdx>=0) examGoals[existIdx]=entry;
