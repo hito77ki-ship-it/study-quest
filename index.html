@@ -9580,12 +9580,13 @@ function renderTimeBlock(dateStr){
       </div>`).join('');
   }
 
-  // グリッド構築（24時間 × 6ブロック/時 = 10分単位）
-  // 表示範囲を実際の最小〜最大時刻に絞る
+  // グリッド表示範囲：startedAt と amount から終了時刻を計算して決定
   let minH = 23, maxH = 0;
   daySessions.forEach(s=>{
     const sh = new Date(s.startedAt).getHours();
-    const eh = new Date(s.endedAt).getHours();
+    // 終了時刻 = 開始時刻 + amount（実経過ではなく記録分数）
+    const endMs = new Date(s.startedAt).getTime() + (s.amount||0)*60000;
+    const eh = new Date(endMs).getHours();
     if(sh < minH) minH = sh;
     if(eh > maxH) maxH = eh;
   });
@@ -9594,19 +9595,23 @@ function renderTimeBlock(dateStr){
   maxH = Math.min(23, maxH+1);
 
   // 5分スロット（12マス/時間）に科目を割り当て
+  // ★ スロット数は s.amount を基準に決定（startedAt→endedAt の実経過に依存しない）
   const SLOT_MIN = 5;
   const slots = {};
   daySessions.forEach(s=>{
     const start = new Date(s.startedAt);
-    const end   = new Date(s.endedAt);
-    let cur = new Date(start);
-    cur.setSeconds(0,0);
-    const startSlot = Math.floor(cur.getMinutes()/SLOT_MIN)*SLOT_MIN;
-    cur.setMinutes(startSlot);
-    while(cur < end){
-      const key = cur.getHours()+':'+cur.getMinutes();
-      if(!slots[key]) slots[key] = s.subject;
-      cur = new Date(cur.getTime() + SLOT_MIN*60000);
+    // 開始スロットを5分単位に切り捨て
+    const slotStart = new Date(start);
+    slotStart.setSeconds(0, 0);
+    slotStart.setMinutes(Math.floor(slotStart.getMinutes() / SLOT_MIN) * SLOT_MIN);
+
+    // 塗るスロット数 = amount を SLOT_MIN で割って切り上げ（1分でも1マス）
+    const numSlots = Math.ceil((s.amount || 0) / SLOT_MIN);
+
+    for(let i = 0; i < numSlots; i++){
+      const cur = new Date(slotStart.getTime() + i * SLOT_MIN * 60000);
+      const key = cur.getHours() + ':' + cur.getMinutes();
+      if(!slots[key]) slots[key] = s.subject; // 先に来たセッション優先
     }
   });
 
