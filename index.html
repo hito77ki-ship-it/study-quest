@@ -9611,54 +9611,56 @@ function renderTimeBlock(dateStr){
   }
 
   /* ──────────────────────────────────────────────────────
-     スロット割り当て（実測データ最優先・完全版）
+     スロット割り当て（amount 基準・実測優先）
      KEY = 深夜0時からの経過分（0〜1439）
-     優先順位：推定セッション(_estimated) → 実測セッション(timer/manual)
-       推定を先に描いてから実測で上書きすることで、タイマー記録が必ず見える。
-     終了時刻：endedAt が存在すれば startedAt〜endedAt の実区間を使用
-              なければ startedAt + amount 分で算出（従来通り）
+
+     【設計原則】
+     ・スロット数は s.amount（ログに表示される値）から算出する。
+       endedAt は使用しない。
+       理由：タイマー途中でamountを手動修正した場合に endedAt と amount が
+             乖離し、endedAt ベースだと「20分しか塗られない」バグが起きるため。
+     ・処理順：推定(_estimated) → 実測 の順で後着優先。
+       実測セッション（タイマー・開始時刻入力）が推定を必ず上書きする。
   ────────────────────────────────────────────────────── */
   const SLOT_MIN = 5;
   const slots = {}; // key: 0〜1439 (minutesSinceMidnight)
 
-  // ① 推定セッション → ② 実測セッション の順に処理（実測が後から上書き）
+  // 推定セッションを先、実測セッションを後に処理（実測が後着優先で上書き）
   const estimatedSessions = daySessions.filter(s =>  s._estimated);
   const realSessions      = daySessions.filter(s => !s._estimated);
 
-  [...estimatedSessions, ...realSessions].forEach(s=>{
+  [...estimatedSessions, ...realSessions].forEach(s => {
     if(!s.startedAt) return;
-
     const start = new Date(s.startedAt);
     if(isNaN(start.getTime())) return;
 
     // 開始分（5分単位に切り捨て）
     const startMins = start.getHours() * 60 + Math.floor(start.getMinutes() / SLOT_MIN) * SLOT_MIN;
 
-    // 終了分：endedAt があれば実時間、なければ amount から算出
-    let endMins;
-    if(s.endedAt && !s._estimated){
-      const end = new Date(s.endedAt);
-      if(!isNaN(end.getTime())){
-        const rawEnd = end.getHours() * 60 + Math.ceil(end.getMinutes() / SLOT_MIN) * SLOT_MIN;
-        // 深夜またぎ（endedAt が startedAt より前）は amount ベースにフォールバック
-        endMins = rawEnd > startMins ? rawEnd : null;
-      }
-    }
-    if(!endMins){
-      endMins = startMins + Math.ceil((s.amount || 0) / SLOT_MIN) * SLOT_MIN;
-    }
-    endMins = Math.min(endMins, 1440); // 24:00 を超えない
+    // スロット数 = amount ÷ SLOT_MIN の切り上げ（ログ表示と必ず一致）
+    const numSlots = Math.min(
+      Math.ceil((s.amount || 0) / SLOT_MIN),
+      Math.ceil((1440 - startMins) / SLOT_MIN) // 深夜0時をまたがない
+    );
 
-    for(let slotMins = startMins; slotMins < endMins; slotMins += SLOT_MIN){
-      slots[slotMins] = s.subject; // 後着優先（実測セッションが推定を上書き）
+    for(let i = 0; i < numSlots; i++){
+      const slotMins = startMins + i * SLOT_MIN;
+      if(slotMins >= 1440) break;
+      slots[slotMins] = s.subject; // 後着優先
     }
   });
 
-  // グリッドは常に 0:00〜23:55（24時間フル表示）
-  // → 動的範囲では「補完ミスで範囲外に置かれたセッション」が見えなくなるバグを根絶
+  /* ─── 表示範囲：最初の記録の1時間前〜最後のスロットの1時間後（動的） ─── */
   const usedMins = Object.keys(slots).map(Number);
-  const minH = 0;
-  const maxH = 23;
+  let minH, maxH;
+  if(usedMins.length > 0){
+    const firstMin = Math.min(...usedMins);
+    const lastMin  = Math.max(...usedMins);
+    minH = Math.max(0,  Math.floor(firstMin / 60) - 1);
+    maxH = Math.min(23, Math.ceil(lastMin   / 60) + 1);
+  } else {
+    minH = 8; maxH = 20;
+  }
 
   // ラベルとグリッド描画
   if(labels) labels.innerHTML='';
@@ -9666,7 +9668,7 @@ function renderTimeBlock(dateStr){
 
   const ROW_H = 26; // px（タップしやすさを確保）
 
-  for(let h=minH; h<=maxH; h++){
+  for(let h = minH; h <= maxH; h++){
     // 時刻ラベル（3の倍数時間を強調）
     if(labels){
       const lbl = document.createElement('div');
@@ -9687,7 +9689,7 @@ function renderTimeBlock(dateStr){
       lbl.textContent = String(h).padStart(2,'0');
       labels.appendChild(lbl);
     }
-    // 1行（12マス）
+    // 1行（12マス＝60分）
     if(grid){
       const row = document.createElement('div');
       const isKey = h % 3 === 0;
@@ -9697,7 +9699,7 @@ function renderTimeBlock(dateStr){
         `border-bottom:${isKey ? '1px solid rgba(255,255,255,.18)' : '1px solid var(--border)'}`,
         isKey ? `background:rgba(255,255,255,.025)` : '',
       ].filter(Boolean).join(';');
-      for(let m=0; m<60; m+=SLOT_MIN){
+      for(let m = 0; m < 60; m += SLOT_MIN){
         const cell = document.createElement('div');
         const is15 = m % 15 === 0 && m > 0;
         const is30 = m === 30;
@@ -9706,14 +9708,15 @@ function renderTimeBlock(dateStr){
           : is15
             ? '1px solid rgba(255,255,255,.15)'
             : '1px solid var(--border)';
-        cell.style.cssText=`flex:1;border-right:${borderR};min-width:0;`;
-        // スロットキーは「深夜0時からの経過分」
+        cell.style.cssText = `flex:1;border-right:${borderR};min-width:0;`;
         const slotKey = h * 60 + m;
         const sub = slots[slotKey];
         if(sub){
           cell.style.background = tbColor(sub);
           cell.style.opacity = '0.88';
-          cell.title = `${tbName(sub)} ${h}:${String(m).padStart(2,'0')}〜${String(m+SLOT_MIN<60?h:h+1).padStart(2,'0')}:${String((m+SLOT_MIN)%60).padStart(2,'0')}`;
+          const endH = (m + SLOT_MIN < 60) ? h : h + 1;
+          const endM = (m + SLOT_MIN) % 60;
+          cell.title = `${tbName(sub)} ${h}:${String(m).padStart(2,'0')}〜${String(endH).padStart(2,'0')}:${String(endM).padStart(2,'0')}`;
         }
         row.appendChild(cell);
       }
@@ -9721,17 +9724,10 @@ function renderTimeBlock(dateStr){
     }
   }
 
-  // 最初の記録の1時間前にスクロール（24時間表示なので初期位置を自動調整）
+  // 動的範囲のため先頭が「最初の記録の1時間前」→ scrollTop リセット
+  // 表示行数が多い場合は scroll で夜遅くまで確認可能
   const scrollWrap = document.getElementById('tbScrollWrap');
-  if(scrollWrap){
-    if(usedMins.length > 0){
-      const firstMin  = Math.min(...usedMins);
-      const scrollToH = Math.max(0, Math.floor(firstMin / 60) - 1);
-      scrollWrap.scrollTop = scrollToH * ROW_H;
-    } else {
-      scrollWrap.scrollTop = 8 * ROW_H; // データなしは8時スタート
-    }
-  }
+  if(scrollWrap) scrollWrap.scrollTop = 0;
 }
 
 /* ════════════════════════════════════════
