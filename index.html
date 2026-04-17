@@ -9498,7 +9498,8 @@ function switchReportSubTab(sub){
 let tbCurrentDate = null;
 
 function tbColor(subject){
-  return allSelectedSubjects().find(s=>s.key===subject)?.color || '#7cff6e';
+  const subj = allSelectedSubjects().find(s=>s.key===subject);
+  return getSubjectChartColor(subject, subj?.color || '#7cff6e');
 }
 function tbName(subject){
   return allSelectedSubjects().find(s=>s.key===subject)?.name || subject;
