@@ -9558,18 +9558,14 @@ function renderTimeBlock(dateStr){
   }
   if(noData) noData.style.display='none';
 
-  // 合計時間
+  // 合計時間・科目集計は s.amount（棒グラフと同じ値）を使う
   let totalMin = 0;
-  daySessions.forEach(s=>{
-    const ms = new Date(s.endedAt)-new Date(s.startedAt);
-    totalMin += ms/60000;
-  });
+  daySessions.forEach(s=>{ totalMin += s.amount||0; });
   if(total) total.textContent = Math.floor(totalMin/60)+'h '+Math.round(totalMin%60)+'m';
 
-  // 科目ごとの集計
   const subMap = {};
   daySessions.forEach(s=>{
-    const min = (new Date(s.endedAt)-new Date(s.startedAt))/60000;
+    const min = s.amount||0;
     if(!subMap[s.subject]) subMap[s.subject]=0;
     subMap[s.subject]+=min;
   });
