@@ -9633,9 +9633,11 @@ function renderTimeBlock(dateStr){
     }
   });
 
-  // Pass2: 推定セッションを実測の直後から連続配置（衝突なし・薄く表示）
-  const realKeys = Object.keys(slots).map(Number);
-  let estCursor  = realKeys.length > 0 ? Math.max(...realKeys) + SLOT_MIN : 0;
+  // Pass2: 推定セッションを「21:00 or 実測の直後」の遅い方から連続配置
+  // → 夜に記録することが多いため、21:00以降に表示する（実測と視覚的に分離）
+  const realKeys   = Object.keys(slots).map(Number);
+  const afterReal  = realKeys.length > 0 ? Math.max(...realKeys) + SLOT_MIN : 0;
+  let estCursor    = Math.max(afterReal, 21 * 60); // 21:00 より前には置かない
 
   estimated.forEach(s => {
     if(estCursor >= 1440) return;
