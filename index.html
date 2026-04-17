@@ -8374,8 +8374,8 @@ function switchChartTab(tab){
 async function init(){
   try {
 
-  document.getElementById('questDate').value=new Date().toISOString().slice(0,10);
-  document.getElementById('scoreExamDate').value=new Date().toISOString().slice(0,10);
+  document.getElementById('questDate').value=getTodayStr();
+  document.getElementById('scoreExamDate').value=getTodayStr();
   await loadAll();
   initDqStats();
 
@@ -9555,8 +9555,17 @@ function renderTimeBlock(dateStr){
     .filter(s=>isStudyType(s)&&s.date===dateStr)
     .map(s=>{
       if(s.startedAt && s.endedAt) return s;
-      // 手動記録: 現在時刻(または記録時刻)から amount 分遡って補完
-      const refTime = s.createdAt ? new Date(s.createdAt) : new Date();
+      // startedAt/endedAt がない記録：その日の日付に固定して補完
+      // createdAt があればそれ、なければ記録日の 20:00 を終了時刻の基準にする
+      // （new Date() を使うと別日にページを開いたとき全く別の時間に置かれるバグ防止）
+      let refTime;
+      if(s.createdAt){
+        refTime = new Date(s.createdAt);
+      } else {
+        // dateStr（例："2026-04-17"）の 20:00 ローカル時間を基準にする
+        refTime = new Date(s.date + 'T20:00:00');
+        if(isNaN(refTime.getTime())) refTime = new Date(); // フォールバック
+      }
       const endedAt   = refTime.toISOString();
       const startedAt = new Date(refTime.getTime() - (s.amount||0)*60000).toISOString();
       return {...s, startedAt, endedAt, _estimated:true};
@@ -9631,17 +9640,11 @@ function renderTimeBlock(dateStr){
     }
   });
 
-  // グリッド表示範囲：最初の記録1時間前〜最後の記録1時間後（データなし時は8〜20時）
+  // グリッドは常に 0:00〜23:55（24時間フル表示）
+  // → 動的範囲では「補完ミスで範囲外に置かれたセッション」が見えなくなるバグを根絶
   const usedMins = Object.keys(slots).map(Number);
-  let minH, maxH;
-  if(usedMins.length > 0){
-    const firstMin = Math.min(...usedMins);
-    const lastMin  = Math.max(...usedMins);
-    minH = Math.max(0,  Math.floor(firstMin / 60) - 1);
-    maxH = Math.min(23, Math.ceil(lastMin   / 60) + 1);
-  } else {
-    minH = 8; maxH = 20;
-  }
+  const minH = 0;
+  const maxH = 23;
 
   // ラベルとグリッド描画
   if(labels) labels.innerHTML='';
@@ -9650,10 +9653,9 @@ function renderTimeBlock(dateStr){
   const ROW_H = 26; // px（タップしやすさを確保）
 
   for(let h=minH; h<=maxH; h++){
-    // 時刻ラベル
+    // 時刻ラベル（3の倍数時間を強調）
     if(labels){
       const lbl = document.createElement('div');
-      // 3の倍数時間（0,3,6,9…）を強調、それ以外は少し薄め
       const isKey = h % 3 === 0;
       lbl.style.cssText = [
         `height:${ROW_H}px`,
@@ -9705,9 +9707,17 @@ function renderTimeBlock(dateStr){
     }
   }
 
-  // 動的範囲なので先頭がそのまま「最初の記録の1時間前」→ スクロールをリセット
+  // 最初の記録の1時間前にスクロール（24時間表示なので初期位置を自動調整）
   const scrollWrap = document.getElementById('tbScrollWrap');
-  if(scrollWrap) scrollWrap.scrollTop = 0;
+  if(scrollWrap){
+    if(usedMins.length > 0){
+      const firstMin  = Math.min(...usedMins);
+      const scrollToH = Math.max(0, Math.floor(firstMin / 60) - 1);
+      scrollWrap.scrollTop = scrollToH * ROW_H;
+    } else {
+      scrollWrap.scrollTop = 8 * ROW_H; // データなしは8時スタート
+    }
+  }
 }
 
 /* ════════════════════════════════════════
