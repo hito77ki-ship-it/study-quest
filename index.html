@@ -4666,6 +4666,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
               <div id="tbGrid" style="flex:1;display:flex;flex-direction:column;min-width:220px;"></div>
             </div>
           </div>
+          <!-- 時刻不明セッション（startedAt なし）は別セクションで表示 -->
+          <div id="tbUnplaced" style="display:none;margin-top:10px;"></div>
           <div id="tbNoData" style="display:none;text-align:center;padding:30px;color:var(--muted);font-size:13px;">この日の記録はありません<br><span style="font-size:11px;">タイマーで勉強すると記録されます</span></div>
         </div>
       </div>
@@ -9550,27 +9552,13 @@ function renderTimeBlock(dateStr){
   const dow = ['日','月','火','水','木','金','土'][d.getDay()];
   if(label) label.textContent = dateStr.slice(5).replace('-','/') + '（' + dow + '）';
 
-  // その日の全セッションを抽出（手動記録も含む）
-  // startedAt/endedAt がない場合は記録時刻から逆算して補完
-  const daySessions = (sessions||[])
-    .filter(s=>isStudyType(s)&&s.date===dateStr)
-    .map(s=>{
-      if(s.startedAt && s.endedAt) return s;
-      // startedAt/endedAt がない記録：その日の日付に固定して補完
-      // createdAt があればそれ、なければ記録日の 20:00 を終了時刻の基準にする
-      // （new Date() を使うと別日にページを開いたとき全く別の時間に置かれるバグ防止）
-      let refTime;
-      if(s.createdAt){
-        refTime = new Date(s.createdAt);
-      } else {
-        // dateStr（例："2026-04-17"）の 20:00 ローカル時間を基準にする
-        refTime = new Date(s.date + 'T20:00:00');
-        if(isNaN(refTime.getTime())) refTime = new Date(); // フォールバック
-      }
-      const endedAt   = refTime.toISOString();
-      const startedAt = new Date(refTime.getTime() - (s.amount||0)*60000).toISOString();
-      return {...s, startedAt, endedAt, _estimated:true};
-    });
+  // その日の全セッションを抽出
+  // startedAt がないセッションはグリッドに配置せず別セクションで表示する
+  const allDaySessions = (sessions||[]).filter(s=>isStudyType(s)&&s.date===dateStr);
+  // グリッドに乗せる：startedAt が存在するセッション
+  const daySessions    = allDaySessions.filter(s => s.startedAt);
+  // 時刻不明：startedAt がないセッション（推定配置しない）
+  const unplacedSessions = allDaySessions.filter(s => !s.startedAt);
 
   const noData = document.getElementById('tbNoData');
   const grid   = document.getElementById('tbGrid');
@@ -9578,23 +9566,25 @@ function renderTimeBlock(dateStr){
   const subList= document.getElementById('tbSubjectList');
   const total  = document.getElementById('tbTotalTime');
 
-  if(daySessions.length===0){
-    if(noData) noData.style.display='';
-    if(grid)   grid.innerHTML='';
-    if(labels) labels.innerHTML='';
-    if(subList)subList.innerHTML='';
-    if(total)  total.textContent='';
+  const unplacedEl = document.getElementById('tbUnplaced');
+  if(allDaySessions.length===0){
+    if(noData)      noData.style.display='';
+    if(grid)        grid.innerHTML='';
+    if(labels)      labels.innerHTML='';
+    if(subList)     subList.innerHTML='';
+    if(total)       total.textContent='';
+    if(unplacedEl)  unplacedEl.style.display='none';
     return;
   }
   if(noData) noData.style.display='none';
 
-  // 合計時間・科目集計は s.amount（棒グラフと同じ値）を使う
+  // 合計時間・科目集計は allDaySessions（時刻不明含む全件）の amount を使う
   let totalMin = 0;
-  daySessions.forEach(s=>{ totalMin += s.amount||0; });
+  allDaySessions.forEach(s=>{ totalMin += s.amount||0; });
   if(total) total.textContent = Math.floor(totalMin/60)+'h '+Math.round(totalMin%60)+'m';
 
   const subMap = {};
-  daySessions.forEach(s=>{
+  allDaySessions.forEach(s=>{
     const min = s.amount||0;
     if(!subMap[s.subject]) subMap[s.subject]=0;
     subMap[s.subject]+=min;
@@ -9611,25 +9601,21 @@ function renderTimeBlock(dateStr){
   }
 
   /* ──────────────────────────────────────────────────────
-     スロット割り当て（amount 基準・実測優先）
+     スロット割り当て（startedAt がある記録のみ・amount 基準）
      KEY = 深夜0時からの経過分（0〜1439）
 
      【設計原則】
-     ・スロット数は s.amount（ログに表示される値）から算出する。
-       endedAt は使用しない。
-       理由：タイマー途中でamountを手動修正した場合に endedAt と amount が
-             乖離し、endedAt ベースだと「20分しか塗られない」バグが起きるため。
-     ・処理順：推定(_estimated) → 実測 の順で後着優先。
-       実測セッション（タイマー・開始時刻入力）が推定を必ず上書きする。
+     ・startedAt がないセッションはグリッドに配置しない。
+       → 推定配置すると実測セッションに上書きされて消えるバグを根絶
+       → 代わりに「時刻不明の記録」セクションで別途表示
+     ・スロット数は s.amount から算出（ログ表示と必ず一致）
+     ・後着優先：配列の後ろにある記録が同じスロットを上書き
   ────────────────────────────────────────────────────── */
   const SLOT_MIN = 5;
   const slots = {}; // key: 0〜1439 (minutesSinceMidnight)
 
-  // 推定セッションを先、実測セッションを後に処理（実測が後着優先で上書き）
-  const estimatedSessions = daySessions.filter(s =>  s._estimated);
-  const realSessions      = daySessions.filter(s => !s._estimated);
-
-  [...estimatedSessions, ...realSessions].forEach(s => {
+  daySessions.forEach(s => {
+    // daySessions は startedAt が存在するものだけなので null チェックは念のため
     if(!s.startedAt) return;
     const start = new Date(s.startedAt);
     if(isNaN(start.getTime())) return;
@@ -9728,6 +9714,27 @@ function renderTimeBlock(dateStr){
   // 表示行数が多い場合は scroll で夜遅くまで確認可能
   const scrollWrap = document.getElementById('tbScrollWrap');
   if(scrollWrap) scrollWrap.scrollTop = 0;
+
+  /* ── 時刻不明セクション（startedAt なし）── */
+  if(unplacedEl){
+    if(unplacedSessions.length > 0){
+      const rows = unplacedSessions.map(s => {
+        const min = s.amount || 0;
+        const timeStr = Math.floor(min/60) ? `${Math.floor(min/60)}h ${min%60}m` : `${min}m`;
+        return `<div style="display:flex;align-items:center;gap:6px;font-size:12px;">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${tbColor(s.subject)};flex-shrink:0;opacity:.7;"></span>
+          <span style="color:var(--text);">${tbName(s.subject)}</span>
+          <span style="font-family:'Share Tech Mono',monospace;color:var(--muted);font-size:11px;">${timeStr}</span>
+        </div>`;
+      }).join('');
+      unplacedEl.innerHTML = `
+        <div style="font-size:10px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;">⚠ 開始時刻なし（グリッド未配置）</div>
+        <div style="display:flex;flex-direction:column;gap:4px;">${rows}</div>`;
+      unplacedEl.style.display = '';
+    } else {
+      unplacedEl.style.display = 'none';
+    }
+  }
 }
 
 /* ════════════════════════════════════════
