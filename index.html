@@ -4666,8 +4666,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
               <div id="tbGrid" style="flex:1;display:flex;flex-direction:column;min-width:220px;"></div>
             </div>
           </div>
-          <!-- 時刻不明セッション（startedAt なし）は別セクションで表示 -->
-          <div id="tbUnplaced" style="display:none;margin-top:10px;"></div>
           <div id="tbNoData" style="display:none;text-align:center;padding:30px;color:var(--muted);font-size:13px;">この日の記録はありません<br><span style="font-size:11px;">タイマーで勉強すると記録されます</span></div>
         </div>
       </div>
@@ -9553,12 +9551,18 @@ function renderTimeBlock(dateStr){
   if(label) label.textContent = dateStr.slice(5).replace('-','/') + '（' + dow + '）';
 
   // その日の全セッションを抽出
-  // startedAt がないセッションはグリッドに配置せず別セクションで表示する
+  // startedAt がないセッションは記録日の終盤を基準に推定配置する（薄く表示）
   const allDaySessions = (sessions||[]).filter(s=>isStudyType(s)&&s.date===dateStr);
-  // グリッドに乗せる：startedAt が存在するセッション
-  const daySessions    = allDaySessions.filter(s => s.startedAt);
-  // 時刻不明：startedAt がないセッション（推定配置しない）
-  const unplacedSessions = allDaySessions.filter(s => !s.startedAt);
+  const daySessions = allDaySessions.map(s => {
+    if(s.startedAt) return s;
+    // startedAt なし：記録日の 23:00 を基準に amount 分遡って推定
+    // → 実測セッションと被りにくい時間帯に配置
+    const base = new Date(s.date + 'T23:00:00');
+    if(isNaN(base.getTime())) return {...s, _estimated:true};
+    const startedAt = new Date(base.getTime() - (s.amount||0)*60000).toISOString();
+    const endedAt   = base.toISOString();
+    return {...s, startedAt, endedAt, _estimated:true};
+  });
 
   const noData = document.getElementById('tbNoData');
   const grid   = document.getElementById('tbGrid');
@@ -9566,25 +9570,23 @@ function renderTimeBlock(dateStr){
   const subList= document.getElementById('tbSubjectList');
   const total  = document.getElementById('tbTotalTime');
 
-  const unplacedEl = document.getElementById('tbUnplaced');
-  if(allDaySessions.length===0){
-    if(noData)      noData.style.display='';
-    if(grid)        grid.innerHTML='';
-    if(labels)      labels.innerHTML='';
-    if(subList)     subList.innerHTML='';
-    if(total)       total.textContent='';
-    if(unplacedEl)  unplacedEl.style.display='none';
+  if(daySessions.length===0){
+    if(noData)  noData.style.display='';
+    if(grid)    grid.innerHTML='';
+    if(labels)  labels.innerHTML='';
+    if(subList) subList.innerHTML='';
+    if(total)   total.textContent='';
     return;
   }
   if(noData) noData.style.display='none';
 
-  // 合計時間・科目集計は allDaySessions（時刻不明含む全件）の amount を使う
+  // 合計時間・科目集計（全件）
   let totalMin = 0;
-  allDaySessions.forEach(s=>{ totalMin += s.amount||0; });
+  daySessions.forEach(s=>{ totalMin += s.amount||0; });
   if(total) total.textContent = Math.floor(totalMin/60)+'h '+Math.round(totalMin%60)+'m';
 
   const subMap = {};
-  allDaySessions.forEach(s=>{
+  daySessions.forEach(s=>{
     const min = s.amount||0;
     if(!subMap[s.subject]) subMap[s.subject]=0;
     subMap[s.subject]+=min;
@@ -9601,38 +9603,34 @@ function renderTimeBlock(dateStr){
   }
 
   /* ──────────────────────────────────────────────────────
-     スロット割り当て（startedAt がある記録のみ・amount 基準）
+     スロット割り当て（amount 基準・推定→実測の順で後着優先）
      KEY = 深夜0時からの経過分（0〜1439）
-
-     【設計原則】
-     ・startedAt がないセッションはグリッドに配置しない。
-       → 推定配置すると実測セッションに上書きされて消えるバグを根絶
-       → 代わりに「時刻不明の記録」セクションで別途表示
-     ・スロット数は s.amount から算出（ログ表示と必ず一致）
-     ・後着優先：配列の後ろにある記録が同じスロットを上書き
+     推定セッション(_estimated)は先に配置し、実測が上書きする。
+     推定セルは opacity 0.35 で薄く表示（時刻は近似値）。
   ────────────────────────────────────────────────────── */
   const SLOT_MIN = 5;
-  const slots = {}; // key: 0〜1439 (minutesSinceMidnight)
+  const slots    = {}; // key → subject
+  const slotEst  = {}; // key → true なら推定セル
 
-  daySessions.forEach(s => {
-    // daySessions は startedAt が存在するものだけなので null チェックは念のため
+  const estimated = daySessions.filter(s =>  s._estimated);
+  const real      = daySessions.filter(s => !s._estimated);
+
+  [...estimated, ...real].forEach(s => {
     if(!s.startedAt) return;
     const start = new Date(s.startedAt);
     if(isNaN(start.getTime())) return;
 
-    // 開始分（5分単位に切り捨て）
     const startMins = start.getHours() * 60 + Math.floor(start.getMinutes() / SLOT_MIN) * SLOT_MIN;
-
-    // スロット数 = amount ÷ SLOT_MIN の切り上げ（ログ表示と必ず一致）
-    const numSlots = Math.min(
+    const numSlots  = Math.min(
       Math.ceil((s.amount || 0) / SLOT_MIN),
-      Math.ceil((1440 - startMins) / SLOT_MIN) // 深夜0時をまたがない
+      Math.ceil((1440 - startMins) / SLOT_MIN)
     );
 
     for(let i = 0; i < numSlots; i++){
       const slotMins = startMins + i * SLOT_MIN;
       if(slotMins >= 1440) break;
-      slots[slotMins] = s.subject; // 後着優先
+      slots[slotMins]   = s.subject;
+      slotEst[slotMins] = !!s._estimated; // 後着優先で更新
     }
   });
 
@@ -9698,11 +9696,12 @@ function renderTimeBlock(dateStr){
         const slotKey = h * 60 + m;
         const sub = slots[slotKey];
         if(sub){
+          const isEst = slotEst[slotKey];
           cell.style.background = tbColor(sub);
-          cell.style.opacity = '0.88';
+          cell.style.opacity    = isEst ? '0.35' : '0.88';
           const endH = (m + SLOT_MIN < 60) ? h : h + 1;
           const endM = (m + SLOT_MIN) % 60;
-          cell.title = `${tbName(sub)} ${h}:${String(m).padStart(2,'0')}〜${String(endH).padStart(2,'0')}:${String(endM).padStart(2,'0')}`;
+          cell.title = `${tbName(sub)} ${h}:${String(m).padStart(2,'0')}〜${String(endH).padStart(2,'0')}:${String(endM).padStart(2,'0')}${isEst ? '（時刻は推定）' : ''}`;
         }
         row.appendChild(cell);
       }
@@ -9711,30 +9710,8 @@ function renderTimeBlock(dateStr){
   }
 
   // 動的範囲のため先頭が「最初の記録の1時間前」→ scrollTop リセット
-  // 表示行数が多い場合は scroll で夜遅くまで確認可能
   const scrollWrap = document.getElementById('tbScrollWrap');
   if(scrollWrap) scrollWrap.scrollTop = 0;
-
-  /* ── 時刻不明セクション（startedAt なし）── */
-  if(unplacedEl){
-    if(unplacedSessions.length > 0){
-      const rows = unplacedSessions.map(s => {
-        const min = s.amount || 0;
-        const timeStr = Math.floor(min/60) ? `${Math.floor(min/60)}h ${min%60}m` : `${min}m`;
-        return `<div style="display:flex;align-items:center;gap:6px;font-size:12px;">
-          <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${tbColor(s.subject)};flex-shrink:0;opacity:.7;"></span>
-          <span style="color:var(--text);">${tbName(s.subject)}</span>
-          <span style="font-family:'Share Tech Mono',monospace;color:var(--muted);font-size:11px;">${timeStr}</span>
-        </div>`;
-      }).join('');
-      unplacedEl.innerHTML = `
-        <div style="font-size:10px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;">⚠ 開始時刻なし（グリッド未配置）</div>
-        <div style="display:flex;flex-direction:column;gap:4px;">${rows}</div>`;
-      unplacedEl.style.display = '';
-    } else {
-      unplacedEl.style.display = 'none';
-    }
-  }
 }
 
 /* ════════════════════════════════════════
