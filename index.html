@@ -9593,15 +9593,13 @@ function renderTimeBlock(dateStr){
   minH = Math.max(0, minH-1);
   maxH = Math.min(23, maxH+1);
 
-  // 各10分スロットに科目を割り当て (最初に開始したセッション優先)
-  // slot[h][m6] = subject or null
-  const SLOT_MIN = 10;
-  const slots = {}; // key: "HH:MM6slot"
+  // 5分スロット（12マス/時間）に科目を割り当て
+  const SLOT_MIN = 5;
+  const slots = {};
   daySessions.forEach(s=>{
     const start = new Date(s.startedAt);
     const end   = new Date(s.endedAt);
     let cur = new Date(start);
-    // 最初のスロット開始に丸める
     cur.setSeconds(0,0);
     const startSlot = Math.floor(cur.getMinutes()/SLOT_MIN)*SLOT_MIN;
     cur.setMinutes(startSlot);
@@ -9616,26 +9614,36 @@ function renderTimeBlock(dateStr){
   if(labels) labels.innerHTML='';
   if(grid)   grid.innerHTML='';
 
+  const ROW_H = 26; // px（タップしやすさを確保）
+
   for(let h=minH; h<=maxH; h++){
-    // 時刻ラベル
+    // 時刻ラベル（:00と:30を表示）
     if(labels){
       const lbl = document.createElement('div');
-      lbl.style.cssText='height:24px;font-size:9px;color:var(--muted);display:flex;align-items:center;justify-content:flex-end;padding-right:4px;flex-shrink:0;font-family:"Share Tech Mono",monospace;';
+      lbl.style.cssText=`height:${ROW_H}px;font-size:9px;color:var(--muted);display:flex;align-items:center;justify-content:flex-end;padding-right:4px;flex-shrink:0;font-family:"Share Tech Mono",monospace;`;
       lbl.textContent = String(h).padStart(2,'0');
       labels.appendChild(lbl);
     }
-    // 1行（その時間の6スロット）
+    // 1行（12マス）
     if(grid){
       const row = document.createElement('div');
-      row.style.cssText='display:flex;height:24px;border-bottom:1px solid var(--border);';
-      for(let m=0;m<60;m+=SLOT_MIN){
+      row.style.cssText=`display:flex;height:${ROW_H}px;border-bottom:1px solid var(--border);`;
+      for(let m=0; m<60; m+=SLOT_MIN){
         const cell = document.createElement('div');
-        cell.style.cssText='flex:1;border-right:1px solid var(--border);';
+        // 15分区切り（3,6,9マス目）は線を太く・濃く
+        const is15 = m % 15 === 0 && m > 0;
+        const is30 = m === 30;
+        const borderR = is30
+          ? '2px solid rgba(255,255,255,.25)'
+          : is15
+            ? '1px solid rgba(255,255,255,.15)'
+            : '1px solid var(--border)';
+        cell.style.cssText=`flex:1;border-right:${borderR};min-width:0;`;
         const sub = slots[h+':'+m];
         if(sub){
           cell.style.background = tbColor(sub);
-          cell.style.opacity = '0.85';
-          cell.title = sub;
+          cell.style.opacity = '0.88';
+          cell.title = `${tbName(sub)} ${h}:${String(m).padStart(2,'0')}〜${h}:${String(m+SLOT_MIN).padStart(2,'0')}`;
         }
         row.appendChild(cell);
       }
@@ -12651,7 +12659,12 @@ async function quickRecord(mins){
   // フィードバック表示
   const resultEl = document.getElementById('quickRecResult');
   if(resultEl){
-    resultEl.textContent = `✓ ${subj.name} +${mins}分 +${exp}EXP 記録完了！`;
+    const praise = mins <= 5
+      ? '⚡ 5分でもEXP獲得！積み重ねが合格を作る！'
+      : mins <= 15
+        ? `✓ ${subj.name} +${mins}分 +${exp}EXP！スキマ時間も冒険だ！`
+        : `✓ ${subj.name} +${mins}分 +${exp}EXP 記録完了！`;
+    resultEl.textContent = praise;
     setTimeout(()=>{ if(resultEl) resultEl.textContent=''; }, 3000);
   }
 }
@@ -16670,6 +16683,8 @@ function restartTutorial() {
       'いいスタート！この調子で続けよう！',
       '動き出せた、それだけで合格に近づいてるよ！',
       '最初の一歩が一番難しい。もう越えたね！',
+      '5分でも記録したことが偉い！塵も積もれば合格だよ！',
+      'たった5分でも経験値は積み上がる。侮るなかれ！',
     ]},
     // 30〜59分：軌道に乗ってきた
     { min: 30,  max: 59,  pool: [
