@@ -7132,9 +7132,9 @@ async function addQuest(){
   let exp=0;
   if(amount<=0){alert('時間または分を入力してください');return;}exp=Math.round(amount);
   const smins0=studyMins(sessions),lv0=computeLevel(smins0);
-  const today=new Date().toISOString().slice(0,10);
+  const today=getTodayStr();
   if(char.lastLoginDate!==today){
-    const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+    const yesterday=toLocalDateStr(new Date(Date.now()-86400000));
     char.streak=(char.lastLoginDate===yesterday)?char.streak+1:1;
     char.lastLoginDate=today;
   }
@@ -7733,18 +7733,20 @@ async function finishTimer(){
   const minutes=Math.ceil(timerSeconds/60);
   const subject=document.getElementById('timerSubject')?.value;
   const note=document.getElementById('timerNote')?.value.trim()||'';
-  const date=new Date().toISOString().slice(0,10);
+  const date=getTodayStr();
   const exp=minutes;
 
   const smins0=studyMins(sessions),lv0=computeLevel(smins0);
   const today=date;
   if(char.lastLoginDate!==today){
-    const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+    const yesterday=toLocalDateStr(new Date(Date.now()-86400000));
     char.streak=(char.lastLoginDate===yesterday)?char.streak+1:1;
     char.lastLoginDate=today;
   }
   char.totalEXP+=exp;
-  sessions.push({date,subject,type:'study',amount:minutes,exp,note});
+  const endedAt=new Date().toISOString();
+  const startedAt=timerStartedAt||new Date(Date.now()-minutes*60000).toISOString();
+  sessions.push({date,subject,type:'study',amount:minutes,exp,note,startedAt,endedAt});
   const smins1=studyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
   await saveAll();
