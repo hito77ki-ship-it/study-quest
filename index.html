@@ -4928,12 +4928,15 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           <span class="prof-info-label">📝 自己紹介</span>
           <input type="text" class="prof-info-input" id="profBio" placeholder="一言自己紹介..." onchange="saveProfileInfo()" maxlength="60">
         </div>
-        <div class="prof-info-row">
-          <span class="prof-info-label">🔒 プロフィール公開</span>
-          <select class="prof-info-select" id="profIsPublic" onchange="saveProfileInfo()">
-            <option value="true">公開（誰でも見れる）</option>
-            <option value="false">非公開</option>
-          </select>
+        <div class="prof-info-row" style="align-items:flex-start;flex-direction:column;gap:6px;">
+          <span class="prof-info-label">🔒 アカウント公開設定</span>
+          <div style="width:100%;">
+            <select class="prof-info-select" id="profIsPublic" onchange="saveProfileInfo();updatePrivacyHint()" style="width:100%;">
+              <option value="true">🌐 公開（誰でも学習記録を見れる）</option>
+              <option value="false">🔒 非公開（フォロワーのみ見れる）</option>
+            </select>
+            <div id="privacyHint" style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5;"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -5187,11 +5190,15 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 </div>
 
 <!-- ユーザーカードモーダル -->
-<div id="userCardModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:2000;align-items:center;justify-content:center;" onclick="if(event.target===this)closeUserCard()">
-  <div style="background:var(--panel);border-radius:var(--radius);padding:24px 20px;max-width:300px;width:88%;box-shadow:var(--shadow-md);position:relative;">
-    <button onclick="closeUserCard()" style="position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;line-height:1;">✕</button>
-    <div id="userCardContent" style="text-align:center;">
-      <div style="font-size:12px;color:var(--muted);">読み込み中...</div>
+<div id="userCardModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:2000;align-items:flex-end;justify-content:center;" onclick="if(event.target===this)closeUserCard()">
+  <div style="background:var(--panel);border-radius:20px 20px 0 0;padding:0;max-width:520px;width:100%;box-shadow:var(--shadow-md);position:relative;max-height:90vh;display:flex;flex-direction:column;">
+    <!-- ドラッグハンドル -->
+    <div style="width:36px;height:4px;background:var(--border);border-radius:2px;margin:10px auto 0;" onclick="closeUserCard()"></div>
+    <!-- 閉じるボタン -->
+    <button onclick="closeUserCard()" style="position:absolute;top:14px;right:14px;background:var(--panel2);border:none;color:var(--muted);font-size:14px;cursor:pointer;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;">✕</button>
+    <!-- スクロール可能コンテンツ -->
+    <div id="userCardContent" style="overflow-y:auto;padding:16px 20px 32px;">
+      <div style="font-size:12px;color:var(--muted);padding:24px;text-align:center;">読み込み中...</div>
     </div>
   </div>
 </div>
@@ -11537,6 +11544,7 @@ function renderProfileTab(){
   if(profIsPublicEl){
     const info = loadProfileInfo();
     profIsPublicEl.value = (info.isPublic === false) ? 'false' : 'true';
+    updatePrivacyHint();
   }
   const streakEl = document.getElementById('profStreakCount');
   if(streakEl) streakEl.textContent = char.streak || 0;
@@ -11706,6 +11714,15 @@ function getTodayGoalMins(baseWeeklyMins){
   // 平日・休日未設定の場合は学年係数を使って日割り
   const coeff = getGradeCoeff();
   return baseWeeklyMins > 0 ? (baseWeeklyMins / 7) * coeff : 0;
+}
+
+function updatePrivacyHint(){
+  const el = document.getElementById('privacyHint');
+  const sel = document.getElementById('profIsPublic');
+  if(!el || !sel) return;
+  el.textContent = sel.value === 'false'
+    ? 'フォローしている人だけが、あなたの学習記録・時間・ストリークを見られます。'
+    : '誰でもあなたの学習記録を見ることができます。ランキングにも表示されます。';
 }
 
 function saveProfileInfo(){
@@ -15007,63 +15024,161 @@ async function openUserCard(userId, userName, level, avatarUrl, jobIdsStr){
   const content = document.getElementById('userCardContent');
   if(!modal || !content) return;
   modal.style.display = 'flex';
-  content.innerHTML = '<div style="font-size:12px;color:var(--muted);padding:16px 0;">読み込み中...</div>';
+  content.innerHTML = '<div style="font-size:12px;color:var(--muted);padding:32px;text-align:center;">読み込み中...</div>';
 
-  // フォロー状態をSupabaseから取得
-  let isFollowing = false;
-  let isPublic = true;
-  // ローカルのフォローデータでまず確認（Supabaseが失敗しても動く）
+  const isOwn = currentUser && currentUser.id === userId;
+
+  // ── Supabaseからまとめて取得 ──
+  let isFollowing = false, isMutual = false, isPublic = true;
+  let profile = { display_name: userName, avatar_url: avatarUrl, level, total_study_mins: 0, streak: 0, char_title: '', job_ids: jobIdsStr ? jobIdsStr.split(',').filter(Boolean) : [] };
+  let recentPosts = [];
+
   const localFollowData = loadFollowData();
   isFollowing = localFollowData.following.some(f => f.id === userId);
 
   if(currentUser){
     try {
-      const { data: followRow, error: ferr } = await sb.from('follows')
-        .select('id').eq('follower_id', currentUser.id).eq('followed_id', userId).maybeSingle();
-      if(!ferr) isFollowing = !!followRow;
-      else console.warn('follows select error:', ferr);
-    } catch(e){ console.warn('follows fetch error:', e); }
+      // フォロー状態
+      const [{ data: followRow }, { data: followBackRow }] = await Promise.all([
+        sb.from('follows').select('id').eq('follower_id', currentUser.id).eq('followed_id', userId).maybeSingle(),
+        sb.from('follows').select('id').eq('follower_id', userId).eq('followed_id', currentUser.id).maybeSingle(),
+      ]);
+      isFollowing = !!followRow;
+      isMutual = !!followRow && !!followBackRow;
+    } catch(e){}
 
     try {
+      // プロフィール詳細
       const { data: prof } = await sb.from('profiles')
-        .select('is_public').eq('id', userId).maybeSingle();
-      if(prof) isPublic = prof.is_public !== false;
+        .select('display_name, avatar_url, level, total_study_mins, streak, char_title, job_ids, is_public')
+        .eq('id', userId).maybeSingle();
+      if(prof){
+        profile = prof;
+        isPublic = prof.is_public !== false;
+      }
     } catch(e){}
+
+    // 公開 or フォロー済みの場合は最近の投稿を取得
+    if(isPublic || isFollowing || isOwn){
+      try {
+        const { data: posts } = await sb.from('timeline_posts')
+          .select('id, note, rpg_log, minutes, exp, created_at, is_declaration, is_free_post')
+          .eq('user_id', userId)
+          .order('created_at', { ascending: false })
+          .limit(5);
+        if(posts) recentPosts = posts;
+      } catch(e){}
+    }
   }
 
-  const jobIds = jobIdsStr ? jobIdsStr.split(',').filter(Boolean) : [];
+  const canSeeDetail = isPublic || isFollowing || isOwn;
+  const jobIds = (profile.job_ids || []).filter(Boolean);
   const jobLabels = jobIds.map(j => {
     const job = JOBS.find(x => x.id === j);
-    return job ? `<span style="font-size:10px;background:rgba(140,198,63,.12);color:var(--accent2);border:1px solid rgba(140,198,63,.25);border-radius:20px;padding:2px 8px;">${job.icon} ${job.name}</span>` : '';
+    return job ? `<span style="font-size:11px;background:rgba(140,198,63,.12);color:var(--accent2);border:1px solid rgba(140,198,63,.25);border-radius:20px;padding:3px 10px;">${job.icon} ${job.name}</span>` : '';
   }).join('');
 
-  const avatarHtml = avatarUrl
-    ? `<img src="${avatarUrl}" alt="" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);">`
-    : `<div style="width:64px;height:64px;border-radius:50%;background:${avatarColor(userName)};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:#fff;border:2px solid var(--accent);">${(userName||'？')[0]}</div>`;
+  const dispName = profile.display_name || userName;
+  const dispAvatar = profile.avatar_url || avatarUrl;
+  const dispLevel = profile.level || level || 1;
+  const totalHours = ((profile.total_study_mins || 0) / 60).toFixed(1);
+  const streak = profile.streak || 0;
+  const title = profile.char_title || '';
 
-  const isOwn = currentUser && currentUser.id === userId;
-  const followBtn = isOwn ? '' : currentUser ? `
+  const avatarHtml = dispAvatar
+    ? `<img src="${dispAvatar}" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);">`
+    : `<div style="width:72px;height:72px;border-radius:50%;background:${avatarColor(dispName)};display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;border:3px solid var(--accent);">${(dispName||'？')[0]}</div>`;
+
+  // フォローボタン
+  const followBtnHtml = isOwn ? '' : currentUser ? `
     <button id="userCardFollowBtn"
-      onclick="followToggleFromCard('${userId}','${userName.replace(/'/g,'')}', this)"
-      style="margin-top:14px;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;
-             background:${isFollowing ? 'transparent' : 'var(--accent)'};
-             color:${isFollowing ? 'var(--muted)' : '#000'};
-             border:1px solid ${isFollowing ? 'var(--border)' : 'var(--accent)'};">
-      ${isFollowing ? 'フォロー中' : 'フォローする'}
-    </button>` : `<div style="font-size:11px;color:var(--muted);margin-top:12px;">ログインするとフォローできます</div>`;
+      onclick="followToggleFromCard('${userId}','${dispName.replace(/'/g,'')}',this)"
+      style="padding:9px 28px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;
+             background:${isFollowing?'transparent':'var(--accent)'};
+             color:${isFollowing?'var(--muted)':'#000'};
+             border:2px solid ${isFollowing?'var(--border)':'var(--accent)'};">
+      ${isFollowing ? 'フォロー中' : '+ フォローする'}
+    </button>`
+    : `<div style="font-size:11px;color:var(--muted);">ログインするとフォローできます</div>`;
 
-  const privateNotice = !isPublic && !isOwn
-    ? `<div style="font-size:11px;color:var(--muted);margin-top:6px;">🔒 非公開プロフィール</div>` : '';
+  // DMボタン（相互フォロー時のみ）
+  const dmBtnHtml = isMutual ? `
+    <button onclick="closeUserCard();openDmWindow();setTimeout(()=>selectDmPartner('${userId}','${dispName.replace(/'/g,'')}','${dispAvatar||''}'),600)"
+      style="padding:9px 20px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;
+             background:transparent;border:2px solid var(--border);color:var(--muted);">
+      ✉ DM
+    </button>` : '';
+
+  // 最近の投稿
+  const postsHtml = recentPosts.length ? recentPosts.map(p => {
+    const ago = formatRelativeTime(p.created_at);
+    const bodyText = p.is_declaration ? `📣 ${p.note || ''}` : p.is_free_post ? (p.note || '') : (p.rpg_log || '');
+    const mins = p.minutes || 0;
+    const h = Math.floor(mins/60), m = mins%60;
+    const timeStr = h>0 ? `${h}h${m>0?m+'m':''}` : `${m}分`;
+    return `<div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="font-size:12px;color:var(--text);line-height:1.6;">${escHtml(bodyText)}</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px;display:flex;gap:8px;">
+        <span>${ago}</span>
+        ${mins>0?`<span>⏱ ${timeStr}</span>`:''}
+        ${p.exp?`<span>⭐ +${p.exp}EXP</span>`:''}
+      </div>
+    </div>`;
+  }).join('') : `<div style="font-size:12px;color:var(--muted);padding:12px 0;text-align:center;">最近の投稿はありません</div>`;
+
+  // 非公開の場合の差し替えコンテンツ
+  const privateBlock = !canSeeDetail ? `
+    <div style="text-align:center;padding:24px 0;color:var(--muted);">
+      <div style="font-size:28px;margin-bottom:8px;">🔒</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text);">非公開アカウント</div>
+      <div style="font-size:11px;margin-top:4px;">フォローすると学習記録が見えるようになります</div>
+    </div>` : '';
 
   content.innerHTML = `
-    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <!-- プロフィールヘッダー -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
       ${avatarHtml}
-      <div style="font-size:15px;font-weight:700;color:var(--text);">${escHtml(userName)}</div>
-      ${isPublic || isOwn ? `<div style="font-size:11px;color:var(--muted);">Lv.${level}</div>` : ''}
-      ${isPublic || isOwn ? `<div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:4px;">${jobLabels}</div>` : ''}
-      ${privateNotice}
-      ${followBtn}
-    </div>`;
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px;">${escHtml(dispName)}</div>
+        ${title ? `<div style="font-size:11px;color:var(--accent2);margin-bottom:4px;">${escHtml(title)}</div>` : ''}
+        <div style="font-size:12px;color:var(--muted);font-family:'Share Tech Mono',monospace;">Lv.${dispLevel}</div>
+        ${!canSeeDetail ? '<div style="font-size:10px;color:var(--muted);margin-top:2px;">🔒 非公開</div>' : ''}
+      </div>
+    </div>
+
+    <!-- アクションボタン -->
+    <div style="display:flex;gap:10px;margin-bottom:20px;">
+      ${followBtnHtml}
+      ${dmBtnHtml}
+    </div>
+
+    ${canSeeDetail ? `
+    <!-- 統計 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--panel2);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--border);">
+        <div style="font-size:22px;font-weight:700;font-family:'Share Tech Mono',monospace;color:var(--text);">${totalHours}<span style="font-size:12px;color:var(--muted);">h</span></div>
+        <div style="font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.05em;">累計学習時間</div>
+      </div>
+      <div style="background:var(--panel2);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--border);">
+        <div style="font-size:22px;font-weight:700;font-family:'Share Tech Mono',monospace;color:var(--text);">🔥${streak}<span style="font-size:12px;color:var(--muted);">日</span></div>
+        <div style="font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.05em;">連続学習日数</div>
+      </div>
+    </div>
+
+    <!-- ジョブ -->
+    ${jobLabels ? `
+    <div style="margin-bottom:20px;">
+      <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">勉強中の資格</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">${jobLabels}</div>
+    </div>` : ''}
+
+    <!-- 最近の記録 -->
+    <div>
+      <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;">最近の学習記録</div>
+      ${postsHtml}
+    </div>
+    ` : privateBlock}
+  `;
 }
 
 function closeUserCard(){
