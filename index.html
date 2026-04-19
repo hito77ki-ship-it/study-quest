@@ -14525,13 +14525,29 @@ async function getMutualFollows(){
       .eq('followed_id', currentUser.id);
 
     if(following && followers){
-      const followingIds = new Set(following.map(f => f.followed_id));
-      const followerIds  = new Set(followers.map(f => f.follower_id));
+      const followerIds = new Set(followers.map(f => f.follower_id));
 
       // 相互フォロー = 双方向にフォローしている
       mutuals = following
         .filter(f => followerIds.has(f.followed_id))
         .map(f => ({ id: f.followed_id, name: f.followed_name || '冒険者' }));
+
+      // profiles テーブルから最新の名前・アバターを取得
+      if(mutuals.length > 0){
+        const ids = mutuals.map(m => m.id);
+        const { data: profiles } = await sb.from('profiles')
+          .select('id, display_name, avatar_url')
+          .in('id', ids);
+        if(profiles){
+          const pm = {};
+          profiles.forEach(p => pm[p.id] = p);
+          mutuals = mutuals.map(m => ({
+            ...m,
+            name: pm[m.id]?.display_name || m.name,
+            avatarUrl: pm[m.id]?.avatar_url || null,
+          }));
+        }
+      }
     }
   } catch(e){
     console.warn('DM: getMutualFollows error (table may not exist):', e);
@@ -14580,12 +14596,16 @@ async function loadDmPartners(){
   }
 
   // タブバー生成
-  tabBar.innerHTML = dmPartners.map(p => `
+  tabBar.innerHTML = dmPartners.map(p => {
+    const avatarHtml = p.avatarUrl
+      ? `<div class="dm-tab-avatar" style="background:none;padding:0;overflow:hidden;"><img src="${p.avatarUrl}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>`
+      : `<div class="dm-tab-avatar" style="background:${avatarColor(p.name)}">${(p.name||'？')[0]}</div>`;
+    return `
     <div class="dm-tab-item ${dmCurrentPartner?.id === p.id ? 'active' : ''}"
          id="dmtab-${p.id.replace(/[^a-z0-9]/gi,'_')}"
-         onclick="selectDmPartner('${p.id}', '${p.name}')">
-      <div class="dm-tab-avatar" style="background:${avatarColor(p.name)}">${(p.name||'？')[0]}</div>
-      <span>${p.name}</span>
+         onclick="selectDmPartner('${p.id}','${(p.name||'').replace(/'/g,"\\'")}','${(p.avatarUrl||'').replace(/'/g,"\\'")}')">
+      ${avatarHtml}
+      <span>${escHtml(p.name)}</span>
       ${(dmUnreadCount[p.id]||0) > 0
         ? `<span class="dm-tab-unread">${dmUnreadCount[p.id]}</span>`
         : ''}
@@ -14595,15 +14615,15 @@ async function loadDmPartners(){
   // 最初の相手を選択
   if(dmPartners.length > 0 && !dmCurrentPartner){
     const first = dmPartners[0];
-    selectDmPartner(first.id, first.name);
+    selectDmPartner(first.id, first.name, first.avatarUrl || '');
   } else if(dmCurrentPartner){
     renderDmMessages(dmCurrentPartner.id);
   }
 }
 
 /* ── チャット相手を選択 ── */
-async function selectDmPartner(partnerId, partnerName){
-  dmCurrentPartner = { id: partnerId, name: partnerName };
+async function selectDmPartner(partnerId, partnerName, partnerAvatarUrl){
+  dmCurrentPartner = { id: partnerId, name: partnerName, avatarUrl: partnerAvatarUrl || '' };
 
   // ヘッダー更新
   const headerName = document.getElementById('dmHeaderName');
@@ -14611,8 +14631,17 @@ async function selectDmPartner(partnerId, partnerName){
   const headerStatus = document.getElementById('dmHeaderStatus');
   if(headerName) headerName.textContent = partnerName;
   if(headerAvatar){
-    headerAvatar.textContent = (partnerName||'？')[0];
-    headerAvatar.style.background = avatarColor(partnerName);
+    if(partnerAvatarUrl){
+      headerAvatar.innerHTML = `<img src="${partnerAvatarUrl}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+      headerAvatar.style.background = 'none';
+      headerAvatar.style.padding = '0';
+      headerAvatar.style.overflow = 'hidden';
+    } else {
+      headerAvatar.innerHTML = (partnerName||'？')[0];
+      headerAvatar.style.background = avatarColor(partnerName);
+      headerAvatar.style.padding = '';
+      headerAvatar.style.overflow = '';
+    }
   }
   if(headerStatus) headerStatus.textContent = '⚔ 相互フォロー';
 
