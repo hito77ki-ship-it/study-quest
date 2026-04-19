@@ -352,6 +352,19 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .aff-item-desc{font-size:10px;color:var(--muted);}
 .aff-item-btn{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--accent);border:1px solid rgba(140,198,63,.4);padding:4px 10px;border-radius:12px;white-space:nowrap;flex-shrink:0;}
 .aff-note{font-size:9px;color:var(--muted);margin-top:8px;text-align:right;}
+.ob{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(168,85,247,.06));border:1px solid rgba(124,58,237,.35);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);}
+.ob-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.ob-day-badge{font-family:'Share Tech Mono',monospace;font-size:10px;font-weight:700;color:#fff;background:#7c3aed;border-radius:4px;padding:2px 7px;letter-spacing:.06em;}
+.ob-title{font-size:14px;font-weight:700;color:var(--text);}
+.ob-steps{display:flex;flex-direction:column;gap:7px;}
+.ob-step{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--text);}
+.ob-step-done{text-decoration:line-through;color:var(--muted);}
+.ob-step-icon{font-size:15px;width:22px;text-align:center;flex-shrink:0;}
+.ob-check{margin-left:auto;font-size:13px;}
+.ob-prog{margin-top:11px;}
+.ob-prog-label{display:flex;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:4px;}
+.ob-prog-track{height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
+.ob-prog-fill{height:100%;border-radius:3px;background:linear-gradient(to right,#7c3aed,#a855f7);transition:width .6s;}
 .tqb{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;}
 .tqb-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
 .tqb-streak{font-family:'Share Tech Mono',monospace;font-size:13px;font-weight:700;color:#F59E0B;}
@@ -3891,6 +3904,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <!-- STATUS -->
   <div id="panel-status">
+    <!-- 初回3日間チャレンジバナー -->
+    <div id="onboardingBanner" style="grid-column:1/-1;display:none;"></div>
     <!-- 今日のクエストバナー（全幅） -->
     <div id="todayQuestBanner" style="grid-column:1/-1;"></div>
     <!-- 試験カウントダウン（全幅） -->
@@ -6005,7 +6020,7 @@ const BADGES = [
 /* ═══════════════ STATE ═══════════════ */
 let selectedJobIds = [];
 let selectedSubjectKeys = [];
-let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:'',profileIconEmoji:null};
+let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:'',profileIconEmoji:null,installDate:null};
 let sessions = [];
 let bosses = [];  // [{id,name,date,targetHours}, ...]
 let examGoals = []; // [{id,title,date,startDate}, ...]
@@ -6963,6 +6978,7 @@ async function startAdventure(){
 
 /* ═══════════════ DASHBOARD ═══════════════ */
 function initDashboard(){
+  if(!char.installDate){ char.installDate=getTodayStr(); saveAll(); }
   updateGnavVisibility();
   applyChartDarkDefaults();
   const pw=document.getElementById('jobPills');pw.innerHTML='';
@@ -7032,6 +7048,7 @@ function renderAll(){
   renderRaidBoss();
   renderPaceDiag();
   renderDailyMissions();
+  renderOnboardingBanner();
   renderTodayQuestBanner();
   renderAffiliateCard();
   // レポート/プロフィールタブが開いていれば即更新
@@ -7264,7 +7281,7 @@ function switchTab(tab){
   else unsubscribeTlRealtime();
   if(tab==='report')  requestAnimationFrame(()=>renderReportTab());
   if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); });
-  if(tab==='status')  requestAnimationFrame(()=>{ renderExamBanner(); renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); renderTodayQuestBanner(); renderAffiliateCard(); });
+  if(tab==='status')  requestAnimationFrame(()=>{ renderExamBanner(); renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); renderOnboardingBanner(); renderTodayQuestBanner(); renderAffiliateCard(); });
   // モバイルタブバーも同期
   document.querySelectorAll('.m-tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   const activeBtn=document.getElementById('tab-'+tab);
@@ -7778,11 +7795,14 @@ async function finishTimer(){
   const endedAt=new Date().toISOString();
   const startedAt=timerStartedAt||new Date(Date.now()-minutes*60000).toISOString();
   const condition=getTodayCondition();
+  const isFirstSession = sessions.length === 0;
   sessions.push({date,subject,type:'study',amount:minutes,exp,note,startedAt,endedAt,condition});
   const smins1=studyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
   await saveAll();
   renderAll();
+
+  if(isFirstSession) setTimeout(showFirstSessionCelebration, 1500);
 
   // Victory effects
   spawnDmgNumber(`+${exp} EXP`, '#e040fb', true);
@@ -10481,6 +10501,90 @@ function renderAffiliateCard(){
     </div>
     <div class="aff-note">※ 広告・PR</div>
   </div>`;
+}
+
+function renderOnboardingBanner(){
+  const el = document.getElementById('onboardingBanner');
+  if(!el) return;
+  if(!char.installDate){ el.style.display='none'; return; }
+
+  const installD = new Date(char.installDate + 'T00:00:00');
+  const todayD = new Date(getTodayStr() + 'T00:00:00');
+  const dayNum = Math.round((todayD - installD) / 86400000); // 0=初日,1=2日目,2=3日目
+
+  if(dayNum > 2){ el.style.display='none'; return; }
+
+  const hasJob = selectedJobIds.length > 0;
+  const hasSession = sessions.length > 0;
+  const hasBoss = bosses.length > 0;
+
+  const dayLabel = ['DAY 1','DAY 2','DAY 3'][dayNum];
+
+  let titleText, steps;
+  if(dayNum === 0){
+    titleText = '⚔ 冒険を始めよう！最初の3ステップ';
+    steps = [
+      {icon:'🎯', text:'ジョブ（資格）を選ぶ',       done: hasJob},
+      {icon:'⏱', text:'タイマーで初回勉強を記録する', done: hasSession},
+      {icon:'💀', text:'ボス（模試・試験日）を設定する',done: hasBoss},
+    ];
+  } else if(dayNum === 1){
+    titleText = '🔥 2日目！連続ログイン達成！';
+    steps = [
+      {icon:'✅', text:'昨日ログイン達成',              done: true},
+      {icon:'⏱', text:'今日も勉強を記録してストリーク継続', done: sessions.filter(s=>s.date===getTodayStr()).length>0},
+    ];
+  } else {
+    titleText = '🏆 最終日！3日連続で習慣化スタート！';
+    steps = [
+      {icon:'✅', text:'2日間連続達成',                done: true},
+      {icon:'⚡', text:'今日記録すれば習慣化の鍵ゲット！', done: sessions.filter(s=>s.date===getTodayStr()).length>0},
+    ];
+  }
+
+  const doneCnt = steps.filter(s=>s.done).length;
+  const pct = Math.round(doneCnt / steps.length * 100);
+
+  el.style.display='';
+  el.innerHTML = `<div class="ob">
+    <div class="ob-head">
+      <span class="ob-day-badge">${dayLabel}</span>
+      <span class="ob-title">${titleText}</span>
+    </div>
+    <div class="ob-steps">
+      ${steps.map(s=>`
+      <div class="ob-step">
+        <span class="ob-step-icon">${s.icon}</span>
+        <span class="${s.done?'ob-step-done':''}">${s.text}</span>
+        <span class="ob-check">${s.done?'✅':'○'}</span>
+      </div>`).join('')}
+    </div>
+    <div class="ob-prog">
+      <div class="ob-prog-label"><span>PROGRESS</span><span>${doneCnt}/${steps.length}</span></div>
+      <div class="ob-prog-track"><div class="ob-prog-fill" style="width:${pct}%"></div></div>
+    </div>
+  </div>`;
+}
+
+function showFirstSessionCelebration(){
+  if(localStorage.getItem('sq_first_session_done')) return;
+  localStorage.setItem('sq_first_session_done','1');
+  // フラッシュ演出
+  spawnDmgNumber('⚔ 初討伐！冒険が始まった！', '#a855f7', true);
+  setTimeout(()=>{
+    const m = document.createElement('div');
+    m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:flex;align-items:center;justify-content:center;';
+    m.innerHTML=`<div style="background:var(--panel);border:1px solid rgba(124,58,237,.5);border-radius:12px;padding:28px 24px;max-width:320px;width:90%;text-align:center;">
+      <div style="font-size:48px;margin-bottom:12px;">⚔</div>
+      <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#a855f7;margin-bottom:8px;">初討伐完了！</div>
+      <div style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:20px;">
+        最初の一歩を踏み出した。<br>この積み重ねが合格への道になる。
+      </div>
+      <button onclick="this.closest('div[style]').remove()" style="background:#7c3aed;color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:14px;font-weight:700;cursor:pointer;">続ける ▶</button>
+    </div>`;
+    document.body.appendChild(m);
+    m.addEventListener('click', e=>{ if(e.target===m) m.remove(); });
+  }, 1200);
 }
 
 function renderTodayQuestBanner(){
