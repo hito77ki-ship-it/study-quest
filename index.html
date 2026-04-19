@@ -157,7 +157,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;}
 select option{background:var(--panel2);color:var(--text);}
 
 body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;min-height:100vh;
-  background-image:radial-gradient(ellipse 80% 40% at 50% -5%,rgba(140,198,63,.08) 0%,transparent 60%);}
+  background-image:radial-gradient(ellipse 80% 40% at 50% -5%,rgba(140,198,63,.08) 0%,transparent 60%);
+  padding-top: env(safe-area-inset-top, 0px);}
 .wrap{max-width:720px;margin:0 auto;padding:24px 14px 100px;}
 .logo-area{text-align:center;margin-bottom:24px;}
 .logo-en{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.45em;color:var(--accent);opacity:.8;margin-bottom:4px;}
@@ -1311,8 +1312,8 @@ body[data-theme="dark"] .wg-lock-note{color:var(--muted);}
   -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   box-shadow:0 2px 12px rgba(0,0,0,.06);
-  padding: env(safe-area-inset-top, 0px) 14px 0;
-  height: calc(48px + env(safe-area-inset-top, 0px));
+  padding:0 14px;
+  height:48px;
   margin:-24px -14px 16px;
 }
 .gnav-logo{
