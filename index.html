@@ -7384,11 +7384,14 @@ function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const target = document.getElementById(id);
   if(target) target.classList.add('active');
-  // gnav・pcSidebar はダッシュボード画面のみ表示
+  // gnav・pcSidebar・mobileTabBar はダッシュボード画面のみ表示
+  const isDash = id === 'screen-dash';
   const gnav=document.getElementById('gnav');
-  if(gnav) gnav.style.display=id==='screen-dash'?'':'none';
+  if(gnav) gnav.style.display=isDash?'':'none';
   const pcSidebar=document.getElementById('pcSidebar');
-  if(pcSidebar) pcSidebar.style.display=id==='screen-dash'?'':'none';
+  if(pcSidebar) pcSidebar.style.display=isDash?'':'none';
+  const mobileTabBar=document.getElementById('mobileTabBar');
+  if(mobileTabBar) mobileTabBar.style.display=isDash?'':'none';
 }
 function switchTab(tab){
   ['status','quest','materials','titles','boss','ranking','score','report','profile','timeline'].forEach(t=>{
