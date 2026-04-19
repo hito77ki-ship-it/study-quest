@@ -1,35 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHIKAKU QUEST — 管理者ダッシュボード</title>
+<title>STUDY QUEST — 管理者ダッシュボード</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-/*
- * ================================================================
- * SHIKAKU QUEST — 管理者ダッシュボード
- * ================================================================
- * 【セキュリティについて】
- *
- * 1. パスワード認証の仕組み:
- *    - Supabase Auth（メールアドレス＋パスワード）で認証します。
- *    - 認証情報はSupabaseのダッシュボードで管理します。
- *    - コード内に認証情報は一切含まれていません。
- *
- * 2. セッション管理:
- *    - Supabase Auth がセッションを自動管理します。
- *    - ページリロード後もセッションは保持されます。
- *
- * 3. データアクセス:
- *    - Supabaseのprofilesテーブルから全ユーザーデータを取得します。
- *    - Row Level Security (RLS) でアクセス制御を行います。
- * ================================================================
- */
-
 :root {
   --bg: #F0F4F8;
   --panel: #FFFFFF;
@@ -44,10 +23,23 @@
   --amber: #F59E0B;
   --red: #EF4444;
   --purple: #8B5CF6;
+  --cyan: #06B6D4;
   --shadow: 0 1px 8px rgba(0,0,0,.06);
   --shadow-md: 0 4px 20px rgba(0,0,0,.10);
   --radius: 12px;
   --radius-sm: 8px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F1117;
+  --panel: #1A1D2E;
+  --panel2: #141722;
+  --border: #2D3148;
+  --text: #E2E8F0;
+  --muted: #718096;
+  --blue-light: rgba(59,130,246,.15);
+  --shadow: 0 1px 8px rgba(0,0,0,.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.4);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,6 +49,7 @@ body {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+  transition: background .2s, color .2s;
 }
 
 /* ── ログイン画面 ── */
@@ -67,6 +60,9 @@ body {
   justify-content: center;
   background: linear-gradient(135deg, #EFF6FF 0%, #F0F4F8 60%, #F0FDF4 100%);
   padding: 20px;
+}
+[data-theme="dark"] #screen-login {
+  background: linear-gradient(135deg, #0F1117 0%, #141722 100%);
 }
 
 .login-card {
@@ -79,93 +75,44 @@ body {
   border-top: 4px solid var(--blue);
 }
 
-.login-logo {
-  text-align: center;
-  margin-bottom: 32px;
-}
-.login-logo-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-  display: block;
-}
-.login-logo-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.login-logo-sub {
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: .08em;
-}
+.login-logo { text-align: center; margin-bottom: 32px; }
+.login-logo-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+.login-logo-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.login-logo-sub { font-size: 12px; color: var(--muted); letter-spacing: .08em; }
 
 .login-form { display: flex; flex-direction: column; gap: 16px; }
-
 .input-group { display: flex; flex-direction: column; gap: 6px; }
 .input-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: .05em;
-  text-transform: uppercase;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  letter-spacing: .05em; text-transform: uppercase;
 }
 .input-field {
-  background: var(--panel2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 11px 14px;
-  font-size: 15px;
-  color: var(--text);
-  outline: none;
-  transition: all .2s;
-  width: 100%;
+  background: var(--panel2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 11px 14px;
+  font-size: 15px; color: var(--text); outline: none;
+  transition: all .2s; width: 100%;
 }
-.input-field:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(59,130,246,.12);
-}
+.input-field:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59,130,246,.12); }
 
 .login-btn {
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 13px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s;
-  margin-top: 8px;
-  letter-spacing: .03em;
+  background: var(--blue); color: #fff; border: none;
+  border-radius: var(--radius-sm); padding: 13px;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: all .2s; margin-top: 8px; letter-spacing: .03em;
 }
-.login-btn:hover {
-  background: var(--blue2);
-  box-shadow: 0 4px 16px rgba(59,130,246,.35);
-  transform: translateY(-1px);
-}
+.login-btn:hover { background: var(--blue2); box-shadow: 0 4px 16px rgba(59,130,246,.35); transform: translateY(-1px); }
 
 .login-error {
-  display: none;
-  background: #FEF2F2;
-  border: 1px solid #FECACA;
-  border-radius: var(--radius-sm);
-  color: #DC2626;
-  font-size: 13px;
-  padding: 10px 14px;
-  text-align: center;
+  display: none; background: #FEF2F2; border: 1px solid #FECACA;
+  border-radius: var(--radius-sm); color: #DC2626;
+  font-size: 13px; padding: 10px 14px; text-align: center;
 }
 .login-error.show { display: block; }
 
-.login-back {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 12px;
-  color: var(--muted);
-}
+.login-back { text-align: center; margin-top: 20px; font-size: 12px; color: var(--muted); }
 .login-back a { color: var(--blue); text-decoration: none; }
 
-/* ── 管理者ダッシュボード ── */
+/* ── ダッシュボード ── */
 #screen-dashboard { display: none; }
 
 .admin-header {
@@ -182,123 +129,119 @@ body {
   z-index: 100;
 }
 
-.admin-header-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.admin-logo {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--blue2);
-  letter-spacing: .02em;
-}
+.admin-header-left { display: flex; align-items: center; gap: 12px; }
+.admin-logo { font-size: 16px; font-weight: 700; color: var(--blue2); letter-spacing: .02em; }
 .admin-badge {
-  background: var(--blue-light);
-  color: var(--blue2);
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  letter-spacing: .1em;
+  background: var(--blue-light); color: var(--blue2);
+  font-size: 10px; font-weight: 700; padding: 3px 10px;
+  border-radius: 20px; letter-spacing: .1em;
   border: 1px solid rgba(59,130,246,.25);
 }
 
-.admin-header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.admin-header-right { display: flex; align-items: center; gap: 10px; }
+
+.admin-icon-btn {
+  background: var(--panel2); border: 1px solid var(--border);
+  color: var(--muted); border-radius: 8px;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; cursor: pointer; transition: all .2s;
 }
+.admin-icon-btn:hover { border-color: var(--blue); color: var(--blue); }
+
 .admin-sync-btn {
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 7px 18px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s;
+  background: var(--blue); color: #fff; border: none;
+  border-radius: 20px; padding: 7px 16px;
+  font-size: 12px; font-weight: 600; cursor: pointer; transition: all .2s;
 }
 .admin-sync-btn:hover { background: var(--blue2); }
 
 .admin-logout-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  border-radius: 20px;
-  padding: 7px 16px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all .2s;
+  background: transparent; border: 1px solid var(--border);
+  color: var(--muted); border-radius: 20px; padding: 7px 16px;
+  font-size: 12px; cursor: pointer; transition: all .2s;
 }
 .admin-logout-btn:hover { border-color: var(--red); color: var(--red); }
 
-/* ── メインコンテンツ ── */
-.admin-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 24px 60px;
+/* ── ナビタブ ── */
+.admin-nav {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  gap: 4px;
+  position: sticky;
+  top: 60px;
+  z-index: 99;
+}
+.admin-nav-btn {
+  background: none; border: none; border-bottom: 3px solid transparent;
+  color: var(--muted); font-size: 13px; font-weight: 500;
+  padding: 12px 16px; cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+}
+.admin-nav-btn:hover { color: var(--text); }
+.admin-nav-btn.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+.admin-nav-badge {
+  background: var(--red); color: #fff;
+  font-size: 10px; font-weight: 700; padding: 1px 6px;
+  border-radius: 10px; min-width: 18px; text-align: center;
 }
 
-.admin-page-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-.admin-page-sub {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
+/* ── メインコンテンツ ── */
+.admin-main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 60px; }
+
+.admin-page-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.admin-page-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
 
 /* ── KPIカード ── */
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
   margin-bottom: 28px;
 }
 
 .kpi-card {
-  background: var(--panel);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 20px 22px;
-  border-left: 4px solid var(--blue);
-  transition: box-shadow .2s;
+  background: var(--panel); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 18px 20px;
+  border-left: 4px solid var(--blue); transition: box-shadow .2s;
+  position: relative; overflow: hidden;
+}
+.kpi-card::before {
+  content: attr(data-icon);
+  position: absolute; right: 14px; top: 14px;
+  font-size: 24px; opacity: .15;
 }
 .kpi-card:hover { box-shadow: var(--shadow-md); }
 .kpi-card.green  { border-left-color: var(--green); }
 .kpi-card.amber  { border-left-color: var(--amber); }
 .kpi-card.purple { border-left-color: var(--purple); }
 .kpi-card.red    { border-left-color: var(--red); }
+.kpi-card.cyan   { border-left-color: var(--cyan); }
+.kpi-card.teal   { border-left-color: #14B8A6; }
 
 .kpi-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  font-size: 11px; font-weight: 600; color: var(--muted);
+  letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px;
 }
 .kpi-value {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: 4px;
+  font-size: 30px; font-weight: 700; color: var(--text);
+  line-height: 1; margin-bottom: 4px;
   font-family: 'Share Tech Mono', monospace;
 }
-.kpi-unit { font-size: 14px; color: var(--muted); font-weight: 400; }
-.kpi-sub {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 4px;
+.kpi-unit { font-size: 13px; color: var(--muted); font-weight: 400; }
+.kpi-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.kpi-trend {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11px; font-weight: 600; margin-top: 4px;
+  padding: 2px 6px; border-radius: 6px;
 }
+.kpi-trend.up { background: #D1FAE5; color: #065F46; }
+.kpi-trend.neutral { background: var(--panel2); color: var(--muted); }
 
-/* ── グリッドレイアウト ── */
+/* ── グリッド ── */
 .charts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -310,6 +253,8 @@ body {
   .admin-main { padding: 16px 14px 60px; }
   .kpi-grid { grid-template-columns: 1fr 1fr; }
   .login-card { padding: 32px 24px; }
+  .admin-nav { gap: 0; padding: 0 12px; }
+  .admin-nav-btn { padding: 12px 10px; font-size: 12px; }
 }
 @media (max-width: 480px) {
   .kpi-grid { grid-template-columns: 1fr; }
@@ -317,146 +262,78 @@ body {
 }
 
 .chart-card {
-  background: var(--panel);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 24px;
+  background: var(--panel); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 24px;
 }
 .chart-card.full { grid-column: 1 / -1; }
 
-.chart-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.chart-sub {
-  font-size: 11px;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-.chart-wrap {
-  position: relative;
-  height: 260px;
-}
+.chart-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.chart-sub { font-size: 11px; color: var(--muted); margin-bottom: 20px; }
+.chart-wrap { position: relative; height: 260px; }
 .chart-wrap.sm { height: 220px; }
 
 /* ── テーブル ── */
 .table-card {
-  background: var(--panel);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  margin-bottom: 24px;
+  background: var(--panel); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden; margin-bottom: 24px;
 }
 .table-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 24px;
-  border-bottom: 1px solid var(--border);
-  flex-wrap: wrap;
-  gap: 10px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px; border-bottom: 1px solid var(--border);
+  flex-wrap: wrap; gap: 10px;
 }
 .table-title { font-size: 14px; font-weight: 700; color: var(--text); }
 .table-sub { font-size: 11px; color: var(--muted); }
 
 .export-btn {
-  background: var(--green);
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 18px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s;
-  white-space: nowrap;
+  background: var(--green); color: #fff; border: none;
+  border-radius: 20px; padding: 8px 16px;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all .2s; white-space: nowrap;
 }
 .export-btn:hover { background: #059669; box-shadow: 0 4px 12px rgba(16,185,129,.3); }
-.gs-panel {
-  background: var(--panel);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 24px;
-  border-left: 4px solid #34A853;
-}
-.gs-panel-inner { padding: 20px 24px; }
-.gs-sync-btn {
-  background: #34A853;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 9px 20px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all .2s;
-  white-space: nowrap;
-}
-.gs-sync-btn:hover { background: #2d9146; box-shadow: 0 4px 12px rgba(52,168,83,.3); }
-.gs-sync-btn:disabled { background: var(--muted); cursor: not-allowed; box-shadow: none; }
 
 .export-btn-excel {
-  background: #1D6F42;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 18px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s;
-  white-space: nowrap;
+  background: #1D6F42; color: #fff; border: none;
+  border-radius: 20px; padding: 8px 16px;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all .2s; white-space: nowrap;
 }
-.export-btn-excel:hover { background: #155232; box-shadow: 0 4px 12px rgba(29,111,66,.3); }
+.export-btn-excel:hover { background: #155232; }
 
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-}
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .data-table th {
-  background: var(--panel2);
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 10px 16px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
+  background: var(--panel2); color: var(--muted);
+  font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; padding: 10px 16px;
+  text-align: left; border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
 .data-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text);
+  padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--text);
 }
 .data-table tr:last-child td { border-bottom: none; }
 .data-table tr:hover td { background: var(--panel2); }
 
-.td-mono {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 12px;
-}
+.td-mono { font-family: 'Share Tech Mono', monospace; font-size: 12px; }
 .td-pill {
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: 600;
+  display: inline-block; padding: 2px 10px;
+  border-radius: 20px; font-size: 10px; font-weight: 600;
 }
-.td-pill.active { background: #D1FAE5; color: #065F46; }
-.td-pill.guest  { background: #FEF3C7; color: #92400E; }
+.td-pill.active  { background: #D1FAE5; color: #065F46; }
+.td-pill.inactive { background: var(--panel2); color: var(--muted); border: 1px solid var(--border); }
+.td-pill.guest   { background: #FEF3C7; color: #92400E; }
+
+/* ユーザーアバター文字 */
+.user-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
 
 /* ── ローディング ── */
-.loading-state {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-  font-size: 14px;
-}
+.loading-state { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; }
 .spinner {
   width: 36px; height: 36px;
   border: 3px solid var(--border);
@@ -469,55 +346,81 @@ body {
 
 /* ── フィルターバー ── */
 .filter-bar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-  align-items: center;
+  display: flex; gap: 10px; margin-bottom: 16px;
+  flex-wrap: wrap; align-items: center;
 }
 .filter-input {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
-  font-size: 13px;
-  outline: none;
-  transition: all .2s;
-  background: var(--panel);
-  color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 8px 12px; font-size: 13px; outline: none;
+  transition: all .2s; background: var(--panel); color: var(--text);
 }
 .filter-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59,130,246,.1); }
 
-.last-updated {
-  font-size: 11px;
-  color: var(--muted);
-  margin-left: auto;
-}
+.last-updated { font-size: 11px; color: var(--muted); margin-left: auto; }
 
 /* ── セクション区切り ── */
 .section-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  letter-spacing: .15em;
-  text-transform: uppercase;
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  letter-spacing: .15em; text-transform: uppercase;
   margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex; align-items: center; gap: 10px;
 }
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── Google Sheets パネル ── */
+.gs-panel {
+  background: var(--panel); border-radius: var(--radius);
+  box-shadow: var(--shadow); margin-bottom: 24px;
+  border-left: 4px solid #34A853;
 }
+.gs-panel-inner { padding: 20px 24px; }
+.gs-sync-btn {
+  background: #34A853; color: #fff; border: none;
+  border-radius: 20px; padding: 9px 20px;
+  font-size: 12px; font-weight: 700; cursor: pointer;
+  transition: all .2s; white-space: nowrap;
+}
+.gs-sync-btn:hover { background: #2d9146; }
+.gs-sync-btn:disabled { background: var(--muted); cursor: not-allowed; }
+
+/* ── フィードバックカード ── */
+.feedback-list { display: flex; flex-direction: column; gap: 12px; }
+.feedback-card {
+  background: var(--panel); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px 20px;
+  border-left: 4px solid var(--blue);
+  transition: box-shadow .2s;
+}
+.feedback-card:hover { box-shadow: var(--shadow-md); }
+.feedback-card.type-bug     { border-left-color: var(--red); }
+.feedback-card.type-request { border-left-color: var(--purple); }
+.feedback-card.type-other   { border-left-color: var(--muted); }
+
+.feedback-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 8px; flex-wrap: wrap;
+}
+.feedback-type-badge {
+  display: inline-block; padding: 2px 10px;
+  border-radius: 20px; font-size: 10px; font-weight: 700;
+}
+.feedback-type-badge.bug     { background: #FEF2F2; color: #DC2626; }
+.feedback-type-badge.request { background: #EDE9FE; color: #6D28D9; }
+.feedback-type-badge.other   { background: var(--panel2); color: var(--muted); }
+
+.feedback-meta { font-size: 11px; color: var(--muted); margin-left: auto; }
+.feedback-body { font-size: 13px; color: var(--text); line-height: 1.7; }
+.feedback-user { font-size: 11px; color: var(--muted); margin-top: 8px; }
+
+/* ── パネルセクション ── */
+.admin-section { display: none; }
+.admin-section.active { display: block; }
 </style>
 </head>
 <body>
 
-<!-- ══════════ ログイン画面 ══════════ -->
-<!-- パスワードリセット画面 -->
-<div id="screen-reset" style="display:none;">
+<!-- ══════════ パスワードリセット ══════════ -->
+<div id="screen-reset" style="display:none;min-height:100vh;display:none;align-items:center;justify-content:center;background:linear-gradient(135deg,#EFF6FF,#F0F4F8);">
   <div class="login-card">
     <div class="login-logo">
       <span class="login-logo-icon">🔑</span>
@@ -537,14 +440,15 @@ body {
   </div>
 </div>
 
+<!-- ══════════ ログイン画面 ══════════ -->
 <div id="screen-login">
   <div class="login-card">
     <div class="login-logo">
-      <span class="login-logo-icon">🛡</span>
-      <div class="login-logo-title">SHIKAKU QUEST</div>
+      <span class="login-logo-icon">⚔️</span>
+      <div class="login-logo-title">STUDY QUEST</div>
       <div class="login-logo-sub">ADMINISTRATOR ACCESS</div>
     </div>
-    <form onsubmit="handleLogin(event)">
+    <form onsubmit="handleLogin(event)" class="login-form">
       <div class="input-group">
         <label class="input-label">メールアドレス</label>
         <input class="input-field" id="adminEmail" type="email"
@@ -555,12 +459,10 @@ body {
         <input class="input-field" id="adminPw" type="password"
           placeholder="••••••••" autocomplete="current-password" required>
       </div>
-      <div class="login-error" id="loginError" style="display:none;"></div>
+      <div class="login-error" id="loginError"></div>
       <button class="login-btn" type="submit">🔐 管理者としてログイン</button>
     </form>
-    <div class="login-back">
-      <a href="index.html">← 通常の学習画面に戻る</a>
-    </div>
+    <div class="login-back"><a href="index.html">← 通常の学習画面に戻る</a></div>
   </div>
 </div>
 
@@ -570,15 +472,27 @@ body {
   <!-- ヘッダー -->
   <header class="admin-header">
     <div class="admin-header-left">
-      <div class="admin-logo">⚔ SHIKAKU QUEST</div>
+      <div class="admin-logo">⚔ STUDY QUEST</div>
       <div class="admin-badge">ADMIN</div>
     </div>
     <div class="admin-header-right">
       <span id="lastUpdatedHeader" style="font-size:11px;color:var(--muted);"></span>
-      <button class="admin-sync-btn" onclick="loadData()">🔄 データ更新</button>
+      <button class="admin-icon-btn" onclick="toggleDarkMode()" title="ダークモード切替">🌙</button>
+      <button class="admin-sync-btn" onclick="loadData()">🔄 更新</button>
       <button class="admin-logout-btn" onclick="logout()">ログアウト</button>
     </div>
   </header>
+
+  <!-- ナビタブ -->
+  <nav class="admin-nav">
+    <button class="admin-nav-btn active" onclick="switchSection('overview', this)">📊 概要</button>
+    <button class="admin-nav-btn" onclick="switchSection('users', this)">👥 ユーザー</button>
+    <button class="admin-nav-btn" onclick="switchSection('feedback', this)">
+      💬 フィードバック
+      <span class="admin-nav-badge" id="feedbackBadge" style="display:none;">0</span>
+    </button>
+    <button class="admin-nav-btn" onclick="switchSection('export', this)">📤 エクスポート</button>
+  </nav>
 
   <!-- メインコンテンツ -->
   <main class="admin-main">
@@ -592,137 +506,191 @@ body {
 
     <div id="mainContent" style="display:none;">
 
-      <!-- ── KPIカード ── -->
-      <div class="section-label">サマリー</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">登録ユーザー総数</div>
-          <div class="kpi-value" id="kpiTotal">—</div>
-          <div class="kpi-sub">Googleログイン済み</div>
-        </div>
-        <div class="kpi-card green">
-          <div class="kpi-label">平均学習時間（累計）</div>
-          <div class="kpi-value" id="kpiAvgTotal">—</div>
-          <div class="kpi-unit">時間/人</div>
-        </div>
-        <div class="kpi-card amber">
-          <div class="kpi-label">平均Lv</div>
-          <div class="kpi-value" id="kpiAvgLv">—</div>
-          <div class="kpi-sub">全ユーザー平均</div>
-        </div>
-        <div class="kpi-card purple">
-          <div class="kpi-label">最高学習時間</div>
-          <div class="kpi-value" id="kpiTopHours">—</div>
-          <div class="kpi-unit">時間（最大）</div>
-        </div>
-        <div class="kpi-card red">
-          <div class="kpi-label">平均連続日数</div>
-          <div class="kpi-value" id="kpiAvgStreak">—</div>
-          <div class="kpi-unit">日</div>
-        </div>
-      </div>
+      <!-- ══ 概要セクション ══ -->
+      <div class="admin-section active" id="section-overview">
 
-      <!-- ── グラフ ── -->
-      <div class="section-label" style="margin-top:8px;">分析グラフ</div>
-      <div class="charts-grid">
-        <!-- レベル分布 -->
-        <div class="chart-card">
-          <div class="chart-title">📊 レベル分布</div>
-          <div class="chart-sub">ユーザーのレベル帯ごとの人数</div>
-          <div class="chart-wrap sm"><canvas id="chartLevel"></canvas></div>
+        <div class="section-label">KPI サマリー</div>
+        <div class="kpi-grid">
+          <div class="kpi-card" data-icon="👥">
+            <div class="kpi-label">登録ユーザー総数</div>
+            <div class="kpi-value" id="kpiTotal">—</div>
+            <div class="kpi-sub">Googleログイン済み</div>
+          </div>
+          <div class="kpi-card cyan" data-icon="⚡">
+            <div class="kpi-label">直近7日アクティブ</div>
+            <div class="kpi-value" id="kpiActive7">—</div>
+            <div class="kpi-sub" id="kpiActive7Rate">—</div>
+          </div>
+          <div class="kpi-card teal" data-icon="✨">
+            <div class="kpi-label">直近7日新規登録</div>
+            <div class="kpi-value" id="kpiNew7">—</div>
+            <div class="kpi-sub">過去7日間</div>
+          </div>
+          <div class="kpi-card green" data-icon="⏱">
+            <div class="kpi-label">平均学習時間（累計）</div>
+            <div class="kpi-value" id="kpiAvgTotal">—</div>
+            <div class="kpi-unit">時間/人</div>
+          </div>
+          <div class="kpi-card amber" data-icon="⬆">
+            <div class="kpi-label">平均レベル</div>
+            <div class="kpi-value" id="kpiAvgLv">—</div>
+            <div class="kpi-sub">全ユーザー平均</div>
+          </div>
+          <div class="kpi-card purple" data-icon="🏆">
+            <div class="kpi-label">最高学習時間</div>
+            <div class="kpi-value" id="kpiTopHours">—</div>
+            <div class="kpi-unit">時間（最大）</div>
+          </div>
+          <div class="kpi-card red" data-icon="🔥">
+            <div class="kpi-label">平均連続日数</div>
+            <div class="kpi-value" id="kpiAvgStreak">—</div>
+            <div class="kpi-unit">日</div>
+          </div>
         </div>
-        <!-- 科目別学習割合 -->
-        <div class="chart-card">
-          <div class="chart-title">🎯 科目別学習割合</div>
-          <div class="chart-sub">全ユーザーの科目別学習時間の合計</div>
-          <div class="chart-wrap sm"><canvas id="chartSubjects"></canvas></div>
-        </div>
-        <!-- 学習時間分布 -->
-        <div class="chart-card full">
-          <div class="chart-title">⏱ 学習時間分布</div>
-          <div class="chart-sub">ユーザーの累計学習時間の分布（時間帯ごとの人数）</div>
-          <div class="chart-wrap"><canvas id="chartHours"></canvas></div>
-        </div>
-      </div>
 
-      <!-- ── Googleスプレッドシート連携 ── -->
-      <div class="section-label">Googleスプレッドシート連携</div>
-      <div class="gs-panel">
-        <div class="gs-panel-inner">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-            <span style="font-size:22px;">📗</span>
+        <div class="section-label" style="margin-top:8px;">分析グラフ</div>
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-title">📊 レベル分布</div>
+            <div class="chart-sub">ユーザーのレベル帯ごとの人数</div>
+            <div class="chart-wrap sm"><canvas id="chartLevel"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">🎯 科目別学習割合</div>
+            <div class="chart-sub">全ユーザーの科目別学習時間の合計</div>
+            <div class="chart-wrap sm"><canvas id="chartSubjects"></canvas></div>
+          </div>
+          <div class="chart-card full">
+            <div class="chart-title">⏱ 学習時間分布</div>
+            <div class="chart-sub">ユーザーの累計学習時間の分布</div>
+            <div class="chart-wrap"><canvas id="chartHours"></canvas></div>
+          </div>
+        </div>
+
+      </div><!-- /section-overview -->
+
+      <!-- ══ ユーザーセクション ══ -->
+      <div class="admin-section" id="section-users">
+
+        <div class="filter-bar">
+          <input class="filter-input" id="searchInput" type="text"
+            placeholder="🔍 名前で検索..." oninput="filterTable()" style="min-width:200px;">
+          <select class="filter-input" id="sortSelect" onchange="filterTable()">
+            <option value="level_desc">レベル（高い順）</option>
+            <option value="hours_desc">学習時間（多い順）</option>
+            <option value="streak_desc">連続日数（長い順）</option>
+            <option value="updated_desc">最終更新（新しい順）</option>
+            <option value="name_asc">名前（昇順）</option>
+          </select>
+          <select class="filter-input" id="activeFilter" onchange="filterTable()">
+            <option value="all">全員</option>
+            <option value="active">アクティブ（7日以内）</option>
+            <option value="inactive">非アクティブ</option>
+          </select>
+          <span class="last-updated" id="lastUpdated"></span>
+        </div>
+
+        <div class="table-card">
+          <div class="table-header">
             <div>
-              <div style="font-weight:700;font-size:14px;">スプレッドシートへ同期</div>
-              <div style="font-size:11px;color:var(--muted);">ボタン1クリックで全ユーザーデータをGoogleスプレッドシートに書き込みます</div>
+              <div class="table-title">全ユーザーデータ</div>
+              <div class="table-sub" id="tableCount">— 件</div>
             </div>
           </div>
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <input id="gasUrlInput" class="filter-input" type="text"
-              placeholder="Google Apps Script の URL を貼り付け..."
-              style="flex:1;min-width:260px;font-size:12px;"
-              oninput="saveGasUrl()">
-            <button class="gs-sync-btn" onclick="syncToGoogleSheets()">
-              <span id="syncBtnText">🔄 スプレッドシートに同期</span>
-            </button>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>ユーザー</th>
+                  <th>メール</th>
+                  <th>Lv</th>
+                  <th>累計学習</th>
+                  <th>連続</th>
+                  <th>称号</th>
+                  <th>資格</th>
+                  <th>状態</th>
+                  <th>最終更新</th>
+                </tr>
+              </thead>
+              <tbody id="userTableBody"></tbody>
+            </table>
           </div>
-          <div id="syncStatus" style="margin-top:8px;font-size:12px;min-height:18px;"></div>
-          <div style="margin-top:10px;padding:10px;background:var(--panel2);border-radius:8px;border:1px solid var(--border);">
-            <div style="font-size:11px;color:var(--muted);line-height:1.8;">
-              ⚙️ <b>初回セットアップ：</b>
-              <a href="https://script.google.com/home/projects/create" target="_blank"
-                style="color:var(--blue);">Google Apps Script</a> を開き、
-              下の「スクリプトをコピー」ボタンでコードを貼り付け → デプロイ → URLをここに貼ってください
+        </div>
+
+      </div><!-- /section-users -->
+
+      <!-- ══ フィードバックセクション ══ -->
+      <div class="admin-section" id="section-feedback">
+
+        <div class="filter-bar">
+          <select class="filter-input" id="feedbackTypeFilter" onchange="renderFeedbackList()">
+            <option value="all">すべてのタイプ</option>
+            <option value="バグ報告">バグ報告</option>
+            <option value="機能追加">機能追加希望</option>
+            <option value="その他">その他</option>
+          </select>
+          <span class="last-updated" id="feedbackCount">読み込み中...</span>
+        </div>
+
+        <div id="feedbackList" class="feedback-list">
+          <div class="loading-state"><div class="spinner"></div>フィードバックを取得中...</div>
+        </div>
+
+      </div><!-- /section-feedback -->
+
+      <!-- ══ エクスポートセクション ══ -->
+      <div class="admin-section" id="section-export">
+
+        <div class="section-label">データエクスポート</div>
+        <div class="table-card" style="margin-bottom:24px;">
+          <div class="table-header">
+            <div>
+              <div class="table-title">ユーザーデータをダウンロード</div>
+              <div class="table-sub">全ユーザーの学習データをCSV・Excel形式でエクスポート</div>
             </div>
-            <button onclick="copyGasScript()" style="margin-top:8px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;">
-              📋 スクリプトをコピー
-            </button>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="export-btn" onclick="exportCSV()">📥 CSVエクスポート</button>
+              <button class="export-btn-excel" onclick="exportExcel()">📊 Excelエクスポート</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- ── ユーザーテーブル ── -->
-      <div class="section-label">ユーザー一覧</div>
-      <div class="filter-bar">
-        <input class="filter-input" id="searchInput" type="text" placeholder="🔍 名前・メールで検索..." oninput="filterTable()">
-        <select class="filter-input" id="sortSelect" onchange="filterTable()">
-          <option value="level_desc">レベル（高い順）</option>
-          <option value="hours_desc">学習時間（多い順）</option>
-          <option value="streak_desc">連続日数（長い順）</option>
-          <option value="name_asc">名前（昇順）</option>
-        </select>
-        <span class="last-updated" id="lastUpdated"></span>
-      </div>
+        <div class="section-label">Googleスプレッドシート連携</div>
+        <div class="gs-panel">
+          <div class="gs-panel-inner">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+              <span style="font-size:22px;">📗</span>
+              <div>
+                <div style="font-weight:700;font-size:14px;">スプレッドシートへ同期</div>
+                <div style="font-size:11px;color:var(--muted);">ボタン1クリックで全ユーザーデータをGoogleスプレッドシートに書き込みます</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <input id="gasUrlInput" class="filter-input" type="text"
+                placeholder="Google Apps Script の URL を貼り付け..."
+                style="flex:1;min-width:260px;font-size:12px;"
+                oninput="saveGasUrl()">
+              <button class="gs-sync-btn" onclick="syncToGoogleSheets()">
+                <span id="syncBtnText">🔄 スプレッドシートに同期</span>
+              </button>
+            </div>
+            <div id="syncStatus" style="margin-top:8px;font-size:12px;min-height:18px;"></div>
+            <div style="margin-top:10px;padding:10px;background:var(--panel2);border-radius:8px;border:1px solid var(--border);">
+              <div style="font-size:11px;color:var(--muted);line-height:1.8;">
+                ⚙️ <b>初回セットアップ：</b>
+                <a href="https://script.google.com/home/projects/create" target="_blank"
+                  style="color:var(--blue);">Google Apps Script</a> を開き、
+                下の「スクリプトをコピー」ボタンでコードを貼り付け → デプロイ → URLをここに貼ってください
+              </div>
+              <button onclick="copyGasScript()" style="margin-top:8px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;">
+                📋 スクリプトをコピー
+              </button>
+            </div>
+          </div>
+        </div>
 
-      <div class="table-card">
-        <div class="table-header">
-          <div>
-            <div class="table-title">全ユーザーデータ</div>
-            <div class="table-sub" id="tableCount">— 件</div>
-          </div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button class="export-btn" onclick="exportCSV()">📥 CSVエクスポート</button>
-            <button class="export-btn-excel" onclick="exportExcel()">📊 Excelエクスポート</button>
-          </div>
-        </div>
-        <div style="overflow-x:auto;">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>名前</th>
-                <th>メール</th>
-                <th>Lv</th>
-                <th>累計学習</th>
-                <th>連続日数</th>
-                <th>称号</th>
-                <th>資格</th>
-                <th>最終更新</th>
-              </tr>
-            </thead>
-            <tbody id="userTableBody"></tbody>
-          </table>
-        </div>
-      </div>
+      </div><!-- /section-export -->
 
     </div><!-- /mainContent -->
   </main>
@@ -730,43 +698,70 @@ body {
 
 <script>
 /* ════════════════════════════════════════
- * 管理者認証 — Supabase Auth（メール＋パスワード）
+ * Supabase 接続
  * ════════════════════════════════════════ */
+const SUPABASE_URL = 'https://ydexcwnwrbrfikujocon.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZXhjd253cmJyZmlrdWpvY29uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5ODk5ODAsImV4cCI6MjA4OTU2NTk4MH0.dO4PGYDlVrYsrcPgPuQFgzU8fCVvJ0R4gdGBmeAs-OQ';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-function showAdminScreen() {
-  loadGasUrl();
-  const login = document.getElementById('screen-login');
-  const dash  = document.getElementById('screen-dashboard');
-  if(login) login.style.display = 'none';
-  if(dash)  dash.style.display  = 'block';
-  if(typeof loadData === 'function') loadData();
-  else if(typeof initDashboard === 'function') initDashboard();
-  else if(typeof refreshDashboard === 'function') refreshDashboard();
+let allUsers = [];
+let allFeedback = [];
+let chartInstances = {};
+
+/* ── ダークモード ── */
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('sq_admin_theme', isDark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('sq_admin_theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+})();
+
+/* ── セクション切替 ── */
+function switchSection(id, btn) {
+  document.querySelectorAll('.admin-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  btn.classList.add('active');
+  if (id === 'feedback') loadFeedback();
 }
 
-// ページ読み込み時に既存セッションを確認
+/* ════════════════════════════════════════
+ * 認証
+ * ════════════════════════════════════════ */
+function showAdminScreen() {
+  loadGasUrl();
+  document.getElementById('screen-login').style.display = 'none';
+  document.getElementById('screen-dashboard').style.display = 'block';
+  loadData();
+}
+
 async function initAuth() {
-  // パスワードリセットリンクからのアクセスを検出
   const hash = window.location.hash;
   if (hash.includes('type=recovery')) {
     document.getElementById('screen-login').style.display = 'none';
-    document.getElementById('screen-reset').style.display = 'flex';
+    const resetEl = document.getElementById('screen-reset');
+    resetEl.style.display = 'flex';
     return;
   }
   const { data: { session } } = await sb.auth.getSession();
   if (session) showAdminScreen();
 }
+initAuth();
 
 async function submitNewPassword() {
-  const pw      = document.getElementById('newPw').value;
+  const pw = document.getElementById('newPw').value;
   const confirm = document.getElementById('newPwConfirm').value;
-  const msgEl   = document.getElementById('resetMsg');
-  if (pw.length < 6) { msgEl.textContent = 'パスワードは6文字以上にしてください'; return; }
+  const msgEl = document.getElementById('resetMsg');
+  if (pw.length < 6) { msgEl.textContent = 'パスワードは6文字以上'; return; }
   if (pw !== confirm) { msgEl.textContent = 'パスワードが一致しません'; return; }
   const { error } = await sb.auth.updateUser({ password: pw });
   if (error) { msgEl.textContent = '失敗: ' + error.message; return; }
-  msgEl.style.color = '#8CC63F';
-  msgEl.textContent = '✅ パスワードを更新しました。ログイン画面に移動します…';
+  msgEl.style.color = '#10B981';
+  msgEl.textContent = '✅ 更新しました。ログイン画面へ移動します…';
   setTimeout(() => {
     document.getElementById('screen-reset').style.display = 'none';
     document.getElementById('screen-login').style.display = 'flex';
@@ -774,10 +769,10 @@ async function submitNewPassword() {
 }
 
 /* ── ブルートフォース対策 ── */
-const LOCK_KEY   = 'sq_admin_lock';
-const FAIL_KEY   = 'sq_admin_fails';
-const MAX_FAILS  = 5;
-const LOCK_MINS  = 15;
+const LOCK_KEY = 'sq_admin_lock';
+const FAIL_KEY = 'sq_admin_fails';
+const MAX_FAILS = 5;
+const LOCK_MINS = 15;
 const ADMIN_EMAILS = ['hitoki2477@yahoo.co.jp'];
 
 function getLockState() {
@@ -788,64 +783,47 @@ function getLockState() {
     return v;
   } catch { return null; }
 }
-function getFailCount() {
-  return parseInt(localStorage.getItem(FAIL_KEY) || '0');
-}
+function getFailCount() { return parseInt(localStorage.getItem(FAIL_KEY) || '0'); }
 function recordFail() {
   const count = getFailCount() + 1;
   localStorage.setItem(FAIL_KEY, count);
-  if (count >= MAX_FAILS) {
-    const until = Date.now() + LOCK_MINS * 60 * 1000;
-    localStorage.setItem(LOCK_KEY, JSON.stringify({ until }));
-  }
+  if (count >= MAX_FAILS) localStorage.setItem(LOCK_KEY, JSON.stringify({ until: Date.now() + LOCK_MINS * 60000 }));
   return count;
 }
-function clearFails() {
-  localStorage.removeItem(LOCK_KEY);
-  localStorage.removeItem(FAIL_KEY);
-}
+function clearFails() { localStorage.removeItem(LOCK_KEY); localStorage.removeItem(FAIL_KEY); }
 function showError(msg) {
   const el = document.getElementById('loginError');
-  el.textContent = msg;
-  el.style.display = 'block';
-  el.classList.add('show');
+  el.textContent = msg; el.style.display = 'block'; el.classList.add('show');
 }
 
 async function handleLogin(e) {
   e.preventDefault();
-  const email  = document.getElementById('adminEmail').value.trim();
-  const pw     = document.getElementById('adminPw').value;
+  const email = document.getElementById('adminEmail').value.trim();
+  const pw = document.getElementById('adminPw').value;
   document.getElementById('loginError').classList.remove('show');
 
-  // ロック確認
   const lock = getLockState();
   if (lock) {
     const rem = Math.ceil((lock.until - Date.now()) / 60000);
-    showError(`ログインがロックされています。${rem}分後に再試行してください。`);
+    showError(`ロック中です。${rem}分後に再試行してください。`);
     return;
   }
-
-  // 管理者メールホワイトリスト確認
   if (!ADMIN_EMAILS.includes(email)) {
     recordFail();
     showError('このアカウントには管理者権限がありません。');
     document.getElementById('adminPw').value = '';
     return;
   }
-
   const { error } = await sb.auth.signInWithPassword({ email, password: pw });
   if (error) {
     const count = recordFail();
     const rem = MAX_FAILS - count;
-    if (rem <= 0) {
-      showError(`ログインをロックしました。${LOCK_MINS}分後に再試行してください。`);
-    } else {
-      showError(`メールアドレスまたはパスワードが正しくありません。（残り${rem}回）`);
-    }
+    showError(rem <= 0
+      ? `ロックしました。${LOCK_MINS}分後に再試行してください。`
+      : `メールアドレスまたはパスワードが違います。（残り${rem}回）`);
     document.getElementById('adminPw').value = '';
     return;
   }
-
   clearFails();
   showAdminScreen();
 }
@@ -857,26 +835,14 @@ async function logout() {
   document.getElementById('screen-dashboard').style.display = 'none';
 }
 
-/* ================================================================
- * Supabase 接続
- * ================================================================ */
-const SUPABASE_URL = 'https://ydexcwnwrbrfikujocon.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZXhjd253cmJyZmlrdWpvY29uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5ODk5ODAsImV4cCI6MjA4OTU2NTk4MH0.dO4PGYDlVrYsrcPgPuQFgzU8fCVvJ0R4gdGBmeAs-OQ';
-const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-initAuth();
-
-let allUsers = [];
-let chartInstances = {};
-
-/* ================================================================
- * データ取得・集計
- * ================================================================ */
+/* ════════════════════════════════════════
+ * データ取得
+ * ════════════════════════════════════════ */
 async function loadData() {
   document.getElementById('loadingState').style.display = 'block';
   document.getElementById('mainContent').style.display = 'none';
 
   try {
-    // Supabaseから全ユーザーデータ取得
     const { data, error } = await sb.from('profiles')
       .select('*')
       .order('total_study_mins', { ascending: false })
@@ -891,7 +857,6 @@ async function loadData() {
     allUsers = data;
     renderAll(data);
 
-    // 最終更新時刻
     const now = new Date().toLocaleString('ja-JP');
     document.getElementById('lastUpdated').textContent = `最終更新: ${now}`;
     document.getElementById('lastUpdatedHeader').textContent = now;
@@ -903,8 +868,8 @@ async function loadData() {
 
   } catch (e) {
     document.getElementById('loadingState').innerHTML =
-      `<p style="color:var(--red)">❌ データ取得失敗: ${e.message}</p>
-       <p style="color:var(--muted);font-size:12px;margin-top:8px;">Supabaseの接続設定またはテーブル権限を確認してください</p>`;
+      `<p style="color:var(--red)">❌ 取得失敗: ${e.message}</p>
+       <p style="color:var(--muted);font-size:12px;margin-top:8px;">Supabaseの接続設定を確認してください</p>`;
   }
 }
 
@@ -919,12 +884,22 @@ function renderAll(data) {
 /* ── KPIカード ── */
 function renderKPIs(data) {
   const total = data.length;
+  const now = Date.now();
+  const sevenDaysAgo = now - 7 * 24 * 3600 * 1000;
+
+  const active7 = data.filter(u => u.updated_at && new Date(u.updated_at).getTime() > sevenDaysAgo).length;
+  const new7 = data.filter(u => u.created_at && new Date(u.created_at).getTime() > sevenDaysAgo).length;
+  const active7Rate = total > 0 ? ((active7 / total) * 100).toFixed(0) : 0;
+
   const avgHours = data.reduce((a, u) => a + (u.total_study_mins || 0), 0) / total / 60;
   const avgLv = data.reduce((a, u) => a + (u.level || 1), 0) / total;
   const topHours = Math.max(...data.map(u => (u.total_study_mins || 0) / 60));
   const avgStreak = data.reduce((a, u) => a + (u.streak || 0), 0) / total;
 
   document.getElementById('kpiTotal').textContent = total;
+  document.getElementById('kpiActive7').textContent = active7;
+  document.getElementById('kpiActive7Rate').textContent = `稼働率 ${active7Rate}%`;
+  document.getElementById('kpiNew7').textContent = new7;
   document.getElementById('kpiAvgTotal').textContent = avgHours.toFixed(1);
   document.getElementById('kpiAvgLv').textContent = avgLv.toFixed(1);
   document.getElementById('kpiTopHours').textContent = topHours.toFixed(0);
@@ -934,12 +909,12 @@ function renderKPIs(data) {
 /* ── レベル分布グラフ ── */
 function renderLevelChart(data) {
   const bands = [
-    { label: 'Lv1-10',  min: 1,  max: 10  },
-    { label: 'Lv11-25', min: 11, max: 25  },
-    { label: 'Lv26-50', min: 26, max: 50  },
-    { label: 'Lv51-75', min: 51, max: 75  },
-    { label: 'Lv76-99', min: 76, max: 99  },
-    { label: 'Lv100',   min: 100,max: 100 },
+    { label: 'Lv1-10',  min: 1,   max: 10  },
+    { label: 'Lv11-25', min: 11,  max: 25  },
+    { label: 'Lv26-50', min: 26,  max: 50  },
+    { label: 'Lv51-75', min: 51,  max: 75  },
+    { label: 'Lv76-99', min: 76,  max: 99  },
+    { label: 'Lv100+',  min: 100, max: 99999 },
   ];
   const counts = bands.map(b => data.filter(u => (u.level||1) >= b.min && (u.level||1) <= b.max).length);
   const COLORS = ['#93C5FD','#60A5FA','#3B82F6','#2563EB','#1D4ED8','#1E40AF'];
@@ -956,7 +931,7 @@ function renderLevelChart(data) {
       plugins: { legend: { display: false } },
       scales: {
         x: { grid: { display: false }, ticks: { font: { size: 11 } } },
-        y: { grid: { color: '#F1F5F9' }, beginAtZero: true, ticks: { font: { size: 10 }, stepSize: 1 } }
+        y: { grid: { color: 'rgba(0,0,0,.05)' }, beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } } }
       }
     }
   });
@@ -964,7 +939,6 @@ function renderLevelChart(data) {
 
 /* ── 科目別グラフ ── */
 function renderSubjectChart(data) {
-  // subject_stats から科目別の総学習時間を集計
   const subjectTotals = {};
   data.forEach(u => {
     const stats = u.subject_stats || {};
@@ -978,16 +952,19 @@ function renderSubjectChart(data) {
   const COLORS = ['#3B82F6','#10B981','#F59E0B','#EF4444','#8B5CF6','#06B6D4','#F97316','#EC4899'];
 
   if (chartInstances.subjects) chartInstances.subjects.destroy();
+  if (!sorted.length) {
+    const ctx = document.getElementById('chartSubjects');
+    ctx.parentElement.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted);font-size:12px;">データなし</div>';
+    return;
+  }
   chartInstances.subjects = new Chart(document.getElementById('chartSubjects'), {
     type: 'doughnut',
     data: {
-      labels: sorted.map(([k]) => k.length > 6 ? k.slice(0, 6) + '…' : k),
+      labels: sorted.map(([k]) => k.length > 6 ? k.slice(0,6)+'…' : k),
       datasets: [{
         data: sorted.map(([,v]) => v),
         backgroundColor: COLORS,
-        borderWidth: 2,
-        borderColor: '#fff',
-        hoverOffset: 8
+        borderWidth: 2, borderColor: 'var(--panel)', hoverOffset: 8
       }]
     },
     options: {
@@ -1003,20 +980,17 @@ function renderSubjectChart(data) {
 /* ── 学習時間分布グラフ ── */
 function renderHoursChart(data) {
   const bands = [
-    { label: '0-10h',    min: 0,   max: 10   },
-    { label: '10-50h',   min: 10,  max: 50   },
-    { label: '50-100h',  min: 50,  max: 100  },
-    { label: '100-200h', min: 100, max: 200  },
-    { label: '200-500h', min: 200, max: 500  },
-    { label: '500-1000h',min: 500, max: 1000 },
-    { label: '1000h+',   min: 1000,max: 99999},
+    { label: '0-10h',     min: 0,    max: 10    },
+    { label: '10-50h',    min: 10,   max: 50    },
+    { label: '50-100h',   min: 50,   max: 100   },
+    { label: '100-200h',  min: 100,  max: 200   },
+    { label: '200-500h',  min: 200,  max: 500   },
+    { label: '500-1000h', min: 500,  max: 1000  },
+    { label: '1000h+',    min: 1000, max: 99999 },
   ];
-  const counts = bands.map(b => {
-    return data.filter(u => {
-      const h = (u.total_study_mins || 0) / 60;
-      return h >= b.min && h < b.max;
-    }).length;
-  });
+  const counts = bands.map(b =>
+    data.filter(u => { const h = (u.total_study_mins||0)/60; return h >= b.min && h < b.max; }).length
+  );
 
   if (chartInstances.hours) chartInstances.hours.destroy();
   chartInstances.hours = new Chart(document.getElementById('chartHours'), {
@@ -1028,8 +1002,7 @@ function renderHoursChart(data) {
         data: counts,
         backgroundColor: 'rgba(59,130,246,.75)',
         hoverBackgroundColor: '#2563EB',
-        borderRadius: 6,
-        borderSkipped: false
+        borderRadius: 6, borderSkipped: false
       }]
     },
     options: {
@@ -1037,57 +1010,87 @@ function renderHoursChart(data) {
       plugins: { legend: { display: false } },
       scales: {
         x: { grid: { display: false } },
-        y: { grid: { color: '#F1F5F9' }, beginAtZero: true, ticks: { stepSize: 1 } }
+        y: { grid: { color: 'rgba(0,0,0,.05)' }, beginAtZero: true, ticks: { stepSize: 1 } }
       }
     }
   });
 }
 
-/* ── テーブル ── */
+/* ── ユーザーテーブル ── */
+const AVATAR_COLORS = ['#3B82F6','#10B981','#F59E0B','#EF4444','#8B5CF6','#06B6D4','#F97316'];
+function avatarColor(name) {
+  if (!name) return '#718096';
+  let h = 0; for (const c of name) h = (h * 31 + c.charCodeAt(0)) % AVATAR_COLORS.length;
+  return AVATAR_COLORS[h];
+}
+
 function renderTable(data) {
   const tbody = document.getElementById('userTableBody');
   tbody.innerHTML = '';
   document.getElementById('tableCount').textContent = `${data.length} 件`;
 
+  const now = Date.now();
+  const sevenDaysAgo = now - 7 * 24 * 3600 * 1000;
+
   data.forEach((u, i) => {
     const hours = ((u.total_study_mins || 0) / 60).toFixed(1);
+    const updatedMs = u.updated_at ? new Date(u.updated_at).getTime() : 0;
+    const isActive = updatedMs > sevenDaysAgo;
     const date = u.updated_at ? new Date(u.updated_at).toLocaleDateString('ja-JP') : '—';
     const jobs = (u.job_ids || []).join(', ') || '—';
+    const avatarChar = (u.display_name || '？')[0];
+    const color = avatarColor(u.display_name);
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td class="td-mono" style="color:var(--muted)">${i+1}</td>
       <td>
-        <div style="font-weight:600;font-size:13px;">${escHtml(u.display_name || '名無し')}</div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div class="user-avatar" style="background:${color}">${escHtml(avatarChar)}</div>
+          <div>
+            <div style="font-weight:600;font-size:13px;">${escHtml(u.display_name || '名無し')}</div>
+          </div>
+        </div>
       </td>
       <td style="font-size:11px;color:var(--muted)">${escHtml(u.email || '—')}</td>
       <td class="td-mono"><b>Lv.${u.level || 1}</b></td>
       <td class="td-mono">${hours}h</td>
       <td class="td-mono">🔥 ${u.streak || 0}日</td>
-      <td style="font-size:12px;color:var(--muted)">${escHtml(u.char_title || '—')}</td>
+      <td style="font-size:11px;color:var(--muted)">${escHtml(u.char_title || '—')}</td>
       <td style="font-size:11px;color:var(--muted)">${escHtml(jobs)}</td>
+      <td><span class="td-pill ${isActive ? 'active' : 'inactive'}">${isActive ? '✓ 活動中' : '休眠'}</span></td>
       <td style="font-size:11px;color:var(--muted)">${date}</td>
     `;
     tbody.appendChild(tr);
   });
 }
 
-/* ── 検索・ソート ── */
+/* ── 検索・ソート・フィルター ── */
 function filterTable() {
   const q = document.getElementById('searchInput').value.toLowerCase();
   const sort = document.getElementById('sortSelect').value;
+  const activeFilter = document.getElementById('activeFilter').value;
+  const sevenDaysAgo = Date.now() - 7 * 24 * 3600 * 1000;
 
   let filtered = allUsers.filter(u => {
     const name = (u.display_name || '').toLowerCase();
-    return !q || name.includes(q);
+    if (q && !name.includes(q)) return false;
+    if (activeFilter === 'active') {
+      return u.updated_at && new Date(u.updated_at).getTime() > sevenDaysAgo;
+    }
+    if (activeFilter === 'inactive') {
+      return !u.updated_at || new Date(u.updated_at).getTime() <= sevenDaysAgo;
+    }
+    return true;
   });
 
   filtered.sort((a, b) => {
     switch (sort) {
-      case 'level_desc':  return (b.level || 1) - (a.level || 1);
-      case 'hours_desc':  return (b.total_study_mins || 0) - (a.total_study_mins || 0);
-      case 'streak_desc': return (b.streak || 0) - (a.streak || 0);
-      case 'name_asc':    return (a.display_name || '').localeCompare(b.display_name || '');
+      case 'level_desc':   return (b.level || 1) - (a.level || 1);
+      case 'hours_desc':   return (b.total_study_mins || 0) - (a.total_study_mins || 0);
+      case 'streak_desc':  return (b.streak || 0) - (a.streak || 0);
+      case 'updated_desc': return new Date(b.updated_at||0) - new Date(a.updated_at||0);
+      case 'name_asc':     return (a.display_name||'').localeCompare(b.display_name||'');
       default: return 0;
     }
   });
@@ -1095,74 +1098,98 @@ function filterTable() {
   renderTable(filtered);
 }
 
-/* ── CSVエクスポート ── */
+/* ════════════════════════════════════════
+ * フィードバック
+ * ════════════════════════════════════════ */
+async function loadFeedback() {
+  if (allFeedback.length) { renderFeedbackList(); return; }
+
+  document.getElementById('feedbackList').innerHTML =
+    '<div class="loading-state"><div class="spinner"></div>フィードバックを取得中...</div>';
+
+  try {
+    const { data, error } = await sb.from('feedback')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(200);
+
+    if (error) throw error;
+    allFeedback = data || [];
+
+    const badge = document.getElementById('feedbackBadge');
+    if (allFeedback.length > 0) {
+      badge.textContent = allFeedback.length;
+      badge.style.display = '';
+    }
+
+    renderFeedbackList();
+  } catch (e) {
+    document.getElementById('feedbackList').innerHTML =
+      `<div style="color:var(--red);padding:20px;">❌ 取得失敗: ${e.message}</div>`;
+  }
+}
+
+function renderFeedbackList() {
+  const typeFilter = document.getElementById('feedbackTypeFilter').value;
+  const filtered = typeFilter === 'all'
+    ? allFeedback
+    : allFeedback.filter(f => f.type === typeFilter);
+
+  document.getElementById('feedbackCount').textContent = `${filtered.length} 件`;
+
+  if (!filtered.length) {
+    document.getElementById('feedbackList').innerHTML =
+      '<div style="text-align:center;padding:40px;color:var(--muted);font-size:13px;">フィードバックはありません</div>';
+    return;
+  }
+
+  const typeMap = { 'バグ報告': 'bug', '機能追加': 'request', 'その他': 'other' };
+  const typeLabel = { 'バグ報告': '🐛 バグ報告', '機能追加': '✨ 機能追加', 'その他': '💬 その他' };
+
+  document.getElementById('feedbackList').innerHTML = filtered.map(f => {
+    const typeKey = typeMap[f.type] || 'other';
+    const date = f.created_at ? new Date(f.created_at).toLocaleString('ja-JP') : '—';
+    return `
+    <div class="feedback-card type-${typeKey}">
+      <div class="feedback-header">
+        <span class="feedback-type-badge ${typeKey}">${typeLabel[f.type] || f.type || 'その他'}</span>
+        <span class="feedback-meta">${date}</span>
+      </div>
+      <div class="feedback-body">${escHtml(f.text || f.content || f.message || '（本文なし）')}</div>
+      ${f.user_name || f.email ? `<div class="feedback-user">👤 ${escHtml(f.user_name || f.email || '')}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+/* ════════════════════════════════════════
+ * CSVエクスポート
+ * ════════════════════════════════════════ */
 function exportCSV() {
-  const rows = [
-    ['順位', '名前', 'レベル', '累計学習時間(h)', '連続日数', '称号', '資格', '科目数', '最終更新']
-  ];
+  const rows = [['順位', '名前', 'レベル', '累計学習時間(h)', '連続日数', '称号', '資格', '科目数', '最終更新']];
 
   allUsers.forEach((u, i) => {
     const hours = ((u.total_study_mins || 0) / 60).toFixed(1);
     const date = u.updated_at ? new Date(u.updated_at).toLocaleDateString('ja-JP') : '';
-    const jobs = (u.job_ids || []).join('|');
-    const subjCount = Object.keys(u.subject_stats || {}).length;
-
     rows.push([
-      i + 1,
-      u.display_name || '名無し',
-      u.level || 1,
-      hours,
-      u.streak || 0,
-      u.char_title || '',
-      jobs,
-      subjCount,
-      date
+      i + 1, u.display_name || '名無し', u.level || 1, hours,
+      u.streak || 0, u.char_title || '', (u.job_ids || []).join('|'),
+      Object.keys(u.subject_stats || {}).length, date
     ]);
   });
 
-  // BOM付きUTF-8（Excelで文字化けしないように）
-  const csvContent = '\uFEFF' + rows.map(r =>
-    r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
-  ).join('\n');
-
+  const csv = '\uFEFF' + rows.map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
   const now = new Date().toISOString().slice(0, 10);
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `shikaku-quest-users-${now}.csv`;
+  a.download = `study-quest-users-${now}.csv`;
   a.click();
 }
 
-/* ── Googleスプレッドシート連携 ── */
-const GAS_URL_KEY = 'sq_admin_gas_url';
+/* ── Excelエクスポート ── */
+function exportExcel() {
+  if (!allUsers.length) { alert('データがありません'); return; }
 
-function saveGasUrl() {
-  const url = document.getElementById('gasUrlInput').value.trim();
-  localStorage.setItem(GAS_URL_KEY, url);
-}
-
-function loadGasUrl() {
-  const url = localStorage.getItem(GAS_URL_KEY) || '';
-  document.getElementById('gasUrlInput').value = url;
-}
-
-async function syncToGoogleSheets() {
-  const url = document.getElementById('gasUrlInput').value.trim();
-  if (!url) {
-    setSyncStatus('❌ GASのURLを入力してください', 'var(--red)');
-    return;
-  }
-  if (!allUsers || !allUsers.length) {
-    setSyncStatus('❌ データがありません。先にデータを読み込んでください', 'var(--red)');
-    return;
-  }
-
-  const btn = document.querySelector('.gs-sync-btn');
-  btn.disabled = true;
-  document.getElementById('syncBtnText').textContent = '⏳ 同期中...';
-  setSyncStatus('データを送信中...', 'var(--muted)');
-
-  // 全科目キーを収集
   const subjectKeyMap = {};
   allUsers.forEach(u => {
     Object.entries(u.subject_stats || {}).forEach(([key, s]) => {
@@ -1171,27 +1198,18 @@ async function syncToGoogleSheets() {
   });
   const subjectKeys = Object.keys(subjectKeyMap);
 
-  // ヘッダー
   const header = [
-    '#', 'ユーザーID', '名前', 'レベル',
-    '累計学習時間(h)', '連続日数(日)', '称号',
-    '保有資格', '科目数', '登録日', '最終更新日',
+    '#', 'ユーザーID', '名前', 'レベル', '累計学習時間(h)',
+    '連続日数(日)', '称号', '保有資格', '科目数', '登録日', '最終更新日',
     ...subjectKeys.map(k => `[科目]${subjectKeyMap[k]}(h)`)
   ];
 
-  // データ行
   const rows = allUsers.map((u, i) => {
     const hours = parseFloat(((u.total_study_mins || 0) / 60).toFixed(2));
     const stats = u.subject_stats || {};
     return [
-      i + 1,
-      u.id || '',
-      u.display_name || '名無し',
-      u.level || 1,
-      hours,
-      u.streak || 0,
-      u.char_title || '',
-      (u.job_ids || []).join(', '),
+      i + 1, u.id || '', u.display_name || '名無し', u.level || 1, hours,
+      u.streak || 0, u.char_title || '', (u.job_ids || []).join(', '),
       Object.keys(stats).length,
       u.created_at ? new Date(u.created_at).toLocaleDateString('ja-JP') : '',
       u.updated_at ? new Date(u.updated_at).toLocaleDateString('ja-JP') : '',
@@ -1199,22 +1217,64 @@ async function syncToGoogleSheets() {
     ];
   });
 
-  const payload = {
-    header,
-    rows,
-    exportedAt: new Date().toLocaleString('ja-JP'),
-    totalUsers: allUsers.length
-  };
+  const wb = XLSX.utils.book_new();
+  const ws1 = XLSX.utils.aoa_to_sheet([header, ...rows]);
+  ws1['!cols'] = [
+    {wch:4},{wch:38},{wch:18},{wch:8},{wch:16},{wch:12},{wch:16},{wch:24},{wch:8},{wch:14},{wch:14},
+    ...subjectKeys.map(() => ({wch:18}))
+  ];
+  XLSX.utils.book_append_sheet(wb, ws1, 'ユーザー一覧');
+
+  const total = allUsers.length;
+  const avgHours = allUsers.reduce((a,u)=>a+(u.total_study_mins||0),0)/total/60;
+  const avgLv = allUsers.reduce((a,u)=>a+(u.level||1),0)/total;
+  const avgStreak = allUsers.reduce((a,u)=>a+(u.streak||0),0)/total;
+  const ws2 = XLSX.utils.aoa_to_sheet([
+    ['項目','値'],
+    ['エクスポート日時', new Date().toLocaleString('ja-JP')],
+    ['総ユーザー数', total],
+    ['平均レベル', parseFloat(avgLv.toFixed(1))],
+    ['平均累計学習時間(h)', parseFloat(avgHours.toFixed(1))],
+    ['平均連続日数(日)', parseFloat(avgStreak.toFixed(1))],
+    ['最高レベル', Math.max(...allUsers.map(u=>u.level||1))],
+    ['最大累計学習時間(h)', parseFloat(Math.max(...allUsers.map(u=>(u.total_study_mins||0)/60)).toFixed(1))],
+    ['科目種類数', subjectKeys.length],
+  ]);
+  ws2['!cols'] = [{wch:28},{wch:20}];
+  XLSX.utils.book_append_sheet(wb, ws2, 'サマリー');
+
+  XLSX.writeFile(wb, `study-quest-users-${new Date().toISOString().slice(0,10)}.xlsx`);
+}
+
+/* ── Googleスプレッドシート連携 ── */
+const GAS_URL_KEY = 'sq_admin_gas_url';
+function saveGasUrl() { localStorage.setItem(GAS_URL_KEY, document.getElementById('gasUrlInput').value.trim()); }
+function loadGasUrl() { document.getElementById('gasUrlInput').value = localStorage.getItem(GAS_URL_KEY) || ''; }
+
+async function syncToGoogleSheets() {
+  const url = document.getElementById('gasUrlInput').value.trim();
+  if (!url) { setSyncStatus('❌ GASのURLを入力してください', 'var(--red)'); return; }
+  if (!allUsers.length) { setSyncStatus('❌ 先にデータを読み込んでください', 'var(--red)'); return; }
+
+  const btn = document.querySelector('.gs-sync-btn');
+  btn.disabled = true;
+  document.getElementById('syncBtnText').textContent = '⏳ 同期中...';
+  setSyncStatus('データを送信中...', 'var(--muted)');
+
+  const subjectKeyMap = {};
+  allUsers.forEach(u => Object.entries(u.subject_stats||{}).forEach(([k,s])=>{ if(!subjectKeyMap[k]) subjectKeyMap[k]=s.name||k; }));
+  const subjectKeys = Object.keys(subjectKeyMap);
+
+  const header = ['#','ユーザーID','名前','レベル','累計学習時間(h)','連続日数(日)','称号','保有資格','科目数','登録日','最終更新日',...subjectKeys.map(k=>`[科目]${subjectKeyMap[k]}(h)`)];
+  const rows = allUsers.map((u,i)=>{
+    const h=parseFloat(((u.total_study_mins||0)/60).toFixed(2));
+    const stats=u.subject_stats||{};
+    return [i+1,u.id||'',u.display_name||'名無し',u.level||1,h,u.streak||0,u.char_title||'',(u.job_ids||[]).join(', '),Object.keys(stats).length,u.created_at?new Date(u.created_at).toLocaleDateString('ja-JP'):'',u.updated_at?new Date(u.updated_at).toLocaleDateString('ja-JP'):'',...subjectKeys.map(k=>parseFloat(((stats[k]?.hours)||0).toFixed(2)))];
+  });
 
   try {
-    // GASはCORS対応のためno-corsで送信（レスポンスは受け取れない）
-    await fetch(url, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    setSyncStatus(`✅ ${allUsers.length}件のデータを送信しました（${new Date().toLocaleTimeString('ja-JP')}）`, 'var(--green)');
+    await fetch(url, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify({header,rows,exportedAt:new Date().toLocaleString('ja-JP'),totalUsers:allUsers.length}) });
+    setSyncStatus(`✅ ${allUsers.length}件を送信しました（${new Date().toLocaleTimeString('ja-JP')}）`, 'var(--green)');
   } catch (e) {
     setSyncStatus(`❌ 送信失敗: ${e.message}`, 'var(--red)');
   } finally {
@@ -1225,189 +1285,48 @@ async function syncToGoogleSheets() {
 
 function setSyncStatus(msg, color) {
   const el = document.getElementById('syncStatus');
-  el.textContent = msg;
-  el.style.color = color;
+  el.textContent = msg; el.style.color = color;
 }
 
 function copyGasScript() {
   const script = `// Study Quest — Googleスプレッドシート同期スクリプト
-// 使い方: このスクリプトをGASエディタに貼り付けて「デプロイ」→「新しいデプロイ」
-// 種類: ウェブアプリ / アクセス: 全員
-
 function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
     const ss = SpreadsheetApp.getActiveSpreadsheet();
-
-    // ── シート1: ユーザー一覧 ──
     let sheet = ss.getSheetByName('ユーザー一覧');
     if (!sheet) sheet = ss.insertSheet('ユーザー一覧');
     sheet.clearContents();
-
-    // ヘッダー書き込み
-    sheet.getRange(1, 1, 1, data.header.length).setValues([data.header]);
-    const headerRange = sheet.getRange(1, 1, 1, data.header.length);
-    headerRange.setBackground('#34A853');
-    headerRange.setFontColor('#FFFFFF');
-    headerRange.setFontWeight('bold');
-
-    // データ書き込み
-    if (data.rows.length > 0) {
-      sheet.getRange(2, 1, data.rows.length, data.header.length).setValues(data.rows);
-    }
-
-    // 列幅自動調整
+    sheet.getRange(1,1,1,data.header.length).setValues([data.header]);
+    const hr = sheet.getRange(1,1,1,data.header.length);
+    hr.setBackground('#34A853'); hr.setFontColor('#FFFFFF'); hr.setFontWeight('bold');
+    if (data.rows.length > 0) sheet.getRange(2,1,data.rows.length,data.header.length).setValues(data.rows);
     sheet.autoResizeColumns(1, data.header.length);
-
-    // ── シート2: サマリー ──
-    let summary = ss.getSheetByName('サマリー');
-    if (!summary) summary = ss.insertSheet('サマリー');
-    summary.clearContents();
-
-    const summaryData = [
-      ['項目', '値'],
-      ['エクスポート日時', data.exportedAt],
-      ['総ユーザー数', data.totalUsers],
-    ];
-    summary.getRange(1, 1, summaryData.length, 2).setValues(summaryData);
-    summary.getRange(1, 1, 1, 2).setBackground('#4285F4').setFontColor('#FFFFFF').setFontWeight('bold');
-    summary.autoResizeColumns(1, 2);
-
-    return ContentService
-      .createTextOutput(JSON.stringify({ status: 'ok', updated: data.totalUsers }))
-      .setMimeType(ContentService.MimeType.JSON);
-
+    let sum = ss.getSheetByName('サマリー');
+    if (!sum) sum = ss.insertSheet('サマリー');
+    sum.clearContents();
+    const sumData = [['項目','値'],['エクスポート日時',data.exportedAt],['総ユーザー数',data.totalUsers]];
+    sum.getRange(1,1,sumData.length,2).setValues(sumData);
+    sum.getRange(1,1,1,2).setBackground('#4285F4').setFontColor('#FFFFFF').setFontWeight('bold');
+    sum.autoResizeColumns(1,2);
+    return ContentService.createTextOutput(JSON.stringify({status:'ok'})).setMimeType(ContentService.MimeType.JSON);
   } catch(err) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ status: 'error', message: err.message }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(JSON.stringify({status:'error',message:err.message})).setMimeType(ContentService.MimeType.JSON);
   }
 }`;
-
   navigator.clipboard.writeText(script).then(() => {
-    alert('✅ スクリプトをコピーしました！\n\nGoogle Apps Script エディタに貼り付けてデプロイしてください。');
+    alert('✅ スクリプトをコピーしました！\nGoogle Apps Scriptに貼り付けてデプロイしてください。');
   }).catch(() => {
-    // フォールバック
     const ta = document.createElement('textarea');
-    ta.value = script;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    alert('✅ スクリプトをコピーしました！');
+    ta.value = script; document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta); alert('✅ コピーしました！');
   });
-}
-
-/* ── Excelエクスポート（詳細版） ── */
-function exportExcel() {
-  if (!allUsers || !allUsers.length) { alert('データがありません'); return; }
-
-  // 全ユーザーの科目名を収集（列順を決める）
-  const subjectKeyMap = {}; // subject_key -> 表示名
-  allUsers.forEach(u => {
-    const stats = u.subject_stats || {};
-    Object.entries(stats).forEach(([key, s]) => {
-      if (!subjectKeyMap[key]) subjectKeyMap[key] = s.name || key;
-    });
-  });
-  const subjectKeys = Object.keys(subjectKeyMap);
-
-  // ヘッダー行
-  const header = [
-    '#', 'ユーザーID', '名前', 'レベル',
-    '累計学習時間(h)', '連続日数(日)', '称号',
-    '保有資格', '科目数', '登録日', '最終更新日',
-    ...subjectKeys.map(k => `[科目]${subjectKeyMap[k]}(h)`)
-  ];
-
-  // データ行
-  const rows = allUsers.map((u, i) => {
-    const hours = parseFloat(((u.total_study_mins || 0) / 60).toFixed(2));
-    const jobs = (u.job_ids || []).join(', ');
-    const stats = u.subject_stats || {};
-    const subjCount = Object.keys(stats).length;
-    const createdAt = u.created_at ? new Date(u.created_at).toLocaleDateString('ja-JP') : '';
-    const updatedAt = u.updated_at ? new Date(u.updated_at).toLocaleDateString('ja-JP') : '';
-
-    const subjectHours = subjectKeys.map(key => {
-      const s = stats[key];
-      return s ? parseFloat((s.hours || 0).toFixed(2)) : 0;
-    });
-
-    return [
-      i + 1,
-      u.id || '',
-      u.display_name || '名無し',
-      u.level || 1,
-      hours,
-      u.streak || 0,
-      u.char_title || '',
-      jobs,
-      subjCount,
-      createdAt,
-      updatedAt,
-      ...subjectHours
-    ];
-  });
-
-  // ワークブック作成
-  const wb = XLSX.utils.book_new();
-
-  // --- シート1: ユーザー一覧 ---
-  const ws1 = XLSX.utils.aoa_to_sheet([header, ...rows]);
-
-  // 列幅設定
-  const colWidths = [
-    { wch: 4 },   // #
-    { wch: 38 },  // ユーザーID
-    { wch: 18 },  // 名前
-    { wch: 8 },   // レベル
-    { wch: 16 },  // 累計学習時間
-    { wch: 12 },  // 連続日数
-    { wch: 16 },  // 称号
-    { wch: 24 },  // 保有資格
-    { wch: 8 },   // 科目数
-    { wch: 14 },  // 登録日
-    { wch: 14 },  // 最終更新日
-    ...subjectKeys.map(() => ({ wch: 18 }))
-  ];
-  ws1['!cols'] = colWidths;
-
-  XLSX.utils.book_append_sheet(wb, ws1, 'ユーザー一覧');
-
-  // --- シート2: サマリー ---
-  const total = allUsers.length;
-  const avgHours = allUsers.reduce((a, u) => a + (u.total_study_mins || 0), 0) / total / 60;
-  const avgLv = allUsers.reduce((a, u) => a + (u.level || 1), 0) / total;
-  const avgStreak = allUsers.reduce((a, u) => a + (u.streak || 0), 0) / total;
-  const maxLv = Math.max(...allUsers.map(u => u.level || 1));
-  const maxHours = Math.max(...allUsers.map(u => (u.total_study_mins || 0) / 60));
-
-  const summaryData = [
-    ['項目', '値'],
-    ['エクスポート日時', new Date().toLocaleString('ja-JP')],
-    ['総ユーザー数', total],
-    ['平均レベル', parseFloat(avgLv.toFixed(1))],
-    ['平均累計学習時間(h)', parseFloat(avgHours.toFixed(1))],
-    ['平均連続日数(日)', parseFloat(avgStreak.toFixed(1))],
-    ['最高レベル', maxLv],
-    ['最大累計学習時間(h)', parseFloat(maxHours.toFixed(1))],
-    ['科目種類数', subjectKeys.length],
-  ];
-  const ws2 = XLSX.utils.aoa_to_sheet(summaryData);
-  ws2['!cols'] = [{ wch: 28 }, { wch: 20 }];
-  XLSX.utils.book_append_sheet(wb, ws2, 'サマリー');
-
-  // ダウンロード
-  const now = new Date().toISOString().slice(0, 10);
-  XLSX.writeFile(wb, `study-quest-users-${now}.xlsx`);
 }
 
 /* ── ユーティリティ ── */
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
-
 </script>
 </body>
 </html>
