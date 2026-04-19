@@ -168,7 +168,15 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .screen{display:none;}.screen.active{display:block;}
 
 /* AUTH */
-.auth-inner{max-width:380px;margin:0 auto;padding:60px 20px;}
+.auth-inner{max-width:400px;margin:0 auto;padding:32px 20px;}
+.lp-hero{text-align:center;margin-bottom:24px;}
+.lp-tagline{font-family:'Cinzel',serif;font-size:22px;line-height:1.55;color:var(--text);margin-bottom:6px;letter-spacing:.03em;}
+.lp-sub{font-size:12px;color:var(--muted);margin-bottom:20px;line-height:1.7;}
+.lp-features{display:flex;gap:8px;justify-content:center;margin-bottom:4px;}
+.lp-feat{flex:1;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.lp-feat-icon{font-size:26px;}
+.lp-feat-text{font-size:10px;color:var(--muted);line-height:1.55;text-align:center;}
+.lp-feat-text b{color:var(--text);font-weight:700;display:block;font-size:11px;margin-bottom:1px;}
 .auth-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);border-top:3px solid var(--accent);padding:32px 28px;box-shadow:var(--shadow-md);}
 .auth-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.3em;color:var(--accent2);margin-bottom:8px;text-align:center;}
 .auth-sub{font-size:12px;color:var(--muted);text-align:center;margin-bottom:28px;line-height:1.7;}
@@ -3642,6 +3650,24 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="logo-area">
       <div class="logo-en">Shikaku Quest</div>
       <div class="logo-jp">⚔ スタディクエスト ⚔</div>
+    </div>
+    <div class="lp-hero">
+      <div class="lp-tagline">資格合格を、<br>RPGの冒険に変える。</div>
+      <div class="lp-sub">毎日の勉強をゲームにして、継続を習慣にする学習アプリ</div>
+      <div class="lp-features">
+        <div class="lp-feat">
+          <span class="lp-feat-icon">⚔</span>
+          <span class="lp-feat-text"><b>タイマーで攻撃</b>勉強がゲームになる</span>
+        </div>
+        <div class="lp-feat">
+          <span class="lp-feat-icon">⬆</span>
+          <span class="lp-feat-text"><b>レベルアップ</b>成長が目に見える</span>
+        </div>
+        <div class="lp-feat">
+          <span class="lp-feat-icon">💀</span>
+          <span class="lp-feat-text"><b>ボス討伐</b>試験合格を目指せ</span>
+        </div>
+      </div>
     </div>
     <div class="auth-card">
       <div class="auth-title">ADVENTURER LOGIN</div>
@@ -10221,7 +10247,8 @@ function shareDeclResultToX(){
   const text = `${emoji} 今日の勉強記録\n\n` +
     (subjLines ? subjLines+'\n\n' : '') +
     `合計：${doneStr}（目標達成率 ${pct}%）\n\n` +
-    `#${jobName.replace(/[（）()]/g,'')} #勉強垢 #スタディクエスト`;
+    `#${jobName.replace(/[（）()]/g,'')} #勉強垢 #スタディクエスト\n` +
+    `https://hito77ki-ship-it.github.io/study-quest/`;
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
 }
 
