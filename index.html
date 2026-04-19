@@ -4937,6 +4937,29 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     </div>
 
     <!-- ─── プロフィールQRコード ─── -->
+    <!-- ─── 通知・リマインダー設定 ─── -->
+    <div class="section">
+      <div class="sec-title">🔔 毎日のリマインダー</div>
+      <div style="background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);">勉強リマインダー</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">その日まだ勉強していない場合に通知</div>
+          </div>
+          <label style="position:relative;width:44px;height:24px;flex-shrink:0;">
+            <input type="checkbox" id="reminderToggle" onchange="onReminderToggle()" style="opacity:0;width:0;height:0;position:absolute;">
+            <span id="reminderToggleTrack" style="position:absolute;inset:0;background:var(--border);border-radius:12px;transition:.3s;cursor:pointer;"></span>
+            <span id="reminderToggleThumb" style="position:absolute;left:2px;top:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s;"></span>
+          </label>
+        </div>
+        <div id="reminderTimeRow" style="display:none;display:flex;align-items:center;gap:10px;">
+          <span style="font-size:12px;color:var(--muted);">通知時刻</span>
+          <input type="time" id="reminderTimeInput" value="21:00" onchange="saveReminderSettings()" style="background:var(--panel);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:5px 10px;font-size:13px;outline:none;">
+          <span style="font-size:11px;color:var(--muted);" id="reminderStatus"></span>
+        </div>
+      </div>
+    </div>
+
     <div class="section">
       <div class="sec-title">📲 アプリをシェア</div>
       <div class="qr-wrap">
@@ -7034,6 +7057,9 @@ function initDashboard(){
   })();
   // 通知ポーリング開始
   if(currentUser && !isGuest) startNotifPolling();
+  // リマインダー起動
+  updateReminderUI();
+  scheduleStudyReminder();
   // チュートリアル（ログイン後・ダッシュボード表示後に起動）
   setTimeout(showTutorial, 800);
 }
@@ -7316,7 +7342,7 @@ function switchTab(tab){
   if(tab==='timeline') requestAnimationFrame(()=>{ loadTimeline(); subscribeTlRealtime(); });
   else unsubscribeTlRealtime();
   if(tab==='report')  requestAnimationFrame(()=>renderReportTab());
-  if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); });
+  if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); updateReminderUI(); });
   if(tab==='status')  requestAnimationFrame(()=>{ renderExamBanner(); renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); renderOnboardingBanner(); renderTodayQuestBanner(); renderAffiliateCard(); });
   // モバイルタブバーも同期
   document.querySelectorAll('.m-tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
@@ -7893,6 +7919,7 @@ async function finishTimer(){
   renderAll();
 
   if(isFirstSession) setTimeout(showFirstSessionCelebration, 1500);
+  cancelStudyReminder();
 
   // Victory effects
   spawnDmgNumber(`+${exp} EXP`, '#e040fb', true);
@@ -12025,6 +12052,77 @@ function requestNotifPerm(){
     document.getElementById('notifBanner')?.classList.remove('show');
     if(notifGranted) showAutosaveToast();
   });
+}
+
+/* ════ リマインダー設定 ════ */
+const REMINDER_KEY = 'sq_reminder';
+let reminderTimeout = null;
+
+function loadReminderSettings(){
+  try{ return JSON.parse(localStorage.getItem(REMINDER_KEY)||'{}'); }catch{ return {}; }
+}
+function saveReminderSettings(){
+  const enabled = document.getElementById('reminderToggle')?.checked;
+  const time = document.getElementById('reminderTimeInput')?.value || '21:00';
+  localStorage.setItem(REMINDER_KEY, JSON.stringify({enabled, time}));
+  updateReminderUI();
+  scheduleStudyReminder();
+}
+function onReminderToggle(){
+  const enabled = document.getElementById('reminderToggle')?.checked;
+  if(enabled && Notification.permission === 'default'){
+    Notification.requestPermission().then(p=>{ if(p==='granted'){ notifGranted=true; saveReminderSettings(); } else { document.getElementById('reminderToggle').checked=false; } });
+    return;
+  }
+  saveReminderSettings();
+}
+function updateReminderUI(){
+  const cfg = loadReminderSettings();
+  const toggle = document.getElementById('reminderToggle');
+  const track = document.getElementById('reminderToggleTrack');
+  const thumb = document.getElementById('reminderToggleThumb');
+  const timeRow = document.getElementById('reminderTimeRow');
+  const timeInput = document.getElementById('reminderTimeInput');
+  if(!toggle) return;
+  toggle.checked = !!cfg.enabled;
+  if(track){ track.style.background = cfg.enabled ? 'var(--accent)' : 'var(--border)'; }
+  if(thumb){ thumb.style.left = cfg.enabled ? '22px' : '2px'; }
+  if(timeRow){ timeRow.style.display = cfg.enabled ? 'flex' : 'none'; }
+  if(timeInput && cfg.time) timeInput.value = cfg.time;
+  const statusEl = document.getElementById('reminderStatus');
+  if(statusEl && cfg.enabled && cfg.time){
+    const todayStudied = sessions.some(s=>s.date===getTodayStr()&&(s.type==='study'||s.type==='exam'));
+    statusEl.textContent = todayStudied ? '✅ 今日は達成済み' : `⏰ ${cfg.time} に通知予定`;
+  }
+}
+function scheduleStudyReminder(){
+  if(reminderTimeout){ clearTimeout(reminderTimeout); reminderTimeout=null; }
+  const cfg = loadReminderSettings();
+  if(!cfg.enabled || !cfg.time) return;
+  if(Notification.permission !== 'granted') return;
+  const todayStudied = sessions.some(s=>s.date===getTodayStr()&&(s.type==='study'||s.type==='exam'));
+  if(todayStudied) return;
+  const [h,m] = cfg.time.split(':').map(Number);
+  const now = new Date();
+  const target = new Date(); target.setHours(h,m,0,0);
+  const ms = target - now;
+  if(ms <= 0) return; // 既に過ぎた
+  reminderTimeout = setTimeout(()=>{
+    const studiedNow = sessions.some(s=>s.date===getTodayStr()&&(s.type==='study'||s.type==='exam'));
+    if(studiedNow) return;
+    const streak = char.streak||0;
+    try{
+      new Notification('⚔ スタディクエスト', {
+        body: streak>0 ? `🔥 ${streak}日連続継続中！今日の勉強を記録してストリークを守ろう。` : '今日の勉強をまだ記録していません。冒険を続けよう！',
+        icon: '/study-quest/icons/app-icon.png',
+        tag: 'sq-daily-reminder'
+      });
+    }catch(e){}
+  }, ms);
+}
+function cancelStudyReminder(){
+  if(reminderTimeout){ clearTimeout(reminderTimeout); reminderTimeout=null; }
+  updateReminderUI();
 }
 
 function checkNotifBanner(){
