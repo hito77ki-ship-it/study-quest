@@ -1747,7 +1747,26 @@ body[data-theme="dark"] .tl-badge-icon { color:#68d391; }
 }
 .tl-filter-bar {
   display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
+  position: sticky; top: 52px; z-index: 50;
+  background: var(--bg); padding: 8px 0 4px;
 }
+/* 投稿タイプ別左ボーダー */
+.timeline-post.tl-type-decl    { border-left: 3px solid #3B82F6; }
+.timeline-post.tl-type-study   { border-left: 3px solid var(--accent); }
+.timeline-post.tl-type-goal    { border-left: 3px solid #8B5CF6; }
+.timeline-post.tl-type-levelup { border-left: 3px solid #F59E0B; }
+.timeline-post.tl-type-free    { border-left: 3px solid #06B6D4; }
+/* 投稿トリガーボタン */
+.tl-compose-trigger {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px;
+  margin-bottom: 12px; cursor: pointer; width: 100%;
+  transition: border-color .2s;
+}
+.tl-compose-trigger:hover { border-color: var(--accent); }
+.tl-compose-trigger-avatar { width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;font-weight:700;flex-shrink:0; }
+.tl-compose-trigger-text { font-size:13px;color:var(--muted); }
 .tl-filter-btn {
   background: var(--panel); border: 1px solid var(--border);
   border-radius: 20px; padding: 6px 16px;
@@ -5078,6 +5097,14 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <!-- 未ログイン案内 -->
     <div id="tlLoginHint" style="display:none;text-align:center;padding:12px;font-size:12px;color:var(--muted);background:var(--panel);border-radius:8px;margin-bottom:10px;">
       ログインするとみんなの投稿が見られます
+    </div>
+
+    <!-- 投稿トリガーボタン -->
+    <div id="tlComposeTrigger" style="display:none;" onclick="document.getElementById('tlComposeTrigger').style.display='none';document.getElementById('tlComposeToggle').style.display='';document.getElementById('tlInput').focus();">
+      <div class="tl-compose-trigger">
+        <div class="tl-compose-trigger-avatar" id="tlTriggerAvatar">？</div>
+        <div class="tl-compose-trigger-text">一言メモを投稿…（任意）</div>
+      </div>
     </div>
 
     <!-- 投稿エリア -->
@@ -13640,9 +13667,16 @@ async function loadTimeline(){
 
   // ログイン状態で投稿ボタン表示制御
   const composeToggle = document.getElementById('tlComposeToggle');
+  const composeTrigger = document.getElementById('tlComposeTrigger');
   const loginHint = document.getElementById('tlLoginHint');
   if(currentUser || isGuest){
-    if(composeToggle) composeToggle.style.display = '';
+    if(composeTrigger) {
+      composeTrigger.style.display = '';
+      // トリガーアバター文字を更新
+      const triggerAvatar = document.getElementById('tlTriggerAvatar');
+      if(triggerAvatar) triggerAvatar.textContent = (char.name || '？')[0];
+    }
+    if(composeToggle) composeToggle.style.display = 'none';
   }
   if(!currentUser && !isGuest && loginHint) loginHint.style.display = '';
 
@@ -13712,9 +13746,15 @@ function renderTlPage(page){
 
   if(page === 0){
     if(!tlAllPosts.length){
-      feed.innerHTML = `<div class="section" style="text-align:center;padding:30px;">
-        <div style="font-size:32px;margin-bottom:10px;">📚</div>
-        <div style="font-size:13px;color:var(--muted);">まだ投稿がありません。<br>学習を記録すると自動でここに表示されます！</div>
+      const emptyMsg = tlCurrentFilter === 'me'
+        ? '自分の投稿はまだありません。<br>学習を記録すると自動で表示されます！'
+        : tlCurrentFilter === 'goal'
+        ? '同ジョブの投稿はまだありません。<br>仲間の参加を待ちましょう！'
+        : 'まだ投稿がありません。<br>学習を記録すると自動でここに表示されます！';
+      feed.innerHTML = `<div class="section" style="text-align:center;padding:40px 20px;">
+        <div style="font-size:40px;margin-bottom:12px;">⚔️</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;">冒険の記録がここに届く</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.7;">${emptyMsg}</div>
       </div>`;
       if(loadMoreBtn) loadMoreBtn.style.display = 'none';
       return;
@@ -13779,8 +13819,14 @@ function renderPostHTML(post, likes){
   const _cardClick = !isOwn && post.user_id
     ? `onclick="openUserCard('${post.user_id}','${(post.user_name||'').replace(/'/g,'')}',${post.user_level||1},'${(post.avatar_url||'').replace(/'/g,'')}','${(post.job_ids||[]).join(',')}')" style="cursor:pointer;"`
     : '';
+  const postTypeClass = post.is_declaration ? 'tl-type-decl'
+    : post.is_weekly_goal ? 'tl-type-goal'
+    : post.is_free_post ? 'tl-type-free'
+    : (post.rpg_log && post.rpg_log.includes('レベルアップ')) ? 'tl-type-levelup'
+    : 'tl-type-study';
+
   return `
-  <div class="timeline-post" id="tl-post-${post.id}">
+  <div class="timeline-post ${postTypeClass}" id="tl-post-${post.id}">
     <!-- ヘッダー -->
     <div class="tl-post-header">
       <div ${_cardClick} style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
