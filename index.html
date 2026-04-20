@@ -17742,6 +17742,42 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- オートセーブトースト -->
 <div class="autosave-toast" id="autosaveTst">💾 自動保存しました</div>
 
+<!-- ════ PWAインストールバナー ════ -->
+<div id="pwaInstallBanner" style="display:none;position:fixed;bottom:calc(68px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:800;width:min(92vw,400px);background:linear-gradient(135deg,#1a1d2e,#0f1120);border:1px solid rgba(140,198,63,.5);border-radius:14px;padding:11px 12px 11px 14px;box-shadow:0 4px 24px rgba(0,0,0,.6);align-items:center;gap:10px;">
+  <span style="font-size:26px;flex-shrink:0;">📱</span>
+  <div style="flex:1;min-width:0;">
+    <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.3;">ホーム画面に追加しよう</div>
+    <div style="font-size:10px;color:#8CC63F;margin-top:2px;">通知・オフライン対応でより快適に</div>
+  </div>
+  <button id="pwaInstallBtn" onclick="triggerPwaInstall()" style="padding:7px 13px;background:linear-gradient(135deg,#8CC63F,#5C9A1A);border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">追加する</button>
+  <button onclick="dismissPwaInstall()" style="padding:4px 6px;background:transparent;border:none;color:#555;font-size:18px;cursor:pointer;line-height:1;flex-shrink:0;">×</button>
+</div>
+
+<!-- ════ iOS PWAインストール手順モーダル ════ -->
+<div id="iosInstallDim" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9980;" onclick="closeIosInstallModal()"></div>
+<div id="iosInstallModal" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9981;background:linear-gradient(170deg,#1a1d2e,#12152a);border-top:1px solid rgba(140,198,63,.4);border-radius:20px 20px 0 0;padding:22px 20px calc(24px + env(safe-area-inset-bottom,0px));">
+  <div style="text-align:center;margin-bottom:18px;">
+    <div style="font-size:34px;margin-bottom:8px;">📱</div>
+    <div style="font-size:16px;font-weight:700;color:#fff;">ホーム画面に追加する方法</div>
+    <div style="font-size:11px;color:#aab;margin-top:4px;">アプリとして快適に使えます（通知・オフライン対応）</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+    <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border-radius:12px;padding:12px 14px;">
+      <div style="width:30px;height:30px;border-radius:8px;background:rgba(140,198,63,.18);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#8CC63F;flex-shrink:0;">1</div>
+      <div><div style="font-size:13px;color:#fff;font-weight:600;">画面下の <span style="color:#8CC63F;">共有ボタン</span>（↑）をタップ</div><div style="font-size:11px;color:#aab;margin-top:2px;">四角から矢印が出ているアイコン</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border-radius:12px;padding:12px 14px;">
+      <div style="width:30px;height:30px;border-radius:8px;background:rgba(140,198,63,.18);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#8CC63F;flex-shrink:0;">2</div>
+      <div><div style="font-size:13px;color:#fff;font-weight:600;">「<span style="color:#8CC63F;">ホーム画面に追加</span>」を選ぶ</div><div style="font-size:11px;color:#aab;margin-top:2px;">リストを下にスクロールすると見つかります</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border-radius:12px;padding:12px 14px;">
+      <div style="width:30px;height:30px;border-radius:8px;background:rgba(140,198,63,.18);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#8CC63F;flex-shrink:0;">3</div>
+      <div><div style="font-size:13px;color:#fff;font-weight:600;">右上の「<span style="color:#8CC63F;">追加</span>」をタップ</div><div style="font-size:11px;color:#aab;margin-top:2px;">完了！アイコンがホーム画面に追加されます</div></div>
+    </div>
+  </div>
+  <button onclick="closeIosInstallModal()" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#888;font-size:13px;cursor:pointer;">閉じる</button>
+</div>
+
 <!-- ════ お知らせモーダル ════ -->
 <div class="news-modal-overlay" id="newsModal" onclick="handleNewsOverlayClick(event)">
   <div class="news-modal">
@@ -17948,6 +17984,65 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/study-quest/sw.js', { scope: '/study-quest/' });
   });
 }
+</script>
+
+<script>
+/* ════ PWAインストール誘導 ════ */
+(function(){
+  const DISMISSED_KEY = 'sq_pwa_dismissed';
+  const isInstalled = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const isDismissed = !!localStorage.getItem(DISMISSED_KEY);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  let deferredPrompt = null;
+
+  if(isInstalled || isDismissed) return;
+
+  // Android: beforeinstallpromptを捕捉
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    showPwaBanner();
+  });
+
+  // iOS: Safariで未インストールなら30秒後に表示
+  if(isIOS){
+    setTimeout(showPwaBanner, 30000);
+  }
+
+  function showPwaBanner(){
+    if(localStorage.getItem(DISMISSED_KEY)) return;
+    const b = document.getElementById('pwaInstallBanner');
+    if(b){ b.style.display = 'flex'; }
+  }
+
+  window.triggerPwaInstall = function(){
+    if(deferredPrompt){
+      // Android：ネイティブダイアログ
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(r => {
+        if(r.outcome === 'accepted') dismissPwaInstall();
+        deferredPrompt = null;
+      });
+    } else {
+      // iOS：手順モーダル
+      document.getElementById('pwaInstallBanner').style.display = 'none';
+      document.getElementById('iosInstallDim').style.display = '';
+      document.getElementById('iosInstallModal').style.display = '';
+    }
+  };
+
+  window.dismissPwaInstall = function(){
+    localStorage.setItem(DISMISSED_KEY, '1');
+    const b = document.getElementById('pwaInstallBanner');
+    if(b) b.style.display = 'none';
+  };
+
+  window.closeIosInstallModal = function(){
+    document.getElementById('iosInstallDim').style.display = 'none';
+    document.getElementById('iosInstallModal').style.display = 'none';
+    localStorage.setItem(DISMISSED_KEY, '1');
+  };
+})();
 </script>
 
 <!-- ════ チュートリアル ════ -->
