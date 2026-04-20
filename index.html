@@ -1339,7 +1339,7 @@ body[data-theme="dark"] .wg-lock-note{color:var(--muted);}
 
 /* ドロワー */
 .gnav-drawer{
-  position:fixed;top:48px;right:0;bottom:0;
+  position:fixed;top:calc(52px + env(safe-area-inset-top,0px));right:0;bottom:0;
   width:min(280px,85vw);
   background:#fff;
   border-left:1px solid rgba(201,168,76,.2);
@@ -3792,9 +3792,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   </div>
 </div>
 
-<!-- DASHBOARD -->
-<div class="screen" id="screen-dash">
-<!-- ════ グローバルナビゲーションバー ════ -->
+<!-- ════ グローバルナビゲーションバー（screen-dash外・body直下） ════ -->
 <nav class="gnav" id="gnav" style="display:none;">
   <div class="gnav-logo">STUDY QUEST <span>⚔</span></div>
   <div class="gnav-right">
@@ -3900,6 +3898,9 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     </div>
   </div>
 </div>
+
+<!-- DASHBOARD -->
+<div class="screen" id="screen-dash">
 
 <!-- ════ HELPモーダル ════ -->
 <div class="help-modal-overlay" id="helpModalOverlay" onclick="handleHelpOverlayClick(event)">
