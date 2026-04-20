@@ -7216,18 +7216,51 @@ function buildSubjSelect(){
 
       // カスタマイザブルな場合：科目追加UI
       if(j.customizable){
+        const COLORS = ['#EF4444','#3B82F6','#10B981','#F59E0B','#A855F7','#EC4899','#14B8A6','#F97316','#6366F1','#84CC16'];
+        const defaultColor = COLORS[loadCustomSubjects(j.id).length % COLORS.length];
+
         const addWrap = document.createElement('div');
-        addWrap.style.cssText = 'margin-top:8px;display:flex;gap:8px;align-items:center;';
-        addWrap.innerHTML = `
+        addWrap.style.cssText = 'margin-top:10px;display:flex;flex-direction:column;gap:8px;';
+
+        // カラーピッカー行
+        const colorRow = document.createElement('div');
+        colorRow.style.cssText = 'display:flex;gap:6px;align-items:center;flex-wrap:wrap;';
+        colorRow.innerHTML = `<span style="font-size:10px;color:var(--muted);flex-shrink:0;">色</span>`;
+        COLORS.forEach(c => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.dataset.color = c;
+          const isSelected = c === defaultColor;
+          dot.style.cssText = `width:22px;height:22px;border-radius:50%;background:${c};border:${isSelected?'2px solid #fff':'2px solid transparent'};cursor:pointer;flex-shrink:0;transition:border .15s;box-shadow:${isSelected?'0 0 0 2px '+c:'none'};`;
+          dot.onclick = () => {
+            colorRow.querySelectorAll('button').forEach(b => {
+              const bc = b.dataset.color;
+              b.style.border = '2px solid transparent';
+              b.style.boxShadow = 'none';
+            });
+            dot.style.border = '2px solid #fff';
+            dot.style.boxShadow = `0 0 0 2px ${c}`;
+            document.getElementById('customSubjColor_'+j.id).value = c;
+          };
+          colorRow.appendChild(dot);
+        });
+        addWrap.appendChild(colorRow);
+
+        // テキスト入力 + 追加ボタン行
+        const inputRow = document.createElement('div');
+        inputRow.style.cssText = 'display:flex;gap:8px;align-items:center;';
+        inputRow.innerHTML = `
           <input id="customSubjInput_${j.id}" type="text" placeholder="+ 科目名を入力（例：化学基礎）"
             style="flex:1;padding:8px 12px;border:1px dashed var(--border);border-radius:8px;
                    background:var(--panel);color:var(--text);font-size:12px;"
             onkeydown="if(event.key==='Enter')addCustomSubj('${j.id}')">
+          <input type="hidden" id="customSubjColor_${j.id}" value="${defaultColor}">
           <button onclick="addCustomSubj('${j.id}')"
             style="padding:7px 14px;background:rgba(140,198,63,.12);border:1px solid rgba(140,198,63,.4);
                    border-radius:8px;color:var(--accent2);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">
             追加
           </button>`;
+        addWrap.appendChild(inputRow);
         list.appendChild(addWrap);
       }
       updateAllBtn();
@@ -7243,7 +7276,8 @@ function addCustomSubj(jobId){
   if(!name){ input.focus(); return; }
   const COLORS = ['#EF4444','#3B82F6','#10B981','#F59E0B','#A855F7','#EC4899','#14B8A6','#F97316','#6366F1','#84CC16'];
   const existing = loadCustomSubjects(jobId);
-  const color = COLORS[existing.length % COLORS.length];
+  const colorInput = document.getElementById('customSubjColor_'+jobId);
+  const color = colorInput?.value || COLORS[existing.length % COLORS.length];
   const key = 'custom_'+jobId+'_'+Date.now();
   const newSubj = {key, name, desc:'', color, avgH:8, maxH:25, attrs:{int:.5,dex:.5}};
   existing.push(newSubj);
