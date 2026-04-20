@@ -3071,9 +3071,10 @@ body[data-theme="dark"] #mobileTabBar {
 #panel-quest.show-timer #quickMaterialSelect   { display: none !important; }
 #panel-quest.show-timer .decl-card             { display: none !important; }
 #panel-quest.show-timer > .section             { display: none !important; }
+#panel-quest.show-timer                        { overflow: hidden !important; }
 
 /* ════ 記録UI（2タブ：手動入力 / ストップウォッチ）全デバイス共通 ════ */
-#mobileRecordUI { display: none; flex-direction: column; }
+#mobileRecordUI { display: none; flex-direction: column; overscroll-behavior: contain; }
 
 /* show-timer時：全サイズで表示 */
 #panel-quest.show-timer #mobileRecordUI { display: flex !important; flex-direction: column; }
@@ -3155,6 +3156,7 @@ body[data-theme="dark"] #mobileTabBar {
 .mrec-pane { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
 .mrec-form-scroll {
   flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 0 14px;
+  overscroll-behavior: contain;
 }
 .mrec-btn-area { flex-shrink: 0; padding: 10px 14px 12px; background: var(--bg); }
 /* ── 手動入力 フォーム行 ── */
