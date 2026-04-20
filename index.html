@@ -3292,58 +3292,77 @@ body[data-theme="dark"] #mobileTabBar {
 }
 .news-modal-overlay.show{display:flex;}
 .news-modal{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:14px;width:340px;max-height:75vh;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:16px;width:340px;max-height:78vh;
   display:flex;flex-direction:column;overflow:hidden;
-  box-shadow:var(--shadow-md);
+  box-shadow:0 8px 40px rgba(0,0,0,.28);
   animation:scaleIn .2s cubic-bezier(.34,1.56,.64,1);
 }
 .news-modal-header{
-  padding:16px 18px 12px;border-bottom:1px solid var(--border);
+  padding:14px 16px 12px;border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
-  flex-shrink:0;
+  flex-shrink:0;background:var(--panel);
 }
 .news-modal-title{
-  font-size:14px;font-weight:700;color:var(--text);
-  display:flex;align-items:center;gap:6px;
+  font-family:'Cinzel',serif;
+  font-size:11px;letter-spacing:.18em;font-weight:700;color:var(--accent2);
+  display:flex;align-items:center;gap:7px;
 }
+.news-modal-title-icon{font-size:15px;}
 .news-modal-close{
   background:none;border:none;color:var(--muted);
-  font-size:18px;cursor:pointer;padding:2px 6px;border-radius:6px;
+  font-size:16px;cursor:pointer;padding:4px 8px;border-radius:6px;
+  transition:background .15s;
 }
 .news-modal-close:hover{background:var(--panel2);}
-.news-feed{overflow-y:auto;padding:12px;flex:1;}
+.news-feed{overflow-y:auto;padding:10px;flex:1;display:flex;flex-direction:column;gap:6px;}
 .news-feed::-webkit-scrollbar{width:3px;}
 .news-feed::-webkit-scrollbar-thumb{background:var(--border);}
 
+/* カード型ニュースアイテム */
 .news-item{
-  padding:12px 0;border-bottom:1px solid var(--border);
+  background:var(--panel);border-radius:10px;
+  padding:11px 13px 11px 15px;
+  border-left:3px solid var(--border);
+  transition:border-color .15s;
 }
-.news-item:last-child{border-bottom:none;}
+.news-item.unread{ border-left-color:var(--accent); }
+.news-item.type-feature{ border-left-color:#8CC63F; }
+.news-item.type-fix{     border-left-color:#60a5fa; }
+.news-item.type-improve{ border-left-color:#f59e0b; }
 .news-item-header{
-  display:flex;align-items:center;gap:8px;margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;margin-bottom:5px;
 }
 .news-item-badge{
-  font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;
-  letter-spacing:.05em;flex-shrink:0;
+  font-size:8px;font-weight:700;padding:2px 7px;border-radius:4px;
+  letter-spacing:.06em;flex-shrink:0;color:#fff;
 }
-.news-item-badge.new{background:rgba(239,68,68,.15);color:#EF4444;}
-.news-item-badge.feature{background:rgba(140,198,63,.15);color:#8CC63F;}
-.news-item-badge.fix{background:rgba(59,130,246,.15);color:#3B82F6;}
-.news-item-badge.improve{background:rgba(245,158,11,.15);color:#D97706;}
-.news-item-date{font-size:10px;color:var(--muted);margin-left:auto;}
-.news-item-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;}
-.news-item-desc{font-size:11px;color:var(--muted);line-height:1.6;}
+.news-item-badge.new{     background:#EF4444;}
+.news-item-badge.feature{ background:#8CC63F;}
+.news-item-badge.fix{     background:#3B82F6;}
+.news-item-badge.improve{ background:#D97706;}
+.news-item-date{font-size:9px;color:var(--muted);margin-left:auto;letter-spacing:.02em;}
+.news-unread-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  flex-shrink:0;margin-left:2px;
+}
+.news-item-title{
+  font-size:12.5px;font-weight:600;color:var(--text);
+  line-height:1.45;margin-bottom:4px;
+}
+.news-item-desc{font-size:11px;color:var(--muted);line-height:1.65;}
 
 .news-modal-footer{
   padding:10px 14px;border-top:1px solid var(--border);
-  text-align:center;flex-shrink:0;
+  text-align:center;flex-shrink:0;background:var(--panel);
 }
 .news-mark-read{
   background:none;border:none;font-size:11px;
-  color:var(--muted);cursor:pointer;text-decoration:underline;
+  color:var(--muted);cursor:pointer;
+  display:inline-flex;align-items:center;gap:4px;
+  padding:4px 8px;border-radius:6px;transition:background .15s;
 }
-.news-mark-read:hover{color:var(--text);}
+.news-mark-read:hover{background:var(--panel2);color:var(--text);}
 
 /* ════ コンパクトキャラカード ════ */
 .char-card-compact{padding:12px 16px;}
@@ -17260,11 +17279,11 @@ function renderNewsFeed(){
   feed.innerHTML = NEWS_ITEMS.map(item => {
     const isUnread = !read.includes(item.id);
     return `
-    <div class="news-item">
+    <div class="news-item type-${item.type}${isUnread?' unread':''}">
       <div class="news-item-header">
-        ${isUnread ? '<span class="news-item-badge new">NEW</span>' : ''}
         <span class="news-item-badge ${item.type}">${typeLabels[item.type]||item.type}</span>
         <span class="news-item-date">${item.date}</span>
+        ${isUnread ? '<span class="news-unread-dot" title="未読"></span>' : ''}
       </div>
       <div class="news-item-title">${item.title}</div>
       <div class="news-item-desc">${item.desc}</div>
@@ -17395,12 +17414,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="news-modal-overlay" id="newsModal" onclick="handleNewsOverlayClick(event)">
   <div class="news-modal">
     <div class="news-modal-header">
-      <div class="news-modal-title">🔔 お知らせ・更新情報</div>
+      <div class="news-modal-title">
+        <span class="news-modal-title-icon">🔔</span>
+        UPDATE LOG
+      </div>
       <button class="news-modal-close" onclick="toggleNewsModal()">✕</button>
     </div>
     <div class="news-feed" id="newsFeed"></div>
     <div class="news-modal-footer">
-      <button class="news-mark-read" onclick="markAllNewsRead()">すべて既読にする</button>
+      <button class="news-mark-read" onclick="markAllNewsRead()">✓ すべて既読にする</button>
     </div>
   </div>
 </div>
