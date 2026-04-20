@@ -11891,7 +11891,7 @@ function renderHeatmap(){
     col.style.cssText = 'display:flex;flex-direction:column;gap:2px;margin-right:2px;';
     for(let dow=0; dow<7; dow++){
       const d = dates[w*7+dow];
-      const ds = d.toISOString().slice(0,10);
+      const ds = toLocalDateStr(d);
       const mins = dayMap[ds]||0;
       const lv = getLevel(mins);
       const isFuture = d > today;
@@ -11929,7 +11929,7 @@ function renderHeatmap(){
     const months = [];
     for(let i=11; i>=0; i--){
       const d = new Date(today.getFullYear(), today.getMonth()-i, 1);
-      months.push(d.toISOString().slice(0,7));
+      months.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`);
     }
     summaryEl.innerHTML = months.map(ym => {
       const mins = monthSummary[ym]||0;
