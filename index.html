@@ -5749,6 +5749,24 @@ const JOBS = [
   },
 
   /* ══════════════════════════════
+     【学校ギルド】
+  ══════════════════════════════ */
+  {
+    id:'school', name:'学校の定期試験', icon:'📝', tag:'学生の剣士',
+    category:'学校ギルド', rpgClass:'学生の剣士',
+    desc:'中学・高校・大学の定期テスト対策。デフォルト科目に加え、自分の授業科目を自由に追加できる。',
+    color:'#38BDF8', avgHours:30, maxHours:100,
+    customizable: true,
+    subjects:[
+      {key:'sc_jpn',  name:'国語',   desc:'現代文・古文・漢文',         color:'#EF4444',avgH:8, maxH:25,attrs:{int:.7,mag:.3}},
+      {key:'sc_math', name:'数学',   desc:'数Ⅰ・数Ⅱ・数Ⅲ・数A・数B', color:'#3B82F6',avgH:10,maxH:30,attrs:{atk:.7,dex:.3}},
+      {key:'sc_eng',  name:'英語',   desc:'英語・英文法・リスニング',   color:'#10B981',avgH:10,maxH:30,attrs:{int:.5,mag:.5}},
+      {key:'sc_sci',  name:'理科',   desc:'物理・化学・生物・地学',     color:'#A855F7',avgH:8, maxH:25,attrs:{int:.6,dex:.4}},
+      {key:'sc_soc',  name:'社会',   desc:'歴史・地理・公民',           color:'#F59E0B',avgH:6, maxH:20,attrs:{int:.7,spi:.3}},
+    ]
+  },
+
+  /* ══════════════════════════════
      【追加ジョブ：大阪経済大学×大原提携】
   ══════════════════════════════ */
 
@@ -6371,10 +6389,22 @@ function getJobTitles(job){
 }
 
 /* ═══════════════ HELPERS ═══════════════ */
+function loadCustomSubjects(jobId){
+  try{ const v=localStorage.getItem('sq2_custom_subj_'+jobId); return v?JSON.parse(v):[]; }catch{ return []; }
+}
+function saveCustomSubjects(jobId, arr){
+  try{ localStorage.setItem('sq2_custom_subj_'+jobId, JSON.stringify(arr)); }catch{}
+}
+
 function allSelectedSubjects(){
   const out=[],seen=new Set();
   JOBS.filter(j=>selectedJobIds.includes(j.id)).forEach(j=>{
-    j.subjects.forEach(s=>{
+    // カスタム科目を動的にマージ
+    const subjectsWithCustom = j.customizable
+      ? [...j.subjects, ...loadCustomSubjects(j.id)]
+      : j.subjects;
+
+    subjectsWithCustom.forEach(s=>{
       // 通常科目
       if(selectedSubjectKeys.includes(s.key) && !seen.has(s.key)){
         seen.add(s.key); out.push(s);
@@ -6981,6 +7011,7 @@ function buildJobGrid(){
     '国際ギルド':'🌐',
     'スキルギルド':'🎨',
     '受験ギルド':'🎓',
+    '学校ギルド':'📝',
     '福祉・医療ギルド':'🏥',
     '技術ギルド':'⚙',
     'その他':'📚',
@@ -7156,15 +7187,59 @@ function buildSubjSelect(){
     };
 
     const renderSubjBlocks = () => {
-      // allBtn以外をリセット
       while(list.children.length > 1) list.removeChild(list.lastChild);
-      j.subjects.forEach(s=>renderSubjRow(s, list));
+      const customSubjs = j.customizable ? loadCustomSubjects(j.id) : [];
+      [...j.subjects, ...customSubjs].forEach(s=>renderSubjRow(s, list));
+
+      // カスタマイザブルな場合：科目追加UI
+      if(j.customizable){
+        const COLORS = ['#EF4444','#3B82F6','#10B981','#F59E0B','#A855F7','#EC4899','#14B8A6','#F97316','#6366F1','#84CC16'];
+        const addWrap = document.createElement('div');
+        addWrap.style.cssText = 'margin-top:8px;display:flex;gap:8px;align-items:center;';
+        addWrap.innerHTML = `
+          <input id="customSubjInput_${j.id}" type="text" placeholder="+ 科目名を入力（例：化学基礎）"
+            style="flex:1;padding:8px 12px;border:1px dashed var(--border);border-radius:8px;
+                   background:var(--panel);color:var(--text);font-size:12px;"
+            onkeydown="if(event.key==='Enter')addCustomSubj('${j.id}')">
+          <button onclick="addCustomSubj('${j.id}')"
+            style="padding:7px 14px;background:rgba(140,198,63,.12);border:1px solid rgba(140,198,63,.4);
+                   border-radius:8px;color:var(--accent2);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">
+            追加
+          </button>`;
+        list.appendChild(addWrap);
+
+        if(customSubjs.length){
+          const delNote = document.createElement('div');
+          delNote.style.cssText = 'font-size:10px;color:var(--muted);margin-top:4px;';
+          delNote.textContent = '追加した科目を削除するにはジョブ変更設定から行えます';
+          list.appendChild(delNote);
+        }
+      }
       updateAllBtn();
     };
 
     renderSubjBlocks();
   });
 }
+function addCustomSubj(jobId){
+  const input = document.getElementById('customSubjInput_'+jobId);
+  if(!input) return;
+  const name = input.value.trim();
+  if(!name){ input.focus(); return; }
+  const COLORS = ['#EF4444','#3B82F6','#10B981','#F59E0B','#A855F7','#EC4899','#14B8A6','#F97316','#6366F1','#84CC16'];
+  const existing = loadCustomSubjects(jobId);
+  const color = COLORS[existing.length % COLORS.length];
+  const key = 'custom_'+jobId+'_'+Date.now();
+  const newSubj = {key, name, desc:'', color, avgH:8, maxH:25, attrs:{int:.5,dex:.5}};
+  existing.push(newSubj);
+  saveCustomSubjects(jobId, existing);
+  // 自動選択
+  if(!selectedSubjectKeys.includes(key)) selectedSubjectKeys.push(key);
+  input.value = '';
+  // 再描画
+  buildSubjSelect();
+}
+
 async function startAdventure(){
   const errEl = document.getElementById('startErrorMsg');
   const showErr = (msg) => {
