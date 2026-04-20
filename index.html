@@ -6407,6 +6407,9 @@ function loadCustomSubjects(jobId){
 function saveCustomSubjects(jobId, arr){
   try{ localStorage.setItem('sq2_custom_subj_'+jobId, JSON.stringify(arr)); }catch{}
 }
+function loadSubjColors(){ try{ return JSON.parse(localStorage.getItem('sq2_subj_colors')||'{}'); }catch{ return {}; } }
+function saveSubjColors(obj){ try{ localStorage.setItem('sq2_subj_colors', JSON.stringify(obj)); }catch{} }
+function getSubjColor(key, defaultColor){ const m=loadSubjColors(); return m[key]||defaultColor; }
 
 function allSelectedSubjects(){
   const out=[],seen=new Set();
@@ -6419,13 +6422,13 @@ function allSelectedSubjects(){
     subjectsWithCustom.forEach(s=>{
       // 通常科目
       if(selectedSubjectKeys.includes(s.key) && !seen.has(s.key)){
-        seen.add(s.key); out.push(s);
+        seen.add(s.key); out.push({...s, color: getSubjColor(s.key, s.color)});
       }
       // splitInto科目
       if(s.splitInto){
         s.splitInto.forEach(sp=>{
           if(selectedSubjectKeys.includes(sp.key) && !seen.has(sp.key)){
-            seen.add(sp.key); out.push(sp);
+            seen.add(sp.key); out.push({...sp, color: getSubjColor(sp.key, sp.color)});
           }
         });
       }
@@ -7133,8 +7136,9 @@ function buildSubjSelect(){
       row.className='subj-check-row'+((!isSplit && selectedSubjectKeys.includes(s.key))?' checked':'');
       if(isSplit) row.style.opacity='.45';
 
+      const dispColor = getSubjColor(s.key, s.color);
       row.innerHTML=`<div class="subj-checkbox">${!isSplit && selectedSubjectKeys.includes(s.key)?'✦':''}</div>
-        <div class="subj-dot" style="background:${s.color}"></div>
+        <div class="subj-dot" style="background:${dispColor};cursor:pointer;position:relative;" title="色を変更" onclick="event.stopPropagation();openSubjColorPicker('${s.key}',this,'${s.color}')"></div>
         <div class="subj-info"><div class="subj-cname">${s.name}</div><div class="subj-cdesc">${s.desc}</div></div>
         <div class="subj-maxh">MAX<br><span>${s.maxH}h</span></div>
         ${s.splittable?`<button class="subj-split-toggle${isSplit?' active':''}" data-key="${s.key}">⇄ 計算/理論</button>`:''}`;
@@ -7181,8 +7185,9 @@ function buildSubjSelect(){
         s.splitInto.forEach(sp=>{
           const srow=document.createElement('div');
           srow.className='subj-check-row'+(selectedSubjectKeys.includes(sp.key)?' checked':'');
+          const spColor = getSubjColor(sp.key, sp.color);
           srow.innerHTML=`<div class="subj-checkbox">${selectedSubjectKeys.includes(sp.key)?'✦':''}</div>
-            <div class="subj-dot" style="background:${sp.color}"></div>
+            <div class="subj-dot" style="background:${spColor};cursor:pointer;" title="色を変更" onclick="event.stopPropagation();openSubjColorPicker('${sp.key}',this,'${sp.color}')"></div>
             <div class="subj-info"><div class="subj-cname">${sp.name}</div><div class="subj-cdesc">${sp.desc}</div></div>
             <div class="subj-maxh">MAX<br><span>${sp.maxH}h</span></div>`;
           srow.onclick=()=>{
@@ -17787,6 +17792,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- オートセーブトースト -->
 <div class="autosave-toast" id="autosaveTst">💾 自動保存しました</div>
 
+<!-- 科目カラーピッカーポップアップ -->
+<div id="subjColorPickerPopup" style="display:none;position:fixed;z-index:9500;background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:10px;box-shadow:0 4px 24px rgba(0,0,0,.6);flex-wrap:wrap;gap:7px;width:168px;align-items:center;"></div>
+
 <!-- ════ PWAインストールバナー ════ -->
 <div id="pwaInstallBanner" style="display:none;position:fixed;bottom:calc(68px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:800;width:min(92vw,400px);background:linear-gradient(135deg,#1a1d2e,#0f1120);border:1px solid rgba(140,198,63,.5);border-radius:14px;padding:11px 12px 11px 14px;box-shadow:0 4px 24px rgba(0,0,0,.6);align-items:center;gap:10px;">
   <span style="font-size:26px;flex-shrink:0;">📱</span>
@@ -18023,6 +18031,77 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </div>
+<script>
+/* ════ 科目カラーピッカー ════ */
+(function(){
+  const COLORS = ['#EF4444','#3B82F6','#10B981','#F59E0B','#A855F7','#EC4899','#14B8A6','#F97316','#6366F1','#84CC16'];
+  // リセット色（デフォルト）用
+  const RESET_COLOR = '#RESET#';
+
+  window.openSubjColorPicker = function(key, dotEl, defaultColor){
+    const popup = document.getElementById('subjColorPickerPopup');
+    if(!popup) return;
+    const current = getSubjColor(key, defaultColor);
+    popup.innerHTML = '';
+
+    // 各カラースウォッチ
+    COLORS.forEach(c => {
+      const btn = document.createElement('button');
+      btn.style.cssText = `width:26px;height:26px;border-radius:50%;background:${c};border:${c===current?'2.5px solid #fff':'2px solid transparent'};cursor:pointer;box-shadow:${c===current?'0 0 0 2px '+c:'none'};transition:all .15s;flex-shrink:0;`;
+      btn.title = c;
+      btn.onclick = e => {
+        e.stopPropagation();
+        applySubjColor(key, c, dotEl);
+        popup.style.display = 'none';
+      };
+      popup.appendChild(btn);
+    });
+
+    // リセットボタン
+    const resetBtn = document.createElement('button');
+    resetBtn.textContent = '↩';
+    resetBtn.title = 'デフォルト色に戻す';
+    resetBtn.style.cssText = 'width:26px;height:26px;border-radius:50%;background:var(--panel);border:1px solid var(--border);cursor:pointer;font-size:13px;color:var(--muted);flex-shrink:0;';
+    resetBtn.onclick = e => {
+      e.stopPropagation();
+      const colors = loadSubjColors(); delete colors[key]; saveSubjColors(colors);
+      dotEl.style.background = defaultColor;
+      popup.style.display = 'none';
+      _rechartIfVisible();
+    };
+    popup.appendChild(resetBtn);
+
+    // 位置決め
+    const rect = dotEl.getBoundingClientRect();
+    const popH = 90; // 大体の高さ
+    const top = rect.bottom + 6 + popH > window.innerHeight ? rect.top - popH - 6 : rect.bottom + 6;
+    const left = Math.max(8, Math.min(rect.left - 20, window.innerWidth - 180));
+    popup.style.top = top + 'px';
+    popup.style.left = left + 'px';
+    popup.style.display = 'flex';
+  };
+
+  function applySubjColor(key, color, dotEl){
+    const colors = loadSubjColors(); colors[key] = color; saveSubjColors(colors);
+    dotEl.style.background = color;
+    _rechartIfVisible();
+  }
+
+  function _rechartIfVisible(){
+    // レポートが表示中なら再描画
+    try{ if(typeof renderReportTab==='function') renderReportTab(); }catch{}
+    try{ if(typeof renderScoreCharts==='function') renderScoreCharts(); }catch{}
+    try{ if(typeof renderAll==='function') renderAll(); }catch{}
+  }
+
+  // 外タップで閉じる
+  document.addEventListener('click', () => {
+    const p = document.getElementById('subjColorPickerPopup');
+    if(p) p.style.display = 'none';
+  });
+})();
+</script>
+
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
