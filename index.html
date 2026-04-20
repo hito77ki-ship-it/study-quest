@@ -652,6 +652,7 @@ body[data-theme="dark"] .eb-prog-labels{color:#9ae6b4;}
 .lu-overlay.show{opacity:1;pointer-events:auto;}
 .lu-box{background:var(--panel);border:2px solid var(--accent);border-radius:var(--radius);padding:42px 48px;text-align:center;box-shadow:0 0 60px rgba(140,198,63,.35);animation:scaleIn .4s cubic-bezier(.34,1.56,.64,1);max-width:340px;width:90%;}
 @keyframes scaleIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}
 .lu-stars{font-size:24px;letter-spacing:.3em;margin-bottom:12px;}
 .lu-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.4em;color:var(--gold);margin-bottom:6px;}
 .lu-level{font-family:'Cinzel',serif;font-size:54px;color:var(--accent);text-shadow:0 0 30px rgba(140,198,63,.5);line-height:1;margin-bottom:8px;}
@@ -7534,6 +7535,59 @@ async function addQuest(){
   const qam=document.getElementById('questAmountMin');if(qam)qam.value='';
   document.getElementById('questNote').value='';
   const qst = document.getElementById('questStartTime'); if(qst) qst.value='';
+
+  // 記録直後Xシェアバナー
+  showSessionShareBanner({subject, amount, exp});
+}
+
+function showSessionShareBanner({subject, amount, exp}){
+  const subj = allSelectedSubjects().find(s=>s.key===subject);
+  const subjName = subj?.name || subject;
+  const h = Math.floor(amount/60), m = amount%60;
+  const timeStr = h ? `${h}時間${m?m+'分':''}` : `${m}分`;
+  const streak = char.streak || 0;
+  const lv = char.level || 1;
+  const examInfo = getNextExamDays();
+  const examLine = examInfo ? `📅 ${examInfo.title}まであと${examInfo.days}日\n` : '';
+  const jobTag = getJobHashtags();
+  const shareText =
+`📚 ${subjName}を${timeStr}勉強した
+
+🔥 ${streak}日連続学習中
+⚔ Lv.${lv} ／ +${exp}EXP獲得
+${examLine}
+積み上げた時間は裏切らない。
+
+#スタディクエスト #勉強垢 #勉強記録 ${jobTag}
+${SQ_URL}`;
+
+  // 既存バナーを除去
+  document.getElementById('sessionShareBanner')?.remove();
+  const banner = document.createElement('div');
+  banner.id = 'sessionShareBanner';
+  banner.style.cssText = `
+    position:fixed;bottom:calc(80px + env(safe-area-inset-bottom,0px));left:50%;
+    transform:translateX(-50%);z-index:1200;
+    background:var(--panel);border:1px solid rgba(140,198,63,.4);border-radius:14px;
+    padding:12px 16px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 4px 24px rgba(0,0,0,.3);min-width:260px;max-width:320px;
+    animation:slideUp .3s cubic-bezier(.34,1.56,.64,1);
+  `;
+  banner.innerHTML = `
+    <div style="flex:1;min-width:0;">
+      <div style="font-size:11px;font-weight:600;color:var(--text);">📚 ${subjName} ${timeStr} 記録完了</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px;">Xでシェアしてみよう</div>
+    </div>
+    <button onclick="openXShare(${JSON.stringify(shareText)});document.getElementById('sessionShareBanner')?.remove();"
+      style="flex-shrink:0;padding:7px 14px;background:rgba(140,198,63,.15);border:1px solid rgba(140,198,63,.5);
+             border-radius:20px;color:#8CC63F;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
+      𝕏 シェア
+    </button>
+    <button onclick="document.getElementById('sessionShareBanner')?.remove();"
+      style="background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;padding:0 2px;">✕</button>
+  `;
+  document.body.appendChild(banner);
+  setTimeout(()=>banner.remove(), 8000);
 }
 function changeJob(){
   buildJobGrid();if(char.name)document.getElementById('nameInput').value=char.name;showScreen('screen-job');
@@ -7647,23 +7701,63 @@ function closeLevelUp(){
   const sp = SP_PER_LEVEL;
   if(sp>0) setTimeout(()=>openDqAlloc(sp),300);
 }
+/* ════ Xシェア共通ユーティリティ ════ */
+const JOB_HASHTAGS = {
+  cpa:        '#公認会計士 #CPA試験',
+  zeirishi:   '#税理士試験 #税理士',
+  boki1:      '#簿記1級 #日商簿記',
+  boki2:      '#簿記2級 #日商簿記',
+  boki3:      '#簿記3級 #日商簿記',
+  batic:      '#BATIC #全経簿記',
+  fp2:        '#FP2級 #FP3級',
+  toeic:      '#TOEIC #英語学習',
+  toefl:      '#TOEFL #英語学習',
+  eiken:      '#英検 #英語',
+  bar:        '#司法試験 #法律',
+  gyosei:     '#行政書士',
+  shaho:      '#社会保険労務士 #社労士',
+  takken:     '#宅建 #宅地建物取引士',
+  itpass:     '#ITパスポート #IT系',
+  fg2:        '#基本情報技術者',
+  fg1:        '#応用情報技術者',
+  highschool: '#高校受験 #受験生',
+  univ:       '#大学受験 #受験生',
+  school:     '#定期テスト #定期試験',
+};
+function getJobHashtags(){
+  const tags = selectedJobIds.map(id => JOB_HASHTAGS[id]).filter(Boolean);
+  return [...new Set(tags)].slice(0,2).join(' ');
+}
+function openXShare(text){
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
+}
+const SQ_URL = 'https://hito77ki-ship-it.github.io/study-quest/';
+
 async function shareLevelUpToX(){
   const smins = studyMins(sessions);
   const lv = getLevelProgress(smins).level;
   const ti = getTitleInfo(lv);
   const totalH = Math.floor(smins/60);
-  const phrases = [
-    `${ti.emoji} レベルアップ！ Lv.${lv}「${ti.title}」に到達した。`,
-    `累計${totalH}時間の積み重ねが、今ここで報われた。`,
-    `まだ終わらない。次のレベルへ。`,
-  ];
-  const text = phrases.join('\n') + `\n\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
+  const streak = char.streak || 0;
+  const examInfo = getNextExamDays();
+  const examLine = examInfo ? `📅 ${examInfo.title}まであと${examInfo.days}日\n` : '';
+  const jobTag = getJobHashtags();
+  const text =
+`${ti.emoji} Lv.${lv}「${ti.title}」に到達🎉
+
+📚 累計学習時間：${totalH}時間
+🔥 連続学習：${streak}日
+${examLine}
+コツコツ積み上げれば、必ず上がる。
+
+#スタディクエスト #勉強垢 #勉強記録 ${jobTag}
+${SQ_URL}`;
   const btn = document.getElementById('luShareBtn');
   if(btn){ btn.textContent='シェア済み ✓'; btn.style.borderColor='#8CC63F'; btn.style.color='#8CC63F'; btn.disabled=true; }
   if(navigator.share){
     try{ await navigator.share({text}); return; }catch(e){ if(e.name==='AbortError') return; }
   }
-  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+  openXShare(text);
 }
 async function shareLevelUpToThreads(){
   const smins = studyMins(sessions);
@@ -8599,11 +8693,24 @@ function renderScoreBossCard(record, prev){
   }).join('');
 
   // Xシェアテキスト
-  const jobName = JOBS.find(j=>selectedJobIds.includes(j.id))?.name||'資格';
-  const shareText = `【${record.name} 結果報告⚔】\n\n`+
-    `合計：${totalScore}/${totalMax}点（${rate}%）\n`+
-    (prev?`前回比：${totalScore-Object.values(prev.scores).reduce((a,v)=>a+v.score,0)>=0?'+':''}${totalScore-Object.values(prev.scores).reduce((a,v)=>a+v.score,0)}点\n`:'')+
-    `\nまだまだ修行が足りぬ…次は倒す！\n\n#${jobName.replace(/[（）()]/g,'')} #スタディクエスト #勉強垢`;
+  const prevTotal = prev ? Object.values(prev.scores).reduce((a,v)=>a+v.score,0) : null;
+  const diff = prevTotal !== null ? totalScore - prevTotal : null;
+  const diffStr = diff !== null ? `（前回比 ${diff>=0?'+':''}${diff}点）` : '';
+  const subjLines = Object.values(record.scores).map(s=>`  ${s.name||''}：${s.score}/${s.max}`).join('\n');
+  const examInfo2 = getNextExamDays();
+  const examLine2 = examInfo2 ? `📅 ${examInfo2.title}まであと${examInfo2.days}日\n` : '';
+  const jobTag2 = getJobHashtags();
+  const resultEmoji = rate>=80?'🏆':rate>=60?'💪':'🔥';
+  const shareText =
+`${resultEmoji} ${record.name} 結果 ${diffStr}
+
+合計：${totalScore}/${totalMax}点（${rate}%）
+${subjLines}
+
+${examLine2}次は更新する。
+
+#スタディクエスト #勉強垢 #勉強記録 ${jobTag2}
+${SQ_URL}`;
 
   card.style.display='';
   card.innerHTML=`<div class="score-boss-card">
@@ -9737,8 +9844,19 @@ function shareWeeklyGoalToX(){
   const hours    = getThisWeekGoalHours();
   const examInfo = getNextExamDays();
   const examLine = examInfo ? `\n📅 ${examInfo.title}まであと${examInfo.days}日` : '';
-  const text = `今週の勉強目標を設定しました🎯\n\n📅 ${d1}〜${d2}\n⏱ 目標：${hours}時間${examLine}\n\n達成まで頑張ります💪\n#StudyQuest #公認会計士試験\nhttps://hito77ki-ship-it.github.io/study-quest/`;
-  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+  const streak = char.streak || 0;
+  const jobTag = getJobHashtags();
+  const text =
+`📅 今週の学習目標を設定した（${d1}〜${d2}）
+
+🎯 目標：${hours}時間${examLine}
+🔥 現在${streak}日連続学習中
+
+有言実行でいく。
+
+#スタディクエスト #勉強垢 #週間目標 ${jobTag}
+${SQ_URL}`;
+  openXShare(text);
 }
 
 /* 最も近い試験日までの残日数を返す（過去は除外、なければnull） */
@@ -9762,8 +9880,20 @@ function shareGoalProgressToX(){
   const emoji     = pct >= 100 ? '🎉🏆' : pct >= 90 ? '🔥' : pct >= 50 ? '💪' : '📚';
   const examInfo  = getNextExamDays();
   const examLine  = examInfo ? `📅 ${examInfo.title}まであと${examInfo.days}日\n` : '';
-  const text = `今週の学習進捗 ${emoji}\n\n🎯 目標：${goalHours}時間\n✅ 達成率：${pct}%（${doneStr}）\n${examLine}\n#StudyQuest #公認会計士試験\nhttps://hito77ki-ship-it.github.io/study-quest/`;
-  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+  const streak = char.streak || 0;
+  const jobTag = getJobHashtags();
+  const text =
+`${emoji} 今週の学習進捗
+
+🎯 目標：${goalHours}時間
+✅ 達成：${doneStr}（${pct}%）
+🔥 ${streak}日連続学習中
+${examLine}
+${pct>=100?'今週の目標、達成！':pct>=50?'折り返し突破。後半も積み上げる。':'まだまだいける。今日もやる。'}
+
+#スタディクエスト #勉強垢 #勉強記録 ${jobTag}
+${SQ_URL}`;
+  openXShare(text);
 }
 
 /* ════ 週間目標マイルストーン ════
