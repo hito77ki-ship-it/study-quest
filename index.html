@@ -11915,6 +11915,26 @@ function saveProfileName(){
 /* ── 初期化時にロード ── */
 const _origLoadAll = typeof loadAll==='function'?loadAll:null;
 document.addEventListener('DOMContentLoaded',()=>{
+  // iOS safe-area を CSS変数経由で確実に適用
+  (function applySafeArea(){
+    const probe = document.createElement('div');
+    probe.style.cssText = 'position:fixed;top:env(safe-area-inset-top,0px);width:0;height:0;pointer-events:none;visibility:hidden;';
+    document.body.appendChild(probe);
+    const sat = Math.round(parseFloat(getComputedStyle(probe).top)) || 0;
+    document.body.removeChild(probe);
+    if(sat > 0 && window.innerWidth <= 600){
+      document.documentElement.style.setProperty('--sat', sat + 'px');
+      const gnav = document.getElementById('gnav');
+      if(gnav){
+        gnav.style.height = (52 + sat) + 'px';
+        gnav.style.paddingTop = sat + 'px';
+      }
+      document.querySelectorAll('.wrap').forEach(w => {
+        w.style.paddingTop = (52 + sat + 8) + 'px';
+      });
+    }
+  })();
+
   loadReportState();
   // userAvatarにアバター復元
   if(profileAvatarData){
