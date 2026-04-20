@@ -8401,6 +8401,19 @@ async function addScoreRecord(){
   scoreRecords.push(newRecord);
   scoreRecords.sort((a,b)=>a.date.localeCompare(b.date));
   await saveScores();
+
+  // ── SCORE → BOSS 自動連携 ──
+  const matchedBoss = bosses.find(b =>
+    !b.scoreId &&
+    b.name.trim().toLowerCase() === name.trim().toLowerCase()
+  );
+  if(matchedBoss){
+    matchedBoss.scoreId = newRecord.id;
+    try{ localStorage.setItem('sq2_bosses', JSON.stringify(bosses)); }catch(e){}
+    renderBoss();
+    showToast(`⚔ 「${matchedBoss.name}」BOSSに結果を自動連携しました`);
+  }
+
   renderScoreTab();
   renderScoreBossCard(newRecord, prevRecord);
 
@@ -12800,7 +12813,24 @@ function renderBoss(){
           残り: <span style="color:#ff9e4d">${Math.max(0,(tgtH-doneH).toFixed(1))}h</span>
           ／ 目標: ${tgtH}h
         </div>
-        ${passed ? `<button onclick="recordBossResult('${b.id}')" style="margin-top:12px;width:100%;padding:8px;background:linear-gradient(135deg,rgba(140,198,63,.15),rgba(140,198,63,.05));border:1px solid rgba(140,198,63,.4);border-radius:6px;color:#8cc63f;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.05em;">✏ 結果を記録する → SCORE</button>` : ''}
+        ${passed ? (() => {
+          const linked = b.scoreId ? scoreRecords.find(r=>r.id===b.scoreId) : null;
+          if(linked){
+            const total = Object.values(linked.scores).reduce((s,v)=>s+v.score,0);
+            const max   = Object.values(linked.scores).reduce((s,v)=>s+v.max,0);
+            const pct   = max>0?Math.round(total/max*100):'-';
+            return `<div style="margin-top:12px;padding:10px 12px;background:rgba(140,198,63,.08);border:1px solid rgba(140,198,63,.3);border-radius:8px;">
+              <div style="font-size:9px;letter-spacing:.12em;color:#8cc63f;font-family:'Cinzel',serif;margin-bottom:6px;">📊 RESULT LINKED</div>
+              <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                ${Object.values(linked.scores).map(s=>`<span style="font-size:11px;color:var(--text);font-family:'Share Tech Mono',monospace;">${s.name||''} <b style="color:#8cc63f">${s.score}</b><span style="color:var(--muted)">/${s.max}</span></span>`).join('')}
+              </div>
+              <div style="margin-top:6px;font-size:10px;color:var(--muted);">合計 <b style="color:#8cc63f;font-size:13px;">${total}/${max}</b>（${pct}%）· ${linked.date}
+                <button onclick="switchTab('score')" style="margin-left:8px;background:none;border:none;color:#8cc63f;font-size:10px;cursor:pointer;text-decoration:underline;">詳細を見る</button>
+              </div>
+            </div>`;
+          }
+          return `<button onclick="recordBossResult('${b.id}')" style="margin-top:12px;width:100%;padding:8px;background:linear-gradient(135deg,rgba(140,198,63,.15),rgba(140,198,63,.05));border:1px solid rgba(140,198,63,.4);border-radius:6px;color:#8cc63f;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.05em;">✏ 結果を記録する → SCORE</button>`;
+        })() : ''}
       </div>
       <button class="boss-card-del" onclick="editBoss('${b.id}')">✎</button>
       <button class="boss-card-del" style="top:36px;" onclick="deleteBoss('${b.id}')">🗑</button>
