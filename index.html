@@ -18692,6 +18692,94 @@ function restartTutorial() {
   icon.addEventListener('click', showBubble);
   bubble.addEventListener('click', ()=>bubble.classList.remove('visible'));
 
+  // ── ドラッグ移動 ──
+  let dragging = false, dragStartX, dragStartY, origRight, origBottom;
+  let longPressTimer = null;
+
+  function getWrapperPos(){
+    const r = wrapper.getBoundingClientRect();
+    return { right: window.innerWidth - r.right, bottom: window.innerHeight - r.bottom };
+  }
+
+  function onDragStart(clientX, clientY){
+    dragging = false;
+    const pos = getWrapperPos();
+    dragStartX = clientX; dragStartY = clientY;
+    origRight = pos.right; origBottom = pos.bottom;
+    wrapper.style.transition = 'none';
+  }
+
+  function onDragMove(clientX, clientY){
+    const dx = clientX - dragStartX, dy = clientY - dragStartY;
+    if(!dragging && Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
+    dragging = true;
+    clearTimeout(longPressTimer);
+    const newRight = Math.max(0, origRight - dx);
+    const newBottom = Math.max(0, origBottom - dy);
+    wrapper.style.right = newRight + 'px';
+    wrapper.style.bottom = newBottom + 'px';
+    wrapper.style.left = 'auto';
+    wrapper.style.top = 'auto';
+  }
+
+  function onDragEnd(){
+    wrapper.style.transition = '';
+    if(!dragging) return;
+    dragging = false;
+    const pos = getWrapperPos();
+    localStorage.setItem('sq_wakaba_pos', JSON.stringify({ right: pos.right, bottom: pos.bottom }));
+  }
+
+  // 保存済み位置を復元
+  try {
+    const saved = JSON.parse(localStorage.getItem('sq_wakaba_pos') || 'null');
+    if(saved){ wrapper.style.right = saved.right + 'px'; wrapper.style.bottom = saved.bottom + 'px'; }
+  } catch(e){}
+
+  // 長押しで削除確認
+  function startLongPress(){
+    longPressTimer = setTimeout(()=>{
+      if(confirm('若葉を非表示にしますか？\n（設定からいつでも戻せます）')){
+        wrapper.remove();
+        localStorage.setItem('sq_wakaba_hidden', '1');
+      }
+    }, 600);
+  }
+
+  // Touch
+  icon.addEventListener('touchstart', e=>{
+    const t = e.touches[0];
+    onDragStart(t.clientX, t.clientY);
+    startLongPress();
+  }, { passive: true });
+  window.addEventListener('touchmove', e=>{
+    if(!dragStartX && dragStartX !== 0) return;
+    onDragMove(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+  window.addEventListener('touchend', ()=>{
+    clearTimeout(longPressTimer);
+    onDragEnd();
+    dragStartX = null;
+  });
+
+  // Mouse
+  icon.addEventListener('mousedown', e=>{
+    onDragStart(e.clientX, e.clientY);
+    startLongPress();
+  });
+  window.addEventListener('mousemove', e=>{
+    if(dragStartX == null) return;
+    onDragMove(e.clientX, e.clientY);
+  });
+  window.addEventListener('mouseup', ()=>{
+    clearTimeout(longPressTimer);
+    onDragEnd();
+    dragStartX = null;
+  });
+
+  // 非表示設定済みなら表示しない
+  if(localStorage.getItem('sq_wakaba_hidden')) { wrapper.remove(); return; }
+
   // 初回ログイン後に自動で一度表示（3秒後）
   window.addEventListener('load', ()=>{
     setTimeout(()=>{
