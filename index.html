@@ -319,8 +319,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 
 /* TABS */
 .job-pill{font-family:'Share Tech Mono',monospace;font-size:9px;border:1px solid var(--border);color:var(--muted);padding:2px 8px;}
-.change-job-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Share Tech Mono',monospace;font-size:10px;padding:7px 12px;cursor:pointer;transition:all .2s;}
-.change-job-btn:hover{border-color:var(--muted);color:var(--text);}
+.change-job-btn{background:var(--panel);border:1.5px solid var(--accent);color:var(--accent);font-size:13px;font-weight:600;padding:10px 18px;border-radius:var(--radius);cursor:pointer;transition:all .2s;letter-spacing:.02em;}
+.change-job-btn:hover{background:var(--accent);color:#fff;}
 .tabs{display:flex;margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;box-shadow:var(--shadow);padding:4px;gap:2px;}
 .tabs::-webkit-scrollbar{display:none;}
 .tab-btn{flex:1 1 0;min-width:52px;max-width:100px;background:transparent;border:none;color:var(--muted);font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.06em;padding:10px 4px 9px;cursor:pointer;border-right:none;transition:all .18s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center;gap:3px;border-radius:var(--radius-sm);position:relative;}
@@ -4066,7 +4066,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   <!-- JOB PILLS -->
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
     <div id="jobPills" style="display:flex;gap:7px;flex-wrap:wrap;flex:1;"></div>
-    <button class="change-job-btn" onclick="changeJob()">⚙ ジョブ変更</button>
+    <button class="change-job-btn" onclick="changeJob()">⚙ 資格・目標を設定</button>
   </div>
 
   <!-- TABS -->
@@ -4963,6 +4963,9 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="prof-quick-actions">
       <button class="prof-quick-btn primary" onclick="switchTab('score');openAchieveModal()">📣 達成報告を投稿</button>
       <button class="prof-quick-btn secondary" onclick="openProfileQRModal()">📲 QRをシェア</button>
+    </div>
+    <div style="margin-top:10px;text-align:center;">
+      <button class="change-job-btn" onclick="changeJob()" style="width:100%;">⚙ 資格・目標を設定</button>
     </div>
 
     <!-- ─── RPGステータス（冒険の証） ─── -->
@@ -12893,7 +12896,7 @@ const HELP_CONTENT = {
         {
           n:'①', title:'試験・科目を選ぶ',
           desc:'最初に受験する試験（公認会計士・税理士・日商簿記など）と科目を選びます。選択した科目が勉強の「戦場」になります。',
-          tip:'後から「ジョブ変更」でいつでも変えられます'
+          tip:'後から「資格・目標を設定」でいつでも変えられます'
         },
         {
           n:'②', title:'タイマーで勉強を始める',
