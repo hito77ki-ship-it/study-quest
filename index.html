@@ -4167,15 +4167,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <div id="quickRecResult" style="font-size:10px;color:var(--accent2);font-family:'Share Tech Mono',monospace;margin-top:6px;min-height:16px;"></div>
     </div>
     <!-- 広告スペース（将来のAdSense用） -->
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTO+ECS9V6+408S+60OXE" rel="nofollow" target="_blank" class="affiliate-card" style="grid-column:1/-1;margin:4px 0;">
-      <div class="affiliate-card-icon">📱</div>
-      <div class="affiliate-card-body">
-        <div class="affiliate-card-label">PR · オンスク.JP</div>
-        <div class="affiliate-card-title">スマホで資格学習、はじめよう</div>
-        <div class="affiliate-card-desc">月額1,628円〜・50資格以上が学び放題</div>
-      </div>
-      <div class="affiliate-card-arrow">›</div>
-    </a>
+    <div id="affiliateCardStatus" style="grid-column:1/-1;margin:4px 0;"></div>
   </div>
 
   <!-- MATERIALS (教材) -->
@@ -4982,17 +4974,11 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         </div>
       </div>
 
-    <!-- アフィリエイト：オンスク.JP -->
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTO+ECS9V6+408S+60OXE" rel="nofollow" target="_blank" class="affiliate-card">
-      <div class="affiliate-card-icon">📱</div>
-      <div class="affiliate-card-body">
-        <div class="affiliate-card-label">PR · オンスク.JP</div>
-        <div class="affiliate-card-title">スマホで資格学習、はじめよう</div>
-        <div class="affiliate-card-desc">月額1,628円〜・50資格以上が学び放題の動画講義サービス</div>
-      </div>
-      <div class="affiliate-card-arrow">›</div>
-    </a>
+    <!-- アフィリエイト（ジョブ連動） -->
+    <div id="affiliateCardReport"></div>
+    <!-- トラッキングピクセル（常時設置） -->
     <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4B1OTO+ECS9V6+408S+60OXE" alt="">
+    <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B1OTO+E97O8I+3AQG+ZS5GI" alt="">
 
     </div>
   </div>
@@ -9348,6 +9334,48 @@ function renderReportTab(){
   try{ renderWeeklyGoal(); }catch(e){ console.warn('renderWeeklyGoal',e); }
   try{ renderExpInfo(); }catch(e){ console.warn('renderExpInfo',e); }
   try{ renderMobileQuestLog(); }catch(e){ console.warn('renderMobileQuestLog',e); }
+  try{ renderAffiliateCards(); }catch(e){ console.warn('renderAffiliateCards',e); }
+}
+
+/* ── アフィリエイトカード（ジョブ連動） ── */
+const AFFILIATE_ADS = {
+  english: {
+    href:  'https://px.a8.net/svt/ejp?a8mat=4B1OTO+E97O8I+3AQG+ZS5GI',
+    icon:  '🌐',
+    label: 'PR · スタディサプリENGLISH',
+    title: '英語学習を、動画で加速しよう',
+    desc:  '日常英会話コース・TOEIC対策など・聞き流しでもOK',
+  },
+  default: {
+    href:  'https://px.a8.net/svt/ejp?a8mat=4B1OTO+ECS9V6+408S+60OXE',
+    icon:  '📱',
+    label: 'PR · オンスク.JP',
+    title: 'スマホで資格学習、はじめよう',
+    desc:  '月額1,628円〜・50資格以上が学び放題の動画講義',
+  },
+};
+const ENGLISH_JOBS = ['toeic','eiken','toefl','korean','chinese'];
+function getAffiliateAd(){
+  const isEnglish = (selectedJobIds||[]).some(id => ENGLISH_JOBS.includes(id));
+  return isEnglish ? AFFILIATE_ADS.english : AFFILIATE_ADS.default;
+}
+function affiliateCardHTML(ad, extraStyle=''){
+  return `<a href="${ad.href}" rel="nofollow" target="_blank" class="affiliate-card" style="${extraStyle}">
+    <div class="affiliate-card-icon">${ad.icon}</div>
+    <div class="affiliate-card-body">
+      <div class="affiliate-card-label">${ad.label}</div>
+      <div class="affiliate-card-title">${ad.title}</div>
+      <div class="affiliate-card-desc">${ad.desc}</div>
+    </div>
+    <div class="affiliate-card-arrow">›</div>
+  </a>`;
+}
+function renderAffiliateCards(){
+  const ad = getAffiliateAd();
+  const report = document.getElementById('affiliateCardReport');
+  const status = document.getElementById('affiliateCardStatus');
+  if(report) report.innerHTML = affiliateCardHTML(ad);
+  if(status) status.innerHTML = affiliateCardHTML(ad, 'grid-column:1/-1;margin:4px 0;');
 }
 
 /* 統計数字 */
@@ -11337,14 +11365,14 @@ const AFFILIATE_DATA = {
   toeic: {
     label: 'TOEIC',
     items: [
-      { name:'スタディサプリ ENGLISH', desc:'TOEIC特化。AIが弱点を分析。', url:'https://eigosapuri.jp/toeic/', badge:'AI分析' },
+      { name:'スタディサプリ ENGLISH', desc:'TOEIC特化。AIが弱点を分析。', url:'https://px.a8.net/svt/ejp?a8mat=4B1OTO+E97O8I+3AQG+ZS5GI', badge:'AI分析' },
       { name:'abceed', desc:'公式問題集含む豊富な教材をアプリで。', url:'https://www.abceed.com/', badge:'公式問題集収録' },
     ]
   },
   eiken2: {
     label: '英検2級',
     items: [
-      { name:'スタディサプリ ENGLISH', desc:'英検対策コースあり。動画でわかりやすく。', url:'https://eigosapuri.jp/eiken/', badge:'動画解説' },
+      { name:'スタディサプリ ENGLISH', desc:'英検対策コースあり。日常英会話も同時対策。', url:'https://px.a8.net/svt/ejp?a8mat=4B1OTO+E97O8I+3AQG+ZS5GI', badge:'英検対応' },
     ]
   },
   takken: {
