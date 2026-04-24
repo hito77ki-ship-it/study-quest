@@ -823,6 +823,25 @@ body[data-theme="dark"] .eb-prog-labels{color:#9ae6b4;}
 body[data-theme="dark"] .timer-dmg-track{background:rgba(255,255,255,.04);}
 .timer-dmg-fill{height:100%;background:linear-gradient(to right,#8CC63F,#6AAF2B);box-shadow:0 0 8px rgba(140,198,63,.4);transition:width .5s;}
 .timer-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+/* ── 修行再開ボタン ── */
+.resume-btn{
+  width:100%;padding:18px 20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border:none;border-radius:var(--radius);
+  color:#fff;cursor:pointer;
+  display:flex;align-items:center;gap:14px;
+  font-family:'Noto Serif JP',serif;
+  box-shadow:0 4px 20px rgba(140,198,63,.3);
+  transition:all .2s;margin-bottom:0;
+}
+.resume-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(140,198,63,.4);}
+.resume-btn:active{transform:translateY(0);}
+.resume-btn-icon{font-size:28px;flex-shrink:0;}
+.resume-btn-body{flex:1;text-align:left;}
+.resume-btn-label{font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.7);margin-bottom:3px;font-family:'Share Tech Mono',monospace;}
+.resume-btn-subject{font-size:17px;font-weight:700;color:#fff;line-height:1.3;}
+.resume-btn-sub{font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;}
+.resume-btn-arrow{font-size:22px;color:rgba(255,255,255,.8);}
 .timer-start-btn{
   background:var(--accent);
   border:none;color:#fff;
@@ -4152,6 +4171,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
   <!-- STATUS -->
   <div id="panel-status">
+    <!-- 修行再開ボタン（全幅） -->
+    <div id="resumeButtonWrap" style="grid-column:1/-1;display:none;"></div>
     <!-- 初回3日間チャレンジバナー -->
     <div id="onboardingBanner" style="grid-column:1/-1;display:none;"></div>
     <!-- 今日のクエストバナー（全幅） -->
@@ -7547,6 +7568,7 @@ function renderAll(){
   renderPaceDiag();
   renderDailyMissions();
   renderOnboardingBanner();
+  renderResumeButton();
   renderTodayQuestBanner();
   renderAffiliateCard();
   // レポート/プロフィールタブが開いていれば即更新
@@ -7836,7 +7858,7 @@ function switchTab(tab){
   else unsubscribeTlRealtime();
   if(tab==='report')  requestAnimationFrame(()=>{ const ml=document.getElementById('mql-list'); if(ml) ml._mqlShowing=5; renderReportTab(); });
   if(tab==='profile') requestAnimationFrame(()=>{ renderProfileTab(); renderWeekPlan(); initProfileQR(); updateReminderUI(); });
-  if(tab==='status')  requestAnimationFrame(()=>{ renderExamBanner(); renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); renderOnboardingBanner(); renderTodayQuestBanner(); renderAffiliateCard(); });
+  if(tab==='status')  requestAnimationFrame(()=>{ renderResumeButton(); renderExamBanner(); renderTodayPlan(); renderPaceDiag(); renderDailyMissions(); renderOnboardingBanner(); renderTodayQuestBanner(); renderAffiliateCard(); });
   // モバイルタブバーも同期
   document.querySelectorAll('.m-tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   const activeBtn=document.getElementById('tab-'+tab);
@@ -8436,6 +8458,8 @@ async function finishTimer(){
   const subject=document.getElementById('timerSubject')?.value;
   const note=document.getElementById('timerNote')?.value.trim()||'';
   const date=getTodayStr();
+  // 修行再開ボタン用：最終科目を記憶
+  if(subject) localStorage.setItem('sq2_last_subject', subject);
   const exp=Math.ceil(totalSecs/60); // EXPは切り上げのまま
 
   const smins0=studyMins(sessions),lv0=computeLevel(smins0);
@@ -11464,6 +11488,56 @@ function renderAffiliateCard(){
     </div>
     <div class="aff-note">※ 広告・PR</div>
   </div>`;
+}
+
+/* ── 修行再開ボタン ── */
+function renderResumeButton(){
+  const wrap = document.getElementById('resumeButtonWrap');
+  if(!wrap) return;
+
+  const lastKey = localStorage.getItem('sq2_last_subject');
+  if(!lastKey){ wrap.style.display = 'none'; return; }
+
+  const subj = allSelectedSubjects().find(s => s.key === lastKey);
+  if(!subj){ wrap.style.display = 'none'; return; }
+
+  // 今日すでにその科目を勉強していれば継続時間を表示
+  const todaySecs = sessions
+    .filter(s => s.date === getTodayStr() && s.subject === lastKey && isStudyType(s))
+    .reduce((a,s) => a + (s.amountSecs || s.amount*60), 0);
+  const todayStr = todaySecs >= 3600
+    ? `${Math.floor(todaySecs/3600)}h${Math.floor((todaySecs%3600)/60)?Math.floor((todaySecs%3600)/60)+'m':''}`
+    : todaySecs >= 60 ? `${Math.floor(todaySecs/60)}m` : '';
+  const subText = todayStr ? `今日 ${todayStr} 済み　─　続きから再開` : '前回の続きからすぐ再開';
+
+  wrap.style.display = '';
+  wrap.innerHTML = `<button class="resume-btn" onclick="resumeLastSubject()">
+    <div class="resume-btn-icon">${subj.icon || '⚔️'}</div>
+    <div class="resume-btn-body">
+      <div class="resume-btn-label">QUICK RESUME — 修行再開</div>
+      <div class="resume-btn-subject">${subj.name}</div>
+      <div class="resume-btn-sub">${subText}</div>
+    </div>
+    <div class="resume-btn-arrow">▶</div>
+  </button>`;
+}
+
+function resumeLastSubject(){
+  const lastKey = localStorage.getItem('sq2_last_subject');
+  if(!lastKey) return;
+  switchTab('quest');
+  requestAnimationFrame(() => {
+    const sel = document.getElementById('timerSubject');
+    if(sel){
+      sel.value = lastKey;
+      sel.dispatchEvent(new Event('change'));
+    }
+    // モバイル：タイマー画面に切り替え
+    const panel = document.getElementById('panel-quest');
+    if(panel) panel.classList.add('show-timer');
+    // タイマー即開始
+    if(!timerRunning) startTimer();
+  });
 }
 
 function renderOnboardingBanner(){
