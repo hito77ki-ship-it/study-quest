@@ -19642,14 +19642,14 @@ function restartTutorial() {
 <div id="linkEmailModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;" onclick="if(event.target===this)closeLinkEmailModal()">
   <div style="background:var(--panel);border-radius:16px;padding:24px;width:90%;max-width:360px;box-shadow:0 8px 32px rgba(0,0,0,.4);">
     <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;color:var(--accent2);margin-bottom:16px;">✉️ メールアドレス登録</div>
-    <div style="display:flex;flex-direction:column;gap:10px;">
+    <form style="display:flex;flex-direction:column;gap:10px;" onsubmit="submitLinkEmail();return false;">
       <input id="linkEmailInput" type="email" placeholder="メールアドレス" class="email-auth-input" autocomplete="email">
-      <input id="linkPasswordInput" type="password" placeholder="パスワード（6文字以上）" class="email-auth-input">
-      <input id="linkPasswordConfirmInput" type="password" placeholder="パスワード（確認）" class="email-auth-input">
+      <input id="linkPasswordInput" type="password" placeholder="パスワード（6文字以上）" class="email-auth-input" autocomplete="new-password">
+      <input id="linkPasswordConfirmInput" type="password" placeholder="パスワード（確認）" class="email-auth-input" autocomplete="new-password">
       <div id="linkEmailMsg" class="email-auth-msg"></div>
-      <button id="linkEmailSubmitBtn" onclick="submitLinkEmail()" class="email-auth-btn">登録する</button>
-      <button onclick="closeLinkEmailModal()" style="background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:12px;padding:10px;cursor:pointer;">キャンセル</button>
-    </div>
+      <button type="submit" id="linkEmailSubmitBtn" class="email-auth-btn">登録する</button>
+      <button type="button" onclick="closeLinkEmailModal()" style="background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:12px;padding:10px;cursor:pointer;">キャンセル</button>
+    </form>
   </div>
 </div>
 <script>
