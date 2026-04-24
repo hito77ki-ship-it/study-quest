@@ -6790,9 +6790,11 @@ async function restoreFromCloud(){
     let restored = false;
 
     // ── 学習セッション ──
+    // ローカルにcloudに無い未同期セッションがあっても消えないよう、
+    // クラウドの方が多い場合のみ上書きする（同数・少ない場合はローカルを優先）
     if(data.sessions_backup){
       const s = JSON.parse(data.sessions_backup);
-      if(s && (cloudIsNewer ? s.length >= sessions.length : s.length > sessions.length)){
+      if(s && s.length > sessions.length){
         sessions = s; restored = true;
       }
     }
