@@ -1776,6 +1776,29 @@ body[data-theme="dark"] .tl-badge-icon { color:#68d391; }
 .tl-reaction-chip.mine{border-color:var(--accent);background:rgba(140,198,63,.1);color:var(--accent2);}
 .tl-reaction-add{display:inline-flex;align-items:center;gap:3px;font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--border);cursor:pointer;background:none;color:var(--muted);transition:border-color .15s;position:relative;}
 .tl-reaction-add:hover{border-color:var(--accent);}
+/* ── 固定投稿（ピン留め） ── */
+.timeline-post.tl-pinned{border-color:#C9A84C !important;box-shadow:0 0 0 1px rgba(201,168,76,.4),0 4px 20px rgba(201,168,76,.15) !important;background:linear-gradient(135deg,rgba(201,168,76,.04),transparent);}
+.tl-pin-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#C9A84C;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:8px;padding:2px 8px;font-family:'Share Tech Mono',monospace;}
+.tl-pin-btn{background:none;border:1px solid rgba(201,168,76,.4);border-radius:20px;padding:4px 10px;font-size:10px;color:#C9A84C;cursor:pointer;transition:all .15s;font-family:inherit;}
+.tl-pin-btn:hover{background:rgba(201,168,76,.1);}
+/* ── 返信スレッド ── */
+.tl-reply-btn{background:none;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:11px;color:var(--muted);cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:4px;font-family:inherit;}
+.tl-reply-btn:hover{border-color:var(--accent);color:var(--accent2);}
+.tl-reply-thread{margin-top:10px;border-top:1px solid var(--border);padding-top:10px;display:none;}
+.tl-reply-thread.open{display:block;}
+.tl-reply-item{display:flex;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.tl-reply-item:last-of-type{border-bottom:none;margin-bottom:0;}
+.tl-reply-avatar{width:26px;height:26px;flex-shrink:0;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
+.tl-reply-name{font-size:11px;font-weight:700;color:var(--text);}
+.tl-reply-text{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.6;}
+.tl-reply-time{font-size:10px;color:var(--muted);margin-top:2px;}
+.tl-reply-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:13px;padding:8px 12px;resize:none;transition:border-color .2s;box-sizing:border-box;}
+.tl-reply-input:focus{border-color:var(--accent);outline:none;}
+.tl-quick-replies{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0;}
+.tl-quick-reply{font-size:11px;padding:4px 10px;border:1px solid var(--border);border-radius:16px;background:none;color:var(--muted);cursor:pointer;transition:all .15s;font-family:inherit;}
+.tl-quick-reply:hover{border-color:var(--accent);color:var(--accent2);}
+.tl-reply-submit{background:var(--accent);color:#fff;border:none;border-radius:20px;padding:6px 18px;font-size:12px;font-family:inherit;font-weight:700;cursor:pointer;float:right;margin-top:6px;transition:background .2s;}
+.tl-reply-submit:hover{background:var(--accent2);}
 /* ── 投稿プライバシー設定 ── */
 .tl-privacy-row{display:flex;gap:5px;margin-top:8px;}
 .tl-privacy-opt{flex:1;font-size:11px;padding:5px 3px;border:1px solid var(--border);border-radius:16px;background:none;color:var(--muted);cursor:pointer;transition:all .15s;text-align:center;font-family:inherit;}
@@ -14653,6 +14676,15 @@ async function loadTlFilter(filter){
     return true; // public
   });
 
+  // ピン留め投稿を先頭へ
+  merged.sort((a, b) => {
+    const aPin = isPinActive(a.id) || (a.pinned_until && new Date(a.pinned_until) > new Date());
+    const bPin = isPinActive(b.id) || (b.pinned_until && new Date(b.pinned_until) > new Date());
+    if(aPin && !bPin) return -1;
+    if(!aPin && bPin) return 1;
+    return 0;
+  });
+
   tlPostsByFilter[filter] = merged;
   renderTlPage(filter, 0);
 }
@@ -14728,6 +14760,7 @@ function renderPostHTML(post, likes){
   const myReactions = loadLocalReactions();
   const myReaction = myReactions[post.id] || null;
   const liked = likes[post.id] || (post.from_cloud && tlLikedSet && tlLikedSet.has(post.id));
+  const pinned = isPinActive(post.id) || (post.pinned_until && new Date(post.pinned_until) > new Date());
   const timeStr = formatRelativeTime(post.created_at);
   const avatarChar = (post.user_name || '？')[0];
   const jobLabel = (post.job_ids || []).map(j => {
@@ -14736,6 +14769,7 @@ function renderPostHTML(post, likes){
   }).join('');
   const isOwn = (currentUser && post.user_id === currentUser.id) ||
                 post.user_name === char.name;
+  const replyCount = (loadLocalReplies()[post.id] || []).length;
 
   const h = Math.floor((post.minutes||0)/60);
   const m = (post.minutes||0) % 60;
@@ -14756,7 +14790,9 @@ function renderPostHTML(post, likes){
     : 'tl-type-study';
 
   return `
-  <div class="timeline-post ${postTypeClass}" id="tl-post-${post.id}">
+  <div class="timeline-post ${postTypeClass}${pinned?' tl-pinned':''}" id="tl-post-${post.id}">
+    <!-- ピンバッジ -->
+    ${pinned ? `<div style="margin-bottom:8px;"><span class="tl-pin-badge">📌 ピン留め中</span></div>` : ''}
     <!-- ヘッダー -->
     <div class="tl-post-header">
       <div ${_cardClick} style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
@@ -14879,10 +14915,14 @@ function renderPostHTML(post, likes){
           <div style="display:flex;gap:6px;flex-wrap:wrap;">${jobLabel}</div>
         </div>
       </div>
-      <!-- シェア・削除行 -->
-      <div style="display:flex;gap:6px;align-items:center;">
+      <!-- シェア・返信・ピン・削除行 -->
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+        <button class="tl-reply-btn" onclick="toggleReplyThread('${post.id}')">
+          💬 <span id="tl-reply-count-${post.id}">${replyCount}</span>
+        </button>
+        ${isOwn && !pinned ? `<button class="tl-pin-btn" onclick="pinPost('${post.id}')">📌 ${PIN_GOLD_COST}G で固定</button>` : ''}
         <button onclick="sharePostToX('${post.id}')"
-          style="background:none;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:10px;color:var(--muted);cursor:pointer;">
+          style="background:none;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:10px;color:var(--muted);cursor:pointer;margin-left:auto;">
           𝕏 シェア
         </button>
         ${isOwn ? `<button onclick="deleteTlPost('${post.id}', this)"
@@ -14891,6 +14931,8 @@ function renderPostHTML(post, likes){
         </button>` : ''}
       </div>
     </div>
+    <!-- 返信スレッド -->
+    <div class="tl-reply-thread" id="tl-thread-${post.id}"></div>
   </div>`;
 }
 
@@ -15085,7 +15127,9 @@ async function pollNotifications(){
     // 未読通知をトーストで表示（最新1件）
     const n = data[0];
     if(n.type === 'like'){
-      showNotifToast('❤️', `${n.from_user_name}さんがエールを送りました`, `「${n.subject_name}」の投稿に❤️`);
+      showNotifToast('❤️', `${n.from_user_name}さんがエールを送りました`, `「${n.subject_name}」の投稿に反応が！`);
+    } else if(n.type === 'reply'){
+      showNotifToast('💬', `${n.from_user_name}さんが返信しました`, `「${n.subject_name}」`);
     }
 
     // 全て既読にする
@@ -15439,6 +15483,165 @@ function showNotifToast(icon, title, msg){
 }
 
 /* ── リアクション通知はtoggleReaction内で処理済み ── */
+
+/* ════════════════════════════════════════
+   ピン留めシステム
+════════════════════════════════════════ */
+const PIN_GOLD_COST     = 500; // 消費ゴールド（変数で後から調整可能）
+const PIN_DURATION_HOURS = 3;  // 固定時間・時間単位（変数で後から調整可能）
+const TL_PINS_KEY = 'sq2_tl_pins'; // { [postId]: expiresAt(ISO) }
+
+function loadLocalPins(){
+  try { const v = localStorage.getItem(TL_PINS_KEY); return v ? JSON.parse(v) : {}; } catch { return {}; }
+}
+function saveLocalPins(p){
+  try { localStorage.setItem(TL_PINS_KEY, JSON.stringify(p)); } catch {}
+}
+function isPinActive(postId){
+  const pins = loadLocalPins();
+  return pins[postId] ? new Date(pins[postId]) > new Date() : false;
+}
+
+async function pinPost(postId){
+  const gold = char.gold || 0;
+  if(gold < PIN_GOLD_COST){
+    alert(`ゴールドが不足しています。\n必要：${PIN_GOLD_COST}G　所持：${gold}G`);
+    return;
+  }
+  if(!confirm(`📌 ${PIN_GOLD_COST}Gを消費して、この投稿を${PIN_DURATION_HOURS}時間タイムライン最上部に固定しますか？`)) return;
+
+  char.gold = gold - PIN_GOLD_COST;
+  saveAll();
+  const goldEl = document.getElementById('goldBadge');
+  if(goldEl) goldEl.textContent = '💰 ' + char.gold + 'G';
+
+  const expiresAt = new Date(Date.now() + PIN_DURATION_HOURS * 3600 * 1000).toISOString();
+  const pins = loadLocalPins();
+  pins[postId] = expiresAt;
+  saveLocalPins(pins);
+
+  if(currentUser){
+    try {
+      await sb.from('timeline_posts').update({ pinned_until: expiresAt }).eq('id', postId).eq('user_id', currentUser.id);
+    } catch(e){ console.warn('Pin sync:', e); }
+  }
+
+  showNotifToast('📌', '投稿を固定しました', `${PIN_DURATION_HOURS}時間、タイムライン最上部に表示されます`);
+  TL_FILTERS.forEach(f => { tlPostsByFilter[f] = null; });
+  loadTimeline();
+}
+
+/* ════════════════════════════════════════
+   返信システム
+════════════════════════════════════════ */
+const TL_REPLIES_KEY = 'sq2_tl_replies'; // { [postId]: [reply,...] }
+const QUICK_REPLIES = ['お疲れ様！', 'すごすぎる！', '一緒に頑張ろう！', 'ナイスファイト！', '刺激になります🔥'];
+
+function loadLocalReplies(){
+  try { const v = localStorage.getItem(TL_REPLIES_KEY); return v ? JSON.parse(v) : {}; } catch { return {}; }
+}
+function saveLocalReplies(r){
+  try { localStorage.setItem(TL_REPLIES_KEY, JSON.stringify(r)); } catch {}
+}
+
+function toggleReplyThread(postId){
+  const thread = document.getElementById('tl-thread-' + postId);
+  if(!thread) return;
+  const opening = !thread.classList.contains('open');
+  thread.classList.toggle('open', opening);
+  if(opening) renderReplyThreadDOM(postId);
+}
+
+function renderReplyThreadDOM(postId){
+  const thread = document.getElementById('tl-thread-' + postId);
+  if(!thread) return;
+  const replies = loadLocalReplies()[postId] || [];
+  let html = '';
+  if(replies.length){
+    html += replies.map(r => {
+      const ac = (r.user_name || '？')[0];
+      const col = typeof avatarColor === 'function' ? avatarColor(r.user_name) : '#8CC63F';
+      return `<div class="tl-reply-item">
+        <div class="tl-reply-avatar" style="background:${col}">${ac}</div>
+        <div style="flex:1;">
+          <div class="tl-reply-name">${escHtml(r.user_name||'名無し')} <span style="font-size:9px;font-weight:400;color:var(--muted);">Lv.${r.user_level||1}</span></div>
+          <div class="tl-reply-text">${escHtml(r.note)}</div>
+          <div class="tl-reply-time">${formatRelativeTime(r.created_at)}</div>
+        </div>
+      </div>`;
+    }).join('');
+  } else {
+    html += `<div style="font-size:12px;color:var(--muted);text-align:center;padding:6px 0 10px;">まだ返信がありません</div>`;
+  }
+  html += `<div class="tl-reply-input-wrap">
+    <div class="tl-quick-replies">
+      ${QUICK_REPLIES.map(q=>`<button class="tl-quick-reply" onclick="setQuickReply('${postId}','${q}')">${q}</button>`).join('')}
+    </div>
+    <textarea class="tl-reply-input" id="tl-reply-input-${postId}" rows="2" placeholder="返信を入力…" maxlength="200"></textarea>
+    <div style="overflow:hidden;"><button class="tl-reply-submit" onclick="submitReply('${postId}')">返信する</button></div>
+  </div>`;
+  thread.innerHTML = html;
+}
+
+function setQuickReply(postId, text){
+  const el = document.getElementById('tl-reply-input-' + postId);
+  if(el){ el.value = text; el.focus(); }
+}
+
+async function submitReply(postId){
+  const input = document.getElementById('tl-reply-input-' + postId);
+  const text = input?.value.trim();
+  if(!text){ input?.focus(); return; }
+
+  const reply = {
+    id:         Date.now().toString(36) + Math.random().toString(36).slice(2,5),
+    post_id:    postId,
+    user_id:    currentUser ? currentUser.id : 'guest_' + char.name,
+    user_name:  char.name || '冒険者',
+    user_level: char.level || 1,
+    avatar_url: profileAvatarData || null,
+    note:       text,
+    created_at: new Date().toISOString(),
+  };
+
+  const allReplies = loadLocalReplies();
+  if(!allReplies[postId]) allReplies[postId] = [];
+  allReplies[postId].push(reply);
+  saveLocalReplies(allReplies);
+
+  const countEl = document.getElementById('tl-reply-count-' + postId);
+  if(countEl) countEl.textContent = allReplies[postId].length;
+
+  input.value = '';
+  renderReplyThreadDOM(postId);
+
+  // Supabase同期 + 通知
+  if(currentUser){
+    try {
+      await sb.from('timeline_replies').insert({
+        post_id:    postId,
+        user_id:    currentUser.id,
+        user_name:  reply.user_name,
+        user_level: reply.user_level,
+        avatar_url: reply.avatar_url,
+        note:       reply.note,
+        created_at: reply.created_at,
+      }).catch(()=>{});
+      const post = tlAllPostsFlat().find(p => p.id === postId);
+      if(post && post.user_id && post.user_id !== currentUser.id){
+        await sb.from('notifications').insert({
+          to_user_id:     post.user_id,
+          from_user_name: char.name || 'だれか',
+          type:           'reply',
+          post_id:        postId,
+          subject_name:   text.slice(0,30),
+        }).catch(()=>{});
+      }
+    } catch(e){ console.warn('Reply sync:', e); }
+  }
+
+  showNotifToast('💬', '返信しました', text.slice(0,24) + (text.length > 24 ? '…' : ''));
+}
 
 /* ════════════════════════════════════════
    クラスチェンジ演出
