@@ -471,6 +471,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 /* SESSION LOG */
 .session-list{display:flex;flex-direction:column;gap:5px;max-height:280px;overflow-y:auto;}
 .session-item{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;animation:fadeIn .3s ease;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.load-more-btn{width:100%;padding:10px;background:transparent;border:1px dashed var(--border);border-radius:var(--radius-sm);color:var(--muted);font-size:12px;cursor:pointer;margin-top:4px;transition:all .2s;}
+.load-more-btn:hover{border-color:var(--accent);color:var(--accent);}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .session-date{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);white-space:nowrap;}
 .session-time{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--accent2);white-space:nowrap;background:rgba(140,198,63,.1);border:1px solid rgba(140,198,63,.25);border-radius:4px;padding:1px 5px;}
@@ -12384,21 +12386,22 @@ function fmtHHmm(isoStr){
   return String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
 }
 
-function renderSessions(subjs){
+function renderSessions(subjs, showing){
   const smap={};subjs.forEach(s=>smap[s.key]=s);
   const list=document.getElementById('sessionList');
   renderQuestLogStats();
   if(!sessions.length){list.innerHTML='<div class="no-data">クエスト記録なし</div>';return;}
+  const STEP = 30;
+  const reversed = [...sessions].reverse();
+  const count = showing || STEP;
   list.innerHTML='';
-  // 全件（逆順）表示、最大60件
-  [...sessions].reverse().slice(0,60).forEach((s,revIdx)=>{
-    const realIdx = sessions.length - 1 - revIdx; // 実際のindexに変換
+  reversed.slice(0, count).forEach((s, revIdx)=>{
+    const realIdx = sessions.length - 1 - revIdx;
     const sub=smap[s.subject]||{name:s.subject||'—',color:'#606080'};
     const _dispTime = s.type==='study'||s.type==='exam'
       ? fmtSecs(sAmountSecs(s))
       : s.type==='calc' ? s.amount+'問' : '答練';
     const tl = s.type==='study' ? _dispTime : s.type==='calc' ? s.amount+'問' : s.type==='exam' ? '答練 '+_dispTime : '答練';
-    // 開始〜終了時刻（startedAt/endedAt がある場合のみ表示）
     const t0 = fmtHHmm(s.startedAt);
     const t1 = fmtHHmm(s.endedAt);
     const timeHtml = (t0 && t1)
@@ -12417,6 +12420,13 @@ function renderSessions(subjs){
       <span class="session-exp">+${s.exp} EXP</span>`;
     list.appendChild(item);
   });
+  if(reversed.length > count){
+    const btn = document.createElement('button');
+    btn.className = 'load-more-btn';
+    btn.textContent = `もっとみる（残り${reversed.length - count}件）`;
+    btn.onclick = () => renderSessions(subjs, count + STEP);
+    list.appendChild(btn);
+  }
 }
 
 function renderMobileQuestLog(){
