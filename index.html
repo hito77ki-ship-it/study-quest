@@ -6699,23 +6699,25 @@ async function syncToCloud(){
   });
 
   // ── メインプロフィール ──
-  const {error} = await sb.from('profiles').upsert({
+  const profilePayload = {
     id: currentUser.id,
-    display_name: char.name,
-    email: currentUser.email || null,
-    level: lp.level,
-    total_study_mins: smins,
-    streak: char.streak,
-    job_ids: selectedJobIds,
-    subject_keys: selectedSubjectKeys,
-    subject_stats: subjStats,
-    char_title: ti.title,
-    avatar_emoji: char.profileIconEmoji || ti.emoji,
+    display_name: char.name || null,
+    level: Math.floor(lp.level) || 1,
+    total_study_mins: Math.floor(smins) || 0,
+    streak: Math.floor(char.streak || 0),
+    job_ids: Array.isArray(selectedJobIds) ? selectedJobIds : [],
+    subject_keys: Array.isArray(selectedSubjectKeys) ? selectedSubjectKeys : [],
+    subject_stats: subjStats || {},
+    char_title: ti.title || null,
+    avatar_emoji: char.profileIconEmoji || ti.emoji || null,
     avatar_url: profileAvatarData || null,
     week_start: getWeekStart(),
-    week_study_mins: getThisWeekTotalMins(),
+    week_study_mins: Math.floor(getThisWeekTotalMins()) || 0,
     updated_at: new Date().toISOString()
-  }, {onConflict:'id'});
+  };
+  console.log('[SQ] syncToCloud payload:', JSON.stringify(profilePayload).slice(0, 300));
+  const {error, status: s1} = await sb.from('profiles').upsert(profilePayload, {onConflict:'id'});
+  if(error) console.error('[SQ] profiles upsert 1 失敗:', error.code, error.message, error.details, error.hint);
 
   // ── 全データをバックアップ用カラムに保存 ──
   if(!error){
@@ -6730,7 +6732,7 @@ async function syncToCloud(){
     const planJson         = localStorage.getItem('sq2_weekly_plan') || '[]';
     const profileInfoJson  = localStorage.getItem('sq2_profile_info') || '{}';
 
-    await sb.from('profiles').upsert({
+    const {error: err2} = await sb.from('profiles').upsert({
       id: currentUser.id,
       sessions_backup:      JSON.stringify(sessions),
       bosses_backup:        JSON.stringify(bosses),
@@ -6747,6 +6749,7 @@ async function syncToCloud(){
         ? { report_backup: JSON.stringify(weeklyGoalData) }
         : {}),
     }, {onConflict:'id'});
+    if(err2) console.error('[SQ] profiles upsert 2 失敗:', err2.code, err2.message, err2.details, err2.hint);
 
     console.log('[SQ] syncToCloud 完了:', {
       sessions: sessions.length,
