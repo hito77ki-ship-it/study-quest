@@ -15740,7 +15740,7 @@ function toggleReplyLike(postId, replyId){
   if(cnt) cnt.textContent = replies[idx].likes;
 }
 
-function deleteReply(postId, replyId){
+async function deleteReply(postId, replyId){
   if(!confirm('この返信を削除しますか？')) return;
   const allReplies = loadLocalReplies();
   if(allReplies[postId]){
