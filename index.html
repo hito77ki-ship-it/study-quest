@@ -16031,7 +16031,8 @@ async function openRaidInviteModal(raidId){
   const following = followData.following || [];
 
   // 現在のメンバーIDを取得
-  const { data: raid } = await sb.from('party_raids').select('members').eq('id', raidId).single().catch(()=>({ data:null }));
+  let raid;
+  try { const { data } = await sb.from('party_raids').select('members').eq('id', raidId).single(); raid = data; } catch(e){ raid = null; }
   if(!raid){ alert('レイドが見つかりません'); return; }
   const currentMemberIds = new Set((raid.members||[]).map(m => m.id));
 
