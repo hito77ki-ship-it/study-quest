@@ -824,6 +824,25 @@ body[data-theme="dark"] .eb-prog-labels{color:#9ae6b4;}
 body[data-theme="dark"] .timer-dmg-track{background:rgba(255,255,255,.04);}
 .timer-dmg-fill{height:100%;background:linear-gradient(to right,#8CC63F,#6AAF2B);box-shadow:0 0 8px rgba(140,198,63,.4);transition:width .5s;}
 .timer-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+/* ── ランダムRPGイベントポップアップ ── */
+.rpg-event-popup{
+  position:fixed;left:50%;bottom:28%;
+  transform:translateX(-50%);
+  background:linear-gradient(160deg,#000040,#000020);
+  border:2px solid var(--accent);border-radius:14px;
+  padding:18px 22px;min-width:270px;max-width:330px;
+  z-index:9100;text-align:center;
+  box-shadow:0 0 30px rgba(140,198,63,.25),0 8px 40px rgba(0,0,0,.6);
+  animation:rpgEvIn .35s cubic-bezier(.34,1.56,.64,1);
+  font-family:'Share Tech Mono',monospace;
+}
+@keyframes rpgEvIn{from{opacity:0;transform:translateX(-50%) scale(.6)}to{opacity:1;transform:translateX(-50%) scale(1)}}
+.rpg-event-popup.rpg-ev-out{animation:rpgEvOut .3s ease forwards;}
+@keyframes rpgEvOut{to{opacity:0;transform:translateX(-50%) translateY(16px)}}
+.rpg-ev-badge{font-size:9px;letter-spacing:.28em;color:var(--accent2);margin-bottom:8px;opacity:.8;}
+.rpg-ev-icon{font-size:40px;margin-bottom:8px;display:block;}
+.rpg-ev-title{font-size:15px;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:6px;}
+.rpg-ev-desc{font-size:12px;color:rgba(255,255,255,.7);line-height:1.7;}
 /* ── 修行再開ボタン ── */
 .resume-btn{
   width:100%;padding:18px 20px;
@@ -8200,11 +8219,13 @@ function startTimer(){
   if(breakBtn)breakBtn.style.display='';
   const sel=document.getElementById('timerSubject');
   if(sel)sel.disabled=true;
+  initRpgEvents(); // ランダムイベント初期化
   timerInterval=setInterval(()=>{
     timerSeconds++;
     updateTimerDisplay();
     updateDmgBar();
     checkPomodoro();
+    checkRandomEvent(); // ランダムRPGイベント
     if(timerSeconds%10===0){ saveBgTimerState(); updateBgBadge(); }  // 10秒ごとに保存
     if(timerSeconds%300===0){ showAutosaveToast(); }               // トーストは5分ごと
     if(timerGoalMins>0 && timerSeconds===timerGoalMins*60) notifyGoalReached();
@@ -8459,6 +8480,87 @@ function spawnBossKill(){
       setTimeout(()=>el.remove(),1500);
     }, i*80);
   }
+}
+
+/* ════════════════════════════════════════
+   ランダムRPGイベントシステム
+════════════════════════════════════════ */
+const RANDOM_EVENTS = [
+  // ─ ゴールドボーナス ─
+  { id:'g1', type:'bonus', icon:'💰', title:'ゴールドを発見！',   desc:'修行の道に金貨が落ちていた！\n＋30G を入手した',   effect:{ gold:30 },  color:'#C9A84C' },
+  { id:'g2', type:'bonus', icon:'🏆', title:'秘宝を発見！',      desc:'集中の証として宝箱が現れた！\n＋50G を入手した',   effect:{ gold:50 },  color:'#C9A84C' },
+  // ─ EXPボーナス ─
+  { id:'e1', type:'bonus', icon:'⚡', title:'会心の一撃！',       desc:'理解が一気に深まった！\n＋30 EXP ボーナス',       effect:{ exp:30 },   color:'#8CC63F' },
+  { id:'e2', type:'bonus', icon:'🌟', title:'覚醒の瞬間！',      desc:'ひらめきの光が走った！\n＋50 EXP ボーナス',       effect:{ exp:50 },   color:'#8CC63F' },
+  // ─ 激励系（演出のみ） ─
+  { id:'c1', type:'cheer', icon:'🔥', title:'熱気を感じる！',    desc:'遠くで仲間たちも戦っている。\n負けるな勇者よ！',   color:'#F59E0B' },
+  { id:'c2', type:'cheer', icon:'⚔️', title:'戦士の直感！',     desc:'今日は調子がいい。\nこのまま突き進め！',           color:'#3B82F6' },
+  { id:'c3', type:'cheer', icon:'🛡️', title:'守護の力！',       desc:'学びの神があなたを見守っている。\n恐れるな！',     color:'#8B5CF6' },
+  { id:'c4', type:'cheer', icon:'🧙', title:'賢者の啓示！',     desc:'「積み重ねた時間は\n必ず力になる」',               color:'#6366F1' },
+  // ─ ハプニング系（煽り・モチベ） ─
+  { id:'h1', type:'event', icon:'👹', title:'魔物が出現！',      desc:'集中を乱す悪魔だ！\n打ち払え勇者よ！',           color:'#EF4444' },
+  { id:'h2', type:'event', icon:'😴', title:'眠気の波！',        desc:'深呼吸して立ち向かえ！\n今が正念場だ！',           color:'#6B7280' },
+  { id:'h3', type:'event', icon:'🌊', title:'試練の嵐！',        desc:'強敵ほど倒した時の喜びは大きい。\n諦めるな！',     color:'#0EA5E9' },
+];
+
+let _rpgEventCount  = 0;
+let _rpgNextEventSec = 0; // この秒数を超えたら次のイベント発火
+
+function initRpgEvents(){
+  _rpgEventCount   = 0;
+  // 最初のイベントは5〜10分後
+  _rpgNextEventSec = 300 + Math.floor(Math.random() * 300);
+}
+
+function checkRandomEvent(){
+  if(!timerRunning) return;
+  if(_rpgEventCount >= 3) return;
+  if(timerSeconds < _rpgNextEventSec) return;
+
+  // イベント発火
+  const ev = RANDOM_EVENTS[Math.floor(Math.random() * RANDOM_EVENTS.length)];
+  triggerRpgEvent(ev);
+
+  _rpgEventCount++;
+  // 次のイベントは10〜15分後
+  _rpgNextEventSec = timerSeconds + 600 + Math.floor(Math.random() * 300);
+}
+
+function triggerRpgEvent(ev){
+  // ─ 効果を適用 ─
+  if(ev.effect?.gold){
+    char.gold = (char.gold || 0) + ev.effect.gold;
+    saveAll();
+    const goldEl = document.getElementById('goldBadge');
+    if(goldEl) goldEl.textContent = '💰 ' + char.gold + 'G';
+    spawnDmgNumber(`+${ev.effect.gold}G`, '#C9A84C', true);
+  }
+  if(ev.effect?.exp){
+    char.totalEXP = (char.totalEXP || 0) + ev.effect.exp;
+    saveAll();
+    spawnDmgNumber(`+${ev.effect.exp} EXP`, '#8CC63F', true);
+  }
+
+  // ─ ポップアップ表示 ─
+  const existing = document.querySelector('.rpg-event-popup');
+  if(existing) existing.remove();
+
+  const typeLabel = ev.type === 'bonus' ? '⚡ BONUS EVENT' : ev.type === 'cheer' ? '🎖 SPECIAL EVENT' : '⚠ RANDOM EVENT';
+  const popup = document.createElement('div');
+  popup.className = 'rpg-event-popup';
+  popup.innerHTML = `
+    <div class="rpg-ev-badge">${typeLabel}</div>
+    <span class="rpg-ev-icon">${ev.icon}</span>
+    <div class="rpg-ev-title">${ev.title}</div>
+    <div class="rpg-ev-desc">${ev.desc.replace(/\n/g,'<br>')}</div>
+  `;
+  document.body.appendChild(popup);
+
+  // 4秒後にフェードアウト
+  setTimeout(() => {
+    popup.classList.add('rpg-ev-out');
+    setTimeout(() => popup.remove(), 300);
+  }, 4000);
 }
 
 async function finishTimer(){
