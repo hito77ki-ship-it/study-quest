@@ -15874,10 +15874,17 @@ async function createPartyRaid(){
 /* ── レイドカード描画 ── */
 async function renderPartyRaidCard(){
   const wrap = document.getElementById('partyRaidCardWrap');
+  const startBtn = document.getElementById('partyRaidStartBtnWrap');
   if(!wrap) return;
 
+  // ログインしていない or アクティブなレイドIDがない → 開始ボタンを表示
   const savedId = _activeRaidId || localStorage.getItem('sq2_active_raid_id');
-  if(!savedId || !currentUser){ wrap.style.display = 'none'; return; }
+  if(!currentUser){ wrap.style.display = 'none'; if(startBtn) startBtn.style.display = 'none'; return; }
+  if(!savedId){
+    wrap.style.display = 'none';
+    if(startBtn) startBtn.style.display = '';
+    return;
+  }
 
   let raid;
   try {
@@ -15885,10 +15892,9 @@ async function renderPartyRaidCard(){
     raid = data;
   } catch(e){ wrap.style.display = 'none'; return; }
 
-  const startBtn = document.getElementById('partyRaidStartBtnWrap');
   if(!raid || raid.status !== 'active' || new Date(raid.expires_at) < new Date()){
     wrap.style.display = 'none';
-    if(startBtn && currentUser) startBtn.style.display = '';
+    if(startBtn) startBtn.style.display = '';
     localStorage.removeItem('sq2_active_raid_id');
     _activeRaidId = null;
     return;
