@@ -11558,10 +11558,14 @@ async function assignDuelRival(duel){
       const prev = hist[0];
       let rematchTarget = null;
       if(prev && prev.rivalId && prev.date===yesterday){
-        const goalRatio = Math.abs((prev.declaredGoalMins||0) - goal) / Math.max(goal, 1);
-        const prev2 = hist[1];
-        const tooFrequent = prev2 && prev2.rivalId===prev.rivalId; // 2連続なら抑制
-        if(goalRatio <= 0.5 && !tooFrequent && Math.random() < 0.35){
+        // 宣言目標・ライバル記録の両方と今日の目標を比較し、近い方で判定
+        const ratioVsDecl   = Math.abs((prev.declaredGoalMins||0) - goal) / Math.max(goal, 1);
+        const ratioVsRecord = Math.abs((prev.rivalRecord||0)      - goal) / Math.max(goal, 1);
+        const withinRange   = Math.min(ratioVsDecl, ratioVsRecord) <= 0.5;
+        // 前日・前々日が同一ライバルなら今日は3連続になるため抑制
+        const prevPrev = hist[1];
+        const alreadyTwoInRow = !!(prevPrev && prevPrev.rivalId && prevPrev.rivalId === prev.rivalId);
+        if(withinRange && !alreadyTwoInRow && Math.random() < 0.35){
           rematchTarget = data.find(p=>p.id===prev.rivalId)||null;
         }
       }
