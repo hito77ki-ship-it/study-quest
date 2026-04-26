@@ -11716,6 +11716,11 @@ function renderDuelStats(){
 }
 
 function renderDuelCard(){
+  _renderDuelCardInner();
+  injectDuelInfoBtn(document.getElementById('duelCard'));
+}
+
+function _renderDuelCardInner(){
   const card = document.getElementById('duelCard');
   if(!card) return;
   if(!currentUser||isGuest){ card.style.display='none'; return; }
@@ -11936,6 +11941,29 @@ function renderDuelCard(){
       <div class="duel-status ${statusCls}">${statusMsg}</div>
     </div>
   </div>`;
+}
+
+function injectDuelInfoBtn(card){
+  if(!card) return;
+  const title = card.querySelector('.duel-title');
+  if(!title || title.querySelector('.duel-info-btn')) return;
+  const btn = document.createElement('span');
+  btn.className = 'duel-info-btn';
+  btn.textContent = '？';
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    const panel = card.querySelector('.duel-info-panel');
+    if(panel) panel.style.display = panel.style.display === 'none' ? '' : 'none';
+  };
+  title.appendChild(btn);
+  const hdr = card.querySelector('.duel-hdr');
+  if(hdr){
+    const panel = document.createElement('div');
+    panel.className = 'duel-info-panel';
+    panel.style.display = 'none';
+    panel.innerHTML = '毎朝<strong>11:59</strong>までに「今日の宣言」を設定すると参加できます。正午にランダムなライバルが選ばれ、<strong>23:59</strong>に勝敗が確定。宣言達成で勝利 <strong>+100G</strong>、未達でも挑んだ証として <strong>+20G</strong> を獲得。';
+    hdr.after(panel);
+  }
 }
 
 /* タイムラインへの宣言投稿 */
@@ -20519,6 +20547,9 @@ if ('serviceWorker' in navigator) {
 .duel-result-hero-note{font-size:10px;color:var(--muted);margin-top:2px;}
 /* 再戦バッジ */
 .duel-rematch-badge{margin-left:auto;font-size:9px;color:#ffaa44;border:1px solid rgba(255,170,68,.4);border-radius:6px;padding:2px 7px;font-family:'Share Tech Mono',monospace;white-space:nowrap;align-self:center;flex-shrink:0;}
+.duel-info-btn{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;border:1px solid rgba(255,154,170,.35);color:rgba(255,154,170,.6);font-size:8px;font-family:'Share Tech Mono',monospace;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:border-color .2s,color .2s;}
+.duel-info-btn:hover{border-color:#ff9aaa;color:#ff9aaa;}
+.duel-info-panel{padding:8px 14px;background:rgba(255,154,170,.05);border-bottom:1px solid rgba(255,154,170,.1);font-size:11px;color:var(--muted);line-height:1.7;}
 
 /* ─── 本日の決闘 モバイル調整 ─── */
 @media (max-width:600px){
