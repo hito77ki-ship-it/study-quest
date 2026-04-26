@@ -128,6 +128,8 @@ nav.scrolled{
   box-shadow:0 2px 12px rgba(140,198,63,.3);
 }
 .nav-cta:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 4px 18px rgba(140,198,63,.4);}
+.nav-updates{font-size:12px;color:var(--ink3);letter-spacing:.04em;padding:6px 12px;border-radius:100px;border:1px solid var(--border);transition:color .2s,border-color .2s;}
+.nav-updates:hover{color:var(--green);border-color:rgba(140,198,63,.4);}
 
 /* ─── HERO ─── */
 .hero{
@@ -541,6 +543,22 @@ nav.scrolled{
 }
 .faq-item.open .faq-a{display:block;}
 
+/* ─── UPDATES ─── */
+.updates{padding:128px 24px;}
+.updates-inner{max-width:720px;margin:0 auto;}
+.updates-sub{font-size:14px;color:var(--ink3);margin:8px 0 48px;line-height:1.7;}
+.updates-list{display:flex;flex-direction:column;gap:0;}
+.update-item{padding:24px 0;border-bottom:1px solid var(--border);}
+.update-item:first-child{border-top:1px solid var(--border);}
+.update-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.update-date{font-family:'Cinzel',serif;font-size:10px;color:var(--ink3);letter-spacing:.1em;}
+.update-badge{font-size:9px;font-weight:700;letter-spacing:.12em;padding:2px 8px;border-radius:100px;text-transform:uppercase;}
+.update-badge.feature{background:rgba(140,198,63,.1);color:#5DB52A;}
+.update-badge.improve{background:rgba(99,102,241,.1);color:#818CF8;}
+.update-badge.fix{background:rgba(245,158,11,.1);color:#F59E0B;}
+.update-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4;}
+.update-desc{font-size:13px;color:var(--ink3);line-height:1.75;}
+
 /* ─── CTA ─── */
 .cta{
   padding:160px 24px;
@@ -636,6 +654,7 @@ footer{background:#091505;padding:48px 24px 40px;}
         <span class="icon-light">🌙</span>
         <span class="icon-dark">☀️</span>
       </button>
+      <a href="#updates" class="nav-updates">更新情報</a>
       <a href="index.html" class="nav-cta">無料で始める</a>
     </div>
   </div>
@@ -1060,6 +1079,42 @@ footer{background:#091505;padding:48px 24px 40px;}
           アカウントを削除したいのですが？<span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">お問い合わせフォームよりご連絡ください。データを含めて削除対応いたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPDATES -->
+<section class="updates" id="updates">
+  <div class="updates-inner">
+    <div class="sec-label">UPDATES</div>
+    <h2 class="sec-title" style="margin-bottom:0;">更新情報</h2>
+    <p class="updates-sub">Study Quest の最近のアップデート</p>
+    <div class="updates-list">
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.04.26</span><span class="update-badge feature">新機能</span></div>
+        <div class="update-title">⚔ 本日の決闘カードUIを全面リデザイン</div>
+        <div class="update-desc">未参加・エントリー済み・進行中・決着済みの4状態で見た目と文言が変わるようになりました。</div>
+      </div>
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.04.25</span><span class="update-badge feature">新機能</span></div>
+        <div class="update-title">🔁 本日の決闘に「再戦」が発生するように</div>
+        <div class="update-desc">昨日の決闘相手が翌日も現れることがあります。毎日の決闘に因縁と物語が生まれます。</div>
+      </div>
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.04.25</span><span class="update-badge feature">新機能</span></div>
+        <div class="update-title">🎲 タイマー中にRPGイベントが発生するように</div>
+        <div class="update-desc">学習中に「幸運の宝箱」「忘却の霧」「ライバルの影」の3種類のランダムイベントが起きます。</div>
+      </div>
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.04.25</span><span class="update-badge feature">新機能</span></div>
+        <div class="update-title">🏰 パーティーレイドシステムを追加</div>
+        <div class="update-desc">最大4人でパーティーを組んでレイドに挑めるようになりました。</div>
+      </div>
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.04.24</span><span class="update-badge improve">改善</span></div>
+        <div class="update-title">💬 タイムラインに返信スレッド機能を追加</div>
+        <div class="update-desc">投稿への返信がYouTubeスタイルでインデント表示されます。</div>
       </div>
     </div>
   </div>
