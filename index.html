@@ -7640,6 +7640,8 @@ function initDashboard(){
   setTimeout(matchWeeklyRival, 4000);
   // 本日の決闘：起動時にチェック（前日結果処理も含む）
   setTimeout(renderDuelCard, 1000);
+  // カウントダウンをリアルタイム更新（60秒ごと）
+  setInterval(renderDuelCard, 60000);
 }
 function renderAll(){
   const smins=studyMins(sessions);
