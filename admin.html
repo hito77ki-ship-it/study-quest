@@ -427,16 +427,18 @@ body {
       <div class="login-logo-title">パスワード再設定</div>
       <div class="login-logo-sub">新しいパスワードを入力してください</div>
     </div>
-    <div class="input-group">
-      <label class="input-label">新しいパスワード</label>
-      <input class="input-field" id="newPw" type="password" placeholder="••••••••" minlength="6">
-    </div>
-    <div class="input-group">
-      <label class="input-label">確認</label>
-      <input class="input-field" id="newPwConfirm" type="password" placeholder="••••••••">
-    </div>
-    <div id="resetMsg" style="font-size:12px;text-align:center;padding:6px 0;min-height:18px;color:#ef4444;"></div>
-    <button class="login-btn" onclick="submitNewPassword()">🔐 パスワードを更新</button>
+    <form onsubmit="submitNewPassword();return false;" class="login-form">
+      <div class="input-group">
+        <label class="input-label">新しいパスワード</label>
+        <input class="input-field" id="newPw" type="password" placeholder="••••••••" minlength="6">
+      </div>
+      <div class="input-group">
+        <label class="input-label">確認</label>
+        <input class="input-field" id="newPwConfirm" type="password" placeholder="••••••••">
+      </div>
+      <div id="resetMsg" style="font-size:12px;text-align:center;padding:6px 0;min-height:18px;color:#ef4444;"></div>
+      <button class="login-btn" type="submit">🔐 パスワードを更新</button>
+    </form>
   </div>
 </div>
 

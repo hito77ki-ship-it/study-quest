@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /study-quest/admin.html
+
+Sitemap: https://hito77ki-ship-it.github.io/study-quest/sitemap.xml
