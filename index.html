@@ -11742,12 +11742,18 @@ function renderDuelCard(){
   }
 
   // ── 決着カード生成ヘルパー ──
-  function resultCard(r, isYesterday){
+  function resultCard(r, isYesterday, noRival){
     const icon   = {win:'🏆',lose:'😔',void:'💀'}[r];
-    const msg    = {win:'宣言を果たした！',lose:'惜敗した',void:'懸賞金は失効した'}[r];
+    const msg    = noRival
+      ? {win:'誓いを果たした！',lose:'宣言を達成できなかった',void:'懸賞金は失効した'}[r]
+      : {win:'宣言を果たした！',lose:'惜敗した',void:'懸賞金は失効した'}[r];
     const reward = {win:'+ 100G',lose:'+ 20G',void:''}[r];
-    const note   = {win:'',lose:'戦った証として',void:'次は最後まで戦え'}[r];
-    const sub    = {win:'勝利',lose:'敗北',void:'失効'}[r];
+    const note   = noRival
+      ? {win:'',lose:'次は最後まで戦え',void:'次は最後まで戦え'}[r]
+      : {win:'',lose:'戦った証として',void:'次は最後まで戦え'}[r];
+    const sub    = noRival
+      ? {win:'一人旅 — 勝利',lose:'一人旅 — 敗北',void:'失効'}[r]
+      : {win:'勝利',lose:'敗北',void:'失効'}[r];
     const hdrCls = {win:'duel-hdr-win',lose:'duel-hdr-lose',void:'duel-hdr-void'}[r];
     const cardCls= {win:'duel-state-win',lose:'duel-state-lose',void:'duel-state-void'}[r];
     const title  = isYesterday ? '昨日の決闘 — 決着' : '本日の決闘 — 決着';
@@ -11771,7 +11777,7 @@ function renderDuelCard(){
 
   // 前日の結果表示
   if(duel && duel.date!==today && duel.result){
-    card.innerHTML = resultCard(duel.result, true);
+    card.innerHTML = resultCard(duel.result, true, !duel.rivalId);
     return;
   }
 
@@ -11802,7 +11808,7 @@ function renderDuelCard(){
 
   // 結果確定済み（今日分）
   if(duel.result){
-    card.innerHTML = resultCard(duel.result, false);
+    card.innerHTML = resultCard(duel.result, false, !duel.rivalId);
     return;
   }
 
@@ -11870,6 +11876,32 @@ function renderDuelCard(){
   const doneMins = sessions.filter(s=>(s.type==='study'||s.type==='exam')&&s.date===today).reduce((a,s)=>a+s.amount,0);
   const pct = Math.min(100, Math.round(doneMins/duel.declaredGoalMins*100));
   const remaining = Math.max(0, duel.declaredGoalMins-doneMins);
+
+  // 夜11:30以降なら結果を自動処理
+  if(now.getHours()>=23 && now.getMinutes()>=30 && !duel.rewardGiven){ processDuelResult(duel); renderDuelCard(); return; }
+
+  // ライバルなし：一人旅モード
+  if(!duel.rivalId){
+    const myBarW = Math.min(100, Math.round(doneMins/Math.max(duel.declaredGoalMins,1)*100));
+    let soloMsg, soloCls;
+    if(pct>=100){ soloMsg='✅ 宣言達成！誓いを果たした！'; soloCls='lead'; }
+    else if(pct>=80){ soloMsg=`残り${fmt(remaining)}！あと少しだ！`; soloCls='close'; }
+    else { soloMsg=`残り${fmt(remaining)}の宣言を果たせ！`; soloCls='behind'; }
+    card.innerHTML=`<div class="duel-card duel-card-active">
+      <div class="duel-hdr"><span>⚔️</span><div><div class="duel-title">本日の決闘 — 進行中</div><div class="duel-sub">今日は一人旅だ</div></div></div>
+      <div class="duel-body">
+        <div class="duel-prog-hero">
+          <div class="duel-prog-hero-pct">${pct}%</div>
+          <div class="duel-prog-hero-bar"><div class="duel-prog-hero-fill" style="width:${myBarW}%"></div></div>
+          <div class="duel-prog-hero-sub">${fmt(doneMins)} 達成 / 宣言 ${fmt(duel.declaredGoalMins)}</div>
+        </div>
+        <div class="duel-status ${soloCls}">${soloMsg}</div>
+        <div class="duel-reward-hint" style="font-size:10px;color:var(--muted);text-align:center;padding:4px 0;">今日の宣言を果たせば +100G</div>
+      </div>
+    </div>`;
+    return;
+  }
+
   const rivalJob = (duel.rivalJobIds||[]).map(id=>{const j=JOBS?.find(x=>x.id===id);return j?j.icon:'';}).join('');
   const maxBar = Math.max(duel.declaredGoalMins, duel.rivalRecord, 1);
   const myBarW = Math.min(100, Math.round(doneMins/maxBar*100));
@@ -11878,9 +11910,6 @@ function renderDuelCard(){
   if(pct>=100){ statusMsg='✅ 宣言達成！勝利確定！'; statusCls='lead'; }
   else if(pct>=80){ statusMsg=`残り${fmt(remaining)}！勝利まであと一息！`; statusCls='close'; }
   else { statusMsg=`残り${fmt(remaining)}の宣言を果たせ！`; statusCls='behind'; }
-
-  // 夜11:30以降なら結果を自動処理
-  if(now.getHours()>=23 && now.getMinutes()>=30 && !duel.rewardGiven){ processDuelResult(duel); renderDuelCard(); return; }
 
   const activeSub = duel.isRematch ? '昨日のライバルが再び現れた' : '23:59 決着';
 
