@@ -20413,7 +20413,27 @@ if ('serviceWorker' in navigator) {
 .duel-result-hero-reward.lose{color:#C9A84C;}
 .duel-result-hero-note{font-size:10px;color:var(--muted);margin-top:2px;}
 /* 再戦バッジ */
-.duel-rematch-badge{margin-left:auto;font-size:9px;color:#ffaa44;border:1px solid rgba(255,170,68,.4);border-radius:6px;padding:2px 7px;font-family:'Share Tech Mono',monospace;white-space:nowrap;align-self:center;}
+.duel-rematch-badge{margin-left:auto;font-size:9px;color:#ffaa44;border:1px solid rgba(255,170,68,.4);border-radius:6px;padding:2px 7px;font-family:'Share Tech Mono',monospace;white-space:nowrap;align-self:center;flex-shrink:0;}
+
+/* ─── 本日の決闘 モバイル調整 ─── */
+@media (max-width:600px){
+  .duel-countdown-num{font-size:30px;}
+  .duel-prog-hero-pct{font-size:36px;}
+  .duel-reward-cards{flex-wrap:wrap;}
+  .duel-reward-card{min-width:calc(50% - 4px);}
+  .duel-rival-compact{flex-wrap:wrap;gap:3px;}
+  .duel-rival-compact-rec{width:100%;padding-top:2px;border-top:1px solid rgba(255,68,102,.1);}
+  .duel-hdr{gap:8px;padding:10px 12px;}
+  .duel-title{font-size:10px;}
+}
+@media (max-width:375px){
+  .duel-countdown-num{font-size:26px;}
+  .duel-prog-hero-pct{font-size:30px;}
+  .duel-body{padding:10px 11px;}
+  .duel-rematch-badge{font-size:8px;padding:2px 5px;}
+  .duel-result-hero-icon{font-size:38px;}
+  .duel-result-hero-reward{font-size:20px;}
+}
 
 /* ═══ 週間ライバル討伐クエスト ═══ */
 .rival-quest-card{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
