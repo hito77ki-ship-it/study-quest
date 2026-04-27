@@ -1,5 +1,32 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(curl:*)",
+      "Bash(open:*)",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(npm install *)",
+      "Bash(node *)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(sips:*)",
+      "Bash(brew install:*)",
+      "Bash(cp:*)",
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "WebSearch",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:hito77ki-ship-it.github.io)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:youtu.be)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Skill(schedule)"
+    ],
     "deny": [
       "Bash(git push --force*)",
       "Bash(git push -f*)",
