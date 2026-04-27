@@ -34,5 +34,18 @@
       "Bash(rm -rf*)",
       "Bash(git branch -D*)"
     ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/hitoki/shikaku-quest && git status --short && git log --oneline -3"
+          }
+        ]
+      }
+    ]
   }
 }
