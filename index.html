@@ -5088,6 +5088,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
             <div id="rptPatternDesc" style="font-size:12px;color:var(--muted);line-height:1.7;">記録が増えると診断できます</div>
           </div>
         </div>
+
+        <!-- おすすめアクション -->
+        <div class="rpt-section">
+          <div class="rpt-section-title">💡 今週のおすすめアクション</div>
+          <div id="rptActionSuggestions"></div>
+        </div>
       </div>
 
       <!-- ── ヒートマップサブタブ ── -->
@@ -10803,6 +10809,7 @@ function renderAnalysisTab(){
   renderStreakCard();
   renderScatterChart();
   renderPatternDiagnosis();
+  renderActionSuggestions();
 }
 
 let _scatterChart = null;
@@ -10885,6 +10892,85 @@ function renderPatternDiagnosis(){
   document.getElementById('rptPatternName').textContent = name;
   document.getElementById('rptPatternDesc').textContent = desc;
 }
+
+function renderActionSuggestions(){
+  const el = document.getElementById('rptActionSuggestions');
+  if(!el) return;
+  const suggestions = [];
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  // 直近7日・先週7日の日付リスト
+  const week7 = [], prevWeek = [];
+  for(let i=6;i>=0;i--){ const d=new Date(today); d.setDate(d.getDate()-i); week7.push(toLocalDateStr(d)); }
+  for(let i=13;i>=7;i--){ const d=new Date(today); d.setDate(d.getDate()-i); prevWeek.push(toLocalDateStr(d)); }
+
+  const week7Sessions = sessions.filter(s=>isStudyType(s)&&week7.includes(s.date));
+  const prevWeekMins  = sessions.filter(s=>isStudyType(s)&&prevWeek.includes(s.date)).reduce((a,s)=>a+sAmount(s),0);
+  const thisWeekMins  = week7Sessions.reduce((a,s)=>a+sAmount(s),0);
+
+  // ① 学習が止まっている
+  const studySorted = sessions.filter(s=>isStudyType(s)&&s.date).sort((a,b)=>b.date.localeCompare(a.date));
+  if(studySorted.length){
+    const lastDate = new Date(studySorted[0].date); lastDate.setHours(0,0,0,0);
+    const gap = Math.round((today-lastDate)/86400000);
+    if(gap>=3){
+      suggestions.push({icon:'⚡',color:'#ff6e6e',title:`${gap}日間、学習が止まっています`,action:'今日10分だけでも再開しましょう。小さな一歩が連続記録の復活につながります。'});
+    }
+  }
+
+  // ② 弱点科目（直近7日）
+  const subjs = allSelectedSubjects();
+  if(subjs.length>=2){
+    const w7dist = subjs.map(s=>({
+      name:s.name, color:s.color,
+      mins:week7Sessions.filter(x=>x.subject===s.key).reduce((a,x)=>a+sAmount(x),0)
+    }));
+    const max7 = Math.max(...w7dist.map(s=>s.mins));
+    if(max7>0){
+      const weak = w7dist.filter(s=>s.mins<max7*0.25).sort((a,b)=>a.mins-b.mins);
+      if(weak.length){
+        suggestions.push({icon:'⚔',color:'#8cc63f',title:`弱点科目：${weak[0].name}`,action:`直近7日の学習時間が他の科目より大幅に少ないです。今週は${weak[0].name}を優先して取り組むと全体のバランスが整います。`});
+      }
+    }
+  }
+
+  // ③ 今週ペースが先週比-30%以上
+  if(prevWeekMins>60 && thisWeekMins < prevWeekMins*0.7){
+    const diff = ((prevWeekMins-thisWeekMins)/60).toFixed(1);
+    suggestions.push({icon:'📉',color:'#60a0ff',title:`今週は先週より${diff}時間少ないペースです`,action:'先週のペースに戻すには、今日から少し多めに取り組むのがおすすめです。'});
+  }
+
+  // ④ ボスの残り日数と必要ペース
+  if(bosses.length){
+    const active = bosses.find(b=>{ const ed=new Date(b.date); ed.setHours(0,0,0,0); return ed>=today; });
+    if(active){
+      const ed=new Date(active.date); ed.setHours(0,0,0,0);
+      const daysLeft = Math.round((ed-today)/86400000);
+      const doneH = studyMins(sessions)/60;
+      const neededH = (active.targetHours||100)-doneH;
+      if(neededH>0 && daysLeft>0){
+        const daily = (neededH/daysLeft).toFixed(1);
+        if(parseFloat(daily)>2){
+          suggestions.push({icon:'💀',color:'#ff9e4d',title:`${active.name}まで残り${daysLeft}日`,action:`目標まで残り${Math.round(neededH)}h。ペースを保つには1日${daily}h必要です。`});
+        }
+      }
+    }
+  }
+
+  if(!suggestions.length){
+    el.innerHTML='<div style="text-align:center;padding:16px;font-size:12px;color:var(--muted);">今週は順調です！このペースを維持しましょう ⚔</div>';
+    return;
+  }
+  el.innerHTML = suggestions.map(s=>`
+    <div style="display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid var(--border);border-left:3px solid ${s.color};border-radius:10px;padding:12px 14px;margin-bottom:8px;">
+      <div style="font-size:18px;flex-shrink:0;">${s.icon}</div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:${s.color};margin-bottom:3px;">${s.title}</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.6;">${s.action}</div>
+      </div>
+    </div>`).join('');
+}
+
 function renderSubjectBars(){
   const el=document.getElementById('rptSubjectBars');
   if(!el) return;
