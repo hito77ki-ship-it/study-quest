@@ -104,6 +104,12 @@ function injectStyles(){
 .sq-mid-cta a:hover{opacity:.85;text-decoration:none;}
 /* 広告プレースホルダー（本文内） */
 .sq-ad-slot{background:#F7FAFC;border:1px dashed #CBD5E0;border-radius:8px;min-height:90px;display:flex;align-items:center;justify-content:center;color:#A0AEC0;font-size:11px;margin:24px 0;}
+/* 著者プロフィール */
+.sq-author{display:flex;align-items:center;gap:14px;background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px 18px;margin:24px 0 32px;}
+.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#4A9A1A);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.sq-author-name{font-size:13px;font-weight:700;color:#1A202C;margin-bottom:2px;}
+.sq-author-title{font-size:11px;color:#8CC63F;font-weight:700;margin-bottom:4px;}
+.sq-author-bio{font-size:12px;color:#718096;line-height:1.6;}
 /* シェアボタン */
 .sq-share{max-width:800px;margin:0 auto;padding:32px 24px 0;}
 .sq-share-title{font-size:12px;font-weight:700;color:#6B7280;letter-spacing:.08em;margin-bottom:12px;}
@@ -232,6 +238,25 @@ function insertMidCTA(){
   target.insertAdjacentElement('beforebegin', cta);
 }
 
+/* ── 著者プロフィール ── */
+function buildAuthorBox(){
+  const container = document.querySelector('.container');
+  if(!container) return;
+  const meta = container.querySelector('.meta');
+  if(!meta) return;
+
+  const box = document.createElement('div');
+  box.className = 'sq-author';
+  box.innerHTML = `
+    <div class="sq-author-avatar">⚔</div>
+    <div>
+      <div class="sq-author-name">大谷 一輝</div>
+      <div class="sq-author-title">現役CPA受験生 ／ Study Quest 開発者</div>
+      <div class="sq-author-bio">大阪経済大学在学中に公認会計士試験の勉強を開始。「勉強が続かない」課題を解決するため、資格学習RPGアプリ Study Quest を個人開発。自身の受験経験をもとに、各資格の勉強法・スケジュールを発信中。</div>
+    </div>`;
+  meta.insertAdjacentElement('afterend', box);
+}
+
 /* ── SNSシェアボタン ── */
 function buildShareButtons(){
   const title = encodeURIComponent(document.title);
@@ -322,6 +347,7 @@ document.addEventListener('DOMContentLoaded',function(){
   buildSidebarCTA(sidebar);
   buildSidebarAd(sidebar);
   insertContentAds();
+  buildAuthorBox();
   insertMidCTA();
   buildShareButtons();
   buildWidgets();
