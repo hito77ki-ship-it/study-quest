@@ -31,6 +31,9 @@ const ARTICLES = {
   'kaigo-fukushi.html':  {label:'介護福祉士',        title:'介護福祉士の独学合格ガイド'},
   'keizoku.html':        {label:'勉強継続',          title:'資格勉強が続かない原因と解決策7つ'},
   'shikaku-app.html':    {label:'アプリ比較',        title:'資格勉強アプリ比較ランキング2026'},
+  'boki-vs-fp.html':     {label:'資格比較',          title:'簿記2級 vs FP2級 どっちを先に取るべき？'},
+  'takken-vs-gyosei.html':{label:'資格比較',         title:'宅建 vs 行政書士 どっちを先に取るべき？'},
+  'itp-vs-fe.html':      {label:'資格比較',          title:'ITパスポート vs 基本情報 どっちを先に取るべき？'},
 };
 
 const CATS = {
@@ -43,7 +46,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shikaku-app.html']},
 };
 
-const LATEST = ['mansion.html','boki1.html','kaigo-fukushi.html','chori.html','mos.html','shihoshoshi.html','iryo-jimu.html','shakai-fukushi.html'];
+const LATEST = ['boki-vs-fp.html','takken-vs-gyosei.html','itp-vs-fe.html','mansion.html','boki1.html','kaigo-fukushi.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 
@@ -101,6 +104,14 @@ function injectStyles(){
 .sq-mid-cta a:hover{opacity:.85;text-decoration:none;}
 /* 広告プレースホルダー（本文内） */
 .sq-ad-slot{background:#F7FAFC;border:1px dashed #CBD5E0;border-radius:8px;min-height:90px;display:flex;align-items:center;justify-content:center;color:#A0AEC0;font-size:11px;margin:24px 0;}
+/* シェアボタン */
+.sq-share{max-width:800px;margin:0 auto;padding:32px 24px 0;}
+.sq-share-title{font-size:12px;font-weight:700;color:#6B7280;letter-spacing:.08em;margin-bottom:12px;}
+.sq-share-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.sq-share-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .2s;}
+.sq-share-btn:hover{opacity:.82;text-decoration:none;}
+.sq-share-btn-x{background:#000;color:#fff;}
+.sq-share-btn-line{background:#06C755;color:#fff;}
 /* 新着・同カテゴリ */
 .sq-widget{padding:40px 24px;background:#fff;}
 .sq-widget-inner{max-width:800px;margin:0 auto;}
@@ -221,6 +232,36 @@ function insertMidCTA(){
   target.insertAdjacentElement('beforebegin', cta);
 }
 
+/* ── SNSシェアボタン ── */
+function buildShareButtons(){
+  const title = encodeURIComponent(document.title);
+  const url   = encodeURIComponent(location.href);
+  const xUrl    = `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=wakaba_sq`;
+  const lineUrl = `https://social-plugins.line.me/lineit/share?url=${url}`;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'sq-share';
+  wrap.innerHTML = `
+    <div class="sq-share-title">この記事をシェアする</div>
+    <div class="sq-share-btns">
+      <a href="${xUrl}" target="_blank" rel="noopener" class="sq-share-btn sq-share-btn-x">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Xでシェア
+      </a>
+      <a href="${lineUrl}" target="_blank" rel="noopener" class="sq-share-btn sq-share-btn-line">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEでシェア
+      </a>
+    </div>`;
+
+  const related = document.querySelector('section[style*="F7FAFC"]');
+  if(related) related.insertAdjacentElement('beforebegin', wrap);
+  else {
+    const footer = document.querySelector('footer');
+    if(footer) footer.insertAdjacentElement('beforebegin', wrap);
+  }
+}
+
 /* ── 新着・同カテゴリウィジェット ── */
 function buildWidgets(){
   let catFiles=[], catName='';
@@ -282,6 +323,7 @@ document.addEventListener('DOMContentLoaded',function(){
   buildSidebarAd(sidebar);
   insertContentAds();
   insertMidCTA();
+  buildShareButtons();
   buildWidgets();
 });
 })();
