@@ -49,6 +49,7 @@ const ARTICLES = {
   'cpa-akirameta-boki1.html': {label:'会計士→簿記1級', title:'公認会計士を諦めたら簿記1級は狙える？勉強時間はどれくらい活きるのか'},
   'cpa-akirameta-shinro.html': {label:'会計士の進路', title:'公認会計士を諦めた後の進路は？後悔しにくい選び方を正直に整理'},
   'shikaku-zasetsu-riyu.html': {label:'挫折・再開', title:'資格勉強を途中でやめる人のよくある理由｜挫折しやすいタイミングと立て直し方'},
+  'hatarakinagara-shikaku.html': {label:'社会人向け', title:'働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選'},
   'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026'},
   'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026'},
   'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026'},
@@ -77,7 +78,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-const LATEST = ['shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html','shikaku-jinsei-kawaru.html','tenshoku-shikaku.html','cospa-shikaku.html','shakaijin-benkyou-jikan.html'];
+const LATEST = ['hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html','shikaku-jinsei-kawaru.html','tenshoku-shikaku.html','cospa-shikaku.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 
