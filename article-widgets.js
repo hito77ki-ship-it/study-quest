@@ -101,8 +101,25 @@ function injectStyles(){
     padding-bottom:40px;
     z-index:10;
   }
+  .sq-sidebar-left{
+    position:fixed;
+    top:72px;
+    left:max(12px, calc(50% - 696px));
+    width:260px;
+    max-height:calc(100vh - 88px);
+    overflow-y:auto;
+    scrollbar-width:thin;
+    scrollbar-color:#E2E8F0 transparent;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    padding-bottom:40px;
+    z-index:10;
+  }
   .sq-sidebar::-webkit-scrollbar{width:3px;}
   .sq-sidebar::-webkit-scrollbar-thumb{background:#E2E8F0;}
+  .sq-sidebar-left::-webkit-scrollbar{width:3px;}
+  .sq-sidebar-left::-webkit-scrollbar-thumb{background:#E2E8F0;}
   .sq-sidebar-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px;}
   .sq-sidebar-box-title{font-size:11px;font-weight:700;color:#6AAF2B;margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase;}
   .sq-sidebar-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:10px;padding:16px;text-align:center;}
@@ -110,6 +127,14 @@ function injectStyles(){
   .sq-sidebar-cta a{background:#8CC63F;color:#0A0A0F;font-size:12px;font-weight:700;padding:8px 16px;border-radius:100px;text-decoration:none;display:inline-block;transition:opacity .2s;}
   .sq-sidebar-cta a:hover{opacity:.85;text-decoration:none;}
   .sq-sidebar-ad{background:#F7FAFC;border:1px dashed #CBD5E0;border-radius:8px;min-height:250px;display:flex;align-items:center;justify-content:center;color:#A0AEC0;font-size:11px;}
+  .sq-mini-card{background:linear-gradient(135deg,#F7FAFC,#EEF7E7);border:1px solid #D7E7BF;border-radius:10px;padding:16px;}
+  .sq-mini-card-title{font-size:13px;font-weight:700;color:#1A202C;line-height:1.6;margin-bottom:8px;}
+  .sq-mini-card-text{font-size:12px;color:#718096;line-height:1.8;}
+  .sq-side-links{display:flex;flex-direction:column;gap:8px;}
+  .sq-side-link{display:block;background:#fff;border:1px solid #E2E8F0;border-radius:9px;padding:12px 13px;text-decoration:none;color:inherit;transition:box-shadow .2s,border-color .2s;}
+  .sq-side-link:hover{box-shadow:0 4px 14px rgba(0,0,0,.06);border-color:#CFE3AE;text-decoration:none;}
+  .sq-side-link-label{font-size:10px;font-weight:700;color:#8CC63F;letter-spacing:.05em;margin-bottom:4px;}
+  .sq-side-link-title{font-size:12px;font-weight:700;color:#1A202C;line-height:1.6;}
 }
 /* TOC（サイドバー内） */
 .sq-toc-title{font-weight:700;color:#1A202C;margin-bottom:10px;font-size:12px;letter-spacing:.04em;}
@@ -164,11 +189,22 @@ function injectStyles(){
 
 /* ── サイドバー構築（position:fixed、コンテナは触らない） ── */
 function buildLayout(){
-  if(window.innerWidth < 1100) return null;
-  const sidebar = document.createElement('aside');
-  sidebar.className = 'sq-sidebar';
-  document.body.appendChild(sidebar);
-  return sidebar;
+  const isDesktop = window.innerWidth >= 1100;
+  const isWideDesktop = window.innerWidth >= 1500;
+  const layout = {right:null,left:null};
+  if(isDesktop){
+    const sidebar = document.createElement('aside');
+    sidebar.className = 'sq-sidebar';
+    document.body.appendChild(sidebar);
+    layout.right = sidebar;
+  }
+  if(isWideDesktop){
+    const leftbar = document.createElement('aside');
+    leftbar.className = 'sq-sidebar-left';
+    document.body.appendChild(leftbar);
+    layout.left = leftbar;
+  }
+  return layout;
 }
 
 /* ── TOC ── */
@@ -227,6 +263,45 @@ function buildSidebarAd(sidebar){
   box.className = 'sq-sidebar-box sq-sidebar-ad';
   box.textContent = '広告';
   sidebar.appendChild(box);
+}
+
+/* ── 左サイドバー（回遊導線） ── */
+function buildLeftSidebar(leftbar){
+  if(!leftbar) return;
+
+  const intro = document.createElement('div');
+  intro.className = 'sq-mini-card';
+  intro.innerHTML = `
+    <div class="sq-mini-card-title">📚 資格選びも、勉強法も、進路も。</div>
+    <div class="sq-mini-card-text">この記事のまわりにある「次に読むと整理が進む記事」を左側に置いています。気になったところから拾って大丈夫です。</div>
+  `;
+  leftbar.appendChild(intro);
+
+  const rec = document.createElement('div');
+  rec.className = 'sq-sidebar-box';
+  rec.innerHTML = `<div class="sq-sidebar-box-title">おすすめ記事</div><div class="sq-side-links"></div>`;
+  const list = rec.querySelector('.sq-side-links');
+  LATEST.filter(f=>f!==PAGE).slice(0,4).forEach(f=>{
+    const a = ARTICLES[f]; if(!a) return;
+    list.innerHTML += `<a href="${f}" class="sq-side-link"><div class="sq-side-link-label">${a.label}</div><div class="sq-side-link-title">${a.title}</div></a>`;
+  });
+  leftbar.appendChild(rec);
+
+  let catFiles=[], catName='';
+  for(const [name,cat] of Object.entries(CATS)){
+    if(cat.files.includes(PAGE)){ catFiles=cat.files.filter(f=>f!==PAGE).slice(0,4); catName=name; break; }
+  }
+  if(catFiles.length > 0){
+    const rel = document.createElement('div');
+    rel.className = 'sq-sidebar-box';
+    rel.innerHTML = `<div class="sq-sidebar-box-title">同カテゴリ（${catName}）</div><div class="sq-side-links"></div>`;
+    const relList = rel.querySelector('.sq-side-links');
+    catFiles.forEach(f=>{
+      const a = ARTICLES[f]; if(!a) return;
+      relList.innerHTML += `<a href="${f}" class="sq-side-link"><div class="sq-side-link-label">${a.label}</div><div class="sq-side-link-title">${a.title}</div></a>`;
+    });
+    leftbar.appendChild(rel);
+  }
 }
 
 /* ── 本文内広告枠（lead後・記事末） ── */
@@ -407,11 +482,12 @@ function buildWidgets(){
 document.addEventListener('DOMContentLoaded',function(){
   injectStyles();
   injectBreadcrumbLD();
-  const sidebar = buildLayout();
-  buildTOC(sidebar);
+  const layout = buildLayout();
+  buildTOC(layout.right);
   buildCatBadge();
-  buildSidebarCTA(sidebar);
-  buildSidebarAd(sidebar);
+  buildSidebarCTA(layout.right);
+  buildSidebarAd(layout.right);
+  buildLeftSidebar(layout.left);
   insertContentAds();
   buildAuthorBox();
   insertMidCTA();
