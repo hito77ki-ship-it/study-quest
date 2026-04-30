@@ -55,6 +55,8 @@ const ARTICLES = {
   'kenchiku.html':             {label:'二級建築士',  title:'二級建築士の独学合格ガイド'},
   'toefl.html':                {label:'TOEFL',       title:'TOEFL iBTの独学スコアアップ戦略'},
   'eiken1.html':               {label:'英検準1級',   title:'英検準1級の独学合格ガイド'},
+  'fp3.html':                  {label:'FP3級',       title:'FP3級の勉強時間・独学合格スケジュール'},
+  'cpa-yobikou.html':          {label:'勉強法',      title:'公認会計士・税理士は予備校と独学どっちがいい？'},
 };
 
 const CATS = {
@@ -67,7 +69,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shikaku-app.html']},
 };
 
-const LATEST = ['sharoshi-vs-shindanshi.html','toeic-vs-eiken.html','takken-vs-mansion.html','shikaku-20dai.html','shikaku-eigyo.html','shikaku-3months.html','shikaku-women.html','shikaku-30dai.html'];
+const LATEST = ['fp3.html','cpa-yobikou.html','sharoshi-vs-shindanshi.html','toeic-vs-eiken.html','takken-vs-mansion.html','shikaku-20dai.html','shikaku-eigyo.html','shikaku-3months.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 
