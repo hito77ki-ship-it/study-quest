@@ -37,10 +37,16 @@ const ARTICLES = {
   'sharoshi-vs-gyosei.html':   {label:'資格比較',    title:'社労士 vs 行政書士 どっちを先に取るべき？'},
   'fe-vs-ap.html':             {label:'資格比較',    title:'基本情報 vs 応用情報 どっちを先に取るべき？'},
   'zeirishi-vs-cpa.html':      {label:'資格比較',    title:'税理士 vs 公認会計士 どっちを目指すべき？'},
+  'sharoshi-vs-shindanshi.html':{label:'資格比較',   title:'社労士 vs 中小企業診断士 どっちを先に取るべき？'},
+  'toeic-vs-eiken.html':       {label:'資格比較',    title:'TOEIC vs 英検 どっちを取るべき？'},
+  'takken-vs-mansion.html':    {label:'資格比較',    title:'宅建 vs マンション管理士 どっちを先に取るべき？'},
   'osusume-shikaku.html':      {label:'まとめ',      title:'社会人におすすめの資格ランキング2026'},
   'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026'},
   'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026'},
   'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026'},
+  'shikaku-20dai.html':        {label:'まとめ',      title:'20代におすすめ資格ランキング2026'},
+  'shikaku-eigyo.html':        {label:'まとめ',      title:'営業職におすすめ資格ランキング2026'},
+  'shikaku-3months.html':      {label:'まとめ',      title:'3ヶ月で取れる資格ランキング2026'},
   'toroku-hanbai.html':        {label:'登録販売者',  title:'登録販売者の独学合格ガイド'},
   'eisei-kanri.html':          {label:'衛生管理者',  title:'衛生管理者（第一種・第二種）の独学合格ガイド'},
   'hisho.html':                {label:'秘書検定',    title:'秘書検定2級・準1級の独学合格ガイド'},
@@ -61,7 +67,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shikaku-app.html']},
 };
 
-const LATEST = ['sharoshi-vs-gyosei.html','fe-vs-ap.html','zeirishi-vs-cpa.html','shikaku-women.html','shikaku-30dai.html','dokugaku-shikaku.html','toefl.html','eiken1.html'];
+const LATEST = ['sharoshi-vs-shindanshi.html','toeic-vs-eiken.html','takken-vs-mansion.html','shikaku-20dai.html','shikaku-eigyo.html','shikaku-3months.html','shikaku-women.html','shikaku-30dai.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 
