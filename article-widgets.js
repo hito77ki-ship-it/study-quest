@@ -46,6 +46,7 @@ const ARTICLES = {
   'tenshoku-shikaku.html':     {label:'まとめ',      title:'転職に有利な資格ランキング10選'},
   'shikaku-jinsei-kawaru.html':{label:'考え方',      title:'資格を取っても人生が変わりやすい人・変わりにくい人'},
   'daigakusei-shikaku-heiyou.html':{label:'大学生',  title:'大学生は資格勉強を2つ以上併用すべき？1つに絞るべき？'},
+  'cpa-akirameta-boki1.html': {label:'会計士→簿記1級', title:'公認会計士を諦めたら簿記1級は狙える？勉強時間はどれくらい活きるのか'},
   'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026'},
   'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026'},
   'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026'},
@@ -74,7 +75,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-const LATEST = ['daigakusei-shikaku-heiyou.html','shikaku-jinsei-kawaru.html','tenshoku-shikaku.html','cospa-shikaku.html','shakaijin-benkyou-jikan.html','fp3.html','cpa-yobikou.html','sharoshi-vs-shindanshi.html'];
+const LATEST = ['cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html','shikaku-jinsei-kawaru.html','tenshoku-shikaku.html','cospa-shikaku.html','shakaijin-benkyou-jikan.html','fp3.html','cpa-yobikou.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 
