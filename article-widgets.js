@@ -30,6 +30,7 @@ const ARTICLES = {
   'iryo-jimu.html':      {label:'医療事務',          title:'医療事務の独学合格ガイド'},
   'kaigo-fukushi.html':  {label:'介護福祉士',        title:'介護福祉士の独学合格ガイド'},
   'keizoku.html':        {label:'勉強継続',          title:'資格勉強が続かない原因と解決策7つ'},
+  'shakaijin-benkyou-jikan.html': {label:'勉強時間', title:'社会人が勉強時間を確保する方法7選'},
   'shikaku-app.html':    {label:'アプリ比較',        title:'資格勉強アプリ比較ランキング2026'},
   'boki-vs-fp.html':           {label:'資格比較',    title:'簿記2級 vs FP2級 どっちを先に取るべき？'},
   'takken-vs-gyosei.html':     {label:'資格比較',    title:'宅建 vs 行政書士 どっちを先に取るべき？'},
@@ -66,10 +67,10 @@ const CATS = {
   '医療・福祉系':    {color:'#EC4899', files:['kaigo.html','nurse.html','hoikushi.html','shakai-fukushi.html','iryo-jimu.html','kaigo-fukushi.html']},
   '技術・工業系':    {color:'#F97316', files:['kiken.html','denki.html','chori.html','kenchiku.html']},
   '語学・教養系':    {color:'#F59E0B', files:['toeic.html','eiken.html','toefl.html','eiken1.html','kanken.html']},
-  '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shikaku-app.html']},
+  '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-const LATEST = ['fp3.html','cpa-yobikou.html','sharoshi-vs-shindanshi.html','toeic-vs-eiken.html','takken-vs-mansion.html','shikaku-20dai.html','shikaku-eigyo.html','shikaku-3months.html'];
+const LATEST = ['shakaijin-benkyou-jikan.html','fp3.html','cpa-yobikou.html','sharoshi-vs-shindanshi.html','toeic-vs-eiken.html','takken-vs-mansion.html','shikaku-20dai.html','shikaku-eigyo.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 
