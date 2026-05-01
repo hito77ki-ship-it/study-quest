@@ -10596,8 +10596,7 @@ async function postWeeklyGoalToTimeline(hours, d1, d2){
       });
     } catch(e){ console.warn('Weekly goal TL post failed:', e); }
   }
-  const panel = document.getElementById('panel-timeline');
-  if(panel && panel.style.display === 'block') loadTimeline();
+  if(isTimelinePanelVisible()) loadTimeline();
 }
 
 function shareWeeklyGoalToX(){
@@ -10764,8 +10763,7 @@ async function postGoalMilestoneToTimeline(milestone, weekMins, goalHours){
     } catch(e){ console.warn('Goal milestone TL post failed:', e); }
   }
 
-  const tlPanel = document.getElementById('panel-timeline');
-  if(tlPanel && tlPanel.style.display === 'block') loadTimeline();
+  if(isTimelinePanelVisible()) loadTimeline();
 }
 
 function showGoalCelebration(){
@@ -12143,8 +12141,7 @@ async function postDeclToTimeline(declArg, showAlert){
     } catch(e){ console.warn('Decl TL post failed:', e); }
   }
 
-  const tlPanel = document.getElementById('panel-timeline');
-  if(tlPanel && tlPanel.style.display === 'block') loadTimeline();
+  if(isTimelinePanelVisible()) loadTimeline();
   if(showAlert) alert('タイムラインに投稿しました！');
 }
 
@@ -15559,8 +15556,7 @@ async function autoPostToTimeline({ subject, minutes, note, exp, lv, name, mater
   }
 
   // タイムラインタブが開いていたら即反映
-  const panel = document.getElementById('panel-timeline');
-  if(panel && panel.style.display === 'block') loadTimeline();
+  if(isTimelinePanelVisible()) loadTimeline();
 }
 
 /* ── 手動投稿 ── */
@@ -15616,7 +15612,8 @@ async function manualPost(){
 
   if(currentUser){
     try {
-      await sb.from('timeline_posts').insert({
+      // 一言投稿はまず最小payloadで送る。個別カラムの差分で400になるのを避ける。
+      const cloudPayload = {
         user_id:      post.user_id,
         user_name:    post.user_name,
         user_level:   post.user_level,
@@ -15627,13 +15624,20 @@ async function manualPost(){
         rpg_log:      '',
         exp:          0,
         likes_count:  0,
-        is_free_post: true,
-        post_image:   post.post_image,
         avatar_url:   post.avatar_url,
-        visibility:   post.visibility,
         created_at:   post.created_at,
-      });
-    } catch(e){ console.warn('Free post cloud failed:', e); }
+      };
+      const { error } = await sb.from('timeline_posts').insert(cloudPayload);
+      if(error){
+        console.warn('Free post cloud failed:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code,
+          payload: cloudPayload
+        });
+      }
+    } catch(e){ console.warn('Free post cloud exception:', e); }
   }
 
   if(document.getElementById('tlInput')) document.getElementById('tlInput').value = '';
@@ -15641,8 +15645,7 @@ async function manualPost(){
   const compose = document.getElementById('tlComposeToggle');
   if(compose) compose.style.display = 'none';
 
-  const tlPanel = document.getElementById('panel-timeline');
-  if(tlPanel && tlPanel.style.display === 'block') loadTimeline();
+  if(isTimelinePanelVisible()) loadTimeline();
 }
 
 function openTlCompose(){
@@ -15668,6 +15671,10 @@ function tlAllPostsFlat(){
   const seen = new Set(), out = [];
   TL_FILTERS.forEach(f => { (tlPostsByFilter[f]||[]).forEach(p => { if(!seen.has(p.id)){ seen.add(p.id); out.push(p); } }); });
   return out;
+}
+function isTimelinePanelVisible(){
+  const panel = document.getElementById('panel-timeline');
+  return !!(panel && (panel.classList.contains('active-panel') || panel.style.display === 'block'));
 }
 let tlRealtimeChannel = null;
 let tlPendingPosts = [];   // Realtimeで受信した未表示の新着
@@ -18364,8 +18371,7 @@ async function submitAchievement(){
   spawnDmgNumber('🏆 達成報告！', '#8CC63F', true);
 
   // タイムラインを更新（タブが開いていなくてもデータは反映済み）
-  const tlPanel = document.getElementById('panel-timeline');
-  if(tlPanel && tlPanel.style.display === 'block') loadTimeline();
+  if(isTimelinePanelVisible()) loadTimeline();
 
   // バッジ解放チェック
   renderAll();
