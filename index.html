@@ -15676,6 +15676,34 @@ function isTimelinePanelVisible(){
   const panel = document.getElementById('panel-timeline');
   return !!(panel && (panel.classList.contains('active-panel') || panel.style.display === 'block'));
 }
+function timelinePostSignature(post){
+  return JSON.stringify([
+    post.user_id || '',
+    post.created_at || '',
+    post.note || '',
+    post.subject_name || '',
+    Number(post.minutes || 0),
+    !!post.is_declaration,
+    !!post.is_weekly_goal,
+    !!post.is_achievement,
+    post.rpg_log || ''
+  ]);
+}
+function normalizeTimelinePost(post){
+  const isFreeLike = !!post.is_free_post || (
+    !post.is_declaration &&
+    !post.is_weekly_goal &&
+    !post.is_achievement &&
+    !post.subject_name &&
+    !(post.rpg_log || '').trim() &&
+    !!(post.note || '').trim() &&
+    Number(post.minutes || 0) === 0
+  );
+  return {
+    ...post,
+    is_free_post: isFreeLike
+  };
+}
 let tlRealtimeChannel = null;
 let tlPendingPosts = [];   // Realtimeで受信した未表示の新着
 let tlLikedSet = new Set(); // クラウドいいね済みIDキャッシュ
@@ -15814,7 +15842,7 @@ async function loadTlFilter(filter){
   tlPageByFilter[filter] = 0;
   feed.innerHTML = '<div style="text-align:center;padding:30px;color:var(--muted);font-size:13px;">読み込み中...</div>';
 
-  let localPosts = loadLocalPosts().reverse();
+  let localPosts = loadLocalPosts().reverse().map(normalizeTimelinePost);
   let cloudPosts = [];
   try {
     let query = sb.from('timeline_posts')
@@ -15831,13 +15859,23 @@ async function loadTlFilter(filter){
         .order('likes_count', { ascending: false }).limit(50);
     }
     const { data } = await query;
-    if(data) cloudPosts = data.map(p => ({...p, from_cloud: true}));
+    if(data) cloudPosts = data.map(p => normalizeTimelinePost({...p, from_cloud: true}));
   } catch(e){ console.warn('Cloud TL load:', filter, e); }
 
-  const seen = new Set();
-  let merged = [...cloudPosts, ...localPosts].filter(p => {
-    if(seen.has(p.id)) return false; seen.add(p.id); return true;
+  const mergedMap = new Map();
+  [...cloudPosts, ...localPosts].forEach(post => {
+    const key = timelinePostSignature(post);
+    const prev = mergedMap.get(key);
+    if(!prev){ mergedMap.set(key, post); return; }
+    mergedMap.set(key, {
+      ...post,
+      ...prev,
+      is_free_post: !!(post.is_free_post || prev.is_free_post),
+      post_image: post.post_image || prev.post_image || null,
+      visibility: post.visibility || prev.visibility || 'public',
+    });
   });
+  let merged = Array.from(mergedMap.values());
   if(filter === 'me'){
     merged = merged.filter(p =>
       (currentUser && p.user_id === currentUser.id) || p.user_name === char.name
@@ -15922,19 +15960,29 @@ function loadMoreTimeline(){
 
 async function deleteTlPost(postId, btn){
   if(!confirm('この投稿を削除しますか？')) return;
+  const targetPost = tlAllPostsFlat().find(p => p.id === postId);
+  const targetSig = targetPost ? timelinePostSignature(targetPost) : null;
   // ローカルから削除
   const posts = loadLocalPosts();
-  const filtered = posts.filter(p => p.id !== postId);
+  const filtered = posts.filter(p => p.id !== postId && (!targetSig || timelinePostSignature(normalizeTimelinePost(p)) !== targetSig));
   saveLocalPosts(filtered);
   // Supabaseからも削除（ログイン中のみ）
-  if(currentUser){
+  if(currentUser && targetPost){
     try {
-      await sb.from('timeline_posts').delete().eq('id', postId).eq('user_id', currentUser.id);
+      if(targetPost.from_cloud){
+        await sb.from('timeline_posts').delete().eq('id', postId).eq('user_id', currentUser.id);
+      } else {
+        await sb.from('timeline_posts').delete()
+          .eq('user_id', currentUser.id)
+          .eq('created_at', targetPost.created_at)
+          .eq('note', targetPost.note || '')
+          .eq('subject_name', targetPost.subject_name || '')
+          .eq('minutes', Number(targetPost.minutes || 0));
+      }
     } catch(e){ console.warn('TL delete failed:', e); }
   }
-  // DOM から即削除
-  const postEl = document.getElementById('tl-post-' + postId);
-  if(postEl) postEl.remove();
+  TL_FILTERS.forEach(f => { tlPostsByFilter[f] = null; });
+  if(isTimelinePanelVisible()) loadTimeline();
 }
 
 /* ── 投稿カードHTML生成 ── */
