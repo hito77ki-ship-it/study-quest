@@ -15753,7 +15753,19 @@ const TL_LEGACY_FIELDS = [
   'is_achievement',
   'achievement_data'
 ].join(',');
-let tlFieldMode = 'public';
+const TL_FIELD_MODE_KEY = 'sq2_tl_field_mode';
+function loadTlFieldMode(){
+  try{
+    const v = localStorage.getItem(TL_FIELD_MODE_KEY);
+    return v === 'legacy' ? 'legacy' : 'public';
+  }catch{
+    return 'public';
+  }
+}
+function saveTlFieldMode(mode){
+  try{ localStorage.setItem(TL_FIELD_MODE_KEY, mode); }catch{}
+}
+let tlFieldMode = loadTlFieldMode();
 let tlPostsByFilter = { all: null, me: null, goal: null, top: null };
 let tlPageByFilter  = { all: 0, me: 0, goal: 0, top: 0 };
 // 後方互換：find系が参照する全投稿
@@ -15957,10 +15969,12 @@ async function loadTlFilter(filter){
     if(error && tlFieldMode === 'public'){
       console.warn('Cloud TL load failed with public fields, retrying legacy fields:', filter, error);
       tlFieldMode = 'legacy';
+      saveTlFieldMode(tlFieldMode);
       const legacyRes = await fetchTimelineFields(fieldsForMode(tlFieldMode));
       data = legacyRes.data;
       error = legacyRes.error;
     }
+    if(!error && tlFieldMode === 'public') saveTlFieldMode('public');
     if(error) throw error;
     if(data) cloudPosts = data.map(p => normalizeTimelinePost({...p, from_cloud: true}));
   } catch(e){ console.warn('Cloud TL load:', filter, e); }
