@@ -7155,7 +7155,12 @@ async function loadRanking(){
   const listEl=document.getElementById('rankingList');
   if(!currentUser||isGuest){listEl.innerHTML='<div class="no-data">ランキングを見るにはGoogleログインが必要です<br><small style="color:var(--muted)">冒険者として名を刻むにはログインが必要だ。</small></div>';return;}
   listEl.innerHTML='<div class="no-data">読み込み中...</div>';
-  const {data,error}=await sb.from('profiles').select('*').gt('total_study_mins',0).order('level',{ascending:false}).order('total_study_mins',{ascending:false}).limit(50);
+  const {data,error}=await sb.from('profiles')
+    .select('id,display_name,level,avatar_url,avatar_emoji,char_title,streak,total_study_mins,subject_stats,job_ids')
+    .gt('total_study_mins',0)
+    .order('level',{ascending:false})
+    .order('total_study_mins',{ascending:false})
+    .limit(50);
   if(error||!data||!data.length){
     listEl.innerHTML=error?'<div class="no-data" style="color:#ff6e6e">読み込み失敗</div>':'<div class="no-data">まだ誰もランキングに参加していません<br><small>「☁ 同期」ボタンを押して参加しよう！</small></div>';
     return;
@@ -16347,7 +16352,7 @@ async function pollNotifications(){
   if(!currentUser || isGuest) return;
   try{
     const { data } = await sb.from('notifications')
-      .select('*')
+      .select('id,type,from_user_name,subject_name,post_id,read,created_at')
       .eq('to_user_id', currentUser.id)
       .eq('read', false)
       .order('created_at', { ascending: false })
