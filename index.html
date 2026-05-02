@@ -15853,6 +15853,36 @@ function normalizeTimelinePost(post){
     is_free_post: isFreeLike
   };
 }
+function prepareTimelinePostsForFilter(filter, posts){
+  let prepared = [...posts];
+  if(filter === 'me'){
+    prepared = prepared.filter(p =>
+      (currentUser && p.user_id === currentUser.id) || p.user_name === char.name
+    );
+  }
+  if(filter === 'goal' && !currentUser){
+    prepared = prepared.filter(p => (p.job_ids||[]).some(j => selectedJobIds.includes(j)));
+  }
+
+  const myId = currentUser ? currentUser.id : null;
+  const myName = char.name;
+  prepared = prepared.filter(p => {
+    const vis = p.visibility || 'public';
+    const isOwn = (myId && p.user_id === myId) || p.user_name === myName;
+    if(vis === 'private') return isOwn;
+    if(vis === 'followers') return isOwn || !!currentUser;
+    return true;
+  });
+
+  prepared.sort((a, b) => {
+    const aPin = isPinActive(a.id) || (a.pinned_until && new Date(a.pinned_until) > new Date());
+    const bPin = isPinActive(b.id) || (b.pinned_until && new Date(b.pinned_until) > new Date());
+    if(aPin && !bPin) return -1;
+    if(!aPin && bPin) return 1;
+    return 0;
+  });
+  return prepared;
+}
 let tlRealtimeChannel = null;
 let tlPendingPosts = [];   // Realtimeで受信した未表示の新着
 let tlLikedSet = new Set(); // クラウドいいね済みIDキャッシュ
@@ -15965,7 +15995,7 @@ function switchTlFilter(filter){
   }, { passive: true });
 })();
 
-async function loadTimeline(){
+function loadTimeline(){
   TL_FILTERS.forEach(f => { tlPostsByFilter[f] = null; });
   // 投稿ボタン表示制御（全フィルター共通）
   const composeToggle = document.getElementById('tlComposeToggle');
@@ -15981,9 +16011,8 @@ async function loadTimeline(){
   }
   if(!currentUser && !isGuest && loginHint) loginHint.style.display = '';
 
-  // まず現在のタブだけ描画して体感を速くし、残りは裏で読む
-  await loadTlFilter(tlCurrentFilter);
-  TL_FILTERS.filter(f => f !== tlCurrentFilter).forEach(f => { loadTlFilter(f); });
+  // いま見ているタブだけを即読込。他タブは切替時に初回読込する
+  loadTlFilter(tlCurrentFilter);
 }
 
 async function loadTlFilter(filter){
@@ -15999,6 +16028,13 @@ async function loadTlFilter(filter){
   }
 
   let localPosts = loadLocalPosts().reverse().map(normalizeTimelinePost);
+  if(!cachedPosts || !cachedPosts.length){
+    const localPrepared = prepareTimelinePostsForFilter(filter, localPosts);
+    if(localPrepared.length){
+      tlPostsByFilter[filter] = localPrepared;
+      renderTlPage(filter, 0);
+    }
+  }
   let cloudPosts = [];
   try {
     const fieldsForMode = (mode) => mode === 'legacy' ? TL_LEGACY_FIELDS : TL_PUBLIC_FIELDS;
@@ -16046,35 +16082,7 @@ async function loadTlFilter(filter){
       visibility: post.visibility || prev.visibility || 'public',
     });
   });
-  let merged = Array.from(mergedMap.values());
-  if(filter === 'me'){
-    merged = merged.filter(p =>
-      (currentUser && p.user_id === currentUser.id) || p.user_name === char.name
-    );
-  }
-  if(filter === 'goal' && !currentUser){
-    merged = merged.filter(p => (p.job_ids||[]).some(j => selectedJobIds.includes(j)));
-  }
-
-  // プライバシーフィルタリング
-  const myId = currentUser ? currentUser.id : null;
-  const myName = char.name;
-  merged = merged.filter(p => {
-    const vis = p.visibility || 'public';
-    const isOwn = (myId && p.user_id === myId) || p.user_name === myName;
-    if(vis === 'private') return isOwn;
-    if(vis === 'followers') return isOwn || !!currentUser; // ログイン済みなら表示
-    return true; // public
-  });
-
-  // ピン留め投稿を先頭へ
-  merged.sort((a, b) => {
-    const aPin = isPinActive(a.id) || (a.pinned_until && new Date(a.pinned_until) > new Date());
-    const bPin = isPinActive(b.id) || (b.pinned_until && new Date(b.pinned_until) > new Date());
-    if(aPin && !bPin) return -1;
-    if(!aPin && bPin) return 1;
-    return 0;
-  });
+  let merged = prepareTimelinePostsForFilter(filter, Array.from(mergedMap.values()));
 
   tlPostsByFilter[filter] = merged;
   saveTlFilterCache(filter, merged);
