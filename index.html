@@ -14999,6 +14999,7 @@ async function saveExamGoal(){
   if(existIdx>=0) examGoals[existIdx]=entry;
   else examGoals.push(entry);
   await saveAll();
+  if(currentUser && !isGuest) syncToCloud().catch(()=>{});
   renderExamBanner(); renderTimerExamMini();
   closeExamModal();
 }
@@ -15006,6 +15007,7 @@ async function deleteExamGoal(id){
   if(!confirm('この試験日を削除しますか？'))return;
   examGoals=examGoals.filter(e=>e.id!==id);
   await saveAll();
+  if(currentUser && !isGuest) syncToCloud().catch(()=>{});
   renderExamBanner(); renderTimerExamMini();
   closeExamModal();
   setTimeout(openExamModal,100); // リストを再表示
@@ -15014,7 +15016,8 @@ async function deleteExamGoal(id){
 async function clearExamGoal(){
   if(!confirm('すべての試験日設定を削除しますか？'))return;
   examGoals=[];
-  localStorage.removeItem('sq2_exams');
+  await saveAll();
+  if(currentUser && !isGuest) syncToCloud().catch(()=>{});
   renderExamBanner(); renderTimerExamMini();
   closeExamModal();
 }
