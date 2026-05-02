@@ -14719,7 +14719,7 @@ function renderExamBanner(){
   const today=new Date(); today.setHours(0,0,0,0);
 
   if(!examGoals.length){
-    wrap.innerHTML=`<div class="eb-set-hint" onclick="openExamModal()">📅 試験日を設定する（タップで設定）</div>`;
+    wrap.innerHTML=`<div class="eb-set-hint" onclick="openExamModal('new')">📅 試験日を設定する（タップで設定）</div>`;
     return;
   }
   // 直近の未終了試験を上に
@@ -14738,7 +14738,7 @@ function renderExamBanner(){
       const pct=span>0?Math.min(100,Math.max(0,elapsed/span*100)):0;
       prog=`<div class="eb-progress-row"><div class="eb-prog-track"><div class="eb-prog-fill" style="width:${pct.toFixed(1)}%"></div></div><div class="eb-prog-labels"><span>${eg.startDate}</span><span>${Math.round(pct)}%</span><span>${eg.date}</span></div></div>`;
     }
-    return `<div class="exam-banner ${sc}" onclick="openExamModal()">
+    return `<div class="exam-banner ${sc}" onclick="openExamModal('manage')">
       <span class="eb-icon">${icon}</span>
       <div class="eb-main">
         <div class="eb-label">FINAL EXAM TARGET</div>
@@ -14753,7 +14753,7 @@ function renderExamBanner(){
       </div>
     </div>`;
   }).join('')}
-  <div class="eb-set-hint" onclick="openExamModal()" style="text-align:center;font-size:11px;padding:8px;cursor:pointer;color:var(--muted);">＋ 試験日を追加</div>
+  <div class="eb-set-hint" onclick="openExamModal('new')" style="text-align:center;font-size:11px;padding:8px;cursor:pointer;color:var(--muted);">＋ 試験日を追加</div>
   </div>`;
 }
 
@@ -14953,10 +14953,14 @@ function updateRonbunBar(key, passHensa){
   if(bar) bar.style.width = pct+'%';
 }
 
-function openExamModal(){
+function openExamModal(mode='manage'){
   const listEl = document.getElementById('examModalList');
   if(listEl){
-    if(examGoals.length){
+    if(mode === 'new'){
+      listEl.innerHTML = '';
+      listEl.style.display = 'none';
+    } else if(examGoals.length){
+      listEl.style.display = '';
       listEl.innerHTML=`<div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.15em;margin-bottom:8px;">登録済みの試験日</div>`+
       examGoals.map(eg=>`
         <div class="exam-modal-list-item">
@@ -14967,6 +14971,7 @@ function openExamModal(){
           <button class="exam-modal-list-item-del" onclick="deleteExamGoal('${eg.id}')">🗑</button>
         </div>`).join('');
     } else {
+      listEl.style.display = 'none';
       listEl.innerHTML='';
     }
   }
@@ -14981,8 +14986,14 @@ function openExamModal(){
   if(resultEl) resultEl.style.display='none';
   selectExamPhase('tanto');
   const lbl=document.getElementById('examFormLabel');
-  if(lbl) lbl.textContent='＋ 新しい試験日を追加';
+  if(lbl) lbl.textContent = mode === 'new' ? '＋ 新しい試験日を追加' : '登録済みの試験日を確認 / 新しい試験日を追加';
   document.getElementById('examModal').classList.add('show');
+  if(mode === 'new'){
+    requestAnimationFrame(()=>{
+      document.getElementById('examTitle')?.focus();
+      document.getElementById('examTitle')?.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  }
 }
 window.openExamModal = openExamModal;
 function closeExamModal(){document.getElementById('examModal').classList.remove('show');}
