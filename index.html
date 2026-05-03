@@ -4240,6 +4240,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         </div>
         <div class="char-compact-sub">
           <span class="char-title-text" id="charTitleText" style="font-size:11px;">見習い冒険者</span>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--accent2);margin-left:8px;" id="overallLevelDisp">総合Lv.1</span>
           <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-left:8px;" id="totalHoursDisp">0h</span>
           <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-left:8px;" id="questCountDisp">0 quests</span>
         </div>
@@ -6665,19 +6666,32 @@ function importData(){
 
 /* ═══════════════ LEVEL SYSTEM ═══════════════ */
 const K = 1.41;
-function getMaxMins(){const s=allSelectedSubjects();return s.length?s.reduce((a,x)=>a+x.maxH*60,0):1;}
-function getAvgMins(){const s=allSelectedSubjects();return s.length?s.reduce((a,x)=>a+x.avgH*60,0):1;}
-function computeLevel(smins){
-  const ratio=Math.min(1,smins/getMaxMins());
+function getSubjectsForJobId(jobId){
+  const job = JOBS.find(j=>j.id===jobId);
+  return job ? (job.subjects || []) : [];
+}
+function getMaxMinsForSubjects(subjects){return subjects.length?subjects.reduce((a,x)=>a+x.maxH*60,0):1;}
+function getAvgMinsForSubjects(subjects){return subjects.length?subjects.reduce((a,x)=>a+x.avgH*60,0):1;}
+function getMaxMins(){return getMaxMinsForSubjects(allSelectedSubjects());}
+function getAvgMins(){return getAvgMinsForSubjects(allSelectedSubjects());}
+function computeLevelWithMaxMins(smins,maxMins){
+  const ratio=Math.min(1,smins/Math.max(1,maxMins));
   if(smins<=0)return 1;
   return Math.max(1,Math.min(100,Math.floor(100*Math.pow(ratio,1/K))));
 }
+function computeLevel(smins){ return computeLevelWithMaxMins(smins, getMaxMins()); }
 function minsForLevel(L){return getMaxMins()*Math.pow(L/100,K);}
-function getLevelProgress(smins){
-  const lv=computeLevel(smins);
+function minsForLevelWithMaxMins(L,maxMins){return Math.max(1,maxMins)*Math.pow(L/100,K);}
+function getLevelProgressWithMaxMins(smins,maxMins){
+  const lv=computeLevelWithMaxMins(smins,maxMins);
   if(lv>=100)return{level:100,pctInLevel:1,minsForNext:0};
-  const fl=minsForLevel(lv),cl=minsForLevel(lv+1),span=cl-fl;
+  const fl=minsForLevelWithMaxMins(lv,maxMins),cl=minsForLevelWithMaxMins(lv+1,maxMins),span=cl-fl;
   return{level:lv,pctInLevel:Math.max(0,Math.min(1,(smins-fl)/span)),minsForNext:Math.round(span-(smins-fl))};
+}
+function getLevelProgress(smins){ return getLevelProgressWithMaxMins(smins, getMaxMins()); }
+function computeOverallLevel(totalMins){
+  const hours = Math.max(0, totalMins / 60);
+  return Math.max(1, Math.floor(Math.sqrt(hours) * 1.2));
 }
 function getTitleInfo(lv){
   // 選択ジョブがあればジョブ固有の称号を使う
@@ -6814,12 +6828,24 @@ function fmtSecs(totalSecs){
 }
 /* 分数（小数可）→ "Xh Ym" 表示（従来互換） */
 function studyMins(sess){return sess.filter(s=>s.type==='study'||s.type==='exam').reduce((a,s)=>a+sAmount(s),0);}
-function levelStudyMins(sess){
-  const keys = new Set(selectedSubjectKeys || []);
-  if(!keys.size) return studyMins(sess);
+function studyMinsForKeys(sess, keys){
+  const set = new Set(keys || []);
+  if(!set.size) return studyMins(sess);
   return sess
-    .filter(s=>(s.type==='study'||s.type==='exam') && s.subject && keys.has(s.subject))
+    .filter(s=>(s.type==='study'||s.type==='exam') && s.subject && set.has(s.subject))
     .reduce((a,s)=>a+sAmount(s),0);
+}
+function levelStudyMins(sess){
+  return studyMinsForKeys(sess, selectedSubjectKeys || []);
+}
+function levelStudyMinsForJob(sess, jobId){
+  return studyMinsForKeys(sess, getSubjectsForJobId(jobId).map(s=>s.key));
+}
+function getCurrentTrackLevelInfo(sess){
+  const subjects = allSelectedSubjects();
+  const smins = studyMinsForKeys(sess, subjects.map(s=>s.key));
+  const maxMins = getMaxMinsForSubjects(subjects);
+  return { smins, maxMins, progress: getLevelProgressWithMaxMins(smins, maxMins) };
 }
 function subjStudyMins(sess,key){return sess.filter(s=>s.subject===key&&(s.type==='study'||s.type==='exam')).reduce((a,s)=>a+sAmount(s),0);}
 function formatHM(mins){return `${Math.floor(mins/60)}h ${Math.round(mins%60)}m`;}
@@ -7230,7 +7256,6 @@ async function loadRanking(){
   const {data,error}=await sb.from('profiles')
     .select('id,display_name,level,avatar_url,avatar_emoji,char_title,streak,total_study_mins,subject_stats,job_ids')
     .gt('total_study_mins',0)
-    .order('level',{ascending:false})
     .order('total_study_mins',{ascending:false})
     .limit(50);
   if(error||!data||!data.length){
@@ -7245,6 +7270,8 @@ async function loadRanking(){
     const posClass=pos===1?'gold':pos===2?'silver':pos===3?'bronze':'';
     const posDisp=pos<=3?['🥇','🥈','🥉'][pos-1]:pos;
     const hours=Math.floor((p.total_study_mins||0)/60);
+    const overallLv = computeOverallLevel(p.total_study_mins||0);
+    const currentLv = p.level || 1;
     const topSubjs=Object.entries(p.subject_stats||{}).slice(0,4);
     const bars=topSubjs.map(([k,s])=>`<div class="rank-bar-row"><span class="rank-bar-label">${(s.name||k).slice(0,4)}</span><div class="rank-bar-track"><div class="rank-bar-fill" style="width:${s.pct||0}%;background:${SCOLORS[k]||'#c9a84c'}"></div></div></div>`).join('');
     const item=document.createElement('div');
@@ -7255,7 +7282,7 @@ async function loadRanking(){
       : p.avatar_emoji && p.avatar_emoji !== '📚'
         ? escHtml(p.avatar_emoji)
         : `<div style="width:100%;height:100%;border-radius:50%;background:${avatarColor(p.display_name)};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;">${escHtml((p.display_name||'？')[0])}</div>`;
-    item.innerHTML=`<div class="rank-pos ${posClass}">${posDisp}</div><div class="rank-avatar rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}>${_rankAvatar}</div><div class="rank-info rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}><div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--gold)">← YOU</span>':''}</div><div class="rank-title-text">${escHtml(p.char_title||'—')}</div>${bars?`<div class="rank-bars">${bars}</div>`:''}</div><div class="rank-right"><div class="rank-level">Lv.${p.level||1}</div><div class="rank-hours">${hours}h</div><div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted)">🔥${p.streak||0}日</div></div>`;
+    item.innerHTML=`<div class="rank-pos ${posClass}">${posDisp}</div><div class="rank-avatar rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}>${_rankAvatar}</div><div class="rank-info rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}><div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--gold)">← YOU</span>':''}</div><div class="rank-title-text">${escHtml(p.char_title||'—')}</div>${bars?`<div class="rank-bars">${bars}</div>`:''}</div><div class="rank-right"><div class="rank-level">総合Lv.${overallLv}</div><div class="rank-hours">${hours}h</div><div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted)">資格Lv.${currentLv} / 🔥${p.streak||0}日</div></div>`;
     if(canOpenUserCard){
       item.querySelectorAll('.rank-user-open').forEach(el=>{
         el.addEventListener('click', ()=>openUserCard(p.id, p.display_name || '名無し', p.level || 1, p.avatar_url || '', (p.job_ids||[]).join(',')));
@@ -7760,8 +7787,12 @@ function initDashboard(){
   setInterval(renderDuelCard, 60000);
 }
 function renderAll(){
-  const trackSmins=levelStudyMins(sessions);
-  const lp=getLevelProgress(trackSmins);char.level=lp.level;
+  const totalSmins=studyMins(sessions);
+  const trackInfo=getCurrentTrackLevelInfo(sessions);
+  const trackSmins=trackInfo.smins;
+  const lp=trackInfo.progress;
+  const overallLv = computeOverallLevel(totalSmins);
+  char.level=lp.level;
   const ti=getTitleInfo(lp.level);const attrs=computeAttrs();const subjs=allSelectedSubjects();
   const aeEl=document.getElementById('avatarEmoji');
   if(profileAvatarData){
@@ -7791,18 +7822,19 @@ function renderAll(){
   document.getElementById('streakBadge').textContent='🔥 '+char.streak+'日連続';
   const goldEl=document.getElementById('goldBadge'); if(goldEl) goldEl.textContent='💰 '+(char.gold||0)+'G';
   document.getElementById('levelDispMeta').textContent=lp.level+' / 100';
-  document.getElementById('totalHoursDisp').textContent=Math.floor(smins/60)+'h';
+  document.getElementById('overallLevelDisp').textContent=`総合Lv.${overallLv}`;
+  document.getElementById('totalHoursDisp').textContent=Math.floor(totalSmins/60)+'h';
   document.getElementById('questCountDisp').textContent=sessions.length;
   const barPct=lp.level>=100?100:Math.round(lp.pctInLevel*100);
   document.getElementById('expFill').style.width=barPct+'%';
   document.getElementById('expNumbers').textContent=lp.level>=100?'⭐ MAX LEVEL REACHED ⭐':`Lv${lp.level} → Lv${lp.level+1} まで あと ${formatHM(lp.minsForNext)}`;
-  renderOverallProgress(smins,subjs);
+  renderOverallProgress(totalSmins,subjs);
   renderRadar(attrs);renderAttrs(attrs);
   renderDqStatusCard();
   renderSessions(subjs);renderQuestLogStats&&renderQuestLogStats();renderTitles();
   if(typeof bosses!=='undefined') renderBoss();
   if(typeof examGoals!=='undefined'){ renderExamBanner(); renderTimerExamMini(); }
-  renderEquipBadge(smins);
+  renderEquipBadge(totalSmins);
   renderRaidBoss();
   renderPaceDiag();
   renderDailyMissions();
@@ -10909,7 +10941,7 @@ function renderExpInfo(){
   if(!el) return;
   const totalSmins=studyMins(sessions);
   const trackSmins=levelStudyMins(sessions);
-  el.textContent=`累計 ${Math.floor(totalSmins/60)}h → Lv.${computeLevel(trackSmins)} / 1分 ＝ 1EXP`;
+  el.textContent=`現在資格 Lv.${computeLevel(trackSmins)} / 総合Lv.${computeOverallLevel(totalSmins)} / 累計 ${Math.floor(totalSmins/60)}h`;
 }
 
 /* ── 分析サブタブ ── */
@@ -13442,10 +13474,12 @@ function renderHeatmap(){
    PROFILE TAB
 ════════════════════════════════════════ */
 function renderProfileTab(){
+  const totalSmins = studyMins(sessions);
   const smins = levelStudyMins(sessions);
   const lp = getLevelProgress(smins);
+  const overallLv = computeOverallLevel(totalSmins);
   const ti = getTitleInfo(lp.level);
-  const equip = getCurrentEquipment(smins/60);
+  const equip = getCurrentEquipment(totalSmins/60);
   renderImportPastSection();
 
   // ── プレイヤーカード ──
@@ -13471,7 +13505,7 @@ function renderProfileTab(){
   if(bioEl) bioEl.textContent = profInfo.bio || ti.title;
   const tagsEl = document.getElementById('profCardTags');
   if(tagsEl){
-    const tags = [];
+    const tags = [`現在Lv.${lp.level}`, `総合Lv.${overallLv}`];
     if(profInfo.grade) tags.push(profInfo.grade);
     if(profInfo.pref)  tags.push(profInfo.pref);
     (selectedJobIds||[]).forEach(j=>{
@@ -18355,6 +18389,7 @@ async function openUserCard(userId, userName, level, avatarUrl, jobIdsStr){
   const dispAvatar = profile.avatar_url || avatarUrl;
   const dispLevel = profile.level || level || 1;
   const totalHours = ((profile.total_study_mins || 0) / 60).toFixed(1);
+  const overallLv = computeOverallLevel(profile.total_study_mins || 0);
   const streak = profile.streak || 0;
   const title = profile.char_title || '';
 
@@ -18414,7 +18449,7 @@ async function openUserCard(userId, userName, level, avatarUrl, jobIdsStr){
       <div style="flex:1;min-width:0;">
         <div style="font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px;">${escHtml(dispName)}</div>
         ${title ? `<div style="font-size:11px;color:var(--accent2);margin-bottom:4px;">${escHtml(title)}</div>` : ''}
-        <div style="font-size:12px;color:var(--muted);font-family:'Share Tech Mono',monospace;">Lv.${dispLevel}</div>
+        <div style="font-size:12px;color:var(--muted);font-family:'Share Tech Mono',monospace;">資格Lv.${dispLevel} / 総合Lv.${overallLv}</div>
         ${!canSeeDetail ? '<div style="font-size:10px;color:var(--muted);margin-top:2px;">🔒 非公開</div>' : ''}
       </div>
     </div>
@@ -18534,11 +18569,12 @@ window.pcNavSwitch = pcNavSwitch;
 function updatePcSidebar(){
   const totalSmins = studyMins(sessions);
   const lp = getLevelProgress(levelStudyMins(sessions));
+  const overallLv = computeOverallLevel(totalSmins);
   const nameEl = document.getElementById('pcSidebarName');
   const lvEl   = document.getElementById('pcSidebarLevel');
   const avEl   = document.getElementById('pcSidebarAvatar');
   if(nameEl) nameEl.textContent = char.name || '冒険者';
-  if(lvEl)   lvEl.textContent   = `Lv.${lp.level} | ${Math.floor(totalSmins/60)}h`;
+  if(lvEl)   lvEl.textContent   = `資格Lv.${lp.level} | 総合Lv.${overallLv}`;
   if(avEl){
     if(profileAvatarData){
       avEl.innerHTML = `<img src="${profileAvatarData}" alt="">`;
