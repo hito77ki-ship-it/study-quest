@@ -121,71 +121,71 @@ function injectStyles(){
     z-index:10;
   }
   .sq-sidebar::-webkit-scrollbar{width:3px;}
-  .sq-sidebar::-webkit-scrollbar-thumb{background:#E2E8F0;}
+  .sq-sidebar::-webkit-scrollbar-thumb{background:rgba(140,198,63,.28);}
   .sq-sidebar-left::-webkit-scrollbar{width:3px;}
-  .sq-sidebar-left::-webkit-scrollbar-thumb{background:#E2E8F0;}
-  .sq-sidebar-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px;}
-  .sq-sidebar-box-title{font-size:11px;font-weight:700;color:#6AAF2B;margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase;}
-  .sq-sidebar-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:10px;padding:16px;text-align:center;}
-  .sq-sidebar-cta p{font-size:12px;color:#A0C070;margin-bottom:12px;line-height:1.7;}
-  .sq-sidebar-cta a{background:#8CC63F;color:#0A0A0F;font-size:12px;font-weight:700;padding:8px 16px;border-radius:100px;text-decoration:none;display:inline-block;transition:opacity .2s;}
-  .sq-sidebar-cta a:hover{opacity:.85;text-decoration:none;}
-  .sq-sidebar-ad{background:#F7FAFC;border:1px dashed #CBD5E0;border-radius:8px;min-height:250px;display:flex;align-items:center;justify-content:center;color:#A0AEC0;font-size:11px;}
-  .sq-mini-card{background:linear-gradient(135deg,#F7FAFC,#EEF7E7);border:1px solid #D7E7BF;border-radius:10px;padding:16px;}
-  .sq-mini-card-title{font-size:13px;font-weight:700;color:#1A202C;line-height:1.6;margin-bottom:8px;}
-  .sq-mini-card-text{font-size:12px;color:#718096;line-height:1.8;}
+  .sq-sidebar-left::-webkit-scrollbar-thumb{background:rgba(140,198,63,.28);}
+  .sq-sidebar-box{background:linear-gradient(180deg,#151A2A 0%, #101522 100%);border:1px solid rgba(140,198,63,.18);box-shadow:0 0 0 1px rgba(140,198,63,.04), 0 14px 36px rgba(5,10,20,.22);border-radius:12px;padding:16px;}
+  .sq-sidebar-box-title{font-size:10px;font-weight:700;color:#A9D86F;margin-bottom:10px;letter-spacing:.14em;text-transform:uppercase;}
+  .sq-sidebar-cta{background:radial-gradient(circle at top right, rgba(140,198,63,.18), transparent 38%),linear-gradient(135deg,#101623,#152233 60%, #182C22 100%);border:1px solid rgba(140,198,63,.22);box-shadow:0 0 0 1px rgba(140,198,63,.05), 0 16px 36px rgba(6,10,18,.26);border-radius:12px;padding:18px 16px;text-align:center;}
+  .sq-sidebar-cta p{font-size:12px;color:#D9E6C7;margin-bottom:12px;line-height:1.75;}
+  .sq-sidebar-cta a{background:#8CC63F;color:#0A0A0F;font-size:12px;font-weight:700;padding:8px 16px;border-radius:100px;text-decoration:none;display:inline-block;transition:opacity .2s, transform .2s, box-shadow .2s;box-shadow:0 8px 22px rgba(140,198,63,.22);}
+  .sq-sidebar-cta a:hover{opacity:.85;text-decoration:none;transform:translateY(-1px);box-shadow:0 10px 26px rgba(140,198,63,.28);}
+  .sq-sidebar-ad{background:linear-gradient(180deg,#151A2A,#101522);border:1px dashed rgba(140,198,63,.16);border-radius:12px;min-height:250px;display:flex;align-items:center;justify-content:center;color:#64748B;font-size:11px;}
+  .sq-mini-card{background:radial-gradient(circle at top left, rgba(140,198,63,.14), transparent 34%),linear-gradient(180deg,#151A2A,#101522);border:1px solid rgba(140,198,63,.18);box-shadow:0 0 0 1px rgba(140,198,63,.04), 0 14px 32px rgba(5,10,20,.2);border-radius:12px;padding:16px;}
+  .sq-mini-card-title{font-size:13px;font-weight:700;color:#F8FAFC;line-height:1.65;margin-bottom:8px;}
+  .sq-mini-card-text{font-size:12px;color:#A7B2C5;line-height:1.85;}
   .sq-side-links{display:flex;flex-direction:column;gap:8px;}
-  .sq-side-link{display:block;background:#fff;border:1px solid #E2E8F0;border-radius:9px;padding:12px 13px;text-decoration:none;color:inherit;transition:box-shadow .2s,border-color .2s;}
-  .sq-side-link:hover{box-shadow:0 4px 14px rgba(0,0,0,.06);border-color:#CFE3AE;text-decoration:none;}
-  .sq-side-link-label{font-size:10px;font-weight:700;color:#8CC63F;letter-spacing:.05em;margin-bottom:4px;}
-  .sq-side-link-title{font-size:12px;font-weight:700;color:#1A202C;line-height:1.6;}
+  .sq-side-link{display:block;background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.01));border:1px solid rgba(148,163,184,.16);border-radius:10px;padding:12px 13px;text-decoration:none;color:inherit;transition:box-shadow .2s,border-color .2s,transform .2s;}
+  .sq-side-link:hover{box-shadow:0 10px 24px rgba(0,0,0,.16);border-color:rgba(140,198,63,.32);transform:translateY(-1px);text-decoration:none;}
+  .sq-side-link-label{font-size:10px;font-weight:700;color:#A9D86F;letter-spacing:.08em;margin-bottom:4px;}
+  .sq-side-link-title{font-size:12px;font-weight:700;color:#F8FAFC;line-height:1.65;}
 }
 /* TOC（サイドバー内） */
-.sq-toc-title{font-weight:700;color:#1A202C;margin-bottom:10px;font-size:12px;letter-spacing:.04em;}
+.sq-toc-title{font-weight:700;color:#F8FAFC;margin-bottom:10px;font-size:12px;letter-spacing:.08em;}
 .sq-toc ol{margin:0;padding-left:16px;}
 .sq-toc li{margin-bottom:5px;line-height:1.6;}
-.sq-toc a{font-size:12px;color:#6AAF2B;text-decoration:none;}
+.sq-toc a{font-size:12px;color:#B6E27C;text-decoration:none;}
 .sq-toc a:hover{text-decoration:underline;}
 /* TOC（モバイル：インライン） */
 @media(max-width:959px){
-  .sq-toc-inline{background:#F7FAFC;border:1px solid #E2E8F0;border-left:3px solid #8CC63F;border-radius:0 8px 8px 0;padding:16px 20px;margin:24px 0 32px;font-size:13px;}
+  .sq-toc-inline{background:radial-gradient(circle at top right, rgba(140,198,63,.12), transparent 30%),linear-gradient(180deg,#14192A,#101522);border:1px solid rgba(140,198,63,.18);border-left:3px solid #8CC63F;border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0 32px;font-size:13px;}
   .sq-toc-inline ol{margin:0;padding-left:18px;}
   .sq-toc-inline li{margin-bottom:5px;}
-  .sq-toc-inline a{color:#6AAF2B;text-decoration:none;}
+  .sq-toc-inline a{color:#B6E27C;text-decoration:none;}
 }
 /* カテゴリーバッジ */
 .sq-cat-badge{margin-bottom:8px;}
-.sq-cat-badge span{display:inline-block;font-size:11px;font-weight:700;padding:3px 12px;border-radius:100px;color:#fff;letter-spacing:.04em;}
+.sq-cat-badge span{display:inline-block;font-size:10px;font-weight:700;padding:4px 12px;border-radius:100px;color:#fff;letter-spacing:.12em;box-shadow:0 8px 20px rgba(0,0,0,.12);}
 /* 途中CTA */
-.sq-mid-cta{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border:1px solid #9AE6B4;border-radius:10px;padding:16px 20px;margin:32px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-.sq-mid-cta p{font-size:13px;color:#1A202C;margin:0;flex:1;line-height:1.7;}
-.sq-mid-cta a{background:#8CC63F;color:#fff;font-size:12px;font-weight:700;padding:8px 18px;border-radius:100px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:opacity .2s;}
-.sq-mid-cta a:hover{opacity:.85;text-decoration:none;}
+.sq-mid-cta{background:radial-gradient(circle at top right, rgba(140,198,63,.18), transparent 34%),linear-gradient(135deg,#12192A,#152233 68%, #172A21 100%);border:1px solid rgba(140,198,63,.24);box-shadow:0 0 0 1px rgba(140,198,63,.04), 0 14px 30px rgba(5,10,20,.16);border-radius:12px;padding:18px 20px;margin:32px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.sq-mid-cta p{font-size:13px;color:#E5EDF7;margin:0;flex:1;line-height:1.8;}
+.sq-mid-cta a{background:#8CC63F;color:#0A0A0F;font-size:12px;font-weight:700;padding:8px 18px;border-radius:100px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:opacity .2s, transform .2s, box-shadow .2s;box-shadow:0 8px 22px rgba(140,198,63,.22);}
+.sq-mid-cta a:hover{opacity:.88;text-decoration:none;transform:translateY(-1px);}
 /* 広告プレースホルダー（本文内） */
 .sq-ad-slot{background:#F7FAFC;border:1px dashed #CBD5E0;border-radius:8px;min-height:90px;display:flex;align-items:center;justify-content:center;color:#A0AEC0;font-size:11px;margin:24px 0;}
 /* 著者プロフィール */
-.sq-author{display:flex;align-items:center;gap:14px;background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px 18px;margin:24px 0 32px;}
-.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#4A9A1A);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.sq-author-name{font-size:13px;font-weight:700;color:#1A202C;margin-bottom:2px;}
-.sq-author-title{font-size:11px;color:#8CC63F;font-weight:700;margin-bottom:4px;}
-.sq-author-bio{font-size:12px;color:#718096;line-height:1.6;}
+.sq-author{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,#151A2A,#101522);border:1px solid rgba(140,198,63,.18);box-shadow:0 0 0 1px rgba(140,198,63,.04), 0 12px 28px rgba(5,10,20,.14);border-radius:12px;padding:14px 18px;margin:24px 0 32px;}
+.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 0 24px rgba(140,198,63,.22);}
+.sq-author-name{font-size:13px;font-weight:700;color:#F8FAFC;margin-bottom:2px;}
+.sq-author-title{font-size:11px;color:#A9D86F;font-weight:700;margin-bottom:4px;letter-spacing:.06em;}
+.sq-author-bio{font-size:12px;color:#A7B2C5;line-height:1.7;}
 /* シェアボタン */
 .sq-share{max-width:800px;margin:0 auto;padding:32px 24px 0;}
-.sq-share-title{font-size:12px;font-weight:700;color:#6B7280;letter-spacing:.08em;margin-bottom:12px;}
+.sq-share-title{font-size:11px;font-weight:700;color:#7C8AA5;letter-spacing:.16em;margin-bottom:12px;text-transform:uppercase;}
 .sq-share-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.sq-share-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .2s;}
-.sq-share-btn:hover{opacity:.82;text-decoration:none;}
+.sq-share-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .2s, transform .2s, box-shadow .2s;}
+.sq-share-btn:hover{opacity:.9;text-decoration:none;transform:translateY(-1px);}
 .sq-share-btn-x{background:#000;color:#fff;}
 .sq-share-btn-line{background:#06C755;color:#fff;}
 /* 新着・同カテゴリ */
-.sq-widget{padding:40px 24px;background:#fff;}
+.sq-widget{padding:44px 24px;background:linear-gradient(180deg,#F8FAFC,#F1F6FD);}
 .sq-widget-inner{max-width:800px;margin:0 auto;}
-.sq-widget-title{font-size:15px;font-weight:700;color:#1A202C;margin:0 0 16px;padding-left:12px;border-left:3px solid #8CC63F;}
+.sq-widget-title{font-size:15px;font-weight:700;color:#162033;margin:0 0 16px;padding-left:12px;border-left:3px solid #8CC63F;letter-spacing:.04em;}
 .sq-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:36px;}
-.sq-card{display:block;background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none;transition:box-shadow .2s;}
-.sq-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);text-decoration:none;}
-.sq-card-label{font-size:10px;font-weight:700;color:#8CC63F;margin-bottom:5px;letter-spacing:.06em;}
-.sq-card-title{font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;}
+.sq-card{display:block;background:linear-gradient(180deg,#151A2A,#111728);border:1px solid rgba(140,198,63,.16);box-shadow:0 0 0 1px rgba(140,198,63,.03), 0 12px 28px rgba(5,10,20,.12);border-radius:12px;padding:14px 16px;color:inherit;text-decoration:none;transition:box-shadow .2s,border-color .2s,transform .2s;}
+.sq-card:hover{box-shadow:0 16px 34px rgba(0,0,0,.16);border-color:rgba(140,198,63,.3);transform:translateY(-2px);text-decoration:none;}
+.sq-card-label{font-size:10px;font-weight:700;color:#A9D86F;margin-bottom:5px;letter-spacing:.08em;}
+.sq-card-title{font-size:13px;font-weight:700;color:#F8FAFC;line-height:1.6;}
 .sq-new-badge{display:inline-block;background:#EF4444;color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;margin-left:5px;vertical-align:middle;}
   `;
   document.head.appendChild(s);
@@ -256,7 +256,7 @@ function buildSidebarCTA(sidebar){
   if(!sidebar) return;
   const box = document.createElement('div');
   box.className = 'sq-sidebar-cta';
-  box.innerHTML = `<p>⚔ 資格勉強をRPGに変える<br>学習管理アプリ</p><a href="index.html">無料で試してみる →</a>`;
+  box.innerHTML = `<p>⚔ 勉強記録を経験値に変えて、<br>毎日の資格学習を冒険として積み上げる。</p><a href="index.html">Study Quest を起動する →</a>`;
   sidebar.appendChild(box);
 }
 
@@ -267,8 +267,8 @@ function buildLeftSidebar(leftbar){
   const intro = document.createElement('div');
   intro.className = 'sq-mini-card';
   intro.innerHTML = `
-    <div class="sq-mini-card-title">📚 資格選びも、勉強法も、進路も。</div>
-    <div class="sq-mini-card-text">この記事のまわりにある「次に読むと整理が進む記事」を左側に置いています。気になったところから拾って大丈夫です。</div>
+    <div class="sq-mini-card-title">🚪 未知の合格ルートに入るための案内板。</div>
+    <div class="sq-mini-card-text">このページのまわりに、資格選び・勉強法・進路整理の導線をまとめています。気になったところから辿れば、次の一歩が見えやすくなります。</div>
   `;
   leftbar.appendChild(intro);
 
@@ -309,7 +309,7 @@ function insertMidCTA(){
   if(!target) return;
   const cta = document.createElement('div');
   cta.className = 'sq-mid-cta';
-  cta.innerHTML = '<p>📱 <strong>Study Quest</strong> — 資格勉強をRPGに変える学習アプリ。毎日の勉強時間を経験値に変えてレベルアップしよう。</p><a href="index.html">無料で試してみる →</a>';
+  cta.innerHTML = '<p>📱 <strong>Study Quest</strong> は、停滞しがちな資格勉強を「積み上がりが見える冒険」に変える学習アプリです。今日の勉強を、次のレベルアップに変えましょう。</p><a href="index.html">無料で試してみる →</a>';
   target.insertAdjacentElement('beforebegin', cta);
 }
 
