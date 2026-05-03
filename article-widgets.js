@@ -83,11 +83,129 @@ const CATS = {
 const LATEST = ['daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html','shikaku-jinsei-kawaru.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
+const ARTICLE_THEME_KEY = 'sq2_theme';
+const ARTICLE_THEME_MANUAL_KEY = 'sq2_theme_manual';
+
+function resolveArticleTheme(){
+  const saved = localStorage.getItem(ARTICLE_THEME_KEY);
+  const manual = localStorage.getItem(ARTICLE_THEME_MANUAL_KEY);
+  const osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return (saved && manual) ? saved : (osDark ? 'dark' : 'light');
+}
+
+function applyArticleTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+function toggleArticleTheme(){
+  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem(ARTICLE_THEME_KEY, next);
+  localStorage.setItem(ARTICLE_THEME_MANUAL_KEY, '1');
+  applyArticleTheme(next);
+  syncThemeButtonLabel();
+}
+
+function syncThemeButtonLabel(){
+  const btn = document.getElementById('sq-article-theme-toggle');
+  if(!btn) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.setAttribute('aria-label', isDark ? 'ライトモードに切替' : 'ダークモードに切替');
+  btn.setAttribute('title', isDark ? 'ライトモードに切替' : 'ダークモードに切替');
+  btn.innerHTML = isDark ? '<span class="sq-theme-icon">☀</span><span class="sq-theme-text">Light</span>' : '<span class="sq-theme-icon">☾</span><span class="sq-theme-text">Dark</span>';
+}
+
+applyArticleTheme(resolveArticleTheme());
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if(!localStorage.getItem(ARTICLE_THEME_MANUAL_KEY)){
+    applyArticleTheme(e.matches ? 'dark' : 'light');
+    syncThemeButtonLabel();
+  }
+});
 
 /* ── スタイル ── */
 function injectStyles(){
   const s = document.createElement('style');
   s.textContent = `
+html[data-theme="dark"]{
+  --text:#E8EEF8;
+  --muted:#9BA7BB;
+  --border:#273247;
+  --bg:#0B0F17;
+  --light:#121826;
+}
+html[data-theme="dark"] body{background:
+  radial-gradient(circle at top right, rgba(140,198,63,.08), transparent 24%),
+  linear-gradient(180deg,#0B0F17,#0F1421 55%,#0B1019);
+  color:var(--text);
+}
+html[data-theme="dark"] nav{background:rgba(10,14,22,.9);border-bottom:1px solid rgba(140,198,63,.14);}
+html[data-theme="dark"] .nav-inner{max-width:1100px;}
+html[data-theme="dark"] .nav-logo{color:#C4EB89;}
+html[data-theme="dark"] .nav-cta{box-shadow:0 10px 24px rgba(140,198,63,.22);}
+html[data-theme="dark"] .breadcrumb,
+html[data-theme="dark"] .breadcrumb a,
+html[data-theme="dark"] .meta{color:#8F9BB0;}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3{color:#F8FAFC !important;}
+html[data-theme="dark"] p,
+html[data-theme="dark"] ul,
+html[data-theme="dark"] ol,
+html[data-theme="dark"] li,
+html[data-theme="dark"] td{color:#CCD6E5;}
+html[data-theme="dark"] .lead{background:linear-gradient(180deg,#121826,#0F1523);border:1px solid rgba(140,198,63,.18);border-left:3px solid #8CC63F;color:#E4ECF8;}
+html[data-theme="dark"] h2{border-left-color:#8CC63F;}
+html[data-theme="dark"] h3{color:#B6E27C;}
+html[data-theme="dark"] th{background:#8CC63F;color:#0A0A0F;}
+html[data-theme="dark"] td{border-bottom-color:rgba(255,255,255,.06);}
+html[data-theme="dark"] tr:nth-child(even) td{background:#111827;}
+html[data-theme="dark"] table{border-color:rgba(255,255,255,.06);}
+html[data-theme="dark"] .tip-box{background:linear-gradient(180deg,#102218,#0E1A15);border-color:rgba(140,198,63,.26);}
+html[data-theme="dark"] .tip-box strong{color:#B6E27C;}
+html[data-theme="dark"] .warn-box{background:linear-gradient(180deg,#2A210E,#1C160A);border-color:rgba(246,224,94,.32);}
+html[data-theme="dark"] .warn-box strong{color:#F7D774;}
+html[data-theme="dark"] .app-cta{background:radial-gradient(circle at top right, rgba(140,198,63,.16), transparent 34%),linear-gradient(135deg,#12192A,#152233 68%, #172A21 100%);border:1px solid rgba(140,198,63,.24);box-shadow:0 0 0 1px rgba(140,198,63,.04), 0 14px 30px rgba(5,10,20,.16);}
+html[data-theme="dark"] .app-cta p{color:#D9E6C7;}
+html[data-theme="dark"] details{background:linear-gradient(180deg,#13192A,#101522);border-color:rgba(140,198,63,.14) !important;}
+html[data-theme="dark"] details summary{color:#F8FAFC !important;}
+html[data-theme="dark"] details div{color:#CCD6E5 !important;}
+html[data-theme="dark"] section[style*="background:#F7FAFC"]{background:linear-gradient(180deg,#0F1523,#0B1019) !important;}
+html[data-theme="dark"] section[style*="background:#F7FAFC"] a[style*="background:#fff"]{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;box-shadow:0 0 0 1px rgba(140,198,63,.03), 0 12px 28px rgba(5,10,20,.12);}
+html[data-theme="dark"] section[style*="background:#F7FAFC"] a[style*="background:#fff"] div[style*="color:#1A202C"]{color:#F8FAFC !important;}
+html[data-theme="dark"] section[style*="background:#F7FAFC"] a[style*="background:#fff"] div[style*="color:#8CC63F"]{color:#A9D86F !important;}
+html[data-theme="dark"] footer{background:#080B12;}
+html[data-theme="dark"] footer a{color:#8F9BB0;}
+html[data-theme="dark"] footer p{color:#6B7280;}
+.sq-article-theme-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-width:88px;
+  justify-content:center;
+  border:1px solid rgba(140,198,63,.22);
+  background:rgba(255,255,255,.88);
+  color:#1A202C;
+  border-radius:999px;
+  padding:8px 14px;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+.sq-article-theme-btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(15,23,42,.12);border-color:rgba(140,198,63,.42);}
+.sq-theme-icon{font-size:14px;line-height:1;}
+.sq-theme-text{letter-spacing:.08em;}
+html[data-theme="dark"] .sq-article-theme-btn{
+  background:rgba(17,24,39,.82);
+  color:#F8FAFC;
+  border-color:rgba(140,198,63,.24);
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+}
+@media(max-width:640px){
+  .sq-article-theme-btn{min-width:auto;padding:8px 12px;}
+  .sq-theme-text{display:none;}
+}
 /* サイドバー：fixed で記事の右に配置（1100px以上のみ） */
 @media(min-width:1100px){
   .sq-sidebar{
@@ -189,6 +307,20 @@ function injectStyles(){
 .sq-new-badge{display:inline-block;background:#EF4444;color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;margin-left:5px;vertical-align:middle;}
   `;
   document.head.appendChild(s);
+}
+
+function buildThemeToggle(){
+  const navInner = document.querySelector('.nav-inner');
+  if(!navInner) return;
+  const btn = document.createElement('button');
+  btn.id = 'sq-article-theme-toggle';
+  btn.className = 'sq-article-theme-btn';
+  btn.type = 'button';
+  btn.addEventListener('click', toggleArticleTheme);
+  const cta = navInner.querySelector('.nav-cta');
+  if(cta) navInner.insertBefore(btn, cta);
+  else navInner.appendChild(btn);
+  syncThemeButtonLabel();
 }
 
 /* ── サイドバー構築（position:fixed、コンテナは触らない） ── */
@@ -451,6 +583,7 @@ function buildWidgets(){
 
 document.addEventListener('DOMContentLoaded',function(){
   injectStyles();
+  buildThemeToggle();
   injectBreadcrumbLD();
   const layout = buildLayout();
   buildTOC(layout.right);
