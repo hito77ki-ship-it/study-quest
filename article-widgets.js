@@ -328,7 +328,23 @@ html[data-theme="dark"] .sq-article-theme-group{
   border-color:rgba(140,198,63,.24);
   box-shadow:0 10px 28px rgba(0,0,0,.18);
 }
+.nav-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  column-gap:16px;
+}
+.nav-logo{justify-self:start;}
+#sq-article-theme-toggle{justify-self:center;}
+.nav-cta{justify-self:end;}
 @media(max-width:640px){
+  .nav-inner{
+    grid-template-columns:1fr auto;
+    row-gap:10px;
+  }
+  .nav-logo{grid-column:1 / 2;}
+  #sq-article-theme-toggle{grid-column:1 / 2;justify-self:start;}
+  .nav-cta{grid-column:2 / 3;grid-row:1 / 3;align-self:center;}
   .sq-article-theme-option{min-width:auto;padding:8px 10px;}
   .sq-theme-text{display:none;}
 }
