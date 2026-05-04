@@ -5,6 +5,7 @@ const ARTICLES = {
   'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール'},
   'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
+  'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
   'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド'},
   'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール'},
@@ -72,7 +73,7 @@ const ARTICLES = {
 
 const CATS = {
   'IT・技術系':      {color:'#10B981', files:['itp.html','fe.html','ap.html','mos.html']},
-  'ビジネス・経済系': {color:'#3B82F6', files:['boki.html','boki2.html','boki1.html','fp.html','shindanshi.html','gaibuin.html','hisho.html','eisei-kanri.html']},
+  'ビジネス・経済系': {color:'#3B82F6', files:['boki.html','boki2.html','boki1.html','boki1-yobikou.html','fp.html','shindanshi.html','gaibuin.html','hisho.html','eisei-kanri.html']},
   '法律・会計系':    {color:'#8B5CF6', files:['cpa.html','takken.html','gyosei.html','sharoshi.html','zeirishi.html','shihoshoshi.html','mansion.html']},
   '医療・福祉系':    {color:'#EC4899', files:['kaigo.html','nurse.html','hoikushi.html','shakai-fukushi.html','iryo-jimu.html','kaigo-fukushi.html']},
   '技術・工業系':    {color:'#F97316', files:['kiken.html','denki.html','chori.html','kenchiku.html']},
@@ -80,7 +81,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-const LATEST = ['daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html','shikaku-jinsei-kawaru.html'];
+const LATEST = ['boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html'];
 
 const PAGE = location.pathname.split('/').pop() || '';
 const ARTICLE_THEME_KEY = 'sq2_theme';
