@@ -645,6 +645,91 @@ footer{background:#091505;padding:48px 24px 40px;}
   .stat+.stat{border-left:none;border-top:1px solid var(--border);}
   .stat{padding:20px 0;}
 }
+
+/* ─── ARTICLE SIDEBAR PANEL (desktop sticky) ─── */
+.art-panel{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);
+  z-index:150;width:230px;
+  background:var(--card-bg);
+  border:1px solid var(--border);border-right:none;
+  border-radius:14px 0 0 14px;
+  padding:18px 16px 14px;
+  box-shadow:-4px 0 28px rgba(0,0,0,.10);
+  transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .35s;
+  max-height:72vh;overflow-y:auto;
+  opacity:0;pointer-events:none;
+}
+.art-panel.show{opacity:1;pointer-events:auto;}
+.art-panel.collapsed{transform:translateY(-50%) translateX(214px);}
+.art-panel-tab{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);
+  z-index:151;
+  background:var(--green);color:#fff;
+  border:none;border-radius:8px 0 0 8px;
+  padding:14px 6px;cursor:pointer;
+  writing-mode:vertical-rl;font-size:11px;font-weight:700;letter-spacing:.12em;
+  font-family:'Noto Sans JP',sans-serif;
+  box-shadow:-2px 0 12px rgba(140,198,63,.3);
+  transition:background .2s,opacity .35s;
+  opacity:0;pointer-events:none;
+}
+.art-panel-tab.show{opacity:1;pointer-events:auto;}
+.art-panel-tab:hover{background:#6AAF2B;}
+.art-panel-link{
+  display:flex;align-items:flex-start;gap:6px;
+  font-size:11px;color:var(--ink2);
+  padding:7px 0;border-bottom:1px solid var(--border);
+  text-decoration:none;transition:color .15s;line-height:1.45;
+}
+.art-panel-link:last-child{border-bottom:none;}
+.art-panel-link:hover{color:var(--green);}
+@media(max-width:1200px){.art-panel,.art-panel-tab{display:none !important;}}
+
+/* ─── ARTICLES SECTION 2-COLUMN ─── */
+.articles-layout{
+  display:grid;grid-template-columns:1fr 248px;gap:32px;align-items:start;
+}
+.articles-sidebar{position:sticky;top:80px;}
+.articles-sidebar-box{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:14px;padding:20px;margin-bottom:16px;
+}
+.articles-sidebar-title{
+  font-size:11px;font-weight:700;color:var(--ink3);
+  letter-spacing:.1em;margin-bottom:12px;
+}
+.cat-link{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--ink2);
+  padding:7px 0;border-bottom:1px solid var(--border);
+  text-decoration:none;transition:color .15s;
+}
+.cat-link:last-child{border-bottom:none;}
+.cat-link:hover{color:var(--green);}
+.cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.sidebar-art-link{
+  display:block;font-size:12px;color:var(--ink2);
+  padding:7px 0;border-bottom:1px solid var(--border);
+  text-decoration:none;transition:color .15s;line-height:1.5;
+}
+.sidebar-art-link:last-child{border-bottom:none;}
+.sidebar-art-link:hover{color:var(--green);}
+@media(max-width:900px){
+  .articles-layout{grid-template-columns:1fr;}
+  .articles-sidebar{position:static;}
+}
+
+/* ─── MOBILE FLOAT BUTTON ─── */
+.art-float{
+  display:none;position:fixed;bottom:24px;right:20px;z-index:140;
+  background:var(--green);color:#fff;border:none;border-radius:100px;
+  padding:11px 20px;font-size:13px;font-weight:700;cursor:pointer;
+  box-shadow:0 4px 20px rgba(140,198,63,.45);
+  font-family:'Noto Sans JP',sans-serif;
+  transition:opacity .3s,transform .3s;opacity:0;transform:translateY(16px);
+}
+.art-float.show{opacity:1;transform:none;}
+@media(max-width:1200px){.art-float{display:block;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
@@ -1215,13 +1300,15 @@ footer{background:#091505;padding:48px 24px 40px;}
 </section>
 
 <!-- 資格別学習ガイド -->
-<section style="background:var(--surface);padding:64px 24px;">
-  <div style="max-width:900px;margin:0 auto;">
+<section id="articles" style="background:var(--surface);padding:64px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:40px;">
       <div style="font-size:11px;letter-spacing:.15em;color:var(--ink3);font-family:'Cinzel',serif;margin-bottom:8px;">STUDY GUIDE</div>
       <h2 style="font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--ink);">資格別 学習ガイド</h2>
       <p style="font-size:14px;color:var(--ink3);margin-top:8px;">各資格の勉強時間・攻略法を無料で公開しています</p>
     </div>
+    <div class="articles-layout">
+    <div><!-- メインコンテンツ -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;">
       <a href="shikaku-list.html" style="display:block;background:linear-gradient(135deg,rgba(140,198,63,.12),rgba(140,198,63,.04));border:2px solid var(--green);border-radius:12px;padding:16px;text-align:center;transition:border-color .2s,transform .15s;color:inherit;">
         <div style="font-size:24px;margin-bottom:8px;">📋</div>
@@ -1385,9 +1472,72 @@ footer{background:#091505;padding:48px 24px 40px;}
           <span style="font-size:18px;">📈</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">転職に有利な資格ランキング</div><div style="font-size:10px;color:var(--ink3);">20代・30代のキャリアアップ向け</div></div>
         </a>
       </div>
-    </div>
+    </div><!-- /メインコンテンツ -->
+
+    <!-- サイドバー -->
+    <aside class="articles-sidebar">
+      <div class="articles-sidebar-box">
+        <div class="articles-sidebar-title">📂 カテゴリから探す</div>
+        <a href="#" onclick="document.querySelector('[href=\'cpa.html\']').scrollIntoView({behavior:'smooth'});return false;" class="cat-link">
+          <span class="cat-dot" style="background:#c9a84c;"></span>法律・会計系
+        </a>
+        <a href="#" onclick="document.querySelector('[href=\'itp.html\']').scrollIntoView({behavior:'smooth'});return false;" class="cat-link">
+          <span class="cat-dot" style="background:#10B981;"></span>IT・技術系
+        </a>
+        <a href="#" onclick="document.querySelector('[href=\'toeic.html\']').scrollIntoView({behavior:'smooth'});return false;" class="cat-link">
+          <span class="cat-dot" style="background:#F59E0B;"></span>語学・教養系
+        </a>
+        <a href="#" onclick="document.querySelector('[href=\'nurse.html\']').scrollIntoView({behavior:'smooth'});return false;" class="cat-link">
+          <span class="cat-dot" style="background:#EC4899;"></span>医療・福祉系
+        </a>
+        <a href="#" onclick="document.querySelector('[href=\'boki-vs-fp.html\']').scrollIntoView({behavior:'smooth'});return false;" class="cat-link">
+          <span class="cat-dot" style="background:#8CC63F;"></span>比較・まとめ
+        </a>
+      </div>
+
+      <div class="articles-sidebar-box">
+        <div class="articles-sidebar-title">🔥 よく読まれている記事</div>
+        <a href="osusume-shikaku.html" class="sidebar-art-link">🏆 社会人おすすめ資格TOP10</a>
+        <a href="keizoku.html" class="sidebar-art-link">🔥 勉強が続かない原因と解決策</a>
+        <a href="boki-vs-fp.html" class="sidebar-art-link">⚖ 簿記2級 vs FP2級 どっちを先に？</a>
+        <a href="cpa.html" class="sidebar-art-link">⚖ 公認会計士の独学ロードマップ</a>
+        <a href="dokugaku-shikaku.html" class="sidebar-art-link">📚 独学で取れる資格ランキング</a>
+      </div>
+
+      <div class="articles-sidebar-box" style="background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.02));border-color:rgba(140,198,63,.3);">
+        <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;">⚔ 学習記録と一緒に使う</div>
+        <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;line-height:1.6;">記事を読んだら、Study Questで実際に勉強を記録してみよう。</div>
+        <a href="index.html" style="display:block;background:var(--green);color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">無料で始める →</a>
+      </div>
+    </aside>
+
+    </div><!-- /articles-layout -->
   </div>
 </section>
+
+<!-- Sticky Article Panel (desktop) -->
+<button class="art-panel-tab" id="artPanelTab">📚 攻略記事</button>
+<div class="art-panel" id="artPanel">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+    <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.1em;">📚 人気の攻略記事</div>
+    <button id="artPanelClose" style="background:none;border:none;color:var(--ink3);cursor:pointer;font-size:16px;padding:0;line-height:1;">×</button>
+  </div>
+  <a href="osusume-shikaku.html" class="art-panel-link">🏆 社会人おすすめ資格TOP10</a>
+  <a href="keizoku.html" class="art-panel-link">🔥 勉強が続かない原因と解決策</a>
+  <a href="cpa.html" class="art-panel-link">⚖ 公認会計士の独学ロードマップ</a>
+  <a href="boki.html" class="art-panel-link">📒 簿記3級・2級の攻略法</a>
+  <a href="boki-vs-fp.html" class="art-panel-link">⚖ 簿記2級 vs FP2級 どっちを先に？</a>
+  <a href="takken.html" class="art-panel-link">🏠 宅建 独学スケジュール</a>
+  <a href="dokugaku-shikaku.html" class="art-panel-link">📚 独学で取れる資格ランキング</a>
+  <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);text-align:center;">
+    <a href="#articles" style="font-size:11px;color:var(--green);font-weight:700;text-decoration:none;">全記事を見る ↓</a>
+  </div>
+</div>
+
+<!-- Mobile Float Button -->
+<button class="art-float" id="artFloat" onclick="document.getElementById('articles').scrollIntoView({behavior:'smooth'})">
+  📚 攻略記事を見る
+</button>
 
 <!-- FOOTER -->
 <footer>
@@ -1446,6 +1596,54 @@ const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 24);
 }, { passive: true });
+
+// ─── Sticky Article Panel ───
+(function(){
+  const panel = document.getElementById('artPanel');
+  const tab   = document.getElementById('artPanelTab');
+  const close = document.getElementById('artPanelClose');
+  const floatBtn = document.getElementById('artFloat');
+  if(!panel || !tab) return;
+
+  let panelOpen = false;
+
+  function openPanel(){
+    panel.classList.remove('collapsed');
+    panel.classList.add('show');
+    tab.style.display = 'none';
+    panelOpen = true;
+  }
+  function closePanel(){
+    panel.classList.add('collapsed');
+    panel.classList.remove('show');
+    tab.style.display = '';
+    panelOpen = false;
+  }
+
+  tab.addEventListener('click', openPanel);
+  if(close) close.addEventListener('click', closePanel);
+
+  // heroを過ぎたら表示
+  const hero = document.querySelector('.hero');
+  window.addEventListener('scroll', ()=>{
+    const heroGone = hero && hero.getBoundingClientRect().bottom < 0;
+    if(heroGone){
+      tab.classList.add('show');
+      if(floatBtn) floatBtn.classList.add('show');
+    } else {
+      tab.classList.remove('show');
+      panel.classList.remove('show');
+      panel.classList.remove('collapsed');
+      if(floatBtn) floatBtn.classList.remove('show');
+      panelOpen = false;
+    }
+  },{passive:true});
+
+  // 記事リンクのGA追跡
+  panel.querySelectorAll('a[href]').forEach(a=>{
+    a.addEventListener('click',()=>{ try{ gtag('event','art_panel_click',{article:a.getAttribute('href')}); }catch{} });
+  });
+})();
 
 // FAQ accordion
 function toggleFaq(btn) {
