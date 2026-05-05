@@ -688,12 +688,34 @@ html[data-theme="dark"] .sq-article-theme-group{
 .sq-toc li{margin-bottom:5px;line-height:1.6;}
 .sq-toc a{font-size:12px;color:var(--sq-accent-bright);text-decoration:none;}
 .sq-toc a:hover{text-decoration:underline;}
-/* TOC（モバイル：インライン） */
+/* TOC（モバイル：アコーディオン） */
 @media(max-width:959px){
-  .sq-toc-inline{background:radial-gradient(circle at top right, rgba(140,198,63,.12), transparent 30%),linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);border-left:3px solid #8CC63F;border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0 32px;font-size:13px;}
-  .sq-toc-inline ol{margin:0;padding-left:18px;}
-  .sq-toc-inline li{margin-bottom:5px;}
-  .sq-toc-inline a{color:var(--sq-accent-bright);text-decoration:none;}
+  .sq-toc-inline{background:radial-gradient(circle at top right, rgba(140,198,63,.12), transparent 30%),linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);border-left:3px solid #8CC63F;border-radius:0 12px 12px 0;margin:20px 0 28px;overflow:hidden;}
+  .sq-toc-inline details{padding:0;}
+  .sq-toc-inline summary{list-style:none;padding:14px 18px;cursor:pointer;font-size:13px;font-weight:700;color:var(--sq-text);display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none;}
+  .sq-toc-inline summary::-webkit-details-marker{display:none;}
+  .sq-toc-inline summary::after{content:'▼';font-size:10px;color:var(--sq-muted);transition:transform .2s;flex-shrink:0;}
+  .sq-toc-inline details[open] summary::after{transform:rotate(-180deg);}
+  .sq-toc-inline ol{margin:0;padding:0 18px 14px 32px;}
+  .sq-toc-inline li{margin-bottom:7px;line-height:1.6;}
+  .sq-toc-inline a{color:var(--sq-accent-bright);text-decoration:none;font-size:13px;}
+  /* コンテナのモバイル余白 */
+  body .container{padding-left:16px !important;padding-right:16px !important;}
+  /* シェアボタンモバイル */
+  .sq-share-btns{flex-direction:column;gap:10px;}
+  .sq-share-btn{justify-content:center;}
+  /* リアクションモバイル */
+  .sq-reaction{padding:24px 16px;}
+  .sq-reaction-btn{padding:14px 16px;flex:1;min-width:90px;}
+  .sq-reaction-emoji{font-size:22px;}
+  .sq-reaction-btns{gap:8px;}
+  /* 関連記事グリッドモバイル */
+  .sq-card-grid{grid-template-columns:1fr !important;}
+  /* 途中CTAモバイル */
+  .sq-mid-cta{flex-direction:column;gap:12px;text-align:center;}
+  .sq-mid-cta a{width:100%;text-align:center;padding:12px 20px;font-size:14px;}
+  /* 著者モバイル */
+  .sq-author{flex-direction:column;text-align:center;gap:10px;}
 }
 /* カテゴリーバッジ */
 .sq-cat-badge{margin-bottom:8px;}
@@ -811,11 +833,16 @@ function buildTOC(sidebar){
     box.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> _gaEvent('toc_click', {article_id: PAGE, heading: a.textContent.trim()})));
     sidebar.appendChild(box);
   } else {
-    // モバイル：lead直後にインライン配置
+    // モバイル：lead直後にアコーディオン配置
     const toc = document.createElement('div');
     toc.className = 'sq-toc-inline';
-    toc.innerHTML = `<div class="sq-toc-title">📋 この記事の目次</div>${ol}`;
-    toc.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> _gaEvent('toc_click', {article_id: PAGE, heading: a.textContent.trim()})));
+    toc.innerHTML = `<details><summary>📋 この記事の目次</summary>${ol}</details>`;
+    toc.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{
+      _gaEvent('toc_click', {article_id: PAGE, heading: a.textContent.trim()});
+      // タップ後に閉じる（モバイルUX）
+      const det = toc.querySelector('details');
+      if(det && window.innerWidth < 960) setTimeout(()=>{ det.open=false; }, 300);
+    }));
     const lead = container.querySelector('.lead');
     if(lead) lead.insertAdjacentElement('afterend', toc);
   }
