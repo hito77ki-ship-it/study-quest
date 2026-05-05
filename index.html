@@ -14870,6 +14870,7 @@ function markBossResult(bossId, result){
   const b = bosses.find(x=>x.id===bossId);
   if(!b) return;
   b.result = result;
+  gtag('event','boss_result',{exam_name: b.name, result});
   saveAll();
   renderBoss();
   if(result==='pass'){
@@ -15744,6 +15745,7 @@ async function quickRecord(mins){
   const startedAt = new Date(Date.now() - mins*60000).toISOString();
   const condition = getTodayCondition();
 
+  gtag('event','quick_record',{minutes: mins, subject: subj.key});
   sessions.push({ date:today, subject:subj.key, type:'study', amount:mins, exp, note:'⚡ クイック記録', startedAt, endedAt, condition });
 
   const smins1 = levelStudyMins(sessions), lv1 = computeLevel(smins1);
@@ -15800,6 +15802,7 @@ function saveLocalLikes(likes){
 
 /* ── 自動投稿（記録完了時に呼ばれる） ── */
 async function autoPostToTimeline({ subject, minutes, note, exp, lv, name, material_name, material_cover, material_id, post_image, examPost }){
+  gtag('event','timeline_post',{subject, minutes});
   const subj = allSelectedSubjects().find(s => s.key === subject);
   const subjName = subj ? subj.name : subject || '学習';
   const rpgLog = generateRpgLog(name, subjName, minutes);
@@ -19431,6 +19434,7 @@ function saveMaterial(){
     const idx = materials.findIndex(m => m.id === editId);
     if(idx >= 0) materials[idx] = {...materials[idx], ...entry};
   } else {
+    gtag('event','material_added',{material_name: name, subject_key: subjectKey});
     materials.unshift(entry);
   }
   saveMaterials();

@@ -808,12 +808,14 @@ function buildTOC(sidebar){
     const box = document.createElement('div');
     box.className = 'sq-sidebar-box';
     box.innerHTML = `<div class="sq-toc-title">📋 目次</div><div class="sq-toc">${ol}</div>`;
+    box.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> _gaEvent('toc_click', {article_id: PAGE, heading: a.textContent.trim()})));
     sidebar.appendChild(box);
   } else {
     // モバイル：lead直後にインライン配置
     const toc = document.createElement('div');
     toc.className = 'sq-toc-inline';
     toc.innerHTML = `<div class="sq-toc-title">📋 この記事の目次</div>${ol}`;
+    toc.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> _gaEvent('toc_click', {article_id: PAGE, heading: a.textContent.trim()})));
     const lead = container.querySelector('.lead');
     if(lead) lead.insertAdjacentElement('afterend', toc);
   }
@@ -1102,6 +1104,26 @@ function injectGA(){
   gtag('config', 'G-WL5KSKG1JK');
 }
 
+function trackScrollDepth(){
+  const fired = new Set();
+  window.addEventListener('scroll', ()=>{
+    const el = document.documentElement;
+    const pct = Math.round((el.scrollTop + el.clientHeight) / el.scrollHeight * 100);
+    [50, 100].forEach(d=>{
+      if(pct >= d && !fired.has(d)){
+        fired.add(d);
+        _gaEvent('scroll_depth', {article_id: PAGE, depth: d});
+      }
+    });
+  }, {passive: true});
+}
+
+function trackRelatedArticleClicks(){
+  document.querySelectorAll('.sq-card, .sq-side-link').forEach(a=>{
+    a.addEventListener('click', ()=> _gaEvent('related_article_click', {from: PAGE, to: a.getAttribute('href')}));
+  });
+}
+
 document.addEventListener('DOMContentLoaded',function(){
   injectGA();
   injectStyles();
@@ -1117,5 +1139,7 @@ document.addEventListener('DOMContentLoaded',function(){
   buildReactionWidget();
   buildShareButtons();
   buildWidgets();
+  trackScrollDepth();
+  trackRelatedArticleClicks();
 });
 })();
