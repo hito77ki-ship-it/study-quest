@@ -839,6 +839,7 @@ function buildSidebarCTA(sidebar){
   const box = document.createElement('div');
   box.className = 'sq-sidebar-cta';
   box.innerHTML = `<p>⚔ 勉強記録を経験値に変えて、<br>毎日の資格学習を冒険として積み上げる。</p><a href="index.html">Study Quest を起動する →</a>`;
+  box.querySelector('a').addEventListener('click', ()=> _gaEvent('cta_click', {article_id: PAGE, cta_position: 'sidebar'}));
   sidebar.appendChild(box);
 }
 
@@ -892,6 +893,7 @@ function insertMidCTA(){
   const cta = document.createElement('div');
   cta.className = 'sq-mid-cta';
   cta.innerHTML = '<p>📱 <strong>Study Quest</strong> は、停滞しがちな資格勉強を「積み上がりが見える冒険」に変える学習アプリです。今日の勉強を、次のレベルアップに変えましょう。</p><a href="index.html">無料で試してみる →</a>';
+  cta.querySelector('a').addEventListener('click', ()=> _gaEvent('cta_click', {article_id: PAGE, cta_position: 'mid'}));
   target.insertAdjacentElement('beforebegin', cta);
 }
 
@@ -971,6 +973,9 @@ function buildShareButtons(){
       </a>
     </div>`;
 
+  wrap.querySelector('.sq-share-btn-x').addEventListener('click', ()=> _gaEvent('share', {article_id: PAGE, method: 'x'}));
+  wrap.querySelector('.sq-share-btn-line').addEventListener('click', ()=> _gaEvent('share', {article_id: PAGE, method: 'line'}));
+
   const related = document.querySelector('section[style*="F7FAFC"]');
   if(related) related.insertAdjacentElement('beforebegin', wrap);
   else {
@@ -1014,6 +1019,7 @@ function buildReactionWidget(){
       wrap.querySelectorAll('.sq-reaction-btn').forEach(b=>b.classList.toggle('sq-reacted', b.dataset.type===type));
       const note = document.getElementById('sqRNote');
       if(note) note.textContent = 'ありがとうございます！';
+      _gaEvent('article_reaction', {article_id: articleId, reaction_type: type});
       await _sendReaction(articleId, type);
       const c = await _fetchCounts(articleId);
       REACTIONS.forEach(r=>{ const el=document.getElementById('sqRc-'+r.type); if(el) el.textContent=c[r.type]||0; });
@@ -1077,6 +1083,10 @@ function buildWidgets(){
     const footer = document.querySelector('footer');
     if(footer) footer.insertAdjacentElement('beforebegin', wrap);
   }
+}
+
+function _gaEvent(name, params){
+  try{ if(window.gtag) gtag('event', name, params); }catch{}
 }
 
 function injectGA(){
