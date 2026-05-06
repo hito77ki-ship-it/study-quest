@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <title>スタディクエスト｜RPG風 勉強管理アプリ【無料】</title>
 <!-- PWA -->
@@ -13384,8 +13387,9 @@ function renderPaceDiag(){
   const progressPct = Math.min(100, Math.round(totalStudiedMins / totalTargetMins * 100));
   const dailyNeedMins = daysLeft > 0 ? Math.ceil(remainMins / daysLeft) : 0;
   const sevenDaysAgo = new Date(today.getTime() - 7 * 86400000);
-  const subjectSet = new Set(selectedSubjectKeys || []);
-  const recentMins = Math.round(sessions.filter(s => isStudyType(s) && s.date && new Date(s.date) >= sevenDaysAgo && (!subjectSet.size || subjectSet.has(s.subject))).reduce((a,s) => a + s.amount, 0));
+  const _pdSubjects = allSelectedSubjects();
+  const _pdSubjSet = new Set(_pdSubjects.map(s => s.key));
+  const recentMins = Math.round(sessions.filter(s => isStudyType(s) && s.date && new Date(s.date) >= sevenDaysAgo && (_pdSubjSet.size === 0 || _pdSubjSet.has(s.subject))).reduce((a,s) => a + s.amount, 0));
   const recentDailyMins = Math.round(recentMins / 7);
   let status = 'ok';
   if(dailyNeedMins > recentDailyMins * 1.5 || dailyNeedMins > 240) status = 'danger';
