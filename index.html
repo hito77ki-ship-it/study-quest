@@ -6842,13 +6842,15 @@ function fmtSecs(totalSecs){
 function studyMins(sess){return sess.filter(s=>s.type==='study'||s.type==='exam').reduce((a,s)=>a+sAmount(s),0);}
 function studyMinsForKeys(sess, keys){
   const set = new Set(keys || []);
-  if(!set.size) return studyMins(sess);
+  if(!set.size) return 0;
   return sess
     .filter(s=>(s.type==='study'||s.type==='exam') && s.subject && set.has(s.subject))
     .reduce((a,s)=>a+sAmount(s),0);
 }
 function levelStudyMins(sess){
-  return studyMinsForKeys(sess, selectedSubjectKeys || []);
+  const subjects = allSelectedSubjects();
+  if(!subjects.length) return 0;
+  return studyMinsForKeys(sess, subjects.map(s => s.key));
 }
 function levelStudyMinsForJob(sess, jobId){
   return studyMinsForKeys(sess, getSubjectsForJobId(jobId).map(s=>s.key));
