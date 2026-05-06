@@ -656,6 +656,14 @@ html[data-theme="dark"] .compare-card.tan .badge{background:rgba(246,224,94,.2) 
 html[data-theme="dark"] .compare-card.fuku .badge{background:rgba(140,198,63,.2) !important;color:#B6E27C !important;}
 html[data-theme="dark"] .compare-card .eg{background:rgba(255,255,255,.05) !important;color:#9BA7BB !important;}
 html[data-theme="dark"] .compare-card p{color:#CCD6E5 !important;}
+/* 借方・貸方 記憶カード（第4回） */
+html[data-theme="dark"] .memory-card{border-color:rgba(140,198,63,.16) !important;}
+html[data-theme="dark"] .memory-half.left{background:rgba(59,130,246,.14) !important;}
+html[data-theme="dark"] .memory-half.right{background:rgba(237,137,54,.12) !important;}
+html[data-theme="dark"] .memory-half.left .memory-char{color:#90CDF4 !important;}
+html[data-theme="dark"] .memory-half.right .memory-char{color:#FBD38D !important;}
+html[data-theme="dark"] .memory-title{color:#F8FAFC !important;}
+html[data-theme="dark"] .memory-desc{color:#9BA7BB !important;}
 /* 仕訳エントリー（第5回 je-kari/je-kashi） */
 html[data-theme="dark"] .je-kari{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .je-kashi{background:rgba(237,137,54,.10) !important;border-color:rgba(237,137,54,.25) !important;color:#CCD6E5 !important;}
