@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仕訳のしくみ・借方と貸方とは？【ゼロからの簿記 第4回】｜スタディクエスト</title>
+<meta name="description" content="簿記の核心「仕訳（しわけ）」のしくみをゼロから解説。借方・貸方の意味、勘定科目とは何か、複式簿記と単式簿記の違いを初心者向けにわかりやすく説明します。">
+<meta name="keywords" content="仕訳 とは,借方 貸方 覚え方,勘定科目 とは,複式簿記 とは,日商簿記3級 仕訳">
+<meta property="og:title" content="仕訳のしくみ・借方と貸方とは？【ゼロからの簿記 第4回】">
+<meta property="og:description" content="簿記の核心「仕訳」のしくみをゼロから解説。借方・貸方の意味と覚え方、勘定科目とは何かを初心者向けに。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki-zero-04.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "仕訳のしくみ・借方と貸方とは？【ゼロからの簿記 第4回】",
+  "description": "簿記の核心「仕訳」のしくみをゼロから解説。",
+  "url": "https://hito77ki-ship-it.github.io/study-quest/boki-zero-04.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
+  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:32px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.warn-box strong{color:#975A16;}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+.series-nav{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:12px;padding:20px 24px;margin:32px 0;}
+.series-nav-title{font-size:12px;font-weight:700;color:#276749;letter-spacing:.05em;margin-bottom:12px;}
+.series-nav ol{margin:0 0 0 16px;}
+.series-nav li{font-size:13px;color:#374151;margin-bottom:6px;}
+.series-nav li.current{font-weight:700;color:var(--green2);}
+.page-nav{display:flex;justify-content:space-between;margin:48px 0 0;gap:12px;}
+.page-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#fff;padding:10px 20px;border-radius:100px;transition:opacity .2s;text-decoration:none;}
+.page-nav a:hover{opacity:.85;}
+.page-nav .prev{background:var(--muted);}
+.page-nav .next{background:var(--green2);margin-left:auto;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:8px;}
+.point-card p{font-size:15px;font-weight:700;color:var(--text);margin:0;}
+
+/* 単式 vs 複式 比較 */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+@media(max-width:480px){.compare-grid{grid-template-columns:1fr;}}
+.compare-card{border-radius:12px;padding:20px;}
+.compare-card.tan{background:#FFF9C4;border:1px solid #F6E05E;}
+.compare-card.fuku{background:#E8F7B8;border:1px solid #9AE6B4;}
+.compare-card .badge{font-size:11px;font-weight:700;letter-spacing:.05em;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:10px;}
+.compare-card.tan .badge{background:#F6E05E;color:#975A16;}
+.compare-card.fuku .badge{background:#9AE6B4;color:#276749;}
+.compare-card .title{font-size:14px;font-weight:700;margin-bottom:8px;}
+.compare-card p{font-size:12px;margin-bottom:6px;}
+.compare-card .eg{font-size:12px;color:var(--muted);background:#fff;border-radius:6px;padding:8px 10px;margin-top:8px;font-family:monospace;}
+
+/* 仕訳ボックス */
+.shiwake{display:flex;border:2px solid var(--border);border-radius:12px;overflow:hidden;margin:24px 0;font-size:14px;}
+.shiwake-col{flex:1;padding:16px 20px;}
+.shiwake-col.kari{background:#EBF8FF;border-right:2px solid var(--border);}
+.shiwake-col.kashi{background:#FFF9F0;}
+.shiwake-label{font-size:10px;font-weight:700;letter-spacing:.1em;margin-bottom:10px;}
+.shiwake-col.kari .shiwake-label{color:#2B6CB0;}
+.shiwake-col.kashi .shiwake-label{color:#C05621;}
+.shiwake-item{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.shiwake-item .kamoku{font-weight:700;font-size:15px;}
+.shiwake-item .amount{font-size:15px;color:var(--muted);}
+
+/* 覚え方カード */
+.memory-card{display:flex;gap:0;border-radius:12px;overflow:hidden;margin:24px 0;border:2px solid var(--border);}
+.memory-half{flex:1;padding:20px;text-align:center;}
+.memory-half.left{background:#EBF8FF;}
+.memory-half.right{background:#FFF9F0;}
+.memory-char{font-size:48px;font-weight:900;line-height:1;margin-bottom:8px;}
+.memory-half.left .memory-char{color:#2B6CB0;}
+.memory-half.right .memory-char{color:#C05621;}
+.memory-title{font-size:13px;font-weight:700;margin-bottom:4px;}
+.memory-desc{font-size:12px;color:var(--muted);}
+
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="index.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="lp.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; ゼロからの簿記 第4回
+  </div>
+
+  <p class="meta">初心者向け連載 | 第4回 | 公開：2026年5月7日</p>
+  <h1>仕訳のしくみ・借方と貸方とは？<br>【ゼロからの簿記 第4回】</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <p class="lead">
+    いよいよ簿記の核心、<strong>仕訳（しわけ）</strong>です。<br>
+    「借方・貸方って何？」「勘定科目って普通の言葉じゃダメなの？」—— 私も最初はここで止まりかけました。<br>
+    でも仕組みを理解すれば、仕訳は「ルールに従って書くだけ」になります。焦らず読んでみてください。
+  </p>
+
+  <div class="series-nav">
+    <div class="series-nav-title">📚 初めての人向け！ゼロからの簿記 — 全5回</div>
+    <ol>
+      <li><a href="boki-zero-01.html">第1回「お店の取引とは？」「簿記とは？」</a></li>
+      <li><a href="boki-zero-02.html">第2回「なぜ簿記が大事といわれるか？」</a></li>
+      <li><a href="boki-zero-03.html">第3回「簿記の流れ」</a></li>
+      <li class="current">第4回「仕訳のしくみ」← 今ここ</li>
+      <li><a href="boki-zero-05.html">第5回「仕訳から財務諸表へ」</a></li>
+    </ol>
+  </div>
+
+  <h2>単式簿記と複式簿記の違い</h2>
+
+  <p>取引をメモする方法には、<strong>単式簿記</strong>と<strong>複式簿記</strong>の2種類があります。</p>
+
+  <div class="compare-grid">
+    <div class="compare-card tan">
+      <span class="badge">単式簿記</span>
+      <div class="title">家計簿スタイル</div>
+      <p>お金の出入りを1行でメモする。個人の家計簿と同じ感覚。</p>
+      <p>✅ 書きやすい<br>❌ 「なぜ増えた/減ったか」がわかりにくい</p>
+      <div class="eg">4/1　商品販売　＋1,100円</div>
+    </div>
+    <div class="compare-card fuku">
+      <span class="badge">複式簿記</span>
+      <div class="title">仕訳スタイル</div>
+      <p>1つの取引を左右2面から記録する。お店や会社で使う正式な方法。</p>
+      <p>✅ 「何が増えて何が減ったか」が両面わかる<br>✅ 財務諸表が自動的に作れる</p>
+      <div class="eg">現金 1,100 ／ 売上 1,100</div>
+    </div>
+  </div>
+
+  <p>お店や会社では現金以外にも「商品」「備品」「借金」などさまざまな財産が動きます。単式簿記では「お金が1,100円増えた」しか記録できませんが、複式簿記なら「お金が1,100円増えて、同時に売上が1,100円発生した」と両面記録できます。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student">🐣</div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">家計簿じゃダメな理由がいまいちピンとこないです…</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher">📚</div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">たとえば「現金が100万円増えた」と単式簿記で記録したとします。でもその100万円は「商品を売ってもらったのか」「銀行から借りたのか」「株主から出資してもらったのか」が記録に残りません。複式簿記なら両面書くので原因と結果が同時に記録できるんです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student">🐣</div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">なるほど！借りたお金と売上は全然違うから、区別して記録しないといけないんですね。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>仕訳のしくみ</h2>
+
+  <p>複式簿記では、取引のメモを<strong>仕訳（しわけ）</strong>という形で書きます。仕訳は必ず「左」と「右」の2列に分けて書きます。</p>
+
+  <p>たとえば「商品を売って1,100円の現金を受け取った」という取引は、次のように仕訳します。</p>
+
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方（かりかた）＝左</div>
+      <div class="shiwake-item">
+        <span class="kamoku">現金</span>
+        <span class="amount">1,100</span>
+      </div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方（かしかた）＝右</div>
+      <div class="shiwake-item">
+        <span class="kamoku">売上</span>
+        <span class="amount">1,100</span>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>左（借方）の「現金 1,100」</strong>…現金が1,100円増えたことを表す</li>
+    <li><strong>右（貸方）の「売上 1,100」</strong>…売上が1,100円発生したことを表す</li>
+  </ul>
+
+  <p>左右の金額は必ず一致します（バランスが崩れると計算ミスのサイン）。これが複式簿記の「複式」の意味 ——1つの取引を必ず2面から記録するというルールです。</p>
+
+  <h2>借方・貸方の覚え方</h2>
+
+  <p>「借方」「貸方」は非常に紛らわしい言葉です。私も最初は何度も間違えました。でも、有名な覚え方があります。</p>
+
+  <div class="memory-card">
+    <div class="memory-half left">
+      <div class="memory-char">り</div>
+      <div class="memory-title">借（か<u>り</u>）方 ＝ 左</div>
+      <div class="memory-desc">「り」の字は左に向かって払う<br>→ 左側が借方</div>
+    </div>
+    <div class="memory-half right">
+      <div class="memory-char">し</div>
+      <div class="memory-title">貸（か<u>し</u>）方 ＝ 右</div>
+      <div class="memory-desc">「し」の字は右に向かって流れる<br>→ 右側が貸方</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 私の覚え方</strong><br>
+    CPA勉強当初、私はこれをひたすら仕訳を書きながら体に覚えさせました。「借方は左」を100回唱えるより、仕訳問題を10問解く方が確実に定着します。手を動かすことが大事です。
+  </div>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student">🐣</div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">借方が左か右か、いつも混乱します。何かいい方法ありますか？</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher">📚</div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">「か<strong>り</strong>かた」の「り」は左払い、「か<strong>し</strong>かた」の「し」は右流れ、と覚えるのが有名な方法です。ただ正直、これも慣れるまでは混乱します。最終的には問題を解きながら「あ、これは左だな」と自然に出てくるようになるので、理屈より量をこなすのが近道です。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student">🐣</div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">結局は慣れですか（笑）</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher">📚</div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そうです（笑）。最初の2〜3週間は混乱してOK。毎日少しでも仕訳を書いていれば、必ず自然に出てくるようになります。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>勘定科目とは？</h2>
+
+  <p>仕訳に出てくる「現金」「売上」などの言葉を<strong>勘定科目（かんじょうかもく）</strong>といいます。なぜ「お金」「売り上げ」ではなく「現金」「売上」という特定の言葉を使うのでしょうか。</p>
+
+  <div class="point-card">
+    <div class="label">REASON</div>
+    <p>勘定科目は「誰が見ても同じ意味に伝わる共通言語」だから</p>
+  </div>
+
+  <p>たとえばA社が「お金」、B社が「金銭」、C社が「現金」と書いたら、後で比較しようとしたとき同じ意味かどうか判断できません。そこで日本中のお店・会社が「現金」「売上」「買掛金」などの統一された勘定科目を使います。</p>
+  <p>試験では主要な勘定科目を覚える必要がありますが、3級の範囲は約50〜60個です。最初から全部覚えようとせず、問題を解きながら自然に覚えていくのが効率的です。</p>
+
+  <h3>よく使う勘定科目（3級レベル）</h3>
+
+  <table style="width:100%;border-collapse:collapse;margin-bottom:24px;font-size:13px;">
+    <thead>
+      <tr>
+        <th style="background:var(--green);color:#fff;padding:10px 14px;text-align:left;">種類</th>
+        <th style="background:var(--green);color:#fff;padding:10px 14px;text-align:left;">主な勘定科目</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border);">資産（財産）</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">現金・普通預金・売掛金・商品・建物・備品</td></tr>
+      <tr style="background:var(--light);"><td style="padding:10px 14px;border-bottom:1px solid var(--border);">負債（借金）</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">買掛金・借入金・未払金</td></tr>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border);">収益（売上系）</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">売上・受取利息・受取手数料</td></tr>
+      <tr style="background:var(--light);"><td style="padding:10px 14px;">費用（コスト系）</td><td style="padding:10px 14px;">仕入・給料・家賃・通信費・水道光熱費</td></tr>
+    </tbody>
+  </table>
+
+  <h2>仕訳を見ればわかること</h2>
+
+  <p>仕訳が書けるようになると、「取引の事実」が左右2列から読み取れます。</p>
+
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方（左）</div>
+      <div class="shiwake-item">
+        <span class="kamoku">現金</span>
+        <span class="amount">1,100</span>
+      </div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方（右）</div>
+      <div class="shiwake-item">
+        <span class="kamoku">売上</span>
+        <span class="amount">1,100</span>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li>右「売上 1,100」→ 商品を1,100円分売ったことが発生した</li>
+    <li>左「現金 1,100」→ その代金として現金1,100円を受け取った</li>
+  </ul>
+
+  <p>この仕訳を積み重ねていくと、「現金の残高」「売上の合計」が自動的に計算され、第3回で学んだ財務諸表（損益計算書・貸借対照表）ができあがります。これが第5回のテーマです。</p>
+
+  <div class="warn-box">
+    <strong>⚠ よくある誤解</strong><br>
+    「借方＝借りている（負債）」ではありません。借方・貸方はただの「左・右」を指す記帳用語です。資産が左（借方）に増えることもあれば、負債が右（貸方）に増えることもあります。意味と位置は切り離して覚えましょう。
+  </div>
+
+  <h2>第4回のまとめ</h2>
+
+  <ul>
+    <li>単式簿記＝家計簿スタイル / <strong>複式簿記＝仕訳スタイル（会社で使う）</strong></li>
+    <li>仕訳は取引を「左（借方）」と「右（貸方）」の2列で記録する</li>
+    <li>左右の金額は必ず一致する</li>
+    <li>「か<strong>り</strong>かた＝左」「か<strong>し</strong>かた＝右」— 字の形で覚える</li>
+    <li>勘定科目は「全国共通の取引用語」— 慣れるまで問題を解きながら覚える</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>📌 次回予告（最終回）</strong><br>
+    第5回は「仕訳から財務諸表へ」。仕訳をどうやって損益計算書・貸借対照表にまとめていくのか、簿記の全体の流れを完成させます。この連載のゴール回です！
+  </div>
+
+  <div class="app-cta">
+    <h3>簿記の学習時間をRPGで記録しよう</h3>
+    <p>毎日の勉強をレベルアップ・ボス討伐で楽しく継続できるWebアプリ。無料で使えます。</p>
+    <a href="index.html">スタディクエストを無料で使う</a>
+  </div>
+
+  <div class="series-nav">
+    <div class="series-nav-title">📚 ゼロからの簿記 — 全5回</div>
+    <ol>
+      <li><a href="boki-zero-01.html">第1回「お店の取引とは？」「簿記とは？」</a></li>
+      <li><a href="boki-zero-02.html">第2回「なぜ簿記が大事といわれるか？」</a></li>
+      <li><a href="boki-zero-03.html">第3回「簿記の流れ」</a></li>
+      <li class="current">第4回「仕訳のしくみ」← 今ここ</li>
+      <li><a href="boki-zero-05.html">第5回「仕訳から財務諸表へ」</a></li>
+    </ol>
+  </div>
+
+  <div class="page-nav">
+    <a class="prev" href="boki-zero-03.html">← 第3回へ</a>
+    <a class="next" href="boki-zero-05.html">第5回へ →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="lp.html">TOP</a>
+  <a href="boki.html">簿記勉強法</a>
+  <a href="about.html">運営者情報</a>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <a href="contact.html">お問い合わせ</a>
+  <p>© 2026 スタディクエスト. All rights reserved.</p>
+</footer>
+
+<script src="article-widgets.js"></script>
+</body>
+</html>
