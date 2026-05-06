@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説｜スタディクエスト</title>
+<meta name="description" content="貸倒引当金の仕訳を「計上→貸倒れ発生」の流れで解説。差額補充法の計算方法、貸倒損失との使い分け、2級向け当期回収パターンまで例題つきで網羅。日商簿記3級の頻出論点です。">
+<meta name="keywords" content="貸倒引当金 仕訳,差額補充法 計算,貸倒損失 違い,日商簿記3級 貸倒引当金,貸倒引当金繰入 仕訳">
+<meta property="og:title" content="貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説">
+<meta property="og:description" content="貸倒引当金を「計上→貸倒れ発生」の流れで解説。差額補充法の計算、貸倒損失との使い分けを例題つきで。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-kashidaore.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説",
+  "description": "貸倒引当金を「計上→貸倒れ発生」の流れで解説。差額補充法の計算、貸倒損失との使い分けを例題つきで。",
+  "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-kashidaore.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
+  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.warn-box strong{color:#975A16;}
+
+/* 仕訳ボックス */
+.shiwake{display:flex;border:2px solid var(--border);border-radius:12px;overflow:hidden;margin:16px 0;font-size:14px;}
+.shiwake-col{flex:1;padding:14px 18px;}
+.shiwake-col.kari{background:#EBF8FF;border-right:2px solid var(--border);}
+.shiwake-col.kashi{background:#FFF9F0;}
+.shiwake-label{font-size:10px;font-weight:700;letter-spacing:.1em;margin-bottom:8px;}
+.shiwake-col.kari .shiwake-label{color:#2B6CB0;}
+.shiwake-col.kashi .shiwake-label{color:#C05621;}
+.shiwake-item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 0;}
+.shiwake-item .kamoku{font-weight:700;font-size:14px;}
+.shiwake-item .amount{font-size:14px;color:var(--muted);}
+
+/* 例題ブロック */
+.mondai{background:#FAFAFA;border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:20px 0;}
+.mondai .mondai-label{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--muted);margin-bottom:10px;}
+.mondai p{font-size:14px;margin:0;}
+.kaitou-label{font-size:10px;font-weight:700;letter-spacing:.1em;color:#276749;margin:16px 0 6px;}
+
+/* 差額補充法 計算ボックス */
+.calc-box{background:#fff;border:2px solid var(--green);border-radius:14px;padding:20px 24px;margin:24px 0;}
+.calc-box .calc-title{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:16px;}
+.calc-row{display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0;border-bottom:1px dashed var(--border);}
+.calc-row:last-child{border-bottom:none;padding-top:12px;margin-top:4px;}
+.calc-row .label{color:var(--muted);min-width:180px;flex-shrink:0;font-size:13px;}
+.calc-row .val{font-weight:700;color:var(--text);}
+.calc-row .val.result{color:var(--green2);font-size:16px;}
+.calc-operator{color:var(--muted);font-size:16px;}
+@media(max-width:480px){.calc-row{flex-wrap:wrap;}.calc-row .label{min-width:auto;width:100%;}}
+
+/* 引当金足りる/足りない 比較 */
+.pattern-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+@media(max-width:540px){.pattern-grid{grid-template-columns:1fr;}}
+.pattern-card{border-radius:12px;padding:18px;}
+.pattern-card.enough{background:#F0FFF4;border:1px solid #9AE6B4;}
+.pattern-card.short{background:#FFF5F5;border:1px solid #FEB2B2;}
+.pattern-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.pattern-card.enough .pattern-badge{background:#9AE6B4;color:#276749;}
+.pattern-card.short .pattern-badge{background:#FEB2B2;color:#9B2C2C;}
+.pattern-card .pattern-title{font-size:13px;font-weight:700;margin-bottom:8px;}
+.pattern-card .pattern-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:240px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+
+/* アプリCTA */
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="index.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="lp.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 貸倒引当金の仕訳と計算
+  </div>
+
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>貸倒引当金の仕訳と計算<br>差額補充法・貸倒損失を完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <p class="lead">
+    貸倒引当金は日商簿記3級で<strong>ほぼ確実に出る最重要論点</strong>です。<br>
+    私が初めて解いたとき「なぜ引当金を積むのか」の意味が分からず何度もミスしました。
+    今回は「なぜ必要か」から始めて、計算→仕訳の流れをステップで整理します。
+  </p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">貸倒引当金って何ですか？「引当金」って初めて聞きました。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">売掛金は「将来もらえるお金の約束」ですよね。でも取引先が倒産したら回収できない。その<strong>回収できないリスクを事前に費用として計上しておく</strong>のが貸倒引当金です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">なんで事前に計上するんですか？実際に倒産してから計上すればいいのでは？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">それだと「売上は前期・損失は当期」になってしまい、利益の計算がおかしくなります。売上と費用は同じ期に対応させる——これが<strong>費用収益対応の原則</strong>です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <!-- ── 広告 ── -->
+  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <h2>貸倒引当金を積まなかったらどうなるか</h2>
+
+  <p>まず「引当金なし」の世界から確認します。</p>
+
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>前期に発生した売掛金￥7,000が貸倒れた。前期末に貸倒引当金は計上していなかった。</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">7,000</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">7,000</span></div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠ 引当金なしの問題点：</strong>前期の売上に対応する損失が当期に出てしまい、利益が歪みます。これを防ぐために、決算時点で「貸倒引当金」を事前に積んでおくわけです。
+  </div>
+
+  <h2>STEP 1：決算で貸倒引当金を積む（差額補充法）</h2>
+
+  <p>決算整理で、売掛金・受取手形の残高に対して一定割合の引当金を設定します。試験では<strong>差額補充法</strong>が定番です。</p>
+
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>貸倒引当金の残高は￥500。売掛金期末残高￥10,000・受取手形期末残高￥30,000に対して3%の貸倒れを見積もり、差額補充法で貸倒引当金を設定する。</p>
+  </div>
+
+  <h3>計算の下書き（これを書けば絶対ミスしない）</h3>
+
+  <div class="calc-box">
+    <div class="calc-title">📝 差額補充法の計算手順</div>
+    <div class="calc-row">
+      <span class="label">① 必要な引当金（目標額）</span>
+      <span class="calc-operator">=</span>
+      <span class="val">(￥10,000 ＋ ￥30,000) × 3% ＝ <strong>￥1,200</strong></span>
+    </div>
+    <div class="calc-row">
+      <span class="label">② 既存の引当金残高</span>
+      <span class="calc-operator">−</span>
+      <span class="val"><strong>￥500</strong></span>
+    </div>
+    <div class="calc-row">
+      <span class="label">③ 今期に繰り入れる額（①−②）</span>
+      <span class="calc-operator">=</span>
+      <span class="val result">￥700　← これが仕訳の金額</span>
+    </div>
+  </div>
+
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒引当金繰入</span><span class="amount">700</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒引当金</span><span class="amount">700</span></div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 ポイント：</strong>「差額補充法」とは、<em>目標額と残高の差額だけ</em>追加積みする方法です。残高が既に目標額以上なら繰入不要（逆に戻入が必要なこともあります）。
+  </div>
+
+  <!-- ── 広告 ── -->
+  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <h2>STEP 2：実際に貸倒れが起きたとき</h2>
+
+  <p>期中に取引先が倒産して売掛金が回収不能になったとき、積んでいた引当金から取り崩します。</p>
+
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>得意先が倒産し、前期に計上した売掛金￥3,000が貸倒れとなった。貸倒引当金の残高は￥1,200。</p>
+  </div>
+
+  <div class="pattern-grid">
+    <div class="pattern-card short">
+      <div class="pattern-badge">貸倒額 ＞ 引当金残高</div>
+      <div class="pattern-title">引当金が足りない場合（本問）</div>
+      <p style="font-size:13px;color:#374151;margin-bottom:0;">引当金を全額取り崩し、<br>不足分は<strong>貸倒損失</strong>で補う。</p>
+      <div class="pattern-note">貸倒 ¥3,000 ＞ 引当金 ¥1,200<br>→ 不足 ¥1,800 は貸倒損失</div>
+    </div>
+    <div class="pattern-card enough">
+      <div class="pattern-badge">貸倒額 ≤ 引当金残高</div>
+      <div class="pattern-title">引当金で全額まかなえる場合</div>
+      <p style="font-size:13px;color:#374151;margin-bottom:0;">引当金だけで処理。<br><strong>貸倒損失は使わない</strong>。</p>
+      <div class="pattern-note">貸倒 ¥1,000 ≤ 引当金 ¥1,200<br>→ 引当金だけで ¥1,000 取り崩し</div>
+    </div>
+  </div>
+
+  <div class="kaitou-label">解答（本問：引当金が足りないケース）</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒引当金</span><span class="amount">1,200</span></div>
+      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">1,800</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">3,000</span></div>
+    </div>
+  </div>
+
+  <div class="kaitou-label">参考（引当金で全額まかなえるケース）</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒引当金</span><span class="amount">1,000</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">1,000</span></div>
+    </div>
+  </div>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">引当金が足りない場合と足りる場合で使う科目が変わるんですね。混乱しそうです…</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">手順を決めると迷いません。①まず貸方に「売掛金」を書く。②引当金残高の分だけ借方に「貸倒引当金」を書く。③差額が残れば借方に「貸倒損失」を書く。この順番で機械的にやれば大丈夫です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>補足：当期発生の売掛金が貸倒れたとき（2級向け）</h2>
+
+  <p>引当金は「前期以前に発生した債権」に対して積むものです。<strong>当期に発生した売掛金</strong>が同じ期に貸倒れた場合は、引当金を使わず直接「貸倒損失」で処理します。</p>
+
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>当期に発生した売掛金￥5,000を貸倒処理したが、決算日に￥2,000を現金で回収できた。</p>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);margin-bottom:8px;">貸倒処理時の仕訳（参考）</p>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方（貸倒処理時）</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">5,000</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">5,000</span></div>
+    </div>
+  </div>
+
+  <div class="kaitou-label">解答（回収時の仕訳）</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">2,000</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">2,000</span></div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <strong>💡 解説：</strong>当期に「貸倒損失」で費用計上した後、同じ期中に回収できたので貸倒損失を取り消します。回収額だけ費用を戻す形です。
+  </div>
+
+  <h2>まとめ</h2>
+
+  <div class="matome">
+    <h3>📋 貸倒引当金 処理ルール一覧</h3>
+    <div class="matome-row">
+      <span class="trigger">決算：差額補充法で積む</span>
+      <span class="result">借方「貸倒引当金繰入」／貸方「貸倒引当金」</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">前期の売掛金が貸倒れ（引当金で足りる）</span>
+      <span class="result">借方「貸倒引当金」／貸方「売掛金」</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">前期の売掛金が貸倒れ（引当金が足りない）</span>
+      <span class="result">借方「貸倒引当金＋貸倒損失」／貸方「売掛金」</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">引当金なし・前期売掛金が貸倒れ</span>
+      <span class="result">借方「貸倒損失」／貸方「売掛金」</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">当期売掛金が貸倒れ後に回収（2級）</span>
+      <span class="result">借方「現金」／貸方「貸倒損失」</span>
+    </div>
+  </div>
+
+  <!-- アプリCTA -->
+  <div class="app-cta">
+    <h3>⚔ 学習時間を記録して合格を加速</h3>
+    <p>簿記の勉強時間をスタディクエストで記録すると、経験値・レベルが上がりモチベーションが続きます。</p>
+    <a href="index.html">無料で始める →</a>
+  </div>
+
+  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
+    <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-bottom:12px;">関連記事</div>
+    <a href="boki3-kafusoku.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;">
+      🔍 流れで覚える現金過不足の仕訳 →
+    </a>
+    <a href="boki3-genkin.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
+      💴 現金・当座預金の違いと仕訳 →
+    </a>
+    <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
+      📒 簿記3級・2級 独学攻略ガイド →
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="lp.html">TOP</a>
+  <a href="about.html">運営者情報</a>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <a href="terms.html">利用規約</a>
+  <p>© 2026 スタディクエスト</p>
+</footer>
+
+<script src="article-widgets.js"></script>
+</body>
+</html>
