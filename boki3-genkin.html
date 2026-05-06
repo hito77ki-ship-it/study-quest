@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>現金・当座預金の違いと仕訳【日商簿記3級】小切手の処理も完全解説｜スタディクエスト</title>
+<meta name="description" content="現金と当座預金の違いを初心者向けに解説。他店振出しの小切手・自己振出小切手・郵便切手・収入印紙の仕訳判断を例題つきで完全網羅。日商簿記3級の頻出論点です。">
+<meta name="keywords" content="現金 当座預金 違い,小切手 仕訳,自己振出小切手,他店振出小切手,日商簿記3級 現金,当座預金 仕訳">
+<meta property="og:title" content="現金・当座預金の違いと仕訳【日商簿記3級】">
+<meta property="og:description" content="現金と当座預金の違いを初心者向けに解説。小切手の仕訳判断を例題つきで完全網羅。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-genkin.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "現金・当座預金の違いと仕訳【日商簿記3級】",
+  "description": "現金と当座預金の違いを初心者向けに解説。小切手の仕訳判断を例題つきで完全網羅。",
+  "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-genkin.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
+  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.warn-box strong{color:#975A16;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:8px;}
+.point-card p{font-size:15px;font-weight:700;color:var(--text);margin:0;}
+
+/* ○× 判定グリッド */
+.maru-batu-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}
+@media(max-width:540px){.maru-batu-grid{grid-template-columns:1fr;}}
+.mb-card{border-radius:10px;padding:16px 18px;}
+.mb-card.maru{background:#F0FFF4;border:1px solid #9AE6B4;}
+.mb-card.batu{background:#FFF5F5;border:1px solid #FEB2B2;}
+.mb-badge{display:inline-block;font-size:18px;font-weight:900;margin-bottom:10px;}
+.mb-card.maru .mb-badge{color:#276749;}
+.mb-card.batu .mb-badge{color:#9B2C2C;}
+.mb-title{font-size:11px;font-weight:700;letter-spacing:.05em;margin-bottom:8px;color:var(--muted);}
+.mb-item{font-size:13px;color:var(--text);padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:flex-start;gap:6px;}
+.mb-item:last-child{border-bottom:none;}
+.mb-item .note{font-size:11px;color:var(--muted);margin-top:1px;}
+
+/* 仕訳ボックス */
+.shiwake{display:flex;border:2px solid var(--border);border-radius:12px;overflow:hidden;margin:16px 0;font-size:14px;}
+.shiwake-col{flex:1;padding:14px 18px;}
+.shiwake-col.kari{background:#EBF8FF;border-right:2px solid var(--border);}
+.shiwake-col.kashi{background:#FFF9F0;}
+.shiwake-label{font-size:10px;font-weight:700;letter-spacing:.1em;margin-bottom:8px;}
+.shiwake-col.kari .shiwake-label{color:#2B6CB0;}
+.shiwake-col.kashi .shiwake-label{color:#C05621;}
+.shiwake-item{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.shiwake-item .kamoku{font-weight:700;font-size:14px;}
+.shiwake-item .amount{font-size:14px;color:var(--muted);}
+
+/* 例題ブロック */
+.mondai{background:#FAFAFA;border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:20px 0;}
+.mondai .mondai-label{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--muted);margin-bottom:10px;}
+.mondai p{font-size:14px;margin:0;}
+.kaitou-label{font-size:10px;font-weight:700;letter-spacing:.1em;color:#276749;margin:16px 0 6px;}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:220px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+
+/* アプリCTA */
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="index.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="lp.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 現金・当座預金の違いと仕訳
+  </div>
+
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>現金・当座預金の違いと仕訳<br>小切手の処理を完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <p class="lead">
+    「現金ってお札と硬貨だけじゃないの？」——簿記を勉強し始めると、<strong>現金の定義が日常感覚とズレている</strong>ことに気づきます。
+    小切手を受け取ったとき「現金」になるのか「当座預金」になるのか、ここを正確に判断できるかどうかが試験の分かれ道です。
+    今回は現金と当座預金の違いを、例題を通して丁寧に整理します。
+  </p>
+
+  <!-- ── 広告 ── -->
+  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <h2>当座預金・小切手の仕組み</h2>
+
+  <p>当座預金は、<strong>小切手を振り出す（発行する）ための専用口座</strong>です。普通預金と違って利息がつきませんが、代わりに決済手段として小切手を使えます。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">小切手って、お金の代わりに渡す紙ですよね？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">そうです。「この銀行口座からお金を出してください」という指示書です。渡した側は当座預金が減り、受け取った側は現金として扱えます。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">じゃあ小切手をもらったら「現金」で記録するんですね？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">基本はそうです。ただし「自分が出した小切手が戻ってきた場合」は「当座預金」になります。これが一番よく出るひっかけポイントです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>「現金」とは？簿記での定義</h2>
+
+  <p>日常語の「現金」はお札・硬貨ですが、簿記では<strong>すぐに換金できる通貨代用証券</strong>も現金として扱います。</p>
+
+  <div class="maru-batu-grid">
+    <div class="mb-card maru">
+      <div class="mb-badge">○ 現金</div>
+      <div class="mb-title">現金として仕訳するもの</div>
+      <div class="mb-item">💴 紙幣・硬貨</div>
+      <div class="mb-item">
+        📄 他店（他社）振出しの小切手
+        <div class="note">取引先からもらった小切手</div>
+      </div>
+      <div class="mb-item">📮 送金小切手・郵便為替証書</div>
+    </div>
+    <div class="mb-card batu">
+      <div class="mb-badge">× 現金ではない</div>
+      <div class="mb-title">現金と間違えやすいもの</div>
+      <div class="mb-item">
+        📝 当社振出しの小切手（自己振出小切手）
+        <div class="note">→ 当座預金で処理</div>
+      </div>
+      <div class="mb-item">
+        📋 他社振出しの約束手形
+        <div class="note">→ 受取手形で処理</div>
+      </div>
+      <div class="mb-item">
+        📮 郵便切手
+        <div class="note">→ 通信費 or 貯蔵品</div>
+      </div>
+      <div class="mb-item">
+        🏛 収入印紙
+        <div class="note">→ 租税公課 or 貯蔵品</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠ 暗記ポイント：</strong>郵便切手と収入印紙は「現金ではない」。期中に使ったら費用（通信費・租税公課）、期末に未使用のものが残ったら「貯蔵品」（資産）に振り替えます。
+  </div>
+
+  <h2>自己振出小切手（当社振出しの小切手）</h2>
+
+  <p>ここが最も出題されやすいポイントです。<strong>自分が振り出した小切手が手元に戻ってきた場合は「当座預金」</strong>として処理します。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">なんで「当座預金」なんですか？小切手をもらったんだから「現金」じゃないですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">小切手を振り出したとき、当座預金をマイナスしましたよね？その小切手が戻ってきたということは、まだ銀行で換金されていない。つまり「当座預金のマイナスを取り消す」必要があるんです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">あ、なるほど！「なかったことに戻す」から、当座預金が増える（借方）んですね。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">そのとおりです。「振り出した小切手が戻ってきた ＝ 当座預金の復活」と覚えてください。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h3>例題：自己振出小切手が戻ってきた場合</h3>
+
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>商品￥20,000を販売し、代金として以前に当社が振り出していた小切手で受け取った。</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方（DEBIT）</div>
+      <div class="shiwake-item">
+        <span class="kamoku">当座預金</span>
+        <span class="amount">20,000</span>
+      </div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方（CREDIT）</div>
+      <div class="shiwake-item">
+        <span class="kamoku">売上</span>
+        <span class="amount">20,000</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 解き方：</strong>「以前に当社が振り出していた小切手」というキーワードが出たら、借方は必ず「当座預金」。「現金」と書かないように注意。
+  </div>
+
+  <!-- ── 広告 ── -->
+  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <h2>まとめ：小切手の仕訳パターン一覧</h2>
+
+  <div class="matome">
+    <h3>📋 小切手の仕訳ルール</h3>
+    <div class="matome-row">
+      <span class="trigger">小切手を<strong>振り出した</strong>（渡した）</span>
+      <span class="result">→ 当座預金　減る（貸方）</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">他社から小切手を<strong>もらった</strong></span>
+      <span class="result">→ 現金　増える（借方）</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">前に渡した<strong>当社の小切手が戻ってきた</strong></span>
+      <span class="result">→ 当座預金　増える（借方）</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">小切手をもらって<strong>すぐ当座預金に入金</strong>した</span>
+      <span class="result">→ 当座預金　増える（借方）</span>
+    </div>
+  </div>
+
+  <h2>例題で確認しよう</h2>
+
+  <h3>パターン①：小切手を振り出した（基本）</h3>
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>仕入先に商品￥300を注文し、手付金として￥200の小切手を振り出して渡した。</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">前払金</span><span class="amount">200</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">当座預金</span><span class="amount">200</span></div>
+    </div>
+  </div>
+
+  <h3>パターン②：他社から小切手をもらった（基本）</h3>
+  <div class="mondai">
+    <div class="mondai-label">問題①</div>
+    <p>小切手受入による売上￥100。</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">100</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">売上</span><span class="amount">100</span></div>
+    </div>
+  </div>
+
+  <div class="mondai">
+    <div class="mondai-label">問題②</div>
+    <p>売掛金￥300が取引先振出しの小切手により回収された。</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">300</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">300</span></div>
+    </div>
+  </div>
+
+  <h3>パターン③：もらった小切手をすぐ当座預金に入金</h3>
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>得意先より手付金として得意先振出しの小切手￥30を受け取り、直ちに当座預金に預け入れた。</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借方</div>
+      <div class="shiwake-item"><span class="kamoku">当座預金</span><span class="amount">30</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸方</div>
+      <div class="shiwake-item"><span class="kamoku">前受金</span><span class="amount">30</span></div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <strong>💡 ポイント：</strong>「直ちに（すぐに）当座預金に預け入れた」という文言があると、現金を経由せず直接「当座預金」になります。
+  </div>
+
+  <h3>パターン④：「現金残高はいくらか」問題での注意</h3>
+
+  <div class="mondai">
+    <div class="mondai-label">問題</div>
+    <p>金庫に以下のものが保管されていた。現金の実際残高はいくらか。<br>
+    ・紙幣・硬貨　　　　　　　　￥500<br>
+    ・当社振出しの小切手　　　　￥100<br>
+    ・他店振出しの小切手　　　　￥200<br>
+    ・郵便切手　　　　　　　　　￥50</p>
+  </div>
+  <div class="kaitou-label">解答</div>
+  <p style="background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:14px 18px;font-size:15px;font-weight:700;color:#276749;">
+    現金 = ￥500 ＋ ￥200 = <strong>￥700</strong>
+  </p>
+  <div class="tip-box">
+    <strong>💡 解説：</strong>当社振出しの小切手（自己振出）と郵便切手は現金ではありません。含めないように注意。他店振出しの小切手は現金として数えます。
+  </div>
+
+  <!-- アプリCTA -->
+  <div class="app-cta">
+    <h3>⚔ 学習時間を記録して合格を加速</h3>
+    <p>簿記の勉強時間をスタディクエストで記録すると、経験値・レベルが上がりモチベーションが続きます。</p>
+    <a href="index.html">無料で始める →</a>
+  </div>
+
+  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
+    <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-bottom:12px;">関連記事</div>
+    <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;">
+      📒 簿記3級・2級 独学攻略ガイド →
+    </a>
+    <a href="boki-zero-01.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
+      ✏️ ゼロからの簿記 第1回：取引とは？ →
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="lp.html">TOP</a>
+  <a href="about.html">運営者情報</a>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <a href="terms.html">利用規約</a>
+  <p>© 2026 スタディクエスト</p>
+</footer>
+
+<script src="article-widgets.js"></script>
+</body>
+</html>
