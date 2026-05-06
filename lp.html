@@ -1542,30 +1542,59 @@ footer{background:#091505;padding:48px 24px 40px;}
     <aside class="articles-sidebar">
       <div class="articles-sidebar-box">
         <div class="articles-sidebar-title">📂 カテゴリから探す</div>
-        <a href="#cat-law" class="cat-link">
-          <span class="cat-dot" style="background:#c9a84c;"></span>法律・会計系
-        </a>
-        <a href="#cat-it" class="cat-link">
-          <span class="cat-dot" style="background:#10B981;"></span>IT・技術系
-        </a>
-        <a href="#cat-lang" class="cat-link">
-          <span class="cat-dot" style="background:#F59E0B;"></span>語学・教養系
-        </a>
-        <a href="#cat-medical" class="cat-link">
-          <span class="cat-dot" style="background:#EC4899;"></span>医療・福祉系
-        </a>
-        <a href="#cat-compare" class="cat-link">
-          <span class="cat-dot" style="background:#8CC63F;"></span>比較・まとめ
-        </a>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <a href="#cat-law" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.07);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#c9a84c;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#c9a84c;">法律・会計系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">簿記・CPA・行政書士・宅建</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+          <a href="#cat-it" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.06);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#10B981;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#10B981;">IT・技術系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">ITパスポート・基本情報・応用</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+          <a href="#cat-lang" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.06);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#F59E0B;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#F59E0B;">語学・教養系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">TOEIC・英検・FP</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+          <a href="#cat-medical" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(236,72,153,.3);background:rgba(236,72,153,.06);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#EC4899;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#EC4899;">医療・福祉系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">医療事務・登録販売者</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+          <a href="#cat-compare" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(140,198,63,.35);background:rgba(140,198,63,.07);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#8CC63F;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#8CC63F;">比較・まとめ</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">ランキング・vs比較</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+        </div>
       </div>
 
       <div class="articles-sidebar-box">
         <div class="articles-sidebar-title">🔥 よく読まれている記事</div>
-        <a href="osusume-shikaku.html" class="sidebar-art-link">🏆 社会人おすすめ資格TOP10</a>
-        <a href="keizoku.html" class="sidebar-art-link">🔥 勉強が続かない原因と解決策</a>
-        <a href="boki-vs-fp.html" class="sidebar-art-link">⚖ 簿記2級 vs FP2級 どっちを先に？</a>
-        <a href="cpa.html" class="sidebar-art-link">⚖ 公認会計士の独学ロードマップ</a>
-        <a href="dokugaku-shikaku.html" class="sidebar-art-link">📚 独学で取れる資格ランキング</a>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <a href="osusume-shikaku.html" style="display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:color .15s;">
+            <span style="font-size:13px;font-weight:900;color:#c9a84c;min-width:20px;text-align:center;flex-shrink:0;">1</span>
+            <span style="font-size:12px;color:var(--ink2);line-height:1.4;">社会人おすすめ資格TOP10</span>
+          </a>
+          <a href="keizoku.html" style="display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:color .15s;">
+            <span style="font-size:13px;font-weight:900;color:#9CA3AF;min-width:20px;text-align:center;flex-shrink:0;">2</span>
+            <span style="font-size:12px;color:var(--ink2);line-height:1.4;">勉強が続かない原因と解決策</span>
+          </a>
+          <a href="boki-vs-fp.html" style="display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:color .15s;">
+            <span style="font-size:13px;font-weight:900;color:#9CA3AF;min-width:20px;text-align:center;flex-shrink:0;">3</span>
+            <span style="font-size:12px;color:var(--ink2);line-height:1.4;">簿記2級 vs FP2級 どっちを先に？</span>
+          </a>
+          <a href="cpa.html" style="display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:color .15s;">
+            <span style="font-size:13px;font-weight:900;color:#9CA3AF;min-width:20px;text-align:center;flex-shrink:0;">4</span>
+            <span style="font-size:12px;color:var(--ink2);line-height:1.4;">公認会計士の独学ロードマップ</span>
+          </a>
+          <a href="dokugaku-shikaku.html" style="display:flex;align-items:center;gap:10px;padding:8px 4px;text-decoration:none;color:inherit;transition:color .15s;">
+            <span style="font-size:13px;font-weight:900;color:#9CA3AF;min-width:20px;text-align:center;flex-shrink:0;">5</span>
+            <span style="font-size:12px;color:var(--ink2);line-height:1.4;">独学で取れる資格ランキング</span>
+          </a>
+        </div>
       </div>
 
       <div class="articles-sidebar-box" style="background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.02));border-color:rgba(140,198,63,.3);">
