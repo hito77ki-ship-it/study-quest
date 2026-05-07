@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで図解で完全解説｜スタディクエスト</title>
+<meta name="description" content="受取手形・支払手形の仕訳を図解で解説。振出人・名宛人の違い、満期日の決済、電子記録債権・債務まで例題つきで完全解説。日商簿記3級の頻出論点。">
+<meta name="keywords" content="受取手形 仕訳,支払手形 仕訳,電子記録債権,約束手形 簿記,日商簿記3級 手形">
+<meta property="og:title" content="受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説">
+<meta property="og:description" content="振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説","description":"振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.warn-box strong{color:#975A16;}
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p{font-size:14px;color:#374151;margin:0;}
+
+/* 振出人・名宛人カード */
+.role-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+@media(max-width:560px){.role-compare{grid-template-columns:1fr;}}
+.role-card{border-radius:12px;padding:18px 20px;}
+.role-card.meiate{background:#EBF8FF;border:2px solid #90CDF4;}
+.role-card.furidashi{background:#FFF5F5;border:2px solid #FC8181;}
+.role-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;margin-bottom:8px;}
+.role-card.meiate .role-badge{background:#BFDBFE;color:#1D4ED8;}
+.role-card.furidashi .role-badge{background:#FECACA;color:#B91C1C;}
+.role-name{font-size:14px;font-weight:700;margin-bottom:4px;}
+.role-card.meiate .role-name{color:#1D4ED8;}
+.role-card.furidashi .role-name{color:#B91C1C;}
+.role-kamoku{font-size:13px;font-weight:700;margin-bottom:4px;}
+.role-card.meiate .role-kamoku{color:#2B6CB0;}
+.role-card.furidashi .role-kamoku{color:#9B2C2C;}
+.role-desc{font-size:12px;color:#374151;line-height:1.7;}
+
+/* 仕訳ボックス */
+.shiwake-box{background:var(--light);border-radius:10px;padding:14px 18px;margin:12px 0;}
+.shiwake-box .sw-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;}
+.sw-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-size:13px;margin-bottom:4px;}
+.sw-row:last-child{margin-bottom:0;}
+.sw-row .kari{color:#2B6CB0;font-weight:700;}
+.sw-row .kashi{color:#C05621;font-weight:700;text-align:right;}
+.sw-row .sep{color:var(--muted);font-size:11px;}
+.sw-row .amt{font-size:11px;color:var(--muted);margin-left:4px;}
+
+/* 電子記録比較 */
+.denshi-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
+@media(max-width:540px){.denshi-compare{grid-template-columns:1fr;}}
+.denshi-card{border-radius:10px;padding:14px 16px;border-left:4px solid;}
+.denshi-card.urike{background:#EBF8FF;border-color:#3B82F6;}
+.denshi-card.shiike{background:#FFF5F5;border-color:#FC8181;}
+.denshi-title{font-size:13px;font-weight:700;margin-bottom:4px;}
+.denshi-card.urike .denshi-title{color:#1D4ED8;}
+.denshi-card.shiike .denshi-title{color:#B91C1C;}
+.denshi-sub{font-size:11px;color:var(--muted);margin-bottom:6px;}
+.denshi-kamoku{font-size:12px;font-weight:700;}
+.denshi-card.urike .denshi-kamoku{color:#2B6CB0;}
+.denshi-card.shiike .denshi-kamoku{color:#9B2C2C;}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:180px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 受取手形・支払手形の仕訳</div>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>受取手形・支払手形の仕訳<br>電子記録債権まで図解で完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="lead">手形とは「一定の期日に一定の金額を支払う」という証書です。掛取引と似ていますが、<strong>支払期日が明確に定められている</strong>点が違います。受取手形は「後でもらえる権利」（資産）、支払手形は「後で払う義務」（負債）です。</p>
+  <div class="sq-chat"></div>
+
+  <h2>振出人と名宛人の違い</h2>
+  <div class="role-compare">
+    <div class="role-card meiate">
+      <span class="role-badge">商品を売った側</span>
+      <div class="role-name">名宛人（なあてにん）</div>
+      <div class="role-kamoku">→ 受取手形（資産）</div>
+      <div class="role-desc">手形を受け取った側。満期日に銀行を通じてお金を受け取れる。</div>
+    </div>
+    <div class="role-card furidashi">
+      <span class="role-badge">商品を買った側</span>
+      <div class="role-name">振出人（ふりだしにん）</div>
+      <div class="role-kamoku">→ 支払手形（負債）</div>
+      <div class="role-desc">手形を発行した側。満期日に銀行口座から引き落とされる。</div>
+    </div>
+  </div>
+
+  <h2>① 手形を受け取ったとき（名宛人）</h2>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>A社に商品 ¥100,000 を売り上げ、代金として約束手形を受け取った。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">A社（名宛人）の仕訳</div>
+    <div class="sw-row"><span class="kari">受取手形<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">100,000</span></span></div>
+  </div>
+
+  <h2>② 手形を振り出したとき（振出人）</h2>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>B社から商品 ¥100,000 を仕入れ、代金として約束手形を振り出した。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">B社（振出人）の仕訳</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">支払手形<span class="amt">100,000</span></span></div>
+  </div>
+
+  <h2>③ 満期日に決済されたとき</h2>
+  <div class="shiwake-box">
+    <div class="sw-label">名宛人（受け取る側）</div>
+    <div class="sw-row"><span class="kari">当座預金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">受取手形<span class="amt">100,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">振出人（支払う側）</div>
+    <div class="sw-row"><span class="kari">支払手形<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">100,000</span></span></div>
+  </div>
+  <div class="tip-box"><strong>満期日の仕訳は「発生の逆」をやるだけ！</strong><br>受取手形を受け取ったときの逆＝当座預金に入金して受取手形を消す。支払手形を振り出したときの逆＝当座預金から引かれて支払手形を消す。</div>
+
+  <h2>④ 電子記録債権・電子記録債務</h2>
+  <p>紙の約束手形に代わる電子的な仕組みで、2016年以降の簿記3級の試験範囲です。仕訳の考え方は手形とまったく同じです。</p>
+  <div class="denshi-compare">
+    <div class="denshi-card urike">
+      <div class="denshi-title">電子記録債権</div>
+      <div class="denshi-sub">受取手形に相当（資産）</div>
+      <div class="denshi-kamoku">→ 電子記録債権 ／ 売上</div>
+    </div>
+    <div class="denshi-card shiike">
+      <div class="denshi-title">電子記録債務</div>
+      <div class="denshi-sub">支払手形に相当（負債）</div>
+      <div class="denshi-kamoku">→ 仕入 ／ 電子記録債務</div>
+    </div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">電子記録債権の発生（売った側）</div>
+    <div class="sw-row"><span class="kari">電子記録債権<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">100,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">電子記録債権の回収（満期決済）</div>
+    <div class="sw-row"><span class="kari">当座預金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">電子記録債権<span class="amt">100,000</span></span></div>
+  </div>
+  <div class="warn-box"><strong>名称が違うだけで仕訳の構造は手形と同じ！</strong><br>試験で「電子記録債権」「電子記録債務」という言葉が出てきても、受取手形・支払手形と同じように処理すれば正解できます。</div>
+
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。ボスまであと何時間かリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <div class="matome">
+    <h3>📋 まとめ：手形 早見表</h3>
+    <div class="matome-row"><span class="trigger">手形を受け取った（売り側）</span><span class="result">受取手形（資産↑）／ 売上</span></div>
+    <div class="matome-row"><span class="trigger">手形を振り出した（買い側）</span><span class="result">仕入 ／ 支払手形（負債↑）</span></div>
+    <div class="matome-row"><span class="trigger">満期日・受取側</span><span class="result">当座預金 ／ 受取手形（資産↓）</span></div>
+    <div class="matome-row"><span class="trigger">満期日・支払側</span><span class="result">支払手形（負債↓）／ 当座預金</span></div>
+    <div class="matome-row"><span class="trigger">電子記録債権（発生）</span><span class="result">電子記録債権 ／ 売上</span></div>
+    <div class="matome-row"><span class="trigger">電子記録債務（発生）</span><span class="result">仕入 ／ 電子記録債務</span></div>
+  </div>
+</div>
+<footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>

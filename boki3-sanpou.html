@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品売買の仕訳（三分法）【日商簿記3級】仕入・売上・繰越商品を図解で完全解説｜スタディクエスト</title>
+<meta name="description" content="三分法（仕入・売上・繰越商品）の仕訳を図解で解説。商品を仕入れたとき・売ったとき・返品のときの仕訳と、決算整理の繰越商品まで例題つきで完全解説。日商簿記3級の頻出論点。">
+<meta name="keywords" content="三分法 仕訳,仕入 売上 繰越商品,商品売買 簿記,返品 仕訳,日商簿記3級 商品売買">
+<meta property="og:title" content="商品売買の仕訳（三分法）【日商簿記3級】">
+<meta property="og:description" content="仕入・売上・繰越商品の三分法を図解で解説。例題つきで完全攻略。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-sanpou.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"商品売買の仕訳（三分法）【日商簿記3級】","description":"仕入・売上・繰越商品の三分法を図解で解説。例題つきで完全攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-sanpou.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.warn-box strong{color:#975A16;}
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p{font-size:14px;color:#374151;margin:0;}
+
+/* 三勘定グリッド */
+.san-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0;}
+@media(max-width:560px){.san-grid{grid-template-columns:1fr;}}
+.san-card{border-radius:12px;padding:16px 18px;border:2px solid;}
+.san-card.s-shii{background:#EBF8FF;border-color:#90CDF4;}
+.san-card.s-uriage{background:#F0FFF4;border-color:#9AE6B4;}
+.san-card.s-kuri{background:#FFF9F0;border-color:#FBD38D;}
+.san-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-bottom:8px;}
+.san-card.s-shii .san-badge{background:#BFDBFE;color:#1D4ED8;}
+.san-card.s-uriage .san-badge{background:#BBF7D0;color:#15803D;}
+.san-card.s-kuri .san-badge{background:#FBD38D;color:#975A16;}
+.san-name{font-size:14px;font-weight:700;margin-bottom:4px;}
+.san-card.s-shii .san-name{color:#1D4ED8;}
+.san-card.s-uriage .san-name{color:#15803D;}
+.san-card.s-kuri .san-name{color:#975A16;}
+.san-desc{font-size:12px;color:#374151;line-height:1.7;}
+
+/* 仕訳ボックス */
+.shiwake-box{background:var(--light);border-radius:10px;padding:14px 18px;margin:12px 0;}
+.shiwake-box .sw-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;}
+.sw-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-size:13px;margin-bottom:4px;}
+.sw-row:last-child{margin-bottom:0;}
+.sw-row .kari{color:#2B6CB0;font-weight:700;}
+.sw-row .kashi{color:#C05621;font-weight:700;text-align:right;}
+.sw-row .sep{color:var(--muted);font-size:11px;}
+.sw-row .amt{font-size:11px;color:var(--muted);margin-left:4px;}
+
+/* 2列比較 */
+.compare-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+@media(max-width:540px){.compare-2{grid-template-columns:1fr;}}
+.c2-card{border-radius:12px;padding:16px 18px;}
+.c2-card.buy{background:#EBF8FF;border:1px solid #90CDF4;}
+.c2-card.sell{background:#F0FFF4;border:1px solid #9AE6B4;}
+.c2-title{font-size:13px;font-weight:700;margin-bottom:10px;}
+.c2-card.buy .c2-title{color:#1D4ED8;}
+.c2-card.sell .c2-title{color:#15803D;}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:160px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 商品売買の仕訳（三分法）</div>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>商品売買の仕訳（三分法）<br>仕入・売上・繰越商品を図解で完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="lead">簿記3級の取引の大半は「商品を仕入れて売る」です。この仕訳を正確に書けるかどうかが、合否に直結します。<strong>三分法</strong>は仕入・売上・繰越商品の3つの勘定を使う、最も基本的な商品売買の記録方法です。</p>
+  <div class="sq-chat"></div>
+
+  <h2>三分法の3つの勘定科目</h2>
+  <div class="san-grid">
+    <div class="san-card s-shii">
+      <span class="san-badge">費用</span>
+      <div class="san-name">仕入（しいれ）</div>
+      <div class="san-desc">商品を買ったときに使う。費用の勘定。期末に損益勘定へ振り替える。</div>
+    </div>
+    <div class="san-card s-uriage">
+      <span class="san-badge">収益</span>
+      <div class="san-name">売上（うりあげ）</div>
+      <div class="san-desc">商品を売ったときに使う。収益の勘定。期末に損益勘定へ振り替える。</div>
+    </div>
+    <div class="san-card s-kuri">
+      <span class="san-badge">資産</span>
+      <div class="san-name">繰越商品（くりこししょうひん）</div>
+      <div class="san-desc">期末に売れ残った商品（在庫）を表す。決算整理でのみ動く。</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>「三分法」と呼ぶ理由：</strong>商品の動きを仕入・売上・繰越商品の「3つ」の勘定に分けて記録するから。</div>
+
+  <h2>① 商品を仕入れたときの仕訳</h2>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>商品 ¥50,000 を現金で仕入れた。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">50,000</span></span></div>
+  </div>
+  <p>商品を買うと「仕入」（費用）が増えます。支払い方法（現金・当座預金・買掛金など）によって貸方が変わるだけで、借方は必ず「仕入」です。</p>
+
+  <h2>② 商品を売ったときの仕訳</h2>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>原価 ¥50,000 の商品を ¥80,000 で現金販売した。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">80,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">80,000</span></span></div>
+  </div>
+  <div class="warn-box"><strong>売上は販売額（売価）で記録する！</strong><br>原価 ¥50,000 ではなく、お客さんから受け取る金額 ¥80,000 で仕訳します。原価と売価の差 ¥30,000 が利益（売上総利益）になります。</div>
+
+  <h2>③ 返品・値引きの仕訳</h2>
+  <div class="compare-2">
+    <div class="c2-card buy">
+      <div class="c2-title">仕入側の返品・値引き</div>
+      <div class="shiwake-box" style="margin:0;">
+        <div class="sw-label">仕入返品（¥5,000）</div>
+        <div class="sw-row"><span class="kari">買掛金<span class="amt">5,000</span></span><span class="sep">／</span><span class="kashi">仕入<span class="amt">5,000</span></span></div>
+      </div>
+    </div>
+    <div class="c2-card sell">
+      <div class="c2-title">売上側の返品・値引き</div>
+      <div class="shiwake-box" style="margin:0;">
+        <div class="sw-label">売上返品（¥5,000）</div>
+        <div class="sw-row"><span class="kari">売上<span class="amt">5,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">5,000</span></span></div>
+      </div>
+    </div>
+  </div>
+  <p>返品・値引きは最初の仕訳を「逆に戻す」イメージ。仕入れたものを戻したら仕入を減らし、売ったものが戻ってきたら売上を減らします。</p>
+
+  <h2>④ 決算整理：繰越商品の仕訳</h2>
+  <p>期末に売れ残った商品（在庫）を「繰越商品」として翌期に引き継ぎます。決算整理仕訳は2ステップです。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">ステップ① 期首の繰越商品を仕入に振り替える（期首商品 ¥10,000）</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">繰越商品<span class="amt">10,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">ステップ② 期末の在庫を繰越商品に振り替える（期末商品 ¥15,000）</div>
+    <div class="sw-row"><span class="kari">繰越商品<span class="amt">15,000</span></span><span class="sep">／</span><span class="kashi">仕入<span class="amt">15,000</span></span></div>
+  </div>
+  <div class="tip-box">
+    <strong>売上原価の計算式</strong><br>
+    売上原価 ＝ 期首商品 ＋ 当期仕入高 − 期末商品<br>
+    例）10,000 ＋ 200,000 − 15,000 ＝ 195,000
+  </div>
+
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。ボスまであと何時間かリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <div class="matome">
+    <h3>📋 まとめ：三分法 早見表</h3>
+    <div class="matome-row"><span class="trigger">商品を仕入れた</span><span class="result">仕入 ／ 現金（または買掛金）</span></div>
+    <div class="matome-row"><span class="trigger">商品を売った</span><span class="result">現金（または売掛金）／ 売上（売価で記録）</span></div>
+    <div class="matome-row"><span class="trigger">仕入の返品・値引き</span><span class="result">買掛金 ／ 仕入</span></div>
+    <div class="matome-row"><span class="trigger">売上の返品・値引き</span><span class="result">売上 ／ 売掛金</span></div>
+    <div class="matome-row"><span class="trigger">決算①期首商品の振替</span><span class="result">仕入 ／ 繰越商品</span></div>
+    <div class="matome-row"><span class="trigger">決算②期末商品の振替</span><span class="result">繰越商品 ／ 仕入</span></div>
+  </div>
+</div>
+<footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>

@@ -83,6 +83,10 @@ const ARTICLES = {
   'boki3-shisanhyo.html':{label:'簿記3級',title:'試算表3種類の違い'},
   'boki3-denpyo.html':  {label:'簿記3級', title:'伝票会計（３伝票制）の仕訳と解き方'},
   'boki3-nikkei.html':  {label:'簿記3級', title:'仕訳日計表の書き方と集計ステップ'},
+  'boki3-sanpou.html':  {label:'簿記3級', title:'商品売買の仕訳（三分法）仕入・売上・繰越商品'},
+  'boki3-kake.html':    {label:'簿記3級', title:'掛取引（売掛金・買掛金）の仕訳'},
+  'boki3-tegata.html':  {label:'簿記3級', title:'受取手形・支払手形・電子記録債権の仕訳'},
+  'boki3-kyuryo.html':  {label:'簿記3級', title:'給料の仕訳と源泉所得税・社会保険料の預り金'},
 };
 
 const CATS = {
@@ -1410,6 +1414,7 @@ const BOKI3_FILES = [
   'boki3-genkin.html','boki3-kafusoku.html','boki3-kashidaore.html',
   'boki3-genka.html','boki3-keika.html','boki3-keika2.html',
   'boki3-shisanhyo.html','boki3-denpyo.html','boki3-nikkei.html',
+  'boki3-sanpou.html','boki3-kake.html','boki3-tegata.html','boki3-kyuryo.html',
 ];
 
 function buildBoki3Sidebar(sidebar){

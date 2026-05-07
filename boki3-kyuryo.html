@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>給料の仕訳【日商簿記3級】源泉所得税・社会保険料の預り金を図解で完全解説｜スタディクエスト</title>
+<meta name="description" content="給料支払いの仕訳を図解で解説。源泉所得税・社会保険料の預り金、手取り計算まで例題つきで完全解説。日商簿記3級の頻出論点。">
+<meta name="keywords" content="給料 仕訳,源泉所得税 預り金,社会保険料 仕訳,給料 手取り 計算,日商簿記3級 給料">
+<meta property="og:title" content="給料の仕訳【日商簿記3級】源泉所得税・社会保険料の預り金を図解で完全解説">
+<meta property="og:description" content="給料の仕訳、源泉所得税・社会保険料の預り金まで例題つきで解説。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-kyuryo.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"給料の仕訳【日商簿記3級】源泉所得税・社会保険料の預り金を図解で完全解説","description":"給料の仕訳、源泉所得税・社会保険料の預り金まで例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kyuryo.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.warn-box strong{color:#975A16;}
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p{font-size:14px;color:#374151;margin:0;}
+
+/* 給料内訳ボックス */
+.kyuryo-breakdown{border:2px solid var(--border);border-radius:12px;overflow:hidden;margin:20px 0;}
+.kb-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;}
+.kb-row:last-child{border-bottom:none;}
+.kb-row.total{background:#EBF8FF;font-weight:700;}
+.kb-row.deduct{background:#FFF5F5;}
+.kb-row.net{background:#F0FFF4;font-weight:700;}
+.kb-label{color:var(--text);}
+.kb-row.deduct .kb-label{color:#9B2C2C;}
+.kb-row.net .kb-label{color:#276749;}
+.kb-amt{font-weight:700;color:var(--text);}
+.kb-row.deduct .kb-amt{color:#9B2C2C;}
+.kb-row.net .kb-amt{color:#276749;}
+.kb-row.total .kb-amt{color:#2B6CB0;}
+
+/* 仕訳ボックス */
+.shiwake-box{background:var(--light);border-radius:10px;padding:14px 18px;margin:12px 0;}
+.shiwake-box .sw-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;}
+.sw-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-size:13px;margin-bottom:4px;}
+.sw-row:last-child{margin-bottom:0;}
+.sw-row .kari{color:#2B6CB0;font-weight:700;}
+.sw-row .kashi{color:#C05621;font-weight:700;text-align:right;}
+.sw-row .sep{color:var(--muted);font-size:11px;}
+.sw-row .amt{font-size:11px;color:var(--muted);margin-left:4px;}
+
+/* ポイントカード */
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:16px 20px;margin:20px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:6px;}
+.point-card p{font-size:14px;font-weight:700;color:var(--text);margin:0;}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:180px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 給料の仕訳</div>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>給料の仕訳<br>源泉所得税・社会保険料の預り金を図解で完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="lead">給料の仕訳でポイントになるのは、<strong>「総支給額（額面）で仕訳する」</strong>という点です。会社は従業員の代わりに源泉所得税・社会保険料を一時的に預かり、後日まとめて国や健康保険組合に納付します。</p>
+  <div class="sq-chat"></div>
+
+  <h2>給料支払いの全体像</h2>
+  <div class="kyuryo-breakdown">
+    <div class="kb-row total">
+      <span class="kb-label">総支給額（額面）</span>
+      <span class="kb-amt">¥300,000</span>
+    </div>
+    <div class="kb-row deduct">
+      <span class="kb-label">（控除）源泉所得税</span>
+      <span class="kb-amt">− ¥15,000</span>
+    </div>
+    <div class="kb-row deduct">
+      <span class="kb-label">（控除）社会保険料（従業員負担）</span>
+      <span class="kb-amt">− ¥30,000</span>
+    </div>
+    <div class="kb-row net">
+      <span class="kb-label">手取り額（実際に振り込む金額）</span>
+      <span class="kb-amt">¥255,000</span>
+    </div>
+  </div>
+  <p>控除分は「預り金」として会社が一旦立て替え、後日まとめて納付します。</p>
+
+  <h2>① 給料を支払ったときの仕訳</h2>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>給料の総支給額 ¥300,000 のうち、源泉所得税 ¥15,000・社会保険料（従業員負担）¥30,000 を控除し、差引手取り ¥255,000 を当座預金から振り込んだ。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">給料<span class="amt">300,000</span></span><span class="sep">／</span><span class="kashi">預り金（源泉所得税）<span class="amt">15,000</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">預り金（社会保険料）<span class="amt">30,000</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">当座預金<span class="amt">255,000</span></span></div>
+  </div>
+
+  <div class="point-card">
+    <div class="pc-label">最重要ポイント</div>
+    <p>借方は必ず「給料 ¥300,000」（総支給額）。手取り額の ¥255,000 ではない！</p>
+  </div>
+
+  <h2>② 預り金を納付したときの仕訳</h2>
+  <p>預かった税金・社会保険料は、後日まとめて国や健康保険組合に納付します。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">源泉所得税を税務署に納付したとき</div>
+    <div class="sw-row"><span class="kari">預り金（源泉所得税）<span class="amt">15,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">15,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">社会保険料を健康保険組合等に納付したとき</div>
+    <div class="sw-row"><span class="kari">預り金（社会保険料）<span class="amt">30,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">30,000</span></span></div>
+  </div>
+  <div class="tip-box"><strong>「預り金」は負債！</strong><br>会社が従業員の代わりに一時的に持っているお金なので、いつか返す（納付する）義務がある負債です。給料支払い時に発生し、納付時に消えます。</div>
+
+  <h2>③ 社会保険料の会社負担分</h2>
+  <p>社会保険料は従業員だけでなく、会社も同額を負担します（労使折半）。会社負担分は「法定福利費」（費用）で処理します。</p>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>社会保険料（従業員負担）¥30,000 と、会社負担分 ¥30,000 を合わせて当座預金から納付した。なお、従業員負担分はすでに預り金として処理済み。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">納付時の仕訳</div>
+    <div class="sw-row"><span class="kari">預り金（社会保険料）<span class="amt">30,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">60,000</span></span></div>
+    <div class="sw-row"><span class="kari">法定福利費<span class="amt">30,000</span></span><span class="sep"></span><span class="kashi"></span></div>
+  </div>
+  <div class="warn-box"><strong>従業員負担分と会社負担分を混同しない！</strong><br>従業員負担分：給料から天引き→「預り金」で処理<br>会社負担分：会社が別途払う→「法定福利費」（費用）で処理</div>
+
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。ボスまであと何時間かリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <div class="matome">
+    <h3>📋 まとめ：給料の仕訳 早見表</h3>
+    <div class="matome-row"><span class="trigger">給料支払い（借方）</span><span class="result">給料（総支給額）を借方に記録</span></div>
+    <div class="matome-row"><span class="trigger">給料支払い（貸方）</span><span class="result">預り金（税金・社保）＋当座預金（手取り）</span></div>
+    <div class="matome-row"><span class="trigger">源泉所得税の納付</span><span class="result">預り金 ／ 当座預金</span></div>
+    <div class="matome-row"><span class="trigger">社会保険料の納付（全額）</span><span class="result">預り金＋法定福利費 ／ 当座預金</span></div>
+    <div class="matome-row"><span class="trigger">預り金の性質</span><span class="result">負債（後で納付する義務）</span></div>
+    <div class="matome-row"><span class="trigger">法定福利費の性質</span><span class="result">費用（会社負担の社会保険料）</span></div>
+  </div>
+</div>
+<footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>
