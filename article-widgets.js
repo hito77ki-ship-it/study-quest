@@ -627,6 +627,43 @@ html[data-theme="dark"] .matome-row .trigger{color:#F8FAFC !important;}
 html[data-theme="dark"] .matome-row .result{color:#B6E27C !important;}
 /* ── ここまで ── */
 
+/* ── 試算表記事 固有コンポーネント ダークモード ── */
+html[data-theme="dark"] .type-card.t-gokei{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .type-card.t-both{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .type-card.t-zandaka{background:rgba(251,211,141,.08) !important;border-color:rgba(251,211,141,.3) !important;}
+html[data-theme="dark"] .type-card.t-gokei .tc-badge{background:rgba(59,130,246,.25) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .type-card.t-both .tc-badge{background:rgba(140,198,63,.22) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .type-card.t-zandaka .tc-badge{background:rgba(251,211,141,.2) !important;color:#F7D774 !important;}
+html[data-theme="dark"] .tc-name{color:#F8FAFC !important;}
+html[data-theme="dark"] .tc-desc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .type-card.t-gokei .tc-rule{color:#90CDF4 !important;}
+html[data-theme="dark"] .type-card.t-both .tc-rule{color:#B6E27C !important;}
+html[data-theme="dark"] .type-card.t-zandaka .tc-rule{color:#F7D774 !important;}
+html[data-theme="dark"] .rule-item.ri-gokei{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .rule-item.ri-zandaka{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .rule-item.ri-gokei .ri-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .rule-item.ri-zandaka .ri-title{color:#B6E27C !important;}
+html[data-theme="dark"] .rule-item .ri-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .shisan-table th.kamoku-head{background:#151A2A !important;color:#9BA7BB !important;}
+html[data-theme="dark"] .shisan-table th.gokei-kari{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .shisan-table th.gokei-kashi{background:rgba(237,137,54,.14) !important;color:#FBD38D !important;}
+html[data-theme="dark"] .shisan-table th.zandaka-kari{background:rgba(140,198,63,.14) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .shisan-table th.zandaka-kashi{background:rgba(246,224,94,.10) !important;color:#F7D774 !important;}
+html[data-theme="dark"] .shisan-table td{background:#121826 !important;color:#CCD6E5 !important;border-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .shisan-table td.kamoku-cell{color:#F8FAFC !important;}
+html[data-theme="dark"] .shisan-table td.gokei-kari{background:rgba(59,130,246,.07) !important;}
+html[data-theme="dark"] .shisan-table td.gokei-kashi{background:rgba(237,137,54,.06) !important;}
+html[data-theme="dark"] .shisan-table td.zandaka-kari{background:rgba(140,198,63,.07) !important;}
+html[data-theme="dark"] .shisan-table td.zandaka-kashi{background:rgba(246,224,94,.05) !important;}
+html[data-theme="dark"] .shisan-table tfoot td{border-color:rgba(255,255,255,.12) !important;}
+html[data-theme="dark"] .shisan-table tfoot td.gokei-kari{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .shisan-table tfoot td.gokei-kashi{background:rgba(237,137,54,.14) !important;color:#FBD38D !important;}
+html[data-theme="dark"] .shisan-table tfoot td.zandaka-kari{background:rgba(140,198,63,.18) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .shisan-table tfoot td.zandaka-kashi{background:rgba(246,224,94,.12) !important;color:#F7D774 !important;}
+html[data-theme="dark"] .shisan-table td.empty{color:#4A5568 !important;}
+html[data-theme="dark"] .legend-item{color:#9BA7BB !important;}
+/* ── ここまで ── */
+
 /* ── 毎年同額前払い記事 固有コンポーネント ダークモード ── */
 html[data-theme="dark"] .tl-month-cell.m-rev{background:rgba(246,173,85,.12) !important;border-color:rgba(246,173,85,.3) !important;color:#FBD38D !important;}
 html[data-theme="dark"] .tl-month-cell.m-paid{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
