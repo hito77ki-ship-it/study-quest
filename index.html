@@ -20039,6 +20039,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
   {
+    id: 'v20260507_boki3_articles2',
+    date: '2026-05-07',
+    type: 'feature',
+    title: '📒 簿記3級 解説記事を5本追加',
+    desc: '「固定資産の取得・売却（付随費用・売却損益）」「その他の債権・債務（前払金・仮払金・立替金など）」「株式会社の取引（株式発行・配当・利益準備金）」「消費税の仕訳（税抜方式）」「精算表の書き方（8桁精算表）」を公開しました。簿記3級の主要論点をこれで全てカバーしました。'
+  },
+  {
     id: 'v20260507_lv100_fix',
     date: '2026-05-07',
     type: 'fix',
@@ -21123,7 +21130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="news-modal">
     <div class="news-modal-header">
       <div class="news-modal-title">
-        <span class="news-modal-title-icon">🔔</span>
+        <span class="news-modal-title-icon"><i class="fa-solid fa-bell"></i></span>
         UPDATE LOG
       </div>
       <button class="news-modal-close" onclick="toggleNewsModal()">✕</button>
