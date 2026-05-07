@@ -16502,6 +16502,39 @@ function renderTlPage(filter, page){
       return;
     }
     feed.innerHTML = '';
+    // システムお知らせバナー（全ユーザー共通）
+    const now = new Date();
+    const SYSTEM_NOTICES = [
+      {
+        id: 'sys_multi_subject_20260507',
+        expires: new Date('2026-05-21T00:00:00+09:00'),
+        icon: '🔗',
+        label: '新機能',
+        title: '複数科目を1つに組み合わせる機能を追加しました',
+        body: '教科書登録画面から「科目をまとめる」ができるようになりました。関連する科目をグループ化してスッキリ管理しましょう。',
+      },
+    ];
+    const activeNotices = SYSTEM_NOTICES.filter(n => now < n.expires && !localStorage.getItem('sq_sys_notice_dismissed_' + n.id));
+    if(activeNotices.length && (filter === 'new' || filter === 'all' || filter === 'goal' || filter === 'top')){
+      activeNotices.forEach(notice => {
+        const noticeEl = document.createElement('div');
+        noticeEl.innerHTML = `<div class="timeline-post tl-type-free tl-pinned" style="border-color:#C9A84C;margin-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+            <span style="font-size:11px;font-weight:700;color:#C9A84C;background:rgba(201,168,76,.15);padding:2px 8px;border-radius:100px;">📌 お知らせ</span>
+            <span style="font-size:10px;color:var(--muted);">Study Quest 公式</span>
+            <button onclick="localStorage.setItem('sq_sys_notice_dismissed_${notice.id}','1');this.closest('.timeline-post').remove();" style="margin-left:auto;background:none;border:none;cursor:pointer;font-size:16px;color:var(--muted);padding:0 2px;line-height:1;" title="閉じる">×</button>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <div style="font-size:28px;line-height:1;">${notice.icon}</div>
+            <div style="flex:1;">
+              <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;">${notice.title}</div>
+              <div style="font-size:12px;color:var(--muted);line-height:1.6;">${notice.body}</div>
+            </div>
+          </div>
+        </div>`;
+        feed.appendChild(noticeEl.firstElementChild);
+      });
+    }
   }
   pagePosts.forEach(post => {
     const el = document.createElement('div');
