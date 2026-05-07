@@ -88,6 +88,7 @@ const ARTICLES = {
   'boki3-tegata.html':  {label:'簿記3級', title:'受取手形・支払手形・電子記録債権の仕訳'},
   'boki3-kyuryo.html':  {label:'簿記3級', title:'給料の仕訳と源泉所得税・社会保険料の預り金'},
   'boki3-kotei.html':  {label:'簿記3級', title:'固定資産の取得・売却の仕訳（付随費用・売却損益）'},
+  'boki3-sonota.html': {label:'簿記3級', title:'その他の債権・債務（前払金・前受金・仮払金・仮受金・立替金・預り金）'},
 };
 
 const CATS = {
@@ -922,6 +923,19 @@ html[data-theme="dark"] .lg-card.gain .lg-badge{background:rgba(140,198,63,.18) 
 html[data-theme="dark"] .lg-card.loss .lg-name{color:#FC8181 !important;}
 html[data-theme="dark"] .lg-card.gain .lg-name{color:#B6E27C !important;}
 html[data-theme="dark"] .lg-desc{color:#9BA7BB !important;}
+/* ── その他の債権債務記事 ── */
+html[data-theme="dark"] .st-card.saiken{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .st-card.saimu{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .st-badge{background:transparent !important;}
+html[data-theme="dark"] .st-card.saiken .st-badge{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .st-card.saimu .st-badge{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .st-card.saiken .st-name{color:#90CDF4 !important;}
+html[data-theme="dark"] .st-card.saimu .st-name{color:#FC8181 !important;}
+html[data-theme="dark"] .st-desc{color:#9BA7BB !important;}
+html[data-theme="dark"] .pair-table th{background:#1A2232 !important;border-color:rgba(255,255,255,.08) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .pair-table td{border-color:rgba(255,255,255,.08) !important;color:#9BA7BB !important;}
+html[data-theme="dark"] .pair-table .col-saiken{color:#90CDF4 !important;}
+html[data-theme="dark"] .pair-table .col-saimu{color:#FC8181 !important;}
 /* ── ここまで ── */
 
 .sq-key,
@@ -1498,7 +1512,7 @@ const BOKI3_FILES = [
   'boki3-genka.html','boki3-keika.html','boki3-keika2.html',
   'boki3-shisanhyo.html','boki3-denpyo.html','boki3-nikkei.html',
   'boki3-sanpou.html','boki3-kake.html','boki3-tegata.html','boki3-kyuryo.html',
-  'boki3-kotei.html',
+  'boki3-kotei.html','boki3-sonota.html',
 ];
 
 function buildBoki3Sidebar(sidebar){
