@@ -82,6 +82,7 @@ const ARTICLES = {
   'boki3-keika2.html':  {label:'簿記3級', title:'毎年同額の前払い（18か月の理由）'},
   'boki3-shisanhyo.html':{label:'簿記3級',title:'試算表3種類の違い'},
   'boki3-denpyo.html':  {label:'簿記3級', title:'伝票会計（３伝票制）の仕訳と解き方'},
+  'boki3-nikkei.html':  {label:'簿記3級', title:'仕訳日計表の書き方と集計ステップ'},
 };
 
 const CATS = {
@@ -713,6 +714,35 @@ html[data-theme="dark"] .step-body{color:#CCD6E5 !important;}
 html[data-theme="dark"] .step-body strong{color:#F8FAFC !important;}
 /* ── ここまで ── */
 
+/* ── 仕訳日計表記事 固有コンポーネント ダークモード ── */
+html[data-theme="dark"] .dd-row.r-nyukin{background:rgba(59,130,246,.12) !important;}
+html[data-theme="dark"] .dd-row.r-shukin{background:rgba(252,129,129,.10) !important;}
+html[data-theme="dark"] .dd-row.r-furikae{background:rgba(140,198,63,.10) !important;}
+html[data-theme="dark"] .dd-row .kari{color:#90CDF4 !important;}
+html[data-theme="dark"] .dd-row .kashi{color:#FBD38D !important;}
+html[data-theme="dark"] .dd-row .sep{color:#4A5568 !important;}
+html[data-theme="dark"] .dd-type-label.nyukin{background:rgba(59,130,246,.25) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .dd-type-label.shukin{background:rgba(252,129,129,.22) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .dd-type-label.furikae{background:rgba(140,198,63,.22) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .collect-item.c-kari{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .collect-item.c-kashi{background:rgba(237,137,54,.10) !important;border-color:rgba(237,137,54,.3) !important;}
+html[data-theme="dark"] .ci-kamoku{color:#F8FAFC !important;}
+html[data-theme="dark"] .ci-calc{color:#9BA7BB !important;}
+html[data-theme="dark"] .collect-item.c-kari .ci-total{color:#90CDF4 !important;}
+html[data-theme="dark"] .collect-item.c-kashi .ci-total{color:#FBD38D !important;}
+html[data-theme="dark"] .nikkei-table th.kamoku-head{background:#151A2A !important;color:#9BA7BB !important;}
+html[data-theme="dark"] .nikkei-table th.n-kari{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .nikkei-table th.n-kashi{background:rgba(237,137,54,.14) !important;color:#FBD38D !important;}
+html[data-theme="dark"] .nikkei-table td{background:#121826 !important;color:#CCD6E5 !important;border-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .nikkei-table td.kamoku-cell{color:#F8FAFC !important;}
+html[data-theme="dark"] .nikkei-table td.n-kari{background:rgba(59,130,246,.07) !important;}
+html[data-theme="dark"] .nikkei-table td.n-kashi{background:rgba(237,137,54,.06) !important;}
+html[data-theme="dark"] .nikkei-table tfoot td{border-color:rgba(255,255,255,.12) !important;}
+html[data-theme="dark"] .nikkei-table tfoot td.n-kari{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .nikkei-table tfoot td.n-kashi{background:rgba(237,137,54,.14) !important;color:#FBD38D !important;}
+html[data-theme="dark"] .nikkei-table td.empty{color:#4A5568 !important;}
+/* ── ここまで ── */
+
 /* ── 毎年同額前払い記事 固有コンポーネント ダークモード ── */
 html[data-theme="dark"] .tl-month-cell.m-rev{background:rgba(246,173,85,.12) !important;border-color:rgba(246,173,85,.3) !important;color:#FBD38D !important;}
 html[data-theme="dark"] .tl-month-cell.m-paid{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
@@ -1220,7 +1250,7 @@ const BOKI3_FILES = [
   'boki-zero-04.html','boki-zero-05.html',
   'boki3-genkin.html','boki3-kafusoku.html','boki3-kashidaore.html',
   'boki3-genka.html','boki3-keika.html','boki3-keika2.html',
-  'boki3-shisanhyo.html','boki3-denpyo.html',
+  'boki3-shisanhyo.html','boki3-denpyo.html','boki3-nikkei.html',
 ];
 
 function buildBoki3Sidebar(sidebar){

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仕訳日計表の書き方【日商簿記3級】伝票会計・集計ステップを図解で完全解説｜スタディクエスト</title>
+<meta name="description" content="仕訳日計表とは何か、伝票から仕訳日計表を作成するステップを図解で解説。入金・出金・振替伝票を勘定科目ごとに集計する方法を例題つきで完全解説。日商簿記3級の伝票会計。">
+<meta name="keywords" content="仕訳日計表 書き方,仕訳日計表 作り方,伝票会計 集計,日商簿記3級 仕訳日計表,仕訳日計表 例題">
+<meta property="og:title" content="仕訳日計表の書き方【日商簿記3級】伝票会計・集計ステップを図解で完全解説">
+<meta property="og:description" content="入金・出金・振替伝票を集計して仕訳日計表を作る手順を例題つきで解説。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-nikkei.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "仕訳日計表の書き方【日商簿記3級】伝票会計・集計ステップを図解で完全解説",
+  "description": "入金・出金・振替伝票を集計して仕訳日計表を作る手順を例題つきで解説。",
+  "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-nikkei.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
+  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.warn-box strong{color:#975A16;}
+
+/* 例題ボックス */
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p{font-size:14px;color:#374151;margin:0;}
+
+/* 伝票一覧グリッド */
+.denpyo-day{display:flex;flex-direction:column;gap:8px;margin:20px 0;}
+.dd-section{margin-bottom:4px;}
+.dd-type-label{font-size:11px;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:6px;}
+.dd-type-label.nyukin{background:#BFDBFE;color:#1D4ED8;}
+.dd-type-label.shukin{background:#FECACA;color:#B91C1C;}
+.dd-type-label.furikae{background:#BBF7D0;color:#15803D;}
+.dd-rows{display:flex;flex-direction:column;gap:4px;}
+.dd-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:8px 14px;border-radius:7px;font-size:13px;}
+.dd-row.r-nyukin{background:#EBF8FF;}
+.dd-row.r-shukin{background:#FFF5F5;}
+.dd-row.r-furikae{background:#F0FFF4;}
+.dd-row .kari{color:#2B6CB0;font-weight:700;}
+.dd-row .kashi{color:#C05621;font-weight:700;text-align:right;}
+.dd-row .sep{color:var(--muted);font-size:11px;}
+
+/* 集計プロセス */
+.collect-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:20px 0;}
+.collect-item{border-radius:10px;padding:12px 14px;border:1px solid;}
+.collect-item.c-kari{background:#EBF8FF;border-color:#90CDF4;}
+.collect-item.c-kashi{background:#FFF9F0;border-color:#FBD38D;}
+.collect-item .ci-kamoku{font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.collect-item.c-kari .ci-kamoku::before{content:"借方　";}
+.collect-item.c-kashi .ci-kamoku::before{content:"貸方　";}
+.collect-item .ci-calc{font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:6px;}
+.collect-item .ci-total{font-size:14px;font-weight:700;}
+.collect-item.c-kari .ci-total{color:#2B6CB0;}
+.collect-item.c-kashi .ci-total{color:#C05621;}
+
+/* 仕訳日計表 */
+.nikkei-wrap{overflow-x:auto;margin:20px 0;}
+.nikkei-table{width:100%;border-collapse:collapse;font-size:13px;min-width:300px;}
+.nikkei-table caption{font-size:14px;font-weight:700;color:var(--text);text-align:center;padding:0 0 10px;letter-spacing:.08em;}
+.nikkei-table th{padding:9px 14px;font-weight:700;font-size:12px;letter-spacing:.04em;border:1px solid var(--border);}
+.nikkei-table td{padding:8px 14px;border:1px solid var(--border);text-align:right;font-size:13px;}
+.nikkei-table td.kamoku-cell{text-align:center;font-weight:700;color:var(--text);}
+.nikkei-table tfoot td{font-weight:700;border-top:2px solid var(--border);}
+.nikkei-table th.n-kari{background:#EBF8FF;color:#2B6CB0;}
+.nikkei-table th.n-kashi{background:#FFF9F0;color:#C05621;}
+.nikkei-table td.n-kari{background:#F7FCFF;}
+.nikkei-table td.n-kashi{background:#FFFCF7;}
+.nikkei-table tfoot td.n-kari{background:#EBF8FF;color:#2B6CB0;font-weight:700;}
+.nikkei-table tfoot td.n-kashi{background:#FFF9F0;color:#C05621;font-weight:700;}
+.nikkei-table td.empty{color:var(--muted);}
+.nikkei-table th.kamoku-head{background:var(--light);color:var(--muted);}
+
+/* 解き方ステップ */
+.step-list{margin:16px 0;}
+.step-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start;}
+.step-num{background:#3B82F6;color:#fff;font-size:12px;font-weight:700;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-body{font-size:14px;color:#374151;line-height:1.75;}
+.step-body strong{color:var(--text);}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:140px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+
+/* アプリCTA */
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="index.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 仕訳日計表の書き方
+  </div>
+
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>仕訳日計表の書き方<br>伝票から集計するステップを図解で完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <p class="lead">
+    仕訳日計表はその日に起票されたすべての伝票を<strong>勘定科目ごとに集計した一覧表</strong>です。<br>
+    難しそうに見えますが、手順は「①伝票を仕訳に直す → ②勘定科目ごとに合計する」の2ステップだけです。
+  </p>
+
+  <div class="sq-chat"></div>
+
+  <h2>仕訳日計表とは？</h2>
+
+  <p>企業では毎日たくさんの取引が発生し、伝票が大量に起票されます。その日に起票されたすべての伝票を集計して1枚の表にまとめたものが<strong>仕訳日計表</strong>です。</p>
+
+  <ul>
+    <li>一日の取引量・金額を一目で把握できる</li>
+    <li>伝票の記入ミスや集計漏れを発見できる（借方合計＝貸方合計で検証）</li>
+    <li>仕訳日計表から元帳（得意先元帳・仕入先元帳など）への転記に使う</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>借方合計と貸方合計は必ず一致する！</strong><br>
+    仕訳の借方・貸方が同額になるルールと同じです。合計が合わない場合は集計ミスや伝票の見落としがあります。
+  </div>
+
+  <h2>例題</h2>
+
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>2026年6月1日に次の伝票が起票された。この伝票から仕訳日計表を作成しなさい。</p>
+  </div>
+
+  <h3>起票された伝票（6月1日分）</h3>
+
+  <div class="denpyo-day">
+    <div class="dd-section">
+      <span class="dd-type-label nyukin">入金伝票</span>
+      <div class="dd-rows">
+        <div class="dd-row r-nyukin">
+          <span class="kari">現金　3,000</span>
+          <span class="sep">／</span>
+          <span class="kashi">売掛金　3,000</span>
+        </div>
+        <div class="dd-row r-nyukin">
+          <span class="kari">現金　20,000</span>
+          <span class="sep">／</span>
+          <span class="kashi">当座預金　20,000</span>
+        </div>
+      </div>
+    </div>
+    <div class="dd-section">
+      <span class="dd-type-label shukin">出金伝票</span>
+      <div class="dd-rows">
+        <div class="dd-row r-shukin">
+          <span class="kari">仕入　1,000</span>
+          <span class="sep">／</span>
+          <span class="kashi">現金　1,000</span>
+        </div>
+        <div class="dd-row r-shukin">
+          <span class="kari">水道光熱費　4,000</span>
+          <span class="sep">／</span>
+          <span class="kashi">現金　4,000</span>
+        </div>
+      </div>
+    </div>
+    <div class="dd-section">
+      <span class="dd-type-label furikae">振替伝票</span>
+      <div class="dd-rows">
+        <div class="dd-row r-furikae">
+          <span class="kari">売掛金　10,000</span>
+          <span class="sep">／</span>
+          <span class="kashi">売上　10,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>解き方：2ステップで完成</h2>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>伝票から仕訳を確認する</strong><br>入金・出金・振替の各伝票をすべて仕訳の形に並べる（上の表がそれ）</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>勘定科目ごとに合計して仕訳日計表に記入する</strong><br>同じ勘定科目が複数の伝票に登場する場合は合算する</div>
+    </div>
+  </div>
+
+  <h3>勘定科目ごとの集計</h3>
+
+  <div class="collect-grid">
+    <div class="collect-item c-kari">
+      <div class="ci-kamoku">現金</div>
+      <div class="ci-calc">3,000 + 20,000</div>
+      <div class="ci-total">23,000</div>
+    </div>
+    <div class="collect-item c-kashi">
+      <div class="ci-kamoku">現金</div>
+      <div class="ci-calc">1,000 + 4,000</div>
+      <div class="ci-total">5,000</div>
+    </div>
+    <div class="collect-item c-kari">
+      <div class="ci-kamoku">売掛金</div>
+      <div class="ci-calc">10,000</div>
+      <div class="ci-total">10,000</div>
+    </div>
+    <div class="collect-item c-kashi">
+      <div class="ci-kamoku">売掛金</div>
+      <div class="ci-calc">3,000</div>
+      <div class="ci-total">3,000</div>
+    </div>
+    <div class="collect-item c-kashi">
+      <div class="ci-kamoku">当座預金</div>
+      <div class="ci-calc">20,000</div>
+      <div class="ci-total">20,000</div>
+    </div>
+    <div class="collect-item c-kari">
+      <div class="ci-kamoku">仕入</div>
+      <div class="ci-calc">1,000</div>
+      <div class="ci-total">1,000</div>
+    </div>
+    <div class="collect-item c-kari">
+      <div class="ci-kamoku">水道光熱費</div>
+      <div class="ci-calc">4,000</div>
+      <div class="ci-total">4,000</div>
+    </div>
+    <div class="collect-item c-kashi">
+      <div class="ci-kamoku">売上</div>
+      <div class="ci-calc">10,000</div>
+      <div class="ci-total">10,000</div>
+    </div>
+  </div>
+
+  <h3>完成した仕訳日計表</h3>
+
+  <div class="nikkei-wrap">
+    <table class="nikkei-table">
+      <caption>仕訳日計表　2026年6月1日</caption>
+      <thead>
+        <tr>
+          <th class="n-kari" style="width:35%;">借方</th>
+          <th class="kamoku-head" style="width:30%;">勘定科目</th>
+          <th class="n-kashi" style="width:35%;">貸方</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="n-kari">23,000</td>
+          <td class="kamoku-cell">現金</td>
+          <td class="n-kashi">5,000</td>
+        </tr>
+        <tr>
+          <td class="n-kari">10,000</td>
+          <td class="kamoku-cell">売掛金</td>
+          <td class="n-kashi">3,000</td>
+        </tr>
+        <tr>
+          <td class="n-kari empty">—</td>
+          <td class="kamoku-cell">当座預金</td>
+          <td class="n-kashi">20,000</td>
+        </tr>
+        <tr>
+          <td class="n-kari">1,000</td>
+          <td class="kamoku-cell">仕入</td>
+          <td class="n-kashi empty">—</td>
+        </tr>
+        <tr>
+          <td class="n-kari">4,000</td>
+          <td class="kamoku-cell">水道光熱費</td>
+          <td class="n-kashi empty">—</td>
+        </tr>
+        <tr>
+          <td class="n-kari empty">—</td>
+          <td class="kamoku-cell">売上</td>
+          <td class="n-kashi">10,000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="n-kari">38,000</td>
+          <td class="kamoku-cell">合　計</td>
+          <td class="n-kashi">38,000</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="tip-box">
+    <strong>借方合計 38,000＝貸方合計 38,000 で一致！</strong><br>
+    借方：23,000＋10,000＋1,000＋4,000＝38,000<br>
+    貸方：5,000＋3,000＋20,000＋10,000＝38,000<br>
+    合計が合えば集計完了。合わない場合はどこかの伝票の記入漏れや計算ミスを確認する。
+  </div>
+
+  <h2>試験でよく一緒に出る：元帳への転記</h2>
+
+  <p>試験では仕訳日計表の作成と同時に、<strong>得意先元帳（売掛金明細）や仕入先元帳（買掛金明細）</strong>への転記を求める問題が出ます。</p>
+  <p>元帳への転記自体は補助簿の知識がそのまま使えます。仕訳日計表の金額を見ながら、各取引先の口座に金額を写すだけです。</p>
+
+  <div class="warn-box">
+    <strong>勘定科目の順番に決まりはない</strong><br>
+    仕訳日計表の勘定科目の記載順は問題ごとに異なります。答案用紙の勘定科目欄が空欄になっていれば自分で書き、あらかじめ印刷されていればその順番に従います。どちらの形式にも対応できるようにしておきましょう。
+  </div>
+
+  <div class="app-cta">
+    <h3>⚔ Study Quest で学習を記録しよう</h3>
+    <p>簿記3級の学習時間をRPG感覚で記録。ボス（試験日）まであと何時間かリアルタイムで確認できます。</p>
+    <a href="index.html">無料で始める →</a>
+  </div>
+
+  <div class="matome">
+    <h3>📋 まとめ：仕訳日計表 早見表</h3>
+    <div class="matome-row">
+      <span class="trigger">仕訳日計表とは</span>
+      <span class="result">その日の全伝票を勘定科目ごとに集計した表</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">作成手順 ①</span>
+      <span class="result">全伝票を仕訳の形に並べる</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">作成手順 ②</span>
+      <span class="result">勘定科目ごとに借方・貸方を合計して記入</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">完成の確認方法</span>
+      <span class="result">借方合計＝貸方合計になれば正解</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">試験の頻出セット</span>
+      <span class="result">仕訳日計表＋得意先元帳（または仕入先元帳）の転記</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="lp.html">記事トップ</a>
+  <a href="index.html">アプリを使う</a>
+  <p>© 2026 スタディクエスト</p>
+</footer>
+
+<script src="article-widgets.js"></script>
+</body>
+</html>
