@@ -92,6 +92,8 @@ const ARTICLES = {
   'boki3-kabushiki.html':{label:'簿記3級',title:'株式会社の取引の仕訳（株式発行・剰余金の配当・利益準備金）'},
   'boki3-shohi.html':  {label:'簿記3級', title:'消費税の仕訳（税抜方式）仮払消費税・仮受消費税'},
   'boki3-seisanhyo.html':{label:'簿記3級',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで'},
+  'boki3-koguchi.html': {label:'簿記3級',title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方'},
+  'boki3-ginko.html':   {label:'簿記3級',title:'銀行勘定調整表の書き方と修正仕訳（不一致の4原因）'},
 };
 
 const CATS = {
@@ -986,6 +988,32 @@ html[data-theme="dark"] .seisan-table .val-purple{color:#C4B5FD !important;}
 html[data-theme="dark"] .step-item{border-color:rgba(255,255,255,.10) !important;background:#111827 !important;}
 html[data-theme="dark"] .step-text{color:#9BA7BB !important;}
 html[data-theme="dark"] .step-text strong{color:#CCD6E5 !important;}
+/* ── 小口現金記事 ── */
+html[data-theme="dark"] .rf-box.kaisha{background:rgba(139,92,246,.10) !important;border-color:rgba(139,92,246,.35) !important;}
+html[data-theme="dark"] .rf-box.koguchi{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .rf-box.kaisha .rf-title{color:#C4B5FD !important;}
+html[data-theme="dark"] .rf-box.koguchi .rf-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .rf-desc{color:#9BA7BB !important;}
+html[data-theme="dark"] .koguchi-table th{background:#1A2232 !important;border-color:rgba(255,255,255,.08) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .koguchi-table td{border-color:rgba(255,255,255,.06) !important;background:#111827 !important;color:#9BA7BB !important;}
+html[data-theme="dark"] .koguchi-table .row-hokyuu td{background:rgba(139,92,246,.08) !important;}
+html[data-theme="dark"] .koguchi-table .row-total td{background:#1A2232 !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .koguchi-table .val-purple{color:#C4B5FD !important;}
+html[data-theme="dark"] .koguchi-table .val-blue{color:#90CDF4 !important;}
+/* ── 銀行勘定調整表記事 ── */
+html[data-theme="dark"] .reason-card.jisha{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .reason-card.ginko{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .reason-card.jisha .rc-badge{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .reason-card.ginko .rc-badge{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .reason-card.jisha .rc-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .reason-card.ginko .rc-title{color:#FC8181 !important;}
+html[data-theme="dark"] .rc-desc{color:#9BA7BB !important;}
+html[data-theme="dark"] .chosei-table th{background:#1A2232 !important;border-color:rgba(255,255,255,.08) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .chosei-table td{border-color:rgba(255,255,255,.06) !important;color:#9BA7BB !important;}
+html[data-theme="dark"] .chosei-table .row-start td{background:rgba(59,130,246,.10) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .chosei-table .row-add td{background:rgba(140,198,63,.06) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .chosei-table .row-sub td{background:rgba(252,129,129,.06) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .chosei-table .row-result td{background:rgba(140,198,63,.12) !important;color:#B6E27C !important;}
 /* ── ここまで ── */
 
 .sq-key,
@@ -1563,7 +1591,7 @@ const BOKI3_FILES = [
   'boki3-shisanhyo.html','boki3-denpyo.html','boki3-nikkei.html',
   'boki3-sanpou.html','boki3-kake.html','boki3-tegata.html','boki3-kyuryo.html',
   'boki3-kotei.html','boki3-sonota.html','boki3-kabushiki.html','boki3-shohi.html',
-  'boki3-seisanhyo.html',
+  'boki3-seisanhyo.html','boki3-koguchi.html','boki3-ginko.html',
 ];
 
 function buildBoki3Sidebar(sidebar){
