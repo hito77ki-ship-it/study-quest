@@ -81,6 +81,7 @@ const ARTICLES = {
   'boki3-keika.html':   {label:'簿記3級', title:'経過勘定（前払・未払・前受・未収）'},
   'boki3-keika2.html':  {label:'簿記3級', title:'毎年同額の前払い（18か月の理由）'},
   'boki3-shisanhyo.html':{label:'簿記3級',title:'試算表3種類の違い'},
+  'boki3-denpyo.html':  {label:'簿記3級', title:'伝票会計（３伝票制）の仕訳と解き方'},
 };
 
 const CATS = {
@@ -676,6 +677,42 @@ html[data-theme="dark"] .shisan-table td.empty{color:#4A5568 !important;}
 html[data-theme="dark"] .legend-item{color:#9BA7BB !important;}
 /* ── ここまで ── */
 
+/* ── 伝票会計記事 固有コンポーネント ダークモード ── */
+html[data-theme="dark"] .dp-card.nyukin{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .dp-card.shukin{background:rgba(252,129,129,.10) !important;border-color:rgba(252,129,129,.3) !important;}
+html[data-theme="dark"] .dp-card.furikae{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .dp-card.nyukin .dp-badge{background:rgba(59,130,246,.25) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .dp-card.shukin .dp-badge{background:rgba(252,129,129,.22) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .dp-card.furikae .dp-badge{background:rgba(140,198,63,.22) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .dp-name{color:#F8FAFC !important;}
+html[data-theme="dark"] .dp-cond{color:#9BA7BB !important;}
+html[data-theme="dark"] .dp-shiwake{background:rgba(255,255,255,.05) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .shiwake-row{background:rgba(255,255,255,.05) !important;}
+html[data-theme="dark"] .shiwake-row .sw-kari{color:#90CDF4 !important;}
+html[data-theme="dark"] .shiwake-row .sw-sep{color:#4A5568 !important;}
+html[data-theme="dark"] .shiwake-row .sw-kashi{color:#FBD38D !important;}
+html[data-theme="dark"] .shiwake-row .sw-amt{color:#9BA7BB !important;}
+html[data-theme="dark"] .ticket.t-nyukin{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.4) !important;}
+html[data-theme="dark"] .ticket.t-shukin{background:rgba(252,129,129,.10) !important;border-color:rgba(252,129,129,.4) !important;}
+html[data-theme="dark"] .ticket.t-furikae{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.35) !important;}
+html[data-theme="dark"] .ticket.t-nyukin .tk-badge{background:rgba(59,130,246,.25) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .ticket.t-shukin .tk-badge{background:rgba(252,129,129,.22) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .ticket.t-furikae .tk-badge{background:rgba(140,198,63,.22) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .ticket.t-nyukin .tk-shiwake{color:#90CDF4 !important;}
+html[data-theme="dark"] .ticket.t-shukin .tk-shiwake{color:#FC8181 !important;}
+html[data-theme="dark"] .ticket.t-furikae .tk-shiwake{color:#B6E27C !important;}
+html[data-theme="dark"] .mc-card.m-bunkai{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .mc-card.m-gisei{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .mc-card.m-bunkai .mc-badge{background:rgba(59,130,246,.25) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .mc-card.m-gisei .mc-badge{background:rgba(140,198,63,.22) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .mc-title{color:#F8FAFC !important;}
+html[data-theme="dark"] .mc-cond{color:#9BA7BB !important;}
+html[data-theme="dark"] .mc-card.m-bunkai .mc-key{color:#90CDF4 !important;}
+html[data-theme="dark"] .mc-card.m-gisei .mc-key{color:#B6E27C !important;}
+html[data-theme="dark"] .step-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .step-body strong{color:#F8FAFC !important;}
+/* ── ここまで ── */
+
 /* ── 毎年同額前払い記事 固有コンポーネント ダークモード ── */
 html[data-theme="dark"] .tl-month-cell.m-rev{background:rgba(246,173,85,.12) !important;border-color:rgba(246,173,85,.3) !important;color:#FBD38D !important;}
 html[data-theme="dark"] .tl-month-cell.m-paid{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
@@ -1183,7 +1220,7 @@ const BOKI3_FILES = [
   'boki-zero-04.html','boki-zero-05.html',
   'boki3-genkin.html','boki3-kafusoku.html','boki3-kashidaore.html',
   'boki3-genka.html','boki3-keika.html','boki3-keika2.html',
-  'boki3-shisanhyo.html',
+  'boki3-shisanhyo.html','boki3-denpyo.html',
 ];
 
 function buildBoki3Sidebar(sidebar){

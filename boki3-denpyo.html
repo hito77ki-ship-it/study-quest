@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伝票会計（３伝票制）の仕訳と解き方【日商簿記3級】分解法・擬制法を図解で完全解説｜スタディクエスト</title>
+<meta name="description" content="３伝票制（入金伝票・出金伝票・振替伝票）の書き方と、取引を分解する方法・擬制する方法を例題つきで解説。日商簿記3級の伝票会計を図解でやさしく説明します。">
+<meta name="keywords" content="伝票会計 仕訳,3伝票制 解き方,入金伝票 出金伝票 振替伝票,取引を分解する方法,取引を擬制する方法,日商簿記3級 伝票">
+<meta property="og:title" content="伝票会計（３伝票制）の仕訳と解き方【日商簿記3級】">
+<meta property="og:description" content="入金・出金・振替の3伝票制を図解で解説。分解法と擬制法を例題つきで完全攻略。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-denpyo.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "伝票会計（３伝票制）の仕訳と解き方【日商簿記3級】",
+  "description": "入金・出金・振替の3伝票制を図解で解説。分解法と擬制法を例題つきで完全攻略。",
+  "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-denpyo.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
+  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
+.warn-box strong{color:#975A16;}
+
+/* 3伝票カードグリッド */
+.denpyo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0;}
+@media(max-width:600px){.denpyo-grid{grid-template-columns:1fr;}}
+.dp-card{border-radius:12px;padding:16px 18px;border:2px solid;}
+.dp-card.nyukin{background:#EBF8FF;border-color:#90CDF4;}
+.dp-card.shukin{background:#FFF5F5;border-color:#FC8181;}
+.dp-card.furikae{background:#F0FFF4;border-color:#9AE6B4;}
+.dp-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-bottom:8px;}
+.dp-card.nyukin .dp-badge{background:#90CDF4;color:#2B6CB0;}
+.dp-card.shukin .dp-badge{background:#FC8181;color:#9B2C2C;}
+.dp-card.furikae .dp-badge{background:#9AE6B4;color:#276749;}
+.dp-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.dp-cond{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.dp-shiwake{font-size:12px;font-family:monospace;background:rgba(0,0,0,.04);border-radius:6px;padding:8px 10px;line-height:1.8;}
+
+/* 仕訳ボックス */
+.shiwake-wrap{margin:16px 0;}
+.shiwake-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;}
+.shiwake-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;background:var(--light);border-radius:8px;padding:10px 14px;margin-bottom:6px;font-size:13px;}
+.shiwake-row .sw-kari{color:#2B6CB0;font-weight:700;}
+.shiwake-row .sw-sep{color:var(--muted);font-size:11px;}
+.shiwake-row .sw-kashi{color:#C05621;font-weight:700;text-align:right;}
+.shiwake-row .sw-amt{font-size:12px;color:var(--muted);margin-left:4px;}
+
+/* 例題ボックス */
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p{font-size:14px;color:#374151;margin:0;}
+
+/* 解き方ステップ */
+.step-list{margin:16px 0;}
+.step-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start;}
+.step-num{background:#3B82F6;color:#fff;font-size:12px;font-weight:700;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-body{font-size:14px;color:#374151;line-height:1.75;}
+.step-body strong{color:var(--text);}
+
+/* 伝票イメージカード */
+.ticket-group{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+.ticket{border-radius:8px;padding:12px 16px;border-left:4px solid;font-size:13px;}
+.ticket.t-nyukin{background:#EBF8FF;border-color:#3B82F6;}
+.ticket.t-shukin{background:#FFF5F5;border-color:#FC8181;}
+.ticket.t-furikae{background:#F0FFF4;border-color:#22C55E;}
+.ticket .tk-badge{font-size:10px;font-weight:700;padding:1px 8px;border-radius:100px;margin-bottom:6px;display:inline-block;}
+.ticket.t-nyukin .tk-badge{background:#BFDBFE;color:#1D4ED8;}
+.ticket.t-shukin .tk-badge{background:#FECACA;color:#B91C1C;}
+.ticket.t-furikae .tk-badge{background:#BBF7D0;color:#15803D;}
+.ticket .tk-shiwake{font-family:monospace;font-size:12px;line-height:1.8;}
+.ticket.t-nyukin .tk-shiwake{color:#1D4ED8;}
+.ticket.t-shukin .tk-shiwake{color:#B91C1C;}
+.ticket.t-furikae .tk-shiwake{color:#15803D;}
+
+/* 2メソッド比較 */
+.method-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+@media(max-width:560px){.method-compare{grid-template-columns:1fr;}}
+.mc-card{border-radius:12px;padding:18px 20px;}
+.mc-card.m-bunkai{background:#EBF8FF;border:2px solid #90CDF4;}
+.mc-card.m-gisei{background:#F0FFF4;border:2px solid #9AE6B4;}
+.mc-badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:100px;margin-bottom:10px;}
+.mc-card.m-bunkai .mc-badge{background:#BFDBFE;color:#1D4ED8;}
+.mc-card.m-gisei .mc-badge{background:#BBF7D0;color:#15803D;}
+.mc-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.mc-cond{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.7;}
+.mc-key{font-size:12px;font-weight:700;}
+.mc-card.m-bunkai .mc-key{color:#1D4ED8;}
+.mc-card.m-gisei .mc-key{color:#15803D;}
+
+/* まとめカード */
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:160px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+
+/* アプリCTA */
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="index.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 伝票会計（３伝票制）の解き方
+  </div>
+
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>伝票会計（３伝票制）の仕訳と解き方<br>分解法・擬制法を図解で完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <p class="lead">
+    「仕訳は書けるのに、伝票問題になると途端に手が止まる」——よくある悩みです。<br>
+    伝票のルールは実は<strong>たった3つ</strong>。そのルールさえ覚えれば、どんな問題も「仕訳を伝票に振り分けるだけ」のパズルになります。
+  </p>
+
+  <div class="sq-chat"></div>
+
+  <h2>伝票とは何か？</h2>
+
+  <p>一人でお店を経営しているなら、取引のたびに自分で仕訳を書けます。でも大きな会社では、たくさんの営業マンがバラバラに取引を行います。</p>
+  <p>そこで<strong>「一定のルールで記録できるメモ用紙」</strong>が必要になります。それが<strong>伝票</strong>です。営業マンが伝票を書いて持ち帰り、経理がまとめて仕訳に変換する——という流れで使われます。</p>
+
+  <div class="tip-box">
+    <strong>3級の試験では「３伝票制」のみが対象！</strong><br>
+    以前は5伝票制もありましたが、2016年度の改正で範囲外になりました。入金伝票・出金伝票・振替伝票の3種類だけ覚えればOKです。
+  </div>
+
+  <h2>３伝票制のルール：たった3つ</h2>
+
+  <div class="denpyo-grid">
+    <div class="dp-card nyukin">
+      <span class="dp-badge">①</span>
+      <div class="dp-name">入金伝票</div>
+      <div class="dp-cond">現金を受け取ったとき</div>
+      <div class="dp-shiwake">現金 ×× ／ ○○ ××</div>
+    </div>
+    <div class="dp-card shukin">
+      <span class="dp-badge">②</span>
+      <div class="dp-name">出金伝票</div>
+      <div class="dp-cond">現金を支払ったとき</div>
+      <div class="dp-shiwake">○○ ×× ／ 現金 ××</div>
+    </div>
+    <div class="dp-card furikae">
+      <span class="dp-badge">③</span>
+      <div class="dp-name">振替伝票</div>
+      <div class="dp-cond">現金が絡まない取引</div>
+      <div class="dp-shiwake">仕訳がそのまま入る</div>
+    </div>
+  </div>
+
+  <p>入金・出金伝票では「現金」が固定されており、伝票には相手勘定だけを書きます。振替伝票は現金なしの取引をそのまま仕訳の形で書きます。</p>
+
+  <h3>具体例：3つの伝票イメージ</h3>
+
+  <div class="ticket-group">
+    <div class="ticket t-nyukin">
+      <span class="tk-badge">入金伝票</span>
+      <div class="tk-shiwake">現金 20,000 ／ 売上 20,000</div>
+    </div>
+    <div class="ticket t-shukin">
+      <span class="tk-badge">出金伝票</span>
+      <div class="tk-shiwake">買掛金 10,000 ／ 現金 10,000</div>
+    </div>
+    <div class="ticket t-furikae">
+      <span class="tk-badge">振替伝票</span>
+      <div class="tk-shiwake">車両 200,000 ／ 未払金 200,000</div>
+    </div>
+  </div>
+
+  <h2>問題のパターンは2種類</h2>
+
+  <p>伝票会計の問題では、取引の仕訳を複数の伝票に分ける方法が2つあります。どちらを使うかは<strong>問題文の指示</strong>で決まります。</p>
+
+  <div class="method-compare">
+    <div class="mc-card m-bunkai">
+      <span class="mc-badge">方法①</span>
+      <div class="mc-title">取引を分解する方法</div>
+      <div class="mc-cond">「実際の現金収支額のみを記入する」と指示があるとき</div>
+      <div class="mc-key">→ 現金部分と非現金部分に仕訳を割る</div>
+    </div>
+    <div class="mc-card m-gisei">
+      <span class="mc-badge">方法②</span>
+      <div class="mc-title">取引を擬制（ぎせい）する方法</div>
+      <div class="mc-cond">「支払総額を出金処理し、〇〇を入金処理する」と指示があるとき</div>
+      <div class="mc-key">→ 一度全額を現金で払ったとみなす</div>
+    </div>
+  </div>
+
+  <h2>方法① 取引を分解する方法</h2>
+
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>商品 ¥300,000 を仕入れ、代金は現金 ¥100,000 と前払金 ¥100,000 で充当し、残額は掛とした。当店は3伝票制を採用しており、<strong>出金伝票には実際の現金収支額のみ</strong>を記入する。</p>
+  </div>
+
+  <h3>まず全体の仕訳を書く</h3>
+
+  <div class="shiwake-wrap">
+    <div class="shiwake-label">全体の仕訳</div>
+    <div class="shiwake-row">
+      <span class="sw-kari">仕入<span class="sw-amt">300,000</span></span>
+      <span class="sw-sep">／</span>
+      <span class="sw-kashi">現金<span class="sw-amt">100,000</span><br>前払金<span class="sw-amt">100,000</span><br>買掛金<span class="sw-amt">100,000</span></span>
+    </div>
+  </div>
+
+  <h3>伝票に分解する</h3>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">3伝票制なので「仕入伝票」は使わない（仕入伝票は5伝票制のもの）</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>実際に出金した ¥100,000 を出金伝票に記載</strong><br>現金部分だけを切り出す</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>残りを振替伝票に記載</strong><br>前払金と買掛金の合計 ¥200,000 を振替伝票へ</div>
+    </div>
+  </div>
+
+  <div class="ticket-group">
+    <div class="ticket t-shukin">
+      <span class="tk-badge">出金伝票（実際の出金のみ）</span>
+      <div class="tk-shiwake">仕入 100,000 ／ 現金 100,000</div>
+    </div>
+    <div class="ticket t-furikae">
+      <span class="tk-badge">振替伝票（残り）</span>
+      <div class="tk-shiwake">仕入 200,000 ／ 前払金 100,000<br>　　　　　　　買掛金 100,000</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>分解法のポイント：現金部分と非現金部分を切り分ける</strong><br>
+    ① 全体の仕訳を書く → ② 現金の部分だけ出金（または入金）伝票へ → ③ 残りを振替伝票へ<br>
+    この順番で考えると迷いません。
+  </div>
+
+  <h2>方法② 取引を擬制（ぎせい）する方法</h2>
+
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>商品 ¥200,000 を仕入れ、代金は現金 ¥100,000 と前払金 ¥100,000 で充当した。当店は3伝票制を採用しており、<strong>支払総額を出金処理し、前払金を入金処理する方法</strong>によるものとする。</p>
+  </div>
+
+  <h3>まず全体の仕訳を書く</h3>
+
+  <div class="shiwake-wrap">
+    <div class="shiwake-label">全体の仕訳</div>
+    <div class="shiwake-row">
+      <span class="sw-kari">仕入<span class="sw-amt">200,000</span></span>
+      <span class="sw-sep">／</span>
+      <span class="sw-kashi">現金<span class="sw-amt">100,000</span><br>前払金<span class="sw-amt">100,000</span></span>
+    </div>
+  </div>
+
+  <h3>擬制して伝票に記載する</h3>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>一旦、支払総額 ¥200,000 を出金伝票に記載</strong><br>実際は ¥200,000 全額を現金で払ったとみなす（擬制）</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>実際は出金していない前払金 ¥100,000 を入金伝票に記載</strong><br>「前払金で払った分は現金で返ってきた」とみなす（擬制）</div>
+    </div>
+  </div>
+
+  <div class="ticket-group">
+    <div class="ticket t-shukin">
+      <span class="tk-badge">出金伝票（総額を擬制）</span>
+      <div class="tk-shiwake">仕入 200,000 ／ 現金 200,000</div>
+    </div>
+    <div class="ticket t-nyukin">
+      <span class="tk-badge">入金伝票（前払金を擬制）</span>
+      <div class="tk-shiwake">現金 100,000 ／ 前払金 100,000</div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>擬制法は「架空の現金のやり取り」をイメージする</strong><br>
+    ①まず ¥200,000 全額を現金で支払った、②その後 ¥100,000 が前払金の形で戻ってきた——という2段階の取引に分解して考えます。実際にはお金は動いていませんが、伝票上ではこう記載します。
+  </div>
+
+  <div class="app-cta">
+    <h3>⚔ Study Quest で学習を記録しよう</h3>
+    <p>簿記3級の学習時間をRPG感覚で記録。ボス（試験日）まであと何時間かリアルタイムで確認できます。</p>
+    <a href="index.html">無料で始める →</a>
+  </div>
+
+  <h2>分解法と擬制法の選び方</h2>
+
+  <div class="method-compare">
+    <div class="mc-card m-bunkai">
+      <span class="mc-badge">分解法を選ぶとき</span>
+      <div class="mc-cond">問題文に「<strong>実際の現金収支額のみ</strong>を記入する」</div>
+      <div class="mc-key">→ 現金分だけ出金伝票に切り出し、残りを振替伝票へ</div>
+    </div>
+    <div class="mc-card m-gisei">
+      <span class="mc-badge">擬制法を選ぶとき</span>
+      <div class="mc-cond">問題文に「<strong>支払総額を出金処理し、○○を入金処理する</strong>」</div>
+      <div class="mc-key">→ 全額を出金伝票、非現金分を入金伝票で相殺</div>
+    </div>
+  </div>
+
+  <div class="matome">
+    <h3>📋 まとめ：伝票会計 早見表</h3>
+    <div class="matome-row">
+      <span class="trigger">入金伝票</span>
+      <span class="result">現金を受け取る → 現金 ×× ／ ○○ ××</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">出金伝票</span>
+      <span class="result">現金を支払う → ○○ ×× ／ 現金 ××</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">振替伝票</span>
+      <span class="result">現金なし → 仕訳をそのまま記載</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">分解法の見分け方</span>
+      <span class="result">「実際の現金収支額のみ」という指示</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">擬制法の見分け方</span>
+      <span class="result">「支払総額を出金処理し、○○を入金処理」という指示</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">両方に共通する手順</span>
+      <span class="result">まず全体の仕訳を書いてから伝票に振り分ける</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="lp.html">記事トップ</a>
+  <a href="index.html">アプリを使う</a>
+  <p>© 2026 スタディクエスト</p>
+</footer>
+
+<script src="article-widgets.js"></script>
+</body>
+</html>
