@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>簿記3級 学習進捗チェック｜スタディクエスト</title>
+<meta name="description" content="日商簿記3級の記事を読んだらチェック。自分の学習進捗を一覧で確認できます。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;--blue:#3B82F6;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:720px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+
+/* ヘッダー */
+.progress-header{margin-bottom:32px;}
+h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:20px;}
+
+/* 進捗オーバービュー */
+.overview{background:linear-gradient(135deg,#EBF8FF,#DBEAFE);border:2px solid #90CDF4;border-radius:14px;padding:20px 24px;margin-bottom:28px;}
+.ov-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.ov-count{font-size:28px;font-weight:700;color:var(--blue);}
+.ov-total{font-size:14px;color:var(--muted);font-weight:500;}
+.ov-bar-wrap{height:8px;background:rgba(59,130,246,.15);border-radius:4px;overflow:hidden;}
+.ov-bar-fill{height:8px;background:linear-gradient(90deg,#3B82F6,#60A5FA);border-radius:4px;transition:width .6s ease;}
+.ov-pct{font-size:12px;color:var(--blue);font-weight:700;margin-top:6px;text-align:right;}
+.ov-message{font-size:13px;color:#2B6CB0;margin-top:10px;font-weight:500;}
+
+/* セクション */
+.section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--blue);}
+
+/* 記事カード */
+.article-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+.article-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .15s;cursor:pointer;background:var(--bg);}
+.article-item:hover{border-color:rgba(59,130,246,.4);background:#F7FAFF;}
+.article-item.done{border-color:rgba(140,198,63,.5);background:#F0FFF4;}
+.article-checkbox{width:22px;height:22px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.article-item.done .article-checkbox{background:#8CC63F;border-color:#8CC63F;color:#fff;}
+.article-info{flex:1;min-width:0;}
+.article-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.5;}
+.article-item.done .article-title{color:#276749;}
+.article-link{font-size:11px;color:var(--blue);margin-left:auto;flex-shrink:0;padding:4px 10px;border:1px solid rgba(59,130,246,.3);border-radius:100px;white-space:nowrap;transition:background .15s;}
+.article-link:hover{background:rgba(59,130,246,.08);text-decoration:none;}
+
+/* リセットボタン */
+.reset-wrap{text-align:center;margin-top:28px;}
+.reset-btn{background:none;border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:12px;color:var(--muted);cursor:pointer;font-family:inherit;transition:color .2s,border-color .2s;}
+.reset-btn:hover{color:#E53E3E;border-color:#E53E3E;}
+
+/* CTAカード */
+.cta-card{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:24px;margin-top:32px;text-align:center;color:#fff;}
+.cta-card h3{color:var(--green);font-size:16px;margin-bottom:6px;}
+.cta-card p{color:#A0C070;font-size:13px;margin-bottom:14px;}
+.cta-card a{background:var(--green);color:#0A0A0F;font-weight:700;padding:10px 24px;border-radius:100px;font-size:13px;display:inline-block;}
+.cta-card a:hover{opacity:.85;text-decoration:none;}
+
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="index.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 学習進捗チェック
+  </div>
+
+  <div class="progress-header">
+    <p class="meta">日商簿記3級</p>
+    <h1>学習進捗チェック</h1>
+    <p class="meta">読んだ記事にチェックをつけて、学習の進み具合を確認しよう。</p>
+  </div>
+
+  <div class="overview">
+    <div class="ov-row">
+      <div>
+        <span class="ov-count" id="read-count">0</span>
+        <span class="ov-total"> / <span id="total-count">0</span> 記事読了</span>
+      </div>
+      <div id="ov-badge" style="font-size:28px;"></div>
+    </div>
+    <div class="ov-bar-wrap"><div class="ov-bar-fill" id="ov-bar" style="width:0%"></div></div>
+    <div class="ov-pct" id="ov-pct">0%</div>
+    <div class="ov-message" id="ov-message"></div>
+  </div>
+
+  <div class="section-title">ゼロからの簿記シリーズ</div>
+  <div class="article-list" id="list-zero"></div>
+
+  <div class="section-title">各論点 解説記事</div>
+  <div class="article-list" id="list-ronten"></div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" id="reset-btn">進捗をリセットする</button>
+  </div>
+
+  <div class="cta-card">
+    <h3>⚔ Study Quest で学習を記録しよう</h3>
+    <p>学習時間をRPG感覚で積み上げ。ボスまであと何時間かリアルタイムで確認できます。</p>
+    <a href="index.html">無料で始める →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="lp.html">記事トップ</a>
+  <a href="index.html">アプリを使う</a>
+  <p>© 2026 スタディクエスト</p>
+</footer>
+
+<script>
+const BOKI3_ZERO = [
+  {file:'boki-zero-01.html', title:'ゼロからの簿記①取引・簿記とは？'},
+  {file:'boki-zero-02.html', title:'ゼロからの簿記②なぜ簿記が大事？'},
+  {file:'boki-zero-03.html', title:'ゼロからの簿記③簿記の流れ'},
+  {file:'boki-zero-04.html', title:'ゼロからの簿記④仕訳のしくみ'},
+  {file:'boki-zero-05.html', title:'ゼロからの簿記⑤仕訳から財務諸表へ'},
+];
+const BOKI3_RONTEN = [
+  {file:'boki3-genkin.html',    title:'現金・当座預金の違いと仕訳'},
+  {file:'boki3-kafusoku.html',  title:'現金過不足（雑損・雑益）'},
+  {file:'boki3-kashidaore.html',title:'貸倒引当金の仕訳と計算'},
+  {file:'boki3-genka.html',     title:'減価償却（定額法）の計算と仕訳'},
+  {file:'boki3-keika.html',     title:'経過勘定（前払・未払・前受・未収）'},
+  {file:'boki3-keika2.html',    title:'毎年同額の前払い（18か月の理由）'},
+  {file:'boki3-shisanhyo.html', title:'試算表3種類の違い'},
+  {file:'boki3-denpyo.html',    title:'伝票会計（３伝票制）の仕訳と解き方'},
+  {file:'boki3-nikkei.html',    title:'仕訳日計表の書き方と集計ステップ'},
+];
+const ALL = [...BOKI3_ZERO, ...BOKI3_RONTEN];
+const KEY = f => `sq_read_${f}`;
+
+function isRead(f){ return !!localStorage.getItem(KEY(f)); }
+function toggle(f){
+  if(isRead(f)) localStorage.removeItem(KEY(f));
+  else localStorage.setItem(KEY(f),'1');
+}
+
+function renderList(containerId, items){
+  const el = document.getElementById(containerId);
+  el.innerHTML = items.map(({file, title}) => {
+    const done = isRead(file);
+    return `<div class="article-item${done?' done':''}" data-file="${file}">
+      <div class="article-checkbox">${done?'✓':''}</div>
+      <div class="article-info"><div class="article-title">${title}</div></div>
+      <a href="${file}" class="article-link" onclick="event.stopPropagation()">読む →</a>
+    </div>`;
+  }).join('');
+  el.querySelectorAll('.article-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const f = item.dataset.file;
+      toggle(f);
+      renderAll();
+    });
+  });
+}
+
+function updateOverview(){
+  const readCount = ALL.filter(({file}) => isRead(file)).length;
+  const total = ALL.length;
+  const pct = total > 0 ? Math.round(readCount / total * 100) : 0;
+  document.getElementById('read-count').textContent = readCount;
+  document.getElementById('total-count').textContent = total;
+  document.getElementById('ov-bar').style.width = pct + '%';
+  document.getElementById('ov-pct').textContent = pct + '%';
+
+  let badge = '', msg = '';
+  if(pct === 0)       { badge='📖'; msg='まずは最初の記事から読んでみよう！'; }
+  else if(pct < 30)   { badge='🌱'; msg='いいスタートです。続けていこう！'; }
+  else if(pct < 60)   { badge='⚔'; msg='着実に進んでいます。この調子！'; }
+  else if(pct < 100)  { badge='🔥'; msg='もうすぐ全記事制覇！あと少し！'; }
+  else                { badge='🏆'; msg='全記事読了！簿記3級の基礎はバッチリです！'; }
+  document.getElementById('ov-badge').textContent = badge;
+  document.getElementById('ov-message').textContent = msg;
+}
+
+function renderAll(){
+  renderList('list-zero', BOKI3_ZERO);
+  renderList('list-ronten', BOKI3_RONTEN);
+  updateOverview();
+}
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  if(!confirm('進捗をすべてリセットしますか？')) return;
+  ALL.forEach(({file}) => localStorage.removeItem(KEY(file)));
+  renderAll();
+});
+
+renderAll();
+</script>
+</body>
+</html>

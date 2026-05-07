@@ -1135,6 +1135,29 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
   .sq-art-auth-bar{justify-content:flex-start;}
   .sq-comment-section{padding:24px 16px;}
 }
+/* ── 読了プログレスバー ── */
+.sq-read-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#8CC63F,#A3E635);z-index:10001;width:0%;transition:width .08s linear;pointer-events:none;}
+/* ── 前後記事ナビ ── */
+.sq-prevnext{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:36px 0 8px;max-width:800px;margin-left:auto;margin-right:auto;padding:0 24px;}
+.sq-pn-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1px solid var(--sq-border);border-radius:12px;text-decoration:none;color:var(--sq-text);transition:border-color .2s,background .2s;}
+.sq-pn-btn:hover{border-color:#8CC63F;background:var(--sq-surface-soft);text-decoration:none;}
+.sq-pn-next{justify-content:flex-end;}
+.sq-pn-arrow{font-size:18px;color:#8CC63F;flex-shrink:0;font-weight:700;line-height:1;}
+.sq-pn-info{display:flex;flex-direction:column;gap:3px;min-width:0;}
+.sq-pn-next .sq-pn-info{text-align:right;}
+.sq-pn-label{font-size:10px;color:var(--sq-muted);font-weight:700;letter-spacing:.07em;}
+.sq-pn-title{font-size:12px;font-weight:700;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+@media(max-width:540px){
+  .sq-prevnext{grid-template-columns:1fr;padding:0 16px;}
+  .sq-pn-next{justify-content:flex-start;}
+  .sq-pn-next .sq-pn-info{text-align:left;}
+}
+/* ── 読んだ！ボタン ── */
+.sq-read-btn-wrap{max-width:800px;margin:0 auto 8px;padding:0 24px;text-align:center;}
+.sq-read-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:2px solid var(--sq-border);border-radius:100px;background:transparent;color:var(--sq-muted);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;}
+.sq-read-btn:hover{border-color:#8CC63F;color:#8CC63F;}
+.sq-read-btn.sq-read-btn--done{border-color:#8CC63F;background:rgba(140,198,63,.12);color:#276749;}
+.sq-read-btn .sq-rb-icon{font-size:16px;}
 /* ── 検索モーダル ── */
 .sq-search-btn{background:none;border:none;cursor:pointer;padding:6px 10px;color:var(--sq-muted);border-radius:8px;transition:color .15s,background .15s;display:flex;align-items:center;gap:5px;font-size:14px;font-family:inherit;line-height:1;}
 .sq-search-btn:hover{color:var(--sq-text);background:var(--sq-surface-soft);}
@@ -1184,6 +1207,65 @@ function buildThemeToggle(){
   if(cta) navInner.insertBefore(group, cta);
   else navInner.appendChild(group);
   syncThemeControls();
+}
+
+/* ── 読了プログレスバー ── */
+function buildReadProgress(){
+  const bar = document.createElement('div');
+  bar.className = 'sq-read-progress';
+  document.body.appendChild(bar);
+  function update(){
+    const st = window.scrollY;
+    const dh = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (dh > 0 ? Math.min(100, st / dh * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', update, {passive: true});
+}
+
+/* ── 前後記事ナビ（簿記3級シリーズ） ── */
+function buildPrevNextNav(){
+  if(!BOKI3_FILES.includes(PAGE)) return;
+  const idx = BOKI3_FILES.indexOf(PAGE);
+  const prev = idx > 0 ? BOKI3_FILES[idx - 1] : null;
+  const next = idx < BOKI3_FILES.length - 1 ? BOKI3_FILES[idx + 1] : null;
+  if(!prev && !next) return;
+
+  const nav = document.createElement('div');
+  nav.className = 'sq-prevnext';
+  nav.innerHTML =
+    (prev && ARTICLES[prev]
+      ? `<a href="${prev}" class="sq-pn-btn sq-pn-prev"><span class="sq-pn-arrow">←</span><span class="sq-pn-info"><span class="sq-pn-label">前の記事</span><span class="sq-pn-title">${ARTICLES[prev].title}</span></span></a>`
+      : '<div></div>') +
+    (next && ARTICLES[next]
+      ? `<a href="${next}" class="sq-pn-btn sq-pn-next"><span class="sq-pn-info"><span class="sq-pn-label">次の記事</span><span class="sq-pn-title">${ARTICLES[next].title}</span></span><span class="sq-pn-arrow">→</span></a>`
+      : '<div></div>');
+
+  const footer = document.querySelector('footer');
+  if(footer) footer.insertAdjacentElement('beforebegin', nav);
+}
+
+/* ── 「読んだ！」ボタン（簿記3級シリーズ） ── */
+const _READ_KEY = f => `sq_read_${f}`;
+function buildReadButton(){
+  if(!BOKI3_FILES.includes(PAGE)) return;
+  const done = !!localStorage.getItem(_READ_KEY(PAGE));
+
+  const wrap = document.createElement('div');
+  wrap.className = 'sq-read-btn-wrap';
+  const btn = document.createElement('button');
+  btn.className = 'sq-read-btn' + (done ? ' sq-read-btn--done' : '');
+  btn.innerHTML = done
+    ? '<span class="sq-rb-icon">✓</span> 読了済み'
+    : '<span class="sq-rb-icon">📖</span> 読んだ！';
+  btn.addEventListener('click', () => {
+    localStorage.setItem(_READ_KEY(PAGE), '1');
+    btn.className = 'sq-read-btn sq-read-btn--done';
+    btn.innerHTML = '<span class="sq-rb-icon">✓</span> 読了済み！';
+  });
+  wrap.appendChild(btn);
+
+  const footer = document.querySelector('footer');
+  if(footer) footer.insertAdjacentElement('beforebegin', wrap);
 }
 
 /* ── 検索モーダル ── */
@@ -1333,14 +1415,28 @@ const BOKI3_FILES = [
 function buildBoki3Sidebar(sidebar){
   if(!sidebar) return;
   if(!BOKI3_FILES.includes(PAGE)) return;
+
+  const readCount = BOKI3_FILES.filter(f => localStorage.getItem(_READ_KEY(f))).length;
+  const total = BOKI3_FILES.length;
+  const pct = Math.round(readCount / total * 100);
+
   const box = document.createElement('div');
   box.className = 'sq-sidebar-box';
-  box.innerHTML = '<div class="sq-sidebar-box-title" style="color:#3B82F6">📘 日商簿記3級 記事一覧</div><div class="sq-side-links"></div>';
+  box.innerHTML =
+    `<div class="sq-sidebar-box-title" style="color:#3B82F6">📘 日商簿記3級 記事一覧</div>` +
+    `<a href="boki3-progress.html" style="display:block;margin-bottom:8px;font-size:11px;color:#3B82F6;text-decoration:none;">` +
+    `<div style="background:rgba(59,130,246,.08);border-radius:6px;padding:6px 10px;">` +
+    `<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>学習進捗</span><span style="font-weight:700;">${readCount}/${total}</span></div>` +
+    `<div style="height:4px;background:rgba(59,130,246,.15);border-radius:2px;"><div style="height:4px;background:#3B82F6;border-radius:2px;width:${pct}%;transition:width .4s;"></div></div>` +
+    `</div></a>` +
+    `<div class="sq-side-links"></div>`;
+
   const list = box.querySelector('.sq-side-links');
   BOKI3_FILES.forEach(f => {
     const a = ARTICLES[f]; if(!a) return;
     const isCurrent = f === PAGE;
-    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}" style="${isCurrent ? 'border-left:3px solid #3B82F6;font-weight:700;' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${a.title}</div></a>`;
+    const isRead = !!localStorage.getItem(_READ_KEY(f));
+    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}" style="${isCurrent ? 'border-left:3px solid #3B82F6;font-weight:700;' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
   });
   sidebar.appendChild(box);
 }
@@ -1455,9 +1551,10 @@ function buildAuthorBox(){
 
 /* ── SNSシェアボタン ── */
 function buildShareButtons(){
-  const title = encodeURIComponent(document.title);
+  const artTitle = ARTICLES[PAGE]?.title || document.title;
+  const tweetText = encodeURIComponent(`「${artTitle}」を読んだ！ #簿記3級 #スタディクエスト\n`);
   const url   = encodeURIComponent(location.href);
-  const xUrl    = `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=wakaba_sq`;
+  const xUrl    = `https://twitter.com/intent/tweet?text=${tweetText}&url=${url}&via=wakaba_sq`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${url}`;
 
   const wrap = document.createElement('div');
@@ -1962,6 +2059,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   injectGA();
   trackPageView();
   injectStyles();
+  buildReadProgress();
   buildThemeToggle();
   buildSearchModal();
   injectBreadcrumbLD();
@@ -1973,6 +2071,8 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildLeftSidebar(layout.left);
   buildAuthorBox();
   insertMidCTA();
+  buildPrevNextNav();
+  buildReadButton();
   buildShareButtons();
   buildWidgets();
   trackScrollDepth();
