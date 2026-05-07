@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固定資産の取得・売却の仕訳【日商簿記3級】付随費用・売却損益を図解で完全解説｜スタディクエスト</title>
+<meta name="description" content="固定資産（建物・備品・車両）の取得・売却の仕訳を図解で解説。付随費用の処理、売却損益の計算、期中売却まで例題つきで完全解説。日商簿記3級の頻出論点。">
+<meta name="keywords" content="固定資産 取得 仕訳,固定資産 売却 仕訳,固定資産売却損益,付随費用 簿記,日商簿記3級 固定資産">
+<meta property="og:title" content="固定資産の取得・売却の仕訳【日商簿記3級】付随費用・売却損益まで完全解説">
+<meta property="og:description" content="固定資産の取得・売却仕訳と売却損益の計算を例題つきで解説。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-kotei.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"固定資産の取得・売却の仕訳【日商簿記3級】","description":"固定資産の取得・売却仕訳と売却損益の計算を例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kotei.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.warn-box strong{color:#975A16;}
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p{font-size:14px;color:#374151;margin:0;}
+.shiwake-box{background:var(--light);border-radius:10px;padding:14px 18px;margin:12px 0;}
+.shiwake-box .sw-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;}
+.sw-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-size:13px;margin-bottom:4px;}
+.sw-row:last-child{margin-bottom:0;}
+.sw-row .kari{color:#2B6CB0;font-weight:700;}
+.sw-row .kashi{color:#C05621;font-weight:700;text-align:right;}
+.sw-row .sep{color:var(--muted);font-size:11px;}
+.sw-row .amt{font-size:11px;color:var(--muted);margin-left:4px;}
+
+/* 売却損益計算ボックス */
+.uriage-calc{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:20px 0;}
+.uc-row{display:grid;grid-template-columns:1fr auto;padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+.uc-row:last-child{border-bottom:none;}
+.uc-row.uc-total{background:#EBF8FF;font-weight:700;}
+.uc-row.uc-sub{background:#FFF9F0;}
+.uc-row.uc-result-loss{background:#FFF5F5;font-weight:700;}
+.uc-row.uc-result-gain{background:#F0FFF4;font-weight:700;}
+.uc-label{color:var(--text);}
+.uc-row.uc-total .uc-label{color:#1D4ED8;}
+.uc-row.uc-result-loss .uc-label{color:#B91C1C;}
+.uc-row.uc-result-gain .uc-label{color:#15803D;}
+.uc-amt{font-weight:700;color:var(--text);}
+.uc-row.uc-total .uc-amt{color:#1D4ED8;}
+.uc-row.uc-result-loss .uc-amt{color:#B91C1C;}
+.uc-row.uc-result-gain .uc-amt{color:#15803D;}
+
+/* 損益比較 */
+.lossgain{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+@media(max-width:540px){.lossgain{grid-template-columns:1fr;}}
+.lg-card{border-radius:12px;padding:16px 18px;}
+.lg-card.loss{background:#FFF5F5;border:2px solid #FC8181;}
+.lg-card.gain{background:#F0FFF4;border:2px solid #9AE6B4;}
+.lg-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;margin-bottom:8px;}
+.lg-card.loss .lg-badge{background:#FECACA;color:#B91C1C;}
+.lg-card.gain .lg-badge{background:#BBF7D0;color:#15803D;}
+.lg-name{font-size:14px;font-weight:700;margin-bottom:4px;}
+.lg-card.loss .lg-name{color:#B91C1C;}
+.lg-card.gain .lg-name{color:#15803D;}
+.lg-desc{font-size:12px;color:#374151;line-height:1.7;}
+
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:180px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 固定資産の取得・売却</div>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
+  <h1>固定資産の取得・売却の仕訳<br>付随費用・売却損益を図解で完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="lead">建物・備品・車両など長期間使う資産を<strong>固定資産</strong>といいます。取得時は付随費用を含めた金額で記録し、売却時は帳簿価額と売却価格の差額で損益を計算します。減価償却（定額法）の記事と合わせて読むと理解が深まります。</p>
+  <div class="sq-chat"></div>
+
+  <h2>① 固定資産を取得したときの仕訳</h2>
+  <p>固定資産を購入するときは、<strong>本体価格＋付随費用（送料・設置費など）</strong>をまとめて資産の取得原価として記録します。</p>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>備品 ¥500,000 を購入し、送料・設置費用 ¥20,000 とともに現金で支払った。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">備品<span class="amt">520,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">520,000</span></span></div>
+  </div>
+  <div class="tip-box"><strong>付随費用も取得原価に含める！</strong><br>送料・設置費・登記料など、資産を使えるようにするためにかかった費用はすべて取得原価に含めます。別途「費用」として処理してはいけません。</div>
+
+  <h2>② 固定資産を売却したときの仕訳</h2>
+  <p>売却時は「帳簿価額」と「売却価格」を比べて、差額を<strong>固定資産売却損（費用）</strong>または<strong>固定資産売却益（収益）</strong>として記録します。</p>
+
+  <div class="lossgain">
+    <div class="lg-card loss">
+      <span class="lg-badge">売却価格 ＜ 帳簿価額</span>
+      <div class="lg-name">固定資産売却損（費用）</div>
+      <div class="lg-desc">高く買ったのに安く売った → 損失が発生。借方に「固定資産売却損」を記録。</div>
+    </div>
+    <div class="lg-card gain">
+      <span class="lg-badge">売却価格 ＞ 帳簿価額</span>
+      <div class="lg-name">固定資産売却益（収益）</div>
+      <div class="lg-desc">帳簿より高く売れた → 利益が発生。貸方に「固定資産売却益」を記録。</div>
+    </div>
+  </div>
+
+  <h3>売却損が出る例題</h3>
+  <div class="mondai">
+    <div class="m-label">例題①（売却損）</div>
+    <p>取得原価 ¥600,000・減価償却累計額 ¥200,000 の備品を ¥350,000 で現金売却した。</p>
+  </div>
+
+  <div class="uriage-calc">
+    <div class="uc-row uc-total"><span class="uc-label">取得原価</span><span class="uc-amt">600,000</span></div>
+    <div class="uc-row uc-sub"><span class="uc-label">－ 減価償却累計額</span><span class="uc-amt">△ 200,000</span></div>
+    <div class="uc-row"><span class="uc-label">帳簿価額</span><span class="uc-amt">400,000</span></div>
+    <div class="uc-row uc-sub"><span class="uc-label">売却価格</span><span class="uc-amt">350,000</span></div>
+    <div class="uc-row uc-result-loss"><span class="uc-label">固定資産売却損</span><span class="uc-amt">50,000</span></div>
+  </div>
+
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">350,000</span></span><span class="sep">／</span><span class="kashi">備品<span class="amt">600,000</span></span></div>
+    <div class="sw-row"><span class="kari">減価償却累計額<span class="amt">200,000</span></span><span class="sep"></span><span class="kashi"></span></div>
+    <div class="sw-row"><span class="kari">固定資産売却損<span class="amt">50,000</span></span><span class="sep"></span><span class="kashi"></span></div>
+  </div>
+
+  <h3>売却益が出る例題</h3>
+  <div class="mondai">
+    <div class="m-label">例題②（売却益）</div>
+    <p>取得原価 ¥600,000・減価償却累計額 ¥200,000 の備品を ¥450,000 で現金売却した。</p>
+  </div>
+
+  <div class="uriage-calc">
+    <div class="uc-row uc-total"><span class="uc-label">取得原価</span><span class="uc-amt">600,000</span></div>
+    <div class="uc-row uc-sub"><span class="uc-label">－ 減価償却累計額</span><span class="uc-amt">△ 200,000</span></div>
+    <div class="uc-row"><span class="uc-label">帳簿価額</span><span class="uc-amt">400,000</span></div>
+    <div class="uc-row uc-sub"><span class="uc-label">売却価格</span><span class="uc-amt">450,000</span></div>
+    <div class="uc-row uc-result-gain"><span class="uc-label">固定資産売却益</span><span class="uc-amt">50,000</span></div>
+  </div>
+
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">450,000</span></span><span class="sep">／</span><span class="kashi">備品<span class="amt">600,000</span></span></div>
+    <div class="sw-row"><span class="kari">減価償却累計額<span class="amt">200,000</span></span><span class="sep"></span><span class="kashi"></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">固定資産売却益<span class="amt">50,000</span></span></div>
+  </div>
+
+  <div class="warn-box"><strong>貸方に「備品」を取得原価で記録する！</strong><br>減価償却後の帳簿価額（¥400,000）ではなく、取得原価（¥600,000）を貸方に記録します。減価償却累計額を借方に出して相殺するのがポイントです。</div>
+
+  <h2>③ 期中売却（月割り計算）</h2>
+  <p>会計期間の途中で売却する場合、売却月までの減価償却費を計上してから売却の仕訳をします。</p>
+  <div class="mondai">
+    <div class="m-label">例題③（期中売却）</div>
+    <p>期首帳簿価額 ¥400,000 の備品（年間減価償却費 ¥60,000）を、期首から6か月後に ¥340,000 で売却した。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">ステップ① 当期分の減価償却費を計上（6か月分）</div>
+    <div class="sw-row"><span class="kari">減価償却費<span class="amt">30,000</span></span><span class="sep">／</span><span class="kashi">減価償却累計額<span class="amt">30,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">ステップ② 売却の仕訳（帳簿価額 400,000−30,000＝370,000）</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">340,000</span></span><span class="sep">／</span><span class="kashi">備品<span class="amt">※取得原価</span></span></div>
+    <div class="sw-row"><span class="kari">減価償却累計額<span class="amt">※累計額</span></span><span class="sep"></span><span class="kashi"></span></div>
+    <div class="sw-row"><span class="kari">固定資産売却損<span class="amt">30,000</span></span><span class="sep"></span><span class="kashi"></span></div>
+  </div>
+  <div class="tip-box"><strong>期中売却の手順</strong><br>① 月割りで当期の減価償却費を計上 → ② その後で売却仕訳<br>60,000 × 6/12 ＝ 30,000円を先に計上し、帳簿価額を更新してから売却損益を計算します。</div>
+
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。ボスまであと何時間かリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <div class="matome">
+    <h3>📋 まとめ：固定資産 早見表</h3>
+    <div class="matome-row"><span class="trigger">取得時</span><span class="result">固定資産（取得原価＋付随費用）／ 現金など</span></div>
+    <div class="matome-row"><span class="trigger">売却時（借方）</span><span class="result">現金 ＋ 減価償却累計額 ＋ 売却損（あれば）</span></div>
+    <div class="matome-row"><span class="trigger">売却時（貸方）</span><span class="result">固定資産（取得原価）＋ 売却益（あれば）</span></div>
+    <div class="matome-row"><span class="trigger">売却損の発生条件</span><span class="result">売却価格 ＜ 帳簿価額（費用）</span></div>
+    <div class="matome-row"><span class="trigger">売却益の発生条件</span><span class="result">売却価格 ＞ 帳簿価額（収益）</span></div>
+    <div class="matome-row"><span class="trigger">期中売却</span><span class="result">①月割り減価償却費を計上 → ②売却仕訳</span></div>
+  </div>
+</div>
+<footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>

@@ -87,6 +87,7 @@ const ARTICLES = {
   'boki3-kake.html':    {label:'簿記3級', title:'掛取引（売掛金・買掛金）の仕訳'},
   'boki3-tegata.html':  {label:'簿記3級', title:'受取手形・支払手形・電子記録債権の仕訳'},
   'boki3-kyuryo.html':  {label:'簿記3級', title:'給料の仕訳と源泉所得税・社会保険料の預り金'},
+  'boki3-kotei.html':  {label:'簿記3級', title:'固定資産の取得・売却の仕訳（付随費用・売却損益）'},
 };
 
 const CATS = {
@@ -901,6 +902,26 @@ html[data-theme="dark"] .kb-amt{color:#F8FAFC !important;}
 html[data-theme="dark"] .kb-row.deduct .kb-amt{color:#FC8181 !important;}
 html[data-theme="dark"] .kb-row.net .kb-amt{color:#B6E27C !important;}
 html[data-theme="dark"] .kb-row.total .kb-amt{color:#90CDF4 !important;}
+/* ── 固定資産記事 ── */
+html[data-theme="dark"] .uriage-calc{border-color:rgba(255,255,255,.12) !important;}
+html[data-theme="dark"] .uc-row{border-bottom-color:rgba(255,255,255,.08) !important;background:#1A2232 !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .uc-row.uc-total{background:rgba(59,130,246,.14) !important;}
+html[data-theme="dark"] .uc-row.uc-total .uc-label{color:#90CDF4 !important;}
+html[data-theme="dark"] .uc-row.uc-total .uc-amt{color:#90CDF4 !important;}
+html[data-theme="dark"] .uc-row.uc-sub{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .uc-row.uc-result-loss{background:rgba(252,129,129,.10) !important;}
+html[data-theme="dark"] .uc-row.uc-result-loss .uc-label{color:#FC8181 !important;}
+html[data-theme="dark"] .uc-row.uc-result-loss .uc-amt{color:#FC8181 !important;}
+html[data-theme="dark"] .uc-row.uc-result-gain{background:rgba(140,198,63,.10) !important;}
+html[data-theme="dark"] .uc-row.uc-result-gain .uc-label{color:#B6E27C !important;}
+html[data-theme="dark"] .uc-row.uc-result-gain .uc-amt{color:#B6E27C !important;}
+html[data-theme="dark"] .lg-card.loss{background:rgba(252,129,129,.10) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .lg-card.gain{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.35) !important;}
+html[data-theme="dark"] .lg-card.loss .lg-badge{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .lg-card.gain .lg-badge{background:rgba(140,198,63,.18) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .lg-card.loss .lg-name{color:#FC8181 !important;}
+html[data-theme="dark"] .lg-card.gain .lg-name{color:#B6E27C !important;}
+html[data-theme="dark"] .lg-desc{color:#9BA7BB !important;}
 /* ── ここまで ── */
 
 .sq-key,
@@ -1477,6 +1498,7 @@ const BOKI3_FILES = [
   'boki3-genka.html','boki3-keika.html','boki3-keika2.html',
   'boki3-shisanhyo.html','boki3-denpyo.html','boki3-nikkei.html',
   'boki3-sanpou.html','boki3-kake.html','boki3-tegata.html','boki3-kyuryo.html',
+  'boki3-kotei.html',
 ];
 
 function buildBoki3Sidebar(sidebar){
