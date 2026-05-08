@@ -94,6 +94,10 @@ const ARTICLES = {
   'boki3-seisanhyo.html':{label:'簿記3級',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで'},
   'boki3-koguchi.html': {label:'簿記3級',title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方'},
   'boki3-ginko.html':   {label:'簿記3級',title:'銀行勘定調整表の書き方と修正仕訳（不一致の4原因）'},
+  'boki3-shohinuriage.html': {label:'簿記3級', title:'商品有高帳の書き方（先入先出法・移動平均法）'},
+  'boki3-hojosho.html':      {label:'簿記3級', title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）'},
+  'boki3-hojinzei.html':     {label:'簿記3級', title:'法人税等の仕訳（仮払法人税等・未払法人税等）'},
+  'boki3-credit.html':       {label:'簿記3級', title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
 };
 
 const CATS = {
@@ -1618,6 +1622,7 @@ const BOKI3_FILES = [
   'boki3-sanpou.html','boki3-kake.html','boki3-tegata.html','boki3-kyuryo.html',
   'boki3-kotei.html','boki3-sonota.html','boki3-kabushiki.html','boki3-shohi.html',
   'boki3-seisanhyo.html','boki3-koguchi.html','boki3-ginko.html',
+  'boki3-shohinuriage.html','boki3-hojosho.html','boki3-hojinzei.html','boki3-credit.html',
 ];
 
 function buildBoki3Sidebar(sidebar){

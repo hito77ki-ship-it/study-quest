@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】｜スタディクエスト</title>
+<meta name="description" content="日商簿記3級の商品有高帳を図解で解説。先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで完全解説。">
+<meta name="keywords" content="商品有高帳 書き方 簿記3級,先入先出法 移動平均法 違い,商品有高帳 例題">
+<meta property="og:title" content="商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】">
+<meta property="og:description" content="商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki3-shohinuriage.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】","description":"商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-shohinuriage.html","datePublished":"2026-05-08","dateModified":"2026-05-08","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--green2);text-decoration:none;}a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
+p{font-size:14px;color:#374151;margin-bottom:16px;}
+ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.tip-box strong{color:#276749;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.warn-box strong{color:#975A16;}
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;}
+.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px;}
+.mondai p,.mondai ul{font-size:14px;color:#374151;margin:0;}
+.mondai ul{margin:8px 0 0 16px;}
+.shiwake-box{background:var(--light);border-radius:10px;padding:14px 18px;margin:12px 0;}
+.shiwake-box .sw-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;}
+.sw-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-size:13px;margin-bottom:4px;}
+.sw-row:last-child{margin-bottom:0;}
+.sw-row .kari{color:#2B6CB0;font-weight:700;}
+.sw-row .kashi{color:#C05621;font-weight:700;text-align:right;}
+.sw-row .sep{color:var(--muted);font-size:11px;}
+.sw-row .amt{font-size:11px;color:var(--muted);margin-left:4px;}
+
+/* 有高帳テーブル */
+.uriage-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:12px;}
+.uriage-table th{padding:8px 10px;border:1px solid var(--border);background:#F7FAFC;font-weight:700;text-align:center;}
+.uriage-table td{padding:8px 10px;border:1px solid var(--border);text-align:right;}
+.uriage-table td.left{text-align:left;}
+.uriage-table .row-hd{background:#EBF8FF;}
+.uriage-table .row-result{background:#F0FFF4;font-weight:700;}
+@media(max-width:560px){.uriage-table{font-size:11px;}.uriage-table th,.uriage-table td{padding:6px 6px;}}
+
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
+.matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
+.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.matome-row:last-child{border-bottom:none;}
+.matome-row .trigger{font-weight:700;min-width:140px;flex-shrink:0;}
+.matome-row .result{color:#276749;font-weight:700;}
+@media(max-width:540px){.matome-row{flex-direction:column;gap:2px;}.matome-row .trigger{min-width:auto;}}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
+.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:#4A5568;margin:0 10px;}
+footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">簿記</a> &gt; 商品有高帳の書き方</div>
+  <p class="meta">日商簿記3級 | 公開：2026年5月8日</p>
+  <h1>商品有高帳の書き方<br>先入先出法・移動平均法を例題で完全解説【日商簿記3級】</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="lead">商品有高帳は「何を・いくらで仕入れ、いくらで払い出したか」を管理する補助簿です。<strong>先入先出法（FIFO）</strong>と<strong>移動平均法</strong>の2種類の計算方法があり、どちらを使うかによって払出単価・売上原価が変わります。本記事では両方の計算方法を例題つきで完全解説します。</p>
+  <div class="sq-chat"></div>
+
+  <h2>① 商品有高帳とは</h2>
+  <p>商品有高帳は、商品の<strong>受入・払出・残高</strong>を管理する補助簿です。三分法では「仕入」「売上」「繰越商品」の3勘定を使いますが、実際に何個をいくらで仕入れてどれだけ残っているかは総勘定元帳だけでは把握できません。商品有高帳を記けることで、<strong>売上原価（払出金額の合計）</strong>を正確に計算できます。</p>
+  <ul>
+    <li>記入タイミング：商品の仕入時（受入）と販売時（払出）のたび</li>
+    <li>帳簿の構成：日付・摘要・受入（数量・単価・金額）・払出（数量・単価・金額）・残高（数量・単価・金額）</li>
+    <li>払出単価の計算方法：先入先出法 or 移動平均法</li>
+  </ul>
+
+  <h2>② 先入先出法（FIFO）</h2>
+  <p>先入先出法は「<strong>古いものから先に払い出す</strong>」というルールです。先に仕入れたロットから順番に払い出すため、払出単価は仕入順に決まります。物価が上昇しているときは、古い（安い）単価が先に払い出されるため、売上原価が低く・利益が高くなる傾向があります。</p>
+
+  <h3>例題（先入先出法）</h3>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>以下の取引について先入先出法で商品有高帳を記入しなさい。</p>
+    <ul>
+      <li>期首残高：100個 ＠200円</li>
+      <li>5月10日 仕入：200個 ＠210円</li>
+      <li>5月15日 売上：150個（払出）</li>
+    </ul>
+  </div>
+
+  <p>先入先出法では、売上150個の払出は「期首の100個（＠200円）→ 仕入分の50個（＠210円）」の順に払い出します。</p>
+
+  <table class="uriage-table">
+    <thead>
+      <tr>
+        <th rowspan="2">日付</th>
+        <th rowspan="2">摘要</th>
+        <th colspan="3">受　入</th>
+        <th colspan="3">払　出</th>
+        <th colspan="3">残　高</th>
+      </tr>
+      <tr>
+        <th>数量</th><th>単価</th><th>金額</th>
+        <th>数量</th><th>単価</th><th>金額</th>
+        <th>数量</th><th>単価</th><th>金額</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row-hd">
+        <td class="left">前期繰越</td><td class="left">期首</td>
+        <td>100</td><td>200</td><td>20,000</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>100</td><td>200</td><td>20,000</td>
+      </tr>
+      <tr>
+        <td class="left">5/10</td><td class="left">仕入</td>
+        <td>200</td><td>210</td><td>42,000</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>200</td><td>210</td><td>42,000</td>
+      </tr>
+      <tr>
+        <td class="left">5/15</td><td class="left">売上①</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>100</td><td>200</td><td>20,000</td>
+        <td>—</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td class="left">5/15</td><td class="left">売上②</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>50</td><td>210</td><td>10,500</td>
+        <td>150</td><td>210</td><td>31,500</td>
+      </tr>
+      <tr class="row-result">
+        <td colspan="2" class="left">払出合計</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>150</td><td>—</td><td>30,500</td>
+        <td>150</td><td>210</td><td>31,500</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;color:var(--muted);">先入先出法では、単価の異なるロットが残高欄に複数行並ぶことがあります（上記では期首100個と仕入200個が混在）。払出時は古い方から先に処理します。</p>
+
+  <h2>③ 移動平均法</h2>
+  <p>移動平均法は「<strong>仕入のたびに平均単価を計算しなおす</strong>」方法です。受入のたびに（受入前残高金額＋今回受入金額）÷（受入前残高数量＋今回受入数量）で新しい平均単価を求め、以後の払出にはこの単価を使います。</p>
+
+  <h3>例題（移動平均法）</h3>
+  <p>同じ例題で移動平均法を使います。5月10日の仕入後の平均単価を計算します。</p>
+  <p style="background:var(--light);padding:12px 16px;border-radius:8px;font-size:13px;">
+    平均単価 ＝（20,000 ＋ 42,000）÷（100 ＋ 200）＝ 62,000 ÷ 300 ＝ <strong>206.67円（≒207円）</strong>
+  </p>
+
+  <table class="uriage-table">
+    <thead>
+      <tr>
+        <th rowspan="2">日付</th>
+        <th rowspan="2">摘要</th>
+        <th colspan="3">受　入</th>
+        <th colspan="3">払　出</th>
+        <th colspan="3">残　高</th>
+      </tr>
+      <tr>
+        <th>数量</th><th>単価</th><th>金額</th>
+        <th>数量</th><th>単価</th><th>金額</th>
+        <th>数量</th><th>単価</th><th>金額</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row-hd">
+        <td class="left">前期繰越</td><td class="left">期首</td>
+        <td>100</td><td>200</td><td>20,000</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>100</td><td>200</td><td>20,000</td>
+      </tr>
+      <tr>
+        <td class="left">5/10</td><td class="left">仕入</td>
+        <td>200</td><td>210</td><td>42,000</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>300</td><td>207</td><td>62,000</td>
+      </tr>
+      <tr>
+        <td class="left">5/15</td><td class="left">売上</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>150</td><td>207</td><td>31,050</td>
+        <td>150</td><td>207</td><td>30,950</td>
+      </tr>
+      <tr class="row-result">
+        <td colspan="2" class="left">払出合計</td>
+        <td>—</td><td>—</td><td>—</td>
+        <td>150</td><td>207</td><td>31,050</td>
+        <td>150</td><td>207</td><td>30,950</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;color:var(--muted);">移動平均法では、残高欄の単価は常に1行（平均単価）になります。端数が出る場合は問題の指示（小数点以下切捨てなど）に従います。</p>
+
+  <h2>④ 2つの方法の違いと選び方</h2>
+  <table class="uriage-table">
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th>先入先出法（FIFO）</th>
+        <th>移動平均法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">払出単価の決め方</td>
+        <td>古いロットから順番</td>
+        <td>仕入のたびに平均計算</td>
+      </tr>
+      <tr>
+        <td class="left">残高欄の行数</td>
+        <td>複数行になることあり</td>
+        <td>常に1行</td>
+      </tr>
+      <tr>
+        <td class="left">物価上昇時の売上原価</td>
+        <td>低くなる（古い安い単価）</td>
+        <td>中間的な値</td>
+      </tr>
+      <tr>
+        <td class="left">物価上昇時の利益</td>
+        <td>高くなる</td>
+        <td>中間的な値</td>
+      </tr>
+      <tr>
+        <td class="left">計算の手間</td>
+        <td>払出時に複数ロットの管理が必要</td>
+        <td>仕入時に平均計算が必要</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box"><strong>試験での注意点：払出欄の単価・金額・残高欄の記入ミスに注意</strong><br>商品有高帳の記入問題では、払出欄の単価と金額を正確に記入することが重要です。先入先出法では複数ロットにまたがる場合、払出欄を2行に分けて記入します。残高欄の金額は「数量×単価」で必ず一致させましょう。</div>
+
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。ボスまであと何時間かリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <div class="mondai">
+    <div class="m-label">練習問題</div>
+    <p>以下の取引について、先入先出法・移動平均法それぞれで商品有高帳を記入しなさい。</p>
+    <ul>
+      <li>4月1日 前期繰越：50個 ＠300円</li>
+      <li>4月5日 仕入：100個 ＠320円</li>
+      <li>4月10日 売上：80個（払出）</li>
+      <li>4月18日 仕入：60個 ＠330円</li>
+      <li>4月25日 売上：90個（払出）</li>
+    </ul>
+    <p style="margin-top:12px;font-size:13px;color:#3B4DA8;"><strong>ポイント：</strong>先入先出法では4月10日の払出が2ロットにまたがります。移動平均法は仕入のたびに平均単価を再計算します。</p>
+  </div>
+
+  <div class="matome">
+    <h3>まとめ：商品有高帳 早見表</h3>
+    <div class="matome-row"><span class="trigger">先入先出法（FIFO）</span><span class="result">古いロットから順に払出。残高欄が複数行になることあり</span></div>
+    <div class="matome-row"><span class="trigger">移動平均法</span><span class="result">仕入のたびに平均単価を再計算。残高欄は常に1行</span></div>
+    <div class="matome-row"><span class="trigger">払出金額の合計</span><span class="result">売上原価になる（費用）</span></div>
+    <div class="matome-row"><span class="trigger">残高金額</span><span class="result">期末商品棚卸高になる（資産）</span></div>
+  </div>
+</div>
+<footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>
