@@ -48,8 +48,6 @@
   gtag('config', 'G-WL5KSKG1JK');
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://unpkg.com/@zxing/library@0.21.3/umd/index.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Serif+JP:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -9704,7 +9702,9 @@ function renderScoreSummary(){
   </div>`;
 }
 
-function renderScoreCharts(){
+async function renderScoreCharts(){
+  await loadChartJs();
+  applyChartDarkDefaults();
   const labels=scoreRecords.map(r=>r.date.slice(5)); // MM-DD
   const subjs=allSelectedSubjects();
 
@@ -9902,8 +9902,23 @@ let profileAvatarData = null; // base64
 let rptChartInstances = {};
 let setupReturnTarget = null;
 
-/* ── localStorage からロード ── */
-/* Chart.js グローバルダーク設定 */
+/* ── 遅延読み込みヘルパー ── */
+function loadChartJs(){
+  return window.Chart ? Promise.resolve() : new Promise(r=>{
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js';
+    s.onload=r; document.head.appendChild(s);
+  });
+}
+function loadZXing(){
+  return window.ZXing ? Promise.resolve() : new Promise(r=>{
+    const s=document.createElement('script');
+    s.src='https://unpkg.com/@zxing/library@0.21.3/umd/index.min.js';
+    s.onload=r; document.head.appendChild(s);
+  });
+}
+
+/* ── Chart.js グローバルダーク設定 ── */
 function applyChartDarkDefaults(){
   if(typeof Chart==='undefined') return;
   Chart.defaults.color='#666';
@@ -10045,7 +10060,9 @@ function getSubjectDistribution(){
 }
 
 /* ── レポートタブ描画メイン ── */
-function renderReportTab(){
+async function renderReportTab(){
+  await loadChartJs();
+  applyChartDarkDefaults();
   if(typeof sessions==='undefined') sessions=[];
   if(typeof char==='undefined')     char={name:'',level:1,streak:0,totalEXP:0};
   if(typeof examGoals==='undefined') examGoals=[];
@@ -19888,6 +19905,7 @@ function _getZxingReader(){
 
 /* ── スキャナー起動 ── */
 async function startBarcodeScanner(){
+  await loadZXing();
   barcodeDetected = false;
   document.getElementById('barcodeModal').classList.add('show');
   document.getElementById('barcodeStatus').textContent = 'カメラを起動中...';
