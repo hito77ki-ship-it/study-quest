@@ -5630,8 +5630,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         </div>
       </div>
       <input type="hidden" id="examPhase" value="tanto">
-      <div class="form-group"><label class="form-label">試験日</label><input class="form-input" id="examTargetDate" type="date"></div>
-      <div class="form-group"><label class="form-label">勉強開始日（任意）</label><input class="form-input" id="examStartDate" type="date"></div>
+      <div class="form-group"><label class="form-label" for="examTargetDate">試験日</label><input class="form-input" id="examTargetDate" type="date" aria-label="試験日"></div>
+      <div class="form-group"><label class="form-label" for="examStartDate">勉強開始日（任意）</label><input class="form-input" id="examStartDate" type="date" aria-label="勉強開始日"></div>
       <!-- 現在地・目標スコア（パーソナライズ計算用） -->
       <div style="border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
         <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.15em;margin-bottom:10px;">現在地から必要時間を計算（任意）</div>
@@ -21261,8 +21261,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <input class="form-input" id="materialName" type="text" placeholder="スッキリわかる 日商簿記3級">
       </div>
       <div class="form-group">
-        <label class="form-label">科目</label>
-        <select class="form-select" id="materialSubject">
+        <label class="form-label" for="materialSubject">科目</label>
+        <select class="form-select" id="materialSubject" aria-label="科目を選択">
           <option value="">選択してください</option>
         </select>
       </div>
@@ -21313,8 +21313,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- 資格選択（資格合格の場合のみ表示） -->
       <div class="form-group" id="achieveJobSelectGroup">
-        <label class="form-label">資格を選択</label>
-        <select class="form-input" id="achieveJobSelect" onchange="onAchieveJobSelect(this.value)" style="cursor:pointer;">
+        <label class="form-label" for="achieveJobSelect">資格を選択</label>
+        <select class="form-input" id="achieveJobSelect" onchange="onAchieveJobSelect(this.value)" style="cursor:pointer;" aria-label="資格を選択">
           <option value="">-- 資格を選ぶ --</option>
         </select>
       </div>
@@ -21327,8 +21327,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- 日付 -->
       <div class="form-group">
-        <label class="form-label">達成日</label>
-        <input class="form-input" id="achieveDate" type="date">
+        <label class="form-label" for="achieveDate">達成日</label>
+        <input class="form-input" id="achieveDate" type="date" aria-label="達成日">
       </div>
 
       <!-- 合計点 -->
