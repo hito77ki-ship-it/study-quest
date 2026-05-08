@@ -66,6 +66,36 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .seisan-table .val-green{color:#15803D;font-weight:700;}
 .seisan-table .val-purple{color:#5B21B6;font-weight:700;}
 
+/* 5要素テーブル */
+.elem-wrap{overflow-x:auto;margin:16px 0 24px;}
+.elem-table{width:100%;border-collapse:collapse;font-size:13px;}
+.elem-table th{padding:8px 14px;background:#F7FAFC;border:1px solid var(--border);font-size:11px;font-weight:700;text-align:left;}
+.elem-table td{padding:8px 14px;border:1px solid var(--border);vertical-align:top;}
+.e-tag{display:inline-block;padding:2px 10px;border-radius:100px;font-size:11px;font-weight:700;}
+.e-asset .e-tag{background:#DBEAFE;color:#1D4ED8;}
+.e-debt .e-tag{background:#FEE2E2;color:#B91C1C;}
+.e-equity .e-tag{background:#EDE9FE;color:#5B21B6;}
+.e-revenue .e-tag{background:#D1FAE5;color:#065F46;}
+.e-expense .e-tag{background:#FEF9C3;color:#854D0E;}
+.e-pl{font-weight:700;color:#15803D;}
+.e-bs{font-weight:700;color:#5B21B6;}
+.e-desc{font-size:12px;color:var(--muted);}
+
+/* 当期純利益行 */
+.seisan-table .row-rieki{background:#FEF3C7;border-top:2px solid #F59E0B;border-bottom:2px solid #F59E0B;}
+.seisan-table .row-rieki .col-name{color:#92400E;font-weight:700;}
+
+/* ダークモード */
+html[data-theme="dark"] .seisan-table th{background:#1E2A3A !important;color:#CBD5E0 !important;border-color:#2D3748 !important;}
+html[data-theme="dark"] .seisan-table td{background:#0F1923 !important;border-color:#2D3748 !important;}
+html[data-theme="dark"] .seisan-table td.col-name{color:#F1F5F9 !important;}
+html[data-theme="dark"] .seisan-table .row-total{background:#1A2535 !important;}
+html[data-theme="dark"] .seisan-table .row-rieki{background:rgba(245,158,11,.18) !important;border-top:2px solid #D97706 !important;border-bottom:2px solid #D97706 !important;}
+html[data-theme="dark"] .seisan-table .row-rieki .col-name{color:#FCD34D !important;}
+html[data-theme="dark"] .elem-table th{background:#1E2A3A !important;color:#CBD5E0 !important;border-color:#2D3748 !important;}
+html[data-theme="dark"] .elem-table td{background:#0F1923 !important;border-color:#2D3748 !important;color:#E2E8F0 !important;}
+html[data-theme="dark"] .e-desc{color:#94A3B8 !important;}
+
 /* 手順フロー */
 .step-flow{display:flex;flex-direction:column;gap:0;margin:20px 0;}
 .step-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:1px solid var(--border);border-radius:0;border-bottom:none;background:var(--bg);}
@@ -136,7 +166,49 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p style="font-size:12px;color:var(--muted);">※数字は説明用の簡略例です。単位：千円</p>
 
-  <h2>② 精算表の作成手順</h2>
+  <h2>② 勘定科目は「5つの要素」で覚える</h2>
+  <p>精算表を正確に解くには、<strong>各勘定科目がどの要素に属するか</strong>を把握していることが大前提です。要素は全部で5つあり、この要素によってP/L欄・B/S欄のどちらに記入するかが決まります。</p>
+
+  <div class="elem-wrap">
+    <table class="elem-table">
+      <thead>
+        <tr><th>要素</th><th>精算表の列</th><th>代表的な勘定科目</th></tr>
+      </thead>
+      <tbody>
+        <tr class="e-asset">
+          <td><span class="e-tag">資産</span></td>
+          <td><span class="e-bs">B/S 借方</span></td>
+          <td><span class="e-desc">現金、当座預金、売掛金、繰越商品、建物、備品、前払費用、未収収益 など</span></td>
+        </tr>
+        <tr class="e-debt">
+          <td><span class="e-tag">負債</span></td>
+          <td><span class="e-bs">B/S 貸方</span></td>
+          <td><span class="e-desc">買掛金、借入金、未払金、前受収益、未払費用、貸倒引当金 など</span></td>
+        </tr>
+        <tr class="e-equity">
+          <td><span class="e-tag">純資産</span></td>
+          <td><span class="e-bs">B/S 貸方</span></td>
+          <td><span class="e-desc">資本金、繰越利益剰余金 など</span></td>
+        </tr>
+        <tr class="e-revenue">
+          <td><span class="e-tag">収益</span></td>
+          <td><span class="e-pl">P/L 貸方</span></td>
+          <td><span class="e-desc">売上、受取利息、受取手数料、雑益 など</span></td>
+        </tr>
+        <tr class="e-expense">
+          <td><span class="e-tag">費用</span></td>
+          <td><span class="e-pl">P/L 借方</span></td>
+          <td><span class="e-desc">仕入、給料、減価償却費、支払利息、貸倒引当金繰入、雑損 など</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip-box"><strong>暗記のコツ：「費収 → P/L」「資負純 → B/S」</strong><br>
+  費用・収益はP/L（損益計算書）欄へ、資産・負債・純資産はB/S（貸借対照表）欄へ。<br>
+  借方・貸方の向きは「通常残高」と同じ方向です（資産→借方、負債・純資産→貸方、費用→借方、収益→貸方）。試算表で各勘定科目の残高がどちら側にあるかを確認する習慣をつけましょう。</div>
+
+  <h2>③ 精算表の作成手順</h2>
 
   <div class="step-flow">
     <div class="step-item">
@@ -161,7 +233,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h2>③ 主な決算整理仕訳（修正記入欄に記入するもの）</h2>
+  <h2>④ 主な決算整理仕訳（修正記入欄に記入するもの）</h2>
   <p>精算表で最も重要なのが修正記入欄への決算整理仕訳の転記です。</p>
 
   <h3>① 売上原価の計算（三分法→繰越商品の振替）</h3>

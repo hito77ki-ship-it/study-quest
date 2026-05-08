@@ -1148,12 +1148,12 @@ html[data-theme="dark"] .sq-article-theme-group{
   .sq-article-theme-option{min-width:auto;padding:8px 10px;}
   .sq-theme-text{display:none;}
 }
-/* サイドバー：fixed で記事の右に配置（1100px以上のみ） */
-@media(min-width:1100px){
+/* サイドバー：fixed で記事の右に配置（1450px以上のみ） */
+@media(min-width:1450px){
   .sq-sidebar{
     position:fixed;
     top:72px;
-    left:min(calc(50% + 420px), calc(100vw - 276px - 12px));
+    left:min(calc(50% + 462px), calc(100vw - 272px));
     width:260px;
     max-height:calc(100vh - 88px);
     overflow-y:auto;
@@ -1168,7 +1168,7 @@ html[data-theme="dark"] .sq-article-theme-group{
   .sq-sidebar-left{
     position:fixed;
     top:72px;
-    left:max(12px, calc(50% - 696px));
+    left:max(12px, calc(50% - 722px));
     width:260px;
     max-height:calc(100vh - 88px);
     overflow-y:auto;
