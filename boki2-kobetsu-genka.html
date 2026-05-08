@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個別原価計算とは？製造指図書・仕掛品の流れを解説【簿記2級】｜スタディクエスト</title>
+<meta name="description" content="日商簿記2級 工業簿記の個別原価計算を初心者向けに解説。製造指図書、直接材料費・直接労務費・直接経費、製造間接費の配賦、仕掛品から製品への流れを例題つきで整理します。">
+<meta name="keywords" content="個別原価計算とは 簿記2級,製造指図書 個別原価計算,個別原価計算 仕訳,仕掛品 製品 売上原価">
+<meta property="og:title" content="個別原価計算とは？製造指図書・仕掛品の流れを解説【簿記2級】">
+<meta property="og:description" content="個別原価計算の全体像を、製造指図書・仕掛品・製品・売上原価の流れから初心者向けに解説。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki2-kobetsu-genka.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"個別原価計算とは？製造指図書・仕掛品の流れを解説【簿記2級】","description":"日商簿記2級 工業簿記の個別原価計算を初心者向けに解説。製造指図書、直接材料費・直接労務費・直接経費、製造間接費の配賦、仕掛品から製品への流れを例題つきで整理します。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-kobetsu-genka.html","datePublished":"2026-05-09","dateModified":"2026-05-09","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/","logo":{"@type":"ImageObject","url":"https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);line-height:1.9}a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px}.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-size:15px;font-weight:700;color:var(--green2)}.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px}.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px}.breadcrumb a{color:var(--muted)}h1{font-size:clamp(20px,4vw,30px);line-height:1.4;margin-bottom:8px}.meta{font-size:13px;color:var(--muted);margin-bottom:16px}.lead{font-size:15px;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0}h2{font-size:20px;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green)}h3{font-size:16px;margin:28px 0 10px;color:var(--green2)}p,li{font-size:14px;color:#374151}p{margin-bottom:16px}ul,ol{margin:0 0 16px 20px}li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{background:var(--green);color:#fff;padding:10px 12px;text-align:left}td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}tr:nth-child(even) td{background:var(--light)}.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px}.tip-box strong{color:#276749}.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px}.warn-box strong{color:#975A16}
+.shiwake-box{background:var(--light);border-radius:10px;padding:14px 18px;margin:16px 0}.sw-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px}.sw-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;font-size:13px}.kari{color:#2B6CB0;font-weight:700}.kashi{color:#C05621;font-weight:700;text-align:right}.sep{color:var(--muted)}
+.flow{counter-reset:flow;margin:20px 0}.flow-item{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:#374151}.flow-item::before{counter-increment:flow;content:counter(flow);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff}.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px}.app-cta p{color:#A0C070;font-size:13px}.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block}footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px}footer a{font-size:12px;color:#4A5568;margin:0 10px}footer p{font-size:11px;color:#2D3748;margin-top:8px}
+@media(max-width:640px){table{font-size:12px}th,td{padding:8px}.sw-row{font-size:12px}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 個別原価計算</div>
+  <p class="meta">日商簿記2級 | 公開：2026年5月9日</p>
+  <h1>個別原価計算とは？<br>製造指図書・仕掛品の流れを解説【簿記2級】</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="lead">個別原価計算は、注文ごと・製造指図書ごとに原価を集める方法です。工業簿記の中でも「材料費・労務費・経費をどう製品に集めるか」が一気につながる重要論点です。この記事では、製造指図書、仕掛品、製品、売上原価までの流れを初心者向けに整理します。</p>
+  <div class="sq-chat"></div>
+
+  <div class="tip-box"><strong>先に結論：</strong>個別原価計算は「1つひとつの注文や仕事ごとに原価を集める計算方法」です。製造指図書ごとに直接費を集計し、製造間接費を配賦して、製品原価を求めます。</div>
+
+  <h2>個別原価計算とは</h2>
+  <p>個別原価計算とは、製品や注文ごとに原価を個別に計算する方法です。オーダーメイド家具、特注機械、建設工事のように、作るものが注文ごとに違う場合に向いています。</p>
+  <p>簿記2級では、製造指図書という管理表を使って、注文ごとに直接材料費・直接労務費・直接経費・製造間接費を集めます。</p>
+
+  <h2>総合原価計算との違い</h2>
+  <table>
+    <tr><th>項目</th><th>個別原価計算</th><th>総合原価計算</th></tr>
+    <tr><td>向いている生産形態</td><td>受注生産</td><td>大量生産</td></tr>
+    <tr><td>原価の集め方</td><td>製造指図書ごとに集計</td><td>一定期間の原価をまとめて集計</td></tr>
+    <tr><td>例</td><td>特注品、オーダーメイド品、建設工事</td><td>食品、日用品、同じ製品の大量生産</td></tr>
+  </table>
+  <p>個別原価計算は「注文ごと」、総合原価計算は「期間ごと」と考えると整理しやすくなります。</p>
+
+  <h2>製造指図書とは</h2>
+  <p>製造指図書とは、どの製品をどれだけ作るかを指示し、その製品にかかった原価を集計するための表です。個別原価計算では、製造指図書が原価計算の中心になります。</p>
+  <table>
+    <tr><th>製造指図書に集める原価</th><th>内容</th></tr>
+    <tr><td>直接材料費</td><td>その注文の製品に直接使った材料費</td></tr>
+    <tr><td>直接労務費</td><td>その注文の製品に直接かかった作業時間の賃金</td></tr>
+    <tr><td>直接経費</td><td>その注文の製品に直接ひもづく外注加工賃など</td></tr>
+    <tr><td>製造間接費</td><td>配賦基準にしたがって割り当てる工場共通費</td></tr>
+  </table>
+
+  <h2>原価の流れ</h2>
+  <p>個別原価計算では、原価は次のように流れます。ここを図のようにイメージできると、仕訳も理解しやすくなります。</p>
+  <div class="flow">
+    <div class="flow-item"><strong>直接費を仕掛品に集める：</strong>直接材料費・直接労務費・直接経費を製造指図書ごとに集計する。</div>
+    <div class="flow-item"><strong>製造間接費を配賦する：</strong>直接作業時間などの基準で、各製造指図書に製造間接費を割り当てる。</div>
+    <div class="flow-item"><strong>完成したら製品へ振り替える：</strong>完成品原価を仕掛品から製品へ移す。</div>
+    <div class="flow-item"><strong>販売したら売上原価へ振り替える：</strong>販売した製品の原価を製品から売上原価へ移す。</div>
+  </div>
+
+  <h2>基本仕訳</h2>
+  <div class="shiwake-box">
+    <div class="sw-label">直接材料費を消費したとき</div>
+    <div class="sw-row"><span class="kari">仕掛品 50,000</span><span class="sep">／</span><span class="kashi">材料 50,000</span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">直接労務費が発生したとき</div>
+    <div class="sw-row"><span class="kari">仕掛品 30,000</span><span class="sep">／</span><span class="kashi">賃金 30,000</span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">製造間接費を配賦したとき</div>
+    <div class="sw-row"><span class="kari">仕掛品 20,000</span><span class="sep">／</span><span class="kashi">製造間接費 20,000</span></div>
+  </div>
+  <p>直接費も製造間接費も、最終的には仕掛品に集めます。個別原価計算では、この仕掛品の内訳を製造指図書ごとに管理するイメージです。</p>
+
+  <h2>例題で確認</h2>
+  <p>製造指図書No.101について、直接材料費50,000円、直接労務費30,000円、直接経費10,000円、製造間接費配賦額20,000円が発生したとします。</p>
+  <table>
+    <tr><th>項目</th><th>金額</th></tr>
+    <tr><td>直接材料費</td><td>50,000円</td></tr>
+    <tr><td>直接労務費</td><td>30,000円</td></tr>
+    <tr><td>直接経費</td><td>10,000円</td></tr>
+    <tr><td>製造間接費配賦額</td><td>20,000円</td></tr>
+    <tr><td><strong>製造原価</strong></td><td><strong>110,000円</strong></td></tr>
+  </table>
+  <p>この製造指図書の製造原価は110,000円です。完成したら、仕掛品から製品へ振り替えます。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">完成したとき</div>
+    <div class="sw-row"><span class="kari">製品 110,000</span><span class="sep">／</span><span class="kashi">仕掛品 110,000</span></div>
+  </div>
+
+  <h2>よくあるミス</h2>
+  <ul>
+    <li>直接費だけを集計して、製造間接費の配賦を忘れる</li>
+    <li>製造指図書ごとの原価と、工場全体の原価を混同する</li>
+    <li>完成前なのに仕掛品から製品へ振り替えてしまう</li>
+    <li>販売していない製品まで売上原価にしてしまう</li>
+  </ul>
+
+  <div class="warn-box"><strong>判断の軸：</strong>未完成なら仕掛品、完成したら製品、販売したら売上原価です。この3段階を崩さないことが個別原価計算の土台です。</div>
+
+  <h2>まとめ</h2>
+  <ul>
+    <li>個別原価計算は、注文ごと・製造指図書ごとに原価を集める方法</li>
+    <li>受注生産や特注品の原価計算に向いている</li>
+    <li>直接材料費・直接労務費・直接経費は製造指図書へ直接集計する</li>
+    <li>製造間接費は配賦して製造指図書に割り当てる</li>
+    <li>原価は仕掛品 → 製品 → 売上原価の順に流れる</li>
+  </ul>
+
+  <div class="app-cta">
+    <h3>⚔ 個別原価計算を記録しながら攻略しよう</h3>
+    <p>スタディクエストで工業簿記の学習時間を記録し、材料費・労務費・経費から個別原価計算まで順番に積み上げましょう。</p>
+    <a href="index.html">無料で学習記録を始める →</a>
+  </div>
+</div>
+
+<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
+  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">個別原価計算とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">注文ごと・製造指図書ごとに原価を集める計算方法です。受注生産や特注品の原価計算に向いています。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">個別原価計算と総合原価計算の違いは？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">個別原価計算は注文ごとに原価を集めます。総合原価計算は、同じ製品を大量生産する場合に、一定期間の原価をまとめて計算します。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">製造指図書とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">どの製品を作るかを指示し、その製品にかかった直接費や製造間接費を集計するための表です。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">製造間接費は個別原価計算でどう扱いますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">直接作業時間などの配賦基準を使って、各製造指図書に割り当てます。配賦された金額は仕掛品に集計されます。</div></details>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"個別原価計算とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"注文ごと・製造指図書ごとに原価を集める計算方法です。受注生産や特注品の原価計算に向いています。"}},{"@type":"Question","name":"個別原価計算と総合原価計算の違いは？","acceptedAnswer":{"@type":"Answer","text":"個別原価計算は注文ごとに原価を集めます。総合原価計算は、同じ製品を大量生産する場合に、一定期間の原価をまとめて計算します。"}},{"@type":"Question","name":"製造指図書とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"どの製品を作るかを指示し、その製品にかかった直接費や製造間接費を集計するための表です。"}},{"@type":"Question","name":"製造間接費は個別原価計算でどう扱いますか？","acceptedAnswer":{"@type":"Answer","text":"直接作業時間などの配賦基準を使って、各製造指図書に割り当てます。配賦された金額は仕掛品に集計されます。"}}]}
+</script>
+<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+  <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">工業簿記とは？商業簿記との違い</div></a>
+  <a href="boki2-keihi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">前の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">経費とは？製造原価の分類</div></a>
+  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
+</div></div></section>
+<footer><div><a href="lp.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>
