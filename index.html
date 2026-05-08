@@ -75,7 +75,7 @@
   /* ── テキスト ── */
   --text:#1A202C;
   --text-secondary:#4A5568;  /* サブ見出し・説明文 */
-  --muted:#718096;
+  --muted:#4A5568;
   --text-on-accent:#FFFFFF;  /* アクセント色背景上のテキスト */
 
   /* ── アクセント（緑） ── */
@@ -169,7 +169,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .section{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:var(--shadow);}
 .sec-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.25em;color:var(--accent2);margin-bottom:6px;display:flex;align-items:center;gap:10px;font-weight:700;}
 .sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);opacity:.3;}
-.sec-sub{font-size:9px;color:var(--muted);letter-spacing:.1em;margin-bottom:16px;font-family:'Share Tech Mono',monospace;opacity:.7;}
+.sec-sub{font-size:9px;color:var(--muted);letter-spacing:.1em;margin-bottom:16px;font-family:'Share Tech Mono',monospace;}
 .screen{display:none;}.screen.active{display:block;min-height:100dvh;overflow-y:auto;}
 
 /* AUTH */
@@ -21065,7 +21065,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ⏱ <span id="bgTimerBadgeText">00:00:00</span>
 </div>
 <!-- Google Forms送信用 hidden iframe -->
-<iframe name="feedback_iframe" style="display:none;"></iframe>
+<iframe name="feedback_iframe" title="フィードバック送信フレーム" style="display:none;"></iframe>
 
 <!-- 改善要望モーダル -->
 <div class="modal-overlay" id="feedbackModal">

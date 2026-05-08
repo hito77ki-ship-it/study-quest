@@ -422,6 +422,18 @@ html[data-theme="light"] .sq-card-label,
 html[data-theme="light"] .sq-sidebar-box-title,
 html[data-theme="light"] .sq-author-title,
 html[data-theme="light"] .sq-toc a{color:#6AAF2B !important;}
+html[data-theme="light"] .sq-boki3-title,
+html[data-theme="light"] .sq-boki3-progress-link{color:#3B82F6 !important;}
+html[data-theme="light"] .sq-boki3-progress-card{
+  background:rgba(59,130,246,.08) !important;
+  color:#1A202C !important;
+}
+html[data-theme="light"] .sq-boki3-progress-track{background:rgba(59,130,246,.15) !important;}
+html[data-theme="light"] .sq-boki3-progress-fill{background:#3B82F6 !important;}
+html[data-theme="light"] .sq-side-link--active{
+  border-left:3px solid #3B82F6 !important;
+  font-weight:700 !important;
+}
 html[data-theme="light"] section[style*="background:#F7FAFC"],
 html[data-theme="light"] div[style*="background:#F7FAFC"]{
   background:#F7FAFC !important;
@@ -594,6 +606,18 @@ html[data-theme="dark"] .sq-card-label,
 html[data-theme="dark"] .sq-sidebar-box-title,
 html[data-theme="dark"] .sq-author-title,
 html[data-theme="dark"] .sq-toc a{color:#B6E27C !important;}
+html[data-theme="dark"] .sq-boki3-title,
+html[data-theme="dark"] .sq-boki3-progress-link{color:#90CDF4 !important;}
+html[data-theme="dark"] .sq-boki3-progress-card{
+  background:rgba(59,130,246,.12) !important;
+  color:#CCD6E5 !important;
+}
+html[data-theme="dark"] .sq-boki3-progress-track{background:rgba(59,130,246,.18) !important;}
+html[data-theme="dark"] .sq-boki3-progress-fill{background:#60A5FA !important;}
+html[data-theme="dark"] .sq-side-link--active{
+  border-left:3px solid #60A5FA !important;
+  font-weight:700 !important;
+}
 
 /* ── 簿記3級記事 固有コンポーネント ダークモード ── */
 /* 仕訳ボックス */
@@ -1605,11 +1629,11 @@ function buildBoki3Sidebar(sidebar){
   const box = document.createElement('div');
   box.className = 'sq-sidebar-box';
   box.innerHTML =
-    `<div class="sq-sidebar-box-title" style="color:#3B82F6">📘 日商簿記3級 記事一覧</div>` +
-    `<a href="boki3-progress.html" style="display:block;margin-bottom:8px;font-size:11px;color:#3B82F6;text-decoration:none;">` +
-    `<div style="background:rgba(59,130,246,.08);border-radius:6px;padding:6px 10px;">` +
+    `<div class="sq-sidebar-box-title sq-boki3-title">📘 日商簿記3級 記事一覧</div>` +
+    `<a href="boki3-progress.html" class="sq-boki3-progress-link" style="display:block;margin-bottom:8px;font-size:11px;text-decoration:none;">` +
+    `<div class="sq-boki3-progress-card" style="border-radius:6px;padding:6px 10px;">` +
     `<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>学習進捗</span><span style="font-weight:700;">${readCount}/${total}</span></div>` +
-    `<div style="height:4px;background:rgba(59,130,246,.15);border-radius:2px;"><div style="height:4px;background:#3B82F6;border-radius:2px;width:${pct}%;transition:width .4s;"></div></div>` +
+    `<div class="sq-boki3-progress-track" style="height:4px;border-radius:2px;"><div class="sq-boki3-progress-fill" style="height:4px;border-radius:2px;width:${pct}%;transition:width .4s;"></div></div>` +
     `</div></a>` +
     `<div class="sq-side-links"></div>`;
 
@@ -1618,7 +1642,7 @@ function buildBoki3Sidebar(sidebar){
     const a = ARTICLES[f]; if(!a) return;
     const isCurrent = f === PAGE;
     const isRead = !!localStorage.getItem(_READ_KEY(f));
-    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}" style="${isCurrent ? 'border-left:3px solid #3B82F6;font-weight:700;' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
+    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
   });
   sidebar.appendChild(box);
 }
