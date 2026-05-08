@@ -8389,9 +8389,6 @@ function showLevelUp(lv,smins){
 }
 function closeLevelUp(){
   document.getElementById('luOverlay').classList.remove('show');
-  // Open DQ allocation after level up dismissed
-  const sp = SP_PER_LEVEL;
-  if(sp>0) setTimeout(()=>openDqAlloc(sp),300);
 }
 /* ════ Xシェア共通ユーティリティ ════ */
 const JOB_HASHTAGS = {
@@ -17487,6 +17484,8 @@ async function createPartyRaid(){
 
 /* ── レイドカード描画 ── */
 async function renderPartyRaidCard(){
+  // パーティーレイドはユーザー数が増えたら再開。UIは非表示。
+  return;
   const wrap = document.getElementById('partyRaidCardWrap');
   const startBtn = document.getElementById('partyRaidStartBtnWrap');
   if(!wrap) return;
