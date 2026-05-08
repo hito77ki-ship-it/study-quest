@@ -1124,21 +1124,23 @@ html[data-theme="dark"] .sq-article-theme-group{
 }
 .nav-inner{
   display:grid;
-  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  grid-template-columns:minmax(0,1fr) auto auto auto;
   align-items:center;
-  column-gap:16px;
+  column-gap:12px;
 }
 .nav-logo{justify-self:start;}
 #sq-article-theme-toggle{justify-self:center;}
+.sq-search-btn{justify-self:end;}
 .nav-cta{justify-self:end;}
 @media(max-width:640px){
   .nav-inner{
-    grid-template-columns:1fr auto;
-    row-gap:10px;
+    grid-template-columns:1fr auto auto;
+    row-gap:8px;
   }
-  .nav-logo{grid-column:1 / 2;}
-  #sq-article-theme-toggle{grid-column:1 / 2;justify-self:start;}
-  .nav-cta{grid-column:2 / 3;grid-row:1 / 3;align-self:center;}
+  .nav-logo{grid-column:1;grid-row:1;}
+  .sq-search-btn{grid-column:2;grid-row:1;}
+  .nav-cta{grid-column:3;grid-row:1;}
+  #sq-article-theme-toggle{grid-column:1 / -1;grid-row:2;justify-self:start;}
   .sq-article-theme-option{min-width:auto;padding:8px 10px;}
   .sq-theme-text{display:none;}
 }
