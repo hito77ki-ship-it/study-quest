@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -4047,7 +4047,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <div class="step-title">目指す資格を選んでください（複数可）</div>
     </div>
     <div style="position:relative;margin-bottom:14px;">
-      <input type="text" id="jobSearch" placeholder="🔍 資格名で検索…" oninput="buildJobGrid()"
+      <input type="text" id="jobSearch" placeholder="🔍 資格名で検索…" aria-label="資格名で検索" oninput="buildJobGrid()"
         style="width:100%;padding:10px 14px 10px 36px;border:1px solid var(--border);border-radius:100px;background:var(--panel);color:var(--text);font-size:13px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color .2s;">
       <span style="position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;">🔍</span>
     </div>
@@ -4070,8 +4070,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <div class="step-title">冒険者名と勉強中の科目を選択</div>
     </div>
     <div class="name-group">
-      <label class="name-label">冒険者の名前</label>
-      <input class="name-input" id="nameInput" type="text" placeholder="名前を入力..." maxlength="20">
+      <label class="name-label" for="nameInput">冒険者の名前</label>
+      <input class="name-input" id="nameInput" type="text" placeholder="名前を入力..." maxlength="20" aria-label="冒険者の名前">
     </div>
     <div id="subjSelectBlocks"></div>
     <div id="startErrorMsg" style="display:none;background:#2a0808;border:1px solid #ff4444;border-left:3px solid #ff4444;color:#ff9e9e;font-size:12px;padding:10px 14px;margin-bottom:10px;"></div>
@@ -4630,7 +4630,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         </div>
       </div>
       <!-- メモ -->
-      <input class="timer-session-note" id="timerNote" type="text" placeholder="今日の学習内容（任意）..." maxlength="100">
+      <input class="timer-session-note" id="timerNote" type="text" placeholder="今日の学習内容（任意）..." maxlength="100" aria-label="今日の学習内容">
       <!-- ボタン -->
       <div class="timer-btns" style="margin-top:12px;">
         <button class="timer-start-btn" id="timerStartBtn" onclick="toggleTimer()">▶ 攻撃開始</button>
@@ -4659,9 +4659,9 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           <div class="form-group">
             <label class="form-label" id="amountLabel">時間</label>
             <div style="display:flex;gap:6px;align-items:center;">
-              <input class="form-input" id="questAmountHour" type="number" min="0" max="12" placeholder="0" style="width:60px;">
+              <input class="form-input" id="questAmountHour" type="number" min="0" max="12" placeholder="0" style="width:60px;" aria-label="学習時間（時間）">
               <span style="color:var(--muted);font-size:12px;">時間</span>
-              <input class="form-input" id="questAmountMin" type="number" min="0" max="59" placeholder="0" style="width:60px;">
+              <input class="form-input" id="questAmountMin" type="number" min="0" max="59" placeholder="0" style="width:60px;" aria-label="学習時間（分）">
               <span style="color:var(--muted);font-size:12px;">分</span>
             </div>
           </div>
