@@ -58,6 +58,12 @@ tr:nth-child(even) td{background:var(--light);}
 .tip-box strong{color:#276749;}
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
 .warn-box strong{color:#975A16;}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:20px 0 28px;}
+.video-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;}
+.video-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 10px 24px rgba(140,198,63,.14);text-decoration:none;}
+.video-card__source{font-size:10px;color:var(--green2);font-weight:700;margin-bottom:6px;letter-spacing:.08em;}
+.video-card__title{font-size:13px;font-weight:700;color:var(--text);line-height:1.5;}
+.video-card__note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:6px;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
 .app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
@@ -188,6 +194,36 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <li><strong>スッキリわかる日商簿記2級（TAC出版）：</strong>キャラクターを使った解説で読みやすい。問題集とセット使用を推奨。</li>
     <li><strong>合格トレーニング日商簿記2級（TAC出版）：</strong>演習量を確保したい方向け。問題の量・質ともに優秀。</li>
   </ul>
+
+  <h2>動画で理解を補強する</h2>
+  <p>簿記2級は、テキストだけで進めると連結会計・固定資産・引当金などで手が止まりやすいです。独学で詰まったときは、YouTubeの解説動画で図や話し言葉の説明を聞いてから、もう一度テキストと問題集に戻るのがおすすめです。</p>
+
+  <div class="tip-box">
+    <strong>動画の使い方：</strong>動画は「わかった気になる」ためではなく、テキストで止まった論点を動かすために使いましょう。視聴後に必ず例題を1問解くと、理解が定着しやすくなります。
+  </div>
+
+  <div class="video-grid">
+    <a class="video-card" href="https://www.youtube.com/watch?v=anMvq5x8A7E" target="_blank" rel="noopener">
+      <div class="video-card__source">ふくしままさゆき</div>
+      <div class="video-card__title">簿記2級の独学勉強方法</div>
+      <div class="video-card__note">全体の進め方で迷ったときに見る</div>
+    </a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=gqTUA3INPZU" target="_blank" rel="noopener">
+      <div class="video-card__source">ふくしままさゆき</div>
+      <div class="video-card__title">有形固定資産の解説</div>
+      <div class="video-card__note">減価償却・建設仮勘定まわりの補強</div>
+    </a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=Sa6FrTSprSA" target="_blank" rel="noopener">
+      <div class="video-card__source">ふくしままさゆき</div>
+      <div class="video-card__title">引当金その2</div>
+      <div class="video-card__note">退職給付引当金などを動画で確認</div>
+    </a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=NJsmDWctaeU" target="_blank" rel="noopener">
+      <div class="video-card__source">公認会計士たぬ吉の資格塾</div>
+      <div class="video-card__title">日商簿記2級 最新攻略法</div>
+      <div class="video-card__note">試験全体の攻略方針を確認</div>
+    </a>
+  </div>
 
   <div class="app-cta">
     <h3>⚔ 簿記2級の学習時間を積み上げよう</h3>
