@@ -741,6 +741,44 @@ html[data-theme="dark"] div[style*="background:#F7FAFC"] div[style*="color:#8CC6
 html[data-theme="dark"] footer{background:#080B12 !important;border-top:1px solid rgba(140,198,63,.10) !important;}
 html[data-theme="dark"] footer a{color:#8F9BB0;}
 html[data-theme="dark"] footer p{color:#6B7280;}
+html[data-theme="dark"] .container .point-card,
+html[data-theme="dark"] .container .calc-box,
+html[data-theme="dark"] .container .step-item,
+html[data-theme="dark"] .container .article-item,
+html[data-theme="dark"] .container .summary-card,
+html[data-theme="dark"] .container .quick-card,
+html[data-theme="dark"] .container .book-card,
+html[data-theme="dark"] .container .video-card,
+html[data-theme="dark"] .container .related-card,
+html[data-theme="dark"] .container .rule-item{
+  background:linear-gradient(180deg,#151A2A,#111728) !important;
+  border-color:rgba(140,198,63,.20) !important;
+  color:#E8EEF8 !important;
+  box-shadow:0 0 0 1px rgba(140,198,63,.03), 0 12px 28px rgba(5,10,20,.12) !important;
+}
+html[data-theme="dark"] .container .point-card *,
+html[data-theme="dark"] .container .calc-box *,
+html[data-theme="dark"] .container .step-item *,
+html[data-theme="dark"] .container .article-item *,
+html[data-theme="dark"] .container .summary-card *,
+html[data-theme="dark"] .container .quick-card *,
+html[data-theme="dark"] .container .book-card *,
+html[data-theme="dark"] .container .video-card *,
+html[data-theme="dark"] .container .related-card *,
+html[data-theme="dark"] .container .rule-item *{
+  color:inherit;
+}
+html[data-theme="dark"] .container .quick-card__label,
+html[data-theme="dark"] .container .book-card__kicker,
+html[data-theme="dark"] .container .video-card__source,
+html[data-theme="dark"] .container .related-card__tag{
+  color:#B6E27C !important;
+}
+html[data-theme="dark"] .container .quick-card__note,
+html[data-theme="dark"] .container .book-card__desc,
+html[data-theme="dark"] .container .video-card__note{
+  color:#9BA7BB !important;
+}
 html[data-theme="dark"] .num-box{
   background:linear-gradient(180deg,#151A2A,#111728) !important;
   border:1px solid rgba(140,198,63,.16) !important;
