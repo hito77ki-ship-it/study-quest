@@ -349,7 +349,8 @@ html[data-theme="light"] .formula strong{color:#111827 !important;}
 html[data-theme="light"] .flow-item{
   background:#FFFFFF !important;
   border-color:rgba(26,32,44,.10) !important;
-  color:#2D3748 !important;
+  color:#1F2937 !important;
+  font-weight:500;
   box-shadow:var(--sq-shadow);
 }
 html[data-theme="light"] .flow-item strong{color:#1A202C !important;}
@@ -542,7 +543,8 @@ html[data-theme="dark"] .formula strong{color:#F8FAFC !important;}
 html[data-theme="dark"] .flow-item{
   background:linear-gradient(180deg,#151A2A,#111728) !important;
   border-color:rgba(140,198,63,.14) !important;
-  color:#CCD6E5 !important;
+  color:#E8EEF8 !important;
+  font-weight:600;
   box-shadow:0 0 0 1px rgba(140,198,63,.03), 0 12px 28px rgba(5,10,20,.12) !important;
 }
 html[data-theme="dark"] .flow-item strong{color:#F8FAFC !important;}
