@@ -575,6 +575,7 @@ html[data-theme="light"] .sq-sidebar-box-title,
 html[data-theme="light"] .sq-author-title,
 html[data-theme="light"] .sq-toc a{color:#6AAF2B !important;}
 html[data-theme="light"] .sq-boki3-title,
+html[data-theme="light"] .sq-boki2-title,
 html[data-theme="light"] .sq-boki3-progress-link{color:#3B82F6 !important;}
 html[data-theme="light"] .sq-boki3-progress-card{
   background:rgba(59,130,246,.08) !important;
@@ -834,6 +835,7 @@ html[data-theme="dark"] .sq-sidebar-box-title,
 html[data-theme="dark"] .sq-author-title,
 html[data-theme="dark"] .sq-toc a{color:#B6E27C !important;}
 html[data-theme="dark"] .sq-boki3-title,
+html[data-theme="dark"] .sq-boki2-title,
 html[data-theme="dark"] .sq-boki3-progress-link{color:#90CDF4 !important;}
 html[data-theme="dark"] .sq-boki3-progress-card{
   background:rgba(59,130,246,.12) !important;
@@ -1878,6 +1880,49 @@ const BOKI3_FILES = [
   'boki3-shohinuriage.html','boki3-hojosho.html','boki3-hojinzei.html','boki3-credit.html',
 ];
 
+const BOKI2_COMMERCIAL_FILES = [
+  'boki2-kessan.html','boki2-shohin-baibai.html','boki2-junshisan.html',
+  'boki2-hojinzei-shohizei.html','boki2-software.html','boki2-ginko-chosei.html',
+  'boki2-renketsu.html','boki2-zeikouka.html','boki2-lease.html',
+  'boki2-gaika.html','boki2-yukashoken.html','boki2-kotei-shisan.html',
+  'boki2-hikiatekin.html','boki2-shasai.html',
+];
+
+const BOKI2_INDUSTRIAL_FILES = [
+  'boki2-kogyo.html','boki2-zairyouhi.html','boki2-roumuhi.html','boki2-keihi.html',
+  'boki2-seizo-kansetsuhi.html','boki2-bumonbetsu.html','boki2-kobetsu-genka.html',
+  'boki2-sogo-genka.html','boki2-hyojun-genka.html','boki2-chokusetsu-genka.html',
+  'boki2-cvp.html','boki2-seizo-genka-hokokusho.html','boki2-net-test.html',
+];
+
+const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-ochita.html'];
+
+function buildBoki2Sidebar(sidebar){
+  if(!sidebar) return;
+  if(!BOKI2_FILES.includes(PAGE)) return;
+
+  const box = document.createElement('div');
+  box.className = 'sq-sidebar-box';
+  box.innerHTML =
+    `<div class="sq-sidebar-box-title sq-boki2-title">📗 日商簿記2級 論点一覧</div>` +
+    `<div class="sq-boki2-group"><div class="sq-side-link-label" style="margin:8px 0 6px;">商業簿記</div><div class="sq-side-links sq-boki2-commercial"></div></div>` +
+    `<div class="sq-boki2-group"><div class="sq-side-link-label" style="margin:12px 0 6px;">工業簿記</div><div class="sq-side-links sq-boki2-industrial"></div></div>`;
+
+  const render = (selector, files) => {
+    const list = box.querySelector(selector);
+    files.forEach(f => {
+      const a = ARTICLES[f]; if(!a) return;
+      const isCurrent = f === PAGE;
+      const isRead = !!localStorage.getItem(_READ_KEY(f));
+      list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
+    });
+  };
+
+  render('.sq-boki2-commercial', BOKI2_COMMERCIAL_FILES);
+  render('.sq-boki2-industrial', BOKI2_INDUSTRIAL_FILES);
+  sidebar.appendChild(box);
+}
+
 function buildBoki3Sidebar(sidebar){
   if(!sidebar) return;
   if(!BOKI3_FILES.includes(PAGE)) return;
@@ -2531,6 +2576,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   injectBreadcrumbLD();
   const layout = buildLayout();
   buildTOC(layout.right);
+  buildBoki2Sidebar(layout.right);
   buildBoki3Sidebar(layout.right);
   buildCatBadge();
   buildArticleDialogue();
