@@ -22,7 +22,7 @@
   "description": "FP2級（ファイナンシャルプランナー）の必要勉強時間・独学スケジュール・科目別攻略法を解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/fp.html",
   "datePublished": "2026-04-28",
-  "dateModified": "2026-04-28",
+  "dateModified": "2026-05-09",
   "author": {"@type": "Person", "name": "若葉", "url": "https://hito77ki-ship-it.github.io/study-quest/lp.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/", "logo": {"@type": "ImageObject", "url": "https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hito77ki-ship-it.github.io/study-quest/fp.html"}
@@ -58,6 +58,19 @@ tr:nth-child(even) td{background:var(--light);}
 .tip-box strong{color:#276749;}
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
 .warn-box strong{color:#975A16;}
+.quick-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 34px;}
+.quick-card,.topic-card,.book-card,.summary-list{background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);}
+.quick-card{padding:16px;}
+.quick-card__label,.topic-card__tag,.book-card__kicker{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.quick-card__value{font-size:18px;color:var(--sq-text,var(--text));font-weight:700;line-height:1.45;margin-bottom:4px;}
+.quick-card__note,.book-card__desc{font-size:11px;color:var(--sq-muted,var(--muted));line-height:1.65;}
+.topic-grid,.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 28px;}
+.topic-card,.book-card{display:block;padding:16px;color:inherit;text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s;}
+.topic-card:hover,.book-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 12px 28px rgba(140,198,63,.15);text-decoration:none;}
+.topic-card__title,.book-card__title{font-size:13px;font-weight:700;color:var(--sq-text,var(--text));line-height:1.55;}
+.book-card__desc{font-size:12px;margin-top:8px;}
+.summary-list{padding:18px 22px;margin-top:12px;}
+.summary-list li{margin-bottom:8px;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
 .app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
@@ -66,6 +79,7 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+@media(max-width:640px){.quick-summary,.topic-grid,.book-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -84,9 +98,15 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h1>FP2級の勉強時間・独学合格スケジュール【2026年版】</h1>
-  <p class="meta">更新日：2026年4月28日｜スタディクエスト編集部</p>
+  <p class="meta">更新日：2026年5月9日｜スタディクエスト編集部</p>
 
   <p class="lead">FP（ファイナンシャルプランニング技能士）2級は、金融・保険・不動産・税金の知識を体系的に学べる実用的な資格です。3級取得後のステップアップとして受験する方が多く、就職・転職でも評価されます。本記事では独学での合格に必要な勉強時間とスケジュールを解説します。</p>
+
+  <div class="quick-summary" aria-label="この記事の要点">
+    <div class="quick-card"><div class="quick-card__label">STUDY TIME</div><div class="quick-card__value">150〜300時間</div><div class="quick-card__note">3級取得済みなら150〜200時間、初学者は250〜300時間が目安。</div></div>
+    <div class="quick-card"><div class="quick-card__label">HARD PART</div><div class="quick-card__value">税金・金融・相続</div><div class="quick-card__note">計算問題が絡む3分野を早めに回すと安定します。</div></div>
+    <div class="quick-card"><div class="quick-card__label">EXAM</div><div class="quick-card__value">実技を先に決める</div><div class="quick-card__note">金財かFP協会かで対策の優先順位が変わります。</div></div>
+  </div>
 
   <h2>FP2級試験の基本情報</h2>
 
@@ -110,6 +130,15 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <tr><td>不動産</td><td>不動産取引・税金</td><td>20〜25時間</td><td>★★☆</td></tr>
     <tr><td>相続・事業承継</td><td>相続税・贈与税</td><td>20〜25時間</td><td>★★★</td></tr>
   </table>
+
+  <div class="topic-grid">
+    <div class="topic-card"><div class="topic-card__tag">生活設計</div><div class="topic-card__title">ライフプランニング：年金・社会保険を先に整理</div></div>
+    <div class="topic-card"><div class="topic-card__tag">保険</div><div class="topic-card__title">リスク管理：生命保険・損害保険の特徴を比較</div></div>
+    <div class="topic-card"><div class="topic-card__tag">難関</div><div class="topic-card__title">金融資産運用：利回り・債券・投信の計算を反復</div></div>
+    <div class="topic-card"><div class="topic-card__tag">難関</div><div class="topic-card__title">タックス：所得税の流れを表で覚える</div></div>
+    <div class="topic-card"><div class="topic-card__tag">不動産</div><div class="topic-card__title">不動産：取引ルールと税金をセットで確認</div></div>
+    <div class="topic-card"><div class="topic-card__tag">難関</div><div class="topic-card__title">相続：基礎控除と法定相続分から固める</div></div>
+  </div>
 
   <div class="tip-box">
     <strong>3級取得済みの方へ：</strong>FP3級の知識がベースになるため、2級の学習内容は「3級の深掘り」と考えると理解しやすいです。特に年金・税金・保険の部分は3級で学んだ概念をそのまま応用できます。
@@ -188,11 +217,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </table>
 
   <h2>独学おすすめテキスト</h2>
-  <ul>
-    <li><strong>みんなが欲しかった！FPの教科書2級（TAC出版）：</strong>フルカラーでわかりやすい。3級版と同シリーズなので3級合格者にそのまま使いやすい。</li>
-    <li><strong>スッキリわかるFP技能士2級（TAC出版）：</strong>ストーリー仕立ての解説で読みやすい。</li>
-    <li><strong>2級FP技能士 精選過去問題集（きんざい）：</strong>金財受験者向け。実技対策に特化。</li>
-  </ul>
+  <div class="book-grid">
+    <div class="book-card"><div class="book-card__kicker">フルカラー</div><div class="book-card__title">みんなが欲しかった！FPの教科書2級</div><div class="book-card__desc">3級版と同シリーズなので、3級合格者がそのまま使いやすい教材です。</div></div>
+    <div class="book-card"><div class="book-card__kicker">読みやすさ重視</div><div class="book-card__title">スッキリわかるFP技能士2級</div><div class="book-card__desc">ストーリー仕立ての解説で、固い文章が苦手な人でも進めやすいです。</div></div>
+    <div class="book-card"><div class="book-card__kicker">金財実技</div><div class="book-card__title">2級FP技能士 精選過去問題集</div><div class="book-card__desc">金財受験者向け。実技対策と計算問題の反復に使いやすい問題集です。</div></div>
+  </div>
 
   <div class="app-cta">
     <h3>⚔ FP2級の学習時間をゲームで管理しよう</h3>
@@ -201,7 +230,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h2>まとめ</h2>
-  <ul>
+  <ul class="summary-list">
     <li>FP2級の必要勉強時間は3級取得済みなら150〜200時間が目安</li>
     <li>タックスプランニング・金融資産・相続が難関科目。早めに着手する</li>
     <li>受験団体（金財 or FP協会）を先に決めて対策を変える</li>

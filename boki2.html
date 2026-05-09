@@ -31,33 +31,62 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
-a{color:var(--green2);text-decoration:none;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--sq-text,var(--text));background:linear-gradient(180deg,var(--sq-page,var(--bg)) 0%,var(--sq-surface-soft,#F7FAFC) 100%);line-height:1.95;}
+a{color:var(--sq-accent-bright,var(--green2));text-decoration:none;text-underline-offset:3px;}
 a:hover{text-decoration:underline;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
 .nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
 .nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
 .nav-cta:hover{opacity:.85;text-decoration:none;}
-.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.container{max-width:820px;margin:0 auto;padding:88px 24px 80px;}
 .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
 .breadcrumb a{color:var(--muted);}
-h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
-.meta{font-size:13px;color:var(--muted);margin-bottom:32px;}
-.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
-h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
-h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
-p{font-size:14px;color:#374151;margin-bottom:16px;}
-ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+h1{font-size:clamp(24px,4vw,36px);font-weight:700;line-height:1.36;margin-bottom:10px;letter-spacing:.01em;}
+.meta{font-size:13px;color:var(--sq-muted,var(--muted));margin-bottom:28px;}
+.lead{font-size:15px;line-height:2;margin-bottom:28px;padding:24px;background:linear-gradient(135deg,var(--sq-surface-soft,var(--light)),var(--sq-surface,#fff));border:1px solid var(--sq-border,var(--border));border-left:4px solid var(--green);border-radius:10px;box-shadow:0 12px 30px rgba(26,32,44,.05);}
+h2{font-size:21px;font-weight:700;margin:56px 0 18px;padding-left:14px;border-left:4px solid var(--green);letter-spacing:.01em;}
+h3{font-size:16px;font-weight:700;margin:30px 0 10px;color:var(--sq-accent-bright,var(--green2));}
+p{font-size:14.5px;color:var(--sq-soft,#374151);margin-bottom:16px;}
+ul,ol{font-size:14.5px;color:var(--sq-soft,#374151);margin:0 0 16px 20px;}
 li{margin-bottom:6px;}
-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:13px;}
-th{background:var(--green);color:#fff;padding:10px 14px;text-align:left;}
-td{padding:10px 14px;border-bottom:1px solid var(--border);}
-tr:nth-child(even) td{background:var(--light);}
-.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:28px;font-size:13px;border:1px solid var(--sq-border,var(--border));border-radius:10px;overflow:hidden;background:var(--sq-surface,#fff);box-shadow:0 10px 26px rgba(26,32,44,.04);}
+th{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:11px 14px;text-align:left;}
+td{padding:11px 14px;border-bottom:1px solid var(--sq-border,var(--border));color:var(--sq-soft,#374151);}
+tr:last-child td{border-bottom:0;}
+tr:nth-child(even) td{background:var(--sq-surface-soft,var(--light));}
+.tip-box{background:linear-gradient(135deg,rgba(140,198,63,.12),rgba(140,198,63,.04));border:1px solid rgba(140,198,63,.35);border-radius:10px;padding:18px 20px;margin:26px 0;}
 .tip-box strong{color:#276749;}
-.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
+.warn-box{background:linear-gradient(135deg,#FFFBEB,#FFF7D6);border:1px solid #F6E05E;border-radius:10px;padding:18px 20px;margin:26px 0;}
 .warn-box strong{color:#975A16;}
+.quick-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 34px;}
+.quick-card{background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:10px;padding:16px;box-shadow:0 10px 24px rgba(26,32,44,.05);}
+.quick-card__label{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.quick-card__value{font-size:18px;color:var(--sq-text,var(--text));font-weight:700;line-height:1.45;margin-bottom:4px;}
+.quick-card__note{font-size:11px;color:var(--sq-muted,var(--muted));line-height:1.65;}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:14px 0 24px;}
+.topic-card{display:block;background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:10px;padding:14px 15px;color:var(--sq-text,var(--text));text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s;}
+.topic-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 10px 24px rgba(140,198,63,.14);text-decoration:none;}
+.topic-card__tag{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;margin-bottom:5px;letter-spacing:.06em;}
+.topic-card__title{font-size:13px;font-weight:700;line-height:1.55;}
+.book-note{font-size:12px;color:var(--sq-muted,var(--muted));margin-top:-6px;margin-bottom:14px;}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:16px 0 30px;}
+.book-card{display:flex;flex-direction:column;min-height:210px;background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:12px;padding:16px;color:inherit;text-decoration:none;box-shadow:0 12px 28px rgba(26,32,44,.05);transition:transform .18s,border-color .18s,box-shadow .18s;}
+.book-card:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 16px 34px rgba(140,198,63,.16);text-decoration:none;}
+.book-card__kicker{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;letter-spacing:.08em;margin-bottom:8px;}
+.book-card__title{font-size:14px;font-weight:700;color:var(--sq-text,var(--text));line-height:1.55;margin-bottom:10px;}
+.book-card__desc{font-size:12px;color:var(--sq-soft,#374151);line-height:1.7;margin-bottom:14px;}
+.book-card__cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:8px 14px;}
+.summary-list{background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:12px;padding:18px 22px;margin-top:12px;box-shadow:0 12px 28px rgba(26,32,44,.05);}
+.summary-list li{margin-bottom:8px;}
+.related-section{background:var(--sq-surface-soft,#F7FAFC);padding:48px 24px;}
+.related-inner{max-width:820px;margin:0 auto;}
+.related-title{font-size:15px;font-weight:700;color:var(--sq-text,var(--text));margin-bottom:20px;padding-left:12px;border-left:3px solid var(--green);}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.related-card{display:block;background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:10px;padding:16px;color:inherit;text-decoration:none;box-shadow:0 10px 24px rgba(26,32,44,.05);transition:transform .18s,border-color .18s,box-shadow .18s;}
+.related-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 12px 28px rgba(140,198,63,.15);text-decoration:none;}
+.related-card__tag{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;margin-bottom:6px;letter-spacing:.08em;}
+.related-card__title{font-size:13px;font-weight:700;color:var(--sq-text,var(--text));line-height:1.5;}
 .video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:20px 0 28px;}
 .video-card{display:block;background:linear-gradient(180deg,var(--sq-surface,#fff),var(--sq-surface-soft,#F7FAFC));border:1px solid var(--sq-border,var(--border));border-radius:10px;padding:16px;color:var(--sq-text,var(--text));text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;}
 .video-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 10px 24px rgba(140,198,63,.18);text-decoration:none;}
@@ -72,6 +101,13 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+@media(max-width:640px){
+  .container{padding:78px 18px 64px;}
+  .quick-summary{grid-template-columns:1fr;gap:10px;}
+  .book-grid,.topic-grid,.video-grid{grid-template-columns:1fr;}
+  table{font-size:12px;}
+  th,td{padding:10px 11px;}
+}
 </style>
 </head>
 <body>
@@ -93,6 +129,24 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">更新日：2026年5月9日｜スタディクエスト編集部</p>
 
   <p class="lead">日商簿記2級は経理・財務職の必携資格であり、就職・転職市場で高く評価されます。しかし合格率は20〜30%と簿記3級より大幅に難しくなります。最大のポイントは「工業簿記」という3級にない新科目への対応です。本記事では2級合格に必要な勉強時間と科目別攻略法を詳しく解説します。</p>
+
+  <div class="quick-summary" aria-label="この記事の要点">
+    <div class="quick-card">
+      <div class="quick-card__label">STUDY TIME</div>
+      <div class="quick-card__value">150〜350時間</div>
+      <div class="quick-card__note">3級取得済みなら150〜200時間、初学者は250〜350時間が目安。</div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-card__label">KEY POINT</div>
+      <div class="quick-card__value">工業簿記を先に慣らす</div>
+      <div class="quick-card__note">3級にない新科目。早めに触れるほど後半の演習が楽になります。</div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-card__label">STRATEGY</div>
+      <div class="quick-card__value">5ヶ月で1周＋演習</div>
+      <div class="quick-card__note">テキスト精読、問題集、模試の順に進めると迷いにくいです。</div>
+    </div>
+  </div>
 
   <div class="warn-box">
     <strong>【出題範囲の改定情報】2026年度は変更なし・2027年度から大改定予定</strong><br>
@@ -150,16 +204,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>2級商業簿記の最難関が<a href="boki2-renketsu.html">連結会計</a>です。親会社と子会社の財務諸表を合算して「グループとしての財務状況」を表す処理です。連結修正仕訳の流れを図で理解してから、反復演習で定着させることが攻略の近道です。</p>
 
   <h3>頻出論点リスト</h3>
-  <ul>
-    <li><a href="boki2-kotei-shisan.html">固定資産（減価償却・除却・売却）</a></li>
-    <li><a href="boki2-yukashoken.html">有価証券（売買目的・満期保有・子会社株式）</a></li>
-    <li><a href="boki2-shasai.html">社債（発行・利息・償却原価法）</a></li>
-    <li><a href="boki2-hikiatekin.html">引当金（貸倒引当金・退職給付引当金）</a></li>
-    <li><a href="boki2-zeikouka.html">税効果会計（繰延税金資産・法人税等調整額）</a></li>
-    <li><a href="boki2-renketsu.html">連結会計（連結修正仕訳・のれん）</a></li>
-    <li><a href="boki2-lease.html">リース取引（ファイナンス・リース・利子抜き法）</a></li>
-    <li><a href="boki2-gaika.html">外貨換算会計（為替差損益・決算時換算）</a></li>
-  </ul>
+  <div class="topic-grid">
+    <a class="topic-card" href="boki2-kotei-shisan.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">固定資産（減価償却・除却・売却）</div></a>
+    <a class="topic-card" href="boki2-yukashoken.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">有価証券（売買目的・満期保有）</div></a>
+    <a class="topic-card" href="boki2-shasai.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">社債（発行・利息・償却原価法）</div></a>
+    <a class="topic-card" href="boki2-hikiatekin.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">引当金（貸倒・退職給付）</div></a>
+    <a class="topic-card" href="boki2-zeikouka.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">税効果会計（繰延税金資産）</div></a>
+    <a class="topic-card" href="boki2-renketsu.html"><div class="topic-card__tag">最難関</div><div class="topic-card__title">連結会計（連結修正仕訳・のれん）</div></a>
+    <a class="topic-card" href="boki2-lease.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">リース取引（ファイナンス・リース）</div></a>
+    <a class="topic-card" href="boki2-gaika.html"><div class="topic-card__tag">商業簿記</div><div class="topic-card__title">外貨換算会計（為替差損益）</div></a>
+  </div>
 
   <h2>工業簿記の攻略法</h2>
 
@@ -189,11 +243,33 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </table>
 
   <h2>おすすめテキスト</h2>
-  <ul>
-    <li><strong>みんなが欲しかった！簿記の教科書2級（TAC出版）：</strong>商業簿記・工業簿記それぞれ1冊ずつ。フルカラーで見やすい。</li>
-    <li><strong>スッキリわかる日商簿記2級（TAC出版）：</strong>キャラクターを使った解説で読みやすい。問題集とセット使用を推奨。</li>
-    <li><strong>合格トレーニング日商簿記2級（TAC出版）：</strong>演習量を確保したい方向け。問題の量・質ともに優秀。</li>
-  </ul>
+  <p class="book-note">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
+  <div class="book-grid">
+    <a class="book-card" href="https://amzn.to/4eC0DNk" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">商業簿記 / テキスト＋問題集</div>
+      <div class="book-card__title">【講義動画付き】2026年度版 スッキリわかる 日商簿記2級 商業簿記</div>
+      <div class="book-card__desc">模擬試験プログラム・仕訳Webアプリ付き。ネット試験と統一試験の両方に対応しています。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4cZ1mXB" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">工業簿記 / テキスト＋問題集</div>
+      <div class="book-card__title">【講義動画付き】2026年度版 スッキリわかる 日商簿記2級 工業簿記</div>
+      <div class="book-card__desc">工業簿記を短く整理しながら進めたい人向け。模擬試験プログラム・仕訳Webアプリ付き。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/3RayrXZ" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">工業簿記 / フルカラーテキスト</div>
+      <div class="book-card__title">みんなが欲しかった！ 簿記の教科書 日商2級 工業簿記 第11版</div>
+      <div class="book-card__desc">フルカラーで見やすく、工業簿記の全体像をつかみたい人に向いています。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4djSI53" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">工業簿記 / 演習用</div>
+      <div class="book-card__title">合格トレーニング 日商簿記2級 工業簿記 Ver.10.0</div>
+      <div class="book-card__desc">ネット試験・統一試験に完全対応。工業簿記の演習量を確保したい方向けです。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+  </div>
 
   <h2>動画で理解を補強する</h2>
   <p>簿記2級は、テキストだけで進めると連結会計・固定資産・引当金などで手が止まりやすいです。独学で詰まったときは、YouTubeの解説動画で図や話し言葉の説明を聞いてから、もう一度テキストと問題集に戻るのがおすすめです。</p>
@@ -232,7 +308,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h2>まとめ</h2>
-  <ul>
+  <ul class="summary-list">
     <li>簿記2級の勉強時間は3級取得済みで150〜200時間、初学者で250〜350時間</li>
     <li>工業簿記は早めに始めることが合格のカギ</li>
     <li>商業簿記の最難関は連結会計。図で理解してから演習に入る</li>
@@ -252,57 +328,57 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"簿記2級と3級の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"3級は個人商店レベルの会計（50〜100時間）、2級は株式会社の会計＋工業簿記（150〜250時間）が対象です。"}},{"@type":"Question","name":"工業簿記の勉強はいつから始めるべきですか？","acceptedAnswer":{"@type":"Answer","text":"商業簿記と並行して早い段階から着手することをおすすめします。工業簿記は習得に時間がかかるため後回しにしないことが重要です。"}},{"@type":"Question","name":"簿記2級は難化しているって本当ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、近年の統一試験では応用論点が増え、合格率が15%台に落ちる回も出ています。初受験はネット試験を選ぶのもひとつの戦略です。"}},{"@type":"Question","name":"簿記2級を取得するメリットは何ですか？","acceptedAnswer":{"@type":"Answer","text":"経理・財務職への就職・転職で高く評価されます。公認会計士・税理士などの上位資格の学習にもつながります。"}}]}
 </script>
 
-<section style="background:#F7FAFC;padding:48px 24px;">
-  <div style="max-width:800px;margin:0 auto;">
-    <h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-      <a href="boki2-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の連結会計とは？連結修正仕訳とのれん</div>
+<section class="related-section">
+  <div class="related-inner">
+    <h2 class="related-title">関連記事</h2>
+    <div class="related-grid">
+      <a class="related-card" href="boki2-renketsu.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の連結会計とは？連結修正仕訳とのれん</div>
       </a>
-      <a href="boki2-zeikouka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の税効果会計とは？繰延税金資産</div>
+      <a class="related-card" href="boki2-zeikouka.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の税効果会計とは？繰延税金資産</div>
       </a>
-      <a href="boki2-lease.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級のリース取引とは？ファイナンス・リース</div>
+      <a class="related-card" href="boki2-lease.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級のリース取引とは？ファイナンス・リース</div>
       </a>
-      <a href="boki2-gaika.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の外貨換算会計とは？為替差損益</div>
+      <a class="related-card" href="boki2-gaika.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の外貨換算会計とは？為替差損益</div>
       </a>
-      <a href="boki2-yukashoken.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の有価証券とは？売買目的・満期保有</div>
+      <a class="related-card" href="boki2-yukashoken.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の有価証券とは？売買目的・満期保有</div>
       </a>
-      <a href="boki2-kotei-shisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の固定資産とは？減価償却・売却</div>
+      <a class="related-card" href="boki2-kotei-shisan.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の固定資産とは？減価償却・売却</div>
       </a>
-      <a href="boki2-hikiatekin.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の引当金とは？貸倒・退職給付</div>
+      <a class="related-card" href="boki2-hikiatekin.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の引当金とは？貸倒・退職給付</div>
       </a>
-      <a href="boki2-shasai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の社債とは？発行・利息・償却原価法</div>
+      <a class="related-card" href="boki2-shasai.html">
+        <div class="related-card__tag">商業簿記</div>
+        <div class="related-card__title">簿記2級の社債とは？発行・利息・償却原価法</div>
       </a>
-      <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の工業簿記とは？商業簿記との違い</div>
+      <a class="related-card" href="boki2-kogyo.html">
+        <div class="related-card__tag">工業簿記</div>
+        <div class="related-card__title">簿記2級の工業簿記とは？商業簿記との違い</div>
       </a>
-      <a href="boki.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記3級</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記3級・2級の独学勉強法と合格スケジュール</div>
+      <a class="related-card" href="boki.html">
+        <div class="related-card__tag">簿記3級</div>
+        <div class="related-card__title">簿記3級・2級の独学勉強法と合格スケジュール</div>
       </a>
-      <a href="cpa.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">公認会計士</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">公認会計士試験の勉強法・独学ロードマップ</div>
+      <a class="related-card" href="cpa.html">
+        <div class="related-card__tag">公認会計士</div>
+        <div class="related-card__title">公認会計士試験の勉強法・独学ロードマップ</div>
       </a>
-      <a href="keizoku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
-        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">継続</div>
-        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">資格勉強が続かない原因と解決策7つ</div>
+      <a class="related-card" href="keizoku.html">
+        <div class="related-card__tag">継続</div>
+        <div class="related-card__title">資格勉強が続かない原因と解決策7つ</div>
       </a>
     </div>
   </div>

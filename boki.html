@@ -22,7 +22,7 @@
   "description": "日商簿記3級・2級の独学合格を目指す方向けに、おすすめテキスト・勉強時間・科目別攻略法を解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki.html",
   "datePublished": "2026-04-26",
-  "dateModified": "2026-04-28",
+  "dateModified": "2026-05-09",
   "author": {"@type": "Person", "name": "若葉", "url": "https://hito77ki-ship-it.github.io/study-quest/lp.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/", "logo": {"@type": "ImageObject", "url": "https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hito77ki-ship-it.github.io/study-quest/boki.html"}
@@ -58,6 +58,21 @@ tr:nth-child(even) td{background:var(--light);}
 .tip-box strong{color:#276749;}
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
 .warn-box strong{color:#975A16;}
+.quick-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 34px;}
+.quick-card,.topic-card,.book-card,.summary-list{background:var(--sq-surface,#fff);border:1px solid var(--sq-border,var(--border));border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);}
+.quick-card{padding:16px;}
+.quick-card__label,.topic-card__tag,.book-card__kicker{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.quick-card__value{font-size:18px;color:var(--sq-text,var(--text));font-weight:700;line-height:1.45;margin-bottom:4px;}
+.quick-card__note,.book-card__desc{font-size:11px;color:var(--sq-muted,var(--muted));line-height:1.65;}
+.topic-grid,.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 28px;}
+.topic-card,.book-card{display:block;padding:16px;color:inherit;text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s;}
+.topic-card:hover,.book-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 12px 28px rgba(140,198,63,.15);text-decoration:none;}
+.topic-card__title,.book-card__title{font-size:13px;font-weight:700;color:var(--sq-text,var(--text));line-height:1.55;}
+.book-card__desc{font-size:12px;margin-top:8px;}
+.book-card__cta{display:inline-flex;margin-top:12px;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:7px 13px;}
+.book-note{font-size:12px;color:var(--sq-muted,var(--muted));margin-top:-4px;}
+.summary-list{padding:18px 22px;margin-top:12px;}
+.summary-list li{margin-bottom:8px;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
 .app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
@@ -66,6 +81,7 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+@media(max-width:640px){.quick-summary,.topic-grid,.book-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -84,9 +100,15 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h1>日商簿記3級・2級の独学勉強法と合格スケジュール【2026年版】</h1>
-  <p class="meta">更新日：2026年4月26日｜大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  <p class="meta">更新日：2026年5月9日｜大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
   <p class="lead">日商簿記検定は<span class="sq-key">年間40万人以上</span>が受験する日本最大規模の資格試験です。私自身、公認会計士を目指して約1年間勉強するなかで簿記2級の知識をベースに積み上げてきました。この記事は私の受験経験と、実際に使ったテキスト・スケジュールをもとにまとめた勉強法です。</p>
+
+  <div class="quick-summary" aria-label="この記事の要点">
+    <div class="quick-card"><div class="quick-card__label">3級</div><div class="quick-card__value">50〜100時間</div><div class="quick-card__note">仕訳と決算整理を固めれば、短期合格を狙いやすい入門級。</div></div>
+    <div class="quick-card"><div class="quick-card__label">2級</div><div class="quick-card__value">150〜250時間</div><div class="quick-card__note">商業簿記に加えて工業簿記が登場。早めの全体像理解がカギ。</div></div>
+    <div class="quick-card"><div class="quick-card__label">STRATEGY</div><div class="quick-card__value">ネット試験も活用</div><div class="quick-card__note">日程の自由度が高く、仕上がったタイミングで受けやすいです。</div></div>
+  </div>
 
   <div class="tip-box"><strong>この記事について：</strong>筆者（大谷）は大阪経済大学3回生。公認会計士試験を約1年間学習後、現在は日商簿記1級を目標に勉強中です。実際の受験経験をベースに書いています。正確性には注意していますが、最新の試験情報は<a href="https://www.kentei.ne.jp/" target="_blank" rel="noopener">日本商工会議所の公式サイト</a>でご確認ください。</div>
 
@@ -127,13 +149,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </ol>
 
   <h3>頻出論点と注意点</h3>
-  <ul>
-    <li>現金過不足・小口現金の処理</li>
-    <li>売掛金・買掛金の管理</li>
-    <li>減価償却（定額法）の計算</li>
-    <li>決算整理仕訳（未払費用・前払費用・減価償却など）</li>
-    <li>精算表・貸借対照表・損益計算書の作成</li>
-  </ul>
+  <div class="topic-grid">
+    <a class="topic-card" href="boki3-kafusoku.html"><div class="topic-card__tag">簿記3級</div><div class="topic-card__title">現金過不足・小口現金の処理</div></a>
+    <a class="topic-card" href="boki3-kake.html"><div class="topic-card__tag">簿記3級</div><div class="topic-card__title">売掛金・買掛金の管理</div></a>
+    <a class="topic-card" href="boki3-genka.html"><div class="topic-card__tag">簿記3級</div><div class="topic-card__title">減価償却（定額法）の計算</div></a>
+    <a class="topic-card" href="boki3-keika.html"><div class="topic-card__tag">簿記3級</div><div class="topic-card__title">決算整理仕訳（前払・未払など）</div></a>
+    <a class="topic-card" href="boki3-seisanhyo.html"><div class="topic-card__tag">簿記3級</div><div class="topic-card__title">精算表・財務諸表の作成</div></a>
+  </div>
 
   <h2>簿記2級の勉強法</h2>
 
@@ -195,14 +217,14 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h2>おすすめテキスト・教材</h2>
 
   <h3>3級向け（私が実際に使ったもの・調べたもの）</h3>
-  <p style="font-size:12px;color:#718096;margin-top:-4px;">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
-  <ul>
-    <li><strong><a href="https://amzn.to/48LW7bo" target="_blank" rel="sponsored nofollow noopener">みんなが欲しかった！簿記の教科書 日商3級 商業簿記（TAC出版）</a>：</strong>フルカラーで図解が豊富。簿記の勉強仲間の多くがこれを使っていて、初学者にはいちばんおすすめしやすい1冊です。</li>
-    <li><strong><a href="https://amzn.to/3RavxCz" target="_blank" rel="sponsored nofollow noopener">スッキリわかる 日商簿記3級（TAC出版）</a>：</strong>ストーリー形式で読みやすく、文字が多いのが苦手な人に向いています。問題集とセットで使うと効果が出やすいです。</li>
-  </ul>
+  <p class="book-note">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
+  <div class="book-grid">
+    <a class="book-card" href="https://amzn.to/48LW7bo" target="_blank" rel="sponsored nofollow noopener"><div class="book-card__kicker">3級 / フルカラー</div><div class="book-card__title">みんなが欲しかった！簿記の教科書 日商3級 商業簿記</div><div class="book-card__desc">図解が豊富で、初学者におすすめしやすい1冊です。</div><div class="book-card__cta">Amazonで見る</div></a>
+    <a class="book-card" href="https://amzn.to/3RavxCz" target="_blank" rel="sponsored nofollow noopener"><div class="book-card__kicker">3級 / ストーリー形式</div><div class="book-card__title">スッキリわかる 日商簿記3級</div><div class="book-card__desc">文字が多いのが苦手な人に向いています。問題集とセットで使うと効果が出やすいです。</div><div class="book-card__cta">Amazonで見る</div></a>
+  </div>
 
   <h3>2級向け</h3>
-  <ul>
+  <ul class="summary-list">
     <li><strong>みんなが欲しかった！簿記の教科書2級（TAC出版）：</strong>商業簿記・工業簿記それぞれ1冊ずつ。3級からの流れでそのままこのシリーズを使い続けると統一感があります。</li>
     <li><strong>合格トレーニング日商簿記2級（TAC出版）：</strong>演習量を増やしたい時期に使うと効果的です。教科書を一通り終えた後の問題演習に向いています。</li>
   </ul>
