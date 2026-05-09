@@ -74,6 +74,7 @@ const ARTICLES = {
   'boki-zero-03.html':  {label:'簿記3級', title:'ゼロからの簿記③簿記の流れ'},
   'boki-zero-04.html':  {label:'簿記3級', title:'ゼロからの簿記④仕訳のしくみ'},
   'boki-zero-05.html':  {label:'簿記3級', title:'ゼロからの簿記⑤仕訳から財務諸表へ'},
+  'boki2-kotei-shisan.html': {label:'簿記2級', title:'固定資産（減価償却・除却・売却）の仕訳'},
   'boki3-genkin.html':  {label:'簿記3級', title:'現金・当座預金の違いと仕訳'},
   'boki3-kafusoku.html':{label:'簿記3級', title:'現金過不足（雑損・雑益）'},
   'boki3-kashidaore.html':{label:'簿記3級',title:'貸倒引当金の仕訳と計算'},
