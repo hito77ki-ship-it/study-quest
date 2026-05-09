@@ -25,6 +25,10 @@ const ARTICLES = {
   'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略'},
   'shihoshoshi.html':    {label:'司法書士',          title:'司法書士の独学合格ガイド'},
   'shihoshoshi-start.html': {label:'司法書士',       title:'司法書士を目指す人が最初の7日間でやること'},
+  'shihoshoshi-minpo-sosoku.html': {label:'司法書士', title:'民法総則・意思表示・代理・時効'},
+  'shihoshoshi-minpo-bukken.html': {label:'司法書士', title:'物権・抵当権・対抗要件'},
+  'shihoshoshi-futoki.html': {label:'司法書士',       title:'不動産登記法・所有権移転・抵当権設定'},
+  'shihoshoshi-kaishaho.html': {label:'司法書士',     title:'会社法・商業登記法'},
   'mansion.html':        {label:'マンション管理士',  title:'マンション管理士の独学合格ガイド'},
   'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略'},
   'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド'},
@@ -1672,9 +1676,9 @@ function buildReadProgress(){
   window.addEventListener('scroll', update, {passive: true});
 }
 
-/* ── 前後記事ナビ（簿記3級・2級シリーズ） ── */
+/* ── 前後記事ナビ（簿記3級・2級・司法書士シリーズ） ── */
 function buildPrevNextNav(){
-  const sequence = BOKI3_FILES.includes(PAGE) ? BOKI3_FILES : (BOKI2_FILES.includes(PAGE) ? BOKI2_FILES : null);
+  const sequence = BOKI3_FILES.includes(PAGE) ? BOKI3_FILES : (BOKI2_FILES.includes(PAGE) ? BOKI2_FILES : (SHIHOSHO_FILES.includes(PAGE) ? SHIHOSHO_FILES : null));
   if(!sequence) return;
   const idx = sequence.indexOf(PAGE);
   const prev = idx > 0 ? sequence[idx - 1] : null;
@@ -1908,6 +1912,32 @@ const BOKI2_INDUSTRIAL_FILES = [
 ];
 
 const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-ochita.html'];
+
+const SHIHOSHO_FILES = [
+  'shihoshoshi.html',
+  'shihoshoshi-start.html',
+  'shihoshoshi-minpo-sosoku.html',
+  'shihoshoshi-minpo-bukken.html',
+  'shihoshoshi-futoki.html',
+  'shihoshoshi-kaishaho.html',
+];
+
+function buildShihoshoSidebar(sidebar){
+  if(!sidebar) return;
+  if(!SHIHOSHO_FILES.includes(PAGE)) return;
+
+  const box = document.createElement('div');
+  box.className = 'sq-sidebar-box';
+  box.innerHTML = `<div class="sq-sidebar-box-title">⚖ 司法書士 論点一覧</div><div class="sq-side-links"></div>`;
+  const list = box.querySelector('.sq-side-links');
+  SHIHOSHO_FILES.forEach(f => {
+    const a = ARTICLES[f]; if(!a) return;
+    const isCurrent = f === PAGE;
+    const isRead = !!localStorage.getItem(_READ_KEY(f));
+    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
+  });
+  sidebar.appendChild(box);
+}
 
 function buildBoki2Sidebar(sidebar){
   if(!sidebar) return;
@@ -2590,6 +2620,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildTOC(layout.right);
   buildBoki2Sidebar(layout.right);
   buildBoki3Sidebar(layout.right);
+  buildShihoshoSidebar(layout.right);
   buildCatBadge();
   buildArticleDialogue();
   buildSidebarCTA(layout.right);
