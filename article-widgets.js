@@ -24,6 +24,7 @@ const ARTICLES = {
   'sharoshi.html':       {label:'社労士',           title:'社会保険労務士の独学合格ガイド'},
   'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略'},
   'shihoshoshi.html':    {label:'司法書士',          title:'司法書士の独学合格ガイド'},
+  'shihoshoshi-start.html': {label:'司法書士',       title:'司法書士を目指す人が最初の7日間でやること'},
   'mansion.html':        {label:'マンション管理士',  title:'マンション管理士の独学合格ガイド'},
   'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略'},
   'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド'},
