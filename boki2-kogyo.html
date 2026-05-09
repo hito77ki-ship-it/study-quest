@@ -42,8 +42,9 @@ tr:nth-child(even) td{background:var(--light);}
 .tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.tip-box strong{color:#276749;}
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}.warn-box strong{color:#975A16;}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
-.compare-card{border:1px solid var(--border);border-radius:10px;padding:16px;background:#fff;}
+.compare-card{border:1px solid var(--sq-border,var(--border));border-radius:10px;padding:16px;background:var(--sq-surface,#fff);}
 .compare-card h3{margin:0 0 8px;font-size:15px;}
+.compare-card p,.compare-card li{color:var(--sq-text-muted,#374151);}
 .flow{counter-reset:flow;margin:20px 0;}
 .flow-item{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:#374151;}
 .flow-item::before{counter-increment:flow;content:counter(flow);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
@@ -178,7 +179,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <li><a href="boki2-zairyouhi.html">材料費とは</a>：直接材料費・間接材料費・材料副費</li>
     <li><a href="boki2-roumuhi.html">労務費とは</a>：直接労務費・間接労務費・賃率差異</li>
     <li><a href="boki2-keihi.html">経費とは</a>：外注加工賃・減価償却費・工場消耗品費</li>
-    <li>製造間接費とは：予定配賦・配賦差異</li>
+    <li><a href="boki2-seizo-kansetsuhi.html">製造間接費とは</a>：予定配賦・配賦差異</li>
     <li><a href="boki2-kobetsu-genka.html">個別原価計算とは</a>：製造指図書ごとの原価計算</li>
     <li><a href="boki2-sogo-genka.html">総合原価計算とは</a>：大量生産と月末仕掛品の計算</li>
     <li><a href="boki2-hyojun-genka.html">標準原価計算とは</a>：標準原価と原価差異の分析</li>
