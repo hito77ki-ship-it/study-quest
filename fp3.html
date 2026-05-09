@@ -58,6 +58,11 @@ tr:nth-child(even) td{background:var(--light);}
 .tip-box strong{color:#276749;}
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
 .warn-box strong{color:#975A16;}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0 30px;}
+.topic-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;transition:border-color .2s,transform .2s;}
+.topic-card:hover{border-color:var(--green);transform:translateY(-2px);text-decoration:none;}
+.topic-card__tag{font-size:10px;color:var(--green2);font-weight:700;margin-bottom:6px;letter-spacing:.08em;}
+.topic-card__title{font-size:14px;font-weight:700;color:var(--text);line-height:1.5;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
 .app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
@@ -86,7 +91,26 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h1>FP3級の勉強時間・独学合格スケジュール【2026年版】</h1>
   <p class="meta">更新日：2026年4月30日｜若葉（スタディクエスト）</p>
 
-  <p class="lead">FP3級（ファイナンシャルプランニング技能士3級）は、お金の知識を体系的に学べる国家資格です。合格率は50〜60%と比較的高く、独学でも十分合格を狙えます。本記事では、必要な勉強時間から具体的な学習スケジュールまで解説します。</p>
+  <p class="lead">FP3級（ファイナンシャルプランニング技能士3級）は、お金の知識を体系的に学べる国家資格です。合格率は50〜60%と比較的高く、独学でも十分合格を狙えます。本記事では、必要な勉強時間、6分野の学習順、具体的な独学スケジュールまで解説します。</p>
+
+  <h2>FP3級の学習ロードマップ</h2>
+  <p>FP3級は6分野を広く学ぶ試験です。最初から細部を暗記するより、まず全体像をつかみ、過去問で出るところに戻る方が効率的です。</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="fp3-lifeplanning.html"><div class="topic-card__tag">1 / 土台</div><div class="topic-card__title">ライフプランニングと資金計画</div></a>
+    <a class="topic-card" href="fp3-risk.html"><div class="topic-card__tag">2 / 保険</div><div class="topic-card__title">リスク管理</div></a>
+    <a class="topic-card" href="fp3-finance.html"><div class="topic-card__tag">3 / 投資</div><div class="topic-card__title">金融資産運用</div></a>
+    <a class="topic-card" href="fp3-tax.html"><div class="topic-card__tag">4 / 税金</div><div class="topic-card__title">タックスプランニング</div></a>
+    <a class="topic-card" href="fp3-realestate.html"><div class="topic-card__tag">5 / 取引</div><div class="topic-card__title">不動産</div></a>
+    <a class="topic-card" href="fp3-inheritance.html"><div class="topic-card__tag">6 / 相続</div><div class="topic-card__title">相続・事業承継</div></a>
+  </div>
+
+  <h2>FP3級で迷いやすいテーマ</h2>
+  <div class="topic-grid">
+    <a class="topic-card" href="fp3-iminai.html"><div class="topic-card__tag">価値</div><div class="topic-card__title">FP3級は意味ない？取る価値がある人・ない人</div></a>
+    <a class="topic-card" href="fp3-nannichi.html"><div class="topic-card__tag">短期合格</div><div class="topic-card__title">FP3級は何日で受かる？30日・60日・90日プラン</div></a>
+    <a class="topic-card" href="fp3-daigakusei.html"><div class="topic-card__tag">大学生</div><div class="topic-card__title">大学生がFP3級を取るメリット</div></a>
+    <a class="topic-card" href="boki-vs-fp.html"><div class="topic-card__tag">比較</div><div class="topic-card__title">簿記とFPどっちを先に取るべき？</div></a>
+  </div>
 
   <h2>FP3級試験の基本情報</h2>
 
@@ -206,6 +230,18 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div style="max-width:800px;margin:0 auto;">
     <h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+      <a href="fp3-lifeplanning.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
+        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">FP3級</div>
+        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">ライフプランニングと資金計画</div>
+      </a>
+      <a href="fp3-tax.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
+        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">FP3級</div>
+        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">タックスプランニング</div>
+      </a>
+      <a href="fp3-iminai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
+        <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">FP3級</div>
+        <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">FP3級は意味ない？取る価値を整理</div>
+      </a>
       <a href="fp.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;">
         <div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">FP</div>
         <div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">FP2級の勉強時間・独学合格スケジュール</div>

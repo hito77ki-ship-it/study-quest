@@ -14,6 +14,7 @@ const ARTICLES = {
   'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦'},
   'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書'},
   'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の問題構成・時間配分'},
+  'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
@@ -78,6 +79,14 @@ const ARTICLES = {
   'toefl.html':                {label:'TOEFL',       title:'TOEFL iBTの独学スコアアップ戦略'},
   'eiken1.html':               {label:'英検準1級',   title:'英検準1級の独学合格ガイド'},
   'fp3.html':                  {label:'FP3級',       title:'FP3級の勉強時間・独学合格スケジュール'},
+  'fp3-lifeplanning.html':     {label:'FP3級',       title:'ライフプランニングと資金計画'},
+  'fp3-risk.html':             {label:'FP3級',       title:'リスク管理・保険'},
+  'fp3-finance.html':          {label:'FP3級',       title:'金融資産運用'},
+  'fp3-tax.html':              {label:'FP3級',       title:'タックスプランニング'},
+  'fp3-realestate.html':       {label:'FP3級',       title:'不動産'},
+  'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継'},
+  'fp3-iminai.html':           {label:'FP3級',       title:'FP3級は意味ない？取る価値を整理'},
+  'fp3-nannichi.html':         {label:'FP3級',       title:'FP3級は何日で受かる？短期合格計画'},
   'cpa-yobikou.html':          {label:'勉強法',      title:'公認会計士・税理士は予備校と独学どっちがいい？'},
   'boki-zero-01.html':  {label:'簿記3級', title:'ゼロからの簿記①取引・簿記とは？'},
   'boki-zero-02.html':  {label:'簿記3級', title:'ゼロからの簿記②なぜ簿記が大事？'},
@@ -114,7 +123,7 @@ const ARTICLES = {
 
 const CATS = {
   'IT・技術系':      {color:'#10B981', files:['itp.html','fe.html','ap.html','mos.html']},
-  'ビジネス・経済系': {color:'#3B82F6', files:['boki.html','boki2.html','boki1.html','boki1-yobikou.html','fp.html','shindanshi.html','gaibuin.html','hisho.html','eisei-kanri.html']},
+  'ビジネス・経済系': {color:'#3B82F6', files:['boki.html','boki2.html','boki1.html','boki1-yobikou.html','fp3.html','fp.html','shindanshi.html','gaibuin.html','hisho.html','eisei-kanri.html']},
   '法律・会計系':    {color:'#8B5CF6', files:['cpa.html','takken.html','gyosei.html','sharoshi.html','zeirishi.html','shihoshoshi.html','mansion.html']},
   '医療・福祉系':    {color:'#EC4899', files:['kaigo.html','nurse.html','hoikushi.html','shakai-fukushi.html','iryo-jimu.html','kaigo-fukushi.html']},
   '技術・工業系':    {color:'#F97316', files:['kiken.html','denki.html','chori.html','kenchiku.html']},
@@ -1662,12 +1671,13 @@ function buildReadProgress(){
   window.addEventListener('scroll', update, {passive: true});
 }
 
-/* ── 前後記事ナビ（簿記3級シリーズ） ── */
+/* ── 前後記事ナビ（簿記3級・2級シリーズ） ── */
 function buildPrevNextNav(){
-  if(!BOKI3_FILES.includes(PAGE)) return;
-  const idx = BOKI3_FILES.indexOf(PAGE);
-  const prev = idx > 0 ? BOKI3_FILES[idx - 1] : null;
-  const next = idx < BOKI3_FILES.length - 1 ? BOKI3_FILES[idx + 1] : null;
+  const sequence = BOKI3_FILES.includes(PAGE) ? BOKI3_FILES : (BOKI2_FILES.includes(PAGE) ? BOKI2_FILES : null);
+  if(!sequence) return;
+  const idx = sequence.indexOf(PAGE);
+  const prev = idx > 0 ? sequence[idx - 1] : null;
+  const next = idx < sequence.length - 1 ? sequence[idx + 1] : null;
   if(!prev && !next) return;
 
   const nav = document.createElement('div');
@@ -1893,6 +1903,7 @@ const BOKI2_INDUSTRIAL_FILES = [
   'boki2-seizo-kansetsuhi.html','boki2-bumonbetsu.html','boki2-kobetsu-genka.html',
   'boki2-sogo-genka.html','boki2-hyojun-genka.html','boki2-chokusetsu-genka.html',
   'boki2-cvp.html','boki2-seizo-genka-hokokusho.html','boki2-net-test.html',
+  'boki2-kogyo-enshu.html',
 ];
 
 const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-ochita.html'];
