@@ -116,6 +116,105 @@ const LATEST = ['boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku
 
 const PAGE = location.pathname.split('/').pop() || '';
 
+const ARTICLE_DIALOGUES = {
+  'boki2.html': [
+    ['student', '受験生', '簿記2級って、3級の延長だと思って始めても大丈夫ですか？'],
+    ['teacher', '大谷', '半分はその通りです。ただ、工業簿記はまったく新しい科目なので、3級の延長だけで考えると途中で止まりやすいです。'],
+    ['student', '受験生', 'じゃあ最初に何を意識すればいいですか？'],
+    ['teacher', '大谷', '商業簿記を進めながら、早い段階で工業簿記の全体像だけでも見てください。「原価が材料から製品へ流れる」とわかるだけで、後半の伸び方が変わります。']
+  ],
+  'boki.html': [
+    ['student', '受験生', '簿記って、3級から始めるべきですか？いきなり2級は無理ですか？'],
+    ['teacher', '大谷', '初学者なら3級からがいいです。仕訳の感覚がないまま2級に入ると、工業簿記以前に商業簿記で苦しくなります。'],
+    ['student', '受験生', '3級を取ったあと、すぐ2級に進んだ方がいいですか？'],
+    ['teacher', '大谷', '記憶が新しいうちに進むのがおすすめです。3級の仕訳感覚が残っているうちに、2級の商業簿記へ橋をかけるとスムーズです。']
+  ],
+  'boki1.html': [
+    ['student', '受験生', '簿記1級って、独学でも本当に狙えますか？'],
+    ['teacher', '大谷', '狙えます。ただし、短期勝負というより長期戦です。特に会計学の理論で止まりやすいので、質問できる環境や動画教材を組み合わせた方が現実的です。'],
+    ['student', '受験生', '最初から4科目を全部進めるべきですか？'],
+    ['teacher', '大谷', '最初は工業簿記・原価計算から入るのがおすすめです。2級の知識が活きやすく、早めに得点源を作れるからです。']
+  ],
+  'fp.html': [
+    ['student', '受験生', 'FP2級って、暗記だけでいけますか？'],
+    ['teacher', '大谷', '暗記だけだと税金・金融・相続の計算で止まりやすいです。用語を覚えたら、すぐ過去問で「どう聞かれるか」まで確認しましょう。'],
+    ['student', '受験生', '金財とFP協会はどっちを選べばいいですか？'],
+    ['teacher', '大谷', '迷うならFP協会が入りやすいです。金融業界寄りで計算問題をしっかり鍛えたいなら金財も選択肢になります。']
+  ],
+  'keizoku.html': [
+    ['student', '受験生', '勉強を続けたいのに、毎回途中で止まります。意志が弱いんでしょうか？'],
+    ['teacher', '大谷', '意志だけの問題ではないです。続く人は、やる気がある日だけ頑張っているのではなく、記録・時間帯・小さい目標を仕組みにしています。'],
+    ['student', '受験生', 'まず何から変えればいいですか？'],
+    ['teacher', '大谷', '今日やる量を小さくしてください。「30分だけ」「問題3問だけ」でも記録に残す。継続は、完璧な日より途切れない日の方が強いです。']
+  ],
+  'shukatsu-shikaku.html': [
+    ['student', '大学生', '就活のために資格を取るなら、何から始めるのがいいですか？'],
+    ['teacher', '大谷', '志望業界が決まっているなら、その業界に直結する資格からです。迷っているなら、簿記2級・TOEIC・ITパスポートは使いやすい土台になります。'],
+    ['student', '大学生', '資格があれば就活で有利になりますか？'],
+    ['teacher', '大谷', '資格だけで決まるわけではありません。ただ、勉強を継続して結果を出した証拠として語れるなら、面接でかなり強くなります。']
+  ],
+  'hatarakinagara-shikaku.html': [
+    ['student', '社会人', '働きながら資格を取るのって、やっぱりきついですか？'],
+    ['teacher', '大谷', 'きついです。だからこそ、最初から長時間を狙わない方がいいです。平日は短く、休日に少し厚くする設計が現実的です。'],
+    ['student', '社会人', '途中で疲れて止まるのが怖いです。'],
+    ['teacher', '大谷', '疲れる前提で計画しましょう。毎日2時間ではなく、平日30分でも進む資格を選ぶと、合格までの道が見えやすくなります。']
+  ],
+  'tenshoku-shikaku.html': [
+    ['student', '社会人', '転職のために資格を取れば、すぐ有利になりますか？'],
+    ['teacher', '大谷', '資格単体ではなく、実務経験と組み合わせて強くなります。経理なら簿記、不動産なら宅建、ITなら基本情報のように、職種とつなげて選ぶのが大事です。'],
+    ['student', '社会人', '迷ったらどの資格を選ぶべきですか？'],
+    ['teacher', '大谷', '転職先の求人票を見て、よく出てくる資格を選んでください。市場が求めている言葉に合わせるのが一番堅いです。']
+  ]
+};
+
+function getArticleDialogue(){
+  if(ARTICLE_DIALOGUES[PAGE]) return ARTICLE_DIALOGUES[PAGE];
+  const article = ARTICLES[PAGE];
+  if(!article) return null;
+  if(article.label.includes('簿記')){
+    return [
+      ['student', '受験生', 'この論点、テキストを読んでもいまいちつながりません。'],
+      ['teacher', '大谷', '簿記は用語だけを追うと難しく見えます。まず「何が増えて、何が減ったのか」を先に見てから仕訳に戻ると理解しやすいです。'],
+      ['student', '受験生', 'いきなり暗記しなくてもいいんですか？'],
+      ['teacher', '大谷', '最初は暗記より流れです。例題を1つ解いて、なぜその科目が左・右に来るのかを確認しましょう。']
+    ];
+  }
+  if(article.label.includes('資格比較')){
+    return [
+      ['student', '受験生', 'どっちを選べばいいか、調べるほど迷います。'],
+      ['teacher', '大谷', '迷ったときは、難易度より「合格後に何へつながるか」で見てください。資格は取ることより、次の行動に使えることが大事です。'],
+      ['student', '受験生', '自分に合う方を選ぶコツはありますか？'],
+      ['teacher', '大谷', '今の生活で続けられる勉強量と、目指す仕事に近い方を選ぶのが現実的です。続かない計画は、どれだけ正しくても機能しません。']
+    ];
+  }
+  if(['まとめ','社会人向け','大学生向け','勉強法','継続・ツール','挫折・再開'].some(label => article.label.includes(label))){
+    return [
+      ['student', '受験生', '資格が多すぎて、何から始めればいいかわかりません。'],
+      ['teacher', '大谷', 'まずは「今の自分に必要な理由」がある資格に絞りましょう。人気ランキングより、生活に組み込めるかが大切です。'],
+      ['student', '受験生', '途中で飽きそうなのが不安です。'],
+      ['teacher', '大谷', '飽きる前提で、記録と小さな達成感を作るのがおすすめです。続けられる仕組みまで含めて資格選びです。']
+    ];
+  }
+  return [
+    ['student', '受験生', 'この資格、独学でも進められますか？'],
+    ['teacher', '大谷', '独学でも進められます。ただし、最初に試験範囲と必要時間を把握して、教材を1つに絞ることが大事です。'],
+    ['student', '受験生', '最初に全部理解しようとしなくてもいいですか？'],
+    ['teacher', '大谷', '大丈夫です。1周目は全体像、2周目で理解、問題演習で定着。この順番で進めると迷いにくくなります。']
+  ];
+}
+
+function renderDialogue(rows){
+  return rows.map(([role, name, text]) => `
+    <div class="sq-chat-row ${role}">
+      <div class="sq-chat-avatar ${role}">${role === 'teacher' ? '師' : '受'}</div>
+      <div>
+        <div class="sq-chat-name">${_escHtml(name)}</div>
+        <div class="sq-chat-bubble">${_escHtml(text)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
 /* ── Supabase / Auth ── */
 const _SB_URL  = 'https://ydexcwnwrbrfikujocon.supabase.co';
 const _SB_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZXhjd253cmJyZmlrdWpvY29uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5ODk5ODAsImV4cCI6MjA4OTU2NTk4MH0.dO4PGYDlVrYsrcPgPuQFgzU8fCVvJ0R4gdGBmeAs-OQ';
@@ -1184,21 +1283,27 @@ html[data-theme="dark"] .sq-article-theme-group{
   align-items:center;
   column-gap:12px;
 }
-.nav-logo{justify-self:start;}
+.nav-logo{justify-self:start;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;}
 #sq-article-theme-toggle{justify-self:center;}
 .sq-search-btn{justify-self:end;}
 .nav-cta{justify-self:end;}
 @media(max-width:640px){
   .nav-inner{
-    grid-template-columns:1fr auto auto;
+    grid-template-columns:minmax(0,1fr) auto auto;
     row-gap:8px;
+    column-gap:8px;
   }
-  .nav-logo{grid-column:1;grid-row:1;}
+  .nav-logo{grid-column:1;grid-row:1;font-size:14px;}
   .sq-search-btn{grid-column:2;grid-row:1;}
+  .sq-search-btn span{display:none;}
   .nav-cta{grid-column:3;grid-row:1;}
   #sq-article-theme-toggle{grid-column:1 / -1;grid-row:2;justify-self:start;}
   .sq-article-theme-option{min-width:auto;padding:8px 10px;}
   .sq-theme-text{display:none;}
+}
+@media(max-width:380px){
+  .nav-logo{font-size:13px;}
+  .nav-cta{font-size:12px;padding:8px 13px;}
 }
 /* サイドバー：fixed で記事の右に配置（1450px以上のみ） */
 @media(min-width:1450px){
@@ -1652,6 +1757,30 @@ function buildCatBadge(){
   badge.innerHTML = `<span style="background:${catColor}">${catName}</span>`;
   const h1 = document.querySelector('h1');
   if(h1) h1.insertAdjacentElement('beforebegin', badge);
+}
+
+/* ── 記事ごとの導入会話 ── */
+function buildArticleDialogue(){
+  const container = document.querySelector('.container');
+  if(!container) return;
+  const rows = getArticleDialogue();
+  if(!rows || !rows.length) return;
+
+  const emptyChat = Array.from(container.querySelectorAll('.sq-chat')).find(chat => !chat.textContent.trim());
+  if(emptyChat){
+    emptyChat.innerHTML = renderDialogue(rows);
+    emptyChat.classList.add('sq-chat-auto');
+    return;
+  }
+
+  if(container.querySelector('.sq-chat')) return;
+
+  const lead = container.querySelector('.lead');
+  if(!lead) return;
+  const chat = document.createElement('div');
+  chat.className = 'sq-chat sq-chat-auto';
+  chat.innerHTML = renderDialogue(rows);
+  lead.insertAdjacentElement('afterend', chat);
 }
 
 /* ── サイドバーCTA ── */
@@ -2332,6 +2461,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildTOC(layout.right);
   buildBoki3Sidebar(layout.right);
   buildCatBadge();
+  buildArticleDialogue();
   buildSidebarCTA(layout.right);
   buildLeftSidebar(layout.left);
   buildAuthorBox();
