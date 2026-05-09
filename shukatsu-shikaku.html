@@ -11,6 +11,7 @@
 <meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/shukatsu-shikaku.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_icon.png">
+<link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/shukatsu-shikaku.html">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
@@ -22,8 +23,8 @@
   "description": "大学生向けに、就活で意味を持ちやすい資格を厳選して紹介します。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/shukatsu-shikaku.html",
   "datePublished": "2026-04-30",
-  "dateModified": "2026-04-30",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://hito77ki-ship-it.github.io/study-quest/lp.html"},
+  "dateModified": "2026-05-09",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/", "logo": {"@type": "ImageObject", "url": "https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hito77ki-ship-it.github.io/study-quest/shukatsu-shikaku.html"}
 }
@@ -62,47 +63,60 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:var(--sq-text,#1A202C);--muted:var(--sq-muted,#718096);--border:var(--sq-border,#E2E8F0);--bg:var(--sq-page,#FFFFFF);--light:var(--sq-surface-soft,#F7FAFC);}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
-a{color:var(--green2);text-decoration:none;}
+a{color:var(--sq-accent,#6AAF2B);text-decoration:none;}
 a:hover{text-decoration:underline;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in srgb, var(--sq-page,#FFFFFF) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
 .nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
-.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--sq-accent-bright,#6AAF2B);}
+.nav-cta{background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text,#fff);font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s;}
 .nav-cta:hover{opacity:.85;text-decoration:none;}
 .container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
 .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
 .breadcrumb a{color:var(--muted);}
 h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
 .meta{font-size:13px;color:var(--muted);margin-bottom:32px;}
-.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
-h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
-h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
-p{font-size:14px;color:#374151;margin-bottom:16px;}
-ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--sq-accent,#8CC63F);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--sq-accent,#6AAF2B);}
+p{font-size:14px;color:var(--sq-text-soft,#374151);margin-bottom:16px;}
+ul,ol{font-size:14px;color:var(--sq-text-soft,#374151);margin:0 0 16px 20px;}
 li{margin-bottom:6px;}
 table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:13px;}
-th{background:var(--green);color:#fff;padding:10px 14px;text-align:left;}
+th{background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text,#fff);padding:10px 14px;text-align:left;}
 td{padding:10px 14px;border-bottom:1px solid var(--border);}
 tr:nth-child(even) td{background:var(--light);}
-.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;}
-.tip-box strong{color:#276749;}
-.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
-.warn-box strong{color:#975A16;}
-.rank-card{border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:16px;background:#fff;}
+.tip-box{background:var(--sq-highlight-bg,#F0FFF4);border:1px solid var(--sq-border-strong,#9AE6B4);border-radius:8px;padding:16px 20px;margin:24px 0;}
+.tip-box strong{color:var(--sq-highlight-text,#276749);}
+.warn-box{background:color-mix(in srgb, #f59e0b 10%, var(--sq-surface,#FFFFFF));border:1px solid color-mix(in srgb, #f59e0b 35%, var(--border));border-radius:8px;padding:16px 20px;margin:24px 0;}
+.warn-box strong{color:color-mix(in srgb, #975A16 72%, var(--sq-text,#1A202C));}
+.rank-card{border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:16px;background:var(--sq-surface,#FFFFFF);}
 .rank-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
-.rank-num{width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.rank-title{font-size:17px;font-weight:700;color:#1A202C;}
+.rank-num{width:34px;height:34px;border-radius:50%;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text,#fff);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rank-title{font-size:17px;font-weight:700;color:var(--sq-text,#1A202C);}
 .rank-meta{font-size:12px;color:var(--muted);}
-.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
-.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
-.app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
-.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
+.app-cta{background:linear-gradient(135deg,var(--sq-surface-strong,#1A2A0A),color-mix(in srgb, var(--sq-accent,#8CC63F) 28%, var(--sq-surface-strong,#2D4A10)));border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:var(--sq-cta-text,#fff);}
+.app-cta h3{color:var(--sq-accent,#8CC63F);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:var(--sq-highlight-text,#A0C070);font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#0A0A0F);font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
-footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
-footer a{font-size:12px;color:#4A5568;margin:0 10px;}
-footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.faq-section{max-width:800px;margin:0 auto;padding:0 24px 48px;}
+.faq-title{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F);color:var(--sq-text,#1A202C);}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;background:var(--sq-surface,#FFFFFF);}
+.faq-summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:var(--sq-text,#1A202C);list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-answer{padding:0 16px 14px;font-size:13px;color:var(--sq-text-soft,#374151);line-height:1.8;}
+.faq-plus{color:var(--sq-accent,#8CC63F);font-size:18px;flex-shrink:0;margin-left:8px;}
+.related-section{background:var(--sq-surface-soft,#F7FAFC);padding:48px 24px;}
+.related-inner{max-width:800px;margin:0 auto;}
+.related-title{font-size:15px;font-weight:700;color:var(--sq-text,#1A202C);margin-bottom:20px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F);}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.related-card{display:block;background:var(--sq-surface,#FFFFFF);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;}
+.related-kicker{font-size:10px;font-weight:700;color:var(--sq-accent,#8CC63F);margin-bottom:6px;}
+.related-card-title{font-size:13px;font-weight:700;line-height:1.6;color:var(--sq-text,#1A202C);}
+footer{background:var(--sq-surface-strong,#111827);padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:var(--sq-muted,#4A5568);margin:0 10px;}
+footer p{font-size:11px;color:var(--sq-muted-strong,#2D3748);margin-top:8px;}
 </style>
 </head>
 <body>
@@ -121,7 +135,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h1>就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選【2026年版】</h1>
-  <p class="meta">更新日：2026年4月30日｜スタディクエスト編集部</p>
+  <p class="meta">更新日：2026年5月9日｜スタディクエスト編集部</p>
 
   <p class="lead">「大学生のうちに資格を取りたいけど、就活で本当に意味あるの？」「ESや面接で話せる資格を取りたい」。そんな人向けに、就活で比較的意味を持ちやすい資格を厳選しました。大事なのは、知名度だけではなく、<span class="sq-key">業界との相性・話しやすさ・将来へのつながり</span>です。</p>
 
@@ -223,28 +237,28 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </ul>
 </div>
 
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">就活で資格は本当に有利になりますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">資格だけで内定が決まるわけではありませんが、業界との相性がよく、努力や関心を説明しやすい資格は十分プラスになります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">大学生が資格を取るなら、何を優先すべきですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">業界との相性、就活で話しやすいか、将来にもつながるか、続け切れるかを優先すると失敗しにくいです。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">資格とインターン、どちらを優先すべきですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">業界理解や実務体験が重要な職種ではインターンの方が優先度が高いこともあります。ただし、資格が強く評価される分野では並行して進める価値があります。</div></details>
+<section class="faq-section">
+  <h2 class="faq-title">よくある質問</h2>
+  <details class="faq-item"><summary class="faq-summary">就活で資格は本当に有利になりますか？<span class="faq-plus">＋</span></summary><div class="faq-answer">資格だけで内定が決まるわけではありませんが、業界との相性がよく、努力や関心を説明しやすい資格は十分プラスになります。</div></details>
+  <details class="faq-item"><summary class="faq-summary">大学生が資格を取るなら、何を優先すべきですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">業界との相性、就活で話しやすいか、将来にもつながるか、続け切れるかを優先すると失敗しにくいです。</div></details>
+  <details class="faq-item"><summary class="faq-summary">資格とインターン、どちらを優先すべきですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">業界理解や実務体験が重要な職種ではインターンの方が優先度が高いこともあります。ただし、資格が強く評価される分野では並行して進める価値があります。</div></details>
 </section>
 
-<section style="background:#F7FAFC;padding:48px 24px;">
-  <div style="max-width:800px;margin:0 auto;">
-    <h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-      <a href="daigakusei-shikaku-heiyou.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
-        <div style="font-size:10px;font-weight:700;color:#8CC63F;margin-bottom:6px;">大学生</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.6;">大学生は資格勉強を2つ以上併用すべき？</div>
+<section class="related-section">
+  <div class="related-inner">
+    <h2 class="related-title">関連記事</h2>
+    <div class="related-grid">
+      <a href="daigakusei-shikaku-heiyou.html" class="related-card">
+        <div class="related-kicker">大学生</div>
+        <div class="related-card-title">大学生は資格勉強を2つ以上併用すべき？</div>
       </a>
-      <a href="shikaku-20dai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
-        <div style="font-size:10px;font-weight:700;color:#8CC63F;margin-bottom:6px;">20代</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.6;">20代におすすめ資格ランキング</div>
+      <a href="shikaku-20dai.html" class="related-card">
+        <div class="related-kicker">20代</div>
+        <div class="related-card-title">20代におすすめ資格ランキング</div>
       </a>
-      <a href="shikaku-jinsei-kawaru.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
-        <div style="font-size:10px;font-weight:700;color:#8CC63F;margin-bottom:6px;">考え方</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.6;">資格で人生が変わる人・変わらない人</div>
+      <a href="shikaku-jinsei-kawaru.html" class="related-card">
+        <div class="related-kicker">考え方</div>
+        <div class="related-card-title">資格で人生が変わる人・変わらない人</div>
       </a>
     </div>
   </div>
