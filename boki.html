@@ -71,6 +71,12 @@ tr:nth-child(even) td{background:var(--light);}
 .book-card__desc{font-size:12px;margin-top:8px;}
 .book-card__cta{display:inline-flex;margin-top:12px;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:7px 13px;}
 .book-note{font-size:12px;color:var(--sq-muted,var(--muted));margin-top:-4px;}
+.start-routes{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 34px;}
+.start-card{display:block;background:linear-gradient(180deg,var(--sq-surface,#fff),var(--sq-surface-soft,#F7FAFC));border:1px solid var(--sq-border,var(--border));border-left:3px solid var(--green);border-radius:0 12px 12px 0;padding:18px;color:inherit;text-decoration:none;box-shadow:0 10px 24px rgba(26,32,44,.05);transition:transform .18s,border-color .18s,box-shadow .18s;}
+.start-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 12px 28px rgba(140,198,63,.15);text-decoration:none;}
+.start-card__label{font-size:10px;color:var(--sq-accent-bright,var(--green2));font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.start-card__title{font-size:15px;font-weight:700;color:var(--sq-text,var(--text));line-height:1.55;margin-bottom:7px;}
+.start-card__desc{font-size:12px;color:var(--sq-muted,var(--muted));line-height:1.7;}
 .summary-list{padding:18px 22px;margin-top:12px;}
 .summary-list li{margin-bottom:8px;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
@@ -81,7 +87,7 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-@media(max-width:640px){.quick-summary,.topic-grid,.book-grid{grid-template-columns:1fr;}}
+@media(max-width:640px){.quick-summary,.topic-grid,.book-grid,.start-routes{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -108,6 +114,19 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="quick-card"><div class="quick-card__label">3級</div><div class="quick-card__value">50〜100時間</div><div class="quick-card__note">仕訳と決算整理を固めれば、短期合格を狙いやすい入門級。</div></div>
     <div class="quick-card"><div class="quick-card__label">2級</div><div class="quick-card__value">150〜250時間</div><div class="quick-card__note">商業簿記に加えて工業簿記が登場。早めの全体像理解がカギ。</div></div>
     <div class="quick-card"><div class="quick-card__label">STRATEGY</div><div class="quick-card__value">ネット試験も活用</div><div class="quick-card__note">日程の自由度が高く、仕上がったタイミングで受けやすいです。</div></div>
+  </div>
+
+  <div class="start-routes" aria-label="簿記学習のスタート記事">
+    <a class="start-card" href="boki-zero-01.html">
+      <div class="start-card__label">3級から始める</div>
+      <div class="start-card__title">ゼロからの簿記① 取引・簿記とは？</div>
+      <div class="start-card__desc">簿記が初めてならここから。取引、勘定科目、仕訳に入る前の土台を短く確認できます。</div>
+    </a>
+    <a class="start-card" href="boki2.html">
+      <div class="start-card__label">2級に進む</div>
+      <div class="start-card__title">簿記2級の勉強時間・独学合格ロードマップ</div>
+      <div class="start-card__desc">3級の次に進む人向け。商業簿記・工業簿記の全体像と5ヶ月プランを確認できます。</div>
+    </a>
   </div>
 
   <div class="tip-box"><strong>この記事について：</strong>筆者（大谷）は大阪経済大学3回生。公認会計士試験を約1年間学習後、現在は日商簿記1級を目標に勉強中です。実際の受験経験をベースに書いています。正確性には注意していますが、最新の試験情報は<a href="https://www.kentei.ne.jp/" target="_blank" rel="noopener">日本商工会議所の公式サイト</a>でご確認ください。</div>
