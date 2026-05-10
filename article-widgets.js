@@ -25,6 +25,7 @@ const ARTICLES = {
   'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略'},
   'shihoshoshi.html':    {label:'司法書士',          title:'司法書士の独学合格ガイド'},
   'shihoshoshi-start.html': {label:'司法書士',       title:'司法書士を目指す人が最初の7日間でやること'},
+  'shihoshoshi-roniten.html': {label:'司法書士',      title:'司法書士の科目別論点一覧'},
   'shihoshoshi-minpo-sosoku.html': {label:'司法書士', title:'民法総則・意思表示・代理・時効'},
   'shihoshoshi-minpo-bukken.html': {label:'司法書士', title:'物権・抵当権・対抗要件'},
   'shihoshoshi-futoki.html': {label:'司法書士',       title:'不動産登記法・所有権移転・抵当権設定'},
@@ -1916,8 +1917,25 @@ const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIA
 const SHIHOSHO_FILES = [
   'shihoshoshi.html',
   'shihoshoshi-start.html',
+  'shihoshoshi-roniten.html',
   'shihoshoshi-minpo-sosoku.html',
   'shihoshoshi-minpo-bukken.html',
+  'shihoshoshi-futoki.html',
+  'shihoshoshi-kaishaho.html',
+];
+
+const SHIHOSHO_CORE_FILES = [
+  'shihoshoshi.html',
+  'shihoshoshi-start.html',
+  'shihoshoshi-roniten.html',
+];
+
+const SHIHOSHO_MINPO_FILES = [
+  'shihoshoshi-minpo-sosoku.html',
+  'shihoshoshi-minpo-bukken.html',
+];
+
+const SHIHOSHO_TOKI_FILES = [
   'shihoshoshi-futoki.html',
   'shihoshoshi-kaishaho.html',
 ];
@@ -1928,14 +1946,23 @@ function buildShihoshoSidebar(sidebar){
 
   const box = document.createElement('div');
   box.className = 'sq-sidebar-box';
-  box.innerHTML = `<div class="sq-sidebar-box-title">⚖ 司法書士 論点一覧</div><div class="sq-side-links"></div>`;
-  const list = box.querySelector('.sq-side-links');
-  SHIHOSHO_FILES.forEach(f => {
-    const a = ARTICLES[f]; if(!a) return;
-    const isCurrent = f === PAGE;
-    const isRead = !!localStorage.getItem(_READ_KEY(f));
-    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
-  });
+  box.innerHTML =
+    `<div class="sq-sidebar-box-title">⚖ 司法書士 論点一覧</div>` +
+    `<div class="sq-side-link-label" style="margin:8px 0 6px;">全体・学習順</div><div class="sq-side-links sq-shihosho-core"></div>` +
+    `<div class="sq-side-link-label" style="margin:12px 0 6px;">民法</div><div class="sq-side-links sq-shihosho-minpo"></div>` +
+    `<div class="sq-side-link-label" style="margin:12px 0 6px;">登記法・会社法</div><div class="sq-side-links sq-shihosho-toki"></div>`;
+  const render = (selector, files) => {
+    const list = box.querySelector(selector);
+    files.forEach(f => {
+      const a = ARTICLES[f]; if(!a) return;
+      const isCurrent = f === PAGE;
+      const isRead = !!localStorage.getItem(_READ_KEY(f));
+      list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
+    });
+  };
+  render('.sq-shihosho-core', SHIHOSHO_CORE_FILES);
+  render('.sq-shihosho-minpo', SHIHOSHO_MINPO_FILES);
+  render('.sq-shihosho-toki', SHIHOSHO_TOKI_FILES);
   sidebar.appendChild(box);
 }
 
