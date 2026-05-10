@@ -4,6 +4,7 @@
 const ARTICLES = {
   'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール'},
   'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ'},
+  'boki2-progress.html': {label:'簿記2級',          title:'簿記2級 学習進捗チェック'},
   'boki2-kessan.html':   {label:'簿記2級',          title:'決算整理・財務諸表作成の第3問対策'},
   'boki2-shohin-baibai.html': {label:'簿記2級',     title:'商品売買・売上原価・棚卸資産'},
   'boki2-junshisan.html': {label:'簿記2級',         title:'株式発行・純資産・剰余金配当'},
@@ -1982,6 +1983,7 @@ const BOKI2_INDUSTRIAL_FILES = [
 ];
 
 const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-ochita.html'];
+const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html');
 
 const SHIHOSHO_FILES = [
   'shihoshoshi.html',
@@ -2041,8 +2043,16 @@ function buildBoki2Sidebar(sidebar){
 
   const box = document.createElement('div');
   box.className = 'sq-sidebar-box';
+  const readCount = BOKI2_PROGRESS_FILES.filter(f => localStorage.getItem(_READ_KEY(f))).length;
+  const total = BOKI2_PROGRESS_FILES.length;
+  const pct = total ? Math.round(readCount / total * 100) : 0;
   box.innerHTML =
     `<div class="sq-sidebar-box-title sq-boki2-title">📗 日商簿記2級 論点一覧</div>` +
+    `<a href="boki2-progress.html" class="sq-boki3-progress-link" style="display:block;margin-bottom:8px;font-size:11px;text-decoration:none;">` +
+    `<div class="sq-boki3-progress-card" style="border-radius:6px;padding:6px 10px;">` +
+    `<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>学習進捗</span><span style="font-weight:700;">${readCount}/${total}</span></div>` +
+    `<div class="sq-boki3-progress-track" style="height:4px;border-radius:2px;"><div class="sq-boki3-progress-fill" style="height:4px;border-radius:2px;width:${pct}%;transition:width .4s;"></div></div>` +
+    `</div></a>` +
     `<div class="sq-boki2-group"><div class="sq-side-link-label" style="margin:8px 0 6px;">商業簿記</div><div class="sq-side-links sq-boki2-commercial"></div></div>` +
     `<div class="sq-boki2-group"><div class="sq-side-link-label" style="margin:12px 0 6px;">工業簿記</div><div class="sq-side-links sq-boki2-industrial"></div></div>`;
 

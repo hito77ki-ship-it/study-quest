@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>簿記2級 学習進捗チェック｜スタディクエスト</title>
+<meta name="description" content="日商簿記2級の記事を読んだらチェック。商業簿記・工業簿記・試験対策に分けて、自分の学習進捗を確認できます。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;--card:#FFFFFF;--accent:#8B5CF6;--nav:rgba(255,255,255,.95);}
+html[data-theme="dark"]{--text:#F0F4F8;--muted:#94A3B8;--border:rgba(148,163,184,.22);--bg:#0D111A;--light:#151B27;--card:#111827;--accent:#A78BFA;--nav:rgba(13,17,26,.94);}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;transition:background .2s,color .2s;}
+a{color:var(--green2);text-decoration:none;}a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.theme-toggle{display:flex;align-items:center;gap:4px;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:3px;box-shadow:0 8px 24px rgba(15,23,42,.05);}
+.theme-btn{border:0;background:transparent;color:var(--muted);font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;cursor:pointer;font-family:inherit;line-height:1;}
+.theme-btn.is-active{background:var(--green);color:#0A0A0F;}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;}.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:760px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
+.progress-header{margin-bottom:32px;}h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:8px;}.meta{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.overview{background:linear-gradient(135deg,rgba(139,92,246,.14),rgba(167,139,250,.18));border:2px solid rgba(139,92,246,.55);border-radius:14px;padding:20px 24px;margin-bottom:28px;}
+.ov-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}.ov-count{font-size:28px;font-weight:700;color:var(--accent);}.ov-total{font-size:14px;color:var(--muted);font-weight:500;}
+.ov-bar-wrap{height:8px;background:rgba(139,92,246,.16);border-radius:4px;overflow:hidden;}.ov-bar-fill{height:8px;background:linear-gradient(90deg,#8B5CF6,#A78BFA);border-radius:4px;transition:width .6s ease;}
+.ov-pct{font-size:12px;color:var(--accent);font-weight:700;margin-top:6px;text-align:right;}.ov-message{font-size:13px;color:var(--accent);margin-top:10px;font-weight:500;}
+.section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--accent);}
+.article-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}.article-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .15s;cursor:pointer;background:var(--card);}
+.article-item:hover{border-color:rgba(139,92,246,.42);background:rgba(139,92,246,.07);}.article-item.done{border-color:rgba(140,198,63,.5);background:rgba(140,198,63,.12);}
+.article-checkbox{width:22px;height:22px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}.article-item.done .article-checkbox{background:#8CC63F;border-color:#8CC63F;color:#fff;}
+.article-info{flex:1;min-width:0;}.article-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.5;}html[data-theme="light"] .article-item.done .article-title{color:#276749;}html[data-theme="dark"] .article-item.done .article-title{color:#D9F99D;}
+.article-link{font-size:11px;color:var(--accent);margin-left:auto;flex-shrink:0;padding:4px 10px;border:1px solid rgba(139,92,246,.35);border-radius:100px;white-space:nowrap;transition:background .15s;}.article-link:hover{background:rgba(139,92,246,.08);text-decoration:none;}
+.reset-wrap{text-align:center;margin-top:28px;}.reset-btn{background:none;border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:12px;color:var(--muted);cursor:pointer;font-family:inherit;transition:color .2s,border-color .2s;}.reset-btn:hover{color:#E53E3E;border-color:#E53E3E;}
+.cta-card{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:24px;margin-top:32px;text-align:center;color:#fff;}.cta-card h3{color:var(--green);font-size:16px;margin-bottom:6px;}.cta-card p{color:#A0C070;font-size:13px;margin-bottom:14px;}.cta-card a{background:var(--green);color:#0A0A0F;font-weight:700;padding:10px 24px;border-radius:100px;font-size:13px;display:inline-block;}.cta-card a:hover{opacity:.85;text-decoration:none;}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}footer a{font-size:12px;color:#9CA3AF;margin:0 10px;}footer p{font-size:11px;color:#6B7280;margin-top:8px;}
+@media(max-width:560px){nav{padding:0 14px}.nav-inner{height:auto;min-height:56px;gap:10px}.nav-actions{gap:6px}.theme-btn{padding:6px 8px}.nav-cta{padding:8px 12px}.article-item{padding:11px 12px}.article-link{padding:4px 8px}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><div class="nav-actions"><div class="theme-toggle" aria-label="テーマ切替"><button class="theme-btn" type="button" data-theme-choice="light">☀ Light</button><button class="theme-btn" type="button" data-theme-choice="dark">☾ Dark</button></div><a class="nav-cta" href="index.html">無料で始める</a></div></div></nav>
+
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki2">日商簿記2級</a> &gt; 学習進捗チェック</div>
+  <div class="progress-header"><p class="meta">日商簿記2級</p><h1>学習進捗チェック</h1><p class="meta">商業簿記・工業簿記・試験対策を分けて、読んだ記事にチェックをつけよう。</p></div>
+  <div class="overview"><div class="ov-row"><div><span class="ov-count" id="read-count">0</span><span class="ov-total"> / <span id="total-count">0</span> 記事読了</span></div><div id="ov-badge" style="font-size:28px;"></div></div><div class="ov-bar-wrap"><div class="ov-bar-fill" id="ov-bar" style="width:0%"></div></div><div class="ov-pct" id="ov-pct">0%</div><div class="ov-message" id="ov-message"></div></div>
+  <div class="section-title">全体・ロードマップ</div><div class="article-list" id="list-core"></div>
+  <div class="section-title">商業簿記</div><div class="article-list" id="list-commercial"></div>
+  <div class="section-title">工業簿記</div><div class="article-list" id="list-industrial"></div>
+  <div class="section-title">試験対策</div><div class="article-list" id="list-strategy"></div>
+  <div class="reset-wrap"><button class="reset-btn" id="reset-btn">進捗をリセットする</button></div>
+  <div class="cta-card"><h3>⚔ Study Quest で簿記2級を積み上げよう</h3><p>商業簿記と工業簿記の勉強時間を分けて記録し、苦手論点を見える化できます。</p><a href="index.html">無料で始める →</a></div>
+</div>
+
+<footer><a href="lp.html">記事トップ</a><a href="boki2.html">簿記2級ガイド</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
+
+<script>
+const CORE = [{file:'boki2.html', title:'簿記2級の勉強時間・独学合格ロードマップ'}];
+const COMMERCIAL = [
+  {file:'boki2-kessan.html', title:'決算整理・財務諸表作成の第3問対策'},
+  {file:'boki2-shohin-baibai.html', title:'商品売買・売上原価・棚卸資産'},
+  {file:'boki2-junshisan.html', title:'株式発行・純資産・剰余金配当'},
+  {file:'boki2-hojinzei-shohizei.html', title:'法人税等・消費税の仕訳'},
+  {file:'boki2-software.html', title:'ソフトウェア・研究開発費・無形固定資産'},
+  {file:'boki2-ginko-chosei.html', title:'銀行勘定調整表'},
+  {file:'boki2-renketsu.html', title:'連結会計・のれん・修正仕訳'},
+  {file:'boki2-zeikouka.html', title:'税効果会計・繰延税金資産'},
+  {file:'boki2-lease.html', title:'リース取引・利子抜き法'},
+  {file:'boki2-gaika.html', title:'外貨換算・為替差損益'},
+  {file:'boki2-yukashoken.html', title:'有価証券・売買目的・満期保有'},
+  {file:'boki2-kotei-shisan.html', title:'固定資産・減価償却・売却'},
+  {file:'boki2-hikiatekin.html', title:'引当金・貸倒・退職給付'},
+  {file:'boki2-shasai.html', title:'社債・償却原価法'},
+];
+const INDUSTRIAL = [
+  {file:'boki2-kogyo.html', title:'工業簿記とは・商業簿記との違い'},
+  {file:'boki2-zairyouhi.html', title:'材料費・直接材料費・副費'},
+  {file:'boki2-roumuhi.html', title:'労務費・賃金・賃率差異'},
+  {file:'boki2-keihi.html', title:'経費・外注加工賃ほか'},
+  {file:'boki2-seizo-kansetsuhi.html', title:'製造間接費・予定配賦・配賦差異'},
+  {file:'boki2-bumonbetsu.html', title:'部門別計算・補助部門費の配賦'},
+  {file:'boki2-kobetsu-genka.html', title:'個別原価計算・製造指図書'},
+  {file:'boki2-sogo-genka.html', title:'総合原価計算・月末仕掛品'},
+  {file:'boki2-hyojun-genka.html', title:'標準原価計算・原価差異分析'},
+  {file:'boki2-chokusetsu-genka.html', title:'直接原価計算・貢献利益'},
+  {file:'boki2-cvp.html', title:'CVP分析・損益分岐点'},
+  {file:'boki2-seizo-genka-hokokusho.html', title:'製造原価報告書'},
+  {file:'boki2-kogyo-enshu.html', title:'工業簿記の演習ロードマップ'},
+];
+const STRATEGY = [
+  {file:'boki2-net-test.html', title:'ネット試験の問題構成・時間配分'},
+  {file:'boki2-ochita.html', title:'簿記2級に落ちたら次回合格へ立て直す'},
+];
+const ALL = [...CORE, ...COMMERCIAL, ...INDUSTRIAL, ...STRATEGY];
+const KEY = f => `sq_read_${f}`;
+const THEME_KEY = 'sq2_theme';
+function applyTheme(theme){const next = theme === 'dark' ? 'dark' : 'light';document.documentElement.setAttribute('data-theme', next);localStorage.setItem(THEME_KEY, next);document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.toggle('is-active', btn.dataset.themeChoice === next));}
+function isRead(f){return !!localStorage.getItem(KEY(f));}
+function toggle(f){if(isRead(f)) localStorage.removeItem(KEY(f)); else localStorage.setItem(KEY(f),'1');}
+function renderList(containerId, items){const el=document.getElementById(containerId);el.innerHTML=items.map(({file,title})=>{const done=isRead(file);return `<div class="article-item${done?' done':''}" data-file="${file}"><div class="article-checkbox">${done?'✓':''}</div><div class="article-info"><div class="article-title">${title}</div></div><a href="${file}" class="article-link" onclick="event.stopPropagation()">読む →</a></div>`;}).join('');el.querySelectorAll('.article-item').forEach(item=>item.addEventListener('click',()=>{toggle(item.dataset.file);renderAll();}));}
+function updateOverview(){const readCount=ALL.filter(({file})=>isRead(file)).length;const total=ALL.length;const pct=total>0?Math.round(readCount/total*100):0;document.getElementById('read-count').textContent=readCount;document.getElementById('total-count').textContent=total;document.getElementById('ov-bar').style.width=pct+'%';document.getElementById('ov-pct').textContent=pct+'%';let badge='',msg='';if(pct===0){badge='📗';msg='まずはロードマップで全体像をつかもう。';}else if(pct<30){badge='🌱';msg='商業簿記と工業簿記の土台作り中です。';}else if(pct<60){badge='⚔';msg='いい進み具合です。苦手論点を潰していこう。';}else if(pct<100){badge='🔥';msg='合格圏が見えてきました。試験対策までつなげよう。';}else{badge='🏆';msg='全記事読了！簿記2級の地図はかなり整っています。';}document.getElementById('ov-badge').textContent=badge;document.getElementById('ov-message').textContent=msg;}
+function renderAll(){renderList('list-core',CORE);renderList('list-commercial',COMMERCIAL);renderList('list-industrial',INDUSTRIAL);renderList('list-strategy',STRATEGY);updateOverview();}
+document.getElementById('reset-btn').addEventListener('click',()=>{if(!confirm('進捗をすべてリセットしますか？')) return;ALL.forEach(({file})=>localStorage.removeItem(KEY(file)));renderAll();});
+document.querySelectorAll('.theme-btn').forEach(btn=>btn.addEventListener('click',()=>applyTheme(btn.dataset.themeChoice)));
+applyTheme(localStorage.getItem(THEME_KEY) || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+renderAll();
+</script>
+</body>
+</html>
