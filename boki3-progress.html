@@ -8,13 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;--blue:#3B82F6;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;--card:#FFFFFF;--blue:#3B82F6;--nav:rgba(255,255,255,.95);}
+html[data-theme="dark"]{--text:#F0F4F8;--muted:#94A3B8;--border:rgba(148,163,184,.22);--bg:#0D111A;--light:#151B27;--card:#111827;--blue:#60A5FA;--nav:rgba(13,17,26,.94);}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;transition:background .2s,color .2s;}
 a{color:var(--green2);text-decoration:none;}
 a:hover{text-decoration:underline;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
 .nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-size:15px;font-weight:700;color:var(--green2);}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.theme-toggle{display:flex;align-items:center;gap:4px;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:3px;box-shadow:0 8px 24px rgba(15,23,42,.05);}
+.theme-btn{border:0;background:transparent;color:var(--muted);font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;cursor:pointer;font-family:inherit;line-height:1;}
+.theme-btn.is-active{background:var(--green);color:#0A0A0F;}
 .nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;}
 .nav-cta:hover{opacity:.85;text-decoration:none;}
 .container{max-width:720px;margin:0 auto;padding:88px 24px 80px;}
@@ -27,28 +32,29 @@ h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:
 .meta{font-size:13px;color:var(--muted);margin-bottom:20px;}
 
 /* 進捗オーバービュー */
-.overview{background:linear-gradient(135deg,#EBF8FF,#DBEAFE);border:2px solid #90CDF4;border-radius:14px;padding:20px 24px;margin-bottom:28px;}
+.overview{background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(96,165,250,.18));border:2px solid rgba(96,165,250,.55);border-radius:14px;padding:20px 24px;margin-bottom:28px;}
 .ov-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 .ov-count{font-size:28px;font-weight:700;color:var(--blue);}
 .ov-total{font-size:14px;color:var(--muted);font-weight:500;}
 .ov-bar-wrap{height:8px;background:rgba(59,130,246,.15);border-radius:4px;overflow:hidden;}
 .ov-bar-fill{height:8px;background:linear-gradient(90deg,#3B82F6,#60A5FA);border-radius:4px;transition:width .6s ease;}
 .ov-pct{font-size:12px;color:var(--blue);font-weight:700;margin-top:6px;text-align:right;}
-.ov-message{font-size:13px;color:#2B6CB0;margin-top:10px;font-weight:500;}
+.ov-message{font-size:13px;color:var(--blue);margin-top:10px;font-weight:500;}
 
 /* セクション */
 .section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--blue);}
 
 /* 記事カード */
 .article-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
-.article-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .15s;cursor:pointer;background:var(--bg);}
-.article-item:hover{border-color:rgba(59,130,246,.4);background:#F7FAFF;}
-.article-item.done{border-color:rgba(140,198,63,.5);background:#F0FFF4;}
+.article-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .15s;cursor:pointer;background:var(--card);}
+.article-item:hover{border-color:rgba(59,130,246,.4);background:rgba(59,130,246,.06);}
+.article-item.done{border-color:rgba(140,198,63,.5);background:rgba(140,198,63,.12);}
 .article-checkbox{width:22px;height:22px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
 .article-item.done .article-checkbox{background:#8CC63F;border-color:#8CC63F;color:#fff;}
 .article-info{flex:1;min-width:0;}
 .article-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.5;}
-.article-item.done .article-title{color:#276749;}
+html[data-theme="light"] .article-item.done .article-title{color:#276749;}
+html[data-theme="dark"] .article-item.done .article-title{color:#D9F99D;}
 .article-link{font-size:11px;color:var(--blue);margin-left:auto;flex-shrink:0;padding:4px 10px;border:1px solid rgba(59,130,246,.3);border-radius:100px;white-space:nowrap;transition:background .15s;}
 .article-link:hover{background:rgba(59,130,246,.08);text-decoration:none;}
 
@@ -65,15 +71,22 @@ h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:
 .cta-card a:hover{opacity:.85;text-decoration:none;}
 
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
-footer a{font-size:12px;color:#4A5568;margin:0 10px;}
-footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+footer a{font-size:12px;color:#9CA3AF;margin:0 10px;}
+footer p{font-size:11px;color:#6B7280;margin-top:8px;}
+@media(max-width:560px){nav{padding:0 14px}.nav-inner{height:auto;min-height:56px;gap:10px}.nav-actions{gap:6px}.theme-btn{padding:6px 8px}.nav-cta{padding:8px 12px}.article-item{padding:11px 12px}.article-link{padding:4px 8px}}
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
-    <a class="nav-cta" href="index.html">無料で始める</a>
+    <div class="nav-actions">
+      <div class="theme-toggle" aria-label="テーマ切替">
+        <button class="theme-btn" type="button" data-theme-choice="light">☀ Light</button>
+        <button class="theme-btn" type="button" data-theme-choice="dark">☾ Dark</button>
+      </div>
+      <a class="nav-cta" href="index.html">無料で始める</a>
+    </div>
   </div>
 </nav>
 
@@ -134,32 +147,42 @@ const BOKI3_ZERO = [
 ];
 const BOKI3_RONTEN = [
   {file:'boki3-genkin.html',    title:'現金・当座預金の違いと仕訳'},
+  {file:'boki3-kake.html',      title:'掛取引（売掛金・買掛金）の仕訳'},
+  {file:'boki3-sanpou.html',    title:'商品売買の仕訳（三分法）仕入・売上・繰越商品'},
+  {file:'boki3-shohinuriage.html', title:'商品有高帳の書き方（先入先出法・移動平均法）'},
+  {file:'boki3-tegata.html',    title:'受取手形・支払手形・電子記録債権の仕訳'},
+  {file:'boki3-credit.html',       title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
+  {file:'boki3-sonota.html',   title:'その他の債権・債務（前払金・前受金・仮払金・仮受金・立替金・預り金）'},
   {file:'boki3-kafusoku.html',  title:'現金過不足（雑損・雑益）'},
-  {file:'boki3-kashidaore.html',title:'貸倒引当金の仕訳と計算'},
+  {file:'boki3-koguchi.html', title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方'},
+  {file:'boki3-kyuryo.html',    title:'給料の仕訳と源泉所得税・社会保険料の預り金'},
+  {file:'boki3-kotei.html',    title:'固定資産の取得・売却の仕訳（付随費用・売却損益）'},
   {file:'boki3-genka.html',     title:'減価償却（定額法）の計算と仕訳'},
-  {file:'boki3-keika.html',     title:'経過勘定（前払・未払・前受・未収）'},
-  {file:'boki3-keika2.html',    title:'毎年同額の前払い（18か月の理由）'},
+  {file:'boki3-kashidaore.html',title:'貸倒引当金の仕訳と計算'},
+  {file:'boki3-hojosho.html',      title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）'},
   {file:'boki3-shisanhyo.html', title:'試算表3種類の違い'},
   {file:'boki3-denpyo.html',    title:'伝票会計（３伝票制）の仕訳と解き方'},
   {file:'boki3-nikkei.html',    title:'仕訳日計表の書き方と集計ステップ'},
-  {file:'boki3-sanpou.html',    title:'商品売買の仕訳（三分法）仕入・売上・繰越商品'},
-  {file:'boki3-kake.html',      title:'掛取引（売掛金・買掛金）の仕訳'},
-  {file:'boki3-tegata.html',    title:'受取手形・支払手形・電子記録債権の仕訳'},
-  {file:'boki3-kyuryo.html',    title:'給料の仕訳と源泉所得税・社会保険料の預り金'},
-  {file:'boki3-kotei.html',    title:'固定資産の取得・売却の仕訳（付随費用・売却損益）'},
-  {file:'boki3-sonota.html',   title:'その他の債権・債務（前払金・前受金・仮払金・仮受金・立替金・預り金）'},
-  {file:'boki3-kabushiki.html',title:'株式会社の取引の仕訳（株式発行・剰余金の配当・利益準備金）'},
+  {file:'boki3-keika.html',     title:'経過勘定（前払・未払・前受・未収）'},
+  {file:'boki3-keika2.html',    title:'毎年同額の前払い（18か月の理由）'},
   {file:'boki3-shohi.html',    title:'消費税の仕訳（税抜方式）仮払消費税・仮受消費税'},
-  {file:'boki3-seisanhyo.html',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで'},
-  {file:'boki3-koguchi.html', title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方'},
-  {file:'boki3-ginko.html',   title:'銀行勘定調整表の書き方と修正仕訳（不一致の4原因）'},
-  {file:'boki3-shohinuriage.html', title:'商品有高帳の書き方（先入先出法・移動平均法）'},
-  {file:'boki3-hojosho.html',      title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）'},
   {file:'boki3-hojinzei.html',     title:'法人税等の仕訳（仮払法人税等・未払法人税等）'},
-  {file:'boki3-credit.html',       title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
+  {file:'boki3-kabushiki.html',title:'株式会社の取引の仕訳（株式発行・剰余金の配当・利益準備金）'},
+  {file:'boki3-ginko.html',   title:'銀行勘定調整表の書き方と修正仕訳（不一致の4原因）'},
+  {file:'boki3-seisanhyo.html',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで'},
 ];
 const ALL = [...BOKI3_ZERO, ...BOKI3_RONTEN];
 const KEY = f => `sq_read_${f}`;
+const THEME_KEY = 'sq2_theme';
+
+function applyTheme(theme){
+  const next = theme === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem(THEME_KEY, next);
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.toggle('is-active', btn.dataset.themeChoice === next);
+  });
+}
 
 function isRead(f){ return !!localStorage.getItem(KEY(f)); }
 function toggle(f){
@@ -217,6 +240,11 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   renderAll();
 });
 
+document.querySelectorAll('.theme-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyTheme(btn.dataset.themeChoice));
+});
+
+applyTheme(localStorage.getItem(THEME_KEY) || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 renderAll();
 </script>
 </body>

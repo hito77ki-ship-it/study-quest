@@ -1955,13 +1955,14 @@ function buildSidebarCTA(sidebar){
 const BOKI3_FILES = [
   'boki-zero-01.html','boki-zero-02.html','boki-zero-03.html',
   'boki-zero-04.html','boki-zero-05.html',
-  'boki3-genkin.html','boki3-kafusoku.html','boki3-kashidaore.html',
-  'boki3-genka.html','boki3-keika.html','boki3-keika2.html',
-  'boki3-shisanhyo.html','boki3-denpyo.html','boki3-nikkei.html',
-  'boki3-sanpou.html','boki3-kake.html','boki3-tegata.html','boki3-kyuryo.html',
-  'boki3-kotei.html','boki3-sonota.html','boki3-kabushiki.html','boki3-shohi.html',
-  'boki3-seisanhyo.html','boki3-koguchi.html','boki3-ginko.html',
-  'boki3-shohinuriage.html','boki3-hojosho.html','boki3-hojinzei.html','boki3-credit.html',
+  'boki3-genkin.html','boki3-kake.html','boki3-sanpou.html',
+  'boki3-shohinuriage.html','boki3-tegata.html','boki3-credit.html',
+  'boki3-sonota.html','boki3-kafusoku.html','boki3-koguchi.html',
+  'boki3-kyuryo.html','boki3-kotei.html','boki3-genka.html',
+  'boki3-kashidaore.html','boki3-hojosho.html','boki3-shisanhyo.html',
+  'boki3-denpyo.html','boki3-nikkei.html','boki3-keika.html',
+  'boki3-keika2.html','boki3-shohi.html','boki3-hojinzei.html',
+  'boki3-kabushiki.html','boki3-ginko.html','boki3-seisanhyo.html',
 ];
 
 const BOKI2_COMMERCIAL_FILES = [
