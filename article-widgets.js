@@ -1629,10 +1629,12 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-item:last-child{border-bottom:none;}
 .sq-search-item--current{border-left:3px solid #8CC63F;background:rgba(140,198,63,.06);}
 .sq-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
-.sq-search-title{font-size:13px;font-weight:500;line-height:1.5;}
+.sq-search-title{font-size:13px;font-weight:700;line-height:1.5;display:block;}
+.sq-search-snippet{font-size:11px;color:var(--sq-muted);line-height:1.6;margin-top:2px;display:block;}
+.sq-search-state{padding:10px 20px;font-size:11px;color:var(--sq-muted);border-bottom:1px solid var(--sq-border);}
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
-  `;
+`;
   document.head.appendChild(s);
 }
 
@@ -1740,35 +1742,101 @@ function buildSearchModal(){
   const modal = document.createElement('div');
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
-  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事タイトルで検索... 例：試算表、経過勘定"><div class="sq-search-results"></div><div class="sq-search-hint">Esc で閉じる　　/ キーで開く</div></div>';
+  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-results"></div><div class="sq-search-hint">本文検索対応　　Esc で閉じる　　/ キーで開く</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
   const results= modal.querySelector('.sq-search-results');
+  let searchIndex = null;
+  let indexPromise = null;
+  let indexReady = false;
+
+  const normalize = text => String(text || '').toLowerCase().replace(/\s+/g,' ').trim();
+  const excerpt = (text, q) => {
+    const source = String(text || '').replace(/\s+/g,' ').trim();
+    if(!q) return '';
+    const lower = source.toLowerCase();
+    const idx = lower.indexOf(q.toLowerCase());
+    if(idx < 0) return source.slice(0,70);
+    const start = Math.max(0, idx - 28);
+    const end = Math.min(source.length, idx + q.length + 46);
+    return `${start ? '...' : ''}${source.slice(start,end)}${end < source.length ? '...' : ''}`;
+  };
+  const baseEntries = () => Object.entries(ARTICLES).map(([f,a]) => ({
+    f,
+    label: a.label,
+    title: a.title,
+    text: `${a.label} ${a.title}`,
+    normalized: normalize(`${a.label} ${a.title}`),
+    loaded: false
+  }));
+  const extractArticleText = html => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.querySelectorAll('script,style,nav,footer,svg').forEach(el => el.remove());
+    const meta = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+    const main = doc.querySelector('main,.container,article') || doc.body;
+    return `${meta} ${main.textContent || ''}`.replace(/\s+/g,' ').trim().slice(0,12000);
+  };
+  const ensureSearchIndex = () => {
+    if(indexReady && searchIndex) return Promise.resolve(searchIndex);
+    if(indexPromise) return indexPromise;
+    if(searchIndex) return Promise.resolve(searchIndex);
+    searchIndex = baseEntries();
+    indexPromise = Promise.all(searchIndex.map(async item => {
+      const cacheKey = `sq_article_search_${item.f}`;
+      try{
+        const cached = sessionStorage.getItem(cacheKey);
+        const bodyText = cached || extractArticleText(await (await fetch(item.f, {cache:'force-cache'})).text());
+        if(!cached) sessionStorage.setItem(cacheKey, bodyText);
+        item.text = `${item.label} ${item.title} ${bodyText}`;
+        item.normalized = normalize(item.text);
+        item.loaded = true;
+      }catch(e){
+        item.loaded = false;
+      }
+      return item;
+    })).then(() => {
+      indexReady = true;
+      return searchIndex;
+    });
+    return indexPromise;
+  };
 
   function openModal(){
     modal.classList.add('open');
     setTimeout(()=>input.focus(),40);
     input.value='';
     render('');
+    ensureSearchIndex().then(()=>render(input.value));
   }
   function closeModal(){ modal.classList.remove('open'); }
 
   function render(q){
-    const entries = Object.entries(ARTICLES);
-    const filtered = q.trim()===''
+    const query = normalize(q);
+    const entries = searchIndex || baseEntries();
+    const filtered = query === ''
       ? entries
-      : entries.filter(([,a])=>a.title.includes(q)||a.label.includes(q));
+      : entries.filter(item => item.normalized.includes(query));
     if(!filtered.length){
-      results.innerHTML=`<div class="sq-search-empty">「${q}」に一致する記事はありませんでした</div>`;
+      results.innerHTML=`<div class="sq-search-empty">「${_escHtml(q)}」に一致する記事はありませんでした</div>`;
       return;
     }
-    results.innerHTML = filtered.slice(0,10).map(([f,a])=>
-      `<a href="${f}" class="sq-search-item${f===PAGE?' sq-search-item--current':''}">
-        <span class="sq-search-label">${a.label}</span>
-        <span class="sq-search-title">${a.title}</span>
+    const sorted = filtered.slice().sort((a,b) => {
+      if(query === '') return 0;
+      const aTitle = normalize(`${a.label} ${a.title}`).includes(query) ? 1 : 0;
+      const bTitle = normalize(`${b.label} ${b.title}`).includes(query) ? 1 : 0;
+      return bTitle - aTitle;
+    });
+    const loading = searchIndex && !indexReady
+      ? '<div class="sq-search-state">本文を読み込みながら検索しています...</div>'
+      : '';
+    results.innerHTML = loading + sorted.slice(0,10).map(item => {
+      const snip = query ? excerpt(item.text, q) : '';
+      return `<a href="${item.f}" class="sq-search-item${item.f===PAGE?' sq-search-item--current':''}">
+        <span class="sq-search-label">${_escHtml(item.label)}</span>
+        <span><span class="sq-search-title">${_escHtml(item.title)}</span>${snip ? `<span class="sq-search-snippet">${_escHtml(snip)}</span>` : ''}</span>
       </a>`
-    ).join('');
+    }).join('');
   }
 
   btn.addEventListener('click', openModal);
