@@ -3851,12 +3851,22 @@ input[type="date"].mrec-select {
 .dm-item.done .dm-exp{color:var(--muted);}
 .dm-all-done{text-align:center;padding:6px;font-size:12px;color:var(--accent);font-weight:bold;letter-spacing:.05em;}
 /* ════ TODAY TODO ════ */
-.todo-card{background:var(--panel2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow);}
+.todo-card{background:linear-gradient(135deg,rgba(15,20,18,.92),rgba(20,28,24,.82));border:1px solid rgba(255,255,255,.08);border-left:4px solid var(--accent);border-radius:18px;padding:16px;margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden;position:relative;}
+body[data-theme="light"] .todo-card{background:linear-gradient(135deg,#ffffff,#F7FAFC);border-color:var(--border);}
 .todo-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;}
 .todo-kicker{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:2px;}
 .todo-title{font-size:14px;font-weight:700;color:var(--text);}
 .todo-count{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--accent2);white-space:nowrap;margin-top:2px;}
-.todo-form{display:flex;gap:8px;margin-bottom:10px;}
+.todo-year{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:12px 14px;margin:10px 0 12px;}
+body[data-theme="light"] .todo-year{background:#fff;border-color:var(--border);}
+.todo-year-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px;}
+.todo-year-num{font-family:'Share Tech Mono',monospace;font-size:24px;font-weight:700;color:var(--text);line-height:1;}
+.todo-year-pct{font-family:'Share Tech Mono',monospace;font-size:20px;font-weight:700;color:var(--text);line-height:1;}
+.todo-year-track{height:5px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:7px;}
+body[data-theme="light"] .todo-year-track{background:#E2E8F0;}
+.todo-year-fill{height:100%;background:linear-gradient(90deg,#fff,var(--accent));border-radius:999px;}
+.todo-year-foot{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);}
+.todo-form{display:flex;gap:8px;margin-bottom:12px;}
 .todo-input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:13px;padding:10px 12px;outline:none;}
 .todo-input:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(140,198,63,.12);}
 .todo-add-btn{background:var(--accent);border:none;border-radius:8px;color:#0A0A0F;font-size:13px;font-weight:700;padding:0 14px;cursor:pointer;font-family:inherit;white-space:nowrap;}
@@ -3869,7 +3879,22 @@ input[type="date"].mrec-select {
 .todo-item.done .todo-text{text-decoration:line-through;color:var(--muted);}
 .todo-del{background:transparent;border:none;color:var(--muted);font-size:16px;line-height:1;cursor:pointer;padding:2px 4px;flex-shrink:0;}
 .todo-empty{font-size:12px;color:var(--muted);line-height:1.7;background:var(--panel);border:1px dashed var(--border);border-radius:8px;padding:12px;}
-@media(max-width:540px){.todo-form{flex-direction:column}.todo-add-btn{height:38px}}
+.todo-cal{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:14px;margin-top:12px;}
+body[data-theme="light"] .todo-cal{background:#fff;border-color:var(--border);}
+.todo-cal-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;}
+.todo-cal-weekdays,.todo-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+.todo-cal-weekdays{margin-bottom:6px;}
+.todo-cal-weekdays span{font-size:10px;color:var(--muted);text-align:center;font-weight:700;}
+.todo-day{min-height:60px;border-radius:10px;padding:5px 4px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.04);overflow:hidden;}
+body[data-theme="light"] .todo-day{background:#F8FAFC;border-color:#EDF2F7;}
+.todo-day.is-today{outline:2px solid rgba(140,198,63,.55);background:rgba(140,198,63,.08);}
+.todo-day-num{font-family:'Share Tech Mono',monospace;font-size:15px;color:var(--text);line-height:1.1;margin-bottom:4px;}
+.todo-chip{height:14px;border-radius:4px;font-size:9px;line-height:14px;color:#fff;padding:0 4px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.todo-chip.study{background:#0891B2;}
+.todo-chip.done{background:#16A34A;}
+.todo-chip.todo{background:#A855F7;}
+.todo-more{font-size:9px;color:var(--muted);text-align:right;margin-top:2px;}
+@media(max-width:540px){.todo-form{flex-direction:column}.todo-add-btn{height:38px}.todo-cal{padding:10px}.todo-cal-grid,.todo-cal-weekdays{gap:4px}.todo-day{min-height:48px;padding:4px 3px}.todo-day-num{font-size:13px}.todo-chip{height:12px;line-height:12px;font-size:8px}}
 /* ════ HEATMAP ════ */display:flex;align-items:center;gap:6px;margin-bottom:10px;justify-content:flex-end;}
 .heatmap-legend-cells{display:flex;gap:2px;}
 .hm-cell{width:11px;height:11px;border-radius:2px;}
@@ -13179,6 +13204,63 @@ function deleteTodayTodo(id){
   setTodayTodos(getTodayTodos().filter(item => item.id !== id));
   renderTodayTodoCard();
 }
+function dateKeyLocal(d){
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+function renderTodoYearProgress(){
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 1);
+  const end = new Date(now.getFullYear() + 1, 0, 1);
+  const pct = Math.floor((now - start) / (end - start) * 100);
+  const left = Math.max(0, Math.ceil((end - now) / 86400000));
+  return `<div class="todo-year">
+    <div class="todo-year-top">
+      <div class="todo-year-num">${now.getFullYear()}</div>
+      <div class="todo-year-pct">${pct}%</div>
+    </div>
+    <div class="todo-year-track"><div class="todo-year-fill" style="width:${pct}%"></div></div>
+    <div class="todo-year-foot"><span>今年の${pct}%が過ぎました</span><span>残り ${left}日</span></div>
+  </div>`;
+}
+function renderTodoCalendar(){
+  const todoData = loadTodos();
+  const today = new Date(getTodayStr() + 'T00:00:00');
+  const start = new Date(today);
+  start.setDate(today.getDate() - today.getDay());
+  const end = new Date(start);
+  end.setDate(start.getDate() + 27);
+  const monthLabel = `${start.getMonth()+1}月${start.getDate()}日 - ${end.getMonth()+1}月${end.getDate()}日`;
+  const weekdays = ['日','月','火','水','木','金','土'];
+  const cells = [];
+  for(let i=0;i<28;i++){
+    const d = new Date(start);
+    d.setDate(start.getDate() + i);
+    const key = dateKeyLocal(d);
+    const dayTodos = Array.isArray(todoData[key]) ? todoData[key] : [];
+    const daySessions = sessions.filter(s => s.date === key && isStudyType(s));
+    const chips = [];
+    daySessions.forEach(s => {
+      const subj = allSelectedSubjects().find(x => x.key === s.subject);
+      chips.push(`<div class="todo-chip study">${escHtml(subj?.name || '学習')} ${Math.round(sAmount(s))}m</div>`);
+    });
+    dayTodos.forEach(t => chips.push(`<div class="todo-chip ${t.done?'done':'todo'}">${escHtml(t.text)}</div>`));
+    const visibleChips = chips.slice(0,4);
+    const more = Math.max(0, chips.length - visibleChips.length);
+    cells.push(`<div class="todo-day${key === getTodayStr() ? ' is-today' : ''}">
+      <div class="todo-day-num">${d.getDate()}</div>
+      ${visibleChips.join('')}
+      ${more ? `<div class="todo-more">+${more}</div>` : ''}
+    </div>`);
+  }
+  return `<div class="todo-cal">
+    <div class="todo-cal-title">${monthLabel}</div>
+    <div class="todo-cal-weekdays">${weekdays.map(w => `<span>${w}</span>`).join('')}</div>
+    <div class="todo-cal-grid">${cells.join('')}</div>
+  </div>`;
+}
 function renderTodayTodoCard(){
   const el = document.getElementById('todayTodoCard');
   if(!el) return;
@@ -13194,6 +13276,7 @@ function renderTodayTodoCard(){
       </div>
       <div class="todo-count">${done}/${total}</div>
     </div>
+    ${renderTodoYearProgress()}
     <div class="todo-form">
       <input id="todoInput" class="todo-input" type="text" maxlength="60" placeholder="例：民法総則を30分 / 過去問を5問" onkeydown="if(event.key==='Enter') addTodayTodo()">
       <button class="todo-add-btn" onclick="addTodayTodo()">追加</button>
@@ -13207,6 +13290,7 @@ function renderTodayTodoCard(){
         </div>
       `).join('') : `<div class="todo-empty">今日のTodoはまだありません。まずは「何を・どれくらい」やるかを1つだけ書き出しましょう。</div>`}
     </div>
+    ${renderTodoCalendar()}
   </div>`;
 }
 
