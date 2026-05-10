@@ -9126,6 +9126,7 @@ async function finishTimer(){
     lv: char.level, name: char.name
   });
 
+  timerStartedAt = null;
   // Reset timer
   timerSeconds=0;pomoCount=0;pomoPhase='study';
   clearInterval(pomoBreakInterval);
@@ -10263,7 +10264,7 @@ function renderRivalCard(){
       </div>
       <div class="rival-bar-section">
         <div class="rival-bar-label">
-          <span>${fmt(myMins)}</span><span style="color:#555;">今週の学習時間</span><span>${fmt(rivalMins)}</span>
+          <span>${fmt(myMins)}</span><span style="color:var(--muted);">今週の学習時間</span><span>${fmt(rivalMins)}</span>
         </div>
         <div class="rival-bar-track" style="margin-bottom:5px;"><div class="rival-bar-my" style="width:${Math.round(myMins/maxMins*100)}%"></div></div>
         <div class="rival-bar-track"><div class="rival-bar-enemy" style="width:${Math.round(rivalMins/maxMins*100)}%"></div></div>
@@ -10810,10 +10811,10 @@ function renderWeeklyGoal(){
       const doneStr = doneH ? `${doneH}h${doneM?doneM+'m':''}` : `${doneM}m`;
       const achieved = pct>=1;
       txtEl.innerHTML =
-        `今週 <strong style="color:#333">${doneStr}</strong> / ${goalHours}h`+
+        `今週 <strong style="color:var(--text)">${doneStr}</strong> / ${goalHours}h`+
         (achieved
           ? `<br><span style="color:#66bb6a;font-weight:700">🎉 目標達成！</span>`
-          : `<br><span style="color:#888;font-size:11px">残り ${Math.max(0,Math.round((goalMins-weekMins)/60*10)/10)}h</span>`);
+          : `<br><span style="color:var(--muted);font-size:11px">残り ${Math.max(0,Math.round((goalMins-weekMins)/60*10)/10)}h</span>`);
     }
   }
 
@@ -19931,7 +19932,7 @@ function renderMaterials(){
 
   container.innerHTML = Object.entries(groups).map(([cat, mats]) => `
     <div>
-      <div class="material-category-header">${cat}</div>
+      <div class="material-category-header">${escHtml(cat)}</div>
       <div class="material-grid">
         ${mats.map(m => {
           const mins = materialMins[m.id] || 0;
