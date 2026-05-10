@@ -3856,6 +3856,7 @@ body[data-theme="light"] .todo-card{background:linear-gradient(135deg,#ffffff,#F
 .todo-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;}
 .todo-kicker{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:2px;}
 .todo-title{font-size:14px;font-weight:700;color:var(--text);}
+.todo-subtitle{font-size:11px;color:var(--muted);margin-top:2px;}
 .todo-count{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--accent2);white-space:nowrap;margin-top:2px;}
 .todo-year{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:12px 14px;margin:10px 0 12px;}
 body[data-theme="light"] .todo-year{background:#fff;border-color:var(--border);}
@@ -3885,9 +3886,10 @@ body[data-theme="light"] .todo-cal{background:#fff;border-color:var(--border);}
 .todo-cal-weekdays,.todo-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
 .todo-cal-weekdays{margin-bottom:6px;}
 .todo-cal-weekdays span{font-size:10px;color:var(--muted);text-align:center;font-weight:700;}
-.todo-day{min-height:60px;border-radius:10px;padding:5px 4px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.04);overflow:hidden;}
+.todo-day{min-height:60px;border-radius:10px;padding:5px 4px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.04);overflow:hidden;cursor:pointer;text-align:left;font-family:inherit;}
 body[data-theme="light"] .todo-day{background:#F8FAFC;border-color:#EDF2F7;}
 .todo-day.is-today{outline:2px solid rgba(140,198,63,.55);background:rgba(140,198,63,.08);}
+.todo-day.is-selected{border-color:var(--accent);box-shadow:0 0 0 2px rgba(140,198,63,.25) inset;}
 .todo-day-num{font-family:'Share Tech Mono',monospace;font-size:15px;color:var(--text);line-height:1.1;margin-bottom:4px;}
 .todo-chip{height:14px;border-radius:4px;font-size:9px;line-height:14px;color:#fff;padding:0 4px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .todo-chip.study{background:#0891B2;}
@@ -13168,20 +13170,38 @@ function renderTodayQuestBanner(){
 }
 
 const TODO_KEY = 'sq2_today_todos';
+const TODO_SELECTED_DATE_KEY = 'sq2_todo_selected_date';
 function loadTodos(){
   try{ return JSON.parse(localStorage.getItem(TODO_KEY) || '{}'); }catch{ return {}; }
 }
 function saveTodos(data){
   try{ localStorage.setItem(TODO_KEY, JSON.stringify(data)); }catch{}
 }
-function getTodayTodos(){
+function getSelectedTodoDate(){
+  try{
+    const stored = localStorage.getItem(TODO_SELECTED_DATE_KEY);
+    if(stored && /^\d{4}-\d{2}-\d{2}$/.test(stored)) return stored;
+  }catch{}
+  return getTodayStr();
+}
+function setSelectedTodoDate(date){
+  if(!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
+  try{ localStorage.setItem(TODO_SELECTED_DATE_KEY, date); }catch{}
+  renderTodayTodoCard();
+}
+function formatTodoDateLabel(dateStr){
+  const d = new Date(dateStr + 'T00:00:00');
+  const weekdays = ['日','月','火','水','木','金','土'];
+  const label = `${d.getMonth()+1}月${d.getDate()}日(${weekdays[d.getDay()]})`;
+  return dateStr === getTodayStr() ? `今日 ${label}` : label;
+}
+function getTodosForDate(date){
   const data = loadTodos();
-  const date = getTodayStr();
   return Array.isArray(data[date]) ? data[date] : [];
 }
-function setTodayTodos(items){
+function setTodosForDate(date, items){
   const data = loadTodos();
-  data[getTodayStr()] = items;
+  data[date] = items;
   saveTodos(data);
 }
 function addTodayTodo(){
@@ -13189,19 +13209,22 @@ function addTodayTodo(){
   if(!input) return;
   const text = input.value.trim();
   if(!text) return;
-  const items = getTodayTodos();
+  const date = getSelectedTodoDate();
+  const items = getTodosForDate(date);
   items.push({ id: Date.now().toString(36), text, done: false, createdAt: new Date().toISOString() });
-  setTodayTodos(items);
+  setTodosForDate(date, items);
   input.value = '';
   renderTodayTodoCard();
 }
 function toggleTodayTodo(id){
-  const items = getTodayTodos().map(item => item.id === id ? {...item, done: !item.done} : item);
-  setTodayTodos(items);
+  const date = getSelectedTodoDate();
+  const items = getTodosForDate(date).map(item => item.id === id ? {...item, done: !item.done} : item);
+  setTodosForDate(date, items);
   renderTodayTodoCard();
 }
 function deleteTodayTodo(id){
-  setTodayTodos(getTodayTodos().filter(item => item.id !== id));
+  const date = getSelectedTodoDate();
+  setTodosForDate(date, getTodosForDate(date).filter(item => item.id !== id));
   renderTodayTodoCard();
 }
 function dateKeyLocal(d){
@@ -13227,6 +13250,7 @@ function renderTodoYearProgress(){
 }
 function renderTodoCalendar(){
   const todoData = loadTodos();
+  const selectedDate = getSelectedTodoDate();
   const today = new Date(getTodayStr() + 'T00:00:00');
   const start = new Date(today);
   start.setDate(today.getDate() - today.getDay());
@@ -13249,11 +13273,14 @@ function renderTodoCalendar(){
     dayTodos.forEach(t => chips.push(`<div class="todo-chip ${t.done?'done':'todo'}">${escHtml(t.text)}</div>`));
     const visibleChips = chips.slice(0,4);
     const more = Math.max(0, chips.length - visibleChips.length);
-    cells.push(`<div class="todo-day${key === getTodayStr() ? ' is-today' : ''}">
+    const classes = ['todo-day'];
+    if(key === getTodayStr()) classes.push('is-today');
+    if(key === selectedDate) classes.push('is-selected');
+    cells.push(`<button type="button" class="${classes.join(' ')}" onclick="setSelectedTodoDate('${key}')" aria-label="${key}のTodoを見る">
       <div class="todo-day-num">${d.getDate()}</div>
       ${visibleChips.join('')}
       ${more ? `<div class="todo-more">+${more}</div>` : ''}
-    </div>`);
+    </button>`);
   }
   return `<div class="todo-cal">
     <div class="todo-cal-title">${monthLabel}</div>
@@ -13264,7 +13291,9 @@ function renderTodoCalendar(){
 function renderTodayTodoCard(){
   const el = document.getElementById('todayTodoCard');
   if(!el) return;
-  const items = getTodayTodos();
+  const selectedDate = getSelectedTodoDate();
+  const selectedLabel = formatTodoDateLabel(selectedDate);
+  const items = getTodosForDate(selectedDate);
   const done = items.filter(item => item.done).length;
   const total = items.length;
 
@@ -13272,13 +13301,14 @@ function renderTodayTodoCard(){
     <div class="todo-head">
       <div>
         <div class="todo-kicker">TODAY TODO</div>
-        <div class="todo-title">今日やること</div>
+        <div class="todo-title">${selectedDate === getTodayStr() ? '今日やること' : 'その日にやること'}</div>
+        <div class="todo-subtitle">${selectedLabel}</div>
       </div>
       <div class="todo-count">${done}/${total}</div>
     </div>
     ${renderTodoYearProgress()}
     <div class="todo-form">
-      <input id="todoInput" class="todo-input" type="text" maxlength="60" placeholder="例：民法総則を30分 / 過去問を5問" onkeydown="if(event.key==='Enter') addTodayTodo()">
+      <input id="todoInput" class="todo-input" type="text" maxlength="60" placeholder="${selectedLabel}のTodoを追加 例：民法総則を30分 / 過去問を5問" onkeydown="if(event.key==='Enter') addTodayTodo()">
       <button class="todo-add-btn" onclick="addTodayTodo()">追加</button>
     </div>
     <div class="todo-list">
@@ -13288,7 +13318,7 @@ function renderTodayTodoCard(){
           <div class="todo-text">${escHtml(item.text)}</div>
           <button class="todo-del" onclick="deleteTodayTodo('${item.id}')" aria-label="削除">×</button>
         </div>
-      `).join('') : `<div class="todo-empty">今日のTodoはまだありません。まずは「何を・どれくらい」やるかを1つだけ書き出しましょう。</div>`}
+      `).join('') : `<div class="todo-empty">${selectedLabel}のTodoはまだありません。カレンダーで日付を選んで、「何を・どれくらい」やるかを1つだけ書き出しましょう。</div>`}
     </div>
     ${renderTodoCalendar()}
   </div>`;
