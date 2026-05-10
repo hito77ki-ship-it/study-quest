@@ -687,12 +687,21 @@ footer{background:#091505;padding:48px 24px 40px;}
 
 /* ─── ARTICLES SECTION 2-COLUMN ─── */
 .articles-layout{
-  display:grid;grid-template-columns:1fr 248px;gap:32px;align-items:start;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start;
+  max-width:960px;margin:0 auto;
 }
-.articles-sidebar{position:sticky;top:80px;}
+.articles-main{min-width:0;}
+.articles-feature-links{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,224px));
+  justify-content:center;gap:12px;margin-bottom:36px;
+}
+.articles-sidebar{
+  position:static;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;
+}
 .articles-sidebar-box{
   background:var(--card-bg);border:1px solid var(--border);
-  border-radius:14px;padding:20px;margin-bottom:16px;
+  border-radius:14px;padding:20px;margin-bottom:0;
 }
 .articles-sidebar-title{
   font-size:11px;font-weight:700;color:var(--ink3);
@@ -715,8 +724,9 @@ footer{background:#091505;padding:48px 24px 40px;}
 .sidebar-art-link:last-child{border-bottom:none;}
 .sidebar-art-link:hover{color:var(--green);}
 @media(max-width:900px){
-  .articles-layout{grid-template-columns:1fr;}
-  .articles-sidebar{position:static;}
+  .articles-layout{max-width:100%;}
+  .articles-sidebar{display:block;}
+  .articles-sidebar-box{margin-bottom:16px;}
 }
 
 /* ─── MOBILE FLOAT BUTTON ─── */
@@ -1399,10 +1409,10 @@ footer{background:#091505;padding:48px 24px 40px;}
       <p style="font-size:14px;color:var(--ink3);margin-top:8px;">各資格の勉強時間・攻略法を無料で公開しています</p>
     </div>
     <div class="articles-layout">
-    <div><!-- メインコンテンツ -->
+    <div class="articles-main"><!-- メインコンテンツ -->
 
     <!-- 注目リンク -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:36px;">
+    <div class="articles-feature-links">
       <a href="shikaku-list.html" style="display:block;background:linear-gradient(135deg,rgba(140,198,63,.12),rgba(140,198,63,.04));border:2px solid var(--green);border-radius:12px;padding:16px;text-align:center;transition:border-color .2s,transform .15s;color:inherit;">
         <div style="font-size:24px;margin-bottom:8px;">📋</div>
         <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">資格ガイド一覧</div>
