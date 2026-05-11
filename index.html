@@ -6818,16 +6818,31 @@ function mergeCustomSubjectsBackup(localMap = {}, cloudMap = {}, localDeleted = 
   });
   return {customSubjects: merged, deleted};
 }
-function buildExtendedProfileInfoBackup(){
-  const info = getLocalJson('sq2_profile_info', {});
+function pickCurrentDailyValue(localValue, cloudValue){
+  const today = getTodayStr();
+  const localIsToday = localValue?.date === today;
+  const cloudIsToday = cloudValue?.date === today;
+  if(localIsToday && cloudIsToday){
+    const lt = Date.parse(localValue.updatedAt || localValue.createdAt || localValue.declaredAt || '') || 0;
+    const ct = Date.parse(cloudValue.updatedAt || cloudValue.createdAt || cloudValue.declaredAt || '') || 0;
+    return ct > lt ? cloudValue : localValue;
+  }
+  if(localIsToday) return localValue;
+  if(cloudIsToday) return cloudValue;
+  return localValue || cloudValue || null;
+}
+function buildExtendedProfileInfoBackup(baseProfileInfo = {}){
+  const info = {...(baseProfileInfo || {}), ...getLocalJson('sq2_profile_info', {})};
+  const localDecl = getLocalJson('sq2_daily_decl', null);
+  const localDuel = getLocalJson('sq2_today_duel', null);
   return JSON.stringify({
     ...info,
     _customSubjects: getCustomSubjectsBackup(),
     _deletedCustomSubjects: loadDeletedCustomSubjects(),
     _todos: getLocalJson('sq2_today_todos', {}),
     _todoDeleted: getLocalJson('sq2_today_todo_deleted', {}),
-    _dailyDecl: getLocalJson('sq2_daily_decl', null),
-    _dailyDuel: getLocalJson('sq2_today_duel', null),
+    _dailyDecl: pickCurrentDailyValue(localDecl, baseProfileInfo?._dailyDecl),
+    _dailyDuel: pickCurrentDailyValue(localDuel, baseProfileInfo?._dailyDuel),
     _importPast: getLocalJson('sq2_import_past', {}),
     _deletedSessions: loadDeletedSessions(),
     _deletedMaterials: loadDeletedMaterials(),
@@ -6879,6 +6894,19 @@ async function mergeCloudBackupsIntoLocal(){
     });
     saveDeletedCustomSubjects(mergedCustom.deleted);
   }
+  const today = getTodayStr();
+  const cloudDecl = cloudProfileInfo?._dailyDecl;
+  const localDecl = getLocalJson('sq2_daily_decl', null);
+  const mergedDecl = pickCurrentDailyValue(localDecl, cloudDecl);
+  if(mergedDecl?.date === today && JSON.stringify(mergedDecl) !== JSON.stringify(localDecl)){
+    setLocalJson('sq2_daily_decl', mergedDecl);
+  }
+  const cloudDuel = cloudProfileInfo?._dailyDuel;
+  const localDuel = getLocalJson('sq2_today_duel', null);
+  const mergedDuel = pickCurrentDailyValue(localDuel, cloudDuel);
+  if(mergedDuel?.date === today && JSON.stringify(mergedDuel) !== JSON.stringify(localDuel)){
+    setLocalJson('sq2_today_duel', mergedDuel);
+  }
   const cloudMaterials = safeParseJson(cloudBackup?.materials_backup, []);
   if(Array.isArray(cloudMaterials)){
     loadMaterials();
@@ -6892,6 +6920,7 @@ async function mergeCloudBackupsIntoLocal(){
     saveDeletedMaterials(mergedMaterials.deleted);
     localStorage.setItem('sq2_materials', JSON.stringify(materials));
   }
+  return cloudProfileInfo;
 }
 async function loadAll(){
   try{const v=localStorage.getItem('sq2_char');     if(v)char=JSON.parse(v);}catch{}
@@ -7341,7 +7370,12 @@ async function signOut(){
 }
 async function syncToCloud(){
   if(!currentUser || isGuest) return;
-  try { await mergeCloudBackupsIntoLocal(); } catch(e) { console.warn('[SQ] cloud backup merge skipped:', e); }
+  let cloudProfileInfoForBackup = {};
+  try {
+    cloudProfileInfoForBackup = await mergeCloudBackupsIntoLocal() || {};
+  } catch(e) {
+    console.warn('[SQ] cloud backup merge skipped:', e);
+  }
   const totalSmins = studyMins(sessions);
   const trackSmins = levelStudyMins(sessions);
   const lp = getLevelProgress(trackSmins);
@@ -7374,6 +7408,7 @@ async function syncToCloud(){
   if(error) console.error('[SQ] profiles upsert 1 失敗:', error.code, error.message, error.details, error.hint);
 
   // ── 全データをバックアップ用カラムに保存 ──
+  let backupError = null;
   if(!error){
     const syncAt = new Date().toISOString();
     char.lastSyncAt = syncAt;
@@ -7384,7 +7419,7 @@ async function syncToCloud(){
     const materialsJson    = JSON.stringify(materials);
     const scoresJson       = JSON.stringify(scoreRecords);
     const planJson         = localStorage.getItem('sq2_weekly_plan') || '[]';
-    const profileInfoJson  = buildExtendedProfileInfoBackup();
+    const profileInfoJson  = buildExtendedProfileInfoBackup(cloudProfileInfoForBackup);
 
     const {error: err2} = await sb.from('profiles').upsert({
       id: currentUser.id,
@@ -7403,6 +7438,7 @@ async function syncToCloud(){
         ? { report_backup: JSON.stringify(weeklyGoalData) }
         : {}),
     }, {onConflict:'id'});
+    backupError = err2 || null;
     if(err2) console.error('[SQ] profiles upsert 2 失敗:', err2.code, err2.message, err2.details, err2.hint);
 
     console.log('[SQ] syncToCloud 完了:', {
@@ -7415,8 +7451,9 @@ async function syncToCloud(){
 
   const el = document.getElementById('userBarSync');
   if(el){
-    el.textContent = error ? '✗ 同期失敗' : '✓ 同期済み';
-    if(!error) setTimeout(()=>{ el.textContent=''; }, 3000);
+    const failed = error || backupError;
+    el.textContent = failed ? '✗ 同期失敗' : '✓ 同期済み';
+    if(!failed) setTimeout(()=>{ el.textContent=''; }, 3000);
   }
 }
 
@@ -7525,15 +7562,17 @@ async function restoreFromCloud(){
       const today = getTodayStr();
       const cloudDecl = cloudProfileInfo?._dailyDecl;
       const localDecl = getLocalJson('sq2_daily_decl', null);
-      if(cloudDecl?.date === today && (localDecl?.date !== today || cloudIsNewer)){
-        setLocalJson('sq2_daily_decl', cloudDecl);
+      const mergedDecl = pickCurrentDailyValue(localDecl, cloudDecl);
+      if(mergedDecl?.date === today && JSON.stringify(mergedDecl) !== JSON.stringify(localDecl)){
+        setLocalJson('sq2_daily_decl', mergedDecl);
         restored = true;
         console.log('[SQ] 今日の宣言をクラウドから復元');
       }
       const cloudDuel = cloudProfileInfo?._dailyDuel;
       const localDuel = getLocalJson('sq2_today_duel', null);
-      if(cloudDuel?.date === today && (localDuel?.date !== today || cloudIsNewer)){
-        setLocalJson('sq2_today_duel', cloudDuel);
+      const mergedDuel = pickCurrentDailyValue(localDuel, cloudDuel);
+      if(mergedDuel?.date === today && JSON.stringify(mergedDuel) !== JSON.stringify(localDuel)){
+        setLocalJson('sq2_today_duel', mergedDuel);
         restored = true;
         console.log('[SQ] 本日の決闘をクラウドから復元');
       }
@@ -12278,7 +12317,8 @@ function submitDecl(){
     if(total > 0) subjects[s.key] = total;
   });
 
-  const decl = { date: getTodayStr(), totalMins, subjects, createdAt: new Date().toISOString() };
+  const now = new Date().toISOString();
+  const decl = { date: getTodayStr(), totalMins, subjects, createdAt: now, updatedAt: now };
   saveDecl(decl);
   showDeclDisplay(decl);
   initTodayDuelFromDecl(decl);
@@ -14560,12 +14600,21 @@ function saveProfileInfo(){
   };
   try{ localStorage.setItem(PROF_INFO_KEY, JSON.stringify(info)); }catch{}
   // Supabaseにも反映（is_public + profile_info_backup）
-  if(currentUser){
-    sb.from('profiles').upsert({
-      id: currentUser.id,
-      is_public: info.isPublic,
-      profile_info_backup: JSON.stringify(info),
-    }).then(()=>{}, ()=>{});
+  if(currentUser && !isGuest){
+    sb.from('profiles')
+      .select('profile_info_backup')
+      .eq('id', currentUser.id)
+      .single()
+      .then(({data})=>{
+        const cloudProfileInfo = safeParseJson(data?.profile_info_backup, {});
+        return sb.from('profiles').upsert({
+          id: currentUser.id,
+          is_public: info.isPublic,
+          profile_info_backup: buildExtendedProfileInfoBackup(cloudProfileInfo),
+          updated_at: new Date().toISOString(),
+        }, {onConflict:'id'});
+      })
+      .then(()=>scheduleCloudSync(), ()=>scheduleCloudSync());
   }
   // タグを即時更新
   renderProfileTab();
@@ -20636,6 +20685,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260511_sync_overwrite_guard',
+    date: '2026-05-11',
+    type: 'fix',
+    title: '☁️ 教材・今日の宣言の同期保護を強化しました',
+    desc: 'PCやスマホの片方にだけ残っている教材・今日の宣言を、空の端末データで上書きしないようにしました。プロフィール更新時もクラウドバックアップの学習データを保持します。'
+  },
   {
     id: 'v20260511_mobile_drawer_layer_fix',
     date: '2026-05-11',
