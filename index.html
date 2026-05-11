@@ -4011,7 +4011,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="pc-nav-item" id="pcnav-quest" onclick="pcNavSwitch('quest')"><span class="pc-nav-icon"><i class="fa-solid fa-stopwatch"></i></span>タイマー / 記録</div>
     <div class="pc-nav-item" id="pcnav-timeline" onclick="pcNavSwitch('timeline')"><span class="pc-nav-icon"><i class="fa-solid fa-timeline"></i></span>タイムライン</div>
     <div class="pc-nav-item" id="pcnav-score" onclick="pcNavSwitch('score')"><span class="pc-nav-icon"><i class="fa-solid fa-chart-bar"></i></span>SCORE</div>
-    <div class="pc-nav-item" id="pcnav-boss" onclick="pcNavSwitch('boss')"><span class="pc-nav-icon"><i class="fa-solid fa-skull"></i></span>BOSS</div>
     <div class="pc-nav-item" id="pcnav-ranking" onclick="pcNavSwitch('ranking')"><span class="pc-nav-icon"><i class="fa-solid fa-ranking-star"></i></span>RANKING</div>
     <div class="pc-nav-item" id="pcnav-titles" onclick="pcNavSwitch('titles')"><span class="pc-nav-icon"><i class="fa-solid fa-medal"></i></span>TITLES</div>
     <div class="pc-nav-item" id="pcnav-report" onclick="pcNavSwitch('report')"><span class="pc-nav-icon"><i class="fa-solid fa-chart-line"></i></span>レポート</div>
@@ -4068,8 +4067,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           <span class="lp-feat-text"><b>レベルアップ</b>成長が目に見える</span>
         </div>
         <div class="lp-feat">
-          <span class="lp-feat-icon">💀</span>
-          <span class="lp-feat-text"><b>ボス討伐</b>試験合格を目指せ</span>
+          <span class="lp-feat-icon">📅</span>
+          <span class="lp-feat-text"><b>試験日管理</b>合格まで逆算できる</span>
         </div>
       </div>
     </div>
@@ -4191,10 +4190,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="gnav-item" onclick="closeDrawer();switchTab('score')">
       <span class="gnav-item-icon"><i class="fa-solid fa-chart-bar nav-icon"></i></span>
       <div class="gnav-item-body"><div class="gnav-item-label">SCORE</div><div class="gnav-item-desc">試験スコア・記録</div></div>
-    </div>
-    <div class="gnav-item" onclick="closeDrawer();switchTab('boss')">
-      <span class="gnav-item-icon"><i class="fa-solid fa-skull nav-icon"></i></span>
-      <div class="gnav-item-body"><div class="gnav-item-label">BOSS</div><div class="gnav-item-desc">科目ボスに挑戦</div></div>
     </div>
     <div class="gnav-item" onclick="closeDrawer();switchTab('titles')">
       <span class="gnav-item-icon"><i class="fa-solid fa-medal nav-icon"></i></span>
@@ -4348,7 +4343,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <button class="tab-btn" onclick="switchTab('quest')" id="tab-quest"><span class="tab-icon"><i class="fa-solid fa-stopwatch nav-icon"></i></span>記録</button>
     <button class="tab-btn" onclick="switchTab('materials')" id="tab-materials"><span class="tab-icon"><i class="fa-solid fa-book-open nav-icon"></i></span>教材</button>
     <button class="tab-btn" onclick="switchTab('score')" id="tab-score"><span class="tab-icon"><i class="fa-solid fa-chart-bar nav-icon"></i></span>SCORE</button>
-    <button class="tab-btn" onclick="switchTab('boss')" id="tab-boss"><span class="tab-icon"><i class="fa-solid fa-skull nav-icon"></i></span>BOSS</button>
     <button class="tab-btn" onclick="switchTab('titles')" id="tab-titles"><span class="tab-icon"><i class="fa-solid fa-medal nav-icon"></i></span>TITLES</button>
     <button class="tab-btn" onclick="switchTab('ranking')" id="tab-ranking"><span class="tab-icon"><i class="fa-solid fa-ranking-star nav-icon"></i></span>RANK</button>
     <button class="tab-btn" onclick="switchTab('report')" id="tab-report"><span class="tab-icon"><i class="fa-solid fa-chart-line nav-icon"></i></span>レポート</button>
@@ -4677,14 +4671,14 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <!-- 敵 -->
       <div class="timer-display">
         <span class="timer-enemy" id="timerEnemy">💀</span>
-        <div class="timer-enemy-name" id="timerEnemyName">科目ボスを選択してください</div>
+        <div class="timer-enemy-name" id="timerEnemyName">科目を選択してください</div>
         <div class="timer-time" id="timerDisplay">00:00:00</div>
       </div>
       <!-- ダメージバー -->
       <div class="timer-damage-bar-wrap">
         <div class="timer-dmg-label">
           <span>累計ダメージ</span>
-          <span id="timerDmgText">0 / 30分で討伐</span>
+          <span id="timerDmgText">0 / 30分で1セット完了</span>
         </div>
         <div class="timer-dmg-track">
           <div class="timer-dmg-fill" id="timerDmgFill" style="width:0%"></div>
@@ -4773,38 +4767,6 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <div class="section">
       <div class="sec-title">TITLE COLLECTION</div>
       <div class="titles-grid" id="titlesGrid"></div>
-    </div>
-  </div>
-
-  <!-- BOSS -->
-  <div id="panel-boss" style="display:none;">
-    <!-- 共闘レイドボス（週間イベント） -->
-    <div id="raidBossSection" style="display:none;"></div>
-    <!-- ヒントバナー -->
-    <div class="tab-hint-banner">
-      <span class="tab-hint-banner-icon">💡</span>
-      <span>模試・答練を複数登録できます。勉強時間がたまるたびに全ボスのHPが削れます</span>
-      <button class="tab-hint-link" onclick="openHelp('faq')">詳しく</button>
-    </div>
-    <!-- ボス一覧 -->
-    <div class="boss-list" id="bossList"></div>
-    <button class="boss-add-btn" onclick="openBossForm()">＋ 模試・答練を追加する</button>
-
-    <!-- 追加フォーム（非表示デフォルト） -->
-    <div class="section" id="bossFormSection" style="display:none;margin-top:12px;">
-      <div class="sec-title" id="bossFormTitle">ADD BOSS</div>
-      <div class="form-grid">
-        <input type="hidden" id="bossEditId" value="">
-        <div class="form-group"><label class="form-label">模試・答練名</label><input class="form-input" id="bossName" type="text" placeholder="第○回 公開模試" maxlength="50"></div>
-        <div class="form-row-2">
-          <div class="form-group"><label class="form-label">実施日</label><input class="form-input" id="bossDate" type="date"></div>
-          <div class="form-group"><label class="form-label">目標勉強時間（h）</label><input class="form-input" id="bossTargetHours" type="number" min="1" placeholder="100"></div>
-        </div>
-        <div style="display:flex;gap:8px;">
-          <button class="btn-submit" onclick="setBoss()" style="flex:1">◆ 保存する ◆</button>
-          <button onclick="closeBossForm()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:0 16px;cursor:pointer;font-size:12px;">キャンセル</button>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -6658,7 +6620,7 @@ document.addEventListener('visibilitychange', () => {
 const POMO_STUDY = 25 * 60;
 const POMO_BREAK = 5 * 60;
 const POMO_SETS = 4;
-const BOSS_THRESHOLD = 30 * 60; // 30分でボス討伐
+const BOSS_THRESHOLD = 30 * 60; // 30分で集中セット完了
 
 /* ═══════════════ STORAGE ═══════════════ */
 async function saveAll(){
@@ -8363,7 +8325,8 @@ function showScreen(id){
   updateSetupReturnButtons(id);
 }
 function switchTab(tab){
-  ['status','quest','materials','titles','boss','ranking','score','report','profile','timeline'].forEach(t=>{
+  if(tab === 'boss') tab = 'score';
+  ['status','quest','materials','titles','ranking','score','report','profile','timeline'].forEach(t=>{
     const p=document.getElementById('panel-'+t);
     const b=document.getElementById('tab-'+t);
     if(p){
@@ -8692,7 +8655,7 @@ function updateTimerEnemy(){
   const sel=document.getElementById('timerSubject');if(!sel)return;
   const key=sel.value;
   if(typeof SUBJECT_ENEMIES==='undefined'){return;}
-  const enemy=SUBJECT_ENEMIES[key]||{emoji:'💀',name:'ボスを選択'};
+  const enemy=SUBJECT_ENEMIES[key]||{emoji:'📚',name:'科目を選択'};
   const enemyEl=document.getElementById('timerEnemy');
   const nameEl=document.getElementById('timerEnemyName');
   if(enemyEl)enemyEl.textContent=enemy.emoji;
@@ -8764,8 +8727,8 @@ function updateDmgBar(){
   const txt=document.getElementById('timerDmgText');
   if(fill)fill.style.width=pct+'%';
   const remain=Math.max(0,Math.ceil((BOSS_THRESHOLD-timerSeconds)/60));
-  if(txt)txt.textContent=remain>0?`累計 ${Math.floor(timerSeconds/60)}分 / あと${remain}分で討伐`:'⚡ ボス討伐達成！';
-  // 30分ごとにダメージポップアップ
+  if(txt)txt.textContent=remain>0?`累計 ${Math.floor(timerSeconds/60)}分 / あと${remain}分で1セット完了`:'⚡ 30分集中達成！';
+  // 30分ごとに達成ポップアップ
   if(timerSeconds>0 && timerSeconds%BOSS_THRESHOLD===0){
     spawnBossKill();
   }
@@ -8967,7 +8930,7 @@ function spawnDmgNumber(text, color, big=false){
 
 function spawnBossKill(){
   shakeEnemy();
-  spawnDmgNumber('⚡ BOSS DEFEATED!', '#ffd700', true);
+  spawnDmgNumber('⚡ 30分集中達成！', '#ffd700', true);
   // Confetti burst
   for(let i=0;i<12;i++){
     setTimeout(()=>{
@@ -9535,20 +9498,7 @@ async function addScoreRecord(){
   scoreRecords.sort((a,b)=>a.date.localeCompare(b.date));
   await saveScores();
 
-  // ── SCORE → BOSS 自動連携 ──
-  const matchedBoss = bosses.find(b =>
-    !b.scoreId &&
-    b.name.trim().toLowerCase() === name.trim().toLowerCase()
-  );
-  if(matchedBoss){
-    matchedBoss.scoreId = newRecord.id;
-    try{ localStorage.setItem('sq2_bosses', JSON.stringify(bosses)); }catch(e){}
-    renderBoss();
-    showToast(`⚔ 「${matchedBoss.name}」BOSSに結果を自動連携しました`);
-  }
-
   renderScoreTab();
-  renderScoreBossCard(newRecord, prevRecord);
 
   // ── 合格判定 → 昇格イベント ──
   const activeJobId = (selectedJobIds||[])[0];
@@ -9617,6 +9567,9 @@ async function addScoreRecord(){
 function renderScoreBossCard(record, prev){
   const card = document.getElementById('scoreBossCard');
   if(!card) return;
+  card.style.display = 'none';
+  card.innerHTML = '';
+  return;
 
   const totalScore = Object.values(record.scores).reduce((a,v)=>a+v.score,0);
   const totalMax   = Object.values(record.scores).reduce((a,v)=>a+v.max,0);
@@ -11347,25 +11300,7 @@ function renderActionSuggestions(){
     suggestions.push({icon:'📉',color:'#60a0ff',title:`今週は先週より${diff}時間少ないペースです`,action:`先週のペースに戻すには、今日から1日約${dailyNeeded}時間多めに取り組むのがおすすめです。`,btn:null});
   }
 
-  // ⑤ ボスの残り日数と必要ペース
-  if(bosses.length){
-    const active = bosses.find(b=>{ const ed=new Date(b.date); ed.setHours(0,0,0,0); return ed>=today; });
-    if(active){
-      const ed=new Date(active.date); ed.setHours(0,0,0,0);
-      const daysLeft = Math.round((ed-today)/86400000);
-      const doneH = studyMins(sessions)/60;
-      const neededH = (active.targetHours||100)-doneH;
-      if(neededH>0 && daysLeft>0){
-        const daily = (neededH/daysLeft).toFixed(1);
-        const weekly = Math.min(70, (parseFloat(daily)*7).toFixed(1));
-        if(parseFloat(daily)>1.5){
-          suggestions.push({icon:'💀',color:'#ff9e4d',title:`${active.name}まで残り${daysLeft}日`,action:`目標まで残り${Math.round(neededH)}h。今週${weekly}h・1日${daily}hのペースが必要です。`,btn:{label:'ボス状況を確認',tab:'boss'}});
-        }
-      }
-    }
-  }
-
-  // ⑥ 長い連続記録中（激励）
+  // ⑤ 長い連続記録中（激励）
   if(char.streak>=7 && char.streak<30){
     suggestions.push({icon:'🔥',color:'#ff9e4d',title:`${char.streak}日連続学習中！`,action:'素晴らしいストリークです。今日も記録してこのペースを守り続けよう。',btn:null});
   }
@@ -13103,13 +13038,13 @@ function showFirstSessionCelebration(){
   if(localStorage.getItem('sq_first_session_done')) return;
   localStorage.setItem('sq_first_session_done','1');
   // フラッシュ演出
-  spawnDmgNumber('⚔ 初討伐！冒険が始まった！', '#a855f7', true);
+  spawnDmgNumber('⚔ 初記録！冒険が始まった！', '#a855f7', true);
   setTimeout(()=>{
     const m = document.createElement('div');
     m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:flex;align-items:center;justify-content:center;';
     m.innerHTML=`<div style="background:var(--panel);border:1px solid rgba(124,58,237,.5);border-radius:12px;padding:28px 24px;max-width:320px;width:90%;text-align:center;">
       <div style="font-size:48px;margin-bottom:12px;">⚔</div>
-      <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#a855f7;margin-bottom:8px;">初討伐完了！</div>
+      <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#a855f7;margin-bottom:8px;">初記録完了！</div>
       <div style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:20px;">
         最初の一歩を踏み出した。<br>この積み重ねが合格への道になる。
       </div>
@@ -13683,8 +13618,8 @@ function renderStudyPlan(){
   if(!goals.length){
     el.innerHTML = `<div class="sp-no-exam">
       試験日が設定されていません📅<br>
-      BOSSタブから試験日を登録すると<br>1日あたりの学習時間を自動計算します。
-      <br><button class="sp-set-btn" onclick="switchTab('boss')">⚔ 試験日を設定する</button>
+      STATUS画面から試験日を登録すると<br>1日あたりの学習時間を自動計算します。
+      <br><button class="sp-set-btn" onclick="switchTab('status')">📅 試験日を設定する</button>
     </div>`;
     return;
   }
@@ -14929,9 +14864,9 @@ const HELP_CONTENT = {
           スタディクエストは、資格勉強を<strong style="color:var(--text)">RPG風のゲーム体験</strong>に変換するアプリです。<br>
           1分勉強すると1EXP、レベルが上がり、称号が解放されます。<br>
           「なんか知らんけどモチベ出る」が設計思想です。<br><br>
-          <strong style="color:var(--gold)">模試や答練のカウントダウン</strong>は「ボス戦」として設定でき、<br>
-          <strong style="color:var(--exp2)">試験日</strong>は複数登録してトップに常時表示されます。<br><br>
-          さらに、<strong style="color:var(--text)">今日の宣言・本日の決闘・週間目標・タイムライン</strong>で、<br>
+          <strong style="color:var(--gold)">試験日</strong>は複数登録でき、トップに常時表示されます。<br>
+          日付別Todoで今日やることを決め、SCOREで模試・答練の結果も記録できます。<br><br>
+          さらに、<strong style="color:var(--text)">今日の宣言・週間目標・タイムライン</strong>で、<br>
           一人だと続きにくい資格勉強に「締切」と「仲間」を足しています。
         </div>
       </div>`;
@@ -14954,17 +14889,17 @@ const HELP_CONTENT = {
         },
         {
           n:'④', title:'今日の宣言と週間目標でリズムをつくる',
-          desc:'その日の学習目標は「今日の宣言」、週全体の目標はレポートの週間目標で管理します。宣言をすると本日の決闘にも参加でき、達成への緊張感が生まれます。',
+          desc:'その日の学習目標は「今日の宣言」、週全体の目標はレポートの週間目標で管理します。日付別Todoも使うと、今日やることと先の予定を分けて整理できます。',
           tip:'週間目標は週の途中で下げられない仕様です'
         },
         {
-          n:'⑤', title:'模試・答練は「BOSS」と「SCORE」で管理する',
-          desc:'模試や答練は「BOSS」で期限までの残り学習量をHP表示し、終わったら「SCORE」で点数や科目別の結果を記録します。試験日とBOSSは別で使い分けられます。',
-          tip:'模試がない時期はBOSSなしでも使えます'
+          n:'⑤', title:'模試・答練はSCOREで管理する',
+          desc:'模試や答練が終わったら「SCORE」で点数や科目別の結果を記録します。合計点の推移や科目別の正答率を見ながら、次に補強する分野を決められます。',
+          tip:'模試・答練の学習時間はタイマー／記録から残せます'
         },
         {
           n:'⑥', title:'プロフィールとタイムラインを育てる',
-          desc:'「プロフィール」では自分の投稿・決闘戦績・引き継ぎ時間・公開設定を管理できます。「タイムライン」では一言投稿、返信、同ジョブ表示、人気表示を通して他ユーザーとつながれます。',
+          desc:'「プロフィール」では自分の投稿・引き継ぎ時間・公開設定を管理できます。「タイムライン」では一言投稿、返信、同ジョブ表示、人気表示を通して他ユーザーとつながれます。',
           tip:'乗り換え勢はプロフィール内の「過去の勉強時間を引き継ぐ」も活用できます'
         },
       ];
@@ -14996,12 +14931,8 @@ const HELP_CONTENT = {
     render(){
       const faqs = [
         {
-          q: '試験日やBOSSは複数設定できますか？',
-          a: 'はい！どちらも複数登録できます。\n\n試験日：STATUS画面の「＋ 試験日を追加」から新規追加できます。既存カードをタップすると管理モードで開きます。\n\nBOSS（模試・答練）：「BOSS」タブの「＋ 模試・答練を追加する」から何個でも登録できます。全ボスのHPバーが勉強するたびに同時に削れます。'
-        },
-        {
-          q: 'BOSSって何ですか？どうやって使うの？',
-          a: '「BOSS」は模試・答練などの期限付き目標のことです。\n\n「BOSS」タブを開き、「SET BOSS」セクションで\n① 模試名（例：つつK）\n② 実施日\n③ それまでに勉強したい時間（時間数）\nを設定します。\n\nすると画面上部にカウントダウンとHPバーが表示され、勉強するたびにHPが削れていきます。「今この模試まであと何時間勉強が必要か」が一目でわかります。'
+          q: '試験日は複数設定できますか？',
+          a: 'はい。STATUS画面の「＋ 試験日を追加」から複数登録できます。\n\n既存の試験日カードをタップすると管理モードで開き、試験名・日付・目標時間などをあとから編集できます。直近の試験日はSTATUS画面に常時表示されます。'
         },
         {
           q: 'レベルはどうやって上がりますか？',
@@ -15059,19 +14990,15 @@ const HELP_CONTENT = {
       const features = [
         { icon:'fa-solid fa-shield-halved', name:'STATUS',     desc:'キャラクターレベル・EXPバー・科目別レーダーチャート・RPGステータス（ATK/DEF/INT…）' },
         { icon:'fa-solid fa-stopwatch',     name:'タイマー／記録', desc:'学習タイマー（ポモドーロ対応）・教材選択・秒単位で正確に記録・クエストログの表示・削除' },
-        { icon:'fa-solid fa-skull',         name:'BOSS',       desc:'模試・答練のカウントダウン設定・HPバーで残り勉強時間を可視化・結果をSCOREへ接続' },
         { icon:'fa-solid fa-medal',         name:'TITLES',     desc:'累計時間・連続日数・得点などで解放される称号バッジ' },
         { icon:'fa-solid fa-ranking-star',  name:'RANKING',    desc:'フォロー中ユーザーとのレベル・学習時間ランキング（累計・週間）' },
-        { icon:'fa-solid fa-chart-bar',     name:'SCORE',      desc:'模試得点の入力・合計点推移グラフ・科目別正答率・レーダーチャート・ボス結果連携' },
+        { icon:'fa-solid fa-chart-bar',     name:'SCORE',      desc:'模試得点の入力・合計点推移グラフ・科目別正答率・レーダーチャート' },
         { icon:'fa-solid fa-chart-line',    name:'レポート',   desc:'Day/Week/Month/Year の学習時間グラフ・科目別円グラフ・週間目標・学習計画（試験日逆算）・合格ペース診断' },
         { icon:'fa-solid fa-users',         name:'タイムライン', desc:'一言投稿・学習宣言・同ジョブ／人気フィルター・リアクション・返信スレッド' },
         { icon:'fa-solid fa-envelope',      name:'DM',         desc:'相互フォロー中のユーザーとダイレクトメッセージ' },
-        { icon:'fa-solid fa-circle-user',   name:'プロフィール', desc:'プロフィールアイコン（画像アップロード）・表示名・公開/非公開設定・データ管理・決闘戦績・自分の投稿' },
+        { icon:'fa-solid fa-circle-user',   name:'プロフィール', desc:'プロフィールアイコン（画像アップロード）・表示名・公開/非公開設定・データ管理・自分の投稿' },
         { icon:'fa-solid fa-clock',         name:'バックグラウンドタイマー', desc:'タブ非表示でも計測継続・自動保存・クラッシュ復元・Web通知' },
         { icon:'fa-solid fa-lock',          name:'週間目標',   desc:'月〜日の学習目標を設定・週終了まで変更不可のロック機能' },
-        { icon:'fa-solid fa-swords',        name:'本日の決闘', desc:'毎朝11:59までに宣言すると正午にライバルが確定。23:59に勝敗が決まる日次バトル。宣言達成で+100G' },
-        { icon:'fa-solid fa-crosshairs',    name:'週間ライバル討伐クエスト', desc:'週に1人、自分の学習量に近いライバルが選ばれる。今週中に上回れば討伐クエスト達成' },
-        { icon:'fa-solid fa-shield-halved', name:'パーティーレイド', desc:'最大4人でパーティーを組んでレイドに挑む。メンバーの合計学習量でボスを攻略' },
         { icon:'fa-solid fa-calendar-days', name:'試験日管理', desc:'複数の試験日登録・勉強開始日・目標時間・スコア逆算・独立した管理モーダル' },
         { icon:'fa-solid fa-bolt',          name:'資格Lv / 総合Lv', desc:'資格ごとの進捗レベルと、累計努力ベースの総合レベルを分けて表示' },
       ];
@@ -20325,6 +20252,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
   {
+    id: 'v20260511_remove_boss_nav',
+    date: '2026-05-11',
+    type: 'improve',
+    title: '🧹 BOSS機能の導線を整理しました',
+    desc: '模試・答練の記録はSCOREに集約し、重複していたBOSSタブをメニューから外しました。はじめかた・FAQ・機能一覧も、試験日管理とSCORE中心の説明に更新しています。'
+  },
+  {
     id: 'v20260510_date_todo_calendar',
     date: '2026-05-10',
     type: 'feature',
@@ -20528,18 +20462,11 @@ const NEWS_ITEMS = [
     desc: '資格を切り替えたあとでも、過去に学習した科目の配分グラフや分析から記録が消えにくいよう改善しました。過去の積み上げを見失わずに振り返れます。'
   },
   {
-    id: 'v20260429_boss_result',
-    date: '2026-04-29',
-    type: 'feature',
-    title: '🏆 ボス討伐後に合格・不合格を記録できるように',
-    desc: '試験日を過ぎたBOSSカードに「✅ 合格した！」「❌ 不合格だった」ボタンが表示されるようになりました。選択した結果はカードに永続保存され、合格時にはお祝いトーストが表示されます。試験の振り返りと次の目標設定がスムーズになりました。'
-  },
-  {
     id: 'v20260429_action_suggest',
     date: '2026-04-29',
     type: 'improve',
     title: '💡 分析アクション提案を6種類に強化',
-    desc: '分析画面のアクション提案が大幅にパワーアップしました。①学習が3日以上止まっている ②今日まだ記録がない ③弱点科目がある ④今週ペースが先週比-30%以上 ⑤ボス討伐まで残り日数が少ない ⑥連続学習7〜29日の激励 — の6パターンを状況に応じて表示。各カードにタイマー起動・記録追加・ボス設定画面へのナビゲーションボタンも付きました。'
+    desc: '分析画面のアクション提案が大幅にパワーアップしました。①学習が3日以上止まっている ②今日まだ記録がない ③弱点科目がある ④今週ペースが先週比-30%以上 ⑥連続学習7〜29日の激励 — の6パターンを状況に応じて表示。各カードにタイマー起動・記録追加へのナビゲーションボタンも付きました。'
   },
   {
     id: 'v20260429_decl_mobile_fix',
@@ -20556,20 +20483,6 @@ const NEWS_ITEMS = [
     desc: 'ヘルプ「はじめかた」にステップ⑥として引き継ぎ機能の説明を追加しました。また「よくある質問」に「他のアプリからの勉強時間を引き継げますか？」、チュートリアルにも引き継ぎステップを追加。スタディプラスなどからの乗り換えユーザーが迷わず使えるようになりました。'
   },
   {
-    id: 'v20260426_duel_explain_btn',
-    date: '2026-04-26',
-    type: 'improve',
-    title: '❓ 本日の決闘カードに説明トグルボタンを追加',
-    desc: '本日の決闘カードに「？」ボタンが追加されました。タップすると「本日の決闘とは何か」「ルール・報酬」の説明がその場で開閉できます。初めて見るユーザーも迷わず参加できるようになりました。'
-  },
-  {
-    id: 'v20260426_duel_solo_journey',
-    date: '2026-04-26',
-    type: 'improve',
-    title: '🗺 ライバルがいないときの決闘カードを「一人旅」表示に改善',
-    desc: 'ライバルが見つからない場合、決闘カードが「一人旅」モードで表示されるようになりました。「今日は一人旅だ。それでも前へ進もう」という文言とともに、自分の宣言達成だけを目指すシンプルなカードが表示されます。'
-  },
-  {
     id: 'v20260426_ranking_avatar_fix',
     date: '2026-04-26',
     type: 'fix',
@@ -20577,60 +20490,11 @@ const NEWS_ITEMS = [
     desc: '週間ランキングで他のユーザーのアバター画像が表示されない問題を修正しました。'
   },
   {
-    id: 'v20260426_duel_card_mobile',
-    date: '2026-04-26',
-    type: 'fix',
-    title: '📱 本日の決闘カードをスマホ小画面に対応',
-    desc: '375px以下の小さい画面で、カウントダウンや達成率の数字が詰まって見えた問題を修正しました。フォントサイズの自動縮小・報酬カードの折り返し・ライバル情報の2段表示・再戦バッジの圧縮など、どの端末でも見やすいレイアウトになりました。'
-  },
-  {
-    id: 'v20260426_duel_card_redesign',
-    date: '2026-04-26',
-    type: 'improve',
-    title: '⚔ 本日の決闘カードを全面リデザイン',
-    desc: '未参加・エントリー済み・進行中・決着済みの4状態ごとに、カードの見た目と文言を大きく変えました。エントリー済みではカウントダウンを大きく表示、進行中では達成率％をヒーロー要素に配置、決着済みでは勝敗ごとに専用カラー（勝利：金・敗北：赤・失効：グレー）で強調。毎日の状態変化が一目でわかるようになりました。'
-  },
-  {
-    id: 'v20260425_duel_rematch',
-    date: '2026-04-25',
-    type: 'feature',
-    title: '🔁 本日の決闘に「再戦」が発生するように',
-    desc: '昨日の決闘相手が翌日のライバル候補として優先されるようになりました。宣言目標の差が近く、同じ相手が連続しすぎていなければ一定確率で再戦が発生します。再戦時はカードに「🔁 再戦」バッジが表示され、サブ文言が「昨日のライバルが再び現れた」に変わります。毎日の決闘に因縁や物語が生まれやすくなりました。'
-  },
-  {
-    id: 'v20260425_duel_stats',
-    date: '2026-04-25',
-    type: 'feature',
-    title: '📊 決闘戦績がプロフィールで確認できるように',
-    desc: 'プロフィール画面に「⚔ 決闘戦績」セクションが追加されました。総試合数・勝利数・敗北数・勝率に加え、現在の連勝/連敗ストリークと最高連勝記録、直近7試合の結果ドット表示も確認できます。'
-  },
-  {
-    id: 'v20260425_today_duel',
-    date: '2026-04-25',
-    type: 'feature',
-    title: '⚔ 本日の決闘システムを追加',
-    desc: '毎朝11:59までに「今日の宣言」を設定すると、正午にランダムなライバルが選ばれ決闘がスタートします。23:59に勝敗が確定し、宣言達成で+100G・敗北でも+20Gを獲得。毎日1回の本気勝負が始まりました。'
-  },
-  {
-    id: 'v20260425_rival_quest',
-    date: '2026-04-25',
-    type: 'feature',
-    title: '👁 週間ライバル討伐クエストを追加',
-    desc: '週に1人、あなたの週間学習量に近い「ライバル」が選ばれます。今週のライバルを討伐（学習量で上回る）するとクエスト達成。プロフィール画面のRPTタブから状況を確認できます。'
-  },
-  {
     id: 'v20260425_rpg_events',
     date: '2026-04-25',
     type: 'feature',
     title: '🎲 タイマー中にRPGイベントが発生するように',
     desc: 'タイマーで学習中、ランダムでRPGイベントが起きるようになりました。「幸運の宝箱」（ゴールド獲得）・「忘却の霧」（経験値減少のピンチ）・「ライバルの影」（ライバル出現の前兆）の3種類。毎回の学習セッションにゲームのような緊張感が生まれます。'
-  },
-  {
-    id: 'v20260425_party_raid',
-    date: '2026-04-25',
-    type: 'feature',
-    title: '🏰 パーティーレイドシステムを追加',
-    desc: '最大4人でパーティーを組んでレイドに挑む「パーティーレイド」機能が追加されました。空きスロットをタップしてメンバーを招待でき、招待モーダルはカード選択UIで使いやすくなっています。'
   },
   {
     id: 'v20260424_shugyou_return',
@@ -20687,13 +20551,6 @@ const NEWS_ITEMS = [
     type: 'improve',
     title: '✨ ヘルプ「機能一覧」のアイコンをデザイン統一',
     desc: 'ヘルプモーダルの「機能一覧」に表示されるアイコンを、アプリ全体のナビゲーションと同じFont Awesomeの塗りつぶしアイコンに統一しました。'
-  },
-  {
-    id: 'v20260419_boss_score_link',
-    date: '2026-04-19',
-    type: 'feature',
-    title: '⚔ BOSSカードから直接スコアを記録できるように',
-    desc: '試験日を過ぎたBOSSカードに「📊 結果を記録」ボタンが表示されるようになりました。ボタンをタップするとSCOREタブにそのまま移動し、BOSSの情報が自動入力された状態でスコア記録を開始できます。二度入力の手間がなくなります。'
   },
   {
     id: 'v20260419_day_graph_redesign',
@@ -20896,7 +20753,7 @@ const NEWS_ITEMS = [
     date: '2026-04-09',
     type: 'fix',
     title: '⚔ 答練が全集計に反映されるように修正',
-    desc: '答練（模試）の学習時間がレポートのグラフ・草・レイドボス・Xシェアなど全ての集計箇所に正しく含まれるようになりました。今日の宣言の達成時間にも反映されます。'
+    desc: '答練（模試）の学習時間がレポートのグラフ・草・Xシェアなど主要な集計箇所に正しく含まれるようになりました。今日の宣言の達成時間にも反映されます。'
   },
   {
     id: 'v20260408_pomo_overtime',
@@ -21067,13 +20924,6 @@ const NEWS_ITEMS = [
     desc: 'タイムラインの投稿にいいねされると、トースト通知でお知らせします。30秒ごとに自動チェックされます。'
   },
   {
-    id: 'v20260330_score_rpg',
-    date: '2026/03/30',
-    type: 'feature',
-    title: '⚔ 模試結果がRPGボス戦に！',
-    desc: 'SCOREタブで模試・答練の結果を入力すると「ボス戦結果カード」が表示されます！正答率がダメージに変換され、前回比で「形勢逆転！」「ボスの反撃！」などRPG風に演出。Xへのシェアボタンも付いています。'
-  },
-  {
     id: 'v20260330_subj_split',
     date: '2026/03/30',
     type: 'feature',
@@ -21102,13 +20952,6 @@ const NEWS_ITEMS = [
     desc: 'Claude APIのコスト問題により、AI賢者コーチ「アルス」機能を削除しました。タイマー・ランキング・ヒートマップ・学習計画など他の全機能は引き続き完全無料でご利用いただけます。'
   },
   {
-    id: 'v20260330_status_cleanup',
-    date: '2026/03/30',
-    type: 'improve',
-    title: '🎭 STATUSタブをスッキリ整理',
-    desc: 'キャラカードをコンパクト化。試験カウントダウンをSTATUS上部に固定表示。全体進捗と科目HPを1枚のカードに統合。レイドボスはBOSSタブのみに移動。'
-  },
-  {
     id: 'v20260330_menu_cleanup',
     date: '2026/03/30',
     type: 'improve',
@@ -21128,13 +20971,6 @@ const NEWS_ITEMS = [
     type: 'improve',
     title: '⏱ ポモドーロタイマー改善',
     desc: '25分集中→タイマー自動停止＋休憩カウントダウン画面が登場！休憩中にランダムヒントが表示されます。5分休憩終了後は自動で次のセットが再開します。スキップも可能。'
-  },
-  {
-    id: 'v20260329_studyplan',
-    date: '2026/03/29',
-    type: 'feature',
-    title: '📅 学習計画自動生成',
-    desc: 'レポートタブの「記録」に学習計画カードが追加！試験日・目標時間・現在の進捗から「今日あと何時間必要か」を自動計算します。BOSSタブで試験日を設定するだけでOK。'
   },
   {
     id: 'v20260329_heatmap',
@@ -21205,13 +21041,6 @@ const NEWS_ITEMS = [
     type: 'feature',
     title: '💎 リザレクション（復活）システム',
     desc: '3日以上学習しないとキャラが石化状態に。再開時に復活演出とボーナスEXPがもらえます。'
-  },
-  {
-    id: 'v20260328_raid',
-    date: '2026/03/28',
-    type: 'feature',
-    title: '🐲 共闘レイドボス「龍王バアルベック」',
-    desc: '全ユーザーの学習時間合計50,000分でボスを撃破する週間共闘イベントを実装。'
   },
   {
     id: 'v20260328_timeline',

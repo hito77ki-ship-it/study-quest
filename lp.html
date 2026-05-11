@@ -45,7 +45,6 @@
     "記事本文検索",
     "学習進捗チェック",
     "装備進化システム",
-    "レイドボスイベント",
     "学習レポート"
   ],
   "keywords": "勉強管理アプリ, 学習トラッカー, RPG, 資格勉強, CPA, 簿記, 行政書士, 宅建, ポモドーロ, 無料",
@@ -1046,7 +1045,7 @@ footer{background:#091505;padding:48px 24px 40px;}
       <div class="benefit-card fi">
         <div class="benefit-icon">📈</div>
         <h3 class="benefit-title">継続率が劇的に上がる</h3>
-        <p class="benefit-desc">レベルアップ・称号獲得・ボス討伐など、ゲームの報酬設計をそのまま学習に適用。「今日もやらないと」ではなく「今日もやりたい」という感覚に変わります。毎日のログインが習慣になり、気づけば数ヶ月連続記録が当たり前になっていきます。</p>
+        <p class="benefit-desc">レベルアップ・称号獲得・ストリークなど、ゲームの報酬設計をそのまま学習に適用。「今日もやらないと」ではなく「今日もやりたい」という感覚に変わります。毎日のログインが習慣になり、気づけば数ヶ月連続記録が当たり前になっていきます。</p>
       </div>
       <div class="benefit-card fi">
         <div class="benefit-icon">🎯</div>
@@ -1116,7 +1115,7 @@ footer{background:#091505;padding:48px 24px 40px;}
     <div class="story-body fi">
       <p>公認会計士試験は、合格までに平均3,000〜5,000時間の学習が必要と言われています。毎日8時間勉強しても、完走まで2年近くかかる計算です。わたし自身、勉強を始めたばかりの頃は「どれだけやれば合格できるのか」が見えず、ただ不安だけが積み重なっていきました。</p>
       <p>スタディプラスで記録をつけてみたものの、続かない。Notionで計画を立ててみたけれど、見返さない。どのツールも「記録するだけ」で、学習を続ける動機にはなりませんでした。</p>
-      <p>そのとき気づいたのは、ゲームはなぜあんなに続けられるのかという単純な疑問です。ドラクエをやっていると、レベルが上がる・装備が強くなる・ボスを倒す、というサイクルが自然に「次もやろう」という気持ちを生み出します。この仕組みを、そのまま資格勉強に移植できないか——それがスタディクエスト誕生のきっかけです。</p>
+      <p>そのとき気づいたのは、ゲームはなぜあんなに続けられるのかという単純な疑問です。ドラクエをやっていると、レベルが上がる・装備が強くなる・次の町へ進む、というサイクルが自然に「次もやろう」という気持ちを生み出します。この仕組みを、そのまま資格勉強に移植できないか——それがスタディクエスト誕生のきっかけです。</p>
       <p>開発は完全に個人で行っており、毎日の勉強と並行しながらコードを書き続けています。使う人に「本当に役立った」と言ってもらえることを唯一の指標に、機能の追加と削除を繰り返しています。まだ荒削りな部分もありますが、同じ悩みを持つすべての受験生に届けたいという気持ちは、最初の日から変わっていません。</p>
     </div>
   </div>
@@ -1141,7 +1140,7 @@ footer{background:#091505;padding:48px 24px 40px;}
           <li>簿記2級・3級の学習進捗チェック</li>
           <li>司法書士向け記事・論点ロードマップ</li>
           <li>PWA対応・クラウド同期</li>
-          <li>レイド・決闘・週間ライバル討伐クエスト</li>
+          <li>今日の宣言・週間目標・リマインダー</li>
         </ul>
       </div>
       <div class="rm-card next fi">
@@ -1378,29 +1377,9 @@ footer{background:#091505;padding:48px 24px 40px;}
         <div class="update-desc">スタディプラス等からの乗り換えユーザー向けに、勉強時間の引き継ぎ方法をヘルプとチュートリアルで案内するようにしました。</div>
       </div>
       <div class="update-item fi">
-        <div class="update-meta"><span class="update-date">2026.04.26</span><span class="update-badge improve">改善</span></div>
-        <div class="update-title">❓ 決闘カードに説明ボタン追加・一人旅表示に対応</div>
-        <div class="update-desc">「？」ボタンで決闘ルールをその場で確認できるように。ライバルがいない日は「一人旅」モードで表示されます。</div>
-      </div>
-      <div class="update-item fi">
-        <div class="update-meta"><span class="update-date">2026.04.26</span><span class="update-badge feature">新機能</span></div>
-        <div class="update-title">⚔ 本日の決闘カードUIを全面リデザイン</div>
-        <div class="update-desc">未参加・エントリー済み・進行中・決着済みの4状態で見た目と文言が変わるようになりました。</div>
-      </div>
-      <div class="update-item fi">
-        <div class="update-meta"><span class="update-date">2026.04.25</span><span class="update-badge feature">新機能</span></div>
-        <div class="update-title">🔁 本日の決闘に「再戦」が発生するように</div>
-        <div class="update-desc">昨日の決闘相手が翌日も現れることがあります。毎日の決闘に因縁と物語が生まれます。</div>
-      </div>
-      <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.04.25</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">🎲 タイマー中にRPGイベントが発生するように</div>
         <div class="update-desc">学習中に「幸運の宝箱」「忘却の霧」「ライバルの影」の3種類のランダムイベントが起きます。</div>
-      </div>
-      <div class="update-item fi">
-        <div class="update-meta"><span class="update-date">2026.04.25</span><span class="update-badge feature">新機能</span></div>
-        <div class="update-title">🏰 パーティーレイドシステムを追加</div>
-        <div class="update-desc">最大4人でパーティーを組んでレイドに挑めるようになりました。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.04.24</span><span class="update-badge improve">改善</span></div>
