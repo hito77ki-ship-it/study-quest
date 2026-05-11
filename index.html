@@ -6647,6 +6647,7 @@ function setLocalJson(key, value){
 
 const SESSION_DELETED_KEY = 'sq2_deleted_sessions';
 const MATERIAL_DELETED_KEY = 'sq2_deleted_materials';
+const CUSTOM_SUBJ_DELETED_KEY = 'sq2_deleted_custom_subjects';
 let cloudSyncTimer = null;
 function scheduleCloudSync(delay = 600){
   if(!currentUser || isGuest) return;
@@ -6685,6 +6686,12 @@ function loadDeletedMaterials(){
 function saveDeletedMaterials(data){
   setLocalJson(MATERIAL_DELETED_KEY, data || {});
 }
+function loadDeletedCustomSubjects(){
+  return getLocalJson(CUSTOM_SUBJ_DELETED_KEY, {});
+}
+function saveDeletedCustomSubjects(data){
+  setLocalJson(CUSTOM_SUBJ_DELETED_KEY, data || {});
+}
 function markSessionDeleted(s){
   const deleted = loadDeletedSessions();
   deleted[sessionSyncKey(s)] = new Date().toISOString();
@@ -6695,6 +6702,12 @@ function markMaterialDeleted(m){
   const deleted = loadDeletedMaterials();
   deleted[m.id] = new Date().toISOString();
   saveDeletedMaterials(deleted);
+}
+function markCustomSubjectDeleted(jobId, key){
+  if(!jobId || !key) return;
+  const deleted = loadDeletedCustomSubjects();
+  deleted[`${jobId}:${key}`] = new Date().toISOString();
+  saveDeletedCustomSubjects(deleted);
 }
 function mergeTimestampMaps(a = {}, b = {}){
   const merged = {...a};
@@ -6758,10 +6771,38 @@ function mergeMaterialBackups(localMaterials = [], cloudMaterials = [], localDel
   const merged = [...map.values()].sort((a,b)=>recordUpdatedTime(b)-recordUpdatedTime(a));
   return {materials: merged, deleted};
 }
+function getCustomSubjectsBackup(){
+  const backup = {};
+  JOBS.forEach(j=>{
+    const list = loadCustomSubjects(j.id);
+    if(list.length) backup[j.id] = list;
+  });
+  return backup;
+}
+function mergeCustomSubjectsBackup(localMap = {}, cloudMap = {}, localDeleted = {}, cloudDeleted = {}){
+  const deleted = mergeTimestampMaps(localDeleted, cloudDeleted);
+  const merged = {};
+  const jobIds = new Set([...Object.keys(localMap || {}), ...Object.keys(cloudMap || {})]);
+  jobIds.forEach(jobId=>{
+    const map = new Map();
+    [...(localMap?.[jobId] || []), ...(cloudMap?.[jobId] || [])].forEach(s=>{
+      if(!s?.key) return;
+      const tombstoneKey = `${jobId}:${s.key}`;
+      const deletedAt = Date.parse(deleted[tombstoneKey] || '') || 0;
+      if(deletedAt && deletedAt >= recordUpdatedTime(s)) return;
+      const existing = map.get(s.key);
+      if(!existing || recordUpdatedTime(s) >= recordUpdatedTime(existing)) map.set(s.key, s);
+    });
+    if(map.size) merged[jobId] = [...map.values()];
+  });
+  return {customSubjects: merged, deleted};
+}
 function buildExtendedProfileInfoBackup(){
   const info = getLocalJson('sq2_profile_info', {});
   return JSON.stringify({
     ...info,
+    _customSubjects: getCustomSubjectsBackup(),
+    _deletedCustomSubjects: loadDeletedCustomSubjects(),
     _todos: getLocalJson('sq2_today_todos', {}),
     _todoDeleted: getLocalJson('sq2_today_todo_deleted', {}),
     _dailyDecl: getLocalJson('sq2_daily_decl', null),
@@ -6773,7 +6814,7 @@ function buildExtendedProfileInfoBackup(){
 }
 function stripSyncInternalProfileInfo(info = {}){
   const cleaned = {...info};
-  ['_todos','_todoDeleted','_dailyDecl','_dailyDuel','_importPast','_deletedSessions','_deletedMaterials'].forEach(k=>delete cleaned[k]);
+  ['_customSubjects','_deletedCustomSubjects','_todos','_todoDeleted','_dailyDecl','_dailyDuel','_importPast','_deletedSessions','_deletedMaterials'].forEach(k=>delete cleaned[k]);
   return cleaned;
 }
 async function mergeCloudBackupsIntoLocal(){
@@ -6804,6 +6845,18 @@ async function mergeCloudBackupsIntoLocal(){
     );
     setLocalJson('sq2_today_todos', mergedTodos.todos);
     setLocalJson('sq2_today_todo_deleted', mergedTodos.deleted);
+  }
+  if(cloudProfileInfo?._customSubjects){
+    const mergedCustom = mergeCustomSubjectsBackup(
+      getCustomSubjectsBackup(),
+      cloudProfileInfo._customSubjects,
+      loadDeletedCustomSubjects(),
+      cloudProfileInfo._deletedCustomSubjects || {}
+    );
+    Object.entries(mergedCustom.customSubjects).forEach(([jobId, list])=>{
+      localStorage.setItem('sq2_custom_subj_' + jobId, JSON.stringify(list));
+    });
+    saveDeletedCustomSubjects(mergedCustom.deleted);
   }
   const cloudMaterials = safeParseJson(cloudBackup?.materials_backup, []);
   if(Array.isArray(cloudMaterials)){
@@ -6958,6 +7011,7 @@ function loadCustomSubjects(jobId){
 }
 function saveCustomSubjects(jobId, arr){
   try{ localStorage.setItem('sq2_custom_subj_'+jobId, JSON.stringify(arr)); }catch{}
+  scheduleCloudSync();
 }
 function loadSubjColors(){ try{ return JSON.parse(localStorage.getItem('sq2_subj_colors')||'{}'); }catch{ return {}; } }
 function saveSubjColors(obj){ try{ localStorage.setItem('sq2_subj_colors', JSON.stringify(obj)); }catch{} }
@@ -7491,6 +7545,23 @@ async function restoreFromCloud(){
           console.log('[SQ] Todoをクラウドから復元');
         }
       }
+      if(pi?._customSubjects){
+        const mergedCustom = mergeCustomSubjectsBackup(
+          getCustomSubjectsBackup(),
+          pi._customSubjects,
+          loadDeletedCustomSubjects(),
+          pi._deletedCustomSubjects || {}
+        );
+        const beforeCustom = JSON.stringify(getCustomSubjectsBackup());
+        Object.entries(mergedCustom.customSubjects).forEach(([jobId, list])=>{
+          localStorage.setItem('sq2_custom_subj_' + jobId, JSON.stringify(list));
+        });
+        saveDeletedCustomSubjects(mergedCustom.deleted);
+        if(JSON.stringify(mergedCustom.customSubjects) !== beforeCustom){
+          restored = true;
+          console.log('[SQ] 組み合わせ科目をクラウドから復元');
+        }
+      }
       if(pi?._importPast){
         const localImportPast = getLocalJson('sq2_import_past', {});
         if(Object.keys(localImportPast).length === 0 || cloudIsNewer){
@@ -7524,6 +7595,7 @@ async function restoreFromCloud(){
       try{ renderTodayTodoCard && renderTodayTodoCard(); }catch(e){}
       try{ renderDeclCard && renderDeclCard(); }catch(e){}
       try{ renderDuelCard && renderDuelCard(); }catch(e){}
+      try{ renderJobSettings && renderJobSettings(); }catch(e){}
       try{ renderMaterials && renderMaterials(); }catch(e){}
       try{ updateTimerMaterialSelect && updateTimerMaterialSelect(); }catch(e){}
       try{ renderQuickMaterialSelect && renderQuickMaterialSelect(); }catch(e){}
@@ -8028,7 +8100,8 @@ function addCustomSubj(jobId){
   const colorInput = document.getElementById('customSubjColor_'+jobId);
   const color = colorInput?.value || COLORS[existing.length % COLORS.length];
   const key = 'custom_'+jobId+'_'+Date.now();
-  const newSubj = {key, name, desc:'', color, avgH:8, maxH:25, attrs:{int:.5,dex:.5}};
+  const now = new Date().toISOString();
+  const newSubj = {key, name, desc:'', color, avgH:8, maxH:25, attrs:{int:.5,dex:.5}, createdAt:now, updatedAt:now};
   existing.push(newSubj);
   saveCustomSubjects(jobId, existing);
   // 自動選択
@@ -8049,6 +8122,7 @@ function deleteCustomSubj(jobId, key){
   _doDeleteCustomSubj(jobId, key);
 }
 function _doDeleteCustomSubj(jobId, key){
+  markCustomSubjectDeleted(jobId, key);
   const updated = loadCustomSubjects(jobId).filter(s => s.key !== key);
   saveCustomSubjects(jobId, updated);
   selectedSubjectKeys = selectedSubjectKeys.filter(k => k !== key);
@@ -8067,7 +8141,8 @@ function addCombinedSubj(jobId){
   const mergedKeys = checked.map(c=>c.dataset.key);
   const mergedNames= checked.map(c=>c.dataset.name);
   const existing   = loadCustomSubjects(jobId);
-  existing.push({key, name, desc:'組み合わせ科目', color, avgH, maxH, attrs:{int:.5,dex:.5}, mergedKeys, mergedNames});
+  const now = new Date().toISOString();
+  existing.push({key, name, desc:'組み合わせ科目', color, avgH, maxH, attrs:{int:.5,dex:.5}, mergedKeys, mergedNames, createdAt:now, updatedAt:now});
   saveCustomSubjects(jobId, existing);
   if(!selectedSubjectKeys.includes(key)) selectedSubjectKeys.push(key);
   checked.forEach(c=>c.checked=false);
@@ -11650,11 +11725,11 @@ function switchReportSubTab(sub){
 let tbCurrentDate = null;
 
 function tbColor(subject){
-  const subj = allSelectedSubjects().find(s=>s.key===subject);
+  const subj = getReportSubjects().find(s=>s.key===subject);
   return getSubjectChartColor(subject, subj?.color || '#7cff6e');
 }
 function tbName(subject){
-  return allSelectedSubjects().find(s=>s.key===subject)?.name || subject;
+  return getReportSubjects().find(s=>s.key===subject)?.name || subject;
 }
 
 /* タイムブロック整合性チェック（コンソールから auditTimeblock() で実行可能）*/
@@ -14663,7 +14738,7 @@ function renderSessions(subjs, showing){
 function renderMobileQuestLog(){
   const el = document.getElementById('mobileQuestLog');
   if(!el || getComputedStyle(el).display === 'none') return;
-  const subjs = allSelectedSubjects();
+  const subjs = getReportSubjects();
   const smap = {}; subjs.forEach(s=>smap[s.key]=s);
 
   // 統計
@@ -20517,6 +20592,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260511_custom_subject_mobile_report',
+    date: '2026-05-11',
+    type: 'fix',
+    title: '📊 モバイルのレポートに組み合わせ科目を反映しました',
+    desc: 'PCで作成した「商業簿記＋会計学」のような組み合わせ科目をクラウド同期し、スマホのレポート・時間割・QUEST LOGでも同じ名前と色で表示されるようにしました。'
+  },
   {
     id: 'v20260511_material_decl_sync',
     date: '2026-05-11',
