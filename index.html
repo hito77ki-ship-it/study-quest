@@ -6646,6 +6646,7 @@ function setLocalJson(key, value){
 }
 
 const SESSION_DELETED_KEY = 'sq2_deleted_sessions';
+const MATERIAL_DELETED_KEY = 'sq2_deleted_materials';
 let cloudSyncTimer = null;
 function scheduleCloudSync(delay = 600){
   if(!currentUser || isGuest) return;
@@ -6678,10 +6679,22 @@ function loadDeletedSessions(){
 function saveDeletedSessions(data){
   setLocalJson(SESSION_DELETED_KEY, data || {});
 }
+function loadDeletedMaterials(){
+  return getLocalJson(MATERIAL_DELETED_KEY, {});
+}
+function saveDeletedMaterials(data){
+  setLocalJson(MATERIAL_DELETED_KEY, data || {});
+}
 function markSessionDeleted(s){
   const deleted = loadDeletedSessions();
   deleted[sessionSyncKey(s)] = new Date().toISOString();
   saveDeletedSessions(deleted);
+}
+function markMaterialDeleted(m){
+  if(!m?.id) return;
+  const deleted = loadDeletedMaterials();
+  deleted[m.id] = new Date().toISOString();
+  saveDeletedMaterials(deleted);
 }
 function mergeTimestampMaps(a = {}, b = {}){
   const merged = {...a};
@@ -6732,25 +6745,41 @@ function mergeTodoBackups(localTodos = {}, cloudTodos = {}, localDeleted = {}, c
   });
   return {todos: merged, deleted};
 }
+function mergeMaterialBackups(localMaterials = [], cloudMaterials = [], localDeleted = {}, cloudDeleted = {}){
+  const deleted = mergeTimestampMaps(localDeleted, cloudDeleted);
+  const map = new Map();
+  [...localMaterials, ...cloudMaterials].forEach(m=>{
+    if(!m?.id) return;
+    const deletedAt = Date.parse(deleted[m.id] || '') || 0;
+    if(deletedAt && deletedAt >= recordUpdatedTime(m)) return;
+    const existing = map.get(m.id);
+    if(!existing || recordUpdatedTime(m) >= recordUpdatedTime(existing)) map.set(m.id, m);
+  });
+  const merged = [...map.values()].sort((a,b)=>recordUpdatedTime(b)-recordUpdatedTime(a));
+  return {materials: merged, deleted};
+}
 function buildExtendedProfileInfoBackup(){
   const info = getLocalJson('sq2_profile_info', {});
   return JSON.stringify({
     ...info,
     _todos: getLocalJson('sq2_today_todos', {}),
     _todoDeleted: getLocalJson('sq2_today_todo_deleted', {}),
+    _dailyDecl: getLocalJson('sq2_daily_decl', null),
+    _dailyDuel: getLocalJson('sq2_today_duel', null),
     _importPast: getLocalJson('sq2_import_past', {}),
     _deletedSessions: loadDeletedSessions(),
+    _deletedMaterials: loadDeletedMaterials(),
   });
 }
 function stripSyncInternalProfileInfo(info = {}){
   const cleaned = {...info};
-  ['_todos','_todoDeleted','_importPast','_deletedSessions'].forEach(k=>delete cleaned[k]);
+  ['_todos','_todoDeleted','_dailyDecl','_dailyDuel','_importPast','_deletedSessions','_deletedMaterials'].forEach(k=>delete cleaned[k]);
   return cleaned;
 }
 async function mergeCloudBackupsIntoLocal(){
   if(!currentUser || isGuest) return;
   const {data: cloudBackup} = await sb.from('profiles')
-    .select('sessions_backup,profile_info_backup')
+    .select('sessions_backup,materials_backup,profile_info_backup')
     .eq('id', currentUser.id)
     .single();
   const cloudProfileInfo = safeParseJson(cloudBackup?.profile_info_backup, {});
@@ -6775,6 +6804,19 @@ async function mergeCloudBackupsIntoLocal(){
     );
     setLocalJson('sq2_today_todos', mergedTodos.todos);
     setLocalJson('sq2_today_todo_deleted', mergedTodos.deleted);
+  }
+  const cloudMaterials = safeParseJson(cloudBackup?.materials_backup, []);
+  if(Array.isArray(cloudMaterials)){
+    loadMaterials();
+    const mergedMaterials = mergeMaterialBackups(
+      materials,
+      cloudMaterials,
+      loadDeletedMaterials(),
+      cloudProfileInfo?._deletedMaterials || {}
+    );
+    materials = mergedMaterials.materials;
+    saveDeletedMaterials(mergedMaterials.deleted);
+    localStorage.setItem('sq2_materials', JSON.stringify(materials));
   }
 }
 async function loadAll(){
@@ -7365,13 +7407,41 @@ async function restoreFromCloud(){
 
     // ── 教材・参考書 ──
     if(data.materials_backup){
-      const mats = JSON.parse(data.materials_backup);
+      const mats = safeParseJson(data.materials_backup, []);
       loadMaterials();
-      if(mats && mats.length > 0 && (materials.length === 0 || cloudIsNewer)){
-        materials = mats;
-        saveMaterials();
+      if(Array.isArray(mats)){
+        const mergedMats = mergeMaterialBackups(
+          materials,
+          mats,
+          loadDeletedMaterials(),
+          cloudProfileInfo?._deletedMaterials || {}
+        );
+        const beforeMaterials = JSON.stringify(materials);
+        materials = mergedMats.materials;
+        saveDeletedMaterials(mergedMats.deleted);
+        localStorage.setItem('sq2_materials', JSON.stringify(materials));
+        if(JSON.stringify(materials) !== beforeMaterials){
+          restored = true;
+          console.log('[SQ] 教材をクラウドから復元:', mats.length, '件');
+        }
+      }
+    }
+    // ── 今日の宣言・本日の決闘 ──
+    if(data.profile_info_backup){
+      const today = getTodayStr();
+      const cloudDecl = cloudProfileInfo?._dailyDecl;
+      const localDecl = getLocalJson('sq2_daily_decl', null);
+      if(cloudDecl?.date === today && (localDecl?.date !== today || cloudIsNewer)){
+        setLocalJson('sq2_daily_decl', cloudDecl);
         restored = true;
-        console.log('[SQ] 教材をクラウドから復元:', mats.length, '件');
+        console.log('[SQ] 今日の宣言をクラウドから復元');
+      }
+      const cloudDuel = cloudProfileInfo?._dailyDuel;
+      const localDuel = getLocalJson('sq2_today_duel', null);
+      if(cloudDuel?.date === today && (localDuel?.date !== today || cloudIsNewer)){
+        setLocalJson('sq2_today_duel', cloudDuel);
+        restored = true;
+        console.log('[SQ] 本日の決闘をクラウドから復元');
       }
     }
     // ── スコア記録 ──
@@ -7452,6 +7522,12 @@ async function restoreFromCloud(){
     if(restored){
       await saveAll();
       try{ renderTodayTodoCard && renderTodayTodoCard(); }catch(e){}
+      try{ renderDeclCard && renderDeclCard(); }catch(e){}
+      try{ renderDuelCard && renderDuelCard(); }catch(e){}
+      try{ renderMaterials && renderMaterials(); }catch(e){}
+      try{ updateTimerMaterialSelect && updateTimerMaterialSelect(); }catch(e){}
+      try{ renderQuickMaterialSelect && renderQuickMaterialSelect(); }catch(e){}
+      try{ renderMobileQuestMaterials && renderMobileQuestMaterials(); }catch(e){}
       // 週間目標UIを即時更新（reportパネルが閉じていても反映）
       try{ renderWeeklyGoal && renderWeeklyGoal(); }catch(e){}
     }
@@ -11997,6 +12073,7 @@ function loadDecl(){
 }
 function saveDecl(obj){
   try{ localStorage.setItem(DECL_KEY, JSON.stringify(obj)); }catch(e){}
+  scheduleCloudSync();
 }
 function clearDecl(){
   try{ localStorage.removeItem(DECL_KEY); }catch(e){}
@@ -12149,7 +12226,7 @@ function updateDeclDisplay(decl){
 ════════════════════════════════════════ */
 const DUEL_KEY = 'sq2_today_duel';
 function loadDuel(){ try{ const v=localStorage.getItem(DUEL_KEY); return v?JSON.parse(v):null; }catch(e){ return null; } }
-function saveDuel(obj){ try{ if(obj===null)localStorage.removeItem(DUEL_KEY); else localStorage.setItem(DUEL_KEY,JSON.stringify(obj)); }catch(e){} }
+function saveDuel(obj){ try{ if(obj===null)localStorage.removeItem(DUEL_KEY); else localStorage.setItem(DUEL_KEY,JSON.stringify(obj)); }catch(e){} scheduleCloudSync(); }
 function maskName(name){ if(!name)return '???'; return name.length<=2?name[0]+'...':name.slice(0,2)+'...'; }
 
 function initTodayDuelFromDecl(decl){
@@ -19883,14 +19960,7 @@ function loadMaterials(){
 
 function saveMaterials(){
   try { localStorage.setItem(MATERIAL_KEY, JSON.stringify(materials)); } catch {}
-  // ログイン中はクラウドにも即時反映
-  if(currentUser && !isGuest){
-    sb.from('profiles').upsert({
-      id: currentUser.id,
-      materials_backup: JSON.stringify(materials),
-      updated_at: new Date().toISOString(),
-    }, {onConflict:'id'}).then(()=>{}, ()=>{});
-  }
+  scheduleCloudSync();
 }
 
 /* ── 教材追加モーダルを開く ── */
@@ -19986,6 +20056,7 @@ function saveMaterial(){
     cover:      materialCoverData,
     totalMins:  0, // 累計学習時間（自動計算）
     createdAt:  editId ? (materials.find(m=>m.id===editId)?.createdAt || new Date().toISOString()) : new Date().toISOString(),
+    updatedAt:  new Date().toISOString(),
   };
 
   if(editId){
@@ -20011,6 +20082,7 @@ function deleteMaterial(id){
   const m = materials.find(x => x.id === id);
   if(!m) return;
   if(!confirm(`「${m.name}」を削除しますか？\n学習記録は残ります。`)) return;
+  markMaterialDeleted(m);
   materials = materials.filter(x => x.id !== id);
   saveMaterials();
   renderMaterials();
@@ -20445,6 +20517,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260511_material_decl_sync',
+    date: '2026-05-11',
+    type: 'fix',
+    title: '☁️ 教材と今日の宣言の同期を改善しました',
+    desc: 'PCとスマホで教材の登録数がずれる問題を修正し、今日の宣言・本日の決闘もクラウドバックアップに含めるようにしました。'
+  },
   {
     id: 'v20260511_cross_device_sync',
     date: '2026-05-11',
