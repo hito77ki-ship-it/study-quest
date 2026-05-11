@@ -6634,6 +6634,149 @@ async function saveAll(){
     saveReportState();
   }catch(e){console.warn('save failed',e);}
 }
+
+function safeParseJson(raw, fallback){
+  try{ return raw ? JSON.parse(raw) : fallback; }catch{ return fallback; }
+}
+function getLocalJson(key, fallback){
+  return safeParseJson(localStorage.getItem(key), fallback);
+}
+function setLocalJson(key, value){
+  try{ localStorage.setItem(key, JSON.stringify(value)); }catch(e){ console.warn('local save failed', key, e); }
+}
+
+const SESSION_DELETED_KEY = 'sq2_deleted_sessions';
+let cloudSyncTimer = null;
+function scheduleCloudSync(delay = 600){
+  if(!currentUser || isGuest) return;
+  if(cloudSyncTimer) clearTimeout(cloudSyncTimer);
+  cloudSyncTimer = setTimeout(()=>{
+    cloudSyncTimer = null;
+    syncToCloud().catch(()=>{});
+  }, delay);
+}
+function recordUpdatedTime(record){
+  const raw = record?.updatedAt || record?.endedAt || record?.startedAt || record?.createdAt || record?.date || '';
+  const t = Date.parse(raw);
+  return Number.isFinite(t) ? t : 0;
+}
+function sessionSyncKey(s){
+  if(s?.id) return `id:${s.id}`;
+  return [
+    s?.date || '',
+    s?.subject || '',
+    s?.type || '',
+    Math.round(sAmount?.(s) || s?.amount || 0),
+    s?.startedAt || '',
+    s?.endedAt || '',
+    s?.note || ''
+  ].join('|');
+}
+function loadDeletedSessions(){
+  return getLocalJson(SESSION_DELETED_KEY, {});
+}
+function saveDeletedSessions(data){
+  setLocalJson(SESSION_DELETED_KEY, data || {});
+}
+function markSessionDeleted(s){
+  const deleted = loadDeletedSessions();
+  deleted[sessionSyncKey(s)] = new Date().toISOString();
+  saveDeletedSessions(deleted);
+}
+function mergeTimestampMaps(a = {}, b = {}){
+  const merged = {...a};
+  Object.entries(b || {}).forEach(([key, val])=>{
+    const cur = Date.parse(merged[key] || '') || 0;
+    const next = Date.parse(val || '') || 0;
+    if(next >= cur) merged[key] = val;
+  });
+  return merged;
+}
+function mergeSessionBackups(localSessions = [], cloudSessions = [], localDeleted = {}, cloudDeleted = {}){
+  const deleted = mergeTimestampMaps(localDeleted, cloudDeleted);
+  const map = new Map();
+  [...localSessions, ...cloudSessions].forEach(s=>{
+    if(!s) return;
+    const key = sessionSyncKey(s);
+    const deletedAt = Date.parse(deleted[key] || '') || 0;
+    if(deletedAt && deletedAt >= recordUpdatedTime(s)) return;
+    const existing = map.get(key);
+    if(!existing || recordUpdatedTime(s) >= recordUpdatedTime(existing)) map.set(key, s);
+  });
+  const merged = [...map.values()].sort((a,b)=>{
+    const ad = `${a.date || ''} ${a.startedAt || ''}`;
+    const bd = `${b.date || ''} ${b.startedAt || ''}`;
+    return ad.localeCompare(bd);
+  });
+  return {sessions: merged, deleted};
+}
+function todoItemTime(item){
+  const t = Date.parse(item?.updatedAt || item?.createdAt || '') || 0;
+  return t;
+}
+function mergeTodoBackups(localTodos = {}, cloudTodos = {}, localDeleted = {}, cloudDeleted = {}){
+  const deleted = mergeTimestampMaps(localDeleted, cloudDeleted);
+  const merged = {};
+  const dates = new Set([...Object.keys(localTodos || {}), ...Object.keys(cloudTodos || {})]);
+  dates.forEach(date=>{
+    const map = new Map();
+    [...(localTodos?.[date] || []), ...(cloudTodos?.[date] || [])].forEach(item=>{
+      if(!item?.id) return;
+      const key = `${date}:${item.id}`;
+      const deletedAt = Date.parse(deleted[key] || deleted[item.id] || '') || 0;
+      if(deletedAt && deletedAt >= todoItemTime(item)) return;
+      const existing = map.get(item.id);
+      if(!existing || todoItemTime(item) >= todoItemTime(existing)) map.set(item.id, item);
+    });
+    if(map.size) merged[date] = [...map.values()].sort((a,b)=>todoItemTime(a)-todoItemTime(b));
+  });
+  return {todos: merged, deleted};
+}
+function buildExtendedProfileInfoBackup(){
+  const info = getLocalJson('sq2_profile_info', {});
+  return JSON.stringify({
+    ...info,
+    _todos: getLocalJson('sq2_today_todos', {}),
+    _todoDeleted: getLocalJson('sq2_today_todo_deleted', {}),
+    _importPast: getLocalJson('sq2_import_past', {}),
+    _deletedSessions: loadDeletedSessions(),
+  });
+}
+function stripSyncInternalProfileInfo(info = {}){
+  const cleaned = {...info};
+  ['_todos','_todoDeleted','_importPast','_deletedSessions'].forEach(k=>delete cleaned[k]);
+  return cleaned;
+}
+async function mergeCloudBackupsIntoLocal(){
+  if(!currentUser || isGuest) return;
+  const {data: cloudBackup} = await sb.from('profiles')
+    .select('sessions_backup,profile_info_backup')
+    .eq('id', currentUser.id)
+    .single();
+  const cloudProfileInfo = safeParseJson(cloudBackup?.profile_info_backup, {});
+  const cloudSessions = safeParseJson(cloudBackup?.sessions_backup, []);
+  if(Array.isArray(cloudSessions)){
+    const mergedSessions = mergeSessionBackups(
+      sessions,
+      cloudSessions,
+      loadDeletedSessions(),
+      cloudProfileInfo?._deletedSessions || {}
+    );
+    sessions = mergedSessions.sessions;
+    saveDeletedSessions(mergedSessions.deleted);
+    localStorage.setItem('sq2_sessions', JSON.stringify(sessions));
+  }
+  if(cloudProfileInfo?._todos){
+    const mergedTodos = mergeTodoBackups(
+      getLocalJson('sq2_today_todos', {}),
+      cloudProfileInfo._todos,
+      getLocalJson('sq2_today_todo_deleted', {}),
+      cloudProfileInfo._todoDeleted || {}
+    );
+    setLocalJson('sq2_today_todos', mergedTodos.todos);
+    setLocalJson('sq2_today_todo_deleted', mergedTodos.deleted);
+  }
+}
 async function loadAll(){
   try{const v=localStorage.getItem('sq2_char');     if(v)char=JSON.parse(v);}catch{}
   try{const v=localStorage.getItem('sq2_sessions'); if(v)sessions=JSON.parse(v);}catch{}
@@ -7062,6 +7205,7 @@ async function signOut(){
 }
 async function syncToCloud(){
   if(!currentUser || isGuest) return;
+  try { await mergeCloudBackupsIntoLocal(); } catch(e) { console.warn('[SQ] cloud backup merge skipped:', e); }
   const totalSmins = studyMins(sessions);
   const trackSmins = levelStudyMins(sessions);
   const lp = getLevelProgress(trackSmins);
@@ -7104,7 +7248,7 @@ async function syncToCloud(){
     const materialsJson    = JSON.stringify(materials);
     const scoresJson       = JSON.stringify(scoreRecords);
     const planJson         = localStorage.getItem('sq2_weekly_plan') || '[]';
-    const profileInfoJson  = localStorage.getItem('sq2_profile_info') || '{}';
+    const profileInfoJson  = buildExtendedProfileInfoBackup();
 
     const {error: err2} = await sb.from('profiles').upsert({
       id: currentUser.id,
@@ -7163,13 +7307,19 @@ async function restoreFromCloud(){
 
     let restored = false;
 
+    const cloudProfileInfo = safeParseJson(data.profile_info_backup, {});
+    const cloudDeletedSessions = cloudProfileInfo?._deletedSessions || {};
+
     // ── 学習セッション ──
-    // ローカルにcloudに無い未同期セッションがあっても消えないよう、
-    // クラウドの方が多い場合のみ上書きする（同数・少ない場合はローカルを優先）
+    // 端末ごとに追加した記録が同数でも落ちないよう、上書きではなく差分マージする。
     if(data.sessions_backup){
-      const s = JSON.parse(data.sessions_backup);
-      if(s && s.length > sessions.length){
-        sessions = s; restored = true;
+      const s = safeParseJson(data.sessions_backup, []);
+      if(Array.isArray(s)){
+        const merged = mergeSessionBackups(sessions, s, loadDeletedSessions(), cloudDeletedSessions);
+        const changed = JSON.stringify(merged.sessions) !== JSON.stringify(sessions);
+        sessions = merged.sessions;
+        saveDeletedSessions(merged.deleted);
+        if(changed) restored = true;
       }
     }
     // ── ボス ──
@@ -7247,13 +7397,37 @@ async function restoreFromCloud(){
     }
     // ── プロフィール詳細（学年・目標時間・都道府県等）──
     if(data.profile_info_backup){
-      const pi = JSON.parse(data.profile_info_backup);
-      const localPi = JSON.parse(localStorage.getItem('sq2_profile_info') || '{}');
+      const pi = cloudProfileInfo;
+      const localPi = getLocalJson('sq2_profile_info', {});
       const localHasData = Object.keys(localPi).some(k => localPi[k]);
-      if(pi && Object.keys(pi).length > 0 && (!localHasData || cloudIsNewer)){
-        localStorage.setItem('sq2_profile_info', JSON.stringify(pi));
+      const cleanPi = stripSyncInternalProfileInfo(pi);
+      if(cleanPi && Object.keys(cleanPi).length > 0 && (!localHasData || cloudIsNewer)){
+        localStorage.setItem('sq2_profile_info', JSON.stringify(cleanPi));
         restored = true;
         console.log('[SQ] プロフィール詳細をクラウドから復元');
+      }
+      if(pi?._todos){
+        const mergedTodos = mergeTodoBackups(
+          getLocalJson('sq2_today_todos', {}),
+          pi._todos,
+          getLocalJson('sq2_today_todo_deleted', {}),
+          pi._todoDeleted || {}
+        );
+        const beforeTodos = localStorage.getItem('sq2_today_todos') || '{}';
+        setLocalJson('sq2_today_todos', mergedTodos.todos);
+        setLocalJson('sq2_today_todo_deleted', mergedTodos.deleted);
+        if(JSON.stringify(mergedTodos.todos) !== beforeTodos){
+          restored = true;
+          console.log('[SQ] Todoをクラウドから復元');
+        }
+      }
+      if(pi?._importPast){
+        const localImportPast = getLocalJson('sq2_import_past', {});
+        if(Object.keys(localImportPast).length === 0 || cloudIsNewer){
+          setLocalJson('sq2_import_past', pi._importPast);
+          restored = true;
+          console.log('[SQ] 過去時間インポート情報をクラウドから復元');
+        }
       }
     }
     // ── 週間目標データ ──
@@ -7277,6 +7451,7 @@ async function restoreFromCloud(){
 
     if(restored){
       await saveAll();
+      try{ renderTodayTodoCard && renderTodayTodoCard(); }catch(e){}
       // 週間目標UIを即時更新（reportパネルが閉じていても反映）
       try{ renderWeeklyGoal && renderWeeklyGoal(); }catch(e){}
     }
@@ -13105,12 +13280,21 @@ function renderTodayQuestBanner(){
 }
 
 const TODO_KEY = 'sq2_today_todos';
+const TODO_DELETED_KEY = 'sq2_today_todo_deleted';
 const TODO_SELECTED_DATE_KEY = 'sq2_todo_selected_date';
 function loadTodos(){
   try{ return JSON.parse(localStorage.getItem(TODO_KEY) || '{}'); }catch{ return {}; }
 }
 function saveTodos(data){
   try{ localStorage.setItem(TODO_KEY, JSON.stringify(data)); }catch{}
+  scheduleCloudSync();
+}
+function loadTodoDeleted(){
+  try{ return JSON.parse(localStorage.getItem(TODO_DELETED_KEY) || '{}'); }catch{ return {}; }
+}
+function saveTodoDeleted(data){
+  try{ localStorage.setItem(TODO_DELETED_KEY, JSON.stringify(data || {})); }catch{}
+  scheduleCloudSync();
 }
 function getSelectedTodoDate(){
   try{
@@ -13146,19 +13330,24 @@ function addTodayTodo(){
   if(!text) return;
   const date = getSelectedTodoDate();
   const items = getTodosForDate(date);
-  items.push({ id: Date.now().toString(36), text, done: false, createdAt: new Date().toISOString() });
+  const now = new Date().toISOString();
+  items.push({ id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2,7)}`, text, done: false, createdAt: now, updatedAt: now });
   setTodosForDate(date, items);
   input.value = '';
   renderTodayTodoCard();
 }
 function toggleTodayTodo(id){
   const date = getSelectedTodoDate();
-  const items = getTodosForDate(date).map(item => item.id === id ? {...item, done: !item.done} : item);
+  const now = new Date().toISOString();
+  const items = getTodosForDate(date).map(item => item.id === id ? {...item, done: !item.done, updatedAt: now} : item);
   setTodosForDate(date, items);
   renderTodayTodoCard();
 }
 function deleteTodayTodo(id){
   const date = getSelectedTodoDate();
+  const deleted = loadTodoDeleted();
+  deleted[`${date}:${id}`] = new Date().toISOString();
+  saveTodoDeleted(deleted);
   setTodosForDate(date, getTodosForDate(date).filter(item => item.id !== id));
   renderTodayTodoCard();
 }
@@ -14487,6 +14676,7 @@ async function deleteSession(idx){
   if(idx<0||idx>=sessions.length) return;
   lastDeletedSession = {...sessions[idx]};
   lastDeletedIndex   = idx;
+  markSessionDeleted(lastDeletedSession);
 
   sessions.splice(idx, 1);
   // char.totalEXP 再計算
@@ -14520,11 +14710,15 @@ function hideUndoBar(){
 async function undoDelete(){
   if(lastDeletedSession===null||lastDeletedIndex===null) return;
   clearTimeout(undoTimer);
+  const deleted = loadDeletedSessions();
+  delete deleted[sessionSyncKey(lastDeletedSession)];
+  saveDeletedSessions(deleted);
   sessions.splice(lastDeletedIndex, 0, lastDeletedSession);
   char.totalEXP = sessions.reduce((a,s)=>a+(s.exp||0), 0);
   const smins = levelStudyMins(sessions);
   char.level = computeLevel(smins);
   await saveAll();
+  syncToCloud().catch(()=>{});
   renderAll();
   hideUndoBar();
   lastDeletedSession=null; lastDeletedIndex=null;
@@ -20251,6 +20445,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260511_cross_device_sync',
+    date: '2026-05-11',
+    type: 'fix',
+    title: '☁️ PC・スマホ間の同期を改善しました',
+    desc: '端末ごとに追加した学習記録が同数だと反映されにくい問題を修正し、日付別Todo・削除履歴・過去時間インポート情報もクラウドバックアップに含めるようにしました。'
+  },
   {
     id: 'v20260511_remove_boss_nav',
     date: '2026-05-11',
