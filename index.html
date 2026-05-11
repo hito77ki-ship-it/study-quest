@@ -7080,9 +7080,28 @@ function getAllKnownSubjectsMap(){
   });
   return map;
 }
+function getSessionSubjectNameMap(){
+  const map = new Map();
+  (sessions || []).forEach(s=>{
+    if(s?.subject && s.subjectName) map.set(s.subject, s.subjectName);
+    if(s?.subject && s.subject_name) map.set(s.subject, s.subject_name);
+  });
+  return map;
+}
+function fallbackSubjectLabel(key){
+  if(!key) return '学習';
+  if(String(key).startsWith('custom_')){
+    const parts = String(key).split('_');
+    const jobId = parts[1] || '';
+    const jobName = JOBS.find(j=>j.id===jobId)?.name || '';
+    return jobName ? `${jobName} カスタム科目` : 'カスタム科目';
+  }
+  return key;
+}
 function getReportSubjects(){
   const selected = allSelectedSubjects();
   const knownMap  = getAllKnownSubjectsMap();
+  const sessionNameMap = getSessionSubjectNameMap();
   const out = [];
   const seen = new Set();
 
@@ -7104,7 +7123,7 @@ function getReportSubjects(){
       const meta = knownMap.get(key);
       out.push(meta ? {...meta, color:getSubjColor(key, meta.color)} : {
         key,
-        name:key,
+        name:sessionNameMap.get(key) || fallbackSubjectLabel(key),
         color:getSubjColor(key, '#8CC63F'),
         maxH:0,
         attrs:{}
@@ -8546,7 +8565,8 @@ async function addQuest(){
     }
   }
   const condition = parseInt(document.getElementById('mrecCondition')?.value ?? 1);
-  sessions.push({date,subject,type:currentType,amount,exp,note,startedAt,endedAt,condition});
+  const subjectMeta = getReportSubjects().find(s=>s.key===subject) || allSelectedSubjects().find(s=>s.key===subject);
+  sessions.push({date,subject,subjectName:subjectMeta?.name||fallbackSubjectLabel(subject),type:currentType,amount,exp,note,startedAt,endedAt,condition});
   timerStartedAt = null;
   const smins1=levelStudyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
@@ -9398,7 +9418,8 @@ async function finishTimer(){
   const condition=getTodayCondition();
   const isFirstSession = sessions.length === 0;
   gtag('event','session_record',{subject, minutes, is_first: isFirstSession});
-  sessions.push({date,subject,type:'study',amount:minutes,amountSecs:totalSecs,exp,note,startedAt,endedAt,condition});
+  const subjectMeta = getReportSubjects().find(s=>s.key===subject) || allSelectedSubjects().find(s=>s.key===subject);
+  sessions.push({date,subject,subjectName:subjectMeta?.name||fallbackSubjectLabel(subject),type:'study',amount:minutes,amountSecs:totalSecs,exp,note,startedAt,endedAt,condition});
   const smins1=levelStudyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
   // 忘却の霧ボーナス
@@ -16434,7 +16455,7 @@ async function quickRecord(mins){
   const condition = getTodayCondition();
 
   gtag('event','quick_record',{minutes: mins, subject: subj.key});
-  sessions.push({ date:today, subject:subj.key, type:'study', amount:mins, exp, note:'⚡ クイック記録', startedAt, endedAt, condition });
+  sessions.push({ date:today, subject:subj.key, subjectName:subj.name, type:'study', amount:mins, exp, note:'⚡ クイック記録', startedAt, endedAt, condition });
 
   const smins1 = levelStudyMins(sessions), lv1 = computeLevel(smins1);
   char.level = lv1;
@@ -16491,8 +16512,8 @@ function saveLocalLikes(likes){
 /* ── 自動投稿（記録完了時に呼ばれる） ── */
 async function autoPostToTimeline({ subject, minutes, note, exp, lv, name, material_name, material_cover, material_id, post_image, examPost }){
   gtag('event','timeline_post',{subject, minutes});
-  const subj = allSelectedSubjects().find(s => s.key === subject);
-  const subjName = subj ? subj.name : subject || '学習';
+  const subj = getReportSubjects().find(s => s.key === subject) || allSelectedSubjects().find(s => s.key === subject);
+  const subjName = subj ? subj.name : fallbackSubjectLabel(subject);
   const rpgLog = generateRpgLog(name, subjName, minutes);
 
   // 教材が未指定の場合、同じ科目の教材から表紙を探す（答練・模試は対象外）
