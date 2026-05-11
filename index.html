@@ -6780,6 +6780,8 @@ function mergeTodoBackups(localTodos = {}, cloudTodos = {}, localDeleted = {}, c
   return {todos: merged, deleted};
 }
 function mergeMaterialBackups(localMaterials = [], cloudMaterials = [], localDeleted = {}, cloudDeleted = {}){
+  localMaterials = normalizeMaterialListIds(localMaterials);
+  cloudMaterials = normalizeMaterialListIds(cloudMaterials);
   const deleted = mergeTimestampMaps(localDeleted, cloudDeleted);
   const map = new Map();
   [...localMaterials, ...cloudMaterials].forEach(m=>{
@@ -7373,6 +7375,11 @@ async function syncToCloud(){
   let cloudProfileInfoForBackup = {};
   try {
     cloudProfileInfoForBackup = await mergeCloudBackupsIntoLocal() || {};
+    try{ renderMaterials && renderMaterials(); }catch(e){}
+    try{ updateTimerMaterialSelect && updateTimerMaterialSelect(); }catch(e){}
+    try{ renderQuickMaterialSelect && renderQuickMaterialSelect(); }catch(e){}
+    try{ renderMobileQuestMaterials && renderMobileQuestMaterials(); }catch(e){}
+    try{ renderDeclCard && renderDeclCard(); }catch(e){}
   } catch(e) {
     console.warn('[SQ] cloud backup merge skipped:', e);
   }
@@ -7689,6 +7696,27 @@ async function restoreFromCloud(){
     return false;
   }
 }
+let lastCloudRefreshAt = 0;
+function refreshFromCloudIfNeeded(reason = ''){
+  if(!currentUser || isGuest) return;
+  const now = Date.now();
+  if(now - lastCloudRefreshAt < 30000) return;
+  lastCloudRefreshAt = now;
+  restoreFromCloud().then(restored => {
+    if(!restored) return;
+    console.log('[SQ] cloud refresh applied:', reason);
+    try{ renderAll && renderAll(); }catch(e){}
+    try{ renderQuickMaterialSelect && renderQuickMaterialSelect(); }catch(e){}
+    try{ renderMobileQuestMaterials && renderMobileQuestMaterials(); }catch(e){}
+    try{ renderDeclCard && renderDeclCard(); }catch(e){}
+  }).catch(e => console.warn('[SQ] cloud refresh skipped:', e));
+}
+
+document.addEventListener('visibilitychange', () => {
+  if(!document.hidden) refreshFromCloudIfNeeded('visibility');
+});
+window.addEventListener('focus', () => refreshFromCloudIfNeeded('focus'));
+
 let currentRankTab = 'total';
 
 function switchRankTab(tab){
@@ -19787,6 +19815,27 @@ const MATERIAL_KEY = 'sq2_materials';
 let materials = [];
 let materialCoverData = null; // base64
 
+function genMaterialId(){
+  return 'mat_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8);
+}
+
+function normalizeMaterialListIds(list = []){
+  const seen = new Set();
+  return (Array.isArray(list) ? list : []).filter(Boolean).map(m => {
+    const item = {...m};
+    let id = String(item.id || '').trim();
+    if(!id || seen.has(id)) id = genMaterialId();
+    seen.add(id);
+    const now = new Date().toISOString();
+    return {
+      ...item,
+      id,
+      createdAt: item.createdAt || item.updatedAt || now,
+      updatedAt: item.updatedAt || item.createdAt || now,
+    };
+  });
+}
+
 function checkNoMaterialBanner(){
   const banner = document.getElementById('noMaterialBanner');
   if(!banner) return;
@@ -20122,11 +20171,12 @@ function mobileMatLongPress(e, materialId){
 function loadMaterials(){
   try {
     const v = localStorage.getItem(MATERIAL_KEY);
-    materials = v ? JSON.parse(v) : [];
+    materials = normalizeMaterialListIds(v ? JSON.parse(v) : []);
   } catch { materials = []; }
 }
 
 function saveMaterials(){
+  materials = normalizeMaterialListIds(materials);
   try { localStorage.setItem(MATERIAL_KEY, JSON.stringify(materials)); } catch {}
   scheduleCloudSync();
 }
@@ -20216,7 +20266,7 @@ function saveMaterial(){
 
   const editId = document.getElementById('materialEditId').value;
   const entry = {
-    id:         editId || Date.now().toString(36),
+    id:         editId || genMaterialId(),
     name,
     author:     document.getElementById('materialAuthor').value.trim(),
     pages:      parseInt(document.getElementById('materialPages').value) || null,
@@ -20685,6 +20735,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260512_material_sync_repair',
+    date: '2026-05-12',
+    type: 'fix',
+    title: '📚 PC・スマホ間の教材同期を再修正しました',
+    desc: '教材IDの重複で一部の教材が別端末に反映されない可能性を修正しました。アプリ復帰時にもクラウドから最新データを確認し、教材一覧を更新します。'
+  },
   {
     id: 'v20260511_sync_overwrite_guard',
     date: '2026-05-11',
