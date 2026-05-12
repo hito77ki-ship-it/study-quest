@@ -752,6 +752,11 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-box{position:absolute;top:80px;left:50%;transform:translateX(-50%);width:min(580px,92vw);background:var(--card-bg);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--border);}
 .lp-search-input{width:100%;padding:16px 20px;font-size:15px;border:none;outline:none;border-bottom:1px solid var(--border);background:transparent;color:var(--ink);font-family:'Noto Sans JP',sans-serif;}
 .lp-search-input::placeholder{color:var(--ink3);}
+.lp-search-filters{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface);scrollbar-width:none;}
+.lp-search-filters::-webkit-scrollbar{display:none;}
+.lp-search-chip{border:1px solid var(--border);background:var(--card-bg);color:var(--ink3);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:'Noto Sans JP',sans-serif;white-space:nowrap;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
+.lp-search-chip:hover{border-color:rgba(140,198,63,.45);color:var(--green);}
+.lp-search-chip.active{background:rgba(140,198,63,.16);border-color:rgba(140,198,63,.45);color:var(--green);}
 .lp-search-results{max-height:380px;overflow-y:auto;}
 .lp-search-item{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);transition:background .12s;}
 .lp-search-item:hover{background:var(--card-bg);filter:brightness(0.97);}
@@ -1226,6 +1231,11 @@ footer{background:#091505;padding:48px 24px 40px;}
     <h2 class="sec-title" style="margin-bottom:0;">更新情報</h2>
     <p class="updates-sub">Study Quest の最近のアップデート</p>
     <div class="updates-list">
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.05.12</span><span class="update-badge improve">改善</span></div>
+        <div class="update-title">🔎 記事検索にカテゴリ絞り込みを追加しました</div>
+        <div class="update-desc">記事検索で「簿記2級」「司法書士」「IT・技術系」などのカテゴリを選んでから検索できるようにしました。探したい記事へより早くたどり着けます。</div>
+      </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.12</span><span class="update-badge fix">修正</span></div>
         <div class="update-title">📚 PC・スマホ間の教材同期を再修正しました</div>
@@ -2435,8 +2445,9 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   <div class="lp-search-overlay"></div>
   <div class="lp-search-box">
     <input class="lp-search-input" type="text" placeholder="記事タイトルで検索... 例：試算表、伝票">
+    <div class="lp-search-filters"></div>
     <div class="lp-search-results"></div>
-    <div class="lp-search-hint">Esc で閉じる　　/ キーで開く</div>
+    <div class="lp-search-hint">カテゴリ絞り込み対応　　Esc で閉じる　　/ キーで開く</div>
   </div>
 </div>
 <script>
@@ -2482,30 +2493,58 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   const modal   = document.getElementById('lp-search-modal');
   const openBtn = document.getElementById('lp-search-open');
   const input   = modal.querySelector('.lp-search-input');
+  const filters = modal.querySelector('.lp-search-filters');
   const results = modal.querySelector('.lp-search-results');
   let index = null;
+  let selectedLabel = 'all';
+  const esc = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function categoryLabels(){
+    if(!index) index = buildIndex();
+    const labels = [...new Set(index.map(x=>x.label).filter(Boolean))];
+    const priority = ['簿記3級','簿記2級','法律・会計系','IT・技術系','ビジネス系','医療・福祉系','継続・ツール','追加記事'];
+    return labels.sort((a,b)=>{
+      const ai = priority.indexOf(a), bi = priority.indexOf(b);
+      if(ai >= 0 || bi >= 0) return (ai >= 0 ? ai : 999) - (bi >= 0 ? bi : 999);
+      return a.localeCompare(b, 'ja');
+    });
+  }
+
+  function renderFilters(){
+    filters.innerHTML = [
+      `<button type="button" class="lp-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
+      ...categoryLabels().map(label => `<button type="button" class="lp-search-chip${selectedLabel===label?' active':''}" data-label="${esc(label)}">${esc(label)}</button>`)
+    ].join('');
+  }
 
   function open(){
     if(!index) index = buildIndex();
     modal.classList.add('open');
     setTimeout(()=>input.focus(), 40);
     input.value = '';
+    selectedLabel = 'all';
+    renderFilters();
     render('');
   }
   function close(){ modal.classList.remove('open'); }
 
   function render(q){
-    const filtered = q.trim()===''
-      ? index
-      : index.filter(x=>x.title.includes(q)||x.label.includes(q));
+    const query = q.trim();
+    const scoped = selectedLabel === 'all' ? index : index.filter(x=>x.label === selectedLabel);
+    const filtered = query === ''
+      ? scoped
+      : scoped.filter(x=>x.title.includes(query)||x.label.includes(query));
     if(!filtered.length){
-      results.innerHTML = `<div class="lp-search-empty">「${q}」に一致する記事はありませんでした</div>`;
+      const msg = selectedLabel === 'all'
+        ? `「${esc(q)}」に一致する記事はありませんでした`
+        : `「${esc(selectedLabel)}」内に一致する記事はありませんでした`;
+      results.innerHTML = `<div class="lp-search-empty">${msg}</div>`;
       return;
     }
     results.innerHTML = filtered.slice(0,12).map(x=>
       `<a href="${x.href}" class="lp-search-item">
-        <span class="lp-search-label">${x.label}</span>
-        <span class="lp-search-title">${x.title}</span>
+        <span class="lp-search-label">${esc(x.label)}</span>
+        <span class="lp-search-title">${esc(x.title)}</span>
       </a>`
     ).join('');
   }
@@ -2513,6 +2552,13 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   openBtn.addEventListener('click', open);
   modal.querySelector('.lp-search-overlay').addEventListener('click', close);
   input.addEventListener('input', ()=>render(input.value));
+  filters.addEventListener('click', e=>{
+    const chip = e.target.closest('.lp-search-chip');
+    if(!chip) return;
+    selectedLabel = chip.dataset.label || 'all';
+    renderFilters();
+    render(input.value);
+  });
   document.addEventListener('keydown', e=>{
     if(e.key==='Escape'){ close(); return; }
     if(e.key==='/' && !modal.classList.contains('open') && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){

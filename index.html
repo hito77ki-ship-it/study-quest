@@ -7002,8 +7002,20 @@ function getSubjectsForJobId(jobId){
   const job = JOBS.find(j=>j.id===jobId);
   return job ? (job.subjects || []) : [];
 }
-function getMaxMinsForSubjects(subjects){return subjects.length?subjects.reduce((a,x)=>a+x.maxH*60,0):1;}
-function getAvgMinsForSubjects(subjects){return subjects.length?subjects.reduce((a,x)=>a+x.avgH*60,0):1;}
+function toFiniteNumber(value, fallback = 0){
+  const n = Number(value);
+  return Number.isFinite(n) ? n : fallback;
+}
+function getMaxMinsForSubjects(subjects){
+  return subjects.length
+    ? Math.max(1, subjects.reduce((a,x)=>a + toFiniteNumber(x.maxH) * 60, 0))
+    : 1;
+}
+function getAvgMinsForSubjects(subjects){
+  return subjects.length
+    ? Math.max(1, subjects.reduce((a,x)=>a + toFiniteNumber(x.avgH) * 60, 0))
+    : 1;
+}
 function getMaxMins(){return getMaxMinsForSubjects(allSelectedSubjects());}
 function getAvgMins(){return getAvgMinsForSubjects(allSelectedSubjects());}
 function computeLevelWithMaxMins(smins,maxMins){
@@ -7165,9 +7177,19 @@ function getReportSubjects(){
   return out;
 }
 /* 秒精度ヘルパー: amountSecs があればそれを/60、なければ amount（旧データ互換） */
-function sAmount(s){ return s.amountSecs !== undefined ? s.amountSecs / 60 : (s.amount || 0); }
+function sAmount(s){
+  if(s?.amountSecs !== undefined && s?.amountSecs !== null && s?.amountSecs !== ''){
+    return toFiniteNumber(s.amountSecs) / 60;
+  }
+  return toFiniteNumber(s?.amount);
+}
 /* 合計秒数を返す */
-function sAmountSecs(s){ return s.amountSecs !== undefined ? s.amountSecs : (s.amount || 0) * 60; }
+function sAmountSecs(s){
+  if(s?.amountSecs !== undefined && s?.amountSecs !== null && s?.amountSecs !== ''){
+    return toFiniteNumber(s.amountSecs);
+  }
+  return toFiniteNumber(s?.amount) * 60;
+}
 /* 秒数 → "1h 23m 45s" 形式 */
 function fmtSecs(totalSecs){
   totalSecs = Math.round(totalSecs);
@@ -8486,7 +8508,8 @@ function renderAll(){
 
 function renderOverallProgress(smins,subjs){
   const con=document.getElementById('overallProgressSection');
-  const avgMins=getAvgMins();
+  smins = toFiniteNumber(smins);
+  const avgMins=toFiniteNumber(getAvgMins(), 1);
   const scaleMins=Math.max(avgMins*1.25,smins,60);
   const th=smins/60,ah=avgMins/60,sh=scaleMins/60;
   const remain=Math.max(0,ah-th);
@@ -8535,13 +8558,15 @@ function renderSubjStats(subjs){
   const RK=['D','C','B','A','S'],RC=['#ff6e6e','#4db8ff','#7cff6e','#c9a84c','#ffd700'];
   subjs.forEach(s=>{
     const mins=subjStudyMins(sessions,s.key),hours=mins/60;
-    const pct=Math.min(100,Math.round(hours/s.maxH*100));
+    const maxH=Math.max(1, toFiniteNumber(s.maxH, 1));
+    const avgH=toFiniteNumber(s.avgH);
+    const pct=Math.min(100,Math.round(hours/maxH*100));
     const ri=Math.min(4,Math.floor(pct/20));
     const ec=sessions.filter(x=>x.subject===s.key&&x.type==='exam').length;
-    const cc=sessions.filter(x=>x.subject===s.key&&x.type==='calc').reduce((a,x)=>a+x.amount,0);
-    const avgPctBar=Math.min(100,s.avgH/s.maxH*100);
+    const cc=sessions.filter(x=>x.subject===s.key&&x.type==='calc').reduce((a,x)=>a+toFiniteNumber(x.amount),0);
+    const avgPctBar=Math.min(100,avgH/maxH*100);
     const row=document.createElement('div');row.className='subj-stat-row';
-    row.innerHTML=`<div class="subj-stat-header"><span class="subj-stat-name" style="color:${s.color}">${s.name}</span><div class="subj-stat-right"><span class="subj-stat-rank" style="color:${RC[ri]};border:1px solid ${RC[ri]}44">${RK[ri]}</span><span class="subj-stat-pct" style="color:${s.color}">${pct}<span style="font-size:11px">%</span></span></div></div><div class="hp-track" style="position:relative;"><div class="hp-avg-marker" style="left:${avgPctBar.toFixed(1)}%"></div><div class="hp-fill" style="width:${pct}%;background:linear-gradient(to right,${s.color}33,${s.color});box-shadow:0 0 10px ${s.color}55"></div></div><div class="subj-target-info"><span>${formatHM(mins)} / avg ${s.avgH}h / MAX ${s.maxH}h</span><span class="subj-target-remain">平均まで あと ${Math.ceil(Math.max(0,s.avgH-hours))}h</span></div><div class="subj-meta-row" style="margin-top:4px">${cc?`<span class="subj-meta-chip">🔢 ${cc}問</span>`:''}${ec?`<span class="subj-meta-chip">⚔ 答練${ec}回</span>`:''}</div>`;
+    row.innerHTML=`<div class="subj-stat-header"><span class="subj-stat-name" style="color:${s.color}">${s.name}</span><div class="subj-stat-right"><span class="subj-stat-rank" style="color:${RC[ri]};border:1px solid ${RC[ri]}44">${RK[ri]}</span><span class="subj-stat-pct" style="color:${s.color}">${pct}<span style="font-size:11px">%</span></span></div></div><div class="hp-track" style="position:relative;"><div class="hp-avg-marker" style="left:${avgPctBar.toFixed(1)}%"></div><div class="hp-fill" style="width:${pct}%;background:linear-gradient(to right,${s.color}33,${s.color});box-shadow:0 0 10px ${s.color}55"></div></div><div class="subj-target-info"><span>${formatHM(mins)} / avg ${avgH}h / MAX ${maxH}h</span><span class="subj-target-remain">平均まで あと ${Math.ceil(Math.max(0,avgH-hours))}h</span></div><div class="subj-meta-row" style="margin-top:4px">${cc?`<span class="subj-meta-chip">🔢 ${cc}問</span>`:''}${ec?`<span class="subj-meta-chip">⚔ 答練${ec}回</span>`:''}</div>`;
     con.appendChild(row);
   });
 }
@@ -20735,6 +20760,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20260512_article_search_filters',
+    date: '2026-05-12',
+    type: 'improve',
+    title: '🔎 記事検索にカテゴリ絞り込みを追加しました',
+    desc: '記事検索で「簿記2級」「司法書士」「資格比較」などのカテゴリを選んでから検索できるようにしました。探したい記事へより早くたどり着けます。'
+  },
   {
     id: 'v20260512_material_sync_repair',
     date: '2026-05-12',

@@ -1624,6 +1624,11 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-box{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:min(560px,90vw);background:var(--sq-surface);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--sq-border-strong);}
 .sq-search-input{width:100%;padding:16px 20px;font-size:15px;border:none;outline:none;border-bottom:1px solid var(--sq-border);background:transparent;color:var(--sq-text);font-family:inherit;}
 .sq-search-input::placeholder{color:var(--sq-muted);}
+.sq-search-filters{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--sq-border);background:var(--sq-surface-soft);scrollbar-width:none;}
+.sq-search-filters::-webkit-scrollbar{display:none;}
+.sq-search-chip{border:1px solid var(--sq-border);background:var(--sq-surface);color:var(--sq-muted);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:inherit;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
+.sq-search-chip:hover{color:var(--sq-text);border-color:var(--sq-border-strong);}
+.sq-search-chip.active{background:rgba(140,198,63,.18);border-color:rgba(140,198,63,.45);color:#276749;}
 .sq-search-results{max-height:360px;overflow-y:auto;}
 .sq-search-item{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--sq-border);text-decoration:none;color:var(--sq-text);transition:background .12s;}
 .sq-search-item:hover{background:var(--sq-surface-soft);text-decoration:none;}
@@ -1743,14 +1748,16 @@ function buildSearchModal(){
   const modal = document.createElement('div');
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
-  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-results"></div><div class="sq-search-hint">本文検索対応　　Esc で閉じる　　/ キーで開く</div></div>';
+  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters"></div><div class="sq-search-results"></div><div class="sq-search-hint">カテゴリ絞り込み・本文検索対応　　Esc で閉じる　　/ キーで開く</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
+  const filters= modal.querySelector('.sq-search-filters');
   const results= modal.querySelector('.sq-search-results');
   let searchIndex = null;
   let indexPromise = null;
   let indexReady = false;
+  let selectedLabel = 'all';
 
   const normalize = text => String(text || '').toLowerCase().replace(/\s+/g,' ').trim();
   const excerpt = (text, q) => {
@@ -1802,11 +1809,29 @@ function buildSearchModal(){
     });
     return indexPromise;
   };
+  const categoryLabels = () => {
+    const labels = [...new Set(Object.values(ARTICLES).map(a => a.label).filter(Boolean))];
+    const priority = ['簿記3級','簿記2級','簿記1級','司法書士','FP2級','公認会計士','資格比較','まとめ','勉強継続'];
+    return labels.sort((a,b)=>{
+      const ai = priority.indexOf(a), bi = priority.indexOf(b);
+      if(ai >= 0 || bi >= 0) return (ai >= 0 ? ai : 999) - (bi >= 0 ? bi : 999);
+      return a.localeCompare(b, 'ja');
+    });
+  };
+  function renderFilters(){
+    const labels = categoryLabels();
+    filters.innerHTML = [
+      `<button type="button" class="sq-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
+      ...labels.map(label => `<button type="button" class="sq-search-chip${selectedLabel===label?' active':''}" data-label="${_escHtml(label)}">${_escHtml(label)}</button>`)
+    ].join('');
+  }
 
   function openModal(){
     modal.classList.add('open');
     setTimeout(()=>input.focus(),40);
     input.value='';
+    selectedLabel='all';
+    renderFilters();
     render('');
     ensureSearchIndex().then(()=>render(input.value));
   }
@@ -1815,9 +1840,14 @@ function buildSearchModal(){
   function render(q){
     const query = normalize(q);
     const entries = searchIndex || baseEntries();
+    const scoped = selectedLabel === 'all' ? entries : entries.filter(item => item.label === selectedLabel);
     const filtered = query === ''
-      ? entries
-      : entries.filter(item => item.normalized.includes(query));
+      ? scoped
+      : scoped.filter(item => item.normalized.includes(query));
+    if(!filtered.length && selectedLabel !== 'all'){
+      results.innerHTML=`<div class="sq-search-empty">「${_escHtml(selectedLabel)}」内に一致する記事はありませんでした</div>`;
+      return;
+    }
     if(!filtered.length){
       results.innerHTML=`<div class="sq-search-empty">「${_escHtml(q)}」に一致する記事はありませんでした</div>`;
       return;
@@ -1843,6 +1873,13 @@ function buildSearchModal(){
   btn.addEventListener('click', openModal);
   modal.querySelector('.sq-search-overlay').addEventListener('click', closeModal);
   input.addEventListener('input', ()=>render(input.value));
+  filters.addEventListener('click', e=>{
+    const chip = e.target.closest('.sq-search-chip');
+    if(!chip) return;
+    selectedLabel = chip.dataset.label || 'all';
+    renderFilters();
+    render(input.value);
+  });
   document.addEventListener('keydown', e=>{
     if(e.key==='Escape'){ closeModal(); return; }
     if(e.key==='/' && !modal.classList.contains('open') && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){
