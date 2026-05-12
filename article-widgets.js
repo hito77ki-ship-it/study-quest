@@ -97,7 +97,7 @@ const ARTICLES = {
   'cpa-yobikou.html':          {label:'勉強法',      title:'公認会計士・税理士は予備校と独学どっちがいい？'},
   'boki-zero-01.html':  {label:'簿記3級', title:'ゼロからの簿記①取引・簿記とは？'},
   'boki-zero-02.html':  {label:'簿記3級', title:'ゼロからの簿記②なぜ簿記が大事？'},
-  'boki-zero-03.html':  {label:'簿記3級', title:'ゼロからの簿記③簿記の流れ'},
+  'boki-zero-03.html':  {label:'簿記3級', title:'ゼロからの簿記③簿記の流れ・決算書とは？'},
   'boki-zero-04.html':  {label:'簿記3級', title:'ゼロからの簿記④仕訳のしくみ'},
   'boki-zero-05.html':  {label:'簿記3級', title:'ゼロからの簿記⑤仕訳から財務諸表へ'},
   'boki2-kotei-shisan.html': {label:'簿記2級', title:'固定資産（減価償却・除却・売却）の仕訳'},
