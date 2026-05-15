@@ -5805,7 +5805,7 @@ const JOBS = [
     id:'cpa', name:'公認会計士', icon:'⚖', tag:'聖騎士CPA',
     category:'会計ギルド', rpgClass:'聖騎士',
     desc:'難関国家資格。短答＋論文の2段階試験。会計界の頂点。',
-    color:'#c9a84c', avgHours:3500, maxHours:5250,
+    color:'#c9a84c', avgHours:4500, maxHours:6750,
     subjects:[
       {key:'fin_calc', name:'財務会計論（計算）',desc:'簿記・連結・企業結合',          color:'#4db8ff',avgH:900,maxH:1350,attrs:{atk:.7,dex:.3}},
       {key:'fin_th',   name:'財務会計論（理論）',desc:'会計基準・概念フレームワーク',  color:'#7ab8ff',avgH:600,maxH:900, attrs:{int:.6,mag:.4}},
@@ -5819,7 +5819,7 @@ const JOBS = [
       {key:'audit',    name:'監査論',            desc:'監査基準・内部統制',            color:'#ff9e4d',avgH:333,maxH:500, attrs:{int:.7,spi:.3}},
       {key:'corp',     name:'企業法',            desc:'会社法・金融商品取引法',        color:'#c97cff',avgH:333,maxH:500, attrs:{int:.8,spi:.2}},
       {key:'tax',      name:'租税法',            desc:'法人税・所得税・消費税',        color:'#ff6e9e',avgH:333,maxH:500, attrs:{mag:.6,dex:.4}},
-      {key:'biz_mgmt', name:'経営学（選択）',    desc:'経営戦略・ファイナンス',        color:'#6effee',avgH:333,maxH:500, attrs:{dex:.5,spi:.3,mag:.2}},
+      {key:'biz_mgmt', name:'経営学（選択）',    desc:'経営戦略・ファイナンス',        color:'#6effee',avgH:335,maxH:500, attrs:{dex:.5,spi:.3,mag:.2}},
       {key:'biz_eco',  name:'経済学（選択）',    desc:'ミクロ・マクロ経済学',         color:'#ffe066',avgH:333,maxH:500, attrs:{int:.6,dex:.4}},
       {key:'biz_law',  name:'民法（選択）',      desc:'民法総則・物権・債権',         color:'#ff9e7a',avgH:333,maxH:500, attrs:{int:.7,spi:.3}},
       {key:'biz_stat', name:'統計学（選択）',    desc:'確率・推測統計・回帰分析',     color:'#b0aaff',avgH:333,maxH:500, attrs:{dex:.4,atk:.4,mag:.2}},
@@ -5831,13 +5831,13 @@ const JOBS = [
     desc:'税務のプロ。科目合格制で5科目取得。',
     color:'#4dff9f', avgHours:3000, maxHours:4500,
     subjects:[
-      {key:'z_boki',    name:'簿記論',    desc:'企業会計の基礎',  color:'#4db8ff',avgH:300,maxH:450, attrs:{atk:.7,dex:.3}},
-      {key:'z_zai',     name:'財務諸表論',desc:'財務会計理論',    color:'#7cff6e',avgH:300,maxH:450, attrs:{mag:.6,int:.4}},
-      {key:'z_hojin',   name:'法人税法',  desc:'法人税の基幹科目',color:'#ff9e4d',avgH:400,maxH:600, attrs:{int:.7,mag:.3}},
-      {key:'z_shoto',   name:'所得税法',  desc:'個人所得課税',    color:'#c97cff',avgH:400,maxH:600, attrs:{int:.6,dex:.4}},
-      {key:'z_shohi',   name:'消費税法',  desc:'間接税・インボイス',color:'#ff6e9e',avgH:200,maxH:300,attrs:{dex:.6,mag:.4}},
-      {key:'z_souzoku', name:'相続税法',  desc:'相続・贈与の課税',color:'#ffd700',avgH:200,maxH:300, attrs:{int:.5,spi:.5}},
-      {key:'z_jizei',   name:'住民税',    desc:'地方税の選択科目',color:'#6effee',avgH:150,maxH:225, attrs:{dex:.7,spi:.3}},
+      {key:'z_boki',    name:'簿記論',    desc:'企業会計の基礎',  color:'#4db8ff',avgH:450,maxH:675, attrs:{atk:.7,dex:.3}},
+      {key:'z_zai',     name:'財務諸表論',desc:'財務会計理論',    color:'#7cff6e',avgH:450,maxH:675, attrs:{mag:.6,int:.4}},
+      {key:'z_hojin',   name:'法人税法',  desc:'法人税の基幹科目',color:'#ff9e4d',avgH:700,maxH:1050,attrs:{int:.7,mag:.3}},
+      {key:'z_shoto',   name:'所得税法',  desc:'個人所得課税',    color:'#c97cff',avgH:700,maxH:1050,attrs:{int:.6,dex:.4}},
+      {key:'z_shohi',   name:'消費税法',  desc:'間接税・インボイス',color:'#ff6e9e',avgH:300,maxH:450,attrs:{dex:.6,mag:.4}},
+      {key:'z_souzoku', name:'相続税法',  desc:'相続・贈与の課税',color:'#ffd700',avgH:300,maxH:450, attrs:{int:.5,spi:.5}},
+      {key:'z_jizei',   name:'住民税',    desc:'地方税の選択科目',color:'#6effee',avgH:100,maxH:150, attrs:{dex:.7,spi:.3}},
     ]
   },
   {
@@ -5918,8 +5918,11 @@ const JOBS = [
       {key:'ss_minpo',  name:'民法',      desc:'民法全般・物権・債権', color:'#F472B6',avgH:700,maxH:1100,attrs:{int:.8,mag:.2}},
       {key:'ss_fudosan',name:'不動産登記法',desc:'登記手続・申請方法',  color:'#7cff6e',avgH:600,maxH:900, attrs:{int:.7,dex:.3}},
       {key:'ss_shoho',  name:'商業登記法', desc:'会社設立・変更登記',  color:'#ff9e4d',avgH:400,maxH:600, attrs:{int:.6,dex:.4}},
+      {key:'ss_kaishaho',name:'会社法・商法',desc:'会社法・商法総則・商行為',color:'#F59E0B',avgH:300,maxH:450, attrs:{int:.7,dex:.3}},
       {key:'ss_kenpou', name:'憲法・刑法', desc:'公法・基礎法学',      color:'#c97cff',avgH:300,maxH:450, attrs:{int:.7,spi:.3}},
       {key:'ss_minsoho',name:'民事訴訟法', desc:'訴訟手続・強制執行',  color:'#4db8ff',avgH:300,maxH:450, attrs:{int:.8,mag:.2}},
+      {key:'ss_kyotaku',name:'供託法・司法書士法',desc:'供託手続・司法書士制度',color:'#38BDF8',avgH:100,maxH:150, attrs:{int:.6,spi:.4}},
+      {key:'ss_kijutsu',name:'記述式対策', desc:'不動産登記・商業登記の記述',color:'#F87171',avgH:300,maxH:400, attrs:{dex:.7,int:.3}},
     ]
   },
   {
@@ -6296,7 +6299,7 @@ const JOBS = [
       {key:'cs_houki',     name:'経営法務',            desc:'会社法・知財・契約',            color:'#c97cff',avgH:100,maxH:150,attrs:{int:.7,spi:.3}},
       {key:'cs_jojo',      name:'経営情報システム',    desc:'IT戦略・DB・セキュリティ',      color:'#38BDF8',avgH:80, maxH:120,attrs:{dex:.5,int:.5}},
       {key:'cs_chusho',    name:'中小企業経営・政策',  desc:'白書・中小企業施策・支援制度',  color:'#A78BFA',avgH:90, maxH:140,attrs:{int:.5,spi:.5}},
-      {key:'cs_jitai',     name:'2次試験（事例Ⅰ〜Ⅳ）',desc:'企業診断・事例分析の記述式',  color:'#F87171',avgH:200,maxH:300,attrs:{int:.6,mag:.4}},
+      {key:'cs_jitai',     name:'2次試験（事例Ⅰ〜Ⅳ）',desc:'企業診断・事例分析の記述式',  color:'#F87171',avgH:200,maxH:280,attrs:{int:.6,mag:.4}},
     ]
   },
   {
@@ -6328,7 +6331,7 @@ const JOBS = [
       {key:'sh_minso',     name:'民事訴訟法',       desc:'訴訟要件・証拠・強制執行',       color:'#ff9e4d',avgH:350, maxH:900, attrs:{int:.7,mag:.3}},
       {key:'sh_keiso',     name:'刑事訴訟法',       desc:'捜査・公判・証拠・上訴',         color:'#c97cff',avgH:350, maxH:900, attrs:{int:.7,spi:.3}},
       {key:'sh_gyosei',    name:'行政法',           desc:'行政行為・取消訴訟・国賠',       color:'#A78BFA',avgH:300, maxH:700, attrs:{int:.8,dex:.2}},
-      {key:'sh_ronbun',    name:'論文式対策',       desc:'答案作成・判例分析・起案',       color:'#F59E0B',avgH:550, maxH:1800,attrs:{int:.6,mag:.4}},
+      {key:'sh_ronbun',    name:'論文式対策',       desc:'答案作成・判例分析・起案',       color:'#F59E0B',avgH:550, maxH:2800,attrs:{int:.6,mag:.4}},
     ]
   },
   {
@@ -6460,6 +6463,7 @@ const JOBS = [
       {key:'md_small',     name:'小科目群',            desc:'産婦人科・小児科・精神科・眼科・耳鼻科',    color:'#7cff6e',avgH:600,maxH:1000,attrs:{int:.7,spi:.3}},
       {key:'md_kiso',      name:'基礎医学',            desc:'解剖・生理・生化学・病理・微生物・薬理',    color:'#ff9e4d',avgH:500,maxH:800, attrs:{int:.8,dex:.2}},
       {key:'md_eisei',     name:'公衆衛生・社会医学',  desc:'疫学・統計・医療法規・社会保障',            color:'#c97cff',avgH:200,maxH:300, attrs:{int:.6,spi:.4}},
+      {key:'md_sogo',      name:'必修・総合演習',      desc:'必修対策・総合問題・過去問演習',            color:'#F59E0B',avgH:400,maxH:700, attrs:{int:.7,dex:.3}},
     ]
   },
   {
