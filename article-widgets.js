@@ -156,6 +156,20 @@ async function loadLatestFromSitemap() {
   } catch(e) {}
 }
 
+let POPULAR = [];
+
+async function loadPopularArticles() {
+  try {
+    const res = await fetch(
+      `${_SB_URL}/rest/v1/article_views?select=article_id,view_count&order=view_count.desc&limit=12`,
+      { headers: { apikey: _SB_ANON, Authorization: 'Bearer ' + _SB_ANON } }
+    );
+    const data = await res.json();
+    const files = data.map(d => d.article_id).filter(f => ARTICLES[f]);
+    if (files.length >= 3) POPULAR = files;
+  } catch(e) {}
+}
+
 const PAGE = location.pathname.split('/').pop() || '';
 
 const ARTICLE_DIALOGUES = {
@@ -2169,7 +2183,8 @@ function buildLeftSidebar(leftbar){
   rec.className = 'sq-sidebar-box';
   rec.innerHTML = `<div class="sq-sidebar-box-title">おすすめ記事</div><div class="sq-side-links"></div>`;
   const list = rec.querySelector('.sq-side-links');
-  LATEST.filter(f=>f!==PAGE).slice(0,4).forEach(f=>{
+  const recFiles = (POPULAR.length >= 3 ? POPULAR : LATEST).filter(f=>f!==PAGE).slice(0,4);
+  recFiles.forEach(f=>{
     const a = ARTICLES[f]; if(!a) return;
     list.innerHTML += `<a href="${f}" class="sq-side-link"><div class="sq-side-link-label">${a.label}</div><div class="sq-side-link-title">${a.title}</div></a>`;
   });
@@ -2783,7 +2798,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildCatBadge();
   buildArticleDialogue();
   buildSidebarCTA(layout.right);
-  await loadLatestFromSitemap();
+  await Promise.all([loadLatestFromSitemap(), loadPopularArticles()]);
   buildLeftSidebar(layout.left);
   buildAuthorBox();
   insertMidCTA();
