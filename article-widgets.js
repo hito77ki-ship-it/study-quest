@@ -138,7 +138,23 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-const LATEST = ['boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html'];
+let LATEST = ['boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html'];
+
+async function loadLatestFromSitemap() {
+  try {
+    const res = await fetch('sitemap.xml');
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, 'text/xml');
+    const entries = [...xml.querySelectorAll('url')]
+      .map(u => ({
+        file: (u.querySelector('loc')?.textContent || '').split('/').pop(),
+        lastmod: u.querySelector('lastmod')?.textContent || ''
+      }))
+      .filter(e => e.lastmod && e.file.endsWith('.html') && ARTICLES[e.file])
+      .sort((a, b) => b.lastmod.localeCompare(a.lastmod));
+    if (entries.length > 0) LATEST = entries.slice(0, 8).map(e => e.file);
+  } catch(e) {}
+}
 
 const PAGE = location.pathname.split('/').pop() || '';
 
@@ -2767,6 +2783,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildCatBadge();
   buildArticleDialogue();
   buildSidebarCTA(layout.right);
+  await loadLatestFromSitemap();
   buildLeftSidebar(layout.left);
   buildAuthorBox();
   insertMidCTA();

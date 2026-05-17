@@ -117,30 +117,43 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <p>「<span id="searchEmptyQuery"></span>」に一致する資格が見つかりませんでした</p>
   </div>
 
-  <!-- 新着記事 -->
-  <div class="new-section">
+  <!-- 新着記事（sitemap.xmlから自動生成） -->
+  <div class="new-section" id="js-new-section" style="display:none">
     <div class="new-section-title">🆕 最近追加されたガイド</div>
-    <div class="new-list">
-      <a href="boki1-yobikou.html" class="new-item"><div class="new-item-date">2026.05.04</div><div class="new-item-name">🏫 簿記1級は予備校と独学どっちがいい？</div></a>
-      <a href="daigakusei-keizoku.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">📝 大学生が資格勉強を続ける方法</div></a>
-      <a href="shukatsu-shikaku.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">🎯 就活で強い資格ランキング</div></a>
-      <a href="hatarakinagara-shikaku.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">💼 働きながら取れる資格ランキング</div></a>
-      <a href="shikaku-zasetsu-riyu.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">🧩 資格勉強を途中でやめる理由は？</div></a>
-      <a href="cpa-akirameta-shinro.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">🛤 会計士を諦めた後の進路は？</div></a>
-      <a href="cpa-akirameta-boki1.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">📘 会計士を諦めたら簿記1級は狙える？</div></a>
-      <a href="daigakusei-shikaku-heiyou.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">🎓 大学生は資格を併用すべき？</div></a>
-      <a href="shikaku-jinsei-kawaru.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">🧭 資格で人生が変わる人・変わらない人</div></a>
-      <a href="tenshoku-shikaku.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">📈 転職に有利な資格ランキング</div></a>
-      <a href="cospa-shikaku.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">💸 コスパがいい資格ランキング</div></a>
-      <a href="shakaijin-benkyou-jikan.html" class="new-item"><div class="new-item-date">2026.04.30</div><div class="new-item-name">⏰ 社会人が勉強時間を確保する方法</div></a>
-      <a href="denki.html" class="new-item"><div class="new-item-date">2026.04.29</div><div class="new-item-name">⚡ 電気工事士（2種）独学合格ガイド</div></a>
-      <a href="hoikushi.html" class="new-item"><div class="new-item-date">2026.04.29</div><div class="new-item-name">🧸 保育士試験 独学合格ガイド</div></a>
-      <a href="nurse.html" class="new-item"><div class="new-item-date">2026.04.29</div><div class="new-item-name">🩺 看護師国家試験 合格スケジュール</div></a>
-      <a href="kaigo.html" class="new-item"><div class="new-item-date">2026.04.29</div><div class="new-item-name">🏥 ケアマネジャー試験 独学合格ガイド</div></a>
-      <a href="ap.html" class="new-item"><div class="new-item-date">2026.04.29</div><div class="new-item-name">🖥️ 応用情報技術者試験 独学合格ガイド</div></a>
-      <a href="zeirishi.html" class="new-item"><div class="new-item-date">2026.04.29</div><div class="new-item-name">🧾 税理士試験 科目選択戦略ガイド</div></a>
-    </div>
+    <div class="new-list" id="js-new-list"></div>
   </div>
+  <script>
+  (async function(){
+    try {
+      const res = await fetch('sitemap.xml');
+      const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
+      const entries = [...xml.querySelectorAll('url')]
+        .map(u => ({
+          file: (u.querySelector('loc')?.textContent || '').split('/').pop(),
+          lastmod: u.querySelector('lastmod')?.textContent || ''
+        }))
+        .filter(e => e.lastmod && e.file.endsWith('.html') &&
+          !['index.html','lp.html','privacy.html','terms.html','tokusho.html','contact.html','shikaku-list.html','game.html','admin.html','about.html'].includes(e.file))
+        .sort((a, b) => b.lastmod.localeCompare(a.lastmod))
+        .slice(0, 12);
+
+      const titles = await Promise.all(entries.map(async e => {
+        try {
+          const r = await fetch(e.file);
+          const doc = new DOMParser().parseFromString(await r.text(), 'text/html');
+          return doc.querySelector('h1')?.textContent?.trim() || doc.title.split('|')[0].trim();
+        } catch { return e.file; }
+      }));
+
+      const list = document.getElementById('js-new-list');
+      entries.forEach((e, i) => {
+        const d = e.lastmod.replace(/-/g, '.').slice(0, 10);
+        list.innerHTML += `<a href="${e.file}" class="new-item"><div class="new-item-date">${d}</div><div class="new-item-name">${titles[i]}</div></a>`;
+      });
+      document.getElementById('js-new-section').style.display = '';
+    } catch(e) {}
+  })();
+  </script>
 
   <!-- 難易度別 -->
   <h2 style="font-size:18px;font-weight:700;margin-bottom:8px;padding-left:12px;border-left:3px solid var(--green);">難易度から探す</h2>
