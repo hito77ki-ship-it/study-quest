@@ -9509,8 +9509,8 @@ async function finishTimer(){
     char.lastLoginDate=today;
   }
   char.totalEXP+=exp;
-  const endedAt=new Date().toISOString();
   const startedAt=timerStartedAt||new Date(Date.now()-totalSecs*1000).toISOString();
+  const endedAt=new Date(new Date(startedAt).getTime()+totalSecs*1000).toISOString();
   const condition=getTodayCondition();
   const isFirstSession = sessions.length === 0;
   gtag('event','session_record',{subject, minutes, is_first: isFirstSession});
