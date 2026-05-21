@@ -9554,7 +9554,7 @@ async function finishTimer(){
   });
 
   // Reset timer
-  timerSeconds=0;pomoCount=0;pomoPhase='study';
+  timerStartedAt=null;timerSeconds=0;pomoCount=0;pomoPhase='study';
   clearInterval(pomoBreakInterval);
   const overlay=document.getElementById('pomoBreakOverlay');
   if(overlay) overlay.classList.remove('show');
