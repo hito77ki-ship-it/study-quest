@@ -6955,7 +6955,37 @@ async function loadAll(){
   }catch{}
   await loadScores();
   loadReportState();
+  migrateSessionTimestamps();
 }
+
+// startedAt〜endedAtの幅が実際の学習時間より5分以上大きいセッションを修正する一回限りのマイグレーション
+function migrateSessionTimestamps(){
+  if(localStorage.getItem('sq2_session_ts_migrated_v2')) return;
+  let changed = false;
+  const deleted = loadDeletedSessions();
+  sessions = sessions.map(s => {
+    if(!s.startedAt || !s.endedAt) return s;
+    const startMs = new Date(s.startedAt).getTime();
+    const endMs   = new Date(s.endedAt).getTime();
+    if(isNaN(startMs) || isNaN(endMs)) return s;
+    const actualSecs = s.amountSecs || (s.amount * 60);
+    if(!actualSecs) return s;
+    const spanSecs = (endMs - startMs) / 1000;
+    if(spanSecs <= actualSecs + 300) return s; // 5分以内の誤差は正常とみなす
+    const oldKey = sessionSyncKey(s);
+    const newStartedAt = new Date(endMs - actualSecs * 1000).toISOString();
+    const fixed = {...s, startedAt: newStartedAt};
+    deleted[oldKey] = new Date().toISOString(); // クラウド上の古いキーを削除扱いにする
+    changed = true;
+    return fixed;
+  });
+  if(changed){
+    saveDeletedSessions(deleted);
+    localStorage.setItem('sq2_sessions', JSON.stringify(sessions));
+  }
+  localStorage.setItem('sq2_session_ts_migrated_v2', '1');
+}
+
 function exportData(){
   const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),char,sessions,selectedJobIds,selectedSubjectKeys,bosses,examGoals},null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='study_quest_'+new Date().toISOString().slice(0,10)+'.json';a.click();
