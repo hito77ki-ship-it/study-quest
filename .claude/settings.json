@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd /Users/hitoki/shikaku-quest && git status --short && git log --oneline -3"
+            "command": "cd /home/user/study-quest && git status --short && git log --oneline -3"
           }
         ]
       }
