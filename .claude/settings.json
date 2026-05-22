@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd /Users/hitoki/shikaku-quest && git status --short && git log --oneline -3"
+            "command": "git -C \"$(git rev-parse --show-toplevel)\" status --short && git -C \"$(git rev-parse --show-toplevel)\" log --oneline -3"
           }
         ]
       }
