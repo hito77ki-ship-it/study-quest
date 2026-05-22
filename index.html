@@ -6958,11 +6958,14 @@ async function loadAll(){
   migrateSessionTimestamps();
 }
 
-// startedAt〜endedAtの幅が実際の学習時間より5分以上大きいセッションを修正する一回限りのマイグレーション
+// startedAt〜endedAtの幅が実際の学習時間より5分以上大きいセッションを修正し、重複も除去する
 function migrateSessionTimestamps(){
-  if(localStorage.getItem('sq2_session_ts_migrated_v2')) return;
-  let changed = false;
+  if(localStorage.getItem('sq2_session_ts_migrated_v3')) return;
+  localStorage.removeItem('sq2_session_ts_migrated_v2');
   const deleted = loadDeletedSessions();
+  let changed = false;
+
+  // Step1: タイムスタンプ修正
   sessions = sessions.map(s => {
     if(!s.startedAt || !s.endedAt) return s;
     const startMs = new Date(s.startedAt).getTime();
@@ -6970,20 +6973,44 @@ function migrateSessionTimestamps(){
     if(isNaN(startMs) || isNaN(endMs)) return s;
     const actualSecs = s.amountSecs || (s.amount * 60);
     if(!actualSecs) return s;
-    const spanSecs = (endMs - startMs) / 1000;
-    if(spanSecs <= actualSecs + 300) return s; // 5分以内の誤差は正常とみなす
+    if((endMs - startMs) / 1000 <= actualSecs + 300) return s;
     const oldKey = sessionSyncKey(s);
-    const newStartedAt = new Date(endMs - actualSecs * 1000).toISOString();
-    const fixed = {...s, startedAt: newStartedAt};
-    deleted[oldKey] = new Date().toISOString(); // クラウド上の古いキーを削除扱いにする
+    const fixed = {...s, startedAt: new Date(endMs - actualSecs * 1000).toISOString()};
+    deleted[oldKey] = new Date().toISOString();
     changed = true;
     return fixed;
   });
+
+  // Step2: 同一セッションの重複除去（date+subject+type+amount が同じなら短いspan側を残す）
+  const seen = new Map();
+  const deduped = [];
+  sessions.forEach(s => {
+    const k = `${s.date}|${s.subject}|${s.type}|${Math.round(s.amountSecs||s.amount*60)}`;
+    const existing = seen.get(k);
+    if(!existing){
+      seen.set(k, s);
+      deduped.push(s);
+    } else {
+      // spanが小さい（正しい）方を残す
+      const spanOld = new Date(existing.endedAt).getTime() - new Date(existing.startedAt).getTime();
+      const spanNew = new Date(s.endedAt).getTime() - new Date(s.startedAt).getTime();
+      if(spanNew < spanOld){
+        deleted[sessionSyncKey(existing)] = new Date().toISOString();
+        seen.set(k, s);
+        const idx = deduped.indexOf(existing);
+        if(idx >= 0) deduped[idx] = s;
+      } else {
+        deleted[sessionSyncKey(s)] = new Date().toISOString();
+      }
+      changed = true;
+    }
+  });
   if(changed){
+    sessions = deduped;
     saveDeletedSessions(deleted);
     localStorage.setItem('sq2_sessions', JSON.stringify(sessions));
   }
-  localStorage.setItem('sq2_session_ts_migrated_v2', '1');
+  localStorage.setItem('sq2_session_ts_migrated_v3', '1');
 }
 
 function exportData(){
