@@ -11371,7 +11371,7 @@ function renderWeekDailyBars(daily, goalMins){
     const over    = dailyGoal>0 && d.mins>=dailyGoal;
     const fillClass = d.isToday ? 'today' : over ? 'over' : '';
     const minsDisp = d.mins>0
-      ? (d.mins>=60 ? Math.floor(d.mins/60)+'h'+(d.mins%60?d.mins%60+'m':'') : d.mins+'m')
+      ? (d.mins>=60 ? Math.floor(d.mins/60)+'h'+(Math.round(d.mins%60)?Math.round(d.mins%60)+'m':'') : Math.round(d.mins)+'m')
       : '';
     // 目標ライン（目標/7の高さに点線）
     const goalLinePct = dailyGoal>0 ? Math.min(100,(dailyGoal/maxM)*100).toFixed(1) : null;
@@ -11855,7 +11855,7 @@ function renderSubjectBars(){
       <div class="rpt-subj-bar-track">
         <div class="rpt-subj-bar-fill" style="width:${(d.mins/max*100).toFixed(1)}%;background:${d.color||'#7cff6e'}"></div>
       </div>
-      <div class="rpt-subj-bar-val">${Math.floor(d.mins/60)}h${d.mins%60}m</div>
+      <div class="rpt-subj-bar-val">${Math.floor(d.mins/60)}h${Math.round(d.mins%60)}m</div>
     </div>`).join('');
 }
 function renderMonthChart(){
