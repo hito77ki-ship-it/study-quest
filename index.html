@@ -10583,7 +10583,7 @@ function getLast7DaysData(){
   const days=[];
   for(let i=6;i>=0;i--){
     const d=new Date(); d.setDate(d.getDate()-i);
-    const ds=d.toISOString().slice(0,10);
+    const ds=toLocalDateStr(d);
     const wd=['日','月','火','水','木','金','土'][d.getDay()];
     const label=(d.getMonth()+1)+'/'+d.getDate()+'\n'+wd;
     days.push({date:ds,label,mins:getWeekMinsForDate(ds)});
@@ -11295,7 +11295,7 @@ function renderWeeklyGoal(){
       txtEl.innerHTML = '1週間の目標を設定して<br>100%達成を目指そう！';
     } else {
       const doneH = Math.floor(weekMins/60);
-      const doneM = weekMins % 60;
+      const doneM = Math.round(weekMins % 60);
       const doneStr = doneH ? `${doneH}h${doneM?doneM+'m':''}` : `${doneM}m`;
       const achieved = pct>=1;
       txtEl.innerHTML =
@@ -11344,9 +11344,9 @@ function renderWeeklyGoal(){
     if(lockedHours) lockedHours.textContent = goalHours;
     if(lockedSub){
       const doneH = Math.floor(weekMins/60);
-      const doneM = weekMins%60;
+      const doneM = Math.round(weekMins%60);
       const remH  = Math.max(0, goalHours - Math.floor(weekMins/60));
-      const remM  = Math.max(0, goalMins  - weekMins) % 60;
+      const remM  = Math.round(Math.max(0, goalMins  - weekMins) % 60);
       const todayToSunDays = (() => {
         const today = new Date(); today.setHours(0,0,0,0);
         const sunD  = new Date(sun);
@@ -11527,7 +11527,7 @@ function shareGoalProgressToX(){
   const weekMins  = getThisWeekTotalMins();
   const pct       = goalHours > 0 ? Math.min(100, Math.round(weekMins / (goalHours*60) * 100)) : 0;
   const doneH     = Math.floor(weekMins/60);
-  const doneM     = weekMins % 60;
+  const doneM     = Math.round(weekMins % 60);
   const doneStr   = doneH ? `${doneH}時間${doneM?doneM+'分':''}` : `${doneM}分`;
   const emoji     = pct >= 100 ? '🎉🏆' : pct >= 90 ? '🔥' : pct >= 50 ? '💪' : '📚';
   const examInfo  = getNextExamDays();
@@ -11593,7 +11593,7 @@ async function checkWeeklyGoalMilestones(){
 async function postGoalMilestoneToTimeline(milestone, weekMins, goalHours){
   const name    = char.name || '冒険者';
   const doneH   = Math.floor(weekMins/60);
-  const doneM   = weekMins % 60;
+  const doneM   = Math.round(weekMins % 60);
   const goalH   = Number(goalHours) || 0;  // undefined/NaN を防ぐ
   const doneStr = doneH ? `${doneH}時間${doneM ? doneM+'分' : ''}` : `${doneM}分`;
   const goalStr = `${goalH}時間`;
@@ -17340,7 +17340,7 @@ function renderPostHTML(post, likes){
   const replyCount = getReplyCount(post.id);
 
   const h = Math.floor((post.minutes||0)/60);
-  const m = (post.minutes||0) % 60;
+  const m = Math.round((post.minutes||0) % 60);
   const timeStudy = h > 0 ? `${h}h${m > 0 ? m+'m' : ''}` : `${m}分`;
   const expColor = (post.exp || 0) > 60 ? '#8CC63F' : '#718096';
 
@@ -17387,7 +17387,7 @@ function renderPostHTML(post, likes){
 
     <!-- RPG戦闘ログ -->
     <div style="background:linear-gradient(135deg,rgba(140,198,63,.06),transparent);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:8px 12px;margin-bottom:10px;font-size:12px;color:var(--text);line-height:1.6;">
-      <i class="fa-solid fa-shield-halved tl-rpg-icon"></i>${escHtml(post.rpg_log || '')}
+      <i class="fa-solid fa-shield-halved tl-rpg-icon"></i>${escHtml((post.rpg_log || '').replace(/(\d+)時間(\d+\.\d+)分/g,(_,h,m)=>`${h}時間${Math.round(parseFloat(m))}分`))}
     </div>
 
     <!-- 投稿画像 -->
@@ -17415,7 +17415,9 @@ function renderPostHTML(post, likes){
         const pct     = ach.pct || 0;
         const faIcon  = pct >= 100 ? 'fa-trophy' : pct >= 90 ? 'fa-fire' : pct >= 50 ? 'fa-bolt' : 'fa-book-open';
         const barColor= pct >= 100 ? '#F59E0B' : pct >= 90 ? '#EF4444' : '#8CC63F';
-        const doneStr = ach.doneStr || (()=>{ const h=Math.floor((ach.weekMins||0)/60),m=(ach.weekMins||0)%60; return h?`${h}時間${m?m+'分':''}`:`${m}分`; })();
+        const doneStr = (ach.weekMins != null)
+          ? (()=>{ const h=Math.floor((ach.weekMins||0)/60),m=Math.round((ach.weekMins||0)%60); return h?`${h}時間${m?m+'分':''}`:`${m}分`; })()
+          : (ach.doneStr||'').replace(/(\d+)時間(\d+\.\d+)分/g,(_,h,m)=>`${h}時間${Math.round(parseFloat(m))}分`);
         const goalStr = ach.goalStr || (ach.goalHours ? `${ach.goalHours}時間` : '目標未設定');
         return `<div class="tl-achieve-card" style="background:rgba(140,198,63,.06);border-color:rgba(140,198,63,.3);">
           <div class="tl-achieve-badge" style="background:rgba(140,198,63,.15);color:#3a7d00;">${typeLabel}</div>
@@ -17798,9 +17800,9 @@ function generateShareCard(){
 
   // 大きな学習時間表示
   const todayMins = sessions
-    .filter(s => isStudyType(s) && s.date===new Date().toISOString().slice(0,10))
+    .filter(s => isStudyType(s) && s.date===getTodayStr())
     .reduce((a,s) => a+s.amount, 0);
-  const h = Math.floor(todayMins/60), m = todayMins%60;
+  const h = Math.floor(todayMins/60), m = Math.round(todayMins%60);
   const timeStr = h > 0 ? `${h}時間${m>0?m+'分':''}` : `${m}分`;
 
   // 学習時間カード
@@ -17883,9 +17885,9 @@ async function shareToX(){
   const totalSmins = studyMins(sessions);
   const trackSmins = levelStudyMins(sessions);
   const todayMins = sessions
-    .filter(s=>s.type==='study'&&s.date===new Date().toISOString().slice(0,10))
+    .filter(s=>s.type==='study'&&s.date===getTodayStr())
     .reduce((a,s)=>a+s.amount,0);
-  const h = Math.floor(todayMins/60), m = todayMins%60;
+  const h = Math.floor(todayMins/60), m = Math.round(todayMins%60);
   const timeStr = h>0 ? `${h}時間${m>0?m+'分':''}` : `${m}分`;
   const lv = getLevelProgress(trackSmins).level;
   const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(totalSmins/60)}時間\n\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
