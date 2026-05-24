@@ -17388,7 +17388,7 @@ function renderPostHTML(post, likes){
 
     <!-- RPG戦闘ログ -->
     <div style="background:linear-gradient(135deg,rgba(140,198,63,.06),transparent);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:8px 12px;margin-bottom:10px;font-size:12px;color:var(--text);line-height:1.6;">
-      <i class="fa-solid fa-shield-halved tl-rpg-icon"></i>${escHtml((post.rpg_log || '').replace(/(\d+)時間(\d+\.\d+)分/g,(_,h,m)=>`${h}時間${Math.round(parseFloat(m))}分`))}
+      <i class="fa-solid fa-shield-halved tl-rpg-icon"></i>${escHtml((post.rpg_log || '').replace(/(\d+)時間(\d+\.\d+)分/g,(_,h,m)=>`${h}時間${parseFloat(parseFloat(m).toFixed(2))}分`))}
     </div>
 
     <!-- 投稿画像 -->
@@ -17417,8 +17417,8 @@ function renderPostHTML(post, likes){
         const faIcon  = pct >= 100 ? 'fa-trophy' : pct >= 90 ? 'fa-fire' : pct >= 50 ? 'fa-bolt' : 'fa-book-open';
         const barColor= pct >= 100 ? '#F59E0B' : pct >= 90 ? '#EF4444' : '#8CC63F';
         const doneStr = (ach.weekMins != null)
-          ? (()=>{ const h=Math.floor((ach.weekMins||0)/60),m=Math.round((ach.weekMins||0)%60); return h?`${h}時間${m?m+'分':''}`:`${m}分`; })()
-          : (ach.doneStr||'').replace(/(\d+)時間(\d+\.\d+)分/g,(_,h,m)=>`${h}時間${Math.round(parseFloat(m))}分`);
+          ? (()=>{ const h=Math.floor((ach.weekMins||0)/60),m=parseFloat(((ach.weekMins||0)%60).toFixed(2)); return h?`${h}時間${m?m+'分':''}`:`${m}分`; })()
+          : (ach.doneStr||'').replace(/(\d+)時間(\d+\.\d+)分/g,(_,h,m)=>`${h}時間${parseFloat(parseFloat(m).toFixed(2))}分`);
         const goalStr = ach.goalStr || (ach.goalHours ? `${ach.goalHours}時間` : '目標未設定');
         return `<div class="tl-achieve-card" style="background:rgba(140,198,63,.06);border-color:rgba(140,198,63,.3);">
           <div class="tl-achieve-badge" style="background:rgba(140,198,63,.15);color:#3a7d00;">${typeLabel}</div>
