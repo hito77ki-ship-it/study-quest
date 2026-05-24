@@ -11295,7 +11295,7 @@ function renderWeeklyGoal(){
       txtEl.innerHTML = '1週間の目標を設定して<br>100%達成を目指そう！';
     } else {
       const doneH = Math.floor(weekMins/60);
-      const doneM = Math.round(weekMins % 60);
+      const doneM = parseFloat((weekMins%60).toFixed(2));
       const doneStr = doneH ? `${doneH}h${doneM?doneM+'m':''}` : `${doneM}m`;
       const achieved = pct>=1;
       txtEl.innerHTML =
@@ -11385,8 +11385,9 @@ function renderWeekDailyBars(daily, goalMins){
     const heightPx = Math.round(pct*56); // max 56px
     const over    = dailyGoal>0 && d.mins>=dailyGoal;
     const fillClass = d.isToday ? 'today' : over ? 'over' : '';
+    const _minRem = parseFloat((d.mins%60).toFixed(2));
     const minsDisp = d.mins>0
-      ? (d.mins>=60 ? Math.floor(d.mins/60)+'h'+(Math.round(d.mins%60)?Math.round(d.mins%60)+'m':'') : Math.round(d.mins)+'m')
+      ? (d.mins>=60 ? Math.floor(d.mins/60)+'h'+(_minRem>0?_minRem+'m':'') : parseFloat(d.mins.toFixed(2))+'m')
       : '';
     // 目標ライン（目標/7の高さに点線）
     const goalLinePct = dailyGoal>0 ? Math.min(100,(dailyGoal/maxM)*100).toFixed(1) : null;
