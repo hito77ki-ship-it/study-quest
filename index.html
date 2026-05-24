@@ -17285,10 +17285,20 @@ function renderTlPage(filter, page){
   if(posts.length > start + TL_PAGE_SIZE){
     const btn = document.createElement('button');
     btn.className = 'tl-slide-loadmore';
-    btn.style.display = '';
     btn.textContent = 'もっと見る';
-    btn.onclick = () => { tlPageByFilter[filter]++; renderTlPage(filter, tlPageByFilter[filter]); };
+    const loadNext = () => {
+      tlPageByFilter[filter]++;
+      renderTlPage(filter, tlPageByFilter[filter]);
+    };
+    btn.onclick = loadNext;
     feed.appendChild(btn);
+    // 自動スクロール読み込み（IntersectionObserver）
+    if(typeof IntersectionObserver !== 'undefined'){
+      const obs = new IntersectionObserver(entries => {
+        if(entries[0].isIntersecting){ obs.disconnect(); loadNext(); }
+      }, { rootMargin: '120px' });
+      obs.observe(btn);
+    }
   }
 }
 
