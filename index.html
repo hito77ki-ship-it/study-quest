@@ -4015,6 +4015,27 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   cursor:pointer;transition:all .2s;
 }
 
+/* ════ キャラクター選択画面 ════ */
+.char-select-section{margin-bottom:22px;}
+.char-select-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.25em;color:var(--accent2);margin-bottom:10px;text-align:center;}
+.char-gender-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:4px;}
+.char-class-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px;}
+.char-select-card{background:var(--panel2);border:2px solid var(--border);border-radius:var(--radius);padding:14px 8px 10px;text-align:center;cursor:pointer;transition:all .22s;position:relative;}
+.char-select-card.selected{border-color:var(--accent);background:var(--accent-subtle);box-shadow:0 0 14px rgba(140,198,63,.22);}
+.char-select-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.char-select-card.selected::after{content:'✓';position:absolute;top:6px;right:8px;font-size:11px;color:var(--accent);font-weight:700;}
+.char-select-sprite{width:88px;height:88px;object-fit:contain;image-rendering:pixelated;display:block;margin:0 auto 8px;}
+.char-class-sprite{width:72px;height:72px;object-fit:contain;image-rendering:pixelated;display:block;margin:0 auto 6px;}
+.char-select-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.char-select-desc{font-size:10px;color:var(--muted);}
+.char-preview-wrap{text-align:center;margin:8px 0 20px;background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;}
+.char-preview-wrap img{width:128px;height:128px;object-fit:contain;image-rendering:pixelated;}
+.char-preview-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;color:var(--muted);margin-top:8px;}
+/* キャラスプライト（ダッシュボードカード内） */
+.char-sprite-disp{width:64px;height:64px;object-fit:contain;image-rendering:pixelated;display:none;}
+/* タイマー内ヒーロースプライト */
+.timer-hero-sprite{width:80px;height:80px;object-fit:contain;image-rendering:pixelated;display:none;}
+
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
@@ -4122,7 +4143,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   </div>
   <div class="section">
     <div class="step-header">
-      <div class="step-label">STEP 1 / 2 — JOB SELECT</div>
+      <div class="step-label">STEP 1 / 3 — JOB SELECT</div>
       <div class="step-title">目指す資格を選んでください（複数可）</div>
     </div>
     <div style="position:relative;margin-bottom:14px;">
@@ -4145,7 +4166,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   </div>
   <div class="section">
     <div class="step-header">
-      <div class="step-label">STEP 2 / 2 — CHARACTER SETUP</div>
+      <div class="step-label">STEP 2 / 3 — CHARACTER SETUP</div>
       <div class="step-title">冒険者名と勉強中の科目を選択</div>
     </div>
     <div class="name-group">
@@ -4154,9 +4175,71 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     </div>
     <div id="subjSelectBlocks"></div>
     <div id="startErrorMsg" style="display:none;background:#2a0808;border:1px solid #ff4444;border-left:3px solid #ff4444;color:#ff9e9e;font-size:12px;padding:10px 14px;margin-bottom:10px;"></div>
-    <button class="step-btn" onclick="startAdventure()">◆ 冒険を始める ◆</button>
+    <button class="step-btn" onclick="startAdventure()">次へ：キャラクターを選ぶ →</button>
     <button class="step-btn-ghost" onclick="showScreen('screen-job')">← 資格選択に戻る</button>
     <button class="step-btn-ghost" id="subjBackBtn" style="display:none;" onclick="returnFromSetupFlow()">← ダッシュボードに戻る</button>
+  </div>
+</div>
+
+<!-- STEP 3: CHARACTER SELECT -->
+<div class="screen" id="screen-char">
+  <div class="logo-area">
+    <div class="logo-en">Shikaku Quest</div>
+    <div class="logo-jp">⚔ スタディクエスト ⚔</div>
+  </div>
+  <div class="section">
+    <div class="step-header">
+      <div class="step-label">STEP 3 / 3 — CHARACTER SELECT</div>
+      <div class="step-title">キャラクターを選んでください</div>
+    </div>
+    <!-- 性別 -->
+    <div class="char-select-section">
+      <div class="char-select-label">— 性別 —</div>
+      <div class="char-gender-grid">
+        <div class="char-select-card selected" data-gender="male" onclick="selectGender('male')">
+          <img src="sprites/hero-male-normal.png" class="char-select-sprite" alt="男性" onerror="this.style.display='none'">
+          <div class="char-select-name">男性</div>
+        </div>
+        <div class="char-select-card" data-gender="female" onclick="selectGender('female')">
+          <img src="sprites/hero-female-warrior-normal.png" class="char-select-sprite" alt="女性" onerror="this.style.display='none'">
+          <div class="char-select-name">女性</div>
+        </div>
+      </div>
+    </div>
+    <!-- クラス -->
+    <div class="char-select-section">
+      <div class="char-select-label">— クラス —</div>
+      <div class="char-class-grid">
+        <div class="char-select-card selected" data-class="warrior" onclick="selectClass('warrior')">
+          <img id="classSprite-warrior" src="sprites/hero-male-normal.png" class="char-class-sprite" alt="戦士" onerror="this.style.display='none'">
+          <div class="char-select-name">⚔ 戦士</div>
+          <div class="char-select-desc">バランス型</div>
+        </div>
+        <div class="char-select-card" data-class="mage" onclick="selectClass('mage')">
+          <img id="classSprite-mage" src="sprites/hero-male-mage-normal.png" class="char-class-sprite" alt="魔法使い" onerror="this.style.display='none'">
+          <div class="char-select-name">🧙 魔法使い</div>
+          <div class="char-select-desc">知識特化型</div>
+        </div>
+        <div class="char-select-card" data-class="monk" onclick="selectClass('monk')">
+          <img id="classSprite-monk" src="sprites/hero-male-monk-normal.png" class="char-class-sprite" alt="格闘家" onerror="this.style.display='none'">
+          <div class="char-select-name">🥋 格闘家</div>
+          <div class="char-select-desc">持久力型</div>
+        </div>
+        <div class="char-select-card" data-class="cleric" onclick="selectClass('cleric')">
+          <img id="classSprite-cleric" src="sprites/hero-male-cleric-normal.png" class="char-class-sprite" alt="僧侶" onerror="this.style.display='none'">
+          <div class="char-select-name">✨ 僧侶</div>
+          <div class="char-select-desc">回復特化型</div>
+        </div>
+      </div>
+    </div>
+    <!-- プレビュー -->
+    <div class="char-preview-wrap">
+      <img id="charPreviewImg" src="sprites/hero-male-normal.png" alt="キャラクタープレビュー" onerror="this.style.display='none'">
+      <div class="char-preview-label" id="charPreviewLabel">男性 / 戦士</div>
+    </div>
+    <button class="step-btn" onclick="finishCharSelect()">◆ この冒険者で始める ◆</button>
+    <button class="step-btn-ghost" onclick="showScreen('screen-subj')">← 前のステップに戻る</button>
+    <button class="step-btn-ghost" id="charBackBtn" style="display:none;" onclick="returnFromSetupFlow()">← ダッシュボードに戻る</button>
   </div>
 </div>
 
@@ -4319,6 +4402,7 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   <div class="char-card char-card-compact">
     <div class="char-compact-row">
       <div class="char-avatar char-avatar-sm">
+        <img id="charSpriteDisp" class="char-sprite-disp" src="" alt="キャラクター" onerror="this.style.display='none'">
         <span id="avatarEmoji">📚</span>
         <div class="level-badge">Lv.<span id="levelNum">1</span></div>
       </div>
@@ -4704,9 +4788,12 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           </div>
         </div>
       </div>
-      <!-- 敵 -->
+      <!-- 敵 + 主人公 -->
       <div class="timer-display">
-        <span class="timer-enemy" id="timerEnemy">💀</span>
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+          <img id="timerHeroSprite" class="timer-hero-sprite" src="" alt="主人公" onerror="this.style.display='none'">
+          <span class="timer-enemy" id="timerEnemy">💀</span>
+        </div>
         <div class="timer-enemy-name" id="timerEnemyName">科目を選択してください</div>
         <div class="timer-time" id="timerDisplay">00:00:00</div>
       </div>
@@ -5282,8 +5369,9 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <button class="prof-quick-btn primary" onclick="switchTab('score');openAchieveModal()">📣 達成報告を投稿</button>
       <button class="prof-quick-btn secondary" onclick="openProfileQRModal()">📲 QRをシェア</button>
     </div>
-    <div style="margin-top:10px;text-align:center;">
-      <button class="change-job-btn" onclick="changeJob()" style="width:100%;">⚙ 資格・目標を設定</button>
+    <div style="margin-top:10px;text-align:center;display:flex;gap:8px;">
+      <button class="change-job-btn" onclick="changeJob()" style="flex:1;">⚙ 資格・目標を設定</button>
+      <button class="change-job-btn" onclick="openCharSelect(true)" style="flex:1;">🧙 キャラ変更</button>
     </div>
 
     <!-- ─── 自分の投稿 ─── -->
@@ -8446,6 +8534,89 @@ function applyCombinedSplit(jobId, combinedKey, totalMins){
   renderSubjectStats && renderSubjectStats();
 }
 
+/* ═══════════════ CHARACTER SELECT ═══════════════ */
+let _csGender = 'male';
+let _csClass  = 'warrior';
+const CLASS_NAMES = {warrior:'戦士', mage:'魔法使い', monk:'格闘家', cleric:'僧侶'};
+const GENDER_NAMES = {male:'男性', female:'女性'};
+
+function getHeroSpriteFor(gender, cls, state){
+  // 男性戦士だけファイル名にclassが入らない命名
+  if(gender==='male' && cls==='warrior') return `sprites/hero-male-${state}.png`;
+  return `sprites/hero-${gender}-${cls}-${state}.png`;
+}
+function getHeroSprite(state='normal'){
+  return getHeroSpriteFor(char.gender||'male', char.charClass||'warrior', state);
+}
+
+function selectGender(gender){
+  _csGender = gender;
+  document.querySelectorAll('[data-gender]').forEach(el=>
+    el.classList.toggle('selected', el.dataset.gender===gender));
+  updateClassCardSprites();
+  updateCharPreview();
+}
+function selectClass(cls){
+  _csClass = cls;
+  document.querySelectorAll('[data-class]').forEach(el=>
+    el.classList.toggle('selected', el.dataset.class===cls));
+  updateCharPreview();
+}
+function updateClassCardSprites(){
+  ['warrior','mage','monk','cleric'].forEach(c=>{
+    const img=document.getElementById('classSprite-'+c);
+    if(img){ img.src=getHeroSpriteFor(_csGender,c,'normal'); img.style.display=''; }
+  });
+}
+function updateCharPreview(){
+  const img=document.getElementById('charPreviewImg');
+  const lbl=document.getElementById('charPreviewLabel');
+  if(img){ img.src=getHeroSpriteFor(_csGender,_csClass,'normal'); img.style.display=''; }
+  if(lbl) lbl.textContent=`${GENDER_NAMES[_csGender]} / ${CLASS_NAMES[_csClass]}`;
+}
+function openCharSelect(fromSettings=false){
+  _csGender = char.gender||'male';
+  _csClass  = char.charClass||'warrior';
+  document.querySelectorAll('[data-gender]').forEach(el=>
+    el.classList.toggle('selected', el.dataset.gender===_csGender));
+  document.querySelectorAll('[data-class]').forEach(el=>
+    el.classList.toggle('selected', el.dataset.class===_csClass));
+  updateClassCardSprites();
+  updateCharPreview();
+  const backBtn=document.getElementById('charBackBtn');
+  if(backBtn) backBtn.style.display=fromSettings?'':'none';
+  showScreen('screen-char');
+}
+async function finishCharSelect(){
+  char.gender    = _csGender;
+  char.charClass = _csClass;
+  await saveAll();
+  setupReturnTarget = null;
+  updateCharSprite();
+  initDashboard();
+  showScreen('screen-dash');
+}
+function updateCharSprite(){
+  const spriteEl = document.getElementById('charSpriteDisp');
+  const emojiEl  = document.getElementById('avatarEmoji');
+  if(!spriteEl) return;
+  const hasCustomAvatar = !!profileAvatarData || !!(char.equippedAvatar);
+  if(char.gender && char.charClass && !hasCustomAvatar){
+    spriteEl.src = getHeroSprite('normal');
+    spriteEl.style.display = '';
+    if(emojiEl) emojiEl.style.display = 'none';
+  } else {
+    spriteEl.style.display = 'none';
+    if(emojiEl) emojiEl.style.display = '';
+  }
+  // タイマー内スプライト更新
+  const timerHero=document.getElementById('timerHeroSprite');
+  if(timerHero && char.gender && char.charClass){
+    timerHero.src=getHeroSprite('normal');
+    timerHero.style.display='';
+  }
+}
+
 async function startAdventure(){
   const errEl = document.getElementById('startErrorMsg');
   const showErr = (msg) => {
@@ -8464,10 +8635,15 @@ async function startAdventure(){
     if(currentUser && !isGuest){
       await syncToCloud();
     }
-    setupReturnTarget = null;
-    initDashboard();
-    showScreen('screen-dash');
-    console.log('[startAdventure] SUCCESS: screen-dash shown');
+    // キャラ未選択なら選択画面へ、既に選択済みならそのまま
+    if(!char.gender || !char.charClass){
+      openCharSelect(false);
+    } else {
+      setupReturnTarget = null;
+      initDashboard();
+      showScreen('screen-dash');
+    }
+    console.log('[startAdventure] SUCCESS');
   } catch(e) {
     console.error('[startAdventure] ERROR:', e);
     showErr('エラーが発生しました: ' + e.message);
@@ -8534,6 +8710,7 @@ function renderAll(){
     aeEl.textContent = shopAv ? shopAv.icon : ti.emoji;
     aeEl.style.background='';
   }
+  updateCharSprite();
   // アバター枠
   const charAvatarEl = document.querySelector('.char-avatar');
   if(charAvatarEl){
@@ -8830,6 +9007,7 @@ function changeJob(){
 }
 function returnFromSetupFlow(){
   if(setupReturnTarget === 'screen-dash'){
+    updateCharSprite();
     initDashboard();
     showScreen('screen-dash');
     return;
@@ -8838,10 +9016,12 @@ function returnFromSetupFlow(){
 }
 function updateSetupReturnButtons(screenId){
   const editing = setupReturnTarget === 'screen-dash';
-  const jobBackBtn = document.getElementById('jobBackBtn');
+  const jobBackBtn  = document.getElementById('jobBackBtn');
   const subjBackBtn = document.getElementById('subjBackBtn');
-  if(jobBackBtn) jobBackBtn.style.display = editing && screenId === 'screen-job' ? '' : 'none';
+  const charBackBtn = document.getElementById('charBackBtn');
+  if(jobBackBtn)  jobBackBtn.style.display  = editing && screenId === 'screen-job'  ? '' : 'none';
   if(subjBackBtn) subjBackBtn.style.display = editing && screenId === 'screen-subj' ? '' : 'none';
+  if(charBackBtn) charBackBtn.style.display = editing && screenId === 'screen-char' ? '' : 'none';
 }
 
 /* ═══════════════ UI ═══════════════ */
