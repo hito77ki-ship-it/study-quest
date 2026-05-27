@@ -4036,6 +4036,49 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 /* タイマー内ヒーロースプライト */
 .timer-hero-sprite{width:80px;height:80px;object-fit:contain;image-rendering:pixelated;display:none;}
 
+/* ════ スプライトアニメーション ════ */
+@keyframes sq-idle{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-5px);}
+}
+@keyframes sq-running{
+  0%,100%{transform:translateY(0) scaleX(1);}
+  25%{transform:translateY(-3px) scaleX(1.03);}
+  75%{transform:translateY(-3px) scaleX(.97);}
+}
+@keyframes sq-attack{
+  0%{transform:translateX(0) scale(1);}
+  25%{transform:translateX(14px) scale(1.08);}
+  55%{transform:translateX(-5px) scale(.96);}
+  100%{transform:translateX(0) scale(1);}
+}
+@keyframes sq-damage{
+  0%,100%{transform:translateX(0);filter:brightness(1);}
+  15%{transform:translateX(-7px);filter:brightness(3) saturate(5) hue-rotate(-20deg);}
+  30%{transform:translateX(7px);filter:brightness(3) saturate(5) hue-rotate(-20deg);}
+  50%{transform:translateX(-4px);filter:brightness(1.8);}
+  70%{transform:translateX(4px);filter:brightness(1.4);}
+}
+@keyframes sq-critical{
+  0%,100%{transform:rotate(0deg) translateY(0);}
+  30%{transform:rotate(-4deg) translateY(2px);}
+  70%{transform:rotate(4deg) translateY(2px);}
+}
+@keyframes sq-levelup{
+  0%{transform:translateY(0) scale(1);filter:brightness(1);}
+  20%{transform:translateY(-22px) scale(1.12);filter:brightness(2.5) drop-shadow(0 0 10px #FFD700);}
+  45%{transform:translateY(-10px) scale(1.06);filter:brightness(1.8) drop-shadow(0 0 6px #FFD700);}
+  65%{transform:translateY(-18px) scale(1.1);filter:brightness(2.2) drop-shadow(0 0 10px #FFD700);}
+  85%{transform:translateY(-4px) scale(1.02);filter:brightness(1.3);}
+  100%{transform:translateY(0) scale(1);filter:brightness(1);}
+}
+.sq-anim-idle{animation:sq-idle 2.4s ease-in-out infinite;}
+.sq-anim-running{animation:sq-running 0.9s ease-in-out infinite;}
+.sq-anim-attack{animation:sq-attack 0.45s ease-out;}
+.sq-anim-damage{animation:sq-damage 0.55s ease-out;}
+.sq-anim-critical{animation:sq-critical 2s ease-in-out infinite;filter:brightness(.85) saturate(.7);}
+.sq-anim-levelup{animation:sq-levelup 1.1s ease-out;}
+
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
@@ -8615,6 +8658,23 @@ function updateCharSprite(){
     timerHero.src=getHeroSprite('normal');
     timerHero.style.display='';
   }
+  setSpriteAnim('sq-anim-idle');
+}
+
+const SPRITE_ANIM_CLASSES = ['sq-anim-idle','sq-anim-running','sq-anim-attack','sq-anim-damage','sq-anim-critical','sq-anim-levelup'];
+function setSpriteAnim(anim, tempMs=0){
+  const ids = ['charSpriteDisp','timerHeroSprite'];
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el || el.style.display==='none') return;
+    SPRITE_ANIM_CLASSES.forEach(c=>el.classList.remove(c));
+    // アニメーション再トリガー（同じクラスの連続付与対応）
+    void el.offsetWidth;
+    el.classList.add(anim);
+  });
+  if(tempMs>0){
+    setTimeout(()=>setSpriteAnim(timerRunning ? 'sq-anim-running' : 'sq-anim-idle'), tempMs);
+  }
 }
 
 async function startAdventure(){
@@ -9119,6 +9179,7 @@ function checkStreakMilestone(streak){
 }
 
 function showLevelUp(lv,smins){
+  setSpriteAnim('sq-anim-levelup', 1100);
   const ti=getTitleInfo(lv);const log=LEVEL_LOGS[Math.floor(Math.random()*LEVEL_LOGS.length)];
   document.getElementById('luLevel').textContent=lv;
   document.getElementById('luTitle').textContent=ti.emoji+' '+ti.title;
@@ -9384,6 +9445,7 @@ function toggleTimer(){
 
 function startTimer(){
   timerRunning=true;
+  setSpriteAnim('sq-anim-attack', 450);
   if(!timerStartedAt){
     timerStartedAt = new Date().toISOString();
     const subj = document.getElementById('timerSubject')?.value||'unknown';
@@ -9416,6 +9478,7 @@ function startTimer(){
 function pauseTimer(){
   timerRunning=false;
   clearInterval(timerInterval);
+  setSpriteAnim('sq-anim-idle');
   const btn=document.getElementById('timerStartBtn');
   const breakBtn=document.getElementById('manualBreakBtn');
   if(btn){btn.textContent='▶ 再開';btn.classList.remove('running');}
