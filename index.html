@@ -8643,7 +8643,7 @@ function updateCharSprite(){
   const spriteEl = document.getElementById('charSpriteDisp');
   const emojiEl  = document.getElementById('avatarEmoji');
   if(!spriteEl) return;
-  const hasCustomAvatar = !!profileAvatarData || !!(char.equippedAvatar);
+  const hasCustomAvatar = !!profileAvatarData;
   if(char.gender && char.charClass && !hasCustomAvatar){
     spriteEl.src = getHeroSprite('normal');
     spriteEl.style.display = '';
