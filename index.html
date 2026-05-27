@@ -4015,6 +4015,31 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   cursor:pointer;transition:all .2s;
 }
 
+/* ════ HP制システム ════ */
+.hp-system-wrap{margin-top:6px;}
+.hp-system-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;}
+.hp-system-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--game-hp);letter-spacing:.1em;}
+.hp-hearts{display:flex;gap:2px;align-items:center;}
+.hp-heart{font-size:11px;line-height:1;transition:transform .2s;}
+.hp-heart.empty{filter:grayscale(1);opacity:.3;}
+.hp-heart.half{filter:hue-rotate(180deg) brightness(.7);}
+.hp-system-nums{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);}
+.hp-bar-track{height:6px;background:var(--panel2);border-radius:3px;overflow:hidden;border:1px solid rgba(255,110,110,.2);}
+.hp-bar-fill{height:100%;border-radius:3px;transition:width .6s ease;background:linear-gradient(90deg,#ff4444,#ff6e6e);}
+.hp-bar-fill.hp-warning{background:linear-gradient(90deg,#cc0000,#ff2222);animation:hpPulse 1s ease-in-out infinite;}
+@keyframes hpPulse{0%,100%{opacity:1;}50%{opacity:.6;}}
+/* 死亡オーバーレイ */
+.death-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;pointer-events:none;transition:opacity .5s;}
+.death-overlay.show{opacity:1;pointer-events:all;}
+.death-overlay img{width:140px;height:140px;object-fit:contain;image-rendering:pixelated;animation:tombstonePop .6s cubic-bezier(.34,1.56,.64,1) forwards;}
+@keyframes tombstonePop{from{transform:scale(0) translateY(40px);}to{transform:scale(1) translateY(0);}}
+.death-title{font-family:'Cinzel',serif;font-size:22px;color:#ff4444;letter-spacing:.15em;text-shadow:0 0 20px rgba(255,68,68,.5);}
+.death-msg{font-size:13px;color:rgba(255,255,255,.7);text-align:center;line-height:1.6;}
+.death-revive-btn{margin-top:8px;background:linear-gradient(135deg,#7f0000,#cc0000);border:none;color:#fff;font-family:'Cinzel',serif;font-size:13px;letter-spacing:.15em;padding:14px 32px;border-radius:8px;cursor:pointer;box-shadow:0 4px 16px rgba(255,68,68,.3);}
+/* HP回復ポップアップ */
+.hp-recover-popup{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(255,100,100,.15);border:1px solid rgba(255,100,100,.4);color:#ff8888;font-family:'Share Tech Mono',monospace;font-size:13px;padding:8px 20px;border-radius:20px;z-index:9999;pointer-events:none;animation:hpPopAnim .6s ease forwards;}
+@keyframes hpPopAnim{0%{opacity:0;transform:translateX(-50%) translateY(10px);}30%{opacity:1;transform:translateX(-50%) translateY(0);}70%{opacity:1;}100%{opacity:0;transform:translateX(-50%) translateY(-20px);}}
+
 /* ════ キャラクター選択画面 ════ */
 .char-select-section{margin-bottom:22px;}
 .char-select-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.25em;color:var(--accent2);margin-bottom:10px;text-align:center;}
@@ -4474,6 +4499,17 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
           <span class="avg-mark" style="color:#7cff6e;">▲ 平均（Lv.75）</span>
           <span style="display:none;" id="levelDispMeta"></span>
           <span class="max-mark">Lv.100</span>
+        </div>
+        <!-- HP バー -->
+        <div class="hp-system-wrap" id="hpSystemWrap">
+          <div class="hp-system-header">
+            <span class="hp-system-label">❤ HP</span>
+            <div class="hp-hearts" id="hpHearts"></div>
+            <span class="hp-system-nums" id="hpNums">50 / 50</span>
+          </div>
+          <div class="hp-bar-track">
+            <div class="hp-bar-fill" id="hpBarFill" style="width:100%"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -6756,7 +6792,7 @@ const BADGES = [
 /* ═══════════════ STATE ═══════════════ */
 let selectedJobIds = [];
 let selectedSubjectKeys = [];
-let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:'',profileIconEmoji:null,installDate:null};
+let char = {name:'',totalEXP:0,streak:0,lastLoginDate:null,level:1,sp:0,stats:{str:10,vit:10,int:10,agi:10},gold:0,unlockedItems:[],equippedAvatar:'',equippedFrame:'',equippedTitle:'',profileIconEmoji:null,installDate:null,hp:50,maxHp:50,lastHpCheckDate:null};
 let sessions = [];
 let bosses = [];  // [{id,name,date,targetHours}, ...]
 let examGoals = []; // [{id,title,date,startDate}, ...]
@@ -8577,6 +8613,138 @@ function applyCombinedSplit(jobId, combinedKey, totalMins){
   renderSubjectStats && renderSubjectStats();
 }
 
+/* ═══════════════ HP SYSTEM ═══════════════ */
+const HP_MAX = 50;
+const HP_PENALTY_MISS   = 10; // 0%達成
+const HP_PENALTY_LOW    = 5;  // 1-49%達成
+const HP_PENALTY_HALF   = 2;  // 50-99%達成
+const HP_RECOVER_GOAL   = 5;  // 目標達成ボーナス
+const HP_RECOVER_STUDY  = 2;  // 勉強記録ごと
+
+function getHeroState(){
+  const hp  = char.hp  ?? HP_MAX;
+  const max = char.maxHp ?? HP_MAX;
+  const pct = hp / max;
+  if(pct <= 0)    return 'critical';
+  if(pct < 0.30)  return 'critical';
+  if(pct < 0.65)  return 'damaged';
+  return 'normal';
+}
+
+function renderHpBar(){
+  const hp    = Math.max(0, char.hp  ?? HP_MAX);
+  const max   = Math.max(1, char.maxHp ?? HP_MAX);
+  const pct   = hp / max;
+  const fill  = document.getElementById('hpBarFill');
+  const nums  = document.getElementById('hpNums');
+  const hearts = document.getElementById('hpHearts');
+  if(!fill) return;
+  fill.style.width = (pct * 100) + '%';
+  fill.className   = 'hp-bar-fill' + (pct < 0.30 ? ' hp-warning' : '');
+  if(nums) nums.textContent = `${hp} / ${max}`;
+  if(hearts){
+    const total = 5;
+    const full  = Math.floor(pct * total);
+    const half  = (pct * total - full) >= 0.5 ? 1 : 0;
+    hearts.innerHTML = '';
+    for(let i=0;i<total;i++){
+      const s = document.createElement('span');
+      s.className = 'hp-heart' + (i < full ? '' : (i === full && half ? ' half' : ' empty'));
+      s.textContent = '❤';
+      hearts.appendChild(s);
+    }
+  }
+}
+
+function checkDailyHpPenalty(){
+  if(!char.lastLoginDate) return; // 初回は無し
+  const today     = getTodayStr();
+  const lastCheck = char.lastHpCheckDate;
+  if(lastCheck === today) return; // 今日もう確認済み
+  char.lastHpCheckDate = today;
+
+  // 昨日の学習を確認
+  const yesterday = toLocalDateStr(new Date(Date.now() - 86400000));
+  if(lastCheck === yesterday || char.lastLoginDate === yesterday){
+    // 昨日の目標を確認
+    const goalMins = getTodayGoalMinsFor(yesterday);
+    if(goalMins > 0){
+      const done = sessions.filter(s=>s.date===yesterday&&s.type==='study')
+                           .reduce((sum,s)=>sum+(s.amount||0),0);
+      const pct = done / goalMins;
+      let penalty = 0;
+      if(pct < 0.01)      penalty = HP_PENALTY_MISS;
+      else if(pct < 0.50) penalty = HP_PENALTY_LOW;
+      else if(pct < 1.00) penalty = HP_PENALTY_HALF;
+      if(penalty > 0){
+        char.hp = Math.max(0, (char.hp ?? HP_MAX) - penalty);
+        saveAll();
+        showHpPopup(`-${penalty} HP（昨日の目標未達成）`, true);
+        if(char.hp <= 0) setTimeout(showDeathScreen, 800);
+      }
+    }
+  }
+  saveAll();
+}
+
+function getTodayGoalMinsFor(dateStr){
+  const isWeekend = [0,6].includes(new Date(dateStr+'T12:00:00').getDay());
+  const profInfo  = loadProfileInfo();
+  const wdH = parseFloat(profInfo.weekdayHours) || 0;
+  const weH = parseFloat(profInfo.weekendHours) || 0;
+  if(wdH > 0 || weH > 0){
+    return (isWeekend ? (weH || wdH) : (wdH || weH)) * 60;
+  }
+  const weeklyMins = getThisWeekGoalHours() * 60;
+  return weeklyMins > 0 ? (weeklyMins / 7) : 0;
+}
+
+function recoverHp(studyMins, isGoalComplete){
+  if(char.hp <= 0) return; // 死亡中は回復しない
+  const max = char.maxHp ?? HP_MAX;
+  let gain = HP_RECOVER_STUDY;
+  if(isGoalComplete) gain += HP_RECOVER_GOAL;
+  const before = char.hp ?? HP_MAX;
+  char.hp = Math.min(max, before + gain);
+  if(char.hp !== before){
+    showHpPopup(`+${char.hp - before} HP`, false);
+    renderHpBar();
+    updateCharSprite();
+  }
+}
+
+function showHpPopup(msg, isDamage){
+  const el = document.createElement('div');
+  el.className  = 'hp-recover-popup';
+  el.textContent = msg;
+  el.style.color  = isDamage ? '#ff6e6e' : '#ff9e9e';
+  el.style.borderColor = isDamage ? 'rgba(255,68,68,.5)' : 'rgba(255,100,100,.4)';
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(), 1800);
+}
+
+function showDeathScreen(){
+  const overlay = document.getElementById('deathOverlay');
+  if(!overlay) return;
+  const streakLost = char.streak || 0;
+  const msg = document.getElementById('deathMsg');
+  if(msg) msg.innerHTML = `連続学習が途切れ、HPが尽きた…<br>連続記録 <strong style="color:#ff6e6e">${streakLost}日</strong> がリセットされます。<br>でも、また立ち上がれる！`;
+  overlay.classList.add('show');
+  updateCharSprite();
+}
+
+function reviveCharacter(){
+  char.hp     = char.maxHp ?? HP_MAX;
+  char.streak = 0;
+  saveAll();
+  const overlay = document.getElementById('deathOverlay');
+  if(overlay) overlay.classList.remove('show');
+  renderHpBar();
+  updateCharSprite();
+  renderAll();
+  spawnDmgNumber('⚔ REVIVED!', '#ff9e9e', true);
+}
+
 /* ═══════════════ CHARACTER SELECT ═══════════════ */
 let _csGender = 'male';
 let _csClass  = 'warrior';
@@ -8643,9 +8811,12 @@ function updateCharSprite(){
   const spriteEl = document.getElementById('charSpriteDisp');
   const emojiEl  = document.getElementById('avatarEmoji');
   if(!spriteEl) return;
+  const hp     = char.hp ?? HP_MAX;
+  const isDead = hp <= 0;
+  const state  = isDead ? 'critical' : getHeroState();
   const hasCustomAvatar = !!profileAvatarData;
   if(char.gender && char.charClass && !hasCustomAvatar){
-    spriteEl.src = getHeroSprite('normal');
+    spriteEl.src = isDead ? 'sprites/tombstone.png' : getHeroSprite(state);
     spriteEl.style.display = '';
     if(emojiEl) emojiEl.style.display = 'none';
   } else {
@@ -8655,10 +8826,11 @@ function updateCharSprite(){
   // タイマー内スプライト更新
   const timerHero=document.getElementById('timerHeroSprite');
   if(timerHero && char.gender && char.charClass){
-    timerHero.src=getHeroSprite('normal');
+    timerHero.src = isDead ? 'sprites/tombstone.png' : getHeroSprite(state);
     timerHero.style.display='';
   }
-  setSpriteAnim('sq-anim-idle');
+  renderHpBar();
+  setSpriteAnim(isDead ? 'sq-anim-critical' : 'sq-anim-idle');
 }
 
 const SPRITE_ANIM_CLASSES = ['sq-anim-idle','sq-anim-running','sq-anim-attack','sq-anim-damage','sq-anim-critical','sq-anim-levelup'];
@@ -8741,6 +8913,7 @@ function initDashboard(){
   updateReminderUI();
   scheduleStudyReminder();
   // チュートリアル（ログイン後・ダッシュボード表示後に起動）
+  checkDailyHpPenalty();
   setTimeout(showTutorial, 800);
   // 忘却の霧チェック
   setTimeout(checkFogOfOblivion, 2500);
@@ -8979,6 +9152,15 @@ async function addQuest(){
   if(lv1>lv0){showLevelUp(lv1,smins1); checkClassChange(lv0,lv1,smins1);}
   if(currentUser) syncToCloud().catch(()=>{});
   checkWeeklyGoalMilestones().catch(()=>{});
+  // HP回復
+  if(currentType === 'study'){
+    const today = getTodayStr();
+    const goalMins = getTodayGoalMinsFor(today);
+    const doneMins = sessions.filter(s=>s.date===today&&s.type==='study').reduce((sum,s)=>sum+(s.amount||0),0);
+    const isGoalComplete = goalMins > 0 && doneMins >= goalMins;
+    recoverHp(amount, isGoalComplete);
+    if(char.hp > 0) saveAll();
+  }
 
   // タイムラインに自動投稿
   if(currentType === 'study') {
@@ -23584,6 +23766,14 @@ async function submitDeleteAccount(){
     <button class="fog-timer-btn" onclick="startFogTimer()">🌫️ 15分復習タイマーを開始</button>
     <button class="fog-skip-btn" onclick="closeFogOverlay()">今は復習しない</button>
   </div>
+</div>
+
+<!-- ════ 死亡オーバーレイ ════ -->
+<div class="death-overlay" id="deathOverlay">
+  <img src="sprites/tombstone.png" alt="お墓" onerror="this.textContent='🪦';this.style.fontSize='80px'">
+  <div class="death-title">YOU DIED</div>
+  <div class="death-msg" id="deathMsg">HPが0になりました…<br>しかし、学習の炎は消えない！</div>
+  <button class="death-revive-btn" onclick="reviveCharacter()">⚔ 立ち上がる</button>
 </div>
 
 <!-- ════ ライバルの影 ════ -->
