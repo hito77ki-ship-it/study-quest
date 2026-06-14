@@ -3549,7 +3549,7 @@ input[type="date"].mrec-select {
 .news-modal-overlay.show{display:flex;}
 .news-modal{
   background:var(--bg);border:1px solid var(--border);
-  border-radius:16px;width:340px;max-height:78vh;
+  border-radius:16px;width:min(340px,calc(100vw - 24px));max-height:78vh;
   display:flex;flex-direction:column;overflow:hidden;
   box-shadow:0 8px 40px rgba(0,0,0,.28);
   animation:scaleIn .2s cubic-bezier(.34,1.56,.64,1);
@@ -8024,7 +8024,7 @@ async function loadRanking(){
     item.className='ranking-item'+(isMe?' me':'');
     const canOpenUserCard = !isMe && !!p.id;
     const _rankAvatar = p.avatar_url
-      ? `<img src="${p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" alt="">`
+      ? `<img src="${escHtml(p.avatar_url)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" alt="">`
       : p.avatar_emoji && p.avatar_emoji !== '📚'
         ? escHtml(p.avatar_emoji)
         : `<div style="width:100%;height:100%;border-radius:50%;background:${avatarColor(p.display_name)};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;">${escHtml((p.display_name||'？')[0])}</div>`;
@@ -8115,7 +8115,7 @@ async function loadWeeklyRanking(){
     const canOpenUserCard = !isMe && !!p.id;
     item.innerHTML = `
       <div class="rank-pos ${posClass}">${posDisp}</div>
-      <div class="rank-avatar rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}>${p.avatar_url ? `<img src="${p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" alt="">` : (p.avatar_emoji && p.avatar_emoji !== '📚') ? escHtml(p.avatar_emoji) : `<div style="width:100%;height:100%;border-radius:50%;background:${avatarColor(p.display_name)};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;">${escHtml((p.display_name||'？')[0])}</div>`}</div>
+      <div class="rank-avatar rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}>${p.avatar_url ? `<img src="${escHtml(p.avatar_url)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" alt="">` : (p.avatar_emoji && p.avatar_emoji !== '📚') ? escHtml(p.avatar_emoji) : `<div style="width:100%;height:100%;border-radius:50%;background:${avatarColor(p.display_name)};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;">${escHtml((p.display_name||'？')[0])}</div>`}</div>
       <div class="rank-info rank-user-open"${canOpenUserCard?' style="cursor:pointer;"':''}>
         <div class="rank-name">${escHtml(p.display_name||'名無し')}${isMe?' <span style="font-size:9px;color:var(--accent)">← YOU</span>':''}<span style="font-size:9px;color:var(--muted);margin-left:4px;">${job}</span></div>
         <div class="rank-title-text">${escHtml(p.char_title||'—')}</div>
@@ -8623,7 +8623,7 @@ const HP_RECOVER_STUDY  = 2;  // 勉強記録ごと
 
 function getHeroState(){
   const hp  = char.hp  ?? HP_MAX;
-  const max = char.maxHp ?? HP_MAX;
+  const max = Math.max(1, char.maxHp ?? HP_MAX);
   const pct = hp / max;
   if(pct <= 0)    return 'critical';
   if(pct < 0.30)  return 'critical';
@@ -9626,6 +9626,7 @@ function toggleTimer(){
 }
 
 function startTimer(){
+  clearInterval(timerInterval);
   timerRunning=true;
   setSpriteAnim('sq-anim-attack', 450);
   if(!timerStartedAt){
@@ -10637,7 +10638,7 @@ function renderScoreTab(){
   const dl = document.getElementById('examNameList');
   if(dl){
     const names = [...new Set(scoreRecords.map(r=>r.name))];
-    dl.innerHTML = names.map(n=>`<option value="${n}">`).join('');
+    dl.innerHTML = names.map(n=>`<option value="${escHtml(n)}">`).join('');
   }
   buildScoreSubjInputs();
   renderScoreSummary();
@@ -17886,7 +17887,7 @@ function renderPostHTML(post, likes){
       </div>`;
     })() : `<div class="tl-post-card">
       <div class="tl-post-card-icon">${post.material_cover
-        ? `<img src="${post.material_cover}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">`
+        ? `<img src="${escHtml(post.material_cover)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">`
         : `<i class="fa-solid fa-book-open tl-icon"></i>`
       }</div>
       <div class="tl-post-card-info">
@@ -18184,7 +18185,7 @@ function avatarColor(name){
 }
 
 function escHtml(s){
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
 /* ════════════════════════════════════════
@@ -18684,7 +18685,7 @@ async function renderPartyRaidCard(){
     </div>`;
     const isMe = m.id === currentUser.id;
     const av = m.avatar_url
-      ? `<img src="${m.avatar_url}" style="width:100%;height:100%;object-fit:cover;" alt="">`
+      ? `<img src="${escHtml(m.avatar_url)}" style="width:100%;height:100%;object-fit:cover;" alt="">`
       : (m.name||'?')[0];
     return `<div class="party-raid-member">
       <div class="party-raid-member-av" style="${m.avatar_url?'background:none;':'background:'+avatarColor(m.name)}">${av}${isMe?'<div style="position:absolute;bottom:-2px;right:-2px;width:12px;height:12px;background:#8CC63F;border-radius:50%;border:1.5px solid var(--panel);"></div>':''}</div>
@@ -18997,7 +18998,7 @@ function renderReplyThreadDOM(postId){
       const ac = (r.user_name || '？')[0];
       const col = typeof avatarColor === 'function' ? avatarColor(r.user_name) : '#8CC63F';
       const avatarHtml = r.avatar_url
-        ? `<div class="tl-reply-avatar" style="background:none;padding:0;overflow:hidden;"><img src="${r.avatar_url}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>`
+        ? `<div class="tl-reply-avatar" style="background:none;padding:0;overflow:hidden;"><img src="${escHtml(r.avatar_url)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>`
         : `<div class="tl-reply-avatar" style="background:${col}">${ac}</div>`;
       const isOwnReply = (currentUser && r.user_id === currentUser.id) || r.user_name === char.name;
       const likedReply = !!replyLikes[r.id];
@@ -19370,7 +19371,7 @@ async function loadDmPartners(){
   // タブバー生成
   tabBar.innerHTML = dmPartners.map(p => {
     const avatarHtml = p.avatarUrl
-      ? `<div class="dm-tab-avatar" style="background:none;padding:0;overflow:hidden;"><img src="${p.avatarUrl}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>`
+      ? `<div class="dm-tab-avatar" style="background:none;padding:0;overflow:hidden;"><img src="${escHtml(p.avatarUrl)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>`
       : `<div class="dm-tab-avatar" style="background:${avatarColor(p.name)}">${(p.name||'？')[0]}</div>`;
     return `
     <div class="dm-tab-item ${dmCurrentPartner?.id === p.id ? 'active' : ''}"
@@ -19404,7 +19405,7 @@ async function selectDmPartner(partnerId, partnerName, partnerAvatarUrl){
   if(headerName) headerName.textContent = partnerName;
   if(headerAvatar){
     if(partnerAvatarUrl){
-      headerAvatar.innerHTML = `<img src="${partnerAvatarUrl}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+      headerAvatar.innerHTML = `<img src="${escHtml(partnerAvatarUrl)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
       headerAvatar.style.background = 'none';
       headerAvatar.style.padding = '0';
       headerAvatar.style.overflow = 'hidden';
@@ -19746,7 +19747,7 @@ async function openFollowListModal(type){
     content.innerHTML = profiles.map(p => {
       const name = p.display_name || '冒険者';
       const avatarHtml = p.avatar_url
-        ? `<img src="${p.avatar_url}" alt="" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--border);">`
+        ? `<img src="${escHtml(p.avatar_url)}" alt="" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--border);">`
         : `<div style="width:40px;height:40px;border-radius:50%;background:${avatarColor(name)};display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0;">${p.avatar_emoji || name[0]}</div>`;
       const jobs = (p.job_ids||[]).map(j => {
         const job = JOBS.find(x => x.id === j);
@@ -19843,7 +19844,7 @@ async function openUserCard(userId, userName, level, avatarUrl, jobIdsStr){
   const title = profile.char_title || '';
 
   const avatarHtml = dispAvatar
-    ? `<img src="${dispAvatar}" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);">`
+    ? `<img src="${escHtml(dispAvatar)}" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);">`
     : `<div style="width:72px;height:72px;border-radius:50%;background:${avatarColor(dispName)};display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;border:3px solid var(--accent);">${(dispName||'？')[0]}</div>`;
 
   // フォローボタン
@@ -20406,7 +20407,7 @@ function renderQuickMaterialSelect(){
     const timeStr = h > 0 ? `${h}h${min>0?min+'m':''}` : mins > 0 ? `${mins}m` : '';
     const isSelected = m.id === currentMatId;
     const coverHtml = m.cover
-      ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`
+      ? `<img src="${escHtml(m.cover)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`
       : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--panel2);border-radius:8px;">📖</div>`;
     return `<div onclick="quickSelectMaterial('${m.id}')" style="
         flex:0 0 auto;width:80px;cursor:pointer;text-align:center;position:relative;
@@ -20535,7 +20536,7 @@ function renderMobileQuestMaterials(){
               : '';
             const {rank, color: rankColor} = getMaterialRank(mins);
             const coverHtml = m.cover
-              ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`
+              ? `<img src="${escHtml(m.cover)}" alt="" style="width:100%;height:100%;object-fit:cover;">`
               : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:32px;background:var(--panel2);">📖</div>`;
             return `
               <div onclick="mobileStartRecord('${m.id}')" style="cursor:pointer;-webkit-tap-highlight-color:transparent;" oncontextmenu="mobileMatLongPress(event,'${m.id}');return false;">
@@ -20577,7 +20578,7 @@ function initMrecUI(materialId){
   if(m){
     if(nameEl) nameEl.textContent = m.name;
     if(coverEl) coverEl.innerHTML = m.cover
-      ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`
+      ? `<img src="${escHtml(m.cover)}" alt="" style="width:100%;height:100%;object-fit:cover;">`
       : `<span>📖</span>`;
   }
 
@@ -20714,7 +20715,7 @@ function _updateMobileTimerMatInfo(materialId){
   const m = materials.find(x => x.id === materialId);
   if(!m){ info.innerHTML = '<div style="font-size:13px;color:var(--muted);">教材未選択</div>'; return; }
   const coverHtml = m.cover
-    ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:3px;">`
+    ? `<img src="${escHtml(m.cover)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:3px;">`
     : '📖';
   info.innerHTML = `
     <div style="width:30px;height:40px;border-radius:4px;overflow:hidden;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.2);">${coverHtml}</div>
@@ -20796,7 +20797,7 @@ function openMaterialForm(editId){
       if(m.cover){
         materialCoverData = m.cover;
         document.getElementById('materialCoverPreview').innerHTML =
-          `<img src="${m.cover}" alt="">`;
+          `<img src="${escHtml(m.cover)}" alt="">`;
       }
     }
     if(confirmBtn) confirmBtn.textContent = '💾 更新する';
@@ -20933,7 +20934,7 @@ function renderMaterials(){
           <div class="material-card" onclick="selectMaterialForTimer('${m.id}')">
             <div class="material-card-cover">
               ${m.cover
-                ? `<img src="${m.cover}" alt="${escHtml(m.name)}">`
+                ? `<img src="${escHtml(m.cover)}" alt="${escHtml(m.name)}">`
                 : `<div class="material-card-cover-default">📖</div>`}
             </div>
             <div class="material-card-info">
@@ -20993,7 +20994,7 @@ function updateTimerMaterial(){
   if(!sel || !thumb) return;
   const m = materials.find(x => x.id === sel.value);
   if(m && m.cover){
-    thumb.innerHTML = `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`;
+    thumb.innerHTML = `<img src="${escHtml(m.cover)}" alt="" style="width:100%;height:100%;object-fit:cover;">`;
   } else {
     thumb.innerHTML = '📖';
   }
