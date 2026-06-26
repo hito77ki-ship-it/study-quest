@@ -206,6 +206,53 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .step-header{text-align:center;margin-bottom:22px;}
 .step-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.35em;color:var(--gold);opacity:.7;margin-bottom:6px;}
 .step-title{font-size:17px;color:var(--text);letter-spacing:.04em;}
+.onboard-hero{
+  min-height:calc(100vh - 48px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:24px 0;
+}
+.onboard-card{
+  background:linear-gradient(180deg,#5B3FD6 0%,#7B5CF0 100%);
+  border:none;
+  border-radius:28px;
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.onboard-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,255,255,.16) 0 2px,transparent 3px),
+    radial-gradient(circle at 78% 26%,rgba(255,255,255,.16) 0 2px,transparent 3px),
+    radial-gradient(circle at 62% 72%,rgba(255,255,255,.12) 0 2px,transparent 3px);
+  pointer-events:none;
+}
+.onboard-content{position:relative;z-index:1;text-align:center;padding:34px 18px 28px;}
+.onboard-logo{font-family:'Cinzel',serif;font-size:30px;letter-spacing:.08em;font-weight:900;margin-bottom:8px;}
+.onboard-title{font-size:28px;line-height:1.35;font-weight:700;margin:26px 0 12px;}
+.onboard-copy{font-size:14px;line-height:1.8;color:rgba(255,255,255,.86);max-width:360px;margin:0 auto 24px;}
+.onboard-pixels{display:flex;justify-content:center;align-items:flex-end;gap:8px;margin:28px 0 18px;min-height:150px;}
+.onboard-pixels img{width:92px;height:92px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 10px 0 rgba(0,0,0,.12));}
+.onboard-pixels img:nth-child(2){width:118px;height:118px;}
+.onboard-dots{display:flex;justify-content:center;gap:14px;margin:8px 0 26px;}
+.onboard-dot{width:10px;height:10px;background:rgba(255,255,255,.32);transform:rotate(45deg);}
+.onboard-dot.active{background:#fff;}
+.onboard-btn{
+  width:100%;
+  min-height:58px;
+  border:2px solid rgba(255,255,255,.35);
+  border-radius:999px;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+}
+.onboard-skip{position:absolute;top:18px;right:18px;background:none;border:none;color:#fff;font-size:14px;cursor:pointer;z-index:2;}
 .job-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
 @media(min-width:520px){.job-grid{grid-template-columns:repeat(3,1fr);}}
 .job-card{background:var(--panel);border:2px solid var(--border);border-radius:var(--radius);padding:20px 12px 16px;text-align:center;cursor:pointer;transition:all .25s;position:relative;user-select:none;box-shadow:var(--shadow);}
@@ -413,6 +460,35 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .prof-quick-btn.primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(140,198,63,.4);}
 .prof-quick-btn.secondary{background:var(--panel);border:1px solid var(--border);color:var(--text);}
 .prof-quick-btn.secondary:hover{border-color:var(--accent);color:var(--accent2);}
+.adventure-pass-card{
+  background:linear-gradient(135deg,rgba(140,198,63,.14),rgba(59,130,246,.10));
+  border:1px solid var(--accent-border);
+  border-radius:var(--radius);
+  padding:16px;
+  margin:14px 0;
+  box-shadow:var(--shadow);
+}
+.adventure-pass-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;}
+.adventure-pass-kicker{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.16em;color:var(--accent2);margin-bottom:4px;}
+.adventure-pass-title{font-size:18px;font-weight:700;color:var(--text);line-height:1.35;}
+.adventure-pass-price{font-family:'Share Tech Mono',monospace;font-size:18px;color:var(--accent2);font-weight:700;white-space:nowrap;text-align:right;}
+.adventure-pass-desc{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px;}
+.adventure-pass-features{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px;}
+.adventure-pass-feature{font-size:11px;color:var(--text);background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:8px 9px;line-height:1.5;}
+.adventure-pass-btn{width:100%;background:var(--accent);border:none;border-radius:10px;color:#000;padding:12px 14px;font-size:13px;font-weight:700;cursor:pointer;}
+.adventure-pass-status{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.6;}
+.pass-plan-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:10px 0 14px;}
+.pass-plan-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:14px;cursor:pointer;transition:all .18s;}
+.pass-plan-card:hover{border-color:var(--accent);background:rgba(140,198,63,.08);}
+.pass-plan-card.recommended{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-subtle);}
+.pass-plan-name{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.pass-plan-price{font-family:'Share Tech Mono',monospace;font-size:18px;color:var(--accent2);margin-top:6px;}
+.pass-plan-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:6px;}
+@media (max-width: 420px){
+  .adventure-pass-head{flex-direction:column;}
+  .adventure-pass-price{text-align:left;}
+  .adventure-pass-features{grid-template-columns:1fr;}
+}
 /* Panel slide-in animation */
 @keyframes panelFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .panel-anim{animation:panelFadeIn .22s ease-out;}
@@ -3408,6 +3484,59 @@ body[data-theme="dark"] #mobileTabBar {
   overscroll-behavior: contain; min-height: 0;
 }
 .mrec-btn-area { flex-shrink: 0; padding: 10px 14px 12px; background: var(--bg); }
+.quick-log-card {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  margin: 4px 0 10px;
+}
+.quick-log-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent2);
+  letter-spacing: .12em;
+  margin-bottom: 8px;
+}
+.quick-log-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.quick-log-input {
+  flex: 1;
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 12px;
+  font-size: 14px;
+  color: var(--text);
+}
+.quick-log-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-subtle); }
+.quick-log-btn {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+}
+.quick-log-status {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 8px;
+  min-height: 18px;
+}
+@media (max-width: 375px) {
+  .quick-log-row { flex-direction: column; }
+  .quick-log-btn { width: 100%; }
+}
 /* ── 手動入力 フォーム行 ── */
 .mrec-row {
   display: flex; align-items: center; min-height: 56px;
@@ -3668,6 +3797,172 @@ input[type="date"].mrec-select {
 .char-compact-info{flex:1;min-width:0;}
 .char-compact-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px;}
 .char-compact-sub{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+
+/* ════ RPG HUD（Habitica風ステータスバー） ════ */
+.char-card-rpg{padding:14px 16px;border-top-color:var(--accent);}
+.rpg-hud{display:flex;align-items:flex-start;gap:12px;}
+.rpg-hud-bars{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;}
+.rpg-hud-name{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px;}
+.rpg-hud-sub{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px;}
+.rpg-hud-title{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);}
+.rpg-bar-row{display:flex;align-items:center;gap:6px;}
+.rpg-bar-icon{font-size:10px;width:14px;text-align:center;flex-shrink:0;line-height:1;}
+.rpg-bar-track{flex:1;height:10px;background:var(--panel2);border:1px solid var(--border);border-radius:5px;overflow:hidden;position:relative;}
+.rpg-bar-track.hp .rpg-bar-fill{background:linear-gradient(to right,#ff6e6e,#ff4444);box-shadow:0 0 6px rgba(255,110,110,.3);}
+.rpg-bar-track.exp .rpg-bar-fill{background:linear-gradient(to right,#f5c842,#e8a020);box-shadow:0 0 6px rgba(245,200,66,.3);}
+.rpg-bar-track.mp .rpg-bar-fill{background:linear-gradient(to right,#4db8ff,#2196f3);}
+.rpg-bar-fill{height:100%;border-radius:4px;transition:width .9s cubic-bezier(.25,1,.5,1);position:relative;}
+.rpg-bar-fill::after{content:'';position:absolute;top:0;right:0;width:2px;height:100%;background:rgba(255,255,255,.7);}
+.rpg-bar-num{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);white-space:nowrap;min-width:52px;text-align:right;flex-shrink:0;}
+.rpg-bar-locked{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted);flex:1;text-align:center;opacity:.7;}
+.rpg-hud-currency{display:flex;align-items:center;gap:8px;margin-top:2px;}
+.rpg-coin{font-family:'Share Tech Mono',monospace;font-size:11px;color:#c9a84c;cursor:pointer;border:1px solid rgba(201,168,76,.3);padding:2px 8px;background:rgba(201,168,76,.08);border-radius:20px;transition:all .15s;}
+.rpg-coin:hover{border-color:var(--accent);transform:scale(1.03);}
+.rpg-shop-btn{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);border:1px solid var(--border);padding:2px 8px;background:var(--panel2);border-radius:20px;cursor:pointer;transition:all .15s;}
+.rpg-shop-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ════ 初心者チュートリアルクエストカード ════ */
+.tq-card{
+  position:relative;background:var(--panel);border-radius:var(--radius);
+  padding:14px 16px;margin-bottom:14px;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.tq-card::before{
+  content:'';position:absolute;inset:0;border-radius:var(--radius);padding:3px;
+  background:linear-gradient(135deg,#6366f1,#ec4899,#f59e0b,#6366f1);
+  background-size:300% 300%;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+  animation:tq-border-spin 5s linear infinite;
+}
+@keyframes tq-border-spin{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.tq-card-inner{position:relative;z-index:1;}
+.tq-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.tq-title{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:6px;}
+.tq-reward{font-family:'Share Tech Mono',monospace;font-size:11px;color:#c9a84c;display:flex;align-items:center;gap:4px;}
+.tq-list{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
+.tq-item{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--panel2);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s;}
+.tq-item:hover{border-color:var(--accent);}
+.tq-item.done{opacity:.65;}
+.tq-item.done .tq-item-title{text-decoration:line-through;color:var(--muted);}
+.tq-item-icon{width:32px;height:32px;border-radius:8px;background:var(--panel3);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.tq-item.done .tq-item-icon{filter:grayscale(.3);}
+.tq-item-body{flex:1;min-width:0;}
+.tq-item-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:1px;}
+.tq-item-desc{font-size:10px;color:var(--muted);line-height:1.4;}
+.tq-item-check{font-size:16px;flex-shrink:0;}
+.tq-prog-label{display:flex;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:4px;}
+.tq-prog-track{height:8px;background:var(--panel2);border-radius:4px;overflow:hidden;}
+.tq-prog-fill{height:100%;border-radius:4px;background:linear-gradient(to right,#6366f1,#a855f7);transition:width .6s;}
+.tq-complete-msg{text-align:center;font-size:12px;color:var(--accent2);font-weight:700;padding:8px 0 2px;}
+
+/* ════ NPCガイド（右下常駐） ════ */
+.npc-guide{
+  position:fixed;bottom:calc(68px + env(safe-area-inset-bottom,0px));right:12px;
+  z-index:900;max-width:min(320px,calc(100vw - 24px));
+  display:flex;flex-direction:column;align-items:flex-end;
+  pointer-events:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s;
+}
+.npc-guide.hidden{opacity:0;transform:translateY(24px);pointer-events:none;}
+.npc-guide.minimized .npc-bubble{display:none;}
+.npc-guide.minimized .npc-avatar-btn{pointer-events:all;cursor:pointer;}
+.npc-avatar-btn{
+  width:56px;height:72px;margin-bottom:-10px;margin-right:4px;
+  position:relative;z-index:2;pointer-events:all;cursor:pointer;
+  background:none;border:none;padding:0;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.45)) drop-shadow(0 0 10px rgba(139,92,246,.5));
+}
+.npc-avatar-btn:hover{transform:scale(1.1) translateY(-3px);}
+.npc-avatar-btn:active{transform:scale(.95);}
+.npc-avatar-img{
+  width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges;
+  object-fit:contain;
+}
+@keyframes npc-bounce{
+  0%,100%{transform:translateY(0);}
+  40%{transform:translateY(-6px);}
+  60%{transform:translateY(-3px);}
+}
+.npc-guide.minimized .npc-avatar-btn{animation:npc-bounce 3.5s ease-in-out infinite;}
+.npc-guide:not(.minimized) .npc-avatar-btn{animation:npc-idle 6s ease-in-out infinite;}
+@keyframes npc-idle{0%,100%{transform:translateY(0) rotate(0deg);}30%{transform:translateY(-2px) rotate(-1deg);}70%{transform:translateY(-1px) rotate(1deg);}}
+.npc-unread-dot{
+  position:absolute;top:2px;right:0;width:12px;height:12px;
+  background:#ef4444;border-radius:50%;border:2px solid var(--bg);
+  display:none;
+  animation:npc-ping 1.5s ease-in-out infinite;
+}
+@keyframes npc-ping{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:.7;}}
+.npc-guide.minimized .npc-unread-dot{display:block;}
+.npc-bubble{
+  background:rgba(12,12,22,.93);border:1px solid rgba(124,58,237,.35);
+  border-radius:14px;padding:12px 14px 10px;position:relative;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 8px 32px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.04) inset;
+  pointer-events:all;
+  animation:npc-pop .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes npc-pop{from{opacity:0;transform:translateY(12px) scale(.93);}to{opacity:1;transform:none;}}
+.npc-name-tag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'Cinzel',serif;font-size:9px;font-weight:700;
+  color:#fff;background:linear-gradient(135deg,#f59e0b,#d97706);
+  padding:3px 9px;border-radius:5px;margin-bottom:7px;letter-spacing:.08em;
+  box-shadow:0 2px 6px rgba(245,158,11,.4);
+}
+.npc-name-tag::before,.npc-name-tag::after{content:'◆';font-size:7px;opacity:.85;}
+.npc-text{font-size:12px;color:#dde6f0;line-height:1.7;margin-bottom:10px;white-space:pre-line;}
+.npc-progress{
+  display:flex;align-items:center;gap:6px;margin-bottom:8px;
+}
+.npc-progress-dots{display:flex;gap:4px;}
+.npc-progress-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .2s;}
+.npc-progress-dot.active{background:#a78bfa;}
+.npc-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.npc-next-btn{
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;
+  border-radius:8px;padding:7px 16px;font-size:11px;font-weight:700;
+  cursor:pointer;font-family:inherit;transition:all .15s;
+  box-shadow:0 2px 8px rgba(99,102,241,.4);
+}
+.npc-next-btn:hover{opacity:.9;transform:translateY(-1px);}
+.npc-next-btn:active{transform:translateY(0);}
+.npc-dismiss-btn{background:none;border:none;color:rgba(255,255,255,.35);font-size:10px;cursor:pointer;padding:4px;transition:color .15s;}
+.npc-dismiss-btn:hover{color:rgba(255,255,255,.65);}
+.npc-arrow{
+  position:absolute;bottom:-9px;right:22px;width:0;height:0;
+  border-left:9px solid transparent;border-right:9px solid transparent;
+  border-top:9px solid rgba(12,12,22,.93);
+}
+body[data-theme="light"] .npc-bubble{
+  background:rgba(255,255,255,.96);border-color:rgba(124,58,237,.25);
+  box-shadow:0 8px 32px rgba(0,0,0,.14);
+}
+body[data-theme="light"] .npc-text{color:var(--text);}
+body[data-theme="light"] .npc-arrow{border-top-color:rgba(255,255,255,.96);}
+@media (min-width:601px){
+  .npc-guide{bottom:calc(20px + env(safe-area-inset-bottom,0px));}
+}
+
+/* ════ ごほうびショップ ════ */
+.shop-tabs{display:flex;gap:6px;margin-bottom:14px;}
+.shop-tab{flex:1;padding:8px 6px;border:1px solid var(--border);border-radius:8px;background:var(--panel2);color:var(--muted);font-size:11px;cursor:pointer;text-align:center;transition:all .15s;font-family:inherit;}
+.shop-tab.active{background:rgba(140,198,63,.12);border-color:var(--accent);color:var(--accent2);font-weight:700;}
+.reward-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;transition:all .15s;}
+.reward-item:hover{border-color:var(--accent);}
+.reward-item-icon{font-size:22px;flex-shrink:0;}
+.reward-item-info{flex:1;min-width:0;}
+.reward-item-name{font-size:13px;font-weight:700;color:var(--text);}
+.reward-item-desc{font-size:10px;color:var(--muted);}
+.reward-buy-btn{font-family:'Share Tech Mono',monospace;font-size:11px;color:#c9a84c;border:1px solid rgba(201,168,76,.4);padding:6px 12px;border-radius:8px;background:rgba(201,168,76,.08);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .15s;}
+.reward-buy-btn:hover{background:rgba(201,168,76,.18);}
+.reward-buy-btn:disabled{opacity:.4;cursor:not-allowed;}
+.reward-add-form{display:flex;gap:6px;margin-top:10px;}
+.reward-add-input{flex:1;background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:12px;color:var(--text);font-family:inherit;}
+.reward-add-price{width:64px;background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:8px;font-size:12px;color:var(--text);font-family:'Share Tech Mono',monospace;text-align:center;}
+.reward-add-btn{background:var(--accent);color:#fff;border:none;border-radius:6px;padding:8px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;}
+
 /* STATUS ミニ試験カウントダウン */
 .status-exam-mini{
   display:grid;grid-template-columns:1fr;gap:8px;width:100%;margin-bottom:10px;
@@ -4053,9 +4348,16 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 .char-class-sprite{width:72px;height:72px;object-fit:contain;image-rendering:pixelated;display:block;margin:0 auto 6px;}
 .char-select-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
 .char-select-desc{font-size:10px;color:var(--muted);}
-.char-preview-wrap{text-align:center;margin:8px 0 20px;background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;}
-.char-preview-wrap img{width:128px;height:128px;object-fit:contain;image-rendering:pixelated;}
-.char-preview-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;color:var(--muted);margin-top:8px;}
+.char-builder-stage{background:#181720;border-radius:18px;padding:20px 16px;margin-bottom:14px;position:relative;overflow:hidden;}
+.char-builder-stage::before{content:'';position:absolute;left:50%;top:70px;width:260px;height:90px;transform:translateX(-50%);background:linear-gradient(#bde4ff 0 22%,#6fcf7a 22% 100%);clip-path:polygon(8% 18%,92% 12%,88% 82%,16% 88%);opacity:.86;}
+.char-builder-guide{position:relative;background:#111016;border-radius:16px;padding:14px 16px;margin-top:12px;color:#fff;text-align:left;font-size:13px;line-height:1.7;}
+.char-builder-guide-name{display:inline-block;background:#c8791d;color:#fff;border-radius:6px;padding:3px 14px;font-weight:700;margin-bottom:6px;}
+.char-preview-wrap{text-align:center;margin:8px 0 20px;background:transparent;border:none;border-radius:0;padding:0;position:relative;z-index:1;}
+.char-preview-wrap img{width:136px;height:136px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 14px 0 rgba(0,0,0,.18));}
+.char-preview-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.74);margin-top:8px;}
+.char-custom-tabs{display:flex;justify-content:space-around;gap:8px;margin:12px -16px -20px;padding:12px 12px 16px;background:#432579;color:rgba(255,255,255,.58);}
+.char-custom-tab{flex:1;text-align:center;font-size:11px;font-weight:700;}
+.char-custom-tab.active{color:#fff;}
 /* キャラスプライト（ダッシュボードカード内） */
 .char-sprite-disp{width:64px;height:64px;object-fit:contain;image-rendering:pixelated;display:none;}
 /* タイマー内ヒーロースプライト */
@@ -4159,46 +4461,42 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
 
 <!-- AUTH SCREEN -->
 <div class="screen active" id="screen-auth">
+  <div class="onboard-hero">
+    <div class="onboard-card">
+      <div class="onboard-content">
+        <div class="onboard-logo">Study Quest</div>
+        <div class="onboard-title">資格合格を、<br>冒険に変えよう</div>
+        <div class="onboard-pixels">
+          <img src="sprites/hero-male-mage-normal.png" alt="">
+          <img src="sprites/boss-dragon.png" alt="">
+          <img src="sprites/hero-female-warrior-normal.png" alt="">
+        </div>
+        <div class="onboard-copy">勉強時間でEXPを獲得し、今日のクエストを進める。ひとりの記録を、続けたくなるRPGへ。</div>
+        <div class="onboard-dots"><span class="onboard-dot active"></span><span class="onboard-dot"></span><span class="onboard-dot"></span></div>
+        <button class="onboard-btn" onclick="showAuthLogin()">はじめましょう</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH LOGIN SCREEN -->
+<div class="screen" id="screen-auth-login">
   <div class="auth-inner">
     <div class="logo-area">
       <div class="logo-en">Shikaku Quest</div>
       <div class="logo-jp">⚔ スタディクエスト ⚔</div>
-    </div>
-    <div class="lp-hero">
-      <div class="lp-tagline">資格合格を、<br>RPGの冒険に変える。</div>
-      <div class="lp-sub">毎日の勉強をゲームにして、継続を習慣にする学習アプリ</div>
-      <div class="lp-features">
-        <div class="lp-feat">
-          <span class="lp-feat-icon">⚔</span>
-          <span class="lp-feat-text"><b>タイマーで攻撃</b>勉強がゲームになる</span>
-        </div>
-        <div class="lp-feat">
-          <span class="lp-feat-icon">⬆</span>
-          <span class="lp-feat-text"><b>レベルアップ</b>成長が目に見える</span>
-        </div>
-        <div class="lp-feat">
-          <span class="lp-feat-icon">📅</span>
-          <span class="lp-feat-text"><b>試験日管理</b>合格まで逆算できる</span>
-        </div>
-      </div>
     </div>
     <div class="auth-card">
       <div class="auth-title">ADVENTURER LOGIN</div>
       <div class="auth-sub">Googleアカウントでログインすると<br>ランキングへの参加・データのクラウド同期ができます</div>
       <button class="google-btn" onclick="signInWithGoogle()">
         <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z"/><path fill="#34A853" d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z"/><path fill="#FBBC05" d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z"/><path fill="#EA4335" d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z"/></svg>
-        Googleでログイン
+        Googleで続行
       </button>
-
-      <div class="auth-note">※ ログイン情報はランキング表示にのみ使用されます</div>
-
+      <div class="auth-note">※ ログイン情報はランキング表示と同期に使用されます</div>
       <div class="auth-divider"><span>または</span></div>
-      <button class="guest-btn" onclick="continueAsGuest()">
-        👤 ゲストとして続ける（ランキング非参加）
-      </button>
+      <button class="guest-btn" onclick="continueAsGuest()">ゲストとして続ける</button>
     </div>
-
-    <!-- 最新アップデート -->
     <div id="lpNewsSection" style="margin-top:20px;width:100%;max-width:360px;"></div>
   </div>
 </div>
@@ -4301,9 +4599,20 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       </div>
     </div>
     <!-- プレビュー -->
-    <div class="char-preview-wrap">
-      <img id="charPreviewImg" src="sprites/hero-male-normal.png" alt="キャラクタープレビュー" onerror="this.style.display='none'">
-      <div class="char-preview-label" id="charPreviewLabel">男性 / 戦士</div>
+    <div class="char-builder-stage">
+      <div class="char-preview-wrap">
+        <img id="charPreviewImg" src="sprites/hero-male-normal.png" alt="キャラクタープレビュー" onerror="this.style.display='none'">
+        <div class="char-preview-label" id="charPreviewLabel">男性 / 戦士</div>
+      </div>
+      <div class="char-builder-guide">
+        <div class="char-builder-guide-name">若葉</div>
+        ようこそ。どの姿で合格への旅に出ますか？あとからプロフィールで変更できます。
+      </div>
+      <div class="char-custom-tabs">
+        <div class="char-custom-tab active">性別</div>
+        <div class="char-custom-tab">クラス</div>
+        <div class="char-custom-tab">装備</div>
+      </div>
     </div>
     <button class="step-btn" onclick="finishCharSelect()">◆ この冒険者で始める ◆</button>
     <button class="step-btn-ghost" onclick="showScreen('screen-subj')">← 前のステップに戻る</button>
@@ -4466,39 +4775,43 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
     <button class="user-bar-btn" onclick="signOut()">ログアウト</button>
   </div>
 
-  <!-- CHAR CARD (コンパクト版) -->
-  <div class="char-card char-card-compact">
-    <div class="char-compact-row">
+  <!-- CHAR CARD (RPG HUD) -->
+  <div class="char-card char-card-rpg">
+    <div class="rpg-hud">
       <div class="char-avatar char-avatar-sm">
         <img id="charSpriteDisp" class="char-sprite-disp" src="" alt="キャラクター" onerror="this.style.display='none'">
         <span id="avatarEmoji">📚</span>
         <div class="level-badge">Lv.<span id="levelNum">1</span></div>
       </div>
-      <div class="char-compact-info">
-        <div class="char-compact-top">
-          <span class="char-name-disp" id="charNameDisp" style="font-size:16px;">—</span>
+      <div class="rpg-hud-bars">
+        <div class="rpg-hud-name" id="charNameDisp">—</div>
+        <div class="rpg-hud-sub">
+          <span class="rpg-hud-title" id="charTitleText">見習い冒険者</span>
           <span class="streak-badge" id="streakBadge">🔥 0日連続</span>
-          <span class="gold-badge" id="goldBadge" onclick="openShop()" style="cursor:pointer;">💰 0G</span>
-          <button class="shop-btn" onclick="openShop()">🛒 ショップ</button>
         </div>
-        <div class="char-compact-sub">
-          <span class="char-title-text" id="charTitleText" style="font-size:11px;">見習い冒険者</span>
-          <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--accent2);margin-left:8px;" id="overallLevelDisp">総合Lv.1</span>
-          <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-left:8px;" id="totalHoursDisp">0h</span>
-          <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);margin-left:8px;" id="questCountDisp">0 quests</span>
+        <div class="rpg-bar-row">
+          <span class="rpg-bar-icon">❤</span>
+          <div class="rpg-bar-track hp"><div class="rpg-bar-fill" id="hpFill" style="width:100%"></div></div>
+          <span class="rpg-bar-num" id="hpNumbers">50 / 50</span>
         </div>
-        <div class="exp-header" style="margin-top:6px;margin-bottom:3px;">
-          <span class="exp-label">EXP</span>
-          <span class="exp-numbers" id="expNumbers" style="font-size:10px;">Lv1 → Lv2</span>
+        <div class="rpg-bar-row">
+          <span class="rpg-bar-icon">⭐</span>
+          <div class="rpg-bar-track exp"><div class="rpg-bar-fill" id="expFill" style="width:0%"></div></div>
+          <span class="rpg-bar-num" id="expNumbers">0 / 25</span>
         </div>
-        <div class="exp-track" style="height:8px;">
-          <div class="exp-fill" id="expFill" style="width:0%"></div>
+        <div class="rpg-bar-row" id="mpBarRow">
+          <span class="rpg-bar-icon">💎</span>
+          <div class="rpg-bar-track mp" id="mpBarTrack" style="display:none;"><div class="rpg-bar-fill" id="mpFill" style="width:0%"></div></div>
+          <span class="rpg-bar-locked" id="mpLocked">Lv.10 で解放</span>
+          <span class="rpg-bar-num" id="mpNumbers" style="display:none;">0 / 50</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--muted);margin-top:2px;">
-          <span>Lv.1</span>
-          <span class="avg-mark" style="color:#7cff6e;">▲ 平均（Lv.75）</span>
+        <div class="rpg-hud-currency">
+          <span class="rpg-coin" id="goldBadge" onclick="openShop('rewards')">💰 <span id="goldAmount">0</span>G</span>
+          <button class="rpg-shop-btn" onclick="openShop()">🛒 ショップ</button>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--muted);margin-left:auto;" id="overallLevelDisp">総合Lv.1</span>
           <span style="display:none;" id="levelDispMeta"></span>
-          <span class="max-mark">Lv.100</span>
+          <span style="display:none;" id="totalHoursDisp"></span>
+          <span style="display:none;" id="questCountDisp"></span>
         </div>
         <!-- HP バー -->
         <div class="hp-system-wrap" id="hpSystemWrap">
@@ -4546,6 +4859,8 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
         ⚔️ パーティーレイドを始める
       </button>
     </div>
+    <!-- 初心者チュートリアルクエスト -->
+    <div id="tutorialQuestCard" style="grid-column:1/-1;display:none;"></div>
     <!-- 初回3日間チャレンジバナー -->
     <div id="onboardingBanner" style="grid-column:1/-1;display:none;"></div>
     <!-- 今日のクエストバナー（全幅） -->
@@ -4721,6 +5036,17 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <!-- ── 手動入力 ── -->
       <div id="mrecPane-manual" class="mrec-pane">
         <div class="mrec-form-scroll">
+          <div class="quick-log-card">
+            <div class="quick-log-label">ONE LINE QUEST LOG</div>
+            <div class="quick-log-row">
+              <input id="mrecQuickText" class="quick-log-input" type="text"
+                placeholder="例：今日は憲法を90分 / 民法 1時間30分"
+                maxlength="120" autocomplete="off"
+                onkeydown="if(event.key==='Enter'){quickLogFromMrec();}">
+              <button class="quick-log-btn" type="button" onclick="quickLogFromMrec()">一言で記録</button>
+            </div>
+            <div class="quick-log-status" id="mrecQuickStatus">時間と科目を読み取り、すぐ記録します。</div>
+          </div>
           <div class="mrec-row">
             <span class="mrec-row-icon"><i class="fa-solid fa-calendar-days nav-icon"></i></span>
             <span class="mrec-row-label">日付</span>
@@ -5448,6 +5774,24 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
       <button class="prof-quick-btn primary" onclick="switchTab('score');openAchieveModal()">📣 達成報告を投稿</button>
       <button class="prof-quick-btn secondary" onclick="openProfileQRModal()">📲 QRをシェア</button>
     </div>
+    <div class="adventure-pass-card" id="adventurePassCard">
+      <div class="adventure-pass-head">
+        <div>
+          <div class="adventure-pass-kicker">ADVENTURE PASS</div>
+          <div class="adventure-pass-title">冒険パス</div>
+        </div>
+        <div class="adventure-pass-price">月480円</div>
+      </div>
+      <div class="adventure-pass-desc">試験日から逆算して、今日やるべきクエストを迷わず決めるためのプレミアムプラン。</div>
+      <div class="adventure-pass-features">
+        <div class="adventure-pass-feature">週間クエスト自動生成</div>
+        <div class="adventure-pass-feature">苦手科目アラート</div>
+        <div class="adventure-pass-feature">月次レポート</div>
+        <div class="adventure-pass-feature">複数資格の本格管理</div>
+      </div>
+      <button class="adventure-pass-btn" onclick="openAdventurePassModal()">冒険パスを見る</button>
+      <div class="adventure-pass-status" id="adventurePassStatus"></div>
+    </div>
     <div style="margin-top:10px;text-align:center;display:flex;gap:8px;">
       <button class="change-job-btn" onclick="changeJob()" style="flex:1;">⚙ 資格・目標を設定</button>
       <button class="change-job-btn" onclick="openCharSelect(true)" style="flex:1;">🧙 キャラ変更</button>
@@ -5936,14 +6280,74 @@ body[data-theme="dark"] { --hm0:#161b22; --hm1:#0e4429; --hm2:#006d32; --hm3:#26
   </div>
 </div>
 
+<!-- NPCガイド -->
+<div class="npc-guide hidden" id="npcGuide">
+  <button class="npc-avatar-btn" id="npcAvatarBtn" onclick="toggleNpcBubble()" aria-label="ガイドを開く">
+    <img class="npc-avatar-img" src="sprites/hero-female-mage-normal.png" alt="賢者ルーン" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=&quot;font-size:42px;line-height:1;display:block;text-align:center&quot;>🧙‍♀️</span>')">
+    <span class="npc-unread-dot" id="npcUnreadDot"></span>
+  </button>
+  <div class="npc-bubble" id="npcBubble">
+    <div class="npc-name-tag" id="npcNameTag">賢者ルーン</div>
+    <div class="npc-text" id="npcText"></div>
+    <div class="npc-progress" id="npcProgress" style="display:none;">
+      <div class="npc-progress-dots" id="npcProgressDots"></div>
+    </div>
+    <div class="npc-actions">
+      <button class="npc-dismiss-btn" onclick="dismissNpcGuide()">今日は表示しない</button>
+      <button class="npc-next-btn" id="npcNextBtn" onclick="advanceNpcDialogue()">次へ ▼</button>
+    </div>
+    <div class="npc-arrow"></div>
+  </div>
+</div>
+
 <!-- LEVEL UP -->
 <!-- ショップモーダル -->
 <div class="shop-overlay" id="shopOverlay" onclick="closeShop(event)">
   <div class="shop-modal">
     <button class="shop-close-btn" onclick="closeShop()">✕</button>
-    <div class="shop-modal-title">🛒 アバターショップ</div>
+    <div class="shop-modal-title">🛒 ショップ</div>
     <div class="shop-gold-disp" id="shopGoldDisp">💰 0G</div>
+    <div class="shop-tabs">
+      <button class="shop-tab active" id="shopTabAvatar" onclick="switchShopTab('avatar')">👤 アバター</button>
+      <button class="shop-tab" id="shopTabRewards" onclick="switchShopTab('rewards')">🎁 ごほうび</button>
+    </div>
     <div id="shopContent"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="adventurePassModal" onclick="if(event.target===this)closeAdventurePassModal()">
+  <div class="modal-box" style="max-width:460px;">
+    <div class="modal-title">ADVENTURE PASS</div>
+    <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px;">冒険パス</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:14px;">
+      記録を増やすためではなく、合格までの迷いを減らすためのプランです。
+    </div>
+    <div class="pass-plan-grid">
+      <div class="pass-plan-card" onclick="startAdventurePassCheckout('monthly')">
+        <div class="pass-plan-name">月額プラン <span>月480円</span></div>
+        <div class="pass-plan-price">480円 / 月</div>
+        <div class="pass-plan-note">まず試したい人向け。いつでも解約できる想定です。</div>
+      </div>
+      <div class="pass-plan-card recommended" onclick="startAdventurePassCheckout('yearly')">
+        <div class="pass-plan-name">年間プラン <span>おすすめ</span></div>
+        <div class="pass-plan-price">4,800円 / 年</div>
+        <div class="pass-plan-note">2か月分お得。資格試験まで腰を据えて進める人向けです。</div>
+      </div>
+    </div>
+    <div style="background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:12px;">
+      <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:8px;">含まれる予定の機能</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.8;">
+        ・週間クエスト自動生成<br>
+        ・苦手科目アラート<br>
+        ・月次レポート<br>
+        ・複数資格の本格管理<br>
+        ・iPhoneショートカット導線の強化
+      </div>
+    </div>
+    <div id="adventurePassModalMsg" style="font-size:11px;color:var(--muted);line-height:1.6;min-height:18px;"></div>
+    <div class="modal-btns" style="margin-top:12px;">
+      <button class="modal-btn" onclick="closeAdventurePassModal()">閉じる</button>
+    </div>
   </div>
 </div>
 
@@ -7635,6 +8039,9 @@ async function signOut(){
   document.getElementById('userBar').style.display='none';
   showScreen('screen-auth');
 }
+function showAuthLogin(){
+  showScreen('screen-auth-login');
+}
 async function syncToCloud(){
   if(!currentUser || isGuest) return;
   let cloudProfileInfoForBackup = {};
@@ -8923,6 +9330,7 @@ function initDashboard(){
   setTimeout(renderDuelCard, 1000);
   // カウントダウンをリアルタイム更新（60秒ごと）
   setInterval(renderDuelCard, 60000);
+  setTimeout(handleLaunchParams, 500);
 }
 function renderAll(){
   const totalSmins=studyMins(sessions);
@@ -8959,14 +9367,26 @@ function renderAll(){
   const shopTitle = char.equippedTitle ? SHOP_ITEMS.titles.find(t=>t.id===char.equippedTitle) : null;
   document.getElementById('charTitleText').textContent = shopTitle ? '「'+shopTitle.name+'」' : ti.title;
   document.getElementById('streakBadge').textContent='🔥 '+char.streak+'日連続';
-  const goldEl=document.getElementById('goldBadge'); if(goldEl) goldEl.textContent='💰 '+(char.gold||0)+'G';
+  updateGoldDisplay();
   document.getElementById('levelDispMeta').textContent=lp.level+' / 100';
   document.getElementById('overallLevelDisp').textContent=`総合Lv.${overallLv}`;
-  document.getElementById('totalHoursDisp').textContent=Math.floor(totalSmins/60)+'h';
-  document.getElementById('questCountDisp').textContent=sessions.length;
+  const totalHoursEl=document.getElementById('totalHoursDisp');
+  if(totalHoursEl) totalHoursEl.textContent=Math.floor(totalSmins/60)+'h';
+  const questCountEl=document.getElementById('questCountDisp');
+  if(questCountEl) questCountEl.textContent=sessions.length;
   const barPct=lp.level>=100?100:Math.round(lp.pctInLevel*100);
   document.getElementById('expFill').style.width=barPct+'%';
-  document.getElementById('expNumbers').textContent=lp.level>=100?'⭐ MAX LEVEL REACHED ⭐':`Lv${lp.level} → Lv${lp.level+1} まで あと ${formatHM(lp.minsForNext)}`;
+  const expNumEl=document.getElementById('expNumbers');
+  if(expNumEl){
+    if(lp.level>=100) expNumEl.textContent='MAX';
+    else {
+      const expTotal=lp.pctInLevel>=1?lp.minsForNext:Math.round(lp.minsForNext/(1-lp.pctInLevel||1));
+      const expCurrent=Math.round(expTotal*lp.pctInLevel);
+      expNumEl.textContent=`${expCurrent} / ${expTotal}`;
+    }
+  }
+  renderRpgHp();
+  renderMpBar(lp.level);
   renderOverallProgress(lp.smins,subjs);
   renderRadar(attrs);renderAttrs(attrs);
   renderDqStatusCard();
@@ -8977,7 +9397,9 @@ function renderAll(){
   renderRaidBoss();
   renderPaceDiag();
   renderDailyMissions();
+  renderTutorialQuestCard();
   renderOnboardingBanner();
+  renderNpcGuide();
   renderResumeButton();
   renderPartyRaidCard();
   renderTodayQuestBanner();
@@ -9280,6 +9702,7 @@ function showScreen(id){
   const mobileTabBar=document.getElementById('mobileTabBar');
   if(mobileTabBar) mobileTabBar.style.display=isDash?'':'none';
   updateSetupReturnButtons(id);
+  if(typeof renderNpcGuide==='function') renderNpcGuide();
 }
 function switchTab(tab){
   if(tab === 'boss') tab = 'score';
@@ -9314,6 +9737,49 @@ function switchTab(tab){
   document.querySelectorAll('.m-tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   const activeBtn=document.getElementById('tab-'+tab);
   if(activeBtn) activeBtn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+
+let launchParamsHandled = false;
+function handleLaunchParams(){
+  if(launchParamsHandled) return;
+  const params = new URLSearchParams(location.search || '');
+  const tab = params.get('tab');
+  const quickMins = parseInt(params.get('quickRecord') || '', 10);
+  const quickLog = params.get('quickLog');
+  const hasAction = tab || quickMins || quickLog;
+  if(!hasAction) return;
+  launchParamsHandled = true;
+
+  if(tab) switchTab(tab);
+  if(quickMins > 0){
+    switchTab('quest');
+    quickRecord(quickMins);
+  }
+  if(quickLog === '1'){
+    openQuickLogPanel();
+  }
+
+  params.delete('tab');
+  params.delete('quickRecord');
+  params.delete('quickLog');
+  const qs = params.toString();
+  const cleanUrl = location.pathname + (qs ? '?' + qs : '') + location.hash;
+  history.replaceState(null, '', cleanUrl);
+}
+
+function openQuickLogPanel(){
+  switchTab('quest');
+  loadMaterials && loadMaterials();
+  document.getElementById('panel-quest')?.classList.add('show-timer');
+  const mat = (materials || [])[0];
+  initMrecUI(mat?.id || '');
+  switchMrecTab('manual');
+  setTimeout(()=>{
+    const input = document.getElementById('mrecQuickText');
+    input?.focus();
+    input?.scrollIntoView({behavior:'smooth', block:'center'});
+  }, 120);
+  if(window.innerWidth <= 600) _lockScreenScroll();
 }
 function launchConfetti(){
   const canvas = document.createElement('canvas');
@@ -9954,8 +10420,7 @@ function triggerRpgEvent(ev){
   if(ev.effect?.gold){
     char.gold = (char.gold || 0) + ev.effect.gold;
     saveAll();
-    const goldEl = document.getElementById('goldBadge');
-    if(goldEl) goldEl.textContent = '💰 ' + char.gold + 'G';
+    updateGoldDisplay();
     spawnDmgNumber(`+${ev.effect.gold}G`, '#C9A84C', true);
   }
   if(ev.effect?.exp){
@@ -10120,8 +10585,7 @@ function openChest(idx){
     }
   });
   char.gold=(char.gold||0)+reward;
-  const goldEl=document.getElementById('goldBadge');
-  if(goldEl)goldEl.textContent='💰 '+char.gold+'G';
+  updateGoldDisplay();
   saveAll();
   spawnDmgNumber(`🎁 +${reward}G`, '#FFD700', true);
   setTimeout(()=>{const cl=document.getElementById('luckyChestClose');if(cl)cl.classList.add('show');},1000);
@@ -13038,8 +13502,7 @@ function processDuelResult(duel){
   addToDuelHistory(duel, doneMins);
   if(gold>0){
     char.gold=(char.gold||0)+gold;
-    const goldEl=document.getElementById('goldBadge');
-    if(goldEl) goldEl.textContent='💰 '+char.gold+'G';
+    updateGoldDisplay();
     saveAll();
     const msgs={win:'⚔️ 昨日の決闘 勝利！ +100G',lose:'⚔️ 昨日の決闘 敗北 +20G'};
     setTimeout(()=>spawnDmgNumber(msgs[result]||'',result==='win'?'#FFD700':'#C9A84C',true),800);
@@ -13998,6 +14461,271 @@ function renderOnboardingBanner(){
   </div>`;
 }
 
+/* ════════════════════════════════════════
+   RPG HUD — HP / MP
+════════════════════════════════════════ */
+function computeRpgHp(){
+  const maxHp = 50;
+  const todayMins = sessions.filter(s=>s.date===getTodayStr()&&isStudyType(s)).reduce((a,s)=>a+s.amount,0);
+  const streak = char.streak||0;
+  let hp = 28 + Math.min(streak*3, 14);
+  if(todayMins>=30) hp = maxHp;
+  else if(todayMins>0) hp += Math.min(12, Math.floor(todayMins/5));
+  const hour = new Date().getHours();
+  if(todayMins===0 && hour>=21 && streak>0) hp = Math.max(8, hp-18);
+  else if(todayMins===0 && hour>=18 && streak>0) hp = Math.max(15, hp-8);
+  return { hp: Math.min(maxHp, hp), maxHp };
+}
+function renderRpgHp(){
+  const {hp,maxHp} = computeRpgHp();
+  const fill = document.getElementById('hpFill');
+  const num = document.getElementById('hpNumbers');
+  if(fill) fill.style.width = Math.round(hp/maxHp*100)+'%';
+  if(num) num.textContent = hp+' / '+maxHp;
+}
+function renderMpBar(level){
+  const locked = document.getElementById('mpLocked');
+  const track = document.getElementById('mpBarTrack');
+  const fill = document.getElementById('mpFill');
+  const num = document.getElementById('mpNumbers');
+  if(!locked) return;
+  if(level < 10){
+    locked.style.display='';
+    if(track) track.style.display='none';
+    if(num) num.style.display='none';
+  } else {
+    locked.style.display='none';
+    if(track) track.style.display='';
+    if(num) num.style.display='';
+    const maxMp = 50;
+    const mp = Math.min(maxMp, Math.round((char.streak||0)*2 + sessions.filter(s=>isStudyType(s)).length*0.5));
+    if(fill) fill.style.width = Math.round(mp/maxMp*100)+'%';
+    if(num) num.textContent = mp+' / '+maxMp;
+  }
+}
+
+/* ════════════════════════════════════════
+   初心者チュートリアルクエスト
+════════════════════════════════════════ */
+const TUTORIAL_QUESTS = [
+  { id:'select_job', icon:'🎯', title:'資格を選ぶ', desc:'冒険の目的地（資格・目標）を決めよう', action:"buildJobGrid();showScreen('screen-job')" },
+  { id:'first_session', icon:'⏱', title:'初めての記録', desc:'タイマーで勉強時間を記録しよう', action:"switchTab('quest')" },
+  { id:'weekly_goal', icon:'📊', title:'週間目標を設定', desc:'レポートタブで今週の目標時間を決めよう', action:"switchTab('report')" },
+  { id:'daily_mission', icon:'⚔', title:'デイリークエスト達成', desc:'今日のミッションを1つクリアしよう', action:"switchTab('status')" },
+  { id:'reward_shop', icon:'🎁', title:'ごほうびを設定', desc:'ショップで自分へのご褒美を登録しよう', action:"openShop('rewards')" },
+];
+const TUTORIAL_REWARD = 100;
+function checkTutorialQuest(id){
+  switch(id){
+    case 'select_job': return selectedJobIds.length>0;
+    case 'first_session': return sessions.length>0;
+    case 'weekly_goal': return getThisWeekGoalHours()>0;
+    case 'daily_mission': {
+      const ms = generateDailyMissions(getTodayStr());
+      const ts = sessions.filter(s=>s.date===getTodayStr());
+      return ms.some(m=>checkMissionDone(m, ts));
+    }
+    case 'reward_shop': return (char.customRewards||[]).length>0 || localStorage.getItem('sq2_tutorial_reward_set');
+    default: return false;
+  }
+}
+function renderTutorialQuestCard(){
+  const el = document.getElementById('tutorialQuestCard');
+  if(!el) return;
+  const results = TUTORIAL_QUESTS.map(q=>({...q, done:checkTutorialQuest(q.id)}));
+  const doneCnt = results.filter(q=>q.done).length;
+  const allDone = doneCnt === TUTORIAL_QUESTS.length;
+
+  if(allDone){
+    if(!localStorage.getItem('sq2_tutorial_complete')){
+      localStorage.setItem('sq2_tutorial_complete','1');
+      if(!char.gold) char.gold=0;
+      char.gold += TUTORIAL_REWARD;
+      saveAll();
+      spawnDmgNumber('🎉 初心者クエスト全達成！ +'+TUTORIAL_REWARD+'G', '#c9a84c', true);
+    }
+    el.style.display='none';
+    return;
+  }
+  el.style.display='';
+  const pct = Math.round(doneCnt/TUTORIAL_QUESTS.length*100);
+  el.innerHTML = `<div class="tq-card"><div class="tq-card-inner">
+    <div class="tq-head">
+      <div class="tq-title">✨ 初心者の目標</div>
+      <div class="tq-reward">💰 ${TUTORIAL_REWARD}G</div>
+    </div>
+    <div class="tq-list">
+      ${results.map(q=>`
+      <div class="tq-item${q.done?' done':''}" ${!q.done&&q.action?`onclick="${q.action}"`:''}>
+        <div class="tq-item-icon">${q.icon}</div>
+        <div class="tq-item-body">
+          <div class="tq-item-title">${escHtml(q.title)}</div>
+          <div class="tq-item-desc">${escHtml(q.desc)}</div>
+        </div>
+        <div class="tq-item-check">${q.done?'✅':q.action?'▶':'○'}</div>
+      </div>`).join('')}
+    </div>
+    <div class="tq-prog-label"><span>PROGRESS</span><span>${doneCnt} / ${TUTORIAL_QUESTS.length}</span></div>
+    <div class="tq-prog-track"><div class="tq-prog-fill" style="width:${pct}%"></div></div>
+  </div></div>`;
+}
+
+/* ════════════════════════════════════════
+   NPCガイド
+════════════════════════════════════════ */
+const NPC_DIALOGUES = [
+  { id:'welcome',
+    test:()=>!localStorage.getItem('sq2_npc_welcome'),
+    msg:'ようこそ、スタディクエストへ！\n我の名はルーン。合格への冒険を共に歩む賢者じゃ。\nさあ、冒険を始めようぞ！' },
+  { id:'no_job',
+    test:()=>selectedJobIds.length===0,
+    msg:'まずは「⚙ 資格・目標を設定」を\nタップせよ。目的地なき冒険は\n迷宮に迷い込むだけじゃ。' },
+  { id:'no_session',
+    test:()=>selectedJobIds.length>0&&sessions.length===0,
+    msg:'目的地は定まった！\n次は「記録」タブでタイマーを起動し、\n最初の修行を記録するのじゃ。' },
+  { id:'hp_low',
+    test:()=>{ try{ return computeRpgHp().hp < 15; }catch(e){ return false; } },
+    msg:'危ない！おぬしのHPが瀕死じゃ！\n今すぐ修行を記録して回復せよ。\nこのままでは倒れてしまうぞ…' },
+  { id:'no_study_today',
+    test:()=>{
+      const todayMins=sessions.filter(s=>s.date===getTodayStr()&&isStudyType(s)).reduce((a,s)=>a+s.amount,0);
+      return sessions.length>0 && todayMins===0 && new Date().getHours()>=15;
+    },
+    msg:'今日まだ修行しておらんぞ！\nストリークが途切れる前に、\n5分だけでも記録するのじゃ。' },
+  { id:'boss_danger',
+    test:()=>{
+      if(!bosses||!bosses.length) return false;
+      const b=bosses[0]; if(!b) return false;
+      const days=Math.ceil((new Date(b.deadline)-new Date())/(86400000));
+      const hpPct=(b.currentHp/b.maxHp)*100;
+      return days<=3 && hpPct>30;
+    },
+    msg:'ボスの討伐期限が迫っておる！\n残り3日以内じゃ。急ぎ修行を積み、\nボスを打ち倒すのじゃ！' },
+  { id:'streak_7',
+    test:()=>(char.streak||0)>=7 && !localStorage.getItem('sq2_npc_streak7_'+Math.floor((char.streak||0)/7)),
+    msg:(()=>{ const s=char.streak||0; return `見事じゃ！${s}日連続の修行！\nその不屈の意志、まさに真の冒険者。\nこのまま続けるのじゃ！`; }) },
+  { id:'streak_3',
+    test:()=>(char.streak||0)>=3 && (char.streak||0)<7,
+    msg:`${char.streak||0}日連続で修行を続けておるな！\n良い調子じゃ。7日連続で\n特別な称号が手に入るぞ。` },
+  { id:'no_goal',
+    test:()=>sessions.length>0 && typeof getThisWeekGoalHours==='function' && getThisWeekGoalHours()===0,
+    msg:'週間目標をまだ設定しておらん。\nレポートタブで目標を決めると、\n合格への道筋が見えてくるぞ。' },
+  { id:'tutorial',
+    test:()=>!localStorage.getItem('sq2_tutorial_complete'),
+    msg:'「初心者の目標」カードが\nあるじゃろう。順番にクリアすれば、\n100Gのボーナスが手に入るぞ！' },
+  { id:'shop_hint',
+    test:()=>(char.gold||0)>=50 && !localStorage.getItem('sq2_npc_shop_hint'),
+    msg:`ゴールドが${char.gold||0}枚も貯まっておるぞ！\nショップで自分へのごほうびを設定し、\nモチベーションを高めるのじゃ。` },
+  { id:'level_milestone',
+    test:()=>(char.level||1)>=5 && !localStorage.getItem('sq2_npc_lv5hint'),
+    msg:`Lv.${char.level||1}まで成長したな！\nアバターショップに新しい装備が\n解放されているかもしれんぞ。` },
+  { id:'morning',
+    test:()=>{ const h=new Date().getHours(); return h>=5&&h<10 && sessions.length>0; },
+    msg:'良い朝じゃ！朝の修行は\n集中力が高く、最も効率が良いぞ。\n今日も最高の一日にするのじゃ！' },
+  { id:'encourage',
+    test:()=>true,
+    msg:'小さな一歩の積み重ねが、\n合格という大きな扉を開ける鍵じゃ。\n今日も共に戦おうぞ！' },
+];
+let npcDialogueIndex = 0;
+let npcCurrentMessages = [];
+function getNpcDismissKey(){ return 'sq2_npc_dismiss_'+getTodayStr(); }
+
+function renderNpcGuide(){
+  const guide = document.getElementById('npcGuide');
+  if(!guide) return;
+  const screen = document.getElementById('screen-dash');
+  if(!screen || !screen.classList.contains('active')){
+    guide.classList.add('hidden');
+    return;
+  }
+  if(localStorage.getItem(getNpcDismissKey())){
+    guide.classList.remove('hidden');
+    guide.classList.add('minimized');
+    const dot = document.getElementById('npcUnreadDot');
+    if(dot) dot.style.display='none';
+    return;
+  }
+  npcCurrentMessages = NPC_DIALOGUES.filter(d=>d.test());
+  if(!npcCurrentMessages.length){
+    guide.classList.remove('hidden');
+    guide.classList.add('minimized');
+    const dot = document.getElementById('npcUnreadDot');
+    if(dot) dot.style.display='none';
+    return;
+  }
+  if(npcDialogueIndex >= npcCurrentMessages.length) npcDialogueIndex = 0;
+  guide.classList.remove('hidden');
+  guide.classList.remove('minimized');
+
+  const msg = npcCurrentMessages[npcDialogueIndex];
+  const textEl = document.getElementById('npcText');
+  const nextBtn = document.getElementById('npcNextBtn');
+  const progWrap = document.getElementById('npcProgress');
+  const progDots = document.getElementById('npcProgressDots');
+
+  // テキスト（msg.msgが関数の場合も評価）
+  const msgText = typeof msg.msg === 'function' ? msg.msg() : msg.msg;
+  if(textEl){
+    textEl.style.opacity='0';
+    setTimeout(()=>{ textEl.textContent=msgText; textEl.style.transition='opacity .25s'; textEl.style.opacity='1'; }, 80);
+  }
+
+  // ドットナビ（2件以上のとき表示）
+  if(progWrap && progDots){
+    if(npcCurrentMessages.length > 1){
+      progWrap.style.display='flex';
+      progDots.innerHTML = npcCurrentMessages.map((_,i)=>
+        `<div class="npc-progress-dot${i===npcDialogueIndex?' active':''}"></div>`
+      ).join('');
+    } else {
+      progWrap.style.display='none';
+    }
+  }
+
+  if(nextBtn) nextBtn.textContent = npcDialogueIndex < npcCurrentMessages.length-1 ? '次へ ▶' : '了解！';
+  if(msg.id==='welcome') localStorage.setItem('sq2_npc_welcome','1');
+  if(msg.id==='shop_hint') localStorage.setItem('sq2_npc_shop_hint','1');
+  if(msg.id==='level_milestone') localStorage.setItem('sq2_npc_lv5hint','1');
+  if(msg.id==='streak_7') localStorage.setItem('sq2_npc_streak7_'+Math.floor((char.streak||0)/7),'1');
+}
+
+function advanceNpcDialogue(){
+  if(npcDialogueIndex < npcCurrentMessages.length-1){
+    npcDialogueIndex++;
+    renderNpcGuide();
+  } else {
+    const guide = document.getElementById('npcGuide');
+    if(guide){ guide.classList.add('minimized'); }
+    const dot = document.getElementById('npcUnreadDot');
+    if(dot) dot.style.display='none';
+  }
+}
+
+function toggleNpcBubble(){
+  const guide = document.getElementById('npcGuide');
+  if(!guide) return;
+  if(guide.classList.contains('minimized')){
+    // アバタータップ時は dismiss を解除してメッセージを再表示
+    localStorage.removeItem(getNpcDismissKey());
+    guide.classList.remove('minimized');
+    guide.classList.remove('hidden');
+    npcDialogueIndex = 0;
+    renderNpcGuide();
+    const dot = document.getElementById('npcUnreadDot');
+    if(dot) dot.style.display='none';
+  } else {
+    guide.classList.add('minimized');
+  }
+}
+
+function dismissNpcGuide(){
+  localStorage.setItem(getNpcDismissKey(),'1');
+  const guide = document.getElementById('npcGuide');
+  if(guide){ guide.classList.add('minimized'); guide.classList.remove('hidden'); }
+  const dot = document.getElementById('npcUnreadDot');
+  if(dot) dot.style.display='none';
+}
+
 function showFirstSessionCelebration(){
   if(localStorage.getItem('sq_first_session_done')) return;
   localStorage.setItem('sq_first_session_done','1');
@@ -14267,8 +14995,7 @@ function renderDailyMissions(){
     char.gold += goldGained;
     setDmAwarded(dateStr, awarded);
     saveAll();
-    const goldEl = document.getElementById('goldBadge');
-    if(goldEl) goldEl.textContent = '💰 '+char.gold+'G';
+    updateGoldDisplay();
   }
 
   el.innerHTML = `<div class="dm-card">
@@ -14427,8 +15154,10 @@ function updateAllAvatarDisplays(){
   }
 }
 
-function openShop(){
+function openShop(tab){
   if(!char.unlockedItems) char.unlockedItems = [];
+  if(!char.customRewards) char.customRewards = [];
+  shopActiveTab = tab || shopActiveTab || 'avatar';
   renderShopContent();
   document.getElementById('shopOverlay').classList.add('show');
 }
@@ -14436,10 +15165,36 @@ function closeShop(e){
   if(e && e.target !== document.getElementById('shopOverlay')) return;
   document.getElementById('shopOverlay').classList.remove('show');
 }
+let shopActiveTab = 'avatar';
+function switchShopTab(tab){
+  shopActiveTab = tab;
+  renderShopContent();
+}
+
+const DEFAULT_REWARDS = [
+  { id:'rw_game30', icon:'🎮', name:'30分ゲーム', desc:'好きなゲームを30分', price:30 },
+  { id:'rw_sns15', icon:'📱', name:'SNS 15分', desc:'SNSを15分楽しむ', price:20 },
+  { id:'rw_snack', icon:'🍫', name:'お菓子タイム', desc:'好きなお菓子を食べる', price:40 },
+  { id:'rw_movie', icon:'🎬', name:'映画・動画1本', desc:'好きな映画や動画を1本', price:80 },
+  { id:'rw_cafe', icon:'☕', name:'カフェ休憩', desc:'カフェで1時間休憩', price:100 },
+  { id:'rw_buy', icon:'🛍', name:'欲しいもの購入', desc:'小さなご褒美を自分に', price:200 },
+];
+
+function getAllRewards(){
+  return [...DEFAULT_REWARDS, ...(char.customRewards||[])];
+}
 
 function renderShopContent(){
   const gold = char.gold || 0;
   document.getElementById('shopGoldDisp').textContent = '💰 ' + gold + 'G';
+  document.getElementById('shopTabAvatar').classList.toggle('active', shopActiveTab==='avatar');
+  document.getElementById('shopTabRewards').classList.toggle('active', shopActiveTab==='rewards');
+
+  if(shopActiveTab === 'rewards'){
+    renderShopRewards();
+    return;
+  }
+
   const unlocked = char.unlockedItems || [];
   const lv = char.level || 1;
 
@@ -14496,6 +15251,62 @@ function renderShopContent(){
     renderSection('👤 アバター絵文字', SHOP_ITEMS.avatars, 'avatars') +
     renderSection('🔵 アバター枠', SHOP_ITEMS.frames, 'frames') +
     renderSection('🏅 特別称号', SHOP_ITEMS.titles, 'titles');
+}
+
+function renderShopRewards(){
+  const gold = char.gold || 0;
+  const rewards = getAllRewards();
+  document.getElementById('shopContent').innerHTML = `
+    <div class="shop-section-title">自分へのごほうび — ゴールドで購入</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.6;">
+      勉強の成果をゴールドに変えて、自分へのご褒美と交換しましょう。
+    </div>
+    ${rewards.map(r=>`
+      <div class="reward-item">
+        <div class="reward-item-icon">${r.icon}</div>
+        <div class="reward-item-info">
+          <div class="reward-item-name">${escHtml(r.name)}</div>
+          <div class="reward-item-desc">${escHtml(r.desc||'')}</div>
+        </div>
+        <button class="reward-buy-btn" ${gold<r.price?'disabled':''} onclick="buyReward('${r.id}')">${r.price}G</button>
+      </div>`).join('')}
+    <div class="shop-section-title" style="margin-top:16px;">カスタムごほうびを追加</div>
+    <div class="reward-add-form">
+      <input class="reward-add-input" id="rewardNameInput" type="text" maxlength="30" placeholder="例：好きなラーメン">
+      <input class="reward-add-price" id="rewardPriceInput" type="number" min="10" max="999" value="50" placeholder="G">
+      <button class="reward-add-btn" onclick="addCustomReward()">追加</button>
+    </div>`;
+}
+
+function addCustomReward(){
+  const nameEl = document.getElementById('rewardNameInput');
+  const priceEl = document.getElementById('rewardPriceInput');
+  if(!nameEl||!priceEl) return;
+  const name = nameEl.value.trim();
+  const price = parseInt(priceEl.value)||50;
+  if(!name){ alert('ごほうびの名前を入力してください'); return; }
+  if(price<10){ alert('価格は10G以上にしてください'); return; }
+  if(!char.customRewards) char.customRewards = [];
+  char.customRewards.push({ id:'rw_custom_'+Date.now(), icon:'🎁', name, desc:'カスタムごほうび', price });
+  localStorage.setItem('sq2_tutorial_reward_set','1');
+  saveAll();
+  nameEl.value='';
+  renderShopContent();
+  renderTutorialQuestCard();
+}
+
+function buyReward(rewardId){
+  const reward = getAllRewards().find(r=>r.id===rewardId);
+  if(!reward) return;
+  if((char.gold||0)<reward.price){ alert('ゴールドが不足しています'); return; }
+  if(!confirm(`「${reward.name}」を ${reward.price}G で購入しますか？\n\n※自分へのご褒美として楽しみましょう！`)) return;
+  char.gold = (char.gold||0) - reward.price;
+  if(!char.purchasedRewards) char.purchasedRewards = [];
+  char.purchasedRewards.push({ id:reward.id, name:reward.name, date:getTodayStr(), price:reward.price });
+  saveAll();
+  renderAll();
+  renderShopContent();
+  spawnDmgNumber('🎁 '+reward.name+' をゲット！', '#c9a84c', true);
 }
 
 function shopAction(category, itemId, status){
@@ -14889,6 +15700,7 @@ function renderProfileTab(){
   const tagsEl = document.getElementById('profCardTags');
   if(tagsEl){
     const tags = [`現在Lv.${lp.level}`, `総合Lv.${overallLv}`];
+    if(isAdventurePassActive()) tags.push('冒険パス');
     if(profInfo.grade) tags.push(profInfo.grade);
     if(profInfo.pref)  tags.push(profInfo.pref);
     (selectedJobIds||[]).forEach(j=>{
@@ -14983,6 +15795,7 @@ function renderProfileTab(){
   // ── アカウント連携セクション ──
   renderLinkAccountSection();
   renderProfileOwnPostsSection();
+  renderAdventurePassCard();
 }
 
 async function renderProfileOwnPostsSection(){
@@ -15090,8 +15903,66 @@ async function linkGoogle(){
 
 /* ── プロフィール基本情報 localStorage ── */
 const PROF_INFO_KEY = 'sq2_profile_info';
+const ADVENTURE_PASS_KEY = 'sq2_adventure_pass';
+const ADVENTURE_PASS_CHECKOUT_URLS = {
+  monthly: '',
+  yearly: '',
+};
 function loadProfileInfo(){
   try{ const v=localStorage.getItem(PROF_INFO_KEY); return v?JSON.parse(v):{}; }catch{ return {}; }
+}
+function loadAdventurePass(){
+  try{ return JSON.parse(localStorage.getItem(ADVENTURE_PASS_KEY) || '{}'); }catch{ return {}; }
+}
+function saveAdventurePass(data){
+  try{ localStorage.setItem(ADVENTURE_PASS_KEY, JSON.stringify({...loadAdventurePass(), ...data, updatedAt:new Date().toISOString()})); }catch{}
+}
+function isAdventurePassActive(){
+  const pass = loadAdventurePass();
+  return pass.status === 'active';
+}
+function renderAdventurePassCard(){
+  const statusEl = document.getElementById('adventurePassStatus');
+  const card = document.getElementById('adventurePassCard');
+  if(!statusEl || !card) return;
+  const pass = loadAdventurePass();
+  const active = pass.status === 'active';
+  if(active){
+    card.style.borderColor = 'var(--accent)';
+    statusEl.textContent = `冒険パス有効：${pass.plan === 'yearly' ? '年間プラン' : '月額プラン'}`;
+    return;
+  }
+  if(pass.status === 'interested'){
+    statusEl.textContent = `${pass.plan === 'yearly' ? '年間プラン' : '月額プラン'}の開始希望を保存しました。決済準備ができたら案内できます。`;
+    return;
+  }
+  statusEl.textContent = 'Freeの記録機能はそのまま使えます。冒険パスは合格までの道筋を強化します。';
+}
+function openAdventurePassModal(){
+  renderAdventurePassCard();
+  const msg = document.getElementById('adventurePassModalMsg');
+  if(msg){
+    const pass = loadAdventurePass();
+    msg.textContent = pass.status === 'interested'
+      ? '開始希望は保存済みです。決済URLを設定すると、この画面から購入できます。'
+      : '現在は決済準備中です。選んだプランを保存して、リリース判断に使います。';
+  }
+  document.getElementById('adventurePassModal')?.classList.add('show');
+}
+function closeAdventurePassModal(){
+  document.getElementById('adventurePassModal')?.classList.remove('show');
+}
+function startAdventurePassCheckout(plan){
+  const url = ADVENTURE_PASS_CHECKOUT_URLS[plan];
+  if(url){
+    window.open(url, '_blank');
+    return;
+  }
+  saveAdventurePass({status:'interested', plan});
+  renderAdventurePassCard();
+  const msg = document.getElementById('adventurePassModalMsg');
+  if(msg) msg.textContent = `${plan === 'yearly' ? '年間プラン' : '月額プラン'}の開始希望を保存しました。`;
+  if(typeof gtag === 'function') gtag('event','adventure_pass_interest',{plan});
 }
 /* 学年係数が適用されるジョブ */
 const GRADE_WEIGHTED_JOBS = ['highschool','univ','eiken','kanken','toeic'];
@@ -18183,6 +19054,16 @@ function avatarColor(name){
   return AVATAR_COLORS[h % AVATAR_COLORS.length];
 }
 
+function updateGoldDisplay(){
+  const amt = char.gold||0;
+  const goldAmtEl = document.getElementById('goldAmount');
+  if(goldAmtEl) goldAmtEl.textContent = amt;
+  else {
+    const goldEl = document.getElementById('goldBadge');
+    if(goldEl) goldEl.innerHTML = '💰 <span id="goldAmount">'+amt+'</span>G';
+  }
+}
+
 function escHtml(s){
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -18898,8 +19779,7 @@ async function pinPost(postId){
 
   char.gold = gold - PIN_GOLD_COST;
   saveAll();
-  const goldEl = document.getElementById('goldBadge');
-  if(goldEl) goldEl.textContent = '💰 ' + char.gold + 'G';
+  updateGoldDisplay();
 
   const expiresAt = new Date(Date.now() + PIN_DURATION_HOURS * 3600 * 1000).toISOString();
   const pins = loadLocalPins();
@@ -20650,6 +21530,87 @@ function mrecFinish(){
   const timerNoteEl = document.getElementById('timerNote');
   if(noteEl && timerNoteEl) timerNoteEl.value = noteEl.value;
   finishTimer();
+}
+
+function normalizeStudyText(text){
+  return String(text || '')
+    .replace(/[０-９]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0))
+    .replace(/[．，]/g, ch => ch === '．' ? '.' : ',')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function parseStudyMinutesFromText(text){
+  const t = normalizeStudyText(text);
+  if(!t) return 0;
+  let mins = 0;
+  const hourMin = t.match(/(\d+(?:\.\d+)?)\s*(?:時間|時|h|hr|hrs)\s*(半|(\d+)\s*(?:分|m|min|mins))?/i);
+  if(hourMin){
+    mins += Math.round(parseFloat(hourMin[1]) * 60);
+    if(hourMin[2] === '半') mins += 30;
+    else if(hourMin[3]) mins += parseInt(hourMin[3], 10);
+    return mins;
+  }
+  const minute = t.match(/(\d+)\s*(?:分|m|min|mins)/i);
+  if(minute) return parseInt(minute[1], 10);
+  return 0;
+}
+
+function findSubjectFromStudyText(text){
+  const normalized = normalizeStudyText(text).replace(/\s+/g, '').toLowerCase();
+  const subjects = allSelectedSubjects()
+    .slice()
+    .sort((a,b)=>String(b.name || '').length - String(a.name || '').length);
+  return subjects.find(s=>{
+    const name = String(s.name || '').replace(/\s+/g, '').toLowerCase();
+    const key = String(s.key || '').replace(/\s+/g, '').toLowerCase();
+    return (name && normalized.includes(name)) || (key && normalized.includes(key));
+  }) || null;
+}
+
+function buildQuickStudyNote(raw, subject){
+  let note = normalizeStudyText(raw)
+    .replace(/(\d+(?:\.\d+)?)\s*(?:時間|時|h|hr|hrs)\s*(?:半|(?:\d+)\s*(?:分|m|min|mins))?/ig, '')
+    .replace(/(\d+)\s*(?:分|m|min|mins)/ig, '');
+  if(subject?.name) note = note.replace(subject.name, '');
+  note = note
+    .replace(/^(今日は|今日|きょう|勉強|学習|を|は|、|。|\s)+/g, '')
+    .replace(/[をは、。]+$/g, '')
+    .trim();
+  return note || '一言記録';
+}
+
+async function quickLogFromMrec(){
+  const input = document.getElementById('mrecQuickText');
+  const status = document.getElementById('mrecQuickStatus');
+  const raw = input?.value || '';
+  const minutes = parseStudyMinutesFromText(raw);
+  if(minutes <= 0){
+    if(status) status.textContent = '時間が読めませんでした。「90分」「1時間30分」のように入力してください。';
+    return;
+  }
+  const subject = findSubjectFromStudyText(raw);
+  const fallbackSubject = document.getElementById('mrecSubject')?.value || document.getElementById('questSubject')?.value || '';
+  const subjectKey = subject?.key || fallbackSubject;
+  if(!subjectKey){
+    if(status) status.textContent = '科目が選ばれていません。先に資格と科目を設定してください。';
+    return;
+  }
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  const note = buildQuickStudyNote(raw, subject);
+  const setVal = (id, v) => { const el = document.getElementById(id); if(el) el.value = v; };
+
+  setVal('mrecHour', h);
+  setVal('mrecMin', m);
+  setVal('mrecSubject', subjectKey);
+  setVal('mrecNote', note);
+  if(status){
+    const subjName = subject?.name || document.getElementById('mrecSubject')?.selectedOptions?.[0]?.textContent || '選択中の科目';
+    status.textContent = `${subjName} / ${h ? h + '時間' : ''}${m ? m + '分' : ''} として記録します。`;
+  }
+  await mrecSubmitManual();
+  if(input) input.value = '';
 }
 
 async function mrecSubmitManual(){
