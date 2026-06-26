@@ -52,6 +52,27 @@
   ],
   "shortcuts": [
     {
+      "name": "一言で記録",
+      "short_name": "一言記録",
+      "description": "今日の学習を一言で入力",
+      "url": "/study-quest/?tab=quest&quickLog=1",
+      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "15分を記録",
+      "short_name": "+15分",
+      "description": "15分の学習をすぐに記録",
+      "url": "/study-quest/?tab=quest&quickRecord=15",
+      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "30分を記録",
+      "short_name": "+30分",
+      "description": "30分の学習をすぐに記録",
+      "url": "/study-quest/?tab=quest&quickRecord=30",
+      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+    },
+    {
       "name": "タイマーを起動",
       "short_name": "タイマー",
       "description": "学習タイマーをすぐに開始",

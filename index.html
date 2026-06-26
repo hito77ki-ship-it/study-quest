@@ -6,7 +6,10 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <title>スタディクエスト｜RPG風 勉強管理アプリ【無料】</title>
 <!-- PWA -->
 <link rel="manifest" href="manifest.json">
@@ -15,7 +18,6 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="スタディクエスト">
-<link rel="apple-touch-icon" href="icons/icon.svg">
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/">
@@ -24369,8 +24371,14 @@ function restartTutorial() {
   const wrapper = document.createElement('div');
   wrapper.id = 'wakabaMei';
   wrapper.innerHTML = `
-    <div id="wakabaBubble"></div>
-    <img src="screenshots/ogp_icon.png" alt="若葉芽依" id="wakabaIcon">
+    <div id="wakabaBubble">
+      <div id="wakabaNameTag">◆ 芽依 ◆</div>
+      <div id="wakabaText"></div>
+      <div class="wakaba-arrow"></div>
+    </div>
+    <div id="wakabaCharWrap">
+      <img src="sprites/npc-fairy.png" alt="芽依" id="wakabaIcon">
+    </div>
   `;
   document.body.appendChild(wrapper);
 
@@ -24379,66 +24387,108 @@ function restartTutorial() {
   style.textContent = `
     #wakabaMei {
       position: fixed;
-      bottom: 72px;
-      right: 14px;
+      bottom: 16px;
+      right: 12px;
       z-index: 9990;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: flex-end;
-      gap: 6px;
+      gap: 0;
       pointer-events: none;
     }
-    #wakabaIcon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-      cursor: pointer;
+    #wakabaCharWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       pointer-events: auto;
-      transition: transform 0.15s;
-      border: 2px solid rgba(140,198,63,0.6);
+      cursor: pointer;
+      flex-shrink: 0;
     }
-    #wakabaIcon:hover { transform: scale(1.08); }
+    #wakabaIcon {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28));
+      transition: transform 0.2s cubic-bezier(.34,1.56,.64,1);
+      animation: wakaba-float 3.5s ease-in-out infinite;
+      image-rendering: pixelated;
+    }
+    #wakabaIcon:hover { transform: scale(1.12) translateY(-4px); }
+    @keyframes wakaba-float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-5px); }
+    }
     #wakabaBubble {
-      background: rgba(255,255,255,0.95);
+      position: relative;
+      background: rgba(255,255,255,0.97);
       color: #374151;
       font-size: 12px;
-      line-height: 1.5;
-      padding: 8px 12px;
-      border-radius: 12px 12px 0 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      max-width: 180px;
-      text-align: right;
+      line-height: 1.6;
+      padding: 10px 13px 10px 12px;
+      border-radius: 14px 14px 0 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      max-width: 172px;
+      margin-right: 8px;
+      margin-bottom: 14px;
       pointer-events: auto;
       cursor: pointer;
       opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.2s, transform 0.2s;
+      transform: translateX(8px) scale(0.92);
+      transform-origin: right bottom;
+      transition: opacity 0.22s, transform 0.22s cubic-bezier(.34,1.56,.64,1);
     }
     #wakabaBubble.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0) scale(1);
+    }
+    .wakaba-arrow {
+      position: absolute;
+      right: -7px;
+      bottom: 14px;
+      width: 0; height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 8px solid rgba(255,255,255,0.97);
+    }
+    #wakabaNameTag {
+      font-size: 10px;
+      font-weight: 700;
+      color: #d45faa;
+      letter-spacing: 0.12em;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+    #wakabaText {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #374151;
     }
     body[data-theme="dark"] #wakabaBubble {
-      background: rgba(30,35,45,0.95);
-      color: #e2e8f0;
+      background: rgba(28,32,44,0.97);
     }
+    body[data-theme="dark"] .wakaba-arrow {
+      border-left-color: rgba(28,32,44,0.97);
+    }
+    body[data-theme="dark"] #wakabaNameTag { color: #f48dc9; }
+    body[data-theme="dark"] #wakabaText { color: #dde6f0; }
   `;
   document.head.appendChild(style);
 
   // 吹き出し表示ロジック
   let bubbleTimer = null;
   const bubble = document.getElementById('wakabaBubble');
+  const textEl = document.getElementById('wakabaText');
   const icon = document.getElementById('wakabaIcon');
+  const charWrap = document.getElementById('wakabaCharWrap');
 
   function showBubble(){
-    bubble.textContent = getMsg();
+    textEl.textContent = getMsg();
     bubble.classList.add('visible');
     clearTimeout(bubbleTimer);
-    bubbleTimer = setTimeout(()=>bubble.classList.remove('visible'), 4000);
+    bubbleTimer = setTimeout(()=>bubble.classList.remove('visible'), 5000);
   }
 
-  icon.addEventListener('click', showBubble);
+  charWrap.addEventListener('click', showBubble);
   bubble.addEventListener('click', ()=>bubble.classList.remove('visible'));
 
   // ── ドラッグ移動 ──
@@ -24488,7 +24538,7 @@ function restartTutorial() {
   // 長押しで削除確認
   function startLongPress(){
     longPressTimer = setTimeout(()=>{
-      if(confirm('若葉を非表示にしますか？\n（設定からいつでも戻せます）')){
+      if(confirm('芽依を非表示にしますか？\n（設定からいつでも戻せます）')){
         wrapper.remove();
         localStorage.setItem('sq_wakaba_hidden', '1');
       }
@@ -24496,7 +24546,7 @@ function restartTutorial() {
   }
 
   // Touch
-  icon.addEventListener('touchstart', e=>{
+  charWrap.addEventListener('touchstart', e=>{
     const t = e.touches[0];
     onDragStart(t.clientX, t.clientY);
     startLongPress();
@@ -24512,7 +24562,7 @@ function restartTutorial() {
   });
 
   // Mouse
-  icon.addEventListener('mousedown', e=>{
+  charWrap.addEventListener('mousedown', e=>{
     onDragStart(e.clientX, e.clientY);
     startLongPress();
   });

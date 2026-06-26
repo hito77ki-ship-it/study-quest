@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-ginko.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>銀行勘定調整表の書き方【日商簿記3級】不一致の原因と仕訳まで図解解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記3級の銀行勘定調整表を図解で解説。当座預金残高と銀行残高証明書が一致しない4つの原因・調整方法・修正仕訳を例題つきでわかりやすく説明。">
+<title>【日商簿記3級】銀行勘定調整表とは？4つの調整パターンを例題つきで完全解説｜スタディクエスト</title>
+<meta name="description" content="簿記3級の銀行勘定調整表を例題つきで完全解説。なぜ残高が一致しないのか、4つの調整パターン（未取立小切手・未渡小切手・時間外入金・未取付小切手）を図解で丁寧に解説。">
 <meta name="keywords" content="銀行勘定調整表 書き方 簿記3級,当座預金 不一致 原因,未取立小切手 未渡小切手,銀行勘定調整表 仕訳">
 <meta property="og:title" content="銀行勘定調整表の書き方【日商簿記3級】不一致の原因と仕訳">
 <meta property="og:description" content="銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。">
@@ -15,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"銀行勘定調整表の書き方【日商簿記3級】","description":"銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-ginko.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"銀行勘定調整表の書き方【日商簿記3級】","description":"銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-ginko.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -179,6 +183,70 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>未取立・未取付は修正仕訳なし</strong><br>未取立小切手と未取付小切手は「銀行側の処理がまだ」なだけで、自社の帳簿は正しく記録されています。調整表上の調整のみで、修正仕訳は不要です。</div>
 
+  <h2>④ 当座借越</h2>
+  <p>当座預金の残高を超えて小切手を振り出すと、残高がマイナスになります。これを<strong>当座借越</strong>といい、銀行からの一時的な借り入れと同じ意味です。あらかじめ<strong>当座借越契約</strong>を結んでおくと、残高不足でも決済できます。</p>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>当座預金残高 ¥600,000 の口座から、買掛金の支払いとして ¥1,000,000 の小切手を振り出した（当座借越契約あり）。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳</div>
+    <div class="sw-row"><span class="kari">買掛金<span class="amt">1,000,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">1,000,000</span></span></div>
+  </div>
+  <div class="tip-box"><strong>当座預金の残高がマイナスになっても仕訳は同じ！</strong><br>振り出した時点では「当座預金」勘定を減らすだけです。決算時には、マイナス残高分を「当座借越」（負債）に振り替えることがあります。</div>
+
+  <h3>決算整理仕訳（当座借越を負債に振替）</h3>
+  <p>決算日に当座預金が貸方残高（マイナス）のとき、その金額を「当座借越（負債）」勘定に振り替えます。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">決算整理仕訳（当座預金の貸方残高が ¥400,000 の場合）</div>
+    <div class="sw-row"><span class="kari">当座預金<span class="amt">400,000</span></span><span class="sep">／</span><span class="kashi">当座借越<span class="amt">400,000</span></span></div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);">これにより当座預金の残高はゼロになり、当座借越400,000円が流動負債としてB/Sに計上されます。</p>
+
+  <h3>翌期首の再振替仕訳</h3>
+  <p>翌期首には決算整理の逆仕訳を行い、当座借越を当座預金のマイナス状態に戻します。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">翌期首（再振替仕訳）</div>
+    <div class="sw-row"><span class="kari">当座借越<span class="amt">400,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">400,000</span></span></div>
+  </div>
+  <div class="warn-box"><strong>再振替仕訳を忘れると翌期の当座預金残高が狂う！</strong><br>決算整理後の当座預金は0円に戻っていますが、翌期首の再振替でマイナス状態に戻さないと、翌期の入出金で残高の計算がズレます。経過勘定と同様に「決算整理→翌期首再振替」をワンセットで覚えましょう。</div>
+
+  <h2>⑤ 当座預金 vs 普通預金</h2>
+  <p>法人が利用する主な銀行口座は「当座預金」と「普通預金」の2種類です。用途・機能の違いを整理しておきましょう。</p>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;">
+    <tr style="background:#F7FAFC;">
+      <th style="padding:10px 14px;border:1px solid var(--border);font-weight:700;text-align:left;">項目</th>
+      <th style="padding:10px 14px;border:1px solid var(--border);font-weight:700;text-align:center;">当座預金</th>
+      <th style="padding:10px 14px;border:1px solid var(--border);font-weight:700;text-align:center;">普通預金</th>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid var(--border);">利息</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#B91C1C;">なし</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#15803D;">あり（微少）</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid var(--border);">小切手の振出</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#15803D;">✓ 可能</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#B91C1C;">✗ 不可</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid var(--border);">手形の振出</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#15803D;">✓ 可能</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#B91C1C;">✗ 不可</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid var(--border);">当座借越</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#15803D;">✓ 可能</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;color:#B91C1C;">✗ 不可</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid var(--border);">主な利用者</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;">法人中心</td>
+      <td style="padding:10px 14px;border:1px solid var(--border);text-align:center;">個人・法人</td>
+    </tr>
+  </table>
+  <div class="warn-box"><strong>最近の動向：当座預金離れが進んでいる</strong><br>全銀協が2026年をめどに紙の手形・小切手の廃止を推進しています。電子記録債権（でんさい）や振込決済への移行が加速し、手形・小切手が不要なら当座預金を開設する必要もなくなります。試験では当座預金の問題が多く出ますが、現実のビジネスでは普通預金が主流になりつつあります。</div>
+
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 
   <div class="matome">
@@ -188,8 +256,34 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">未取付小切手</span><span class="result">銀行側－。自社の修正仕訳なし</span></div>
     <div class="matome-row"><span class="trigger">銀行利息（未通知）</span><span class="result">自社帳簿＋。修正仕訳：当座預金／受取利息</span></div>
     <div class="matome-row"><span class="trigger">調整後の確認</span><span class="result">自社側と銀行側の正しい残高が必ず一致する</span></div>
+    <div class="matome-row"><span class="trigger">当座借越</span><span class="result">当座預金がマイナス＝銀行からの一時借入。決算時に当座借越（負債）へ振替</span></div>
+    <div class="matome-row"><span class="trigger">当座 vs 普通預金</span><span class="result">当座は小切手・手形振出可・利息なし。普通は利息あり・小切手不可</span></div>
   </div>
 </div>
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">銀行残高と帳簿残高はなぜ一致しないのですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">未取立小切手・未渡小切手・時間外入金・未取付小切手などにより、銀行側と会社側でタイミングのズレが生じるためです。銀行勘定調整表でこれらの差異を整理します。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">銀行勘定調整表の主な調整パターンを教えてください</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">①未取立小切手：銀行側に加算。②未渡小切手：銀行側から減算（帳簿側も修正必要）。③時間外入金：銀行側に加算。④未取付小切手：銀行側から減算。それぞれどちらを調整するかを区別しましょう。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">銀行勘定調整表を作った後、仕訳が必要ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">帳簿側の誤りが原因の場合は仕訳が必要です。銀行側のタイミングのズレ（未取立・未取付など）は銀行が自動的に処理するため、会社側の仕訳は不要です。</p>
+    </div>
+  </div>
+  </div>
+</section>
+
 <footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js"></script>
 </body>

@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-seisanhyo.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>精算表の書き方（8桁精算表）【日商簿記3級】決算整理から財務諸表まで図解解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記3級の8桁精算表の書き方を図解で解説。試算表から決算整理仕訳を加えて損益計算書・貸借対照表を作成する手順を例題つきでわかりやすく説明。">
+<title>【日商簿記3級】精算表の書き方を完全解説｜決算整理仕訳から当期純利益の求め方まで例題つき｜スタディクエスト</title>
+<meta name="description" content="簿記3級の精算表を例題つきで完全解説。8列の意味、修正記入→P/L欄→B/S欄への振り分け方、当期純利益の計算方法、P/L差額＝B/S差額の仕組みまで丁寧に解説。">
 <meta name="keywords" content="精算表 書き方 簿記3級,8桁精算表 解き方,決算整理仕訳 精算表,精算表 損益計算書 貸借対照表">
 <meta property="og:title" content="精算表の書き方（8桁精算表）【日商簿記3級】">
 <meta property="og:description" content="8桁精算表の書き方と決算整理仕訳を例題つきで図解解説。">
@@ -15,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"精算表の書き方（8桁精算表）【日商簿記3級】","description":"8桁精算表の書き方と決算整理仕訳を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-seisanhyo.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"精算表の書き方（8桁精算表）【日商簿記3級】","description":"8桁精算表の書き方と決算整理仕訳を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-seisanhyo.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -209,6 +213,26 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   費用・収益はP/L（損益計算書）欄へ、資産・負債・純資産はB/S（貸借対照表）欄へ。<br>
   借方・貸方の向きは「通常残高」と同じ方向です（資産→借方、負債・純資産→貸方、費用→借方、収益→貸方）。試算表で各勘定科目の残高がどちら側にあるかを確認する習慣をつけましょう。</div>
 
+  <h2>なぜ精算表というワークシートを使うのか？</h2>
+  <p>「決算整理仕訳を帳簿に直接記録すればいいのでは？」と思うかもしれません。しかし直接処理すると、修正前後の数字が混ざって確認が困難になります。</p>
+
+  <div class="warn-box">
+    <strong>❌ もし精算表なしで直接財務諸表を作ったら？</strong><br>
+    ・決算整理仕訳を帳簿だけで処理 → 修正漏れや転記ミスが発見しにくい<br>
+    ・修正前後で試算表の数字が変わる → どの数字が修正前でどれが修正後かわからなくなる<br>
+    ・P/LとB/Sの差額が一致しないとき → どこでミスしたかを追跡するのが困難
+  </div>
+
+  <div class="tip-box">
+    <strong>✅ 精算表を使う理由</strong><br>
+    ① <strong>全体が1枚に集約</strong> → 残高T/B→修正記入→P/L・B/Sの全過程が一目で把握できる<br>
+    ② <strong>計算過程が見えてミス発見しやすい</strong> → 修正記入欄の借方合計＝貸方合計で整合性チェック<br>
+    ③ <strong>純利益の一致で完成確認</strong> → P/L差額＝B/S差額になれば当期純利益が確定<br>
+    ④ <strong>財務諸表作成の「下書き」として機能</strong> → 精算表が完成すればP/L・B/Sを機械的に作れる<br>
+    <br>
+    精算表は財務諸表ではなく「作業用メモ」！提出するのはP/LとB/Sだが、その下準備として精算表が大活躍する。
+  </div>
+
   <h2>③ 精算表の作成手順</h2>
 
   <div class="step-flow">
@@ -233,6 +257,38 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <div class="step-text"><strong>当期純利益を P/L 借方・B/S 貸方に記入</strong>して締め切る<br>左右の合計が一致したら精算表の完成です。</div>
     </div>
   </div>
+
+  <h2>⑤ P/L差額＝B/S差額＝当期純利益の仕組み</h2>
+  <p>精算表が完成しているかどうかの最終確認は、<strong>「P/L欄の差額」と「B/S欄の差額」が一致するか</strong>です。この2つは必ず同じ数字（当期純利益）になります。</p>
+
+  <h3>P/L欄（損益計算書欄）</h3>
+  <p>収益合計と費用合計の差額が当期純利益です。差額は費用側（借方）に記入して左右を一致させます。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">P/L欄の例（収益600・費用400）</div>
+    <div class="sw-row"><span class="kari">費用合計<span class="amt">400</span></span><span class="sep"></span><span class="kashi">収益合計<span class="amt">600</span></span></div>
+    <div class="sw-row"><span class="kari">当期純利益<span class="amt">200</span></span><span class="sep"></span><span class="kashi"></span></div>
+  </div>
+
+  <h3>B/S欄（貸借対照表欄）</h3>
+  <p>資産合計と（負債＋資本）合計の差額が当期純利益と等しくなります。差額は資本側（貸方）に記入します。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">B/S欄の例（資産4,000・負債+資本3,800）</div>
+    <div class="sw-row"><span class="kari">資産合計<span class="amt">4,000</span></span><span class="sep"></span><span class="kashi">負債＋資本合計<span class="amt">3,800</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">当期純利益<span class="amt">200</span></span></div>
+  </div>
+
+  <div class="tip-box"><strong>P/L差額とB/S差額が一致したら精算表は完成！</strong><br>一致しない場合は①修正記入欄の借貸合計がズレている、②P/LとB/Sへの振り分けミスがある、のどちらかです。純損失のときはP/L収益欄・B/S資産欄に記入してバランスを取ります。</div>
+
+  <h2>⑥ B/S（貸借対照表）の間接法表示</h2>
+  <p>精算表のB/S欄から貸借対照表を作成するとき、<strong>減価償却累計額と貸倒引当金は取得原価・売掛金から控除する形式（間接法）</strong>で表示します。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">B/S資産の部（例）</div>
+    <div class="sw-row"><span class="kari">売掛金 3,000</span><span class="sep"></span><span class="kashi"></span></div>
+    <div class="sw-row"><span class="kari">　貸倒引当金 △60</span><span class="sep"></span><span class="kashi">正味売掛金 2,940</span></div>
+    <div class="sw-row"><span class="kari">建物 3,000</span><span class="sep"></span><span class="kashi"></span></div>
+    <div class="sw-row"><span class="kari">　減価償却累計額 △1,000</span><span class="sep"></span><span class="kashi">帳簿価額 2,000</span></div>
+  </div>
+  <div class="tip-box"><strong>減価償却累計額のB/S欄は「残高T/B残高 ＋ 修正記入額」の合算！</strong><br>例：残高T/Bの累計額1,000円＋修正記入で追加した1,000円＝B/S貸方に2,000円を記入します。修正記入欄の数字だけ（1,000円）を使ってしまうのが最大の落とし穴です。</div>
 
   <h2>④ 主な決算整理仕訳（修正記入欄に記入するもの）</h2>
   <p>精算表で最も重要なのが修正記入欄への決算整理仕訳の転記です。</p>
@@ -271,10 +327,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   資産（現金・売掛金・繰越商品など）→ <strong>B/S 借方</strong><br>
   負債（買掛金・未払金など）・純資産 → <strong>B/S 貸方</strong></div>
 
-  <div class="warn-box"><strong>試験でよくあるミス</strong><br>
-  ① 修正記入の数字を試算表に足し引きせず、そのままP/L・B/Sに移してしまう<br>
-  ② 「減価償却累計額」を B/S 貸方に忘れる（資産のマイナス項目）<br>
-  ③ 当期純利益の入れる列を逆にする（P/L→借方、B/S→貸方）</div>
+  <div class="warn-box"><strong>試験でよくあるミス（具体例つき）</strong><br>
+  ① 減価償却累計額のB/S欄：修正記入（1,000）のみ記入→正しくは残高T/B（1,000）＋修正（1,000）＝2,000<br>
+  ② 繰越商品のB/S欄：修正記入欄の数字だけ使う→正しくは残高T/B（100）に修正の±を加減した200が正解<br>
+  ③ 当期純利益を P/L借方に書いてB/S貸方を忘れる→P/LとB/Sの<strong>両方</strong>に記入必須<br>
+  ④ 当期純利益の入れる列を逆にする（P/L→借方、B/S→貸方が正しい）</div>
 
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 
@@ -287,6 +344,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">当期純利益</span><span class="result">P/L借方・B/S貸方に記入して左右を一致させる</span></div>
   </div>
 </div>
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">精算表は何のために作るのですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">精算表は決算整理仕訳を加えて財務諸表（損益計算書・貸借対照表）を作成するための作業表です。試算表から決算整理を経て最終的な財務数値を導き出す過程を一覧で確認できます。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">精算表の列の構成を教えてください</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">左から「残高試算表」「修正記入」「損益計算書」「貸借対照表」の8列（借方・貸方×4）で構成されます。修正記入列に決算整理仕訳を記入し、損益科目はP/L欄、資産・負債・純資産科目はB/S欄へ振り分けます。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">精算表で当期純利益はどう求めますか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">損益計算書欄の貸方合計（収益）から借方合計（費用）を差し引いた差額が当期純利益です。同額をB/S欄の貸方にも記入し、B/S欄も一致させます。P/Lの差額＝B/Sの差額で検算できます。</p>
+    </div>
+  </div>
+  </div>
+</section>
+
 <footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js"></script>
 </body>

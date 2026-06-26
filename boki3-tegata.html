@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで図解で完全解説｜スタディクエスト</title>
-<meta name="description" content="受取手形・支払手形の仕訳を図解で解説。振出人・名宛人の違い、満期日の決済、電子記録債権・債務まで例題つきで完全解説。日商簿記3級の頻出論点。">
+<title>【日商簿記3級】手形の仕訳を完全解説｜受取手形・支払手形・電子記録債権の違いを例題つきで解説｜スタディクエスト</title>
+<meta name="description" content="簿記3級の約束手形を例題つきで完全解説。受取手形と支払手形の使い分け、手形の裏書き・割引、電子記録債権への振り替えまで試験頻出パターンを図解でわかりやすく説明。">
 <meta name="keywords" content="受取手形 仕訳,支払手形 仕訳,電子記録債権,約束手形 簿記,日商簿記3級 手形">
 <meta property="og:title" content="受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説">
 <meta property="og:description" content="振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。">
@@ -15,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説","description":"振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説","description":"振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -159,28 +163,64 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="tip-box"><strong>満期日の仕訳は「発生の逆」をやるだけ！</strong><br>受取手形を受け取ったときの逆＝当座預金に入金して受取手形を消す。支払手形を振り出したときの逆＝当座預金から引かれて支払手形を消す。</div>
 
   <h2>④ 電子記録債権・電子記録債務</h2>
-  <p>紙の約束手形に代わる電子的な仕組みで、2016年以降の簿記3級の試験範囲です。仕訳の考え方は手形とまったく同じです。</p>
+  <p>紙の約束手形に代わる電子的な仕組みで、2016年以降の簿記3級の試験範囲です。</p>
+  <div class="tip-box"><strong>でんさいの本質：「振り替え」であって新たな売上・仕入ではない</strong><br>電子記録債権・債務は、すでに計上済みの売掛金・買掛金を電子記録に切り替えるものです。金額はそのまま、勘定科目だけ変わります。売上や仕入は発生しません。</div>
   <div class="denshi-compare">
     <div class="denshi-card urike">
       <div class="denshi-title">電子記録債権</div>
-      <div class="denshi-sub">受取手形に相当（資産）</div>
-      <div class="denshi-kamoku">→ 電子記録債権 ／ 売上</div>
+      <div class="denshi-sub">売掛金から振り替え（資産）</div>
+      <div class="denshi-kamoku">売掛金 → 電子記録債権</div>
     </div>
     <div class="denshi-card shiike">
       <div class="denshi-title">電子記録債務</div>
-      <div class="denshi-sub">支払手形に相当（負債）</div>
-      <div class="denshi-kamoku">→ 仕入 ／ 電子記録債務</div>
+      <div class="denshi-sub">買掛金から振り替え（負債）</div>
+      <div class="denshi-kamoku">買掛金 → 電子記録債務</div>
     </div>
   </div>
+
+  <h3>振り替え時の仕訳（最重要パターン）</h3>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>A社への売掛金 ¥3,000 について、電子記録債権への振り替えを行った。またA社は買掛金 ¥3,000 を電子記録債務に振り替えた。</p>
+  </div>
   <div class="shiwake-box">
-    <div class="sw-label">電子記録債権の発生（売った側）</div>
-    <div class="sw-row"><span class="kari">電子記録債権<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">100,000</span></span></div>
+    <div class="sw-label">債権者側（売掛金がある側）の仕訳</div>
+    <div class="sw-row"><span class="kari">電子記録債権<span class="amt">3,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">3,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">債務者側（買掛金がある側）の仕訳</div>
+    <div class="sw-row"><span class="kari">買掛金<span class="amt">3,000</span></span><span class="sep">／</span><span class="kashi">電子記録債務<span class="amt">3,000</span></span></div>
   </div>
   <div class="shiwake-box">
     <div class="sw-label">電子記録債権の回収（満期決済）</div>
-    <div class="sw-row"><span class="kari">当座預金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">電子記録債権<span class="amt">100,000</span></span></div>
+    <div class="sw-row"><span class="kari">当座預金<span class="amt">3,000</span></span><span class="sep">／</span><span class="kashi">電子記録債権<span class="amt">3,000</span></span></div>
   </div>
-  <div class="warn-box"><strong>名称が違うだけで仕訳の構造は手形と同じ！</strong><br>試験で「電子記録債権」「電子記録債務」という言葉が出てきても、受取手形・支払手形と同じように処理すれば正解できます。</div>
+  <div class="warn-box"><strong>「振り替え」なので売上・仕入は発生しない！</strong><br>電子記録への移行は、既存の債権・債務の形を変えるだけです。売上や仕入はすでに掛取引の時点で計上済み。ここで再度計上するのは誤りです。</div>
+
+  <h2>⑤ 商品売買の手形 vs 資金貸借の手形</h2>
+  <p>約束手形が登場する場面は2種類あります。使う勘定科目が異なるため注意が必要です。</p>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;">
+    <thead>
+      <tr>
+        <th style="padding:10px 14px;border:1px solid var(--border);background:#F7FAFC;font-weight:700;text-align:left;">場面</th>
+        <th style="padding:10px 14px;border:1px solid var(--border);background:#F7FAFC;font-weight:700;text-align:left;">受け取る側</th>
+        <th style="padding:10px 14px;border:1px solid var(--border);background:#F7FAFC;font-weight:700;text-align:left;">振り出す側</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 14px;border:1px solid var(--border);background:#EBF8FF;">商品売買（代金の決済）</td>
+        <td style="padding:10px 14px;border:1px solid var(--border);background:#EBF8FF;font-weight:700;color:#2B6CB0;">受取手形（資産）</td>
+        <td style="padding:10px 14px;border:1px solid var(--border);background:#EBF8FF;font-weight:700;color:#9B2C2C;">支払手形（負債）</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;border:1px solid var(--border);">資金の貸し借り（第7章）</td>
+        <td style="padding:10px 14px;border:1px solid var(--border);font-weight:700;color:#2B6CB0;">手形貸付金（資産）</td>
+        <td style="padding:10px 14px;border:1px solid var(--border);font-weight:700;color:#9B2C2C;">手形借入金（負債）</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="tip-box"><strong>見分け方：何のための手形か？</strong><br>商品を売買した代金の決済 → 受取手形・支払手形<br>お金を貸し借りするときに担保として振り出す → 手形貸付金・手形借入金<br>「商品が動いたかどうか」で判断しましょう。</div>
 
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 
@@ -190,10 +230,36 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">手形を振り出した（買い側）</span><span class="result">仕入 ／ 支払手形（負債↑）</span></div>
     <div class="matome-row"><span class="trigger">満期日・受取側</span><span class="result">当座預金 ／ 受取手形（資産↓）</span></div>
     <div class="matome-row"><span class="trigger">満期日・支払側</span><span class="result">支払手形（負債↓）／ 当座預金</span></div>
-    <div class="matome-row"><span class="trigger">電子記録債権（発生）</span><span class="result">電子記録債権 ／ 売上</span></div>
-    <div class="matome-row"><span class="trigger">電子記録債務（発生）</span><span class="result">仕入 ／ 電子記録債務</span></div>
+    <div class="matome-row"><span class="trigger">電子記録債権（振り替え）</span><span class="result">電子記録債権 ／ 売掛金（売上・仕入は不発生）</span></div>
+    <div class="matome-row"><span class="trigger">電子記録債務（振り替え）</span><span class="result">買掛金 ／ 電子記録債務（売上・仕入は不発生）</span></div>
+    <div class="matome-row"><span class="trigger">資金貸借の手形（貸す側）</span><span class="result">手形貸付金 ／ 現金（受取手形ではない）</span></div>
+    <div class="matome-row"><span class="trigger">資金貸借の手形（借りる側）</span><span class="result">現金 ／ 手形借入金（支払手形ではない）</span></div>
   </div>
 </div>
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">支払手形と受取手形の違いは何ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">手形を振り出した側（支払義務がある）が「支払手形」（負債）、受け取った側（受取権利がある）が「受取手形」（資産）です。掛け取引と同じ構造で、決済手段が手形になったものです。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">電子記録債権と受取手形はどう違いますか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">受取手形は紙の証券ですが、電子記録債権はコンピュータ上の記録で管理されます。電子記録債権は紛失・盗難リスクがなく分割譲渡も可能です。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">手形の裏書きとはどういう意味ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">受け取った手形を第三者に譲渡することです。裏書きすると受取手形（資産）が消えて裏書義務（偶発債務）が発生します。日商簿記3級では裏書譲渡の仕訳が出題されます。</p>
+    </div>
+  </div>
+  </div>
+</section>
+
 <footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js"></script>
 </body>

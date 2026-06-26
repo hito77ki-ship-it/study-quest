@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-keika2.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>経過勘定・毎年同額の前払い保険料【日商簿記3級】なぜ18か月で割るのか完全解説｜スタディクエスト</title>
-<meta name="description" content="毎年同額を前払いしている保険料の決算整理仕訳を解説。なぜ残高を18か月で割るのか、再振替仕訳との関係をタイムライン図で視覚的に完全解説。日商簿記3級の頻出論点。">
+<title>【日商簿記3級】経過勘定の応用｜翌期首の再振替仕訳と4つの経過勘定まとめ【例題つき】｜スタディクエスト</title>
+<meta name="description" content="簿記3級の経過勘定応用を例題つきで完全解説。翌期首の再振替仕訳の考え方、4つの経過勘定の使い分けポイント、試験頻出パターンを月数計算の方法まで丁寧に解説。">
 <meta name="keywords" content="前払保険料 仕訳,毎年同額 前払い,経過勘定 18か月,支払保険料 決算整理,日商簿記3級 経過勘定,再振替仕訳">
 <meta property="og:title" content="経過勘定・毎年同額の前払い【日商簿記3級】なぜ18か月で割るのか">
 <meta property="og:description" content="毎年同額を前払いしている保険料の決算整理仕訳をタイムライン図で完全解説。">
@@ -23,7 +27,7 @@
   "description": "毎年同額を前払いしている保険料の決算整理仕訳をタイムライン図で完全解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-keika2.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-05-07",
+  "dateModified": "2026-06-26",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -332,6 +336,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     問題文に「当期7/1から保険に加入した」と書いてある場合は、再振替仕訳がありません。残高は支払い時の12か月分のみなので、¥180 ÷ 12か月 ＝ ¥15 で計算します。問題文を必ず確認しましょう。
   </div>
 
+  <div class="warn-box">
+    <strong>よくある間違い：再振替仕訳を忘れる！</strong><br>
+    翌期首に再振替仕訳（支払保険料60 ／ 前払保険料60）を行い忘れると、翌期の支払保険料残高が「支払い時の12か月分だけ」になってしまいます。その状態で「¥180 ÷ 18か月」を解こうとすると残高が合わず、解答が狂います。<br>
+    「毎年同額を再振替してから支払う」このサイクルを意識してください。
+  </div>
+
   <div class="app-cta">
     <h3>⚔ Study Quest で学習を記録しよう</h3>
     <p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p>
@@ -367,6 +377,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </p>
 
 </div>
+
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">翌期首の再振替仕訳とはなんですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">決算時に計上した経過勘定（前払費用・未払費用など）を翌期首に逆仕訳して元の科目に戻すことです。これにより翌期の帳簿処理をシンプルに保ちます。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">経過勘定で試験に最も多く出るのはどれですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">前払費用と未払費用が特に頻出です。家賃・保険料・利息の前払い、利息・給料の未払いなどが典型的な出題パターンです。精算表問題でも毎回登場します。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">経過勘定の金額計算で間違えないコツは？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">問題文の契約期間と決算日を確認し、当期分と次期分を月数で比例計算します。例えば12ヶ月契約で8ヶ月経過なら、次期分4ヶ月分が前払費用です。タイムラインを描いて確認しましょう。</p>
+    </div>
+  </div>
+  </div>
+</section>
 
 <footer>
   <a href="lp.html">記事トップ</a>

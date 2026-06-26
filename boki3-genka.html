@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-genka.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>減価償却（定額法）の計算と仕訳【日商簿記3級】間接法・売却まで完全解説｜スタディクエスト</title>
-<meta name="description" content="減価償却（定額法）を初心者向けに解説。耐用年数・残存価額の意味から計算式、間接法の仕訳、固定資産売却まで4ステップで完全網羅。日商簿記3級の頻出論点。">
+<title>【日商簿記3級】減価償却とは？直接法・間接法の仕訳を例題つきで完全解説｜スタディクエスト</title>
+<meta name="description" content="簿記3級の減価償却を例題つきで完全解説。なぜ減価償却が必要か、直接法と間接法の違い、定額法の計算式から決算仕訳まで図解でわかりやすく解説。試験頻出の間接法B/S表示も収録。">
 <meta name="keywords" content="減価償却 定額法,減価償却費 仕訳,減価償却累計額,固定資産売却 仕訳,日商簿記3級 減価償却,間接法">
 <meta property="og:title" content="減価償却（定額法）の計算と仕訳【日商簿記3級】">
 <meta property="og:description" content="耐用年数・残存価額の意味から計算式、間接法の仕訳、固定資産売却まで完全解説。">
@@ -23,7 +27,7 @@
   "description": "耐用年数・残存価額の意味から計算式、間接法の仕訳、固定資産売却まで完全解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-genka.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-05-07",
+  "dateModified": "2026-06-26",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -173,6 +177,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
+  <h2>なぜ減価償却が必要なのか（費用配分の原則）</h2>
+
+  <p>「1,000円のトラックを買った年に全額費用計上すれば簡単では？」と思うかもしれません。でも、それでは財務諸表が正確になりません。</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;">
+    <div style="background:#FFF5F5;border:2px solid #FC8181;border-radius:12px;padding:18px;">
+      <div style="font-size:11px;font-weight:700;color:#C53030;letter-spacing:.1em;margin-bottom:8px;">❌ 一括計上（NG）</div>
+      <p style="font-size:13px;margin-bottom:6px;color:#374151;">購入年度に1,000円全額を費用計上</p>
+      <p style="font-size:13px;color:#C53030;font-weight:700;">購入年：利益が激減<br>翌年以降：利益が不当に膨らむ</p>
+      <p style="font-size:12px;color:#718096;margin:0;">→ 毎期の業績比較ができない</p>
+    </div>
+    <div style="background:#F0FFF4;border:2px solid #68D391;border-radius:12px;padding:18px;">
+      <div style="font-size:11px;font-weight:700;color:#276749;letter-spacing:.1em;margin-bottom:8px;">✅ 毎年分割計上（正解）</div>
+      <p style="font-size:13px;margin-bottom:6px;color:#374151;">使用期間（5年）にわたり毎年200円を費用計上</p>
+      <p style="font-size:13px;color:#276749;font-weight:700;">毎期の費用と収益が対応<br>正確な利益計算ができる</p>
+      <p style="font-size:12px;color:#718096;margin:0;">→ 費用配分の原則</p>
+    </div>
+  </div>
+
+  <div class="point-card">
+    <div class="label">費用配分の原則</div>
+    <p>固定資産の取得コストは、その資産を使用する期間（耐用年数）にわたって分割して費用化する。</p>
+  </div>
+
   <h2>定額法の計算式</h2>
 
   <div class="calc-box">
@@ -242,6 +270,52 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="tip-box">
     <strong>「間接法」とは？</strong><br>
     直接「備品」の金額を減らすのではなく、<strong>減価償却累計額</strong>という別の勘定を使う方法。備品の帳簿価額は「備品 − 減価償却累計額」で計算できる。試験では間接法が圧倒的に多く出題される。
+  </div>
+
+  <h2>B/S上の表示と帳簿価額の変化</h2>
+
+  <p>間接法では減価償却累計額を別勘定で管理するため、B/S（貸借対照表）では次のように表示されます。</p>
+
+  <div class="calc-box">
+    <div class="calc-title">📋 B/S上の固定資産の表示（例：建物 取得原価3,000 / 耐用年数3年 / 残存価額0）</div>
+    <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;">
+      <thead>
+        <tr style="background:var(--light);">
+          <th style="padding:8px 12px;border:1px solid var(--border);text-align:left;">期末</th>
+          <th style="padding:8px 12px;border:1px solid var(--border);text-align:right;">建物（取得原価）</th>
+          <th style="padding:8px 12px;border:1px solid var(--border);text-align:right;">減価償却累計額</th>
+          <th style="padding:8px 12px;border:1px solid var(--border);text-align:right;color:var(--green2);">帳簿価額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px 12px;border:1px solid var(--border);">1年目</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;">3,000</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;">△1,000</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;font-weight:700;color:var(--green2);">2,000</td>
+        </tr>
+        <tr style="background:var(--light);">
+          <td style="padding:8px 12px;border:1px solid var(--border);">2年目</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;">3,000</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;">△2,000</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;font-weight:700;color:var(--green2);">1,000</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border:1px solid var(--border);">3年目</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;">3,000</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;">△3,000</td>
+          <td style="padding:8px 12px;border:1px solid var(--border);text-align:right;font-weight:700;color:var(--green2);">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted);margin:12px 0 0;">帳簿価額 ＝ 取得原価 − 減価償却累計額。取得原価は変わらず、累計額が毎年増える。</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>直接法 vs 間接法：何が違うか</strong><br>
+    <strong>直接法</strong>：建物の残高を直接減らす → 取得原価がB/Sから見えなくなる<br>
+    <strong>間接法★</strong>：「建物3,000 △累計額2,000」のように対照表示 → 取得原価と累計額の両方がわかる<br>
+    試験では<strong>間接法</strong>が標準。B/Sを見た人が「いくらで買って今いくら価値が残っているか」を把握できる。
   </div>
 
   <h2>固定資産を売却したときの仕訳</h2>
@@ -322,8 +396,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="matome">
     <h3>📋 まとめ：減価償却（定額法）パターン一覧</h3>
     <div class="matome-row">
+      <span class="trigger">なぜ毎年分割するか</span>
+      <span class="result">費用配分の原則：使用期間に費用を対応させる</span>
+    </div>
+    <div class="matome-row">
       <span class="trigger">定額法の計算式</span>
       <span class="result">（取得原価 − 残存価額）÷ 耐用年数</span>
+    </div>
+    <div class="matome-row">
+      <span class="trigger">B/S表示（間接法）</span>
+      <span class="result">建物3,000 / 減価償却累計額 △2,000 / 帳簿価額1,000</span>
     </div>
     <div class="matome-row">
       <span class="trigger">間接法の仕訳（毎年）</span>
@@ -348,6 +430,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
 </div>
+
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">減価償却費の計算式は何ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">定額法の場合「（取得原価－残存価額）÷耐用年数」で計算します。日商簿記3級では残存価額ゼロのケースが多く、「取得原価÷耐用年数」で計算することもあります。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">直接法と間接法の違いは何ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">直接法は固定資産の帳簿価額から直接減額する方法です。間接法は「減価償却累計額」という勘定を使って累計額を別建てにする方法です。3級では両方出題されます。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">減価償却はなぜ必要なのですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">固定資産は複数年にわたって使用するため、使用期間に応じて少しずつ費用化（配分）します。これにより毎期の費用と収益を適切に対応させ（費用収益対応の原則）、正確な損益計算が可能になります。</p>
+    </div>
+  </div>
+  </div>
+</section>
 
 <footer>
   <a href="lp.html">記事トップ</a>

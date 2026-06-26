@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-kabushiki.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>株式会社の取引（株式発行・剰余金の配当・利益準備金）【日商簿記3級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記3級の株式会社に関する取引を図解で解説。株式発行・剰余金の配当・利益準備金の積立の仕訳を例題つきでわかりやすく説明。">
+<title>【日商簿記3級】株式会社の仕訳を完全解説｜株式発行・配当・利益準備金の3パターン例題つき｜スタディクエスト</title>
+<meta name="description" content="日商簿記3級の株式会社の仕訳を完全解説。株式発行・剰余金の配当・利益準備金の積立の3パターンを例題つきで図解。繰越利益剰余金の増減フロー・よくある間違い3パターンまで完全網羅。">
 <meta name="keywords" content="株式発行 仕訳,剰余金 配当 仕訳,利益準備金 簿記3級,資本金 仕訳,株式会社 簿記">
 <meta property="og:title" content="株式会社の取引（株式発行・剰余金の配当・利益準備金）【日商簿記3級】">
 <meta property="og:description" content="株式発行・剰余金の配当・利益準備金を例題つきで図解解説。">
@@ -15,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"株式会社の取引（株式発行・剰余金の配当・利益準備金）【日商簿記3級】","description":"株式発行・剰余金の配当・利益準備金を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kabushiki.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"株式会社の取引（株式発行・剰余金の配当・利益準備金）【日商簿記3級】","description":"株式発行・剰余金の配当・利益準備金を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kabushiki.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -91,6 +95,15 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.faq{margin:40px 0;}
+.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}
+.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.related{margin:32px 0;}
+.related h2{font-size:18px;font-weight:700;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--green);}
+.related ul{list-style:none;margin:0;padding:0;}
+.related li{padding:7px 0;border-bottom:1px solid var(--border);}
+.related li:last-child{border-bottom:none;}
 </style>
 </head>
 <body>
@@ -98,7 +111,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 <div class="container">
   <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="lp.html#cat-boki3">日商簿記3級</a> &gt; 株式会社の取引</div>
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
-  <h1>株式会社の取引の仕訳<br>株式発行・剰余金の配当・利益準備金</h1>
+  <h1>株式会社の仕訳を完全解説<br>株式発行・剰余金の配当・利益準備金を例題3パターンで解説【日商簿記3級】</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
   <p class="lead">株式会社では、株式を発行して資金を集め、利益を株主に配当します。簿記3級では<strong>株式発行・剰余金の配当・利益準備金の積立</strong>の3つの処理を押さえれば十分です。</p>
   <div class="sq-chat"></div>
@@ -110,7 +123,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="eq-header">純資産（資本）の構成</div>
     <div class="eq-row cap">
       <span class="eq-label">資本金</span>
-      <span class="eq-note">株主から出資してもらったお金（原則として株式発行額の全額）</span>
+      <span class="eq-note">株主からの出資のうち資本金として計上した金額（払込金額の1/2以上）</span>
+    </div>
+    <div class="eq-row cap">
+      <span class="eq-label">資本準備金</span>
+      <span class="eq-note">株式発行時に資本金に計上しなかった残りの払込金額（払込金額の1/2以下）</span>
     </div>
     <div class="eq-row prep">
       <span class="eq-label">利益準備金</span>
@@ -125,19 +142,29 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="tip-box"><strong>「繰越利益剰余金」が試験のキーポイント</strong><br>配当や利益準備金の積立では「繰越利益剰余金」を減らします。増減の仕訳をしっかり覚えましょう。</div>
 
   <h2>② 株式を発行したときの仕訳</h2>
-  <p>会社設立時や増資時に株式を発行し、株主から出資金を受け取ります。受け取った金額はすべて<strong>資本金</strong>に計上します（簿記3級の範囲では全額資本金）。</p>
+  <p>会社設立時や増資時に株式を発行し、株主から出資金を受け取ります。会社法の規定により、<strong>払込金額の1/2以上を資本金</strong>、残りを<strong>資本準備金</strong>に計上します。問題文で指示がなければ全額資本金とします。</p>
 
   <div class="mondai">
-    <div class="m-label">例題①</div>
-    <p>会社設立にあたり、株式200株を1株 ¥50,000 で発行し、全株の払込みを受け、当座預金に入金された。</p>
+    <div class="m-label">例題①（全額資本金）</div>
+    <p>会社設立にあたり、株式100株を1株 ¥1,000 で発行し、全額を当座預金に入金した。</p>
   </div>
   <div class="shiwake-box">
-    <div class="sw-label">仕訳</div>
-    <div class="sw-row"><span class="kari">当座預金<span class="amt">10,000,000</span></span><span class="sep">／</span><span class="kashi">資本金<span class="amt">10,000,000</span></span></div>
+    <div class="sw-label">仕訳（全額資本金）</div>
+    <div class="sw-row"><span class="kari">当座預金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">資本金<span class="amt">100,000</span></span></div>
   </div>
-  <p style="font-size:13px;color:var(--muted);">（200株 × ¥50,000 ＝ ¥10,000,000）</p>
 
-  <div class="warn-box"><strong>簿記2級以上では「資本準備金」に半分計上できる</strong><br>3級では発行額の全額を「資本金」とします。2級では会社法の規定により、払込金額の1/2までを資本準備金として計上可能です。</div>
+  <div class="mondai">
+    <div class="m-label">例題②（資本金・資本準備金に分割）</div>
+    <p>株式100株を1株 ¥1,000 で発行し、全額を当座預金に入金した。払込金額の1/2を資本金、残りを資本準備金とする。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕訳（資本準備金あり）</div>
+    <div class="sw-row"><span class="kari">当座預金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">資本金<span class="amt">50,000</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">資本準備金<span class="amt">50,000</span></span></div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);">（資本金：100,000 × 1/2 ＝ 50,000 　資本準備金：残り50,000）</p>
+
+  <div class="tip-box"><strong>資本金と資本準備金の分け方</strong><br>問題文に「払込金額の1/2を資本金、残りを資本準備金とする」などの指示がある場合はその通りに分けます。指示がない場合は全額を資本金として処理します（払込金額の1/2以上が資本金になるというルール）。</div>
 
   <h2>③ 剰余金の配当と利益準備金の積立</h2>
   <p>株主総会で配当が承認されると、<strong>繰越利益剰余金</strong>を減らして「未払配当金（負債）」と「利益準備金」に振り替えます。</p>
@@ -188,11 +215,77 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">繰越利益剰余金<span class="amt">xxx</span></span><span class="sep">／</span><span class="kashi">損益<span class="amt">xxx</span></span></div>
   </div>
 
+  <h2>⑤ 繰越利益剰余金の増減フロー</h2>
+  <p>繰越利益剰余金は当期純利益の振替で<strong>増加</strong>し、配当・利益準備金の積立で<strong>減少</strong>します。</p>
+
+  <div class="shiwake-box">
+    <div class="sw-label">増加：純利益500,000円を振替（決算時）</div>
+    <div class="sw-row"><span class="kari">損益<span class="amt">500,000</span></span><span class="sep">／</span><span class="kashi">繰越利益剰余金<span class="amt">500,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">減少：配当300,000円・利益準備金30,000円を決議（株主総会）</div>
+    <div class="sw-row"><span class="kari">繰越利益剰余金<span class="amt">330,000</span></span><span class="sep">／</span><span class="kashi">未払配当金<span class="amt">300,000</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">利益準備金<span class="amt">30,000</span></span></div>
+  </div>
+  <div class="tip-box"><strong>繰越利益剰余金の残高＝前期残高＋当期純利益−配当−利益準備金</strong><br>この残高がB/Sの純資産の部に計上されます。利益準備金は資本金の1/4に達するまで配当のたびに積立義務があります（積立額は配当金の1/10）。</div>
+
+  <h2>⑥ よくある間違い</h2>
+  <div class="warn-box">
+    <strong>❌ よくある間違いパターン</strong><br><br>
+    <strong>① 株式発行で全額資本金にしてしまう（資本準備金指示があるのに）</strong><br>
+    誤：当座預金100,000 ／ 資本金100,000<br>
+    正：当座預金100,000 ／ 資本金50,000・資本準備金50,000<br><br>
+    <strong>② 中間納付を「法人税等（費用）」で計上してしまう</strong><br>
+    誤：法人税等60,000 ／ 現金60,000<br>
+    正：仮払法人税等60,000（資産）／ 現金60,000<br>
+    （確定前なので費用計上はまだ早い！）<br><br>
+    <strong>③ 当期純損失のとき振替仕訳の向きを間違える</strong><br>
+    誤：損益 ／ 繰越利益剰余金<br>
+    正：繰越利益剰余金 ／ 損益<br>
+    （損失のとき繰越利益剰余金が減る）
+  </div>
+
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <section class="faq" id="faq">
+    <h2>よくある質問</h2>
+    <div itemscope itemtype="https://schema.org/FAQPage">
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">株式発行時の資本金はいくらになるの？</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">問題文の指示によって異なります。「払込金額の1/2を資本金、残りを資本準備金とする」という指示があればその通りに分けます。指示がない場合は払込金額の全額を資本金として処理します。例えば100株を@1,000円で発行した場合、指示なしなら資本金100,000円・資本準備金0円です。</p>
+        </div>
+      </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">配当するたびに利益準備金を積み立てる必要があるの？</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">会社法の規定により、配当するたびに配当額の1/10を利益準備金として積み立てる義務があります。ただし、利益準備金と資本準備金の合計が資本金の1/4に達したら、それ以上の積立義務はなくなります。3級の試験では「資本金の1/4に達するまで配当の1/10を積み立てる」という計算が頻出です。</p>
+        </div>
+      </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">繰越利益剰余金が増えるのはいつ・減るのはいつ？</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">繰越利益剰余金は、決算で当期純利益が確定したときに「損益 ／ 繰越利益剰余金」の仕訳で増加します。一方、株主総会で配当と利益準備金の積立が承認されたときに「繰越利益剰余金 ／ 未払配当金・利益準備金」の仕訳で減少します。当期純損失の場合は逆仕訳（繰越利益剰余金 ／ 損益）で減少します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="related">
+    <h2>関連記事</h2>
+    <ul>
+      <li><a href="/boki3-hojinzei.html">法人税等の仕訳【日商簿記3級】中間・決算・確定申告の3ステップ</a></li>
+      <li><a href="/boki3-seisanhyo.html">精算表の作り方【日商簿記3級】8桁精算表を完全解説</a></li>
+      <li><a href="/boki3-keika.html">費用・収益の繰延べ・見越しの仕訳【日商簿記3級】</a></li>
+      <li><a href="/boki3-genka.html">減価償却の仕訳【日商簿記3級】定額法・直接法・間接法</a></li>
+      <li><a href="/boki.html">日商簿記3級の勉強法・出題範囲まとめ</a></li>
+    </ul>
+  </div>
 
   <div class="matome">
     <h3>📋 まとめ：株式会社の取引 早見表</h3>
-    <div class="matome-row"><span class="trigger">株式発行</span><span class="result">当座預金など ／ 資本金（全額）</span></div>
+    <div class="matome-row"><span class="trigger">株式発行（全額資本金）</span><span class="result">当座預金など ／ 資本金</span></div>
+    <div class="matome-row"><span class="trigger">株式発行（分割指示あり）</span><span class="result">当座預金など ／ 資本金（1/2以上）＋資本準備金（残り）</span></div>
     <div class="matome-row"><span class="trigger">配当の承認</span><span class="result">繰越利益剰余金 ／ 未払配当金 ＋ 利益準備金</span></div>
     <div class="matome-row"><span class="trigger">準備金の積立額</span><span class="result">配当額 × 1/10（資本金1/4まで積立義務）</span></div>
     <div class="matome-row"><span class="trigger">配当の支払</span><span class="result">未払配当金 ／ 当座預金</span></div>

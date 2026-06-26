@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-shohinuriage.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記3級の商品有高帳を図解で解説。先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで完全解説。">
+<title>【日商簿記3級】商品有高帳と売上原価を完全解説｜先入先出法・移動平均法の違いと例題3問｜スタディクエスト</title>
+<meta name="description" content="簿記3級の商品有高帳・売上原価算定を図解で完全解説。先入先出法と移動平均法の計算方法の違いを例題3問で丁寧に解説。「しくりくりし」の決算仕訳もわかりやすく説明。">
 <meta name="keywords" content="商品有高帳 書き方 簿記3級,先入先出法 移動平均法 違い,商品有高帳 例題">
 <meta property="og:title" content="商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】">
 <meta property="og:description" content="商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。">
@@ -15,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】","description":"商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-shohinuriage.html","datePublished":"2026-05-08","dateModified":"2026-05-08","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】","description":"商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-shohinuriage.html","datePublished":"2026-05-08","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -256,6 +260,64 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>試験での注意点：払出欄の単価・金額・残高欄の記入ミスに注意</strong><br>商品有高帳の記入問題では、払出欄の単価と金額を正確に記入することが重要です。先入先出法では複数ロットにまたがる場合、払出欄を2行に分けて記入します。残高欄の金額は「数量×単価」で必ず一致させましょう。</div>
 
+  <h2>⑤ 先入先出法 vs 移動平均法：同じデータで比較</h2>
+  <p>同じデータを両方の方法で計算すると、<strong>売上原価と期末在庫の金額が変わります</strong>。問題で指定された方法を必ず確認してから計算を始めましょう。</p>
+  <div class="mondai">
+    <div class="m-label">比較データ</div>
+    <p>前月繰越：100個 ＠100円　／　仕入：100個 ＠120円　／　売上：150個（払出）</p>
+  </div>
+
+  <h3>先入先出法の計算結果</h3>
+  <p>払出は古い単価（＠100円）から100個→次に仕入分（＠120円）から50個の順。</p>
+  <ul>
+    <li>払出金額 ＝ 100個×＠100円 ＋ 50個×＠120円 ＝ 10,000 ＋ 6,000 ＝ <strong>16,000円</strong>（売上原価）</li>
+    <li>期末残高 ＝ 50個×＠120円 ＝ <strong>6,000円</strong></li>
+  </ul>
+
+  <h3>移動平均法の計算結果</h3>
+  <p>仕入後の平均単価：(100個×100円 ＋ 100個×120円) ÷ 200個 ＝ 22,000 ÷ 200 ＝ <strong>＠110円</strong></p>
+  <ul>
+    <li>払出金額 ＝ 150個×＠110円 ＝ <strong>16,500円</strong>（売上原価）</li>
+    <li>期末残高 ＝ 50個×＠110円 ＝ <strong>5,500円</strong></li>
+  </ul>
+
+  <table class="uriage-table">
+    <thead>
+      <tr>
+        <th>方法</th>
+        <th>売上原価（払出）</th>
+        <th>期末在庫残高</th>
+        <th>合計（一致確認）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">先入先出法</td>
+        <td>16,000円</td>
+        <td>6,000円</td>
+        <td>22,000円</td>
+      </tr>
+      <tr>
+        <td class="left">移動平均法</td>
+        <td>16,500円</td>
+        <td>5,500円</td>
+        <td>22,000円</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="tip-box"><strong>売上原価 ＋ 期末在庫 ＝ 期首在庫 ＋ 仕入高（合計は一致する）</strong><br>方法によって内訳（売上原価と期末在庫の金額）は変わりますが、合計（22,000円）は必ず一致します。計算後に合計でチェックする習慣をつけましょう。</div>
+
+  <h2>⑥ なぜ「期首在庫＋仕入高－期末在庫＝売上原価」なのか</h2>
+  <p>三分法では期中に売上原価を自動計算できません。そこで決算整理で次の公式を使います。</p>
+  <p style="background:var(--light);padding:14px 18px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;">売上原価 ＝ 期首在庫 ＋ 当期仕入高 － 期末在庫</p>
+  <p>この公式の背景には<strong>費用収益対応の原則</strong>があります。</p>
+  <ul>
+    <li><strong>もし仕入れた全額を売上原価にしたら？</strong>　→　10個仕入れて7個しか売れていないのに10個分のコストを費用にしてしまい、今期の利益が過少・来期の費用がゼロになる。</li>
+    <li><strong>正しい考え方：</strong>　売上収益と対応するコストだけを当期費用に計上する（費用収益対応の原則）。</li>
+    <li><strong>期末在庫は資産：</strong>　売れ残りは翌期に売れる商品（繰越商品）としてB/Sに計上し、来期の売上原価になる。</li>
+  </ul>
+  <div class="warn-box"><strong>三分法の弱点を補うのが商品有高帳と決算整理</strong><br>三分法では期中の仕訳で売上原価が自動計算されません。期末に「期首振替→期末振替」の2本セットの決算整理仕訳を行うことで、初めて正確な売上原価が算定されます。</div>
+
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 
   <div class="mondai">
@@ -279,6 +341,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">残高金額</span><span class="result">期末商品棚卸高になる（資産）</span></div>
   </div>
 </div>
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">先入先出法と移動平均法の違いは何ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">先入先出法は古い仕入分から先に売れたと仮定して原価計算する方法、移動平均法は仕入のたびに平均単価を計算し直す方法です。どちらも日商簿記3級の試験範囲です。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">売上原価の算定式はどうやって覚えますか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">売上原価＝期首商品棚卸高＋当期仕入高－期末商品棚卸高で計算します。「しくりくりし」（仕繰り繰り仕）と覚えると決算整理仕訳が書きやすくなります。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">商品有高帳は試験で記入できるようにする必要がありますか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">はい、日商簿記3級では商品有高帳の記入問題が出題されます。先入先出法と移動平均法の両方の形式で記入できるように練習しておきましょう。</p>
+    </div>
+  </div>
+  </div>
+</section>
+
 <footer><a href="lp.html">記事トップ</a><a href="index.html">アプリを使う</a><p>© 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js"></script>
 </body>

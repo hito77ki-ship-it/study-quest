@@ -2,10 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki3-kashidaore.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説｜スタディクエスト</title>
-<meta name="description" content="貸倒引当金の仕訳を「計上→貸倒れ発生」の流れで解説。差額補充法の計算方法、貸倒損失との使い分け、2級向け当期回収パターンまで例題つきで網羅。日商簿記3級の頻出論点です。">
+<title>【日商簿記3級】貸倒れ・貸倒損失の仕訳を完全解説｜貸倒引当金・償却債権取立益まで例題つき｜スタディクエスト</title>
+<meta name="description" content="簿記3級の貸倒れ処理を例題つきで完全解説。貸倒損失・貸倒引当金繰入の違い、保守主義の原則、償却債権取立益の仕訳まで丁寧に解説。費用収益対応の原則の理由も説明。">
 <meta name="keywords" content="貸倒引当金 仕訳,差額補充法 計算,貸倒損失 違い,日商簿記3級 貸倒引当金,貸倒引当金繰入 仕訳">
 <meta property="og:title" content="貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説">
 <meta property="og:description" content="貸倒引当金を「計上→貸倒れ発生」の流れで解説。差額補充法の計算、貸倒損失との使い分けを例題つきで。">
@@ -23,7 +27,7 @@
   "description": "貸倒引当金を「計上→貸倒れ発生」の流れで解説。差額補充法の計算、貸倒損失との使い分けを例題つきで。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-kashidaore.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-05-07",
+  "dateModified": "2026-06-26",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -298,6 +302,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
+  <h2>「償却債権取立益」─前期以前の貸倒処理分を回収したとき</h2>
+
+  <p>前期以前に「貸倒損失」で費用計上して切り捨てた売掛金が、当期に思いがけず回収されることがあります。このとき使うのが<strong>償却債権取立益（収益）</strong>です。</p>
+
+  <div class="mondai">
+    <div class="mondai-label">例題</div>
+    <p>前期に貸倒処理済みの売掛金 ¥1,000 が当期に現金で回収された。</p>
+  </div>
+
+  <div class="kaitou-label">▶ 解答</div>
+  <div class="shiwake">
+    <div class="shiwake-col kari">
+      <div class="shiwake-label">借　方</div>
+      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">1,000</span></div>
+    </div>
+    <div class="shiwake-col kashi">
+      <div class="shiwake-label">貸　方</div>
+      <div class="shiwake-item"><span class="kamoku">償却債権取立益</span><span class="amount">1,000</span></div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>なぜ「売掛金の復活」ではないのか？</strong><br>
+    前期に「貸倒損失（費用）」として処理したとき、売掛金はすでに帳簿から消えています。当期に回収した現金は「過去に諦めた債権が戻ってきた利益」なので、資産の復活ではなく<strong>収益（償却債権取立益）</strong>として計上します。
+  </div>
+
+  <div class="warn-box">
+    <strong>「貸倒損失」との違いに注意！</strong><br>
+    ・<strong>貸倒損失</strong>：今期発生した貸倒れの費用（借方）<br>
+    ・<strong>償却債権取立益</strong>：過去に切り捨てた債権が当期に回収されたときの収益（貸方）<br>
+    同じ「貸倒れ」に関する取引でも、発生した期によって全く違う勘定科目になります。
+  </div>
+
   <h2>補足：当期発生の売掛金が貸倒れたとき（2級向け）</h2>
 
   <p>引当金は「前期以前に発生した債権」に対して積むものです。<strong>当期に発生した売掛金</strong>が同じ期に貸倒れた場合は、引当金を使わず直接「貸倒損失」で処理します。</p>
@@ -355,6 +392,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <span class="result">借方「貸倒損失」／貸方「売掛金」</span>
     </div>
     <div class="matome-row">
+      <span class="trigger">前期以前の貸倒処理分を当期回収</span>
+      <span class="result">借方「現金」／貸方「償却債権取立益（収益）」</span>
+    </div>
+    <div class="matome-row">
       <span class="trigger">当期売掛金が貸倒れ後に回収（2級）</span>
       <span class="result">借方「現金」／貸方「貸倒損失」</span>
     </div>
@@ -381,6 +422,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
 </div>
+
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">貸倒損失と貸倒引当金繰入の違いは？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">貸倒損失は当期に売上債権が回収不能になったときの費用です。貸倒引当金繰入は決算時に翌期以降の貸倒れに備えて見積もり計上する費用です。3級では両方出題されます。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">償却債権取立益とは何ですか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">過去に貸倒れ処理した債権が思いがけず回収できたときに計上する収益です。過去の費用の打ち消しではなく、新たな収益として貸方に計上します。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">3級では貸倒引当金はどう出題されますか？</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">決算整理仕訳として「貸倒引当金繰入（費用）／貸倒引当金」の仕訳と、翌期に実際に貸倒れが発生したときの処理が問われます。精算表の修正記入でも頻出です。</p>
+    </div>
+  </div>
+  </div>
+</section>
 
 <footer>
   <a href="lp.html">TOP</a>
