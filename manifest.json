@@ -12,16 +12,20 @@
   "lang": "ja",
   "dir": "ltr",
   "prefer_related_applications": false,
-  "categories": ["education", "productivity", "lifestyle"],
+  "categories": [
+    "education",
+    "productivity",
+    "lifestyle"
+  ],
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "favicon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "favicon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -56,35 +60,60 @@
       "short_name": "一言記録",
       "description": "今日の学習を一言で入力",
       "url": "/study-quest/?tab=quest&quickLog=1",
-      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icons/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "15分を記録",
       "short_name": "+15分",
       "description": "15分の学習をすぐに記録",
       "url": "/study-quest/?tab=quest&quickRecord=15",
-      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icons/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "30分を記録",
       "short_name": "+30分",
       "description": "30分の学習をすぐに記録",
       "url": "/study-quest/?tab=quest&quickRecord=30",
-      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icons/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "タイマーを起動",
       "short_name": "タイマー",
       "description": "学習タイマーをすぐに開始",
       "url": "/study-quest/?tab=quest",
-      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icons/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "ランキングを見る",
       "short_name": "ランキング",
       "description": "週間ランキングをチェック",
       "url": "/study-quest/?tab=ranking",
-      "icons": [{ "src": "icons/app-icon.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icons/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
