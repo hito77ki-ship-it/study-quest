@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="400" fill="#FAFAFA" rx="12"/>
+
+  <!-- Title -->
+  <rect x="60" y="12" width="640" height="36" fill="#FEF3C7" rx="8"/>
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1A202C">銀行勘定調整表——不一致の4原因と調整の方向</text>
+
+  <!-- ── 2列ヘッダー ── -->
+  <rect x="20" y="60" width="350" height="32" fill="#1D4ED8" rx="6 6 0 0"/>
+  <text x="195" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">自社帳簿 ✏️（自分で修正できる）</text>
+
+  <rect x="390" y="60" width="350" height="32" fill="#059669" rx="6 6 0 0"/>
+  <text x="565" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">銀行残高証明書 🏦（銀行側で調整）</text>
+
+  <!-- 自社側の原因 -->
+  <rect x="20" y="92" width="350" height="130" fill="#EFF6FF" rx="0 0 6 6"/>
+
+  <rect x="30" y="100" width="330" height="52" fill="#DBEAFE" rx="6"/>
+  <text x="195" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">① 未記帳の振込入金</text>
+  <text x="195" y="136" text-anchor="middle" font-size="10" fill="#374151">銀行に入金済みだが自社が帳簿未記入</text>
+  <text x="195" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">→ 自社帳簿に＋ （修正仕訳あり）</text>
+
+  <rect x="30" y="160" width="330" height="52" fill="#DBEAFE" rx="6"/>
+  <text x="195" y="180" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">② 銀行手数料・利息の未記帳</text>
+  <text x="195" y="196" text-anchor="middle" font-size="10" fill="#374151">銀行が引き落とし済みだが自社が未記入</text>
+  <text x="195" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#B91C1C">→ 自社帳簿に－ （修正仕訳あり）</text>
+
+  <!-- 銀行側の原因 -->
+  <rect x="390" y="92" width="350" height="130" fill="#ECFDF5" rx="0 0 6 6"/>
+
+  <rect x="400" y="100" width="330" height="52" fill="#A7F3D0" rx="6"/>
+  <text x="565" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">③ 未取立小切手</text>
+  <text x="565" y="136" text-anchor="middle" font-size="10" fill="#374151">受取小切手をまだ銀行に持ち込んでいない</text>
+  <text x="565" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#065F46">→ 銀行残高に＋ （自社修正仕訳なし）</text>
+
+  <rect x="400" y="160" width="330" height="52" fill="#A7F3D0" rx="6"/>
+  <text x="565" y="180" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">④ 未渡し小切手</text>
+  <text x="565" y="196" text-anchor="middle" font-size="10" fill="#374151">振り出したが相手にまだ渡していない</text>
+  <text x="565" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#B91C1C">→ 銀行残高に－ （自社修正仕訳なし）</text>
+
+  <!-- 中央区切り -->
+  <line x1="375" y1="60" x2="375" y2="232" stroke="#E2E8F0" stroke-width="2"/>
+  <circle cx="375" cy="156" r="18" fill="#F3F4F6" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="375" y="160" text-anchor="middle" font-size="10" font-weight="700" fill="#6B7280">←→</text>
+
+  <!-- 調整表フォーム -->
+  <rect x="20" y="242" width="720" height="140" fill="#fff" rx="10" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="264" text-anchor="middle" font-size="12" font-weight="700" fill="#1A202C">📊 銀行勘定調整表（両者区分調整法）の構造</text>
+
+  <!-- 自社列 -->
+  <rect x="30" y="274" width="330" height="98" fill="#EFF6FF" rx="6"/>
+  <text x="195" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">自社帳簿残高</text>
+  <text x="60" y="311" font-size="10" fill="#374151">＋ 未記帳の振込入金</text>
+  <text x="350" y="311" text-anchor="end" font-size="10" fill="#374151">××,×××</text>
+  <text x="60" y="328" font-size="10" fill="#374151">－ 銀行手数料・利息未記帳</text>
+  <text x="350" y="328" text-anchor="end" font-size="10" fill="#374151">△×,×××</text>
+  <rect x="42" y="340" width="306" height="24" fill="#BFDBFE" rx="4"/>
+  <text x="195" y="357" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">修正後残高 ◀ 一致 ▶</text>
+
+  <!-- 銀行列 -->
+  <rect x="410" y="274" width="320" height="98" fill="#ECFDF5" rx="6"/>
+  <text x="570" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">銀行残高証明書</text>
+  <text x="420" y="311" font-size="10" fill="#374151">＋ 未取立小切手</text>
+  <text x="722" y="311" text-anchor="end" font-size="10" fill="#374151">××,×××</text>
+  <text x="420" y="328" font-size="10" fill="#374151">－ 未渡し小切手</text>
+  <text x="722" y="328" text-anchor="end" font-size="10" fill="#374151">△×,×××</text>
+  <rect x="422" y="340" width="296" height="24" fill="#6EE7B7" rx="4"/>
+  <text x="570" y="357" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">調整後残高 ◀ 一致 ▶</text>
+</svg>

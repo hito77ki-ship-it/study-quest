@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="380" fill="#FAFAFA" rx="12"/>
+
+  <!-- Title -->
+  <rect x="60" y="12" width="640" height="36" fill="#EDE9FE" rx="8"/>
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1A202C">クレジット販売の3者関係フロー</text>
+
+  <!-- ── 3者の箱 ── -->
+  <!-- 顧客 -->
+  <rect x="20" y="72" width="160" height="72" fill="#FEF3C7" rx="10" stroke="#FCD34D" stroke-width="2"/>
+  <text x="100" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#92400E">顧　客</text>
+  <text x="100" y="126" text-anchor="middle" font-size="11" fill="#78350F">クレジットで購入する人</text>
+
+  <!-- 当社 (center-bottom) -->
+  <rect x="290" y="160" width="180" height="72" fill="#DBEAFE" rx="10" stroke="#93C5FD" stroke-width="2"/>
+  <text x="380" y="192" text-anchor="middle" font-size="15" font-weight="700" fill="#1D4ED8">当　社</text>
+  <text x="380" y="214" text-anchor="middle" font-size="11" fill="#1E40AF">商品を販売する側</text>
+
+  <!-- 信販会社 -->
+  <rect x="580" y="72" width="160" height="72" fill="#D1FAE5" rx="10" stroke="#6EE7B7" stroke-width="2"/>
+  <text x="660" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">信販会社</text>
+  <text x="660" y="126" text-anchor="middle" font-size="11" fill="#065F46">カード会社・立替払い</text>
+
+  <!-- ── 矢印 ── -->
+  <!-- 顧客→当社: 商品購入 -->
+  <line x1="180" y1="108" x2="290" y2="172" stroke="#F59E0B" stroke-width="2"/>
+  <polygon points="287,164 297,176 281,178" fill="#F59E0B"/>
+  <rect x="170" y="120" width="120" height="28" fill="#FEF9C3" rx="6"/>
+  <text x="230" y="136" text-anchor="middle" font-size="10" fill="#92400E">①商品をクレジット販売</text>
+  <text x="230" y="148" text-anchor="middle" font-size="10" fill="#92400E">（現金を受け取らない）</text>
+
+  <!-- 当社→信販会社: 売上代金請求 -->
+  <line x1="470" y1="178" x2="580" y2="120" stroke="#6EE7B7" stroke-width="2"/>
+  <polygon points="575,128 585,114 570,116" fill="#6EE7B7"/>
+  <rect x="470" y="118" width="126" height="28" fill="#ECFDF5" rx="6"/>
+  <text x="533" y="134" text-anchor="middle" font-size="10" fill="#065F46">②信販会社に立替を依頼</text>
+  <text x="533" y="146" text-anchor="middle" font-size="10" fill="#065F46">（クレジット売掛金が発生）</text>
+
+  <!-- 信販会社→当社: 手数料引いた現金 -->
+  <line x1="580" y1="144" x2="470" y2="206" stroke="#3B82F6" stroke-width="2"/>
+  <polygon points="473,198 463,212 479,210" fill="#3B82F6"/>
+  <rect x="468" y="164" width="130" height="28" fill="#EFF6FF" rx="6"/>
+  <text x="533" y="178" text-anchor="middle" font-size="10" fill="#1D4ED8">③手数料を差し引いた</text>
+  <text x="533" y="192" text-anchor="middle" font-size="10" fill="#1D4ED8">金額を入金</text>
+
+  <!-- 顧客→信販会社: 後払い -->
+  <line x1="180" y1="100" x2="580" y2="100" stroke="#D97706" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="578,95 578,105 586,100" fill="#D97706"/>
+  <text x="380" y="92" text-anchor="middle" font-size="10" fill="#D97706">④顧客は後日カード会社へ支払い（当社には関係なし）</text>
+
+  <!-- ── 仕訳ボックス ── -->
+  <rect x="20" y="252" width="720" height="112" fill="#fff" rx="10" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="274" text-anchor="middle" font-size="12" font-weight="700" fill="#1A202C">📝 各タイミングの仕訳</text>
+
+  <!-- 販売時 -->
+  <rect x="30" y="282" width="216" height="72" fill="#EFF6FF" rx="8"/>
+  <text x="138" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">①販売時</text>
+  <text x="138" y="318" text-anchor="middle" font-size="11" fill="#374151">クレジット売掛金　1,050</text>
+  <text x="138" y="334" text-anchor="middle" font-size="11" fill="#374151">支払手数料　　　　　50</text>
+  <text x="138" y="350" text-anchor="middle" font-size="11" fill="#374151">／ 売上　1,100</text>
+
+  <!-- 入金時 -->
+  <rect x="258" y="282" width="216" height="72" fill="#D1FAE5" rx="8"/>
+  <text x="366" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">③入金時</text>
+  <text x="366" y="318" text-anchor="middle" font-size="11" fill="#374151">現金　　　　　　1,050</text>
+  <text x="366" y="334" text-anchor="middle" font-size="11" fill="#374151">／ クレジット売掛金</text>
+  <text x="366" y="350" text-anchor="middle" font-size="11" fill="#374151">　　　　　　　　1,050</text>
+
+  <!-- ポイント -->
+  <rect x="486" y="282" width="244" height="72" fill="#FEF3C7" rx="8"/>
+  <text x="608" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">⚠️ ポイント</text>
+  <text x="608" y="318" text-anchor="middle" font-size="11" fill="#374151">売掛金 ≠ クレジット売掛金</text>
+  <text x="608" y="334" text-anchor="middle" font-size="10" fill="#374151">売掛金 → 顧客からもらう権利</text>
+  <text x="608" y="350" text-anchor="middle" font-size="10" fill="#374151">クレジット売掛金 → 信販会社からもらう権利</text>
+</svg>
