@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">社労士 vs 中小企業診断士——基本情報・強み・目的別おすすめ比較</text>
+  <!-- Column Headers -->
+  <rect x="20" y="52" width="256" height="34" rx="6" fill="#EA580C"/>
+  <text x="148" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">社会保険労務士（社労士）</text>
+  <rect x="284" y="52" width="192" height="34" rx="6" fill="#475569"/>
+  <text x="380" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">比較項目</text>
+  <rect x="484" y="52" width="256" height="34" rx="6" fill="#0369A1"/>
+  <text x="612" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">中小企業診断士</text>
+  <!-- Rows -->
+  <rect x="20" y="94" width="256" height="36" rx="4" fill="#FFEDD5"/>
+  <text x="148" y="117" text-anchor="middle" font-size="11" fill="#9A3412">年1回・8月（1段階）</text>
+  <rect x="284" y="94" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">試験回数・形式</text>
+  <rect x="484" y="94" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="117" text-anchor="middle" font-size="11" fill="#0369A1">年1回・1次（8月）＋2次（10月）</text>
+
+  <rect x="20" y="136" width="256" height="36" rx="4" fill="#FFEDD5"/>
+  <text x="148" y="159" text-anchor="middle" font-size="11" fill="#9A3412">6〜8%</text>
+  <rect x="284" y="136" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="159" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">合格率（最終）</text>
+  <rect x="484" y="136" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="159" text-anchor="middle" font-size="11" fill="#0369A1">約4〜5%（1次30% × 2次20%）</text>
+
+  <rect x="20" y="178" width="256" height="36" rx="4" fill="#FFEDD5"/>
+  <text x="148" y="201" text-anchor="middle" font-size="11" fill="#9A3412">500〜800時間</text>
+  <rect x="284" y="178" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="201" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">必要勉強時間</text>
+  <rect x="484" y="178" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="201" text-anchor="middle" font-size="11" fill="#0369A1">800〜1,200時間</text>
+
+  <rect x="20" y="220" width="256" height="44" rx="4" fill="#FFEDD5"/>
+  <text x="148" y="238" text-anchor="middle" font-size="11" fill="#9A3412">労働法・社会保険の専門家</text>
+  <text x="148" y="255" text-anchor="middle" font-size="10" fill="#9A3412">法律に基づく手続き代行が独占業務</text>
+  <rect x="284" y="220" width="192" height="44" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="243" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">専門領域</text>
+  <rect x="484" y="220" width="256" height="44" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="238" text-anchor="middle" font-size="11" fill="#0369A1">経営全般のコンサルタント</text>
+  <text x="612" y="255" text-anchor="middle" font-size="10" fill="#0369A1">財務・戦略・マーケティング・IT</text>
+
+  <rect x="20" y="270" width="256" height="44" rx="4" fill="#FED7AA"/>
+  <text x="148" y="288" text-anchor="middle" font-size="11" fill="#9A3412">人事・労務担当・社労士事務所</text>
+  <text x="148" y="305" text-anchor="middle" font-size="10" fill="#9A3412">独立開業・企業内社労士</text>
+  <rect x="284" y="270" width="192" height="44" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">活躍の場</text>
+  <rect x="484" y="270" width="256" height="44" rx="4" fill="#BAE6FD"/>
+  <text x="612" y="288" text-anchor="middle" font-size="11" fill="#0369A1">経営コンサル・金融機関・中小企業</text>
+  <text x="612" y="305" text-anchor="middle" font-size="10" fill="#0369A1">副業コンサル・独立開業</text>
+
+  <rect x="20" y="320" width="256" height="36" rx="4" fill="#FFEDD5"/>
+  <text x="148" y="343" text-anchor="middle" font-size="11" fill="#9A3412">「人」に関する問題を法律で解決</text>
+  <rect x="284" y="320" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="343" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">向いている人</text>
+  <rect x="484" y="320" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="343" text-anchor="middle" font-size="11" fill="#0369A1">「会社全体」の経営課題を解決したい</text>
+
+  <!-- Bottom recommendation -->
+  <rect x="20" y="368" width="720" height="40" rx="8" fill="#1E293B"/>
+  <rect x="28" y="376" width="330" height="24" rx="5" fill="#EA580C"/>
+  <text x="193" y="393" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">労務・人事・社会保険を極めたい → 社労士</text>
+  <rect x="402" y="376" width="330" height="24" rx="5" fill="#0369A1"/>
+  <text x="567" y="393" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">経営全般のコンサルをしたい → 中小企業診断士</text>
+</svg>
