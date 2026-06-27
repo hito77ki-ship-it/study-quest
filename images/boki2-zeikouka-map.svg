@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">税効果会計——一時差異と繰延税金資産・負債の仕組み</text>
+
+  <!-- Top: なぜズレが生じるか -->
+  <rect x="30" y="52" width="330" height="80" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="195" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">会計上の利益（P/L）</text>
+  <text x="195" y="90" text-anchor="middle" font-size="10.5" fill="#374151">会計基準に従った収益・費用を集計</text>
+  <text x="195" y="108" text-anchor="middle" font-size="10" fill="#64748B">例：貸倒引当金100万を費用計上</text>
+  <text x="195" y="122" text-anchor="middle" font-size="10" fill="#64748B">→ 利益 900万（費用として認識済み）</text>
+
+  <rect x="400" y="52" width="330" height="80" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="565" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">税法上の所得</text>
+  <text x="565" y="90" text-anchor="middle" font-size="10.5" fill="#374151">税法の損金・益金ルールで計算</text>
+  <text x="565" y="108" text-anchor="middle" font-size="10" fill="#64748B">例：貸倒引当金100万は損金不算入</text>
+  <text x="565" y="122" text-anchor="middle" font-size="10" fill="#64748B">→ 所得 1,000万（費用と認めない）</text>
+
+  <text x="380" y="148" text-anchor="middle" font-size="11" fill="#EF4444">← このタイミングのズレ（一時差異）を調整するのが税効果会計 →</text>
+
+  <!-- 一時差異の2タイプ -->
+  <rect x="30" y="160" width="330" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="30" y="160" width="330" height="28" rx="10" fill="#22C55E"/>
+  <rect x="30" y="178" width="330" height="10" fill="#22C55E"/>
+  <text x="195" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">将来減算一時差異 → 繰延税金資産</text>
+  <text x="195" y="202" text-anchor="middle" font-size="10.5" fill="#374151">今は税金を多く払っている → 将来取り戻せる</text>
+  <text x="195" y="218" text-anchor="middle" font-size="10" fill="#64748B">例：貸倒引当金の損金不算入</text>
+  <rect x="50" y="226" width="290" height="28" rx="5" fill="#DCFCE7"/>
+  <text x="195" y="244" text-anchor="middle" font-size="10.5" fill="#166534">繰延税金資産 ×× ／ 法人税等調整額 ××</text>
+  <text x="195" y="268" text-anchor="middle" font-size="10" fill="#64748B">→ B/Sに資産計上（将来の節税効果）</text>
+
+  <rect x="400" y="160" width="330" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="400" y="160" width="330" height="28" rx="10" fill="#EF4444"/>
+  <rect x="400" y="178" width="330" height="10" fill="#EF4444"/>
+  <text x="565" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">将来加算一時差異 → 繰延税金負債</text>
+  <text x="565" y="202" text-anchor="middle" font-size="10.5" fill="#374151">今は税金を少なく払っている → 将来払う</text>
+  <text x="565" y="218" text-anchor="middle" font-size="10" fill="#64748B">例：その他有価証券の評価益</text>
+  <rect x="420" y="226" width="290" height="28" rx="5" fill="#FEE2E2"/>
+  <text x="565" y="244" text-anchor="middle" font-size="10.5" fill="#DC2626">法人税等調整額 ×× ／ 繰延税金負債 ××</text>
+  <text x="565" y="268" text-anchor="middle" font-size="10" fill="#64748B">→ B/Sに負債計上（将来の追加税金）</text>
+
+  <!-- Bottom: 仕訳の全体像 -->
+  <rect x="30" y="294" width="700" height="114" rx="10" fill="#1E293B"/>
+  <text x="380" y="316" text-anchor="middle" font-size="12" font-weight="700" fill="#F8FAFC">税効果会計の仕訳パターン（貸倒引当金の例）</text>
+
+  <rect x="50" y="326" width="300" height="70" rx="6" fill="#0F172A"/>
+  <text x="200" y="346" text-anchor="middle" font-size="10.5" font-weight="700" fill="#94A3B8">計上時（損金不算入で差異発生）</text>
+  <text x="200" y="364" text-anchor="middle" font-size="10.5" fill="#86EFAC">繰延税金資産 30 ／ 法人税等調整額 30</text>
+  <text x="200" y="382" text-anchor="middle" font-size="9.5" fill="#64748B">（引当金100万 × 実効税率30%）</text>
+
+  <rect x="410" y="326" width="300" height="70" rx="6" fill="#0F172A"/>
+  <text x="560" y="346" text-anchor="middle" font-size="10.5" font-weight="700" fill="#94A3B8">解消時（損金算入で差異消滅）</text>
+  <text x="560" y="364" text-anchor="middle" font-size="10.5" fill="#FCA5A5">法人税等調整額 30 ／ 繰延税金資産 30</text>
+  <text x="560" y="382" text-anchor="middle" font-size="9.5" fill="#64748B">（実際に貸倒れ → 損金算入 → 税金還付）</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">有価証券——4分類の保有目的と評価・処理の違い</text>
+
+  <!-- 4 cards in 2×2 grid -->
+  <!-- 売買目的 -->
+  <rect x="30" y="52" width="340" height="148" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="30" y="52" width="340" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="30" y="72" width="340" height="10" fill="#3B82F6"/>
+  <text x="200" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 売買目的有価証券</text>
+  <text x="200" y="96" text-anchor="middle" font-size="10.5" fill="#1E40AF">短期の値上がり益を目的とした保有</text>
+  <rect x="50" y="104" width="300" height="28" rx="5" fill="#DBEAFE"/>
+  <text x="200" y="122" text-anchor="middle" font-size="10.5" fill="#1D4ED8">決算時：時価評価（洗替法または切放法）</text>
+  <text x="200" y="138" text-anchor="middle" font-size="10.5" fill="#1D4ED8">有価証券評価損益 → P/Lへ</text>
+  <text x="200" y="158" text-anchor="middle" font-size="10" fill="#374151">流動資産に表示（1年以内売却目的）</text>
+  <text x="200" y="176" text-anchor="middle" font-size="10" fill="#64748B">取得時：有価証券 ×× / 現金 ××</text>
+  <text x="200" y="190" text-anchor="middle" font-size="10" fill="#64748B">評価：有価証券 ×× / 有価証券評価益 ××</text>
+
+  <!-- 満期保有目的 -->
+  <rect x="390" y="52" width="340" height="148" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="390" y="52" width="340" height="30" rx="10" fill="#EAB308"/>
+  <rect x="390" y="72" width="340" height="10" fill="#EAB308"/>
+  <text x="560" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 満期保有目的債券</text>
+  <text x="560" y="96" text-anchor="middle" font-size="10.5" fill="#713F12">満期まで保有して利息を受け取る目的</text>
+  <rect x="410" y="104" width="300" height="28" rx="5" fill="#FEF9C3"/>
+  <text x="560" y="122" text-anchor="middle" font-size="10.5" fill="#713F12">決算時：時価評価しない（償却原価法）</text>
+  <text x="560" y="138" text-anchor="middle" font-size="10.5" fill="#713F12">割引差額を毎期利息に按分して帳簿価額増加</text>
+  <text x="560" y="158" text-anchor="middle" font-size="10" fill="#374151">投資有価証券（固定資産）に表示</text>
+  <text x="560" y="176" text-anchor="middle" font-size="10" fill="#64748B">按分：投資有価証券 ×× / 有価証券利息 ××</text>
+  <text x="560" y="190" text-anchor="middle" font-size="10" fill="#64748B">最終的に額面まで帳簿価額が増加</text>
+
+  <!-- 子会社・関連会社 -->
+  <rect x="30" y="212" width="340" height="148" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="30" y="212" width="340" height="30" rx="10" fill="#7C3AED"/>
+  <rect x="30" y="232" width="340" height="10" fill="#7C3AED"/>
+  <text x="200" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ 子会社・関連会社株式</text>
+  <text x="200" y="256" text-anchor="middle" font-size="10.5" fill="#5B21B6">支配・影響力行使を目的とした保有</text>
+  <rect x="50" y="264" width="300" height="28" rx="5" fill="#EDE9FE"/>
+  <text x="200" y="282" text-anchor="middle" font-size="10.5" fill="#5B21B6">決算時：原則として時価評価しない（原価法）</text>
+  <text x="200" y="298" text-anchor="middle" font-size="10.5" fill="#5B21B6">連結財務諸表では連結修正仕訳で処理</text>
+  <text x="200" y="318" text-anchor="middle" font-size="10" fill="#374151">投資有価証券（固定資産）に表示</text>
+  <text x="200" y="336" text-anchor="middle" font-size="10" fill="#64748B">取得原価のまま保有（原価不変）</text>
+  <text x="200" y="350" text-anchor="middle" font-size="10" fill="#64748B">著しい価値下落時は強制評価減</text>
+
+  <!-- その他有価証券 -->
+  <rect x="390" y="212" width="340" height="148" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="390" y="212" width="340" height="30" rx="10" fill="#22C55E"/>
+  <rect x="390" y="232" width="340" height="10" fill="#22C55E"/>
+  <text x="560" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">④ その他有価証券</text>
+  <text x="560" y="256" text-anchor="middle" font-size="10.5" fill="#166534">上記①〜③に分類できないもの</text>
+  <rect x="410" y="264" width="300" height="28" rx="5" fill="#DCFCE7"/>
+  <text x="560" y="282" text-anchor="middle" font-size="10.5" fill="#166534">決算時：時価評価（全部純資産直入法）</text>
+  <text x="560" y="298" text-anchor="middle" font-size="10.5" fill="#166534">評価差額 → P/Lでなく純資産直入</text>
+  <text x="560" y="318" text-anchor="middle" font-size="10" fill="#374151">投資有価証券（固定資産）に表示</text>
+  <text x="560" y="336" text-anchor="middle" font-size="10" fill="#64748B">評価増：その他有価証券評価差額金（純資産）</text>
+  <text x="560" y="350" text-anchor="middle" font-size="10" fill="#64748B">翌期首に洗替法で振り戻す（洗替法）</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="372" width="700" height="20" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="386" text-anchor="middle" font-size="10.5" fill="#475569">💡 保有目的が違えば処理が全く異なる。問題文の「○○目的」という記述を見落とさないことが最大のポイント。</text>
+</svg>
