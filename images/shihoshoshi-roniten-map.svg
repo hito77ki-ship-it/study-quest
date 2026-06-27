@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">司法書士——科目別学習ロードマップと論点の重み</text>
+
+  <!-- フェーズ1 -->
+  <rect x="20" y="52" width="168" height="260" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="20" y="52" width="168" height="28" rx="10" fill="#EF4444"/>
+  <rect x="20" y="70" width="168" height="10" fill="#EF4444"/>
+  <text x="104" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Phase 1（必須）</text>
+  <text x="104" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#DC2626">民法</text>
+  <rect x="36" y="98" width="136" height="20" rx="4" fill="#FEE2E2"/>
+  <text x="104" y="112" text-anchor="middle" font-size="9.5" fill="#7F1D1D">総則（意思表示・代理・時効）</text>
+  <rect x="36" y="122" width="136" height="20" rx="4" fill="#FEE2E2"/>
+  <text x="104" y="136" text-anchor="middle" font-size="9.5" fill="#7F1D1D">物権・担保物権（抵当権）</text>
+  <rect x="36" y="146" width="136" height="20" rx="4" fill="#FEE2E2"/>
+  <text x="104" y="160" text-anchor="middle" font-size="9.5" fill="#7F1D1D">債権総論・各論</text>
+  <rect x="36" y="170" width="136" height="20" rx="4" fill="#FEE2E2"/>
+  <text x="104" y="184" text-anchor="middle" font-size="9.5" fill="#7F1D1D">家族法（相続・親族）</text>
+  <text x="104" y="210" text-anchor="middle" font-size="10" fill="#374151">午前20問の配点</text>
+  <text x="104" y="226" text-anchor="middle" font-size="10" fill="#374151">全科目の土台になる</text>
+  <text x="104" y="246" text-anchor="middle" font-size="10" fill="#64748B">学習期間の目安：</text>
+  <text x="104" y="262" text-anchor="middle" font-size="10" fill="#64748B">6〜12ヶ月</text>
+  <text x="104" y="284" text-anchor="middle" font-size="10" fill="#DC2626">★★★★★</text>
+
+  <!-- フェーズ2 -->
+  <rect x="208" y="52" width="168" height="260" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="208" y="52" width="168" height="28" rx="10" fill="#22C55E"/>
+  <rect x="208" y="70" width="168" height="10" fill="#22C55E"/>
+  <text x="292" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Phase 2（主戦場）</text>
+  <text x="292" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">不動産登記法</text>
+  <rect x="224" y="98" width="136" height="20" rx="4" fill="#DCFCE7"/>
+  <text x="292" y="112" text-anchor="middle" font-size="9.5" fill="#166534">登記の一般原則</text>
+  <rect x="224" y="122" width="136" height="20" rx="4" fill="#DCFCE7"/>
+  <text x="292" y="136" text-anchor="middle" font-size="9.5" fill="#166534">所有権・抵当権の登記</text>
+  <rect x="224" y="146" width="136" height="20" rx="4" fill="#DCFCE7"/>
+  <text x="292" y="160" text-anchor="middle" font-size="9.5" fill="#166534">申請情報・添付情報</text>
+  <rect x="224" y="170" width="136" height="20" rx="4" fill="#DCFCE7"/>
+  <text x="292" y="184" text-anchor="middle" font-size="9.5" fill="#166534">各種登記手続（保存・移転）</text>
+  <text x="292" y="210" text-anchor="middle" font-size="10" fill="#374151">午後16問＋記述1問</text>
+  <text x="292" y="226" text-anchor="middle" font-size="10" fill="#374151">民法とセット学習が効果的</text>
+  <text x="292" y="246" text-anchor="middle" font-size="10" fill="#64748B">学習期間の目安：</text>
+  <text x="292" y="262" text-anchor="middle" font-size="10" fill="#64748B">3〜6ヶ月</text>
+  <text x="292" y="284" text-anchor="middle" font-size="10" fill="#22C55E">★★★★★</text>
+
+  <!-- フェーズ3 -->
+  <rect x="396" y="52" width="168" height="260" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="396" y="52" width="168" height="28" rx="10" fill="#EAB308"/>
+  <rect x="396" y="70" width="168" height="10" fill="#EAB308"/>
+  <text x="480" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Phase 3（並走）</text>
+  <text x="480" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#713F12">会社法・商業登記法</text>
+  <rect x="412" y="98" width="136" height="20" rx="4" fill="#FEF9C3"/>
+  <text x="480" y="112" text-anchor="middle" font-size="9.5" fill="#713F12">株式会社の機関・株式</text>
+  <rect x="412" y="122" width="136" height="20" rx="4" fill="#FEF9C3"/>
+  <text x="480" y="136" text-anchor="middle" font-size="9.5" fill="#713F12">役員変更・設立・解散</text>
+  <rect x="412" y="146" width="136" height="20" rx="4" fill="#FEF9C3"/>
+  <text x="480" y="160" text-anchor="middle" font-size="9.5" fill="#713F12">商業登記の手続</text>
+  <rect x="412" y="170" width="136" height="20" rx="4" fill="#FEF9C3"/>
+  <text x="480" y="184" text-anchor="middle" font-size="9.5" fill="#713F12">持分会社・組織再編</text>
+  <text x="480" y="210" text-anchor="middle" font-size="10" fill="#374151">午前9問＋午後記述1問</text>
+  <text x="480" y="226" text-anchor="middle" font-size="10" fill="#374151">会社法と商業登記はセット</text>
+  <text x="480" y="246" text-anchor="middle" font-size="10" fill="#64748B">学習期間の目安：</text>
+  <text x="480" y="262" text-anchor="middle" font-size="10" fill="#64748B">2〜4ヶ月</text>
+  <text x="480" y="284" text-anchor="middle" font-size="10" fill="#EAB308">★★★★</text>
+
+  <!-- フェーズ4 -->
+  <rect x="584" y="52" width="156" height="260" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="584" y="52" width="156" height="28" rx="10" fill="#7C3AED"/>
+  <rect x="584" y="70" width="156" height="10" fill="#7C3AED"/>
+  <text x="662" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Phase 4（後半）</text>
+  <text x="662" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#5B21B6">マイナー科目</text>
+  <rect x="600" y="98" width="124" height="18" rx="4" fill="#EDE9FE"/>
+  <text x="662" y="111" text-anchor="middle" font-size="9.5" fill="#5B21B6">民事訴訟法（5問）</text>
+  <rect x="600" y="120" width="124" height="18" rx="4" fill="#EDE9FE"/>
+  <text x="662" y="133" text-anchor="middle" font-size="9.5" fill="#5B21B6">民事執行法（3問）</text>
+  <rect x="600" y="142" width="124" height="18" rx="4" fill="#EDE9FE"/>
+  <text x="662" y="155" text-anchor="middle" font-size="9.5" fill="#5B21B6">民事保全法（2問）</text>
+  <rect x="600" y="164" width="124" height="18" rx="4" fill="#EDE9FE"/>
+  <text x="662" y="177" text-anchor="middle" font-size="9.5" fill="#5B21B6">供託法・司法書士法</text>
+  <rect x="600" y="186" width="124" height="18" rx="4" fill="#EDE9FE"/>
+  <text x="662" y="199" text-anchor="middle" font-size="9.5" fill="#5B21B6">憲法・刑法</text>
+  <text x="662" y="220" text-anchor="middle" font-size="10" fill="#374151">合計約14問</text>
+  <text x="662" y="236" text-anchor="middle" font-size="10" fill="#374151">基本論点のみ押さえる</text>
+  <text x="662" y="256" text-anchor="middle" font-size="10" fill="#64748B">学習期間：</text>
+  <text x="662" y="272" text-anchor="middle" font-size="10" fill="#64748B">1〜2ヶ月</text>
+  <text x="662" y="292" text-anchor="middle" font-size="10" fill="#7C3AED">★★★</text>
+
+  <!-- Bottom arrow -->
+  <rect x="20" y="324" width="720" height="28" rx="6" fill="#1E293B"/>
+  <text x="380" y="342" text-anchor="middle" font-size="10.5" fill="#F8FAFC">学習の流れ：民法（土台）→ 不動産登記法（主戦場）→ 会社法・商業登記法（並走）→ マイナー科目（後半）</text>
+</svg>
