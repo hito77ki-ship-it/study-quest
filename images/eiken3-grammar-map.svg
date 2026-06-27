@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検3級 語彙・文法 頻出パターン攻略マップ</text>
+  <!-- 大問1 語彙攻略 -->
+  <rect x="20" y="52" width="348" height="348" rx="8" fill="#F0FDF4"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#16A34A"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">大問1 語彙問題の頻出カテゴリ</text>
+  <!-- Categories -->
+  <rect x="36" y="96" width="316" height="38" rx="5" fill="#DCFCE7"/>
+  <text x="104" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">名詞</text>
+  <text x="104" y="128" text-anchor="middle" font-size="9" fill="#374151">collection / effort / result</text>
+  <text x="280" y="121" text-anchor="middle" font-size="9" fill="#64748B">日常・学校・家族・社会</text>
+  <rect x="36" y="140" width="316" height="38" rx="5" fill="#DCFCE7"/>
+  <text x="104" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">動詞</text>
+  <text x="104" y="172" text-anchor="middle" font-size="9" fill="#374151">decide / explain / improve</text>
+  <text x="280" y="165" text-anchor="middle" font-size="9" fill="#64748B">行動・状態・変化を表す動詞</text>
+  <rect x="36" y="184" width="316" height="38" rx="5" fill="#DCFCE7"/>
+  <text x="104" y="202" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">形容詞</text>
+  <text x="104" y="216" text-anchor="middle" font-size="9" fill="#374151">popular / various / certain</text>
+  <text x="280" y="209" text-anchor="middle" font-size="9" fill="#64748B">程度・性質・状態の表現</text>
+  <rect x="36" y="228" width="316" height="38" rx="5" fill="#DCFCE7"/>
+  <text x="104" y="246" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">副詞・前置詞句</text>
+  <text x="104" y="260" text-anchor="middle" font-size="9" fill="#374151">already / usually / instead of</text>
+  <text x="280" y="253" text-anchor="middle" font-size="9" fill="#64748B">時・頻度・否定の副詞表現</text>
+  <rect x="36" y="272" width="316" height="38" rx="5" fill="#BBF7D0"/>
+  <text x="104" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">熟語・コロケーション</text>
+  <text x="104" y="304" text-anchor="middle" font-size="9" fill="#374151">take care of / be good at</text>
+  <text x="280" y="297" text-anchor="middle" font-size="9" fill="#64748B">動詞＋前置詞の熟語が最多</text>
+  <rect x="36" y="360" width="316" height="30" rx="5" fill="#166534"/>
+  <text x="194" y="380" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">大問1は15問中11問以上が合格の目安</text>
+  <!-- 文法頻出パターン -->
+  <rect x="384" y="52" width="356" height="348" rx="8" fill="#EFF6FF"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#2563EB"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">頻出文法パターン（大問2〜4）</text>
+  <rect x="400" y="96" width="324" height="48" rx="5" fill="#DBEAFE"/>
+  <text x="562" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">① 動詞の形（時制・助動詞）</text>
+  <text x="562" y="132" text-anchor="middle" font-size="10" fill="#374151">現在完了・過去進行・will/can/must の使い分け</text>
+  <rect x="400" y="152" width="324" height="48" rx="5" fill="#DBEAFE"/>
+  <text x="562" y="172" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">② 不定詞・動名詞</text>
+  <text x="562" y="188" text-anchor="middle" font-size="10" fill="#374151">want to do / enjoy doing / decide to do の使い分け</text>
+  <rect x="400" y="208" width="324" height="48" rx="5" fill="#DBEAFE"/>
+  <text x="562" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">③ 比較表現</text>
+  <text x="562" y="244" text-anchor="middle" font-size="10" fill="#374151">as...as / 比較級 / 最上級 の使い分けと語順</text>
+  <rect x="400" y="264" width="324" height="48" rx="5" fill="#DBEAFE"/>
+  <text x="562" y="284" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">④ 関係代名詞・接続詞</text>
+  <text x="562" y="300" text-anchor="middle" font-size="10" fill="#374151">who / which / that の節・when/if/because の接続</text>
+  <rect x="400" y="320" width="324" height="48" rx="5" fill="#BFDBFE"/>
+  <text x="562" y="340" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">⑤ 受動態・前置詞</text>
+  <text x="562" y="356" text-anchor="middle" font-size="10" fill="#374151">be+過去分詞 の形と by/in/at/on/for の使い方</text>
+  <rect x="400" y="380" width="324" height="14" rx="5" fill="#1D4ED8"/>
+  <text x="562" y="392" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">文法問題は「品詞」「語順」「動詞の形」を軸に素早く判断</text>
+</svg>

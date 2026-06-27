@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="360" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検5級 試験構成と攻略——中学初級・英語学習の最初の目標</text>
+  <!-- Left -->
+  <rect x="20" y="52" width="348" height="288" rx="8" fill="#F1F5F9"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#64748B"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成（CEFR A1）</text>
+  <rect x="40" y="96" width="310" height="26" rx="4" fill="#E2E8F0"/>
+  <text x="50" y="113" text-anchor="start" font-size="10" fill="#374151">筆記25分：語彙問題（15問）・会話文（5問）・長文（5問）</text>
+  <rect x="40" y="128" width="310" height="26" rx="4" fill="#E2E8F0"/>
+  <text x="50" y="145" text-anchor="start" font-size="10" fill="#374151">リスニング20分：会話・文（各10問）</text>
+  <rect x="40" y="160" width="310" height="26" rx="4" fill="#E2E8F0"/>
+  <text x="50" y="177" text-anchor="start" font-size="10" fill="#374151">語彙数の目安：約600語（中学1年前半）</text>
+  <rect x="40" y="192" width="310" height="26" rx="4" fill="#E2E8F0"/>
+  <text x="50" y="209" text-anchor="start" font-size="10" fill="#374151">文法：be動詞・一般動詞の基本・代名詞・疑問文</text>
+  <rect x="40" y="224" width="310" height="26" rx="4" fill="#CBD5E1"/>
+  <text x="50" y="241" text-anchor="start" font-size="10" fill="#374151">二次試験なし（一次試験のみ）</text>
+  <text x="40" y="278" text-anchor="start" font-size="10" fill="#374151">活用場面：英語学習の最初の目標・達成感と自信の獲得</text>
+  <text x="40" y="296" text-anchor="start" font-size="10" fill="#374151">合格率70〜75%。正しく勉強すれば確実に合格できる</text>
+  <!-- Right -->
+  <rect x="384" y="52" width="356" height="288" rx="8" fill="#F0FDF4"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#22C55E"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">合格のための学習ポイント</text>
+  <rect x="400" y="96" width="324" height="56" rx="6" fill="#DCFCE7"/>
+  <text x="562" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#15803D">① 単語600語をまず覚える</text>
+  <text x="562" y="134" text-anchor="middle" font-size="10" fill="#374151">「でる順パス単5級」の頻出単語を毎日5〜10語</text>
+  <text x="562" y="150" text-anchor="middle" font-size="10" fill="#374151">日常生活（色・食べ物・動作・場所）から始めるとすんなり入る</text>
+  <rect x="400" y="162" width="324" height="56" rx="6" fill="#DCFCE7"/>
+  <text x="562" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#15803D">② be動詞と一般動詞を使い分ける</text>
+  <text x="562" y="200" text-anchor="middle" font-size="10" fill="#374151">「I am」「She is」「They are」と「I play」の違いを確認</text>
+  <text x="562" y="216" text-anchor="middle" font-size="10" fill="#374151">疑問文（Do you...? / Are you...?）の作り方を練習する</text>
+  <rect x="400" y="228" width="324" height="56" rx="6" fill="#BBF7D0"/>
+  <text x="562" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#15803D">③ リスニング：ゆっくりの英語に慣れる</text>
+  <text x="562" y="266" text-anchor="middle" font-size="10" fill="#374151">5級は話すスピードがゆっくり。まず数字・人名・場所に集中</text>
+  <text x="562" y="282" text-anchor="middle" font-size="10" fill="#374151">公式問題集を2〜3回繰り返せば形式に慣れて得点しやすい</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検準2級 試験構成と攻略——高校在学程度・CEFR A2〜B1</text>
+  <!-- Left -->
+  <rect x="20" y="52" width="348" height="308" rx="8" fill="#F0F9FF"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#0284C7"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成</text>
+  <text x="40" y="106" text-anchor="start" font-size="12" font-weight="700" fill="#0369A1">一次試験</text>
+  <rect x="40" y="114" width="310" height="26" rx="4" fill="#E0F2FE"/>
+  <text x="50" y="131" text-anchor="start" font-size="10" fill="#374151">筆記75分：語彙・読解・英作文（メール返信80〜100語）</text>
+  <rect x="40" y="146" width="310" height="26" rx="4" fill="#E0F2FE"/>
+  <text x="50" y="163" text-anchor="start" font-size="10" fill="#374151">リスニング25分：会話・文の2種（各12問）</text>
+  <rect x="40" y="178" width="310" height="26" rx="4" fill="#E0F2FE"/>
+  <text x="50" y="195" text-anchor="start" font-size="10" fill="#374151">語彙数の目安：約3,500語</text>
+  <text x="40" y="224" text-anchor="start" font-size="12" font-weight="700" fill="#0369A1">二次試験（面接 約7分）</text>
+  <rect x="40" y="232" width="310" height="26" rx="4" fill="#BAE6FD"/>
+  <text x="50" y="249" text-anchor="start" font-size="10" fill="#374151">4コマイラスト描写＋Q&amp;A 4問</text>
+  <rect x="40" y="264" width="310" height="26" rx="4" fill="#BAE6FD"/>
+  <text x="50" y="281" text-anchor="start" font-size="10" fill="#374151">日常的な話題・身近な社会問題（2級より易しめ）</text>
+  <text x="40" y="314" text-anchor="start" font-size="10" fill="#374151">活用場面：大学入試の英語加点・高校の内申・就活補完</text>
+  <!-- Right -->
+  <rect x="384" y="52" width="356" height="308" rx="8" fill="#EFF6FF"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#3B82F6"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">合格のための学習ポイント</text>
+  <rect x="400" y="96" width="324" height="56" rx="6" fill="#DBEAFE"/>
+  <text x="562" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">① 語彙：3,500語・毎日コツコツ</text>
+  <text x="562" y="134" text-anchor="middle" font-size="10" fill="#374151">「でる順パス単準2級」を1日15語ペースで覚える</text>
+  <text x="562" y="150" text-anchor="middle" font-size="10" fill="#374151">大問1語彙問題20問で15問以上を確保するのが目標</text>
+  <rect x="400" y="162" width="324" height="56" rx="6" fill="#DBEAFE"/>
+  <text x="562" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">② 英作文：メール返信の型を固める</text>
+  <text x="562" y="200" text-anchor="middle" font-size="10" fill="#374151">お礼・提案・質問の3パターンを10本ずつ書いて練習</text>
+  <text x="562" y="216" text-anchor="middle" font-size="10" fill="#374151">80〜100語をテンプレートで素早く書けるようにする</text>
+  <rect x="400" y="228" width="324" height="56" rx="6" fill="#DBEAFE"/>
+  <text x="562" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">③ リスニング：毎日20分の聴き込み</text>
+  <text x="562" y="266" text-anchor="middle" font-size="10" fill="#374151">公式問題集の音声をシャドーイング＆ディクテーション</text>
+  <text x="562" y="282" text-anchor="middle" font-size="10" fill="#374151">会話文は場面のイメージを先に掴んでから聴く</text>
+  <rect x="400" y="294" width="324" height="56" rx="6" fill="#BFDBFE"/>
+  <text x="562" y="314" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">④ 二次：日常話題の英語で答える練習</text>
+  <text x="562" y="332" text-anchor="middle" font-size="10" fill="#374151">「I agree/disagree because...」の型で答えを組み立てる</text>
+  <text x="562" y="348" text-anchor="middle" font-size="10" fill="#374151">身近なテーマ（スマホ・環境・勉強）の意見を10個準備</text>
+</svg>

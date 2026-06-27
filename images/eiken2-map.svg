@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検2級 試験構成と攻略——高校卒業・大学入試の基準</text>
+  <!-- Left: 試験構成 -->
+  <rect x="20" y="52" width="348" height="328" rx="8" fill="#EFF6FF"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#2563EB"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成（CEFR B1〜B2）</text>
+  <text x="40" y="106" text-anchor="start" font-size="12" font-weight="700" fill="#1D4ED8">一次試験</text>
+  <rect x="40" y="114" width="310" height="28" rx="4" fill="#DBEAFE"/>
+  <text x="50" y="133" text-anchor="start" font-size="10" fill="#374151">筆記85分：語彙・読解・英作文（メール/意見文）</text>
+  <rect x="40" y="148" width="310" height="28" rx="4" fill="#DBEAFE"/>
+  <text x="50" y="167" text-anchor="start" font-size="10" fill="#374151">リスニング25分：会話・文（各15問）</text>
+  <rect x="40" y="182" width="310" height="28" rx="4" fill="#DBEAFE"/>
+  <text x="50" y="201" text-anchor="start" font-size="10" fill="#374151">語彙数の目安：約5,000語</text>
+  <text x="40" y="230" text-anchor="start" font-size="12" font-weight="700" fill="#1D4ED8">二次試験（面接 約7分）</text>
+  <rect x="40" y="238" width="310" height="28" rx="4" fill="#BFDBFE"/>
+  <text x="50" y="257" text-anchor="start" font-size="10" fill="#374151">4コマイラスト描写＋Q&amp;A（社会問題）</text>
+  <rect x="40" y="272" width="310" height="28" rx="4" fill="#BFDBFE"/>
+  <text x="50" y="291" text-anchor="start" font-size="10" fill="#374151">評価：文法・語彙・発音・内容</text>
+  <text x="40" y="320" text-anchor="start" font-size="11" font-weight="700" fill="#1D4ED8">活用場面</text>
+  <text x="40" y="338" text-anchor="start" font-size="10" fill="#374151">大学入試（共通テスト英語の代替）、就活のアピール</text>
+  <text x="40" y="356" text-anchor="start" font-size="10" fill="#374151">TOEIC換算で約550〜700点相当の英語力の証明</text>
+  <!-- Right: 合格戦略 -->
+  <rect x="384" y="52" width="356" height="328" rx="8" fill="#F0F9FF"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#0369A1"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">合格のための学習ポイント</text>
+  <rect x="400" y="96" width="324" height="58" rx="6" fill="#E0F2FE"/>
+  <text x="562" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">① 語彙：5,000語を確実に</text>
+  <text x="562" y="134" text-anchor="middle" font-size="10" fill="#374151">「でる順パス単2級」を2〜3周。語彙問題は大問1の要</text>
+  <text x="562" y="150" text-anchor="middle" font-size="10" fill="#374151">ここで満点に近い点数を取ることが合格の近道</text>
+  <rect x="400" y="164" width="324" height="58" rx="6" fill="#E0F2FE"/>
+  <text x="562" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">② 英作文：メール形式を練習</text>
+  <text x="562" y="202" text-anchor="middle" font-size="10" fill="#374151">「要約メール」と「意見文」の2タイプを各10本書く</text>
+  <text x="562" y="218" text-anchor="middle" font-size="10" fill="#374151">構成（主張→理由×2→まとめ）を固定してスピードアップ</text>
+  <rect x="400" y="232" width="324" height="58" rx="6" fill="#E0F2FE"/>
+  <text x="562" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">③ 長文：skim読みで全問解答</text>
+  <text x="562" y="270" text-anchor="middle" font-size="10" fill="#374151">時間配分：語彙20分・英作25分・長文40分が目安</text>
+  <text x="562" y="286" text-anchor="middle" font-size="10" fill="#374151">設問から逆算して必要な箇所を狙い読みする</text>
+  <rect x="400" y="300" width="324" height="70" rx="6" fill="#BFDBFE"/>
+  <text x="562" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">④ 二次：4コマ描写の型を覚える</text>
+  <text x="562" y="338" text-anchor="middle" font-size="10" fill="#374151">「〜は〜しています」の現在進行形で描写</text>
+  <text x="562" y="354" text-anchor="middle" font-size="10" fill="#374151">社会問題の意見（3文テンプレート）を5つ準備</text>
+</svg>

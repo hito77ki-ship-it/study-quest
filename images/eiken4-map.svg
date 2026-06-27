@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="360" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検4級 試験構成と攻略——中学中級・CEFR A1〜A2</text>
+  <!-- Left -->
+  <rect x="20" y="52" width="348" height="288" rx="8" fill="#FFFBEB"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#D97706"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成（二次試験なし）</text>
+  <rect x="40" y="96" width="310" height="26" rx="4" fill="#FEF3C7"/>
+  <text x="50" y="113" text-anchor="start" font-size="10" fill="#374151">筆記35分：語彙問題（15問）・会話文（5問）・長文（10問）</text>
+  <rect x="40" y="128" width="310" height="26" rx="4" fill="#FEF3C7"/>
+  <text x="50" y="145" text-anchor="start" font-size="10" fill="#374151">リスニング30分：会話・文（各10問）</text>
+  <rect x="40" y="160" width="310" height="26" rx="4" fill="#FEF3C7"/>
+  <text x="50" y="177" text-anchor="start" font-size="10" fill="#374151">語彙数の目安：約1,500語（中学前半〜中盤）</text>
+  <rect x="40" y="192" width="310" height="26" rx="4" fill="#FEF3C7"/>
+  <text x="50" y="209" text-anchor="start" font-size="10" fill="#374151">文法：中学基礎（be動詞・一般動詞・現在進行形・過去形）</text>
+  <rect x="40" y="224" width="310" height="26" rx="4" fill="#FDE68A"/>
+  <text x="50" y="241" text-anchor="start" font-size="10" fill="#374151">合格ライン：各技能約60%（6割正解が目安）</text>
+  <text x="40" y="278" text-anchor="start" font-size="10" fill="#374151">活用場面：英語学習の中間目標・3級への橋渡し</text>
+  <text x="40" y="296" text-anchor="start" font-size="10" fill="#374151">英検4級は二次試験（面接）がなく受験しやすい</text>
+  <!-- Right -->
+  <rect x="384" y="52" width="356" height="288" rx="8" fill="#FFFBEB"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#F59E0B"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">合格のための学習ポイント</text>
+  <rect x="400" y="96" width="324" height="56" rx="6" fill="#FEF3C7"/>
+  <text x="562" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">① 単語：1,500語を7割覚える</text>
+  <text x="562" y="134" text-anchor="middle" font-size="10" fill="#374151">「でる順パス単4級」を1日10語。絵や例文とセットで記憶</text>
+  <text x="562" y="150" text-anchor="middle" font-size="10" fill="#374151">語彙問題15問で10問以上を確保するのが合格への近道</text>
+  <rect x="400" y="162" width="324" height="56" rx="6" fill="#FEF3C7"/>
+  <text x="562" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">② 文法：中学基礎文法を完璧に</text>
+  <text x="562" y="200" text-anchor="middle" font-size="10" fill="#374151">be動詞・一般動詞の肯定・否定・疑問文の変換</text>
+  <text x="562" y="216" text-anchor="middle" font-size="10" fill="#374151">現在・過去・現在進行形の3時制を確実にする</text>
+  <rect x="400" y="228" width="324" height="56" rx="6" fill="#FDE68A"/>
+  <text x="562" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">③ リスニング：毎日10分聴く習慣</text>
+  <text x="562" y="266" text-anchor="middle" font-size="10" fill="#374151">公式問題集の音声を繰り返し聴いてスピードに慣れる</text>
+  <text x="562" y="282" text-anchor="middle" font-size="10" fill="#374151">まずスクリプトを見ながら聴いて意味を確認する</text>
+</svg>

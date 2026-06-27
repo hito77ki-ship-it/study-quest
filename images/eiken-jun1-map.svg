@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検準1級 試験構成と攻略——TOEIC換算730〜850点相当</text>
+  <!-- Left: 試験構成 -->
+  <rect x="20" y="52" width="348" height="328" rx="8" fill="#F5F3FF"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#7C3AED"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成（CEFR B2）</text>
+  <text x="40" y="106" text-anchor="start" font-size="12" font-weight="700" fill="#6D28D9">一次試験</text>
+  <rect x="40" y="114" width="310" height="28" rx="4" fill="#EDE9FE"/>
+  <text x="50" y="133" text-anchor="start" font-size="10" fill="#374151">筆記90分：語彙・読解・英作文（意見論述120〜150語）</text>
+  <rect x="40" y="148" width="310" height="28" rx="4" fill="#EDE9FE"/>
+  <text x="50" y="167" text-anchor="start" font-size="10" fill="#374151">リスニング30分：会話・文・Real-Lifeの3種</text>
+  <rect x="40" y="182" width="310" height="28" rx="4" fill="#EDE9FE"/>
+  <text x="50" y="201" text-anchor="start" font-size="10" fill="#374151">語彙数の目安：約8,000語（2級の1.6倍）</text>
+  <text x="40" y="230" text-anchor="start" font-size="12" font-weight="700" fill="#6D28D9">二次試験（面接 約8分）</text>
+  <rect x="40" y="238" width="310" height="28" rx="4" fill="#DDD6FE"/>
+  <text x="50" y="257" text-anchor="start" font-size="10" fill="#374151">4コマイラスト2分スピーチ＋Q&amp;A 4問</text>
+  <rect x="40" y="272" width="310" height="28" rx="4" fill="#DDD6FE"/>
+  <text x="50" y="291" text-anchor="start" font-size="10" fill="#374151">社会問題・抽象的テーマの意見を求められる</text>
+  <text x="40" y="320" text-anchor="start" font-size="11" font-weight="700" fill="#6D28D9">活用場面</text>
+  <text x="40" y="338" text-anchor="start" font-size="10" fill="#374151">大学院入試・教員採用・海外留学・国際業務のアピール</text>
+  <text x="40" y="356" text-anchor="start" font-size="10" fill="#374151">英語教員免許取得での優遇（大学による）</text>
+  <!-- Right: 合格戦略 -->
+  <rect x="384" y="52" width="356" height="328" rx="8" fill="#FDF4FF"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#9333EA"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">合格のための学習ポイント</text>
+  <rect x="400" y="96" width="324" height="58" rx="6" fill="#F3E8FF"/>
+  <text x="562" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#7E22CE">① 語彙：8,000語が最大の壁</text>
+  <text x="562" y="134" text-anchor="middle" font-size="10" fill="#374151">「準1級でる順パス単」を毎日20語ペースで完走</text>
+  <text x="562" y="150" text-anchor="middle" font-size="10" fill="#374151">大問1語彙問題（25問）で9割を取ることが合否の鍵</text>
+  <rect x="400" y="164" width="324" height="58" rx="6" fill="#F3E8FF"/>
+  <text x="562" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#7E22CE">② 英作文：意見論述の型を固める</text>
+  <text x="562" y="202" text-anchor="middle" font-size="10" fill="#374151">主張→理由2つ→具体例→結論の4段構成で書く</text>
+  <text x="562" y="218" text-anchor="middle" font-size="10" fill="#374151">社会・環境・教育・テクノロジー系テーマを20本書く</text>
+  <rect x="400" y="232" width="324" height="58" rx="6" fill="#F3E8FF"/>
+  <text x="562" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#7E22CE">③ リスニング：Real-Life形式に慣れる</text>
+  <text x="562" y="270" text-anchor="middle" font-size="10" fill="#374151">状況説明→会話の流れを先読みしてから聴く</text>
+  <text x="562" y="286" text-anchor="middle" font-size="10" fill="#374151">英語ニュース・Podcastを週5時間以上聴く習慣</text>
+  <rect x="400" y="300" width="324" height="70" rx="6" fill="#EDE9FE"/>
+  <text x="562" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#7E22CE">④ 二次：抽象テーマの意見を英語で</text>
+  <text x="562" y="338" text-anchor="middle" font-size="10" fill="#374151">「少子化」「AI」「グローバル化」30テーマで意見文を準備</text>
+  <text x="562" y="354" text-anchor="middle" font-size="10" fill="#374151">Agree/Disagreeを明確にし根拠2つ以上で答える</text>
+</svg>

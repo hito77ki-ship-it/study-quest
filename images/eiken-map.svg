@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検 全7級ロードマップ——CEFR対応と各級の位置づけ</text>
+  <!-- Grade bars -->
+  <rect x="20" y="52" width="720" height="46" rx="6" fill="#7C3AED"/>
+  <text x="130" y="73" text-anchor="start" font-size="12" font-weight="700" fill="#fff">英検 1 級</text>
+  <text x="130" y="89" text-anchor="start" font-size="10" fill="#E9D5FF">大学上級・大学院レベル　語彙15,000語　CEFR C1〜C2</text>
+  <rect x="580" y="62" width="148" height="26" rx="4" fill="#6D28D9"/>
+  <text x="654" y="80" text-anchor="middle" font-size="10" fill="#fff">合格率 約10%</text>
+
+  <rect x="20" y="106" width="720" height="46" rx="6" fill="#8B5CF6"/>
+  <text x="130" y="127" text-anchor="start" font-size="12" font-weight="700" fill="#fff">英検 準1 級</text>
+  <text x="130" y="143" text-anchor="start" font-size="10" fill="#EDE9FE">大学中級程度　語彙8,000語　CEFR B2　TOEIC換算約730〜850点</text>
+  <rect x="580" y="116" width="148" height="26" rx="4" fill="#7C3AED"/>
+  <text x="654" y="134" text-anchor="middle" font-size="10" fill="#fff">合格率 約15〜20%</text>
+
+  <rect x="20" y="160" width="720" height="46" rx="6" fill="#3B82F6"/>
+  <text x="130" y="181" text-anchor="start" font-size="12" font-weight="700" fill="#fff">英検 2 級</text>
+  <text x="130" y="197" text-anchor="start" font-size="10" fill="#DBEAFE">高校卒業程度　語彙5,000語　CEFR B1〜B2　大学入試・就活で活用</text>
+  <rect x="580" y="170" width="148" height="26" rx="4" fill="#2563EB"/>
+  <text x="654" y="188" text-anchor="middle" font-size="10" fill="#fff">合格率 約25〜35%</text>
+
+  <rect x="20" y="214" width="720" height="46" rx="6" fill="#0EA5E9"/>
+  <text x="130" y="235" text-anchor="start" font-size="12" font-weight="700" fill="#fff">英検 準2 級</text>
+  <text x="130" y="251" text-anchor="start" font-size="10" fill="#E0F2FE">高校在学程度（高1〜2）　語彙3,500語　CEFR A2〜B1</text>
+  <rect x="580" y="224" width="148" height="26" rx="4" fill="#0284C7"/>
+  <text x="654" y="242" text-anchor="middle" font-size="10" fill="#fff">合格率 約30〜40%</text>
+
+  <rect x="20" y="268" width="720" height="46" rx="6" fill="#22C55E"/>
+  <text x="130" y="289" text-anchor="start" font-size="12" font-weight="700" fill="#fff">英検 3 級</text>
+  <text x="130" y="305" text-anchor="start" font-size="10" fill="#DCFCE7">中学卒業程度　語彙2,500語　CEFR A2　初の二次試験（面接）あり</text>
+  <rect x="580" y="278" width="148" height="26" rx="4" fill="#16A34A"/>
+  <text x="654" y="296" text-anchor="middle" font-size="10" fill="#fff">合格率 約45〜55%</text>
+
+  <rect x="20" y="322" width="720" height="38" rx="6" fill="#F59E0B"/>
+  <text x="130" y="339" text-anchor="start" font-size="11" font-weight="700" fill="#fff">英検 4 級　中学中級　語彙1,500語　CEFR A1〜A2　筆記＋リスニングのみ</text>
+  <rect x="580" y="330" width="148" height="22" rx="4" fill="#D97706"/>
+  <text x="654" y="345" text-anchor="middle" font-size="10" fill="#fff">合格率 約60〜65%</text>
+
+  <rect x="20" y="368" width="720" height="38" rx="6" fill="#94A3B8"/>
+  <text x="130" y="385" text-anchor="start" font-size="11" font-weight="700" fill="#fff">英検 5 級　中学初級　語彙600語　CEFR A1　英語学習の最初の目標</text>
+  <rect x="580" y="376" width="148" height="22" rx="4" fill="#64748B"/>
+  <text x="654" y="391" text-anchor="middle" font-size="10" fill="#fff">合格率 約70〜75%</text>
+
+  <!-- Decorative labels -->
+  <text x="30" y="72" text-anchor="middle" font-size="18" font-weight="700" fill="#E9D5FF">1</text>
+  <text x="30" y="126" text-anchor="middle" font-size="18" font-weight="700" fill="#EDE9FE">準</text>
+  <text x="30" y="180" text-anchor="middle" font-size="18" font-weight="700" fill="#DBEAFE">2</text>
+  <text x="30" y="234" text-anchor="middle" font-size="18" font-weight="700" fill="#E0F2FE">準</text>
+  <text x="30" y="288" text-anchor="middle" font-size="18" font-weight="700" fill="#DCFCE7">3</text>
+  <text x="30" y="341" text-anchor="middle" font-size="18" font-weight="700" fill="#FEF3C7">4</text>
+  <text x="30" y="387" text-anchor="middle" font-size="18" font-weight="700" fill="#F1F5F9">5</text>
+</svg>
