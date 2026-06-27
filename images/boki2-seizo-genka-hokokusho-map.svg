@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">製造原価報告書——3費目の集計から売上原価までの流れ</text>
+
+  <!-- 3 cost items -->
+  <rect x="30" y="56" width="145" height="52" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="102" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">材料費</text>
+  <text x="102" y="96" text-anchor="middle" font-size="10" fill="#374151">直接・間接材料費</text>
+
+  <rect x="30" y="118" width="145" height="52" rx="8" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="102" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">労務費</text>
+  <text x="102" y="158" text-anchor="middle" font-size="10" fill="#374151">直接・間接労務費</text>
+
+  <rect x="30" y="180" width="145" height="52" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="102" y="202" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">経費</text>
+  <text x="102" y="220" text-anchor="middle" font-size="10" fill="#374151">直接・間接経費</text>
+
+  <!-- Arrow right to 製造間接費 -->
+  <line x1="175" y1="145" x2="225" y2="145" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="200" y="136" text-anchor="middle" font-size="9" fill="#EF4444">間接費</text>
+
+  <!-- 製造間接費 box -->
+  <rect x="225" y="118" width="140" height="52" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="295" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">製造間接費</text>
+  <text x="295" y="156" text-anchor="middle" font-size="10" fill="#374151">→ 配賦基準で按分</text>
+
+  <!-- Arrow right from 製造間接費 to 仕掛品 -->
+  <polygon points="376,144 365,139 365,149" fill="#DC2626"/>
+  <line x1="365" y1="144" x2="365" y2="144" stroke="#DC2626" stroke-width="1.5"/>
+
+  <!-- Arrow from 直接費 to 仕掛品 -->
+  <line x1="175" y1="82" x2="390" y2="180" stroke="#EAB308" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="290" y="120" text-anchor="middle" font-size="9" fill="#EAB308">直接費</text>
+
+  <!-- 仕掛品 -->
+  <rect x="378" y="82" width="160" height="176" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="378" y="82" width="160" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="378" y="102" width="160" height="10" fill="#3B82F6"/>
+  <text x="458" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">仕 掛 品</text>
+  <text x="458" y="124" text-anchor="middle" font-size="10" fill="#374151">当月製造費用</text>
+  <text x="458" y="140" text-anchor="middle" font-size="10" fill="#374151">＋月初仕掛品</text>
+  <line x1="398" y1="148" x2="518" y2="148" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="458" y="166" text-anchor="middle" font-size="10" fill="#374151">＝ 当月製造費用合計</text>
+  <text x="458" y="184" text-anchor="middle" font-size="10" fill="#374151">−月末仕掛品</text>
+  <line x1="398" y1="192" x2="518" y2="192" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="458" y="210" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">完成品原価</text>
+  <text x="458" y="228" text-anchor="middle" font-size="10" fill="#64748B">← 製造原価報告書の</text>
+  <text x="458" y="244" text-anchor="middle" font-size="10" fill="#64748B">　　当期製品製造原価</text>
+
+  <!-- Arrow to 製品 -->
+  <polygon points="556,170 545,165 545,175" fill="#22C55E"/>
+  <line x1="538" y1="170" x2="545" y2="170" stroke="#22C55E" stroke-width="1.5"/>
+
+  <!-- 製品 -->
+  <rect x="556" y="92" width="140" height="160" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="556" y="92" width="140" height="28" rx="10" fill="#22C55E"/>
+  <rect x="556" y="110" width="140" height="10" fill="#22C55E"/>
+  <text x="626" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">製　品</text>
+  <text x="626" y="136" text-anchor="middle" font-size="10" fill="#374151">月初製品棚卸高</text>
+  <text x="626" y="152" text-anchor="middle" font-size="10" fill="#374151">＋完成品（上記）</text>
+  <line x1="576" y1="160" x2="680" y2="160" stroke="#86EFAC" stroke-width="1"/>
+  <text x="626" y="178" text-anchor="middle" font-size="10" fill="#374151">−月末製品棚卸高</text>
+  <line x1="576" y1="186" x2="680" y2="186" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="626" y="205" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">売上原価</text>
+  <text x="626" y="225" text-anchor="middle" font-size="10" fill="#64748B">P/Lに計上</text>
+  <text x="626" y="241" text-anchor="middle" font-size="10" fill="#64748B">される金額</text>
+
+  <!-- 製造原価報告書 label -->
+  <rect x="30" y="252" width="505" height="42" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="282" y="271" text-anchor="middle" font-size="11" fill="#475569">製造原価報告書（CR）が示す範囲</text>
+  <text x="282" y="286" text-anchor="middle" font-size="10.5" fill="#475569">材料費＋労務費＋経費 ＋月初仕掛品 −月末仕掛品 ＝ 当期製品製造原価</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="310" width="700" height="78" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="380" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">製造原価報告書の2つのひな形パターン</text>
+  <text x="55" y="350" font-size="10.5" fill="#374151">形式A（費目別）：材料費 ××  労務費 ××  経費 ××  ＝ 当月製造費用 → 仕掛品増減 → 当期製品製造原価</text>
+  <text x="55" y="368" font-size="10.5" fill="#374151">形式B（直接・間接別）：直接材料費 ×× 直接労務費 ×× 製造間接費 ×× を別々に表示してから合計する</text>
+  <text x="55" y="384" font-size="10" fill="#64748B">※ 試験では両形式が出る。問題のひな形（様式）を先に確認してから記入する。</text>
+</svg>

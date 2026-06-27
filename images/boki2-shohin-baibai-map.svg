@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">商品売買——売上原価の算定と棚卸資産の3層評価</text>
+
+  <!-- 売上原価の計算 -->
+  <rect x="30" y="52" width="700" height="60" rx="8" fill="#1E293B"/>
+  <text x="380" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#F8FAFC">売上原価の計算公式（しくりくりし）</text>
+  <text x="380" y="96" text-anchor="middle" font-size="11" fill="#94A3B8">期首商品棚卸高（しくり） ＋ 当期商品仕入高 − 期末商品棚卸高（くりし） ＝ 売上原価</text>
+
+  <!-- 3層評価 -->
+  <text x="380" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">期末商品の3層評価——「帳簿・実在・時価」を比べる</text>
+
+  <!-- Layer 1: 帳簿数量 -->
+  <rect x="30" y="150" width="700" height="60" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <text x="100" y="176" font-size="11" font-weight="700" fill="#1E40AF">① 帳簿棚卸高</text>
+  <text x="100" y="196" font-size="10.5" fill="#374151">帳簿上の数量 × 原価 ＝ 帳簿上の商品価額</text>
+  <text x="500" y="176" font-size="10.5" fill="#1E40AF">B/Sの理論値（全部残っているはず）</text>
+
+  <!-- Arrow + 減耗損 -->
+  <text x="380" y="228" text-anchor="middle" font-size="10.5" fill="#EF4444">↓ 数量不足がある場合は「棚卸減耗損」を計上</text>
+
+  <!-- Layer 2: 実地数量 -->
+  <rect x="30" y="238" width="700" height="60" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="100" y="264" font-size="11" font-weight="700" fill="#166534">② 実地棚卸高</text>
+  <text x="100" y="284" font-size="10.5" fill="#374151">実際に数えた数量 × 原価 ＝ 実際の商品価額</text>
+  <text x="500" y="264" font-size="10.5" fill="#166534">棚卸減耗損 ＝ ①−②（数量不足分の原価）</text>
+
+  <!-- Arrow + 評価損 -->
+  <text x="380" y="314" text-anchor="middle" font-size="10.5" fill="#F97316">↓ 時価が原価より低い場合は「商品評価損」を計上（低価法）</text>
+
+  <!-- Layer 3: 時価評価 -->
+  <rect x="30" y="324" width="700" height="42" rx="8" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="100" y="344" font-size="11" font-weight="700" fill="#C2410C">③ 正味売却価額（時価）</text>
+  <text x="100" y="360" font-size="10.5" fill="#374151">実地数量 × 正味売却価額 ＝ B/S計上額</text>
+  <text x="500" y="344" font-size="10.5" fill="#C2410C">商品評価損 ＝ ②−③（原価超過分）</text>
+</svg>
