@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>
+      text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }
+    </style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">小口現金の仕組み——会計係と用度係の役割分担</text>
+
+  <!-- 会計係 box (left) -->
+  <rect x="40" y="70" width="200" height="180" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="40" y="70" width="200" height="40" rx="12" fill="#3B82F6"/>
+  <rect x="40" y="98" width="200" height="12" fill="#3B82F6"/>
+  <text x="140" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">会計係（経理部）</text>
+  <text x="140" y="128" text-anchor="middle" font-size="11" fill="#1E40AF">仕訳を切る側</text>
+  <text x="140" y="155" text-anchor="middle" font-size="28" fill="#3B82F6">🏢</text>
+  <text x="140" y="186" text-anchor="middle" font-size="11" fill="#374151">① 小口現金を前渡し</text>
+  <text x="140" y="202" text-anchor="middle" font-size="11" fill="#374151">③ 報告を受けて補給</text>
+  <text x="140" y="218" text-anchor="middle" font-size="11" fill="#374151">④ 補給時に仕訳計上</text>
+
+  <!-- 用度係 box (right) -->
+  <rect x="520" y="70" width="200" height="180" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="520" y="70" width="200" height="40" rx="12" fill="#22C55E"/>
+  <rect x="520" y="98" width="200" height="12" fill="#22C55E"/>
+  <text x="620" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">用度係（庶務・総務）</text>
+  <text x="620" y="128" text-anchor="middle" font-size="11" fill="#166534">現金を受け取り使う側</text>
+  <text x="620" y="155" text-anchor="middle" font-size="28" fill="#22C55E">👤</text>
+  <text x="620" y="186" text-anchor="middle" font-size="11" fill="#374151">② 日々の小口支払い</text>
+  <text x="620" y="202" text-anchor="middle" font-size="11" fill="#374151">　（交通費・消耗品等）</text>
+  <text x="620" y="218" text-anchor="middle" font-size="11" fill="#374151">③ 支払内訳を報告</text>
+
+  <!-- Arrow ①: 会計→用度（前渡し） -->
+  <line x1="242" y1="130" x2="518" y2="130" stroke="#3B82F6" stroke-width="2"/>
+  <polygon points="518,130 508,124 508,136" fill="#3B82F6"/>
+  <rect x="305" y="113" width="150" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="380" y="129" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">① 小口現金を前渡し</text>
+
+  <!-- Arrow ②→③: 用度→会計（報告） -->
+  <line x1="518" y1="190" x2="242" y2="190" stroke="#22C55E" stroke-width="2"/>
+  <polygon points="242,190 252,184 252,196" fill="#22C55E"/>
+  <rect x="305" y="173" width="150" height="24" rx="5" fill="#DCFCE7"/>
+  <text x="380" y="189" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">③ 支払内訳を報告</text>
+
+  <!-- Arrow ③→④: 会計→用度（補給） -->
+  <line x1="242" y1="230" x2="518" y2="230" stroke="#F97316" stroke-width="2" stroke-dasharray="5,4"/>
+  <polygon points="518,230 508,224 508,236" fill="#F97316"/>
+  <rect x="305" y="213" width="150" height="24" rx="5" fill="#FFEDD5"/>
+  <text x="380" y="229" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">④ 同額を補給（現金）</text>
+
+  <!-- Bottom note table -->
+  <rect x="40" y="270" width="680" height="90" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">補給時の仕訳タイミング</text>
+  <!-- table -->
+  <line x1="40" y1="298" x2="720" y2="298" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="200" y="314" text-anchor="middle" font-size="11" fill="#475569">補給＝報告と同時の場合</text>
+  <text x="200" y="332" text-anchor="middle" font-size="11" fill="#1D4ED8">交通費・消耗品費 / 小口現金</text>
+  <line x1="380" y1="298" x2="380" y2="356" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="560" y="314" text-anchor="middle" font-size="11" fill="#475569">補給が報告と別日の場合</text>
+  <text x="560" y="332" text-anchor="middle" font-size="11" fill="#1D4ED8">仕訳は<tspan font-weight="700">報告日</tspan>に計上（補給日ではない）</text>
+  <text x="380" y="352" text-anchor="middle" font-size="10" fill="#94A3B8">（試験でよく問われるポイント）</text>
+</svg>

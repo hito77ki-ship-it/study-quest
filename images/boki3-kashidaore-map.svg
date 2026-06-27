@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" width="760" height="390">
+  <defs>
+    <style>
+      text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }
+    </style>
+  </defs>
+  <rect width="760" height="390" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">貸倒引当金あり vs なし——利益への影響比較</text>
+
+  <!-- Header row -->
+  <rect x="30" y="50" width="340" height="34" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="200" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">【引当金あり】（正しい処理）</text>
+  <rect x="390" y="50" width="340" height="34" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="560" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#991B1B">【引当金なし】（NG）</text>
+
+  <!-- Timeline Left (あり) -->
+  <!-- 前期 -->
+  <rect x="30" y="100" width="340" height="70" rx="8" fill="#DBEAFE"/>
+  <text x="50" y="120" font-size="11" font-weight="700" fill="#1D4ED8">前期末</text>
+  <text x="50" y="140" font-size="11" fill="#1E3A8A">貸倒引当金繰入 ¥7,000 ／ 貸倒引当金 ¥7,000</text>
+  <text x="50" y="158" font-size="10" fill="#3B82F6">→ 前期の費用として計上　（利益▲7,000）</text>
+
+  <!-- arrow -->
+  <line x1="200" y1="170" x2="200" y2="198" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="200,202 194,194 206,194" fill="#64748B"/>
+
+  <!-- 当期 -->
+  <rect x="30" y="206" width="340" height="70" rx="8" fill="#DCFCE7"/>
+  <text x="50" y="226" font-size="11" font-weight="700" fill="#166534">当期（貸倒発生）</text>
+  <text x="50" y="246" font-size="11" fill="#14532D">貸倒引当金 ¥7,000 ／ 売掛金 ¥7,000</text>
+  <text x="50" y="264" font-size="10" fill="#16A34A">→ 引当金で相殺　当期の利益への影響 ± 0</text>
+
+  <!-- result あり -->
+  <rect x="30" y="292" width="340" height="54" rx="8" fill="#F0FDF4" stroke="#4ADE80" stroke-width="2"/>
+  <text x="200" y="315" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">✅ 費用の期間対応が正しい</text>
+  <text x="200" y="334" text-anchor="middle" font-size="11" fill="#15803D">前期▲7,000 / 当期 ±0</text>
+
+  <!-- Timeline Right (なし) -->
+  <!-- 前期 -->
+  <rect x="390" y="100" width="340" height="70" rx="8" fill="#F1F5F9"/>
+  <text x="410" y="120" font-size="11" font-weight="700" fill="#64748B">前期末</text>
+  <text x="410" y="140" font-size="11" fill="#94A3B8">（仕訳なし）</text>
+  <text x="410" y="158" font-size="10" fill="#94A3B8">→ 前期の費用計上なし　（利益は正確でない）</text>
+
+  <!-- arrow -->
+  <line x1="560" y1="170" x2="560" y2="198" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="560,202 554,194 566,194" fill="#64748B"/>
+
+  <!-- 当期 -->
+  <rect x="390" y="206" width="340" height="70" rx="8" fill="#FEE2E2"/>
+  <text x="410" y="226" font-size="11" font-weight="700" fill="#991B1B">当期（貸倒発生）</text>
+  <text x="410" y="246" font-size="11" fill="#7F1D1D">貸倒損失 ¥7,000 ／ 売掛金 ¥7,000</text>
+  <text x="410" y="264" font-size="10" fill="#DC2626">→ 当期にドカンと費用計上　（利益▲7,000）</text>
+
+  <!-- result なし -->
+  <rect x="390" y="292" width="340" height="54" rx="8" fill="#FEF2F2" stroke="#F87171" stroke-width="2"/>
+  <text x="560" y="315" text-anchor="middle" font-size="12" font-weight="700" fill="#991B1B">❌ 費用が当期に偏る（利益の歪み）</text>
+  <text x="560" y="334" text-anchor="middle" font-size="11" fill="#DC2626">前期 ±0 / 当期▲7,000</text>
+
+  <!-- divider line -->
+  <line x1="375" y1="50" x2="375" y2="358" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- bottom label -->
+  <text x="380" y="380" text-anchor="middle" font-size="10.5" fill="#94A3B8">引当金の目的 = 費用・収益の期間対応（発生主義の徹底）</text>
+</svg>

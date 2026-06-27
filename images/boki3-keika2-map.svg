@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>
+      text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }
+    </style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">残高が「18か月分」になる仕組み</text>
+  <text x="380" y="54" text-anchor="middle" font-size="12" fill="#64748B">毎年7/1に12か月分¥180を支払う → 12/31決算時の残高は？</text>
+
+  <!-- Timeline axis -->
+  <line x1="60" y1="110" x2="700" y2="110" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Time markers -->
+  <!-- 前期 7/1 -->
+  <line x1="100" y1="100" x2="100" y2="120" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="100" y="94" text-anchor="middle" font-size="10" fill="#64748B">前期 7/1</text>
+  <!-- 前期 12/31 -->
+  <line x1="280" y1="100" x2="280" y2="120" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="280" y="94" text-anchor="middle" font-size="10" fill="#64748B">前期 12/31</text>
+  <!-- 当期 7/1 -->
+  <line x1="460" y1="100" x2="460" y2="120" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="460" y="94" text-anchor="middle" font-size="10" fill="#64748B">当期 7/1</text>
+  <!-- 当期 12/31 -->
+  <line x1="640" y1="100" x2="640" y2="120" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="640" y="94" text-anchor="middle" font-size="10" fill="#64748B">当期 12/31</text>
+
+  <!-- Row1: 前期7/1 支払い -->
+  <rect x="60" y="128" width="640" height="36" rx="0" fill="none"/>
+  <text x="60" y="145" font-size="10.5" font-weight="700" fill="#1D4ED8">【前期 7/1】支払保険料 ¥180（12か月分）を支払い</text>
+  <!-- bar: 12 months -->
+  <rect x="100" y="152" width="360" height="20" rx="4" fill="#93C5FD"/>
+  <text x="280" y="166" text-anchor="middle" font-size="10" fill="#1E40AF">12か月分 ¥180（7月〜翌6月）</text>
+
+  <!-- Row2: 前期12/31 決算整理 -->
+  <text x="60" y="196" font-size="10.5" font-weight="700" fill="#7C3AED">【前期 12/31】決算整理 → 前払分を資産に振替</text>
+  <!-- 費用区間 -->
+  <rect x="100" y="200" width="180" height="20" rx="4" fill="#93C5FD"/>
+  <text x="190" y="214" text-anchor="middle" font-size="9.5" fill="#1E40AF">費用 6か月分 ¥90</text>
+  <!-- 前払区間 -->
+  <rect x="280" y="200" width="180" height="20" rx="4" fill="#C4B5FD"/>
+  <text x="370" y="214" text-anchor="middle" font-size="9.5" fill="#5B21B6">前払保険料 ¥90（資産）</text>
+  <!-- arrow -->
+  <text x="245" y="214" text-anchor="middle" font-size="14" fill="#7C3AED">→</text>
+
+  <!-- Row3: 当期期首 再振替 -->
+  <text x="60" y="244" font-size="10.5" font-weight="700" fill="#0891B2">【当期 1/1】再振替仕訳 → 前払保険料を費用に戻す</text>
+  <rect x="280" y="248" width="180" height="20" rx="4" fill="#BAE6FD"/>
+  <text x="370" y="262" text-anchor="middle" font-size="9.5" fill="#0C4A6E">支払保険料 ¥90（費用に戻る）</text>
+
+  <!-- Row4: 当期7/1 支払い -->
+  <text x="60" y="292" font-size="10.5" font-weight="700" fill="#1D4ED8">【当期 7/1】また12か月分 ¥180 を支払い</text>
+  <rect x="460" y="296" width="200" height="20" rx="4" fill="#93C5FD"/>
+  <text x="560" y="310" text-anchor="middle" font-size="9.5" fill="#1E40AF">12か月分 ¥180（7月〜翌6月）</text>
+
+  <!-- Row5: 当期12/31 決算前残高 -->
+  <rect x="30" y="328" width="700" height="56" rx="8" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="50" y="350" font-size="11" font-weight="700" fill="#C2410C">【当期 12/31 決算整理前残高 ¥180 の正体】</text>
+  <text x="50" y="370" font-size="11" fill="#7C2D12">前期 7/1 分の再振替（¥90）＋ 当期 7/1 分（¥180）− 費用として消費（¥90）＝ ¥180</text>
+  <text x="50" y="388" font-size="10.5" fill="#92400E">　= 次期に繰り越す前払保険料6か月分（¥90）＋ 当期費用6か月分（¥90）が残高に含まれている</text>
+
+  <!-- bottom note -->
+  <text x="380" y="410" text-anchor="middle" font-size="10.5" fill="#94A3B8">※ 決算整理で前払6か月分¥90を「前払保険料（資産）」に振替し、費用は6か月分¥90だけが当期費用となる</text>
+</svg>
