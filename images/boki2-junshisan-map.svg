@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">純資産——B/S右下の構造と株主資本の内訳</text>
+
+  <!-- B/S mini diagram -->
+  <rect x="30" y="52" width="200" height="210" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="130" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">貸借対照表（B/S）</text>
+  <rect x="40" y="80" width="180" height="90" rx="4" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="130" y="130" text-anchor="middle" font-size="11" fill="#1E40AF">資　産</text>
+  <rect x="40" y="178" width="80" height="76" rx="4" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="80" y="222" text-anchor="middle" font-size="11" fill="#DC2626">負　債</text>
+  <rect x="128" y="178" width="92" height="76" rx="4" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="174" y="214" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">純資産</text>
+  <text x="174" y="232" text-anchor="middle" font-size="10" fill="#166534">←ここ</text>
+  <text x="130" y="252" text-anchor="middle" font-size="10" fill="#64748B">資産 − 負債 ＝ 純資産</text>
+
+  <!-- Arrow right -->
+  <polygon points="244,158 258,152 258,164" fill="#22C55E"/>
+  <line x1="230" y1="158" x2="258" y2="158" stroke="#22C55E" stroke-width="2"/>
+
+  <!-- Pure asset breakdown: 2 main groups -->
+  <!-- 株主資本 -->
+  <rect x="270" y="52" width="230" height="300" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="270" y="52" width="230" height="32" rx="10" fill="#22C55E"/>
+  <rect x="270" y="74" width="230" height="10" fill="#22C55E"/>
+  <text x="385" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">株主資本（主要部分）</text>
+
+  <rect x="288" y="96" width="194" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="385" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">資本金</text>
+  <text x="385" y="124" text-anchor="middle" font-size="10" fill="#374151">株主が出資した元本の全額または一部</text>
+
+  <rect x="288" y="140" width="194" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="385" y="154" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">資本準備金</text>
+  <text x="385" y="168" text-anchor="middle" font-size="10" fill="#374151">株式発行時の払込超過額の1/2以上</text>
+
+  <rect x="288" y="184" width="194" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="385" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">利益準備金</text>
+  <text x="385" y="212" text-anchor="middle" font-size="10" fill="#374151">配当時に積み立てが義務づけられる準備金</text>
+
+  <rect x="288" y="228" width="194" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="385" y="242" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">繰越利益剰余金</text>
+  <text x="385" y="256" text-anchor="middle" font-size="10" fill="#374151">毎期の利益が積み上がったもの（配当の源泉）</text>
+
+  <text x="385" y="330" text-anchor="middle" font-size="10" fill="#64748B">株主資本 ＝ 資本金 ＋ 資本剰余金 ＋ 利益剰余金</text>
+  <text x="385" y="344" text-anchor="middle" font-size="10" fill="#64748B">（自己株式がある場合はマイナス）</text>
+
+  <!-- 評価換算差額等 -->
+  <rect x="520" y="52" width="210" height="160" rx="10" fill="#FEF9C3" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="520" y="52" width="210" height="32" rx="10" fill="#EAB308"/>
+  <rect x="520" y="74" width="210" height="10" fill="#EAB308"/>
+  <text x="625" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">評価換算差額等</text>
+
+  <rect x="538" y="96" width="174" height="50" rx="6" fill="#FEF9C3"/>
+  <text x="625" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">その他有価証券評価差額金</text>
+  <text x="625" y="132" text-anchor="middle" font-size="10.5" fill="#374151">売買目的外の有価証券を</text>
+  <text x="625" y="146" text-anchor="middle" font-size="10.5" fill="#374151">時価評価したときの差額</text>
+
+  <text x="625" y="190" text-anchor="middle" font-size="10.5" fill="#92400E">未実現なので当期損益にならず</text>
+  <text x="625" y="204" text-anchor="middle" font-size="10.5" fill="#92400E">純資産に直接計上（OCI処理）</text>
+
+  <!-- 配当 box -->
+  <rect x="520" y="228" width="210" height="124" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="625" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">剰余金配当の仕訳</text>
+  <rect x="538" y="256" width="174" height="80" rx="6" fill="#DBEAFE"/>
+  <text x="625" y="274" text-anchor="middle" font-size="10.5" fill="#1D4ED8">繰越利益剰余金 ××</text>
+  <text x="625" y="292" text-anchor="middle" font-size="10.5" fill="#1D4ED8">／ 未払配当金 ××（9/10）</text>
+  <text x="625" y="310" text-anchor="middle" font-size="10.5" fill="#1D4ED8">／ 利益準備金  ××（1/10）</text>
+  <text x="625" y="328" text-anchor="middle" font-size="9.5" fill="#64748B">資本準備金＋利益準備金が資本金×1/4になるまで積立</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="368" width="700" height="22" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="383" text-anchor="middle" font-size="10.5" fill="#475569">💡 純資産 ＝ 株主に帰属する正味財産。利益が出るほど繰越利益剰余金が増え、純資産が大きくなる。</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">標準原価計算——差異分析の全体構造</text>
+
+  <!-- Top: 2 columns -->
+  <rect x="30" y="52" width="320" height="72" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="190" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">標準原価（目標値）</text>
+  <text x="190" y="96" text-anchor="middle" font-size="10.5" fill="#92400E">あらかじめ設定した「こうあるべき原価」</text>
+  <text x="190" y="112" text-anchor="middle" font-size="10" fill="#64748B">標準単価 × 標準消費量 で計算</text>
+
+  <rect x="410" y="52" width="320" height="72" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="570" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">実際原価（実績値）</text>
+  <text x="570" y="96" text-anchor="middle" font-size="10.5" fill="#1D4ED8">実際に発生した原価の合計</text>
+  <text x="570" y="112" text-anchor="middle" font-size="10" fill="#64748B">実際単価 × 実際消費量 で計算</text>
+
+  <!-- Arrow and 差異 -->
+  <rect x="290" y="82" width="180" height="42" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="380" y="99" text-anchor="middle" font-size="12" font-weight="700" fill="#DC2626">差　異</text>
+  <text x="380" y="115" text-anchor="middle" font-size="10" fill="#EF4444">標準 − 実際 = 差異</text>
+
+  <!-- 差異の正負 -->
+  <text x="380" y="150" text-anchor="middle" font-size="11" fill="#64748B">プラス差異（有利差異/貸方差異）：標準より節約できた</text>
+  <text x="380" y="166" text-anchor="middle" font-size="11" fill="#64748B">マイナス差異（不利差異/借方差異）：標準より多くかかった</text>
+
+  <!-- 3 差異 types -->
+  <!-- 材料費差異 -->
+  <rect x="30" y="182" width="220" height="164" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="30" y="182" width="220" height="30" rx="10" fill="#EAB308"/>
+  <rect x="30" y="202" width="220" height="10" fill="#EAB308"/>
+  <text x="140" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">材料費差異</text>
+  <text x="140" y="232" text-anchor="middle" font-size="11" fill="#713F12">価格差異</text>
+  <rect x="50" y="238" width="180" height="28" rx="5" fill="#FEF9C3"/>
+  <text x="140" y="256" text-anchor="middle" font-size="10.5" fill="#713F12">（標準単価−実際単価）×実際消費量</text>
+  <text x="140" y="278" text-anchor="middle" font-size="11" fill="#713F12">数量差異</text>
+  <rect x="50" y="284" width="180" height="28" rx="5" fill="#FEF9C3"/>
+  <text x="140" y="302" text-anchor="middle" font-size="10.5" fill="#713F12">（標準消費量−実際消費量）×標準単価</text>
+  <text x="140" y="334" text-anchor="middle" font-size="10" fill="#64748B">材料費差異 ＝ 価格差異 ＋ 数量差異</text>
+
+  <!-- 労務費差異 -->
+  <rect x="270" y="182" width="220" height="164" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="270" y="182" width="220" height="30" rx="10" fill="#7C3AED"/>
+  <rect x="270" y="202" width="220" height="10" fill="#7C3AED"/>
+  <text x="380" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">労務費差異</text>
+  <text x="380" y="232" text-anchor="middle" font-size="11" fill="#5B21B6">賃率差異</text>
+  <rect x="290" y="238" width="180" height="28" rx="5" fill="#EDE9FE"/>
+  <text x="380" y="256" text-anchor="middle" font-size="10.5" fill="#5B21B6">（標準賃率−実際賃率）×実際作業時間</text>
+  <text x="380" y="278" text-anchor="middle" font-size="11" fill="#5B21B6">作業時間差異</text>
+  <rect x="290" y="284" width="180" height="28" rx="5" fill="#EDE9FE"/>
+  <text x="380" y="302" text-anchor="middle" font-size="10.5" fill="#5B21B6">（標準時間−実際時間）×標準賃率</text>
+  <text x="380" y="334" text-anchor="middle" font-size="10" fill="#64748B">労務費差異 ＝ 賃率差異 ＋ 作業時間差異</text>
+
+  <!-- 製造間接費差異 -->
+  <rect x="510" y="182" width="220" height="164" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="510" y="182" width="220" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="510" y="202" width="220" height="10" fill="#3B82F6"/>
+  <text x="620" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">製造間接費差異</text>
+  <text x="620" y="232" text-anchor="middle" font-size="11" fill="#1E40AF">予算差異</text>
+  <rect x="530" y="238" width="180" height="28" rx="5" fill="#DBEAFE"/>
+  <text x="620" y="256" text-anchor="middle" font-size="10.5" fill="#1D4ED8">予算許容額 − 実際発生額</text>
+  <text x="620" y="278" text-anchor="middle" font-size="11" fill="#1E40AF">操業度差異</text>
+  <rect x="530" y="284" width="180" height="28" rx="5" fill="#DBEAFE"/>
+  <text x="620" y="302" text-anchor="middle" font-size="10.5" fill="#1D4ED8">固定費率 ×（実際操業度−基準操業度）</text>
+  <text x="620" y="334" text-anchor="middle" font-size="10" fill="#64748B">能率差異を加えた3分法も出題あり</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="360" width="700" height="46" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="378" text-anchor="middle" font-size="11" fill="#475569">💡 差異を計算したら「有利か不利か」を常に確認。不利差異が大きい場合はその原因（材料の無駄・作業の非効率等）を分析して改善につなげる。</text>
+  <text x="380" y="396" text-anchor="middle" font-size="10.5" fill="#475569">差異は原価差異勘定を通じて、最終的に売上原価または仕掛品・製品に按分して処理する。</text>
+</svg>

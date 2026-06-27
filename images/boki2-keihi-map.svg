@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">経費——直接経費・間接経費の分類と具体例</text>
+
+  <!-- Top: 製造原価の3区分 -->
+  <rect x="30" y="52" width="700" height="48" rx="8" fill="#1E293B"/>
+  <text x="380" y="72" text-anchor="middle" font-size="12" fill="#F8FAFC">製造原価の3区分：</text>
+  <rect x="180" y="62" width="120" height="26" rx="6" fill="#3B82F6"/>
+  <text x="240" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">材料費</text>
+  <rect x="320" y="62" width="120" height="26" rx="6" fill="#EF4444"/>
+  <text x="380" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">労務費</text>
+  <rect x="460" y="62" width="120" height="26" rx="6" fill="#22C55E"/>
+  <text x="520" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">経費（今回）</text>
+  <text x="645" y="79" text-anchor="middle" font-size="11" fill="#94A3B8">← 材料費・労務費以外</text>
+
+  <!-- Left: 直接経費 -->
+  <rect x="30" y="116" width="330" height="218" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="30" y="116" width="330" height="32" rx="10" fill="#22C55E"/>
+  <rect x="30" y="138" width="330" height="10" fill="#22C55E"/>
+  <text x="195" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">直接経費（製品に直接紐づく）</text>
+
+  <text x="195" y="168" text-anchor="middle" font-size="10.5" fill="#166534">製品Xだけのために発生した経費 → 直接製品原価に集計</text>
+
+  <!-- 外注加工賃 -->
+  <rect x="50" y="178" width="290" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="64" y="196" font-size="11" font-weight="700" fill="#166534">外注加工賃</text>
+  <text x="64" y="210" font-size="10" fill="#374151">外部に加工を依頼したときの費用（代表的な直接経費）</text>
+
+  <!-- 特許権使用料 -->
+  <rect x="50" y="222" width="290" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="64" y="240" font-size="11" font-weight="700" fill="#166534">特許権使用料</text>
+  <text x="64" y="254" font-size="10" fill="#374151">その製品の製造に使う特許の使用料</text>
+
+  <!-- 試験検査費 -->
+  <rect x="50" y="266" width="290" height="36" rx="6" fill="#DCFCE7"/>
+  <text x="64" y="284" font-size="11" font-weight="700" fill="#166534">試験・検査費</text>
+  <text x="64" y="298" font-size="10" fill="#374151">その製品専用の検査・試験にかかる費用</text>
+
+  <text x="195" y="326" text-anchor="middle" font-size="10" fill="#64748B">外注加工賃が最頻出。仕訳は「仕掛品 ／ 外注加工賃」</text>
+
+  <!-- Right: 間接経費 -->
+  <rect x="400" y="116" width="330" height="218" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="400" y="116" width="330" height="32" rx="10" fill="#3B82F6"/>
+  <rect x="400" y="138" width="330" height="10" fill="#3B82F6"/>
+  <text x="565" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">間接経費（複数製品に共通）</text>
+
+  <text x="565" y="168" text-anchor="middle" font-size="10.5" fill="#1E40AF">複数の製品に共通して発生 → 配賦して各製品に割当て</text>
+
+  <!-- 電力料 -->
+  <rect x="420" y="178" width="290" height="36" rx="6" fill="#DBEAFE"/>
+  <text x="434" y="196" font-size="11" font-weight="700" fill="#1E40AF">電力料・ガス代・水道料</text>
+  <text x="434" y="210" font-size="10" fill="#374151">工場全体で使う光熱費（機械時間等で配賦）</text>
+
+  <!-- 減価償却費 -->
+  <rect x="420" y="222" width="290" height="36" rx="6" fill="#DBEAFE"/>
+  <text x="434" y="240" font-size="11" font-weight="700" fill="#1E40AF">減価償却費（製造設備）</text>
+  <text x="434" y="254" font-size="10" fill="#374151">工場の機械・建物に対する減価償却</text>
+
+  <!-- 修繕料 -->
+  <rect x="420" y="266" width="290" height="36" rx="6" fill="#DBEAFE"/>
+  <text x="434" y="284" font-size="11" font-weight="700" fill="#1E40AF">修繕料・保険料・賃借料</text>
+  <text x="434" y="298" font-size="10" fill="#374151">工場全体の修繕・保険・設備リース料 etc.</text>
+
+  <text x="565" y="326" text-anchor="middle" font-size="10" fill="#64748B">製造間接費として集計 → 配賦基準で各製品へ按分</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="346" width="700" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+  <text x="380" y="361" text-anchor="middle" font-size="10.5" fill="#92400E">💡 経費の仕訳：発生時「製造間接費（または仕掛品） ／ 現金・減価償却累計額等」。販売費・一般管理費とは区別すること。</text>
+</svg>
