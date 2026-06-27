@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">三分法の3勘定科目と決算整理「しくりくりし」</text>
+
+  <!-- 3 cards row -->
+  <!-- 仕入 (費用) -->
+  <rect x="30" y="58" width="210" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="30" y="58" width="210" height="36" rx="10" fill="#EF4444"/>
+  <rect x="30" y="84" width="210" height="10" fill="#EF4444"/>
+  <text x="135" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">仕入（しいれ）</text>
+  <text x="65" y="106" font-size="11" fill="#991B1B">分類：費用</text>
+  <text x="65" y="124" font-size="10.5" fill="#7F1D1D">商品を買ったときに使う</text>
+  <text x="65" y="140" font-size="10.5" fill="#7F1D1D">借方（左）に計上</text>
+  <text x="65" y="158" font-size="10" fill="#94A3B8">期末に損益勘定へ振り替える</text>
+
+  <!-- 売上 (収益) -->
+  <rect x="275" y="58" width="210" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="275" y="58" width="210" height="36" rx="10" fill="#22C55E"/>
+  <rect x="275" y="84" width="210" height="10" fill="#22C55E"/>
+  <text x="380" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">売上（うりあげ）</text>
+  <text x="310" y="106" font-size="11" fill="#166534">分類：収益</text>
+  <text x="310" y="124" font-size="10.5" fill="#14532D">商品を売ったときに使う</text>
+  <text x="310" y="140" font-size="10.5" fill="#14532D">貸方（右）に計上</text>
+  <text x="310" y="158" font-size="10" fill="#94A3B8">期末に損益勘定へ振り替える</text>
+
+  <!-- 繰越商品 (資産) -->
+  <rect x="520" y="58" width="210" height="120" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="520" y="58" width="210" height="36" rx="10" fill="#3B82F6"/>
+  <rect x="520" y="84" width="210" height="10" fill="#3B82F6"/>
+  <text x="625" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">繰越商品（くりこし）</text>
+  <text x="555" y="106" font-size="11" fill="#1E40AF">分類：資産</text>
+  <text x="555" y="124" font-size="10.5" fill="#1E3A8A">期末在庫の金額を記録</text>
+  <text x="555" y="140" font-size="10.5" fill="#1E3A8A">B/Sに残高が載る</text>
+  <text x="555" y="158" font-size="10" fill="#94A3B8">繰越商品は期中は動かない</text>
+
+  <!-- Section: 決算整理「しくりくりし」 -->
+  <rect x="30" y="198" width="700" height="186" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">決算整理「しくりくりし」——売上原価を確定させる2本の仕訳</text>
+
+  <!-- Step boxes -->
+  <!-- Step 1: しいれ → くりこしょうひん -->
+  <rect x="50" y="234" width="290" height="60" rx="8" fill="#FEF3C7"/>
+  <text x="195" y="255" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">① し → くり（期首繰越商品を仕入へ）</text>
+  <text x="195" y="273" text-anchor="middle" font-size="11" fill="#78350F">仕　入 ／ 繰越商品</text>
+  <text x="195" y="289" text-anchor="middle" font-size="10" fill="#92400E">（前期の在庫を今期の費用に組み込む）</text>
+
+  <!-- arrow -->
+  <polygon points="354,264 368,258 368,270" fill="#D97706"/>
+  <line x1="340" y1="264" x2="368" y2="264" stroke="#D97706" stroke-width="2"/>
+
+  <!-- Step 2: くりこしょうひん → しいれ -->
+  <rect x="380" y="234" width="290" height="60" rx="8" fill="#FEF3C7"/>
+  <text x="525" y="255" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">② くり → し（期末在庫を繰越商品へ）</text>
+  <text x="525" y="273" text-anchor="middle" font-size="11" fill="#78350F">繰越商品 ／ 仕　入</text>
+  <text x="525" y="289" text-anchor="middle" font-size="10" fill="#92400E">（今期の在庫を費用から除く）</text>
+
+  <!-- formula -->
+  <rect x="90" y="308" width="580" height="60" rx="8" fill="#FEF9C3" stroke="#FDE047" stroke-width="1.5"/>
+  <text x="380" y="328" text-anchor="middle" font-size="12" font-weight="700" fill="#713F12">売上原価 ＝ 期首繰越商品 ＋ 当期仕入高 − 期末繰越商品</text>
+  <text x="380" y="348" text-anchor="middle" font-size="11" fill="#92400E">（「しくりくりし」の順に2本仕訳すると、仕入勘定の残高がそのまま売上原価になる）</text>
+  <text x="380" y="367" text-anchor="middle" font-size="10" fill="#A16207">し＝仕入　くり＝繰越商品　くり＝繰越商品　し＝仕入（語呂合わせ）</text>
+</svg>

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" width="760" height="390">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="390" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">8桁精算表の4列ペア構造</text>
+
+  <!-- Header row -->
+  <rect x="30" y="52" width="700" height="36" rx="8" fill="#1E293B"/>
+  <text x="100" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">勘定科目</text>
+  <line x1="170" y1="52" x2="170" y2="320" stroke="#475569" stroke-width="1"/>
+  <text x="257" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#FDE68A">残高試算表</text>
+  <text x="257" y="83" text-anchor="middle" font-size="9" fill="#CBD5E1">借方 / 貸方</text>
+  <line x1="344" y1="52" x2="344" y2="320" stroke="#475569" stroke-width="1"/>
+  <text x="431" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#86EFAC">修正記入</text>
+  <text x="431" y="83" text-anchor="middle" font-size="9" fill="#CBD5E1">借方 / 貸方</text>
+  <line x1="518" y1="52" x2="518" y2="320" stroke="#475569" stroke-width="1"/>
+  <text x="566" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#FCA5A5">損益計算書</text>
+  <text x="566" y="83" text-anchor="middle" font-size="9" fill="#CBD5E1">借方 / 貸方</text>
+  <line x1="614" y1="52" x2="614" y2="320" stroke="#475569" stroke-width="1"/>
+  <text x="662" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#93C5FD">貸借対照表</text>
+  <text x="662" y="83" text-anchor="middle" font-size="9" fill="#CBD5E1">借方 / 貸方</text>
+
+  <!-- Data rows -->
+  <!-- row bg alternating -->
+  <rect x="30" y="88" width="700" height="30" rx="0" fill="#F8FAFC"/>
+  <rect x="30" y="118" width="700" height="30" rx="0" fill="#F1F5F9"/>
+  <rect x="30" y="148" width="700" height="30" rx="0" fill="#F8FAFC"/>
+  <rect x="30" y="178" width="700" height="30" rx="0" fill="#F1F5F9"/>
+  <rect x="30" y="208" width="700" height="30" rx="0" fill="#F8FAFC"/>
+
+  <!-- vertical lines for all rows -->
+  <line x1="170" y1="88" x2="170" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="257" y1="88" x2="257" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="344" y1="88" x2="344" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="431" y1="88" x2="431" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="518" y1="88" x2="518" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="566" y1="88" x2="566" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="614" y1="88" x2="614" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="662" y1="88" x2="662" y2="238" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- row borders -->
+  <line x1="30" y1="88" x2="730" y2="88" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="30" y1="118" x2="730" y2="118" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="30" y1="148" x2="730" y2="148" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="30" y1="178" x2="730" y2="178" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="30" y1="208" x2="730" y2="208" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="30" y1="238" x2="730" y2="238" stroke="#CBD5E1" stroke-width="1"/>
+
+  <!-- row 1: 現金 -->
+  <text x="100" y="108" text-anchor="middle" font-size="11" fill="#374151">現　金</text>
+  <text x="213" y="108" text-anchor="middle" font-size="11" fill="#374151">50,000</text>
+  <text x="300" y="108" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="387" y="108" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="474" y="108" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="542" y="108" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="590" y="108" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="618" y="92" width="90" height="22" rx="3" fill="#DBEAFE"/>
+  <text x="638" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">50,000</text>
+  <text x="686" y="108" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+
+  <!-- row 2: 支払保険料 -->
+  <text x="100" y="138" text-anchor="middle" font-size="11" fill="#374151">支払保険料</text>
+  <text x="213" y="138" text-anchor="middle" font-size="11" fill="#374151">12,000</text>
+  <text x="300" y="138" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="348" y="122" width="90" height="22" rx="3" fill="#DCFCE7"/>
+  <text x="368" y="138" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="435" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">3,000</text>
+  <rect x="522" y="122" width="88" height="22" rx="3" fill="#FEE2E2"/>
+  <text x="542" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">9,000</text>
+  <text x="590" y="138" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="638" y="138" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="686" y="138" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+
+  <!-- row 3: 前払保険料 -->
+  <text x="100" y="168" text-anchor="middle" font-size="11" fill="#374151">前払保険料</text>
+  <text x="213" y="168" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="300" y="168" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="348" y="152" width="90" height="22" rx="3" fill="#DCFCE7"/>
+  <text x="368" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">3,000</text>
+  <text x="435" y="168" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="542" y="168" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="590" y="168" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="618" y="152" width="90" height="22" rx="3" fill="#DBEAFE"/>
+  <text x="638" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">3,000</text>
+  <text x="686" y="168" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+
+  <!-- row 4: 売上 -->
+  <text x="100" y="198" text-anchor="middle" font-size="11" fill="#374151">売　上</text>
+  <text x="213" y="198" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="300" y="198" text-anchor="middle" font-size="11" fill="#374151">80,000</text>
+  <text x="387" y="198" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="474" y="198" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="542" y="198" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="568" y="182" width="88" height="22" rx="3" fill="#FEE2E2"/>
+  <text x="590" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">80,000</text>
+  <text x="638" y="198" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="686" y="198" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+
+  <!-- row 5: 当期純利益 -->
+  <text x="100" y="228" text-anchor="middle" font-size="11" fill="#374151">当期純利益</text>
+  <text x="213" y="228" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="300" y="228" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="387" y="228" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="474" y="228" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="522" y="212" width="88" height="22" rx="3" fill="#FFEDD5"/>
+  <text x="542" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">×,×××</text>
+  <text x="590" y="228" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <text x="638" y="228" text-anchor="middle" font-size="10" fill="#94A3B8">—</text>
+  <rect x="666" y="212" width="88" height="22" rx="3" fill="#FFEDD5"/>
+  <text x="686" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">×,×××</text>
+
+  <!-- Legend / explanation boxes -->
+  <rect x="30" y="252" width="165" height="52" rx="8" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="112" y="270" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">① 残高試算表</text>
+  <text x="112" y="287" text-anchor="middle" font-size="10" fill="#92400E">決算整理前の残高</text>
+  <text x="112" y="300" text-anchor="middle" font-size="10" fill="#92400E">（仕訳帳から集計）</text>
+
+  <rect x="208" y="252" width="165" height="52" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="290" y="270" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">② 修正記入</text>
+  <text x="290" y="287" text-anchor="middle" font-size="10" fill="#15803D">決算整理仕訳を</text>
+  <text x="290" y="300" text-anchor="middle" font-size="10" fill="#15803D">この列に書く</text>
+
+  <rect x="386" y="252" width="165" height="52" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="468" y="270" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">③ 損益計算書</text>
+  <text x="468" y="287" text-anchor="middle" font-size="10" fill="#7F1D1D">費用・収益の勘定</text>
+  <text x="468" y="300" text-anchor="middle" font-size="10" fill="#7F1D1D">→ P/L に転記</text>
+
+  <rect x="564" y="252" width="165" height="52" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="646" y="270" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">④ 貸借対照表</text>
+  <text x="646" y="287" text-anchor="middle" font-size="10" fill="#1D4ED8">資産・負債・純資産</text>
+  <text x="646" y="300" text-anchor="middle" font-size="10" fill="#1D4ED8">→ B/S に転記</text>
+
+  <!-- bottom note -->
+  <rect x="30" y="318" width="700" height="54" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="338" text-anchor="middle" font-size="11" fill="#475569">💡 P/L差額（収益合計 − 費用合計）＝ B/S差額（資産合計 − 負債・純資産合計）＝ <tspan font-weight="700">当期純利益</tspan></text>
+  <text x="380" y="358" text-anchor="middle" font-size="11" fill="#475569">この等式が成り立たない場合は修正記入や転記にミスがある</text>
+  <text x="380" y="374" text-anchor="middle" font-size="10" fill="#94A3B8">精算表はあくまで「ワークシート」——財務諸表そのものではない</text>
+</svg>

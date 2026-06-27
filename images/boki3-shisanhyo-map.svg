@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">仕訳帳→元帳→試算表——3種類の試算表の違い</text>
+
+  <!-- Flow top: 仕訳帳 → 元帳 → 試算表 -->
+  <rect x="30" y="56" width="140" height="60" rx="8" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="100" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">仕訳帳</text>
+  <text x="100" y="100" text-anchor="middle" font-size="10" fill="#9A3412">取引を時系列で記録</text>
+
+  <polygon points="188,86 176,80 176,92" fill="#64748B"/>
+  <line x1="170" y1="86" x2="188" y2="86" stroke="#64748B" stroke-width="2"/>
+  <text x="179" y="76" text-anchor="middle" font-size="9" fill="#64748B">転記</text>
+
+  <rect x="192" y="56" width="140" height="60" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="262" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">総勘定元帳</text>
+  <text x="262" y="100" text-anchor="middle" font-size="10" fill="#1E3A8A">勘定科目ごとにT字で管理</text>
+
+  <polygon points="350,86 338,80 338,92" fill="#64748B"/>
+  <line x1="332" y1="86" x2="350" y2="86" stroke="#64748B" stroke-width="2"/>
+  <text x="341" y="76" text-anchor="middle" font-size="9" fill="#64748B">集計</text>
+
+  <rect x="354" y="56" width="376" height="60" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="542" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">試算表（さんだかひょう）</text>
+  <text x="542" y="100" text-anchor="middle" font-size="10" fill="#15803D">全勘定の借方・貸方合計を一覧にして転記ミスを検証</text>
+
+  <!-- 3 types section -->
+  <text x="380" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">3種類の試算表——何を表示するかの違い</text>
+
+  <!-- 合計試算表 -->
+  <rect x="30" y="158" width="210" height="170" rx="10" fill="#FEF9C3" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="30" y="158" width="210" height="34" rx="10" fill="#EAB308"/>
+  <rect x="30" y="182" width="210" height="10" fill="#EAB308"/>
+  <text x="135" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 合計試算表</text>
+  <text x="135" y="210" text-anchor="middle" font-size="11" fill="#713F12">借方合計 / 貸方合計</text>
+  <text x="135" y="228" text-anchor="middle" font-size="10.5" fill="#713F12">期間中の全取引金額の総計</text>
+  <!-- mini table -->
+  <rect x="50" y="240" width="170" height="72" rx="6" fill="#FEFCE8"/>
+  <text x="135" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#713F12">科目 / 借方合計 / 貸方合計</text>
+  <line x1="50" y1="263" x2="220" y2="263" stroke="#FDE68A" stroke-width="1"/>
+  <text x="80" y="277" text-anchor="middle" font-size="9.5" fill="#374151">現金</text>
+  <text x="150" y="277" text-anchor="middle" font-size="9.5" fill="#374151">80,000</text>
+  <text x="200" y="277" text-anchor="middle" font-size="9.5" fill="#374151">30,000</text>
+  <text x="80" y="292" text-anchor="middle" font-size="9.5" fill="#374151">売上</text>
+  <text x="150" y="292" text-anchor="middle" font-size="9.5" fill="#374151">—</text>
+  <text x="200" y="292" text-anchor="middle" font-size="9.5" fill="#374151">90,000</text>
+  <text x="135" y="308" text-anchor="middle" font-size="9" fill="#94A3B8">（取引量の大きさがわかる）</text>
+
+  <!-- 合計残高試算表 -->
+  <rect x="275" y="158" width="210" height="170" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="275" y="158" width="210" height="34" rx="10" fill="#22C55E"/>
+  <rect x="275" y="182" width="210" height="10" fill="#22C55E"/>
+  <text x="380" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 合計残高試算表</text>
+  <text x="380" y="210" text-anchor="middle" font-size="11" fill="#166534">合計 ＋ 残高（両方表示）</text>
+  <text x="380" y="228" text-anchor="middle" font-size="10.5" fill="#166534">最も情報量が多い・実務でよく使う</text>
+  <rect x="295" y="240" width="170" height="72" rx="6" fill="#DCFCE7"/>
+  <text x="380" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">借方残 / 借方合計 / 貸方合計 / 貸方残</text>
+  <line x1="295" y1="263" x2="465" y2="263" stroke="#86EFAC" stroke-width="1"/>
+  <text x="325" y="277" text-anchor="middle" font-size="9.5" fill="#374151">現金</text>
+  <text x="370" y="277" text-anchor="middle" font-size="9.5" fill="#374151">50,000</text>
+  <text x="410" y="277" text-anchor="middle" font-size="9.5" fill="#374151">80,000</text>
+  <text x="450" y="277" text-anchor="middle" font-size="9.5" fill="#374151">30,000</text>
+  <text x="380" y="300" text-anchor="middle" font-size="9" fill="#94A3B8">（①＋③を合わせた構造）</text>
+  <text x="380" y="315" text-anchor="middle" font-size="9" fill="#94A3B8">試験でも最もよく出題</text>
+
+  <!-- 残高試算表 -->
+  <rect x="520" y="158" width="210" height="170" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="520" y="158" width="210" height="34" rx="10" fill="#3B82F6"/>
+  <rect x="520" y="182" width="210" height="10" fill="#3B82F6"/>
+  <text x="625" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ 残高試算表</text>
+  <text x="625" y="210" text-anchor="middle" font-size="11" fill="#1E40AF">借方残高 / 貸方残高</text>
+  <text x="625" y="228" text-anchor="middle" font-size="10.5" fill="#1E40AF">期末時点の残高だけ表示</text>
+  <rect x="540" y="240" width="170" height="72" rx="6" fill="#DBEAFE"/>
+  <text x="625" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">科目 / 借方残高 / 貸方残高</text>
+  <line x1="540" y1="263" x2="710" y2="263" stroke="#93C5FD" stroke-width="1"/>
+  <text x="570" y="277" text-anchor="middle" font-size="9.5" fill="#374151">現金</text>
+  <text x="640" y="277" text-anchor="middle" font-size="9.5" fill="#374151">50,000</text>
+  <text x="695" y="277" text-anchor="middle" font-size="9.5" fill="#374151">—</text>
+  <text x="570" y="292" text-anchor="middle" font-size="9.5" fill="#374151">売上</text>
+  <text x="640" y="292" text-anchor="middle" font-size="9.5" fill="#374151">—</text>
+  <text x="695" y="292" text-anchor="middle" font-size="9.5" fill="#374151">90,000</text>
+  <text x="625" y="315" text-anchor="middle" font-size="9" fill="#94A3B8">（精算表に転記する元データ）</text>
+
+  <!-- common: 合計=合計 check -->
+  <rect x="30" y="344" width="700" height="40" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="360" text-anchor="middle" font-size="11" fill="#475569">💡 3種類どれも「<tspan font-weight="700">借方合計（or残高合計）＝ 貸方合計（or残高合計）</tspan>」になれば転記ミスなし</text>
+  <text x="380" y="378" text-anchor="middle" font-size="10.5" fill="#475569">合わない場合は仕訳帳から元帳への転記をチェックする</text>
+</svg>
