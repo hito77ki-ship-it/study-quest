@@ -1863,6 +1863,26 @@ html[data-theme="dark"] .bc-item.move{color:#F6AD55 !important;}
 html[data-theme="dark"] .flow-box.sub{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.35) !important;color:#90CDF4 !important;}
 html[data-theme="dark"] .flow-box.prod{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.3) !important;color:#B6E27C !important;}
 html[data-theme="dark"] .flow-box.item{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.35) !important;color:#F6AD55 !important;}
+/* ── 総合原価計算記事 (boki2-sogo-genka) 図解ナビ追加コンポーネント ── */
+html[data-theme="dark"] .box-guide{background:rgba(59,130,246,.06) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bg-lead{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bg-card.mat{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bg-card.kak{background:rgba(39,103,73,.12) !important;border-color:rgba(39,103,73,.35) !important;}
+html[data-theme="dark"] .bg-note{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bg-card.mat .bg-eq{background:rgba(59,130,246,.15) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .bg-card.kak .bg-eq{background:rgba(39,103,73,.15) !important;color:#9AE6B4 !important;}
+html[data-theme="dark"] .keiro-box{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .kb-text{color:#CCD6E5 !important;}
+html[data-theme="dark"] .kb-row{color:#CCD6E5 !important;}
+html[data-theme="dark"] .kb-note{color:#F6AD55 !important;}
+html[data-theme="dark"] .block-map{background:rgba(59,130,246,.06) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bm-intro{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bm-block.i1{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bm-block.i2{background:rgba(39,103,73,.12) !important;border-color:rgba(39,103,73,.3) !important;}
+html[data-theme="dark"] .bm-block.i3{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.3) !important;}
+html[data-theme="dark"] .bm-calc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bm-desc{color:#8899AA !important;}
+html[data-theme="dark"] .bm-total{background:rgba(124,58,237,.10) !important;border-color:rgba(124,58,237,.3) !important;color:#C4B5FD !important;}
 /* ── ここまで ── */
 `;
   document.head.appendChild(s);

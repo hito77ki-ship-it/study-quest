@@ -132,6 +132,55 @@ tr:nth-child(even) td{background:var(--light);}
 .result-box .r-label{font-size:11px;font-weight:700;color:#276749;letter-spacing:.08em;margin-bottom:8px;}
 .result-box p{margin:0;font-size:14px;color:#1A202C;}
 
+/* box-guide: 2枚のボックス図の読み方 */
+.box-guide{background:#F8FAFF;border:1px solid #C3DAFE;border-radius:12px;padding:20px 22px;margin:16px 0 20px;}
+.bg-lead{font-size:13px;color:#374151;margin-bottom:16px;line-height:1.8;}
+.bg-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:600px){.bg-pair{grid-template-columns:1fr;}}
+.bg-card{border-radius:10px;padding:16px 18px;}
+.bg-card.mat{background:#EBF8FF;border:1px solid #90CDF4;}
+.bg-card.kak{background:#F0FFF4;border:1px solid #9AE6B4;}
+.bg-head{font-size:13px;font-weight:700;margin-bottom:6px;}
+.bg-card.mat .bg-head{color:#1D4ED8;}
+.bg-card.kak .bg-head{color:#276749;}
+.bg-rule-label{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-bottom:8px;}
+.bg-card.mat .bg-rule-label{background:#DBEAFE;color:#1D4ED8;}
+.bg-card.kak .bg-rule-label{background:#DCFCE7;color:#276749;}
+.bg-note{font-size:12px;color:#374151;margin:0 0 10px;line-height:1.7;}
+.bg-eq{font-size:12px;font-weight:700;padding:8px 10px;border-radius:6px;text-align:center;}
+.bg-card.mat .bg-eq{background:#DBEAFE;color:#1D4ED8;}
+.bg-card.kak .bg-eq{background:#DCFCE7;color:#276749;}
+.bg-em{background:#FBBF24;color:#1A202C;padding:0 4px;border-radius:3px;font-weight:700;}
+
+/* keiro-box: 430個の正体 */
+.keiro-box{background:#FFFBEB;border:1px solid #FCD34D;border-radius:12px;padding:18px 22px;margin:16px 0;}
+.kb-label{font-size:12px;font-weight:700;color:#92400E;margin-bottom:10px;letter-spacing:.05em;}
+.kb-text{font-size:13px;color:#374151;margin-bottom:12px;}
+.kb-steps{margin-bottom:12px;}
+.kb-row{display:flex;gap:10px;font-size:13px;color:#374151;padding:6px 0;border-bottom:1px dashed rgba(0,0,0,.08);align-items:flex-start;}
+.kb-row:last-child{border-bottom:none;}
+.kb-num{min-width:22px;height:22px;background:#D97706;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.kb-highlight{color:#D97706;font-size:15px;}
+.kb-note{font-size:12px;color:#92400E;margin:0;line-height:1.7;border-top:1px solid rgba(0,0,0,.08);padding-top:8px;}
+
+/* block-map: 先入先出法 420個の3ブロック分解 */
+.block-map{background:#F8FAFF;border:1px solid #C3DAFE;border-radius:12px;padding:20px 22px;margin:16px 0;}
+.bm-label{font-size:12px;font-weight:700;color:#3B4DA8;margin-bottom:10px;letter-spacing:.05em;}
+.bm-intro{font-size:13px;color:#374151;margin-bottom:14px;}
+.bm-blocks{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.bm-block{flex:1;min-width:120px;border-radius:10px;padding:12px 14px;}
+.bm-block.i1{background:#DBEAFE;border:1px solid #93C5FD;}
+.bm-block.i2{background:#D1FAE5;border:1px solid #6EE7B7;}
+.bm-block.i3{background:#FEF3C7;border:1px solid #FCD34D;}
+.bm-num{font-size:11px;font-weight:700;margin-bottom:4px;}
+.bm-block.i1 .bm-num{color:#1D4ED8;}
+.bm-block.i2 .bm-num{color:#059669;}
+.bm-block.i3 .bm-num{color:#D97706;}
+.bm-calc{font-size:13px;font-weight:700;color:#1A202C;margin-bottom:4px;}
+.bm-desc{font-size:11px;color:#4B5563;line-height:1.5;}
+.bm-plus{font-size:20px;font-weight:700;color:var(--muted);display:flex;align-items:center;flex-shrink:0;}
+.bm-total{padding:10px 14px;background:#EDE9FE;border:1px solid #C4B5FD;border-radius:8px;font-size:14px;font-weight:700;color:#5B21B6;text-align:center;}
+
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -209,6 +258,29 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   この2つの数字を<strong>必ず別々のボックス図で管理</strong>することで、ミスがなくなります。</div>
 
   <h2>📦 ボックス図の書き方——試験会場で最初に書く「下書き」</h2>
+
+  <figure style="margin:20px 0 0;">
+    <img src="images/sogo-genka-map.png" alt="総合原価計算 ボックス図の読み方と先入先出法の分母分解マップ" style="width:100%;border-radius:12px;">
+    <figcaption style="text-align:center;font-size:12px;color:var(--muted);margin-top:8px;">▲ 図解①：2枚のボックス図の構造（平均法・例題2）　図解②：先入先出法の分母3ブロック分解（例題3）</figcaption>
+  </figure>
+
+  <div class="box-guide">
+    <p class="bg-lead">2枚のボックス図は<strong>「材料費用」</strong>と<strong>「加工費用」</strong>のパズルです。どちらも<strong>左の合計（借方）＝ 右の合計（貸方）</strong>が必ず一致します——この法則がすべての計算の土台です。</p>
+    <div class="bg-pair">
+      <div class="bg-card mat">
+        <div class="bg-head">① 材料費ボックス</div>
+        <span class="bg-rule-label">進捗度は不問</span>
+        <p class="bg-note">材料は製造の最初に全部投入。作りかけでも材料はすでに100%消費済みなので、月末仕掛品も<strong>そのままの個数</strong>を使います。</p>
+        <div class="bg-eq">完成個数 ＋ 月末<span class="bg-em">個数</span> ＝ 左の合計</div>
+      </div>
+      <div class="bg-card kak">
+        <div class="bg-head">② 加工費ボックス</div>
+        <span class="bg-rule-label">進捗度を掛けて換算</span>
+        <p class="bg-note">電気代・人件費は工程が進むほど発生。50%しか進んでいなければ50%分しか使っていないので、月末仕掛品は<strong>個数×進捗度</strong>の換算量に変換します。</p>
+        <div class="bg-eq">完成個数 ＋ 月末<span class="bg-em">換算量</span> ＝ 左の合計</div>
+      </div>
+    </div>
+  </div>
 
   <p>ボックス図は仕掛品勘定のT字形式です。<strong>材料費用・加工費用の2枚を横に並べて書く</strong>のが正しい使い方です。</p>
 
@@ -304,6 +376,17 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="step-item"><div class="step-num">3</div><div class="step-body"><strong>平均法の単価計算（月初＋当月を合算して割る）</strong><br>材料費単価：(20,000 ＋ 80,000) ÷ 500個 ＝ <strong>200円/個</strong><br>加工費単価：(9,000 ＋ 126,000) ÷ 450換算 ＝ <strong>300円/換算個</strong></div></div>
   </div>
 
+  <div class="keiro-box">
+    <div class="kb-label">🔍 図解①と例題2を紐付ける——加工費ボックスの「430個換算」の正体</div>
+    <p class="kb-text">図解①の加工費ボックス左欄に「当月換算 <strong>430個</strong>」があります。問題文には直接書かれていませんが、左右一致の法則から逆算できます。</p>
+    <div class="kb-steps">
+      <div class="kb-row"><div class="kb-num">①</div><span>貸方（右）の合計 ＝ 完成400個 ＋ 月末換算50個 ＝ <strong>450個換算</strong></span></div>
+      <div class="kb-row"><div class="kb-num">②</div><span>左右は必ず一致するので、借方（左）の合計も <strong>450換算</strong></span></div>
+      <div class="kb-row"><div class="kb-num">③</div><span>借方 ＝ 月初換算20個 ＋ 当月換算 ＝ 450<br>∴ 当月換算 ＝ 450 − 20 ＝ <strong class="kb-highlight">430個換算</strong></span></div>
+    </div>
+    <p class="kb-note">「問題文に載っていない数字」でも、左右一致の法則から逆算できます。また平均法の分母は <strong>450換算</strong>（右合計）ですが、当月投入量は <strong>430換算</strong>——この違いを図解で確認してください。</p>
+  </div>
+
   <div class="box-pair">
     <div class="tbox tbox-mat">
       <div class="tbox-head">① 材料費ボックス（平均法）</div>
@@ -393,6 +476,31 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
         <strong>完成品は「月初の原価そのまま」＋「当月分の計算額」を合算する</strong>
       </div>
     </div>
+  </div>
+
+  <div class="block-map">
+    <div class="bm-label">📊 図解②と例題3を紐付ける——加工費分母「420個換算」の3ブロック分解</div>
+    <p class="bm-intro">先入先出法の加工費分母 <strong>420個換算</strong> は、「当月に実際に投入した加工費の対象」を3つのブロックに分解して合計したものです。図解②の3色の構造と照合してください。</p>
+    <div class="bm-blocks">
+      <div class="bm-block i1">
+        <div class="bm-num">① 月初残作業分</div>
+        <div class="bm-calc">100 × (1−40%) ＝ <strong>60個換算</strong></div>
+        <div class="bm-desc">月初に40%進んでいた→残り60%を当月に加工した分</div>
+      </div>
+      <div class="bm-plus">＋</div>
+      <div class="bm-block i2">
+        <div class="bm-num">② 当月新規完成分</div>
+        <div class="bm-calc">400 − 100 ＝ <strong>300個</strong></div>
+        <div class="bm-desc">今月ゼロから投入して完成させた個数——加工費を100%使った</div>
+      </div>
+      <div class="bm-plus">＋</div>
+      <div class="bm-block i3">
+        <div class="bm-num">③ 月末仕掛品分</div>
+        <div class="bm-calc">100 × 60% ＝ <strong>60個換算</strong></div>
+        <div class="bm-desc">今月新たに投入して60%まで進めた作りかけの分</div>
+      </div>
+    </div>
+    <div class="bm-total">分母合計 ＝ 60 ＋ 300 ＋ 60 ＝ <strong>420個換算</strong>（先入先出法の加工費分母）</div>
   </div>
 
   <div class="box-pair">
