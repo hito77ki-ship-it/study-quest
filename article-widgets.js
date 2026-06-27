@@ -1670,6 +1670,134 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-state{padding:10px 20px;font-size:11px;color:var(--sq-muted);border-bottom:1px solid var(--sq-border);}
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
+
+/* ── 工業簿記4記事 共通コンポーネント ダークモード ── */
+/* mondai (boki2版 — liも対象) */
+html[data-theme="dark"] .mondai li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .mondai .m-label{color:#90CDF4 !important;}
+/* faq */
+html[data-theme="dark"] .faq-item{border-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .faq-q{background:linear-gradient(180deg,#151A2A,#111728) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .faq-a{color:#CCD6E5 !important;background:#0F1421 !important;}
+/* c2-card.a / c2-card.b (工業簿記記事のバリアント — .buy/.sellとは別) */
+html[data-theme="dark"] .c2-card.a{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.25) !important;}
+html[data-theme="dark"] .c2-card.b{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.25) !important;}
+html[data-theme="dark"] .c2-card.a .c2-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .c2-card.b .c2-title{color:#B6E27C !important;}
+html[data-theme="dark"] .c2-card p,html[data-theme="dark"] .c2-card li{color:#CCD6E5 !important;}
+/* table highlight rows */
+html[data-theme="dark"] .td-total{background:rgba(140,198,63,.15) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .td-goal{background:rgba(59,130,246,.15) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .td-sub{background:rgba(59,130,246,.10) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] td.td-red{color:#FC8181 !important;}
+html[data-theme="dark"] td.td-green{color:#B6E27C !important;}
+html[data-theme="dark"] td.td-plus{color:#B6E27C !important;}
+html[data-theme="dark"] td.td-minus{color:#FC8181 !important;}
+
+/* ── 総合原価計算記事 (boki2-sogo-genka) 固有コンポーネント ── */
+/* tbox (材料費・加工費ボックス図) */
+html[data-theme="dark"] .tbox-mat{border-color:rgba(59,130,246,.45) !important;}
+html[data-theme="dark"] .tbox-kak{border-color:rgba(39,103,73,.55) !important;}
+html[data-theme="dark"] .tbox-mat .tbox-col.l{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .tbox-kak .tbox-col.l{background:rgba(39,103,73,.12) !important;}
+html[data-theme="dark"] .tbox-col.r{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .tbox-col{border-right-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .tbox-col-title{color:#9BA7BB !important;}
+html[data-theme="dark"] .tbox-item{color:#CCD6E5 !important;border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .tbox-item.total{border-top-color:rgba(255,255,255,.15) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .tbox-item.answer{color:#B6E27C !important;}
+html[data-theme="dark"] .tbox-item.pass{color:#F6AD55 !important;}
+html[data-theme="dark"] .tbox-item.newitem{color:#90CDF4 !important;}
+html[data-theme="dark"] .tbox-item.sub{color:#9BA7BB !important;}
+html[data-theme="dark"] .tbox-badge{background:rgba(255,255,255,.08) !important;color:#9BA7BB !important;}
+/* result-box (STEP3合算) */
+html[data-theme="dark"] .result-box{background:linear-gradient(180deg,#0E2218,#0B1A14) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .result-box .r-label{color:#B6E27C !important;}
+html[data-theme="dark"] .result-box p{color:#E8EEF8 !important;}
+
+/* ── 製造原価報告書記事 (boki2-seizo-genka-hokokusho) 固有コンポーネント ── */
+/* box-grid (仕掛品T字ボックス) */
+html[data-theme="dark"] .box-grid{border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .box-left{background:rgba(59,130,246,.10) !important;border-right-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .box-right{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .box-header{color:#9BA7BB !important;}
+html[data-theme="dark"] .box-row{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .box-row.total{border-top-color:rgba(59,130,246,.4) !important;}
+html[data-theme="dark"] .box-row .label{color:#CCD6E5 !important;}
+html[data-theme="dark"] .box-row .num{color:#F8FAFC !important;}
+html[data-theme="dark"] .box-row.highlight .label,html[data-theme="dark"] .box-row.highlight .num{color:#F6AD55 !important;}
+html[data-theme="dark"] .box-row.answer .label,html[data-theme="dark"] .box-row.answer .num{color:#90CDF4 !important;}
+/* combo-relay (仕掛品→製品バトンリレーボックス) */
+html[data-theme="dark"] .relay-card.wip{border-color:rgba(59,130,246,.4) !important;}
+html[data-theme="dark"] .relay-card.prod{border-color:rgba(39,103,73,.45) !important;}
+html[data-theme="dark"] .relay-card.wip .relay-col.l{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .relay-card.prod .relay-col.l{background:rgba(39,103,73,.12) !important;}
+html[data-theme="dark"] .relay-col.r{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .relay-col{border-right-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .relay-col-title{color:#9BA7BB !important;}
+html[data-theme="dark"] .relay-item{color:#CCD6E5 !important;border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .relay-item.move{color:#F6AD55 !important;}
+html[data-theme="dark"] .relay-item.answer{color:#B6E27C !important;}
+html[data-theme="dark"] .relay-item.out{color:#FC8181 !important;}
+html[data-theme="dark"] .relay-arrow-col .arr-label{color:#9BA7BB !important;}
+/* img-explain (図解説明) */
+html[data-theme="dark"] .img-explain{background:#111826 !important;}
+html[data-theme="dark"] .ie-row{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .ie-label.ie-left{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .ie-label.ie-right{background:rgba(140,198,63,.16) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .ie-desc{color:#CCD6E5 !important;}
+/* baton-box (バトンリレー説明) */
+html[data-theme="dark"] .baton-left{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .baton-right{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .baton-left .baton-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .baton-right .baton-title{color:#F6AD55 !important;}
+html[data-theme="dark"] .baton-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .baton-body strong{color:#B6E27C !important;}
+html[data-theme="dark"] .baton-arrow{color:#B6E27C !important;}
+html[data-theme="dark"] .baton-arrow span{color:#9BA7BB !important;}
+/* cross-link */
+html[data-theme="dark"] .cross-link{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .cross-link .cl-label{color:#F6AD55 !important;}
+html[data-theme="dark"] .cross-link p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .cross-link a{background:#D97706 !important;color:#0A0A0F !important;}
+
+/* ── 製造間接費記事 (boki2-seizo-kansetsuhi) 固有コンポーネント ── */
+/* t-account (T字勘定ビジュアル) */
+html[data-theme="dark"] .t-account{border-color:rgba(255,255,255,.15) !important;}
+html[data-theme="dark"] .t-left{background:rgba(252,129,129,.08) !important;border-right-color:rgba(255,255,255,.15) !important;}
+html[data-theme="dark"] .t-right{background:rgba(140,198,63,.08) !important;}
+html[data-theme="dark"] .t-row{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .t-row.balance{border-top-color:rgba(255,255,255,.2) !important;}
+html[data-theme="dark"] .t-row .label{color:#CCD6E5 !important;}
+html[data-theme="dark"] .t-row .num{color:#F8FAFC !important;}
+html[data-theme="dark"] .t-row.unfav .label,html[data-theme="dark"] .t-row.unfav .num{color:#FC8181 !important;}
+html[data-theme="dark"] .t-row.fav .label,html[data-theme="dark"] .t-row.fav .num{color:#B6E27C !important;}
+html[data-theme="dark"] .t-badge.unfav{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .t-badge.fav{background:rgba(140,198,63,.18) !important;color:#B6E27C !important;}
+/* story-card (社長ストーリー) */
+html[data-theme="dark"] .story-card.bad{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.3) !important;}
+html[data-theme="dark"] .story-card.good{background:rgba(140,198,63,.08) !important;border-color:rgba(140,198,63,.3) !important;}
+html[data-theme="dark"] .story-card.bad .story-title{color:#FC8181 !important;}
+html[data-theme="dark"] .story-card.good .story-title{color:#B6E27C !important;}
+html[data-theme="dark"] .story-card p{color:#CCD6E5 !important;}
+/* box-card (シュラッター図ボックス) */
+html[data-theme="dark"] .box-card{border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .box-card.product{border-color:rgba(39,103,73,.4) !important;}
+html[data-theme="dark"] .box-card .bc-col.left{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .box-card.product .bc-col.left{background:rgba(39,103,73,.12) !important;}
+html[data-theme="dark"] .bc-col.right{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .bc-col{border-right-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .bc-item{color:#CCD6E5 !important;border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .bc-item.highlight{color:#90CDF4 !important;}
+html[data-theme="dark"] .bc-item.answer{color:#B6E27C !important;}
+html[data-theme="dark"] .bc-item.move{color:#F6AD55 !important;}
+
+/* ── 部門別原価計算記事 (boki2-bumonbetsu) 固有コンポーネント ── */
+/* flow-box (部門フロー図) */
+html[data-theme="dark"] .flow-box.sub{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.35) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .flow-box.prod{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.3) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .flow-box.item{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.35) !important;color:#F6AD55 !important;}
+/* ── ここまで ── */
 `;
   document.head.appendChild(s);
 }
