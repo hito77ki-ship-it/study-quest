@@ -1863,6 +1863,18 @@ html[data-theme="dark"] .bc-item.move{color:#F6AD55 !important;}
 html[data-theme="dark"] .flow-box.sub{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.35) !important;color:#90CDF4 !important;}
 html[data-theme="dark"] .flow-box.prod{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.3) !important;color:#B6E27C !important;}
 html[data-theme="dark"] .flow-box.item{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.35) !important;color:#F6AD55 !important;}
+/* ── boki-zero-04 仕訳のしくみ 図解追加コンポーネント ── */
+html[data-theme="dark"] .or-card.result{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .or-card.reason{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.3) !important;}
+html[data-theme="dark"] .or-card.result .or-kamoku{color:#90CDF4 !important;}
+html[data-theme="dark"] .or-card.reason .or-kamoku{color:#F6AD55 !important;}
+html[data-theme="dark"] .or-note{color:#8899AA !important;}
+html[data-theme="dark"] .or-balance{background:rgba(39,103,73,.12) !important;color:#9AE6B4 !important;}
+html[data-theme="dark"] .memory-half.left{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .memory-half.right{background:rgba(217,119,6,.08) !important;}
+html[data-theme="dark"] .faq-item{border-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .faq-item h3{background:rgba(255,255,255,.04) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .faq-answer{color:#CCD6E5 !important;}
 /* ── 総合原価計算記事 (boki2-sogo-genka) 図解ナビ追加コンポーネント ── */
 html[data-theme="dark"] .box-guide{background:rgba(59,130,246,.06) !important;border-color:rgba(59,130,246,.3) !important;}
 html[data-theme="dark"] .bg-lead{color:#CCD6E5 !important;}
