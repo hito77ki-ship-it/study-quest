@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">不合格分析——4パターンの原因と次の合格への4ステップ</text>
+
+  <!-- Top: 4原因 -->
+  <text x="380" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">不合格の主な原因4パターン</text>
+
+  <!-- Pattern 1 -->
+  <rect x="30" y="76" width="165" height="96" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="30" y="76" width="165" height="28" rx="10" fill="#EF4444"/>
+  <rect x="30" y="94" width="165" height="10" fill="#EF4444"/>
+  <text x="112" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">① 理解不足</text>
+  <text x="112" y="116" text-anchor="middle" font-size="10.5" fill="#374151">仕訳の意味を理解せず</text>
+  <text x="112" y="132" text-anchor="middle" font-size="10.5" fill="#374151">丸暗記で進めていた</text>
+  <text x="112" y="150" text-anchor="middle" font-size="10" fill="#DC2626">→ 仕訳の理由から学び直す</text>
+  <text x="112" y="164" text-anchor="middle" font-size="10" fill="#64748B">テキスト§から再スタート</text>
+
+  <!-- Pattern 2 -->
+  <rect x="205" y="76" width="165" height="96" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="205" y="76" width="165" height="28" rx="10" fill="#EAB308"/>
+  <rect x="205" y="94" width="165" height="10" fill="#EAB308"/>
+  <text x="287" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">② 演習量不足</text>
+  <text x="287" y="116" text-anchor="middle" font-size="10.5" fill="#374151">テキストを読んだだけで</text>
+  <text x="287" y="132" text-anchor="middle" font-size="10.5" fill="#374151">問題演習が少なかった</text>
+  <text x="287" y="150" text-anchor="middle" font-size="10" fill="#92400E">→ 過去問・予想問を3回転</text>
+  <text x="287" y="164" text-anchor="middle" font-size="10" fill="#64748B">間違えた問題に絞って</text>
+
+  <!-- Pattern 3 -->
+  <rect x="380" y="76" width="165" height="96" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="380" y="76" width="165" height="28" rx="10" fill="#7C3AED"/>
+  <rect x="380" y="94" width="165" height="10" fill="#7C3AED"/>
+  <text x="462" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">③ 時間切れ</text>
+  <text x="462" y="116" text-anchor="middle" font-size="10.5" fill="#374151">知識はあるが90分で</text>
+  <text x="462" y="132" text-anchor="middle" font-size="10.5" fill="#374151">解き切れなかった</text>
+  <text x="462" y="150" text-anchor="middle" font-size="10" fill="#5B21B6">→ 解く順番と時間配分を固定</text>
+  <text x="462" y="164" text-anchor="middle" font-size="10" fill="#64748B">タイムトライアル演習</text>
+
+  <!-- Pattern 4 -->
+  <rect x="555" y="76" width="175" height="96" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="555" y="76" width="175" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="555" y="94" width="175" height="10" fill="#3B82F6"/>
+  <text x="642" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">④ 工業簿記の弱さ</text>
+  <text x="642" y="116" text-anchor="middle" font-size="10.5" fill="#374151">商業は得点できたが</text>
+  <text x="642" y="132" text-anchor="middle" font-size="10.5" fill="#374151">工業簿記で失点</text>
+  <text x="642" y="150" text-anchor="middle" font-size="10" fill="#1E40AF">→ 工業の勘定フローを先に</text>
+  <text x="642" y="164" text-anchor="middle" font-size="10" fill="#64748B">毎日1問は工業演習</text>
+
+  <!-- Bottom: 4ステップ -->
+  <text x="380" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">不合格後の学習4ステップ</text>
+
+  <!-- Step blocks -->
+  <!-- Step 1 -->
+  <rect x="30" y="216" width="160" height="130" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="30" y="216" width="160" height="30" rx="10" fill="#F97316"/>
+  <rect x="30" y="236" width="160" height="10" fill="#F97316"/>
+  <text x="110" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 1：分析（1週間）</text>
+  <text x="110" y="258" text-anchor="middle" font-size="10.5" fill="#374151">答案用紙を振り返り</text>
+  <text x="110" y="274" text-anchor="middle" font-size="10.5" fill="#374151">何問・どの論点で</text>
+  <text x="110" y="290" text-anchor="middle" font-size="10.5" fill="#374151">失点したかを記録</text>
+  <text x="110" y="310" text-anchor="middle" font-size="10" fill="#C2410C">感情より先に原因を出す</text>
+  <polygon points="200,278 216,272 216,284" fill="#CBD5E1"/>
+
+  <!-- Step 2 -->
+  <rect x="210" y="216" width="160" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="210" y="216" width="160" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="210" y="236" width="160" height="10" fill="#3B82F6"/>
+  <text x="290" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 2：弱点補強（3週間）</text>
+  <text x="290" y="258" text-anchor="middle" font-size="10.5" fill="#374151">失点した論点のみ</text>
+  <text x="290" y="274" text-anchor="middle" font-size="10.5" fill="#374151">テキスト＋問題を</text>
+  <text x="290" y="290" text-anchor="middle" font-size="10.5" fill="#374151">集中的に反復する</text>
+  <text x="290" y="310" text-anchor="middle" font-size="10" fill="#1E40AF">弱点だけに絞る勇気</text>
+  <polygon points="380,278 396,272 396,284" fill="#CBD5E1"/>
+
+  <!-- Step 3 -->
+  <rect x="390" y="216" width="160" height="130" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="390" y="216" width="160" height="30" rx="10" fill="#7C3AED"/>
+  <rect x="390" y="236" width="160" height="10" fill="#7C3AED"/>
+  <text x="470" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 3：模試（1週間）</text>
+  <text x="470" y="258" text-anchor="middle" font-size="10.5" fill="#374151">本番と同じ90分で</text>
+  <text x="470" y="274" text-anchor="middle" font-size="10.5" fill="#374151">過去問・予想問を</text>
+  <text x="470" y="290" text-anchor="middle" font-size="10.5" fill="#374151">3回以上通しで解く</text>
+  <text x="470" y="310" text-anchor="middle" font-size="10" fill="#5B21B6">時間配分を固める</text>
+  <polygon points="560,278 576,272 576,284" fill="#CBD5E1"/>
+
+  <!-- Step 4 -->
+  <rect x="570" y="216" width="160" height="130" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="570" y="216" width="160" height="30" rx="10" fill="#22C55E"/>
+  <rect x="570" y="236" width="160" height="10" fill="#22C55E"/>
+  <text x="650" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 4：本番再挑戦</text>
+  <text x="650" y="258" text-anchor="middle" font-size="10.5" fill="#374151">ネット試験なら</text>
+  <text x="650" y="274" text-anchor="middle" font-size="10.5" fill="#374151">随時受験可能</text>
+  <text x="650" y="290" text-anchor="middle" font-size="10.5" fill="#374151">合格まで平均2.3回</text>
+  <text x="650" y="310" text-anchor="middle" font-size="10" fill="#166534">諦めないことが最強戦略</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="360" width="700" height="28" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="380" y="377" text-anchor="middle" font-size="11" fill="#1E40AF">💡 不合格は「学習戦略の改善点」がわかった状態。原因が特定できれば、次回合格確率は大幅に上がる。</text>
+</svg>

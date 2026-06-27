@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">簿記2級ネット試験——90分の時間配分と解く順番</text>
+
+  <!-- Left: 時間配分グラフ -->
+  <rect x="30" y="52" width="320" height="290" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="190" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">90分の時間配分イメージ</text>
+
+  <!-- Bar chart -->
+  <!-- 第1問 15分 -->
+  <rect x="60" y="88" width="70" height="170" rx="4" fill="#E2E8F0"/>
+  <rect x="60" y="208" width="70" height="50" rx="4" fill="#3B82F6"/>
+  <text x="95" y="204" text-anchor="middle" font-size="9" fill="#374151">15分</text>
+  <text x="95" y="272" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">第1問</text>
+  <text x="95" y="285" text-anchor="middle" font-size="9" fill="#3B82F6">仕訳×5</text>
+  <text x="95" y="300" text-anchor="middle" font-size="9" fill="#64748B">20点</text>
+  <!-- 第2問 -->
+  <text x="95" y="318" text-anchor="middle" font-size="9" fill="#64748B">ここから解く</text>
+
+  <!-- 第3問 30分 -->
+  <rect x="148" y="88" width="70" height="170" rx="4" fill="#E2E8F0"/>
+  <rect x="148" y="148" width="70" height="110" rx="4" fill="#F97316"/>
+  <text x="183" y="144" text-anchor="middle" font-size="9" fill="#374151">30分</text>
+  <text x="183" y="220" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">第3問</text>
+  <text x="183" y="235" text-anchor="middle" font-size="9" fill="#F97316">財務諸表</text>
+  <text x="183" y="250" text-anchor="middle" font-size="9" fill="#64748B">20点</text>
+
+  <!-- 第4問 15分 -->
+  <rect x="236" y="88" width="70" height="170" rx="4" fill="#E2E8F0"/>
+  <rect x="236" y="208" width="70" height="50" rx="4" fill="#22C55E"/>
+  <text x="271" y="204" text-anchor="middle" font-size="9" fill="#374151">15分</text>
+  <text x="271" y="272" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">第4問</text>
+  <text x="271" y="285" text-anchor="middle" font-size="9" fill="#22C55E">工業仕訳</text>
+  <text x="271" y="300" text-anchor="middle" font-size="9" fill="#64748B">28点</text>
+
+  <!-- X axis -->
+  <line x1="50" y1="258" x2="340" y2="258" stroke="#CBD5E1" stroke-width="1"/>
+
+  <text x="190" y="336" text-anchor="middle" font-size="10" fill="#64748B">第2問(15分)・第5問(15分)・見直し(5分)は省略</text>
+
+  <!-- Right: 解く順番 -->
+  <rect x="370" y="52" width="360" height="290" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="550" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">推奨する解く順番</text>
+
+  <!-- Step 1 -->
+  <rect x="390" y="86" width="320" height="52" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="420" y="107" font-size="12" font-weight="700" fill="#1E40AF">① 第1問（仕訳）10〜15分</text>
+  <text x="420" y="125" font-size="10.5" fill="#374151">確実に5問全部解く。わからない問題は最後に戻る</text>
+
+  <!-- Step 2 -->
+  <rect x="390" y="148" width="320" height="52" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="420" y="169" font-size="12" font-weight="700" fill="#166534">② 第4問・第5問（工業）30分</text>
+  <text x="420" y="187" font-size="10.5" fill="#374151">型が決まっており得点しやすい。勘定フローを先に書く</text>
+
+  <!-- Step 3 -->
+  <rect x="390" y="210" width="320" height="52" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="420" y="231" font-size="12" font-weight="700" fill="#713F12">③ 第3問（財務諸表）25〜30分</text>
+  <text x="420" y="249" font-size="10.5" fill="#374151">完璧を目指さない。決算整理わかる箇所から埋める</text>
+
+  <!-- Step 4 -->
+  <rect x="390" y="272" width="320" height="52" rx="8" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="420" y="293" font-size="12" font-weight="700" fill="#5B21B6">④ 第2問（個別論点）残り時間</text>
+  <text x="420" y="311" font-size="10.5" fill="#374151">出題が多様。取れそうな小問から拾って部分点を狙う</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="356" width="700" height="18" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="369" text-anchor="middle" font-size="10.5" fill="#475569">💡 合格ライン70点。難問1問を固執するより、基本問題を確実に取る方が効率的。「捨てる勇気」が合格を引き寄せる。</text>
+</svg>

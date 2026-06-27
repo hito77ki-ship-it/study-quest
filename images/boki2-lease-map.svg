@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">リース取引——ファイナンスかオペレーティングかの判定と仕訳</text>
+
+  <!--判定フロー -->
+  <rect x="270" y="52" width="220" height="52" rx="10" fill="#1E293B"/>
+  <text x="380" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#F8FAFC">リース取引の判定</text>
+  <text x="380" y="92" text-anchor="middle" font-size="10.5" fill="#94A3B8">ノンキャンセラブル ＋ フルペイアウト？</text>
+
+  <!-- Arrow down -->
+  <line x1="310" y1="104" x2="190" y2="134" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="450" y1="104" x2="570" y2="134" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="230" y="124" text-anchor="middle" font-size="10" fill="#3B82F6">両方 YES</text>
+  <text x="530" y="124" text-anchor="middle" font-size="10" fill="#EF4444">どちらか NO</text>
+
+  <!-- Left: ファイナンス・リース -->
+  <rect x="30" y="138" width="330" height="200" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="30" y="138" width="330" height="32" rx="10" fill="#3B82F6"/>
+  <rect x="30" y="160" width="330" height="10" fill="#3B82F6"/>
+  <text x="195" y="157" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">ファイナンス・リース</text>
+
+  <text x="195" y="186" text-anchor="middle" font-size="11" fill="#1E40AF">実質的な購入と同じ扱い</text>
+  <text x="195" y="202" text-anchor="middle" font-size="10.5" fill="#374151">→ 借り手がB/Sに資産・負債を計上</text>
+
+  <!-- 借入時 -->
+  <rect x="50" y="212" width="290" height="40" rx="6" fill="#DBEAFE"/>
+  <text x="195" y="228" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">リース開始時</text>
+  <text x="195" y="244" text-anchor="middle" font-size="10.5" fill="#1D4ED8">リース資産 ×× ／ リース債務 ××</text>
+
+  <!-- 毎期 -->
+  <rect x="50" y="258" width="290" height="52" rx="6" fill="#DBEAFE"/>
+  <text x="195" y="274" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">毎期のリース料支払時</text>
+  <text x="195" y="290" text-anchor="middle" font-size="10.5" fill="#1D4ED8">支払利息 ×× ／ 現金 ××</text>
+  <text x="195" y="305" text-anchor="middle" font-size="10.5" fill="#1D4ED8">リース債務 ×× ／</text>
+  <text x="195" y="327" text-anchor="middle" font-size="10" fill="#64748B">減価償却も毎期計上する</text>
+
+  <!-- Right: オペレーティング・リース -->
+  <rect x="400" y="138" width="330" height="200" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="400" y="138" width="330" height="32" rx="10" fill="#94A3B8"/>
+  <rect x="400" y="160" width="330" height="10" fill="#94A3B8"/>
+  <text x="565" y="157" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">オペレーティング・リース</text>
+
+  <text x="565" y="186" text-anchor="middle" font-size="11" fill="#475569">単純な「借りて使う」契約</text>
+  <text x="565" y="202" text-anchor="middle" font-size="10.5" fill="#374151">→ B/Sに計上しない（オフバランス）</text>
+
+  <rect x="420" y="212" width="290" height="40" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="565" y="228" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">リース料支払時（毎回）</text>
+  <text x="565" y="244" text-anchor="middle" font-size="10.5" fill="#374151">支払リース料 ×× ／ 現金 ××</text>
+
+  <rect x="420" y="258" width="290" height="52" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="565" y="278" text-anchor="middle" font-size="10.5" fill="#475569">資産・負債の計上なし</text>
+  <text x="565" y="296" text-anchor="middle" font-size="10.5" fill="#475569">（注記で開示のみ）</text>
+  <text x="565" y="318" text-anchor="middle" font-size="10" fill="#94A3B8">減価償却もしない</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="352" width="700" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+  <text x="380" y="367" text-anchor="middle" font-size="10.5" fill="#92400E">💡 ノンキャンセラブル：途中解約不可 ／ フルペイアウト：経済的便益とリスクが借り手に移転。両方を満たすとファイナンス・リース。</text>
+</svg>
