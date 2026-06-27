@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">TOEIC 860点超——上位10%へのロードマップ</text>
+  <!-- Left: 失点ゼロ化 -->
+  <rect x="20" y="54" width="350" height="350" rx="8" fill="#FEF2F2"/>
+  <rect x="20" y="54" width="350" height="34" rx="8" fill="#EF4444"/>
+  <text x="195" y="77" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">860点に必要な「失点ゼロ化」パート別目標</text>
+  <!-- Part rows -->
+  <rect x="36" y="98" width="318" height="42" rx="5" fill="#FFF"/>
+  <text x="100" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#1E293B">Part 1 / 2</text>
+  <text x="100" y="131" text-anchor="middle" font-size="9" fill="#64748B">写真描写・応答</text>
+  <rect x="210" y="104" width="130" height="28" rx="4" fill="#FEE2E2"/>
+  <text x="275" y="123" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">ほぼ満点が必須</text>
+  <rect x="36" y="148" width="318" height="42" rx="5" fill="#FFF7ED"/>
+  <text x="100" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#1E293B">Part 3 / 4</text>
+  <text x="100" y="181" text-anchor="middle" font-size="9" fill="#64748B">会話・説明文（69問）</text>
+  <rect x="210" y="154" width="130" height="28" rx="4" fill="#FEF3C7"/>
+  <text x="275" y="173" text-anchor="middle" font-size="11" font-weight="700" fill="#D97706">-3〜4問以内</text>
+  <rect x="36" y="198" width="318" height="42" rx="5" fill="#FFF"/>
+  <text x="100" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="#1E293B">Part 5</text>
+  <text x="100" y="231" text-anchor="middle" font-size="9" fill="#64748B">短文穴埋め（30問）</text>
+  <rect x="210" y="204" width="130" height="28" rx="4" fill="#DCFCE7"/>
+  <text x="275" y="223" text-anchor="middle" font-size="11" font-weight="700" fill="#16A34A">-2問以内</text>
+  <rect x="36" y="248" width="318" height="42" rx="5" fill="#FFF7ED"/>
+  <text x="100" y="266" text-anchor="middle" font-size="11" font-weight="700" fill="#1E293B">Part 6</text>
+  <text x="100" y="281" text-anchor="middle" font-size="9" fill="#64748B">長文穴埋め（16問）</text>
+  <rect x="210" y="254" width="130" height="28" rx="4" fill="#DCFCE7"/>
+  <text x="275" y="273" text-anchor="middle" font-size="11" font-weight="700" fill="#16A34A">-1問以内</text>
+  <rect x="36" y="298" width="318" height="42" rx="5" fill="#FFF"/>
+  <text x="100" y="316" text-anchor="middle" font-size="11" font-weight="700" fill="#1E293B">Part 7</text>
+  <text x="100" y="331" text-anchor="middle" font-size="9" fill="#64748B">読解（54問）</text>
+  <rect x="210" y="304" width="130" height="28" rx="4" fill="#FEE2E2"/>
+  <text x="275" y="323" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">全問読み切り必須</text>
+  <!-- summary -->
+  <rect x="36" y="352" width="318" height="36" rx="6" fill="#FECACA"/>
+  <text x="195" y="375" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">合計目標：L 460以上 ＋ R 400以上 ＝ 860点</text>
+  <!-- Right: スキルアップ戦略 -->
+  <rect x="386" y="54" width="354" height="350" rx="8" fill="#F0F9FF"/>
+  <rect x="386" y="54" width="354" height="34" rx="8" fill="#0369A1"/>
+  <text x="563" y="77" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">860点への3大スキルアップ戦略</text>
+  <!-- 精聴力 -->
+  <rect x="400" y="98" width="326" height="88" rx="6" fill="#E0F2FE"/>
+  <text x="563" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">① 精聴力を上げる</text>
+  <text x="563" y="138" text-anchor="middle" font-size="10" fill="#374151">ネイティブ速度（160wpm以上）の音声を</text>
+  <text x="563" y="154" text-anchor="middle" font-size="10" fill="#374151">聞き逃しゼロで理解できるまで反復する</text>
+  <text x="563" y="172" text-anchor="middle" font-size="9" fill="#0369A1">→ ディクテーション＋シャドーイングで耳を鍛える</text>
+  <!-- 速読力 -->
+  <rect x="400" y="196" width="326" height="88" rx="6" fill="#DCFCE7"/>
+  <text x="563" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#15803D">② 速読力を上げる（200wpm以上）</text>
+  <text x="563" y="236" text-anchor="middle" font-size="10" fill="#374151">Part7を余裕で読み切るには毎分200語以上</text>
+  <text x="563" y="252" text-anchor="middle" font-size="10" fill="#374151">のスピードでの読解が必要</text>
+  <text x="563" y="270" text-anchor="middle" font-size="9" fill="#15803D">→ 英語ニュースを毎日読む習慣で底上げ</text>
+  <!-- 高度語彙 -->
+  <rect x="400" y="294" width="326" height="88" rx="6" fill="#FEF3C7"/>
+  <text x="563" y="314" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">③ 高度語彙を覚える</text>
+  <text x="563" y="334" text-anchor="middle" font-size="10" fill="#374151">「金フレ」2,000語を超えた高頻度語彙</text>
+  <text x="563" y="350" text-anchor="middle" font-size="10" fill="#374151">（3,000〜4,000語レベル）まで拡張する</text>
+  <text x="563" y="368" text-anchor="middle" font-size="9" fill="#92400E">→ 文脈からの推測力も同時に鍛える</text>
+</svg>

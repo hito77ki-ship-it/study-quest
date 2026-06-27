@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">TOEIC 600点突破ロードマップ</text>
+  <!-- 3本柱 -->
+  <text x="380" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">── 600点突破の3本柱 ──</text>
+  <!-- 柱1: 単語力 -->
+  <rect x="20" y="74" width="228" height="100" rx="8" fill="#EFF6FF"/>
+  <rect x="20" y="74" width="228" height="28" rx="8" fill="#3B82F6"/>
+  <text x="134" y="93" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 単語力</text>
+  <text x="134" y="120" text-anchor="middle" font-size="11" fill="#1E40AF">基本2,000語をまず覚える</text>
+  <text x="134" y="138" text-anchor="middle" font-size="10" fill="#374151">「金フレ」「でる1000」などを使い</text>
+  <text x="134" y="154" text-anchor="middle" font-size="10" fill="#374151">ビジネス頻出語を毎日10語ずつ積む</text>
+  <!-- 柱2: 文法 -->
+  <rect x="264" y="74" width="228" height="100" rx="8" fill="#F0FDF4"/>
+  <rect x="264" y="74" width="228" height="28" rx="8" fill="#22C55E"/>
+  <text x="378" y="93" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 文法（Part5）</text>
+  <text x="378" y="120" text-anchor="middle" font-size="11" fill="#14532D">頻出30パターンに集中する</text>
+  <text x="378" y="138" text-anchor="middle" font-size="10" fill="#374151">時制・品詞・前置詞・代名詞の4軸で</text>
+  <text x="378" y="154" text-anchor="middle" font-size="10" fill="#374151">素早く選択肢を絞る練習を重ねる</text>
+  <!-- 柱3: リスニング -->
+  <rect x="508" y="74" width="232" height="100" rx="8" fill="#FFF7ED"/>
+  <rect x="508" y="74" width="232" height="28" rx="8" fill="#F97316"/>
+  <text x="624" y="93" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ リスニング慣れ</text>
+  <text x="624" y="120" text-anchor="middle" font-size="11" fill="#7C2D12">Part2→3→4の順に慣れる</text>
+  <text x="624" y="138" text-anchor="middle" font-size="10" fill="#374151">毎日20分以上の聴き込みで</text>
+  <text x="624" y="154" text-anchor="middle" font-size="10" fill="#374151">英語の音とリズムに耳を慣らす</text>
+  <!-- Phase Flow -->
+  <text x="380" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">── 学習フェーズ ──</text>
+  <!-- Phase1 -->
+  <rect x="20" y="214" width="210" height="180" rx="8" fill="#DBEAFE"/>
+  <rect x="20" y="214" width="210" height="32" rx="8" fill="#2563EB"/>
+  <text x="125" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Phase 1 ／ 2〜3週</text>
+  <text x="125" y="260" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">基礎固め</text>
+  <text x="125" y="280" text-anchor="middle" font-size="10" fill="#374151">・単語帳1周</text>
+  <text x="125" y="298" text-anchor="middle" font-size="10" fill="#374151">・文法テキスト基礎読破</text>
+  <text x="125" y="316" text-anchor="middle" font-size="10" fill="#374151">・公式問題集で形式確認</text>
+  <text x="125" y="334" text-anchor="middle" font-size="10" fill="#374151">・毎日英語を耳に入れる習慣</text>
+  <text x="125" y="378" text-anchor="middle" font-size="9" fill="#3B82F6">目標：試験の全体感を掴む</text>
+  <!-- Arrow1 -->
+  <polygon points="240,304 268,293 268,315" fill="#94A3B8"/>
+  <line x1="230" y1="304" x2="268" y2="304" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Phase2 -->
+  <rect x="270" y="214" width="220" height="180" rx="8" fill="#DCFCE7"/>
+  <rect x="270" y="214" width="220" height="32" rx="8" fill="#16A34A"/>
+  <text x="380" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Phase 2 ／ 1〜2ヶ月</text>
+  <text x="380" y="260" text-anchor="middle" font-size="11" font-weight="700" fill="#14532D">パート別演習</text>
+  <text x="380" y="280" text-anchor="middle" font-size="10" fill="#374151">・Part5を毎日20問の反復</text>
+  <text x="380" y="298" text-anchor="middle" font-size="10" fill="#374151">・Part2→3→4 先読み訓練</text>
+  <text x="380" y="316" text-anchor="middle" font-size="10" fill="#374151">・Part7 速読練習（skim）</text>
+  <text x="380" y="334" text-anchor="middle" font-size="10" fill="#374151">・単語帳2〜3周で定着</text>
+  <text x="380" y="378" text-anchor="middle" font-size="9" fill="#16A34A">目標：各パートを安定させる</text>
+  <!-- Arrow2 -->
+  <polygon points="500,304 528,293 528,315" fill="#94A3B8"/>
+  <line x1="490" y1="304" x2="528" y2="304" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Phase3 -->
+  <rect x="530" y="214" width="210" height="180" rx="8" fill="#FEF3C7"/>
+  <rect x="530" y="214" width="210" height="32" rx="8" fill="#D97706"/>
+  <text x="635" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Phase 3 ／ 2〜3週</text>
+  <text x="635" y="260" text-anchor="middle" font-size="11" font-weight="700" fill="#78350F">模試で仕上げ</text>
+  <text x="635" y="280" text-anchor="middle" font-size="10" fill="#374151">・本番形式の模試を毎週1回</text>
+  <text x="635" y="298" text-anchor="middle" font-size="10" fill="#374151">・時間配分を固定する</text>
+  <text x="635" y="316" text-anchor="middle" font-size="10" fill="#374151">・ミス分析で弱点を潰す</text>
+  <text x="635" y="334" text-anchor="middle" font-size="10" fill="#374151">・当日のルーティン確立</text>
+  <text x="635" y="378" text-anchor="middle" font-size="9" fill="#D97706">目標：600点を安定して出す</text>
+</svg>

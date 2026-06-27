@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="460" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">TOEIC L&amp;R 試験の全体像</text>
+  <!-- Left panel -->
+  <rect x="20" y="50" width="340" height="395" rx="8" fill="#EFF6FF"/>
+  <text x="190" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">試験構成（計200問・2時間）</text>
+  <!-- Listening column -->
+  <rect x="35" y="88" width="148" height="342" rx="6" fill="#DBEAFE"/>
+  <rect x="35" y="88" width="148" height="32" rx="6" fill="#3B82F6"/>
+  <text x="109" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Listening 100問</text>
+  <text x="109" y="123" text-anchor="middle" font-size="10" fill="#BFDBFE">45分</text>
+  <rect x="43" y="128" width="132" height="58" rx="4" fill="#EFF6FF"/>
+  <text x="109" y="148" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">Part 1</text>
+  <text x="109" y="163" text-anchor="middle" font-size="10" fill="#374151">写真描写問題</text>
+  <text x="109" y="178" text-anchor="middle" font-size="10" fill="#64748B">6問</text>
+  <rect x="43" y="192" width="132" height="58" rx="4" fill="#EFF6FF"/>
+  <text x="109" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">Part 2</text>
+  <text x="109" y="227" text-anchor="middle" font-size="10" fill="#374151">応答問題</text>
+  <text x="109" y="242" text-anchor="middle" font-size="10" fill="#64748B">25問</text>
+  <rect x="43" y="256" width="132" height="58" rx="4" fill="#EFF6FF"/>
+  <text x="109" y="276" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">Part 3</text>
+  <text x="109" y="291" text-anchor="middle" font-size="10" fill="#374151">会話問題</text>
+  <text x="109" y="306" text-anchor="middle" font-size="10" fill="#64748B">39問</text>
+  <rect x="43" y="320" width="132" height="100" rx="4" fill="#EFF6FF"/>
+  <text x="109" y="342" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">Part 4</text>
+  <text x="109" y="358" text-anchor="middle" font-size="10" fill="#374151">説明文問題</text>
+  <text x="109" y="374" text-anchor="middle" font-size="10" fill="#64748B">30問</text>
+  <text x="109" y="392" text-anchor="middle" font-size="9" fill="#94A3B8">先読みが重要</text>
+  <!-- Reading column -->
+  <rect x="191" y="88" width="148" height="342" rx="6" fill="#DCFCE7"/>
+  <rect x="191" y="88" width="148" height="32" rx="6" fill="#22C55E"/>
+  <text x="265" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Reading 100問</text>
+  <text x="265" y="123" text-anchor="middle" font-size="10" fill="#BBF7D0">75分</text>
+  <rect x="199" y="128" width="132" height="58" rx="4" fill="#F0FDF4"/>
+  <text x="265" y="148" text-anchor="middle" font-size="11" font-weight="700" fill="#16A34A">Part 5</text>
+  <text x="265" y="163" text-anchor="middle" font-size="10" fill="#374151">短文穴埋め</text>
+  <text x="265" y="178" text-anchor="middle" font-size="10" fill="#64748B">30問</text>
+  <rect x="199" y="192" width="132" height="58" rx="4" fill="#F0FDF4"/>
+  <text x="265" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#16A34A">Part 6</text>
+  <text x="265" y="227" text-anchor="middle" font-size="10" fill="#374151">長文穴埋め</text>
+  <text x="265" y="242" text-anchor="middle" font-size="10" fill="#64748B">16問</text>
+  <rect x="199" y="256" width="132" height="164" rx="4" fill="#F0FDF4"/>
+  <text x="265" y="276" text-anchor="middle" font-size="11" font-weight="700" fill="#16A34A">Part 7</text>
+  <text x="265" y="291" text-anchor="middle" font-size="10" fill="#374151">読解問題</text>
+  <text x="265" y="306" text-anchor="middle" font-size="10" fill="#374151">シングル＋マルチパッセージ</text>
+  <text x="265" y="321" text-anchor="middle" font-size="10" fill="#64748B">54問</text>
+  <text x="265" y="340" text-anchor="middle" font-size="9" fill="#94A3B8">全体の最大のボトルネック</text>
+  <text x="265" y="355" text-anchor="middle" font-size="9" fill="#94A3B8">スピードが命</text>
+  <!-- Right panel: スコア帯 -->
+  <rect x="374" y="50" width="368" height="395" rx="8" fill="#FDF4FF"/>
+  <text x="558" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#7E22CE">スコア帯別・用途と位置づけ</text>
+  <rect x="390" y="88" width="336" height="52" rx="6" fill="#7C3AED"/>
+  <text x="558" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">990点（満点）</text>
+  <text x="558" y="128" text-anchor="middle" font-size="10" fill="#E9D5FF">上位1〜2% ／ 完璧な英語運用能力の証明</text>
+  <rect x="390" y="148" width="336" height="52" rx="6" fill="#A855F7"/>
+  <text x="558" y="170" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">900点以上　CEFR C1</text>
+  <text x="558" y="188" text-anchor="middle" font-size="10" fill="#F3E8FF">上位5〜8% ／ 外資系・通訳レベル</text>
+  <rect x="390" y="208" width="336" height="52" rx="6" fill="#3B82F6"/>
+  <text x="558" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">860点以上　CEFR B2+</text>
+  <text x="558" y="248" text-anchor="middle" font-size="10" fill="#DBEAFE">上位10% ／ グローバル業務が自立でできる</text>
+  <rect x="390" y="268" width="336" height="52" rx="6" fill="#0EA5E9"/>
+  <text x="558" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">730点以上　CEFR B2</text>
+  <text x="558" y="308" text-anchor="middle" font-size="10" fill="#E0F2FE">上位30% ／ 就職・昇進・海外赴任の基準</text>
+  <rect x="390" y="328" width="336" height="52" rx="6" fill="#22C55E"/>
+  <text x="558" y="350" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">600点以上　CEFR B1</text>
+  <text x="558" y="368" text-anchor="middle" font-size="10" fill="#DCFCE7">就活エントリー目安 ／ 全国平均580点を超える</text>
+  <rect x="390" y="388" width="336" height="46" rx="6" fill="#94A3B8"/>
+  <text x="558" y="408" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">500点前後</text>
+  <text x="558" y="424" text-anchor="middle" font-size="10" fill="#F1F5F9">全国平均ゾーン ／ 英語基礎固めが課題</text>
+</svg>
