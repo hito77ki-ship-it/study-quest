@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="340" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">大学生がFP3級を取るべき3つの理由と学習戦略</text>
+
+  <!-- 3 reasons -->
+  <rect x="20" y="52" width="224" height="200" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="52" width="224" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="70" width="224" height="10" fill="#3B82F6"/>
+  <text x="132" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">① 就活に直結する</text>
+  <text x="132" y="92" text-anchor="middle" font-size="10.5" fill="#374151">金融・保険・不動産業界では</text>
+  <text x="132" y="108" text-anchor="middle" font-size="10.5" fill="#374151">積極的に評価される資格</text>
+  <text x="132" y="130" text-anchor="middle" font-size="10" fill="#64748B">「勉強している学生」の実績に</text>
+  <text x="132" y="146" text-anchor="middle" font-size="10" fill="#64748B">国家資格なので信頼度が高い</text>
+  <text x="132" y="162" text-anchor="middle" font-size="10" fill="#64748B">ES・面接でのアピールポイント</text>
+  <rect x="36" y="178" width="192" height="60" rx="6" fill="#DBEAFE"/>
+  <text x="132" y="196" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">大学2〜3年の夏休みに</text>
+  <text x="132" y="212" text-anchor="middle" font-size="10" fill="#374151">60〜90日で取れる。</text>
+  <text x="132" y="228" text-anchor="middle" font-size="10" fill="#374151">就活解禁前に取得が理想。</text>
+
+  <rect x="268" y="52" width="224" height="200" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="268" y="52" width="224" height="28" rx="10" fill="#22C55E"/>
+  <rect x="268" y="70" width="224" height="10" fill="#22C55E"/>
+  <text x="380" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">② 社会人前のマネー教育</text>
+  <text x="380" y="92" text-anchor="middle" font-size="10.5" fill="#374151">社会保険・年金・税金の仕組みを</text>
+  <text x="380" y="108" text-anchor="middle" font-size="10.5" fill="#374151">就職前に理解できる</text>
+  <text x="380" y="130" text-anchor="middle" font-size="10" fill="#64748B">初任給の手取り計算がわかる</text>
+  <text x="380" y="146" text-anchor="middle" font-size="10" fill="#64748B">NISA・iDeCoを早期スタートできる</text>
+  <text x="380" y="162" text-anchor="middle" font-size="10" fill="#64748B">保険選びで損しない判断力がつく</text>
+  <rect x="284" y="178" width="192" height="60" rx="6" fill="#DCFCE7"/>
+  <text x="380" y="196" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">社会人1年目からの</text>
+  <text x="380" y="212" text-anchor="middle" font-size="10" fill="#374151">お金の失敗を予防できる</text>
+  <text x="380" y="228" text-anchor="middle" font-size="10" fill="#374151">一生使える知識への投資</text>
+
+  <rect x="516" y="52" width="224" height="200" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="516" y="52" width="224" height="28" rx="10" fill="#F97316"/>
+  <rect x="516" y="70" width="224" height="10" fill="#F97316"/>
+  <text x="628" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">③ FP2級への最速ルート</text>
+  <text x="628" y="92" text-anchor="middle" font-size="10.5" fill="#374151">3級合格 → 2級受験資格GET</text>
+  <text x="628" y="108" text-anchor="middle" font-size="10.5" fill="#374151">大学3〜4年でFP2級まで取れる</text>
+  <text x="628" y="130" text-anchor="middle" font-size="10" fill="#64748B">FP2級は業界での評価が格段に上がる</text>
+  <text x="628" y="146" text-anchor="middle" font-size="10" fill="#64748B">在学中に2級まで取るのがベスト</text>
+  <text x="628" y="162" text-anchor="middle" font-size="10" fill="#64748B">3→2級は半年〜1年で達成可能</text>
+  <rect x="532" y="178" width="192" height="60" rx="6" fill="#FFEDD5"/>
+  <text x="628" y="196" text-anchor="middle" font-size="10" font-weight="700" fill="#C2410C">3級合格ならすぐ2級申込</text>
+  <text x="628" y="212" text-anchor="middle" font-size="10" fill="#374151">「3級合格→次の試験で2級」</text>
+  <text x="628" y="228" text-anchor="middle" font-size="10" fill="#374151">が最も効率的なルート</text>
+
+  <!-- Bottom -->
+  <rect x="20" y="266" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="282" text-anchor="middle" font-size="10.5" fill="#475569">💡 大学生のFP3級は「お金の知識×国家資格×就活アピール」を一度に手に入れられるコスパ最高の資格。</text>
+  <rect x="20" y="298" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="314" text-anchor="middle" font-size="10.5" fill="#475569">💡 試験は年3回（1月・5月・9月）。大学2年の夏に受験→合格したら次の試験でFP2級が理想ルート。</text>
+</svg>

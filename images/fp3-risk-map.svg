@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP3級 リスク管理——保険の3大分類と税務ポイント</text>
+
+  <!-- 3 columns -->
+  <!-- 生命保険 -->
+  <rect x="20" y="52" width="224" height="240" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="52" width="224" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="72" width="224" height="10" fill="#3B82F6"/>
+  <text x="132" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">生命保険</text>
+  <text x="132" y="96" text-anchor="middle" font-size="10" fill="#1E40AF">死亡・高度障害に備える</text>
+
+  <rect x="36" y="104" width="192" height="30" rx="5" fill="#DBEAFE"/>
+  <text x="132" y="118" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">定期保険</text>
+  <text x="132" y="132" text-anchor="middle" font-size="10" fill="#374151">一定期間のみ / 掛捨て / 保険料安い</text>
+
+  <rect x="36" y="142" width="192" height="30" rx="5" fill="#DBEAFE"/>
+  <text x="132" y="156" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">終身保険</text>
+  <text x="132" y="170" text-anchor="middle" font-size="10" fill="#374151">一生涯保障 / 解約返戻金あり</text>
+
+  <rect x="36" y="180" width="192" height="30" rx="5" fill="#DBEAFE"/>
+  <text x="132" y="194" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">養老保険</text>
+  <text x="132" y="208" text-anchor="middle" font-size="10" fill="#374151">満期あり / 死亡・満期で同額受取</text>
+
+  <rect x="36" y="218" width="192" height="30" rx="5" fill="#DBEAFE"/>
+  <text x="132" y="232" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">個人年金保険</text>
+  <text x="132" y="246" text-anchor="middle" font-size="10" fill="#374151">老後の年金を自分で準備</text>
+
+  <text x="132" y="278" text-anchor="middle" font-size="10" fill="#64748B">生命保険料控除（所得控除）</text>
+  <text x="132" y="292" text-anchor="middle" font-size="10" fill="#64748B">一般・介護医療・個人年金の3枠</text>
+
+  <!-- 損害保険 -->
+  <rect x="268" y="52" width="224" height="240" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="268" y="52" width="224" height="30" rx="10" fill="#22C55E"/>
+  <rect x="268" y="72" width="224" height="10" fill="#22C55E"/>
+  <text x="380" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">損害保険</text>
+  <text x="380" y="96" text-anchor="middle" font-size="10" fill="#166534">財産・賠償責任に備える</text>
+
+  <rect x="284" y="104" width="192" height="30" rx="5" fill="#DCFCE7"/>
+  <text x="380" y="118" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">火災保険</text>
+  <text x="380" y="132" text-anchor="middle" font-size="10" fill="#374151">建物・家財の損害 / 地震は別</text>
+
+  <rect x="284" y="142" width="192" height="30" rx="5" fill="#DCFCE7"/>
+  <text x="380" y="156" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">自動車保険</text>
+  <text x="380" y="170" text-anchor="middle" font-size="10" fill="#374151">任意 / 対人・対物・車両</text>
+
+  <rect x="284" y="180" width="192" height="30" rx="5" fill="#DCFCE7"/>
+  <text x="380" y="194" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">地震保険</text>
+  <text x="380" y="208" text-anchor="middle" font-size="10" fill="#374151">火災保険に付帯 / 単独不可</text>
+
+  <rect x="284" y="218" width="192" height="30" rx="5" fill="#DCFCE7"/>
+  <text x="380" y="232" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">傷害保険</text>
+  <text x="380" y="246" text-anchor="middle" font-size="10" fill="#374151">ケガによる入院・後遺障害</text>
+
+  <text x="380" y="278" text-anchor="middle" font-size="10" fill="#64748B">地震保険料控除あり（所得控除）</text>
+  <text x="380" y="292" text-anchor="middle" font-size="10" fill="#64748B">損害保険金は原則非課税</text>
+
+  <!-- 第三分野 -->
+  <rect x="516" y="52" width="224" height="240" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="516" y="52" width="224" height="30" rx="10" fill="#F97316"/>
+  <rect x="516" y="72" width="224" height="10" fill="#F97316"/>
+  <text x="628" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">第三分野</text>
+  <text x="628" y="96" text-anchor="middle" font-size="10" fill="#C2410C">生損保の中間的な保険</text>
+
+  <rect x="532" y="104" width="192" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="628" y="118" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">医療保険</text>
+  <text x="628" y="132" text-anchor="middle" font-size="10" fill="#374151">入院・手術の費用を保障</text>
+
+  <rect x="532" y="142" width="192" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="628" y="156" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">がん保険</text>
+  <text x="628" y="170" text-anchor="middle" font-size="10" fill="#374151">がん診断・入院・治療費</text>
+
+  <rect x="532" y="180" width="192" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="628" y="194" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">介護保険（民間）</text>
+  <text x="628" y="208" text-anchor="middle" font-size="10" fill="#374151">要介護状態で保険金受取</text>
+
+  <rect x="532" y="218" width="192" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="628" y="232" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">就業不能保険</text>
+  <text x="628" y="246" text-anchor="middle" font-size="10" fill="#374151">病気・ケガで働けない期間の収入補填</text>
+
+  <text x="628" y="278" text-anchor="middle" font-size="10" fill="#64748B">生命保険料控除の対象（介護医療枠）</text>
+  <text x="628" y="292" text-anchor="middle" font-size="10" fill="#64748B">保険金・給付金は原則非課税</text>
+
+  <!-- Bottom hint -->
+  <rect x="20" y="304" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="320" text-anchor="middle" font-size="10.5" fill="#475569">💡 生命保険の死亡保険金：契約者＝被保険者→相続税課税、契約者≠被保険者→所得税か贈与税に注意。</text>
+
+  <rect x="20" y="336" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="352" text-anchor="middle" font-size="10.5" fill="#475569">💡 生命保険料控除（旧契約）：一般・個人年金の2枠。（新契約）：一般・介護医療・個人年金の3枠。各最大4万円（所得税）。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP3級 タックスプランニング——所得10種類と課税の仕組み</text>
+
+  <!-- 所得の10種類 -->
+  <rect x="20" y="52" width="340" height="260" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="52" width="340" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="70" width="340" height="10" fill="#3B82F6"/>
+  <text x="190" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">所得の10種類</text>
+
+  <text x="40" y="92" font-size="10.5" fill="#1E40AF">① 利子所得</text><text x="200" y="92" font-size="10" fill="#374151">預貯金・公社債の利子</text>
+  <text x="40" y="110" font-size="10.5" fill="#1E40AF">② 配当所得</text><text x="200" y="110" font-size="10" fill="#374151">株式配当・投信分配金</text>
+  <text x="40" y="128" font-size="10.5" fill="#1E40AF">③ 不動産所得</text><text x="200" y="128" font-size="10" fill="#374151">家賃・地代などの収入</text>
+  <text x="40" y="146" font-size="10.5" fill="#1E40AF">④ 事業所得</text><text x="200" y="146" font-size="10" fill="#374151">個人事業・農業</text>
+  <text x="40" y="164" font-size="10.5" fill="#1E40AF">⑤ 給与所得</text><text x="200" y="164" font-size="10" fill="#374151">サラリーマンの給料</text>
+  <text x="40" y="182" font-size="10.5" fill="#1E40AF">⑥ 退職所得</text><text x="200" y="182" font-size="10" fill="#374151">退職金（分離課税）</text>
+  <text x="40" y="200" font-size="10.5" fill="#1E40AF">⑦ 山林所得</text><text x="200" y="200" font-size="10" fill="#374151">山林の伐採・売却</text>
+  <text x="40" y="218" font-size="10.5" fill="#1E40AF">⑧ 譲渡所得</text><text x="200" y="218" font-size="10" fill="#374151">資産の売却益</text>
+  <text x="40" y="236" font-size="10.5" fill="#1E40AF">⑨ 一時所得</text><text x="200" y="236" font-size="10" fill="#374151">懸賞・保険金満期など</text>
+  <text x="40" y="254" font-size="10.5" fill="#1E40AF">⑩ 雑所得</text><text x="200" y="254" font-size="10" fill="#374151">公的年金・副業収入など</text>
+
+  <line x1="36" y1="260" x2="344" y2="260" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="190" y="276" text-anchor="middle" font-size="10" fill="#1D4ED8">①〜⑤⑨⑩ → 総合課税（合算して累進税率）</text>
+  <text x="190" y="292" text-anchor="middle" font-size="10" fill="#1D4ED8">⑥⑦⑧ → 申告分離課税（他の所得と別計算）</text>
+  <text x="190" y="308" text-anchor="middle" font-size="9.5" fill="#64748B">利子所得・一部配当 → 源泉分離課税（確定申告不要）</text>
+
+  <!-- 所得控除と税額計算 -->
+  <rect x="400" y="52" width="340" height="260" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="400" y="52" width="340" height="28" rx="10" fill="#F97316"/>
+  <rect x="400" y="70" width="340" height="10" fill="#F97316"/>
+  <text x="570" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">税額の計算フロー</text>
+
+  <rect x="416" y="82" width="308" height="28" rx="5" fill="#FFEDD5"/>
+  <text x="570" y="100" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">収入金額</text>
+
+  <text x="570" y="120" text-anchor="middle" font-size="10" fill="#374151">▼ 必要経費・給与所得控除を差し引く</text>
+
+  <rect x="416" y="126" width="308" height="28" rx="5" fill="#FFEDD5"/>
+  <text x="570" y="144" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">所得金額（各種）</text>
+
+  <text x="570" y="164" text-anchor="middle" font-size="10" fill="#374151">▼ 所得控除（15種類）を差し引く</text>
+  <text x="570" y="180" text-anchor="middle" font-size="9.5" fill="#64748B">基礎・配偶者・扶養・社会保険料・医療費 etc.</text>
+
+  <rect x="416" y="186" width="308" height="28" rx="5" fill="#FFEDD5"/>
+  <text x="570" y="204" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">課税所得金額</text>
+
+  <text x="570" y="224" text-anchor="middle" font-size="10" fill="#374151">▼ 累進税率（5%〜45%）を掛ける</text>
+
+  <rect x="416" y="230" width="308" height="28" rx="5" fill="#FEE2E2"/>
+  <text x="570" y="248" text-anchor="middle" font-size="10.5" font-weight="700" fill="#DC2626">税額</text>
+
+  <text x="570" y="268" text-anchor="middle" font-size="10" fill="#374151">▼ 税額控除（住宅ローン控除 etc）を差し引く</text>
+
+  <rect x="416" y="274" width="308" height="28" rx="5" fill="#FEE2E2"/>
+  <text x="570" y="292" text-anchor="middle" font-size="10.5" font-weight="700" fill="#DC2626">納付税額</text>
+
+  <text x="570" y="312" text-anchor="middle" font-size="9.5" fill="#64748B">源泉徴収分を差し引いた残りを納付</text>
+
+  <!-- 確定申告 -->
+  <rect x="20" y="324" width="720" height="58" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="380" y="346" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">確定申告が必要なケース（給与所得者）</text>
+  <text x="380" y="364" text-anchor="middle" font-size="10" fill="#374151">給与2,000万超 ／ 副業所得20万超 ／ 2か所以上から給与 ／ 医療費控除や住宅ローン控除を受けたい（初年度）</text>
+  <text x="380" y="380" text-anchor="middle" font-size="10" fill="#64748B">申告期限：翌年2月16日〜3月15日</text>
+</svg>

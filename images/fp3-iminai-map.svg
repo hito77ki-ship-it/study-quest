@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" width="760" height="320">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="320" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP3級——「意味ない」は本当？取得メリット4つ</text>
+
+  <!-- 4 cards -->
+  <!-- 実生活 -->
+  <rect x="20" y="52" width="340" height="118" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="52" width="340" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="70" width="340" height="10" fill="#3B82F6"/>
+  <text x="190" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">① 実生活に直結する知識が身につく</text>
+  <text x="190" y="90" text-anchor="middle" font-size="10.5" fill="#374151">保険・税金・年金・NISAを「体系的に」理解できる</text>
+  <text x="190" y="106" text-anchor="middle" font-size="10" fill="#64748B">社会保険の仕組みを知らないと損する場面が多い</text>
+  <text x="190" y="122" text-anchor="middle" font-size="10" fill="#64748B">住宅購入・相続・資産運用の判断力が上がる</text>
+  <text x="190" y="138" text-anchor="middle" font-size="10" fill="#64748B">「お金のリテラシー」として一生使える知識</text>
+  <text x="190" y="158" text-anchor="middle" font-size="10" fill="#1D4ED8">→ 資格の「使えなさ」ではなく知識の有益さを評価</text>
+
+  <!-- 就活 -->
+  <rect x="400" y="52" width="340" height="118" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="400" y="52" width="340" height="28" rx="10" fill="#EAB308"/>
+  <rect x="400" y="70" width="340" height="10" fill="#EAB308"/>
+  <text x="570" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">② 就活・転職で差別化できる</text>
+  <text x="570" y="90" text-anchor="middle" font-size="10.5" fill="#374151">金融・保険・不動産業界では評価されやすい</text>
+  <text x="570" y="106" text-anchor="middle" font-size="10" fill="#64748B">「勉強する姿勢・計画性」のアピールになる</text>
+  <text x="570" y="122" text-anchor="middle" font-size="10" fill="#64748B">大学生のうちに取れば就活前に武器になる</text>
+  <text x="570" y="138" text-anchor="middle" font-size="10" fill="#64748B">「国家資格」の実績として履歴書に書ける</text>
+  <text x="570" y="158" text-anchor="middle" font-size="10" fill="#713F12">→ 取得難度が低い分、2級取得への足がかりとして活用</text>
+
+  <!-- FP2への道 -->
+  <rect x="20" y="182" width="340" height="118" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="20" y="182" width="340" height="28" rx="10" fill="#22C55E"/>
+  <rect x="20" y="200" width="340" height="10" fill="#22C55E"/>
+  <text x="190" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">③ FP2級合格への確実な足がかり</text>
+  <text x="190" y="220" text-anchor="middle" font-size="10.5" fill="#374151">FP2級の受験資格：3級合格が最も手軽なルート</text>
+  <text x="190" y="236" text-anchor="middle" font-size="10" fill="#64748B">3級で全分野の土台を作ってから2級へ進む</text>
+  <text x="190" y="252" text-anchor="middle" font-size="10" fill="#64748B">FP2級は就活・転職でより強力な評価を受ける</text>
+  <text x="190" y="268" text-anchor="middle" font-size="10" fill="#64748B">FP1級やCFPへの最初のステップでもある</text>
+  <text x="190" y="288" text-anchor="middle" font-size="10" fill="#166534">→ 3級単体ではなく「2級合格セット」で考える</text>
+
+  <!-- コスパ -->
+  <rect x="400" y="182" width="340" height="118" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="400" y="182" width="340" height="28" rx="10" fill="#EF4444"/>
+  <rect x="400" y="200" width="340" height="10" fill="#EF4444"/>
+  <text x="570" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">④ 短期間・低コストで取れる国家資格</text>
+  <text x="570" y="220" text-anchor="middle" font-size="10.5" fill="#374151">勉強期間：1〜3ヶ月（1日1時間程度）</text>
+  <text x="570" y="236" text-anchor="middle" font-size="10" fill="#64748B">合格率：60〜70%台（挑戦しやすい難易度）</text>
+  <text x="570" y="252" text-anchor="middle" font-size="10" fill="#64748B">受験料：6,000円程度（学科＋実技）</text>
+  <text x="570" y="268" text-anchor="middle" font-size="10" fill="#64748B">年3回受験機会（1・5・9月）</text>
+  <text x="570" y="288" text-anchor="middle" font-size="10" fill="#DC2626">→ 「意味ない」より「取らない理由がない」レベル</text>
+</svg>

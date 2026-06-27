@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="340" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP3級——期間別合格スケジュールと1日あたりの目安</text>
+
+  <!-- 30日 -->
+  <rect x="20" y="52" width="224" height="230" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="20" y="52" width="224" height="28" rx="10" fill="#EF4444"/>
+  <rect x="20" y="70" width="224" height="10" fill="#EF4444"/>
+  <text x="132" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">30日プラン（短期集中）</text>
+  <text x="132" y="92" text-anchor="middle" font-size="10.5" fill="#374151">1日 2〜3時間</text>
+  <rect x="36" y="100" width="192" height="130" rx="6" fill="#FEE2E2"/>
+  <text x="132" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="#DC2626">Week 1（1〜7日）</text>
+  <text x="132" y="134" text-anchor="middle" font-size="10" fill="#374151">テキスト全体を1周（読む）</text>
+  <text x="132" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#DC2626">Week 2（8〜14日）</text>
+  <text x="132" y="164" text-anchor="middle" font-size="10" fill="#374151">過去問チャレンジ＋間違い分析</text>
+  <text x="132" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#DC2626">Week 3（15〜21日）</text>
+  <text x="132" y="194" text-anchor="middle" font-size="10" fill="#374151">苦手分野の集中攻略</text>
+  <text x="132" y="208" text-anchor="middle" font-size="10" font-weight="700" fill="#DC2626">Week 4（22〜30日）</text>
+  <text x="132" y="224" text-anchor="middle" font-size="10" fill="#374151">模擬試験×2回＋最終確認</text>
+  <text x="132" y="256" text-anchor="middle" font-size="10" fill="#374151">向いている人：</text>
+  <text x="132" y="272" text-anchor="middle" font-size="10" fill="#64748B">試験まで時間がない／</text>
+  <text x="132" y="286" text-anchor="middle" font-size="10" fill="#64748B">会計や金融の基礎知識あり</text>
+
+  <!-- 60日 -->
+  <rect x="268" y="52" width="224" height="230" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="268" y="52" width="224" height="28" rx="10" fill="#EAB308"/>
+  <rect x="268" y="70" width="224" height="10" fill="#EAB308"/>
+  <text x="380" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">60日プラン（標準）</text>
+  <text x="380" y="92" text-anchor="middle" font-size="10.5" fill="#374151">1日 1〜1.5時間</text>
+  <rect x="284" y="100" width="192" height="130" rx="6" fill="#FEF9C3"/>
+  <text x="380" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="#713F12">1〜2週目</text>
+  <text x="380" y="134" text-anchor="middle" font-size="10" fill="#374151">テキスト1周（ライフ〜相続）</text>
+  <text x="380" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#713F12">3〜4週目</text>
+  <text x="380" y="164" text-anchor="middle" font-size="10" fill="#374151">過去問（学科）を3回転</text>
+  <text x="380" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#713F12">5〜6週目</text>
+  <text x="380" y="194" text-anchor="middle" font-size="10" fill="#374151">実技対策＋苦手強化</text>
+  <text x="380" y="208" text-anchor="middle" font-size="10" font-weight="700" fill="#713F12">7〜8週目</text>
+  <text x="380" y="224" text-anchor="middle" font-size="10" fill="#374151">模試＋弱点ゼロ化</text>
+  <text x="380" y="256" text-anchor="middle" font-size="10" fill="#374151">向いている人：</text>
+  <text x="380" y="272" text-anchor="middle" font-size="10" fill="#64748B">忙しいが毎日時間を確保／</text>
+  <text x="380" y="286" text-anchor="middle" font-size="10" fill="#64748B">初学者で確実に合格したい</text>
+
+  <!-- 90日 -->
+  <rect x="516" y="52" width="224" height="230" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="516" y="52" width="224" height="28" rx="10" fill="#22C55E"/>
+  <rect x="516" y="70" width="224" height="10" fill="#22C55E"/>
+  <text x="628" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">90日プラン（余裕あり）</text>
+  <text x="628" y="92" text-anchor="middle" font-size="10.5" fill="#374151">1日 30〜60分</text>
+  <rect x="532" y="100" width="192" height="130" rx="6" fill="#DCFCE7"/>
+  <text x="628" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">Month 1</text>
+  <text x="628" y="134" text-anchor="middle" font-size="10" fill="#374151">テキストを分野別にゆっくり</text>
+  <text x="628" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">Month 2</text>
+  <text x="628" y="164" text-anchor="middle" font-size="10" fill="#374151">過去問を繰り返し＋暗記</text>
+  <text x="628" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">Month 3（最終月）</text>
+  <text x="628" y="194" text-anchor="middle" font-size="10" fill="#374151">実技＋模試＋最終チェック</text>
+  <text x="628" y="208" text-anchor="middle" font-size="10" fill="#374151">余裕を持って仕上げ</text>
+  <text x="628" y="228" text-anchor="middle" font-size="10" fill="#374151">向いている人：</text>
+  <text x="628" y="256" text-anchor="middle" font-size="10" fill="#374151">向いている人：</text>
+  <text x="628" y="272" text-anchor="middle" font-size="10" fill="#64748B">大学生・社会人で本業が忙しい／</text>
+  <text x="628" y="286" text-anchor="middle" font-size="10" fill="#64748B">完全初学者でじっくり学びたい</text>
+
+  <!-- Bottom -->
+  <rect x="20" y="294" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="310" text-anchor="middle" font-size="10.5" fill="#475569">💡 FP3級の合格率は学科・実技ともに60〜70%台。過去問3〜5回転＋苦手分野の集中攻略が最短合格への近道。</text>
+</svg>

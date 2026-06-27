@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP3級 不動産——取引・税金・法令制限の頻出ポイント</text>
+
+  <!-- Top: 不動産取引の流れ -->
+  <text x="380" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">不動産売買の流れ</text>
+
+  <rect x="20" y="66" width="108" height="50" rx="7" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="74" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#1E40AF">媒介契約</text>
+  <text x="74" y="102" text-anchor="middle" font-size="9.5" fill="#374151">専属・専任・一般</text>
+
+  <polygon points="134,91 128,86 128,96" fill="#64748B"/>
+  <line x1="128" y1="91" x2="134" y2="91" stroke="#64748B" stroke-width="1.5"/>
+
+  <rect x="138" y="66" width="108" height="50" rx="7" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="192" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#1E40AF">重要事項説明</text>
+  <text x="192" y="102" text-anchor="middle" font-size="9.5" fill="#374151">宅建士が書面で説明</text>
+
+  <polygon points="252,91 246,86 246,96" fill="#64748B"/>
+
+  <rect x="256" y="66" width="108" height="50" rx="7" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="310" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#1E40AF">売買契約</text>
+  <text x="310" y="102" text-anchor="middle" font-size="9.5" fill="#374151">手付金（解約手付）</text>
+
+  <polygon points="370,91 364,86 364,96" fill="#64748B"/>
+
+  <rect x="374" y="66" width="108" height="50" rx="7" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="428" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#1E40AF">ローン審査</text>
+  <text x="428" y="102" text-anchor="middle" font-size="9.5" fill="#374151">住宅ローン契約</text>
+
+  <polygon points="488,91 482,86 482,96" fill="#64748B"/>
+
+  <rect x="492" y="66" width="108" height="50" rx="7" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="546" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#1E40AF">引渡し・登記</text>
+  <text x="546" y="102" text-anchor="middle" font-size="9.5" fill="#374151">所有権移転登記</text>
+
+  <polygon points="606,91 600,86 600,96" fill="#64748B"/>
+
+  <rect x="610" y="66" width="130" height="50" rx="7" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="675" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">取得完了</text>
+  <text x="675" y="102" text-anchor="middle" font-size="9.5" fill="#374151">各種税金の支払いへ</text>
+
+  <!-- 3段階の税金 -->
+  <text x="380" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">不動産にかかる税金——3段階</text>
+
+  <!-- 取得時 -->
+  <rect x="20" y="148" width="224" height="130" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="20" y="148" width="224" height="28" rx="10" fill="#EF4444"/>
+  <rect x="20" y="166" width="224" height="10" fill="#EF4444"/>
+  <text x="132" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">取得時の税金</text>
+  <text x="132" y="190" text-anchor="middle" font-size="10.5" fill="#374151">不動産取得税（都道府県税）</text>
+  <text x="132" y="206" text-anchor="middle" font-size="9.5" fill="#64748B">固定資産税評価額 × 原則4%（住宅は3%）</text>
+  <text x="132" y="222" text-anchor="middle" font-size="10.5" fill="#374151">登録免許税</text>
+  <text x="132" y="238" text-anchor="middle" font-size="9.5" fill="#64748B">所有権移転・抵当権設定など登記時</text>
+  <text x="132" y="254" text-anchor="middle" font-size="10.5" fill="#374151">印紙税</text>
+  <text x="132" y="270" text-anchor="middle" font-size="9.5" fill="#64748B">売買契約書・ローン契約書など</text>
+
+  <!-- 保有時 -->
+  <rect x="268" y="148" width="224" height="130" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="268" y="148" width="224" height="28" rx="10" fill="#EAB308"/>
+  <rect x="268" y="166" width="224" height="10" fill="#EAB308"/>
+  <text x="380" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">保有時の税金</text>
+  <text x="380" y="190" text-anchor="middle" font-size="10.5" fill="#374151">固定資産税（市町村税）</text>
+  <text x="380" y="206" text-anchor="middle" font-size="9.5" fill="#64748B">固定資産税評価額 × 1.4%（標準税率）</text>
+  <text x="380" y="222" text-anchor="middle" font-size="9.5" fill="#64748B">1月1日現在の所有者に課税</text>
+  <text x="380" y="238" text-anchor="middle" font-size="10.5" fill="#374151">都市計画税</text>
+  <text x="380" y="254" text-anchor="middle" font-size="9.5" fill="#64748B">市街化区域内の土地・建物のみ</text>
+  <text x="380" y="270" text-anchor="middle" font-size="9.5" fill="#64748B">固定資産税評価額 × 0.3%（制限税率）</text>
+
+  <!-- 譲渡時 -->
+  <rect x="516" y="148" width="224" height="130" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="516" y="148" width="224" height="28" rx="10" fill="#22C55E"/>
+  <rect x="516" y="166" width="224" height="10" fill="#22C55E"/>
+  <text x="628" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">譲渡時の税金</text>
+  <text x="628" y="190" text-anchor="middle" font-size="10.5" fill="#374151">譲渡所得税（申告分離課税）</text>
+  <text x="628" y="206" text-anchor="middle" font-size="9.5" fill="#64748B">短期（5年以下）：39.63%</text>
+  <text x="628" y="222" text-anchor="middle" font-size="9.5" fill="#64748B">長期（5年超）：20.315%</text>
+  <text x="628" y="238" text-anchor="middle" font-size="9.5" fill="#166534">居住用：3,000万円特別控除</text>
+  <text x="628" y="254" text-anchor="middle" font-size="9.5" fill="#166534">軽減税率（10年超：14.21%）</text>
+  <text x="628" y="270" text-anchor="middle" font-size="9.5" fill="#64748B">譲渡所得＝収入−(取得費＋譲渡費用)</text>
+
+  <!-- Bottom hint -->
+  <rect x="20" y="290" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="306" text-anchor="middle" font-size="10.5" fill="#475569">💡 譲渡所得の「短期5年以下vs長期5年超」の判定は、売却した年の1月1日現在の保有期間で判断（購入〜売却の年数ではない）。</text>
+  <rect x="20" y="322" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="338" text-anchor="middle" font-size="10.5" fill="#475569">💡 固定資産税の小規模住宅用地特例：200㎡以下の部分は課税標準を1/6に。それ超は1/3に。</text>
+</svg>
