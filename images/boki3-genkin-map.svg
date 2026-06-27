@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="380" fill="#FAFAFA" rx="12"/>
+
+  <!-- Title -->
+  <rect x="60" y="12" width="640" height="36" fill="#FEF3C7" rx="8"/>
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1A202C">小切手（こぎって）を受け取ったとき——どの科目を使う？</text>
+
+  <!-- 上部: 現金の定義 -->
+  <rect x="16" y="60" width="728" height="70" fill="#F0FFF4" rx="8" stroke="#6EE7B7" stroke-width="1"/>
+  <text x="380" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46">簿記での「現金」＝ 通貨（お札・硬貨）＋ 通貨代用証券（つうかだいようしょうけん）</text>
+  <text x="380" y="100" text-anchor="middle" font-size="11" fill="#374151">通貨代用証券 ＝ すぐに現金化できる証券</text>
+  <text x="380" y="118" text-anchor="middle" font-size="11" fill="#374151">例：他人振出小切手・送金小切手・郵便為替証書・期限到来の公社債利札　など</text>
+
+  <!-- フローチャート開始 -->
+  <!-- 起点ボックス -->
+  <rect x="270" y="148" width="220" height="40" fill="#FDE68A" rx="8" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="380" y="173" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">小切手を受け取った</text>
+
+  <!-- 矢印下 -->
+  <line x1="380" y1="188" x2="380" y2="212" stroke="#9CA3AF" stroke-width="2"/>
+  <polygon points="375,210 385,210 380,218" fill="#9CA3AF"/>
+
+  <!-- 判断ひし形 -->
+  <polygon points="380,218 510,254 380,290 250,254" fill="#E0E7FF" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="380" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#3730A3">自己振出し？</text>
+  <text x="380" y="264" text-anchor="middle" font-size="10" fill="#3730A3">（自分が出した小切手か？）</text>
+
+  <!-- YES 分岐（右） -->
+  <line x1="510" y1="254" x2="580" y2="254" stroke="#9CA3AF" stroke-width="2"/>
+  <polygon points="578,249 578,259 586,254" fill="#9CA3AF"/>
+  <text x="540" y="248" text-anchor="middle" font-size="10" fill="#6B7280">YES</text>
+
+  <rect x="586" y="230" width="148" height="48" fill="#DBEAFE" rx="8" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="660" y="252" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">当座預金</text>
+  <text x="660" y="270" text-anchor="middle" font-size="10" fill="#374151">（当座預金が復活）</text>
+
+  <!-- YES 説明 -->
+  <rect x="586" y="286" width="148" height="44" fill="#EFF6FF" rx="6"/>
+  <text x="660" y="305" text-anchor="middle" font-size="10" fill="#374151">自分の口座から</text>
+  <text x="660" y="320" text-anchor="middle" font-size="10" fill="#374151">引き出す権利が戻る</text>
+
+  <!-- NO 分岐（左） -->
+  <line x1="250" y1="254" x2="180" y2="254" stroke="#9CA3AF" stroke-width="2"/>
+  <polygon points="182,249 182,259 174,254" fill="#9CA3AF"/>
+  <text x="218" y="248" text-anchor="middle" font-size="10" fill="#6B7280">NO</text>
+
+  <rect x="26" y="230" width="148" height="48" fill="#D1FAE5" rx="8" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="100" y="252" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46">現　金</text>
+  <text x="100" y="270" text-anchor="middle" font-size="10" fill="#374151">（通貨代用証券）</text>
+
+  <!-- NO 説明 -->
+  <rect x="26" y="286" width="148" height="44" fill="#ECFDF5" rx="6"/>
+  <text x="100" y="305" text-anchor="middle" font-size="10" fill="#374151">他人の口座から</text>
+  <text x="100" y="320" text-anchor="middle" font-size="10" fill="#374151">引き出せる証券</text>
+
+  <!-- 下部まとめ -->
+  <rect x="16" y="338" width="728" height="30" fill="#FEF3C7" rx="8"/>
+  <text x="380" y="358" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">⚠️ 試験頻出：「自己振出し」なら当座預金、「他店振出し」なら現金！</text>
+</svg>

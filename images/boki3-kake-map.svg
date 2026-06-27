@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="800" height="420" fill="#FAFAFA" rx="12"/>
+
+  <!-- Title -->
+  <rect x="80" y="12" width="640" height="36" fill="#EBF8FF" rx="8"/>
+  <text x="400" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1A202C">売掛金・買掛金 T字勘定フロー</text>
+
+  <!-- 売掛金 ─────────────────────── -->
+  <rect x="16" y="60" width="368" height="38" fill="#3B82F6" rx="8 8 0 0"/>
+  <text x="200" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">売掛金（うりかけきん）</text>
+  <text x="200" y="96" text-anchor="middle" font-size="10" fill="#BFDBFE">資産（ざいさん） — 後でもらえる権利</text>
+
+  <!-- T cross -->
+  <line x1="16" y1="98" x2="384" y2="98" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="200" y1="98" x2="200" y2="262" stroke="#93C5FD" stroke-width="1.5"/>
+
+  <!-- 借方 label -->
+  <rect x="16" y="98" width="184" height="22" fill="#DBEAFE"/>
+  <text x="108" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">借方（左）</text>
+  <!-- 貸方 label -->
+  <rect x="200" y="98" width="184" height="22" fill="#EFF6FF"/>
+  <text x="292" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#6B7280">貸方（右）</text>
+
+  <!-- 左セル：増える -->
+  <rect x="20" y="124" width="176" height="72" fill="#DBEAFE" rx="6"/>
+  <text x="108" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">売上時に増える ↑</text>
+  <text x="108" y="163" text-anchor="middle" font-size="11" fill="#374151">仕訳：売掛金／売上</text>
+  <text x="108" y="188" text-anchor="middle" font-size="10" fill="#4B5563">後でもらえる権利が発生</text>
+
+  <!-- 右セル：減る -->
+  <rect x="204" y="124" width="176" height="72" fill="#EFF6FF" rx="6"/>
+  <text x="292" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">回収時に減る ↓</text>
+  <text x="292" y="163" text-anchor="middle" font-size="11" fill="#374151">仕訳：現金／売掛金</text>
+  <text x="292" y="188" text-anchor="middle" font-size="10" fill="#4B5563">現金を受け取り権利が消える</text>
+
+  <!-- 残高 -->
+  <rect x="20" y="202" width="360" height="26" fill="#BFDBFE" rx="6"/>
+  <text x="200" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">残高 ＝ まだ回収できていない売上代金</text>
+
+  <!-- 買掛金 ─────────────────────── -->
+  <rect x="416" y="60" width="368" height="38" fill="#EF4444" rx="8 8 0 0"/>
+  <text x="600" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">買掛金（かいかけきん）</text>
+  <text x="600" y="96" text-anchor="middle" font-size="10" fill="#FECACA">負債（ふさい） — 後で払わないといけない義務</text>
+
+  <line x1="416" y1="98" x2="784" y2="98" stroke="#FCA5A5" stroke-width="1.5"/>
+  <line x1="600" y1="98" x2="600" y2="262" stroke="#FCA5A5" stroke-width="1.5"/>
+
+  <rect x="416" y="98" width="184" height="22" fill="#FEE2E2"/>
+  <text x="508" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#6B7280">借方（左）</text>
+  <rect x="600" y="98" width="184" height="22" fill="#FFF5F5"/>
+  <text x="692" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">貸方（右）</text>
+
+  <!-- 左セル：減る -->
+  <rect x="420" y="124" width="176" height="72" fill="#FEE2E2" rx="6"/>
+  <text x="508" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#B91C1C">支払時に減る ↓</text>
+  <text x="508" y="163" text-anchor="middle" font-size="11" fill="#374151">仕訳：買掛金／現金</text>
+  <text x="508" y="188" text-anchor="middle" font-size="10" fill="#4B5563">現金を払い義務が消える</text>
+
+  <!-- 右セル：増える -->
+  <rect x="604" y="124" width="176" height="72" fill="#FFF5F5" rx="6"/>
+  <text x="692" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#9B2C2C">仕入時に増える ↑</text>
+  <text x="692" y="163" text-anchor="middle" font-size="11" fill="#374151">仕訳：仕入／買掛金</text>
+  <text x="692" y="188" text-anchor="middle" font-size="10" fill="#4B5563">後で払う義務が発生</text>
+
+  <!-- 残高 -->
+  <rect x="420" y="202" width="360" height="26" fill="#FECACA" rx="6"/>
+  <text x="600" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">残高 ＝ まだ支払っていない仕入代金</text>
+
+  <!-- VS -->
+  <circle cx="400" cy="168" r="20" fill="#F0FFF4" stroke="#6EE7B7" stroke-width="2"/>
+  <text x="400" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">VS</text>
+
+  <!-- ── まとめ ── -->
+  <rect x="16" y="244" width="768" height="158" fill="#F0FFF4" rx="10" stroke="#6EE7B7" stroke-width="1"/>
+  <text x="400" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46">🎯 まとめ：2つの科目の正体</text>
+
+  <rect x="30" y="278" width="340" height="110" fill="#DBEAFE" rx="8"/>
+  <text x="200" y="300" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">売掛金（資産）</text>
+  <text x="200" y="320" text-anchor="middle" font-size="11" fill="#374151">商品を売ったのに</text>
+  <text x="200" y="338" text-anchor="middle" font-size="11" fill="#374151">まだお金をもらっていない状態</text>
+  <text x="200" y="358" text-anchor="middle" font-size="11" fill="#1D4ED8">売るたびに増え、回収で消える</text>
+  <text x="200" y="376" text-anchor="middle" font-size="10" fill="#4B5563">売掛金 → 借方（左）に記入で増加</text>
+
+  <rect x="430" y="278" width="340" height="110" fill="#FEE2E2" rx="8"/>
+  <text x="600" y="300" text-anchor="middle" font-size="13" font-weight="700" fill="#B91C1C">買掛金（負債）</text>
+  <text x="600" y="320" text-anchor="middle" font-size="11" fill="#374151">商品を買ったのに</text>
+  <text x="600" y="338" text-anchor="middle" font-size="11" fill="#374151">まだお金を払っていない状態</text>
+  <text x="600" y="358" text-anchor="middle" font-size="11" fill="#B91C1C">買うたびに増え、支払いで消える</text>
+  <text x="600" y="376" text-anchor="middle" font-size="10" fill="#4B5563">買掛金 → 貸方（右）に記入で増加</text>
+</svg>

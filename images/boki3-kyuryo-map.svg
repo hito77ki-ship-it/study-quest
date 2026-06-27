@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="400" fill="#FAFAFA" rx="12"/>
+
+  <!-- Title -->
+  <rect x="60" y="12" width="640" height="36" fill="#D1FAE5" rx="8"/>
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">給料（きゅうりょう）支払いの全体像——お金の流れを図解</text>
+
+  <!-- ── 上部：横棒グラフ ── -->
+  <!-- 総支給額バー背景 -->
+  <rect x="20" y="62" width="720" height="44" fill="#F3F4F6" rx="6"/>
+  <text x="26" y="80" font-size="10" fill="#6B7280">総支給額</text>
+  <text x="26" y="96" font-size="10" font-weight="700" fill="#374151">300,000</text>
+
+  <!-- 手取り（緑） -->
+  <rect x="100" y="64" width="510" height="40" fill="#6EE7B7" rx="4 0 0 4"/>
+  <text x="355" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">手取り額 255,000円</text>
+
+  <!-- 社保（橙） -->
+  <rect x="610" y="64" width="60" height="40" fill="#FCD34D"/>
+  <text x="640" y="82" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">社保</text>
+  <text x="640" y="96" text-anchor="middle" font-size="9" fill="#92400E">30,000</text>
+
+  <!-- 源泉（赤） -->
+  <rect x="670" y="64" width="70" height="40" fill="#FCA5A5" rx="0 4 4 0"/>
+  <text x="705" y="82" text-anchor="middle" font-size="9" font-weight="700" fill="#9B2C2C">所得税</text>
+  <text x="705" y="96" text-anchor="middle" font-size="9" fill="#9B2C2C">15,000</text>
+
+  <!-- ── 仕訳ビジュアル ── -->
+  <rect x="20" y="120" width="720" height="170" fill="#fff" rx="10" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">📝 給料支払い時の仕訳（借方・貸方）</text>
+
+  <!-- 借方ゾーン -->
+  <rect x="30" y="152" width="320" height="128" fill="#DBEAFE" rx="8"/>
+  <text x="190" y="174" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">借方（かりかた）＝ 左</text>
+  <!-- 給料 -->
+  <rect x="42" y="182" width="296" height="34" fill="#fff" rx="6"/>
+  <text x="160" y="205" font-size="13" font-weight="700" fill="#1D4ED8">給料（きゅうりょう）</text>
+  <text x="320" y="205" text-anchor="end" font-size="13" font-weight="700" fill="#1D4ED8">300,000</text>
+  <text x="42" y="222" font-size="9" fill="#4B5563">  ← 総支給額で費用計上（控除前）</text>
+
+  <!-- 貸方ゾーン -->
+  <rect x="360" y="152" width="370" height="128" fill="#FEF3C7" rx="8"/>
+  <text x="545" y="174" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">貸方（かしかた）＝ 右</text>
+  <!-- 所得税預り金 -->
+  <rect x="372" y="182" width="346" height="28" fill="#fff" rx="4"/>
+  <text x="508" y="201" font-size="12" font-weight="700" fill="#B91C1C">所得税預り金（あずかりきん）</text>
+  <text x="710" y="201" text-anchor="end" font-size="12" font-weight="700" fill="#B91C1C">15,000</text>
+  <!-- 社保預り金 -->
+  <rect x="372" y="216" width="346" height="28" fill="#fff" rx="4"/>
+  <text x="508" y="235" font-size="12" font-weight="700" fill="#D97706">社会保険料預り金</text>
+  <text x="710" y="235" text-anchor="end" font-size="12" font-weight="700" fill="#D97706">30,000</text>
+  <!-- 現金 -->
+  <rect x="372" y="250" width="346" height="22" fill="#fff" rx="4"/>
+  <text x="508" y="266" font-size="12" font-weight="700" fill="#065F46">現金（手取り振込）</text>
+  <text x="710" y="266" text-anchor="end" font-size="12" font-weight="700" fill="#065F46">255,000</text>
+
+  <!-- ── 後日納付の流れ ── -->
+  <rect x="20" y="304" width="720" height="80" fill="#FFF7ED" rx="10" stroke="#FCD34D" stroke-width="1"/>
+  <text x="380" y="326" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">📅 後日、預り金を税務署・社会保険事務所へ納付するとき</text>
+
+  <!-- 納付仕訳 -->
+  <rect x="100" y="338" width="560" height="36" fill="#fff" rx="6" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="210" y="362" text-anchor="middle" font-size="12" fill="#374151">借方：所得税預り金 15,000</text>
+  <text x="380" y="362" text-anchor="middle" font-size="12" fill="#9CA3AF">／</text>
+  <text x="530" y="362" text-anchor="middle" font-size="12" fill="#374151">貸方：現金 15,000</text>
+
+  <text x="380" y="390" text-anchor="middle" font-size="10" fill="#6B7280">（預り金 → 現金で納付することで預り金が消える）</text>
+</svg>
