@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">外貨換算——3つのタイミングとレートの使い分け</text>
+
+  <!-- Timeline -->
+  <line x1="60" y1="100" x2="700" y2="100" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="704,100 694,95 694,105" fill="#CBD5E1"/>
+
+  <!-- Point 1: 取引発生時 -->
+  <line x1="130" y1="92" x2="130" y2="108" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="130" y="86" text-anchor="middle" font-size="10" fill="#3B82F6">取引発生時</text>
+  <text x="130" y="74" text-anchor="middle" font-size="9" fill="#64748B">（例：7/1）</text>
+
+  <!-- Point 2: 決算時 -->
+  <line x1="430" y1="92" x2="430" y2="108" stroke="#7C3AED" stroke-width="2.5"/>
+  <text x="430" y="86" text-anchor="middle" font-size="10" fill="#7C3AED">決　算　時</text>
+  <text x="430" y="74" text-anchor="middle" font-size="9" fill="#64748B">（例：12/31）</text>
+
+  <!-- Point 3: 決済時 -->
+  <line x1="650" y1="92" x2="650" y2="108" stroke="#22C55E" stroke-width="2.5"/>
+  <text x="650" y="86" text-anchor="middle" font-size="10" fill="#22C55E">決　済　時</text>
+  <text x="650" y="74" text-anchor="middle" font-size="9" fill="#64748B">（例：翌1/31）</text>
+
+  <!-- Card 1: 取引発生時 -->
+  <rect x="30" y="118" width="220" height="174" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="30" y="118" width="220" height="32" rx="10" fill="#3B82F6"/>
+  <rect x="30" y="138" width="220" height="12" fill="#3B82F6"/>
+  <text x="140" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 取引発生時</text>
+  <text x="140" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">取引日のレートで換算</text>
+  <text x="140" y="184" text-anchor="middle" font-size="10.5" fill="#374151">（Historical Rate / HR）</text>
+  <rect x="50" y="196" width="180" height="58" rx="6" fill="#DBEAFE"/>
+  <text x="140" y="214" text-anchor="middle" font-size="10.5" fill="#1D4ED8">例：$1,000を売掛金で売上</text>
+  <text x="140" y="232" text-anchor="middle" font-size="10.5" fill="#1D4ED8">レート：1$＝140円</text>
+  <text x="140" y="250" text-anchor="middle" font-size="10.5" fill="#1D4ED8">売掛金 140,000 / 売上 140,000</text>
+  <text x="140" y="280" text-anchor="middle" font-size="10" fill="#94A3B8">この時点では為替差損益なし</text>
+
+  <!-- Card 2: 決算時 -->
+  <rect x="270" y="118" width="220" height="174" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="270" y="118" width="220" height="32" rx="10" fill="#7C3AED"/>
+  <rect x="270" y="138" width="220" height="12" fill="#7C3AED"/>
+  <text x="380" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 決算時</text>
+  <text x="380" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">決算日レートで再換算</text>
+  <text x="380" y="184" text-anchor="middle" font-size="10.5" fill="#374151">（Current Rate / CR）</text>
+  <rect x="290" y="196" width="180" height="72" rx="6" fill="#EDE9FE"/>
+  <text x="380" y="214" text-anchor="middle" font-size="10.5" fill="#5B21B6">決算日レート：1$＝145円</text>
+  <text x="380" y="232" text-anchor="middle" font-size="10.5" fill="#5B21B6">評価替え：145,000円に</text>
+  <text x="380" y="250" text-anchor="middle" font-size="10.5" fill="#5B21B6">差額5,000 → 為替差益</text>
+  <text x="380" y="268" text-anchor="middle" font-size="10" fill="#5B21B6">売掛金 5,000 / 為替差益 5,000</text>
+  <text x="380" y="283" text-anchor="middle" font-size="10" fill="#94A3B8">外貨建金銭債権・債務のみ対象</text>
+
+  <!-- Card 3: 決済時 -->
+  <rect x="510" y="118" width="220" height="174" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="510" y="118" width="220" height="32" rx="10" fill="#22C55E"/>
+  <rect x="510" y="138" width="220" height="12" fill="#22C55E"/>
+  <text x="620" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ 決済時</text>
+  <text x="620" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">決済日レートで換算</text>
+  <text x="620" y="184" text-anchor="middle" font-size="10.5" fill="#374151">（売掛金を実際に回収）</text>
+  <rect x="530" y="196" width="180" height="72" rx="6" fill="#DCFCE7"/>
+  <text x="620" y="214" text-anchor="middle" font-size="10.5" fill="#166534">決済日レート：1$＝143円</text>
+  <text x="620" y="232" text-anchor="middle" font-size="10.5" fill="#166534">現金受取：143,000円</text>
+  <text x="620" y="250" text-anchor="middle" font-size="10.5" fill="#166534">帳簿残高145,000との差▲2,000</text>
+  <text x="620" y="268" text-anchor="middle" font-size="10" fill="#166534">現金 143,000</text>
+  <text x="620" y="282" text-anchor="middle" font-size="10" fill="#166534">為替差損 2,000 / 売掛金 145,000</text>
+
+  <!-- bottom note -->
+  <rect x="30" y="306" width="700" height="60" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="380" y="326" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">為替差損益の判定ポイント</text>
+  <text x="380" y="346" text-anchor="middle" font-size="11" fill="#374151">売掛金（受取る側）：円高（レート低下）→ 為替差損 ／ 円安（レート上昇）→ 為替差益</text>
+  <text x="380" y="362" text-anchor="middle" font-size="11" fill="#374151">買掛金（支払う側）：円高（レート低下）→ 為替差益 ／ 円安（レート上昇）→ 為替差損</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">直接原価計算 vs 全部原価計算——利益の見え方がこう変わる</text>
+
+  <!-- Left: 全部原価計算 -->
+  <rect x="30" y="54" width="330" height="308" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="30" y="54" width="330" height="36" rx="10" fill="#F97316"/>
+  <rect x="30" y="80" width="330" height="10" fill="#F97316"/>
+  <text x="195" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">全部原価計算（外部報告用）</text>
+
+  <!-- cost stack -->
+  <text x="195" y="108" text-anchor="middle" font-size="11" fill="#C2410C">製品原価 ＝ 変動製造費 ＋ 固定製造費</text>
+  <rect x="50" y="118" width="290" height="36" rx="6" fill="#FFEDD5"/>
+  <text x="195" y="140" text-anchor="middle" font-size="11" fill="#C2410C">変動製造費（直接材料費・直接労務費 etc.）</text>
+  <rect x="50" y="158" width="290" height="36" rx="6" fill="#FED7AA"/>
+  <text x="195" y="180" text-anchor="middle" font-size="11" fill="#C2410C">固定製造費（製造部門の固定費）← ここも製品原価</text>
+
+  <text x="195" y="212" text-anchor="middle" font-size="10" fill="#64748B">↓ 売上原価として期末在庫に含まれる可能性あり</text>
+
+  <!-- P/L structure -->
+  <rect x="50" y="220" width="290" height="124" rx="8" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="195" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">損益計算書（全部）</text>
+  <text x="60" y="260" font-size="10.5" fill="#374151">売　上　高</text>
+  <text x="330" y="260" text-anchor="end" font-size="10.5" fill="#374151">XXX</text>
+  <text x="60" y="278" font-size="10.5" fill="#374151">売上原価（変動費＋固定費混在）</text>
+  <text x="330" y="278" text-anchor="end" font-size="10.5" fill="#374151">△XXX</text>
+  <line x1="60" y1="284" x2="330" y2="284" stroke="#FDE68A" stroke-width="1"/>
+  <text x="60" y="300" font-size="10.5" fill="#374151">売上総利益</text>
+  <text x="60" y="318" font-size="10.5" fill="#374151">販管費</text>
+  <text x="330" y="318" text-anchor="end" font-size="10.5" fill="#374151">△XXX</text>
+  <line x1="60" y1="324" x2="330" y2="324" stroke="#FDE68A" stroke-width="1"/>
+  <text x="60" y="340" font-size="10.5" font-weight="700" fill="#713F12">営業利益</text>
+
+  <text x="195" y="358" text-anchor="middle" font-size="10" fill="#92400E">在庫が増えると固定費が在庫に吸収→利益が増える</text>
+
+  <!-- Right: 直接原価計算 -->
+  <rect x="400" y="54" width="330" height="308" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="400" y="54" width="330" height="36" rx="10" fill="#3B82F6"/>
+  <rect x="400" y="80" width="330" height="10" fill="#3B82F6"/>
+  <text x="565" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">直接原価計算（利益計画・CVP用）</text>
+
+  <text x="565" y="108" text-anchor="middle" font-size="11" fill="#1E40AF">製品原価 ＝ 変動製造費のみ</text>
+  <rect x="420" y="118" width="290" height="36" rx="6" fill="#DBEAFE"/>
+  <text x="565" y="140" text-anchor="middle" font-size="11" fill="#1D4ED8">変動製造費（直接材料費・直接労務費 etc.）</text>
+  <rect x="420" y="158" width="290" height="36" rx="6" fill="#E0E7FF"/>
+  <text x="565" y="180" text-anchor="middle" font-size="11" fill="#4338CA">固定製造費 → 期間費用（全額その期に計上）</text>
+
+  <text x="565" y="212" text-anchor="middle" font-size="10" fill="#64748B">↓ 在庫に固定費が乗らない＝利益の見え方がクリア</text>
+
+  <!-- P/L structure -->
+  <rect x="420" y="220" width="290" height="124" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="565" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">損益計算書（直接）</text>
+  <text x="430" y="260" font-size="10.5" fill="#374151">売　上　高</text>
+  <text x="700" y="260" text-anchor="end" font-size="10.5" fill="#374151">XXX</text>
+  <text x="430" y="278" font-size="10.5" fill="#374151">変動売上原価（変動費のみ）</text>
+  <text x="700" y="278" text-anchor="end" font-size="10.5" fill="#374151">△XXX</text>
+  <line x1="430" y1="284" x2="700" y2="284" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="420" y="284" width="290" height="24" rx="0" fill="#BFDBFE"/>
+  <text x="430" y="300" font-size="10.5" font-weight="700" fill="#1D4ED8">貢　献　利　益</text>
+  <text x="430" y="318" font-size="10.5" fill="#374151">固定費（全額期間費用）</text>
+  <text x="700" y="318" text-anchor="end" font-size="10.5" fill="#374151">△XXX</text>
+  <line x1="430" y1="324" x2="700" y2="324" stroke="#93C5FD" stroke-width="1"/>
+  <text x="430" y="340" font-size="10.5" font-weight="700" fill="#1E40AF">営業利益</text>
+
+  <text x="565" y="358" text-anchor="middle" font-size="10" fill="#1E40AF">貢献利益 ＝ 売上高 − 変動費　← CVP分析の核心</text>
+
+  <!-- bottom note -->
+  <rect x="30" y="374" width="700" height="20" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="388" text-anchor="middle" font-size="10.5" fill="#64748B">💡 日本の外部財務報告（決算書）は全部原価計算が必須。直接原価計算は内部管理・CVP分析のみに使う。</text>
+</svg>

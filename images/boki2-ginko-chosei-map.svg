@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">銀行勘定調整表——4パターンの分類と調整方向</text>
+
+  <!-- Header: 2 columns -->
+  <rect x="30" y="52" width="340" height="36" rx="8" fill="#3B82F6"/>
+  <text x="200" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">会社側の修正が必要 → 仕訳を切る</text>
+
+  <rect x="390" y="52" width="340" height="36" rx="8" fill="#94A3B8"/>
+  <text x="560" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">銀行側の未反映 → 仕訳不要（待つだけ）</text>
+
+  <!-- Pattern 1: 未渡小切手 -->
+  <rect x="30" y="100" width="340" height="100" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">未渡小切手（みわたし）</text>
+  <text x="200" y="140" text-anchor="middle" font-size="11" fill="#374151">小切手を作ったが相手に渡していない</text>
+  <text x="200" y="158" text-anchor="middle" font-size="11" fill="#374151">会社は当座預金を減らした記録がある</text>
+  <text x="200" y="176" text-anchor="middle" font-size="10.5" fill="#1D4ED8">→ 減らした分を戻す（取消仕訳）</text>
+  <text x="200" y="192" text-anchor="middle" font-size="10" fill="#1D4ED8">当座預金 ×× / 買掛金（等）××</text>
+
+  <!-- Pattern 2: 未記帳 -->
+  <rect x="30" y="212" width="340" height="100" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="200" y="232" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">未記帳（みきちょう）</text>
+  <text x="200" y="252" text-anchor="middle" font-size="11" fill="#374151">銀行では引き落とし済みだが会社が未記帳</text>
+  <text x="200" y="270" text-anchor="middle" font-size="11" fill="#374151">（手数料・振込入金の通知未受取など）</text>
+  <text x="200" y="288" text-anchor="middle" font-size="10.5" fill="#1D4ED8">→ 会社帳簿にその分を記帳する</text>
+  <text x="200" y="304" text-anchor="middle" font-size="10" fill="#1D4ED8">支払手数料 ×× / 当座預金 ××</text>
+
+  <!-- Pattern 3: 未取付小切手 -->
+  <rect x="390" y="100" width="340" height="100" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="560" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">未取付小切手（みとりつけ）</text>
+  <text x="560" y="140" text-anchor="middle" font-size="11" fill="#374151">会社が振り出した小切手がまだ銀行に呈示されていない</text>
+  <text x="560" y="160" text-anchor="middle" font-size="11" fill="#374151">銀行残高がまだ引き落とされていない</text>
+  <text x="560" y="178" text-anchor="middle" font-size="10.5" fill="#475569">→ 銀行残高から減算（仕訳なし）</text>
+  <text x="560" y="194" text-anchor="middle" font-size="10" fill="#94A3B8">相手先が呈示すれば自動的に一致する</text>
+
+  <!-- Pattern 4: 時間外預入 -->
+  <rect x="390" y="212" width="340" height="100" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="560" y="232" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">時間外預入（じかんがい）</text>
+  <text x="560" y="252" text-anchor="middle" font-size="11" fill="#374151">会社は決算日に預け入れたが銀行の締め時間後</text>
+  <text x="560" y="270" text-anchor="middle" font-size="11" fill="#374151">→ 銀行では翌営業日処理</text>
+  <text x="560" y="290" text-anchor="middle" font-size="10.5" fill="#475569">→ 銀行残高に加算（仕訳なし）</text>
+  <text x="560" y="306" text-anchor="middle" font-size="10" fill="#94A3B8">翌営業日に銀行が処理すれば一致する</text>
+
+  <!-- divider line -->
+  <line x1="375" y1="52" x2="375" y2="324" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- Bottom: 調整後残高の一致 -->
+  <rect x="30" y="328" width="700" height="58" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="380" y="350" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">調整後、両者の残高が一致すればOK</text>
+  <text x="200" y="370" text-anchor="middle" font-size="11" fill="#374151">会社の帳簿残高 ±（未渡・未記帳）</text>
+  <text x="380" y="370" text-anchor="middle" font-size="14" fill="#22C55E">＝</text>
+  <text x="560" y="370" text-anchor="middle" font-size="11" fill="#374151">銀行残高 −（未取付）＋（時間外）</text>
+  <text x="380" y="382" text-anchor="middle" font-size="10" fill="#94A3B8">一致しない場合は記入ミスまたは原因の見落としあり</text>
+</svg>
