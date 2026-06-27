@@ -1671,6 +1671,40 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
 
+/* ── 法人税等・消費税記事 (boki2-hojinzei-shohizei) 固有コンポーネント ダークモード ── */
+/* step-flow (3ステップ) */
+html[data-theme="dark"] .step-card.s1{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .step-card.s2{background:rgba(124,58,237,.10) !important;border-color:rgba(124,58,237,.35) !important;}
+html[data-theme="dark"] .step-card.s3{background:rgba(39,103,73,.12) !important;border-color:rgba(39,103,73,.4) !important;}
+html[data-theme="dark"] .step-card.s1 .step-kamoku,html[data-theme="dark"] .step-card.s1 .step-amt{color:#90CDF4 !important;}
+html[data-theme="dark"] .step-card.s2 .step-kamoku,html[data-theme="dark"] .step-card.s2 .step-amt{color:#C4B5FD !important;}
+html[data-theme="dark"] .step-card.s3 .step-kamoku,html[data-theme="dark"] .step-card.s3 .step-amt{color:#B6E27C !important;}
+html[data-theme="dark"] .step-timing,html[data-theme="dark"] .step-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .step-note{color:#CCD6E5 !important;}
+html[data-theme="dark"] .step-arrow{color:#B6E27C !important;}
+/* calc-bar */
+html[data-theme="dark"] .calc-bar{background:rgba(59,130,246,.08) !important;border-color:rgba(59,130,246,.25) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .calc-bar strong{color:#90CDF4 !important;}
+/* sousai-box (消費税相殺パズル) */
+html[data-theme="dark"] .sousai-card.kari-uke{background:rgba(79,209,197,.08) !important;border-color:rgba(79,209,197,.35) !important;}
+html[data-theme="dark"] .sousai-card.kari-barai{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-badge{background:rgba(79,209,197,.2) !important;color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-badge{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-name{color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-name{color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-amt{color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-amt{color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-desc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-move{background:rgba(79,209,197,.15) !important;color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-move{background:rgba(252,129,129,.12) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-center .sc-label{color:#9BA7BB !important;}
+html[data-theme="dark"] .sousai-result{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .sousai-result .sr-calc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .sousai-result .sr-name,html[data-theme="dark"] .sousai-result .sr-amt{color:#F6AD55 !important;}
+html[data-theme="dark"] .sousai-result .sr-note{color:#9BA7BB !important;}
+/* ── ここまで ── */
+
 /* ── 純資産・剰余金配当記事 (boki2-junshisan) 固有コンポーネント ダークモード ── */
 /* group-map (2グループ) */
 html[data-theme="dark"] .gm-card.blue{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
