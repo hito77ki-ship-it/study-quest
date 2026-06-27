@@ -92,6 +92,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -104,10 +106,47 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>掛取引（売掛金・買掛金）の仕訳<br>後払いの取引を図解で完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">「掛け」とは後払いのこと。商品を買ったその場では代金を払わず、後日まとめて支払う取引です。<strong>売掛金は「後でもらえる権利」（資産）、買掛金は「後で払う義務」（負債）</strong>とイメージすると整理できます。</p>
-  <div class="sq-chat"></div>
 
-  <h2>売掛金・買掛金とは</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>売掛金</strong>＝掛けで売ったときに発生する「後でもらえる権利」（資産）。回収したら消える。</li>
+      <li><strong>買掛金</strong>＝掛けで買ったときに発生する「後で払う義務」（負債）。支払ったら消える。</li>
+      <li>発生・回収・返品の仕訳は「資産・負債の増減」で考えれば迷わない</li>
+      <li>後払いに「現金」ではなく専用科目を使う理由は、誰からいくら回収すべきかを管理するため</li>
+    </ul>
+  </div>
+
+  <p class="lead">「掛け」とは後払いのこと。商品を買ったその場では代金を払わず、後日まとめて支払う取引です。<strong>売掛金は「後でもらえる権利」（資産）、買掛金は「後で払う義務」（負債）</strong>とイメージすると整理できます。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">「掛け」ってよく出てくるんですけど、正直よくわからないまま来てしまいました…</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">最初はみんなそこで止まるので大丈夫ですよ。一言でいえば「後払い」のことです。商品を売っても今すぐお金をもらわず、後日まとめてもらう約束をする取引です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">後払いなら「現金」を増やして記録すればいいんじゃないですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">そこが最初の難関です！まだもらっていないのに現金を増やすと、帳簿の現金と実際のお金がズレてしまいます。だから「売掛金（後でもらえる権利）」という専用の科目で記録するんです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">なるほど！じゃあ買掛金は逆で「後で払う義務」ということですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">完璧です。売掛金（資産）と買掛金（負債）は完全に対になっています。この2つさえ掴めば、掛取引の仕訳は全部解けます。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>❓ 売掛金・買掛金とは？資産と負債の違いを図解</h2>
   <div class="kake-compare">
     <div class="kake-card urikake">
       <span class="kake-badge">資産</span>
@@ -123,7 +162,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h2>① 掛けで売ったとき（売掛金の発生）</h2>
+  <h2>📝 ① 掛けで売ったときの仕訳——売掛金（資産）が発生する瞬間</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>A社に商品 ¥100,000 を掛けで売り上げた。</p>
@@ -142,7 +181,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="flow-node">売掛金（資産）減少</div>
   </div>
 
-  <h2>② 売掛金を回収したとき</h2>
+  <h2>💰 ② 売掛金を回収したとき——資産が現金に変わる仕訳</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>A社への売掛金 ¥100,000 を現金で回収した。</p>
@@ -152,7 +191,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">現金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">100,000</span></span></div>
   </div>
 
-  <h2>③ 掛けで買ったとき（買掛金の発生）</h2>
+  <h2>📦 ③ 掛けで買ったときの仕訳——買掛金（負債）が発生する瞬間</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>B社から商品 ¥80,000 を掛けで仕入れた。</p>
@@ -162,7 +201,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">仕入<span class="amt">80,000</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">80,000</span></span></div>
   </div>
 
-  <h2>④ 買掛金を支払ったとき</h2>
+  <h2>💸 ④ 買掛金を支払ったとき——負債が消える仕訳</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>B社への買掛金 ¥80,000 を当座預金から支払った。</p>
@@ -172,7 +211,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">買掛金<span class="amt">80,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">80,000</span></span></div>
   </div>
 
-  <h2>⑤ 返品の仕訳</h2>
+  <h2>🔄 ⑤ 返品が起きたときの仕訳——売上返品と仕入返品はどう違う？</h2>
   <div class="shiwake-box">
     <div class="sw-label">売上返品（¥10,000 を返品された）</div>
     <div class="sw-row"><span class="kari">売上<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">10,000</span></span></div>
@@ -183,7 +222,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>返品は「発生の逆」をやるだけ！</strong><br>売掛金が発生した仕訳を逆にすれば売上返品、買掛金が発生した仕訳を逆にすれば仕入返品になります。</div>
 
-  <h2>⑥ なぜ後払い取引に売掛金・買掛金を使うのか？</h2>
+  <h2>💡 ⑥ なぜ「現金」じゃなくて売掛金・買掛金を使うのか？</h2>
   <p>「後払いなら現金勘定で記録すればいいのでは？」と思うかもしれません。しかし、それでは以下の問題が生じます。</p>
   <div class="warn-box">
     <strong>❌ もし後払いを「現金」で記録したら？</strong>
@@ -202,6 +241,35 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
   <p>現金はまだ動いていなくても、<strong>権利と義務は取引時点で確実に発生</strong>しています。これが掛取引の本質です。</p>
+
+  <h2>📌 ⑦ 手付金の仕訳——前払金・前受金はいつ使う？注文時と受取時の違い</h2>
+  <p>商品の注文時に代金の一部を先払い（または先受け）することがあります。この「手付金」は掛取引とは別の勘定科目を使います。</p>
+  <table>
+    <thead><tr><th>立場</th><th>手付金を払ったとき</th><th>商品を受け取ったとき</th></tr></thead>
+    <tbody>
+      <tr><td>買う側（仕入側）</td><td>前払金（資産）↑</td><td>前払金↓ ＋ 買掛金などで差額精算</td></tr>
+      <tr><td>売る側（売上側）</td><td>前受金（負債）↑</td><td>前受金↓ ＋ 売掛金などで差額精算</td></tr>
+    </tbody>
+  </table>
+  <div class="shiwake-box">
+    <div class="sw-label">注文時：商品代金10,000円の手付金2,000円を現金で払った（仕入側）</div>
+    <div class="sw-row"><span class="kari">前払金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">2,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">商品受取時：残額8,000円は掛けで精算</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">前払金<span class="amt">2,000</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">買掛金<span class="amt">8,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">注文時：手付金2,000円を現金で受け取った（売上側）</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">前受金<span class="amt">2,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">商品引渡し時：残額8,000円は掛けで精算</div>
+    <div class="sw-row"><span class="kari">前受金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">10,000</span></span></div>
+    <div class="sw-row"><span class="kari">売掛金<span class="amt">8,000</span></span><span class="sep">／</span><span class="kashi"></span></div>
+  </div>
+  <div class="tip-box"><strong>前払金 vs 前受金の覚え方</strong><br>・前払金（資産）＝ まだ受け取っていない商品への「権利」→ お金は出て行ったが商品はまだ来ていない<br>・前受金（負債）＝ まだ渡していない商品への「義務」→ お金は入ったが商品をまだ渡していない</div>
 
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 

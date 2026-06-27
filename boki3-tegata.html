@@ -100,6 +100,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -112,10 +114,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>受取手形・支払手形の仕訳<br>電子記録債権まで図解で完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">手形とは「一定の期日に一定の金額を支払う」という証書です。掛取引と似ていますが、<strong>支払期日が明確に定められている</strong>点が違います。受取手形は「後でもらえる権利」（資産）、支払手形は「後で払う義務」（負債）です。</p>
-  <div class="sq-chat"></div>
 
-  <h2>振出人と名宛人の違い</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>受取手形は資産・支払手形は負債</strong>——受け取った側が権利、振り出した側が義務</li>
+      <li><strong>満期日に決済</strong>→受取手形/支払手形を消去して当座預金と交換する</li>
+      <li><strong>電子記録債権・電子記録債務</strong>は手形の電子版——勘定科目が変わるだけで考え方は同じ</li>
+      <li>貸付金・借入金は「商品代金ではなくお金の貸し借り」——手形との違いを混同しないことが合否の分かれ目</li>
+    </ul>
+  </div>
+
+  <p class="lead">手形とは「一定の期日に一定の金額を支払う」という証書です。掛取引と似ていますが、<strong>支払期日が明確に定められている</strong>点が違います。受取手形は「後でもらえる権利」（資産）、支払手形は「後で払う義務」（負債）です。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">手形って受取手形・支払手形・電子記録債権……勘定科目が多すぎてどれをいつ使えばいいのか混乱します。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">大丈夫、整理するポイントは2つだけです。まず「自分が受け取った手形か、振り出した手形か」で資産か負債かが決まります。次に「紙の手形か電子かで勘定科目名が変わる」だけで、仕訳の考え方は全く同じです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">貸付金と手形の違いもよくわからなくて…。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">そこは混同しやすいですが、手形は「商品売買の後払い」、貸付金は「お金そのものを貸した」という違いです。問題文に「資金を貸した」と書いてあれば貸付金、「商品の代金として手形を受け取った」なら受取手形です。焦らず問題文を読めば必ず判断できますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>❓ 振出人と名宛人の違い——「振り出す側」と「受け取る側」どちらが負債になるか</h2>
   <div class="role-compare">
     <div class="role-card meiate">
       <span class="role-badge">商品を売った側</span>
@@ -131,7 +162,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h2>① 手形を受け取ったとき（名宛人）</h2>
+  <h2>📄 ① 手形を受け取ったとき（名宛人）——受取手形（資産）が発生する仕訳</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>A社に商品 ¥100,000 を売り上げ、代金として約束手形を受け取った。</p>
@@ -141,7 +172,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">受取手形<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">100,000</span></span></div>
   </div>
 
-  <h2>② 手形を振り出したとき（振出人）</h2>
+  <h2>📝 ② 手形を振り出したとき（振出人）——支払手形（負債）が発生する仕訳</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>B社から商品 ¥100,000 を仕入れ、代金として約束手形を振り出した。</p>
@@ -151,7 +182,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">仕入<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">支払手形<span class="amt">100,000</span></span></div>
   </div>
 
-  <h2>③ 満期日に決済されたとき</h2>
+  <h2>💰 ③ 満期日に決済されたとき——受取手形・支払手形を消去して当座預金と交換する</h2>
   <div class="shiwake-box">
     <div class="sw-label">名宛人（受け取る側）</div>
     <div class="sw-row"><span class="kari">当座預金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">受取手形<span class="amt">100,000</span></span></div>
@@ -162,7 +193,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>満期日の仕訳は「発生の逆」をやるだけ！</strong><br>受取手形を受け取ったときの逆＝当座預金に入金して受取手形を消す。支払手形を振り出したときの逆＝当座預金から引かれて支払手形を消す。</div>
 
-  <h2>④ 電子記録債権・電子記録債務</h2>
+  <h2>💻 ④ 電子記録債権・電子記録債務——手形の電子版、勘定科目名だけが違う</h2>
   <p>紙の約束手形に代わる電子的な仕組みで、2016年以降の簿記3級の試験範囲です。</p>
   <div class="tip-box"><strong>でんさいの本質：「振り替え」であって新たな売上・仕入ではない</strong><br>電子記録債権・債務は、すでに計上済みの売掛金・買掛金を電子記録に切り替えるものです。金額はそのまま、勘定科目だけ変わります。売上や仕入は発生しません。</div>
   <div class="denshi-compare">
@@ -178,7 +209,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h3>振り替え時の仕訳（最重要パターン）</h3>
+  <h3>振り替え時の仕訳——売掛金・買掛金から電子記録債権・債務へ</h3>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>A社への売掛金 ¥3,000 について、電子記録債権への振り替えを行った。またA社は買掛金 ¥3,000 を電子記録債務に振り替えた。</p>
@@ -197,7 +228,56 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="warn-box"><strong>「振り替え」なので売上・仕入は発生しない！</strong><br>電子記録への移行は、既存の債権・債務の形を変えるだけです。売上や仕入はすでに掛取引の時点で計上済み。ここで再度計上するのは誤りです。</div>
 
-  <h2>⑤ 商品売買の手形 vs 資金貸借の手形</h2>
+  <h2>💴 ⑤ 貸付金・借入金と利息の仕訳——「お金の貸し借り」は手形とは別の勘定科目</h2>
+  <p>お金を貸し借りするときの勘定科目と、利息（レンタル料）の処理を確認しましょう。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">貸付時（現金100,000円をA社に貸した）</div>
+    <div class="sw-row"><span class="kari">貸付金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">100,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">利息受取時（受取利息は収益）</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">受取利息<span class="amt">1,500</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">借入時（現金100,000円を銀行から借りた）</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">借入金<span class="amt">100,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">利息支払時（支払利息は費用）</div>
+    <div class="sw-row"><span class="kari">支払利息<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">1,500</span></span></div>
+  </div>
+  <div class="tip-box"><strong>利息の計算式：元金 × 年利率 × 月数÷12</strong><br>例）元金100,000円・年利3%・6ヶ月 → 100,000 × 3% × 6/12 ＝ 1,500円<br>年利率をそのまま掛けず「×月数/12」を忘れずに！</div>
+
+  <h2>📌 ⑥ 利息天引き借入——借入時に利息を差し引かれるパターンの仕訳</h2>
+  <p>銀行が借入時に利息を差し引いて入金する「天引き」パターンは要注意です。</p>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>元金500円・利息20円を天引きして480円が入金された。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">借入時（天引きパターン）</div>
+    <div class="sw-row"><span class="kari">普通預金<span class="amt">480</span></span><span class="sep">／</span><span class="kashi">借入金<span class="amt">500</span></span></div>
+    <div class="sw-row"><span class="kari">支払利息<span class="amt">20</span></span><span class="sep"></span><span class="kashi"></span></div>
+  </div>
+  <div class="warn-box"><strong>❌ NG：入金額480円を借入金にしてはいけない！</strong><br>（借）現金480 ／（貸）借入金480 → 返済時に500円払うのに帳簿と20円の差が出てしまう。<br><strong>✅ 借入金は「返済義務の金額（元金）」で計上する。利息は支払利息（費用）で別計上。</strong></div>
+
+  <h2>👥 ⑦ 役員・従業員への貸付金・借入金——相手が社内の人でも勘定科目は変わる？</h2>
+  <p>相手が自社の役員や従業員の場合は、専用の勘定科目を使います。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">役員に現金100円を貸した</div>
+    <div class="sw-row"><span class="kari">役員貸付金<span class="amt">100</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">100</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">従業員に現金500円を貸した</div>
+    <div class="sw-row"><span class="kari">従業員貸付金<span class="amt">500</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">500</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">役員から現金600円を借り入れた</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">600</span></span><span class="sep">／</span><span class="kashi">役員借入金<span class="amt">600</span></span></div>
+  </div>
+  <div class="tip-box"><strong>なぜ専用勘定を使うのか？</strong><br>役員との金銭取引は財務諸表で開示が必要なため、通常の「貸付金」と区別します。「誰に対する貸付・借入か」を科目名で明示するルールです。</div>
+
+  <h2>🔍 ⑧ 商品売買の手形 vs 資金貸借の手形——どちらか迷ったら問題文のこの言葉を探す</h2>
   <p>約束手形が登場する場面は2種類あります。使う勘定科目が異なるため注意が必要です。</p>
   <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;">
     <thead>

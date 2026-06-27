@@ -116,6 +116,8 @@ li{margin-bottom:6px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
 
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -138,6 +140,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>貸倒引当金の仕訳と計算<br>差額補充法・貸倒損失を完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>貸倒引当金は「回収リスクを事前に費用化」する仮勘定</strong>——費用収益対応の原則による処理</li>
+      <li><strong>差額補充法</strong>——期末残高に不足する分だけ「貸倒引当金繰入」で追加計上する</li>
+      <li>実際の貸倒れは「引当金が足りるか足りないか」で仕訳が変わる——差額が「貸倒損失」に</li>
+      <li>回収できた場合は「償却債権取立益」（収益）——前期に処理した貸倒れが戻ってきたとき</li>
+    </ul>
+  </div>
 
   <p class="lead">
     貸倒引当金は日商簿記3級で<strong>ほぼ確実に出る最重要論点</strong>です。<br>
@@ -168,7 +180,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-  <h2>貸倒引当金を積まなかったらどうなるか</h2>
+  <h2>❓ 貸倒引当金を積まなかったらどうなるか——利益が2期にわたってズレる問題</h2>
 
   <p>まず「引当金なし」の世界から確認します。</p>
 
@@ -192,7 +204,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <strong>⚠ 引当金なしの問題点：</strong>前期の売上に対応する損失が当期に出てしまい、利益が歪みます。これを防ぐために、決算時点で「貸倒引当金」を事前に積んでおくわけです。
   </div>
 
-  <h2>STEP 1：決算で貸倒引当金を積む（差額補充法）</h2>
+  <h2>📝 STEP 1：決算で貸倒引当金を積む——差額補充法「不足分だけ追加する」の計算手順</h2>
 
   <p>決算整理で、売掛金・受取手形の残高に対して一定割合の引当金を設定します。試験では<strong>差額補充法</strong>が定番です。</p>
 
@@ -201,7 +213,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <p>貸倒引当金の残高は￥500。売掛金期末残高￥10,000・受取手形期末残高￥30,000に対して3%の貸倒れを見積もり、差額補充法で貸倒引当金を設定する。</p>
   </div>
 
-  <h3>計算の下書き（これを書けば絶対ミスしない）</h3>
+  <h3>計算の下書き——この3行を書けば絶対ミスしない</h3>
 
   <div class="calc-box">
     <div class="calc-title">📝 差額補充法の計算手順</div>
@@ -242,7 +254,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-  <h2>STEP 2：実際に貸倒れが起きたとき</h2>
+  <h2>🚨 STEP 2：実際に貸倒れが起きたとき——引当金が「足りる」か「足りない」かで仕訳が変わる</h2>
 
   <p>期中に取引先が倒産して売掛金が回収不能になったとき、積んでいた引当金から取り崩します。</p>
 
@@ -302,7 +314,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h2>「償却債権取立益」─前期以前の貸倒処理分を回収したとき</h2>
+  <h2>💰 「償却債権取立益」——一度貸倒れにしたお金が戻ってきたときの仕訳</h2>
 
   <p>前期以前に「貸倒損失」で費用計上して切り捨てた売掛金が、当期に思いがけず回収されることがあります。このとき使うのが<strong>償却債権取立益（収益）</strong>です。</p>
 
@@ -335,7 +347,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     同じ「貸倒れ」に関する取引でも、発生した期によって全く違う勘定科目になります。
   </div>
 
-  <h2>補足：当期発生の売掛金が貸倒れたとき（2級向け）</h2>
+  <h2>📌 補足：当期発生の売掛金が貸倒れたとき——引当金を使わず直接「貸倒損失」で処理するパターン</h2>
 
   <p>引当金は「前期以前に発生した債権」に対して積むものです。<strong>当期に発生した売掛金</strong>が同じ期に貸倒れた場合は、引当金を使わず直接「貸倒損失」で処理します。</p>
 

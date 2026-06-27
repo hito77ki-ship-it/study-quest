@@ -92,6 +92,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -104,10 +106,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>銀行勘定調整表の書き方<br>不一致の4原因と修正仕訳を図解解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">自社の当座預金勘定の残高と銀行が発行する<strong>残高証明書の残高</strong>は、タイムラグなどが原因で一致しないことがあります。<strong>銀行勘定調整表</strong>はその差異の原因を整理し、正しい残高に調整するための表です。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① 不一致が起こる4つの原因</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>不一致の原因は4種類</strong>——未取立小切手・未渡小切手・未通知・誤記入に分類される</li>
+      <li><strong>「自社帳簿を修正するか・銀行残高を調整するか」</strong>を原因ごとに判断するのが調整表の核心</li>
+      <li><strong>修正仕訳が必要なのは「自社の記録ミス・未記入」のみ</strong>——銀行側の調整項目に仕訳は不要</li>
+      <li>当座借越は期末に「当座預金（資産）→当座借越（負債）」へ振り替えて正しく表示する</li>
+    </ul>
+  </div>
+
+  <p class="lead">自社の当座預金勘定の残高と銀行が発行する<strong>残高証明書の残高</strong>は、タイムラグなどが原因で一致しないことがあります。<strong>銀行勘定調整表</strong>はその差異の原因を整理し、正しい残高に調整するための表です。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">銀行残高と帳簿残高がなぜ一致しないのかわからないし、調整表のどこを修正仕訳にすればいいのかも混乱しています。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">焦らなくて大丈夫。一致しない原因はタイムラグがほとんどです。「自社が知らないだけ」か「銀行が知らないだけ」かを判断する——これが調整表の全てです。自社が知らないものは帳簿を修正、銀行が知らないものは調整表上の計算だけで仕訳不要です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">未渡小切手って自社帳簿に加算するんですか、それとも銀行側に加算するんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">未渡小切手は「振り出したのにまだ渡していない」状態です。自社帳簿では既に当座預金を減らしていますが、実際には渡していないので帳簿残高を増やす（加算）修正が必要です。こういう判断の型を一つずつ整理すれば絶対解けます！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>❓ ① 不一致が起こる4つの原因——「自社側」か「銀行側」か、原因を分類する</h2>
   <p>原因によって「自社の帳簿を修正するか」「銀行側を調整するか」が変わります。</p>
 
   <div class="reason-grid">
@@ -135,7 +166,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>「銀行側を直すか、自社を直すか」で考える</strong><br>調整表には「両者区分調整法（Bank Reconciliation）」が標準です。<br>自社帳簿残高 → 修正 → 正しい残高<br>銀行残高証明書 → 調整 → 正しい残高<br>両方が同じ金額になれば完成です。</div>
 
-  <h2>② 銀行勘定調整表（例題）</h2>
+  <h2>📊 ② 銀行勘定調整表（例題）——両者区分調整法で残高を一致させる手順</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>当座預金の帳簿残高 ¥320,000、銀行残高証明書 ¥350,000。差異の原因は以下のとおり。</p>
@@ -165,17 +196,17 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="warn-box"><strong>両者の正しい残高が一致しなければ誤り！</strong><br>上の例では自社側350,000・銀行側360,000で一致していません。これは説明用の数字のため。実際の試験では必ず一致します。一致しない場合は計算ミスを疑いましょう。</div>
 
-  <h2>③ 修正仕訳（自社帳簿を直す）</h2>
+  <h2>✏️ ③ 修正仕訳——自社帳簿の誤りや未記入だけが仕訳の対象になる</h2>
   <p>調整表で自社側の修正が必要な項目は、実際に仕訳を切って帳簿を修正します。</p>
 
-  <h3>未渡小切手（当座預金を増やす）</h3>
+  <h3>未渡小切手——振り出したのに渡していない→帳簿の当座預金を加算する</h3>
   <div class="shiwake-box">
     <div class="sw-label">修正仕訳</div>
     <div class="sw-row"><span class="kari">当座預金<span class="amt">20,000</span></span><span class="sep">／</span><span class="kashi">未払金<span class="amt">20,000</span></span></div>
   </div>
   <p style="font-size:13px;color:var(--muted);">振り出したが未渡しなので「支払っていない」状態に戻す。相手科目は未払金（負債）。</p>
 
-  <h3>銀行利息の入金（未通知）</h3>
+  <h3>銀行利息の未通知——銀行が入金しているのに自社が知らない→帳簿を加算修正</h3>
   <div class="shiwake-box">
     <div class="sw-label">修正仕訳</div>
     <div class="sw-row"><span class="kari">当座預金<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">受取利息<span class="amt">10,000</span></span></div>
@@ -183,7 +214,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>未取立・未取付は修正仕訳なし</strong><br>未取立小切手と未取付小切手は「銀行側の処理がまだ」なだけで、自社の帳簿は正しく記録されています。調整表上の調整のみで、修正仕訳は不要です。</div>
 
-  <h2>④ 当座借越</h2>
+  <h2>⚠️ ④ 当座借越——当座預金残高がマイナスになったとき負債として振り替える</h2>
   <p>当座預金の残高を超えて小切手を振り出すと、残高がマイナスになります。これを<strong>当座借越</strong>といい、銀行からの一時的な借り入れと同じ意味です。あらかじめ<strong>当座借越契約</strong>を結んでおくと、残高不足でも決済できます。</p>
   <div class="mondai">
     <div class="m-label">例題</div>
@@ -195,7 +226,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>当座預金の残高がマイナスになっても仕訳は同じ！</strong><br>振り出した時点では「当座預金」勘定を減らすだけです。決算時には、マイナス残高分を「当座借越」（負債）に振り替えることがあります。</div>
 
-  <h3>決算整理仕訳（当座借越を負債に振替）</h3>
+  <h3>決算整理仕訳——当座預金（マイナス）を当座借越（負債）へ振り替える</h3>
   <p>決算日に当座預金が貸方残高（マイナス）のとき、その金額を「当座借越（負債）」勘定に振り替えます。</p>
   <div class="shiwake-box">
     <div class="sw-label">決算整理仕訳（当座預金の貸方残高が ¥400,000 の場合）</div>
@@ -203,7 +234,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p style="font-size:13px;color:var(--muted);">これにより当座預金の残高はゼロになり、当座借越400,000円が流動負債としてB/Sに計上されます。</p>
 
-  <h3>翌期首の再振替仕訳</h3>
+  <h3>翌期首の再振替仕訳——期首に当座借越を当座預金へ戻す</h3>
   <p>翌期首には決算整理の逆仕訳を行い、当座借越を当座預金のマイナス状態に戻します。</p>
   <div class="shiwake-box">
     <div class="sw-label">翌期首（再振替仕訳）</div>
@@ -211,7 +242,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="warn-box"><strong>再振替仕訳を忘れると翌期の当座預金残高が狂う！</strong><br>決算整理後の当座預金は0円に戻っていますが、翌期首の再振替でマイナス状態に戻さないと、翌期の入出金で残高の計算がズレます。経過勘定と同様に「決算整理→翌期首再振替」をワンセットで覚えましょう。</div>
 
-  <h2>⑤ 当座預金 vs 普通預金</h2>
+  <h2>💡 ⑤ 当座預金 vs 普通預金——小切手が使えるのはどちら？利息がつくのはどちら？</h2>
   <p>法人が利用する主な銀行口座は「当座預金」と「普通預金」の2種類です。用途・機能の違いを整理しておきましょう。</p>
   <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;">
     <tr style="background:#F7FAFC;">

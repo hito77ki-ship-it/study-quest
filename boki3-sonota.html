@@ -87,6 +87,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -99,10 +101,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>その他の債権・債務の仕訳<br>前払金・前受金・仮払金・仮受金・立替金・預り金</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">簿記3級では「売掛金・買掛金」以外にも、取引の前後関係や第三者のお金を預かる場面で使われる勘定科目が出てきます。今回は<strong>前払金・前受金・仮払金・仮受金・立替金・預り金</strong>の6つを、債権・債務の観点から整理します。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① 債権と債務の考え方</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>前払金（資産）・前受金（負債）</strong>——内容が確定する前に授受した手付金の処理</li>
+      <li><strong>仮払金（資産）・仮受金（負債）</strong>——内容不明のまま一時的に記録する仮勘定、後で正しい科目に振り替える</li>
+      <li><strong>立替金（資産）・預り金（負債）</strong>——第三者のお金を一時的に立て替え・預かる取引</li>
+      <li>6科目の共通点は「一時的な仮勘定」——最終的には別の科目に振り替えて消滅させる</li>
+    </ul>
+  </div>
+
+  <p class="lead">簿記3級では「売掛金・買掛金」以外にも、取引の前後関係や第三者のお金を預かる場面で使われる勘定科目が出てきます。今回は<strong>前払金・前受金・仮払金・仮受金・立替金・預り金</strong>の6つを、債権・債務の観点から整理します。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">前払金・仮払金・立替金って全部「先にお金を払う」感じで同じに見えます。どう違うんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">良い質問です。決め手は「用途が確定しているか」です。前払金は「この商品の手付金」と明確な用途がある。仮払金は「出張で使うかもしれないお金」で用途未定。立替金は「本来は他の人が払うべきお金を代わりに払った」という違いです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">仮払金は後で振り替えるんですよね？振り替えを忘れないか心配で…</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">試験では必ず「精算した」「内容が判明した」という文章が出てきます。そのタイミングで仮払金を正しい科目（交通費・備品など）に振り替えるだけです。焦らず問題文を読めば必ず判断できますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>💡 ① 債権と債務の考え方——「受け取る権利」は資産、「支払う義務」は負債</h2>
   <p>簿記の債権・債務は「お金を受け取る権利（資産）」と「お金を支払う義務（負債）」です。</p>
 
   <div class="sonota-grid">
@@ -120,7 +151,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>語呂合わせで覚えよう！</strong><br>「前・仮・立→資産」「前受・仮受・預り→負債」<br>払う側（払金・払金・替）は資産、受け取る側（受金・受金・り）は負債と覚えると混乱しにくい。</div>
 
-  <h2>② 前払金・前受金</h2>
+  <h2>📌 ② 前払金・前受金——商品を受け渡す前に授受した手付金の処理</h2>
   <p>商品の<strong>注文時に手付金（内金）を授受する</strong>ときに使います。商品の引渡しが完了すると精算します。</p>
 
   <table class="pair-table">
@@ -137,7 +168,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </tr>
   </table>
 
-  <h3>買い手側（前払金）</h3>
+  <h3>買い手側（前払金）——商品を受け取る前に払った手付金は資産で記録</h3>
   <div class="mondai">
     <div class="m-label">例題①-A</div>
     <p>商品 ¥100,000 を注文し、手付金 ¥20,000 を現金で支払った。</p>
@@ -156,7 +187,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">現金<span class="amt">80,000</span></span></div>
   </div>
 
-  <h3>売り手側（前受金）</h3>
+  <h3>売り手側（前受金）——商品を渡す前に受け取った手付金は負債で記録</h3>
   <div class="mondai">
     <div class="m-label">例題①-C</div>
     <p>商品 ¥100,000 を注文され、手付金 ¥20,000 を現金で受け取った。</p>
@@ -175,10 +206,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">現金<span class="amt">80,000</span></span><span class="sep"></span><span class="kashi"></span></div>
   </div>
 
-  <h2>③ 仮払金・仮受金</h2>
+  <h2>🔄 ③ 仮払金・仮受金——内容が不明なまま一時記録する仮勘定、後で正しい科目へ振り替える</h2>
   <p>金額や内容が<strong>確定していない段階</strong>で支払い・受取りが発生したとき、一時的に「仮払金」「仮受金」で処理します。内容が確定したら正しい勘定科目に振り替えます。</p>
 
-  <h3>仮払金（資産）</h3>
+  <h3>仮払金（資産）——用途未定のまま仮に払い出したお金の処理</h3>
   <div class="mondai">
     <div class="m-label">例題②-A</div>
     <p>社員の出張費として概算 ¥30,000 を現金で渡した。</p>
@@ -197,7 +228,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">現金<span class="amt">4,000</span></span><span class="sep"></span><span class="kashi"></span></div>
   </div>
 
-  <h3>仮払金の精算3パターン</h3>
+  <h3>仮払金の精算3パターン——過払い・不足・ちょうどで仕訳が変わる</h3>
   <div class="mondai">
     <div class="m-label">パターンA</div>
     <p>実費 ＝ 概算 ¥30,000（ピッタリだった場合）</p>
@@ -217,7 +248,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>3パターンの共通ルール：</strong>費用（旅費交通費）は必ず「<strong>実費の金額</strong>」で計上。仮払金は概算額で取り崩し、差額は現金で授受する。</div>
 
-  <h3>仮受金（負債）</h3>
+  <h3>仮受金（負債）——用途不明のまま受け取ったお金は負債で一時記録</h3>
   <div class="mondai">
     <div class="m-label">例題③-A</div>
     <p>銀行口座に ¥50,000 の入金があったが、内容が不明だった。</p>
@@ -235,7 +266,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">仮受金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">50,000</span></span></div>
   </div>
 
-  <h3>仮受金の振替パターン② — 貸付金の回収（利息含む）</h3>
+  <h3>仮受金の振替パターン②——貸付金の回収（利息含む）の場合</h3>
   <div class="mondai">
     <div class="m-label">例題③-C</div>
     <p>銀行口座に ¥100,000 の入金があったが、内容が不明だった。</p>
@@ -255,7 +286,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>内容判明時は必ず正しい科目へ：</strong>入金が「売掛金回収」なら売掛金へ、「貸付金回収＋利息」なら貸付金と受取利息に分けて振り替えます。利息を忘れないよう注意！</div>
 
-  <h2>なぜ「仮払金」「仮受金」という仮勘定を使うのか？</h2>
+  <h2>❓ なぜ「仮払金」「仮受金」という仮勘定を使うのか？——内容確定まで正しい科目が決められない理由</h2>
   <p>「概算払いなら先に費用で記録、入金があればすぐ収益で記録すればいいのでは？」と思うかもしれません。しかし<strong>金額や内容が確定する前に費用・収益を認識してしまうと、後で修正が複雑になります。</strong></p>
 
   <div class="warn-box">
@@ -280,10 +311,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     仮払金・仮受金はあくまで一時的な記録。確定したら必ず正しい勘定科目に振り替えること！
   </div>
 
-  <h2>④ 立替金・預り金</h2>
+  <h2>🤝 ④ 立替金・預り金——第三者のお金を一時的に立て替え・預かる取引の仕訳</h2>
   <p><strong>第三者のお金</strong>を一時的に立て替えたり預かったりするときに使います。</p>
 
-  <h3>立替金（資産）</h3>
+  <h3>立替金（資産）——本来は相手が払うべきお金を代わりに払ったとき</h3>
   <p>本来は相手が払うべきお金を、こちらが代わりに支払った場合。後で返してもらう権利が発生します。</p>
   <div class="mondai">
     <div class="m-label">例題④-A</div>
@@ -295,7 +326,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>給料日に差し引く場合</strong><br>給料から天引きするときは「立替金」を取り崩します。<br>（借）給料 xxx ／ （貸）立替金 5,000 ／ （貸）現金（差引支給）xxx</div>
 
-  <h3>預り金（負債）</h3>
+  <h3>預り金（負債）——従業員の所得税・社会保険料など第三者へ渡すお金を一時預かる</h3>
   <p>本来は相手のお金を一時的に預かっているだけです。<strong>源泉所得税・社会保険料の天引き</strong>が典型例です（給料の記事と合わせて確認しよう）。</p>
   <div class="mondai">
     <div class="m-label">例題④-B</div>
@@ -312,10 +343,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="warn-box"><strong>「預り金」を収益にしてはいけない！</strong><br>預かっているだけなので収益にはなりません。後で必ず返す・納付する義務がある「負債」として処理します。</div>
 
-  <h2>⑤ 租税公課・費用科目の使い分け</h2>
+  <h2>📋 ⑤ 租税公課・費用科目の使い分け——固定資産税・印紙税は費用として計上する</h2>
   <p>会社が納付する固定資産税・自動車税・印紙税などは、まとめて「<strong>租税公課</strong>（費用）」で処理します。費用の種類ごとに正しい勘定科目名を使うことが重要です。</p>
 
-  <h3>租税公課の仕訳</h3>
+  <h3>租税公課の仕訳——固定資産税・印紙税・自動車税を支払ったとき</h3>
   <div class="mondai">
     <div class="m-label">例題⑤-A</div>
     <p>固定資産税 ¥100,000 を現金で納付した。</p>
@@ -334,7 +365,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="warn-box"><strong>切手と収入印紙を混同しない！</strong><br>切手（郵便代）→「通信費」。収入印紙（税金）→「租税公課」。どちらも「貼り付けるもの」ですが、勘定科目が異なります。固定資産税・自動車税・印紙税はすべて「租税公課」です。</div>
 
-  <h3>代表的な費用科目一覧</h3>
+  <h3>代表的な費用科目一覧——どの支出にどの科目を使うか</h3>
   <table class="pair-table">
     <tr><th>支払内容</th><th>勘定科目</th></tr>
     <tr><td>広告チラシ・宣伝費</td><td>広告宣伝費</td></tr>
@@ -346,10 +377,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <tr><td>少額・分類困難なもの</td><td>雑費</td></tr>
   </table>
 
-  <h2>⑥ 訂正仕訳</h2>
+  <h2>✏️ ⑥ 訂正仕訳——仕訳を間違えたときに「逆仕訳＋正しい仕訳」で修正する方法</h2>
   <p>誤って記帳した仕訳を修正するには、「<strong>①誤った仕訳の逆仕訳（消去）＋ ②正しい仕訳（追加）</strong>」の2ステップを組み合わせます。実務では①と②を合算した1本の仕訳にします。</p>
 
-  <h3>例①：勘定科目の誤り</h3>
+  <h3>訂正例①：勘定科目を間違えた場合</h3>
   <div class="mondai">
     <div class="m-label">例題⑥-A</div>
     <p>消耗品費 ¥300 を現金で支払ったが、誤って「雑費」で記帳してしまった。</p>
@@ -367,7 +398,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">消耗品費<span class="amt">300</span></span><span class="sep">／</span><span class="kashi">雑費<span class="amt">300</span></span></div>
   </div>
 
-  <h3>例②：金額の誤り</h3>
+  <h3>訂正例②：金額を間違えた場合</h3>
   <div class="mondai">
     <div class="m-label">例題⑥-B</div>
     <p>売掛金 ¥10,000 を現金で回収したが、誤って ¥100,000 で記帳してしまった。</p>

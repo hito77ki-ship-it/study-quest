@@ -96,6 +96,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -108,10 +110,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>商品売買の仕訳（三分法）<br>仕入・売上・繰越商品を図解で完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">簿記3級の取引の大半は「商品を仕入れて売る」です。この仕訳を正確に書けるかどうかが、合否に直結します。<strong>三分法</strong>は仕入・売上・繰越商品の3つの勘定を使う、最も基本的な商品売買の記録方法です。</p>
-  <div class="sq-chat"></div>
 
-  <h2>三分法の3つの勘定科目</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>三分法は「仕入・売上・繰越商品」の3勘定</strong>で商品売買を記録する——売ったときに利益を直接計算しないのがポイント</li>
+      <li><strong>仕入は借方・売上は貸方</strong>——常にこの方向で記録する（反対にはならない）</li>
+      <li><strong>売上原価は決算整理でまとめて計算</strong>——「しくりくりし」の仕訳が出来ればOK</li>
+      <li>返品・仕入諸掛り・分記法との違いまで押さえれば試験対策は完璧</li>
+    </ul>
+  </div>
+
+  <p class="lead">簿記3級の取引の大半は「商品を仕入れて売る」です。この仕訳を正確に書けるかどうかが、合否に直結します。<strong>三分法</strong>は仕入・売上・繰越商品の3つの勘定を使う、最も基本的な商品売買の記録方法です。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">「三分法」って名前からして難しそうで…仕入・売上・繰越商品の3つを使い分けるのがよくわかりません。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">焦らなくて大丈夫。三分法の一番のポイントは「売ったときに利益を計算しない」という点です。仕入は費用として記録するだけ、売上は収益として記録するだけ。差額が利益になるのは決算のときです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">じゃあ「繰越商品」ってどこで使うんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">期末に売れ残った商品を次の期に繰り越すための勘定です。「しくりくりし」という決算整理仕訳で登場します。聞き慣れない言葉ですが、パターンを一度覚えれば必ず解けますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>📦 三分法の3つの勘定科目——仕入・売上・繰越商品はそれぞれ何の要素？</h2>
   <div class="san-grid">
     <div class="san-card s-shii">
       <span class="san-badge">費用</span>
@@ -131,7 +162,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>「三分法」と呼ぶ理由：</strong>商品の動きを仕入・売上・繰越商品の「3つ」の勘定に分けて記録するから。</div>
 
-  <h2>① 商品を仕入れたときの仕訳</h2>
+  <h2>📝 ① 商品を仕入れたときの仕訳——「仕入（費用）」を借方に記録する</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>商品 ¥50,000 を現金で仕入れた。</p>
@@ -142,7 +173,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p>商品を買うと「仕入」（費用）が増えます。支払い方法（現金・当座預金・買掛金など）によって貸方が変わるだけで、借方は必ず「仕入」です。</p>
 
-  <h2>② 商品を売ったときの仕訳</h2>
+  <h2>💰 ② 商品を売ったときの仕訳——「売上（収益）」を貸方に記録する</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>原価 ¥50,000 の商品を ¥80,000 で現金販売した。</p>
@@ -153,7 +184,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="warn-box"><strong>売上は販売額（売価）で記録する！</strong><br>原価 ¥50,000 ではなく、お客さんから受け取る金額 ¥80,000 で仕訳します。原価と売価の差 ¥30,000 が利益（売上総利益）になります。</div>
 
-  <h2>③ 返品・値引きの仕訳</h2>
+  <h2>🔄 ③ 返品・値引きの仕訳——仕入返品と売上返品はどちらも「逆の仕訳」で処理する</h2>
   <div class="compare-2">
     <div class="c2-card buy">
       <div class="c2-title">仕入側の返品・値引き</div>
@@ -172,7 +203,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p>返品・値引きは最初の仕訳を「逆に戻す」イメージ。仕入れたものを戻したら仕入を減らし、売ったものが戻ってきたら売上を減らします。</p>
 
-  <h2>④ 決算整理：繰越商品の仕訳</h2>
+  <h2>✏️ ④ 決算整理：繰越商品の仕訳——「しくりくりし」で売上原価を確定させる</h2>
   <p>期末に売れ残った商品（在庫）を「繰越商品」として翌期に引き継ぎます。決算整理仕訳は2ステップです。</p>
   <div class="shiwake-box">
     <div class="sw-label">ステップ① 期首の繰越商品を仕入に振り替える（期首商品 ¥10,000）</div>
@@ -188,7 +219,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     例）10,000 ＋ 200,000 − 15,000 ＝ 195,000
   </div>
 
-  <h2>⑤ 三分法 vs 分記法：試験は三分法のみ</h2>
+  <h2>❓ ⑤ 三分法 vs 分記法——簿記3級の試験で出るのはどっち？</h2>
   <p>商品売買の記帳方法には「三分法」と「分記法」の2種類がありますが、日商簿記3級の試験で使うのは<strong>三分法のみ</strong>です。分記法は参考知識として押さえておきましょう。</p>
   <div class="compare-2">
     <div class="c2-card buy">
@@ -218,6 +249,33 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
   <div class="tip-box"><strong>3級の試験は三分法で解答する！</strong><br>分記法は「第6章：固定資産の売却」で似た考え方が登場します。ここでは「三分法が3級のスタンダード」とだけ覚えておけばOKです。</div>
+
+  <h2>🚚 ⑥ 仕入諸掛り（付随費用の処理）——運賃は「当社負担」か「先方負担」かで仕訳が変わる</h2>
+  <p>商品の売買に伴う送料などの諸経費（諸掛り）は、誰が負担するかで処理が変わります。</p>
+  <h3>当社負担の場合——仕入原価に含める</h3>
+  <div class="shiwake-box">
+    <div class="sw-label">売上時（発送費は別建て）</div>
+    <div class="sw-row"><span class="kari">発送費<span class="amt">50</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">50</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">仕入時（仕入原価に合算）：購入代価1,500 + 諸掛り100</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">1,600</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">1,500</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">現金<span class="amt">100</span></span></div>
+  </div>
+  <div class="tip-box"><strong>売上諸掛り vs 仕入諸掛りの違い</strong><br>・売上時の諸掛り→「発送費」で別建て（仕入には合算しない）<br>・仕入時の諸掛り→「仕入」勘定に合算（発送費は使わない）<br>同じ諸経費でも、売上側と仕入側で処理が真逆！</div>
+
+  <h3>先方負担の場合——立替金（資産）として記録する</h3>
+  <div class="shiwake-box">
+    <div class="sw-label">仕入先負担の送料100円を立替払い</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">1,500</span></span></div>
+    <div class="sw-row"><span class="kari">立替金<span class="amt">100</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">100</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">または買掛金と相殺する方法</div>
+    <div class="sw-row"><span class="kari">仕入<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">1,400</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">現金<span class="amt">100</span></span></div>
+  </div>
+  <div class="warn-box"><strong>先方負担の費用は絶対に「仕入」に合算しない！</strong><br>仕入先が負担すべき送料は、自分（当社）の費用にはなりません。立替金（資産）として記録し、後で仕入先から回収します。</div>
 
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 

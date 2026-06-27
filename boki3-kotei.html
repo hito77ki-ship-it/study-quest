@@ -97,6 +97,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -109,10 +111,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>固定資産の取得・売却の仕訳<br>付随費用・売却損益を図解で完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">建物・備品・車両など長期間使う資産を<strong>固定資産</strong>といいます。取得時は付随費用を含めた金額で記録し、売却時は帳簿価額と売却価格の差額で損益を計算します。減価償却（定額法）の記事と合わせて読むと理解が深まります。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① 固定資産を取得したときの仕訳</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>取得原価＝本体価格＋付随費用</strong>——送料・設置費も含めた金額で資産を計上する</li>
+      <li><strong>売却損益＝売却価格－帳簿価額</strong>——帳簿価額（取得原価－減価償却累計額）との差額が損益</li>
+      <li><strong>期中売却は月割りで当期分だけ償却</strong>——「×ヶ月÷12」で計算する</li>
+      <li>修繕費（費用）と資本的支出（資産）の区別が試験頻出——「能力を高めるか・維持するか」で判断</li>
+    </ul>
+  </div>
+
+  <p class="lead">建物・備品・車両など長期間使う資産を<strong>固定資産</strong>といいます。取得時は付随費用を含めた金額で記録し、売却時は帳簿価額と売却価格の差額で損益を計算します。減価償却（定額法）の記事と合わせて読むと理解が深まります。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">固定資産の売却がどうしても苦手で…。固定資産売却損と売却益のどちらになるかの判断がいつも混乱します。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">焦らなくて大丈夫。「売却価格と帳簿価額のどちらが大きいか」だけ確認すればいいです。帳簿価額より高く売れた→売却益（収益）、帳簿価額より安く売れた→売却損（費用）です。まず帳簿価額を正確に計算することがすべての出発点です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">帳簿価額ってどうやって計算するんでしたっけ？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">「取得原価 − 減価償却累計額」です。累計額は今まで費用にした合計額なので、それを引いた残りが今の帳簿上の価値です。この計算さえ確実にできれば、売却問題は必ず解けますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>🏢 ① 固定資産を取得したときの仕訳——付随費用を含めた取得原価の計算</h2>
   <p>固定資産を購入するときは、<strong>本体価格＋付随費用（送料・設置費など）</strong>をまとめて資産の取得原価として記録します。</p>
   <div class="mondai">
     <div class="m-label">例題</div>
@@ -124,7 +155,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>付随費用も取得原価に含める！</strong><br>送料・設置費・登記料など、資産を使えるようにするためにかかった費用はすべて取得原価に含めます。別途「費用」として処理してはいけません。</div>
 
-  <h2>なぜ付随費用を取得原価に含めるのか？</h2>
+  <h2>❓ なぜ付随費用を取得原価に含めるのか？——「使えるようにするためのコスト」はすべて原価</h2>
   <p>「運送費や登記料は費用で処理すればいいのでは？」と思うかもしれません。しかし会計では、<strong>固定資産を「使える状態にするまでにかかった全コスト」</strong>を取得原価として資産に計上します（取得原価主義）。</p>
 
   <div class="warn-box">
@@ -143,7 +174,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     商品仕入の諸掛り（運送費など）を仕入原価に含めるのと同じ考え方！
   </div>
 
-  <h2>② 固定資産を売却したときの仕訳</h2>
+  <h2>💰 ② 固定資産を売却したときの仕訳——帳簿価額との差額が固定資産売却損益になる</h2>
   <p>売却時は「帳簿価額」と「売却価格」を比べて、差額を<strong>固定資産売却損（費用）</strong>または<strong>固定資産売却益（収益）</strong>として記録します。</p>
 
   <div class="lossgain">
@@ -159,7 +190,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h3>売却損が出る例題</h3>
+  <h3>売却損が出るケース——帳簿価額より安く売れたとき</h3>
   <div class="mondai">
     <div class="m-label">例題①（売却損）</div>
     <p>取得原価 ¥600,000・減価償却累計額 ¥200,000 の備品を ¥350,000 で現金売却した。</p>
@@ -180,7 +211,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">固定資産売却損<span class="amt">50,000</span></span><span class="sep"></span><span class="kashi"></span></div>
   </div>
 
-  <h3>売却益が出る例題</h3>
+  <h3>売却益が出るケース——帳簿価額より高く売れたとき</h3>
   <div class="mondai">
     <div class="m-label">例題②（売却益）</div>
     <p>取得原価 ¥600,000・減価償却累計額 ¥200,000 の備品を ¥450,000 で現金売却した。</p>
@@ -203,7 +234,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="warn-box"><strong>貸方に「備品」を取得原価で記録する！</strong><br>減価償却後の帳簿価額（¥400,000）ではなく、取得原価（¥600,000）を貸方に記録します。減価償却累計額を借方に出して相殺するのがポイントです。</div>
 
-  <h2>③ 期中売却（月割り計算）</h2>
+  <h2>📅 ③ 期中売却（月割り計算）——期末前に売却したときは当期分の償却を忘れずに</h2>
   <p>会計期間の途中で売却する場合、売却月までの減価償却費を計上してから売却の仕訳をします。</p>
   <div class="mondai">
     <div class="m-label">例題③（期中売却）</div>
@@ -221,7 +252,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>期中売却の手順</strong><br>① 月割りで当期の減価償却費を計上 → ② その後で売却仕訳<br>60,000 × 6/12 ＝ 30,000円を先に計上し、帳簿価額を更新してから売却損益を計算します。</div>
 
-  <h2>④ 家賃・地代の仕訳</h2>
+  <h2>🏠 ④ 家賃・地代の仕訳——支払家賃は費用、受取家賃は収益で記録する</h2>
   <p>建物の貸し借りには<strong>家賃</strong>、土地の貸し借りには<strong>地代</strong>を使います。支払う側（借主）は費用、受け取る側（貸主）は収益として処理します。</p>
   <div class="compare-2">
     <div class="c2-card buy">
@@ -243,7 +274,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>建物→家賃 / 土地→地代と覚えよう</strong><br>「支払〇〇」は費用、「受取〇〇」は収益。命名ルールが統一されているので覚えやすい。</div>
 
-  <h2>⑤ 敷金（差入保証金）と仲介手数料</h2>
+  <h2>🔑 ⑤ 敷金（差入保証金）と仲介手数料——返ってくるお金と費用になるお金を区別する</h2>
   <p>賃貸借契約を結ぶときは、敷金・仲介手数料・家賃を同時に支払うことが多いです。<strong>「返ってくるか否か」</strong>で勘定科目が変わります。</p>
   <div class="compare-2">
     <div class="c2-card sell">
@@ -272,7 +303,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">支払家賃<span class="amt">80,000</span></span><span class="sep"></span><span class="kashi"></span></div>
   </div>
 
-  <h2>⑥ 未収入金・未払金（商品以外の後払い取引）</h2>
+  <h2>📋 ⑥ 未収入金・未払金——固定資産の後払い取引では「売掛金・買掛金」を使わない</h2>
   <p>固定資産など<strong>商品以外</strong>のものを後払いで売買したとき、売掛金・買掛金は使いません。専用の勘定科目を使います。</p>
   <div class="compare-2">
     <div class="c2-card sell">
@@ -293,7 +324,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="warn-box"><strong>売掛金・買掛金との使い分け</strong><br>売掛金・買掛金は「商品の後払い」専用。固定資産など商品以外は「未収入金・未払金」を使います。「何を売買したか」で判断しましょう。</div>
 
-  <h2>⑦ 固定資産の修繕費 vs 改良費</h2>
+  <h2>🔧 ⑦ 修繕費 vs 資本的支出（改良費）——「元に戻すだけ」か「能力アップ」かで判断する</h2>
   <p>固定資産を修理・改良したとき、その目的によって費用か資産かが変わります。</p>
   <div class="compare-2">
     <div class="c2-card buy">

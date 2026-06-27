@@ -82,6 +82,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -103,10 +105,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月8日</p>
   <h1>クレジット売掛金の仕訳とは？<br>手数料2パターン・信販会社との取引を例題3問で完全解説【日商簿記3級】</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">クレジット販売では、代金を受け取るのは<strong>顧客ではなく信販会社から</strong>です。通常の売掛金と区別するため「<strong>クレジット売掛金</strong>」という勘定科目を使います。また、信販会社に支払う手数料の処理タイミングが試験で問われます。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① クレジット販売の流れ</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>クレジット売掛金</strong>——信販会社に対する債権。通常の売掛金（顧客への債権）と区別する</li>
+      <li><strong>支払手数料の計上タイミング</strong>——「販売時」か「入金時」か問題文に従う（標準は入金時）</li>
+      <li>入金時はクレジット売掛金（資産）を消去して当座預金または現金に換える</li>
+      <li><strong>受取商品券</strong>も同様の資産——精算時に現金化する（発行元に請求して受取）</li>
+    </ul>
+  </div>
+
+  <p class="lead">クレジット販売では、代金を受け取るのは<strong>顧客ではなく信販会社から</strong>です。通常の売掛金と区別するため「<strong>クレジット売掛金</strong>」という勘定科目を使います。また、信販会社に支払う手数料の処理タイミングが試験で問われます。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">クレジット売掛金と通常の売掛金の違いってなんですか？どちらも「後でお金をもらう権利」じゃないですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">正確な見方です。違いは「誰からお金を受け取るか」です。通常の売掛金は顧客から直接もらう権利、クレジット売掛金は信販会社（カード会社）からもらう権利です。間に信販会社が入っているので別の科目で管理します。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">支払手数料を「販売時」と「入金時」どちらで計上するかって、どうやって判断するんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">問題文に必ず「販売時に計上する」または何も指示がない（→入金時が標準）と書かれています。判断に迷ったら入金時を選んでおけば大丈夫です。焦らず問題文をよく読めば必ず判断できますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>💳 ① クレジット販売の流れ——当社・顧客・信販会社の3者の関係を把握する</h2>
   <p>クレジット販売では3者（当社・顧客・信販会社）が登場します。</p>
 
   <div class="credit-flow">
@@ -128,12 +159,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <p>顧客は信販会社に後払いしますが、当社は信販会社から（手数料差引後の）代金を受け取ります。この「信販会社に対する債権」が<strong>クレジット売掛金</strong>です。</p>
 
-  <h2>② 販売時の仕訳</h2>
+  <h2>📝 ② 販売時の仕訳——クレジット売掛金（資産）が発生する瞬間</h2>
   <div class="warn-box"><strong>【最大のひっかけ】売上は満額・クレジット売掛金は手数料控除後</strong><br>売上は販売価格の満額で計上します。クレジット売掛金（信販会社に対する債権）は手数料を差し引いた金額になります。この「売上とクレジット売掛金の金額が違う」ことが最大の落とし穴です。<br>例）売上10,000円・手数料200円 → 売上 10,000 ／ クレジット売掛金 9,800 ＋ 支払手数料 200</div>
   <p>商品10,000円をクレジットカードで販売。信販会社の手数料率は3%（300円）の場合を考えます。</p>
   <p>手数料の計上タイミングによって2パターンあります。</p>
 
-  <h3>パターンA：手数料を販売時に計上する場合（問題文に指示がある場合）</h3>
+  <h3>パターンA：手数料を販売時に計上する場合——問題文に「販売時に計上」の指示がある場合</h3>
   <div class="shiwake-box">
     <div class="sw-label">仕訳（販売時・手数料率3%）</div>
     <div class="sw-row">
@@ -149,7 +180,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p style="font-size:13px;color:var(--muted);">クレジット売掛金 ＝ 10,000 − 300（手数料）＝ 9,700円。販売時に手数料も費用計上するパターン。</p>
 
-  <h3>パターンB：手数料を入金時に計上する場合（指示がない場合の標準）</h3>
+  <h3>パターンB：手数料を入金時に計上する場合——指示がないときの標準パターン</h3>
   <div class="shiwake-box">
     <div class="sw-label">仕訳（販売時）</div>
     <div class="sw-row">
@@ -160,7 +191,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p style="font-size:13px;color:var(--muted);">販売時は手数料を計上せず、クレジット売掛金を販売価格の全額（10,000円）で計上する。</p>
 
-  <h2>③ 入金時の仕訳（手数料を販売時に計上した場合）</h2>
+  <h2>💰 ③ 入金時の仕訳（手数料を販売時に計上した場合）——クレジット売掛金を消去して現金化する</h2>
   <p>パターンAの場合、信販会社から9,700円が入金された時の仕訳です。</p>
 
   <div class="shiwake-box">
@@ -173,7 +204,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p>手数料はすでに販売時に費用計上済みなので、入金時は単純にクレジット売掛金を消去します。</p>
 
-  <h2>④ 入金時の仕訳（手数料を入金時に計上する場合）</h2>
+  <h2>💰 ④ 入金時の仕訳（手数料を入金時に計上する場合）——入金のタイミングで手数料を費用計上する</h2>
   <p>パターンBの場合、信販会社から9,700円（手数料300円差引後）が入金された時の仕訳です。</p>
 
   <div class="shiwake-box">
@@ -193,7 +224,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="warn-box"><strong>手数料の計上タイミングは問題文の指示に従う</strong><br>「クレジット手数料は販売時に計上する」と指示があればパターンA、指示がなければパターンBが一般的です。試験では問題文をよく読んで、どちらのパターンかを判断しましょう。</div>
 
-  <h2>⑤ 通常の売掛金との違い</h2>
+  <h2>🔍 ⑤ 通常の売掛金との違い——「誰からもらう権利か」が勘定科目の使い分けのポイント</h2>
   <table class="hikaku-table">
     <thead>
       <tr>
@@ -230,6 +261,26 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       </tr>
     </tbody>
   </table>
+
+  <h2>🎫 ⑥ 商品券（受取商品券）——発行元から現金を受け取る権利（資産）として処理する</h2>
+  <p>他店が発行した商品券を受け取って商品を販売した場合、「受取商品券（資産）」という勘定科目を使います。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">商品10,000円を売り、他店発行の商品券10,000円を受け取った</div>
+    <div class="sw-row"><span class="kari">受取商品券<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">10,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">後日、商品券を発行元に持参して現金10,000円に換えた（精算）</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">受取商品券<span class="amt">10,000</span></span></div>
+  </div>
+  <table>
+    <thead><tr><th>場面</th><th>借方</th><th>貸方</th></tr></thead>
+    <tbody>
+      <tr><td>商品券で商品を売る</td><td>受取商品券（資産）↑</td><td>売上</td></tr>
+      <tr><td>商品券を現金に精算</td><td>現金</td><td>受取商品券（資産）↓</td></tr>
+    </tbody>
+  </table>
+  <div class="tip-box"><strong>受取商品券はなぜ「資産」？</strong><br>商品券は発行元から現金を受け取る権利（請求権）です。クレジット売掛金と同じ考え方で、「後で現金に換えられる」権利を資産として記録します。</div>
+  <div class="warn-box"><strong>自社が発行した商品券と混同しないこと！</strong><br>自社発行の商品券を売ったときは「前受金（負債）」です。他社から受け取った商品券が「受取商品券（資産）」です。</div>
 
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 

@@ -87,6 +87,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -99,10 +101,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>小口現金の仕訳（定額資金前渡制度）<br>補給・出納帳の書き方まで図解解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">日常の細かい支払い（交通費・消耗品費など）を処理するために、会計係から用度係（小口係）に一定金額を前渡しする仕組みを<strong>定額資金前渡制度（インプレスト・システム）</strong>といいます。使った分を定期的に補給して常に同額に保つのがポイントです。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① 仕組みと登場人物</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>小口現金はインプレストシステム</strong>——一定額を前渡しし、使った分を定期補給して常に同額に保つ</li>
+      <li><strong>仕訳は会計係（経理）が切る</strong>——用度係は小口現金出納帳を記録するだけで仕訳は切らない</li>
+      <li><strong>費用計上のタイミングは「報告を受けたとき」</strong>——前渡し時ではなく、支払報告を受けた時点</li>
+      <li>補給の仕訳は「報告受領と同日」の場合と「別の日」の場合で合算できるかどうかが変わる</li>
+    </ul>
+  </div>
+
+  <p class="lead">日常の細かい支払い（交通費・消耗品費など）を処理するために、会計係から用度係（小口係）に一定金額を前渡しする仕組みを<strong>定額資金前渡制度（インプレスト・システム）</strong>といいます。使った分を定期的に補給して常に同額に保つのがポイントです。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">小口現金って、前渡しするとき・報告を受けるとき・補給するときの3つで仕訳が変わるんですよね。どのタイミングで何を書けばいいのかわかりません。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">焦らなくて大丈夫。ポイントは「費用が確定するのは報告を受けたとき」です。前渡し時は小口現金（資産）が増えるだけ。報告を受けたときに初めて交通費や消耗品費などの費用が計上されます。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">補給は報告と同じ日でいいんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">問題に「同日に補給した」と書いてあれば報告と補給の仕訳を合算できます。別の日なら別々に切ります。問題文の日付を確認するクセをつけておけば迷わないですよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>👥 ① 仕組みと登場人物——会計係と用度係の役割分担はどうなっている？</h2>
 
   <div class="role-flow">
     <div class="rf-box kaisha">
@@ -118,9 +149,9 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>仕訳を切るのは「会計係」だけ！</strong><br>用度係は小口現金出納帳（帳簿）に記録するだけで、仕訳は切りません。試験では「会計係が仕訳した」という前提で解きます。</div>
 
-  <h2>② 3つのタイミングで仕訳を切る</h2>
+  <h2>📝 ② 3つのタイミングで仕訳を切る——前渡し・報告受領・補給で何が変わるか</h2>
 
-  <h3>① 前渡し（小口現金を渡すとき）</h3>
+  <h3>① 前渡し——小口現金（資産）が発生するだけで費用はまだ計上しない</h3>
   <div class="mondai">
     <div class="m-label">例題①</div>
     <p>会計係は用度係に小口現金として ¥50,000 を小切手で前渡しした。</p>
@@ -130,7 +161,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">小口現金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">50,000</span></span></div>
   </div>
 
-  <h3>② 報告受領（用度係から支払報告を受けたとき）</h3>
+  <h3>② 報告受領——このタイミングで費用（交通費・消耗品費など）が確定する</h3>
   <div class="mondai">
     <div class="m-label">例題②</div>
     <p>用度係から1週間の支払報告があった。交通費 ¥8,000・消耗品費 ¥12,000・通信費 ¥5,000（合計 ¥25,000）。</p>
@@ -142,7 +173,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">通信費<span class="amt">5,000</span></span><span class="sep"></span><span class="kashi"></span></div>
   </div>
 
-  <h3>③ 補給（使った分を小切手で補充するとき）</h3>
+  <h3>③ 補給——使った分だけ小切手で補充して小口現金を定額に戻す</h3>
   <div class="mondai">
     <div class="m-label">例題③</div>
     <p>例題②の報告と同時に、使用分 ¥25,000 を小切手で補給した。</p>
@@ -154,7 +185,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>「報告と同時に補給」のときは2つをまとめられる</strong><br>報告受領と補給が同じタイミングの場合、「小口現金」が相殺されるため：<br>（借）旅費交通費8,000 ／（貸）当座預金25,000<br>　　 消耗品費12,000<br>　　 通信費5,000<br>とまとめて仕訳することもできます。</div>
 
-  <h2>③ 小口現金出納帳（用度係が記録する帳簿）</h2>
+  <h2>📋 ③ 小口現金出納帳——用度係が記録する補助簿の書き方と試験での記入ポイント</h2>
   <p>用度係は「小口現金出納帳」に支払いを記録します。試験では帳簿の空欄補充問題が出ます。</p>
 
   <div class="koguchi-table-wrap">

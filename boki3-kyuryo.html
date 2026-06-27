@@ -210,6 +210,68 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     →「給料費用は総額」「天引き分は預り金（負債）」として全金額が帳簿に残る。
   </div>
 
+  <h2>⑥ 総合例題：所得税＋社会保険料をまとめて処理</h2>
+  <p>実務では所得税と社会保険料を同時に天引きします。1つの仕訳で処理できるよう練習しましょう。</p>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>給料総額 ¥350,000 のうち、所得税 ¥25,000・社会保険料（従業員負担）¥17,500 を天引きし、手取り ¥307,500 を普通預金から振り込んだ。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">給料支払時（3つを同時処理）</div>
+    <div class="sw-row"><span class="kari">給料<span class="amt">350,000</span></span><span class="sep">／</span><span class="kashi">所得税預り金<span class="amt">25,000</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">社会保険料預り金<span class="amt">17,500</span></span></div>
+    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">普通預金<span class="amt">307,500</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">翌月①：所得税を税務署に納付</div>
+    <div class="sw-row"><span class="kari">所得税預り金<span class="amt">25,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">25,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">翌月②：社会保険料を年金事務所に納付（従業員分＋会社負担分の合計）</div>
+    <div class="sw-row"><span class="kari">社会保険料預り金<span class="amt">17,500</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">35,000</span></span></div>
+    <div class="sw-row"><span class="kari">法定福利費<span class="amt">17,500</span></span><span class="sep"></span><span class="kashi"></span></div>
+  </div>
+  <div class="tip-box"><strong>納付先が2か所あることに注意！</strong><br>所得税→税務署、社会保険料→年金事務所。社保は「従業員分＋会社負担分」の合計（35,000円）をまとめて納付します。</div>
+
+  <h2>⑦ 取引先への立替金・預り金</h2>
+  <p>給料以外の場面でも「立替金」「預り金」は出てきます。相手が従業員でなく取引先でも考え方は同じです。</p>
+  <div class="mondai">
+    <div class="m-label">例題①：取引先の運賃を立替え</div>
+    <p>取引先B社の運賃 ¥2,000 を現金で立替払いした。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">立替時</div>
+    <div class="sw-row"><span class="kari">立替金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">2,000</span></span></div>
+  </div>
+  <div class="mondai">
+    <div class="m-label">例題②：取引先の売掛金を代わりに受け取り</div>
+    <p>取引先D社の売掛金 ¥50,000 を代わりに現金で受け取った。</p>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">受取時（預り金として記録）</div>
+    <div class="sw-row"><span class="kari">現金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">預り金<span class="amt">50,000</span></span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">D社に返金したとき</div>
+    <div class="sw-row"><span class="kari">預り金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">50,000</span></span></div>
+  </div>
+  <div class="tip-box"><strong>立替金 vs 従業員立替金の使い分け：</strong><br>相手が<strong>従業員</strong>→「従業員立替金」、相手が<strong>取引先など</strong>→「立替金」。どちらも資産（後で回収できる権利）である点は同じです。</div>
+
+  <h2>⑧ よくある間違い3パターン</h2>
+  <div class="warn-box">
+    <strong>❌ 間違い①：給料を手取り額で計上してしまう</strong><br>
+    ❌ （借）給料 307,500 ／（貸）普通預金 307,500<br>
+    ✅ （借）給料 350,000 ／（貸）所得税預り金 25,000 ／ 社保料預り金 17,500 ／ 普通預金 307,500<br>
+    <br>
+    <strong>❌ 間違い②：従業員の生命保険料を会社の「保険料」費用として計上してしまう</strong><br>
+    ❌ （借）保険料 ／（貸）現金<br>
+    ✅ 従業員のための立替は「従業員立替金（資産）」→後で給料から控除して回収する<br>
+    <br>
+    <strong>❌ 間違い③：取引先の売掛金を代わりに受け取ったとき「売掛金」で処理してしまう</strong><br>
+    ❌ （借）売掛金 ／（貸）現金<br>
+    ✅ 他社のお金を預かっているので「預り金（負債）」→後でその会社に返す
+  </div>
+
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
 
   <div class="matome">

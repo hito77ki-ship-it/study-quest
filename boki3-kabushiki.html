@@ -92,6 +92,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -113,10 +115,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>株式会社の仕訳を完全解説<br>株式発行・剰余金の配当・利益準備金を例題3パターンで解説【日商簿記3級】</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">株式会社では、株式を発行して資金を集め、利益を株主に配当します。簿記3級では<strong>株式発行・剰余金の配当・利益準備金の積立</strong>の3つの処理を押さえれば十分です。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① 純資産の構成を把握する</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>株式発行</strong>——払込金額の1/2以下を資本準備金、残りを資本金に計上（問題文の指示に従う）</li>
+      <li><strong>剰余金の配当</strong>——繰越利益剰余金を減らし、配当金＋利益準備金の積立を同時に処理</li>
+      <li><strong>利益準備金の積立額</strong>——配当額×1/10（上限：資本金×1/4 − 準備金合計）</li>
+      <li>当期純利益は決算時に損益勘定から繰越利益剰余金へ振り替える</li>
+    </ul>
+  </div>
+
+  <p class="lead">株式会社では、株式を発行して資金を集め、利益を株主に配当します。簿記3級では<strong>株式発行・剰余金の配当・利益準備金の積立</strong>の3つの処理を押さえれば十分です。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">株式会社の仕訳って「資本金・資本準備金・繰越利益剰余金・利益準備金」と科目が多くて整理できません。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">焦らなくて大丈夫。整理のポイントは「外から入ってきたお金（株主からの出資）→資本金・資本準備金」「内部で稼いだ利益→繰越利益剰余金・利益準備金」という区分です。出資と利益が混ざらないようにするための仕組みです。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">配当のときに利益準備金も同時に積まないといけないのがわかりにくいです。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">利益準備金は「配当しすぎて会社の体力がなくならないための積立金」です。配当額の10分の1を強制的に積み立てるルールになっています。計算パターンを1つ覚えれば試験では必ず対応できますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>🏢 ① 純資産の構成を把握する——資本金・資本準備金・繰越利益剰余金・利益準備金の違い</h2>
   <p>株式会社の純資産は主に3つで構成されます。</p>
 
   <div class="equity-diagram">
@@ -141,7 +172,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>「繰越利益剰余金」が試験のキーポイント</strong><br>配当や利益準備金の積立では「繰越利益剰余金」を減らします。増減の仕訳をしっかり覚えましょう。</div>
 
-  <h2>② 株式を発行したときの仕訳</h2>
+  <h2>📝 ② 株式を発行したときの仕訳——払込金額の1/2以下を資本準備金、残りを資本金へ</h2>
   <p>会社設立時や増資時に株式を発行し、株主から出資金を受け取ります。会社法の規定により、<strong>払込金額の1/2以上を資本金</strong>、残りを<strong>資本準備金</strong>に計上します。問題文で指示がなければ全額資本金とします。</p>
 
   <div class="mondai">
@@ -166,10 +197,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>資本金と資本準備金の分け方</strong><br>問題文に「払込金額の1/2を資本金、残りを資本準備金とする」などの指示がある場合はその通りに分けます。指示がない場合は全額を資本金として処理します（払込金額の1/2以上が資本金になるというルール）。</div>
 
-  <h2>③ 剰余金の配当と利益準備金の積立</h2>
+  <h2>💰 ③ 剰余金の配当と利益準備金の積立——配当のたびに10分の1を強制積立する理由</h2>
   <p>株主総会で配当が承認されると、<strong>繰越利益剰余金</strong>を減らして「未払配当金（負債）」と「利益準備金」に振り替えます。</p>
 
-  <h3>利益準備金の積立額の計算ルール</h3>
+  <h3>利益準備金の積立額の計算ルール——「配当額×1/10」と上限額の求め方</h3>
   <p>会社法では、配当するたびに<strong>配当額の1/10</strong>を利益準備金として積み立てることが義務づけられています。ただし、<strong>資本金の1/4</strong>に達したら積立不要です。</p>
 
   <div class="haito-calc">
@@ -198,7 +229,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>承認時と支払時で2段階に分けて仕訳する！</strong><br>株主総会で承認されたとき → 「未払配当金」（負債）を立てる<br>実際に支払ったとき → 「未払配当金」を取り崩す</div>
 
-  <h2>④ 当期純利益の振替（決算整理）</h2>
+  <h2>📊 ④ 当期純利益の振替（決算整理）——損益勘定から繰越利益剰余金へ振り替える仕訳</h2>
   <p>決算で当期純利益が確定すると、損益勘定から<strong>繰越利益剰余金</strong>へ振り替えます。</p>
 
   <div class="mondai">
@@ -215,7 +246,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">繰越利益剰余金<span class="amt">xxx</span></span><span class="sep">／</span><span class="kashi">損益<span class="amt">xxx</span></span></div>
   </div>
 
-  <h2>⑤ 繰越利益剰余金の増減フロー</h2>
+  <h2>🔄 ⑤ 繰越利益剰余金の増減フロー——増える場面・減る場面を整理する</h2>
   <p>繰越利益剰余金は当期純利益の振替で<strong>増加</strong>し、配当・利益準備金の積立で<strong>減少</strong>します。</p>
 
   <div class="shiwake-box">
@@ -229,7 +260,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>繰越利益剰余金の残高＝前期残高＋当期純利益−配当−利益準備金</strong><br>この残高がB/Sの純資産の部に計上されます。利益準備金は資本金の1/4に達するまで配当のたびに積立義務があります（積立額は配当金の1/10）。</div>
 
-  <h2>⑥ よくある間違い</h2>
+  <h2>⚠️ ⑥ よくある間違い——株式会社の仕訳で混乱しやすいポイントと対処法</h2>
   <div class="warn-box">
     <strong>❌ よくある間違いパターン</strong><br><br>
     <strong>① 株式発行で全額資本金にしてしまう（資本準備金指示があるのに）</strong><br>

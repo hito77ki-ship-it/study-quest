@@ -133,6 +133,8 @@ li{margin-bottom:6px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
 
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -156,14 +158,41 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h1>仕訳日計表の書き方<br>伝票から集計するステップを図解で完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>仕訳日計表は「伝票を仕訳に直す→科目ごとに集計」の2ステップ</strong>で完成する</li>
+      <li>入金伝票は（借）現金、出金伝票は（貸）現金、振替伝票はそのまま仕訳——これだけ覚えればOK</li>
+      <li><strong>借方合計＝貸方合計</strong>になれば仕訳日計表は完成——不一致は必ず転記ミス</li>
+      <li>完成した仕訳日計表から総勘定元帳へ転記するのが最終ステップ</li>
+    </ul>
+  </div>
+
   <p class="lead">
     仕訳日計表はその日に起票されたすべての伝票を<strong>勘定科目ごとに集計した一覧表</strong>です。<br>
     難しそうに見えますが、手順は「①伝票を仕訳に直す → ②勘定科目ごとに合計する」の2ステップだけです。
   </p>
 
-  <div class="sq-chat"></div>
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">仕訳日計表って伝票をただ集計するだけの作業じゃないんですか？なんで難しく感じるんでしょう…</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">焦らなくて大丈夫。つまずきやすいのは「入金伝票・出金伝票→それぞれどっちが借方か」の部分です。入金伝票は現金が入ってくるから（借）現金、出金伝票は出ていくから（貸）現金——ここだけ押さえれば後は機械的な集計作業です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">集計した後に元帳への転記もしなきゃいけないんですよね。転記ってどうやるんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">仕訳日計表の借方・貸方の合計額をそのまま総勘定元帳の該当科目に転記するだけです。伝票1枚ずつではなく、日計表の合計を1行で転記できるのが仕訳日計表の便利なところです。慣れれば速くできますよ！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
 
-  <h2>仕訳日計表とは？</h2>
+  <h2>❓ 仕訳日計表とは？——その日の全伝票を勘定科目ごとに集計した一覧表</h2>
 
   <p>企業では毎日たくさんの取引が発生し、伝票が大量に起票されます。その日に起票されたすべての伝票を集計して1枚の表にまとめたものが<strong>仕訳日計表</strong>です。</p>
 
@@ -178,7 +207,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     仕訳の借方・貸方が同額になるルールと同じです。合計が合わない場合は集計ミスや伝票の見落としがあります。
   </div>
 
-  <h3>なぜ仕訳日計表を使うのか</h3>
+  <h3>なぜ仕訳日計表を使うのか——伝票ごとではなく日計表で元帳転記をまとめる理由</h3>
 
   <p>3伝票制では、伝票1枚ごとに総勘定元帳へ転記すると作業量が膨大になります。仕訳日計表を使えば、<strong>1日分の伝票をまとめて集計し、元帳へ合計転記</strong>できるため大幅に効率化できます。</p>
 
@@ -189,14 +218,14 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     → 大企業ほど1日の取引が多いため、仕訳日計表による合計転記が実務・試験の両方で重要になります。
   </div>
 
-  <h2>例題</h2>
+  <h2>📝 例題——6枚の伝票から仕訳日計表を完成させる</h2>
 
   <div class="mondai">
     <div class="m-label">例題</div>
     <p>2026年6月1日に次の伝票が起票された。この伝票から仕訳日計表を作成しなさい。</p>
   </div>
 
-  <h3>起票された伝票（6月1日分）</h3>
+  <h3>起票された伝票（6月1日分）——入金・出金・振替の3種類が混在している</h3>
 
   <div class="denpyo-day">
     <div class="dd-section">
@@ -241,7 +270,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h2>解き方：2ステップで完成</h2>
+  <h2>✏️ 解き方：2ステップで完成——伝票を仕訳に変換→勘定科目ごとに集計</h2>
 
   <div class="step-list">
     <div class="step-item">
@@ -254,7 +283,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h3>勘定科目ごとの集計</h3>
+  <h3>STEP 2：勘定科目ごとに借方・貸方を集計する</h3>
 
   <div class="collect-grid">
     <div class="collect-item c-kari">
@@ -299,7 +328,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h3>完成した仕訳日計表</h3>
+  <h3>完成した仕訳日計表——借方合計＝貸方合計で確認完了</h3>
 
   <div class="nikkei-wrap">
     <table class="nikkei-table">
@@ -360,7 +389,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     合計が合えば集計完了。合わない場合はどこかの伝票の記入漏れや計算ミスを確認する。
   </div>
 
-  <h2>試験でよく一緒に出る：元帳への転記</h2>
+  <h2>📖 試験でよく一緒に出る：元帳への転記——日計表の合計を1行で総勘定元帳へ転記する</h2>
 
   <p>試験では仕訳日計表の作成と同時に、<strong>得意先元帳（売掛金明細）や仕入先元帳（買掛金明細）</strong>への転記を求める問題が出ます。</p>
   <p>元帳への転記自体は補助簿の知識がそのまま使えます。仕訳日計表の金額を見ながら、各取引先の口座に金額を写すだけです。</p>

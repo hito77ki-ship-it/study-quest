@@ -122,6 +122,8 @@ html[data-theme="dark"] .e-desc{color:#94A3B8 !important;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -134,10 +136,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記3級 | 公開：2026年5月7日</p>
   <h1>精算表の書き方（8桁精算表）<br>決算整理から財務諸表まで図解解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
-  <p class="lead">精算表は試算表に決算整理仕訳を加え、損益計算書（P/L）と貸借対照表（B/S）を一枚のワークシートで完成させるものです。列が「試算表・修正記入・P/L・B/S」の8桁（8欄）あることから<strong>8桁精算表</strong>と呼ばれます。</p>
-  <div class="sq-chat"></div>
 
-  <h2>① 8桁精算表の構造</h2>
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>精算表は「試算表→修正記入→P/L→B/S」の8列</strong>で構成される決算作業表。財務諸表そのものではなく下書きシート。</li>
+      <li><strong>振り分けの鉄則は1つ</strong>——収益・費用→P/L欄、資産・負債・純資産→B/S欄</li>
+      <li><strong>P/L差額＝B/S差額＝当期純利益</strong>。この2つが一致したら精算表は完成</li>
+      <li>最大の落とし穴は「減価償却累計額のB/S欄」——試算表残高と修正記入の合算を忘れない</li>
+    </ul>
+  </div>
+
+  <p class="lead">精算表は試算表に決算整理仕訳を加え、損益計算書（P/L）と貸借対照表（B/S）を一枚のワークシートで完成させるものです。列が「試算表・修正記入・P/L・B/S」の8桁（8欄）あることから<strong>8桁精算表</strong>と呼ばれます。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">精算表って列が多すぎて、どこに何を書けばいいのかわからなくなります。試験で見た瞬間に頭が真っ白で…</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">それは最初に全員ぶつかる壁なので安心してください。8列あって難しそうに見えますが、実は「<strong>この勘定科目は何の要素か</strong>」を判断するだけで全部解けます。収益・費用→P/L欄、資産・負債・純資産→B/S欄。このルール1つだけ覚えれば大丈夫です。</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+    <div class="sq-chat-row">
+      <div class="sq-chat-avatar student">受</div>
+      <div class="sq-chat-bubble">でも修正記入とか、P/L差額＝B/S差額とか……覚えることが多くて不安です。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">流れは「①試算表を写す→②修正仕訳を記入→③要素で振り分ける→④差額が一致したら完成」の4ステップです。焦らず順番通りに進めれば必ず完成します。パズルを解くつもりで一緒に見ていきましょう！</div>
+      <div class="sq-chat-avatar teacher">師</div>
+    </div>
+  </div>
+
+  <h2>📊 ① 8桁精算表の構造——4つの列はそれぞれ何をする？</h2>
   <p>精算表は左から「勘定科目」＋8列（4ペア）で構成されます。</p>
 
   <div class="seisan-wrap">
@@ -171,7 +202,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p style="font-size:12px;color:var(--muted);">※数字は説明用の簡略例です。単位：千円</p>
 
-  <h2>② 勘定科目は「5つの要素」で覚える</h2>
+  <h2>🗂 ② 勘定科目は「5つの要素」で覚える——P/L列かB/S列かを一瞬で判断する方法</h2>
   <p>精算表を正確に解くには、<strong>各勘定科目がどの要素に属するか</strong>を把握していることが大前提です。要素は全部で5つあり、この要素によってP/L欄・B/S欄のどちらに記入するかが決まります。</p>
 
   <div class="elem-wrap">
@@ -213,7 +244,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   費用・収益はP/L（損益計算書）欄へ、資産・負債・純資産はB/S（貸借対照表）欄へ。<br>
   借方・貸方の向きは「通常残高」と同じ方向です（資産→借方、負債・純資産→貸方、費用→借方、収益→貸方）。試算表で各勘定科目の残高がどちら側にあるかを確認する習慣をつけましょう。</div>
 
-  <h2>なぜ精算表というワークシートを使うのか？</h2>
+  <h2>❓ なぜ精算表というワークシートを使うのか？——財務諸表を直接修正しない理由</h2>
   <p>「決算整理仕訳を帳簿に直接記録すればいいのでは？」と思うかもしれません。しかし直接処理すると、修正前後の数字が混ざって確認が困難になります。</p>
 
   <div class="warn-box">
@@ -233,7 +264,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     精算表は財務諸表ではなく「作業用メモ」！提出するのはP/LとB/Sだが、その下準備として精算表が大活躍する。
   </div>
 
-  <h2>③ 精算表の作成手順</h2>
+  <h2>📝 ③ 精算表の作成手順——4ステップで確実に完成させる</h2>
 
   <div class="step-flow">
     <div class="step-item">
@@ -258,10 +289,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h2>⑤ P/L差額＝B/S差額＝当期純利益の仕組み</h2>
+  <h2>💡 ⑤ P/L差額＝B/S差額＝当期純利益——この等式が成り立つ仕組み</h2>
   <p>精算表が完成しているかどうかの最終確認は、<strong>「P/L欄の差額」と「B/S欄の差額」が一致するか</strong>です。この2つは必ず同じ数字（当期純利益）になります。</p>
 
-  <h3>P/L欄（損益計算書欄）</h3>
+  <h3>📄 P/L欄（損益計算書欄）——収益と費用の差が純利益になる</h3>
   <p>収益合計と費用合計の差額が当期純利益です。差額は費用側（借方）に記入して左右を一致させます。</p>
   <div class="shiwake-box">
     <div class="sw-label">P/L欄の例（収益600・費用400）</div>
@@ -269,7 +300,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">当期純利益<span class="amt">200</span></span><span class="sep"></span><span class="kashi"></span></div>
   </div>
 
-  <h3>B/S欄（貸借対照表欄）</h3>
+  <h3>📊 B/S欄（貸借対照表欄）——資産・負債・純資産の期末残高を確定する</h3>
   <p>資産合計と（負債＋資本）合計の差額が当期純利益と等しくなります。差額は資本側（貸方）に記入します。</p>
   <div class="shiwake-box">
     <div class="sw-label">B/S欄の例（資産4,000・負債+資本3,800）</div>
@@ -279,7 +310,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="tip-box"><strong>P/L差額とB/S差額が一致したら精算表は完成！</strong><br>一致しない場合は①修正記入欄の借貸合計がズレている、②P/LとB/Sへの振り分けミスがある、のどちらかです。純損失のときはP/L収益欄・B/S資産欄に記入してバランスを取ります。</div>
 
-  <h2>⑥ B/S（貸借対照表）の間接法表示</h2>
+  <h2>🔍 ⑥ B/S（貸借対照表）の間接法表示——減価償却累計額はなぜマイナスで表示するのか</h2>
   <p>精算表のB/S欄から貸借対照表を作成するとき、<strong>減価償却累計額と貸倒引当金は取得原価・売掛金から控除する形式（間接法）</strong>で表示します。</p>
   <div class="shiwake-box">
     <div class="sw-label">B/S資産の部（例）</div>
@@ -290,10 +321,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>減価償却累計額のB/S欄は「残高T/B残高 ＋ 修正記入額」の合算！</strong><br>例：残高T/Bの累計額1,000円＋修正記入で追加した1,000円＝B/S貸方に2,000円を記入します。修正記入欄の数字だけ（1,000円）を使ってしまうのが最大の落とし穴です。</div>
 
-  <h2>④ 主な決算整理仕訳（修正記入欄に記入するもの）</h2>
+  <h2>📋 ⑦ 損益計算書（P/L）の作成——精算表のP/L欄からどうやって転記するか</h2>
+  <p>精算表のP/L欄が完成したら、そのまま損益計算書（P/L）を作成できます。費用・収益を整理し、段階的に利益を計算します。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">P/L（損益計算書）の利益計算の流れ</div>
+    <div class="sw-row"><span class="kari">売上高</span><span class="sep"></span><span class="kashi">8,000</span></div>
+    <div class="sw-row"><span class="kari">売上原価（仕入）</span><span class="sep">△</span><span class="kashi">4,000</span></div>
+    <div class="sw-row"><span class="kari" style="color:#276749;font-size:12px;">＝ 売上総利益</span><span class="sep"></span><span class="kashi" style="color:#276749;">4,000</span></div>
+    <div class="sw-row"><span class="kari">給料・減価償却費等（販管費）</span><span class="sep">△</span><span class="kashi">2,500</span></div>
+    <div class="sw-row"><span class="kari" style="color:#276749;font-size:12px;">＝ 当期純利益</span><span class="sep"></span><span class="kashi" style="color:#276749;">1,500</span></div>
+  </div>
+  <div class="tip-box"><strong>P/Lの等式：収益合計 − 費用合計 ＝ 当期純利益</strong><br>費用合計 > 収益合計のときは「当期純損失」となり、P/Lの収益側（貸方）に純損失額を記入してバランスを取ります。</div>
+
+  <h2>💰 ⑧ 貸借対照表（B/S）の繰越利益剰余金——当期純利益はどこに書く？</h2>
+  <p>B/S欄から貸借対照表を作成するとき、<strong>繰越利益剰余金</strong>は「前期残高 ＋ 当期純利益」で計算します。</p>
+  <div class="shiwake-box">
+    <div class="sw-label">繰越利益剰余金の計算例</div>
+    <div class="sw-row"><span class="kari">前期末繰越利益剰余金</span><span class="sep"></span><span class="kashi">3,940</span></div>
+    <div class="sw-row"><span class="kari">＋ 当期純利益</span><span class="sep"></span><span class="kashi">1,500</span></div>
+    <div class="sw-row"><span class="kari" style="color:#276749;font-size:12px;">＝ B/S計上額</span><span class="sep"></span><span class="kashi" style="color:#276749;">5,440</span></div>
+  </div>
+  <div class="shiwake-box">
+    <div class="sw-label">B/S負債・資本の部（例）</div>
+    <div class="sw-row"><span class="kari">買掛金・借入金等（負債）</span><span class="sep"></span><span class="kashi">3,000</span></div>
+    <div class="sw-row"><span class="kari">資本金</span><span class="sep"></span><span class="kashi">1,500</span></div>
+    <div class="sw-row"><span class="kari">繰越利益剰余金</span><span class="sep"></span><span class="kashi">5,440</span></div>
+    <div class="sw-row"><span class="kari" style="font-weight:700;">資産合計</span><span class="sep">＝</span><span class="kashi" style="font-weight:700;">負債＋資本合計</span></div>
+  </div>
+  <div class="tip-box"><strong>B/S等式：資産合計 ＝ 負債合計 ＋ 資本合計</strong><br>左右が必ず一致！減価償却累計額・貸倒引当金は資産から控除表示（間接法）。繰越利益剰余金は「前期残高 ＋ 当期純利益」で計算します。</div>
+
+  <h2>✏️ ④ 主な決算整理仕訳——修正記入欄に記入する4パターンを完全攻略</h2>
   <p>精算表で最も重要なのが修正記入欄への決算整理仕訳の転記です。</p>
 
-  <h3>① 売上原価の計算（三分法→繰越商品の振替）</h3>
+  <h3>① 売上原価の計算——三分法では繰越商品を期首・期末で振り替える</h3>
   <div class="shiwake-box">
     <div class="sw-label">期首在庫を仕入に振替</div>
     <div class="sw-row"><span class="kari">仕入<span class="amt">期首商品</span></span><span class="sep">／</span><span class="kashi">繰越商品<span class="amt">期首商品</span></span></div>
@@ -303,19 +363,19 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="sw-row"><span class="kari">繰越商品<span class="amt">期末商品</span></span><span class="sep">／</span><span class="kashi">仕入<span class="amt">期末商品</span></span></div>
   </div>
 
-  <h3>② 減価償却費の計上</h3>
+  <h3>② 減価償却費の計上——累計額はどの列に書く？</h3>
   <div class="shiwake-box">
     <div class="sw-label">仕訳</div>
     <div class="sw-row"><span class="kari">減価償却費<span class="amt">xxx</span></span><span class="sep">／</span><span class="kashi">減価償却累計額<span class="amt">xxx</span></span></div>
   </div>
 
-  <h3>③ 貸倒引当金の設定（差額補充法）</h3>
+  <h3>③ 貸倒引当金の設定——差額補充法で修正記入欄への記入は「不足分だけ」</h3>
   <div class="shiwake-box">
     <div class="sw-label">追加積立が必要な場合</div>
     <div class="sw-row"><span class="kari">貸倒引当金繰入<span class="amt">追加額</span></span><span class="sep">／</span><span class="kashi">貸倒引当金<span class="amt">追加額</span></span></div>
   </div>
 
-  <h3>④ 経過勘定の調整</h3>
+  <h3>④ 経過勘定の調整——前払・未払・前受・未収を正しい期間に振り替える</h3>
   <div class="shiwake-box">
     <div class="sw-label">例：未払費用の計上</div>
     <div class="sw-row"><span class="kari">○○費<span class="amt">未払額</span></span><span class="sep">／</span><span class="kashi">未払○○費<span class="amt">未払額</span></span></div>
