@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" width="760" height="390">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="390" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">手形の仕組み——振出人と名宛人の関係</text>
+
+  <!-- 名宛人（資産側）box -->
+  <rect x="30" y="56" width="310" height="210" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="30" y="56" width="310" height="36" rx="10" fill="#3B82F6"/>
+  <rect x="30" y="82" width="310" height="10" fill="#3B82F6"/>
+  <text x="185" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">名宛人（なあてにん）＝売った側</text>
+  <text x="185" y="108" text-anchor="middle" font-size="20" fill="#3B82F6">🏪</text>
+  <text x="185" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">受取手形（資産）が発生</text>
+  <text x="185" y="158" text-anchor="middle" font-size="11" fill="#1E3A8A">手形を受け取った → 後でお金をもらう権利</text>
+  <!-- 仕訳 -->
+  <rect x="50" y="172" width="270" height="40" rx="6" fill="#DBEAFE"/>
+  <text x="185" y="190" text-anchor="middle" font-size="11" fill="#1D4ED8">（商品売上時）</text>
+  <text x="185" y="206" text-anchor="middle" font-size="11" fill="#1D4ED8">受取手形 ／ 売　上</text>
+  <!-- 満期 -->
+  <rect x="50" y="220" width="270" height="30" rx="6" fill="#BFDBFE"/>
+  <text x="185" y="239" text-anchor="middle" font-size="10.5" fill="#1D4ED8">満期 → 受取手形 消去 ／ 当座預金</text>
+
+  <!-- 振出人（負債側）box -->
+  <rect x="420" y="56" width="310" height="210" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="420" y="56" width="310" height="36" rx="10" fill="#EF4444"/>
+  <rect x="420" y="82" width="310" height="10" fill="#EF4444"/>
+  <text x="575" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">振出人（ふりだしにん）＝買った側</text>
+  <text x="575" y="108" text-anchor="middle" font-size="20" fill="#EF4444">🏭</text>
+  <text x="575" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="#991B1B">支払手形（負債）が発生</text>
+  <text x="575" y="158" text-anchor="middle" font-size="11" fill="#7F1D1D">手形を振り出した → 後でお金を払う義務</text>
+  <!-- 仕訳 -->
+  <rect x="440" y="172" width="270" height="40" rx="6" fill="#FEE2E2"/>
+  <text x="575" y="190" text-anchor="middle" font-size="11" fill="#991B1B">（商品仕入時）</text>
+  <text x="575" y="206" text-anchor="middle" font-size="11" fill="#991B1B">仕　入 ／ 支払手形</text>
+  <!-- 満期 -->
+  <rect x="440" y="220" width="270" height="30" rx="6" fill="#FCA5A5"/>
+  <text x="575" y="239" text-anchor="middle" font-size="10.5" fill="#7F1D1D">満期 → 支払手形 消去 ／ 当座預金</text>
+
+  <!-- arrow between -->
+  <text x="380" y="152" text-anchor="middle" font-size="13" font-weight="700" fill="#64748B">手形</text>
+  <polygon points="348,140 340,134 340,146" fill="#64748B"/>
+  <line x1="340" y1="140" x2="420" y2="140" stroke="#64748B" stroke-width="2"/>
+  <polygon points="412,140 420,134 420,146" fill="#64748B"/>
+  <text x="380" y="170" text-anchor="middle" font-size="10" fill="#94A3B8">振り出す ↔ 受け取る</text>
+
+  <!-- Electronic version row -->
+  <rect x="30" y="282" width="700" height="70" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="380" y="302" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">💻 電子版：電子記録債権・電子記録債務</text>
+  <text x="230" y="326" text-anchor="middle" font-size="11" fill="#15803D">電子記録債権（資産）</text>
+  <text x="230" y="342" text-anchor="middle" font-size="10.5" fill="#166534">← 受取手形と同じ働き</text>
+  <line x1="380" y1="286" x2="380" y2="348" stroke="#86EFAC" stroke-width="1"/>
+  <text x="530" y="326" text-anchor="middle" font-size="11" fill="#15803D">電子記録債務（負債）</text>
+  <text x="530" y="342" text-anchor="middle" font-size="10.5" fill="#166534">← 支払手形と同じ働き</text>
+
+  <!-- bottom note -->
+  <text x="380" y="376" text-anchor="middle" font-size="10.5" fill="#94A3B8">手形は約束手形（一対一）と為替手形（三者間）の2種類があるが、簿記3級では約束手形が主な出題</text>
+</svg>
