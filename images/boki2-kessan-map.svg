@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">決算整理——6大整理事項と財務諸表への影響</text>
+
+  <!-- 6 items grid: 2 rows × 3 cols -->
+  <!-- Row 1 -->
+  <!-- 1: 売上原価 -->
+  <rect x="30" y="52" width="222" height="110" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="30" y="52" width="222" height="30" rx="10" fill="#F97316"/>
+  <rect x="30" y="72" width="222" height="10" fill="#F97316"/>
+  <text x="141" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">① 売上原価の算定</text>
+  <text x="141" y="98" text-anchor="middle" font-size="10.5" fill="#C2410C">しくりくりし</text>
+  <text x="141" y="114" text-anchor="middle" font-size="10" fill="#374151">仕入 ／ 繰越商品（期首戻し）</text>
+  <text x="141" y="128" text-anchor="middle" font-size="10" fill="#374151">繰越商品 ／ 仕入（期末振替）</text>
+  <text x="141" y="148" text-anchor="middle" font-size="9.5" fill="#64748B">→ P/L：売上原価が確定</text>
+
+  <!-- 2: 減価償却 -->
+  <rect x="269" y="52" width="222" height="110" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="269" y="52" width="222" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="269" y="72" width="222" height="10" fill="#3B82F6"/>
+  <text x="380" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">② 減価償却</text>
+  <text x="380" y="98" text-anchor="middle" font-size="10.5" fill="#1E40AF">減価償却費 ／ 減価償却累計額</text>
+  <text x="380" y="114" text-anchor="middle" font-size="10" fill="#374151">定額法：取得原価×率</text>
+  <text x="380" y="128" text-anchor="middle" font-size="10" fill="#374151">定率法：帳簿価額×率</text>
+  <text x="380" y="148" text-anchor="middle" font-size="9.5" fill="#64748B">→ P/L：費用計上 / B/S：資産減少</text>
+
+  <!-- 3: 貸倒引当金 -->
+  <rect x="508" y="52" width="222" height="110" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="508" y="52" width="222" height="30" rx="10" fill="#7C3AED"/>
+  <rect x="508" y="72" width="222" height="10" fill="#7C3AED"/>
+  <text x="619" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">③ 貸倒引当金</text>
+  <text x="619" y="98" text-anchor="middle" font-size="10.5" fill="#5B21B6">貸倒引当金繰入 ／ 貸倒引当金</text>
+  <text x="619" y="114" text-anchor="middle" font-size="10" fill="#374151">差額補充法：残高との差額を繰入</text>
+  <text x="619" y="128" text-anchor="middle" font-size="10" fill="#374151">設定額 ＝ 受取手形・売掛金 × 率</text>
+  <text x="619" y="148" text-anchor="middle" font-size="9.5" fill="#64748B">→ P/L：費用 / B/S：債権から控除</text>
+
+  <!-- Row 2 -->
+  <!-- 4: 経過勘定 -->
+  <rect x="30" y="176" width="222" height="110" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="30" y="176" width="222" height="30" rx="10" fill="#EAB308"/>
+  <rect x="30" y="196" width="222" height="10" fill="#EAB308"/>
+  <text x="141" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">④ 経過勘定</text>
+  <text x="141" y="218" text-anchor="middle" font-size="10" fill="#374151">前払費用：支払済み未経過分</text>
+  <text x="141" y="234" text-anchor="middle" font-size="10" fill="#374151">未払費用：未払いの発生済み分</text>
+  <text x="141" y="250" text-anchor="middle" font-size="10" fill="#374151">前受収益・未収収益も対称に処理</text>
+  <text x="141" y="272" text-anchor="middle" font-size="9.5" fill="#64748B">→ 費用・収益を正しい期間に配分</text>
+
+  <!-- 5: 有価証券評価 -->
+  <rect x="269" y="176" width="222" height="110" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="269" y="176" width="222" height="30" rx="10" fill="#22C55E"/>
+  <rect x="269" y="196" width="222" height="10" fill="#22C55E"/>
+  <text x="380" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">⑤ 有価証券の評価</text>
+  <text x="380" y="218" text-anchor="middle" font-size="10" fill="#374151">売買目的：時価評価→有価証券評価損益</text>
+  <text x="380" y="234" text-anchor="middle" font-size="10" fill="#374151">満期保有目的：償却原価法（利息配分）</text>
+  <text x="380" y="250" text-anchor="middle" font-size="10" fill="#374151">その他：評価差額を純資産直入</text>
+  <text x="380" y="272" text-anchor="middle" font-size="9.5" fill="#64748B">→ 保有目的ごとに処理が異なる</text>
+
+  <!-- 6: 法人税等 -->
+  <rect x="508" y="176" width="222" height="110" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="508" y="176" width="222" height="30" rx="10" fill="#EF4444"/>
+  <rect x="508" y="196" width="222" height="10" fill="#EF4444"/>
+  <text x="619" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">⑥ 法人税等・消費税</text>
+  <text x="619" y="218" text-anchor="middle" font-size="10" fill="#374151">法人税等 ／ 未払法人税等</text>
+  <text x="619" y="234" text-anchor="middle" font-size="10" fill="#374151">仮受消費税 ／ 仮払消費税</text>
+  <text x="619" y="250" text-anchor="middle" font-size="10" fill="#374151">　　　　　 ／ 未払消費税（差額）</text>
+  <text x="619" y="272" text-anchor="middle" font-size="9.5" fill="#64748B">→ P/L：税費用 / B/S：未払負債</text>
+
+  <!-- Arrow: 6整理 → 財務諸表 -->
+  <rect x="30" y="302" width="700" height="56" rx="10" fill="#1E293B"/>
+  <text x="380" y="326" text-anchor="middle" font-size="12" font-weight="700" fill="#F8FAFC">6大整理を経て財務諸表が完成</text>
+  <text x="190" y="348" text-anchor="middle" font-size="11" fill="#94A3B8">損益計算書（P/L）</text>
+  <text x="380" y="348" text-anchor="middle" font-size="11" fill="#94A3B8">貸借対照表（B/S）</text>
+  <text x="570" y="348" text-anchor="middle" font-size="11" fill="#94A3B8">株主資本等変動計算書</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="372" width="700" height="36" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="388" text-anchor="middle" font-size="10.5" fill="#475569">💡 決算整理は「期中帳簿を正しい数字に修正する作業」。整理前残高試算表 → 整理 → 整理後残高試算表 → 財務諸表という流れ。</text>
+  <text x="380" y="404" text-anchor="middle" font-size="10.5" fill="#475569">第3問（精算表・財務諸表問題）では6大整理の仕訳を精算表上で処理するスピードが重要。</text>
+</svg>

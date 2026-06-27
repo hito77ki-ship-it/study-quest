@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">固定資産——取得→償却→除却・売却の全ライフサイクル</text>
+
+  <!-- Timeline -->
+  <line x1="50" y1="100" x2="710" y2="100" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="714,100 704,95 704,105" fill="#CBD5E1"/>
+
+  <!-- Point 1: 取得 -->
+  <line x1="100" y1="92" x2="100" y2="108" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="100" y="86" text-anchor="middle" font-size="10" fill="#3B82F6">取　得</text>
+
+  <!-- Point 2: 毎期償却 -->
+  <line x1="370" y1="92" x2="370" y2="108" stroke="#7C3AED" stroke-width="2.5"/>
+  <text x="370" y="86" text-anchor="middle" font-size="10" fill="#7C3AED">毎期償却</text>
+
+  <!-- Point 3: 除却・売却 -->
+  <line x1="640" y1="92" x2="640" y2="108" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="640" y="86" text-anchor="middle" font-size="10" fill="#EF4444">除却・売却</text>
+
+  <!-- Card 1: 取得 -->
+  <rect x="30" y="118" width="220" height="160" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="30" y="118" width="220" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="30" y="138" width="220" height="10" fill="#3B82F6"/>
+  <text x="140" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 取得時</text>
+  <text x="140" y="164" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">取得原価 ＝ 購入代価 ＋ 付随費用</text>
+  <text x="140" y="182" text-anchor="middle" font-size="10" fill="#374151">付随費用に含めるもの：</text>
+  <text x="140" y="198" text-anchor="middle" font-size="10" fill="#374151">引取運賃・据付費・手数料</text>
+  <text x="140" y="218" text-anchor="middle" font-size="10.5" fill="#1D4ED8">建物 ×× ／ 現金 ××</text>
+  <text x="140" y="236" text-anchor="middle" font-size="10" fill="#64748B">土地・建設仮勘定も同様に取得原価</text>
+  <text x="140" y="270" text-anchor="middle" font-size="10" fill="#94A3B8">修繕費は資本的支出か収益的支出かで判断</text>
+
+  <!-- Card 2: 毎期償却 -->
+  <rect x="270" y="118" width="220" height="160" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="270" y="118" width="220" height="30" rx="10" fill="#7C3AED"/>
+  <rect x="270" y="138" width="220" height="10" fill="#7C3AED"/>
+  <text x="380" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 毎期の減価償却</text>
+  <text x="380" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">定額法</text>
+  <rect x="290" y="168" width="180" height="26" rx="5" fill="#EDE9FE"/>
+  <text x="380" y="185" text-anchor="middle" font-size="10" fill="#5B21B6">（取得原価 − 残存価額）÷ 耐用年数</text>
+  <text x="380" y="208" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">定率法</text>
+  <rect x="290" y="214" width="180" height="26" rx="5" fill="#EDE9FE"/>
+  <text x="380" y="231" text-anchor="middle" font-size="10" fill="#5B21B6">期首帳簿価額 × 定率法償却率</text>
+  <text x="380" y="254" text-anchor="middle" font-size="10.5" fill="#5B21B6">減価償却費 ／ 減価償却累計額</text>
+  <text x="380" y="270" text-anchor="middle" font-size="10" fill="#64748B">B/S：取得原価 − 累計額 ＝ 帳簿価額</text>
+
+  <!-- Card 3: 除却・売却 -->
+  <rect x="510" y="118" width="220" height="160" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="510" y="118" width="220" height="30" rx="10" fill="#EF4444"/>
+  <rect x="510" y="138" width="220" height="10" fill="#EF4444"/>
+  <text x="620" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ 除却・売却時</text>
+  <text x="620" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#DC2626">売却損益の計算</text>
+  <rect x="530" y="168" width="180" height="26" rx="5" fill="#FEE2E2"/>
+  <text x="620" y="185" text-anchor="middle" font-size="10" fill="#DC2626">売却価額 − 帳簿価額 ＝ 売却損益</text>
+  <text x="620" y="208" text-anchor="middle" font-size="10" fill="#374151">現金 × × （売却価額）</text>
+  <text x="620" y="224" text-anchor="middle" font-size="10" fill="#374151">減価償却累計額 × ×</text>
+  <text x="620" y="240" text-anchor="middle" font-size="10" fill="#374151">　／ 備品 × × （取得原価）</text>
+  <text x="620" y="256" text-anchor="middle" font-size="10" fill="#DC2626">固定資産売却益or損（差額）</text>
+  <text x="620" y="272" text-anchor="middle" font-size="10" fill="#64748B">除却：除却損 ／ 固定資産（帳簿価額）</text>
+
+  <!-- Bottom: 期中取得・売却の月割計算 -->
+  <rect x="30" y="294" width="700" height="92" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="380" y="316" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">期中取得・売却のポイント——月割り計算</text>
+  <text x="55" y="338" font-size="10.5" fill="#374151">期中取得：当期の償却 ＝ 年間償却費 × 使用月数 ÷ 12</text>
+  <text x="55" y="356" font-size="10.5" fill="#374151">期中売却：売却月までの償却を計算 → 帳簿価額を確定 → 売却損益を算出</text>
+  <text x="55" y="374" font-size="10.5" fill="#374151">建設仮勘定：完成前の支出を一時計上 → 完成時に固定資産勘定へ振替</text>
+</svg>

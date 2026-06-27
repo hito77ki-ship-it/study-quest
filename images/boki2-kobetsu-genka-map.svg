@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">個別原価計算——製造指図書で注文ごとに原価を集計する</text>
+
+  <!-- 注文書 -->
+  <rect x="30" y="56" width="140" height="64" rx="8" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="100" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">注文書</text>
+  <text x="100" y="96" text-anchor="middle" font-size="10" fill="#92400E">得意先からの</text>
+  <text x="100" y="110" text-anchor="middle" font-size="10" fill="#92400E">注文が入る</text>
+
+  <!-- Arrow -->
+  <polygon points="188,88 176,83 176,93" fill="#64748B"/>
+  <line x1="170" y1="88" x2="176" y2="88" stroke="#64748B" stroke-width="1.5"/>
+
+  <!-- 製造指図書 -->
+  <rect x="188" y="56" width="180" height="64" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="278" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">製造指図書 発行</text>
+  <text x="278" y="92" text-anchor="middle" font-size="10" fill="#374151">指図書No. ×××</text>
+  <text x="278" y="108" text-anchor="middle" font-size="10" fill="#374151">各注文に1枚ずつ発行</text>
+
+  <!-- Arrow -->
+  <polygon points="386,88 374,83 374,93" fill="#64748B"/>
+  <line x1="368" y1="88" x2="374" y2="88" stroke="#64748B" stroke-width="1.5"/>
+
+  <!-- 原価集計 central box -->
+  <rect x="386" y="42" width="200" height="92" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="486" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">指図書ごとに原価集計</text>
+  <text x="486" y="82" text-anchor="middle" font-size="10.5" fill="#374151">直接材料費（DM）</text>
+  <text x="486" y="98" text-anchor="middle" font-size="10.5" fill="#374151">直接労務費（DL）</text>
+  <text x="486" y="114" text-anchor="middle" font-size="10.5" fill="#374151">製造間接費（OHは配賦）</text>
+  <text x="486" y="128" text-anchor="middle" font-size="10" fill="#64748B">↑ 直接経費もあれば加算</text>
+
+  <!-- Arrow right to 完成 -->
+  <polygon points="600,88 588,83 588,93" fill="#22C55E"/>
+  <line x1="586" y1="88" x2="588" y2="88" stroke="#22C55E" stroke-width="1.5"/>
+  <rect x="600" y="56" width="130" height="64" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="665" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">製品完成</text>
+  <text x="665" y="98" text-anchor="middle" font-size="10" fill="#374151">仕掛品 → 製品</text>
+  <text x="665" y="112" text-anchor="middle" font-size="10" fill="#374151">勘定へ振替</text>
+
+  <!-- 3 cost type breakdown -->
+  <text x="380" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">製造指図書に集計する3種類の原価</text>
+
+  <!-- 直接材料費 -->
+  <rect x="30" y="182" width="215" height="120" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="30" y="182" width="215" height="28" rx="10" fill="#EAB308"/>
+  <rect x="30" y="200" width="215" height="10" fill="#EAB308"/>
+  <text x="137" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">直接材料費</text>
+  <text x="137" y="224" text-anchor="middle" font-size="10.5" fill="#374151">その製品だけに使った材料</text>
+  <text x="137" y="242" text-anchor="middle" font-size="10" fill="#713F12">→ 直接指図書に賦課</text>
+  <rect x="50" y="252" width="175" height="40" rx="5" fill="#FEF9C3"/>
+  <text x="137" y="268" text-anchor="middle" font-size="10" fill="#713F12">材料出庫時に指図書Noを</text>
+  <text x="137" y="282" text-anchor="middle" font-size="10" fill="#713F12">記入して集計する</text>
+
+  <!-- 直接労務費 -->
+  <rect x="273" y="182" width="214" height="120" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="273" y="182" width="214" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="273" y="200" width="214" height="10" fill="#3B82F6"/>
+  <text x="380" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">直接労務費</text>
+  <text x="380" y="224" text-anchor="middle" font-size="10.5" fill="#374151">その製品だけに費やした作業時間</text>
+  <text x="380" y="242" text-anchor="middle" font-size="10" fill="#1E40AF">→ 直接指図書に賦課</text>
+  <rect x="293" y="252" width="174" height="40" rx="5" fill="#DBEAFE"/>
+  <text x="380" y="268" text-anchor="middle" font-size="10" fill="#1E40AF">作業時間票で指図書ごとの</text>
+  <text x="380" y="282" text-anchor="middle" font-size="10" fill="#1E40AF">直接作業時間を記録する</text>
+
+  <!-- 製造間接費 -->
+  <rect x="515" y="182" width="215" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="515" y="182" width="215" height="28" rx="10" fill="#EF4444"/>
+  <rect x="515" y="200" width="215" height="10" fill="#EF4444"/>
+  <text x="622" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">製造間接費</text>
+  <text x="622" y="224" text-anchor="middle" font-size="10.5" fill="#374151">複数製品で共通の間接費用</text>
+  <text x="622" y="242" text-anchor="middle" font-size="10" fill="#DC2626">→ 配賦基準で各指図書に配賦</text>
+  <rect x="535" y="252" width="175" height="40" rx="5" fill="#FEE2E2"/>
+  <text x="622" y="268" text-anchor="middle" font-size="10" fill="#DC2626">予定配賦率 × 直接作業時間</text>
+  <text x="622" y="282" text-anchor="middle" font-size="10" fill="#DC2626">= 各指図書への配賦額</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="316" width="700" height="50" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="334" text-anchor="middle" font-size="11" fill="#475569">💡 個別原価計算 ＝ 注文ごとに原価を「積み上げる」方式。総合原価計算は「平均する」方式。受注生産（建設・特注機械）は個別、大量生産（飲料・食品）は総合。</text>
+  <text x="380" y="354" text-anchor="middle" font-size="10.5" fill="#475569">完成時：仕掛品 ／ 材料・賃金・製造間接費 → 引渡時：売上原価 ／ 製品</text>
+</svg>

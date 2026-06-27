@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">工業簿記 第4問・第5問——解法の王道フロー</text>
+
+  <!-- Step flow: 5 steps -->
+  <!-- Step 1 -->
+  <rect x="30" y="58" width="126" height="100" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="30" y="58" width="126" height="28" rx="10" fill="#F97316"/>
+  <rect x="30" y="76" width="126" height="10" fill="#F97316"/>
+  <text x="93" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 1</text>
+  <text x="93" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">問題文を読む</text>
+  <text x="93" y="118" text-anchor="middle" font-size="10" fill="#374151">何を聞かれているか</text>
+  <text x="93" y="132" text-anchor="middle" font-size="10" fill="#374151">（仕訳?計算?）確認</text>
+  <text x="93" y="148" text-anchor="middle" font-size="10" fill="#64748B">論点を特定する</text>
+
+  <polygon points="166,108 156,102 156,114" fill="#CBD5E1"/>
+  <line x1="156" y1="108" x2="160" y2="108" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Step 2 -->
+  <rect x="166" y="58" width="126" height="100" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="166" y="58" width="126" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="166" y="76" width="126" height="10" fill="#3B82F6"/>
+  <text x="229" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 2</text>
+  <text x="229" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">原価の分類</text>
+  <text x="229" y="118" text-anchor="middle" font-size="10" fill="#374151">材料費・労務費・経費</text>
+  <text x="229" y="132" text-anchor="middle" font-size="10" fill="#374151">直接 vs 間接に仕分け</text>
+  <text x="229" y="148" text-anchor="middle" font-size="10" fill="#64748B">間接費は配賦へ</text>
+
+  <polygon points="302,108 292,102 292,114" fill="#CBD5E1"/>
+  <line x1="292" y1="108" x2="296" y2="108" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Step 3 -->
+  <rect x="302" y="58" width="126" height="100" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="302" y="58" width="126" height="28" rx="10" fill="#7C3AED"/>
+  <rect x="302" y="76" width="126" height="10" fill="#7C3AED"/>
+  <text x="365" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 3</text>
+  <text x="365" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">T字勘定を書く</text>
+  <text x="365" y="118" text-anchor="middle" font-size="10" fill="#374151">材料／賃金・給料</text>
+  <text x="365" y="132" text-anchor="middle" font-size="10" fill="#374151">製造間接費／仕掛品</text>
+  <text x="365" y="148" text-anchor="middle" font-size="10" fill="#374151">製品の流れを追う</text>
+
+  <polygon points="438,108 428,102 428,114" fill="#CBD5E1"/>
+  <line x1="428" y1="108" x2="432" y2="108" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Step 4 -->
+  <rect x="438" y="58" width="126" height="100" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="438" y="58" width="126" height="28" rx="10" fill="#EAB308"/>
+  <rect x="438" y="76" width="126" height="10" fill="#EAB308"/>
+  <text x="501" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 4</text>
+  <text x="501" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">数値を計算</text>
+  <text x="501" y="118" text-anchor="middle" font-size="10" fill="#374151">消費額・配賦額・</text>
+  <text x="501" y="132" text-anchor="middle" font-size="10" fill="#374151">差異・完成品原価</text>
+  <text x="501" y="148" text-anchor="middle" font-size="10" fill="#374151">を順番に埋める</text>
+
+  <polygon points="574,108 564,102 564,114" fill="#CBD5E1"/>
+  <line x1="564" y1="108" x2="568" y2="108" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Step 5 -->
+  <rect x="574" y="58" width="156" height="100" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="574" y="58" width="156" height="28" rx="10" fill="#22C55E"/>
+  <rect x="574" y="76" width="156" height="10" fill="#22C55E"/>
+  <text x="652" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 5</text>
+  <text x="652" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">解答欄に転記</text>
+  <text x="652" y="118" text-anchor="middle" font-size="10" fill="#374151">仕訳・計算結果を</text>
+  <text x="652" y="132" text-anchor="middle" font-size="10" fill="#374151">丁寧に転記する</text>
+  <text x="652" y="148" text-anchor="middle" font-size="10" fill="#64748B">符号ミスに注意</text>
+
+  <!-- Middle: 勘定の流れ -->
+  <text x="380" y="192" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">工業簿記の勘定フロー（T字勘定のイメージ）</text>
+
+  <!-- Flow: 材料 → 仕掛品 → 製品 → 売上原価 -->
+  <rect x="30" y="208" width="110" height="60" rx="8" fill="#FFF7ED" stroke="#FDB97D" stroke-width="1.5"/>
+  <text x="85" y="233" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">材　料</text>
+  <text x="85" y="251" text-anchor="middle" font-size="9.5" fill="#374151">直接→仕掛品</text>
+  <text x="85" y="263" text-anchor="middle" font-size="9.5" fill="#374151">間接→製造間接費</text>
+
+  <polygon points="154,238 144,233 144,243" fill="#64748B"/>
+  <line x1="140" y1="238" x2="144" y2="238" stroke="#64748B" stroke-width="1.5"/>
+
+  <rect x="154" y="208" width="110" height="60" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="209" y="233" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">賃金・給料</text>
+  <text x="209" y="251" text-anchor="middle" font-size="9.5" fill="#374151">直接→仕掛品</text>
+  <text x="209" y="263" text-anchor="middle" font-size="9.5" fill="#374151">間接→製造間接費</text>
+
+  <polygon points="278,238 268,233 268,243" fill="#64748B"/>
+
+  <rect x="278" y="208" width="110" height="60" rx="8" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="333" y="233" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">製造間接費</text>
+  <text x="333" y="251" text-anchor="middle" font-size="9.5" fill="#374151">↓配賦</text>
+  <text x="333" y="263" text-anchor="middle" font-size="9.5" fill="#374151">→仕掛品へ</text>
+
+  <polygon points="402,238 392,233 392,243" fill="#64748B"/>
+
+  <rect x="402" y="208" width="110" height="60" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="457" y="233" text-anchor="middle" font-size="10.5" font-weight="700" fill="#713F12">仕 掛 品</text>
+  <text x="457" y="251" text-anchor="middle" font-size="9.5" fill="#374151">3費用集積</text>
+  <text x="457" y="263" text-anchor="middle" font-size="9.5" fill="#374151">→完成で製品へ</text>
+
+  <polygon points="526,238 516,233 516,243" fill="#22C55E"/>
+  <line x1="512" y1="238" x2="516" y2="238" stroke="#22C55E" stroke-width="1.5"/>
+
+  <rect x="526" y="208" width="100" height="60" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="576" y="233" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">製　品</text>
+  <text x="576" y="251" text-anchor="middle" font-size="9.5" fill="#374151">完成品</text>
+  <text x="576" y="263" text-anchor="middle" font-size="9.5" fill="#374151">→売上時に費用</text>
+
+  <polygon points="640,238 630,233 630,243" fill="#EF4444"/>
+  <line x1="626" y1="238" x2="630" y2="238" stroke="#EF4444" stroke-width="1.5"/>
+
+  <rect x="640" y="208" width="100" height="60" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="690" y="233" text-anchor="middle" font-size="10.5" font-weight="700" fill="#DC2626">売上原価</text>
+  <text x="690" y="251" text-anchor="middle" font-size="9.5" fill="#374151">販売した分</text>
+  <text x="690" y="263" text-anchor="middle" font-size="9.5" fill="#374151">→P/Lへ</text>
+
+  <!-- Bottom tips -->
+  <rect x="30" y="284" width="700" height="82" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="304" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">演習でよく出る計算パターン</text>
+  <text x="55" y="324" font-size="10.5" fill="#475569">・材料消費額：先入先出法 or 平均法で単価を計算してから消費量を掛ける</text>
+  <text x="55" y="340" font-size="10.5" fill="#475569">・製造間接費配賦：予定配賦率 × 直接作業時間（または機械時間）</text>
+  <text x="55" y="356" font-size="10.5" fill="#475569">・仕掛品の計算：月初仕掛品 ＋ 当月投入 − 月末仕掛品 ＝ 完成品原価</text>
+</svg>
