@@ -1671,6 +1671,38 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
 
+/* ── 純資産・剰余金配当記事 (boki2-junshisan) 固有コンポーネント ダークモード ── */
+/* group-map (2グループ) */
+html[data-theme="dark"] .gm-card.blue{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .gm-card.orange{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .gm-card.blue .gm-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .gm-card.orange .gm-title{color:#F6AD55 !important;}
+html[data-theme="dark"] .gm-item{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .gm-item .gm-name{color:#F8FAFC !important;}
+html[data-theme="dark"] .gm-item .gm-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .gm-item .gm-desc{color:#CCD6E5 !important;}
+/* minus-box (自己株式) */
+html[data-theme="dark"] .minus-box{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.4) !important;}
+html[data-theme="dark"] .minus-badge{background:rgba(252,129,129,.6) !important;}
+html[data-theme="dark"] .minus-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .minus-body strong{color:#FC8181 !important;}
+/* haito-flow (配当フロー) */
+html[data-theme="dark"] .haito-flow{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .hf-title{color:#F6AD55 !important;}
+html[data-theme="dark"] .hf-center{color:#F6AD55 !important;}
+html[data-theme="dark"] .hf-arrow-row{color:#F6AD55 !important;}
+html[data-theme="dark"] .hf-card.red{background:rgba(252,129,129,.10) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .hf-card.teal{background:rgba(79,209,197,.08) !important;border-color:rgba(79,209,197,.35) !important;}
+html[data-theme="dark"] .hf-card.red .hf-name{color:#FC8181 !important;}
+html[data-theme="dark"] .hf-card.teal .hf-name{color:#81E6D9 !important;}
+html[data-theme="dark"] .hf-card .hf-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .hf-card.red .hf-amt{color:#FC8181 !important;}
+html[data-theme="dark"] .hf-card.teal .hf-amt{color:#81E6D9 !important;}
+html[data-theme="dark"] .hf-card .hf-note{color:#9BA7BB !important;}
+html[data-theme="dark"] .hf-sum{background:rgba(255,255,255,.05) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .hf-sum strong{color:#F8FAFC !important;}
+/* ── ここまで ── */
+
 /* ── 工業簿記4記事 共通コンポーネント ダークモード ── */
 /* mondai (boki2版 — liも対象) */
 html[data-theme="dark"] .mondai li{color:#CCD6E5 !important;}
