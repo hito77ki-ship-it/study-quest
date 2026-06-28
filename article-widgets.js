@@ -1895,6 +1895,33 @@ html[data-theme="dark"] .bm-block.i3{background:rgba(217,119,6,.10) !important;b
 html[data-theme="dark"] .bm-calc{color:#CCD6E5 !important;}
 html[data-theme="dark"] .bm-desc{color:#8899AA !important;}
 html[data-theme="dark"] .bm-total{background:rgba(124,58,237,.10) !important;border-color:rgba(124,58,237,.3) !important;color:#C4B5FD !important;}
+/* ── カスタムボックス類のダークモード対応 ── */
+html[data-theme="dark"] .container .warning-box{background:linear-gradient(180deg,#2A1D09,#1C1306) !important;border-color:rgba(245,158,11,.45) !important;}
+html[data-theme="dark"] .container .warning-box p,html[data-theme="dark"] .container .warning-box .wb-title{color:#FDE68A !important;}
+html[data-theme="dark"] .container .trap-box{background:linear-gradient(180deg,#2A0F0F,#1C0A0A) !important;border-color:rgba(252,129,129,.4) !important;}
+html[data-theme="dark"] .container .trap-box p,html[data-theme="dark"] .container .trap-box .trap-title{color:#FCA5A5 !important;}
+html[data-theme="dark"] .container .noneed-box{background:linear-gradient(180deg,#0C2414,#091A0E) !important;border-color:rgba(104,211,145,.3) !important;}
+html[data-theme="dark"] .container .noneed-box p,html[data-theme="dark"] .container .noneed-box .nn-title{color:#86EFAC !important;}
+html[data-theme="dark"] .container .logic-box{background:linear-gradient(180deg,#0C1A2E,#091422) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .container .logic-box p,html[data-theme="dark"] .container .logic-box .lb-title{color:#93C5FD !important;}
+html[data-theme="dark"] .container .checklist li{background:linear-gradient(180deg,#0C2414,#091A0E) !important;border-color:rgba(104,211,145,.22) !important;color:#86EFAC !important;}
+html[data-theme="dark"] .container .rule-card.self-use,html[data-theme="dark"] .container .rule-card.self{background:linear-gradient(180deg,#0C2414,#091A0E) !important;border-color:rgba(104,211,145,.3) !important;}
+html[data-theme="dark"] .container .rule-card.market,html[data-theme="dark"] .container .rule-card.sell{background:linear-gradient(180deg,#0C1A2E,#091422) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .container .rule-card p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .container .rule-card .rc-title{color:#B6E27C !important;}
+html[data-theme="dark"] .container .calc-box em{background:rgba(99,102,241,.28) !important;color:#A5B4FC !important;}
+html[data-theme="dark"] .container .calc-box .calc-formula{color:#E8EEF8 !important;}
+html[data-theme="dark"] .container .calc-box .calc-note{color:#9BA7BB !important;}
+html[data-theme="dark"] .container .classify-table .type-r,html[data-theme="dark"] .container .classify-table .type-g,html[data-theme="dark"] .container .classify-table .type-b{background:transparent !important;}
+html[data-theme="dark"] .container .classify-table td{color:#CCD6E5 !important;}
+html[data-theme="dark"] .container .adj-col{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.2) !important;}
+html[data-theme="dark"] .container .adj-col td{color:#CCD6E5 !important;background:transparent !important;}
+html[data-theme="dark"] .container .adj-col .adj-total td{background:rgba(255,255,255,.06) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .container .adj-col-title.bank{background:#1565C0 !important;}
+html[data-theme="dark"] .container .adj-col-title.co{background:#276749 !important;}
+html[data-theme="dark"] .container .pattern-table td{color:#CCD6E5 !important;}
+html[data-theme="dark"] .container .badge-bank,html[data-theme="dark"] .container .badge-co{color:#fff !important;}
+html[data-theme="dark"] .container .badge-need,html[data-theme="dark"] .container .badge-noneed{color:#fff !important;}
 /* ── ここまで ── */
 `;
   document.head.appendChild(s);
