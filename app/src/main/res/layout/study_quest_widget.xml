@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/study_quest_widget_bg"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/widgetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Study Quest"
+        android:textColor="#1A202C"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/widgetSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="今日の学習をすぐ記録"
+        android:textColor="#4A5568"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/widgetQuickLog"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/study_quest_widget_primary_btn"
+        android:text="一言で記録"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/widgetRecord15"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/study_quest_widget_secondary_btn"
+            android:text="+15分"
+            android:textColor="#1A202C"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/widgetRecord30"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/study_quest_widget_secondary_btn"
+            android:text="+30分"
+            android:textColor="#1A202C"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/widgetRecord60"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/study_quest_widget_secondary_btn"
+            android:text="+1時間"
+            android:textColor="#1A202C"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

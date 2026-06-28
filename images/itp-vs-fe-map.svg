@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">ITパスポート vs 基本情報技術者——比較と選び方</text>
+  <!-- Headers -->
+  <rect x="20" y="52" width="256" height="34" rx="6" fill="#0369A1"/>
+  <text x="148" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">ITパスポート（iパス）</text>
+  <rect x="284" y="52" width="192" height="34" rx="6" fill="#475569"/>
+  <text x="380" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">比較項目</text>
+  <rect x="484" y="52" width="256" height="34" rx="6" fill="#7C3AED"/>
+  <text x="612" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">基本情報技術者（FE）</text>
+  <!-- Rows -->
+  <rect x="20" y="94" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="148" y="117" text-anchor="middle" font-size="11" fill="#0369A1">IPA レベル1</text>
+  <rect x="284" y="94" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">難易度</text>
+  <rect x="484" y="94" width="256" height="36" rx="4" fill="#EDE9FE"/>
+  <text x="612" y="117" text-anchor="middle" font-size="11" fill="#7C3AED">IPA レベル2</text>
+
+  <rect x="20" y="136" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="148" y="159" text-anchor="middle" font-size="11" fill="#0369A1">CBT・全国随時受験</text>
+  <rect x="284" y="136" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="159" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">試験形式</text>
+  <rect x="484" y="136" width="256" height="36" rx="4" fill="#EDE9FE"/>
+  <text x="612" y="159" text-anchor="middle" font-size="11" fill="#7C3AED">CBT・全国随時受験</text>
+
+  <rect x="20" y="178" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="148" y="201" text-anchor="middle" font-size="11" fill="#0369A1">約50〜60%</text>
+  <rect x="284" y="178" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="201" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">合格率</text>
+  <rect x="484" y="178" width="256" height="36" rx="4" fill="#EDE9FE"/>
+  <text x="612" y="201" text-anchor="middle" font-size="11" fill="#7C3AED">約35〜45%</text>
+
+  <rect x="20" y="220" width="256" height="36" rx="4" fill="#E0F2FE"/>
+  <text x="148" y="243" text-anchor="middle" font-size="11" fill="#0369A1">30〜60時間</text>
+  <rect x="284" y="220" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="243" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">必要勉強時間</text>
+  <rect x="484" y="220" width="256" height="36" rx="4" fill="#EDE9FE"/>
+  <text x="612" y="243" text-anchor="middle" font-size="11" fill="#7C3AED">100〜200時間</text>
+
+  <rect x="20" y="262" width="256" height="44" rx="4" fill="#BAE6FD"/>
+  <text x="148" y="280" text-anchor="middle" font-size="11" fill="#0369A1">IT全般の基礎知識を証明</text>
+  <text x="148" y="297" text-anchor="middle" font-size="10" fill="#0369A1">就活・非エンジニア職のアピール</text>
+  <rect x="284" y="262" width="192" height="44" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">強み・用途</text>
+  <rect x="484" y="262" width="256" height="44" rx="4" fill="#DDD6FE"/>
+  <text x="612" y="280" text-anchor="middle" font-size="11" fill="#7C3AED">ITエンジニアの登竜門・必須資格</text>
+  <text x="612" y="297" text-anchor="middle" font-size="10" fill="#7C3AED">アルゴリズム・プログラミング力の証明</text>
+
+  <rect x="20" y="316" width="256" height="36" rx="4" fill="#BAE6FD"/>
+  <text x="148" y="339" text-anchor="middle" font-size="11" fill="#0369A1">IT未経験・文系・新社会人</text>
+  <rect x="284" y="316" width="192" height="36" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="339" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">向いている人</text>
+  <rect x="484" y="316" width="256" height="36" rx="4" fill="#DDD6FE"/>
+  <text x="612" y="339" text-anchor="middle" font-size="11" fill="#7C3AED">エンジニア志望・IT就職・開発職</text>
+
+  <rect x="20" y="362" width="720" height="30" rx="8" fill="#1E293B"/>
+  <rect x="28" y="369" width="330" height="16" rx="4" fill="#0369A1"/>
+  <text x="193" y="381" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">IT知識ゼロからのスタート → iパスから</text>
+  <rect x="402" y="369" width="330" height="16" rx="4" fill="#7C3AED"/>
+  <text x="567" y="381" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">エンジニアとして働きたい → FEへ直行もあり</text>
+</svg>

@@ -52,6 +52,20 @@ tr:nth-child(even) td{background:var(--light);}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.quick-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 34px;}
+.quick-card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);padding:16px;}
+.quick-card__label{font-size:10px;color:var(--green2);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.quick-card__value{font-size:18px;color:var(--text);font-weight:700;line-height:1.45;margin-bottom:4px;}
+.quick-card__note{font-size:11px;color:var(--muted);line-height:1.65;}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 28px;}
+.book-card{display:block;padding:16px;color:inherit;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);transition:transform .18s,border-color .18s;}
+.book-card:hover{transform:translateY(-2px);border-color:var(--green);text-decoration:none;}
+.book-card__kicker{font-size:10px;color:var(--green2);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.book-card__title{font-size:13px;font-weight:700;color:var(--text);line-height:1.55;}
+.book-card__desc{font-size:12px;color:var(--muted);line-height:1.65;margin-top:8px;}
+.book-card__cta{display:inline-flex;margin-top:12px;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:7px 13px;}
+.book-note{font-size:12px;color:var(--muted);margin-top:-4px;}
+@media(max-width:640px){.quick-summary,.book-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -62,6 +76,18 @@ footer a{font-size:12px;color:#4A5568;margin:0 10px;}footer p{font-size:11px;col
   <h1>ITパスポートの勉強時間・独学合格ガイド【2026年版】</h1>
   <p class="meta">更新日：2026年4月28日｜スタディクエスト編集部</p>
   <p class="lead">ITパスポート（iパス）は経済産業省が認定するITの基礎知識を証明する国家資格です。文系・理系問わず社会人・学生に人気で、就職活動や業務でのIT活用に役立ちます。合格率は約50%と比較的高く、正しい方法で学べば1〜3ヶ月で合格できます。</p>
+
+  <div class="quick-summary" aria-label="この記事の要点">
+    <div class="quick-card"><div class="quick-card__label">合格率</div><div class="quick-card__value">約50%</div><div class="quick-card__note">国家資格の中では合格しやすい。正しい学習で1〜3ヶ月で合格圏内に入れる。</div></div>
+    <div class="quick-card"><div class="quick-card__label">勉強時間</div><div class="quick-card__value">100〜200時間</div><div class="quick-card__note">IT初心者の目安。IT経験者なら50〜100時間。1日1時間で2ヶ月が基準。</div></div>
+    <div class="quick-card"><div class="quick-card__label">試験方式</div><div class="quick-card__value">CBT 随時受験</div><div class="quick-card__note">好きなタイミングで受験できる。申込から最短3日で受験設定が可能。</div></div>
+  </div>
+
+  <figure>
+    <img src="images/itp-map.svg" alt="ITパスポート試験（iパス）全体像：3分野の構成と出題比率・合格戦略" style="max-width:100%;height:auto;" loading="lazy">
+    <figcaption>ITパスポート試験の3分野構成（ストラテジ35問・マネジメント20問・テクノロジ45問）と攻略ポイント</figcaption>
+  </figure>
+  <p>ITパスポート試験は3つの分野から構成されており、それぞれの出題数と難易度を把握することが効率的な合格への近道です。</p>
 
   <h2>ITパスポートの基本情報</h2>
   <table>
@@ -100,12 +126,34 @@ footer a{font-size:12px;color:#4A5568;margin:0 10px;}footer p{font-size:11px;col
   <h3>マネジメント系</h3>
   <p>プロジェクトマネジメント（WBS・ガントチャート）、システム開発（ウォーターフォール・アジャイル）が主要テーマです。出題数が少ないので深追いせず基本用語だけ押さえましょう。</p>
 
-  <h2>おすすめテキスト</h2>
-  <ul>
-    <li><strong>いちばんやさしいITパスポート（技術評論社）：</strong>イラスト多めで初学者に最適。文系の方にも読みやすい。</li>
-    <li><strong>令和07年 イメージ&クレバー方式でよくわかる（技術評論社）：</strong>図解が豊富で視覚的に理解しやすい。</li>
-    <li><strong>ITパスポート過去問題集（翔泳社）：</strong>過去問演習の定番。直近の出題傾向を把握できる。</li>
-  </ul>
+  <h2>おすすめテキスト3選</h2>
+  <p class="book-note">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
+  <div class="book-grid">
+    <a class="book-card" href="https://amzn.to/4vDV3j8" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">初学者向け / イラスト重視</div>
+      <div class="book-card__title">いちばんやさしいITパスポート絶対合格の教科書</div>
+      <div class="book-card__desc">文系・IT初心者でも読みやすいイラスト多めの一冊。まず1周読んで全体像をつかむのに最適。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4vtnvEa" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">図解 / 4コマで覚える</div>
+      <div class="book-card__title">キタミ式イラストIT塾 ITパスポート</div>
+      <div class="book-card__desc">4コマ漫画とイラストでIT用語を解説。難しい技術用語が直感的に理解できる人気シリーズ。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4f3y3nH" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">講義形式 / わかりやすさNo.1</div>
+      <div class="book-card__title">かやのき先生のITパスポート教室（令和08年版）</div>
+      <div class="book-card__desc">先生と生徒の対話形式で解説。「なぜそうなるのか」が丁寧に説明されており、独学でも理解が深まりやすい。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4wz5LYn" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">次のステップ / AI資格</div>
+      <div class="book-card__title">生成AIパスポート テキスト＆問題集（GUGA公認 第4版対応）</div>
+      <div class="book-card__desc">ITパスポート合格後の次の目標としておすすめ。生成AIの活用・リスク・倫理を体系的に学べる注目資格。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+  </div>
 
   <div class="app-cta">
     <h3>⚔ ITパスポートの学習時間を記録しよう</h3>

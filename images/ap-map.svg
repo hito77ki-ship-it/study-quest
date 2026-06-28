@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">応用情報技術者試験（AP）の全体像と攻略</text>
+  <!-- Left: 試験構成 -->
+  <rect x="20" y="52" width="348" height="328" rx="8" fill="#F0F9FF"/>
+  <rect x="20" y="52" width="348" height="34" rx="8" fill="#0369A1"/>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成（IPA レベル3・年2回）</text>
+  <text x="40" y="106" text-anchor="start" font-size="12" font-weight="700" fill="#0369A1">午前（150分 80問・マーク式）</text>
+  <rect x="40" y="114" width="310" height="26" rx="4" fill="#E0F2FE"/>
+  <text x="50" y="131" text-anchor="start" font-size="10" fill="#374151">テクノロジ系・マネジメント系・ストラテジ系</text>
+  <rect x="40" y="146" width="310" height="26" rx="4" fill="#BAE6FD"/>
+  <text x="50" y="163" text-anchor="start" font-size="10" font-weight="700" fill="#0369A1">合格基準：60点以上（100点満点）</text>
+  <text x="40" y="196" text-anchor="start" font-size="12" font-weight="700" fill="#0369A1">午後（150分・11分野から4問選択・記述式）</text>
+  <!-- 11分野リスト -->
+  <rect x="40" y="204" width="148" height="24" rx="4" fill="#E0F2FE"/>
+  <text x="114" y="220" text-anchor="middle" font-size="10" fill="#374151">情報セキュリティ（必須）</text>
+  <rect x="200" y="204" width="148" height="24" rx="4" fill="#E0F2FE"/>
+  <text x="274" y="220" text-anchor="middle" font-size="10" fill="#374151">経営戦略</text>
+  <rect x="40" y="234" width="148" height="24" rx="4" fill="#BAE6FD"/>
+  <text x="114" y="250" text-anchor="middle" font-size="10" fill="#374151">プログラミング</text>
+  <rect x="200" y="234" width="148" height="24" rx="4" fill="#BAE6FD"/>
+  <text x="274" y="250" text-anchor="middle" font-size="10" fill="#374151">システムアーキテクチャ</text>
+  <rect x="40" y="264" width="148" height="24" rx="4" fill="#E0F2FE"/>
+  <text x="114" y="280" text-anchor="middle" font-size="10" fill="#374151">ネットワーク</text>
+  <rect x="200" y="264" width="148" height="24" rx="4" fill="#E0F2FE"/>
+  <text x="274" y="280" text-anchor="middle" font-size="10" fill="#374151">データベース</text>
+  <rect x="40" y="294" width="148" height="24" rx="4" fill="#BAE6FD"/>
+  <text x="114" y="310" text-anchor="middle" font-size="10" fill="#374151">組み込みシステム</text>
+  <rect x="200" y="294" width="148" height="24" rx="4" fill="#BAE6FD"/>
+  <text x="274" y="310" text-anchor="middle" font-size="10" fill="#374151">情報システム開発</text>
+  <rect x="120" y="324" width="148" height="24" rx="4" fill="#E0F2FE"/>
+  <text x="194" y="340" text-anchor="middle" font-size="10" fill="#374151">プロジェクトマネジメント</text>
+  <rect x="40" y="354" width="310" height="20" rx="4" fill="#0369A1"/>
+  <text x="194" y="368" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">合格率20〜25%  必要勉強時間200〜400時間</text>
+  <!-- Right: 攻略 -->
+  <rect x="384" y="52" width="356" height="328" rx="8" fill="#EFF6FF"/>
+  <rect x="384" y="52" width="356" height="34" rx="8" fill="#2563EB"/>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">合格のための学習ポイント</text>
+  <rect x="400" y="96" width="324" height="60" rx="6" fill="#DBEAFE"/>
+  <text x="562" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">① 午前：FEの過去問で共通部分を固める</text>
+  <text x="562" y="134" text-anchor="middle" font-size="10" fill="#374151">APの午前はFEと出題範囲が重なる。</text>
+  <text x="562" y="150" text-anchor="middle" font-size="10" fill="#374151">FE過去問＋AP午前過去問を7割以上正解できれば合格圏</text>
+  <rect x="400" y="166" width="324" height="60" rx="6" fill="#DBEAFE"/>
+  <text x="562" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">② 午後：得意分野3＋セキュリティで固める</text>
+  <text x="562" y="204" text-anchor="middle" font-size="10" fill="#374151">必須のセキュリティ＋自分の得意分野3つを決めて</text>
+  <text x="562" y="220" text-anchor="middle" font-size="10" fill="#374151">その4分野を集中的に過去問演習する</text>
+  <rect x="400" y="236" width="324" height="60" rx="6" fill="#DBEAFE"/>
+  <text x="562" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">③ 文系でも狙える分野を選ぶ</text>
+  <text x="562" y="274" text-anchor="middle" font-size="10" fill="#374151">経営戦略・プロジェクトマネジメント・サービスマネジメントは</text>
+  <text x="562" y="290" text-anchor="middle" font-size="10" fill="#374151">プログラミング知識がなくても高得点を狙いやすい</text>
+  <rect x="400" y="306" width="324" height="64" rx="6" fill="#BFDBFE"/>
+  <text x="562" y="326" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">④ 記述式対策：キーワードで答える練習</text>
+  <text x="562" y="344" text-anchor="middle" font-size="10" fill="#374151">APの午後は長文記述だが「キーワードが含まれているか」</text>
+  <text x="562" y="360" text-anchor="middle" font-size="10" fill="#374151">で採点される。模範解答から頻出ワードを抽出して覚える</text>
+</svg>

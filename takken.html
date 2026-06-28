@@ -71,6 +71,20 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.quick-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 34px;}
+.quick-card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);padding:16px;}
+.quick-card__label{font-size:10px;color:var(--green2);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.quick-card__value{font-size:18px;color:var(--text);font-weight:700;line-height:1.45;margin-bottom:4px;}
+.quick-card__note{font-size:11px;color:var(--muted);line-height:1.65;}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 28px;}
+.book-card{display:block;padding:16px;color:inherit;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);transition:transform .18s,border-color .18s;}
+.book-card:hover{transform:translateY(-2px);border-color:var(--green);text-decoration:none;}
+.book-card__kicker{font-size:10px;color:var(--green2);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.book-card__title{font-size:13px;font-weight:700;color:var(--text);line-height:1.55;}
+.book-card__desc{font-size:12px;color:var(--muted);line-height:1.65;margin-top:8px;}
+.book-card__cta{display:inline-flex;margin-top:12px;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:7px 13px;}
+.book-note{font-size:12px;color:var(--muted);margin-top:-4px;}
+@media(max-width:640px){.quick-summary,.book-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -92,6 +106,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">更新日：2026年4月28日｜スタディクエスト編集部</p>
 
   <p class="lead">宅地建物取引士（宅建）は不動産業界の必携資格で、毎年約20万人が受験する人気試験です。合格率は約15〜17%と決して易しくありませんが、独学でも正しいスケジュールと戦略で合格は十分可能です。2026年10月の試験に向けて、今から始める独学スケジュールを徹底解説します。</p>
+
+  <div class="quick-summary" aria-label="この記事の要点">
+    <div class="quick-card"><div class="quick-card__label">合格率</div><div class="quick-card__value">15〜17%</div><div class="quick-card__note">難関資格だが独学合格者多数。宅建業法を重点攻略すれば独学でも十分狙える。</div></div>
+    <div class="quick-card"><div class="quick-card__label">勉強時間</div><div class="quick-card__value">200〜300時間</div><div class="quick-card__note">1日2時間で約3〜5ヶ月。今から始めれば10月試験に余裕をもって間に合う。</div></div>
+    <div class="quick-card"><div class="quick-card__label">試験日</div><div class="quick-card__value">10月第3日曜日</div><div class="quick-card__note">2026年は10月18日（予定）。年1回のみのため準備期間の計画が重要。</div></div>
+  </div>
 
   <h2>宅建試験の基本情報</h2>
 
@@ -149,12 +169,28 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <strong>注意：</strong>宅建業法の改正が毎年あります。テキストは必ず2026年版（最新版）を使用してください。古いテキストの条文と試験問題が食い違うケースがあります。
   </div>
 
-  <h2>おすすめテキスト</h2>
-  <ul>
-    <li><strong>みんなが欲しかった！宅建士の教科書（TAC出版）：</strong>フルカラーでわかりやすい。初学者の定番。</li>
-    <li><strong>わかって合格る宅建士（TAC出版）：</strong>条文の解説が丁寧。権利関係が苦手な人におすすめ。</li>
-    <li><strong>出る順宅建士（LEC東京リーガルマインド）：</strong>過去問分析に基づいた構成で効率よく学べる。</li>
-  </ul>
+  <h2>おすすめテキスト3選</h2>
+  <p class="book-note">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
+  <div class="book-grid">
+    <a class="book-card" href="https://amzn.to/4ezoUTO" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">定番 / フルカラー3分冊</div>
+      <div class="book-card__title">らくらく宅建塾 宅建士基本テキスト 2026年版【フルカラー・分野別3分冊】</div>
+      <div class="book-card__desc">シリーズ累計100万部超のロングセラー。分野別に分冊できるため持ち運びやすく、スキマ時間の学習に最適。スマホ学習・赤シート対応。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4wio7wA" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">初学者向け / フルカラー図解</div>
+      <div class="book-card__title">みんなが欲しかった！宅建士の教科書 2026年度版（TAC出版）</div>
+      <div class="book-card__desc">滝澤ななみ式のわかりやすい解説が人気。フルカラーの図解で複雑な権利関係も視覚的に理解できる。アプリ付きでスマホ学習にも対応。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4oNK9EE" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">YouTuber監修 / 問題集特化</div>
+      <div class="book-card__title">あこ課長の宅建士 テキストいらずのすごい問題集 2026年度版</div>
+      <div class="book-card__desc">教育系YouTuberあこ課長監修。解説が口語的でテキストなしでも理解が進む。動画と組み合わせると効果絶大な問題集特化型の一冊。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+  </div>
 
   <h2>独学 vs 通信講座：どちらを選ぶか</h2>
   <table>

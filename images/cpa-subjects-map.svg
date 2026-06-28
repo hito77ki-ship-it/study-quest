@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="title desc">
+  <title id="title">財務会計論の計算と理論、短答式と論文式の全体マップ</title>
+  <desc id="desc">計算と理論が合体して財務会計論になり、短答式と論文式で問われ方が変わることを示す図解</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.48" stop-color="#fff7fb"/>
+      <stop offset="1" stop-color="#f7fff0"/>
+    </linearGradient>
+    <linearGradient id="job" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8f7ff"/>
+      <stop offset="1" stop-color="#dbffd8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#667085" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:42px;font-weight:800;fill:#1f2937;letter-spacing:0}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:20px;font-weight:600;fill:#64748b;letter-spacing:0}
+      .label{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:28px;font-weight:800;fill:#1f2937;letter-spacing:0}
+      .ruby{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:700;fill:#64748b;letter-spacing:0}
+      .body{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:18px;font-weight:600;fill:#334155;letter-spacing:0}
+      .small{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:600;fill:#475569;letter-spacing:0}
+      .tiny{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:700;fill:#64748b;letter-spacing:0}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:18px;font-weight:800;fill:#ffffff;letter-spacing:0}
+    </style>
+  </defs>
+
+  <rect width="1200" height="920" rx="44" fill="url(#bg)"/>
+  <circle cx="135" cy="110" r="70" fill="#ffe4ef" opacity="0.7"/>
+  <circle cx="1070" cy="155" r="86" fill="#dcfce7" opacity="0.72"/>
+  <circle cx="1010" cy="800" r="100" fill="#e0f2fe" opacity="0.7"/>
+  <circle cx="170" cy="790" r="82" fill="#fef3c7" opacity="0.66"/>
+
+  <text x="600" y="72" text-anchor="middle" class="title">財務会計論は「2心同体」の最強ジョブ</text>
+  <text x="600" y="108" text-anchor="middle" class="sub">計算（手続）と理論（理由）を一括りで育てると、実力ランキングが上がる</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="80" y="172" width="430" height="260" rx="28" fill="#ffffff" stroke="#bae6fd" stroke-width="4"/>
+    <rect x="112" y="204" width="150" height="42" rx="21" fill="#38bdf8"/>
+    <text x="187" y="232" text-anchor="middle" class="pill">計算</text>
+    <text x="295" y="224" text-anchor="middle" class="label">基本の剣技</text>
+    <text x="295" y="252" text-anchor="middle" class="ruby">（きほんのけんぎ）</text>
+    <path d="M171 320 L230 261 L252 283 L193 342 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="4"/>
+    <path d="M224 256 L250 230 L283 263 L257 289 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
+    <rect x="145" y="336" width="76" height="20" rx="10" fill="#7dd3fc" transform="rotate(-45 183 346)"/>
+    <text x="315" y="308" text-anchor="middle" class="body">会計処理の手続を学ぶ</text>
+    <text x="315" y="344" text-anchor="middle" class="small">仕訳や処理の「どうやるか」を</text>
+    <text x="315" y="372" text-anchor="middle" class="small">正確に動かすフィールド</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="690" y="172" width="430" height="260" rx="28" fill="#ffffff" stroke="#e9d5ff" stroke-width="4"/>
+    <rect x="722" y="204" width="150" height="42" rx="21" fill="#c084fc"/>
+    <text x="797" y="232" text-anchor="middle" class="pill">理論</text>
+    <text x="905" y="224" text-anchor="middle" class="label">白魔法の呪文</text>
+    <text x="905" y="252" text-anchor="middle" class="ruby">（しろまほうのじゅもん）</text>
+    <circle cx="802" cy="316" r="43" fill="#f3e8ff" stroke="#a855f7" stroke-width="4"/>
+    <path d="M802 265 L802 367" stroke="#a855f7" stroke-width="8" stroke-linecap="round"/>
+    <path d="M774 294 L830 294" stroke="#a855f7" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="765" cy="256" r="9" fill="#fef9c3"/>
+    <circle cx="850" cy="270" r="7" fill="#dcfce7"/>
+    <circle cx="850" cy="356" r="9" fill="#dbeafe"/>
+    <text x="924" y="308" text-anchor="middle" class="body">背景にある理由を問う</text>
+    <text x="924" y="344" text-anchor="middle" class="small">「なぜその処理をするのか」を</text>
+    <text x="924" y="372" text-anchor="middle" class="small">自分の言葉で説明する力</text>
+  </g>
+
+  <path d="M515 300 C555 300 570 300 592 300" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M685 300 C645 300 630 300 608 300" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="600" cy="300" r="38" fill="#ffffff" stroke="#86efac" stroke-width="5"/>
+  <text x="600" y="310" text-anchor="middle" class="label" fill="#16a34a">合体</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="320" y="486" width="560" height="146" rx="30" fill="url(#job)" stroke="#86efac" stroke-width="5"/>
+    <text x="600" y="537" text-anchor="middle" class="label">最強ジョブ：財務会計論</text>
+    <text x="600" y="567" text-anchor="middle" class="ruby">（ざいむかいけいろん）</text>
+    <text x="600" y="606" text-anchor="middle" class="body">計算と理論を分けず、一括りで学ぶ</text>
+  </g>
+
+  <path d="M600 432 L600 480" stroke="#86efac" stroke-width="8" stroke-linecap="round"/>
+  <path d="M583 464 L600 486 L617 464" fill="none" stroke="#86efac" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="80" y="700" width="500" height="152" rx="26" fill="#ffffff" stroke="#bfdbfe" stroke-width="4"/>
+    <rect x="110" y="728" width="120" height="34" rx="17" fill="#60a5fa"/>
+    <text x="170" y="751" text-anchor="middle" class="pill">短答</text>
+    <text x="250" y="752" class="ruby">（たんとう）</text>
+    <text x="110" y="797" class="body">配点：約80点 / 500点満点中</text>
+    <text x="110" y="827" class="small">マークシート形式。広い範囲から細かく出題。</text>
+    <text x="110" y="855" class="small">理論は1問3分以内、全体30分のタイムアタック。</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="620" y="700" width="500" height="152" rx="26" fill="#ffffff" stroke="#fecaca" stroke-width="4"/>
+    <rect x="650" y="728" width="120" height="34" rx="17" fill="#fb7185"/>
+    <text x="710" y="751" text-anchor="middle" class="pill">論文</text>
+    <text x="790" y="752" class="ruby">（ろんぶん）</text>
+    <text x="650" y="797" class="body">配点：約110点 / 700点満点中</text>
+    <text x="650" y="827" class="small">大問3問、180分。文章を記述する形式。</text>
+    <text x="650" y="855" class="small">思考力・判断力・応用能力・論述力が問われる。</text>
+  </g>
+
+  <path d="M518 632 C418 654 350 672 300 696" stroke="#94a3b8" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M682 632 C782 654 850 672 900 696" stroke="#94a3b8" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="600" y="680" text-anchor="middle" class="tiny">試験では問われ方が変わる</text>
+</svg>

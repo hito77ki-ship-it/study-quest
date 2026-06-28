@@ -76,6 +76,20 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.quick-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 34px;}
+.quick-card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);padding:16px;}
+.quick-card__label{font-size:10px;color:var(--green2);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.quick-card__value{font-size:18px;color:var(--text);font-weight:700;line-height:1.45;margin-bottom:4px;}
+.quick-card__note{font-size:11px;color:var(--muted);line-height:1.65;}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 28px;}
+.book-card{display:block;padding:16px;color:inherit;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(26,32,44,.05);transition:transform .18s,border-color .18s;}
+.book-card:hover{transform:translateY(-2px);border-color:var(--green);text-decoration:none;}
+.book-card__kicker{font-size:10px;color:var(--green2);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.book-card__title{font-size:13px;font-weight:700;color:var(--text);line-height:1.55;}
+.book-card__desc{font-size:12px;color:var(--muted);line-height:1.65;margin-top:8px;}
+.book-card__cta{display:inline-flex;margin-top:12px;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:7px 13px;}
+.book-note{font-size:12px;color:var(--muted);margin-top:-4px;}
+@media(max-width:640px){.quick-summary,.book-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -97,6 +111,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">更新日：2026年4月30日｜若葉（スタディクエスト）</p>
 
   <p class="lead">FP3級（ファイナンシャルプランニング技能士3級）は、お金の知識を体系的に学べる国家資格です。合格率は50〜60%と比較的高く、独学でも十分合格を狙えます。本記事では、必要な勉強時間、6分野の学習順、具体的な独学スケジュールまで解説します。</p>
+
+  <div class="quick-summary" aria-label="この記事の要点">
+    <div class="quick-card"><div class="quick-card__label">合格率</div><div class="quick-card__value">50〜70%</div><div class="quick-card__note">学科・実技ともに合格率が高め。独学でも3〜5ヶ月でしっかり準備できる。</div></div>
+    <div class="quick-card"><div class="quick-card__label">勉強時間</div><div class="quick-card__value">80〜150時間</div><div class="quick-card__note">1日1時間で3〜5ヶ月。短期集中なら1.5〜2時間×2ヶ月でも合格圏内。</div></div>
+    <div class="quick-card"><div class="quick-card__label">試験回数</div><div class="quick-card__value">年3回</div><div class="quick-card__note">5月・9月・1月の年3回実施。受験申込は試験の約2ヶ月前。</div></div>
+  </div>
 
   <h2>FP3級の学習ロードマップ</h2>
   <p>FP3級は6分野を広く学ぶ試験です。最初から細部を暗記するより、まず全体像をつかみ、過去問で出るところに戻る方が効率的です。</p>
@@ -197,12 +217,28 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <tr><td>副業・独立の基礎</td><td>FP2級・CFPへのステップアップで独立も視野に</td></tr>
   </table>
 
-  <h2>独学おすすめテキスト</h2>
-  <ul>
-    <li><strong>みんなが欲しかった！FPの教科書3級（TAC出版）：</strong>フルカラーで図解が豊富。初学者にとって最も読みやすいテキスト。過去問集と同シリーズで揃えると学習しやすい。</li>
-    <li><strong>スッキリわかるFP技能士3級（TAC出版）：</strong>ストーリー仕立ての解説。テキストとしての読みやすさを重視する方向け。</li>
-    <li><strong>FP3級 過去問ドットコム（無料サイト）：</strong>過去問を無料で解けるWebサービス。移動中のスマホ学習に最適。</li>
-  </ul>
+  <h2>独学おすすめテキスト3選</h2>
+  <p class="book-note">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
+  <div class="book-grid">
+    <a class="book-card" href="https://amzn.to/4gKByAF" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">定番 / フルカラー図解</div>
+      <div class="book-card__title">みんなが欲しかった！FPの教科書3級【CBT模擬試験プログラムつき】（TAC出版）</div>
+      <div class="book-card__desc">シリーズ累計200万部超の定番テキスト。フルカラー図解＋CBT模擬試験＋アプリ付きで独学に必要なものが全部揃う。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/4f7D52t" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">YouTuber監修 / 問題集特化</div>
+      <div class="book-card__title">桜田はなのFP3級 テキストいらずのすごい問題集</div>
+      <div class="book-card__desc">教育系YouTuber桜田はな監修。解説が口語的でわかりやすく、動画との併用で理解が加速する。問題演習重視の一冊。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+    <a class="book-card" href="https://amzn.to/44Al6M2" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">ユーキャン / 32日完成</div>
+      <div class="book-card__title">ユーキャンのFP3級 きほんテキスト '26〜'27年版【CBT模試＆マンガつき】</div>
+      <div class="book-card__desc">マンガ×オールカラーで読みやすい32日完成プラン。CBT模試・赤シート付きで短期集中したい人に最適。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
+  </div>
 
   <div class="app-cta">
     <h3>⚔ FP3級の学習時間をゲームで管理しよう</h3>

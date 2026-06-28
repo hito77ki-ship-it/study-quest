@@ -73,6 +73,8 @@ tr:nth-child(even) td{background:var(--light);}
 .topic-card:hover,.book-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 12px 28px rgba(140,198,63,.15);text-decoration:none;}
 .topic-card__title,.book-card__title{font-size:13px;font-weight:700;color:var(--sq-text,var(--text));line-height:1.55;}
 .book-card__desc{font-size:12px;margin-top:8px;}
+.book-card__cta{display:inline-flex;margin-top:12px;background:var(--green);color:#0A0A0F;font-size:12px;font-weight:700;border-radius:100px;padding:7px 13px;}
+.book-note{font-size:12px;color:var(--muted);margin-top:-4px;}
 .summary-list{padding:18px 22px;margin-top:12px;}
 .summary-list li{margin-bottom:8px;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
@@ -161,8 +163,14 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </ul>
 
   <h2>おすすめテキスト</h2>
+  <p class="book-note">※ 以下の教材リンクにはAmazonアソシエイトリンクを含みます。</p>
   <div class="book-grid">
-    <div class="book-card"><div class="book-card__kicker">初学者向け / ★★★★★</div><div class="book-card__title">TAC「スッキリわかる簿記1級」シリーズ</div><div class="book-card__desc">図解が多く読みやすい。1級に入る最初の教材として使いやすいです。</div></div>
+    <a class="book-card" href="https://amzn.to/4fbagBl" target="_blank" rel="sponsored nofollow noopener">
+      <div class="book-card__kicker">初学者向け / 商業簿記 全4冊セット</div>
+      <div class="book-card__title">スッキリわかる日商簿記1級 商業簿記・会計学 全4冊セット（TAC出版）</div>
+      <div class="book-card__desc">図解が豊富で1級に初めて入る方が読みやすいシリーズ定番。商業簿記4冊セットで連結・企業結合・会計基準の論点を網羅。工業簿記・原価計算編と合わせて使う。</div>
+      <div class="book-card__cta">Amazonで見る</div>
+    </a>
     <div class="book-card"><div class="book-card__kicker">網羅型 / ★★★★</div><div class="book-card__title">TAC「合格テキスト簿記1級」シリーズ</div><div class="book-card__desc">範囲を広く押さえるための辞書的な教材。論点確認にも向いています。</div></div>
     <div class="book-card"><div class="book-card__kicker">本番演習 / ★★★★★</div><div class="book-card__title">過去問題集 日商簿記1級</div><div class="book-card__desc">本番形式の練習に必須。時間配分と科目ごとの足切り対策に使います。</div></div>
   </div>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">ITパスポート試験（iパス）の全体像</text>
+  <!-- 3分野 top bar -->
+  <text x="380" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#0369A1">── 試験範囲：3分野・100問・CBT方式（随時受験）・合格率約55% ──</text>
+  <!-- ストラテジ系 -->
+  <rect x="20" y="72" width="226" height="230" rx="8" fill="#EFF6FF"/>
+  <rect x="20" y="72" width="226" height="34" rx="8" fill="#2563EB"/>
+  <text x="133" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">ストラテジ系（35問）</text>
+  <text x="133" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">企業と法務</text>
+  <text x="133" y="144" text-anchor="middle" font-size="10" fill="#374151">企業活動・法務・知的財産権</text>
+  <text x="133" y="162" text-anchor="middle" font-size="10" fill="#374151">内部統制・リスク管理</text>
+  <line x1="40" y1="174" x2="226" y2="174" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="133" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">経営戦略</text>
+  <text x="133" y="212" text-anchor="middle" font-size="10" fill="#374151">経営戦略・マーケティング・技術戦略</text>
+  <line x1="40" y1="224" x2="226" y2="224" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="133" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">システム戦略</text>
+  <text x="133" y="262" text-anchor="middle" font-size="10" fill="#374151">情報システム戦略・ソリューション</text>
+  <rect x="40" y="282" width="186" height="12" rx="4" fill="#BFDBFE"/>
+  <text x="133" y="293" text-anchor="middle" font-size="9" fill="#1D4ED8">文系でも点を取りやすい分野</text>
+  <!-- マネジメント系 -->
+  <rect x="262" y="72" width="236" height="230" rx="8" fill="#F0FDF4"/>
+  <rect x="262" y="72" width="236" height="34" rx="8" fill="#16A34A"/>
+  <text x="380" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">マネジメント系（20問）</text>
+  <text x="380" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">開発技術</text>
+  <text x="380" y="144" text-anchor="middle" font-size="10" fill="#374151">システム開発技術・ソフトウェア開発</text>
+  <line x1="280" y1="156" x2="476" y2="156" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="380" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">プロジェクトマネジメント</text>
+  <text x="380" y="194" text-anchor="middle" font-size="10" fill="#374151">スコープ・コスト・品質・リスク管理</text>
+  <line x1="280" y1="206" x2="476" y2="206" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="380" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">サービスマネジメント</text>
+  <text x="380" y="244" text-anchor="middle" font-size="10" fill="#374151">ITサービス管理・システム監査</text>
+  <rect x="280" y="274" width="178" height="12" rx="4" fill="#BBF7D0"/>
+  <text x="380" y="285" text-anchor="middle" font-size="9" fill="#15803D">出題数は少ないが落とせない</text>
+  <!-- テクノロジ系 -->
+  <rect x="514" y="72" width="226" height="230" rx="8" fill="#FFF7ED"/>
+  <rect x="514" y="72" width="226" height="34" rx="8" fill="#EA580C"/>
+  <text x="627" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">テクノロジ系（45問）</text>
+  <text x="627" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">基礎理論・コンピュータ</text>
+  <text x="627" y="144" text-anchor="middle" font-size="10" fill="#374151">2進数・論理演算・CPU・メモリ</text>
+  <line x1="534" y1="156" x2="720" y2="156" stroke="#FED7AA" stroke-width="1"/>
+  <text x="627" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">ネットワーク・DB・セキュリティ</text>
+  <text x="627" y="194" text-anchor="middle" font-size="10" fill="#374151">TCP/IP・SQL・暗号化・認証</text>
+  <line x1="534" y1="206" x2="720" y2="206" stroke="#FED7AA" stroke-width="1"/>
+  <text x="627" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">ソフトウェア・ハードウェア</text>
+  <text x="627" y="244" text-anchor="middle" font-size="10" fill="#374151">OS・アプリケーション・IoT・AI</text>
+  <rect x="534" y="274" width="186" height="12" rx="4" fill="#FED7AA"/>
+  <text x="627" y="285" text-anchor="middle" font-size="9" fill="#C2410C">最重要・最多出題・苦手でも克服必須</text>
+  <!-- Bottom: 合格戦略 -->
+  <rect x="20" y="316" width="720" height="68" rx="8" fill="#1E293B"/>
+  <text x="380" y="337" text-anchor="middle" font-size="12" font-weight="700" fill="#94A3B8">合格戦略（目標スコア：600点以上 / 1000点満点）</text>
+  <rect x="36" y="345" width="210" height="30" rx="5" fill="#2563EB"/>
+  <text x="141" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">ストラテジ系：7割以上</text>
+  <rect x="258" y="345" width="244" height="30" rx="5" fill="#16A34A"/>
+  <text x="380" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">テクノロジ系：CBT過去問を400問反復</text>
+  <rect x="514" y="345" width="226" height="30" rx="5" fill="#EA580C"/>
+  <text x="627" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">合格率55%・1〜2ヶ月で狙える</text>
+</svg>

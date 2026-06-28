@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">基本情報技術者（FE）vs 応用情報技術者（AP）比較</text>
+  <rect x="20" y="52" width="256" height="34" rx="6" fill="#7C3AED"/>
+  <text x="148" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">基本情報技術者（FE）</text>
+  <rect x="284" y="52" width="192" height="34" rx="6" fill="#475569"/>
+  <text x="380" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">比較項目</text>
+  <rect x="484" y="52" width="256" height="34" rx="6" fill="#0369A1"/>
+  <text x="612" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">応用情報技術者（AP）</text>
+
+  <rect x="20" y="94" width="256" height="34" rx="4" fill="#EDE9FE"/>
+  <text x="148" y="116" text-anchor="middle" font-size="11" fill="#7C3AED">IPA レベル2</text>
+  <rect x="284" y="94" width="192" height="34" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">IPA 難易度</text>
+  <rect x="484" y="94" width="256" height="34" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="116" text-anchor="middle" font-size="11" fill="#0369A1">IPA レベル3</text>
+
+  <rect x="20" y="134" width="256" height="34" rx="4" fill="#EDE9FE"/>
+  <text x="148" y="156" text-anchor="middle" font-size="11" fill="#7C3AED">CBT・随時受験（年数回）</text>
+  <rect x="284" y="134" width="192" height="34" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">試験形式</text>
+  <rect x="484" y="134" width="256" height="34" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="156" text-anchor="middle" font-size="11" fill="#0369A1">紙試験・年2回（春・秋）</text>
+
+  <rect x="20" y="174" width="256" height="34" rx="4" fill="#EDE9FE"/>
+  <text x="148" y="196" text-anchor="middle" font-size="11" fill="#7C3AED">約35〜45%</text>
+  <rect x="284" y="174" width="192" height="34" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="196" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">合格率</text>
+  <rect x="484" y="174" width="256" height="34" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="196" text-anchor="middle" font-size="11" fill="#0369A1">約20〜25%</text>
+
+  <rect x="20" y="214" width="256" height="34" rx="4" fill="#EDE9FE"/>
+  <text x="148" y="236" text-anchor="middle" font-size="11" fill="#7C3AED">100〜200時間</text>
+  <rect x="284" y="214" width="192" height="34" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="236" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">必要勉強時間</text>
+  <rect x="484" y="214" width="256" height="34" rx="4" fill="#E0F2FE"/>
+  <text x="612" y="236" text-anchor="middle" font-size="11" fill="#0369A1">200〜400時間</text>
+
+  <rect x="20" y="254" width="256" height="44" rx="4" fill="#DDD6FE"/>
+  <text x="148" y="272" text-anchor="middle" font-size="11" fill="#7C3AED">科目B：擬似言語・アルゴリズム</text>
+  <text x="148" y="289" text-anchor="middle" font-size="10" fill="#7C3AED">プログラミング的思考力が必要</text>
+  <rect x="284" y="254" width="192" height="44" rx="4" fill="#F1F5F9"/>
+  <text x="380" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">特徴・難しさ</text>
+  <rect x="484" y="254" width="256" height="44" rx="4" fill="#BAE6FD"/>
+  <text x="612" y="272" text-anchor="middle" font-size="11" fill="#0369A1">午後：11分野から4問選択（記述式）</text>
+  <text x="612" y="289" text-anchor="middle" font-size="10" fill="#0369A1">得意分野に絞る戦略が有効</text>
+
+  <rect x="20" y="308" width="720" height="58" rx="8" fill="#1E293B"/>
+  <text x="380" y="327" text-anchor="middle" font-size="11" font-weight="700" fill="#94A3B8">どちらを受けるか</text>
+  <rect x="28" y="334" width="330" height="24" rx="5" fill="#7C3AED"/>
+  <text x="193" y="351" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">IT就職・最初の国家資格 → FEから始める</text>
+  <rect x="402" y="334" width="330" height="24" rx="5" fill="#0369A1"/>
+  <text x="567" y="351" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">FE取得済み・昇給昇格狙い → APへステップアップ</text>
+</svg>
