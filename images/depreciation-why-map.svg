@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7FDF4"/>
+      <stop offset="100%" style="stop-color:#EFF9FF"/>
+    </linearGradient>
+    <linearGradient id="blueBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#76BEF0"/>
+      <stop offset="100%" style="stop-color:#4299E1"/>
+    </linearGradient>
+    <linearGradient id="orangeBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F6C36A"/>
+      <stop offset="100%" style="stop-color:#ED8936"/>
+    </linearGradient>
+    <linearGradient id="blueHead" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4299E1"/>
+      <stop offset="100%" style="stop-color:#2B6CB0"/>
+    </linearGradient>
+    <linearGradient id="orangeHead" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ED8936"/>
+      <stop offset="100%" style="stop-color:#C05621"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="800" height="520" fill="url(#bgGrad)" rx="0"/>
+
+  <!-- Main title -->
+  <text x="400" y="32" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="16" font-weight="700" fill="#1A202C">定額法 vs 定率法 — 価値（費用）の減り方の違いを図解</text>
+  <text x="400" y="50" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#718096">取得原価100万円・5年間の各年度 減価償却費（げんかしょうきゃくひ）のイメージ</text>
+
+  <!-- ===================================================== -->
+  <!-- LEFT PANEL: 定額法                                    -->
+  <!-- ===================================================== -->
+  <rect x="10" y="58" width="384" height="450" rx="16" fill="#EBF8FF" stroke="#90CDF4" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="10" y="58" width="384" height="56" rx="16" fill="url(#blueHead)"/>
+  <rect x="10" y="90" width="384" height="24" fill="#2B6CB0"/>
+  <text x="202" y="82" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">定額法（ていがくほう）</text>
+  <text x="202" y="104" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#BEE3F8">毎年 おなじ金額を費用化する</text>
+
+  <!-- Character card -->
+  <rect x="28" y="120" width="348" height="66" rx="10" fill="#FFFFFF" fill-opacity="0.75" stroke="#90CDF4" stroke-width="1"/>
+  <text x="64" y="143" font-family="'Apple Color Emoji','Segoe UI Emoji',sans-serif" font-size="26">🛏️</text>
+  <text x="100" y="141" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#2B6CB0">「均等くん」— 建物・家具・構造物向き</text>
+  <text x="100" y="158" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">毎日おなじ速さで劣化 → 費用も毎年同額</text>
+  <text x="100" y="174" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">技術革新の影響が少ない資産に最適</text>
+
+  <!-- Chart axis lines -->
+  <line x1="58" y1="198" x2="58" y2="316" stroke="#A0AEC0" stroke-width="1.5"/>
+  <line x1="58" y1="316" x2="380" y2="316" stroke="#A0AEC0" stroke-width="1.5"/>
+  <!-- Axis label -->
+  <text x="46" y="256" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#718096" transform="rotate(-90 46 256)">費用額（↑）</text>
+  <text x="230" y="334" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#718096">1年目　　2年目　　3年目　　4年目　　5年目</text>
+
+  <!-- Bars: all equal, height=90px, base=316 → top=226 -->
+  <rect x="72"  y="226" width="40" height="90" rx="5" fill="url(#blueBar)"/>
+  <rect x="130" y="226" width="40" height="90" rx="5" fill="url(#blueBar)"/>
+  <rect x="188" y="226" width="40" height="90" rx="5" fill="url(#blueBar)"/>
+  <rect x="246" y="226" width="40" height="90" rx="5" fill="url(#blueBar)"/>
+  <rect x="304" y="226" width="40" height="90" rx="5" fill="url(#blueBar)"/>
+
+  <!-- Amount labels above bars -->
+  <text x="92"  y="220" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="150" y="220" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="208" y="220" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="266" y="220" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="324" y="220" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#2B6CB0">20万</text>
+
+  <!-- Dashed horizontal "equal" line -->
+  <line x1="68" y1="271" x2="348" y2="271" stroke="#E53E3E" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="354" y="275" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#E53E3E">均等</text>
+
+  <!-- Formula note -->
+  <rect x="22" y="344" width="360" height="46" rx="8" fill="#FFFFFF" fill-opacity="0.85" stroke="#90CDF4" stroke-width="1"/>
+  <text x="202" y="363" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#2B6CB0">計算式：取得原価（とくとくげんか） ÷ 耐用年数</text>
+  <text x="202" y="381" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">累計額（るいけいがく）は無視してOK！毎年同じ答えが出る</text>
+
+  <!-- Key insight box -->
+  <rect x="22" y="398" width="360" height="98" rx="8" fill="#BEE3F8" fill-opacity="0.65"/>
+  <text x="202" y="418" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#2C5282">✅ 試験での使い方（最もシンプル）</text>
+  <text x="202" y="438" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#2B6CB0">例：100万 ÷ 5年 ＝ 20万円</text>
+  <text x="202" y="456" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#2C5282">何年目でも答えは同じ。累計額は一切見ない！</text>
+  <text x="202" y="474" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4299E1">※残存価額ありの場合：(取得原価-残存価額) ÷ 耐用年数</text>
+  <text x="202" y="490" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4299E1">※新定額法（残存価額ゼロ）が2級では主流</text>
+
+  <!-- ===================================================== -->
+  <!-- RIGHT PANEL: 定率法                                   -->
+  <!-- ===================================================== -->
+  <rect x="406" y="58" width="384" height="450" rx="16" fill="#FFFAF0" stroke="#F6AD55" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="406" y="58" width="384" height="56" rx="16" fill="url(#orangeHead)"/>
+  <rect x="406" y="90" width="384" height="24" fill="#C05621"/>
+  <text x="598" y="82" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">定率法（ていりつほう）</text>
+  <text x="598" y="104" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#FEEBC8">初期ほど費用が大きく、年々減っていく</text>
+
+  <!-- Character card -->
+  <rect x="424" y="120" width="348" height="66" rx="10" fill="#FFFFFF" fill-opacity="0.75" stroke="#F6AD55" stroke-width="1"/>
+  <text x="460" y="143" font-family="'Apple Color Emoji','Segoe UI Emoji',sans-serif" font-size="26">⚙️</text>
+  <text x="496" y="141" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#C05621">「加速くん」— PC・機械・車両向き</text>
+  <text x="496" y="158" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">最新技術は1年目が最も稼ぐが、すぐ陳腐化</text>
+  <text x="496" y="174" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">早期費用化 → 節税・キャッシュ確保の経営の知恵</text>
+
+  <!-- Chart axis lines -->
+  <line x1="454" y1="198" x2="454" y2="316" stroke="#A0AEC0" stroke-width="1.5"/>
+  <line x1="454" y1="316" x2="776" y2="316" stroke="#A0AEC0" stroke-width="1.5"/>
+  <text x="442" y="256" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#718096" transform="rotate(-90 442 256)">費用額（↑）</text>
+  <text x="626" y="334" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#718096">1年目　　2年目　　3年目　　4年目　　5年目</text>
+
+  <!-- Bars: decreasing (40% rate on 100万, scaled to max=100px) -->
+  <!-- Y1=40万→100px top=216, Y2=24万→60px top=256, Y3=14.4万→36px top=280, Y4=8.6万→21px top=295, Y5=5.2万→13px top=303 -->
+  <rect x="468" y="216" width="40" height="100" rx="5" fill="url(#orangeBar)"/>
+  <rect x="526" y="256" width="40" height="60"  rx="5" fill="url(#orangeBar)"/>
+  <rect x="584" y="280" width="40" height="36"  rx="5" fill="url(#orangeBar)"/>
+  <rect x="642" y="295" width="40" height="21"  rx="5" fill="url(#orangeBar)"/>
+  <rect x="700" y="303" width="40" height="13"  rx="5" fill="url(#orangeBar)"/>
+
+  <!-- Amount labels -->
+  <text x="488" y="210" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#C05621">40万</text>
+  <text x="546" y="250" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#C05621">24万</text>
+  <text x="604" y="274" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#C05621">14万</text>
+  <text x="662" y="289" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9"  font-weight="700" fill="#C05621">9万</text>
+  <text x="720" y="297" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9"  font-weight="700" fill="#C05621">5万</text>
+
+  <!-- Trend curve -->
+  <path d="M 488 215 C 520 230 540 252 560 258 S 610 280 650 296 S 705 304 730 308" stroke="#E53E3E" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+  <text x="736" y="306" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#E53E3E">↘減</text>
+
+  <!-- Formula note -->
+  <rect x="418" y="344" width="360" height="46" rx="8" fill="#FFFFFF" fill-opacity="0.85" stroke="#F6AD55" stroke-width="1"/>
+  <text x="598" y="363" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#C05621">計算式：未償却残高（みしょうきゃくざんだか） × 償却率</text>
+  <text x="598" y="381" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">未償却残高 ＝ 取得原価 − 前期末の減価償却累計額</text>
+
+  <!-- Key insight box -->
+  <rect x="418" y="398" width="360" height="98" rx="8" fill="#FEEBC8" fill-opacity="0.65"/>
+  <text x="598" y="418" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#7B341E">⚠️ 試験での使い方（2年目の罠に注意！）</text>
+  <text x="598" y="438" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#7B341E">STEP1: 100万 − 累計40万 ＝ 残高60万</text>
+  <text x="598" y="456" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#7B341E">STEP2: 60万 × 40% ＝ 24万円（2年目の答え）</text>
+  <text x="598" y="476" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#C05621">✗ NG例：100万 × 40% ＝ 40万（毎年同じ計算は×！）</text>
+  <text x="598" y="492" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#7B341E">毎年「前期末の残高」を引き算してから掛け算する</text>
+</svg>

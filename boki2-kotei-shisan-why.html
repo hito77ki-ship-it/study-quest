@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://hito77ki-ship-it.github.io/study-quest/boki2-kotei-shisan-why.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【簿記2級】定額法と定率法はなぜ存在するのか？本質をRPG例えで完全解説｜スタディクエスト</title>
+<meta name="description" content="定額法と定率法の「なぜ使い分けるのか」という本質を、宿屋のベッド（定額法）と魔導アーマー（定率法）のRPG例えで解説。2年目の定率法の罠も完全先回り。初学者が丸暗記から脱却できる記事。">
+<meta property="og:title" content="定額法と定率法はなぜ存在するのか？本質をRPG例えで解説【簿記2級】">
+<meta property="og:description" content="宿屋のベッド（定額法）vs 魔導アーマー（定率法）のRPG例えで本質を理解。試験の2年目罠も完全先回り。">
+<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/boki2-kotei-shisan-why.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"定額法と定率法はなぜ存在するのか？本質をRPG例えで完全解説","description":"定額法と定率法の使い分けの本質をRPG例えで解説。試験の2年目定率法の罠も完全先回り。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-kotei-shisan-why.html","datePublished":"2026-06-30","dateModified":"2026-06-30","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/","logo":{"@type":"ImageObject","url":"https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}}}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);line-height:1.9}
+a{color:var(--green2);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:15px;font-weight:700;color:var(--green2)}
+.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px}
+.breadcrumb,.meta{font-size:13px;color:var(--muted)}
+.breadcrumb{font-size:12px;margin-bottom:24px}
+h1{font-size:clamp(22px,4vw,30px);line-height:1.4;margin:8px 0}
+h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);color:var(--text)}
+h3{font-size:16px;font-weight:700;margin:28px 0 12px;color:var(--text)}
+p,li{font-size:14px;color:#374151}
+p{margin-bottom:16px}
+ul,ol{margin:0 0 16px 20px}
+li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}
+th{background:var(--green);color:#fff;padding:10px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:var(--light)}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.7}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.7}
+.trap-box{background:#FFF5F5;border:1.5px solid #FEB2B2;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.7}
+.trap-box strong{color:#C53030}
+.formula{background:#EBF8FF;border:1.5px solid #90CDF4;border-radius:8px;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.9}
+.formula strong{color:#2B6CB0}
+.flow{counter-reset:step;margin:24px 0}
+.flow-item{position:relative;padding:14px 16px 14px 56px;margin-bottom:10px;background:var(--light);border-radius:8px;border-left:3px solid var(--green);font-size:14px;line-height:1.7}
+.flow-item::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:14px;width:24px;height:24px;background:var(--green);color:#fff;border-radius:50%;font-weight:700;font-size:13px;text-align:center;line-height:24px}
+.journal{background:#1A202C;border-radius:10px;padding:20px;margin:20px 0;overflow-x:auto}
+.journal table{margin:0;font-size:13px}
+.journal th{background:#2D3748;color:#9AE6B4;padding:8px 14px}
+.journal td{color:#E2E8F0;border-bottom:1px solid #4A5568;padding:8px 14px}
+.journal tr:nth-child(even) td{background:#2D3748}
+.rpg-box{border-radius:14px;padding:22px 24px;margin:24px 0;position:relative;overflow:hidden}
+.rpg-box-blue{background:linear-gradient(135deg,#EBF8FF,#BEE3F8);border:1.5px solid #90CDF4}
+.rpg-box-orange{background:linear-gradient(135deg,#FFFAF0,#FEEBC8);border:1.5px solid #F6AD55}
+.rpg-badge{display:inline-block;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:10px;letter-spacing:.05em}
+.rpg-badge-blue{background:#4299E1;color:#fff}
+.rpg-badge-orange{background:#ED8936;color:#fff}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center}
+.app-cta h3{color:var(--green)}
+.app-cta p{color:#D9F99D;margin:12px 0 20px}
+.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;display:inline-block}
+footer{background:#111827;padding:28px;text-align:center}
+footer a{font-size:12px;color:#9CA3AF;margin:0 10px}
+footer p{font-size:11px;color:#6B7280;margin-top:8px}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
+
+<div class="container">
+  <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; <a href="boki2-kotei-shisan.html">固定資産</a> &gt; 定額法・定率法の本質</div>
+  <p class="meta">日商簿記2級 | 公開：2026年6月30日</p>
+  <h1>【簿記2級】定額法と定率法はなぜ存在するのか？<br>本質をRPG例えで完全解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <!-- 挨拶カード -->
+  <div style="background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:14px;padding:24px;margin:24px 0 32px;display:flex;align-items:flex-start;gap:16px;">
+    <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#6AAF2B);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:700;">大</div>
+    <div>
+      <p style="color:#A0C070;font-size:12px;font-weight:700;margin-bottom:8px;letter-spacing:.08em;">著者・大谷からひとこと</p>
+      <p style="color:#E2F0D0;font-size:14px;line-height:1.9;margin:0;">こんにちは、大谷です！実は僕、大学の講義で減価償却を習ったとき、「毎年同じ定額法だけでいいじゃん！なんでわざわざ計算がめんどくさい定率法なんて作ったんだよ、意味不明……なんじゃこりゃ！」と激しくイライラしました（笑）。<br>
+      でも、その<strong style="color:#8CC63F;">【存在理由】が分かった瞬間</strong>、簿記のパズルが10倍面白くなったんです！今回はその秘密を優しくナビゲートします。<br>
+      モチベ維持のために、末尾のほうにある<strong style="color:#8CC63F;">【いいねボタン】</strong>もポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+    </div>
+  </div>
+
+  <div class="sq-chat"></div>
+
+  <div class="tip-box"><strong>この記事で分かること：</strong>①定額法・定率法がなぜ2種類あるのかの本質（RPG例え）　②試験で絶対引っかかる「2年目の定率法の罠」の先回り解説　③下書きの手順（電卓を持つ前にやること）</div>
+
+  <!-- SVG図解 -->
+  <h2>まず図解で全体像をつかむ</h2>
+  <figure style="margin:0 0 8px;">
+    <img src="images/depreciation-why-map.svg" alt="定額法と定率法の費用の減り方の違いを図解。定額法は毎年均等、定率法は初期ほど大きく年々減少。" style="max-width:100%;height:auto;border-radius:12px;border:1px solid #E2E8F0;">
+  </figure>
+  <p style="font-size:12px;color:#718096;text-align:center;margin-bottom:32px;">図：取得原価100万円・5年間の減価償却費の比較（定額法：毎年20万円均等／定率法40%：40万→24万→14万→9万→5万と加速減少）</p>
+
+  <!-- RPGストーリー -->
+  <h2>そもそも、なぜ2つの方法があるのか？</h2>
+  <p>簿記2級を学び始めると「定額法」と「定率法」という2つの減価償却方法が出てきます。「どっちかひとつでよくない？」と思うのは当然です。でも、この2つが存在する理由には<strong>ちゃんとした経営の知恵と現実の問題</strong>が隠れています。</p>
+  <p>RPGの世界で考えると、一気に腑に落ちます。</p>
+
+  <div class="rpg-box rpg-box-blue">
+    <span class="rpg-badge rpg-badge-blue">定額法（ていがくほう）</span>
+    <h3 style="color:#2B6CB0;margin-top:0;">🛏️ 宿屋のベッド型 — 「均等くん」</h3>
+    <p>RPGの宿屋にあるベッドを想像してください。1年目も3年目も5年目も、同じペースで少しずつ傷んでいきます。特別な技術革新が起きるわけでもなく、毎日コツコツと劣化していく。</p>
+    <p>これが<strong>「建物」「構造物」「工具・器具・備品の一部」</strong>のイメージです。10年後に突然「新型の宿屋ベッド」が出て今のベッドの価値がゼロになる……なんてことは起きません。だから<strong>毎年おなじ金額を費用として認識する「定額法」が自然に合っている</strong>んです。</p>
+    <div class="formula">
+      <strong>定額法の式：</strong>（取得原価 − 残存価額） ÷ 耐用年数 ＝ 毎期の減価償却費<br>
+      <strong>簡単バージョン（残存価額ゼロ）：</strong>取得原価 ÷ 耐用年数 ＝ 毎期の減価償却費
+    </div>
+    <p style="margin:0;">この式の最大の特徴は「<strong>累計額（るいけいがく）を一切見ない</strong>」こと。何年目であろうと、答えは常に同じ金額です。</p>
+  </div>
+
+  <div class="rpg-box rpg-box-orange">
+    <span class="rpg-badge rpg-badge-orange">定率法（ていりつほう）</span>
+    <h3 style="color:#C05621;margin-top:0;">⚙️ 魔導アーマー型 — 「加速くん」</h3>
+    <p>こんどはRPGの最新魔導アーマーを想像してください。装備した1年目は性能MAXで、敵に圧勝。お城を守りまくってガンガン稼いでくれます。でも、翌年には新型が発売されて今のモデルの価値はガクンと落ちる……。</p>
+    <p>これが<strong>「パソコン」「機械装置」「車両」</strong>のイメージです。技術革新が早い資産は、<strong>1〜2年目が最も稼働率・価値ともに高く、年を追うごとに陳腐化してしまう</strong>。</p>
+    <p>ここで経営の知恵が登場します。<strong>「価値が早く落ちるなら、費用も早いうちに大きく引いてしまえ！」</strong>——稼げているうちに費用を先取りすることで、税金の支払いを早期に抑えてキャッシュを手元に残せます。これが定率法が存在する本当の理由です。</p>
+    <div class="formula">
+      <strong>定率法の式：</strong>未償却残高（みしょうきゃくざんだか） × 償却率 ＝ 毎期の減価償却費<br>
+      <strong>未償却残高の求め方：</strong>取得原価 − 前期末の減価償却累計額
+    </div>
+    <p style="margin:0;">ポイントは「<strong>未償却残高が毎年変わる</strong>」こと。前の年に引いた分だけ、次の年の計算のベースが小さくなっていきます。だから費用も年々減っていくのです。</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>使い分けのまとめ（試験では問題文に「定額法で計算せよ」「定率法で計算せよ」と指示がある）：</strong><br>
+    試験では問題文で必ずどちらの方法を使うか指定されます。自分で選ぶ必要はありません。指定された方法を確認したら、その方法の計算手順だけに集中しましょう。
+  </div>
+
+  <table>
+    <tr><th>種類</th><th>イメージ</th><th>向いている資産</th><th>費用の特徴</th></tr>
+    <tr><td><strong>定額法</strong></td><td>宿屋のベッド型</td><td>建物・構造物・工具器具備品</td><td>毎年同額・シンプル</td></tr>
+    <tr><td><strong>定率法</strong></td><td>魔導アーマー型</td><td>機械装置・パソコン・車両</td><td>初期ほど大きく、年々減少</td></tr>
+  </table>
+
+  <!-- 試験での手順 -->
+  <h2>試験で迷わない下書き手順</h2>
+  <p>ここからが試験攻略の本番です。「知っている」と「解ける」は別物です。どちらの方法でも、<strong>電卓を叩く前に手書きの下書きをする</strong>ことが最大のミス防止策になります。</p>
+
+  <h3>定額法の下書き手順</h3>
+  <p>定額法は最もシンプルです。<strong>累計額は完全に無視</strong>して、ただ割り算するだけ。</p>
+  <div class="flow">
+    <div class="flow-item">
+      <strong>問題文から「取得原価」と「耐用年数」を読み取る</strong><br>
+      残存価額が指定されている場合は「取得原価 − 残存価額」を先に計算する。<br>
+      2級では残存価額ゼロ（新定額法）の問題が主流なので、取得原価をそのまま使うケースが多い。
+    </div>
+    <div class="flow-item">
+      <strong>取得原価 ÷ 耐用年数 ＝ 減価償却費</strong><br>
+      例：取得原価600,000円・耐用年数5年・残存価額ゼロ<br>
+      → 600,000 ÷ 5 ＝ <strong>120,000円</strong>（1年目も5年目も同じ！）
+    </div>
+    <div class="flow-item">
+      <strong>仕訳を切る</strong><br>
+      <div class="journal" style="margin:10px 0 0;">
+        <table><tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+        <tr><td>減価償却費</td><td>120,000</td><td>減価償却累計額</td><td>120,000</td></tr></table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box"><strong>定額法の鉄則：</strong>「前期末の累計額がいくらか」は計算に一切関係ありません。何年目の問題でも「取得原価 ÷ 耐用年数」を計算するだけ。見落としや思い違いをする心配がないのが定額法の最大の強みです。</div>
+
+  <h3>定率法の下書き手順（「引いてから掛ける」が呪文！）</h3>
+  <p>定率法は<strong>「まず引き算、次に掛け算」</strong>の2ステップが絶対に必要です。電卓を持つ前に紙に書くことを習慣にしてください。</p>
+  <div class="flow">
+    <div class="flow-item">
+      <strong>問題文から「取得原価」「前期末の減価償却累計額」「償却率」を読み取る</strong><br>
+      「前期末の累計額」は問題に書いてある。なければ自分で計算する（前期分の費用を足す）。
+    </div>
+    <div class="flow-item">
+      <strong>【引き算】取得原価 − 前期末の累計額 ＝ 未償却残高を求める</strong><br>
+      例（2年目）：取得原価1,000,000円、前期末累計額400,000円<br>
+      → 1,000,000 − 400,000 ＝ <strong>未償却残高 600,000円</strong><br>
+      この「引き算」が毎年のスタートライン。絶対に省略禁止！
+    </div>
+    <div class="flow-item">
+      <strong>【掛け算】未償却残高 × 償却率 ＝ 今期の減価償却費</strong><br>
+      → 600,000 × 40% ＝ <strong>240,000円</strong>（2年目の答え）
+    </div>
+    <div class="flow-item">
+      <strong>仕訳を切る</strong><br>
+      <div class="journal" style="margin:10px 0 0;">
+        <table><tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+        <tr><td>減価償却費</td><td>240,000</td><td>減価償却累計額</td><td>240,000</td></tr></table>
+      </div>
+    </div>
+  </div>
+
+  <div class="trap-box">
+    <strong>⚠ 2年目の定率法・最頻出の罠：「また取得原価 × 率」は絶対NG！</strong><br><br>
+    定率法の問題で受験生が最も多く失点するのが、<strong>2年目以降も「取得原価 × 償却率」の計算を繰り返してしまう</strong>パターンです。<br><br>
+    ✗ NG（2年目）：1,000,000 × 40% ＝ 400,000円 ← 1年目と同じ計算になっている<br>
+    ✅ 正解（2年目）：(1,000,000 − 400,000) × 40% ＝ 240,000円<br><br>
+    「定率法は<strong>毎年ベースが変わる</strong>」これを体に染み込ませるために、問題を解くたびに必ず「引き算→掛け算」の2ステップを紙に書く練習をしてください。<strong>「まず引く、次に掛ける」</strong>を試験中の呪文にしましょう。
+  </div>
+
+  <h3>定率法の年数別まとめ表（取得原価100万・償却率40%）</h3>
+  <table>
+    <tr><th>年度</th><th>取得原価</th><th>前期末累計額</th><th>未償却残高</th><th>× 40%</th><th>減価償却費</th></tr>
+    <tr><td><strong>1年目</strong></td><td>1,000,000</td><td>0</td><td>1,000,000</td><td>× 0.4</td><td><strong>400,000</strong></td></tr>
+    <tr><td><strong>2年目</strong></td><td>1,000,000</td><td>400,000</td><td>600,000</td><td>× 0.4</td><td><strong>240,000</strong></td></tr>
+    <tr><td><strong>3年目</strong></td><td>1,000,000</td><td>640,000</td><td>360,000</td><td>× 0.4</td><td><strong>144,000</strong></td></tr>
+    <tr><td><strong>4年目</strong></td><td>1,000,000</td><td>784,000</td><td>216,000</td><td>× 0.4</td><td><strong>86,400</strong></td></tr>
+    <tr><td><strong>5年目</strong></td><td>1,000,000</td><td>870,400</td><td>129,600</td><td>× 0.4</td><td><strong>51,840</strong></td></tr>
+  </table>
+  <p style="font-size:12px;color:#718096;">※実際の定率法には「償却保証額」「改定償却率」も存在しますが、簿記2級の試験では問題文に従えばOKです。</p>
+
+  <h2>まとめ</h2>
+  <ul>
+    <li><strong>定額法</strong>＝「均等くん（宿屋のベッド型）」。毎年同額・累計額は無視・計算はシンプル。建物・構造物に多い</li>
+    <li><strong>定率法</strong>＝「加速くん（魔導アーマー型）」。稼げるうちに先に費用を多く引く経営の知恵。機械・PC・車両に多い</li>
+    <li>定率法の下書きは<strong>「引いてから掛ける」</strong>——取得原価 − 前期末累計額 → × 償却率の順番を崩さない</li>
+    <li>2年目以降に「取得原価 × 率」を繰り返すのが最頻出の罠。<strong>毎年ベースが変わることを忘れない</strong></li>
+    <li>試験では問題文が「定額法」「定率法」を明示してくれる。自分で選ぶ必要はゼロ</li>
+  </ul>
+
+  <!-- 本編リンク -->
+  <div style="background:linear-gradient(135deg,#EBF8FF,#BEE3F8);border-radius:14px;padding:24px;margin:40px 0;text-align:center;border:1.5px solid #90CDF4;">
+    <p style="font-size:15px;font-weight:700;color:#2B6CB0;margin:0 0 8px;">仕訳の練習は本編記事で！</p>
+    <p style="font-size:13px;color:#4A5568;margin:0 0 20px;line-height:1.7;">定額法・定率法の「なぜ」が分かったら、次は実際の仕訳を本編記事で反復演習しましょう。除却・売却・期中売却・買換えまで、試験の頻出パターンが全部入っています。</p>
+    <a href="boki2-kotei-shisan.html" style="display:inline-block;background:#2B6CB0;color:#fff;font-weight:700;font-size:14px;padding:12px 28px;border-radius:100px;text-decoration:none;">固定資産の仕訳・本編記事へ →</a>
+  </div>
+
+  <div class="app-cta">
+    <h3>⚔ 減価償却の演習時間を記録しよう</h3>
+    <p>スタディクエストで学習時間と論点の習熟度を記録すると、弱点が一目で分かります。</p>
+    <a href="index.html">無料で学習記録を始める →</a>
+  </div>
+</div>
+
+<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
+  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">定額法と定率法、どちらが簿記2級でよく出ますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">どちらも出題されます。ただし計算が複雑な定率法は、第2問・第3問の総合問題で失点につながりやすいです。定率法の「未償却残高 × 償却率」の手順を毎回下書きで書く習慣をつけておくと安心です。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">「残存価額」がある場合の定額法はどう計算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">（取得原価 − 残存価額）÷ 耐用年数 で計算します。例：取得原価600,000円・残存価額60,000円・耐用年数5年 → (600,000 − 60,000) ÷ 5 ＝ 108,000円。最近の日商簿記2級では残存価額ゼロの「新定額法」が主流ですが、問題文を必ず確認してください。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">定率法で「期中」（年度途中）に取得した場合はどうなりますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">定率法でも月割計算が必要です。「未償却残高 × 償却率 × 月数/12」で求めます。1年目の期中取得で取得月が7月なら残り6ヶ月分（×6/12）になります。2年目以降は月割ではなく通常の計算（未償却残高 × 償却率）に戻ります。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">定率法で「償却率」が問題文に書いていない場合はどうすればいいですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">簿記2級の試験では、定率法を使う問題には必ず「償却率〇%」か「定率法の償却率は□□とする」という指定が入ります。自分で償却率を計算する必要はありません。問題文を読み飛ばさないよう、最初に確認する癖をつけてください。</div></details>
+</section>
+
+<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🏰</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">この記事、お役に立てましたか？</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事が少しでも参考になったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！ 皆さんの一押しが、次の記事を書く力になります。</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="boki2-kotei-shisan.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">固定資産の仕訳を練習する →</a>
+      <a href="boki2.html" style="display:inline-block;background:#fff;border:2px solid #8CC63F;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#276749;text-decoration:none;">簿記2級ロードマップへ</a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"定額法と定率法、どちらが簿記2級でよく出ますか？","acceptedAnswer":{"@type":"Answer","text":"どちらも出題されます。定率法は計算が複雑なため失点につながりやすく、未償却残高×償却率の手順を毎回下書きで書く習慣が大切です。"}},{"@type":"Question","name":"残存価額がある場合の定額法はどう計算しますか？","acceptedAnswer":{"@type":"Answer","text":"（取得原価－残存価額）÷耐用年数で計算します。最近の日商簿記2級では残存価額ゼロの新定額法が主流ですが、問題文を必ず確認してください。"}},{"@type":"Question","name":"定率法で期中に取得した場合はどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"月割計算が必要です。未償却残高×償却率×月数/12で求めます。2年目以降は月割ではなく通常の計算（未償却残高×償却率）に戻ります。"}},{"@type":"Question","name":"定率法で償却率が問題文に書いていない場合はどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"簿記2級の試験では定率法を使う問題には必ず償却率の指定が入ります。自分で償却率を計算する必要はありません。"}}]}
+</script>
+
+<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+  <a href="boki2-kotei-shisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">本編記事</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">固定資産の減価償却・除却・売却の仕訳</div></a>
+  <a href="boki2-shohin-baibai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">商品売買・棚卸減耗損・商品評価損</div></a>
+  <a href="boki2-lease.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">リース取引・ファイナンス・リース</div></a>
+  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
+</div></div></section>
+
+<footer><div><a href="lp.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="boki2-kotei-shisan.html">固定資産</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body></html>
