@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480">
+  <defs>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+    <linearGradient id="gBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EFF6FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="760" height="480" rx="14" fill="url(#gBg)"/>
+
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">11月慣らし受験 → 来年6月本命！ 2ステップ攻略マップ</text>
+  <text x="380" y="49" text-anchor="middle" font-size="11" fill="#64748B">7月スタート〜来年6月・合計約450時間の完全攻略ロードマップ（合格率約10%のボスを2回で仕留める）</text>
+
+  <!-- ===================== STEP 1 SECTION ===================== -->
+  <rect x="10" y="55" width="740" height="172" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <!-- STEP1 label bar -->
+  <rect x="10" y="55" width="740" height="25" rx="12" fill="#3B82F6"/>
+  <rect x="10" y="68" width="740" height="12" fill="#3B82F6"/>
+  <text x="380" y="73" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="0.04em">STEP 1 ▶ 今年11月（慣らし受験・中間ボス戦） ／ 約4ヶ月 ・ 目安〜180時間</text>
+
+  <!-- Dashed connecting line STEP1 -->
+  <line x1="82" y1="150" x2="416" y2="150" stroke="#93C5FD" stroke-width="2" stroke-dasharray="7,4"/>
+
+  <!-- ── Node A: TODAY ── -->
+  <rect x="14" y="93" width="68" height="114" rx="10" fill="#D1FAE5" stroke="#34D399" stroke-width="1.5"/>
+  <rect x="14" y="93" width="68" height="24" rx="10" fill="#10B981"/>
+  <rect x="14" y="105" width="68" height="12" fill="#10B981"/>
+  <text x="48" y="108" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">TODAY</text>
+  <text x="48" y="138" text-anchor="middle" font-size="22">🎯</text>
+  <text x="48" y="161" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">今ここ</text>
+  <text x="48" y="178" text-anchor="middle" font-size="10" fill="#059669">7月スタート</text>
+  <text x="48" y="196" text-anchor="middle" font-size="9" fill="#6EE7B7">いざ1級へ!</text>
+
+  <!-- Arrow A→B -->
+  <line x1="84" y1="150" x2="104" y2="150" stroke="#93C5FD" stroke-width="2"/>
+  <polygon points="108,150 101,146 101,154" fill="#93C5FD"/>
+
+  <!-- ── Node B: 基礎インプット ── -->
+  <rect x="108" y="83" width="128" height="134" rx="10" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="108" y="83" width="128" height="24" rx="10" fill="#3B82F6"/>
+  <rect x="108" y="95" width="128" height="12" fill="#3B82F6"/>
+  <text x="172" y="99" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">7月〜9月</text>
+  <line x1="116" y1="113" x2="228" y2="113" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="172" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">基礎インプット</text>
+  <text x="172" y="145" text-anchor="middle" font-size="10" fill="#374151">商業・会計学</text>
+  <text x="172" y="158" text-anchor="middle" font-size="8.5" fill="#94A3B8">（しょうぎょう・かいけいがく）</text>
+  <text x="172" y="171" text-anchor="middle" font-size="10" fill="#374151">テキスト1周</text>
+  <text x="172" y="184" text-anchor="middle" font-size="10" fill="#374151">工業・原計も基礎</text>
+  <text x="172" y="197" text-anchor="middle" font-size="8.5" fill="#94A3B8">（こうぎょう・げんけい）</text>
+  <text x="172" y="210" text-anchor="middle" font-size="9" fill="#60A5FA">1周でOK！深く追わない</text>
+
+  <!-- Arrow B→C -->
+  <line x1="238" y1="150" x2="258" y2="150" stroke="#93C5FD" stroke-width="2"/>
+  <polygon points="262,150 255,146 255,154" fill="#93C5FD"/>
+
+  <!-- ── Node C: 実戦偵察 ── -->
+  <rect x="262" y="83" width="128" height="134" rx="10" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="262" y="83" width="128" height="24" rx="10" fill="#3B82F6"/>
+  <rect x="262" y="95" width="128" height="12" fill="#3B82F6"/>
+  <text x="326" y="99" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">10月〜11月</text>
+  <line x1="270" y1="113" x2="382" y2="113" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="326" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">実戦・偵察</text>
+  <text x="326" y="145" text-anchor="middle" font-size="10" fill="#374151">過去問1〜2年分</text>
+  <text x="326" y="158" text-anchor="middle" font-size="8.5" fill="#94A3B8">（かこもん・れんしゅう）</text>
+  <text x="326" y="171" text-anchor="middle" font-size="10" fill="#374151">敵の強さを確認！</text>
+  <text x="326" y="184" text-anchor="middle" font-size="10" fill="#374151">弱点リストを作る</text>
+  <text x="326" y="197" text-anchor="middle" font-size="9" fill="#64748B">点数は気にしないで◎</text>
+  <text x="326" y="210" text-anchor="middle" font-size="9" fill="#60A5FA">合格なくてOK!</text>
+
+  <!-- Arrow C→D -->
+  <line x1="392" y1="150" x2="412" y2="150" stroke="#93C5FD" stroke-width="2"/>
+  <polygon points="416,150 409,146 409,154" fill="#93C5FD"/>
+
+  <!-- ── Node D: 11月 中間ボス戦 ── -->
+  <rect x="416" y="83" width="334" height="134" rx="10" fill="#EDE9FE" stroke="#A78BFA" stroke-width="2"/>
+  <rect x="416" y="83" width="334" height="24" rx="10" fill="#6D28D9"/>
+  <rect x="416" y="95" width="334" height="12" fill="#6D28D9"/>
+  <text x="583" y="99" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">11月本番試験（中間ボス戦）</text>
+  <line x1="424" y1="113" x2="742" y2="113" stroke="#DDD6FE" stroke-width="1"/>
+  <!-- Emoji left side -->
+  <text x="466" y="153" text-anchor="middle" font-size="30">🐉</text>
+  <!-- Text right side -->
+  <text x="620" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#4C1D95">中間ボス戦！</text>
+  <text x="620" y="145" text-anchor="middle" font-size="8.5" fill="#94A3B8">（ちゅうかん・ぼすせん）</text>
+  <text x="620" y="161" text-anchor="middle" font-size="10" font-weight="700" fill="#6D28D9">「落ちても全然OK！」</text>
+  <text x="620" y="175" text-anchor="middle" font-size="10" fill="#374151">本番の空気・問題の難しさを</text>
+  <text x="620" y="189" text-anchor="middle" font-size="10" fill="#374151">一度体験するのが目的！</text>
+  <text x="620" y="203" text-anchor="middle" font-size="10" font-weight="700" fill="#7C3AED">→ 経験値MAX で帰還！</text>
+  <text x="620" y="214" text-anchor="middle" font-size="9" fill="#A78BFA">合格点70点は来年のお楽しみに</text>
+
+  <!-- ===================== CONNECTOR ===================== -->
+  <!-- Downward arrow -->
+  <line x1="380" y1="232" x2="380" y2="274" stroke="#F59E0B" stroke-width="2.5"/>
+  <polygon points="380,280 375,272 385,272" fill="#F59E0B"/>
+  <!-- Badge -->
+  <rect x="178" y="238" width="404" height="34" rx="17" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="380" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#B45309">11月本番で「リアルなボスの強さ」を確認！</text>
+  <text x="380" y="267" text-anchor="middle" font-size="10" fill="#92400E">弱点リストを持ち帰り → 来年6月で完全撃破！ ▼</text>
+
+  <!-- ===================== STEP 2 SECTION ===================== -->
+  <rect x="10" y="286" width="740" height="172" rx="12" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+  <!-- STEP2 label bar -->
+  <rect x="10" y="286" width="740" height="25" rx="12" fill="#10B981"/>
+  <rect x="10" y="299" width="740" height="12" fill="#10B981"/>
+  <text x="380" y="304" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="0.04em">STEP 2 ▶ 来年6月（本命・最終決戦）／ 約7ヶ月 ・ 目安〜270時間</text>
+
+  <!-- Dashed connecting line STEP2 -->
+  <line x1="164" y1="381" x2="539" y2="381" stroke="#6EE7B7" stroke-width="2" stroke-dasharray="7,4"/>
+
+  <!-- ── Node E: 弱点補強 ── -->
+  <rect x="14" y="314" width="150" height="134" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="14" y="314" width="150" height="24" rx="10" fill="#10B981"/>
+  <rect x="14" y="326" width="150" height="12" fill="#10B981"/>
+  <text x="89" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">12月〜1月</text>
+  <line x1="22" y1="344" x2="156" y2="344" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="89" y="361" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">弱点補強・総復習</text>
+  <text x="89" y="376" text-anchor="middle" font-size="10" fill="#374151">11月で見つけた</text>
+  <text x="89" y="389" text-anchor="middle" font-size="10" fill="#374151">弱点を徹底的につぶす</text>
+  <text x="89" y="402" text-anchor="middle" font-size="10" fill="#374151">差異分析を完全固め</text>
+  <text x="89" y="414" text-anchor="middle" font-size="8.5" fill="#94A3B8">（さいぶんせき・かためる）</text>
+  <text x="89" y="427" text-anchor="middle" font-size="9" fill="#34D399">苦手を得点源に変換！</text>
+  <text x="89" y="439" text-anchor="middle" font-size="9" fill="#6EE7B7">※ 弱点が先にわかる強み</text>
+
+  <!-- Arrow E→F -->
+  <line x1="166" y1="381" x2="185" y2="381" stroke="#6EE7B7" stroke-width="2"/>
+  <polygon points="189,381 182,377 182,385" fill="#6EE7B7"/>
+
+  <!-- ── Node F: 全科目2周目 ── -->
+  <rect x="189" y="314" width="150" height="134" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="189" y="314" width="150" height="24" rx="10" fill="#10B981"/>
+  <rect x="189" y="326" width="150" height="12" fill="#10B981"/>
+  <text x="264" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">2月〜4月</text>
+  <line x1="197" y1="344" x2="331" y2="344" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="264" y="361" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">全科目2周目</text>
+  <text x="264" y="376" text-anchor="middle" font-size="10" fill="#374151">商業・会計学 理論</text>
+  <text x="264" y="389" text-anchor="middle" font-size="10" fill="#374151">を深堀り</text>
+  <text x="264" y="402" text-anchor="middle" font-size="8.5" fill="#94A3B8">（かいけいがく・りろん）</text>
+  <text x="264" y="415" text-anchor="middle" font-size="10" fill="#374151">工業・原計 応用を強化</text>
+  <text x="264" y="428" text-anchor="middle" font-size="9" fill="#34D399">1周目の2倍速で進む！</text>
+  <text x="264" y="440" text-anchor="middle" font-size="9" fill="#6EE7B7">理解度が段違いに上がる</text>
+
+  <!-- Arrow F→G -->
+  <line x1="341" y1="381" x2="360" y2="381" stroke="#6EE7B7" stroke-width="2"/>
+  <polygon points="364,381 357,377 357,385" fill="#6EE7B7"/>
+
+  <!-- ── Node G: 過去問10年分 ── -->
+  <rect x="364" y="314" width="150" height="134" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="364" y="314" width="150" height="24" rx="10" fill="#10B981"/>
+  <rect x="364" y="326" width="150" height="12" fill="#10B981"/>
+  <text x="439" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">4月〜5月</text>
+  <line x1="372" y1="344" x2="506" y2="344" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="439" y="361" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">過去問10年分</text>
+  <text x="439" y="376" text-anchor="middle" font-size="10" fill="#374151">4科目を通しで解く</text>
+  <text x="439" y="389" text-anchor="middle" font-size="10" fill="#374151">時間配分を体に入れる</text>
+  <text x="439" y="402" text-anchor="middle" font-size="8.5" fill="#94A3B8">（じかんはいぶん・たいにい）</text>
+  <text x="439" y="415" text-anchor="middle" font-size="10" fill="#374151">70点安定を目指す</text>
+  <text x="439" y="428" text-anchor="middle" font-size="9" fill="#34D399">模試1〜2回も受ける！</text>
+  <text x="439" y="440" text-anchor="middle" font-size="9" fill="#6EE7B7">足切り回避を意識</text>
+
+  <!-- Arrow G→H -->
+  <line x1="516" y1="381" x2="535" y2="381" stroke="#6EE7B7" stroke-width="2"/>
+  <polygon points="539,381 532,377 532,385" fill="#6EE7B7"/>
+
+  <!-- ── Node H: 6月 最終決戦! ── -->
+  <rect x="539" y="314" width="211" height="134" rx="10" fill="#FDF4FF" stroke="#D8B4FE" stroke-width="2"/>
+  <rect x="539" y="314" width="211" height="24" rx="10" fill="#7C3AED"/>
+  <rect x="539" y="326" width="211" height="12" fill="#7C3AED"/>
+  <text x="644" y="330" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">6月本番試験（最終決戦！）</text>
+  <line x1="547" y1="344" x2="742" y2="344" stroke="#E9D5FF" stroke-width="1"/>
+  <text x="644" y="364" text-anchor="middle" font-size="24">⚔</text>
+  <text x="644" y="388" text-anchor="middle" font-size="13" font-weight="700" fill="#6B21A8">最終決戦！</text>
+  <text x="644" y="402" text-anchor="middle" font-size="8.5" fill="#94A3B8">（さいしゅう・けっせん）</text>
+  <text x="644" y="416" text-anchor="middle" font-size="11" font-weight="700" fill="#7C3AED">緊張ゼロの無双状態！</text>
+  <text x="644" y="430" text-anchor="middle" font-size="11" fill="#374151">経験値MAXで本番に挑む</text>
+  <text x="644" y="443" text-anchor="middle" font-size="11" font-weight="700" fill="#F59E0B">🏆 LEVEL CLEAR!</text>
+
+  <!-- ===================== SUMMARY BAR ===================== -->
+  <rect x="10" y="462" width="740" height="16" rx="8" fill="#1E293B"/>
+  <text x="380" y="474" text-anchor="middle" font-size="10" fill="#F1F5F9" font-weight="500">合計：約450時間 / 11ヶ月 ／ 2ステップで1級を攻略！来年6月は緊張ゼロの無双状態で試験に臨める</text>
+</svg>

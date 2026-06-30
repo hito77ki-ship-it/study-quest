@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440">
+  <defs>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+    <linearGradient id="gBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="gStart" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D1FAE5"/>
+      <stop offset="100%" stop-color="#A7F3D0"/>
+    </linearGradient>
+    <linearGradient id="gP1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="gP2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+    <linearGradient id="gP3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+    <linearGradient id="gGoal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDF2F8"/>
+      <stop offset="100%" stop-color="#FBCFE8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="760" height="440" rx="14" fill="url(#gBg)"/>
+  <!-- Subtle dot decorations -->
+  <circle cx="24" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="736" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="24" cy="416" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="736" cy="416" r="3" fill="#CBD5E1" opacity="0.5"/>
+
+  <!-- Title -->
+  <text x="380" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">⚔ 1級合格への最速クエストマップ</text>
+  <text x="380" y="56" text-anchor="middle" font-size="12" fill="#64748B">今から約5ヶ月で11月試験を狙う攻略タイムライン（合計 約300〜400時間）</text>
+
+  <!-- Dashed connecting line (behind all nodes) -->
+  <line x1="98" y1="185" x2="620" y2="185" stroke="#CBD5E1" stroke-width="2.5" stroke-dasharray="8,5"/>
+
+  <!-- ===== START NODE ===== -->
+  <rect x="18" y="125" width="80" height="120" rx="12" fill="url(#gStart)" stroke="#34D399" stroke-width="2"/>
+  <rect x="18" y="125" width="80" height="25" rx="12" fill="#10B981"/>
+  <rect x="18" y="138" width="80" height="12" fill="#10B981"/>
+  <text x="58" y="142" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.08em">START</text>
+  <text x="58" y="168" text-anchor="middle" font-size="22">🎓</text>
+  <text x="58" y="191" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">2級</text>
+  <text x="58" y="208" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">合格！</text>
+  <text x="58" y="236" text-anchor="middle" font-size="9" fill="#059669">いざ1級へ→</text>
+
+  <!-- Arrow 1 -->
+  <line x1="100" y1="185" x2="133" y2="185" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="140,185 132,181 132,189" fill="#94A3B8"/>
+
+  <!-- ===== PHASE 1 NODE ===== -->
+  <rect x="140" y="105" width="130" height="160" rx="12" fill="url(#gP1)" stroke="#60A5FA" stroke-width="2"/>
+  <rect x="140" y="105" width="130" height="25" rx="12" fill="#3B82F6"/>
+  <rect x="140" y="118" width="130" height="12" fill="#3B82F6"/>
+  <text x="205" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.1em">PHASE 1</text>
+  <text x="205" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">商業・会計学</text>
+  <text x="205" y="165" text-anchor="middle" font-size="10" fill="#374151">理論をマスター</text>
+  <line x1="152" y1="175" x2="258" y2="175" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="205" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">⏱ 約2ヶ月</text>
+  <text x="205" y="208" text-anchor="middle" font-size="9.5" fill="#374151">連結・企業結合</text>
+  <text x="205" y="223" text-anchor="middle" font-size="9.5" fill="#374151">会計基準の理論</text>
+  <text x="205" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#2563EB">約120〜160h</text>
+  <text x="205" y="258" text-anchor="middle" font-size="9" fill="#93C5FD">7月〜8月</text>
+
+  <!-- Arrow 2 -->
+  <line x1="272" y1="185" x2="293" y2="185" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="300,185 292,181 292,189" fill="#94A3B8"/>
+
+  <!-- ===== PHASE 2 NODE ===== -->
+  <rect x="300" y="105" width="130" height="160" rx="12" fill="url(#gP2)" stroke="#A78BFA" stroke-width="2"/>
+  <rect x="300" y="105" width="130" height="25" rx="12" fill="#7C3AED"/>
+  <rect x="300" y="118" width="130" height="12" fill="#7C3AED"/>
+  <text x="365" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.1em">PHASE 2</text>
+  <text x="365" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#3B1D8A">工業・原価計算</text>
+  <text x="365" y="165" text-anchor="middle" font-size="10" fill="#374151">差異分析を制覇！</text>
+  <line x1="312" y1="175" x2="418" y2="175" stroke="#DDD6FE" stroke-width="1"/>
+  <text x="365" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#6D28D9">⏱ 約1.5ヶ月</text>
+  <text x="365" y="208" text-anchor="middle" font-size="9.5" fill="#374151">標準原価・差異分析</text>
+  <text x="365" y="223" text-anchor="middle" font-size="9.5" fill="#374151">意思決定・CVP</text>
+  <text x="365" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#5B21B6">約90〜120h</text>
+  <text x="365" y="258" text-anchor="middle" font-size="9" fill="#C4B5FD">9月〜10月上旬</text>
+
+  <!-- Arrow 3 -->
+  <line x1="432" y1="185" x2="453" y2="185" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="460,185 452,181 452,189" fill="#94A3B8"/>
+
+  <!-- ===== PHASE 3 NODE ===== -->
+  <rect x="460" y="105" width="130" height="160" rx="12" fill="url(#gP3)" stroke="#FBBF24" stroke-width="2"/>
+  <rect x="460" y="105" width="130" height="25" rx="12" fill="#F59E0B"/>
+  <rect x="460" y="118" width="130" height="12" fill="#F59E0B"/>
+  <text x="525" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.1em">PHASE 3</text>
+  <text x="525" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#78350F">過去問・全範囲模試</text>
+  <text x="525" y="165" text-anchor="middle" font-size="10" fill="#374151">本番感覚を掴む！</text>
+  <line x1="472" y1="175" x2="578" y2="175" stroke="#FDE68A" stroke-width="1"/>
+  <text x="525" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309">⏱ 約1.5ヶ月</text>
+  <text x="525" y="208" text-anchor="middle" font-size="9.5" fill="#374151">4科目横断演習</text>
+  <text x="525" y="223" text-anchor="middle" font-size="9.5" fill="#374151">時間配分の徹底訓練</text>
+  <text x="525" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#D97706">約90〜120h</text>
+  <text x="525" y="258" text-anchor="middle" font-size="9" fill="#FCD34D">10月上旬〜11月</text>
+
+  <!-- Arrow 4 -->
+  <line x1="592" y1="185" x2="613" y2="185" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="620,185 612,181 612,189" fill="#94A3B8"/>
+
+  <!-- ===== GOAL NODE ===== -->
+  <rect x="620" y="125" width="122" height="120" rx="12" fill="url(#gGoal)" stroke="#F472B6" stroke-width="2.5"/>
+  <rect x="620" y="125" width="122" height="25" rx="12" fill="#EC4899"/>
+  <rect x="620" y="138" width="122" height="12" fill="#EC4899"/>
+  <text x="681" y="142" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.08em">GOAL</text>
+  <text x="681" y="166" text-anchor="middle" font-size="22">🏆</text>
+  <text x="681" y="191" text-anchor="middle" font-size="12" font-weight="700" fill="#831843">11月試験</text>
+  <text x="681" y="208" text-anchor="middle" font-size="11" font-weight="700" fill="#831843">本番突撃！</text>
+  <text x="681" y="235" text-anchor="middle" font-size="9" fill="#F9A8D4">合格を掴め！</text>
+
+  <!-- ===== BOTTOM SUMMARY BAR ===== -->
+  <rect x="18" y="284" width="724" height="48" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="306" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">合計：約300〜400時間 ／ 最短5ヶ月の集中クエスト</text>
+  <text x="380" y="323" text-anchor="middle" font-size="11" fill="#64748B">合格基準：4科目合計70点以上 ／ 各科目10点（40%）以上が必須条件</text>
+
+  <!-- ===== THREE INFO CARDS ===== -->
+  <rect x="18" y="348" width="228" height="76" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="132" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">商業・会計学（50点分）</text>
+  <text x="132" y="385" text-anchor="middle" font-size="10" fill="#1E3A8A">連結・企業結合・資産除去</text>
+  <text x="132" y="400" text-anchor="middle" font-size="10" fill="#374151">理論問題が最難関ゾーン</text>
+  <text x="132" y="416" text-anchor="middle" font-size="9" fill="#3B82F6">★最初に全体像を掴む戦略</text>
+
+  <rect x="266" y="348" width="228" height="76" rx="8" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1"/>
+  <text x="380" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#6D28D9">工業・原価計算（50点分）</text>
+  <text x="380" y="385" text-anchor="middle" font-size="10" fill="#3B1D8A">標準原計・差異・意思決定</text>
+  <text x="380" y="400" text-anchor="middle" font-size="10" fill="#374151">ABC原価計算も出題</text>
+  <text x="380" y="416" text-anchor="middle" font-size="9" fill="#7C3AED">★2級の知識が最も活きる！</text>
+
+  <rect x="514" y="348" width="228" height="76" rx="8" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+  <text x="628" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#B45309">過去問・本番演習（全科目）</text>
+  <text x="628" y="385" text-anchor="middle" font-size="10" fill="#78350F">3時間×本番形式で解く</text>
+  <text x="628" y="400" text-anchor="middle" font-size="10" fill="#374151">足切り回避意識を鍛える</text>
+  <text x="628" y="416" text-anchor="middle" font-size="9" fill="#D97706">★最低5〜10年分を反復する</text>
+</svg>

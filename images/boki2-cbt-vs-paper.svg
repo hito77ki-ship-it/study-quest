@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 472" width="800" height="472">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="472" rx="14" fill="#FAFDF6"/>
+  <!-- 装飾ドット -->
+  <circle cx="775" cy="24" r="5" fill="#93C5FD" opacity="0.6"/>
+  <circle cx="753" cy="45" r="3" fill="#FDE68A" opacity="0.65"/>
+  <circle cx="794" cy="50" r="4" fill="#C4B5FD" opacity="0.5"/>
+  <circle cx="20" cy="450" r="4" fill="#86EFAC" opacity="0.4"/>
+
+  <!-- タイトル -->
+  <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">ネット試験（CBT）vs 統一試験（紙）― 2級どっちで受けるべき？</text>
+  <text x="400" y="48" text-anchor="middle" font-size="11" fill="#64748B">2級特有の「工業簿記の下書き問題」「難易度ハズレ回リスク」を踏まえたリアル比較</text>
+
+  <!-- ===== 左列: ネット試験（CBT） ===== -->
+  <rect x="10" y="62" width="374" height="290" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <!-- ヘッダー -->
+  <rect x="10" y="62" width="374" height="38" rx="12" fill="#3B82F6"/>
+  <rect x="10" y="90" width="374" height="10" fill="#3B82F6"/>
+  <text x="197" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">⚡ ネット試験（CBT方式）</text>
+  <!-- サブタイトル -->
+  <text x="197" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">スピード攻略型ダンジョン</text>
+  <text x="197" y="132" text-anchor="middle" font-size="9" fill="#3B82F6">「準備OK！と思ったら即挑戦できる冒険者向け」</text>
+
+  <!-- メリットセクション -->
+  <text x="22" y="152" font-size="10" font-weight="700" fill="#1E40AF">◎ 2級受験のメリット</text>
+  <line x1="22" y1="157" x2="376" y2="157" stroke="#BFDBFE" stroke-width="0.8"/>
+
+  <rect x="22" y="164" width="8" height="8" rx="2" fill="#3B82F6"/>
+  <text x="36" y="173" font-size="9.5" fill="#374151">いつでも受験・不合格でも数日後に即リベンジ可能</text>
+
+  <rect x="22" y="181" width="8" height="8" rx="2" fill="#3B82F6"/>
+  <text x="36" y="190" font-size="9.5" fill="#374151">試験終了後すぐに合否が画面に表示される</text>
+
+  <rect x="22" y="198" width="8" height="8" rx="2" fill="#3B82F6"/>
+  <text x="36" y="207" font-size="9.5" fill="#374151">難易度が比較的安定（超難問ハズレ回リスクが低い）</text>
+
+  <rect x="22" y="215" width="8" height="8" rx="2" fill="#3B82F6"/>
+  <text x="36" y="224" font-size="9.5" fill="#374151">「仕上がったベストな状態」で受験できる自由度</text>
+
+  <!-- 注意点セクション -->
+  <text x="22" y="244" font-size="10" font-weight="700" fill="#B45309">△ 2級特有の注意点</text>
+  <line x1="22" y1="249" x2="376" y2="249" stroke="#FDE68A" stroke-width="0.8"/>
+
+  <rect x="22" y="257" width="8" height="8" rx="2" fill="#F59E0B"/>
+  <text x="36" y="266" font-size="9.5" fill="#374151">複雑な財務諸表を画面で読む「視線移動」が大変</text>
+
+  <rect x="22" y="275" width="8" height="8" rx="2" fill="#F59E0B"/>
+  <text x="36" y="284" font-size="9.5" fill="#374151">計算用紙1〜2枚のみ ／ 下書きを小さく書く練習が必要</text>
+
+  <rect x="22" y="293" width="8" height="8" rx="2" fill="#F59E0B"/>
+  <text x="36" y="302" font-size="9.5" fill="#374151">シュラッター図・ボックス図は別紙に書く工夫が必須</text>
+
+  <!-- タグ -->
+  <rect x="48" y="318" width="298" height="24" rx="6" fill="#DBEAFE"/>
+  <text x="197" y="334" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E40AF">★ 大谷イチ推し！ほとんどの人に強くおすすめ</text>
+
+  <!-- ===== VS バッジ ===== -->
+  <circle cx="400" cy="207" r="25" fill="#1E293B"/>
+  <circle cx="400" cy="207" r="21" fill="#334155"/>
+  <text x="400" y="213" text-anchor="middle" font-size="15" font-weight="700" fill="#F8FAFC">VS</text>
+
+  <!-- ===== 右列: 統一試験（紙） ===== -->
+  <rect x="416" y="62" width="374" height="290" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <!-- ヘッダー -->
+  <rect x="416" y="62" width="374" height="38" rx="12" fill="#F59E0B"/>
+  <rect x="416" y="90" width="374" height="10" fill="#F59E0B"/>
+  <text x="603" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">✏ 統一試験（紙の試験）</text>
+  <!-- サブタイトル -->
+  <text x="603" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">じっくり書き込み型ダンジョン</text>
+  <text x="603" y="132" text-anchor="middle" font-size="9" fill="#B45309">「ペンでゴリゴリ下書きしながら解く職人タイプ向け」</text>
+
+  <!-- メリットセクション -->
+  <text x="428" y="152" font-size="10" font-weight="700" fill="#92400E">◎ 2級受験のメリット</text>
+  <line x1="428" y1="157" x2="782" y2="157" stroke="#FDE68A" stroke-width="0.8"/>
+
+  <rect x="428" y="164" width="8" height="8" rx="2" fill="#F59E0B"/>
+  <text x="442" y="173" font-size="9.5" fill="#374151">問題用紙にシュラッター図・ボックス図を直接書ける</text>
+
+  <rect x="428" y="181" width="8" height="8" rx="2" fill="#F59E0B"/>
+  <text x="442" y="190" font-size="9.5" fill="#374151">長文の問題資料を紙のまま自由に行き来できる安心感</text>
+
+  <rect x="428" y="198" width="8" height="8" rx="2" fill="#F59E0B"/>
+  <text x="442" y="207" font-size="9.5" fill="#374151">画面の視線移動がないため数字の読み飛ばしが減る</text>
+
+  <!-- 注意点セクション -->
+  <text x="428" y="228" font-size="10" font-weight="700" fill="#DC2626">△ 2級特有の注意点（リスク）</text>
+  <line x1="428" y1="233" x2="782" y2="233" stroke="#FCA5A5" stroke-width="0.8"/>
+
+  <rect x="428" y="241" width="8" height="8" rx="2" fill="#EF4444"/>
+  <text x="442" y="250" font-size="9.5" fill="#374151">年3回のみ（11月・2月・6月）不合格で3ヶ月待ち</text>
+
+  <rect x="428" y="259" width="8" height="8" rx="2" fill="#EF4444"/>
+  <text x="442" y="268" font-size="9.5" fill="#374151">超難問「ハズレ回」に当たるリスクがある</text>
+
+  <rect x="428" y="277" width="8" height="8" rx="2" fill="#EF4444"/>
+  <text x="442" y="286" font-size="9.5" fill="#374151">合否結果が後日発表（数週間〜1ヶ月後）</text>
+
+  <rect x="428" y="295" width="8" height="8" rx="2" fill="#EF4444"/>
+  <text x="442" y="304" font-size="9.5" fill="#374151">試験会場が限られ、当日の移動コストもかかる</text>
+
+  <!-- タグ -->
+  <rect x="432" y="318" width="342" height="24" rx="6" fill="#FEF3C7"/>
+  <text x="603" y="334" text-anchor="middle" font-size="9.5" fill="#92400E">書き込み派・難易度ガチャOKの本気の職人向け</text>
+
+  <!-- ===== 下部結論バンド ===== -->
+  <rect x="10" y="364" width="780" height="98" rx="8" fill="#1E293B"/>
+  <text x="400" y="385" text-anchor="middle" font-size="12" font-weight="700" fill="#8CC63F">大谷の2択プレイスタイル診断</text>
+
+  <text x="200" y="406" text-anchor="middle" font-size="10.5" font-weight="700" fill="#93C5FD">◆ ネット試験（CBT）推奨タイプ</text>
+  <text x="26" y="423" font-size="9.5" fill="#CBD5E1">・早く合格してすぐ次のステップへ進みたい人</text>
+  <text x="26" y="441" font-size="9.5" fill="#CBD5E1">・下書き用紙の工夫ができる人　→ ネット試験一択！</text>
+
+  <line x1="400" y1="372" x2="400" y2="455" stroke="#334155" stroke-width="1"/>
+
+  <text x="600" y="406" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FDE68A">◆ 統一試験（紙）推奨タイプ</text>
+  <text x="416" y="423" font-size="9.5" fill="#CBD5E1">・画面の数字でミスが減らない、紙に書き込みたい人</text>
+  <text x="416" y="441" font-size="9.5" fill="#CBD5E1">・ハズレ回リスクを覚悟できる人　→ 統一試験を狙え！</text>
+</svg>

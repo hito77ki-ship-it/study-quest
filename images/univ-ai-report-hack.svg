@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" width="760" height="450">
+  <defs>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+    <linearGradient id="gBg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="760" height="450" rx="14" fill="url(#gBg2)"/>
+  <circle cx="24" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="736" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="24" cy="426" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="736" cy="426" r="3" fill="#CBD5E1" opacity="0.5"/>
+
+  <!-- Title -->
+  <text x="380" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">手書きノート vs AI×ボイスメモ──どっちが最強？</text>
+  <text x="380" y="50" text-anchor="middle" font-size="11" fill="#64748B">「聞き逃し→絶望」を「録音→AI→一瞬解決」に変える大学生最強の自動化ルート</text>
+
+  <!-- VS badge -->
+  <rect x="360" y="58" width="40" height="24" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="380" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#D97706">VS</text>
+
+  <!-- LEFT HEADER -->
+  <rect x="12" y="58" width="342" height="24" rx="8" fill="#94A3B8"/>
+  <text x="183" y="75" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">😰 従来のアナログ方式（ノート手書き）</text>
+
+  <!-- RIGHT HEADER -->
+  <rect x="406" y="58" width="342" height="24" rx="8" fill="#3B82F6"/>
+  <text x="577" y="75" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">🚀 AI×ボイスメモ方式（最強ルート）</text>
+
+  <!-- ===== LEFT NODES (gray / muted) ===== -->
+
+  <!-- Left Node 1 -->
+  <rect x="12" y="86" width="342" height="68" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="12" y="86" width="342" height="22" rx="8" fill="#94A3B8"/>
+  <rect x="12" y="98" width="342" height="10" fill="#94A3B8"/>
+  <text x="183" y="101" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">😰 STEP 1</text>
+  <text x="183" y="119" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">手書きノートに必死になる</text>
+  <text x="183" y="133" text-anchor="middle" font-size="9.5" fill="#64748B">黒板を見ながらひたすら写す</text>
+  <text x="183" y="146" text-anchor="middle" font-size="9.5" fill="#94A3B8">→ 教授の話が頭に入らない...</text>
+
+  <!-- Arrow L1→2 -->
+  <line x1="183" y1="155" x2="183" y2="168" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="183,172 178,164 188,164" fill="#CBD5E1"/>
+
+  <!-- Left Node 2 -->
+  <rect x="12" y="172" width="342" height="68" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="12" y="172" width="342" height="22" rx="8" fill="#94A3B8"/>
+  <rect x="12" y="184" width="342" height="10" fill="#94A3B8"/>
+  <text x="183" y="187" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">😱 STEP 2</text>
+  <text x="183" y="205" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">大事な部分を聞き逃す！</text>
+  <text x="183" y="219" text-anchor="middle" font-size="9.5" fill="#64748B">「えっ今なんて言ったの？」</text>
+  <text x="183" y="232" text-anchor="middle" font-size="9.5" fill="#94A3B8">→ ノートに穴が開く</text>
+
+  <!-- Arrow L2→3 -->
+  <line x1="183" y1="241" x2="183" y2="254" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="183,258 178,250 188,250" fill="#CBD5E1"/>
+
+  <!-- Left Node 3 -->
+  <rect x="12" y="258" width="342" height="68" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="12" y="258" width="342" height="22" rx="8" fill="#94A3B8"/>
+  <rect x="12" y="270" width="342" height="10" fill="#94A3B8"/>
+  <text x="183" y="273" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">😞 STEP 3</text>
+  <text x="183" y="291" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">情報が不足・記憶もあいまい</text>
+  <text x="183" y="305" text-anchor="middle" font-size="9.5" fill="#64748B">レジュメを見ても意味がわからない</text>
+  <text x="183" y="318" text-anchor="middle" font-size="9.5" fill="#94A3B8">→ 何を書けばいいか不明</text>
+
+  <!-- Arrow L3→4 -->
+  <line x1="183" y1="327" x2="183" y2="340" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="183,344 178,336 188,336" fill="#CBD5E1"/>
+
+  <!-- Left Node 4 (RESULT - bad) -->
+  <rect x="12" y="344" width="342" height="76" rx="8" fill="#FFF5F5" stroke="#FCA5A5" stroke-width="1.5"/>
+  <rect x="12" y="344" width="342" height="22" rx="8" fill="#EF4444"/>
+  <rect x="12" y="356" width="342" height="10" fill="#EF4444"/>
+  <text x="183" y="359" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">😰 RESULT（残念...）</text>
+  <text x="183" y="379" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">レポートに詰まる...</text>
+  <text x="183" y="394" text-anchor="middle" font-size="9.5" fill="#374151">ギリギリまで悩んで微妙な出来</text>
+  <text x="183" y="409" text-anchor="middle" font-size="9.5" fill="#DC2626">→ 単位がヤバいかも... 😢</text>
+
+  <!-- ===== RIGHT NODES (colorful) ===== -->
+
+  <!-- Right Node 1: 録音 -->
+  <rect x="406" y="86" width="342" height="68" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="406" y="86" width="342" height="22" rx="8" fill="#3B82F6"/>
+  <rect x="406" y="98" width="342" height="10" fill="#3B82F6"/>
+  <text x="577" y="101" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">🎤 STEP 1</text>
+  <text x="577" y="119" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E3A8A">スマホのボイスメモをON！</text>
+  <text x="577" y="133" text-anchor="middle" font-size="9.5" fill="#374151">録音ボタンを押すだけでOK</text>
+  <text x="577" y="146" text-anchor="middle" font-size="9.5" fill="#3B82F6">→ 授業を丸ごと記録できる</text>
+
+  <!-- Arrow R1→2 -->
+  <line x1="577" y1="155" x2="577" y2="168" stroke="#34D399" stroke-width="2"/>
+  <polygon points="577,172 572,164 582,164" fill="#34D399"/>
+
+  <!-- Right Node 2: 文字起こし -->
+  <rect x="406" y="172" width="342" height="68" rx="8" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="406" y="172" width="342" height="22" rx="8" fill="#7C3AED"/>
+  <rect x="406" y="184" width="342" height="10" fill="#7C3AED"/>
+  <text x="577" y="187" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">📝 STEP 2</text>
+  <text x="577" y="205" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3B1D8A">Nottaで自動文字起こし</text>
+  <text x="577" y="219" text-anchor="middle" font-size="9.5" fill="#374151">（もじおこし：音声→テキスト変換）</text>
+  <text x="577" y="232" text-anchor="middle" font-size="9.5" fill="#7C3AED">→ 90分分が数分で完成</text>
+
+  <!-- Arrow R2→3 -->
+  <line x1="577" y1="241" x2="577" y2="254" stroke="#34D399" stroke-width="2"/>
+  <polygon points="577,258 572,250 582,250" fill="#34D399"/>
+
+  <!-- Right Node 3: AI処理 -->
+  <rect x="406" y="258" width="342" height="68" rx="8" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+  <rect x="406" y="258" width="342" height="22" rx="8" fill="#F59E0B"/>
+  <rect x="406" y="270" width="342" height="10" fill="#F59E0B"/>
+  <text x="577" y="273" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">🤖 STEP 3</text>
+  <text x="577" y="291" text-anchor="middle" font-size="10.5" font-weight="700" fill="#78350F">AIにプロンプトを投入！</text>
+  <text x="577" y="305" text-anchor="middle" font-size="9.5" fill="#374151">（ぷろんぷと：AIへの指示文）</text>
+  <text x="577" y="318" text-anchor="middle" font-size="9.5" fill="#F59E0B">→ 一瞬でレポート骨格が完成</text>
+
+  <!-- Arrow R3→4 -->
+  <line x1="577" y1="327" x2="577" y2="340" stroke="#34D399" stroke-width="2"/>
+  <polygon points="577,344 572,336 582,336" fill="#34D399"/>
+
+  <!-- Right Node 4 (RESULT - GOAL!) -->
+  <rect x="406" y="344" width="342" height="76" rx="8" fill="#F0FDF4" stroke="#34D399" stroke-width="2"/>
+  <rect x="406" y="344" width="342" height="22" rx="8" fill="#10B981"/>
+  <rect x="406" y="356" width="342" height="10" fill="#10B981"/>
+  <text x="577" y="359" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">🎉 RESULT（最強！）</text>
+  <text x="577" y="379" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">爆速レポート完成！</text>
+  <text x="577" y="394" text-anchor="middle" font-size="9.5" fill="#374151">教授が感動する完璧な内容に</text>
+  <text x="577" y="409" text-anchor="middle" font-size="9.5" fill="#10B981">→ 単位ゲット＆時間も余る！✨</text>
+
+  <!-- Summary bar -->
+  <rect x="12" y="426" width="736" height="18" rx="8" fill="#0F172A"/>
+  <text x="380" y="439" text-anchor="middle" font-size="10" fill="#E2E8F0" font-weight="500">「ボイスメモON → 文字起こし → AIに投げる」──この3ステップで授業ノートは不要になる</text>
+</svg>

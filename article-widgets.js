@@ -15,8 +15,12 @@ const ARTICLES = {
   'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦'},
   'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書'},
   'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の問題構成・時間配分'},
+  'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ'},
+  'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
+  'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
+  'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
   'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド'},
@@ -71,6 +75,7 @@ const ARTICLES = {
   'hatarakinagara-shikaku.html': {label:'社会人向け', title:'働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選'},
   'shukatsu-shikaku.html': {label:'大学生向け', title:'就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選'},
   'daigakusei-keizoku.html': {label:'大学生向け', title:'大学生が資格勉強を続ける方法｜授業・バイト・就活と両立するコツ'},
+  'univ-boki-units.html':  {label:'大学生向け', title:'大学の簿記・会計の講義は「神ボーナスステージ」！自習×大学で一石五鳥ハック'},
   'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026'},
   'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026'},
   'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026'},
@@ -126,6 +131,8 @@ const ARTICLES = {
   'boki3-hojosho.html':      {label:'簿記3級', title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）'},
   'boki3-hojinzei.html':     {label:'簿記3級', title:'法人税等の仕訳（仮払法人税等・未払法人税等）'},
   'boki3-credit.html':       {label:'簿記3級', title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
+  'univ-ai-report-hack.html':        {label:'AIライフハック', title:'ボイスメモ×AIでレポート無双！単位修得ハックを完全公開'},
+  'univ-qualification-strategy.html':{label:'大学生向け',    title:'将来から逆算する最強の資格戦略'},
 };
 
 const CATS = {
@@ -138,7 +145,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-let LATEST = ['boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html'];
+let LATEST = ['univ-boki-units.html','univ-ai-report-hack.html','univ-qualification-strategy.html','boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html'];
 
 async function loadLatestFromSitemap() {
   try {
@@ -173,6 +180,18 @@ async function loadPopularArticles() {
 const PAGE = location.pathname.split('/').pop() || '';
 
 const ARTICLE_DIALOGUES = {
+  'boki2-cbt-vs-paper.html': [
+    ['student', '受験生', 'ネット試験と紙の試験、どっちの方が合格しやすいですか？'],
+    ['teacher', '大谷', '難易度の安定性はCBTが有利です。ただし2級は複雑な下書きが増えるので、PC画面だと計算用紙のやりくりが大変になります。どちらが合うかは自分のスタイル次第です。'],
+    ['student', '受験生', '計算用紙って、どうやって工夫すればいいですか？'],
+    ['teacher', '大谷', '1枚を4分割して、問題番号ごとにエリアを決めておくのが一番です。本番前の模試で練習しておくと焦らなくなります。']
+  ],
+  'boki2-next-exam.html': [
+    ['student', '受験生', 'ネット試験って、統一試験より難しかったりしますか？'],
+    ['teacher', '大谷', '試験範囲も合格基準（70点）も同じです。問題がランダム出題なのでヤマを張りにくいですが、それはお互い様なので気にしなくていいです。'],
+    ['student', '受験生', '3ヶ月で本当に間に合いますか？'],
+    ['teacher', '大谷', '1日2〜3時間確保できれば十分狙えます。ネット試験は「準備できたら受ける」ができるので、3ヶ月があくまで目安。仕上がったタイミングで即申し込みが最速ルートです。']
+  ],
   'boki2.html': [
     ['student', '受験生', '簿記2級って、3級の延長だと思って始めても大丈夫ですか？'],
     ['teacher', '大谷', '半分はその通りです。ただ、工業簿記はまったく新しい科目なので、3級の延長だけで考えると途中で止まりやすいです。'],
@@ -220,6 +239,12 @@ const ARTICLE_DIALOGUES = {
     ['teacher', '大谷', '資格単体ではなく、実務経験と組み合わせて強くなります。経理なら簿記、不動産なら宅建、ITなら基本情報のように、職種とつなげて選ぶのが大事です。'],
     ['student', '社会人', '迷ったらどの資格を選ぶべきですか？'],
     ['teacher', '大谷', '転職先の求人票を見て、よく出てくる資格を選んでください。市場が求めている言葉に合わせるのが一番堅いです。']
+  ],
+  'univ-boki-units.html': [
+    ['student', '大学生', '大学の会計の授業って、資格勉強と一緒に進めた方がいいですか？'],
+    ['teacher', '大谷', '絶対に一緒に進めた方がいいです。資格テキストで予備知識があると、同じ内容が講義で出たとき「知ってる！」となって定着率が全然違います。'],
+    ['student', '大学生', '教授への質問って、実際に行ったことありますか？'],
+    ['teacher', '大谷', 'あります。連結会計の内部取引消去で詰まっていたとき、オフィスアワーで教授に聞いたら1時間みっちり教えてもらいました。無料の個別指導は本当に最強です。']
   ]
 };
 

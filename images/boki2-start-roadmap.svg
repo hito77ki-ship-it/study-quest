@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="500" rx="14" fill="#FAFDF6"/>
+  <!-- 装飾ドット -->
+  <circle cx="775" cy="22" r="5" fill="#FDE68A" opacity="0.65"/>
+  <circle cx="752" cy="44" r="3" fill="#C4B5FD" opacity="0.55"/>
+  <circle cx="792" cy="50" r="4" fill="#86EFAC" opacity="0.50"/>
+  <circle cx="20" cy="468" r="4" fill="#93C5FD" opacity="0.40"/>
+  <circle cx="42" cy="488" r="3" fill="#FDE68A" opacity="0.40"/>
+
+  <!-- タイトル -->
+  <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">今日から2級合格まで — 3ヶ月・最速クエストマップ</text>
+  <text x="400" y="48" text-anchor="middle" font-size="11" fill="#64748B">目標：約150〜200時間 ／ ネット試験（CBT方式）ならいつでも受験可能！</text>
+
+  <!-- スタートバッジ -->
+  <rect x="6" y="138" width="16" height="44" rx="4" fill="#8CC63F"/>
+  <text x="14" y="156" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff">今日</text>
+  <text x="14" y="168" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff">から</text>
+  <text x="14" y="180" text-anchor="middle" font-size="7" fill="#fff">START</text>
+  <line x1="22" y1="160" x2="32" y2="160" stroke="#8CC63F" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- ===== PHASE 1: 商業簿記 ===== -->
+  <rect x="30" y="62" width="172" height="195" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <!-- ヘッダー -->
+  <rect x="30" y="62" width="172" height="34" rx="10" fill="#3B82F6"/>
+  <rect x="30" y="86" width="172" height="10" fill="#3B82F6"/>
+  <text x="44" y="84" font-size="11" font-weight="700" fill="#fff">PHASE 1</text>
+  <rect x="158" y="68" width="36" height="16" rx="5" fill="#1D4ED8" opacity="0.75"/>
+  <text x="176" y="80" text-anchor="middle" font-size="9.5" fill="#BFDBFE">1ヶ月</text>
+  <!-- タイトル -->
+  <text x="116" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">商業簿記</text>
+  <text x="116" y="130" text-anchor="middle" font-size="9" fill="#3B82F6">（しょうぎょうぼき）</text>
+  <text x="116" y="145" text-anchor="middle" font-size="10.5" fill="#1D4ED8">攻略クエスト</text>
+  <!-- 箇条書き -->
+  <text x="42" y="165" font-size="9.5" fill="#374151">▸ 仕訳の型を固める</text>
+  <text x="42" y="181" font-size="9.5" fill="#374151">▸ 固定資産・引当金・税効果</text>
+  <text x="42" y="197" font-size="9.5" fill="#374151">▸ 連結会計・本支店会計</text>
+  <!-- 時間目安 -->
+  <text x="116" y="222" text-anchor="middle" font-size="9" fill="#64748B">目安：70〜80時間</text>
+  <!-- タグ -->
+  <rect x="36" y="232" width="158" height="16" rx="5" fill="#DBEAFE"/>
+  <text x="115" y="244" text-anchor="middle" font-size="9" fill="#1E40AF">第1・2・3問の土台を作る</text>
+
+  <!-- 矢印 1→2 -->
+  <line x1="202" y1="160" x2="214" y2="160" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="216,160 210,156 210,164" fill="#8CC63F"/>
+
+  <!-- ===== PHASE 2: 工業簿記 ===== -->
+  <rect x="216" y="62" width="172" height="195" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="216" y="62" width="172" height="34" rx="10" fill="#7C3AED"/>
+  <rect x="216" y="86" width="172" height="10" fill="#7C3AED"/>
+  <text x="230" y="84" font-size="11" font-weight="700" fill="#fff">PHASE 2</text>
+  <rect x="344" y="68" width="36" height="16" rx="5" fill="#5B21B6" opacity="0.75"/>
+  <text x="362" y="80" text-anchor="middle" font-size="9.5" fill="#DDD6FE">3週間</text>
+  <text x="302" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#5B21B6">工業簿記</text>
+  <text x="302" y="130" text-anchor="middle" font-size="9" fill="#7C3AED">（こうぎょうぼき）</text>
+  <text x="302" y="145" text-anchor="middle" font-size="10.5" fill="#6D28D9">攻略クエスト</text>
+  <text x="228" y="165" font-size="9.5" fill="#374151">▸ 材料費・労務費・経費の流れ</text>
+  <text x="228" y="181" font-size="9.5" fill="#374151">▸ 製造間接費・配賦差異（はいふ）</text>
+  <text x="228" y="197" font-size="9.5" fill="#374151">▸ 総合・個別・標準原価計算</text>
+  <text x="302" y="222" text-anchor="middle" font-size="9" fill="#64748B">目安：50〜60時間</text>
+  <rect x="222" y="232" width="160" height="16" rx="5" fill="#EDE9FE"/>
+  <text x="302" y="244" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">★ 40点満点を狙えるボーナス科目！</text>
+
+  <!-- 矢印 2→3 -->
+  <line x1="388" y1="160" x2="400" y2="160" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="402,160 396,156 396,164" fill="#8CC63F"/>
+
+  <!-- ===== PHASE 3: PC模試 ===== -->
+  <rect x="402" y="62" width="172" height="195" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="402" y="62" width="172" height="34" rx="10" fill="#F59E0B"/>
+  <rect x="402" y="86" width="172" height="10" fill="#F59E0B"/>
+  <text x="416" y="84" font-size="11" font-weight="700" fill="#fff">PHASE 3</text>
+  <rect x="528" y="68" width="40" height="16" rx="5" fill="#B45309" opacity="0.75"/>
+  <text x="548" y="80" text-anchor="middle" font-size="9.5" fill="#FEF3C7">2週間</text>
+  <text x="488" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#92400E">PC模試</text>
+  <text x="488" y="130" text-anchor="middle" font-size="9" fill="#F59E0B">（ぴーしーもし）</text>
+  <text x="488" y="145" text-anchor="middle" font-size="10.5" fill="#B45309">直前期・総仕上げ</text>
+  <text x="414" y="165" font-size="9.5" fill="#374151">▸ CBT形式の模試を3回解く</text>
+  <text x="414" y="181" font-size="9.5" fill="#374151">▸ 90分の時間配分を染み込ませる</text>
+  <text x="414" y="197" font-size="9.5" fill="#374151">▸ 弱点論点の集中補強</text>
+  <text x="488" y="222" text-anchor="middle" font-size="9" fill="#64748B">目安：20〜30時間</text>
+  <rect x="410" y="232" width="156" height="16" rx="5" fill="#FEF3C7"/>
+  <text x="488" y="244" text-anchor="middle" font-size="9" fill="#92400E">第4問→第1問の順で演習を積む</text>
+
+  <!-- 矢印 3→4 -->
+  <line x1="574" y1="160" x2="586" y2="160" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="588,160 582,156 582,164" fill="#22C55E"/>
+
+  <!-- ===== PHASE 4: 本番 ===== -->
+  <rect x="588" y="62" width="196" height="195" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="588" y="62" width="196" height="34" rx="10" fill="#22C55E"/>
+  <rect x="588" y="86" width="196" height="10" fill="#22C55E"/>
+  <text x="602" y="84" font-size="11" font-weight="700" fill="#fff">PHASE 4 — 本番突撃！</text>
+  <text x="686" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">ネット試験</text>
+  <text x="686" y="130" text-anchor="middle" font-size="9" fill="#22C55E">（CBT方式・ほぼ毎日受験OK）</text>
+  <text x="686" y="145" text-anchor="middle" font-size="10.5" fill="#15803D">いつでも受験できる！</text>
+  <text x="600" y="165" font-size="9.5" fill="#374151">▸ CBT会場でほぼ毎日受験可能</text>
+  <text x="600" y="181" font-size="9.5" fill="#374151">▸ 試験時間90分・70点以上で合格</text>
+  <text x="600" y="197" font-size="9.5" fill="#374151">▸ 合否はその場で画面に表示</text>
+  <text x="600" y="213" font-size="9.5" fill="#374151">▸ 不合格でも日数空ければ即再挑戦</text>
+  <rect x="596" y="232" width="180" height="16" rx="5" fill="#DCFCE7"/>
+  <text x="686" y="244" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">★ ボス討伐！ 合格証書をゲット！</text>
+
+  <!-- ===== 下部ダークサマリー ===== -->
+  <rect x="10" y="278" width="780" height="88" rx="8" fill="#1E293B"/>
+  <text x="400" y="300" text-anchor="middle" font-size="12" font-weight="700" fill="#8CC63F">3ヶ月 攻略スケジュール サマリー</text>
+
+  <text x="106" y="321" text-anchor="middle" font-size="10.5" font-weight="700" fill="#93C5FD">PHASE 1</text>
+  <text x="106" y="337" text-anchor="middle" font-size="9.5" fill="#CBD5E1">商業簿記（1ヶ月）</text>
+  <text x="106" y="353" text-anchor="middle" font-size="9.5" fill="#94A3B8">70〜80時間</text>
+
+  <line x1="205" y1="290" x2="205" y2="360" stroke="#334155" stroke-width="1"/>
+
+  <text x="302" y="321" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C4B5FD">PHASE 2</text>
+  <text x="302" y="337" text-anchor="middle" font-size="9.5" fill="#CBD5E1">工業簿記（3週間）</text>
+  <text x="302" y="353" text-anchor="middle" font-size="9.5" fill="#94A3B8">50〜60時間</text>
+
+  <line x1="395" y1="290" x2="395" y2="360" stroke="#334155" stroke-width="1"/>
+
+  <text x="488" y="321" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FDE68A">PHASE 3</text>
+  <text x="488" y="337" text-anchor="middle" font-size="9.5" fill="#CBD5E1">PC模試（2週間）</text>
+  <text x="488" y="353" text-anchor="middle" font-size="9.5" fill="#94A3B8">20〜30時間</text>
+
+  <line x1="580" y1="290" x2="580" y2="360" stroke="#334155" stroke-width="1"/>
+
+  <text x="686" y="321" text-anchor="middle" font-size="10.5" font-weight="700" fill="#86EFAC">PHASE 4</text>
+  <text x="686" y="337" text-anchor="middle" font-size="9.5" fill="#CBD5E1">ネット試験（随時）</text>
+  <text x="686" y="353" text-anchor="middle" font-size="9.5" fill="#86EFAC">ボスを撃破せよ！</text>
+
+  <!-- ===== 下部アドバイス ===== -->
+  <rect x="10" y="378" width="780" height="112" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="400" y="400" text-anchor="middle" font-size="11.5" font-weight="700" fill="#374151">大谷からの必勝アドバイス</text>
+  <text x="22" y="419" font-size="9.5" fill="#475569">① 工業簿記（第4・5問＝40点分）で満点を狙うのが最速ルート。「工業で満点＋商業で30点」で70点達成！</text>
+  <text x="22" y="436" font-size="9.5" fill="#475569">② ネット試験はほぼ毎日受験OK。試験日程に縛られず「準備できたら即受験」が最大の武器。</text>
+  <text x="22" y="453" font-size="9.5" fill="#475569">③ 平日2h＋休日4h設計で週約18時間。約2〜3ヶ月でトータル150時間に到達！まず今日テキストを開こう。</text>
+  <rect x="14" y="462" width="772" height="20" rx="5" fill="#DCFCE7"/>
+  <text x="400" y="476" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">合計：150〜200時間 ／ 試験時間：90分 ／ 合格点：70点以上 ／ 合否判定：試験終了後すぐに画面表示</text>
+</svg>
