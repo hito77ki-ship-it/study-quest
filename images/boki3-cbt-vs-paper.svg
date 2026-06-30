@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" width="800" height="490" font-family="'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+  <defs>
+    <linearGradient id="bgG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#EEF2FF"/>
+    </linearGradient>
+    <linearGradient id="cbtH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="papH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="cbtB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="papB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="490" fill="url(#bgG)"/>
+
+  <!-- Top title -->
+  <text x="400" y="36" text-anchor="middle" font-size="19" font-weight="700" fill="#1A202C">ネット試験 vs 統一試験（紙）完全比較</text>
+  <text x="400" y="58" text-anchor="middle" font-size="13" fill="#64748B">どっちのダンジョンで戦う？ あなたのプレイスタイルを選べ！</text>
+
+  <!-- ===== CBT Card ===== -->
+  <!-- Card body -->
+  <rect x="16" y="74" width="362" height="400" rx="14" fill="url(#cbtB)" stroke="#93C5FD" stroke-width="1.5"/>
+  <!-- Card header gradient -->
+  <rect x="16" y="74" width="362" height="78" rx="14" fill="url(#cbtH)"/>
+  <!-- Square off bottom of header -->
+  <rect x="16" y="128" width="362" height="24" fill="#1D4ED8"/>
+
+  <!-- PC icon: screen body -->
+  <rect x="36" y="84" width="48" height="34" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+  <!-- Screen content lines -->
+  <line x1="41" y1="93" x2="79" y2="93" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+  <line x1="41" y1="101" x2="71" y2="101" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+  <line x1="41" y1="109" x2="75" y2="109" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+  <!-- Stand neck -->
+  <rect x="57" y="117" width="6" height="9" fill="rgba(255,255,255,0.8)"/>
+  <!-- Stand base -->
+  <rect x="48" y="125" width="24" height="5" rx="2" fill="rgba(255,255,255,0.8)"/>
+
+  <!-- CBT header text -->
+  <text x="222" y="101" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">ネット試験（CBT）</text>
+  <text x="222" y="121" text-anchor="middle" font-size="12" fill="#BFDBFE">シーフ型：素早く攻略するプレイヤー</text>
+
+  <!-- CBT good point 1 -->
+  <rect x="28" y="164" width="338" height="36" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <circle cx="50" cy="182" r="11" fill="#2563EB"/>
+  <text x="50" y="187" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="68" y="187" font-size="13" fill="#1E3A5F">ほぼ毎日、全国テストセンターで受験OK</text>
+
+  <!-- CBT good point 2 -->
+  <rect x="28" y="206" width="338" height="36" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <circle cx="50" cy="224" r="11" fill="#2563EB"/>
+  <text x="50" y="229" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="68" y="229" font-size="13" fill="#1E3A5F">試験終了後すぐ、画面で合否・点数を確認</text>
+
+  <!-- CBT good point 3 -->
+  <rect x="28" y="248" width="338" height="36" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <circle cx="50" cy="266" r="11" fill="#2563EB"/>
+  <text x="50" y="271" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="68" y="271" font-size="13" fill="#1E3A5F">不合格でも翌日からすぐ再チャレンジ可</text>
+
+  <!-- CBT good point 4 -->
+  <rect x="28" y="290" width="338" height="36" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <circle cx="50" cy="308" r="11" fill="#2563EB"/>
+  <text x="50" y="313" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="68" y="313" font-size="13" fill="#1E3A5F">学習進捗に合わせて受験日を自由に調整</text>
+
+  <!-- CBT warning -->
+  <rect x="28" y="338" width="338" height="52" rx="8" fill="rgba(234,88,12,0.1)" stroke="rgba(234,88,12,0.35)" stroke-width="1"/>
+  <circle cx="50" cy="356" r="11" fill="#DC2626"/>
+  <text x="50" y="361" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">!</text>
+  <text x="68" y="356" font-size="13" fill="#7C2D12">画面と白紙を往復する視線移動で</text>
+  <text x="68" y="374" font-size="13" fill="#7C2D12">パニックになる罠あり！事前練習が必須</text>
+
+  <!-- CBT rating -->
+  <rect x="28" y="404" width="338" height="56" rx="10" fill="#1D4ED8"/>
+  <text x="197" y="426" text-anchor="middle" font-size="12" fill="#BFDBFE">大谷的おすすめ度</text>
+  <text x="197" y="451" text-anchor="middle" font-size="24" font-weight="700" fill="#FDE68A">★★★★★</text>
+
+  <!-- ===== Paper Card ===== -->
+  <!-- Card body -->
+  <rect x="422" y="74" width="362" height="400" rx="14" fill="url(#papB)" stroke="#FCD34D" stroke-width="1.5"/>
+  <!-- Card header gradient -->
+  <rect x="422" y="74" width="362" height="78" rx="14" fill="url(#papH)"/>
+  <!-- Square off header bottom -->
+  <rect x="422" y="128" width="362" height="24" fill="#B45309"/>
+
+  <!-- Paper icon: sheet -->
+  <rect x="440" y="82" width="36" height="44" rx="3" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+  <!-- Folded corner -->
+  <polygon points="466,82 476,82 476,92 466,82" fill="rgba(255,255,255,0.5)"/>
+  <!-- Paper lines -->
+  <line x1="445" y1="97" x2="470" y2="97" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+  <line x1="445" y1="106" x2="467" y2="106" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+  <line x1="445" y1="115" x2="469" y2="115" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+  <!-- Pencil: body -->
+  <rect x="472" y="100" width="5" height="22" rx="2" fill="rgba(255,255,255,0.9)" transform="rotate(35,474,111)"/>
+  <!-- Pencil tip -->
+  <polygon points="485,117 488,126 479,122" fill="rgba(255,255,255,0.8)"/>
+
+  <!-- Paper header text -->
+  <text x="612" y="101" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">統一試験（紙）</text>
+  <text x="612" y="121" text-anchor="middle" font-size="12" fill="#FEF9C3">ナイト型：一発決戦に集中するプレイヤー</text>
+
+  <!-- Paper good point 1 -->
+  <rect x="434" y="164" width="338" height="36" rx="8" fill="rgba(245,158,11,0.13)"/>
+  <circle cx="456" cy="182" r="11" fill="#B45309"/>
+  <text x="456" y="187" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="474" y="187" font-size="13" fill="#4C2A0A">問題用紙にメモ・計算を直接書き込める</text>
+
+  <!-- Paper good point 2 -->
+  <rect x="434" y="206" width="338" height="36" rx="8" fill="rgba(245,158,11,0.13)"/>
+  <circle cx="456" cy="224" r="11" fill="#B45309"/>
+  <text x="456" y="229" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="474" y="229" font-size="13" fill="#4C2A0A">仲間・同期と同じ日に受験できる連帯感</text>
+
+  <!-- Paper good point 3 -->
+  <rect x="434" y="248" width="338" height="36" rx="8" fill="rgba(245,158,11,0.13)"/>
+  <circle cx="456" cy="266" r="11" fill="#B45309"/>
+  <text x="456" y="271" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+  <text x="474" y="271" font-size="13" fill="#4C2A0A">問題冊子を手元に置いて全体を俯瞰しやすい</text>
+
+  <!-- Paper warning 1 -->
+  <rect x="434" y="290" width="338" height="36" rx="8" fill="rgba(220,38,38,0.1)" stroke="rgba(220,38,38,0.3)" stroke-width="1"/>
+  <circle cx="456" cy="308" r="11" fill="#DC2626"/>
+  <text x="456" y="313" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">!</text>
+  <text x="474" y="313" font-size="13" fill="#7C2D12">年3回（11月・2月・6月）のみの一発勝負</text>
+
+  <!-- Paper warning 2 -->
+  <rect x="434" y="332" width="338" height="52" rx="8" fill="rgba(220,38,38,0.1)" stroke="rgba(220,38,38,0.3)" stroke-width="1"/>
+  <circle cx="456" cy="350" r="11" fill="#DC2626"/>
+  <text x="456" y="355" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">!</text>
+  <text x="474" y="350" font-size="13" fill="#7C2D12">合否まで2〜3週間待ち＋難易度ガチャで</text>
+  <text x="474" y="368" font-size="13" fill="#7C2D12">ハズレ回に当たるリスクあり</text>
+
+  <!-- Paper rating -->
+  <rect x="434" y="404" width="338" height="56" rx="10" fill="#B45309"/>
+  <text x="603" y="426" text-anchor="middle" font-size="12" fill="#FEF9C3">大谷的おすすめ度（PC苦手な人限定）</text>
+  <text x="603" y="451" text-anchor="middle" font-size="24" font-weight="700" fill="#FEF9C3">★★★☆☆</text>
+
+  <!-- VS badge (center, overlapping both cards) -->
+  <circle cx="400" cy="136" r="32" fill="#0F172A" stroke="#fff" stroke-width="3"/>
+  <text x="400" y="145" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">VS</text>
+</svg>
