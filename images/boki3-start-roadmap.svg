@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEFDF8"/>
+      <stop offset="100%" style="stop-color:#EFF9FF"/>
+    </linearGradient>
+    <linearGradient id="b1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#63B3ED"/>
+      <stop offset="100%" style="stop-color:#4299E1"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#68D391"/>
+      <stop offset="100%" style="stop-color:#48BB78"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F6C56A"/>
+      <stop offset="100%" style="stop-color:#ED8936"/>
+    </linearGradient>
+    <linearGradient id="b4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#B794F4"/>
+      <stop offset="100%" style="stop-color:#9F7AEA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#bg)"/>
+
+  <!-- Main title -->
+  <text x="400" y="32" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="18" font-weight="700" fill="#1A202C">今日から合格まで！最速スタートダッシュ ロードマップ</text>
+  <text x="400" y="54" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="12" fill="#718096">学習時間の目安：50〜100時間（ネット試験はいつでも受験OK！）</text>
+
+  <!-- ===== PATH LINE connecting all steps ===== -->
+  <!-- Dashed line from STEP1 center to STEP4 center -->
+  <line x1="98" y1="168" x2="702" y2="168" stroke="#CBD5E0" stroke-width="2.5" stroke-dasharray="6,4"/>
+
+  <!-- Intermediate dots (sugoroku spaces) -->
+  <circle cx="195" cy="168" r="5" fill="#CBD5E0"/>
+  <circle cx="217" cy="168" r="5" fill="#CBD5E0"/>
+  <circle cx="383" cy="168" r="5" fill="#CBD5E0"/>
+  <circle cx="405" cy="168" r="5" fill="#CBD5E0"/>
+  <circle cx="571" cy="168" r="5" fill="#CBD5E0"/>
+  <circle cx="593" cy="168" r="5" fill="#CBD5E0"/>
+
+  <!-- ===== STEP 1: テキスト入手 ===== -->
+  <rect x="16" y="70" width="164" height="210" rx="16" fill="#EBF8FF" stroke="#90CDF4" stroke-width="1.5"/>
+  <!-- Header stripe -->
+  <rect x="16" y="70" width="164" height="44" rx="16" fill="url(#b1)"/>
+  <rect x="16" y="96" width="164" height="18" fill="#4299E1"/>
+  <text x="98" y="88" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">STEP 1</text>
+  <text x="98" y="108" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#BEE3F8">0 〜 20時間（じかん）</text>
+  <!-- Icon area -->
+  <text x="98" y="148" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="32" fill="#2B6CB0">本</text>
+  <text x="98" y="175" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#2B6CB0">テキスト入手</text>
+  <text x="98" y="193" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">スッキリわかる等</text>
+  <text x="98" y="208" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">または無料の</text>
+  <text x="98" y="223" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">CPAラーニングで</text>
+  <text x="98" y="238" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">初期装備を揃える！</text>
+  <!-- Arrow right -->
+  <polygon points="183,163 183,173 196,168" fill="#90CDF4"/>
+
+  <!-- ===== STEP 2: 仕訳マスター ===== -->
+  <rect x="204" y="70" width="164" height="210" rx="16" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <rect x="204" y="70" width="164" height="44" rx="16" fill="url(#b2)"/>
+  <rect x="204" y="96" width="164" height="18" fill="#48BB78"/>
+  <text x="286" y="88" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">STEP 2</text>
+  <text x="286" y="108" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#C6F6D5">20 〜 60時間（じかん）</text>
+  <text x="286" y="148" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="32" fill="#276749">記</text>
+  <text x="286" y="175" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#276749">仕訳（しわけ）マスター</text>
+  <text x="286" y="193" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">借方・貸方の感覚を</text>
+  <text x="286" y="208" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">毎日10問ずつ</text>
+  <text x="286" y="223" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">体に染み込ませる。</text>
+  <text x="286" y="238" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#276749">仕訳さえ完璧なら勝利！</text>
+  <polygon points="371,163 371,173 384,168" fill="#9AE6B4"/>
+
+  <!-- ===== STEP 3: PC模試体験 ===== -->
+  <rect x="392" y="70" width="164" height="210" rx="16" fill="#FFFAF0" stroke="#F6AD55" stroke-width="1.5"/>
+  <rect x="392" y="70" width="164" height="44" rx="16" fill="url(#b3)"/>
+  <rect x="392" y="96" width="164" height="18" fill="#ED8936"/>
+  <text x="474" y="88" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">STEP 3</text>
+  <text x="474" y="108" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#FEEBC8">60 〜 90時間（じかん）</text>
+  <!-- PC shape -->
+  <rect x="454" y="122" width="40" height="26" rx="2" fill="none" stroke="#C05621" stroke-width="2"/>
+  <rect x="462" y="149" width="24" height="4" rx="1" fill="#C05621"/>
+  <rect x="456" y="153" width="36" height="3" rx="1" fill="#C05621"/>
+  <line x1="474" y1="125" x2="474" y2="148" stroke="#C05621" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="474" y="175" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#C05621">PC模試（もぎ）体験</text>
+  <text x="474" y="193" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">画面＋電卓＋白紙の</text>
+  <text x="474" y="208" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">3点セット操作に慣れる。</text>
+  <text x="474" y="223" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">公式サンプル問題を</text>
+  <text x="474" y="238" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#C05621">必ず体験しておく！</text>
+  <polygon points="559,163 559,173 572,168" fill="#F6AD55"/>
+
+  <!-- ===== STEP 4: テストセンター突撃！ ===== -->
+  <rect x="580" y="70" width="164" height="210" rx="16" fill="#FAF5FF" stroke="#D6BCFA" stroke-width="1.5"/>
+  <rect x="580" y="70" width="164" height="44" rx="16" fill="url(#b4)"/>
+  <rect x="580" y="96" width="164" height="18" fill="#9F7AEA"/>
+  <text x="662" y="88" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">STEP 4</text>
+  <text x="662" y="108" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="9" fill="#E9D8FD">90 〜 100時間（じかん）</text>
+  <!-- Star/trophy shape -->
+  <polygon points="662,119 666,131 679,131 669,139 672,152 662,144 652,152 655,139 645,131 658,131" fill="#9F7AEA" stroke="none"/>
+  <text x="662" y="175" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#553C9A">テストセンター突撃！</text>
+  <text x="662" y="193" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">予約サイトで日程確定。</text>
+  <text x="662" y="208" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">退路を断てば</text>
+  <text x="662" y="223" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#4A5568">合格率が爆上がり！</text>
+  <text x="662" y="238" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="#9F7AEA">60分・70点以上で合格</text>
+
+  <!-- ===== GOAL marker ===== -->
+  <rect x="758" y="148" width="38" height="40" rx="8" fill="#9F7AEA"/>
+  <text x="777" y="167" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="white">合格</text>
+  <text x="777" y="181" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" font-weight="700" fill="white">🎉</text>
+  <!-- Connector from STEP4 to GOAL -->
+  <line x1="745" y1="168" x2="756" y2="168" stroke="#9F7AEA" stroke-width="2"/>
+  <polygon points="755,163 755,173 761,168" fill="#9F7AEA"/>
+
+  <!-- ===== Bottom note / progress bar ===== -->
+  <rect x="16" y="295" width="766" height="108" rx="12" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Progress bar -->
+  <rect x="36" y="310" width="726" height="12" rx="6" fill="#E2E8F0"/>
+  <rect x="36" y="310" width="726" height="12" rx="6" fill="url(#b1)" style="clip-path:none"/>
+  <!-- Gradient progress bar (use 4 colored segments) -->
+  <rect x="36"  y="310" width="182" height="12" rx="0" fill="#4299E1"/>
+  <rect x="218" y="310" width="181" height="12" fill="#48BB78"/>
+  <rect x="399" y="310" width="182" height="12" fill="#ED8936"/>
+  <rect x="581" y="310" width="181" height="12" rx="0" fill="#9F7AEA"/>
+  <!-- Round the left/right ends -->
+  <rect x="36"  y="310" width="8"  height="12" rx="6" fill="#4299E1"/>
+  <rect x="754" y="310" width="8"  height="12" rx="6" fill="#9F7AEA"/>
+  <!-- Hour markers -->
+  <text x="36"  y="336" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#718096">0h</text>
+  <text x="218" y="336" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#718096">20h</text>
+  <text x="399" y="336" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#718096">60h</text>
+  <text x="581" y="336" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#718096">90h</text>
+  <text x="762" y="336" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#9F7AEA" font-weight="700">100h</text>
+  <!-- Divider lines on bar -->
+  <line x1="218" y1="308" x2="218" y2="324" stroke="white" stroke-width="2"/>
+  <line x1="399" y1="308" x2="399" y2="324" stroke="white" stroke-width="2"/>
+  <line x1="581" y1="308" x2="581" y2="324" stroke="white" stroke-width="2"/>
+  <!-- Bottom note text -->
+  <text x="400" y="358" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">※ネット試験（CBT方式）はこの4ステップを終えたら、</text>
+  <text x="400" y="374" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="11" fill="#4A5568">全国のテストセンターで明日からでも受験できます！統一試験（年3回）も並行して目標設定可能。</text>
+  <text x="400" y="392" text-anchor="middle" font-family="'Hiragino Sans','Meiryo','Noto Sans JP',sans-serif" font-size="10" fill="#8CC63F" font-weight="700">▶ 合格後すぐにパソコン画面で合否が分かるのがネット試験の最大の魅力！</text>
+</svg>
