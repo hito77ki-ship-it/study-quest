@@ -1,61 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
-  <defs>
-    <style>
-      text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }
-    </style>
-  </defs>
-  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
-  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">小口現金の仕組み——会計係と用度係の役割分担</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 720" width="700" height="720">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="700" height="720" rx="16" fill="#FEFCF9"/>
+  <text x="350" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">小口現金（インプレスト・システム）の循環サイクル</text>
+  <text x="350" y="53" text-anchor="middle" font-size="11" fill="#94A3B8">定額資金前渡制度——常に同じ金額に保たれる仕組み</text>
 
-  <!-- 会計係 box (left) -->
-  <rect x="40" y="70" width="200" height="180" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-  <rect x="40" y="70" width="200" height="40" rx="12" fill="#3B82F6"/>
-  <rect x="40" y="98" width="200" height="12" fill="#3B82F6"/>
-  <text x="140" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">会計係（経理部）</text>
-  <text x="140" y="128" text-anchor="middle" font-size="11" fill="#1E40AF">仕訳を切る側</text>
-  <text x="140" y="155" text-anchor="middle" font-size="28" fill="#3B82F6">🏢</text>
-  <text x="140" y="186" text-anchor="middle" font-size="11" fill="#374151">① 小口現金を前渡し</text>
-  <text x="140" y="202" text-anchor="middle" font-size="11" fill="#374151">③ 報告を受けて補給</text>
-  <text x="140" y="218" text-anchor="middle" font-size="11" fill="#374151">④ 補給時に仕訳計上</text>
+  <!-- 循環トラック -->
+  <circle cx="350" cy="370" r="240" fill="none" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3,6"/>
 
-  <!-- 用度係 box (right) -->
-  <rect x="520" y="70" width="200" height="180" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
-  <rect x="520" y="70" width="200" height="40" rx="12" fill="#22C55E"/>
-  <rect x="520" y="98" width="200" height="12" fill="#22C55E"/>
-  <text x="620" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">用度係（庶務・総務）</text>
-  <text x="620" y="128" text-anchor="middle" font-size="11" fill="#166534">現金を受け取り使う側</text>
-  <text x="620" y="155" text-anchor="middle" font-size="28" fill="#22C55E">👤</text>
-  <text x="620" y="186" text-anchor="middle" font-size="11" fill="#374151">② 日々の小口支払い</text>
-  <text x="620" y="202" text-anchor="middle" font-size="11" fill="#374151">　（交通費・消耗品等）</text>
-  <text x="620" y="218" text-anchor="middle" font-size="11" fill="#374151">③ 支払内訳を報告</text>
+  <!-- 中央ハブ -->
+  <circle cx="350" cy="370" r="75" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="2"/>
+  <text x="350" y="364" text-anchor="middle" font-size="13" font-weight="700" fill="#6D28D9">常に一定額を</text>
+  <text x="350" y="382" text-anchor="middle" font-size="13" font-weight="700" fill="#6D28D9">キープ！</text>
 
-  <!-- Arrow ①: 会計→用度（前渡し） -->
-  <line x1="242" y1="130" x2="518" y2="130" stroke="#3B82F6" stroke-width="2"/>
-  <polygon points="518,130 508,124 508,136" fill="#3B82F6"/>
-  <rect x="305" y="113" width="150" height="24" rx="5" fill="#DBEAFE"/>
-  <text x="380" y="129" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">① 小口現金を前渡し</text>
+  <!-- 4つの矢印アーク（時計回り） -->
+  <path d="M447.6,150.8 A240,240 0 0,1 569.2,272.4" fill="none" stroke="#93C5FD" stroke-width="3"/>
+  <polygon points="-7,-6 -7,6 9,0" fill="#93C5FD" transform="translate(569.2,272.4) rotate(66)"/>
 
-  <!-- Arrow ②→③: 用度→会計（報告） -->
-  <line x1="518" y1="190" x2="242" y2="190" stroke="#22C55E" stroke-width="2"/>
-  <polygon points="242,190 252,184 252,196" fill="#22C55E"/>
-  <rect x="305" y="173" width="150" height="24" rx="5" fill="#DCFCE7"/>
-  <text x="380" y="189" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">③ 支払内訳を報告</text>
+  <path d="M569.2,467.6 A240,240 0 0,1 447.6,589.2" fill="none" stroke="#86EFAC" stroke-width="3"/>
+  <polygon points="-7,-6 -7,6 9,0" fill="#86EFAC" transform="translate(447.6,589.2) rotate(156)"/>
 
-  <!-- Arrow ③→④: 会計→用度（補給） -->
-  <line x1="242" y1="230" x2="518" y2="230" stroke="#F97316" stroke-width="2" stroke-dasharray="5,4"/>
-  <polygon points="518,230 508,224 508,236" fill="#F97316"/>
-  <rect x="305" y="213" width="150" height="24" rx="5" fill="#FFEDD5"/>
-  <text x="380" y="229" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">④ 同額を補給（現金）</text>
+  <path d="M252.4,589.2 A240,240 0 0,1 130.8,467.6" fill="none" stroke="#F9A8D4" stroke-width="3"/>
+  <polygon points="-7,-6 -7,6 9,0" fill="#F9A8D4" transform="translate(130.8,467.6) rotate(246)"/>
 
-  <!-- Bottom note table -->
-  <rect x="40" y="270" width="680" height="90" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="380" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">補給時の仕訳タイミング</text>
-  <!-- table -->
-  <line x1="40" y1="298" x2="720" y2="298" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="200" y="314" text-anchor="middle" font-size="11" fill="#475569">補給＝報告と同時の場合</text>
-  <text x="200" y="332" text-anchor="middle" font-size="11" fill="#1D4ED8">交通費・消耗品費 / 小口現金</text>
-  <line x1="380" y1="298" x2="380" y2="356" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="560" y="314" text-anchor="middle" font-size="11" fill="#475569">補給が報告と別日の場合</text>
-  <text x="560" y="332" text-anchor="middle" font-size="11" fill="#1D4ED8">仕訳は<tspan font-weight="700">報告日</tspan>に計上（補給日ではない）</text>
-  <text x="380" y="352" text-anchor="middle" font-size="10" fill="#94A3B8">（試験でよく問われるポイント）</text>
+  <path d="M130.8,272.4 A240,240 0 0,1 252.4,150.8" fill="none" stroke="#FDBA74" stroke-width="3"/>
+  <polygon points="-7,-6 -7,6 9,0" fill="#FDBA74" transform="translate(252.4,150.8) rotate(336)"/>
+
+  <!-- 北：① 前渡し（パステルブルー） -->
+  <rect x="260" y="70" width="180" height="120" rx="18" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="350" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">① 前渡し</text>
+  <text x="350" y="118" text-anchor="middle" font-size="10.5" fill="#374151">会計係が用度係へ</text>
+  <text x="350" y="134" text-anchor="middle" font-size="10.5" fill="#374151">小口現金を前渡しする</text>
+  <text x="350" y="160" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">小口現金 ×× ／ 当座預金 ××</text>
+
+  <!-- 東：② 使用（パステルグリーン） -->
+  <rect x="510" y="310" width="180" height="120" rx="18" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="600" y="338" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">② 使用</text>
+  <text x="600" y="358" text-anchor="middle" font-size="10.5" fill="#374151">用度係が交通費・</text>
+  <text x="600" y="374" text-anchor="middle" font-size="10.5" fill="#374151">消耗品費などを支払う</text>
+  <text x="600" y="400" text-anchor="middle" font-size="9.5" fill="#64748B">（会計係はまだ仕訳しない）</text>
+
+  <!-- 南：③ 報告（パステルピンク） -->
+  <rect x="260" y="550" width="180" height="120" rx="18" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="350" y="578" text-anchor="middle" font-size="13" font-weight="700" fill="#9D174D">③ 報告</text>
+  <text x="350" y="598" text-anchor="middle" font-size="10.5" fill="#374151">用度係が支払内容を</text>
+  <text x="350" y="614" text-anchor="middle" font-size="10.5" fill="#374151">会計係へ報告する</text>
+  <text x="350" y="640" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DB2777">★この時点で費用が確定！</text>
+
+  <!-- 西：④ 補給（パステルオレンジ） -->
+  <rect x="10" y="310" width="180" height="120" rx="18" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <text x="100" y="338" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">④ 補給</text>
+  <text x="100" y="358" text-anchor="middle" font-size="10.5" fill="#374151">会計係が使った分だけ</text>
+  <text x="100" y="374" text-anchor="middle" font-size="10.5" fill="#374151">同額を小切手で補充</text>
+  <text x="100" y="400" text-anchor="middle" font-size="9.5" font-weight="700" fill="#C2410C">小口現金 ×× ／ 当座預金 ××</text>
+
+  <!-- Bottom caption -->
+  <text x="350" y="700" text-anchor="middle" font-size="10.5" fill="#94A3B8">🔁 ①→②→③→④ を繰り返し、小口現金の残高は常に同じ金額に保たれる</text>
 </svg>

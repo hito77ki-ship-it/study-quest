@@ -27,7 +27,7 @@
   "description": "3つの試算表の違いを図解で解説。合計欄と残高欄の書き方を例題つきで完全解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-shisanhyo.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-06-26",
+  "dateModified": "2026-07-01",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -162,10 +162,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h1>合計試算表・合計残高試算表・残高試算表<br>3つの違いと書き方を完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
-  <p class="lead">
-    「仕訳は合っているのに、答案用紙の形式を間違えて0点」——試算表で一番やりがちなミスです。<br>
-    3種類の試算表は<strong>答案用紙を見た瞬間に「合計欄か残高欄か」を判断</strong>できれば怖くありません。この記事で違いを整理しましょう。
-  </p>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    正直に告白すると、簿記の勉強を始めたばかりの頃、模範解答の試算表を初めて見たとき「なんじゃこりゃ！！」と本気で頭が真っ白になりました。数字がびっしり並んだ表に「合計」やら「残高」やら似た名前の欄が横並びで、どこに何を書けばいいのか全く分からず……。仕訳は全問正解だったのに、答案用紙の欄を間違えただけで試算表の問題を丸ごと落とした苦い記憶があります。<br>
+    だからこそ、当時の僕と同じように答案用紙を前にフリーズしている皆さんへ、丸暗記ゼロで欄を絶対に間違えない<strong>【ミスゼロ攻略法】</strong>と、集計時にやりがちな電卓の罠の避け方を、この記事で全部お伝えします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、僕のモチベーション維持のために、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
 
   <div class="sq-chat"></div>
 
@@ -267,6 +273,23 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="tip-box">
     <strong>試験での確認ポイント：答案用紙を最初に見る！</strong><br>
     問題を解く前に必ず答案用紙の列ヘッダーを確認する。「合計」と書いてあれば両方記入、「残高」と書いてあれば一方のみ。これだけで形式ミスはゼロになります。
+  </div>
+
+  <h3>電卓ハック：T字メモから答案用紙へ、二重集計ゼロで転記する手順</h3>
+
+  <p>試算表の問題は、下書き用紙に勘定科目ごとの<strong>T字（略式T勘定）</strong>を作り、そこに借方・貸方の金額をどんどん書き込んでいくのが定石です。ここで一番怖いのが「電卓で合計を叩いたのに、答案用紙に書き写すときにもう一度同じ数字を頭の中で足してしまう」二重集計のミス。防ぐ手順はこれだけです。</p>
+
+  <ol>
+    <li>1科目の集計に入る前に、電卓は必ず<strong>「AC」で一度リセット</strong>する（前の科目の合計を引きずらない）</li>
+    <li>T字の<strong>借方側だけ</strong>を上から順に「＋」で電卓に打ち込み、「＝」で借方合計を出す</li>
+    <li>借方合計が出たら、暗算で二度計算し直さず<strong>その場ですぐ答案用紙に転記</strong>する。両方の合計を計算してからまとめて書こうとすると頭の中で数字が混線する</li>
+    <li>続けて電卓を「AC」でリセットし、T字の<strong>貸方側だけ</strong>を「＋」で打ち込み → 「＝」→ 即転記、を同じ手順で繰り返す</li>
+    <li>転記が終わったT字の数字には<strong>斜線（／）</strong>を引いていく。斜線のない数字が残っていたら、それはまだ電卓に入力していない＝集計漏れの合図</li>
+  </ol>
+
+  <div class="warn-box">
+    <strong>二重集計が起きる典型パターン</strong><br>
+    電卓の表示を一度見た後に「あれ、この数字さっき足したっけ？」と不安になって、頭の中でもう一度同じ数字を足してしまうケースが最多です。電卓の表示を信じて「計算→即転記」を徹底するだけで、このミスはほぼゼロにできます。
   </div>
 
   <h2>使用データ（共通）</h2>
@@ -475,6 +498,18 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <p itemprop="text">試算表は帳簿の記録を確認するための表です。精算表は決算整理を行いP/L・B/Sを作成するための作業表です。試算表を精算表のインプット（残高試算表欄）として使います。</p>
     </div>
   </div>
+  </div>
+</section>
+
+<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">試算表は「借方＝貸方」を合わせるだけのパズルです</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">最初は「なんじゃこりゃ」状態でも、3種類の違いと電卓の叩き方さえ体に染み込めば、試算表は失点源から得点源に変わります。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、試算表マスターへの一歩を刻んでおきましょう。</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
+      <a href="boki.html" style="display:inline-block;background:#fff;border:2px solid #8CC63F;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#276749;text-decoration:none;">簿記3級ロードマップへ</a>
+    </div>
   </div>
 </section>
 

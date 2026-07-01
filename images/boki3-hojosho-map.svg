@@ -1,98 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
   <defs>
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
-  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
-  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">補助簿6種類——記録できる取引との対応</text>
+  <rect width="760" height="460" rx="14" fill="#F8FAFC"/>
+  <text x="380" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">補助簿6種類の分類・関係図——ネットワークで一気に整理</text>
+  <text x="380" y="49" text-anchor="middle" font-size="11" fill="#64748B">「時系列で記録」する補助記入帳と「取引先・商品ごとに記録」する補助元帳の2グループ</text>
 
-  <!-- Column headers -->
-  <rect x="30" y="52" width="730" height="30" rx="6" fill="#1E293B"/>
-  <text x="145" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">補助簿の名称</text>
-  <line x1="260" y1="52" x2="260" y2="82" stroke="#475569" stroke-width="1"/>
-  <text x="360" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">何を記録する？</text>
-  <line x1="460" y1="52" x2="460" y2="82" stroke="#475569" stroke-width="1"/>
-  <text x="595" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">記録が必要な取引</text>
+  <!-- Hub: 補助簿 -->
+  <rect x="310" y="64" width="140" height="46" rx="23" fill="#1E293B"/>
+  <text x="380" y="93" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">補助簿</text>
 
-  <!-- Row 1: 現金出納帳 -->
-  <rect x="30" y="82" width="730" height="42" rx="0" fill="#EFF6FF"/>
-  <rect x="30" y="82" width="6" height="42" rx="3" fill="#3B82F6"/>
-  <text x="145" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">現金出納帳</text>
-  <text x="145" y="116" text-anchor="middle" font-size="10" fill="#1E40AF">（げんきんすいとうちょう）</text>
-  <line x1="260" y1="82" x2="260" y2="124" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="360" y="108" text-anchor="middle" font-size="11" fill="#374151">現金の収入・支出の明細</text>
-  <line x1="460" y1="82" x2="460" y2="124" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="595" y="108" text-anchor="middle" font-size="10.5" fill="#374151">現金の受払いがある取引すべて</text>
+  <!-- Connecting lines: hub -> category hubs -->
+  <line x1="345" y1="110" x2="195" y2="150" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="415" y1="110" x2="565" y2="150" stroke="#94A3B8" stroke-width="2"/>
 
-  <!-- Row 2: 当座預金出納帳 -->
-  <rect x="30" y="124" width="730" height="42" rx="0" fill="#F8FAFC"/>
-  <rect x="30" y="124" width="6" height="42" rx="3" fill="#8B5CF6"/>
-  <text x="145" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">当座預金出納帳</text>
-  <text x="145" y="158" text-anchor="middle" font-size="10" fill="#7C3AED">（とうざよきんすいとうちょう）</text>
-  <line x1="260" y1="124" x2="260" y2="166" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="360" y="150" text-anchor="middle" font-size="11" fill="#374151">当座預金の入出金明細</text>
-  <line x1="460" y1="124" x2="460" y2="166" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="595" y="150" text-anchor="middle" font-size="10.5" fill="#374151">小切手の振出・受取が伴う取引</text>
+  <!-- Category hub: 補助記入帳（ブルー） -->
+  <rect x="85" y="150" width="220" height="60" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="195" y="171" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">補助記入帳</text>
+  <text x="195" y="184" text-anchor="middle" font-size="7.5" fill="#3B82F6">（ほじょきにゅうちょう）</text>
+  <text x="195" y="200" text-anchor="middle" font-size="9.5" fill="#374151">取引を時系列で記録する</text>
 
-  <!-- Row 3: 仕入帳 -->
-  <rect x="30" y="166" width="730" height="42" rx="0" fill="#FEF2F2"/>
-  <rect x="30" y="166" width="6" height="42" rx="3" fill="#EF4444"/>
-  <text x="145" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#991B1B">仕入帳</text>
-  <text x="145" y="200" text-anchor="middle" font-size="10" fill="#DC2626">（しいれちょう）</text>
-  <line x1="260" y1="166" x2="260" y2="208" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="360" y="192" text-anchor="middle" font-size="11" fill="#374151">商品仕入の明細・返品</text>
-  <line x1="460" y1="166" x2="460" y2="208" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="595" y="192" text-anchor="middle" font-size="10.5" fill="#374151">商品を仕入れた・仕入返品した取引</text>
+  <!-- Category hub: 補助元帳（ピンク） -->
+  <rect x="455" y="150" width="220" height="60" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="565" y="171" text-anchor="middle" font-size="13" font-weight="700" fill="#9D174D">補助元帳</text>
+  <text x="565" y="184" text-anchor="middle" font-size="7.5" fill="#DB2777">（ほじょもとちょう）</text>
+  <text x="565" y="200" text-anchor="middle" font-size="9.5" fill="#374151">取引先・商品ごとに記録する</text>
 
-  <!-- Row 4: 売上帳 -->
-  <rect x="30" y="208" width="730" height="42" rx="0" fill="#F0FDF4"/>
-  <rect x="30" y="208" width="6" height="42" rx="3" fill="#22C55E"/>
-  <text x="145" y="226" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">売上帳</text>
-  <text x="145" y="242" text-anchor="middle" font-size="10" fill="#16A34A">（うりあげちょう）</text>
-  <line x1="260" y1="208" x2="260" y2="250" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="360" y="234" text-anchor="middle" font-size="11" fill="#374151">商品売上の明細・返品</text>
-  <line x1="460" y1="208" x2="460" y2="250" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="595" y="234" text-anchor="middle" font-size="10.5" fill="#374151">商品を売った・売上返品された取引</text>
+  <!-- Fan lines: 補助記入帳 -> 3 books -->
+  <line x1="195" y1="210" x2="75" y2="234" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="195" y1="210" x2="195" y2="234" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="195" y1="210" x2="315" y2="234" stroke="#93C5FD" stroke-width="1.5"/>
 
-  <!-- Row 5: 商品有高帳 -->
-  <rect x="30" y="250" width="730" height="42" rx="0" fill="#FFFBEB"/>
-  <rect x="30" y="250" width="6" height="42" rx="3" fill="#EAB308"/>
-  <text x="145" y="268" text-anchor="middle" font-size="12" font-weight="700" fill="#713F12">商品有高帳</text>
-  <text x="145" y="284" text-anchor="middle" font-size="10" fill="#A16207">（しょうひんありだかちょう）</text>
-  <line x1="260" y1="250" x2="260" y2="292" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="360" y="268" text-anchor="middle" font-size="11" fill="#374151">商品の受入・払出・残高</text>
-  <line x1="460" y1="250" x2="460" y2="292" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="595" y="268" text-anchor="middle" font-size="10.5" fill="#374151">商品の仕入・売上・返品</text>
-  <text x="595" y="284" text-anchor="middle" font-size="10" fill="#A16207">（先入先出法・移動平均法で記帳）</text>
+  <!-- Fan lines: 補助元帳 -> 3 books -->
+  <line x1="565" y1="210" x2="445" y2="234" stroke="#F9A8D4" stroke-width="1.5"/>
+  <line x1="565" y1="210" x2="565" y2="234" stroke="#F9A8D4" stroke-width="1.5"/>
+  <line x1="565" y1="210" x2="685" y2="234" stroke="#F9A8D4" stroke-width="1.5"/>
 
-  <!-- Row 6: 得意先元帳・仕入先元帳 -->
-  <rect x="30" y="292" width="730" height="42" rx="0" fill="#F8FAFC"/>
-  <rect x="30" y="292" width="6" height="42" rx="3" fill="#F97316"/>
-  <text x="145" y="310" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">得意先元帳</text>
-  <text x="145" y="326" text-anchor="middle" font-size="10" fill="#EA580C">仕入先元帳</text>
-  <line x1="260" y1="292" x2="260" y2="334" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="360" y="310" text-anchor="middle" font-size="11" fill="#374151">売掛金を取引先ごとに管理</text>
-  <text x="360" y="326" text-anchor="middle" font-size="11" fill="#374151">買掛金を仕入先ごとに管理</text>
-  <line x1="460" y1="292" x2="460" y2="334" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="595" y="318" text-anchor="middle" font-size="10.5" fill="#374151">売掛金・買掛金が発生する取引</text>
+  <!-- Card 1: 現金出納帳 -->
+  <rect x="20" y="234" width="110" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="75" y="258" text-anchor="middle" font-size="20">💰</text>
+  <text x="75" y="280" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">現金出納帳</text>
+  <text x="75" y="292" text-anchor="middle" font-size="7.5" fill="#3B82F6">（げんきん</text>
+  <text x="75" y="302" text-anchor="middle" font-size="7.5" fill="#3B82F6">すいとうちょう）</text>
+  <text x="75" y="320" text-anchor="middle" font-size="9" fill="#374151">現金の出入りを記録</text>
 
-  <!-- border around table -->
-  <rect x="30" y="52" width="730" height="282" rx="0" fill="none" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="82" x2="760" y2="82" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="124" x2="760" y2="124" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="166" x2="760" y2="166" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="208" x2="760" y2="208" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="250" x2="760" y2="250" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="292" x2="760" y2="292" stroke="#CBD5E1" stroke-width="1"/>
-  <line x1="30" y1="334" x2="760" y2="334" stroke="#CBD5E1" stroke-width="1"/>
+  <!-- Card 2: 売上帳 -->
+  <rect x="140" y="234" width="110" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="195" y="258" text-anchor="middle" font-size="20">🧾</text>
+  <text x="195" y="280" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">売上帳</text>
+  <text x="195" y="296" text-anchor="middle" font-size="7.5" fill="#3B82F6">（うりあげちょう）</text>
+  <text x="195" y="320" text-anchor="middle" font-size="9" fill="#374151">商品を売った明細</text>
 
-  <!-- 2 types -->
-  <rect x="30" y="348" width="340" height="56" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
-  <text x="200" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">補助記入帳</text>
-  <text x="200" y="386" text-anchor="middle" font-size="10.5" fill="#374151">現金出納帳・当座預金出納帳・仕入帳・売上帳</text>
-  <text x="200" y="400" text-anchor="middle" font-size="10" fill="#64748B">（取引を時系列で記録）</text>
+  <!-- Card 3: 仕入帳 -->
+  <rect x="260" y="234" width="110" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="315" y="258" text-anchor="middle" font-size="20">📦</text>
+  <text x="315" y="280" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">仕入帳</text>
+  <text x="315" y="296" text-anchor="middle" font-size="7.5" fill="#3B82F6">（しいれちょう）</text>
+  <text x="315" y="320" text-anchor="middle" font-size="9" fill="#374151">商品を仕入れた明細</text>
 
-  <rect x="390" y="348" width="340" height="56" rx="8" fill="#FFF7ED" stroke="#FDB97D" stroke-width="1.5"/>
-  <text x="560" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">補助元帳</text>
-  <text x="560" y="386" text-anchor="middle" font-size="10.5" fill="#374151">商品有高帳・得意先元帳・仕入先元帳</text>
-  <text x="560" y="400" text-anchor="middle" font-size="10" fill="#64748B">（取引先・商品ごとに残高管理）</text>
+  <!-- Card 4: 商品有高帳（要注意バッジ付き） -->
+  <rect x="390" y="234" width="110" height="130" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="445" y="258" text-anchor="middle" font-size="20">📊</text>
+  <text x="445" y="280" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">商品有高帳</text>
+  <text x="445" y="292" text-anchor="middle" font-size="7.5" fill="#DB2777">（しょうひん</text>
+  <text x="445" y="302" text-anchor="middle" font-size="7.5" fill="#DB2777">ありだかちょう）</text>
+  <text x="445" y="320" text-anchor="middle" font-size="9" font-weight="700" fill="#C2410C">原価で記入に注意！</text>
+  <circle cx="490" cy="240" r="13" fill="#F59E0B" stroke="#fff" stroke-width="2"/>
+  <text x="490" y="245" text-anchor="middle" font-size="13" fill="#fff">⚠</text>
+
+  <!-- Card 5: 売掛金元帳 -->
+  <rect x="510" y="234" width="110" height="130" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="565" y="258" text-anchor="middle" font-size="20">🤝</text>
+  <text x="565" y="280" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">売掛金元帳</text>
+  <text x="565" y="292" text-anchor="middle" font-size="7.5" fill="#DB2777">（うりかけきん</text>
+  <text x="565" y="302" text-anchor="middle" font-size="7.5" fill="#DB2777">もとちょう）</text>
+  <text x="565" y="320" text-anchor="middle" font-size="9" fill="#374151">得意先ごとの残高</text>
+
+  <!-- Card 6: 買掛金元帳 -->
+  <rect x="630" y="234" width="110" height="130" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="685" y="258" text-anchor="middle" font-size="20">📋</text>
+  <text x="685" y="280" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">買掛金元帳</text>
+  <text x="685" y="292" text-anchor="middle" font-size="7.5" fill="#DB2777">（かいかけきん</text>
+  <text x="685" y="302" text-anchor="middle" font-size="7.5" fill="#DB2777">もとちょう）</text>
+  <text x="685" y="320" text-anchor="middle" font-size="9" fill="#374151">仕入先ごとの残高</text>
+
+  <!-- Bottom legend -->
+  <rect x="20" y="381" width="720" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="401" text-anchor="middle" font-size="10.5" fill="#374151">🔵 補助記入帳＝取引を時系列で記録　　🩷 補助元帳＝取引先・商品ごとに記録</text>
+  <text x="380" y="421" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">⚠ 商品有高帳は「売価」と「原価」の混同に要注意！（このあとのコラムで解説）</text>
 </svg>

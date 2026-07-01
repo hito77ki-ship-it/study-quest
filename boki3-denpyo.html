@@ -27,7 +27,7 @@
   "description": "入金・出金・振替の3伝票制を図解で解説。分解法と擬制法を例題つきで完全攻略。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-denpyo.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-06-26",
+  "dateModified": "2026-07-01",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -181,31 +181,20 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     伝票のルールは実は<strong>たった3つ</strong>。そのルールさえ覚えれば、どんな問題も「仕訳を伝票に振り分けるだけ」のパズルになります。
   </p>
 
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">分解法と擬制法の違いが全然わかりません。どちらも同じ結果になるなら、どっちかだけ覚えればいいですか？</div>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。問題文に「どちらの方法で記入したか」が指定されていれば、その方法を使うだけです。指定がなければ分解法の方がシンプルでミスが少ないのでおすすめです。どちらも最終的な伝票の合計は一致します。</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">証ひょうを見て仕訳するのが苦手です。どこを見ればいいんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">証ひょう問題は「誰が・誰に・何のために・いくら」を読み取るだけです。領収書なら発行者が受け取った側、請求書なら発行者が請求した側です。読む順番を決めておけばパターンが見えてきます！</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    実は、今回紹介する伝票会計の「擬制法（ぎせいほう）」ですが、僕が初めて出会ったとき、「え、現金なんて1円も動いてないのに、教科書は『全額を現金で払った』ことにしてるやん……！？」と、勝手に作られた架空のストーリーに頭がついていけなくなった論点でした（笑）。<br>
+    でも実はこれ、「一旦、全額をあり金で仮払いしたことにする → その中の"現金じゃなかった分"を見つけ出す → その部分だけ現金が戻ってきたことにしてキャンセルする」という、たった3手順の【現金キャンセルパズル】にすぎません。架空の物語だと割り切ってしまえば、一瞬で解ける得点源に変わります！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、僕のモチベーション維持のために、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <h2>❓ 伝票とは何か？——仕訳を紙に起票して経営管理に使う仕組み</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-denpyo-map.svg" alt="3伝票制の使い分け：入金伝票・出金伝票・振替伝票と分解法・擬制法の図解" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：3伝票制の使い分けルールと現金・掛け混在時の分解法 vs 擬制法</figcaption>
-  </figure>
+  <img src="images/boki3-denpyo-map.svg" alt="3伝票制の使い分けと、現金・掛け混在時の分解法・擬制法の図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>一人でお店を経営しているなら、取引のたびに自分で仕訳を書けます。でも大きな会社では、たくさんの営業マンがバラバラに取引を行います。</p>
   <p>そこで<strong>「一定のルールで記録できるメモ用紙」</strong>が必要になります。それが<strong>伝票</strong>です。営業マンが伝票を書いて持ち帰り、経理がまとめて仕訳に変換する——という流れで使われます。</p>
 
@@ -345,16 +334,20 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <h3>STEP 2：「全額現金払い」と仮定して2枚の伝票に振り分ける</h3>
+  <h3>STEP 2：🧠 脳内キャンセルの手順（3ステップ）</h3>
 
   <div class="step-list">
     <div class="step-item">
       <div class="step-num">1</div>
-      <div class="step-body"><strong>一旦、支払総額 ¥200,000 を出金伝票に記載</strong><br>実際は ¥200,000 全額を現金で払ったとみなす（擬制）</div>
+      <div class="step-body"><strong>まず「全額を現金で仮払いした」と脳内で仮定する</strong><br>実際の内訳は無視して、支払総額 ¥200,000 をまるごと出金伝票に記載する（擬制）</div>
     </div>
     <div class="step-item">
       <div class="step-num">2</div>
-      <div class="step-body"><strong>実際は出金していない前払金 ¥100,000 を入金伝票に記載</strong><br>「前払金で払った分は現金で返ってきた」とみなす（擬制）</div>
+      <div class="step-body"><strong>その仮払い総額のうち「現金じゃなかった分」を探す</strong><br>前払金 ¥100,000 は実際には現金を払っていない部分だと特定する</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>その非現金分だけ「現金が戻ってきた」ことにしてキャンセルする</strong><br>前払金 ¥100,000 分を入金伝票に記載し、STEP1の仮払いを部分的に相殺する</div>
     </div>
   </div>
 
@@ -371,7 +364,8 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="warn-box">
     <strong>擬制法は「架空の現金のやり取り」をイメージする</strong><br>
-    ①まず ¥200,000 全額を現金で支払った、②その後 ¥100,000 が前払金の形で戻ってきた——という2段階の取引に分解して考えます。実際にはお金は動いていませんが、伝票上ではこう記載します。
+    ①まず ¥200,000 全額を現金で支払った、②その後 ¥100,000 が前払金の形で戻ってきた——という2段階の取引に分解して考えます。実際にはお金は動いていませんが、伝票上ではこう記載します。<br>
+    最初は「架空の話をでっち上げてる…？」と混乱しますが、慣れれば脳内キャンセルの3手順を機械的になぞるだけの単純作業になります。
   </div>
 
   <div class="app-cta">
@@ -494,6 +488,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="tip-box">
     <strong>なぜ証ひょうに基づいて仕訳するのか（内部統制）</strong><br>
     証ひょうがあれば「いつ・誰と・いくら・何の取引か」を後から証明できます。証ひょうなしで仕訳すると、税務調査や監査で取引の実在を証明できなくなります。<strong>証ひょう→仕訳→帳簿→財務諸表</strong>の一方通行が簿記の大原則です。
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
+    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">伝票会計は、分解法も擬制法も「まず全体の仕訳を書いてから振り分けるだけ」の単純作業です。特に擬制法は【現金キャンセルパズル】の3手順さえ体に染み込ませれば、試験本番で見た瞬間に手が動くようになります。<br>
+    僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！ そして、Study Questで学習時間を記録しながら、伝票のパズルを何度も解いて得点源に変えていきましょう。</p>
   </div>
 
 </div>
