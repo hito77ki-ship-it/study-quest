@@ -786,6 +786,10 @@ html[data-theme="dark"] .sq-sidebar [style*="background:#F0FFF4"]{
   border-color:rgba(140,198,63,.16) !important;
   box-shadow:0 0 0 1px rgba(140,198,63,.03), 0 12px 28px rgba(5,10,20,.12) !important;
 }
+/* ── 著者カード / いいね誘導ボックス (linear-gradient #F0FFF4,#EBF5FB) ダークモード ── */
+html[data-theme="dark"] [style*="#EBF5FB"]{background:linear-gradient(135deg,#0A1E14,#0D1A3A) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] [style*="#EBF5FB"] [style*="color:#276749"]{color:#B6E27C !important;}
+html[data-theme="dark"] [style*="#EBF5FB"] [style*="color:#1A202C"]{color:#CCD6E5 !important;}
 html[data-theme="dark"] section[style*="background:#F7FAFC"] a[style*="background:#fff"],
 html[data-theme="dark"] section[style*="background:#F7FAFC"] div[style*="background:#fff"],
 html[data-theme="dark"] div[style*="background:#F7FAFC"] a[style*="background:#fff"],
