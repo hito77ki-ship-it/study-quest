@@ -2023,6 +2023,10 @@ html[data-theme="dark"] .office-step strong{color:#B6E27C !important;}
 html[data-theme="dark"] .office-step p{color:#CCD6E5 !important;}
 html[data-theme="dark"] .related-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
 html[data-theme="dark"] .related-card-title{color:#F8FAFC !important;}
+html[data-theme="dark"] .related{background:#0D1117 !important;}
+html[data-theme="dark"] .related h2{color:#E8EEF8 !important;}
+html[data-theme="dark"] .related-section{background:#0D1117 !important;}
+html[data-theme="dark"] .related-section h2{color:#E8EEF8 !important;}
 html[data-theme="dark"] .faq-answer{color:#CCD6E5 !important;}
 /* ── ここまで ── */
 /* ── インライングラデーション背景 ダークモード ── */
