@@ -1,72 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
   <defs>
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
-  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
-  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">社債——発行から償還までの全フローと利息・按分処理</text>
+  <rect width="760" height="460" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">社債の物語——980,000円が5年かけて1,000,000円に育つまで</text>
+  <text x="380" y="45" text-anchor="middle" font-size="11" fill="#64748B">割引発行の差額20,000円を、償却原価法で毎年4,000円ずつ社債利息として加算する</text>
 
-  <!-- Timeline -->
-  <line x1="50" y1="90" x2="710" y2="90" stroke="#CBD5E1" stroke-width="2"/>
-  <polygon points="714,90 704,85 704,95" fill="#CBD5E1"/>
+  <!-- Increment chips row (isolated from bar labels to avoid overlap) -->
+  <g font-size="11" font-weight="700" fill="#B45309">
+    <rect x="102" y="54" width="76" height="20" rx="10" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="140" y="68" text-anchor="middle">+4,000円</text>
+    <rect x="222" y="54" width="76" height="20" rx="10" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="260" y="68" text-anchor="middle">+4,000円</text>
+    <rect x="342" y="54" width="76" height="20" rx="10" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="380" y="68" text-anchor="middle">+4,000円</text>
+    <rect x="462" y="54" width="76" height="20" rx="10" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="500" y="68" text-anchor="middle">+4,000円</text>
+    <rect x="582" y="54" width="76" height="20" rx="10" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="620" y="68" text-anchor="middle">+4,000円</text>
+  </g>
 
-  <line x1="80" y1="82" x2="80" y2="98" stroke="#3B82F6" stroke-width="2.5"/>
-  <text x="80" y="76" text-anchor="middle" font-size="10" fill="#3B82F6">発行日</text>
-  <line x1="290" y1="82" x2="290" y2="98" stroke="#EAB308" stroke-width="2"/>
-  <text x="290" y="76" text-anchor="middle" font-size="10" fill="#EAB308">利払日（年1回or半年）</text>
-  <line x1="500" y1="82" x2="500" y2="98" stroke="#EAB308" stroke-width="2"/>
-  <text x="500" y="76" text-anchor="middle" font-size="10" fill="#EAB308">利払日</text>
-  <line x1="680" y1="82" x2="680" y2="98" stroke="#EF4444" stroke-width="2.5"/>
-  <text x="680" y="76" text-anchor="middle" font-size="10" fill="#EF4444">償還日（満期）</text>
+  <!-- Goal line (額面 1,000,000円) -->
+  <line x1="40" y1="182" x2="730" y2="182" stroke="#FCA5A5" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="45" y="174" font-size="11" font-weight="700" fill="#DC2626">額面 1,000,000円（ゴール）</text>
 
-  <!-- 発行時 -->
-  <rect x="30" y="108" width="210" height="110" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-  <rect x="30" y="108" width="210" height="28" rx="10" fill="#3B82F6"/>
-  <rect x="30" y="126" width="210" height="10" fill="#3B82F6"/>
-  <text x="135" y="124" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">① 発行時（割引発行）</text>
-  <text x="135" y="150" text-anchor="middle" font-size="10.5" fill="#374151">額面100を97で発行した場合</text>
-  <rect x="50" y="158" width="170" height="52" rx="5" fill="#DBEAFE"/>
-  <text x="135" y="174" text-anchor="middle" font-size="10.5" fill="#1D4ED8">現金 97 ／ 社債 97</text>
-  <text x="135" y="190" text-anchor="middle" font-size="10" fill="#374151">（額面ではなく受取額で計上）</text>
-  <text x="135" y="208" text-anchor="middle" font-size="10" fill="#64748B">差額3は償却原価法で毎期増額</text>
+  <!-- Baseline -->
+  <line x1="40" y1="372" x2="730" y2="372" stroke="#CBD5E1" stroke-width="1.5"/>
 
-  <!-- 利払日 -->
-  <rect x="260" y="108" width="240" height="110" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
-  <rect x="260" y="108" width="240" height="28" rx="10" fill="#EAB308"/>
-  <rect x="260" y="126" width="240" height="10" fill="#EAB308"/>
-  <text x="380" y="124" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">② 利払日</text>
-  <text x="380" y="150" text-anchor="middle" font-size="10.5" fill="#374151">社債利息を現金で支払う</text>
-  <rect x="280" y="158" width="200" height="38" rx="5" fill="#FEF9C3"/>
-  <text x="380" y="174" text-anchor="middle" font-size="10.5" fill="#713F12">社債利息 ×× ／ 現金 ××</text>
-  <text x="380" y="190" text-anchor="middle" font-size="10" fill="#374151">利率：額面 × クーポン利率</text>
-  <text x="380" y="208" text-anchor="middle" font-size="10" fill="#64748B">端数期間は月割り計算</text>
+  <!-- Trend line connecting bar tops -->
+  <polyline points="80,332 200,302 320,272 440,242 560,212 680,182" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="80" cy="332" r="3" fill="#F59E0B"/>
+  <circle cx="200" cy="302" r="3" fill="#F59E0B"/>
+  <circle cx="320" cy="272" r="3" fill="#F59E0B"/>
+  <circle cx="440" cy="242" r="3" fill="#F59E0B"/>
+  <circle cx="560" cy="212" r="3" fill="#F59E0B"/>
+  <circle cx="680" cy="182" r="3" fill="#F59E0B"/>
 
-  <!-- 償却原価法 -->
-  <rect x="260" y="228" width="240" height="80" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
-  <text x="380" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">償却原価法（利息法/定額法）</text>
-  <text x="380" y="266" text-anchor="middle" font-size="10.5" fill="#374151">割引額を毎期按分して社債帳簿価額を</text>
-  <text x="380" y="282" text-anchor="middle" font-size="10.5" fill="#374151">段階的に額面に近づける</text>
-  <text x="380" y="298" text-anchor="middle" font-size="10.5" fill="#5B21B6">社債利息 ×× ／ 社債 ××</text>
+  <!-- Step 0: 発行時 980,000円 -->
+  <rect x="50" y="332" width="60" height="40" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="80" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">980,000円</text>
+  <text x="80" y="390" text-anchor="middle" font-size="10.5" fill="#64748B">発行時</text>
 
-  <!-- 償還時 -->
-  <rect x="520" y="108" width="210" height="110" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
-  <rect x="520" y="108" width="210" height="28" rx="10" fill="#EF4444"/>
-  <rect x="520" y="126" width="210" height="10" fill="#EF4444"/>
-  <text x="625" y="124" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">③ 満期償還時</text>
-  <text x="625" y="150" text-anchor="middle" font-size="10.5" fill="#374151">額面で返済（帳簿価額 ＝ 額面）</text>
-  <rect x="540" y="158" width="170" height="38" rx="5" fill="#FEE2E2"/>
-  <text x="625" y="174" text-anchor="middle" font-size="10.5" fill="#DC2626">社債 100 ／ 現金 100</text>
-  <text x="625" y="192" text-anchor="middle" font-size="10" fill="#374151">償却原価法で帳簿価額が額面と一致</text>
-  <text x="625" y="208" text-anchor="middle" font-size="10" fill="#64748B">差損益は発生しない</text>
+  <!-- Step 1: 1年目 984,000円 -->
+  <rect x="170" y="302" width="60" height="70" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="200" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">984,000円</text>
+  <text x="200" y="390" text-anchor="middle" font-size="10.5" fill="#64748B">1年目</text>
 
-  <!-- 買入償還 -->
-  <rect x="520" y="228" width="210" height="80" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-  <text x="625" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">買入償還（途中買い戻し）</text>
-  <text x="625" y="266" text-anchor="middle" font-size="10.5" fill="#374151">市場価格で買い戻す</text>
-  <text x="625" y="282" text-anchor="middle" font-size="10.5" fill="#374151">帳簿価額との差額 → 社債償還損益</text>
+  <!-- Step 2: 2年目 988,000円 -->
+  <rect x="290" y="272" width="60" height="100" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="320" y="260" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">988,000円</text>
+  <text x="320" y="390" text-anchor="middle" font-size="10.5" fill="#64748B">2年目</text>
 
-  <!-- Bottom note -->
-  <rect x="30" y="326" width="700" height="58" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="380" y="346" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">社債 vs 借入金の比較</text>
-  <text x="55" y="366" font-size="10.5" fill="#475569">社債：不特定多数の投資家から資金調達。有価証券として流通。クーポン利率で利息支払い。</text>
-  <text x="55" y="382" font-size="10.5" fill="#475569">長期借入金：特定の金融機関からの借り入れ。市場流通なし。約定利率で利息支払い。</text>
+  <!-- Step 3: 3年目 992,000円 -->
+  <rect x="410" y="242" width="60" height="130" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="440" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">992,000円</text>
+  <text x="440" y="390" text-anchor="middle" font-size="10.5" fill="#64748B">3年目</text>
+
+  <!-- Step 4: 4年目 996,000円 -->
+  <rect x="530" y="212" width="60" height="160" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="560" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">996,000円</text>
+  <text x="560" y="390" text-anchor="middle" font-size="10.5" fill="#64748B">4年目</text>
+
+  <!-- Step 5: 5年目（満期）1,000,000円 -->
+  <rect x="650" y="182" width="60" height="190" rx="6" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="680" y="168" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">★1,000,000円</text>
+  <text x="680" y="390" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">5年目（満期）</text>
+
+  <!-- Bottom journal note -->
+  <rect x="40" y="398" width="690" height="52" rx="8" fill="#111827"/>
+  <text x="385" y="418" text-anchor="middle" font-size="11" font-weight="700" fill="#E5E7EB">毎年末（決算時）の仕訳（償却原価法）</text>
+  <text x="385" y="438" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FBBF24">社債利息 4,000 ／ 社債 4,000</text>
 </svg>

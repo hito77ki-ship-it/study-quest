@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の社債とは？発行・利息・償却原価法の仕訳を解説","description":"日商簿記2級 商業簿記の社債を初心者向けに解説。社債発行、額面発行、割引発行、社債利息、償却原価法、買入償還の仕訳を整理します。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-shasai.html","datePublished":"2026-05-09","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/","logo":{"@type":"ImageObject","url":"https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}}}
+{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の社債とは？発行・利息・償却原価法の仕訳を解説","description":"日商簿記2級 商業簿記の社債を初心者向けに解説。社債発行、額面発行、割引発行、社債利息、償却原価法、買入償還の仕訳を整理します。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-shasai.html","datePublished":"2026-05-09","dateModified": "2026-07-01","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/","logo":{"@type":"ImageObject","url":"https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -39,16 +39,24 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <p class="meta">日商簿記2級 | 公開：2026年5月9日</p>
   <h1>簿記2級の社債とは？<br>発行・利息・償却原価法の仕訳を解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    実は、今回紹介する社債の「割引発行」と「償却原価法」という論点は、僕が大学の講義で初めて解いたとき、「980,000円で発行したはずなのに、なぜか毎年4,000円ずつ社債利息が増えていく……？」という仕訳を見て、「うわっ、なんじゃこりゃ！！」と本気で脳がバグった、忘れられない論点でした（笑）。<br>
+    最初は「安く売ったのに、なんで利息が増えるの？」と意味不明だったのですが、社債を「980,000円スタートで、5年かけて1,000,000円まで育てていく物語」として時系列で捉え直した瞬間、一気に霧が晴れました。だからこそ、当時の僕と同じように混乱している皆さんに、どこよりも直感的に理解してもらえるよう、僕なりの攻略法をお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、モチベーション維持のために、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！</p>
+  </div>
+
   <p class="lead">社債は、会社が投資家から長期の資金を借りるために発行する債券です。簿記2級では、発行時・利息支払時・決算時・償還時の仕訳と、割引発行された場合の償却原価法が重要です。</p>
   <div class="sq-chat"></div>
 
   <div class="tip-box"><strong>先に結論：</strong>社債は「会社側から見た借金」です。額面より安く発行したときは、満期までに社債の帳簿価額を額面金額へ近づけるため、償却原価法で少しずつ社債利息を増やします。</div>
 
   <h2>社債とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki2-shasai-map.svg" alt="社債の発行から利払い・償還までの全フロー" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：発行（割引発行）→利払日（クーポン利率）→償却原価法（按分）→満期償還のライフサイクル</figcaption>
-  </figure>
   <p>社債は発行時・利払時・償還時の3場面で仕訳が変わります。割引発行の場合は償却原価法で帳簿価額を額面まで段階的に引き上げていきます。</p>
   <p>社債とは、株式会社が資金を調達するために発行する債券です。会社は投資家からお金を借り、満期には額面金額を返済し、途中で利息を支払います。</p>
   <p>株式発行が返済不要の資金調達であるのに対して、社債は返済義務のある資金調達です。そのため、発行会社側では負債として処理します。</p>
@@ -77,6 +85,12 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <p>割引発行とは、額面金額より低い金額で社債を発行することです。たとえば額面1,000,000円の社債を980,000円で発行するケースです。</p>
   <p>この場合、会社は980,000円しか受け取っていないのに、満期には1,000,000円を返済します。差額20,000円は、実質的な利息として扱われます。</p>
 
+  <div class="tip-box">
+    <strong>なぜ額面より安く売るの？——ゲームのアイテムで考えてみよう</strong><br>
+    RPGで例えるなら、定価100万Gの装備をそのまま売っても、他にもっと利率（性能）のいい商品があれば誰も買ってくれません。そこで「今なら98万Gで先行販売！」とディスカウントして、買い手にとってのお得感（利回り）を演出するのが割引発行です。<br>
+    値引き分の2万Gは、店（発行会社）が損をしているわけではなく、「満期までの5年間、少しずつ利息として上乗せして払い戻していく分割ボーナス」だと考えると腹落ちします。だからこそ、この2万円は一気にではなく、償却原価法で毎年コツコツ社債の帳簿価額に加算されていくのです。
+  </div>
+
   <h2>割引発行時の仕訳</h2>
   <p>額面1,000,000円の社債を980,000円で発行し、払込金を受け取った場合、発行時は受け取った金額で社債を計上します。</p>
   <div class="journal">
@@ -98,8 +112,12 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   </div>
 
   <h2>償却原価法</h2>
+  <figure style="margin:1.5rem 0;text-align:center;">
+    <img src="images/boki2-shasai-map.svg" alt="社債の帳簿価額が発行時980,000円から満期の1,000,000円まで、5年かけて毎年4,000円ずつ増えていく時系列の図" style="max-width:100%;height:auto;border-radius:8px;">
+    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：発行価額980,000円が、毎年+4,000円の社債利息を積み上げながら、5年かけて額面1,000,000円へ育っていく物語</figcaption>
+  </figure>
   <p>償却原価法とは、発行価額と額面金額の差額を、社債の発行期間にわたって配分する方法です。割引発行の場合、社債の帳簿価額を少しずつ増やし、その増加額を社債利息として処理します。</p>
-  <p>額面1,000,000円、発行価額980,000円、償還期間5年の場合、差額20,000円を5年で配分すると、毎年4,000円ずつ帳簿価額を増やします。</p>
+  <p>額面1,000,000円、発行価額980,000円、償還期間5年の場合、差額20,000円を5年で配分すると、毎年4,000円ずつ帳簿価額を増やします。上の図のように、社債は5年かけて980,000円から1,000,000円へ「レベルアップ」していくとイメージすると覚えやすいです。</p>
   <div class="journal">
     <table>
       <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
@@ -143,6 +161,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     <li>割引発行では、発行価額と額面金額の差額を実質的な利息として扱う</li>
     <li>償却原価法では、社債の帳簿価額を満期までに額面金額へ近づける</li>
     <li>買入償還では、帳簿価額と買入価額の差額を社債償還損益にする</li>
+    <li>社債は「980,000円→984,000円→…→1,000,000円」という<strong>時系列の物語</strong>として一本の線でつなげて理解できれば、簿記2級では確実な得点源になる</li>
   </ul>
 
   <div class="app-cta">
@@ -159,6 +178,13 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">償却原価法とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">発行価額と額面金額の差額を、社債の発行期間にわたって配分する方法です。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">買入償還とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">満期前に会社が市場から自社の社債を買い戻して消滅させることです。帳簿価額と買入価額の差額は社債償還損益になります。</div></details>
 </section>
+<div style="max-width:800px;margin:0 auto;padding:0 24px 32px;">
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;">
+    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">社債は、単発の仕訳を丸暗記するのではなく、「980,000円が5年かけて1,000,000円に育つ物語」として時系列でつなげて理解できれば、簿記2級では確実な得点源になります。<br>
+    僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！ 皆さんの一押しが、次の記事を書く力になります。</p>
+  </div>
+</div>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"社債とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"会社が投資家から資金を借りるために発行する債券です。発行会社側では負債として処理します。"}},{"@type":"Question","name":"割引発行とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"額面金額より低い金額で社債を発行することです。額面との差額は実質的な利息として扱います。"}},{"@type":"Question","name":"償却原価法とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"発行価額と額面金額の差額を、社債の発行期間にわたって配分する方法です。"}},{"@type":"Question","name":"買入償還とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"満期前に会社が市場から自社の社債を買い戻して消滅させることです。帳簿価額と買入価額の差額は社債償還損益になります。"}}]}
 </script>
