@@ -17,6 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/images/cpa-subjects-map.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,7 +26,7 @@
   "description": "公認会計士試験の主要科目、財務会計論（計算・理論）の役割と短答式・論文式での問われ方を、CPAテキスト内容だけを根拠にRPG風に解説します。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/cpa-subjects.html",
   "datePublished": "2026-06-28",
-  "dateModified": "2026-06-28",
+  "dateModified": "2026-07-01",
   "author": {"@type": "Person", "name": "大谷 一輝"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/", "logo": {"@type": "ImageObject", "url": "https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}},
   "image": "https://hito77ki-ship-it.github.io/study-quest/images/cpa-subjects-map.svg"
@@ -58,7 +59,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .breadcrumb a{color:var(--muted);}
 .meta{font-size:13px;color:var(--muted);margin-bottom:16px;}
 h1{font-size:clamp(22px,4vw,32px);font-weight:800;line-height:1.42;margin-bottom:8px;letter-spacing:0;}
-.lead{font-size:15px;line-height:1.95;margin:24px 0 32px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
 h2{font-size:20px;font-weight:800;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);letter-spacing:0;}
 h3{font-size:16px;font-weight:800;margin:28px 0 10px;color:var(--green2);letter-spacing:0;}
 p{font-size:14px;color:#374151;margin-bottom:16px;}
@@ -69,19 +69,27 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px;}
 th{background:var(--green);color:#fff;padding:10px 12px;text-align:left;}
 td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
 tr:nth-child(even) td{background:var(--light);}
-.hero-note{display:inline-flex;align-items:center;gap:8px;background:#F0FFF4;border:1px solid #BBF7D0;color:#276749;border-radius:100px;padding:6px 12px;font-size:12px;font-weight:700;margin-bottom:16px;}
+/* 挨拶カード */
+.author-card{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:14px;padding:24px;margin:24px 0 32px;display:flex;align-items:flex-start;gap:16px;}
+.author-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#6AAF2B);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:700;}
+.author-card-body .kicker{color:#A0C070;font-size:12px;font-weight:700;margin-bottom:8px;letter-spacing:.08em;display:block;}
+.author-card-body p{color:#E2F0D0;font-size:14px;line-height:1.95;margin:0;}
+/* サマリーボックス */
+.summary-box{background:#F0FFF4;border:1px solid #BBF7D0;border-radius:12px;padding:18px 20px;margin:20px 0 28px;}
+.summary-box strong{display:block;color:#166534;font-size:15px;margin-bottom:8px;}
+.summary-box ul{margin-bottom:0;}
+/* 図 */
 .map-figure{margin:26px 0 34px;text-align:center;}
 .map-figure img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 18px 40px rgba(15,23,42,.08);}
 .map-figure figcaption{font-size:12px;color:var(--muted);margin-top:8px;}
-.source-box{background:#FFF7ED;border:1px solid #FDBA74;border-radius:10px;padding:16px 18px;margin:24px 0;font-size:14px;color:#7C2D12;}
-.source-box strong{color:#9A3412;}
+/* カード類 */
 .duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
 .duo-card{border:1px solid var(--border);border-radius:12px;padding:18px;background:#fff;}
 .duo-card.calc{border-color:#BAE6FD;background:#F0F9FF;}
 .duo-card.theory{border-color:#DDD6FE;background:#F5F3FF;}
 .duo-card .tag{display:inline-block;color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
-.duo-card.calc .tag{background:var(--blue);}
-.duo-card.theory .tag{background:var(--purple);}
+.duo-card.calc .tag{background:var(--blue);color:#0C4A6E;}
+.duo-card.theory .tag{background:var(--purple);color:#3B0764;}
 .duo-card h3{margin:0 0 8px;color:var(--text);}
 .why-box{background:#F8FAFC;border:1px solid var(--border);border-radius:12px;padding:20px;margin:24px 0;}
 .why-box p:last-child{margin-bottom:0;}
@@ -95,19 +103,33 @@ tr:nth-child(even) td{background:var(--light);}
 .dungeon-card.long .stage{color:#E11D48;}
 .dungeon-card h3{margin:0 0 10px;color:var(--text);}
 .advice{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:#276749;}
-.advice strong{color:#166534;}
-.cta-panel{background:linear-gradient(135deg,#17210F,#2D4A10);border-radius:14px;padding:30px 24px;margin:44px 0 0;text-align:center;color:#fff;}
+.advice strong{color:#166534;display:block;margin-bottom:6px;}
+.tip-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:#78350F;}
+.tip-box strong{color:#92400E;display:block;margin-bottom:6px;}
+/* いいね誘導 */
+.like-cta{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border:2px solid var(--green);border-radius:14px;padding:28px 24px;margin:44px 0 36px;text-align:center;}
+.like-cta .like-emoji{font-size:36px;display:block;margin-bottom:10px;}
+.like-cta h3{color:#065F46;font-size:17px;margin-bottom:10px;}
+.like-cta p{color:#065F46;font-size:13px;margin:0 0 18px;line-height:1.8;}
+.like-cta-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.like-cta-btns a{display:inline-block;border-radius:100px;padding:10px 22px;font-size:13px;font-weight:800;text-decoration:none;}
+.like-cta-btns .btn-main{background:#276749;color:#fff;}
+.like-cta-btns .btn-sub{background:#fff;border:2px solid #8CC63F;color:#276749;}
+/* CTA */
+.cta-panel{background:linear-gradient(135deg,#17210F,#2D4A10);border-radius:14px;padding:30px 24px;margin:24px 0 0;text-align:center;color:#fff;}
 .cta-panel h2{border:0;padding:0;margin:0 0 10px;color:#fff;font-size:20px;}
 .cta-panel p{color:#CFE8B6;font-size:14px;margin-bottom:18px;}
 .cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
 .cta-actions a{display:inline-block;border-radius:100px;padding:12px 22px;font-size:14px;font-weight:800;text-decoration:none;}
 .cta-primary{background:var(--green);color:#0A0A0F;}
 .cta-secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.24);}
+/* 関連 */
 .related{background:#F7FAFC;padding:48px 24px;}
 .related-inner{max-width:820px;margin:0 auto;}
-.related h2{font-size:15px;margin:0 0 18px;}
+.related h2{font-size:15px;margin:0 0 18px;border:0;padding:0;}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
-.related-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;}
+.related-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;transition:box-shadow .2s,border-color .2s;}
+.related-card:hover{border-color:var(--green);box-shadow:0 4px 12px rgba(140,198,63,.15);text-decoration:none;}
 .related-card span{display:block;font-size:10px;color:var(--green2);font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
 .related-card strong{display:block;font-size:13px;line-height:1.55;}
 footer{background:#111827;padding:28px 24px;text-align:center;}
@@ -117,13 +139,30 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   .duo-grid,.dungeon-grid{grid-template-columns:1fr;}
   table{font-size:12px;}
   th,td{padding:8px;}
+  .author-card{flex-direction:column;gap:12px;}
 }
+/* ダークモード */
+html[data-theme="dark"] .author-card{background:linear-gradient(135deg,#0F1A07,#182808) !important;}
+html[data-theme="dark"] .summary-box{background:linear-gradient(180deg,#102218,#0E1A15) !important;border-color:rgba(140,198,63,.26) !important;}
+html[data-theme="dark"] .summary-box strong{color:#B6E27C !important;}
+html[data-theme="dark"] .duo-card.calc{background:#0A1F2E !important;border-color:rgba(56,189,248,.25) !important;}
+html[data-theme="dark"] .duo-card.theory{background:#150D2E !important;border-color:rgba(167,139,250,.25) !important;}
+html[data-theme="dark"] .why-box{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;}
+html[data-theme="dark"] .dungeon-card.short{background:#0A1520 !important;border-color:rgba(59,130,246,.25) !important;}
+html[data-theme="dark"] .dungeon-card.long{background:#200A0E !important;border-color:rgba(251,113,133,.25) !important;}
+html[data-theme="dark"] .advice{background:linear-gradient(180deg,#0E1A12,#0B1610) !important;border-color:rgba(154,230,180,.2) !important;color:#D1FAE5 !important;}
+html[data-theme="dark"] .tip-box{background:linear-gradient(180deg,#1F1500,#181000) !important;border-color:rgba(246,224,94,.2) !important;color:#FEF3C7 !important;}
+html[data-theme="dark"] .like-cta{background:linear-gradient(135deg,#031510,#051D16) !important;border-color:rgba(140,198,63,.35) !important;}
+html[data-theme="dark"] .like-cta h3,html[data-theme="dark"] .like-cta p{color:#D1FAE5 !important;}
+html[data-theme="dark"] .like-cta-btns .btn-sub{background:#0A2015 !important;border-color:rgba(140,198,63,.4) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .related-card{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;}
+html[data-theme="dark"] .map-figure img{border-color:rgba(255,255,255,.1) !important;box-shadow:0 18px 40px rgba(0,0,0,.4) !important;}
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="lp.html">スタディクエスト</a>
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="index.html">無料で始める</a>
   </div>
 </nav>
@@ -131,64 +170,83 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 <main class="container">
   <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="cpa.html">公認会計士</a> &gt; 財務会計論（計算・理論）</div>
   <p class="meta">公認会計士 | 公開：2026年6月28日</p>
-  <div class="hero-note">この記事の根拠：提供されたCPAテキスト内容のみ</div>
   <h1>財務会計論（計算・理論）とは？<br>短答式・論文式の役割をRPGで解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
-  <p class="lead">
-    こんにちは、大谷です！<br><br>
-    実は、今回紹介する公認会計士の『財務会計論』ですが、僕が初めて予備校の分厚いテキストと問題集を渡されたとき……『うわっ、なんじゃこりゃ……！計算だけでも3級・2級の何倍もあるのに、その背景の理由（理論）まで文字で全部覚えるの！？絶対無理ゲーじゃん！』と激しくフリーズしました（笑）。<br><br>
-    短答の1問3分というタイムアタックや、180分の記述式の論文ボス戦に、最初は絶望しかありませんでした。<br><br>
-    だからこそ、当時の僕と同じように圧倒されている皆さんに、計算（手続）と理論（理由）をガチャンと合体させてパズル感覚で実力を爆上げする最強の攻略法をお届けします！<br><br>
-    また、僕のモチベーション維持のために、記事の末尾のほうにある【いいねボタン】をポチッと押してもらえると、めちゃくちゃ嬉しいです！
-  </p>
+  <!-- 挨拶カード -->
+  <div class="author-card">
+    <div class="author-avatar">大</div>
+    <div class="author-card-body">
+      <span class="kicker">著者・大谷からひとこと</span>
+      <p>こんにちは、大谷です！<br><br>
+      実は、今回紹介する公認会計士の「財務会計論」ですが、僕が初めて予備校の分厚いテキストと問題集を渡されたとき……<strong style="color:#8CC63F;">「うわっ、なんじゃこりゃ……！計算だけでも簿記2級の何倍もあるのに、その背景の理由（理論）まで文字で全部覚えるの！？絶対無理ゲーじゃん！」</strong>と激しくフリーズしました（笑）。<br><br>
+      短答の1問3分というタイムアタックや、180分の記述式の論文ボス戦に、最初は絶望しかありませんでした。だからこそ、当時の僕と同じように圧倒されている皆さんに、計算（手続）と理論（理由）をガチャンと合体させてパズル感覚で実力を爆上げする攻略法をお届けします！<br><br>
+      また、記事の末尾のほうにある<strong style="color:#8CC63F;">【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+    </div>
+  </div>
 
-  <img src="images/cpa-subjects-map.svg" alt="財務会計論の計算と理論の合体マップ" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+  <div class="sq-chat"></div>
 
-  <div class="source-box">
-    <strong>大事な前提：</strong>この記事では、提供されたCPAテキスト内容にある情報だけを使います。試験制度の配点・時間・形式も、ここで示された範囲を超えて書きません。
+  <div class="summary-box">
+    <strong>5秒でわかるまとめ</strong>
+    <ul>
+      <li>財務会計論は「計算（手続）」と「理論（理由）」のセット科目。分けて学ぶより合体させるほうが速い。</li>
+      <li>短答式（配点約80点・500点満点中）は細かい罠を見抜くマークシート戦。1問3分が目安。</li>
+      <li>論文式（配点約110点・700点満点中）は180分で記述するボス戦。丸暗記ではなく本質理解が全て。</li>
+    </ul>
+  </div>
+
+  <figure class="map-figure">
+    <img src="images/cpa-subjects-map.svg" alt="財務会計論の計算と理論の合体マップ">
+    <figcaption>財務会計論の計算と理論の合体マップ（計算と理論の往復が実力をつくる）</figcaption>
+  </figure>
+
+  <div class="tip-box">
+    <strong>この記事について</strong>
+    筆者（大谷）は大阪経済大学3回生。約1年間CPA受験勉強をした後、現在は日商簿記1級を目標に学習中です。実際の受験経験をもとに書いていますが、合格保証はできません。試験の配点・時間・形式などの正確な数字は、<a href="https://jfael.or.jp/" target="_blank" rel="noopener">公認会計士・監査審査会の公式サイト</a>で必ずご確認ください。
   </div>
 
   <h2>財務会計論は「手続」と「理由」のセットです</h2>
-  <p>CPAテキストの整理では、財務会計論（計算）は「会計処理の手続」を学ぶ科目です。一方で、財務会計論（理論）は「その背景にある理由」、つまり「なんでこんな会計処理をするのかという理由」を問う学問です。</p>
+  <p>財務会計論（計算）は「会計処理をどう進めるか」の手続を学ぶ科目です。財務会計論（理論）は「なぜその処理をするのか」という背景の理由を問う科目です。この2つは別物のように見えて、実は表裏一体です。</p>
+  <p>僕が勉強し始めたとき、最初は「計算は計算、理論は理論」として別々に詰め込もうとしていました。でも、それをやると両方の進みが遅くなるんです。計算で手を動かしながら「なんでこの処理なんだろう」と理論に目を向けると、どちらも定着が一気に速くなります。</p>
 
   <div class="duo-grid">
     <section class="duo-card calc">
       <span class="tag">計算</span>
-      <h3>基本の剣技・手続</h3>
-      <p>会計処理をどう進めるかを学ぶ領域です。RPGでいえば、攻撃コマンドを正確に出すための基本の剣技です。</p>
+      <h3>⚔ 基本の剣技・手続</h3>
+      <p>会計処理をどう進めるかを学ぶ領域です。RPGでいえば、攻撃コマンドを正確に出すための基本の剣技。毎日触れないとサビます。</p>
     </section>
     <section class="duo-card theory">
       <span class="tag">理論</span>
-      <h3>白魔法・理由の呪文</h3>
-      <p>なぜその処理をするのかを学ぶ領域です。表面の形ではなく、処理の奥にある理由を回復魔法のように支えます。</p>
+      <h3>✨ 白魔法・理由の呪文</h3>
+      <p>なぜその処理をするのかを学ぶ領域です。表面の形ではなく、処理の奥にある理由を支える白魔法。論文では特にここが問われます。</p>
     </section>
   </div>
 
-  <p>ここで大切なのは、計算と理論を分けて捉えすぎないことです。テキストでは、計算と理論を一括りとして捉えて学習することで、より短時間で効率的に財務会計論全体のランキング、つまり実力を上げることが可能だとされています。</p>
+  <p>計算と理論を<strong>一括りとして往復させながら学ぶ</strong>ことで、財務会計論全体の実力が効率よく上がります。計算だけ、理論だけを分断して詰め込もうとするのは遠回りです。</p>
 
   <h2>「なぜ？」を持つと、初見ダンジョンで崩れにくくなります</h2>
   <div class="why-box">
-    <p class="quote-line">たとえば減価償却です。</p>
-    <p>CPAテキストでは、理論の例として「なぜ取得時に10,000全額を費用化せず減価償却するのか」「なぜ定額法なのか」という問いが示されています。</p>
-    <p>ここ、めちゃくちゃ大事です。ただ仕訳の形を丸暗記するだけでは、角度を変えた初見の応用ダンジョンで即全滅します。もちろん最初は形から入って大丈夫です。でも最後は、「なぜその処理をするのか」を自分の言葉で説明できる状態、つまり理論のマスターを目指してほしいです。</p>
-    <p>焦らなくて大丈夫です。計算で手を動かして、理論で理由を言葉にする。この往復ができるようになると、財務会計論はただの暗記科目ではなく、自分で攻略できる冒険に変わっていきます。</p>
+    <p class="quote-line">たとえば減価償却で、僕がやらかした話があります。</p>
+    <p>「建物は100万円で買ったから、買ったときに費用100万円！」と思ってしまいがちです。でも会計はそうしません。「建物は何年も使って収益を生み続けるから、使う期間にわたって少しずつ費用を対応させる」という理由があるから減価償却が存在するんです。</p>
+    <p>この<strong>「なぜ取得時に一括費用化せず、毎年少しずつ費用を計上するのか」</strong>という理由を自分の言葉で説明できると、角度を変えた初見の応用問題でも全滅しなくなります。最初は仕訳の形から入って全然大丈夫です。でも最終的には「なぜ」まで言える状態を目指してほしいです。</p>
+    <p>焦らなくて大丈夫です。計算で手を動かして、理論で理由を言葉にする。この往復ができるようになると、財務会計論はただの暗記地獄から、自分で攻略できる冒険に変わっていきます。</p>
   </div>
 
-  <h2>短答式と論文式では、同じ理論でも戦い方が変わります</h2>
-  <p>財務会計論（理論）は、短答式試験と論文式試験で問われ方が変わります。ここを知っておくと、普段の問題集の解き方も変わります。</p>
+  <h2>短答式と論文式では、同じ理論でも全く別の戦い方が必要です</h2>
+  <p>財務会計論の理論は、短答と論文で求められることが真逆といっていいくらい違います。これを知らないまま勉強を進めると、短答の感覚のままで論文に臨んで「全然書けない……」という状態になります。僕もそれをやりました。普段の問題集の解き方も、どっちの試験を意識しているかで変えることが大事です。</p>
 
   <table>
-    <tr><th>試験</th><th>提供情報に基づく特徴</th><th>攻略の方向性</th></tr>
+    <tr><th>試験</th><th>特徴・数字</th><th>大谷の正直な感想と攻略の方向性</th></tr>
     <tr>
-      <td>短答式試験<br>財務・理論</td>
-      <td>配点約80点。全体の500点満点中。選択肢から1つを選ぶマークシート形式。比較的細かい内容が広い範囲から網羅的に出題される。理論は1問3分以内、全体で30分が目安。</td>
-      <td>細かい罠を見抜くために、選択肢の理由まで追いかける。</td>
+      <td><strong>短答式試験</strong><br>財務・理論</td>
+      <td>配点約80点（全体500点満点中）。マークシート形式。1問3分以内・理論全体で30分が目安。細かい用語の入れ替えや微妙なひっかけが広範囲から出る。</td>
+      <td>「わかった気」が一番危ない試験です。知っている単語が出た瞬間に正しいと思い込んで、細かい語尾や条件の違いを読み飛ばして失点します。<strong>「×の選択肢がなぜ×なのか」の理由を声に出して説明できるまで追いかける</strong>のが唯一の対策です。</td>
     </tr>
     <tr>
-      <td>論文式試験<br>財務・理論</td>
-      <td>配点約110点。全体の700点満点中。大問3問、180分。実際に文章を記述させる形式。細かい内容ではなく、思考力、判断力、応用能力、論述力といった本質的な理解を問う。</td>
-      <td>字面だけでなく、会計処理の理由を文章で説明できる力を鍛える。</td>
+      <td><strong>論文式試験</strong><br>財務・理論</td>
+      <td>配点約110点（全体700点満点中）。大問3問・180分。実際に文章を記述する形式。細かい暗記より、思考力・判断力・応用能力・論述力が問われる。</td>
+      <td>180分の長丁場は体力と精神力の削り合いです。そしてここが短答と根本的に違うところで、<strong>「なんでその処理をするか」を文章で説明できないと点が入りません。</strong>語尾の暗記が全く使えず、本質理解だけが頼りになるボス戦です。</td>
     </tr>
   </table>
 
@@ -196,45 +254,50 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <section class="dungeon-card short">
       <div class="stage">SHORT ANSWER DUNGEON</div>
       <h3>短答ダンジョン</h3>
-      <p>マークシート形式で、細かい罠が多いダンジョンです。広い範囲から網羅的に出題されるので、「なんとなく正解した」で終わると次に崩れます。</p>
+      <p>広い範囲から細かい罠が大量に飛んでくるマークシート戦。「なんとなく合ってる」で進むと後半で大崩れします。罠の<strong>理由</strong>を言えるまで復習するのが鉄則です。</p>
     </section>
     <section class="dungeon-card long">
       <div class="stage">ESSAY BOSS BATTLE</div>
       <h3>論文ボス戦</h3>
-      <p>180分の長丁場です。実際に文章を書く形式なので、会計基準の本質的な理解を、言葉にして戦う武器が必要になります。</p>
+      <p>180分で文章を書き続けるボス戦。丸暗記はほぼ通用しません。「会計処理の理由」を自分の言葉で展開できる力が、ここで初めて全力で問われます。</p>
     </section>
   </div>
 
   <h2>問題集を解くときの王道攻略法</h2>
   <div class="advice">
-    <strong>短答ダンジョン：</strong>問題集を解くときは、「×の選択肢がなぜ×なのか」の理由まで自分の言葉で説明できるまで徹底的に追いかけるのが王道の攻略法です。<br><br>
-    たとえば問題集の選択肢に『すべての有形固定資産は一律で定額法のみが適用される』といった細かいひっかけがあったら、ただ答えを見るだけでなく、頭の中で【×！パソコンや工場の機械みたいに、最初の1〜2年でガンガン稼いで一気に価値が落ちるものは、稼げるうちに費用を多く引いておく『定率法』を使うから、一律定額法なわけがない！】と、理由を自分の言葉でツッコミながら復習していくのが、本番で罠を見抜く無敵の素振りになります！
+    <strong>短答ダンジョン攻略：×の理由を声に出せるまで追いかける</strong>
+    問題集で×の選択肢を見たとき、「×だな」で終わらせないことが全てです。たとえば「すべての有形固定資産は一律で定額法のみが適用される」という選択肢があったら、頭の中で<strong>「×！機械や工具みたいに最初の数年でガンガン稼いで一気に価値が落ちるものは、稼げるうちに費用を多く引く定率法が合理的だから、一律定額法なんてあるわけない！」</strong>とツッコミながら復習します。この「なぜ×か」の言語化が、本番で罠を3秒で見抜く力になります。1問3分で戦えるのは、普段の復習に時間をかけているからです。
   </div>
-  <p>短答式は1問3分以内が目安とされています。だからこそ、復習では時間をかけて理由を確認します。本番で速く判断するために、普段の復習で「なぜ」を深くしておくイメージです。</p>
-
   <div class="advice">
-    <strong>論文ボス戦：</strong>字面だけの丸暗記ではなく、会計基準の「本質的な理解」を記述する武器が必要になります。
+    <strong>論文ボス戦攻略：計算の「なぜ」を文章に変換する練習をする</strong>
+    論文式では、細かい内容ではなく思考力・論述力が問われます。計算で「なんでこの処理をするんだろう」と感じたこと、それを文章で説明する練習が直結します。答案練習（答練）で時間を測りながら書く練習を週1回以上こなすことが、180分の長丁場を戦い抜く体力をつくります。
   </div>
-  <p>論文式では、細かい内容そのものより、思考力、判断力、応用能力、論述力が問われます。だから、計算で処理の流れをつかみ、理論で背景を言葉にする練習が効いてきます。</p>
 
   <h2>まとめ：財務会計論は、計算と理論を合体させて育てる科目です</h2>
   <ul>
-    <li>財務会計論（計算）は、会計処理の手続を学ぶ領域です。</li>
-    <li>財務会計論（理論）は、背景にある理由を問う領域です。</li>
-    <li>計算と理論を一括りで学ぶと、財務会計論全体の実力を効率的に上げやすくなります。</li>
-    <li>短答式は、マークシート形式で細かい内容が広い範囲から問われます。</li>
-    <li>論文式は、文章で記述し、本質的な理解を問われます。</li>
+    <li>財務会計論（計算）は、会計処理の手続を学ぶ領域。毎日触れないとサビる。</li>
+    <li>財務会計論（理論）は、処理の背景にある理由を問う領域。「なぜ」が鍵。</li>
+    <li>計算と理論を往復させながら学ぶと、両方が速く定着する。</li>
+    <li>短答式（配点約80点）は細かい罠を見抜くマークシート戦。×の理由を言語化する。</li>
+    <li>論文式（配点約110点）は180分の記述ボス戦。丸暗記ではなく本質理解が全て。</li>
   </ul>
 
-  <p>財務会計論は、最初は強そうなボスに見えます。でも、計算の手続と理論の理由がつながった瞬間、「あ、これは戦える」と感じられる科目です。毎日の学習記録を積み上げながら、少しずつ会計士ジョブを育てていきましょう。</p>
+  <p>財務会計論は、最初は巨大すぎるボスに見えます。でも、計算の手続と理論の理由がつながった瞬間、「あ、これ戦えるわ」と視界が開ける科目です。毎日の学習記録を積み上げながら、少しずつ会計士ジョブを育てていきましょう。</p>
 
-  <div class="advice">
-    財務会計論は、会計士試験の中で最も大きな壁に見えます。でも、計算の手続と理論の理由がパズルのようにつながった瞬間、一気に視界が開ける最高の科目です。僕も毎日スタディクエストで冒険を記録しながら戦っています。この記事が少しでもあなたの武器になったら、この下にある【いいねボタン】をポチッと押してもらえると、めちゃくちゃ励みになります！一緒に合格の旗を立てましょう！
+  <!-- いいね誘導カード -->
+  <div class="like-cta">
+    <span class="like-emoji">📚</span>
+    <h3>この記事、財務会計論の攻略に使えましたか？</h3>
+    <p>計算と理論の往復で実力が上がる感覚が伝わったなら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>皆さんの一押しが、次の攻略記事を書く力になります。一緒に合格の旗を立てましょう！</p>
+    <div class="like-cta-btns">
+      <a class="btn-main" href="cpa.html">CPAロードマップへ →</a>
+      <a class="btn-sub" href="cpa-kigyoho-kikansekkei.html">企業法の機関設計を攻略する</a>
+    </div>
   </div>
 
   <section class="cta-panel">
-    <h2>会計ギルドで、今日の冒険を始めよう</h2>
-    <p>登録不要・完全無料。LPやアプリ本体に戻って、実際に会計士ジョブを選び、毎日の勉強を記録していきましょう。</p>
+    <h2>⚔ 会計ギルドで、今日の冒険を始めよう</h2>
+    <p>登録不要・完全無料。財務会計論の勉強時間が経験値に変わり、キャラクターが成長します。</p>
     <div class="cta-actions">
       <a class="cta-primary" href="index.html">無料で学習記録を始める</a>
       <a class="cta-secondary" href="lp.html">LPで会計ギルドを見る</a>
@@ -244,11 +307,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
 <section class="related">
   <div class="related-inner">
-    <h2>関連記事</h2>
+    <h2>🔗 関連記事</h2>
     <div class="related-grid">
       <a class="related-card" href="cpa.html"><span>公認会計士</span><strong>公認会計士試験の勉強法・合格ロードマップ</strong></a>
+      <a class="related-card" href="cpa-kigyoho-kikansekkei.html"><span>企業法</span><strong>株式会社の機関設計（327条・328条）の覚え方</strong></a>
       <a class="related-card" href="cpa-dokugaku.html"><span>独学</span><strong>公認会計士の独学は可能か？最短攻略法</strong></a>
-      <a class="related-card" href="boki1.html"><span>簿記</span><strong>日商簿記1級の勉強ロードマップ</strong></a>
     </div>
   </div>
 </section>
@@ -264,5 +327,6 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
+<script src="article-widgets.js"></script>
 </body>
 </html>
