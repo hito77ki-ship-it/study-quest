@@ -1,77 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520">
   <defs>
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
-  <rect width="760" height="460" rx="12" fill="#F8FAFC"/>
-  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">社労士試験の全体像——試験構成・科目・足切りライン</text>
-  <!-- Left: 試験構成 -->
-  <rect x="20" y="52" width="348" height="388" rx="8" fill="#FFF7ED"/>
-  <rect x="20" y="52" width="348" height="34" rx="8" fill="#EA580C"/>
-  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">試験構成（合格率6〜7%）</text>
-  <!-- 選択式 -->
-  <text x="40" y="106" text-anchor="start" font-size="12" font-weight="700" fill="#C2410C">選択式（午前：1時間20分）</text>
-  <rect x="40" y="114" width="310" height="28" rx="4" fill="#FFEDD5"/>
-  <text x="50" y="133" text-anchor="start" font-size="10" fill="#374151">8科目 × 5問 ＝ 40問（各科目5択穴埋め）</text>
-  <rect x="40" y="148" width="310" height="28" rx="4" fill="#FED7AA"/>
-  <text x="50" y="167" text-anchor="start" font-size="10" font-weight="700" fill="#9A3412">足切り：各科目3点以上（満点5点）が必須</text>
-  <!-- 択一式 -->
-  <text x="40" y="208" text-anchor="start" font-size="12" font-weight="700" fill="#C2410C">択一式（午後：3時間30分）</text>
-  <rect x="40" y="216" width="310" height="28" rx="4" fill="#FFEDD5"/>
-  <text x="50" y="235" text-anchor="start" font-size="10" fill="#374151">7科目 × 10問 ＝ 70問（5肢択一）</text>
-  <rect x="40" y="250" width="310" height="28" rx="4" fill="#FED7AA"/>
-  <text x="50" y="269" text-anchor="start" font-size="10" font-weight="700" fill="#9A3412">足切り：各科目4点以上（満点10点）が必須</text>
-  <!-- 合格ライン -->
-  <text x="40" y="310" text-anchor="start" font-size="12" font-weight="700" fill="#C2410C">合格基準（年度により変動）</text>
-  <rect x="40" y="318" width="310" height="26" rx="4" fill="#FFEDD5"/>
-  <text x="50" y="335" text-anchor="start" font-size="10" fill="#374151">選択式：総得点24〜26点前後（目安）</text>
-  <rect x="40" y="350" width="310" height="26" rx="4" fill="#FFEDD5"/>
-  <text x="50" y="367" text-anchor="start" font-size="10" fill="#374151">択一式：総得点45〜49点前後（目安）</text>
-  <rect x="40" y="382" width="310" height="42" rx="4" fill="#FEE2E2"/>
-  <text x="50" y="400" text-anchor="start" font-size="10" font-weight="700" fill="#991B1B">注意：総得点が高くても各科目の足切りを</text>
-  <text x="50" y="416" text-anchor="start" font-size="10" font-weight="700" fill="#991B1B">1科目でも下回ると不合格になる</text>
-  <!-- Right: 10科目 -->
-  <rect x="384" y="52" width="356" height="388" rx="8" fill="#F0FDF4"/>
-  <rect x="384" y="52" width="356" height="34" rx="8" fill="#15803D"/>
-  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">主要10科目と学習優先度</text>
-  <!-- 科目リスト -->
-  <rect x="400" y="96" width="324" height="28" rx="4" fill="#DCFCE7"/>
-  <text x="410" y="115" text-anchor="start" font-size="10" fill="#374151">① 労働基準法・安全衛生法</text>
-  <rect x="668" y="100" width="48" height="20" rx="4" fill="#16A34A"/>
-  <text x="692" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">最重要</text>
-  <rect x="400" y="130" width="324" height="28" rx="4" fill="#DCFCE7"/>
-  <text x="410" y="149" text-anchor="start" font-size="10" fill="#374151">② 労働者災害補償保険法（労災）</text>
-  <rect x="668" y="134" width="48" height="20" rx="4" fill="#16A34A"/>
-  <text x="692" y="148" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">最重要</text>
-  <rect x="400" y="164" width="324" height="28" rx="4" fill="#DCFCE7"/>
-  <text x="410" y="183" text-anchor="start" font-size="10" fill="#374151">③ 雇用保険法</text>
-  <rect x="668" y="168" width="48" height="20" rx="4" fill="#16A34A"/>
-  <text x="692" y="182" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">最重要</text>
-  <rect x="400" y="198" width="324" height="28" rx="4" fill="#BBF7D0"/>
-  <text x="410" y="217" text-anchor="start" font-size="10" fill="#374151">④ 社会保険に関する一般常識</text>
-  <rect x="668" y="202" width="48" height="20" rx="4" fill="#22C55E"/>
-  <text x="692" y="216" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">重要</text>
-  <rect x="400" y="232" width="324" height="28" rx="4" fill="#BBF7D0"/>
-  <text x="410" y="251" text-anchor="start" font-size="10" fill="#374151">⑤ 健康保険法</text>
-  <rect x="668" y="236" width="48" height="20" rx="4" fill="#22C55E"/>
-  <text x="692" y="250" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">重要</text>
-  <rect x="400" y="266" width="324" height="28" rx="4" fill="#BBF7D0"/>
-  <text x="410" y="285" text-anchor="start" font-size="10" fill="#374151">⑥ 厚生年金保険法</text>
-  <rect x="668" y="270" width="48" height="20" rx="4" fill="#22C55E"/>
-  <text x="692" y="284" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">重要</text>
-  <rect x="400" y="300" width="324" height="28" rx="4" fill="#BBF7D0"/>
-  <text x="410" y="319" text-anchor="start" font-size="10" fill="#374151">⑦ 国民年金法</text>
-  <rect x="668" y="304" width="48" height="20" rx="4" fill="#22C55E"/>
-  <text x="692" y="318" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">重要</text>
-  <rect x="400" y="334" width="324" height="28" rx="4" fill="#DCFCE7"/>
-  <text x="410" y="353" text-anchor="start" font-size="10" fill="#374151">⑧ 労働保険徴収法</text>
-  <rect x="668" y="338" width="48" height="20" rx="4" fill="#86EFAC"/>
-  <text x="692" y="352" text-anchor="middle" font-size="9" fill="#166534">標準</text>
-  <rect x="400" y="368" width="324" height="28" rx="4" fill="#DCFCE7"/>
-  <text x="410" y="387" text-anchor="start" font-size="10" fill="#374151">⑨ 労働に関する一般常識</text>
-  <rect x="668" y="372" width="48" height="20" rx="4" fill="#86EFAC"/>
-  <text x="692" y="386" text-anchor="middle" font-size="9" fill="#166534">標準</text>
-  <rect x="400" y="402" width="324" height="28" rx="4" fill="#DCFCE7"/>
-  <text x="410" y="421" text-anchor="start" font-size="10" fill="#374151">⑩ 労働安全衛生法（安衛法）</text>
-  <rect x="668" y="406" width="48" height="20" rx="4" fill="#86EFAC"/>
-  <text x="692" y="420" text-anchor="middle" font-size="9" fill="#166534">標準</text>
+  <rect width="760" height="520" rx="12" fill="#FAFDF6"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">社労士試験 攻略マップ——選択式・択一式構成と足切り防衛戦略</text>
+  <text x="380" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">総合得点より「全科目3点（4点）以上」の防衛陣形が生死を分ける</text>
+
+  <!-- Left: 試験構成と即死トラップ -->
+  <rect x="20" y="62" width="348" height="440" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+  <rect x="20" y="62" width="348" height="32" rx="10" fill="#FDBA74"/>
+  <rect x="20" y="84" width="348" height="10" fill="#FDBA74"/>
+  <text x="194" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="#9A3412">試験構成（合格率6〜7%）</text>
+
+  <text x="40" y="116" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">選択式（午前：1時間20分）</text>
+  <rect x="40" y="124" width="308" height="26" rx="6" fill="#FFEDD5"/>
+  <text x="50" y="141" text-anchor="start" font-size="10" fill="#7C2D12">8科目 × 5問 ＝ 40問（各科目5択穴埋め）</text>
+  <rect x="40" y="156" width="308" height="30" rx="6" fill="#FECACA"/>
+  <text x="50" y="171" text-anchor="start" font-size="9.5" font-weight="700" fill="#991B1B">⚠ 即死トラップ：各科目3点未満で即アウト</text>
+  <text x="50" y="182" text-anchor="start" font-size="8.5" fill="#B91C1C">（満点5点・救済で2点の回もあり）</text>
+
+  <text x="40" y="216" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">択一式（午後：3時間30分）</text>
+  <rect x="40" y="224" width="308" height="26" rx="6" fill="#FFEDD5"/>
+  <text x="50" y="241" text-anchor="start" font-size="10" fill="#7C2D12">7科目 × 10問 ＝ 70問（5肢択一）</text>
+  <rect x="40" y="256" width="308" height="30" rx="6" fill="#FECACA"/>
+  <text x="50" y="271" text-anchor="start" font-size="9.5" font-weight="700" fill="#991B1B">⚠ 即死トラップ：各科目4点未満で即アウト</text>
+  <text x="50" y="282" text-anchor="start" font-size="8.5" fill="#B91C1C">（満点10点・難化時は3点の回もあり）</text>
+
+  <text x="40" y="316" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">合格基準（年度により変動）</text>
+  <rect x="40" y="324" width="308" height="24" rx="6" fill="#FFEDD5"/>
+  <text x="50" y="340" text-anchor="start" font-size="10" fill="#7C2D12">選択式：総得点24〜26点前後（目安）</text>
+  <rect x="40" y="354" width="308" height="24" rx="6" fill="#FFEDD5"/>
+  <text x="50" y="370" text-anchor="start" font-size="10" fill="#7C2D12">択一式：総得点45〜49点前後（目安）</text>
+
+  <rect x="40" y="392" width="308" height="96" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="194" y="412" text-anchor="middle" font-size="10.5" font-weight="700" fill="#991B1B">🛡 防衛陣形の鉄則</text>
+  <text x="50" y="432" text-anchor="start" font-size="9.5" fill="#7F1D1D">総合点がどれだけ高くても、</text>
+  <text x="50" y="448" text-anchor="start" font-size="9.5" fill="#7F1D1D">1科目でも基準点を割れば即不合格。</text>
+  <text x="50" y="464" text-anchor="start" font-size="9.5" font-weight="700" fill="#991B1B">「高得点科目」より「弱点ゼロ」を優先せよ！</text>
+
+  <!-- Right: 10科目と学習優先度・防具科目 -->
+  <rect x="384" y="62" width="356" height="440" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="384" y="62" width="356" height="32" rx="10" fill="#86EFAC"/>
+  <rect x="384" y="84" width="356" height="10" fill="#86EFAC"/>
+  <text x="562" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">主要10科目と防衛優先度</text>
+
+  <rect x="400" y="102" width="324" height="26" rx="6" fill="#DCFCE7"/>
+  <text x="410" y="119" text-anchor="start" font-size="9.5" fill="#166534">① 労働基準法・安全衛生法</text>
+  <rect x="666" y="106" width="50" height="18" rx="5" fill="#4ADE80"/>
+  <text x="691" y="119" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532D">最重要</text>
+
+  <rect x="400" y="134" width="324" height="26" rx="6" fill="#DCFCE7"/>
+  <text x="410" y="151" text-anchor="start" font-size="9.5" fill="#166534">② 労働者災害補償保険法（労災）</text>
+  <rect x="666" y="138" width="50" height="18" rx="5" fill="#4ADE80"/>
+  <text x="691" y="151" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532D">最重要</text>
+
+  <rect x="400" y="166" width="324" height="26" rx="6" fill="#DCFCE7"/>
+  <text x="410" y="183" text-anchor="start" font-size="9.5" fill="#166534">③ 雇用保険法</text>
+  <rect x="666" y="170" width="50" height="18" rx="5" fill="#4ADE80"/>
+  <text x="691" y="183" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532D">最重要</text>
+
+  <rect x="400" y="198" width="324" height="26" rx="6" fill="#BBF7D0"/>
+  <text x="410" y="215" text-anchor="start" font-size="9.5" fill="#166534">⑤ 健康保険法</text>
+  <rect x="666" y="202" width="50" height="18" rx="5" fill="#86EFAC"/>
+  <text x="691" y="215" text-anchor="middle" font-size="8.5" fill="#166534">重要</text>
+
+  <rect x="400" y="230" width="324" height="26" rx="6" fill="#BBF7D0"/>
+  <text x="410" y="247" text-anchor="start" font-size="9.5" fill="#166534">⑥ 厚生年金保険法</text>
+  <rect x="666" y="234" width="50" height="18" rx="5" fill="#86EFAC"/>
+  <text x="691" y="247" text-anchor="middle" font-size="8.5" fill="#166534">重要</text>
+
+  <rect x="400" y="262" width="324" height="26" rx="6" fill="#BBF7D0"/>
+  <text x="410" y="279" text-anchor="start" font-size="9.5" fill="#166534">⑦ 国民年金法</text>
+  <rect x="666" y="266" width="50" height="18" rx="5" fill="#86EFAC"/>
+  <text x="691" y="279" text-anchor="middle" font-size="8.5" fill="#166534">重要</text>
+
+  <rect x="400" y="294" width="324" height="26" rx="6" fill="#DCFCE7"/>
+  <text x="410" y="311" text-anchor="start" font-size="9.5" fill="#166534">⑧ 労働保険徴収法</text>
+  <rect x="666" y="298" width="50" height="18" rx="5" fill="#BBF7D0"/>
+  <text x="691" y="311" text-anchor="middle" font-size="8.5" fill="#166534">標準</text>
+
+  <rect x="400" y="326" width="324" height="26" rx="6" fill="#DCFCE7"/>
+  <text x="410" y="343" text-anchor="start" font-size="9.5" fill="#166534">⑩ 労働安全衛生法（安衛法）</text>
+  <rect x="666" y="330" width="50" height="18" rx="5" fill="#BBF7D0"/>
+  <text x="691" y="343" text-anchor="middle" font-size="8.5" fill="#166534">標準</text>
+
+  <!-- 防具科目：労一・社一 -->
+  <rect x="400" y="366" width="324" height="52" rx="8" fill="#F5D0FE" stroke="#E9A6F0" stroke-width="1.2"/>
+  <text x="410" y="384" text-anchor="start" font-size="9.5" font-weight="700" fill="#86198F">④ 社会保険に関する一般常識（社一）</text>
+  <text x="410" y="400" text-anchor="start" font-size="9.5" font-weight="700" fill="#86198F">⑨ 労働に関する一般常識（労一）</text>
+  <rect x="666" y="374" width="50" height="34" rx="5" fill="#D946EF"/>
+  <text x="691" y="388" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">🛡防具</text>
+  <text x="691" y="400" text-anchor="middle" font-size="7" fill="#fff">白書対策</text>
+
+  <rect x="400" y="428" width="324" height="60" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="562" y="446" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">労一・社一は「防具」で足切りを防ぐ</text>
+  <text x="410" y="464" text-anchor="start" font-size="9" fill="#374151">白書・統計の最新数値を直前期に集中インプット。</text>
+  <text x="410" y="478" text-anchor="start" font-size="9" fill="#374151">これが基準点割れという即死を防ぐ"防具"になる。</text>
 </svg>
