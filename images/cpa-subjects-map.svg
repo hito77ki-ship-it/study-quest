@@ -39,31 +39,31 @@
     <rect x="80" y="172" width="430" height="260" rx="28" fill="#ffffff" stroke="#bae6fd" stroke-width="4"/>
     <rect x="112" y="204" width="150" height="42" rx="21" fill="#38bdf8"/>
     <text x="187" y="232" text-anchor="middle" class="pill">計算</text>
-    <text x="295" y="224" text-anchor="middle" class="label">基本の剣技</text>
-    <text x="295" y="252" text-anchor="middle" class="ruby">（きほんのけんぎ）</text>
+    <text x="375" y="224" text-anchor="middle" class="label">基本の剣技</text>
+    <text x="375" y="252" text-anchor="middle" class="ruby">（きほんのけんぎ）</text>
     <path d="M171 320 L230 261 L252 283 L193 342 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="4"/>
     <path d="M224 256 L250 230 L283 263 L257 289 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
     <rect x="145" y="336" width="76" height="20" rx="10" fill="#7dd3fc" transform="rotate(-45 183 346)"/>
-    <text x="315" y="308" text-anchor="middle" class="body">会計処理の手続を学ぶ</text>
-    <text x="315" y="344" text-anchor="middle" class="small">仕訳や処理の「どうやるか」を</text>
-    <text x="315" y="372" text-anchor="middle" class="small">正確に動かすフィールド</text>
+    <text x="375" y="308" text-anchor="middle" class="body">会計処理の手続を学ぶ</text>
+    <text x="375" y="344" text-anchor="middle" class="small">仕訳や処理の「どうやるか」を</text>
+    <text x="375" y="372" text-anchor="middle" class="small">正確に動かすフィールド</text>
   </g>
 
   <g filter="url(#softShadow)">
     <rect x="690" y="172" width="430" height="260" rx="28" fill="#ffffff" stroke="#e9d5ff" stroke-width="4"/>
     <rect x="722" y="204" width="150" height="42" rx="21" fill="#c084fc"/>
     <text x="797" y="232" text-anchor="middle" class="pill">理論</text>
-    <text x="905" y="224" text-anchor="middle" class="label">白魔法の呪文</text>
-    <text x="905" y="252" text-anchor="middle" class="ruby">（しろまほうのじゅもん）</text>
+    <text x="990" y="224" text-anchor="middle" class="label">白魔法の呪文</text>
+    <text x="990" y="252" text-anchor="middle" class="ruby">（しろまほうのじゅもん）</text>
     <circle cx="802" cy="316" r="43" fill="#f3e8ff" stroke="#a855f7" stroke-width="4"/>
     <path d="M802 265 L802 367" stroke="#a855f7" stroke-width="8" stroke-linecap="round"/>
     <path d="M774 294 L830 294" stroke="#a855f7" stroke-width="8" stroke-linecap="round"/>
     <circle cx="765" cy="256" r="9" fill="#fef9c3"/>
     <circle cx="850" cy="270" r="7" fill="#dcfce7"/>
     <circle cx="850" cy="356" r="9" fill="#dbeafe"/>
-    <text x="924" y="308" text-anchor="middle" class="body">背景にある理由を問う</text>
-    <text x="924" y="344" text-anchor="middle" class="small">「なぜその処理をするのか」を</text>
-    <text x="924" y="372" text-anchor="middle" class="small">自分の言葉で説明する力</text>
+    <text x="990" y="308" text-anchor="middle" class="body">背景にある理由を問う</text>
+    <text x="990" y="344" text-anchor="middle" class="small">「なぜその処理をするのか」を</text>
+    <text x="990" y="372" text-anchor="middle" class="small">自分の言葉で説明する力</text>
   </g>
 
   <path d="M515 300 C555 300 570 300 592 300" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" fill="none"/>
