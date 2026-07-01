@@ -69,6 +69,31 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.author-card{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:14px;padding:24px;margin:24px 0 32px;display:flex;align-items:flex-start;gap:16px;}
+.author-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#6AAF2B);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:700;}
+.author-card-body .kicker{color:#A0C070;font-size:12px;font-weight:700;margin-bottom:8px;letter-spacing:.08em;display:block;}
+.author-card-body p{color:#E2F0D0;font-size:14px;line-height:1.95;margin:0;}
+.summary-box{background:#F0FFF4;border:1px solid #BBF7D0;border-radius:12px;padding:18px 20px;margin:20px 0 28px;}
+.summary-box strong{display:block;color:#166534;font-size:15px;margin-bottom:8px;}
+.summary-box ul{margin-bottom:0;}
+.like-cta{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border:2px solid var(--green);border-radius:14px;padding:28px 24px;margin:44px 0 36px;text-align:center;}
+.like-cta .like-emoji{font-size:36px;display:block;margin-bottom:10px;}
+.like-cta h3{color:#065F46;font-size:17px;margin-bottom:10px;}
+.like-cta p{color:#065F46;font-size:13px;margin:0 0 18px;line-height:1.8;}
+.like-cta-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.like-cta-btns a{display:inline-block;border-radius:100px;padding:10px 22px;font-size:13px;font-weight:800;text-decoration:none;}
+.like-cta-btns .btn-main{background:#276749;color:#fff;}
+.like-cta-btns .btn-sub{background:#fff;border:2px solid #8CC63F;color:#276749;}
+html[data-theme="dark"] .author-card{background:linear-gradient(135deg,#0F1A07,#182808) !important;}
+html[data-theme="dark"] .summary-box{background:linear-gradient(180deg,#102218,#0E1A15) !important;border-color:rgba(140,198,63,.26) !important;}
+html[data-theme="dark"] .summary-box strong{color:#B6E27C !important;}
+html[data-theme="dark"] .tip-box{background:linear-gradient(180deg,#0E1A12,#0B1610) !important;border-color:rgba(154,230,180,.2) !important;}
+html[data-theme="dark"] .tip-box strong{color:#9AE6B4 !important;}
+html[data-theme="dark"] .like-cta{background:linear-gradient(135deg,#031510,#051D16) !important;border-color:rgba(140,198,63,.35) !important;}
+html[data-theme="dark"] .like-cta h3,html[data-theme="dark"] .like-cta p{color:#D1FAE5 !important;}
+html[data-theme="dark"] .like-cta-btns .btn-sub{background:#0A2015 !important;border-color:rgba(140,198,63,.4) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .app-cta{background:linear-gradient(135deg,#0F1A07,#182808) !important;}
+@media(max-width:680px){.author-card{flex-direction:column;gap:12px;}}
 </style>
 </head>
 <body>
@@ -87,9 +112,32 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h1>公認会計士試験の勉強法・合格ロードマップ【2026年版】</h1>
-  <p class="meta">更新日：2026年4月26日｜大谷 一輝（大阪経済大学3回生・元CPA受験生・日商簿記1級勉強中）</p>
+  <p class="meta">更新日：2026年7月1日｜大谷 一輝（大阪経済大学3回生・元CPA受験生・日商簿記1級勉強中）</p>
 
-  <p class="lead">公認会計士（CPA）は日本の三大国家資格のひとつで、<span class="sq-key">合格率は例年10〜11%前後</span>。私自身、大学在学中に約1年間CPA試験の勉強をしていました。その経験をもとに、試験の概要・科目別の学習法・継続のコツをまとめています。</p>
+  <!-- 挨拶カード -->
+  <div class="author-card">
+    <div class="author-avatar">大</div>
+    <div class="author-card-body">
+      <span class="kicker">著者・大谷からひとこと</span>
+      <p>こんにちは、大谷です！<br><br>
+      公認会計士（CPA）試験——これ、本当に化け物みたいな試験です（笑）。<br><br>
+      僕が初めてテキストを開いたとき、財務会計論の計算問題のボリュームを見て<strong style="color:#8CC63F;">「なんじゃこりゃ……終わった」</strong>と本気で思いました。財務・管理・監査・企業法と、それぞれが1つの資格試験並みの深さを持っているわけですから、最初にパニックになるのは当然です。<br><br>
+      僕自身、大学在学中に約1年間CPA試験の勉強をして、その難しさを身をもって体験しました。「短答式で語尾を読み飛ばして撃沈」「計算を数日サボったら見事に記憶がリセットされた」……そんな痛い経験も山ほどあります。<br><br>
+      この記事では、そのリアルな体験をもとに、試験の概要・科目別の攻略法・絶対にやってはいけない失敗パターンを余すことなく書いています。<br><br>
+      また、記事の末尾のほうにある<strong style="color:#8CC63F;">【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+    </div>
+  </div>
+
+  <div class="sq-chat"></div>
+
+  <div class="summary-box">
+    <strong>5秒でわかるまとめ</strong>
+    <ul>
+      <li>合格率は例年10〜11%前後。必要勉強時間は3,000〜5,000時間の超長期戦です。</li>
+      <li>財務・管理の計算科目は毎日触れること必須。3日休むと感覚がリセットされます。</li>
+      <li>初学者は予備校一択。近年はCPA会計学院の合格占有率が圧倒的な水準に達しています。</li>
+    </ul>
+  </div>
 
   <div class="tip-box"><strong>この記事について：</strong>筆者（大谷）は大阪経済大学3回生。約1年間CPA受験勉強をした後、現在は日商簿記1級を目標に学習中です。実際の受験経験と調査をもとに書いていますが、合格保証・キャリア保証をするものではありません。最新の試験情報は<a href="https://jfael.or.jp/" target="_blank" rel="noopener">公認会計士・監査審査会の公式サイト</a>でご確認ください。</div>
 
@@ -108,10 +156,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h2>科目別の攻略ポイント</h2>
 
   <h3>財務会計論（配点最大・最重要科目）</h3>
-  <p>短答式・論文式ともに配点が最も高い科目です。計算問題（財務諸表の作成・分析）と理論問題に分かれます。<span class="sq-marker">計算は毎日触れることが鉄則で、1日でも離れると感覚が鈍ります。</span>私が勉強していたときも、数日空けると解法がすぐに出てこなくなる感覚がありました。理論は条文の丸暗記よりも「なぜそのルールが存在するか」の背景理解を優先したほうが定着しやすいと感じました。</p>
+  <p>短答式・論文式ともに配点が最も高い科目です。計算問題（財務諸表の作成・分析）と理論問題に分かれます。<span class="sq-marker">計算は毎日触れることが絶対鉄則で、3日サボると身につけた解法の感覚がほぼリセットされます。</span>僕が実際に体験しているのですが、週末に3日空けて月曜日に問題を開いた瞬間、「あれ、この仕訳の順番なんだっけ…」という恐怖の感覚に何度も陥りました。試験直前でなくても毎日5分でも電卓を叩く「素振り」だけは絶対に休まないでください。<strong>「今日は勉強できなかった日」でも、計算1問だけは解く。</strong>それだけで崩壊を防げます。理論は条文の丸暗記よりも「なぜそのルールが存在するか」の背景理解を優先したほうが定着しやすいと感じました。</p>
 
   <h3>管理会計論（計算力勝負）</h3>
-  <p>原価計算・意思決定・業績評価が主要テーマです。私の経験では、公式を丸暗記しようとするより、図解やT字勘定で構造を理解してから解くほうがずっと定着が早かったです。財務会計論と同様に、計算は毎日触れる習慣が大事だと感じました。</p>
+  <p>原価計算・意思決定・業績評価が主要テーマです。私の経験では、公式を丸暗記しようとするより、図解やT字勘定で構造を理解してから解くほうがずっと定着が早かったです。財務会計論と同様に、<strong>計算は毎日触れる習慣が命綱</strong>です。CVP分析や差額原価収益分析は「流れで解く筋肉」が求められるので、2〜3日空けると最初からやり直しに近い感覚になります。管理会計こそ、毎日の5分素振りで維持できる科目だと思っています。</p>
 
   <h3>監査論（理解暗記型）</h3>
   <p>監査基準・品質管理基準の条文理解が中心です。短答では細かい数値や用語の正確な暗記が求められます。「なぜ監査が必要か」という本質的な理解があると、論文式での論述も組み立てやすくなります。</p>
@@ -159,7 +207,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <tr><td>クレアール</td><td>20〜40万円</td><td>社会人向け。非常識合格法で範囲を絞る。</td><td>働きながら受験する社会人</td></tr>
     <tr><td>独学（市販テキスト）</td><td>5〜20万円</td><td>自由度が高いが情報収集に苦労する。</td><td>簿記1級取得者・再受験者</td></tr>
   </table>
-  <div class="tip-box"><strong>近年の動向：</strong>CPA会計学院の合格者数が急増しており、<span class="sq-key">2024年は合格者の約40%がCPA生</span>とされています。費用と合格率のバランスで選ぶなら、CPA会計学院またはTACが有力な選択肢です。</div>
+  <div class="tip-box"><strong>近年の動向：</strong>CPA会計学院の合格者数が急増しており、<span class="sq-key">近年の合格者占有率は圧倒的な水準に達し、最大手と並ぶ存在感</span>を示しています。費用と合格率のバランスで選ぶなら、CPA会計学院またはTACが有力な選択肢です。</div>
 
   <h2>論文式試験の科目別攻略法</h2>
   <table>
@@ -176,7 +224,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>短答式試験に合格すると、合格した年および翌々年度まで短答式試験が免除されます（有効期間2年）。また以下の場合も一部科目が免除されます。</p>
   <ul>
     <li><strong>公認会計士・監査審査会の指定研究者：</strong>一部科目免除</li>
-    <tr><td>簿記1級合格者：</td>財務会計論の計算科目の免除申請が可能（一部の条件あり）</li>
+    <li><strong>簿記1級合格者：</strong>財務会計論の計算科目の免除申請が可能（一部の条件あり）</li>
     <li><strong>税理士・弁護士等の資格保有者：</strong>申請により一部科目免除</li>
   </ul>
   <div class="tip-box"><strong>免除の活用：</strong>短答式を一度クリアすれば2年間は論文式に専念できます。短答式合格を「1つのマイルストーン」として捉え、まず短答突破に集中するのが現実的な戦略です。</div>
@@ -194,7 +242,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <h2>受験生がはまる5つの失敗パターン</h2>
   <ul>
-    <li><strong>財務会計の計算を1日でも休む：</strong>私が実感したのはここです。数日空けると解法がすぐに出てこなくなります。毎日少しでも計算問題に触れる習慣をつくるのが大事だと思いました。</li>
+    <li><strong>財務会計・管理会計の計算を3日以上休む：</strong>これが最も手痛い失敗でした。3日空けると「解法の記憶」がほぼ消えます。大げさではなく、先週解けていた連結問題が手がつかなくなる感覚を何度も経験しました。忙しい日でも<strong>「電卓を5分叩く素振りだけは絶対に休まない」</strong>を鉄則にすると崩壊を防げます。計算力は筋肉と同じで、鍛えるより維持のほうが簡単です。</li>
     <li><strong>理論を「なんとなく」暗記する：</strong>論文式では「なぜそのルールがあるか」を論述する必要があります。背景理解なしに条文だけ暗記しても、本番で応用しにくいと感じました。</li>
     <li><strong>短答式で満点を狙う：</strong>短答式の合格基準は約70%です。すべての論点を完璧にしようとすると時間がいくらあっても足りません。<span class="sq-underline">頻出上位70%に集中する戦略が正解。</span></li>
     <li><strong>答案練習（答練）をスキップする：</strong>予備校の答練は時間内に論述する練習として重要です。忙しい時期でもできる限り受講するほうがよいと思います。</li>
@@ -214,11 +262,25 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h2>まとめ：公認会計士合格への道</h2>
   <ul>
     <li>合格に必要な学習時間は3,000〜5,000時間。長期戦を前提に計画を立てる</li>
-    <li>財務会計論・管理会計論の計算は毎日継続することが最重要</li>
-    <li>初学者は予備校の利用が遠回りが少ないと感じた（独学も状況次第で選択肢）</li>
+    <li>財務会計論・管理会計論の計算は毎日5分でも触れる「素振り」を欠かさない</li>
+    <li>3日以上計算を休むと感覚がリセットされる。これが最大の落とし穴</li>
+    <li>初学者は予備校の利用が遠回りが少ない（近年はCPA会計学院が圧倒的な実績）</li>
     <li>勉強時間を記録・可視化してモチベーションを維持する</li>
     <li>試験日から逆算した週次スケジュールで進捗管理する</li>
   </ul>
+  <p>公認会計士試験は、人生最大級のボスキャラです。3,000〜5,000時間という膨大な旅を完走するためには、日々の学習を「見える化」して自分の成長を確認し続けることが絶対に必要です。僕もスタディクエストで毎日の冒険を記録しながら、一歩ずつ進んでいます。<br><br>
+  この記事があなたの合格ロードマップの一助になったなら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになります！一緒に合格をもぎ取りましょう！</p>
+
+  <!-- いいね誘導カード -->
+  <div class="like-cta">
+    <span class="like-emoji">⚔</span>
+    <h3>公認会計士試験は人生最大級のボスです</h3>
+    <p>3,000〜5,000時間の長期戦を制するには、毎日の勉強を<strong>「見える化」</strong>することが鍵。<br>この記事が少しでも参考になったら、この下にある<strong>【いいねボタン】</strong>をポチッと押してください！皆さんの一押しが次の記事を書く力になります。</p>
+    <div class="like-cta-btns">
+      <a class="btn-main" href="index.html">無料で学習記録を始める →</a>
+      <a class="btn-sub" href="cpa-subjects.html">科目別攻略ガイドへ</a>
+    </div>
+  </div>
 </div>
 
 <section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">

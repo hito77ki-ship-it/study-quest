@@ -1948,6 +1948,91 @@ html[data-theme="dark"] .container .pattern-table td{color:#CCD6E5 !important;}
 html[data-theme="dark"] .container .badge-bank,html[data-theme="dark"] .container .badge-co{color:#fff !important;}
 html[data-theme="dark"] .container .badge-need,html[data-theme="dark"] .container .badge-noneed{color:#fff !important;}
 /* ── ここまで ── */
+/* ── Phase cards ダークモード ── */
+html[data-theme="dark"] .phase-p1{background:linear-gradient(180deg,#0D1A3A,#0A1530) !important;border-color:rgba(59,130,246,.28) !important;}
+html[data-theme="dark"] .phase-p1 h3{color:#90CDF4 !important;}
+html[data-theme="dark"] .phase-p1 .phase-badge{background:rgba(59,130,246,.20) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .phase-p2{background:linear-gradient(180deg,#1A0D3A,#150A2E) !important;border-color:rgba(124,58,237,.28) !important;}
+html[data-theme="dark"] .phase-p2 h3{color:#C4B5FD !important;}
+html[data-theme="dark"] .phase-p2 .phase-badge{background:rgba(124,58,237,.20) !important;color:#C4B5FD !important;}
+html[data-theme="dark"] .phase-p3{background:linear-gradient(180deg,#2A1D07,#1C1305) !important;border-color:rgba(245,158,11,.28) !important;}
+html[data-theme="dark"] .phase-p3 h3{color:#F7D774 !important;}
+html[data-theme="dark"] .phase-p3 .phase-badge{background:rgba(245,158,11,.18) !important;color:#F7D774 !important;}
+html[data-theme="dark"] .phase-card p,
+html[data-theme="dark"] .phase-card li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .phase-card strong{color:#F8FAFC !important;}
+html[data-theme="dark"] .phase-meta span{color:#9BA7BB !important;}
+/* ── ここまで ── */
+/* ── Subject cards ダークモード ── */
+html[data-theme="dark"] .subject-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
+html[data-theme="dark"] .subject-card__title{color:#F8FAFC !important;}
+html[data-theme="dark"] .subject-card__note{color:#9BA7BB !important;}
+/* ── ここまで ── */
+/* ── Exam next / Like CTA / Alert box ダークモード ── */
+html[data-theme="dark"] .exam-next{background:linear-gradient(135deg,#0A1E14,#0C2018) !important;border-color:rgba(52,211,153,.30) !important;}
+html[data-theme="dark"] .exam-next__date{color:#6EE7B7 !important;}
+html[data-theme="dark"] .exam-next__label{color:#34D399 !important;}
+html[data-theme="dark"] .exam-next__note{color:#9BA7BB !important;}
+html[data-theme="dark"] .like-cta{background:linear-gradient(135deg,#0A1E14,#0D2519) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .like-cta p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .like-cta .like-note{color:#9BA7BB !important;}
+html[data-theme="dark"] .alert-box{background:linear-gradient(180deg,#2A0E0E,#1E0A0A) !important;border-color:rgba(252,129,129,.28) !important;}
+html[data-theme="dark"] .alert-box strong{color:#FC8181 !important;}
+html[data-theme="dark"] .alert-box p,
+html[data-theme="dark"] .alert-box li{color:#F0C6C6 !important;}
+/* ── ここまで ── */
+/* ── Caution card / Trap box ダークモード ── */
+html[data-theme="dark"] .caution-card{background:linear-gradient(135deg,#2A1D07,#1C1305) !important;border-color:rgba(246,173,85,.28) !important;}
+html[data-theme="dark"] .caution-card h3{color:#F7D774 !important;}
+html[data-theme="dark"] .caution-card p,
+html[data-theme="dark"] .caution-card li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .caution-card strong{color:#F8FAFC !important;}
+html[data-theme="dark"] .trap-box{background:linear-gradient(180deg,#2A0E0E,#1E0A0A) !important;border-color:rgba(252,129,129,.28) !important;}
+html[data-theme="dark"] .trap-box strong{color:#FC8181 !important;}
+html[data-theme="dark"] .trap-box p,
+html[data-theme="dark"] .trap-box li{color:#F0C6C6 !important;}
+/* ── ここまで ── */
+/* ── Phase boxes / Link cards (boki2-next-exam.html) ダークモード ── */
+html[data-theme="dark"] .phase-box.blue{background:linear-gradient(180deg,#0D1A3A,#0A1530) !important;border-color:rgba(59,130,246,.28) !important;}
+html[data-theme="dark"] .phase-box.purple{background:linear-gradient(180deg,#1A0D3A,#150A2E) !important;border-color:rgba(124,58,237,.28) !important;}
+html[data-theme="dark"] .phase-box.amber{background:linear-gradient(180deg,#2A1D07,#1C1305) !important;border-color:rgba(245,158,11,.28) !important;}
+html[data-theme="dark"] .phase-box.green{background:linear-gradient(180deg,#0A1E14,#0C2018) !important;border-color:rgba(34,197,94,.24) !important;}
+html[data-theme="dark"] .phase-title.blue{color:#90CDF4 !important;}
+html[data-theme="dark"] .phase-title.purple{color:#C4B5FD !important;}
+html[data-theme="dark"] .phase-title.amber{color:#F7D774 !important;}
+html[data-theme="dark"] .phase-title.green{color:#86EFAC !important;}
+html[data-theme="dark"] .phase-box p,
+html[data-theme="dark"] .phase-box li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .phase-box strong{color:#F8FAFC !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#1E40AF"]{color:#90CDF4 !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#5B21B6"]{color:#C4B5FD !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#92400E"]{color:#F7D774 !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#166534"]{color:#86EFAC !important;}
+html[data-theme="dark"] .link-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
+/* ── ここまで ── */
+/* ── Like nudge / Office steps / Related cards ダークモード ── */
+html[data-theme="dark"] .like-nudge{background:linear-gradient(180deg,#2A210E,#1C160A) !important;border-color:rgba(246,224,94,.30) !important;}
+html[data-theme="dark"] .like-nudge p{color:#F7D774 !important;}
+html[data-theme="dark"] .like-nudge span{color:#E8C866 !important;}
+html[data-theme="dark"] .office-step{background:linear-gradient(180deg,#151A2A,#111728) !important;}
+html[data-theme="dark"] .office-step strong{color:#B6E27C !important;}
+html[data-theme="dark"] .office-step p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .related-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
+html[data-theme="dark"] .related-card-title{color:#F8FAFC !important;}
+html[data-theme="dark"] .faq-answer{color:#CCD6E5 !important;}
+/* ── ここまで ── */
+/* ── インライングラデーション背景 ダークモード ── */
+html[data-theme="dark"] .container [style*="#DBEAFE"],
+html[data-theme="dark"] .container [style*="#EFF6FF"]{background:linear-gradient(135deg,#0D1A3A,#0A1530) !important;}
+html[data-theme="dark"] .container [style*="#DBEAFE"] [style*="color:#1D4ED8"],
+html[data-theme="dark"] .container [style*="#EFF6FF"] [style*="color:#1D4ED8"]{color:#90CDF4 !important;}
+html[data-theme="dark"] .container [style*="#DBEAFE"] a[style*="background:#1D4ED8"],
+html[data-theme="dark"] .container [style*="#EFF6FF"] a[style*="background:#1D4ED8"]{background:#3B82F6 !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"]{background:linear-gradient(135deg,#0A1E14,#0C2018) !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"] [style*="color:#22543D"]{color:#6EE7B7 !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"] [style*="color:#276749"]{color:#9BA7BB !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"] a[style*="background:#fff"]{background:rgba(255,255,255,.08) !important;color:#6EE7B7 !important;}
+/* ── ここまで ── */
 `;
   document.head.appendChild(s);
 }

@@ -17,8 +17,9 @@
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/ogp_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"株式会社の機関設計（327条・328条）の覚え方｜企業法の短答ひっかけ対策","description":"公認会計士試験の企業法で混乱しやすい株式会社の機関設計（会社法327条・328条）を、CPAテキスト基準でやさしく整理。","url":"https://hito77ki-ship-it.github.io/study-quest/cpa-kigyoho-kikansekkei.html","datePublished":"2026-06-28","dateModified":"2026-06-28","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/","logo":{"@type":"ImageObject","url":"https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}}}
+{"@context":"https://schema.org","@type":"Article","headline":"株式会社の機関設計（327条・328条）の覚え方｜企業法の短答ひっかけ対策","description":"公認会計士試験の企業法で混乱しやすい株式会社の機関設計（会社法327条・328条）を、CPAテキスト基準でやさしく整理。","url":"https://hito77ki-ship-it.github.io/study-quest/cpa-kigyoho-kikansekkei.html","datePublished":"2026-06-28","dateModified":"2026-07-01","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/","logo":{"@type":"ImageObject","url":"https://hito77ki-ship-it.github.io/study-quest/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -46,57 +47,98 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px;}
 th{background:var(--green);color:#fff;padding:10px 12px;text-align:left;}
 td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
 tr:nth-child(even) td{background:var(--light);}
+/* 挨拶カード */
+.author-card{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:14px;padding:24px;margin:24px 0 32px;display:flex;align-items:flex-start;gap:16px;}
+.author-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#6AAF2B);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:700;}
+.author-card-body .kicker{color:#A0C070;font-size:12px;font-weight:700;margin-bottom:8px;letter-spacing:.08em;display:block;}
+.author-card-body p{color:#E2F0D0;font-size:14px;line-height:1.95;margin:0;}
+/* サマリーボックス */
 .summary-box{background:#F0FFF4;border:1px solid #BBF7D0;border-radius:12px;padding:18px 20px;margin:20px 0 28px;}
-.summary-box strong{display:block;color:#166534;margin-bottom:8px;}
+.summary-box strong{display:block;color:#166534;font-size:15px;margin-bottom:8px;}
 .summary-box ul{margin-bottom:0;}
+/* リード */
 .lead{font-size:15px;line-height:1.95;margin:24px 0 32px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
-.conversation-box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin:26px 0;box-shadow:0 12px 28px rgba(15,23,42,.06);}
+/* 会話ボックス */
+.conversation-box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin:26px 0;box-shadow:0 4px 16px rgba(15,23,42,.06);}
 .conversation-box p{margin-bottom:12px;}
 .conversation-box p:last-child{margin-bottom:0;}
 .role{display:inline-block;font-size:12px;font-weight:800;color:#fff;border-radius:100px;padding:2px 8px;margin-right:6px;}
 .student{background:#60A5FA;}
 .teacher{background:#8CC63F;color:#10200A;}
-.principle{background:#FFF7ED;border:1px solid #FDBA74;border-radius:12px;padding:18px 20px;margin:24px 0;color:#7C2D12;}
-.principle strong{color:#9A3412;}
+/* 原則ボックス */
+.principle{background:#FFF7ED;border:1px solid #FDBA74;border-left:4px solid #F59E0B;border-radius:12px;padding:18px 20px;margin:24px 0;color:#7C2D12;}
+.principle strong{color:#9A3412;display:block;margin-bottom:8px;}
+/* 警告・TIPボックス */
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:#78350F;}
-.warn-box strong{color:#92400E;}
+.warn-box strong{color:#92400E;display:block;margin-bottom:6px;}
 .tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:#276749;}
-.tip-box strong{color:#166534;}
+.tip-box strong{color:#166534;display:block;margin-bottom:6px;}
+/* カード */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0;}
-.card{border:1px solid var(--border);border-radius:12px;padding:18px;background:#fff;}
+.card{border:1px solid var(--border);border-radius:12px;padding:20px;background:#fff;box-shadow:0 2px 8px rgba(26,32,44,.05);border-top:3px solid transparent;}
+.card:has(.tag.blue){border-top-color:#38BDF8;}
+.card:has(.tag.purple){border-top-color:#A78BFA;}
+.card:has(.tag.rose){border-top-color:#FB7185;}
+.card:has(.tag.amber){border-top-color:#F59E0B;}
 .card h3{margin:0 0 8px;color:var(--text);}
 .tag{display:inline-block;color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
-.tag.blue{background:var(--blue);}
-.tag.purple{background:var(--purple);}
-.tag.rose{background:var(--rose);}
-.tag.amber{background:var(--amber);}
+.tag.blue{background:#38BDF8;color:#0C4A6E;}
+.tag.purple{background:#A78BFA;color:#3B0764;}
+.tag.rose{background:#FB7185;}
+.tag.amber{background:#F59E0B;}
+/* チェックリスト */
 .checklist{counter-reset:item;margin:20px 0;}
 .check{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:#374151;}
-.check::before{counter-increment:item;content:counter(item);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;}
-.cta-panel{background:linear-gradient(135deg,#17210F,#2D4A10);border-radius:14px;padding:30px 24px;margin:44px 0 0;text-align:center;color:#fff;}
+.check::before{counter-increment:item;content:counter(item);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;}
+/* いいね誘導カード */
+.like-cta{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border:2px solid var(--green);border-radius:14px;padding:28px 24px;margin:44px 0 36px;text-align:center;}
+.like-cta .like-emoji{font-size:36px;display:block;margin-bottom:10px;}
+.like-cta h3{color:#065F46;font-size:17px;margin-bottom:10px;}
+.like-cta p{color:#065F46;font-size:13px;margin:0 0 18px;line-height:1.8;}
+.like-cta-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.like-cta-btns a{display:inline-block;border-radius:100px;padding:10px 22px;font-size:13px;font-weight:800;text-decoration:none;}
+.like-cta-btns .btn-main{background:#276749;color:#fff;}
+.like-cta-btns .btn-sub{background:#fff;border:2px solid #8CC63F;color:#276749;}
+/* CTA */
+.cta-panel{background:linear-gradient(135deg,#17210F,#2D4A10);border-radius:14px;padding:30px 24px;margin:24px 0 0;text-align:center;color:#fff;}
 .cta-panel h2{border:0;padding:0;margin:0 0 10px;color:#fff;font-size:20px;}
 .cta-panel p{color:#CFE8B6;font-size:14px;margin-bottom:18px;}
 .cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
 .cta-actions a{display:inline-block;border-radius:100px;padding:12px 22px;font-size:14px;font-weight:800;text-decoration:none;}
 .cta-primary{background:var(--green);color:#0A0A0F;}
 .cta-secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.24);}
+/* 関連記事 */
 .related{background:#F7FAFC;padding:48px 24px;}
 .related-inner{max-width:820px;margin:0 auto;}
-.related h2{font-size:15px;margin:0 0 18px;}
+.related h2{font-size:15px;margin:0 0 18px;border:0;padding:0;}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
-.related-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;}
+.related-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;transition:box-shadow .2s,border-color .2s;}
+.related-card:hover{border-color:var(--green);box-shadow:0 4px 12px rgba(140,198,63,.15);text-decoration:none;}
 .related-card span{display:block;font-size:10px;color:var(--green2);font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
 .related-card strong{display:block;font-size:13px;line-height:1.55;}
 footer{background:#111827;padding:28px 24px;text-align:center;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-@media(max-width:680px){.cards{grid-template-columns:1fr;}table{font-size:12px;}th,td{padding:8px;}}
+@media(max-width:680px){.cards{grid-template-columns:1fr;}table{font-size:12px;}th,td{padding:8px;}.author-card{flex-direction:column;gap:12px;}}
+/* ダークモード */
+html[data-theme="dark"] .author-card{background:linear-gradient(135deg,#0F1A07,#182808) !important;}
+html[data-theme="dark"] .summary-box{background:linear-gradient(180deg,#102218,#0E1A15) !important;border-color:rgba(140,198,63,.26) !important;}
+html[data-theme="dark"] .summary-box strong{color:#B6E27C !important;}
+html[data-theme="dark"] .conversation-box{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;box-shadow:none !important;}
+html[data-theme="dark"] .principle{background:linear-gradient(135deg,#2A1500,#381E00) !important;border-color:rgba(251,146,60,.3) !important;border-left-color:#F59E0B !important;color:#FED7AA !important;}
+html[data-theme="dark"] .principle strong{color:#FCA5A5 !important;}
+html[data-theme="dark"] .cards .card{background:#111827 !important;border-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .check{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;}
+html[data-theme="dark"] .like-cta{background:linear-gradient(135deg,#031510,#051D16) !important;border-color:rgba(140,198,63,.35) !important;}
+html[data-theme="dark"] .like-cta h3,html[data-theme="dark"] .like-cta p{color:#D1FAE5 !important;}
+html[data-theme="dark"] .like-cta-btns .btn-sub{background:#0A2015 !important;border-color:rgba(140,198,63,.4) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .related-card{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;}
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="lp.html">スタディクエスト</a>
+    <a class="nav-logo" href="lp.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="index.html">無料で始める</a>
   </div>
 </nav>
@@ -107,6 +149,21 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h1>株式会社の機関設計（327条・328条）の覚え方<br>短答のひっかけを防ぐ最強マップ</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
+  <!-- 挨拶カード -->
+  <div class="author-card">
+    <div class="author-avatar">大</div>
+    <div class="author-card-body">
+      <span class="kicker">著者・大谷からひとこと</span>
+      <p>こんにちは、大谷です！<br><br>
+      実は、今回紹介する会社法327条・328条の「機関設計パズル」は、僕が初めてテキストの表を見たとき、<strong style="color:#8CC63F;">「うわっ、なんじゃこりゃ……！取締役会に監査役に委員会って、組み合わせ多すぎて頭爆発するわ！」</strong>と激しく絶望した大嫌いな論点でした（笑）。<br><br>
+      短答式試験でも、語尾の「置くことができる（任意）」と「置かなければならない（義務）」の入れ替えで何回もひっかけられました。<br><br>
+      だからこそ、当時の僕と同じように条文の迷路で迷子になっている皆さんに、丸暗記を一切排除して「なぜその見張り役が必要なのか」の本質と、試験本番で3秒で正誤を見抜く下書きテクニックをお届けします！<br><br>
+      また、僕のモチベーション維持のために、記事の末尾のほうにある<strong style="color:#8CC63F;">【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+    </div>
+  </div>
+
+  <div class="sq-chat"></div>
+
   <div class="summary-box">
     <strong>5秒でわかるまとめ</strong>
     <ul>
@@ -116,14 +173,6 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <div class="conversation-box">
-    <p><span class="role student">受</span>先生、327条と328条が本当に無理です。取締役会、監査役、監査役会、会計監査人、監査等委員会、指名委員会等って、組み合わせが多すぎて覚えられません。</p>
-    <p><span class="role student">受</span>しかも短答の選択肢を読むと、「置くことができる」なのか「置かなければならない」なのかで毎回ひっかかります。企業法、向いてない気がしてきました。</p>
-    <p><span class="role teacher">師</span>焦らなくて大丈夫です。みんなここで一回パニックになります。むしろ、そこで混乱しているのは、ちゃんと条文の違いを見ようとしている証拠です。</p>
-    <p><span class="role teacher">師</span>機関設計は、ただの暗記パズルに見えます。でも本質はシンプルです。「この会社は、誰が経営をチェックする必要があるのか？」という監視の設計図なんです。</p>
-    <p><span class="role teacher">師</span>実務でも本番でも、「置ける」と「置かなければならない」の違いはよくある罠です。今日はそこを、試験本番で思い出せる形まで一緒に整理していきましょう。</p>
-  </div>
-
   <p class="lead">この記事では、CPA会計学院テキストで重視されている「公開会社・大会社では利害関係者保護のために厳格な機関設計ルールが置かれる」「非公開非大会社では定款自治により柔軟な設計が認められる」という発想を軸に、会社法327条・328条を整理します。丸暗記ではなく、なぜその機関が必要なのかまで言える状態を目指します。</p>
 
   <h2>❓ 株式会社の機関設計って、結局なにを覚える論点ですか？</h2>
@@ -131,7 +180,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>ここで大事なのは、「機関名を覚える」だけで終わらないことです。企業法の問題では、どの会社にどの機関が必要か、なぜその組み合わせになるのかが問われます。</p>
 
   <div class="principle">
-    <strong>💡 迷わないための大原則：会社が大きいほど、見張り役が増える</strong><br>
+    <strong>💡 迷わないための大原則：会社が大きいほど、見張り役が増える</strong>
     公開会社は株主が頻繁に変動し、株主が会社経営に直接関わることが難しくなりやすい会社です。大会社は規模が大きく、会社債権者など利害関係者が多くなります。だから会社法は、こうした会社に厳格な機関設計ルールを置いています。
   </div>
 
@@ -148,7 +197,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>短答式で怖いのは、知っている機関名が出てきた瞬間に安心して、語尾を読み飛ばすことです。会社法の機関設計では、「置ける」のか、「置かなければならない」のか、「置いてはならない」のかが勝負になります。</p>
 
   <div class="warn-box">
-    <strong>💡 スローガン：できるは任意、ならないは義務。語尾だけで勝負するな</strong><br>
+    <strong>💡 スローガン：できるは任意、ならないは義務。語尾だけで勝負するな</strong>
     選択肢で機関名が合っていても、義務設置か任意設置かがズレていれば誤りです。読みながら、頭の中で「任意・義務・禁止」の3色に塗り分けましょう。
   </div>
 
@@ -174,7 +223,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>328条では、公開大会社は監査役会と会計監査人を置かなければならず、非公開大会社も会計監査人を置かなければならないと整理できます。</p>
 
   <div class="tip-box">
-    <strong>💡 スローガン：大会社は、会計の見張り番を外せない</strong><br>
+    <strong>💡 スローガン：大会社は、会計の見張り番を外せない</strong>
     大会社かどうかを見たら、まず会計監査人を思い出しましょう。公開大会社なら、監査役会とのセットにも注意です。
   </div>
 
@@ -183,8 +232,21 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>監査等委員会設置会社と指名委員会等設置会社は、取締役会を置かなければなりません。また、監査役を置いてはなりません。さらに、会計監査人を置かなければなりません。</p>
 
   <div class="principle">
-    <strong>💡 迷わないための大原則：名前で覚えるな、監視役の位置で覚えろ</strong><br>
+    <strong>💡 迷わないための大原則：名前で覚えるな、監視役の位置で覚えろ</strong>
     監査役が外から監査する形なのか、取締役会の中に監査等委員会がある形なのか、委員会制度として設計されている形なのか。機関名ではなく「経営する人」と「監視する人」の位置で見ると、暗記がほどけます。
+  </div>
+
+  <h3>🛠 短答を3秒で解くための「計算用紙の下書きハック」</h3>
+  <p>これが僕の一番の秘密兵器です。機関設計の問題を見たら、選択肢を読む前に<strong>まず計算用紙に十字の線を引いて「4マスのマトリクス」を1秒でフリーハンドで書きます</strong>。縦軸が「公開会社／非公開会社」、横軸が「大会社／非大会社」の4マスです。</p>
+  <p>書いたら、次の2ステップで義務設置を埋めていきます。</p>
+  <div class="checklist">
+    <div class="check"><strong>STEP①「大会社」を見たら、横の列に会計監査人を即書き込む。</strong>公開大会社には監査役会＋会計監査人が義務、非公開大会社には会計監査人だけ義務。まず会計監査人を右列に落とし込むのが328条の起点です。</div>
+    <div class="check"><strong>STEP②「公開会社」を見たら、上の行に取締役会を即書き込む。</strong>公開会社は株主が頻繁に変動するから監督機能として取締役会が義務。上の行に「取締役会：義務」と書けば、327条の起点が完成です。</div>
+    <div class="check"><strong>STEP③ 選択肢の「置く会社の種類」をマトリクスのどのマスに当てはめるか確認する。</strong>そのマスに書いた内容と選択肢の語尾（任意・義務・禁止）が一致するかを照合するだけ。頭の中で処理するより格段にミスが減ります。</div>
+  </div>
+  <div class="tip-box">
+    <strong>💡 なぜ下書きが最強なのか？</strong>
+    機関設計の問題は「①会社の種類を読む → ②必要な機関を想起する → ③語尾と照合する」という3段階を、脳内で並列処理しなければなりません。これを頭の中だけでやるから脳内バグが起きます。マトリクスに書き出した瞬間、①②が「見える情報」になるので、③の照合に集中できます。本番の焦りの中でも、この物理的な下書きが安全装置になります。
   </div>
 
   <h2>🔍 短答式ではどこがひっかけになる？</h2>
@@ -220,6 +282,18 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <li>短答では、語尾と条件の入れ替えに注意する。</li>
   </ul>
   <p>ここでつまずいても、企業法が向いていないわけではありません。機関設計は、最初からスラスラ覚えられる論点ではないです。だからこそ、焦らず「誰を守るためのルールか」に戻りながら、一つずつ自分の言葉にしていきましょう。</p>
+  <p>企業法の機関設計は、最初は無機質な条文の羅列に見えますが、本質が分かればただのイージーなパズルに変わります。僕も毎日スタディクエストで冒険を記録しながら、一歩ずつ進んでいます。この記事が少しでもあなたの短答対策の武器になったら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになります！一緒に合格をもぎ取りましょう！</p>
+
+  <!-- いいね誘導カード -->
+  <div class="like-cta">
+    <span class="like-emoji">🎯</span>
+    <h3>この記事、短答の武器になりましたか？</h3>
+    <p>327条・328条の迷路を一緒に抜け出せたなら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>皆さんの一押しが、次の記事を書く力になります。一緒に合格をもぎ取りましょう！</p>
+    <div class="like-cta-btns">
+      <a class="btn-main" href="cpa-subjects.html">公認会計士の科目構成を見る →</a>
+      <a class="btn-sub" href="cpa.html">CPAロードマップへ</a>
+    </div>
+  </div>
 
   <section class="cta-panel">
     <h2>🎮 企業法のひっかけ論点も、毎日の冒険で攻略しよう</h2>
@@ -237,7 +311,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="related-grid">
       <a class="related-card" href="cpa.html"><span>公認会計士</span><strong>公認会計士試験の勉強法・合格ロードマップ</strong></a>
       <a class="related-card" href="cpa-subjects.html"><span>財務会計論</span><strong>財務会計論（計算・理論）の役割と試験制度</strong></a>
-      <a class="related-card" href="shihoshoshi-kaishaho.html"><span>会社法</span><strong>会社法・商業登記法の勉強法</strong></a>
+      <a class="related-card" href="cpa-dokugaku.html"><span>公認会計士</span><strong>公認会計士独学の壁と最短攻略法</strong></a>
     </div>
   </div>
 </section>
@@ -253,5 +327,6 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
+<script src="article-widgets.js"></script>
 </body>
 </html>
