@@ -1,149 +1,196 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">公認会計士独学の3大ダンジョンと最短攻略ルート</title>
+  <desc id="svgdesc">独学チャレンジャーが直面する3つの壁と、CPAラーニングを活用した最短合格ルートを示す図解</desc>
   <defs>
-    <style>
-      text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }
-    </style>
-    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1E293B"/>
-      <stop offset="100%" stop-color="#374151"/>
+    <linearGradient id="dBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fffaf4"/>
+      <stop offset="1" stop-color="#f4fff8"/>
     </linearGradient>
-    <linearGradient id="wall1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FEF2F2"/>
-      <stop offset="100%" stop-color="#FFF5F5"/>
+    <linearGradient id="dTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
     </linearGradient>
-    <linearGradient id="wall2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFBEB"/>
-      <stop offset="100%" stop-color="#FFFFF0"/>
+    <linearGradient id="dC1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EF4444"/>
+      <stop offset="1" stop-color="#DC2626"/>
     </linearGradient>
-    <linearGradient id="wall3" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#EFF6FF"/>
-      <stop offset="100%" stop-color="#F5F8FF"/>
+    <linearGradient id="dC2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#D97706"/>
     </linearGradient>
+    <linearGradient id="dC3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="dSol" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0FDF4"/>
+      <stop offset="1" stop-color="#DCFCE7"/>
+    </linearGradient>
+    <filter id="dShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.10"/>
+    </filter>
+    <style>.dt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
   </defs>
 
   <!-- Background -->
-  <rect width="760" height="500" rx="14" fill="#F8FAFC"/>
+  <rect width="1200" height="820" rx="20" fill="url(#dBg)"/>
+  <circle cx="110" cy="110" r="90" fill="#FEE2E2" opacity="0.45"/>
+  <circle cx="1090" cy="130" r="100" fill="#DBEAFE" opacity="0.45"/>
+  <circle cx="600" cy="790" r="110" fill="#D1FAE5" opacity="0.38"/>
 
   <!-- Title bar -->
-  <rect x="0" y="0" width="760" height="60" rx="14" fill="url(#titleGrad)"/>
-  <rect x="0" y="46" width="760" height="14" fill="#1E293B"/>
-  <text x="380" y="24" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="3" fill="#94A3B8">公認会計士 独学チャレンジャーが必ず当たる</text>
-  <text x="380" y="46" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">独学の「3大無理ゲーダンジョン」</text>
+  <rect x="40" y="24" width="1120" height="60" rx="14" fill="url(#dTitle)"/>
+  <text x="600" y="46" text-anchor="middle" class="dt" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">公認会計士 独学チャレンジャーが必ず直面する</text>
+  <text x="600" y="68" text-anchor="middle" class="dt" font-size="21" font-weight="800" fill="#FFFFFF">独学の「3大無理ゲーダンジョン」と最短攻略ルート</text>
+  <text x="600" y="106" text-anchor="middle" class="dt" font-size="13" fill="#64748B">この3つの壁が、毎年多くの独学チャレンジャーを短答突破前に脱落させている</text>
 
-  <!-- Dungeon label -->
-  <text x="380" y="80" text-anchor="middle" font-size="11" fill="#94A3B8">この3つの壁に阻まれて、毎年多くの独学チャレンジャーが脱落している</text>
+  <!-- ===== CARD 1: 教材の量 ===== -->
+  <g filter="url(#dShadow)">
+    <rect x="40" y="120" width="360" height="318" rx="18" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/>
+    <rect x="40" y="120" width="360" height="60" rx="18" fill="url(#dC1)"/>
+    <rect x="40" y="160" width="360" height="20" fill="#DC2626"/>
+    <text x="220" y="145" text-anchor="middle" class="dt" font-size="11" font-weight="700" fill="rgba(255,255,255,.72)" letter-spacing="3">DUNGEON  01</text>
+    <text x="220" y="167" text-anchor="middle" class="dt" font-size="16" font-weight="800" fill="#fff">壁①　教材の量の絶望</text>
+  </g>
+  <!-- Icon: book stack (SVG shapes only) -->
+  <rect x="156" y="194" width="128" height="20" rx="5" fill="#EF4444" opacity="0.85"/>
+  <rect x="168" y="218" width="104" height="20" rx="5" fill="#F87171" opacity="0.85"/>
+  <rect x="152" y="242" width="136" height="20" rx="5" fill="#EF4444" opacity="0.70"/>
+  <rect x="162" y="266" width="116" height="20" rx="5" fill="#F87171" opacity="0.60"/>
+  <line x1="164" y1="194" x2="164" y2="214" stroke="#fff" stroke-width="2" opacity="0.55"/>
+  <line x1="176" y1="218" x2="176" y2="238" stroke="#fff" stroke-width="2" opacity="0.55"/>
+  <line x1="160" y1="242" x2="160" y2="262" stroke="#fff" stroke-width="2" opacity="0.55"/>
+  <!-- Description -->
+  <text x="220" y="310" text-anchor="middle" class="dt" font-size="13" font-weight="700" fill="#991B1B">簿記3級の「30〜50倍」のボリューム</text>
+  <text x="220" y="330" text-anchor="middle" class="dt" font-size="12" fill="#7F1D1D">テキストを積み上げると</text>
+  <text x="220" y="348" text-anchor="middle" class="dt" font-size="12" fill="#7F1D1D">自分の身長を超えます。</text>
+  <!-- Stat box -->
+  <rect x="58" y="362" width="324" height="56" rx="10" fill="rgba(239,68,68,.08)" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="220" y="381" text-anchor="middle" class="dt" font-size="11" fill="#991B1B">勉強時間の比較</text>
+  <text x="220" y="399" text-anchor="middle" class="dt" font-size="12" font-weight="700" fill="#7F1D1D">簿記3級 ≒ 100h　→　公認会計士 ≒ 3,000〜5,000h</text>
+  <text x="220" y="414" text-anchor="middle" class="dt" font-size="11" font-weight="700" fill="#EF4444">→ 情報収集だけで数ヶ月が消える</text>
 
-  <!-- ==================== WALL 1 ==================== -->
-  <rect x="22" y="94" width="224" height="262" rx="12" fill="url(#wall1)" stroke="#FCA5A5" stroke-width="2"/>
-  <!-- danger badge -->
-  <rect x="22" y="94" width="224" height="44" rx="12" fill="#EF4444"/>
-  <rect x="22" y="118" width="224" height="20" fill="#EF4444"/>
-  <text x="134" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(255,255,255,.7)" letter-spacing="2">DUNGEON 01</text>
-  <text x="134" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">壁①　教材の量の絶望</text>
+  <!-- ===== CARD 2: 質問できない ===== -->
+  <g filter="url(#dShadow)">
+    <rect x="420" y="120" width="360" height="318" rx="18" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+    <rect x="420" y="120" width="360" height="60" rx="18" fill="url(#dC2)"/>
+    <rect x="420" y="160" width="360" height="20" fill="#D97706"/>
+    <text x="600" y="145" text-anchor="middle" class="dt" font-size="11" font-weight="700" fill="rgba(255,255,255,.72)" letter-spacing="3">DUNGEON  02</text>
+    <text x="600" y="167" text-anchor="middle" class="dt" font-size="16" font-weight="800" fill="#fff">壁②　質問できない孤独</text>
+  </g>
+  <!-- Icon: person + question bubble -->
+  <circle cx="590" cy="220" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+  <text x="590" y="228" text-anchor="middle" class="dt" font-size="22" font-weight="800" fill="#92400E">?</text>
+  <rect x="586" y="246" width="26" height="30" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="2"/>
+  <!-- speech bubble -->
+  <rect x="620" y="200" width="72" height="38" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <polygon points="622,218 613,224 622,230" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1"/>
+  <text x="656" y="214" text-anchor="middle" class="dt" font-size="10" fill="#92400E">誰に</text>
+  <text x="656" y="229" text-anchor="middle" class="dt" font-size="10" fill="#92400E">聞けば…</text>
+  <!-- Description -->
+  <text x="600" y="310" text-anchor="middle" class="dt" font-size="13" font-weight="700" fill="#92400E">エラーが「詰み」になる</text>
+  <text x="600" y="330" text-anchor="middle" class="dt" font-size="12" fill="#78350F">論点でつまずいたとき</text>
+  <text x="600" y="348" text-anchor="middle" class="dt" font-size="12" fill="#78350F">質問できる人がいないと3日詰まる。</text>
+  <!-- Stat box -->
+  <rect x="438" y="362" width="324" height="56" rx="10" fill="rgba(217,119,6,.08)" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="600" y="381" text-anchor="middle" class="dt" font-size="11" fill="#92400E">よくある独学の詰みパターン</text>
+  <text x="600" y="399" text-anchor="middle" class="dt" font-size="12" fill="#78350F">「原価計算の部門配賦が全く分からない」</text>
+  <text x="600" y="414" text-anchor="middle" class="dt" font-size="11" font-weight="700" fill="#D97706">→ 解説動画もない → そのまま挫折</text>
 
-  <!-- icon area -->
-  <text x="134" y="172" text-anchor="middle" font-size="36" fill="#EF4444">📚</text>
+  <!-- ===== CARD 3: 法改正 ===== -->
+  <g filter="url(#dShadow)">
+    <rect x="800" y="120" width="360" height="318" rx="18" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"/>
+    <rect x="800" y="120" width="360" height="60" rx="18" fill="url(#dC3)"/>
+    <rect x="800" y="160" width="360" height="20" fill="#2563EB"/>
+    <text x="980" y="145" text-anchor="middle" class="dt" font-size="11" font-weight="700" fill="rgba(255,255,255,.72)" letter-spacing="3">DUNGEON  03</text>
+    <text x="980" y="167" text-anchor="middle" class="dt" font-size="16" font-weight="800" fill="#fff">壁③　法改正が届かない</text>
+  </g>
+  <!-- Icon: book with alert badge -->
+  <rect x="950" y="196" width="60" height="76" rx="5" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2.5"/>
+  <rect x="954" y="196" width="10" height="76" rx="3" fill="#3B82F6"/>
+  <line x1="970" y1="212" x2="1004" y2="212" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="970" y1="226" x2="1004" y2="226" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="970" y1="240" x2="1004" y2="240" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="970" y1="254" x2="1004" y2="254" stroke="#93C5FD" stroke-width="1.5"/>
+  <!-- Alert triangle -->
+  <polygon points="1002,192 1018,218 986,218" fill="#EF4444"/>
+  <rect x="998" y="200" width="4" height="10" rx="2" fill="#fff"/>
+  <circle cx="1000" cy="213" r="2" fill="#fff"/>
+  <!-- Description -->
+  <text x="980" y="310" text-anchor="middle" class="dt" font-size="13" font-weight="700" fill="#1E40AF">古いテキストは「罠」</text>
+  <text x="980" y="330" text-anchor="middle" class="dt" font-size="12" fill="#1E3A8A">会計基準・会社法は毎年改正。</text>
+  <text x="980" y="348" text-anchor="middle" class="dt" font-size="12" fill="#1E3A8A">2年前のテキストで勉強すると本番で死ぬ。</text>
+  <!-- Stat box -->
+  <rect x="818" y="362" width="324" height="56" rx="10" fill="rgba(59,130,246,.08)" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="980" y="381" text-anchor="middle" class="dt" font-size="11" fill="#1E40AF">特に変更が多い科目</text>
+  <text x="980" y="399" text-anchor="middle" class="dt" font-size="12" fill="#1E3A8A">企業法（会社法）　/　租税法　/　監査論</text>
+  <text x="980" y="414" text-anchor="middle" class="dt" font-size="11" font-weight="700" fill="#3B82F6">→ 最新情報は予備校でないと追えない</text>
 
-  <!-- description -->
-  <text x="134" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">簿記3級の「数十倍」のボリューム</text>
-  <text x="134" y="216" text-anchor="middle" font-size="10.5" fill="#7F1D1D">テキストと問題集を積み上げると</text>
-  <text x="134" y="232" text-anchor="middle" font-size="10.5" fill="#7F1D1D">自分の身長を超えます。</text>
+  <!-- ===== SOLUTION BANNER ===== -->
+  <rect x="40" y="460" width="1120" height="220" rx="18" fill="url(#dSol)" stroke="#86EFAC" stroke-width="2"/>
+  <text x="600" y="490" text-anchor="middle" class="dt" font-size="16" font-weight="800" fill="#166534">3大ダンジョンを迂回して最短合格へ——Study Quest 推奨ルート</text>
 
-  <!-- comparison mini bar -->
-  <rect x="42" y="246" width="184" height="56" rx="8" fill="rgba(239,68,68,.08)" stroke="#FCA5A5" stroke-width="1"/>
-  <text x="134" y="262" text-anchor="middle" font-size="9.5" fill="#991B1B">勉強時間の比較</text>
-  <!-- bar 1: 簿記3級 -->
-  <rect x="52" y="268" width="20" height="22" rx="3" fill="#FCA5A5"/>
-  <text x="62" y="282" text-anchor="middle" font-size="8" fill="#fff">3級</text>
-  <rect x="76" y="270" width="30" height="6" rx="3" fill="#EF4444"/>
-  <text x="108" y="278" font-size="8.5" fill="#7F1D1D">100h</text>
+  <!-- Step 1 -->
+  <rect x="62" y="506" width="236" height="152" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="62" y="506" width="236" height="40" rx="14" fill="#22C55E"/>
+  <rect x="62" y="530" width="236" height="16" fill="#22C55E"/>
+  <text x="180" y="528" text-anchor="middle" class="dt" font-size="12" font-weight="700" fill="#fff">STEP 1　今すぐ・無料</text>
+  <text x="180" y="562" text-anchor="middle" class="dt" font-size="14" font-weight="700" fill="#166534">CPAラーニングで</text>
+  <text x="180" y="582" text-anchor="middle" class="dt" font-size="14" font-weight="700" fill="#166534">簿記3〜2級を制覇</text>
+  <text x="180" y="604" text-anchor="middle" class="dt" font-size="11" fill="#16A34A">完全無料で壁①②③を同時解決</text>
+  <text x="180" y="622" text-anchor="middle" class="dt" font-size="10" fill="#64748B">最新講義＋質問対応あり</text>
+  <text x="180" y="640" text-anchor="middle" class="dt" font-size="10" fill="#64748B">法改正も即反映</text>
 
-  <!-- bar 2: 簿記2級 -->
-  <rect x="52" y="275" width="20" height="0" rx="0" fill="none"/>
-  <rect x="76" y="279" width="65" height="6" rx="3" fill="#F97316"/>
-  <text x="52" y="293" font-size="8" fill="#7F1D1D">2級</text>
-  <text x="145" y="287" font-size="8.5" fill="#7F1D1D">350h</text>
-  <text x="52" y="270" font-size="8" fill="#991B1B">3級</text>
+  <!-- Arrow 1 -->
+  <line x1="304" y1="582" x2="336" y2="582" stroke="#22C55E" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="330,574 346,582 330,590" fill="#22C55E"/>
 
-  <!-- Let me redo this. The bar chart isn't clear. Just use text. -->
-  <!-- Actually, let me remove that complexity. I'll just keep description -->
-  <text x="134" y="310" text-anchor="middle" font-size="10" fill="#94A3B8">簿記3級 ≒ 100h</text>
-  <text x="134" y="325" text-anchor="middle" font-size="10" fill="#94A3B8">公認会計士 ≒ 3,000〜5,000h</text>
-  <text x="134" y="342" text-anchor="middle" font-size="10.5" font-weight="700" fill="#EF4444">→ 約30〜50倍のボリューム</text>
+  <!-- Step 2 -->
+  <rect x="352" y="506" width="236" height="152" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="352" y="506" width="236" height="40" rx="14" fill="#16A34A"/>
+  <rect x="352" y="530" width="236" height="16" fill="#16A34A"/>
+  <text x="470" y="528" text-anchor="middle" class="dt" font-size="12" font-weight="700" fill="#fff">STEP 2　3〜6ヶ月後</text>
+  <text x="470" y="562" text-anchor="middle" class="dt" font-size="14" font-weight="700" fill="#166534">会計士試験の全体像を</text>
+  <text x="470" y="582" text-anchor="middle" class="dt" font-size="14" font-weight="700" fill="#166534">把握・短答範囲を確認</text>
+  <text x="470" y="604" text-anchor="middle" class="dt" font-size="11" fill="#16A34A">独学可能な範囲を見極める</text>
+  <text x="470" y="622" text-anchor="middle" class="dt" font-size="10" fill="#64748B">模擬試験で現在地を計測</text>
+  <text x="470" y="640" text-anchor="middle" class="dt" font-size="10" fill="#64748B">短答式の合格ラインを把握</text>
 
-  <!-- ==================== WALL 2 ==================== -->
-  <rect x="268" y="94" width="224" height="262" rx="12" fill="url(#wall2)" stroke="#FDE68A" stroke-width="2"/>
-  <rect x="268" y="94" width="224" height="44" rx="12" fill="#D97706"/>
-  <rect x="268" y="118" width="224" height="20" fill="#D97706"/>
-  <text x="380" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(255,255,255,.7)" letter-spacing="2">DUNGEON 02</text>
-  <text x="380" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">壁②　質問できない孤独</text>
+  <!-- Arrow 2 -->
+  <line x1="594" y1="582" x2="626" y2="582" stroke="#22C55E" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="620,574 636,582 620,590" fill="#22C55E"/>
 
-  <text x="380" y="172" text-anchor="middle" font-size="36" fill="#D97706">🌑</text>
+  <!-- Step 3 -->
+  <rect x="642" y="506" width="236" height="152" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="642" y="506" width="236" height="40" rx="14" fill="#15803D"/>
+  <rect x="642" y="530" width="236" height="16" fill="#15803D"/>
+  <text x="760" y="528" text-anchor="middle" class="dt" font-size="12" font-weight="700" fill="#fff">STEP 3　本格参戦</text>
+  <text x="760" y="562" text-anchor="middle" class="dt" font-size="14" font-weight="700" fill="#166534">大手予備校に入学</text>
+  <text x="760" y="582" text-anchor="middle" class="dt" font-size="14" font-weight="700" fill="#166534">（質問権＋最新教材）</text>
+  <text x="760" y="604" text-anchor="middle" class="dt" font-size="11" fill="#16A34A">3大ダンジョンをすべてクリア</text>
+  <text x="760" y="622" text-anchor="middle" class="dt" font-size="10" fill="#64748B">CPA会計学院 / TAC / 大原</text>
+  <text x="760" y="640" text-anchor="middle" class="dt" font-size="10" fill="#64748B">圧倒的な合格実績を誇る</text>
 
-  <text x="380" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">エラーが「詰み」になる</text>
-  <text x="380" y="216" text-anchor="middle" font-size="10.5" fill="#78350F">論点でつまずいたとき、</text>
-  <text x="380" y="232" text-anchor="middle" font-size="10.5" fill="#78350F">質問できる人がいないと</text>
-  <text x="380" y="248" text-anchor="middle" font-size="10.5" fill="#78350F">3日間悩んでも解決しない。</text>
+  <!-- Arrow 3 -->
+  <line x1="884" y1="582" x2="916" y2="582" stroke="#22C55E" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="910,574 926,582 910,590" fill="#22C55E"/>
 
-  <rect x="288" y="262" width="184" height="74" rx="8" fill="rgba(217,119,6,.08)" stroke="#FDE68A" stroke-width="1"/>
-  <text x="380" y="280" text-anchor="middle" font-size="10" fill="#92400E">よくある独学の詰みパターン</text>
-  <text x="380" y="298" text-anchor="middle" font-size="10" fill="#78350F">「原価計算の部門配賦が</text>
-  <text x="380" y="312" text-anchor="middle" font-size="10" fill="#78350F">　どうしても分からない」</text>
-  <text x="380" y="328" text-anchor="middle" font-size="10" fill="#78350F">→ 解説動画もない、本も難解</text>
-  <text x="380" y="344" text-anchor="middle" font-size="10.5" font-weight="700" fill="#D97706">→ 結果：そのまま挫折</text>
+  <!-- Goal -->
+  <rect x="928" y="506" width="196" height="152" rx="14" fill="#16A34A"/>
+  <!-- Trophy cup -->
+  <rect x="982" y="520" width="52" height="38" rx="8" fill="#86EFAC"/>
+  <rect x="992" y="558" width="32" height="8" rx="4" fill="#86EFAC"/>
+  <rect x="984" y="566" width="48" height="6" rx="3" fill="#86EFAC"/>
+  <circle cx="1002" cy="540" r="4" fill="#22C55E"/>
+  <circle cx="1014" cy="536" r="3" fill="#22C55E"/>
+  <circle cx="1026" cy="540" r="4" fill="#22C55E"/>
+  <text x="1026" y="598" text-anchor="middle" class="dt" font-size="22" font-weight="800" fill="#fff">合　格</text>
+  <text x="1026" y="620" text-anchor="middle" class="dt" font-size="13" font-weight="700" fill="#BBF7D0">公認会計士</text>
+  <text x="1026" y="642" text-anchor="middle" class="dt" font-size="11" fill="#DCFCE7">最短ルートで到達！</text>
 
-  <!-- ==================== WALL 3 ==================== -->
-  <rect x="514" y="94" width="224" height="262" rx="12" fill="url(#wall3)" stroke="#93C5FD" stroke-width="2"/>
-  <rect x="514" y="94" width="224" height="44" rx="12" fill="#3B82F6"/>
-  <rect x="514" y="118" width="224" height="20" fill="#3B82F6"/>
-  <text x="626" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(255,255,255,.7)" letter-spacing="2">DUNGEON 03</text>
-  <text x="626" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">壁③　法改正が届かない</text>
-
-  <text x="626" y="172" text-anchor="middle" font-size="36" fill="#3B82F6">⚠️</text>
-
-  <text x="626" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">古いテキストは「罠」</text>
-  <text x="626" y="216" text-anchor="middle" font-size="10.5" fill="#1E3A8A">会計基準・税法は毎年改正。</text>
-  <text x="626" y="232" text-anchor="middle" font-size="10.5" fill="#1E3A8A">2年前の参考書で勉強すると</text>
-  <text x="626" y="248" text-anchor="middle" font-size="10.5" fill="#1E3A8A">本番で出題されない論点を</text>
-  <text x="626" y="264" text-anchor="middle" font-size="10.5" fill="#1E3A8A">延々と勉強することになる。</text>
-
-  <rect x="534" y="278" width="184" height="58" rx="8" fill="rgba(59,130,246,.08)" stroke="#93C5FD" stroke-width="1"/>
-  <text x="626" y="296" text-anchor="middle" font-size="10" fill="#1E40AF">特に変更が多い科目</text>
-  <text x="626" y="312" text-anchor="middle" font-size="10" fill="#1E3A8A">企業法（会社法）</text>
-  <text x="626" y="326" text-anchor="middle" font-size="10" fill="#1E3A8A">租税法 / 監査論</text>
-  <text x="626" y="342" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3B82F6">→ 予備校でないと追えない</text>
-
-  <!-- ==================== BOTTOM: 攻略ルート ==================== -->
-  <rect x="22" y="374" width="716" height="106" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
-  <text x="380" y="396" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">Study Quest 推奨ルート——ダンジョンを迂回して最短で合格へ</text>
-
-  <!-- steps -->
-  <rect x="42" y="408" width="160" height="58" rx="8" fill="#DCFCE7"/>
-  <text x="122" y="426" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">STEP 1（今すぐ・無料）</text>
-  <text x="122" y="442" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">CPAラーニングで</text>
-  <text x="122" y="458" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">簿記3級・2級を制覇</text>
-
-  <polygon points="216,437 228,431 228,443" fill="#22C55E"/>
-  <line x1="202" y1="437" x2="228" y2="437" stroke="#22C55E" stroke-width="2"/>
-
-  <rect x="238" y="408" width="160" height="58" rx="8" fill="#DCFCE7"/>
-  <text x="318" y="426" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">STEP 2（3〜6ヶ月後）</text>
-  <text x="318" y="442" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">会計士試験の概要を把握</text>
-  <text x="318" y="458" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">短答式の範囲を確認</text>
-
-  <polygon points="412,437 424,431 424,443" fill="#22C55E"/>
-  <line x1="398" y1="437" x2="424" y2="437" stroke="#22C55E" stroke-width="2"/>
-
-  <rect x="434" y="408" width="160" height="58" rx="8" fill="#DCFCE7"/>
-  <text x="514" y="426" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">STEP 3（本格参戦）</text>
-  <text x="514" y="442" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">大手予備校に入学</text>
-  <text x="514" y="458" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">（質問権＋最新教材）</text>
-
-  <polygon points="608,437 620,431 620,443" fill="#22C55E"/>
-  <line x1="594" y1="437" x2="620" y2="437" stroke="#22C55E" stroke-width="2"/>
-
-  <rect x="630" y="408" width="100" height="58" rx="8" fill="#22C55E"/>
-  <text x="680" y="434" text-anchor="middle" font-size="20" fill="#fff">🏆</text>
-  <text x="680" y="454" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">合　格</text>
-  <text x="680" y="468" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">公認会計士</text>
+  <!-- Footer note -->
+  <rect x="40" y="696" width="1120" height="60" rx="12" fill="rgba(255,255,255,.82)" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="600" y="721" text-anchor="middle" class="dt" font-size="13" fill="#374151">CPAラーニング（無料）で「壁①教材量」「壁②質問」「壁③法改正」の3大ダンジョンをすべて迂回できます。</text>
+  <text x="600" y="742" text-anchor="middle" class="dt" font-size="13" font-weight="700" fill="#8CC63F">まず無料で土台を作り、予備校で一気に駆け上がるのが今の大学生の最強ルートです。</text>
 </svg>
