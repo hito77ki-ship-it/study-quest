@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" width="800" height="580">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+
+  <rect width="800" height="580" rx="14" fill="#FAFDF6"/>
+  <circle cx="775" cy="22" r="5" fill="#FDE68A" opacity="0.65"/>
+  <circle cx="752" cy="44" r="3" fill="#C4B5FD" opacity="0.55"/>
+  <circle cx="792" cy="50" r="4" fill="#86EFAC" opacity="0.50"/>
+  <circle cx="20" cy="556" r="4" fill="#93C5FD" opacity="0.40"/>
+
+  <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP2級 6科目の内訳と難易度攻略マップ</text>
+  <text x="400" y="48" text-anchor="middle" font-size="11" fill="#64748B">合計目安：150〜200時間（3級取得済みの場合）／ ★の数が多いほど計算問題の比重が大きい難関科目</text>
+
+  <!-- ① ライフプランニング -->
+  <rect x="20" y="64" width="244" height="185" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="20" y="64" width="244" height="34" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="88" width="244" height="10" fill="#3B82F6"/>
+  <text x="34" y="86" font-size="11" font-weight="700" fill="#fff">①</text>
+  <text x="142" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">ライフプランニング</text>
+  <text x="142" y="118" text-anchor="middle" font-size="10" fill="#1D4ED8">社会保険・年金・教育資金</text>
+  <text x="34" y="142" font-size="9.5" fill="#374151">▸ 老齢年金の計算は必出</text>
+  <text x="34" y="158" font-size="9.5" fill="#374151">▸ 「自分事」として覚えると定着</text>
+  <text x="142" y="184" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">目安：25〜30時間</text>
+  <text x="142" y="202" text-anchor="middle" font-size="13" fill="#F59E0B">★★<tspan fill="#CBD5E1">☆</tspan></text>
+  <rect x="26" y="216" width="232" height="20" rx="5" fill="#DBEAFE"/>
+  <text x="142" y="230" text-anchor="middle" font-size="9" font-weight="700" fill="#1E40AF">標準難度・早めに固めたい科目</text>
+
+  <!-- ② リスク管理 -->
+  <rect x="278" y="64" width="244" height="185" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="278" y="64" width="244" height="34" rx="10" fill="#7C3AED"/>
+  <rect x="278" y="88" width="244" height="10" fill="#7C3AED"/>
+  <text x="292" y="86" font-size="11" font-weight="700" fill="#fff">②</text>
+  <text x="400" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">リスク管理</text>
+  <text x="400" y="118" text-anchor="middle" font-size="10" fill="#8B5CF6">生命保険・損害保険</text>
+  <text x="292" y="142" font-size="9.5" fill="#374151">▸ 保険の種類ごとの特徴を比較</text>
+  <text x="292" y="158" font-size="9.5" fill="#374151">▸ 契約者・被保険者の関係に注意</text>
+  <text x="400" y="184" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">目安：20〜25時間</text>
+  <text x="400" y="202" text-anchor="middle" font-size="13" fill="#F59E0B">★★<tspan fill="#CBD5E1">☆</tspan></text>
+  <rect x="284" y="216" width="232" height="20" rx="5" fill="#EDE9FE"/>
+  <text x="400" y="230" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">標準難度・暗記中心で得点源に</text>
+
+  <!-- ③ 金融資産運用 -->
+  <rect x="536" y="64" width="244" height="185" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="536" y="64" width="244" height="34" rx="10" fill="#F59E0B"/>
+  <rect x="536" y="88" width="244" height="10" fill="#F59E0B"/>
+  <text x="550" y="86" font-size="11" font-weight="700" fill="#fff">③</text>
+  <text x="658" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">金融資産運用</text>
+  <text x="658" y="118" text-anchor="middle" font-size="10" fill="#B45309">投資信託・株式・債券</text>
+  <text x="550" y="142" font-size="9.5" fill="#374151">▸ 利回り計算のパターンを暗記</text>
+  <text x="550" y="158" font-size="9.5" fill="#374151">▸ 過去問で反復練習が得点の近道</text>
+  <text x="658" y="184" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">目安：25〜30時間</text>
+  <text x="658" y="202" text-anchor="middle" font-size="13" fill="#F59E0B">★★★</text>
+  <rect x="542" y="216" width="232" height="20" rx="5" fill="#FEF3C7"/>
+  <text x="658" y="230" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">難関・計算問題を早めに反復</text>
+
+  <!-- ④ タックスプランニング -->
+  <rect x="20" y="264" width="244" height="185" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="20" y="264" width="244" height="34" rx="10" fill="#EF4444"/>
+  <rect x="20" y="288" width="244" height="10" fill="#EF4444"/>
+  <text x="34" y="286" font-size="11" font-weight="700" fill="#fff">④</text>
+  <text x="142" y="286" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">タックスプランニング</text>
+  <text x="142" y="318" text-anchor="middle" font-size="10" fill="#DC2626">所得税・住民税</text>
+  <text x="34" y="342" font-size="9.5" fill="#374151">▸ 収入→所得→課税所得→税額</text>
+  <text x="34" y="358" font-size="9.5" fill="#374151">▸ 控除の引き算パズルが最大の山場</text>
+  <text x="142" y="384" text-anchor="middle" font-size="10.5" font-weight="700" fill="#991B1B">目安：25〜30時間</text>
+  <text x="142" y="402" text-anchor="middle" font-size="13" fill="#F59E0B">★★★</text>
+  <rect x="26" y="416" width="232" height="20" rx="5" fill="#FEE2E2"/>
+  <text x="142" y="430" text-anchor="middle" font-size="9" font-weight="700" fill="#991B1B">最難関・2級最大のボスキャラ</text>
+
+  <!-- ⑤ 不動産 -->
+  <rect x="278" y="264" width="244" height="185" rx="10" fill="#F0F9FF" stroke="#7DD3FC" stroke-width="1.5"/>
+  <rect x="278" y="264" width="244" height="34" rx="10" fill="#0EA5E9"/>
+  <rect x="278" y="288" width="244" height="10" fill="#0EA5E9"/>
+  <text x="292" y="286" font-size="11" font-weight="700" fill="#fff">⑤</text>
+  <text x="400" y="286" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">不動産</text>
+  <text x="400" y="318" text-anchor="middle" font-size="10" fill="#0369A1">不動産取引・税金</text>
+  <text x="292" y="342" font-size="9.5" fill="#374151">▸ 取引ルールと税金をセットで確認</text>
+  <text x="292" y="358" font-size="9.5" fill="#374151">▸ 建蔽率・容積率の計算に慣れる</text>
+  <text x="400" y="384" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0C4A6E">目安：20〜25時間</text>
+  <text x="400" y="402" text-anchor="middle" font-size="13" fill="#F59E0B">★★<tspan fill="#CBD5E1">☆</tspan></text>
+  <rect x="284" y="416" width="232" height="20" rx="5" fill="#E0F2FE"/>
+  <text x="400" y="430" text-anchor="middle" font-size="9" font-weight="700" fill="#0C4A6E">標準難度・税金分野は暗記中心</text>
+
+  <!-- ⑥ 相続・事業承継 -->
+  <rect x="536" y="264" width="244" height="185" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <rect x="536" y="264" width="244" height="34" rx="10" fill="#EC4899"/>
+  <rect x="536" y="288" width="244" height="10" fill="#EC4899"/>
+  <text x="550" y="286" font-size="11" font-weight="700" fill="#fff">⑥</text>
+  <text x="658" y="286" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">相続・事業承継</text>
+  <text x="658" y="318" text-anchor="middle" font-size="10" fill="#BE185D">相続税・贈与税</text>
+  <text x="550" y="342" font-size="9.5" fill="#374151">▸ 法定相続人・法定相続分が先</text>
+  <text x="550" y="358" font-size="9.5" fill="#374151">▸ 基礎控除の公式を丸暗記</text>
+  <text x="658" y="384" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9D174D">目安：20〜25時間</text>
+  <text x="658" y="402" text-anchor="middle" font-size="13" fill="#F59E0B">★★★</text>
+  <rect x="542" y="416" width="232" height="20" rx="5" fill="#FCE7F3"/>
+  <text x="658" y="430" text-anchor="middle" font-size="9" font-weight="700" fill="#9D174D">難関・控除公式の暗記が鍵</text>
+
+  <!-- 下部ダークサマリー -->
+  <rect x="10" y="462" width="780" height="104" rx="8" fill="#1E293B"/>
+  <text x="400" y="484" text-anchor="middle" font-size="12" font-weight="700" fill="#8CC63F">大谷からのひとこと攻略アドバイス</text>
+  <text x="22" y="503" font-size="9.5" fill="#CBD5E1">① 難関科目（★★★）は「金融資産運用・タックス・相続」の3つ。この3科目から着手すると後半が一気に楽になる。</text>
+  <text x="22" y="519" font-size="9.5" fill="#CBD5E1">② タックスは「引き算のパズル」。控除で削って残った課税所得にだけ税率をかける、と割り切ると一気に理解が進む。</text>
+  <text x="22" y="535" font-size="9.5" fill="#CBD5E1">③ 標準難度（★★☆）の3科目は暗記中心。スキマ時間で反復すれば得点源になる。</text>
+  <rect x="14" y="544" width="772" height="16" rx="5" fill="#166534" opacity="0.35"/>
+  <text x="400" y="556" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DCFCE7">合計目安：150〜200時間（3級取得済み）／ 250〜300時間（初学者）</text>
+</svg>
