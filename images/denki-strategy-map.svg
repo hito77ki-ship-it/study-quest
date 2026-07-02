@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980" role="img" aria-labelledby="title desc">
+  <title id="title">第二種電気工事士の攻略戦略マップ</title>
+  <desc id="desc">筆記試験50問の分野別出題数と、技能試験候補問題13問への流れ、合格までの最短ルートを示す図解</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:32px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:600;fill:#64748b}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#ffffff}
+      .phase{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:22px;font-weight:800;fill:#1f2937}
+      .stat{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:700;fill:#334155}
+      .name{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#1f2937}
+      .detail{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11.5px;font-weight:600;fill:#64748b}
+      .num{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:800;fill:#ffffff}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15.5px;font-weight:700;fill:#166534}
+      .sectionlabel{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:700;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="980" rx="40" fill="url(#bg)"/>
+  <circle cx="110" cy="90" r="66" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1100" cy="120" r="80" fill="#dcfce7" opacity="0.55"/>
+  <circle cx="1090" cy="880" r="90" fill="#fce7f3" opacity="0.5"/>
+  <circle cx="120" cy="890" r="72" fill="#fef3c7" opacity="0.55"/>
+
+  <text x="600" y="54" text-anchor="middle" class="title">電気工事士（第二種）攻略戦略マップ</text>
+  <text x="600" y="84" text-anchor="middle" class="sub">筆記50問 → 技能13問候補、合格までの最短2段階ルート</text>
+
+  <!-- Phase 1: 筆記試験 -->
+  <g filter="url(#softShadow)">
+    <rect x="100" y="118" width="470" height="150" rx="24" fill="#ffffff" stroke="#93c5fd" stroke-width="4"/>
+    <rect x="128" y="140" width="130" height="34" rx="17" fill="#3b82f6"/>
+    <text x="193" y="163" text-anchor="middle" class="pill">STEP 1</text>
+    <text x="278" y="166" class="phase">筆記試験</text>
+    <text x="128" y="204" class="stat">四肢択一50問・100分・60点以上で合格</text>
+    <text x="128" y="228" class="stat">合格率 60〜70%</text>
+    <text x="128" y="252" class="stat">対策：過去問5〜10年分を3周</text>
+  </g>
+
+  <polygon points="600,193 630,178 630,208" fill="#94a3b8"/>
+
+  <!-- Phase 2: 技能試験 -->
+  <g filter="url(#softShadow)">
+    <rect x="630" y="118" width="470" height="150" rx="24" fill="#ffffff" stroke="#86efac" stroke-width="4"/>
+    <rect x="658" y="140" width="130" height="34" rx="17" fill="#22c55e"/>
+    <text x="723" y="163" text-anchor="middle" class="pill">STEP 2</text>
+    <text x="808" y="166" class="phase">技能試験</text>
+    <text x="658" y="204" class="stat">候補問題13問中1問・40分以内に完成</text>
+    <text x="658" y="228" class="stat">合格率 70〜80%</text>
+    <text x="658" y="252" class="stat">対策：全13問を欠陥ゼロで反復</text>
+  </g>
+
+  <!-- 筆記試験 分野別出題数 -->
+  <text x="100" y="308" class="sectionlabel">筆記試験：分野別の出題数（全50問）</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="322" width="1000" height="56" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="128" y="356" class="name">電気理論（オームの法則・電力計算）</text>
+    <rect x="550" y="335" width="400" height="20" rx="10" fill="#3B82F6"/>
+    <text x="750" y="350" text-anchor="middle" class="num">10問・★★★★☆</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="390" width="1000" height="56" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="128" y="424" class="name">配線図の読み取り</text>
+    <rect x="550" y="403" width="400" height="20" rx="10" fill="#3B82F6"/>
+    <text x="750" y="418" text-anchor="middle" class="num">10問・★★★☆☆</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="458" width="1000" height="56" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+    <text x="128" y="492" class="name">電気機器・材料・工具</text>
+    <rect x="550" y="471" width="400" height="20" rx="10" fill="#22C55E"/>
+    <text x="750" y="486" text-anchor="middle" class="num">10問・★★☆☆☆</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="526" width="1000" height="56" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+    <text x="128" y="560" class="name">電気工事の施工方法</text>
+    <rect x="550" y="539" width="320" height="20" rx="10" fill="#22C55E"/>
+    <text x="710" y="554" text-anchor="middle" class="num">8問・★★★☆☆</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="594" width="1000" height="56" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="2"/>
+    <text x="128" y="628" class="name">電気法規・保安</text>
+    <rect x="550" y="607" width="280" height="20" rx="10" fill="#F59E0B"/>
+    <text x="690" y="622" text-anchor="middle" class="num">7問・★★☆☆☆</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="662" width="1000" height="56" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="2"/>
+    <text x="128" y="696" class="name">一般用電気工作物の検査</text>
+    <rect x="550" y="675" width="200" height="20" rx="10" fill="#F59E0B"/>
+    <text x="650" y="690" text-anchor="middle" class="num">5問・★★☆☆☆</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="100" y="746" width="1000" height="192" rx="22" fill="#f0fdf4" stroke="#86efac" stroke-width="3"/>
+    <text x="600" y="786" text-anchor="middle" class="banner">筆記は「電気理論」「配線図」に時間を割き、過去問中心で60点を確実に超える</text>
+    <text x="600" y="814" text-anchor="middle" class="banner">技能は「速さ」より「欠陥ゼロ」——候補問題13問を全部、正確に反復するのが最短ルート</text>
+    <text x="600" y="850" text-anchor="middle" class="detail">重大欠陥（誤接続・極性ミス・ケーブル損傷）は即不合格。軽欠陥は2つで不合格。</text>
+    <text x="600" y="874" text-anchor="middle" class="detail">合計100〜150時間・3ヶ月あれば筆記→技能まで独学で十分間に合う</text>
+  </g>
+</svg>

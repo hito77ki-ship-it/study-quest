@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#FAFDF6"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">資格勉強アプリ 3大分類マップ</text>
+  <text x="380" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">「記録したい」「学びたい」「続けたい」——目的で選べば失敗しない</text>
+
+  <!-- ① 学習記録・管理型 -->
+  <rect x="20" y="62" width="232" height="336" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="20" y="62" width="232" height="34" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="86" width="232" height="10" fill="#3B82F6"/>
+  <text x="136" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">📊 学習記録・管理型</text>
+
+  <text x="136" y="116" text-anchor="middle" font-size="10" fill="#1D4ED8">勉強時間を記録・可視化する</text>
+  <rect x="34" y="128" width="204" height="46" rx="6" fill="#DBEAFE"/>
+  <text x="136" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E40AF">代表アプリ</text>
+  <text x="136" y="162" text-anchor="middle" font-size="9.5" fill="#1E3A8A">StudyPlus／Study Quest</text>
+
+  <text x="34" y="196" font-size="9.5" fill="#374151">▸ 勉強時間をグラフで可視化</text>
+  <text x="34" y="212" font-size="9.5" fill="#374151">▸ SNSで勉強仲間とつながれる</text>
+  <text x="34" y="228" font-size="9.5" fill="#374151">▸ 記録がシンプルで迷わない</text>
+
+  <rect x="34" y="244" width="204" height="70" rx="6" fill="#BFDBFE"/>
+  <text x="136" y="262" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E40AF">弱点</text>
+  <text x="136" y="278" text-anchor="middle" font-size="9" fill="#1E3A8A">継続を後押しする仕掛けが</text>
+  <text x="136" y="292" text-anchor="middle" font-size="9" fill="#1E3A8A">少ないタイプもある</text>
+  <text x="136" y="306" text-anchor="middle" font-size="9" fill="#1E3A8A">（StudyPlusなど）</text>
+
+  <rect x="34" y="326" width="204" height="58" rx="6" fill="#1E3A8A"/>
+  <text x="136" y="345" text-anchor="middle" font-size="9.5" font-weight="700" fill="#93C5FD">向いている人</text>
+  <text x="136" y="362" text-anchor="middle" font-size="9" fill="#DBEAFE">シンプルに記録したい人</text>
+  <text x="136" y="376" text-anchor="middle" font-size="9" fill="#DBEAFE">仲間を見つけたい人</text>
+
+  <!-- ② コンテンツ提供型 -->
+  <rect x="264" y="62" width="232" height="336" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="264" y="62" width="232" height="34" rx="10" fill="#F59E0B"/>
+  <rect x="264" y="86" width="232" height="10" fill="#F59E0B"/>
+  <text x="380" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">🎓 コンテンツ提供型</text>
+
+  <text x="380" y="116" text-anchor="middle" font-size="10" fill="#B45309">講義動画や問題集を提供する</text>
+  <rect x="278" y="128" width="204" height="46" rx="6" fill="#FEF3C7"/>
+  <text x="380" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#92400E">代表アプリ</text>
+  <text x="380" y="162" text-anchor="middle" font-size="9.5" fill="#78350F">スタディング／資格スクエア</text>
+
+  <text x="278" y="196" font-size="9.5" fill="#374151">▸ 講義動画・問題集が高品質</text>
+  <text x="278" y="212" font-size="9.5" fill="#374151">▸ 隙間時間で学習が完結する</text>
+  <text x="278" y="228" font-size="9.5" fill="#374151">▸ AIが学習マップを提示する</text>
+
+  <rect x="278" y="244" width="204" height="70" rx="6" fill="#FDE68A"/>
+  <text x="380" y="262" text-anchor="middle" font-size="9.5" font-weight="700" fill="#92400E">弱点</text>
+  <text x="380" y="278" text-anchor="middle" font-size="9" fill="#78350F">月額費用が必要。継続の</text>
+  <text x="380" y="292" text-anchor="middle" font-size="9" fill="#78350F">仕掛けが弱く、途中離脱</text>
+  <text x="380" y="306" text-anchor="middle" font-size="9" fill="#78350F">しやすい傾向がある</text>
+
+  <rect x="278" y="326" width="204" height="58" rx="6" fill="#92400E"/>
+  <text x="380" y="345" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FDE68A">向いている人</text>
+  <text x="380" y="362" text-anchor="middle" font-size="9" fill="#FEF3C7">教材をアプリで完結したい人</text>
+  <text x="380" y="376" text-anchor="middle" font-size="9" fill="#FEF3C7">隙間時間を活用したい人</text>
+
+  <!-- ③ ゲーミフィケーション型 -->
+  <rect x="508" y="62" width="232" height="336" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="508" y="62" width="232" height="34" rx="10" fill="#22C55E"/>
+  <rect x="508" y="86" width="232" height="10" fill="#22C55E"/>
+  <text x="624" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">🎮 ゲーミフィケーション型</text>
+
+  <text x="624" y="116" text-anchor="middle" font-size="10" fill="#15803D">ゲーム要素で継続をサポート</text>
+  <rect x="522" y="128" width="204" height="46" rx="6" fill="#DCFCE7"/>
+  <text x="624" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">代表アプリ</text>
+  <text x="624" y="162" text-anchor="middle" font-size="9.5" fill="#14532D">Study Quest／Duolingo</text>
+
+  <text x="522" y="196" font-size="9.5" fill="#374151">▸ 経験値・レベルで継続を後押し</text>
+  <text x="522" y="212" font-size="9.5" fill="#374151">▸ ストリーク・通知設計が秀逸</text>
+  <text x="522" y="228" font-size="9.5" fill="#374151">▸ 孤独な勉強がゲームに変わる</text>
+
+  <rect x="522" y="244" width="204" height="70" rx="6" fill="#BBF7D0"/>
+  <text x="624" y="262" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">弱点</text>
+  <text x="624" y="278" text-anchor="middle" font-size="9" fill="#14532D">Duolingoは語学専用。</text>
+  <text x="624" y="292" text-anchor="middle" font-size="9" fill="#14532D">Study Questは学習コンテンツ</text>
+  <text x="624" y="306" text-anchor="middle" font-size="9" fill="#14532D">自体は提供しない（教材は別途）</text>
+
+  <rect x="522" y="326" width="204" height="58" rx="6" fill="#14532D"/>
+  <text x="624" y="345" text-anchor="middle" font-size="9.5" font-weight="700" fill="#86EFAC">向いている人</text>
+  <text x="624" y="362" text-anchor="middle" font-size="9" fill="#DCFCE7">続かないことに悩む人</text>
+  <text x="624" y="376" text-anchor="middle" font-size="9" fill="#DCFCE7">ゲーム好き・独学勢</text>
+</svg>

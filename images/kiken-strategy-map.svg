@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="420" rx="16" fill="#FEFCF9"/>
+  <text x="380" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">危険物乙4試験 3科目構成と足切りを回避する戦略マップ</text>
+  <text x="380" y="48" text-anchor="middle" font-size="11" fill="#94A3B8">3科目すべてで60%以上が必要——1科目でも落とすと即不合格</text>
+
+  <!-- ① 法令 -->
+  <text x="190" y="104" text-anchor="end" font-size="12.5" font-weight="700" fill="#1D4ED8">① 法令</text>
+  <rect x="200" y="80" width="360" height="36" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <line x1="416" y1="74" x2="416" y2="122" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="568" y="104" font-size="11" font-weight="700" fill="#374151">15問中9問以上</text>
+
+  <!-- ② 物理学・化学 -->
+  <text x="190" y="194" text-anchor="end" font-size="12.5" font-weight="700" fill="#166534">② 物理学・化学</text>
+  <rect x="200" y="170" width="240" height="36" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <line x1="344" y1="164" x2="344" y2="212" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="448" y="194" font-size="11" font-weight="700" fill="#374151">10問中6問以上</text>
+
+  <!-- ③ 性質・消火（最重要） -->
+  <text x="190" y="284" text-anchor="end" font-size="12.5" font-weight="700" fill="#C2410C">★③ 性質・消火（最重要）</text>
+  <rect x="200" y="260" width="480" height="36" rx="8" fill="#FED7AA" stroke="#FB923C" stroke-width="2"/>
+  <line x1="488" y1="254" x2="488" y2="302" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="688" y="284" font-size="11" font-weight="700" fill="#374151">20問中12問以上</text>
+
+  <!-- 凡例：足切りライン -->
+  <line x1="640" y1="330" x2="660" y2="330" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="668" y="334" font-size="9.5" fill="#DC2626">＝60%足切りライン</text>
+
+  <!-- 攻略の鉄則ボックス -->
+  <rect x="20" y="320" width="600" height="80" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="320" y="344" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400E">⚠ 3科目とも60%未満なら即不合格（他科目が満点でも無効）</text>
+  <text x="320" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#78350F">攻略順：①性質・消火（配点最大・乙4特有）→②法令（暗記で確実に）→③物理化学（概念中心）</text>
+  <text x="320" y="386" text-anchor="middle" font-size="9.5" fill="#94A3B8">性質・消火だけで全45問中20問（約44%）を占める最重点科目</text>
+</svg>

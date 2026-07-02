@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="460" rx="16" fill="#FEFCF9"/>
+  <text x="380" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">応用情報技術者試験 午前・午後の構成と満点を狙う戦略マップ</text>
+  <text x="380" y="48" text-anchor="middle" font-size="11" fill="#94A3B8">満点は不要。「合格ライン60点＋α」を確実に取りにいくのが最短ルート</text>
+
+  <!-- 午前試験パネル（パステルブルー） -->
+  <rect x="30" y="70" width="340" height="340" rx="16" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="200" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#1D4ED8">☀️ 午前試験</text>
+  <text x="200" y="128" text-anchor="middle" font-size="12" fill="#374151">四肢択一 80問</text>
+  <text x="200" y="146" text-anchor="middle" font-size="12" fill="#374151">試験時間：150分</text>
+
+  <text x="200" y="172" text-anchor="middle" font-size="10" fill="#64748B">得点イメージ</text>
+  <rect x="60" y="186" width="280" height="26" rx="13" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="60" y="186" width="210" height="26" rx="13" fill="#3B82F6"/>
+  <line x1="228" y1="180" x2="228" y2="218" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="228" y="232" text-anchor="middle" font-size="9" font-weight="700" fill="#DC2626">合格ライン</text>
+  <text x="228" y="244" text-anchor="middle" font-size="9" font-weight="700" fill="#DC2626">60点</text>
+
+  <rect x="50" y="290" width="260" height="94" rx="10" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="180" y="312" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">🎯 戦略</text>
+  <text x="180" y="334" text-anchor="middle" font-size="10" fill="#374151">FE合格者は共通知識を</text>
+  <text x="180" y="350" text-anchor="middle" font-size="10" fill="#374151">横展開して得点効率アップ</text>
+  <text x="180" y="368" text-anchor="middle" font-size="9" fill="#64748B">未経験者は過去問5年分を反復</text>
+
+  <!-- 午後試験パネル（パステルパープル） -->
+  <rect x="390" y="70" width="340" height="340" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="560" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#5B21B6">🌙 午後試験</text>
+  <text x="560" y="128" text-anchor="middle" font-size="12" fill="#374151">11分野中 5問選択（記述式）</text>
+  <text x="560" y="146" text-anchor="middle" font-size="12" fill="#374151">試験時間：150分</text>
+
+  <text x="560" y="172" text-anchor="middle" font-size="10" fill="#64748B">得点イメージ</text>
+  <rect x="420" y="186" width="280" height="26" rx="13" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="420" y="186" width="196" height="26" rx="13" fill="#8B5CF6"/>
+  <line x1="588" y1="180" x2="588" y2="218" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="588" y="232" text-anchor="middle" font-size="9" font-weight="700" fill="#DC2626">合格ライン</text>
+  <text x="588" y="244" text-anchor="middle" font-size="9" font-weight="700" fill="#DC2626">60点</text>
+
+  <rect x="410" y="290" width="260" height="94" rx="10" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="540" y="312" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">🎯 戦略</text>
+  <text x="540" y="334" text-anchor="middle" font-size="10" fill="#374151">必須1問＋得意4分野の</text>
+  <text x="540" y="350" text-anchor="middle" font-size="10" fill="#374151">「5人パーティ」で挑む</text>
+  <text x="540" y="368" text-anchor="middle" font-size="9" fill="#64748B">11分野を広く浅くは失敗のもと</text>
+
+  <text x="380" y="440" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">午前・午後どちらも60点以上で合格——選んだ分野を深く仕上げる「絞り込み戦略」が最短ルート</text>
+</svg>

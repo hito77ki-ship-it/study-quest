@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" width="760" height="640">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="640" rx="14" fill="#F8FAFC"/>
+  <text x="380" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">短答を3秒で解くための無敵の4マスマトリクス</text>
+  <text x="380" y="53" text-anchor="middle" font-size="11" fill="#64748B">STEP①→STEP②の順に書き込むだけで、機関設計が一瞬で「見える化」する！</text>
+
+  <!-- STEP legend strip -->
+  <rect x="20" y="68" width="720" height="76" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- STEP2 badge (left, points into top row) -->
+  <rect x="32" y="78" width="345" height="56" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="52" y="98" font-size="12.5" font-weight="700" fill="#1E40AF">STEP②</text>
+  <text x="100" y="98" font-size="10.5" fill="#1E3A8A">「公開会社」を見たら → 上の行に</text>
+  <text x="52" y="120" font-size="12" font-weight="700" fill="#1D4ED8">取締役会（とりしまりやくかい）：義務</text>
+
+  <!-- STEP1 badge (right, points into right column) -->
+  <rect x="383" y="78" width="345" height="56" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="403" y="98" font-size="12.5" font-weight="700" fill="#166534">STEP①</text>
+  <text x="451" y="98" font-size="10.5" fill="#15803D">「大会社」を見たら → 右の列に</text>
+  <text x="403" y="120" font-size="12" font-weight="700" fill="#166534">会計監査人（かいけいかんさにん）：義務</text>
+
+  <!-- arrow: STEP2 -> top-row header (down-right) -->
+  <line x1="150" y1="134" x2="105" y2="164" stroke="#3B82F6" stroke-width="2.5"/>
+  <polygon points="103,172 100,159 112,164" fill="#3B82F6"/>
+
+  <!-- arrow: STEP1 -> right-column header (down) -->
+  <line x1="602" y1="134" x2="602" y2="164" stroke="#22C55E" stroke-width="2.5"/>
+  <polygon points="602,172 596,160 608,160" fill="#22C55E"/>
+
+  <!-- ===== GRID ===== -->
+  <!-- corner cell -->
+  <rect x="20" y="168" width="170" height="40" rx="0" fill="#E2E8F0"/>
+  <text x="105" y="193" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">機関設計マトリクス</text>
+
+  <!-- column headers -->
+  <rect x="190" y="168" width="275" height="40" fill="#F1F5F9"/>
+  <text x="327" y="185" text-anchor="middle" font-size="12.5" font-weight="700" fill="#475569">非大会社</text>
+  <text x="327" y="200" text-anchor="middle" font-size="8.5" fill="#64748B">（ひだいがいしゃ）</text>
+
+  <rect x="465" y="168" width="275" height="40" fill="#DCFCE7"/>
+  <text x="602" y="185" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">大会社</text>
+  <text x="602" y="200" text-anchor="middle" font-size="8.5" fill="#15803D">（だいがいしゃ）</text>
+
+  <!-- row headers -->
+  <rect x="20" y="208" width="170" height="180" fill="#DBEAFE"/>
+  <text x="105" y="293" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E40AF">公開会社</text>
+  <text x="105" y="308" text-anchor="middle" font-size="8.5" fill="#1D4ED8">（こうかいがいしゃ）</text>
+
+  <rect x="20" y="388" width="170" height="180" fill="#F1F5F9"/>
+  <text x="105" y="473" text-anchor="middle" font-size="12.5" font-weight="700" fill="#475569">非公開会社</text>
+  <text x="105" y="488" text-anchor="middle" font-size="8.5" fill="#64748B">（ひこうかいがいしゃ）</text>
+
+  <!-- grid outer border + internal lines -->
+  <rect x="20" y="168" width="720" height="400" rx="0" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="190" y1="168" x2="190" y2="568" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="465" y1="168" x2="465" y2="568" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="20" y1="208" x2="740" y2="208" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="20" y1="388" x2="740" y2="388" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Cell TL: 公開会社 × 非大会社 -->
+  <rect x="192" y="210" width="271" height="176" fill="#FAFBFF"/>
+  <text x="327" y="232" text-anchor="middle" font-size="10" fill="#94A3B8">公開会社 × 非大会社</text>
+  <rect x="222" y="244" width="210" height="28" rx="14" fill="#DCFCE7"/>
+  <text x="327" y="263" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">取締役会：義務</text>
+  <rect x="222" y="280" width="210" height="28" rx="14" fill="#F1F5F9"/>
+  <text x="327" y="299" text-anchor="middle" font-size="12" font-weight="700" fill="#64748B">会計監査人：任意</text>
+  <text x="327" y="332" text-anchor="middle" font-size="9.5" fill="#94A3B8">＝取締役会設置会社</text>
+
+  <!-- Cell TR: 公開会社 × 大会社（公開大会社） -->
+  <rect x="467" y="210" width="271" height="176" fill="#F0FFF4"/>
+  <text x="602" y="232" text-anchor="middle" font-size="10" fill="#15803D">公開会社 × 大会社（公開大会社）</text>
+  <rect x="497" y="244" width="210" height="26" rx="13" fill="#DCFCE7"/>
+  <text x="602" y="262" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">取締役会：義務</text>
+  <rect x="497" y="276" width="210" height="26" rx="13" fill="#DCFCE7"/>
+  <text x="602" y="294" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">会計監査人：義務</text>
+  <rect x="497" y="308" width="210" height="26" rx="13" fill="#DCFCE7"/>
+  <text x="602" y="326" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">監査役会：義務</text>
+  <text x="602" y="356" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DC2626">⭐ 最も規制が厳しい組み合わせ</text>
+
+  <!-- Cell BL: 非公開会社 × 非大会社 -->
+  <rect x="192" y="390" width="271" height="176" fill="#FAFBFF"/>
+  <text x="327" y="412" text-anchor="middle" font-size="10" fill="#94A3B8">非公開会社 × 非大会社</text>
+  <rect x="222" y="424" width="210" height="28" rx="14" fill="#F1F5F9"/>
+  <text x="327" y="443" text-anchor="middle" font-size="12" font-weight="700" fill="#64748B">取締役会：任意</text>
+  <rect x="222" y="460" width="210" height="28" rx="14" fill="#F1F5F9"/>
+  <text x="327" y="479" text-anchor="middle" font-size="12" font-weight="700" fill="#64748B">会計監査人：任意</text>
+  <text x="327" y="512" text-anchor="middle" font-size="9.5" fill="#94A3B8">＝定款自治が最も広い</text>
+
+  <!-- Cell BR: 非公開会社 × 大会社（非公開大会社） -->
+  <rect x="467" y="390" width="271" height="176" fill="#FAFBFF"/>
+  <text x="602" y="412" text-anchor="middle" font-size="10" fill="#94A3B8">非公開会社 × 大会社（非公開大会社）</text>
+  <rect x="497" y="424" width="210" height="28" rx="14" fill="#F1F5F9"/>
+  <text x="602" y="443" text-anchor="middle" font-size="12" font-weight="700" fill="#64748B">取締役会：任意</text>
+  <rect x="497" y="460" width="210" height="28" rx="14" fill="#DCFCE7"/>
+  <text x="602" y="479" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">会計監査人：義務</text>
+  <text x="602" y="512" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DC2626">⚠ 見落とし注意ポイント</text>
+
+  <!-- bottom caption -->
+  <rect x="20" y="584" width="720" height="42" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="380" y="610" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">💡 このハコに当てはめて、選択肢の語尾（義務・任意・禁止）と照合するだけ！</text>
+</svg>
