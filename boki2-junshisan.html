@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】純資産・剰余金の配当を完全解説","description":"純資産の2グループ・自己株式のマイナス・配当の1/10ルールを図解つきで解説。資本金・資本準備金・利益準備金・繰越利益剰余金の仕訳を網羅。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-junshisan.html","datePublished":"2026-05-09","dateModified":"2026-06-27","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】純資産・剰余金の配当を完全解説","description":"純資産の2グループ・自己株式のマイナス・配当の1/10ルールを図解つきで解説。資本金・資本準備金・利益準備金・繰越利益剰余金の仕訳を網羅。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-junshisan.html","datePublished":"2026-05-09","dateModified":"2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -143,13 +143,16 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+
+/* chat icon */
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 純資産・剰余金の配当</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年6月27日</p>
+  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年7月2日</p>
   <h1>【簿記2級】純資産・剰余金の配当を完全解説<br>資本金・準備金・自己株式の仕訳例つき</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
@@ -158,7 +161,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
       <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
     </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！実は、これから紹介する各種の論点は、どれも僕が大学の講義内で初めて学んだとき、「うわっ、なんじゃこりゃ……！」と頭を抱えた難しいものばかりでした（笑）。だからこそ、当時の僕と同じように悩んでいる皆さんに、どこよりも直感的にパズル感覚で理解してもらえるよう、僕なりの分かりやすい図解を交えてお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！実は「純資産」の勉強を始めたとき、僕が本当につまずいたのは計算そのものより「言葉の壁」でした。「資本準備金」と「利益準備金」、漢字も響きも似すぎていて最初の1週間はずっとごちゃ混ぜ。極めつけは「自己株式」という名前を見て「資産の一種でしょ？」と思い込み、盛大に借方へ書いて派手に爆死したこともあります（笑）。名前だけでは正体がつかめない科目が並ぶ単元だからこそ、今回は「言葉の意味」より「どのグループに属するか」で整理できる図解を用意しました。当時の僕と同じ場所でつまずいている人に、一番刺さる解説を届けます！</p>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、毎日のブログ執筆やアプリ開発のモチベーション維持のために、記事の末尾のほうにある<strong>「いいねボタン」</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
   </div>
 
@@ -175,33 +178,45 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="lead">純資産（じゅんしさん）は簿記2級の第3問・第4問で必ずといっていいほど登場します。「資本金と資本準備金の違いは？」「配当のとき繰越利益剰余金からなぜ110,000円も減るの？」——そんな疑問をこの記事で図解つきで完全に解決します。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">純資産の科目が多すぎて、どれがどのグループか全然整理できていません。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">純資産の科目が多すぎて、どれがどのグループか全然整理できていません。しかも配当の問題になると「1/10」とか「1/4ルール」とか、上限まで絡んできて、もう何を計算すればいいのかわからなくなります…</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">純資産の科目は「株主から預かったお金（元手）」と「会社が自分で稼いだお金（利益）」の2つに分けるとスッキリ整理できますよ。図解を見ながら一緒に確認しましょう——焦らなくて大丈夫です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">わかります、僕もそこで一度盛大に爆死しました（笑）。でも準備金ルールは、実は「配当のたびに、資本金の1/4という貯金箱がいっぱいになるまで、配当額の1/10を積み立てなさい」というシンプルな1本のルールだけなんです。だから電卓を叩く前に、①上限額（資本金×1/4）②今の準備金合計③配当の1/10——この3つの数字を計算用紙に先に書き出してしまいましょう。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">3つ書き出して、あとは比べるだけ…！それなら計算の途中で迷わなくなりそうです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そのとおりです！残り枠（上限−現在の合計）と配当の1/10を見比べて、小さい方を積み立てるだけ。この「比べて小さい方を選ぶ」という一手だけ覚えれば、1/4ルールはもう怖くありません。図解を見ながら、一緒に純資産の全体像から確認していきましょう！</div>
+      </div>
     </div>
   </div>
 
   <h2>🗺️ 純資産とは——B/Sの「右下」に隠れた2つのグループ</h2>
+
+  <p>純資産（じゅんしさん）とは、<strong>資産から負債を引いた、会社の正味（しょうみ）の財産</strong>です。貸借対照表（B/S）の右側の下半分に書かれます。まず次の図解で、純資産全体の構造を一気に把握してください。</p>
 
   <figure style="margin:1.5rem 0;text-align:center;">
     <img src="images/boki2-junshisan-map.svg" alt="純資産の構造（株主資本・評価換算差額等）と配当の仕訳" style="max-width:100%;height:auto;border-radius:8px;">
     <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：B/S右下の純資産——株主資本4区分と評価換算差額等、配当仕訳の全体像</figcaption>
   </figure>
   <p>株主資本は「資本金・資本準備金・利益準備金・繰越利益剰余金」の4層構造。配当時は繰越利益剰余金から支払い、利益準備金を積み立てます。</p>
-
-  <p>純資産（じゅんしさん）とは、<strong>資産から負債を引いた、会社の正味（しょうみ）の財産</strong>です。貸借対照表（B/S）の右側の下半分に書かれます。</p>
-  <p>まず次の図解で、純資産全体の構造を一気に把握してください。</p>
-
-  <figure style="margin:24px 0;">
-    <img src="images/junshisan-map.png"
-         alt="純資産のグループ分けマップ——株主の元手エリア（資本金・資本準備金）と会社の利益エリア（利益準備金・繰越利益剰余金）、自己株式のマイナス、配当と積み立ての流れ図"
-         style="width:100%;border-radius:12px;border:1px solid var(--border);display:block;">
-    <figcaption style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">▲ 純資産のグループ分けマップ（上）と剰余金の配当・積み立ての流れ（下）</figcaption>
-  </figure>
 
   <h3>① 図解の「2色のエリア」の読み方</h3>
 
@@ -370,6 +385,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     「1/4ルール」は頭の片隅に置いておきましょう——本番で必ず点差が出るポイントです！
   </div>
 
+  <div class="tip-box">
+    <strong>🖩 実戦テク：電卓での計算手順＋計算用紙の活用ハック</strong><br>
+    本番でパニックにならないよう、電卓を叩く順番を固定しておきましょう。<br>
+    <strong>① 上限額を出す：</strong>資本金 ×「25（％）」または「0.25」を掛けて、資本金の1/4（上限額）を先に計算する。<br>
+    <strong>② 現在の準備金合計を出す：</strong>資本準備金＋利益準備金の残高を電卓に足し込み、「今どこまで積み立て済みか」を確認する。<br>
+    <strong>③ 残り枠を出す：</strong>①（上限額）－②（現在の準備金合計）＝「あと積み立てられる枠」。<br>
+    <strong>④ 配当の1/10と比較：</strong>配当金 ÷ 10 の金額と③「残り枠」を見比べ、<strong>小さい方</strong>を利益準備金の積立額として採用する。<br>
+    計算用紙には、問題を読んだ直後に「上限＝　／　残り枠＝　／　配当1/10＝」の3つの空欄を先に書き出しておくのがコツ。数字を埋めていくだけで判断ミスがなくなり、電卓の叩き直しも防げます。
+  </div>
+
   <h2>⚠️ よくあるミス（実戦版）——ここで合否が分かれる</h2>
 
   <ul>
@@ -410,6 +435,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <h3>⚔ 純資産の仕訳をアプリで練習しよう</h3>
     <p>配当の1/10計算・自己株式・上限ルールの問題を繰り返し解いて身体で覚えましょう。</p>
     <a href="index.html">無料で学習記録を始める →</a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事が少しでも役に立ったら、僕の毎日の執筆・アプリ開発のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 </div>
 

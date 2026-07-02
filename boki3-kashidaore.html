@@ -121,7 +121,8 @@ li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.10);background:#F7FAFC;}</style>
 </head>
 <body>
 
@@ -151,28 +152,44 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">
-    貸倒引当金は日商簿記3級で<strong>ほぼ確実に出る最重要論点</strong>です。<br>
-    私が初めて解いたとき「なぜ引当金を積むのか」の意味が分からず何度もミスしました。
-    今回は「なぜ必要か」から始めて、計算→仕訳の流れをステップで整理します。
-  </p>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！初めて簿記の「貸倒引当金」を習ったとき、僕は本気で「なんじゃこりゃ……！」と脳内パニックを起こしました。だって、取引先はまだ倒産すらしていないのに、勝手に「将来これくらい回収できなくなるだろう」と見積もって、費用として計上しちゃうんですよ？意味不明すぎて、「え、倒産してから処理すればよくない？」と何度も教科書に突っ込みを入れていました（笑）。<br>
+    でもこれ、「倒産リスクを先回りして費用にしておく」という、会社を守るための保険みたいなストーリーだと気づいた瞬間、一気に腑に落ちたんです。今日は僕がつまずいたその瞬間をそのままゲーム感覚の攻略法に変換して、「なぜ必要か」から計算・仕訳まで一気に整理します！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
+  </div>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">貸倒引当金って何ですか？「引当金」って初めて聞きました。</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">貸倒引当金って何ですか？「引当金」って初めて聞きました。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">売掛金は「将来もらえるお金の約束」ですよね。でも取引先が倒産したら回収できない。その<strong>回収できないリスクを事前に費用として計上しておく</strong>のが貸倒引当金です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">売掛金は「将来もらえるお金の約束」ですよね。でも取引先が倒産したら回収できない。その<strong>回収できないリスクを事前に費用として計上しておく</strong>のが貸倒引当金です。いわば「もしもの倒産」に備える保険のようなものだと思ってください。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">なんで事前に計上するんですか？実際に倒産してから計上すればいいのでは？</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">なんで事前に計上するんですか？実際に倒産してから計上すればいいのでは？</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">それだと「売上は前期・損失は当期」になってしまい、利益の計算がおかしくなります。売上と費用は同じ期に対応させる——これが<strong>費用収益対応の原則</strong>です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">それだと「売上は前期・損失は当期」になってしまい、利益の計算がおかしくなります。売上と費用は同じ期に対応させる——これが<strong>費用収益対応の原則</strong>です。倒産リスクを先回りして費用にしておく、いわば「未来の損失を今のうちに織り込んでおく」ゲームだと考えると一気に腑に落ちますよ。</div>
+      </div>
     </div>
   </div>
 
@@ -182,10 +199,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <h2>❓ 貸倒引当金を積まなかったらどうなるか——利益が2期にわたってズレる問題</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-kashidaore-map.svg" alt="貸倒引当金あり vs なし の利益への影響比較タイムライン" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：引当金あり（費用の期間対応が正しい）vs なし（当期に損失が集中）</figcaption>
-  </figure>
+  <img src="images/boki3-kashidaore-map.svg" alt="貸倒引当金がある場合とない場合の利益への影響比較タイムライン図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>まず「引当金なし」の世界から確認します。</p>
 
   <div class="mondai">
@@ -308,13 +322,33 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">引当金が足りない場合と足りる場合で使う科目が変わるんですね。混乱しそうです…</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">引当金が足りない場合と足りる場合で使う科目が変わるんですね。混乱しそうです…</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">手順を決めると迷いません。①まず貸方に「売掛金」を書く。②引当金残高の分だけ借方に「貸倒引当金」を書く。③差額が残れば借方に「貸倒損失」を書く。この順番で機械的にやれば大丈夫です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その気持ち、すごくわかります！でもここ、実は「貯金箱の中身で払いきれるか」を確認するだけのシンプルなパズルなんです。積んでおいた貯金箱（貸倒引当金）から先に出せるだけ出す。それで払いきれなければ、足りない分だけ自腹（貸倒損失）を切る——ただそれだけ。手順化すると迷いません。①まず貸方に「売掛金」を書く。②貯金箱の中身＝引当金残高の分だけ借方に「貸倒引当金」を書く。③それでも差額が残れば、借方に「貸倒損失」を書いて帳尻を合わせる。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">「貯金箱で払えるだけ払って、足りない分は自腹」って考えると、一気にスッキリしました！科目選びで迷わなくなりそうです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その感覚が掴めれば、もうこの論点は攻略したも同然です！「引当金残高 ≧ 貸倒額」なら貸倒引当金だけで完結、「引当金残高 ＜ 貸倒額」なら足りない分だけ貸倒損失をプラス。この2択だけを機械的に判定すれば、本番でも絶対に迷いません。</div>
+      </div>
     </div>
   </div>
 
@@ -435,6 +469,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
       📒 簿記3級・2級 独学攻略ガイド →
     </a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">ここまで読んでくれて本当にありがとうございます！この記事が少しでも役に立ったら、僕の毎日の執筆モチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
 </div>

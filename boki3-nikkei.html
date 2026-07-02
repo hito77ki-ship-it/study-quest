@@ -27,7 +27,7 @@
   "description": "入金・出金・振替伝票を集計して仕訳日計表を作る手順を例題つきで解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-nikkei.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-06-26",
+  "dateModified": "2026-07-02",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -138,7 +138,9 @@ li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:#F7FAFC;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+</style>
 </head>
 <body>
 
@@ -168,36 +170,21 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">
-    仕訳日計表はその日に起票されたすべての伝票を<strong>勘定科目ごとに集計した一覧表</strong>です。<br>
-    難しそうに見えますが、手順は「①伝票を仕訳に直す → ②勘定科目ごとに合計する」の2ステップだけです。
-  </p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">仕訳日計表って伝票をただ集計するだけの作業じゃないんですか？なんで難しく感じるんでしょう…</div>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。つまずきやすいのは「入金伝票・出金伝票→それぞれどっちが借方か」の部分です。入金伝票は現金が入ってくるから（借）現金、出金伝票は出ていくから（貸）現金——ここだけ押さえれば後は機械的な集計作業です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">集計した後に元帳への転記もしなきゃいけないんですよね。転記ってどうやるんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">仕訳日計表の借方・貸方の合計額をそのまま総勘定元帳の該当科目に転記するだけです。伝票1枚ずつではなく、日計表の合計を1行で転記できるのが仕訳日計表の便利なところです。慣れれば速くできますよ！</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    実は、今回紹介する「仕訳日計表」ですが、僕が初めて見たとき、「え、結局ただ伝票を集計して表にするだけの単純作業でしょ？」と正直ナメてかかっていました（笑）。でも実際に解いてみると、入金伝票・出金伝票・振替伝票がごちゃ混ぜになった状態から、勘定科目ごとに正確に拾い集めて借方合計＝貸方合計まで一致させるのは、思っていた以上に骨が折れるパズルでした。<br>
+    でも本質を理解した瞬間、この作業が実務ではとんでもない効率化の武器だと気づいたんです。伝票が100枚あっても、1枚ずつ元帳へ転記していたら日が暮れます。でも仕訳日計表を経由すれば、勘定科目ごとに「たった1回」の合計転記で済んでしまう。この「個別転記→合計転記」への発想の転換こそが、仕訳日計表の面白さです。<br>
+    今回は、このパズルをゲーム感覚で攻略できるよう、図解と一緒に僕なりの解き方をお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <h2>❓ 仕訳日計表とは？——その日の全伝票を勘定科目ごとに集計した一覧表</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-nikkei-map.svg" alt="仕訳日計表の集計構造：伝票→仕訳日計表→各種元帳への転記フロー" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：伝票（入金・出金・振替）→ 仕訳日計表（科目別集計）→ 元帳への転記</figcaption>
-  </figure>
+  <img src="images/boki3-nikkei-map.svg" alt="仕訳日計表の集計構造：伝票→仕訳日計表→各種元帳への転記フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>企業では毎日たくさんの取引が発生し、伝票が大量に起票されます。その日に起票されたすべての伝票を集計して1枚の表にまとめたものが<strong>仕訳日計表</strong>です。</p>
 
   <ul>
@@ -288,6 +275,25 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h3>STEP 2：勘定科目ごとに借方・貸方を集計する</h3>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div class="sq-chat-bubble">伝票が6枚もあって、しかも「現金」があちこちの伝票に散らばって出てきます……これ、どうやって1つの数字にまとめればいいんですか？頭の中がバラバラになりそうです。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">その感覚、すごくわかります！僕も最初は「バラバラのピースをどう集めればいいんだ……」って混乱しました（笑）。でもコツはシンプルで、<strong>同じ勘定科目・同じ借方（または貸方）の数字だけを1つの箱に集めて足し算する</strong>、ただそれだけのパズルなんです。「現金」が3枚の伝票に散らばっていても、借方の現金だけを拾い集めれば1つの合計になります。</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+    </div>
+    <div class="sq-chat-row">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div class="sq-chat-bubble">なるほど、科目ごとに「箱」を用意して仕分けていくイメージですね！全部集め終わったら、最後はどうやって答え合わせすればいいんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">いいところに気づきましたね！全部の箱を集計し終わったら、<strong>借方の合計と貸方の合計が必ずピッタリ一致する</strong>はずです。これは仕訳の「借方＝貸方」というルールがそのまま反映されているからです。ここが合わなければ、どこかの伝票を拾い忘れているか、金額を書き間違えている証拠。まさに答え合わせ機能つきのパズルなんです！</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+    </div>
+  </div>
 
   <div class="collect-grid">
     <div class="collect-item c-kari">
@@ -431,6 +437,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <span class="trigger">試験の頻出セット</span>
       <span class="result">仕訳日計表＋得意先元帳（または仕入先元帳）の転記</span>
     </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
+    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">仕訳日計表は「科目ごとに拾い集めて足し算し、借方＝貸方で答え合わせする」パズルだと気づけば、伝票が何枚あっても怖くありません。<br>
+    僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
 </div>

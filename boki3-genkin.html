@@ -113,7 +113,8 @@ li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.10);background:#F7FAFC;}</style>
 </head>
 <body>
 
@@ -133,6 +134,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h1>現金と当座預金の違いと仕訳<br>小切手は「現金」か「当座預金」か？図解で完全解説</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！初めて簿記の「現金」を習ったとき、僕は本気で「なんじゃこりゃ……！」と脳内パニックを起こしました。だってお札と硬貨だけかと思っていたら、他人が振り出した小切手まで「現金」扱いだと言うじゃないですか。しかも自分が振り出した小切手が戻ってきたときだけは急に「当座預金」に変身する……もう意味がわからなくて、教科書を3回読み直しました（笑）。<br>
+    でもこれ、「サイフ（現金）」と「口座（当座預金）」、2つの登場人物が繰り広げる小さなドラマだと思うと一瞬で整理できるんです。今日は僕がつまずいたポイントをそのままゲーム感覚の攻略法に変換して、二度と間違えない判断軸をお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
+  </div>
+
   <p class="lead">
     「現金ってお札と硬貨だけじゃないの？」——簿記を勉強し始めると、<strong>現金の定義が日常感覚とズレている</strong>ことに気づきます。
     小切手・郵便為替証書・送金小切手など<strong>銀行でその場で換金できる証券（通貨代用証券）</strong>も簿記では現金として扱います。
@@ -149,30 +160,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>当座預金は、<strong>小切手を振り出す（発行する）ための専用口座</strong>です。普通預金と違って利息がつきませんが、代わりに決済手段として小切手を使えます。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">小切手って、お金の代わりに渡す紙ですよね？</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">小切手って、お金の代わりに渡す紙ですよね？</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">そうです。「この銀行口座からお金を出してください」という指示書です。渡した側は当座預金が減り、受け取った側は現金として扱えます。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そうです。「この銀行口座からお金を出してください」という指示書だと思ってください。渡した側は当座預金という口座が減り、受け取った側はサイフに入る「現金」として扱えます。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">じゃあ小切手をもらったら「現金」で記録するんですね？</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">じゃあ小切手をもらったら「現金」で記録するんですね？</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">基本はそうです。ただし「自分が出した小切手が戻ってきた場合」は「当座預金」になります。これが一番よく出るひっかけポイントです。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">基本はそうです。ただし「自分が出した小切手が戻ってきた場合」だけは「当座預金」になります。これが一番よく出るひっかけポイント。次の章でこのドラマの正体を一緒に暴きましょう！</div>
+      </div>
     </div>
   </div>
 
   <h2>「現金」とは？簿記での定義</h2>
 
-  <figure style="margin:20px 0;">
-    <img src="images/boki3-genkin-map.svg" alt="小切手を受け取ったとき 現金か当座預金かの判断フローチャート" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;">
-    <figcaption style="text-align:center;font-size:12px;color:#718096;margin-top:8px;">▲ 小切手を受け取ったとき：自己振出しなら当座預金、他店振出しなら現金（通貨代用証券）</figcaption>
-  </figure>
+  <img src="images/boki3-genkin-map.svg" alt="小切手を受け取ったときの現金・当座預金YES-NO判断フローチャート図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>図解のフローチャートで判断の流れを確認してください。<strong>「自分が出した小切手」が手元に戻ってきたときは当座預金</strong>として処理します。これは「当座預金から引き出す指示書が自分の元に戻った」＝「口座残高が復活した」というイメージです。一方、<strong>他人（他のお店や取引先）が出した小切手を受け取ったときは現金</strong>として処理します——このひっかけパターンは試験に必ず出ます。</p>
 
   <p>日常語の「現金」はお札・硬貨ですが、簿記では<strong>すぐに換金できる通貨代用証券</strong>も現金として扱います。</p>
@@ -219,21 +239,33 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>ここが最も出題されやすいポイントです。<strong>自分が振り出した小切手が手元に戻ってきた場合は「当座預金」</strong>として処理します。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">なんで「当座預金」なんですか？小切手をもらったんだから「現金」じゃないですか？</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">なんで「当座預金」なんですか？小切手をもらったんだから「現金」じゃないですか？</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">小切手を振り出したとき、当座預金をマイナスしましたよね？その小切手が戻ってきたということは、まだ銀行で換金されていない。つまり「当座預金のマイナスを取り消す」必要があるんです。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そこ、僕も最初は同じところで詰まりました！実はこれ、簿記のちょっとしたパズルなんです。小切手を振り出した瞬間に、当座預金という口座はすでにマイナスされています。でもその小切手が銀行で換金されずに、ぐるっと自分の手元に戻ってきたということは……「まだ実際にはお金が引き落とされていない」ってことなんですよ。つまり、さっきのマイナスは「なかったこと」にしないと辻褄が合わない。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">あ、なるほど！「なかったことに戻す」から、当座預金が増える（借方）んですね。</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">あ、なるほど！「なかったことに戻す」から、当座預金が増える（借方）んですね。パズルのピースが逆再生でハマる感じ、ちょっと気持ちいいです！</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">そのとおりです。「振り出した小切手が戻ってきた ＝ 当座預金の復活」と覚えてください。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その感覚、完璧です！「振り出した小切手が戻ってきた＝口座の復活（当座預金のリセットボタン）」と覚えてください。この1行を頭に入れておくだけで、本番でこのひっかけ問題は絶対に落とさなくなりますよ。</div>
+      </div>
     </div>
   </div>
 
@@ -478,6 +510,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <a href="boki-zero-01.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
       ✏️ ゼロからの簿記 第1回：取引とは？ →
     </a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">ここまで読んでくれて本当にありがとうございます！この記事が少しでも役に立ったら、僕の毎日の執筆モチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
 </div>

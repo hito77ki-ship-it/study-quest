@@ -114,6 +114,8 @@ li{margin-bottom:6px;}
 .grad-card h3{font-size:18px;font-weight:700;color:var(--green2);margin-bottom:8px;}
 .grad-card p{font-size:13px;color:#374151;margin-bottom:0;}
 
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.10);background:#F7FAFC;}
+
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -156,10 +158,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <h2>仕訳を積み重ねると財務諸表になる</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki-zero-05-map.svg" alt="仕訳の積み重ねが損益計算書（P/L）と貸借対照表（B/S）になる仕組みの図解" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：日々の仕訳が積み重なりP/L（儲けの報告）とB/S（財産・負債の残高）に集約される流れ</figcaption>
-  </figure>
+  <img src="images/boki-zero-05-map.svg" alt="日々の仕訳がP/LとB/Sに自動集約される簿記の全体像図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>お店や会社では、取引が起きるたびに仕訳を書きます。1日に何十件も取引があれば、仕訳も何十枚と積み重なっていきます。</p>
   <p>下は1ヶ月の仕訳の例です。</p>
 
@@ -227,31 +226,31 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="sq-chat">
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student">🐣</div>
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
       <div>
         <div class="sq-chat-name">受験生</div>
         <div class="sq-chat-bubble">仕訳を集計するだけで財務諸表ができるって、すごくシンプルですね。もっと複雑なのかと思ってました。</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher">📚</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
       <div>
         <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">仕組み自体はシンプルです。でも実際には何百・何千もの仕訳があり、勘定科目の種類も増え、期末の調整（決算整理仕訳）もあります。それを体系的に整理する技術が「簿記」です。基礎の仕組みがわかっている今なら、テキストの内容が格段に理解しやすくなっているはずです。</div>
+        <div class="sq-chat-bubble">仕組みはシンプルなんですが、これ、初めて自分の手で解き切ったときの感動は今でも忘れられません。正直最初は「仕訳なんて、ただの左右の引き算でしょ」って完全にナメてたんです（笑）。でも1ヶ月分・1年分の仕訳を全部積み上げて、決算で損益計算書と貸借対照表を並べた瞬間——利益の数字が1円の狂いもなくピタッと一致したんです。まるでパズルの最後のピースがカチッとハマって盤面が全クリアになった瞬間みたいな、強烈な鳥肌が立って脳汁がドバっと出ました。「え、こんなに綺麗に繋がるの！？」って本気で興奮しましたね。あの感覚を味わいたくて、僕は今も簿記の勉強を続けているんだと思います。</div>
       </div>
     </div>
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student">🐣</div>
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
       <div>
         <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">5回読んで、なんとなく全体像がつかめた気がします！</div>
+        <div class="sq-chat-bubble">鳥肌に脳汁って、そこまでですか…！正直まだ想像つかないですけど、めちゃくちゃワクワクしてきました。5回読んで、なんとなく全体像がつかめた気がします！</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher">📚</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
       <div>
         <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">それがこのシリーズのゴールでした。あとは実際にテキストを開いて、手を動かすだけです。最初の1問が解けた瞬間の感覚、ぜひ味わってください。</div>
+        <div class="sq-chat-bubble">それがこのシリーズのゴールでした！全体像がつかめた今のあなたなら、あの「全クリの快感」までもうあと一歩です。あとは実際にテキストを開いて、自分の手で1問ずつ解いていくだけ。最初の1問が解けた瞬間の感覚、ぜひ自分自身で味わってください。</div>
       </div>
     </div>
   </div>
@@ -290,6 +289,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
         <span>上位資格へ。専門性が一気に上がる。私は現在1級を目指して勉強中です。</span>
       </div>
     </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>🔥 大谷流・熱血キャリア逆算</strong><br>
+    簿記は3級でも就活の武器になりますが、2級、1級、そして公認会計士や税理士へと進むと、ビジネスの世界の見え方が「一般の冒険者」から「チート級の魔法使い（賢者）」へと完全に進化します。ニュースで流れる決算発表も、街で見かける企業の羽振りも、会社の裏側の戦略がすべて数字で読めるようになる。この楽しさを、ぜひ君にも味わってほしい！
   </div>
 
   <h3>3級で学べること</h3>
@@ -343,6 +347,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="page-nav">
     <a href="boki-zero-04.html">← 第4回へ</a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">全5回の連載を最後まで読んでくれて本当にありがとう！この記事が少しでも役に立ったら、僕のこれからの執筆やアプリ開発のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになります！</p>
   </div>
 </div>
 

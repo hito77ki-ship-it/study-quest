@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"銀行勘定調整表の書き方【日商簿記3級】","description":"銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-ginko.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"銀行勘定調整表の書き方【日商簿記3級】","description":"銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-ginko.html","datePublished":"2026-05-07","dateModified": "2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -97,7 +97,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
@@ -117,38 +118,58 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">自社の当座預金勘定の残高と銀行が発行する<strong>残高証明書の残高</strong>は、タイムラグなどが原因で一致しないことがあります。<strong>銀行勘定調整表</strong>はその差異の原因を整理し、正しい残高に調整するための表です。</p>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    正直に告白すると、初めて銀行勘定調整表を見たとき、自社の帳簿残高と銀行の残高証明書の数字が1円も一致しなくて「うわっ、なんじゃこりゃ……！同じ会社の同じ口座なのに、なんで数字が違うんだよ！」と本気で脳内パニックを起こしました（笑）。<br>
+    でも実はこれ、犯人探しでもバグでもなくて、<strong>【会社と銀行のタイムラグドラマ】</strong>なんです。「会社はもう知っているのに銀行がまだ知らない」「銀行はもう知っているのに会社がまだ知らない」——このズレの正体さえ見抜けば、電卓を叩く前にゲーム感覚で一瞬で解けます。今日はその見抜き方を、当時パニックだった僕の目線で余すことなくお伝えします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">銀行残高と帳簿残高がなぜ一致しないのかわからないし、調整表のどこを修正仕訳にすればいいのかも混乱しています。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">銀行残高と帳簿残高がなぜ一致しないのかわからないし、調整表のどこを修正仕訳にすればいいのかも混乱しています……特に「未渡小切手」と「未取付小切手」、名前が似すぎて毎回どっちがどっちか分からなくなります。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。一致しない原因はタイムラグがほとんどです。「自社が知らないだけ」か「銀行が知らないだけ」かを判断する——これが調整表の全てです。自社が知らないものは帳簿を修正、銀行が知らないものは調整表上の計算だけで仕訳不要です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その2つ、簿記3級で一番の「引っかけコンビ」ですよね。僕も最初は完全に混同していました。でも実はたった1つの質問で見分けがつきます。「その小切手、もう相手に渡した？」——これだけです。自社が知らないだけか、銀行が知らないだけかを判断する、それが調整表の全てなんです。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">未渡小切手って自社帳簿に加算するんですか、それとも銀行側に加算するんですか？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">「渡したかどうか」ですか！じゃあ未渡小切手は「まだ渡していない」から……自社が勝手に支払った気になっているだけで、実際はまだ何も起きていない、ということですか？</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">未渡小切手は「振り出したのにまだ渡していない」状態です。自社帳簿では既に当座預金を減らしていますが、実際には渡していないので帳簿残高を増やす（加算）修正が必要です。こういう判断の型を一つずつ整理すれば絶対解けます！</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">大正解です！未渡小切手は「自社の帳簿だけが先走っている」状態なので、自社帳簿を修正して当座預金を増やします。一方、未取付小切手は小切手をちゃんと相手に渡し終えていて、あとは相手が銀行に持ち込むのを待つだけ——つまり<strong>「渡す」という自社のアクションはもう完了している</strong>ので、自社の仕訳は不要、銀行側の処理待ちなだけです。この1問1答の型さえ体に染み込めば、あとはパズル感覚で全部解けますよ！</div>
+      </div>
     </div>
   </div>
 
   <h2>❓ ① 不一致が起こる4つの原因——「自社側」か「銀行側」か、原因を分類する</h2>
-  <figure style="margin:20px 0;">
-    <img src="images/boki3-ginko-map.svg" alt="銀行勘定調整表 4原因と調整方向の図解" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;">
-    <figcaption style="text-align:center;font-size:12px;color:#718096;margin-top:8px;">▲ 左（青）：自社帳簿を修正が必要な原因　右（緑）：銀行側で調整する原因——下段は調整表の構造</figcaption>
-  </figure>
+
+  <img src="images/boki3-ginko-map.svg" alt="銀行勘定調整表の不一致4原因と調整方向の全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+
   <p>図解のポイントは<strong>「どちら側の問題か」で対処が変わる</strong>ことです。自社が帳簿を書き忘れていた場合は修正仕訳が必要ですが、銀行側の処理が遅れているだけなら自社の仕訳は不要です。まずこの分類を図で確認してから例題に進みましょう。</p>
   <p>原因によって「自社の帳簿を修正するか」「銀行側を調整するか」が変わります。</p>
 
   <div class="reason-grid">
-    <div class="reason-card jisha">
-      <span class="rc-badge">自社側の修正が必要</span>
+    <div class="reason-card ginko">
+      <span class="rc-badge">銀行側を調整</span>
       <div class="rc-title">① 未取立小切手</div>
       <div class="rc-desc">受け取った小切手をまだ銀行に持ち込んでいない。自社は入金済みでも銀行はまだ未処理。<br>→ 自社の修正仕訳は不要（銀行側に＋）</div>
     </div>
@@ -162,8 +183,8 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <div class="rc-title">③ 未取付小切手</div>
       <div class="rc-desc">振り出した小切手がまだ銀行に呈示されていない。銀行は未引落だが自社は支払済み処理済。<br>→ 自社の修正仕訳は不要（銀行側を－）</div>
     </div>
-    <div class="reason-card ginko">
-      <span class="rc-badge">銀行側を調整</span>
+    <div class="reason-card jisha">
+      <span class="rc-badge">自社側の修正が必要</span>
       <div class="rc-title">④ 誤記入・未通知</div>
       <div class="rc-desc">銀行が利息を入金したが自社に未通知、または自社が金額を誤記入。<br>→ 内容に応じて自社帳簿を修正</div>
     </div>
@@ -294,6 +315,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">調整後の確認</span><span class="result">自社側と銀行側の正しい残高が必ず一致する</span></div>
     <div class="matome-row"><span class="trigger">当座借越</span><span class="result">当座預金がマイナス＝銀行からの一時借入。決算時に当座借越（負債）へ振替</span></div>
     <div class="matome-row"><span class="trigger">当座 vs 普通預金</span><span class="result">当座は小切手・手形振出可・利息なし。普通は利息あり・小切手不可</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">銀行勘定調整表は「タイムラグの犯人探し」ゲームです</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">最初は1円も合わない数字にパニックになっても、「渡したかどうか」の1問1答さえ身につければ、4原因はもう怖くありません。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、簿記3級マスターへの一歩を刻んでおきましょう。</p>
+    <a href="index.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
   </div>
 </div>
 <section class="faq" id="faq">

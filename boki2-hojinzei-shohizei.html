@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】法人税等・消費税の仕訳を完全解説","description":"中間納付3ステップ・消費税相殺パズルを図解つきで解説。未払法人税等の計算根拠がわかる。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-hojinzei-shohizei.html","datePublished":"2026-05-09","dateModified":"2026-06-27","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】法人税等・消費税の仕訳を完全解説","description":"中間納付3ステップ・消費税相殺パズルを図解つきで解説。未払法人税等の計算根拠がわかる。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-hojinzei-shohizei.html","datePublished":"2026-05-09","dateModified":"2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -159,13 +159,16 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+
+/* chat icon */
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 法人税等・消費税</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年6月27日</p>
+  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年7月2日</p>
   <h1>【簿記2級】法人税等・消費税の仕訳を完全解説<br>中間納付・消費税相殺パズルを図解つきで攻略</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
@@ -191,22 +194,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="lead">法人税等と消費税は、毎回の決算整理で必ず登場する税金論点です。「なぜ300,000が借方なのに120,000と180,000に分かれるの？」「仮受消費税がなぜ借方に来るの？」——この2つの疑問を図解つきで一気に解決します。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">中間納付がある場合の仕訳で、貸方が2つに分かれる理由がよくわかりません。どうして120,000と180,000に分けるんですか？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">中間納付がある場合の仕訳で、貸方が2つに分かれる理由がよくわかりません。どうして120,000と180,000に分けるんですか？あと、仮受消費税が決算で急に借方に来るのも意味不明です…</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">これは「先に払った分（前払い）」と「あとで払う残り」に分けているイメージです。期中に仮払いした120,000円は消して、決算で確定した合計300,000円との差額180,000円を「まだ払っていない分」として未払法人税等に残す——3ステップで理解すると自然に仕訳が書けるようになりますよ。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その感覚、めちゃくちゃわかります。僕も最初「なんで貸方だった科目が急に借方に引っ越すんだ…！」と決算整理の仕訳を見て頭がバグりました（笑）。でも正体は「決算の仕訳マジック」——期中に積み上げた残高を、決算で反対側に置いて丸ごと消し去るトリックなんです。仮払法人税等120,000は「もう払った分」として消し、300,000（正解の税額）との差額180,000だけを「まだ払っていない分」として残す。消費税も同じで、仮受・仮払をそれぞれ反対側に置いてぶつけて相殺すると、差額だけがきれいに残ります。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">「反対側に置いて消す」がマジックの仕掛けなんですね…！言われてみると、法人税等も消費税も同じ考え方で解けそうです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">まさにそうです！このマジックの仕掛けさえ見抜けば、法人税等の3ステップも消費税の相殺パズルも、怖いものではなくなります。図解で数字の動きを一緒に追いかけていきましょう！</div>
+      </div>
     </div>
   </div>
 
   <h2>🏦 法人税等とは——利益にかかる3種類の税金</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki2-hojinzei-shohizei-map.svg" alt="法人税等・消費税の仕訳フロー" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：中間納付（仮払）→期末確定（未払）→翌期納付のフローと消費税の相殺処理</figcaption>
-  </figure>
+  <img src="images/boki2-tax-puzzle-map.svg" alt="法人税等・消費税の仕訳フロー" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>法人税等は中間納付の「仮払」と期末確定の「未払」を使い分けるのがポイントです。消費税は仮払・仮受を相殺して差額を納付します。</p>
 
   <p>法人税等（ほうじんぜいとう）とは、会社の利益に対してかかる税金の総称です。具体的には次の3つをまとめて処理します。</p>
@@ -219,15 +239,6 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </table>
 
   <p>これら3つをまとめて勘定科目名「<strong>法人税等（ほうじんぜいとう）</strong>」として仕訳で処理するのが、簿記2級の出題スタイルです。</p>
-
-  <p>次の図解で、中間納付がある場合の決算整理の全体像を確認してください。</p>
-
-  <figure style="margin:24px 0;">
-    <img src="images/hojinzei-shohizei-map.png"
-         alt="法人税等の中間納付3ステップ決算精算図（STEP1仮払法人税等120,000→STEP2法人税等300,000確定→STEP3未払法人税等180,000）と消費税の相殺パズル図（仮受消費税500,000と仮払消費税320,000を相殺し未払消費税180,000）"
-         style="width:100%;border-radius:12px;border:1px solid var(--border);display:block;">
-    <figcaption style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">▲ 上：法人税等の中間納付3ステップ決算精算図　下：消費税の相殺パズル図</figcaption>
-  </figure>
 
   <h2>📋 中間納付がある場合——3ステップで仕訳を理解する</h2>
 
@@ -422,6 +433,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <h3>⚔ 税金仕訳をアプリで反復練習しよう</h3>
     <p>中間納付パターン・消費税相殺の仕訳を繰り返すことで、決算整理の失点がゼロになります。</p>
     <a href="index.html">無料で学習記録を始める →</a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">決算の仕訳マジックは、種を知れば必ず解けるパズルです。この記事が「あ、そういうことか！」につながったら、僕の毎日の執筆・アプリ開発のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 </div>
 

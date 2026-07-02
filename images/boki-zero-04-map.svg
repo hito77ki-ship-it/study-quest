@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="480" rx="16" fill="#F8FAFC"/>
+  <text x="380" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">単式簿記 vs 複式簿記　＆　借方・貸方の一発暗記</text>
+  <text x="380" y="50" text-anchor="middle" font-size="11" fill="#64748B">「り」は左に払う、「し」は右に流れる——字の形で覚えるのが最速</text>
+
+  <!-- 単式簿記カード -->
+  <rect x="30" y="70" width="340" height="180" rx="12" fill="#FFF9C4" stroke="#F6E05E" stroke-width="2"/>
+  <rect x="50" y="86" width="110" height="26" rx="13" fill="#F6E05E"/>
+  <text x="105" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#78350F">単式簿記</text>
+  <text x="200" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">家計簿スタイル</text>
+  <rect x="60" y="142" width="280" height="40" rx="8" fill="#ffffff"/>
+  <text x="200" y="166" text-anchor="middle" font-size="12" fill="#78350F">4/1　商品販売　＋1,100円</text>
+  <text x="70" y="205" font-size="11" fill="#166534">✅ 書きやすい</text>
+  <text x="70" y="224" font-size="11" fill="#B91C1C">❌ なぜ増えたかわからない</text>
+
+  <!-- 複式簿記カード -->
+  <rect x="390" y="70" width="340" height="180" rx="12" fill="#E8F7B8" stroke="#9AE6B4" stroke-width="2"/>
+  <rect x="410" y="86" width="110" height="26" rx="13" fill="#9AE6B4"/>
+  <text x="465" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">複式簿記</text>
+  <text x="560" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">仕訳スタイル</text>
+  <rect x="420" y="142" width="280" height="40" rx="8" fill="#ffffff"/>
+  <line x1="560" y1="142" x2="560" y2="182" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="490" y="166" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2B6CB0">現金 1,100</text>
+  <text x="630" y="166" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C05621">売上 1,100</text>
+  <text x="410" y="205" font-size="11" fill="#166534">✅ 結果と原因を同時記録</text>
+  <text x="410" y="224" font-size="11" fill="#166534">✅ 財務諸表が自動的に作れる</text>
+
+  <!-- 暗記セクション -->
+  <rect x="30" y="250" width="700" height="210" rx="14" fill="#ffffff" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="380" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">借方（かりかた）・貸方（かしかた）の一発暗記</text>
+
+  <line x1="380" y1="292" x2="380" y2="430" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="200" y="352" text-anchor="middle" font-size="60" font-weight="900" fill="#2B6CB0">り</text>
+  <text x="200" y="380" text-anchor="middle" font-size="20">⬅️</text>
+  <text x="200" y="404" text-anchor="middle" font-size="13" font-weight="700" fill="#2B6CB0">借方（かりかた）＝左</text>
+  <text x="200" y="422" text-anchor="middle" font-size="10.5" fill="#64748B">「り」のハネが左に払う！</text>
+
+  <text x="560" y="352" text-anchor="middle" font-size="60" font-weight="900" fill="#C05621">し</text>
+  <text x="560" y="380" text-anchor="middle" font-size="20">➡️</text>
+  <text x="560" y="404" text-anchor="middle" font-size="13" font-weight="700" fill="#C05621">貸方（かしかた）＝右</text>
+  <text x="560" y="422" text-anchor="middle" font-size="10.5" fill="#64748B">「し」の曲がりが右に流れる！</text>
+
+  <text x="380" y="450" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">例：現金1,100（借方＝左）／ 売上1,100（貸方＝右）</text>
+</svg>

@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】製造原価報告書（CR）の書き方を完全解説","description":"第4問で狙われる製造原価報告書を、ひな形・配賦差異・他勘定振替まで例題つきで完全攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-seizo-genka-hokokusho.html","datePublished":"2026-05-09","dateModified":"2026-06-27","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】製造原価報告書（CR）の書き方を完全解説","description":"第4問で狙われる製造原価報告書を、ひな形・配賦差異・他勘定振替まで例題つきで完全攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-seizo-genka-hokokusho.html","datePublished":"2026-05-09","dateModified":"2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -121,6 +121,9 @@ tr:nth-child(even) td{background:var(--light);}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;}
 
+/* chat icon */
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:#F7FAFC;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+
 /* FAQ */
 .faq-item{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden;}
 .faq-q{font-size:14px;font-weight:700;padding:14px 18px;background:var(--light);}
@@ -189,6 +192,18 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h1>【簿記2級】製造原価報告書（CR）の書き方を完全解説<br>ひな形・配賦差異・他勘定振替まで例題つき</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    実は、今回紹介する工業簿記のラスボス「製造原価報告書（CR）」ですが、僕が初めて解いたとき、材料費・労務費・経費が仕掛品のT字勘定にどんどん流れ込んでいく複雑なつながりを見て、「うわっ、なんじゃこりゃ、どの数字がどこへ消えたのか全然わからん……！」と頭が完全にフリーズしました（笑）。<br>
+    でも実はこの論点の正体は【原価の旅（バトンリレー）】です。工場で発生したコストが仕掛品ボックスの中で合体し、完成品として「当期製品製造原価」という名のバトンに変わり、そのまま製品ボックスへスライドして、最後はP/Lの売上原価としてゴールする——たったこれだけのシンプルな旅なんです。<br>
+    今回は、このバトンリレーをゲーム感覚で攻略できるよう、ボックス図と一緒に僕なりの解き方をお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
+
   <div class="point-card">
     <div class="pc-label">この記事でわかること（5秒まとめ）</div>
     <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
@@ -199,35 +214,32 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">製造原価報告書（Cost Report = CR）は、工場で当期に完成した製品の製造原価を計算する報告書です。第4問の財務諸表作成で必ず登場する最重要書類ですが、単に「当期製造費用＋月初仕掛品－月末仕掛品」だけでは試験で得点できません。消費額の計算・配賦差異の処理・仕掛品ボックスの活用まで、実戦レベルで解説します。</p>
-
   <div class="sq-chat">
     <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">製造原価報告書って計算式は覚えたんですが、実際の試験問題に当てはめようとすると全然解けないんです。</div>
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div class="sq-chat-bubble">製造原価報告書って計算式は覚えたんですが、実際の試験問題に当てはめようとすると全然解けないんです……数字がどこから出てきたのか、頭の中がぐちゃぐちゃになります。</div>
     </div>
     <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">よくある「計算式だけ覚えた」状態ですね。試験では材料費の消費額を求めるパズル、製造間接費に予定配賦額を入れる処理、仕掛品から他の勘定へ流れる引き算など、複数の論点が組み合わさって出ます。順番に整理しましょう——焦らなくて大丈夫です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+      <div class="sq-chat-bubble">わかります、僕もそこで一度心が折れかけました（笑）。でも実は、公式を丸暗記するより<strong>【仕掛品のボックス図】</strong>を描いて、左側（借方）に月初仕掛品と当期総製造費用を足し算、右側（貸方）に月末仕掛品を引き算するだけの1枚のパズルだと気づいた瞬間、一気に解けるようになったんです。左の合計から右下を引けば、残った右上が自動的に「当期製品製造原価」になる——このボックスさえ描ければ、公式を覚えていなくても手が動きますよ！</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+    </div>
+    <div class="sq-chat-row">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div class="sq-chat-bubble">ボックス図なら図で見えるから安心です！でも、そのゴールの数字をどう使えばいいんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">いい質問です！そのボックスの右上に出てきた「当期製品製造原価」は、そのまま次の製品ボックスの左側（たし算エリア）にスライドして、バトンのように受け継がれます。あとは同じ要領で製品ボックスを解けば、売上原価まで一気に辿り着けますよ。</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
     </div>
   </div>
 
   <h2>🗺️ まず全体像を把握する——勘定連絡図で原価の「旅」を一発理解</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki2-seizo-genka-hokokusho-map.svg" alt="製造原価報告書の3費目集計から売上原価までのフロー" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：材料費・労務費・経費→仕掛品→製品→売上原価の流れと製造原価報告書の範囲</figcaption>
-  </figure>
   <p>製造原価報告書は「仕掛品勘定の明細書」。3費目の当月消費額と月初・月末仕掛品から当期製品製造原価を導く構造です。</p>
 
   <p>製造原価報告書（CR）の役割を理解するには、まず「工場で発生したコストが最終的にP/L（損益計算書）の売上原価へ辿り着くまでの流れ」を頭に入れることが大切です。次の図解がその全体像を一枚で示しています。</p>
 
-  <figure style="margin:24px 0;">
-    <img src="images/seizo-genka-box.png"
-         alt="製造原価報告書の勘定連絡図——材料費・労務費・経費が仕掛品ボックス（CR）を経て製品ボックス・売上原価（P/L）へ流れる全体マップ"
-         style="width:100%;border-radius:12px;border:1px solid var(--border);display:block;">
-    <figcaption style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">▲ 原価の流れ全体マップ：材料費・労務費・経費 → 仕掛品〔しかかりひん〕（CR） → 製品〔せいひん〕 → 売上原価（P/L）</figcaption>
-  </figure>
+  <img src="images/boki2-seizo-genka-map.svg" alt="製造原価報告書からP/L売上原価へ流れる勘定連絡図の全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
 
   <h3>① 図解の「たし算エリア」と「結果エリア」の読み方</h3>
 
@@ -583,6 +595,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">配賦差異の調整</span><span class="result">CRの末尾（パターンA）かP/Lの売上原価（パターンB）——問題文の指示に従う</span></div>
     <div class="matome-row"><span class="trigger">他勘定振替・異常仕損</span><span class="result">仕掛品ボックスの右側（貸方）に出してCRの末尾でマイナスする</span></div>
     <div class="matome-row"><span class="trigger">当期製品製造原価</span><span class="result">P/L売上原価計算の「当期製品製造原価」へスライドさせる</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
+    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">製造原価報告書は、公式の丸暗記ではなく「仕掛品ボックス→製品ボックスへのバトンリレー」というたった1つのパズルの型を掴めば、第4問の確実な得点源になります。<br>
+    僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <h2>よくある質問</h2>

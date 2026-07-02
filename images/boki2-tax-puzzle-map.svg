@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" width="760" height="560">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="560" rx="16" fill="#F8FAFC"/>
+  <text x="380" y="30" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1E293B">決算の仕訳マジック——法人税等の3ステップ＆消費税の相殺パズル</text>
+  <text x="380" y="50" text-anchor="middle" font-size="11" fill="#64748B">期中の残高を、決算で反対側に置いて消し去るのがマジックの仕掛け</text>
+
+  <text x="30" y="76" font-size="13" font-weight="700" fill="#1E293B">🏦 法人税等——中間納付の3ステップ</text>
+
+  <!-- STEP1 -->
+  <rect x="30" y="86" width="220" height="108" rx="10" fill="#EBF8FF" stroke="#3B4DA8" stroke-width="2"/>
+  <rect x="105" y="96" width="70" height="20" rx="10" fill="#3B4DA8"/>
+  <text x="140" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">STEP 1</text>
+  <text x="140" y="130" text-anchor="middle" font-size="9.5" fill="#64748B">期中（中間納付）</text>
+  <text x="140" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#3B4DA8">仮払法人税等</text>
+  <text x="140" y="174" text-anchor="middle" font-size="15" font-weight="700" fill="#3B4DA8">120,000円</text>
+
+  <text x="262" y="146" text-anchor="middle" font-size="18" fill="#64748B">→</text>
+
+  <!-- STEP2 -->
+  <rect x="270" y="86" width="220" height="108" rx="10" fill="#F3E8FF" stroke="#7C3AED" stroke-width="2"/>
+  <rect x="345" y="96" width="70" height="20" rx="10" fill="#7C3AED"/>
+  <text x="380" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">STEP 2</text>
+  <text x="380" y="130" text-anchor="middle" font-size="9.5" fill="#64748B">決算（税額確定）</text>
+  <text x="380" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#7C3AED">法人税等</text>
+  <text x="380" y="174" text-anchor="middle" font-size="15" font-weight="700" fill="#7C3AED">300,000円</text>
+
+  <text x="502" y="146" text-anchor="middle" font-size="18" fill="#64748B">→</text>
+
+  <!-- STEP3 -->
+  <rect x="510" y="86" width="220" height="108" rx="10" fill="#F0FFF4" stroke="#276749" stroke-width="2"/>
+  <rect x="585" y="96" width="70" height="20" rx="10" fill="#276749"/>
+  <text x="620" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">STEP 3</text>
+  <text x="620" y="130" text-anchor="middle" font-size="9.5" fill="#64748B">決算整理（仕訳完成）</text>
+  <text x="620" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">未払法人税等</text>
+  <text x="620" y="174" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">180,000円</text>
+
+  <rect x="30" y="204" width="700" height="32" rx="8" fill="#F7F9FF" stroke="#C3DAFE" stroke-width="1.5"/>
+  <text x="380" y="225" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3B4DA8">法人税等 300,000 － 仮払法人税等 120,000 ＝ 未払法人税等 180,000</text>
+
+  <line x1="30" y1="256" x2="730" y2="256" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="30" y="282" font-size="13" font-weight="700" fill="#1E293B">🔄 消費税——決算の相殺パズル</text>
+
+  <!-- 仮受消費税 -->
+  <rect x="30" y="294" width="310" height="130" rx="10" fill="#E6FFFA" stroke="#4FD1C5" stroke-width="2"/>
+  <rect x="120" y="306" width="130" height="22" rx="11" fill="#4FD1C5"/>
+  <text x="185" y="321" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">仮受消費税</text>
+  <text x="185" y="348" text-anchor="middle" font-size="9" fill="#64748B">（かりうけしょうひぜい）</text>
+  <text x="185" y="374" text-anchor="middle" font-size="17" font-weight="700" fill="#285E61">500,000円</text>
+  <text x="185" y="398" text-anchor="middle" font-size="9.5" fill="#374151">期中は貸方（右）</text>
+  <text x="185" y="412" text-anchor="middle" font-size="9.5" font-weight="700" fill="#285E61">→ 決算で借方（左）へ移動</text>
+
+  <!-- center -->
+  <circle cx="380" cy="357" r="22" fill="#ffffff" stroke="#D97706" stroke-width="2"/>
+  <text x="380" y="364" text-anchor="middle" font-size="20">⇄</text>
+  <text x="380" y="390" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309">相殺</text>
+
+  <!-- 仮払消費税 -->
+  <rect x="420" y="294" width="310" height="130" rx="10" fill="#FFF0F0" stroke="#FC8181" stroke-width="2"/>
+  <rect x="510" y="306" width="130" height="22" rx="11" fill="#FC8181"/>
+  <text x="575" y="321" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">仮払消費税</text>
+  <text x="575" y="348" text-anchor="middle" font-size="9" fill="#64748B">（かりばらいしょうひぜい）</text>
+  <text x="575" y="374" text-anchor="middle" font-size="17" font-weight="700" fill="#C05621">320,000円</text>
+  <text x="575" y="398" text-anchor="middle" font-size="9.5" fill="#374151">期中は借方（左）</text>
+  <text x="575" y="412" text-anchor="middle" font-size="9.5" font-weight="700" fill="#C05621">→ 決算で貸方（右）へ移動</text>
+
+  <rect x="30" y="436" width="700" height="50" rx="10" fill="#FEFCE8" stroke="#D97706" stroke-width="2"/>
+  <text x="380" y="458" text-anchor="middle" font-size="12" font-weight="700" fill="#B45309">500,000 － 320,000 ＝ 差額 180,000円</text>
+  <text x="380" y="476" text-anchor="middle" font-size="10.5" fill="#78350F">未払消費税（みはらいしょうひぜい）として国に納付する</text>
+
+  <rect x="30" y="500" width="700" height="46" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="380" y="520" text-anchor="middle" font-size="10.5" fill="#475569">💡 決算マジックの正体：期中に貯まった残高を、反対側に置いて消し去るだけ</text>
+  <text x="380" y="536" text-anchor="middle" font-size="10.5" fill="#475569">法人税等も消費税も「前払い・預り分を消して、差額だけ残す」という同じ仕組み</text>
+</svg>

@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"クレジット売掛金の仕訳【日商簿記3級】信販会社との取引と手数料処理","description":"クレジット販売の仕訳・信販会社からの入金・手数料の処理を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-credit.html","datePublished":"2026-05-08","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"クレジット売掛金の仕訳【日商簿記3級】信販会社との取引と手数料処理","description":"クレジット販売の仕訳・信販会社からの入金・手数料の処理を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-credit.html","datePublished":"2026-05-08","dateModified": "2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -96,6 +96,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 .related ul{list-style:none;margin:0;padding:0;}
 .related li{padding:7px 0;border-bottom:1px solid var(--border);}
 .related li:last-child{border-bottom:none;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:#F7FAFC;box-shadow:0 2px 8px rgba(0,0,0,.10);}
 </style>
 </head>
 <body>
@@ -116,32 +117,20 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">クレジット販売では、代金を受け取るのは<strong>顧客ではなく信販会社から</strong>です。通常の売掛金と区別するため「<strong>クレジット売掛金</strong>」という勘定科目を使います。また、信販会社に支払う手数料の処理タイミングが試験で問われます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">クレジット売掛金と通常の売掛金の違いってなんですか？どちらも「後でお金をもらう権利」じゃないですか？</div>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">正確な見方です。違いは「誰からお金を受け取るか」です。通常の売掛金は顧客から直接もらう権利、クレジット売掛金は信販会社（カード会社）からもらう権利です。間に信販会社が入っているので別の科目で管理します。</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">支払手数料を「販売時」と「入金時」どちらで計上するかって、どうやって判断するんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">問題文に必ず「販売時に計上する」または何も指示がない（→入金時が標準）と書かれています。判断に迷ったら入金時を選んでおけば大丈夫です。焦らず問題文をよく読めば必ず判断できますよ！</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    実は、今回紹介する「クレジット売掛金」ですが、僕が初めて仕訳を見たとき、「え、商品を売ったのに手元の現金が全然増えてない……？しかも謎の手数料まで引かれてる……うわっ、なんじゃこりゃ！」と本気で脳内パニックを起こした論点でした（笑）。<br>
+    落ち着いて考えると、これは会社と顧客の間に「信販会社」というもう1人の登場人物が割り込んでくる、いわば【信販会社とのドラマ】なんです。顧客からは1円も直接もらわず、代わりに信販会社が立て替えて、手数料を天引きした金額を後から振り込んでくれる——この三角関係さえ頭に入れば、あとは機械的に仕訳が組み立てられます。<br>
+    今回は、このドラマをゲーム感覚で一瞬で解ける裏技を、図解と一緒にお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <h2>💳 ① クレジット販売の流れ——当社・顧客・信販会社の3者の関係を把握する</h2>
-  <figure style="margin:20px 0;">
-    <img src="images/boki3-credit-map.svg" alt="クレジット販売 3者関係フロー図解" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;">
-    <figcaption style="text-align:center;font-size:12px;color:#718096;margin-top:8px;">▲ 3者の関係：①顧客が購入 → ②当社がクレジット売掛金を計上 → ③信販会社から手数料引いた金額を入金</figcaption>
-  </figure>
+  <img src="images/boki3-credit-map.svg" alt="クレジット売掛金と支払手数料の3者間キャッシュフローの全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>図解を見てください。クレジット販売では<strong>当社が直接お金をもらう相手は「顧客」ではなく「信販会社（カード会社）」</strong>です。顧客にはカード払いで売るので現金は入りません。その代わり、信販会社が立て替えてくれた金額（手数料を差し引いた額）が後日入金されます。この流れを図で確認してから仕訳の学習に進みましょう。</p>
   <p>クレジット販売では3者（当社・顧客・信販会社）が登場します。</p>
 
@@ -168,6 +157,25 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="warn-box"><strong>【最大のひっかけ】売上は満額・クレジット売掛金は手数料控除後</strong><br>売上は販売価格の満額で計上します。クレジット売掛金（信販会社に対する債権）は手数料を差し引いた金額になります。この「売上とクレジット売掛金の金額が違う」ことが最大の落とし穴です。<br>例）売上10,000円・手数料200円 → 売上 10,000 ／ クレジット売掛金 9,800 ＋ 支払手数料 200</div>
   <p>商品10,000円をクレジットカードで販売。信販会社の手数料率は3%（300円）の場合を考えます。</p>
   <p>手数料の計上タイミングによって2パターンあります。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div class="sq-chat-bubble">手数料300円って、いつ仕訳に登場するんですか？販売した瞬間ですか、それとも入金されたときですか……？考えれば考えるほど頭がこんがらがってきました。</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">実はそこ、僕も最初は「え、どっちでもいいんじゃないの！？」って混乱したポイントです（笑）。でも答えはシンプルで、<strong>問題文が「いつ手数料を計上するか」を必ず教えてくれています</strong>。「販売時に計上する」と書いてあればパターンA、何も指示がなければパターンB（入金時）が標準——このたった1つの分岐を見抜くだけの、実はとてもシンプルなパズルなんです！</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+    </div>
+    <div class="sq-chat-row">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div class="sq-chat-bubble">なるほど、分岐さえ見抜ければいいんですね！でも金額はどう変わるんですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">ここが面白いところで、<strong>手数料をどのタイミングで計上するかによって「クレジット売掛金」の金額そのものが変わる</strong>んです。販売時に計上するなら、クレジット売掛金は最初から手数料を引いた金額（9,700円）。入金時に計上するなら、クレジット売掛金はいったん満額（10,000円）で計上して、入金時に手数料を差し引きます。このズレを体感すると、一気に得点源になりますよ！</div>
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+    </div>
+  </div>
 
   <h3>パターンA：手数料を販売時に計上する場合——問題文に「販売時に計上」の指示がある場合</h3>
   <div class="shiwake-box">
@@ -297,6 +305,12 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <li>② 後日、信販会社から①の代金が当座預金に振り込まれた。</li>
     </ul>
     <p style="margin-top:12px;font-size:13px;color:#3B4DA8;"><strong>ポイント：</strong>手数料 ＝ 50,000 × 2% ＝ 1,000円。クレジット売掛金 ＝ 50,000 − 1,000 ＝ 49,000円。</p>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
+    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">クレジット売掛金は「信販会社とのドラマ」を思い浮かべながら、手数料をどのタイミングで計上するかという1つの分岐さえ見抜ければ、確実な得点源になります。<br>
+    僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <section class="faq" id="faq">

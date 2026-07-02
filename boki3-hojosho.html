@@ -96,6 +96,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 .related ul{list-style:none;margin:0;padding:0;}
 .related li{padding:7px 0;border-bottom:1px solid var(--border);}
 .related li:last-child{border-bottom:none;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.10);background:#F7FAFC;}
 </style>
 </head>
 <body>
@@ -129,31 +130,9 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <p class="lead">補助簿は、主要簿（仕訳帳・総勘定元帳）を補助するための帳簿です。<strong>取引の種類によって記入する補助簿が決まっており</strong>、試験では「この取引は何の補助簿に記入するか」という問題が頻出です。6種類の補助簿をしっかり覚えましょう。</p>
 
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">補助簿が6種類もあって、どれを使えばいいのかよくわかりません。</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。「何の取引か」で記入する補助簿が決まります。現金が動いたら現金出納帳、掛売りなら売掛金元帳と売上帳、手形なら受取手形記入帳、という流れです。取引と帳簿の対応を一覧で整理すれば必ず覚えられます。</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">1つの取引で複数の補助簿に記入することってあるんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">あります。例えば「掛けで商品を売った」場合、売上帳と売掛金元帳の両方に記入します。試験問題では「いくつチェックが入るか」を問われることが多いので、ダブルで記入される取引をしっかり確認しておきましょう！</div>
-      <div class="sq-chat-avatar teacher">師</div>
-    </div>
-  </div>
-
   <h2>📚 ① 補助簿の6種類一覧——何が記録できる帳簿なのかを整理する</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-hojosho-map.svg" alt="補助簿6種類（現金出納帳・売上帳・仕入帳・商品有高帳・売掛金元帳・買掛金元帳）の分類・関係図" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：補助簿6種類のネットワーク——「時系列で記録」する補助記入帳と「取引先・商品ごとに記録」する補助元帳の2グループ</figcaption>
-  </figure>
+  <img src="images/boki3-hojosho-map.svg" alt="補助記入帳と補助元帳の分類・連動関係の全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>日商簿記3級で学ぶ補助簿は以下の6種類です。</p>
 
   <table class="hojo-table">
@@ -203,6 +182,40 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="trap-box"><strong>⚠ 3級受験生の最大の罠：商品有高帳は「売価」ではなく必ず「原価」で記入！</strong><br>
   商品有高帳でいちばん間違えやすいのが、<strong>売上（払出）のとき</strong>の記入金額です。「100円で仕入れた商品を150円で売った」場合、売上帳には売価150円を書きますが、<strong>商品有高帳の払出欄に書くのは売価150円ではなく、原価100円です。</strong><br><br>
   なぜなら商品有高帳は「商品という在庫が、原価ベースでいくら会社に残っているか」を管理する帳簿だからです。売った値段（利益が乗った金額）を書いてしまうと、在庫の原価計算（先入先出法・移動平均法）が根本から崩れてしまいます。<strong>「売上帳は売価、商品有高帳は原価」</strong>とセットで唱えて覚えましょう。</div>
+
+  <div class="tip-box"><strong>🖩 実戦ハック：先入先出・ミスゼロ電卓ハック</strong><br>
+  試験の第2問で商品有高帳の払い出しを書くときは、計算用紙の余白に<strong>【＠100円のハコ】【＠120円のハコ】</strong>と縦に並べて手書きしましょう。先入先出法なら、上の古いハコから順番に指で消し込みながら電卓を叩く。この泥臭い「ハコ消しゴムハック」をやるだけで、本番のパニックによる集計ミスが100%ゼロになりますよ！</div>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">商品有高帳の払出欄、売った値段（売価）をそのまま書いちゃダメなんですか？売上帳と同じ数字を書きたくなっちゃいます……。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そこ、めちゃくちゃ良いところに気づきましたね！実はここ、多くの受験生が引っかかる最強のパズルポイントなんです。商品有高帳は「在庫が原価ベースでいくら会社に残っているか」を管理する帳簿。売った値段（利益込みの150円）をそのまま書いてしまうと、在庫の原価計算がガラガラと崩れてしまいます。だから払出欄には必ず「仕入れたときの原価（100円）」を書く。売上帳＝売価、商品有高帳＝原価。この対比をワンセットで体に叩き込んでください。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">「売上帳は売価、商品有高帳は原価」、呪文みたいに唱えて覚えます！</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その意気です！この1点さえ押さえて、さっきの「ハコ消しゴムハック」で先入先出を手を動かしながら解けば、第2問の商品有高帳問題はもう怖くありません。</div>
+      </div>
+    </div>
+  </div>
 
   <h2>🔍 ② どの取引でどの補助簿に記入するか——取引と帳簿の対応を一覧で整理する</h2>
   <p>1つの取引が複数の補助簿に記入されることもあります。例えば「掛売上」は売掛金元帳と商品有高帳の両方に記入します。</p>
@@ -405,8 +418,8 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">補助簿選びは、パズルのピースを当てはめるゲームだ！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">最初は「6種類も覚えられない」「何個○を付ければいいの」と絶望しかけますが、取引を「何が動いたか」で分解するコツさえ掴めば、驚くほどスラスラ解けるようになります。焦らず1つずつ、パズルを解く感覚で攻略していきましょう。<br><br>
+    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">補助簿選びも商品有高帳のハコ消しも、全部パズルのピースを当てはめるゲームだ！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">最初は「6種類も覚えられない」「原価と売価がごっちゃになる」と絶望しかけますが、取引を「何が動いたか」で分解するコツと、手を動かす「ハコ消しゴムハック」さえ掴めば、驚くほどスラスラ解けるようになります。焦らず1つずつ、パズルを解く感覚で攻略していきましょう。<br><br>
     この記事が少しでも「あ、わかった！」につながったら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいですし、次の記事を書く力になります！<br>
     そして、覚えた知識は使わなければすぐ忘れてしまうもの。Study Questで今日の学習時間を記録して、合格までの成長を「見える化」していきましょう。</p>
   </div>

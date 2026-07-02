@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"株式会社の取引（株式発行・剰余金の配当・利益準備金）【日商簿記3級】","description":"株式発行・剰余金の配当・利益準備金を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kabushiki.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"株式会社の取引（株式発行・剰余金の配当・利益準備金）【日商簿記3級】","description":"株式発行・剰余金の配当・利益準備金を例題つきで図解解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kabushiki.html","datePublished":"2026-05-07","dateModified": "2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -106,6 +106,9 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 .related ul{list-style:none;margin:0;padding:0;}
 .related li{padding:7px 0;border-bottom:1px solid var(--border);}
 .related li:last-child{border-bottom:none;}
+
+/* chat icon */
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 </style>
 </head>
 <body>
@@ -126,32 +129,65 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！実は、初めて簿記で「株式会社の取引」を習ったとき、資本金・資本準備金・利益準備金・繰越利益剰余金と、漢字だらけで名前の似た科目が一気に押し寄せてきて、「うわっ、なんじゃこりゃ……！」と脳内が完全にパニックになりました（笑）。<br>
+    でも実は、この単元は「外からの元手（株主が入れてくれたお金）」と「中での稼ぎ（会社が自分で稼いだお金）」の2グループに分ければ、一瞬でスッキリ整理できるゲームだったんです。資本金・資本準備金は元手グループ、利益準備金・繰越利益剰余金は稼ぎグループ——この2択さえ意識すれば、どの科目がどう動くかが手に取るようにわかるようになります。当時の僕と同じようにパニックになっている皆さんに、この裏技をそのままお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、僕のモチベーション維持のために、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
+
   <p class="lead">株式会社では、株式を発行して資金を集め、利益を株主に配当します。簿記3級では<strong>株式発行・剰余金の配当・利益準備金の積立</strong>の3つの処理を押さえれば十分です。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">株式会社の仕訳って「資本金・資本準備金・繰越利益剰余金・利益準備金」と科目が多くて整理できません。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">株式会社の仕訳って「資本金・資本準備金・繰越利益剰余金・利益準備金」と科目が多くて整理できません。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。整理のポイントは「外から入ってきたお金（株主からの出資）→資本金・資本準備金」「内部で稼いだ利益→繰越利益剰余金・利益準備金」という区分です。出資と利益が混ざらないようにするための仕組みです。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">焦らなくて大丈夫。整理のポイントは「外から入ってきたお金（株主からの出資）→資本金・資本準備金」「内部で稼いだ利益→繰越利益剰余金・利益準備金」という区分です。出資と利益が混ざらないようにするための仕組みです。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">配当のときに利益準備金も同時に積まないといけないのがわかりにくいです。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">配当のときに利益準備金も同時に積まないといけないのがわかりにくいです。なぜ配当するだけなのに、わざわざ別の積立まで発生するんですか？</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">利益準備金は「配当しすぎて会社の体力がなくならないための積立金」です。配当額の10分の1を強制的に積み立てるルールになっています。計算パターンを1つ覚えれば試験では必ず対応できますよ！</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そこ、すごく大事なポイントです！利益準備金は「配当しすぎて会社の体力（現金や資産）がガリガリに削られて倒産しないための、法律で決められた強制積立ルール」なんです。もし稼いだ利益を全部配当で吐き出してしまうと、会社に何も残らず、ちょっとした業績悪化ですぐ経営が傾いてしまいます。だから配当するたびに、その10分の1を会社の中に強制的に貯金箱（利益準備金）として残しておく——これが会社を守るためのブレーキの役割なんです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">なるほど、株主に気持ちよく配りすぎて会社が空っぽになるのを防ぐブレーキなんですね！それなら「配当額×1/10」という数字にもきちんと意味があるとわかって、覚えやすくなりました。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その理解ができれば完璧です！あとは「資本金の1/4に達するまで」という上限だけ覚えれば、計算パターンは1つだけ。試験では必ず対応できるようになりますよ！</div>
+      </div>
     </div>
   </div>
 
   <h2>🏢 ① 純資産の構成を把握する——資本金・資本準備金・繰越利益剰余金・利益準備金の違い</h2>
-  <figure style="margin:20px 0;">
-    <img src="images/boki3-kabushiki-map.svg" alt="株式会社の純資産の構成と繰越利益剰余金の変動フロー" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;">
-    <figcaption style="text-align:center;font-size:12px;color:#718096;margin-top:8px;">▲ 左：純資産4要素の積み上げ構造　右：繰越利益剰余金の増減フロー（上：利益で増加、下：配当で減少）</figcaption>
-  </figure>
+  <img src="images/boki3-kabushiki-map.svg" alt="株式会社の純資産構成と繰越利益剰余金の増減フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>図解の左側を見てください。純資産は大きく<strong>「株主の元手（資本金・資本準備金）」</strong>と<strong>「会社が稼いだ利益（利益準備金・繰越利益剰余金）」</strong>の2グループに分かれます。右側のフローの通り、繰越利益剰余金は毎期の純利益で増え、配当や積立で減ります——この増減の流れが株式会社の仕訳の核心です。</p>
   <p>株式会社の純資産は主に3つで構成されます。</p>
 
@@ -282,6 +318,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="index.html">無料で始める →</a></div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">株式会社の取引は、「外からの元手」か「中での稼ぎ」かを見分けるだけのシンプルなパズルです。この記事が少しでも「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
 
   <section class="faq" id="faq">
     <h2>よくある質問</h2>

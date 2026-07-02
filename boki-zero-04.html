@@ -27,7 +27,7 @@
   "description": "簿記の核心「仕訳」のしくみをゼロから解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki-zero-04.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-06-27",
+  "dateModified": "2026-07-02",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -140,6 +140,7 @@ li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 </style>
 </head>
 <body>
@@ -198,26 +199,26 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
   </div>
 
-  <p>ここで、図解②の単式簿記（左）を見てください。「4/1　商品販売　＋1,100円」と書いてあるだけです。お金が増えたのはわかりますが、<strong>なぜ増えたのか</strong>が全くわかりません。商品を売ったから？銀行から借りたから？株主に出資してもらったから？——「1行記録」では原因が記録に残らないのです。</p>
-  <p>一方、図解②の複式簿記（右）を見てください。左に<strong>【結果】現金 1,100円</strong>、右に<strong>【原因】売上 1,100円</strong>が同時に記録されています。<strong>「何が増えたか（結果）」と「なぜ増えたか（原因）」の2つの面を、1行の仕訳で同時に表現できる</strong>——これが複式簿記の最大の強みです。この仕訳を積み重ねることで、損益計算書や貸借対照表が自動的に出来上がります。会社の決算に家計簿が使えない理由は、まさにここにあります。</p>
+  <p>ここで、上のカードの単式簿記（左）を見てください。「4/1　商品販売　＋1,100円」と書いてあるだけです。お金が増えたのはわかりますが、<strong>なぜ増えたのか</strong>が全くわかりません。商品を売ったから？銀行から借りたから？株主に出資してもらったから？——「1行記録」では原因が記録に残らないのです。</p>
+  <p>一方、上のカードの複式簿記（右）を見てください。左に<strong>【結果】現金 1,100円</strong>、右に<strong>【原因】売上 1,100円</strong>が同時に記録されています。<strong>「何が増えたか（結果）」と「なぜ増えたか（原因）」の2つの面を、1行の仕訳で同時に表現できる</strong>——これが複式簿記の最大の強みです。この仕訳を積み重ねることで、損益計算書や貸借対照表が自動的に出来上がります。会社の決算に家計簿が使えない理由は、まさにここにあります。</p>
 
   <div class="sq-chat">
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student">🐣</div>
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">受験生</div>
         <div class="sq-chat-bubble">家計簿じゃダメな理由がいまいちピンとこないです…</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher">📚</div>
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
         <div class="sq-chat-bubble">たとえば「現金が100万円増えた」と単式簿記で記録したとします。でもその100万円は「商品を売ってもらったのか」「銀行から借りたのか」「株主から出資してもらったのか」が記録に残りません。複式簿記なら両面書くので原因と結果が同時に記録できるんです。</div>
       </div>
     </div>
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student">🐣</div>
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">受験生</div>
         <div class="sq-chat-bubble">なるほど！借りたお金と売上は全然違うから、区別して記録しないといけないんですね。</div>
@@ -227,10 +228,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <h2>仕訳のしくみ</h2>
 
-  <figure style="margin:20px 0 0;">
-    <img src="images/boki3-shiwake-map.png" alt="仕訳のしくみ 借方・貸方の覚え方「り」と「し」、単式簿記vs複式簿記の比較図" style="width:100%;border-radius:12px;">
-    <figcaption style="text-align:center;font-size:12px;color:var(--muted);margin-top:8px;">▲ 図解①「り」「し」の字で借方・貸方の左右を一発暗記　　図解②単式簿記（家計簿）vs 複式簿記（仕訳）の比較</figcaption>
-  </figure>
+  <img src="images/boki-zero-04-map.svg" alt="単式簿記vs複式簿記の比較と借方・貸方の左右ルール図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
 
   <p style="margin-top:20px;">複式簿記では、取引のメモを<strong>仕訳（しわけ）</strong>という形で書きます。仕訳は必ず「左」と「右」の2列に分けて書きます。</p>
 
@@ -279,7 +277,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <h2>借方・貸方の覚え方</h2>
 
-  <p>「借方」「貸方」は本当に紛らわしい言葉です。私も最初は何度も間違えました。でも、図解①を見てください。字の形で一発で覚えられる方法があります。</p>
+  <p>「借方」「貸方」は本当に紛らわしい言葉です。私も最初は何度も間違えました。でも、上の図の「り」「し」を見てください。字の形で一発で覚えられる方法があります。</p>
 
   <div class="memory-card">
     <div class="memory-half left">
@@ -305,31 +303,31 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <div class="sq-chat">
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student">🐣</div>
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">受験生</div>
         <div class="sq-chat-bubble">借方が左か右か、いつも混乱します。何かいい方法ありますか？</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher">📚</div>
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">「か<strong>り</strong>かた」の「り」は左払い、「か<strong>し</strong>かた」の「し」は右流れ、と覚えるのが有名な方法です。ただ正直、これも慣れるまでは混乱します。最終的には問題を解きながら「あ、これは左だな」と自然に出てくるようになるので、理屈より量をこなすのが近道です。</div>
+        <div class="sq-chat-bubble">その混乱、痛いほどわかります（笑）。僕、大学の講義で初めて仕訳を習ったとき、「左が借方で、右が貸方？」って言われた瞬間に頭が真っ白になったんです。「借りてる」んだから普通は右っぽいのに、なんで左なの…？「うわっ、なんじゃこりゃ！」って本気で脳がバグりました。</div>
       </div>
     </div>
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student">🐣</div>
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">結局は慣れですか（笑）</div>
+        <div class="sq-chat-bubble">まさに今の私です…！言葉の意味で覚えようとすると、余計こんがらがるんですよね。</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher">📚</div>
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
       <div>
         <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">そうです（笑）。最初の2〜3週間は混乱してOK。毎日少しでも仕訳を書いていれば、必ず自然に出てくるようになります。</div>
+        <div class="sq-chat-bubble">そうなんです、意味で覚えようとするのが沼なんです。でもある日、「か<strong>り</strong>かた」の「り」のハネが左に払われている形をしていて、「か<strong>し</strong>かた」の「し」の曲がりが右に流れている形をしていることに気づいた瞬間——パズルのピースがガチャッとハマるみたいに、一瞬で全部つながったんです。あの「わかった！」の感動は今でも覚えています。</div>
       </div>
     </div>
   </div>
@@ -345,6 +343,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <p>たとえばA社が「お金」、B社が「金銭」、C社が「現金」と書いたら、後で比較しようとしたとき同じ意味かどうか判断できません。そこで日本中のお店・会社が「現金」「売上」「買掛金」などの統一された勘定科目を使います。</p>
   <p>試験では主要な勘定科目を覚える必要がありますが、3級の範囲は約50〜60個です。最初から全部覚えようとせず、問題を解きながら自然に覚えていくのが効率的です。</p>
+
+  <div class="tip-box">
+    <strong>💡 仕訳パズルの絶対ルール：5要素の特等席</strong><br>
+    勘定科目を1つずつ覚える前に、これだけは絶対に頭に入れてください。<strong>資産・費用が増えたら左（借方）が特等席！ 負債・純資産・収益が増えたら右（貸方）が特等席！</strong> この【ホームポジション】さえ頭に入れば、どんな仕訳も「増えた要素を、決まった特等席（左か右）にはめるだけ」の簡単なゲームに変わるよ！勘定科目の名前を覚えるより先に、この5要素がどっちの特等席に座るかを体で覚えるのが最短ルートです。
+  </div>
 
   <h3>よく使う勘定科目（3級レベル）</h3>
 
@@ -431,6 +434,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="page-nav">
     <a class="prev" href="boki-zero-03.html">← 第3回へ</a>
     <a class="next" href="boki-zero-05.html">第5回へ →</a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事が少しでも参考になったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 </div>
 

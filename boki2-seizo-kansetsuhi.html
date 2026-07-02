@@ -167,6 +167,8 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.10);background:#F7FAFC;}
 </style>
 </head>
 <body>
@@ -176,6 +178,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年6月27日</p>
   <h1>【簿記2級】製造間接費の予定配賦・配賦差異を完全解説<br>T字勘定・シュラッター図・差異仕訳まで例題つき</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！工業簿記の勉強を始めて、僕が一番心を折られかけたのが「製造間接費」と「シュラッター図」でした。予定配賦率・基準操業度・予算差異・操業度差異……似たような言葉と公式が次々に出てきて、意味も分からないまま丸暗記しようとして「なんじゃこりゃ……！」と脳内が完全にパニック状態に。差異がプラスなのかマイナスなのかも、本番になるたびに頭が真っ白になっていました。<br>
+    でもある日、この差異の正体を「社長のストーリー」に例えて考えてみたら、驚くほどスッと腹落ちしたんです。丸暗記をやめて、ストーリーと図解で一瞬で解ける裏技を、今日は僕の実体験を交えて惜しみなく全部お見せします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
+  </div>
 
   <div class="point-card">
     <div class="pc-label">この記事でわかること（5秒まとめ）</div>
@@ -190,30 +202,39 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="lead">製造間接費は工業簿記の核心です。「なぜ予定を使うのか」「差異がプラスかマイナスか」「どこで調整するのか」の3点が本試験の得点に直結します。T字勘定の左右で判断する方法を覚えれば、緊張した試験会場でもド忘れしません。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">有利差異がプラスかマイナスか、いつも本番で混乱してしまいます。</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">有利差異がプラスかマイナスか、いつも本番で混乱してしまいます……。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">暗記で覚えようとすると本番で飛びます。T字勘定の「差額がどちら側に出るか」を見るだけで判断できる方法を覚えましょう——焦らなくて大丈夫です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その気持ち、痛いほどわかります。僕も本番で「あれ、どっちがプラスだっけ？」って一瞬フリーズしたことがあるので……。でもこれ、暗記じゃなくて「パズル」として見た瞬間に一生忘れなくなります。T字勘定は左右にブロックを積むゲームだと思ってください。左（借方）にブロックがはみ出た＝「まだ足りない分がある」から<strong>プラスして補う＝不利差異</strong>。右（貸方）にブロックがはみ出た＝「配りすぎていた分がある」から<strong>マイナスして戻す＝有利差異</strong>。図形として「はみ出た方向」を見るだけで、一瞬で答えが出せます。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">シュラッター図も出てくるんですが、何を求めているのかよくわからないです……</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">パズルだと思うと一気に腹落ちします！シュラッター図も出てくるんですが、何を求めているのかよくわからないです……</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">シュラッター図は「配賦差異の内訳を知りたい」ときに使います。「予算どおりにコストを使えたか（予算差異）」と「工場をどれだけ稼働させたか（操業度差異）」の2つに分解できます。図の形を先に覚えてから計算式に入ると理解が早いですよ。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">シュラッター図は、さっきのT字勘定で出した「差額」をさらに解剖する道具です。「予算どおりにコストを使えたか（予算差異）」と「工場をどれだけ稼働させたか（操業度差異）」の2つの原因に切り分けられます。犯人が1人じゃなくて2人いる、と思うとイメージしやすいですよ。図の形を先に覚えてから計算式に入ると、驚くほどスムーズに解けるようになります。</div>
+      </div>
     </div>
   </div>
 
   <h2>🏭 製造間接費とは——直接費と何が違うのか</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki2-seizo-kansetsuhi-map.svg" alt="製造間接費の予定配賦フローと配賦差異の判定" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：直接費 vs 間接費の分類→予定配賦率設定→毎月配賦→配賦差異（有利・不利）の判定</figcaption>
-  </figure>
+  <img src="images/boki2-seizo-kansetsuhi-map.svg" alt="製造間接費の予定配賦とシュラッター図による差異分析の全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>製造間接費は「予定配賦率 × 実際操業度」で各製品へ配賦し、実際発生額との差額を期末に配賦差異として処理するのが基本の流れです。</p>
 
   <p>製品を作るコストのうち、「製品Aにいくらかかったか」と直接結びつけられるものが<strong>直接費</strong>、結びつけにくいものが<strong>間接費（製造間接費）</strong>です。</p>
@@ -404,6 +425,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <h3>⚔ Study Quest で工業簿記を攻略しよう</h3>
     <p>製造間接費・配賦差異・シュラッター図の学習記録をRPG感覚で管理。試験日まで継続できます。</p>
     <a href="index.html">無料で始める →</a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">ここまで読んでくれて本当にありがとうございます！この記事が少しでも役に立ったら、僕の毎日の執筆モチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <div class="matome">

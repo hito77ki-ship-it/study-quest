@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"固定資産の取得・売却の仕訳【日商簿記3級】","description":"固定資産の取得・売却仕訳と売却損益の計算を例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kotei.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"固定資産の取得・売却の仕訳【日商簿記3級】","description":"固定資産の取得・売却仕訳と売却損益の計算を例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-kotei.html","datePublished":"2026-05-07","dateModified": "2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -102,7 +102,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
@@ -122,24 +123,60 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！実は、初めて簿記で「固定資産の売却」を習ったとき、「取得原価はそのまま貸方に出すのに、なぜ減価償却累計額をわざわざ借方に持ってきて相殺するの？」「土地を売ったのに、なんで売掛金が使えないの？」と、パズルのルールが二重に絡んできて「うわっ、なんじゃこりゃ……！」と脳内が完全にパニックになりました（笑）。<br>
+    でも実は、この単元の正体は「今の価値（帳簿価額）」と「実際に売れた値段（売却価格）」を天秤に乗せて、どっちが重いかを見るだけのシンプルな比較ゲームだったんです。天秤が売却価格側に傾けば儲け（売却益）、帳簿価額側に傾けば損（売却損）——この天秤のイメージさえ持てば、複雑に見えた仕訳が一瞬で解けるようになります。当時の僕と同じようにパニックになっている皆さんに、この裏技をそのままお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、僕のモチベーション維持のために、めちゃくちゃ嬉しいです！</p>
+  </div>
+
   <p class="lead">建物・備品・車両など長期間使う資産を<strong>固定資産</strong>といいます。取得時は付随費用を含めた金額で記録し、売却時は帳簿価額と売却価格の差額で損益を計算します。減価償却（定額法）の記事と合わせて読むと理解が深まります。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">固定資産の売却がどうしても苦手で…。固定資産売却損と売却益のどちらになるかの判断がいつも混乱します。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">固定資産の売却がどうしても苦手で…。固定資産売却損と売却益のどちらになるかの判断がいつも混乱します。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。「売却価格と帳簿価額のどちらが大きいか」だけ確認すればいいです。帳簿価額より高く売れた→売却益（収益）、帳簿価額より安く売れた→売却損（費用）です。まず帳簿価額を正確に計算することがすべての出発点です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">焦らなくて大丈夫。「売却価格と帳簿価額のどちらが大きいか」だけ確認すればいいです。帳簿価額より高く売れた→売却益（収益）、帳簿価額より安く売れた→売却損（費用）です。まず帳簿価額を正確に計算することがすべての出発点です。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">帳簿価額ってどうやって計算するんでしたっけ？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">帳簿価額ってどうやって計算するんでしたっけ？期中に売ったときは、なんだか計算が複雑になる気がして怖いです…</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">「取得原価 − 減価償却累計額」です。累計額は今まで費用にした合計額なので、それを引いた残りが今の帳簿上の価値です。この計算さえ確実にできれば、売却問題は必ず解けますよ！</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">基本は「取得原価 − 減価償却累計額」です。ただ、期中売却のときは、そこにもう1手間かかります。決算日を待たずに手放すので、「今年の頭から売った月まで、何ヶ月使ったか」を指折り数えて、その分だけ先に減価償却費を計上しなければいけません。この「使った月数を数えるパズル」を飛ばして帳簿価額を計算すると、必ず答えがズレます。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">なるほど、いきなり売却の仕訳を書くんじゃなくて、先に「何ヶ月分」を数えて償却費を計上するんですね！</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その順番が命です！①月割りで当期分の減価償却費を計上 → ②帳簿価額を更新 → ③そこでようやく天秤（帳簿価額 vs 売却価格）に乗せる、という3ステップを守れば、期中売却も必ず解けますよ！</div>
+      </div>
     </div>
   </div>
 
@@ -175,10 +212,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h2>💰 ② 固定資産を売却したときの仕訳——帳簿価額との差額が固定資産売却損益になる</h2>
-  <figure style="margin:20px 0;">
-    <img src="images/boki3-kotei-map.svg" alt="固定資産の売却損益計算 図解" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;">
-    <figcaption style="text-align:center;font-size:12px;color:#718096;margin-top:8px;">▲ 左：売却損のケース（帳簿価額400,000 ＞ 売却額350,000）　右：売却益のケース（帳簿価額400,000 ＜ 売却額500,000）</figcaption>
-  </figure>
+  <img src="images/boki3-kotei-map.svg" alt="固定資産売却損益の帳簿価額と売却価格の比較フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>図解の通り、売却損益の計算は<strong>「帳簿価額（取得原価 − 減価償却累計額）」と「売却価格」の比較</strong>で決まります。帳簿価額より高く売れれば売却益、安ければ売却損です。まずこの構造を頭に入れてから例題に進みましょう。</p>
   <p>売却時は「帳簿価額」と「売却価格」を比べて、差額を<strong>固定資産売却損（費用）</strong>または<strong>固定資産売却益（収益）</strong>として記録します。</p>
 
@@ -367,6 +401,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">未払金</span><span class="result">商品以外の後払い購入 → 負債</span></div>
     <div class="matome-row"><span class="trigger">修繕費</span><span class="result">原状回復・維持 → 費用</span></div>
     <div class="matome-row"><span class="trigger">資本的支出</span><span class="result">価値向上・耐用年数延長 → 資産（建物等に加算）</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">固定資産の売却は、帳簿価額と売却価格を天秤に乗せるだけのシンプルなパズルです。この記事が少しでも「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 </div>
 <section class="faq" id="faq">

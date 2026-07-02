@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】総合原価計算を完全解説｜ボックス図・平均法・先入先出法","description":"材料費と加工費を2つのボックス図で分けて計算する実戦解法。平均法・先入先出法を例題つきで攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-sogo-genka.html","datePublished":"2026-05-09","dateModified":"2026-06-27","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】総合原価計算を完全解説｜ボックス図・平均法・先入先出法","description":"材料費と加工費を2つのボックス図で分けて計算する実戦解法。平均法・先入先出法を例題つきで攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-sogo-genka.html","datePublished":"2026-05-09","dateModified":"2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -184,13 +184,16 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+
+/* chat icon */
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 総合原価計算</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年6月27日</p>
+  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年7月2日</p>
   <h1>【簿記2級】総合原価計算を完全解説<br>ボックス図・平均法・先入先出法を例題つきで攻略</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
 
@@ -199,7 +202,9 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
       <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
       <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
     </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！実は、これから紹介する各種の論点は、どれも僕が大学の講義内で初めて学んだとき、「うわっ、なんじゃこりゃ……！」と頭を抱えた難しいものばかりでした（笑）。だからこそ、当時の僕と同じように悩んでいる皆さんに、どこよりも直感的にパズル感覚で理解してもらえるよう、僕なりの分かりやすい図解を交えてお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    正直に告白すると、総合原価計算を初めて勉強したとき、僕は「材料費と加工費、なんで計算方法が違うの…？」と全く腑に落ちないまま、ボックス図を1枚にまとめて計算して盛大に爆死しました（笑）。おまけに「完成品換算量」という謎ワードが出てきた瞬間、「うわっ、なんじゃこりゃ……日本語のはずなのに1ミリも意味がわからん！」と本気で固まったのを今でも覚えています。<br>
+    でも実は、材料費と加工費の違いは「電気代（加工費）は使った分だけ発生するけど、材料は最初にドバッと全部投入する」というたった1つの前提を知っていれば一瞬で腑に落ちる話でした。この記事では、当時の僕がつまずいたポイントを全部つぶしながら、ボックス図を2枚に分けて解く"型"を一緒に叩き込んでいきます！</p>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、毎日のブログ執筆やアプリ開発のモチベーション維持のために、記事の末尾のほうにある<strong>「いいねボタン」</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
   </div>
 
@@ -216,29 +221,40 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="lead">総合原価計算は「同じ製品を大量に作るとき、1か月分の費用を完成品と作りかけ（月末仕掛品）に分ける計算」です。試験で確実に点を取るには、ボックス図（T字勘定）を使った手順を体に覚え込ませることが最重要です。この記事では材料費と加工費を分けた正しい解法を例題つきで完全解説します。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">完成品換算量って何度見ても意味がわかりません。なぜ月末仕掛品を換算しないといけないんですか？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">完成品換算量って何度見ても意味がわかりません。なぜ月末仕掛品をそのまま数えちゃダメで、わざわざ換算しないといけないんですか……？答案用紙を前にすると毎回手が止まります。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">月末仕掛品は「作りかけ」なので、工場の電気代（加工費）を完成品と同じように100%使ったわけじゃありません。50%しか進んでいないなら「半分の電気代しか使っていない」ので、半分の数量として計算します。これが完成品換算量です——焦らなくて大丈夫です。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その感覚、僕も最初まったく同じでした。月末仕掛品は「作りかけ」なので、工場の電気代（加工費）を完成品と同じように100%使ったわけじゃありません。50%しか進んでいないなら「半分の電気代しか使っていない」ので、半分の数量として計算します。これが完成品換算量です——焦らなくて大丈夫、一緒に整理しましょう。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">でも材料費は換算量を使わないんですよね？なぜですか？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">でも材料費は換算量を使わないんですよね？同じ「月末仕掛品」なのに、材料費と加工費で扱いが違うのがまだしっくりきません……</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">材料は製造の最初（始点）に全部ドバッと入れるので、50%しか進んでいなくても材料は100%使い切っています。だから月末仕掛品の材料費は「完成品と同じ個数分」として計算します。材料費と加工費で扱いが違う——これが総合原価計算の最大のポイントです。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">材料は製造の最初（始点）に全部ドバッと入れるので、50%しか進んでいなくても材料はもう100%使い切っています。だから月末仕掛品の材料費は「完成品と同じ個数分」として計算します。材料費と加工費で扱いが違う——これが総合原価計算の最大のポイントです。この1点さえ腹落ちすれば、あとはボックス図を埋めるだけの単純作業になりますよ！</div>
+      </div>
     </div>
   </div>
 
   <h2>🏭 個別原価計算との違い——総合原価計算はどんな製品に使う？</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki2-sogo-genka-map.svg" alt="総合原価計算——ボックス図の構造と材料費（始点投入）・加工費（進捗度）の違い、平均法vs先入先出法" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：仕掛品ボックス図の構造、材料費（個数で換算）vs 加工費（個数×進捗度で換算）の違い、平均法・先入先出法の比較</figcaption>
-  </figure>
+
+  <img src="images/boki2-sogo-genka-map.svg" alt="総合原価計算の材料費・加工費ボックス図と平均法・先入先出法の解法マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+
   <p>総合原価計算の核心は「材料費と加工費で月末仕掛品の換算量の計算が違う」点です。材料費は始点で全量投入なので進捗度を掛けず、加工費は進捗度を掛けた換算量で計算します。</p>
 
   <table>
@@ -604,6 +620,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">平均法の分母</span><span class="result">完成品 ＋ 月末（換算）——月初は分母に含めない</span></div>
     <div class="matome-row"><span class="trigger">先入先出法の分母</span><span class="result">月初残り換算 ＋ 当月新規完成 ＋ 月末換算（月初の投入量は除く）</span></div>
     <div class="matome-row"><span class="trigger">検算</span><span class="result">完成品原価 ＋ 月末仕掛品原価 ＝ 総投入原価（月初＋当月）</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">総合原価計算は「ボックス図を2枚埋めるだけ」のパズルです</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">「完成品換算量」に固まっていた頃の僕が今の記事を読んだら、きっと肩の力が抜けたと思います。材料費と加工費の前提さえ腹落ちすれば、あとは同じ手順の繰り返し。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、工業簿記マスターへの一歩を刻んでおきましょう。</p>
+    <a href="index.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
   </div>
 
   <h2>よくある質問</h2>

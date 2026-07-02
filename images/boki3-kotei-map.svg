@@ -1,81 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430">
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
-  <rect width="760" height="380" fill="#FAFAFA" rx="12"/>
+  <rect width="760" height="430" rx="16" fill="#F8FAFC"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">固定資産の売却損益——帳簿価額（ちょうぼかがく）vs 売却価格の天秤マップ</text>
+  <text x="380" y="47" text-anchor="middle" font-size="10.5" fill="#64748B">天秤が傾いた方向で「売却損」か「売却益」かが一瞬でわかる</text>
 
-  <!-- Title -->
-  <rect x="60" y="12" width="640" height="36" fill="#FEF3C7" rx="8"/>
-  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1A202C">固定資産（こていしさん）の売却損益を図解で理解しよう</text>
+  <line x1="380" y1="66" x2="380" y2="335" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="5,4"/>
 
-  <!-- ── 左：売却損のケース ── -->
-  <rect x="16" y="60" width="356" height="30" fill="#FCA5A5" rx="6 6 0 0"/>
-  <text x="194" y="81" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">❌ 売却損が出るケース</text>
+  <!-- ===== 左：売却損のケース ===== -->
+  <rect x="55" y="62" width="280" height="26" rx="13" fill="#FDF2F8"/>
+  <text x="195" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">❌ 売却損のケース</text>
 
-  <!-- 取得原価バー (loss) -->
-  <rect x="30" y="102" width="328" height="32" fill="#FECACA" rx="4"/>
-  <text x="110" y="123" font-size="11" font-weight="700" fill="#9B2C2C">取得原価（しゅとくげんか）</text>
-  <text x="340" y="123" text-anchor="end" font-size="11" font-weight="700" fill="#9B2C2C">600,000</text>
+  <!-- 地面と支柱 -->
+  <line x1="60" y1="225" x2="330" y2="225" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="195,175 175,205 215,205" fill="#94A3B8"/>
+  <rect x="190" y="205" width="10" height="20" fill="#94A3B8"/>
 
-  <!-- 減価償却累計額バー -->
-  <rect x="30" y="140" width="200" height="28" fill="#FEE2E2" rx="4"/>
-  <text x="108" y="159" font-size="10" fill="#B91C1C">－減価償却累計額</text>
-  <text x="228" y="159" text-anchor="end" font-size="10" fill="#B91C1C">200,000</text>
+  <!-- 天秤の梁（帳簿価額側が重くて下がる） -->
+  <line x1="90" y1="195" x2="300" y2="155" stroke="#374151" stroke-width="4"/>
 
-  <!-- 帳簿価額バー -->
-  <rect x="30" y="174" width="128" height="32" fill="#FEF2F2" rx="4" stroke="#FCA5A5" stroke-width="1.5"/>
-  <text x="94" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">帳簿価額</text>
-  <text x="156" y="193" text-anchor="end" font-size="10" fill="#991B1B">400,000</text>
+  <!-- 左の皿：帳簿価額（重い） -->
+  <line x1="90" y1="195" x2="90" y2="225" stroke="#374151" stroke-width="2"/>
+  <circle cx="90" cy="248" r="40" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="90" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">帳簿価額</text>
+  <text x="90" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">400,000円</text>
 
-  <!-- 売却価額バー -->
-  <rect x="30" y="216" width="88" height="28" fill="#FEE2E2" rx="4" stroke="#FCA5A5" stroke-width="1"/>
-  <text x="73" y="235" text-anchor="middle" font-size="10" fill="#B91C1C">売却額</text>
-  <text x="116" y="235" text-anchor="end" font-size="10" fill="#B91C1C">350,000</text>
+  <!-- 右の皿：売却価格（軽い） -->
+  <line x1="300" y1="155" x2="300" y2="185" stroke="#374151" stroke-width="2"/>
+  <circle cx="300" cy="206" r="34" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2.5"/>
+  <text x="300" y="202" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9D174D">売却価格</text>
+  <text x="300" y="219" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">350,000円</text>
 
-  <!-- 損額バー -->
-  <rect x="122" y="216" width="36" height="28" fill="#FECACA" rx="4" stroke="#EF4444" stroke-width="1.5"/>
-  <text x="140" y="235" text-anchor="middle" font-size="9" font-weight="700" fill="#B91C1C">損</text>
+  <!-- 結果 -->
+  <rect x="45" y="298" width="300" height="52" rx="8" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="195" y="318" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D">400,000 － 350,000 ＝ 差額 50,000円</text>
+  <text x="195" y="337" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D">→ 固定資産売却損（費用）</text>
 
-  <!-- 結果ボックス (loss) -->
-  <rect x="30" y="258" width="328" height="40" fill="#FEE2E2" rx="6"/>
-  <text x="194" y="274" text-anchor="middle" font-size="11" fill="#374151">帳簿価額400,000 ＞ 売却額350,000</text>
-  <text x="194" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#B91C1C">→ 固定資産売却損 50,000（借方・費用）</text>
+  <!-- ===== 右：売却益のケース ===== -->
+  <rect x="425" y="62" width="280" height="26" rx="13" fill="#F0FFF4"/>
+  <text x="565" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">⭕ 売却益のケース</text>
 
-  <!-- ── 右：売却益のケース ── -->
-  <rect x="388" y="60" width="356" height="30" fill="#6EE7B7" rx="6 6 0 0"/>
-  <text x="566" y="81" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46">✅ 売却益が出るケース</text>
+  <line x1="430" y1="225" x2="700" y2="225" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="565,175 545,205 585,205" fill="#94A3B8"/>
+  <rect x="560" y="205" width="10" height="20" fill="#94A3B8"/>
 
-  <!-- 取得原価バー (gain) -->
-  <rect x="402" y="102" width="328" height="32" fill="#D1FAE5" rx="4"/>
-  <text x="480" y="123" font-size="11" font-weight="700" fill="#065F46">取得原価（しゅとくげんか）</text>
-  <text x="722" y="123" text-anchor="end" font-size="11" font-weight="700" fill="#065F46">600,000</text>
+  <!-- 天秤の梁（売却価格側が重くて下がる） -->
+  <line x1="460" y1="155" x2="670" y2="195" stroke="#374151" stroke-width="4"/>
 
-  <!-- 減価償却累計額バー -->
-  <rect x="402" y="140" width="200" height="28" fill="#A7F3D0" rx="4"/>
-  <text x="480" y="159" font-size="10" fill="#065F46">－減価償却累計額</text>
-  <text x="600" y="159" text-anchor="end" font-size="10" fill="#065F46">200,000</text>
+  <!-- 左の皿：帳簿価額（軽い） -->
+  <line x1="460" y1="155" x2="460" y2="185" stroke="#374151" stroke-width="2"/>
+  <circle cx="460" cy="206" r="34" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="460" y="202" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">帳簿価額</text>
+  <text x="460" y="219" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">400,000円</text>
 
-  <!-- 帳簿価額バー -->
-  <rect x="402" y="174" width="128" height="32" fill="#ECFDF5" rx="4" stroke="#6EE7B7" stroke-width="1.5"/>
-  <text x="466" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">帳簿価額</text>
-  <text x="528" y="193" text-anchor="end" font-size="10" fill="#065F46">400,000</text>
+  <!-- 右の皿：売却価格（重い） -->
+  <line x1="670" y1="195" x2="670" y2="225" stroke="#374151" stroke-width="2"/>
+  <circle cx="670" cy="248" r="40" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2.5"/>
+  <text x="670" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">売却価格</text>
+  <text x="670" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">500,000円</text>
 
-  <!-- 売却価額バー（帳簿より大きい） -->
-  <rect x="402" y="216" width="150" height="28" fill="#A7F3D0" rx="4" stroke="#6EE7B7" stroke-width="1"/>
-  <text x="460" y="235" text-anchor="middle" font-size="10" fill="#065F46">売却額 500,000</text>
-
-  <!-- 益額バー -->
-  <rect x="530" y="216" width="22" height="28" fill="#34D399" rx="4" stroke="#059669" stroke-width="1.5"/>
-  <text x="541" y="235" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">益</text>
-
-  <!-- 結果ボックス (gain) -->
-  <rect x="402" y="258" width="328" height="40" fill="#D1FAE5" rx="6"/>
-  <text x="566" y="274" text-anchor="middle" font-size="11" fill="#374151">帳簿価額400,000 ＜ 売却額500,000</text>
-  <text x="566" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">→ 固定資産売却益 100,000（貸方・収益）</text>
-
-  <!-- 中央の ＝ -->
-  <text x="380" y="195" text-anchor="middle" font-size="14" font-weight="700" fill="#9CA3AF">⇔</text>
+  <!-- 結果 -->
+  <rect x="415" y="298" width="300" height="52" rx="8" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="565" y="318" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">500,000 － 400,000 ＝ 差額 100,000円</text>
+  <text x="565" y="337" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">→ 固定資産売却益（収益）</text>
 
   <!-- 下部まとめ -->
-  <rect x="16" y="312" width="728" height="52" fill="#FFFBEB" rx="8" stroke="#FCD34D" stroke-width="1"/>
-  <text x="380" y="334" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">🎯 計算の鉄則：帳簿価額（取得原価 ー 減価償却累計額）と売却価格を比べる</text>
-  <text x="380" y="354" text-anchor="middle" font-size="11" fill="#374151">売却価格 ＞ 帳簿価額 → 売却益（貸方・収益）　　売却価格 ＜ 帳簿価額 → 売却損（借方・費用）</text>
+  <rect x="30" y="368" width="700" height="48" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="390" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">🎯 計算の鉄則：帳簿価額（取得原価－減価償却累計額）と売却価格を比べる</text>
+  <text x="380" y="407" text-anchor="middle" font-size="10.5" fill="#374151">天秤が売却価格側に傾けば売却益、帳簿価額側に傾けば売却損——傾いた方向が答えそのもの！</text>
 </svg>

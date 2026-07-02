@@ -101,7 +101,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.10);background:#F7FAFC;}</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
@@ -121,33 +122,51 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！初めて「三分法」を習ったとき、僕は本気で「なんじゃこりゃ……！」となりました。だって、商品を売ったその瞬間に儲けを計算しないんですよ？仕入は費用として記録するだけ、売上は収益として記録するだけ。利益はどこにも出てこない。おまけに決算になったら「しくりくりし」なんて謎の呪文まで飛び出してきて、頭が完全に置いてけぼりになりました（笑）。<br>
+    でもこれ、正体がわかれば「儲けの計算を、期末に一気にまとめてやる」というシンプルな仕組みだったんです。その"儲けを後回しにする理由"に気づいた瞬間、一気に霧が晴れました。今日は僕がつまずいたポイントをそのまま攻略法に変換して、仕入・売上・繰越商品の3勘定を一気に整理します！</p>
+  </div>
+
   <p class="lead">簿記3級の取引の大半は「商品を仕入れて売る」です。この仕訳を正確に書けるかどうかが、合否に直結します。<strong>三分法</strong>は仕入・売上・繰越商品の3つの勘定を使う、最も基本的な商品売買の記録方法です。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">「三分法」って名前からして難しそうで…仕入・売上・繰越商品の3つを使い分けるのがよくわかりません。</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">「三分法」って名前からして難しそうで…仕入・売上・繰越商品の3つを使い分けるのがよくわかりません。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。三分法の一番のポイントは「売ったときに利益を計算しない」という点です。仕入は費用として記録するだけ、売上は収益として記録するだけ。差額が利益になるのは決算のときです。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その気持ち、痛いほどわかります！僕も最初はそこで固まりました。でも三分法の一番のポイントはたった1つ、「売ったときにその場で利益を計算しない」ということだけなんです。仕入は費用としてポンと記録するだけ、売上は収益としてポンと記録するだけ。差額が利益として姿を現すのは、決算というクライマックスのタイミングだけ。焦らず、この"後回し設計"を体感してください。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">じゃあ「繰越商品」ってどこで使うんですか？</div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">じゃあ「繰越商品」ってどこで使うんですか？名前からして謎です…</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">期末に売れ残った商品を次の期に繰り越すための勘定です。「しくりくりし」という決算整理仕訳で登場します。聞き慣れない言葉ですが、パターンを一度覚えれば必ず解けますよ！</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">期末に売れ残った商品を、次の期にバトンタッチするための勘定です。「しくりくりし」という決算整理仕訳で満を持して登場します。僕も初見では「呪文か！」と思いましたが、パターンさえ一度体に叩き込めば、あとは機械的に解けるようになりますよ！</div>
+      </div>
     </div>
   </div>
 
   <h2>📦 三分法の3つの勘定科目——仕入・売上・繰越商品はそれぞれ何の要素？</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-sanpou-map.svg" alt="三分法の3勘定科目（仕入・売上・繰越商品）と決算整理しくりくりし" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：三分法の3勘定科目の分類と「しくりくりし」で売上原価を確定させる仕組み</figcaption>
-  </figure>
+  <img src="images/boki3-sanpou-map.svg" alt="三分法の仕入・売上・繰越商品フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>三分法では商品取引に<strong>仕入・売上・繰越商品</strong>の3つを使い分けます。決算時の「しくりくりし」で売上原価が確定します。</p>
 
   <div class="san-grid">
@@ -294,6 +313,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">売上の返品・値引き</span><span class="result">売上 ／ 売掛金</span></div>
     <div class="matome-row"><span class="trigger">決算①期首商品の振替</span><span class="result">仕入 ／ 繰越商品</span></div>
     <div class="matome-row"><span class="trigger">決算②期末商品の振替</span><span class="result">繰越商品 ／ 仕入</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">ここまで読んでくれて本当にありがとうございます！この記事が少しでも役に立ったら、僕の毎日の執筆モチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 </div>
 <section class="faq" id="faq">

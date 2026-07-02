@@ -27,7 +27,7 @@
   "description": "現金過不足を「実査→原因判明→決算整理」の3ステップで解説。",
   "url": "https://hito77ki-ship-it.github.io/study-quest/boki3-kafusoku.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-06-26",
+  "dateModified": "2026-07-02",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://hito77ki-ship-it.github.io/study-quest/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://hito77ki-ship-it.github.io/study-quest/"}
 }
@@ -130,7 +130,8 @@ li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}</style>
 </head>
 <body>
 
@@ -160,39 +161,55 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">
-    現金を数えたら帳簿と合わない——実務でも試験でも頻出の状況です。<br>
-    現金過不足は「①実査 → ②原因判明 → ③決算整理」の<strong>3つのフェーズ</strong>で処理します。
-    流れを把握してしまえば、雑損・雑益の判断も迷わなくなります。
-  </p>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    実は僕、大学の空き時間に居酒屋でアルバイトをしていて、閉店後に毎日レジの現金を数える係でした。レジの記録と、数えた実際の小銭・お札の金額が、たった1円合わないだけで「うわっ、なんじゃこりゃ……！どこかで絶対ミスってるのに、原因が全然わからん！」と本気で脳内パニックを起こしていました（笑）。<br>
+    でも簿記を勉強して分かったんです。あの1円のズレは、犯人探しをその場でしなくていい——<strong>「現金過不足」という一時的な仮のハコ</strong>にとりあえず放り込んでおいて、後で原因が分かったら正しい場所に移し替え、それでも決算日までに犯人が見つからなければ「雑損・雑益」として気持ちよく清算してしまえばいい、というゲームのルールだったんです。<br>
+    今日は、当時レジの前で固まっていた僕の目線で、この【一時的な仮のハコと決算清算ストーリー】を一瞬で解けるようになるまで、一緒に攻略していきます！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
 
   <!-- 導入sq-chat -->
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">現金を何回数えても帳簿と合わないんですが、どうすればいいですか…？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">現金を何回数えても帳簿と合わないんですが、どうすればいいですか…？原因がわからないのに仕訳なんて切れる気がしません。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">まず「現金過不足」という勘定科目で一時的に記録しておきましょう。原因がわかったときに正しい科目に直せます。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">原因が分からなくて大丈夫です。まず「現金過不足」という勘定科目に、差額をそのまま一時的に放り込んでおきましょう。犯人が誰かは後で考えればいい——これが最初の一手です。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">決算まで原因がわからなかったらどうなりますか？</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">決算まで原因がわからなかったらどうなりますか？ずっと「仮」のままだと気持ち悪いです……</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">その場合は「雑損」か「雑益」に振り替えます。これが3つ目のフェーズです。順番に見ていきましょう。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その気持ち、正解です！仮のハコは決算日まで放置してはいけません。原因不明のまま期末を迎えたら、強制的に「雑損」か「雑益」に振り替えて必ずゼロにします。これが3つ目のフェーズです。順番に見ていきましょう。</div>
+      </div>
     </div>
   </div>
 
   <!-- 3ステップ概要 -->
   <h2>現金過不足の3ステップ</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-kafusoku-map.svg" alt="現金過不足の3ステップ：実査→仮処理→原因判明で振替→決算で雑益・雑損へ清算" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：現金過不足の3ステップ（実査→振替→清算）</figcaption>
-  </figure>
+  <img src="images/boki3-kafusoku-map.svg" alt="現金過不足の実査・原因判明・決算整理3ステップフロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+
   <p>「現金過不足」は<strong>仮の勘定科目</strong>です。上の3ステップで必ず最後はゼロになります。</p>
 
   <div class="flow-wrap">
@@ -301,13 +318,33 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p>決算時点でまだ現金過不足が残っていたら、原因不明として<strong>雑損</strong>または<strong>雑益</strong>に振り替えます。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">雑損と雑益、どっちを使えばいいか毎回迷います…</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">雑損と雑益、どっちを使えばいいか毎回迷います…現金過不足の残高が借方だったか貸方だったか、覚えるだけでもう精一杯で。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">迷わなくて大丈夫です。「現金過不足を消す（反対側に書く）」→ 残った側が左なら雑損、右なら雑益。それだけです。費用は左・収益は右、という基本に従えば自然に決まります。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">覚える必要すらないんです。決算整理は「残高を消すために、反対側に同じ数字を書くだけ」のパズルだと思ってください。現金過不足が借方に残っているなら、消すために貸方へ書く——すると自動的に借方側に空きができるので、そこに「雑損」が入ります。逆に貸方に残っているなら、消すために借方へ書いて、貸方に空いたスペースへ「雑益」が入る。暗記じゃなくて、その場で反対側に書くだけで答えが出てくる仕組みなんです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">……あ、「消す＝反対側に書く」だけでいいなら、雑損・雑益のどっちが正しいかを丸暗記する必要が最初からなかったんですね！</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その感覚です！費用は左（借方）・収益は右（貸方）という基本と合わせれば、雑損か雑益かは機械的に決まります。この型さえ体に染み込めば、決算整理のこのパートはもう考える必要すらなくなりますよ。</div>
+      </div>
     </div>
   </div>
 
@@ -446,6 +483,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
       📒 簿記3級・2級 独学攻略ガイド →
     </a>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">現金過不足は「反対側に書いて消すだけ」のパズルです</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">レジの前でパニックになっていた居酒屋バイト時代の僕に教えてあげたい——1円のズレも、仮のハコに放り込んで、反対側に書いて消すだけで必ず片づく。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、簿記3級マスターへの一歩を刻んでおきましょう。</p>
+    <a href="index.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
   </div>
 
 </div>

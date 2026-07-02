@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="420" rx="16" fill="#FEFCF9"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">借方・貸方の左右ルールと5要素の特等席</text>
+  <text x="380" y="46" text-anchor="middle" font-size="11" fill="#94A3B8">5つの要素には「増えたら座るホームポジション」が決まっている</text>
+
+  <text x="195" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">借方（左）</text>
+  <text x="565" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">貸方（右）</text>
+  <line x1="380" y1="68" x2="380" y2="328" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3,5"/>
+
+  <!-- ① 資産（借方） -->
+  <rect x="50" y="80" width="290" height="110" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <text x="195" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">① 資産</text>
+  <text x="195" y="136" text-anchor="middle" font-size="10" fill="#374151">現金・売掛金・建物</text>
+  <text x="195" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">増加 → 借方（左）</text>
+
+  <!-- ② 費用（借方） -->
+  <rect x="50" y="210" width="290" height="110" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="195" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#B91C1C">② 費用</text>
+  <text x="195" y="266" text-anchor="middle" font-size="10" fill="#374151">仕入・給料・減価償却費</text>
+  <text x="195" y="292" text-anchor="middle" font-size="10.5" font-weight="700" fill="#B91C1C">増加 → 借方（左）</text>
+
+  <!-- ③ 負債（貸方） -->
+  <rect x="420" y="80" width="290" height="70" rx="12" fill="#FFEDD5" stroke="#FDBA74" stroke-width="2"/>
+  <text x="565" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">③ 負債</text>
+  <text x="565" y="120" text-anchor="middle" font-size="9.5" fill="#374151">買掛金・借入金</text>
+  <text x="565" y="138" text-anchor="middle" font-size="9.5" font-weight="700" fill="#C2410C">増加 → 貸方（右）</text>
+
+  <!-- ④ 純資産（貸方） -->
+  <rect x="420" y="164" width="290" height="70" rx="12" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="565" y="186" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">④ 純資産（資本）</text>
+  <text x="565" y="204" text-anchor="middle" font-size="9.5" fill="#374151">資本金・繰越利益剰余金</text>
+  <text x="565" y="222" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5B21B6">増加 → 貸方（右）</text>
+
+  <!-- ⑤ 収益（貸方） -->
+  <rect x="420" y="248" width="290" height="70" rx="12" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="565" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">⑤ 収益</text>
+  <text x="565" y="288" text-anchor="middle" font-size="9.5" fill="#374151">売上・受取利息</text>
+  <text x="565" y="306" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">増加 → 貸方（右）</text>
+
+  <!-- 暗記のコツ -->
+  <rect x="40" y="336" width="680" height="64" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="360" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">🎯 暗記のコツ</text>
+  <text x="380" y="382" text-anchor="middle" font-size="11" fill="#78350F">「資・費」は借方（左）が増加、残り3つ（負債・純資産・収益）は貸方（右）が増加</text>
+</svg>

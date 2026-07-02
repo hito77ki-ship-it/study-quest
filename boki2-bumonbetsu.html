@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】部門別原価計算を完全解説","description":"直接配賦法・相互配賦法・部門費配賦表・予定配賦率計算まで例題つきで完全攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-bumonbetsu.html","datePublished":"2026-05-09","dateModified":"2026-06-27","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】部門別原価計算を完全解説","description":"直接配賦法・相互配賦法・部門費配賦表・予定配賦率計算まで例題つきで完全攻略。","url":"https://hito77ki-ship-it.github.io/study-quest/boki2-bumonbetsu.html","datePublished":"2026-05-09","dateModified":"2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -123,15 +123,28 @@ tr:nth-child(even) td{background:var(--light);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+
+/* chat icon */
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="lp.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 部門別原価計算</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年6月27日</p>
+  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新：2026年7月2日</p>
   <h1>【簿記2級】部門別原価計算を完全解説<br>直接配賦法・相互配賦法・部門費配賦表まで例題つき</h1>
   <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！実は、部門別原価計算は僕が工業簿記でいちばん手が止まった論点です。修繕時間だのkWhだの、配賦基準の数字がずらっと並んだ瞬間、「これ全部を掛け算しなきゃいけないの…？」と答案用紙の前で完全にフリーズしました（笑）。<br>
+    でも実は、この論点の正体は「補助部門というサイフの中身を、製造部門というサイフへ丸ごと移し替える」だけのシンプルな配賦パズルです。配賦基準の数字は、単に"どの割合で移すか"を決める物差しにすぎません。今回は、僕がつまずいた経験をもとに、直接配賦法・相互配賦法を「攻略パズル」として一気に解けるようになる手順をお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、毎日のブログ執筆やアプリ開発のモチベーション維持のために、記事の末尾のほうにある<strong>「いいねボタン」</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
+  </div>
 
   <div class="point-card">
     <div class="pc-label">この記事でわかること（5秒まとめ）</div>
@@ -146,21 +159,33 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <p class="lead">部門別原価計算は「製造間接費をどの製品にどれだけ負担させるか」をより正確に計算するための手法です。工場全体でひとまとめに配賦するよりも、部門ごとに費用を集計して部門固有の配賦率を使う方が、製品原価の精度が上がります。試験では部門費配賦表の作成と、配賦後の予定配賦率計算がセットで問われます。</p>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">補助部門って製造部門に配賦するんですよね？その後どうするんかよくわかってないんですが……</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">正直に言うと、部門別原価計算を初めて見たとき「配賦基準がこんなに何個もあるの!?　修繕時間だのkWhだの、一体どれをどう掛け算すればいいの…」って答案用紙の前で手が止まりました。試験でこれが出たら絶対に落とすと思って、正直かなり焦ってます……</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">原価の流れを追うと整理できますよ。補助部門費をまず製造部門へ移して、次に製造部門費（直接費＋配賦された補助部門費）を製品に配賦します。2段階の「移す→配る」です。焦らなくて大丈夫、一緒に流れを整理しましょう。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その気持ち、痛いほどわかります。僕も工業簿記を始めたばかりの頃、配賦基準の数字が並んでいるだけで頭が真っ白になりました。でも実は、部門別原価計算がやっていることはたった1つだけなんです。「補助部門の財布を空っぽにして、その中身を製造部門の財布に移し替える」——それだけ。配賦基準の数字は、どの製造部門にどれだけの割合で移すかを決める"ものさし"に過ぎません。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <div class="sq-chat-avatar student">受</div>
-      <div class="sq-chat-bubble">直接配賦法と相互配賦法の違いが特に混乱します……</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">……あ、そうか！配賦基準って、複雑な公式じゃなくて「割合を決めるための物差し」なだけなんですね。修繕部の60,000円を、切削60h・組立40hの比率で"ただ分けているだけ"って考えると、急に怖くなくなってきました！</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">1つだけ覚えてください。「補助部門同士が互いにサービスを提供しているのを無視するか（直接配賦法）、考慮するか（相互配賦法）」の違いだけです。計算の仕方は違いますが、最終的に補助部門費がゼロになる、という目的は同じです。</div>
-      <div class="sq-chat-avatar teacher">師</div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その感覚です！直接配賦法も相互配賦法も、結局やっていることは「補助部門の残高をゼロにする」作業の繰り返し。表を埋めていくと最後は必ず補助部門の列がゼロになる——このゴールが最初から見えていれば、途中で計算がずれてもすぐに気づけます。一緒に、その「ゼロにする感覚」を体に染み込ませていきましょう！</div>
+      </div>
     </div>
   </div>
 
@@ -180,16 +205,6 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <tr><td class="left">補助部門</td><td class="left">製造部門を支援する</td><td class="left">修繕部、動力部、材料倉庫部</td><td class="left">まず製造部門へ→製品へ</td></tr>
     <tr><td class="left">管理部門</td><td class="left">工場全体を管理する</td><td class="left">工場事務部</td><td class="left">製造間接費として集計</td></tr>
   </table>
-
-  <p>原価の流れを図で整理すると次のようになります。</p>
-
-  <div class="flow">
-    <div class="flow-box sub">補助部門費<br><small>（修繕・動力など）</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-box prod">製造部門費<br><small>（切削・組立など）</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-box item">製品原価<br><small>（仕掛品・製品）</small></div>
-  </div>
 
   <div class="tip-box"><strong>なぜわざわざ補助部門を経由するのか？</strong><br>補助部門（修繕部など）は製品に直接触れない代わりに、製造部門の生産活動を支えます。修繕部のコストを直接「製品A」に乗せることはできないので、まず製造部門へ移してから製品へ配賦します。これが部門別計算の本質です。</div>
 
@@ -320,6 +335,24 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <h3>第2次配賦（製造部門のみへ配賦）</h3>
 
+  <div class="tip-box"><strong>鉄則：「第1次で集計、第2次でゼロにする」</strong><br>第1次配賦は補助部門同士のやりとりも含めて<strong>全部門に一旦配ってしまう「集計」の工程</strong>です。この時点では補助部門にまだ残高が残っています（他の補助部門から受け取った分）。第2次配賦は、この残高を<strong>製造部門だけに移してゼロにする「清算」の工程</strong>。第2次で補助部門同士に配ってしまうと、残高が永遠にゼロにならない無限ループに陥るので、第2次の配賦先は必ず製造部門のみです。</div>
+
+  <h4 style="font-size:14px;font-weight:700;color:var(--text);margin:20px 0 8px;">電卓の叩き方（第2次配賦）</h4>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">第1次配賦の表から、<strong>その補助部門が「他の補助部門から受け取った金額」だけ</strong>を電卓に打ち込む（自分が配った金額はもう清算済みなので入力しない）</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body">配賦基準は<strong>製造部門の比率だけ</strong>を使う。分母に他の補助部門の基準を絶対に入れない（直接配賦法と同じ注意点）</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body">残高 × 製造部門の比率 で各製造部門への配賦額を計算し、<strong>電卓に残った補助部門の残高が0になるか検算</strong>する。0にならなければ按分計算のどこかにミスがある</div>
+    </div>
+  </div>
+
   <p>第1次配賦後の補助部門残高：修繕部 6,667円（動力部から受取）、動力部 10,000円（修繕部から受取）</p>
 
   <div class="shiwake-box">
@@ -398,6 +431,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">相互配賦法</span><span class="result">第1次（全部門へ）→ 第2次（製造部門だけへ）の2段階</span></div>
     <div class="matome-row"><span class="trigger">配賦後の予定配賦率</span><span class="result">製造部門費予算 ÷ 予定操業度 → 製品へ乗せる</span></div>
     <div class="matome-row"><span class="trigger">仕訳の方向</span><span class="result">補助部門費（貸方）→ 製造部門費（借方）→ 仕掛品（借方）</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">部門別原価計算は「補助部門をゼロにするだけ」のパズルです</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">最初は配賦基準の数字に圧倒されても、「集めて、移して、ゼロにする」の流れさえ体に染み込めば、部門費配賦表はもう怖くありません。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、工業簿記マスターへの一歩を刻んでおきましょう。</p>
+    <a href="index.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
   </div>
 
   <h2>よくある質問</h2>

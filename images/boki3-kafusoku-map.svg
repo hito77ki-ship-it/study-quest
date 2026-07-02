@@ -1,66 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">現金過不足の実査・原因判明・決算整理3ステップフロー</title>
+  <desc id="desc">現金過不足という仮の勘定科目が、実査で発生し、原因判明で正しい科目へ振り替えられ、決算整理で雑損・雑益に清算されて必ずゼロになる3ステップを示す図解</desc>
   <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
     <style>
-      text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:30px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15.5px;font-weight:600;fill:#64748b}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:800;fill:#ffffff}
+      .stepname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:18px;font-weight:800;fill:#1f2937}
+      .body{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:600;fill:#334155}
+      .ex{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:700}
+      .exsmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:600;fill:#64748b}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:700;fill:#166534}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
     </style>
   </defs>
-  <!-- background -->
-  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
-  <!-- title -->
-  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">現金過不足の3ステップ</text>
 
-  <!-- STEP boxes -->
-  <!-- STEP1 -->
-  <rect x="30" y="70" width="200" height="220" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-  <rect x="30" y="70" width="200" height="38" rx="10" fill="#3B82F6"/>
-  <rect x="30" y="98" width="200" height="10" fill="#3B82F6"/>
-  <text x="130" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP 1　現金実査</text>
-  <text x="130" y="128" text-anchor="middle" font-size="11" fill="#1E40AF">帳簿 ≠ 実際の残高</text>
-  <!-- icon area -->
-  <text x="130" y="165" text-anchor="middle" font-size="30" fill="#3B82F6">🔍</text>
-  <text x="130" y="198" text-anchor="middle" font-size="11" fill="#374151">帳簿と実際の差額を</text>
-  <text x="130" y="214" text-anchor="middle" font-size="11" fill="#374151">「現金過不足」で仮処理</text>
-  <!-- jiwake box -->
-  <rect x="50" y="228" width="160" height="50" rx="6" fill="#DBEAFE"/>
-  <text x="130" y="249" text-anchor="middle" font-size="10" fill="#1D4ED8">（帳簿 &lt; 実際の例）</text>
-  <text x="130" y="266" text-anchor="middle" font-size="10" fill="#1D4ED8">現金 / 現金過不足</text>
+  <rect width="1200" height="660" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1100" cy="110" r="78" fill="#dcfce7" opacity="0.55"/>
+  <circle cx="1090" cy="600" r="88" fill="#fef3c7" opacity="0.55"/>
+  <circle cx="110" cy="590" r="70" fill="#fce7f3" opacity="0.5"/>
 
-  <!-- arrow 1→2 -->
-  <polygon points="244,175 260,165 260,185" fill="#64748B"/>
-  <line x1="230" y1="175" x2="260" y2="175" stroke="#64748B" stroke-width="2"/>
+  <text x="600" y="52" text-anchor="middle" class="title">現金過不足 3ステップ清算マップ</text>
+  <text x="600" y="80" text-anchor="middle" class="sub">「現金過不足」は仮のハコ。3ステップを経て決算日には必ずゼロになる</text>
 
-  <!-- STEP2 -->
-  <rect x="278" y="70" width="200" height="220" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
-  <rect x="278" y="70" width="200" height="38" rx="10" fill="#22C55E"/>
-  <rect x="278" y="98" width="200" height="10" fill="#22C55E"/>
-  <text x="378" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP 2　原因判明</text>
-  <text x="378" y="128" text-anchor="middle" font-size="11" fill="#166534">正しい勘定科目へ振替</text>
-  <text x="378" y="165" text-anchor="middle" font-size="30" fill="#22C55E">💡</text>
-  <text x="378" y="198" text-anchor="middle" font-size="11" fill="#374151">原因が判明したら</text>
-  <text x="378" y="214" text-anchor="middle" font-size="11" fill="#374151">現金過不足を取消して振替</text>
-  <rect x="298" y="228" width="160" height="50" rx="6" fill="#DCFCE7"/>
-  <text x="378" y="249" text-anchor="middle" font-size="10" fill="#15803D">（受取手数料漏れの例）</text>
-  <text x="378" y="266" text-anchor="middle" font-size="10" fill="#15803D">現金過不足 / 受取手数料</text>
+  <!-- STEP1 実査 -->
+  <g filter="url(#softShadow)">
+    <rect x="60" y="120" width="340" height="330" rx="24" fill="#ffffff" stroke="#93c5fd" stroke-width="4"/>
+    <rect x="88" y="146" width="100" height="32" rx="16" fill="#3b82f6"/>
+    <text x="138" y="167" text-anchor="middle" class="pill">STEP 1</text>
+    <text x="230" y="170" text-anchor="middle" class="stepname">現金実査</text>
+    <text x="230" y="210" text-anchor="middle" font-size="34">🔍</text>
+    <text x="88" y="248" class="body">帳簿残高と実際の手元現金を数えて比べる。</text>
+    <text x="88" y="268" class="body">差額が出たら「現金過不足」という</text>
+    <text x="88" y="288" class="body">仮のハコに一時避難させる。</text>
+    <rect x="88" y="310" width="284" height="100" rx="10" fill="#EFF6FF"/>
+    <text x="230" y="334" text-anchor="middle" class="exsmall">例：帳簿100,000 → 実際99,000</text>
+    <text x="230" y="358" text-anchor="middle" class="ex" fill="#1D4ED8">現金過不足 1,000 ／ 現金 1,000</text>
+    <text x="230" y="382" text-anchor="middle" class="exsmall">原因はまだ分からなくてOK</text>
+  </g>
 
-  <!-- arrow 2→3 -->
-  <polygon points="492,175 508,165 508,185" fill="#64748B"/>
-  <line x1="478" y1="175" x2="508" y2="175" stroke="#64748B" stroke-width="2"/>
+  <polygon points="410,290 440,275 440,305" fill="#94a3b8"/>
 
-  <!-- STEP3 -->
-  <rect x="526" y="70" width="200" height="220" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
-  <rect x="526" y="70" width="200" height="38" rx="10" fill="#F97316"/>
-  <rect x="526" y="98" width="200" height="10" fill="#F97316"/>
-  <text x="626" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP 3　決算で清算</text>
-  <text x="626" y="128" text-anchor="middle" font-size="11" fill="#7C2D12">原因不明分を雑益・雑損へ</text>
-  <text x="626" y="165" text-anchor="middle" font-size="30" fill="#F97316">📋</text>
-  <text x="626" y="198" text-anchor="middle" font-size="11" fill="#374151">期末まで残った過不足を</text>
-  <text x="626" y="214" text-anchor="middle" font-size="11" fill="#374151">雑益（収益）/ 雑損（費用）へ</text>
-  <rect x="546" y="228" width="160" height="50" rx="6" fill="#FFEDD5"/>
-  <text x="626" y="249" text-anchor="middle" font-size="10" fill="#C2410C">（帳簿 &lt; 実際が残った例）</text>
-  <text x="626" y="266" text-anchor="middle" font-size="10" fill="#C2410C">現金過不足 / 雑　益</text>
+  <!-- STEP2 原因判明 -->
+  <g filter="url(#softShadow)">
+    <rect x="440" y="120" width="340" height="330" rx="24" fill="#ffffff" stroke="#86efac" stroke-width="4"/>
+    <rect x="468" y="146" width="100" height="32" rx="16" fill="#22c55e"/>
+    <text x="518" y="167" text-anchor="middle" class="pill">STEP 2</text>
+    <text x="610" y="170" text-anchor="middle" class="stepname">原因判明</text>
+    <text x="610" y="210" text-anchor="middle" font-size="34">💡</text>
+    <text x="468" y="248" class="body">原因が分かった分だけ、現金過不足を</text>
+    <text x="468" y="268" class="body">「消して」正しい科目に書き直す。</text>
+    <text x="468" y="288" class="body">消す＝反対側に同額を書くだけ。</text>
+    <rect x="468" y="310" width="284" height="100" rx="10" fill="#F0FDF4"/>
+    <text x="610" y="334" text-anchor="middle" class="exsmall">例：受取手数料の記入漏れ2,000円</text>
+    <text x="610" y="358" text-anchor="middle" class="ex" fill="#166534">現金過不足 2,000 ／ 受取手数料 2,000</text>
+    <text x="610" y="382" text-anchor="middle" class="exsmall">残りはまだ「仮のハコ」に居残る</text>
+  </g>
 
-  <!-- bottom note -->
-  <rect x="30" y="308" width="700" height="52" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="380" y="329" text-anchor="middle" font-size="11" fill="#475569">💡 「現金過不足」は<tspan font-weight="700">仮の勘定科目</tspan>。決算日には必ずゼロにして、残高を雑益または雑損に振り替えます。</text>
-  <text x="380" y="348" text-anchor="middle" font-size="11" fill="#475569">雑益 → 貸方（収益）　｜　雑損 → 借方（費用）</text>
+  <polygon points="790,290 820,275 820,305" fill="#94a3b8"/>
+
+  <!-- STEP3 決算清算 -->
+  <g filter="url(#softShadow)">
+    <rect x="820" y="120" width="320" height="330" rx="24" fill="#ffffff" stroke="#fdba74" stroke-width="4"/>
+    <rect x="848" y="146" width="100" height="32" rx="16" fill="#f97316"/>
+    <text x="898" y="167" text-anchor="middle" class="pill">STEP 3</text>
+    <text x="980" y="170" text-anchor="middle" class="stepname">決算整理</text>
+    <text x="980" y="210" text-anchor="middle" font-size="34">📅</text>
+    <text x="848" y="248" class="body">決算日になっても原因不明の分は、</text>
+    <text x="848" y="268" class="body">現金過不足を強制的にゼロにして</text>
+    <text x="848" y="288" class="body">雑損（費用）か雑益（収益）へ清算。</text>
+    <rect x="848" y="310" width="264" height="100" rx="10" fill="#FFF7ED"/>
+    <text x="980" y="334" text-anchor="middle" class="exsmall">借方に残っていた分（不足＝損）</text>
+    <text x="980" y="358" text-anchor="middle" class="ex" fill="#C2410C">雑損 ／ 現金過不足</text>
+    <text x="980" y="382" text-anchor="middle" class="exsmall">貸方に残っていれば「雑益」で逆仕訳</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="60" y="482" width="1080" height="140" rx="24" fill="#f0fdf4" stroke="#86efac" stroke-width="3"/>
+    <text x="600" y="518" text-anchor="middle" class="banner">決算清算の合言葉：「残高を消すために、反対側に同じ数字を書く」</text>
+    <text x="600" y="546" text-anchor="middle" class="bannersmall">現金過不足が借方に残っていた → 貸方に書いて消す → 反対の借方に残るのが「雑損」</text>
+    <text x="600" y="568" text-anchor="middle" class="bannersmall">現金過不足が貸方に残っていた → 借方に書いて消す → 反対の貸方に残るのが「雑益」</text>
+    <text x="600" y="596" text-anchor="middle" class="bannersmall">この型さえ覚えれば、雑損・雑益のどちらを使うか迷う必要はもうありません</text>
+  </g>
 </svg>
