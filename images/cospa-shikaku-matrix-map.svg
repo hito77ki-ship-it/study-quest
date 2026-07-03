@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 560" width="780" height="560">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="780" height="560" rx="12" fill="#FAFDF6"/>
+  <text x="390" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">コスパがいい資格 4象限マトリクス</text>
+  <text x="390" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">縦軸：活かしやすさ／横軸：勉強時間の短さ——左上に近いほど「最強コスパ」</text>
+
+  <!-- 象限背景 -->
+  <rect x="110" y="60" width="315" height="210" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <rect x="425" y="60" width="315" height="210" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="110" y="270" width="315" height="210" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="425" y="270" width="315" height="210" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+
+  <!-- 象限ラベル -->
+  <text x="130" y="80" font-size="11.5" font-weight="700" fill="#166534">🏆 最強コスパゾーン（短時間×高汎用性）</text>
+  <text x="445" y="80" font-size="11.5" font-weight="700" fill="#1D4ED8">💪 じっくり投資ゾーン（長時間だが高リターン）</text>
+  <text x="130" y="288" font-size="11.5" font-weight="700" fill="#92400E">⚡ お手軽ゾーン（短時間・限定的な汎用性）</text>
+  <text x="445" y="288" font-size="11.5" font-weight="700" fill="#991B1B">⚠ 要注意ゾーン（長時間の割に汎用性低）</text>
+
+  <!-- 軸の目印 -->
+  <text x="112" y="52" font-size="10" font-weight="700" fill="#374151">▲ 活かしやすさ 高い</text>
+  <text x="112" y="502" font-size="10" font-weight="700" fill="#374151">▼ 活かしやすさ 低い</text>
+  <text x="130" y="518" font-size="10" font-weight="700" fill="#374151">◀ 勉強時間 短い</text>
+  <text x="650" y="518" text-anchor="end" font-size="10" font-weight="700" fill="#374151">勉強時間 長い ▶</text>
+
+  <!-- 最強コーナーの強調 -->
+  <circle cx="160" cy="105" r="34" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4,3" opacity="0.7"/>
+  <text x="160" y="72" text-anchor="middle" font-size="9.5" font-weight="700" fill="#B45309">王座</text>
+
+  <!-- プロット: TLゾーン -->
+  <circle cx="175" cy="120" r="13" fill="#22C55E" stroke="#fff" stroke-width="2"/>
+  <text x="175" y="141" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">①簿記3級</text>
+
+  <circle cx="175" cy="168" r="13" fill="#22C55E" stroke="#fff" stroke-width="2"/>
+  <text x="175" y="189" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">②ITパスポート</text>
+
+  <circle cx="275" cy="128" r="11" fill="#4ADE80" stroke="#fff" stroke-width="2"/>
+  <text x="275" y="149" text-anchor="middle" font-size="9" fill="#166534">③FP3級</text>
+
+  <circle cx="175" cy="220" r="10" fill="#86EFAC" stroke="#fff" stroke-width="2"/>
+  <text x="175" y="240" text-anchor="middle" font-size="9" fill="#166534">④MOS</text>
+
+  <circle cx="280" cy="230" r="10" fill="#86EFAC" stroke="#fff" stroke-width="2"/>
+  <text x="280" y="250" text-anchor="middle" font-size="9" fill="#166534">⑤危険物乙4</text>
+
+  <!-- プロット: TRゾーン -->
+  <circle cx="465" cy="150" r="10" fill="#60A5FA" stroke="#fff" stroke-width="2"/>
+  <text x="465" y="170" text-anchor="middle" font-size="9" fill="#1E3A8A">⑨基本情報</text>
+
+  <circle cx="525" cy="112" r="10" fill="#60A5FA" stroke="#fff" stroke-width="2"/>
+  <text x="525" y="132" text-anchor="middle" font-size="9" fill="#1E3A8A">⑩TOEIC</text>
+
+  <circle cx="635" cy="95" r="12" fill="#3B82F6" stroke="#fff" stroke-width="2"/>
+  <text x="635" y="116" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E3A8A">⑥簿記2級</text>
+
+  <circle cx="700" cy="130" r="12" fill="#3B82F6" stroke="#fff" stroke-width="2"/>
+  <text x="700" y="151" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E3A8A">⑦宅建</text>
+
+  <circle cx="615" cy="205" r="10" fill="#93C5FD" stroke="#fff" stroke-width="2"/>
+  <text x="615" y="225" text-anchor="middle" font-size="9" fill="#1E3A8A">⑧登録販売者</text>
+
+  <!-- 下部サマリー -->
+  <rect x="110" y="490" width="630" height="58" rx="8" fill="#1E293B"/>
+  <text x="425" y="510" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">なぜ簿記3級・ITパスポートが「王座」にいるのか</text>
+  <text x="425" y="528" text-anchor="middle" font-size="9" fill="#CBD5E1">50〜100時間という短期投資で、業界を問わず評価される汎用性の高さを両立しているから。</text>
+  <text x="425" y="542" text-anchor="middle" font-size="9" fill="#CBD5E1">簿記2級・宅建は時間はかかるが右上（高リターン）に位置し、じっくり投資する価値がある。</text>
+</svg>

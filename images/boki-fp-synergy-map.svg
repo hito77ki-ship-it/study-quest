@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="460" rx="12" fill="#FAFDF6"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">簿記2級 × FP2級 知識ドッキング・シナジーマップ</text>
+  <text x="380" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">簿記で鍛えた計算力が、FPの3分野にそのまま流れ込む</text>
+
+  <!-- 左: 簿記2級の武器庫 -->
+  <rect x="20" y="62" width="270" height="360" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="20" y="62" width="270" height="34" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="86" width="270" height="10" fill="#3B82F6"/>
+  <text x="155" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">🗡 簿記2級で鍛えた武器</text>
+
+  <rect x="36" y="110" width="238" height="50" rx="8" fill="#DBEAFE"/>
+  <text x="46" y="130" font-size="11" font-weight="700" fill="#1E40AF">財務諸表の読解力（B/S・P/L）</text>
+  <text x="46" y="146" font-size="9.5" fill="#1E3A8A">資産・負債・収益・費用の構造把握</text>
+
+  <rect x="36" y="168" width="238" height="50" rx="8" fill="#DBEAFE"/>
+  <text x="46" y="188" font-size="11" font-weight="700" fill="#1E40AF">税効果会計・税金計算の素養</text>
+  <text x="46" y="204" font-size="9.5" fill="#1E3A8A">法人税・消費税の計算プロセス</text>
+
+  <rect x="36" y="226" width="238" height="50" rx="8" fill="#DBEAFE"/>
+  <text x="46" y="246" font-size="11" font-weight="700" fill="#1E40AF">有価証券・固定資産の評価計算</text>
+  <text x="46" y="262" font-size="9.5" fill="#1E3A8A">時価評価・減価償却の考え方</text>
+
+  <rect x="36" y="284" width="238" height="66" rx="8" fill="#BFDBFE"/>
+  <text x="155" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">⚔ 最大のボス戦</text>
+  <text x="155" y="320" text-anchor="middle" font-size="10" fill="#1E40AF">工業簿記・連結会計</text>
+  <text x="155" y="336" text-anchor="middle" font-size="9" fill="#1E3A8A">ここを越えると計算力が一段化ける</text>
+
+  <rect x="36" y="360" width="238" height="46" rx="8" fill="#1E3A8A"/>
+  <text x="155" y="380" text-anchor="middle" font-size="10" font-weight="700" fill="#93C5FD">身につく力</text>
+  <text x="155" y="396" text-anchor="middle" font-size="9.5" fill="#DBEAFE">数字を正確に追う「計算体力」</text>
+
+  <!-- 中央矢印 -->
+  <line x1="292" y1="240" x2="330" y2="240" stroke="#8CC63F" stroke-width="3" stroke-dasharray="6,3"/>
+  <polygon points="334,240 324,233 324,247" fill="#8CC63F"/>
+  <text x="313" y="222" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">ドッキング</text>
+
+  <!-- 右: FP2級の3分野 -->
+  <rect x="336" y="62" width="404" height="360" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="336" y="62" width="404" height="34" rx="10" fill="#22C55E"/>
+  <rect x="336" y="86" width="404" height="10" fill="#22C55E"/>
+  <text x="538" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">🛡 FP2級で無双する3分野</text>
+
+  <rect x="352" y="110" width="372" height="90" rx="8" fill="#DCFCE7"/>
+  <text x="362" y="130" font-size="11.5" font-weight="700" fill="#166534">① 金融資産運用</text>
+  <text x="362" y="148" font-size="9.5" fill="#374151">株式・債券の評価、財務諸表を使った企業分析は</text>
+  <text x="362" y="163" font-size="9.5" fill="#374151">簿記の有価証券評価の知識がそのまま活きる。</text>
+  <text x="362" y="181" font-size="9.5" font-weight="700" fill="#15803D">→ 「見たことある計算だ」で即座に得点源に</text>
+
+  <rect x="352" y="208" width="372" height="90" rx="8" fill="#DCFCE7"/>
+  <text x="362" y="228" font-size="11.5" font-weight="700" fill="#166534">② タックスプランニング</text>
+  <text x="362" y="246" font-size="9.5" fill="#374151">所得税・法人税の計算構造は、簿記2級の税効果</text>
+  <text x="362" y="261" font-size="9.5" fill="#374151">会計・法人税等の仕訳経験と発想が同じ。</text>
+  <text x="362" y="279" font-size="9.5" font-weight="700" fill="#15803D">→ 控除の引き算パズルに抵抗なく入れる</text>
+
+  <rect x="352" y="306" width="372" height="90" rx="8" fill="#DCFCE7"/>
+  <text x="362" y="326" font-size="11.5" font-weight="700" fill="#166534">③ 相続・事業承継</text>
+  <text x="362" y="344" font-size="9.5" fill="#374151">貸借対照表で純資産・持分を読み解いた経験が、</text>
+  <text x="362" y="359" font-size="9.5" fill="#374151">相続財産の評価・按分計算の理解を加速させる。</text>
+  <text x="362" y="377" font-size="9.5" font-weight="700" fill="#15803D">→ 数字の全体像を掴む力がそのまま得点力に</text>
+
+  <rect x="352" y="404" width="372" height="16" rx="5" fill="#166534" opacity="0.85"/>
+  <text x="538" y="416" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DCFCE7">簿記2級を先に取れば、FP2級の理解速度が一段階アップする</text>
+</svg>

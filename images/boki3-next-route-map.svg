@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="800" height="460" rx="16" fill="#FEFCF9"/>
+  <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">簿記3級合格後の無敵の資格ドッキングロードマップ</text>
+  <text x="400" y="46" text-anchor="middle" font-size="11" fill="#94A3B8">目的に応じて2つのルートが選べ、どちらも将来「FP2級」で合流できる</text>
+
+  <!-- スタート：簿記3級 -->
+  <rect x="40" y="185" width="140" height="90" rx="16" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2.5"/>
+  <text x="110" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">🎓 簿記3級</text>
+  <text x="110" y="242" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">合格！</text>
+  <text x="110" y="260" text-anchor="middle" font-size="9" fill="#14532D">ここがスタート地点</text>
+
+  <!-- ライン：3級→2級 -->
+  <line x1="180" y1="215" x2="288" y2="155" stroke="#93C5FD" stroke-width="2.5"/>
+  <polygon points="296,150 284,148 288,160" fill="#93C5FD"/>
+
+  <!-- ライン：3級→FP3級 -->
+  <line x1="180" y1="250" x2="288" y2="335" stroke="#FDBA74" stroke-width="2.5"/>
+  <polygon points="296,340 284,338 288,326" fill="#FDBA74"/>
+
+  <!-- ② 簿記2級（最優先ルート） -->
+  <rect x="290" y="95" width="170" height="100" rx="16" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="375" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">② 簿記2級</text>
+  <text x="375" y="142" text-anchor="middle" font-size="10" fill="#1E40AF">最優先ルート</text>
+  <text x="375" y="160" text-anchor="middle" font-size="9" fill="#374151">履歴書で即戦力を証明</text>
+  <text x="375" y="176" text-anchor="middle" font-size="9" fill="#374151">150〜250時間</text>
+
+  <!-- ② FP3級（ドッキング用サブルート） -->
+  <rect x="290" y="305" width="170" height="90" rx="16" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2.5"/>
+  <text x="375" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">② FP3級</text>
+  <text x="375" y="350" text-anchor="middle" font-size="10" fill="#78350F">生活防衛サブルート</text>
+  <text x="375" y="368" text-anchor="middle" font-size="9" fill="#374151">合格率70〜80%・60〜100時間</text>
+
+  <!-- ライン：2級→1級 -->
+  <line x1="460" y1="130" x2="578" y2="90" stroke="#FCA5A5" stroke-width="2.5"/>
+  <polygon points="586,86 574,86 578,98" fill="#FCA5A5"/>
+  <text x="500" y="105" text-anchor="middle" font-size="8.5" fill="#B91C1C">税理士・上場企業</text>
+  <text x="500" y="117" text-anchor="middle" font-size="8.5" fill="#B91C1C">本気で目指すなら</text>
+
+  <!-- ライン：2級→FP2級 -->
+  <line x1="460" y1="175" x2="578" y2="255" stroke="#93C5FD" stroke-width="2.5"/>
+  <polygon points="586,260 576,252 574,264" fill="#93C5FD"/>
+
+  <!-- ライン：FP3級→FP2級（ドッキング） -->
+  <line x1="460" y1="335" x2="578" y2="290" stroke="#FDBA74" stroke-width="2.5"/>
+  <polygon points="586,286 574,286 578,298" fill="#FDBA74"/>
+  <text x="500" y="370" text-anchor="middle" font-size="8.5" fill="#C2410C">FP3級合格が</text>
+  <text x="500" y="382" text-anchor="middle" font-size="8.5" fill="#C2410C">FP2級受験の前提条件</text>
+
+  <!-- ③ 日商簿記1級 -->
+  <rect x="580" y="30" width="180" height="100" rx="16" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="2.5"/>
+  <text x="670" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#B91C1C">③ 日商簿記1級</text>
+  <text x="670" y="78" text-anchor="middle" font-size="10" fill="#991B1B">税理士本気ルート</text>
+  <text x="670" y="96" text-anchor="middle" font-size="9" fill="#374151">合格率約10%</text>
+  <text x="670" y="112" text-anchor="middle" font-size="9" fill="#374151">500〜800時間以上</text>
+
+  <!-- ③ FP2級（ドッキングゴール） -->
+  <rect x="580" y="230" width="180" height="100" rx="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2.5"/>
+  <text x="670" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">🔗 ③ FP2級</text>
+  <text x="670" y="278" text-anchor="middle" font-size="10" fill="#4C1D95">2ルートのドッキングゴール</text>
+  <text x="670" y="296" text-anchor="middle" font-size="9" fill="#374151">会計＋個人財務知識で最強</text>
+  <text x="670" y="312" text-anchor="middle" font-size="9" fill="#374151">150〜200時間（FP3級後）</text>
+
+  <!-- 下部まとめ -->
+  <rect x="40" y="404" width="720" height="44" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="400" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">🎯 「簿記2級ルート」も「FP3級ルート」も、最後はFP2級で合流できる無敵の設計</text>
+</svg>

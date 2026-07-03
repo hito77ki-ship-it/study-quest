@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+  <title id="title">調理師試験の食品衛生学における食中毒菌の分類と対策マップ</title>
+  <desc id="desc">食中毒菌を感染型・毒素型・中間型（生体内毒素型）に分類し、代表菌と加熱への耐性の違いを示す図解。黄色ブドウ球菌の毒素は加熱しても分解されない点が最大の試験ポイント</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:28px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:600;fill:#64748b}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:800;fill:#ffffff}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#ffffff}
+      .germname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:800;fill:#1f2937}
+      .germbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11.5px;font-weight:600;fill:#475569}
+      .heat{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11.5px;font-weight:800}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:700;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#78350f}
+    </style>
+  </defs>
+
+  <rect width="1200" height="840" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1100" cy="110" r="78" fill="#fed7aa" opacity="0.45"/>
+  <circle cx="1090" cy="770" r="88" fill="#e9d5ff" opacity="0.45"/>
+  <circle cx="110" cy="760" r="70" fill="#fef3c7" opacity="0.5"/>
+
+  <text x="600" y="50" text-anchor="middle" class="title">食中毒菌 分類マップ</text>
+  <text x="600" y="78" text-anchor="middle" class="sub">感染型・毒素型・中間型（生体内毒素型）——加熱への耐性の違いが合否を分ける</text>
+
+  <!-- 感染型 column -->
+  <g filter="url(#softShadow)">
+    <rect x="60" y="108" width="340" height="44" rx="16" fill="#3b82f6"/>
+    <text x="230" y="136" text-anchor="middle" class="colhead">感染型</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="60" y="168" width="340" height="480" rx="22" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+    <text x="230" y="200" text-anchor="middle" class="germbody">菌そのものを摂取して腸内で増え、感染して発症</text>
+
+    <rect x="84" y="220" width="292" height="98" rx="12" fill="#EFF6FF"/>
+    <text x="104" y="246" class="germname">カンピロバクター</text>
+    <text x="104" y="266" class="germbody">加熱不十分な鶏肉が主な原因。潜伏期間が2〜5日と長い</text>
+    <text x="104" y="300" class="heat" fill="#1D4ED8">🔥 加熱に弱い（菌は熱で死滅）</text>
+
+    <rect x="84" y="330" width="292" height="98" rx="12" fill="#EFF6FF"/>
+    <text x="104" y="356" class="germname">サルモネラ属菌</text>
+    <text x="104" y="376" class="germbody">卵・食肉が主な原因。十分な加熱で予防できる</text>
+    <text x="104" y="410" class="heat" fill="#1D4ED8">🔥 加熱に弱い（菌は熱で死滅）</text>
+
+    <rect x="84" y="440" width="292" height="98" rx="12" fill="#EFF6FF"/>
+    <text x="104" y="466" class="germname">腸炎ビブリオ</text>
+    <text x="104" y="486" class="germbody">生の魚介類が主な原因。真水・加熱に弱い</text>
+    <text x="104" y="520" class="heat" fill="#1D4ED8">🔥 加熱に弱い（菌は熱で死滅）</text>
+
+    <rect x="84" y="550" width="292" height="80" rx="12" fill="#EFF6FF"/>
+    <text x="104" y="576" class="germname">病原性大腸菌（O157等）</text>
+    <text x="104" y="596" class="germbody">加熱不十分な食肉・生野菜が原因。ベロ毒素を産生</text>
+    <text x="104" y="618" class="heat" fill="#1D4ED8">🔥 加熱に弱い（中心75℃1分で死滅）</text>
+  </g>
+
+  <!-- 毒素型 column -->
+  <g filter="url(#softShadow)">
+    <rect x="430" y="108" width="340" height="44" rx="16" fill="#f97316"/>
+    <text x="600" y="136" text-anchor="middle" class="colhead">毒素型</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="430" y="168" width="340" height="480" rx="22" fill="#ffffff" stroke="#fdba74" stroke-width="3"/>
+    <text x="600" y="200" text-anchor="middle" class="germbody">食品中で増えた菌が毒素を産生し、その毒素で発症</text>
+
+    <rect x="454" y="222" width="292" height="150" rx="12" fill="#FFF7ED"/>
+    <text x="474" y="248" class="germname">黄色ブドウ球菌</text>
+    <text x="474" y="268" class="germbody">おにぎり・弁当が主な原因。手指の傷口から食品を汚染</text>
+    <text x="474" y="298" class="heat" fill="#C2410C">🔥🔥🔥 毒素（エンテロトキシン）は</text>
+    <text x="474" y="318" class="heat" fill="#C2410C">100℃で加熱しても分解されない！</text>
+    <text x="474" y="342" class="germbody">→ 加熱後の食品でも安心できない最重要ポイント</text>
+    <text x="474" y="360" class="germbody">予防は「菌を付けない・増やさない」しかない</text>
+
+    <rect x="454" y="384" width="292" height="120" rx="12" fill="#FFF7ED"/>
+    <text x="474" y="410" class="germname">ボツリヌス菌</text>
+    <text x="474" y="430" class="germbody">缶詰・瓶詰・真空パックなど酸素の少ない食品が原因</text>
+    <text x="474" y="454" class="heat" fill="#C2410C">🔥 毒素自体は熱に弱い（80℃30分で失活）</text>
+    <text x="474" y="474" class="germbody">ただし芽胞は非常に耐熱性が高く長時間の加熱が必要</text>
+    <text x="474" y="494" class="germbody">神経毒で麻痺症状を起こす致死率の高い食中毒</text>
+  </g>
+
+  <!-- 中間型 column -->
+  <g filter="url(#softShadow)">
+    <rect x="800" y="108" width="340" height="44" rx="16" fill="#a855f7"/>
+    <text x="970" y="136" text-anchor="middle" class="colhead">中間型（生体内毒素型）</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="800" y="168" width="340" height="480" rx="22" fill="#ffffff" stroke="#d8b4fe" stroke-width="3"/>
+    <text x="970" y="200" text-anchor="middle" class="germbody">体内（腸管内）で菌が増殖し毒素を作って発症</text>
+
+    <rect x="824" y="222" width="292" height="140" rx="12" fill="#FAF5FF"/>
+    <text x="844" y="248" class="germname">ウェルシュ菌</text>
+    <text x="844" y="268" class="germbody">カレー・シチューなど大量調理の煮込み料理が原因</text>
+    <text x="844" y="298" class="heat" fill="#7E22CE">🔥 芽胞は耐熱性が高く、加熱調理でも生き残る</text>
+    <text x="844" y="322" class="germbody">冷めていく過程で再増殖するため、粗熱を取って</text>
+    <text x="844" y="342" class="germbody">すぐ冷蔵・小分け保存するのが予防の鉄則</text>
+
+    <rect x="824" y="376" width="292" height="120" rx="12" fill="#FAF5FF"/>
+    <text x="844" y="402" class="germname">セレウス菌（下痢型）</text>
+    <text x="844" y="422" class="germbody">米飯・パスタなどが原因。芽胞を形成する菌</text>
+    <text x="844" y="450" class="heat" fill="#7E22CE">🔥 芽胞は耐熱性が高い</text>
+    <text x="844" y="474" class="germbody">作り置きご飯の常温放置に特に注意</text>
+
+    <rect x="824" y="508" width="292" height="120" rx="12" fill="#F1F5F9"/>
+    <text x="844" y="534" class="germbody" font-weight="700">分類のコツ</text>
+    <text x="844" y="556" class="germbody">・菌そのものが原因＝感染型</text>
+    <text x="844" y="576" class="germbody">・食品中で作った毒素が原因＝毒素型</text>
+    <text x="844" y="596" class="germbody">・体内で作った毒素が原因＝中間型</text>
+    <text x="844" y="616" class="germbody">この3分類の軸で覚えると迷わない</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="60" y="668" width="1080" height="150" rx="24" fill="#fffbeb" stroke="#fcd34d" stroke-width="3"/>
+    <text x="600" y="704" text-anchor="middle" class="banner">試験最大の落とし穴：「加熱すれば食中毒は防げる」は間違い</text>
+    <text x="600" y="732" text-anchor="middle" class="bannersmall">黄色ブドウ球菌のエンテロトキシンは耐熱性——一度作られた毒素は100℃で加熱しても分解されない</text>
+    <text x="600" y="756" text-anchor="middle" class="bannersmall">ウェルシュ菌・セレウス菌・ボツリヌス菌の「芽胞」も加熱に強く、通常の調理温度では死滅しないことがある</text>
+    <text x="600" y="780" text-anchor="middle" class="bannersmall">だからこそ「菌を付けない・増やさない・早く冷やす」という予防の3原則が食品衛生学の核心になる</text>
+  </g>
+</svg>

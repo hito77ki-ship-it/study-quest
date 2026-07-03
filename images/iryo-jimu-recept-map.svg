@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">レセプト作成・最速逆算攻略マップ</title>
+  <desc id="desc">点数表のインデックス（索引）からレセプトの該当欄へ点数を落とし込む4ステップの逆算フローを示す図解。実技試験は暗記ではなく検索スピードで攻略できることを表す</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:28px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:600;fill:#64748b}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:800;fill:#ffffff}
+      .stepname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15.5px;font-weight:800;fill:#1f2937}
+      .body{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:700;fill:#166534}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="80" r="60" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1100" cy="100" r="72" fill="#dcfce7" opacity="0.55"/>
+  <circle cx="1090" cy="580" r="82" fill="#fce7f3" opacity="0.5"/>
+  <circle cx="110" cy="570" r="66" fill="#fef3c7" opacity="0.5"/>
+
+  <text x="600" y="48" text-anchor="middle" class="title">レセプト作成 最速逆算攻略マップ</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">点数表は「読む」ものじゃなく「引く」もの——インデックスから答えへ一直線</text>
+
+  <!-- STEP 1 -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="130" width="250" height="290" rx="22" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+    <rect x="94" y="154" width="90" height="32" rx="16" fill="#3b82f6"/>
+    <text x="139" y="176" text-anchor="middle" class="pill">STEP 1</text>
+    <text x="195" y="230" text-anchor="middle" font-size="34">📋</text>
+    <text x="195" y="264" text-anchor="middle" class="stepname">カルテを確認</text>
+    <text x="94" y="292" class="body">診療内容（初診・検査・</text>
+    <text x="94" y="310" class="body">投薬など）を1つずつ</text>
+    <text x="94" y="328" class="body">リストアップするだけ。</text>
+    <text x="94" y="346" class="body">暗記した知識は不要。</text>
+  </g>
+
+  <polygon points="330,275 358,262 358,288" fill="#94a3b8"/>
+
+  <!-- STEP 2 -->
+  <g filter="url(#softShadow)">
+    <rect x="368" y="130" width="250" height="290" rx="22" fill="#ffffff" stroke="#fdba74" stroke-width="4"/>
+    <rect x="392" y="154" width="90" height="32" rx="16" fill="#f97316"/>
+    <text x="437" y="176" text-anchor="middle" class="pill">STEP 2</text>
+    <text x="493" y="230" text-anchor="middle" font-size="34">🔎</text>
+    <text x="493" y="264" text-anchor="middle" class="stepname">索引で検索</text>
+    <text x="392" y="292" class="body">点数表の巻末インデックス</text>
+    <text x="392" y="310" class="body">から診療行為名で逆引き。</text>
+    <text x="392" y="328" class="body">ここが最大のスピード</text>
+    <text x="392" y="346" class="body">勝負ポイント。</text>
+  </g>
+
+  <polygon points="628,275 656,262 656,288" fill="#94a3b8"/>
+
+  <!-- STEP 3 -->
+  <g filter="url(#softShadow)">
+    <rect x="666" y="130" width="250" height="290" rx="22" fill="#ffffff" stroke="#86efac" stroke-width="3"/>
+    <rect x="690" y="154" width="90" height="32" rx="16" fill="#22c55e"/>
+    <text x="735" y="176" text-anchor="middle" class="pill">STEP 3</text>
+    <text x="791" y="230" text-anchor="middle" font-size="34">✍️</text>
+    <text x="791" y="264" text-anchor="middle" class="stepname">点数を転記</text>
+    <text x="690" y="292" class="body">見つけたページの点数を</text>
+    <text x="690" y="310" class="body">レセプトの該当欄へ</text>
+    <text x="690" y="328" class="body">そのまま書き写す。</text>
+    <text x="690" y="346" class="body">計算より作業に近い。</text>
+  </g>
+
+  <polygon points="926,275 954,262 954,288" fill="#94a3b8"/>
+
+  <!-- STEP 4 -->
+  <g filter="url(#softShadow)">
+    <rect x="964" y="130" width="250" height="290" rx="22" fill="#ffffff" stroke="#d8b4fe" stroke-width="3"/>
+    <rect x="988" y="154" width="90" height="32" rx="16" fill="#a855f7"/>
+    <text x="1033" y="176" text-anchor="middle" class="pill">STEP 4</text>
+    <text x="1089" y="230" text-anchor="middle" font-size="34">✅</text>
+    <text x="1089" y="264" text-anchor="middle" class="stepname">合算・検算</text>
+    <text x="988" y="292" class="body">点数を合計し、記載漏れ</text>
+    <text x="988" y="310" class="body">がないか見直す。</text>
+    <text x="988" y="328" class="body">ここまで来たら</text>
+    <text x="988" y="346" class="body">1枚のレセプト完成。</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="450" width="1060" height="150" rx="24" fill="#f0fdf4" stroke="#86efac" stroke-width="3"/>
+    <text x="600" y="486" text-anchor="middle" class="banner">実技試験は「暗記不要の検索スピードゲーム」</text>
+    <text x="600" y="514" text-anchor="middle" class="bannersmall">点数表は試験に持ち込み可能——覚える試験ではなく、目的の項目を素早く見つけられるかを問う試験</text>
+    <text x="600" y="538" text-anchor="middle" class="bannersmall">目安は1項目30秒以内。索引の使い方に慣れるほど、レセプト1枚を書き切る時間が短くなる</text>
+    <text x="600" y="562" text-anchor="middle" class="bannersmall">外来・入院それぞれ20枚以上書いて「探す→写す→合わせる」の型を体に染み込ませるのが最短ルート</text>
+  </g>
+</svg>

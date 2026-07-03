@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説","description":"振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html","datePublished":"2026-05-07","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
+{"@context":"https://schema.org","@type":"Article","headline":"受取手形・支払手形の仕訳【日商簿記3級】電子記録債権まで完全解説","description":"振出人・名宛人の違いと仕訳、電子記録債権・債務まで例題つきで解説。","url":"https://hito77ki-ship-it.github.io/study-quest/boki3-tegata.html","datePublished":"2026-05-07","dateModified": "2026-07-03","author":{"@type":"Person","name":"大谷 一輝","url":"https://hito77ki-ship-it.github.io/study-quest/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://hito77ki-ship-it.github.io/study-quest/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -73,20 +73,6 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .sw-row .sep{color:var(--muted);font-size:11px;}
 .sw-row .amt{font-size:11px;color:var(--muted);margin-left:4px;}
 
-/* 電子記録比較 */
-.denshi-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
-@media(max-width:540px){.denshi-compare{grid-template-columns:1fr;}}
-.denshi-card{border-radius:10px;padding:14px 16px;border-left:4px solid;}
-.denshi-card.urike{background:#EBF8FF;border-color:#3B82F6;}
-.denshi-card.shiike{background:#FFF5F5;border-color:#FC8181;}
-.denshi-title{font-size:13px;font-weight:700;margin-bottom:4px;}
-.denshi-card.urike .denshi-title{color:#1D4ED8;}
-.denshi-card.shiike .denshi-title{color:#B91C1C;}
-.denshi-sub{font-size:11px;color:var(--muted);margin-bottom:6px;}
-.denshi-kamoku{font-size:12px;font-weight:700;}
-.denshi-card.urike .denshi-kamoku{color:#2B6CB0;}
-.denshi-card.shiike .denshi-kamoku{color:#9B2C2C;}
-
 /* まとめカード */
 .matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0;}
 .matome h3{color:#276749;font-size:16px;margin:0 0 16px;}
@@ -105,7 +91,8 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}</style>
+.faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover;}</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="lp.html">⚔ スタディクエスト</a><a class="nav-cta" href="index.html">無料で始める</a></div></nav>
@@ -125,33 +112,51 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
-  <p class="lead">手形とは「一定の期日に一定の金額を支払う」という証書です。掛取引と似ていますが、<strong>支払期日が明確に定められている</strong>点が違います。受取手形は「後でもらえる権利」（資産）、支払手形は「後で払う義務」（負債）です。</p>
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-otani.png" alt="大谷" style="width:100%;height:100%;object-fit:cover;"></div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    正直に告白すると、簿記の勉強で初めて「手形」のページを開いたとき、受取手形・支払手形・裏書譲渡・手形の割引・電子記録債権・手形貸付金……知らない単語が次から次へと出てきて「うわっ、なんじゃこりゃ……勘定科目、一体いくつあるんだよ！」と本気で頭を抱えました（笑）。<br>
+    でも実は、手形の正体はシンプルで、「誰が振り出して、誰が受け取ったか」というたった1つの関係さえ押さえれば、あとは同じロジックの繰り返しでしかない<strong>“究極のパズル”</strong>だったんです。振出人＝負債、名宛人＝資産。この1行さえ体に入れば、あとの応用パターンは全部同じ型で解けます。<br>
+    今日は、当時の僕と同じように単語の多さにフリーズしている皆さんへ、このパズルの解き方を一気に伝授します！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
 
   <div class="sq-chat">
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
-      <div class="sq-chat-bubble">手形って受取手形・支払手形・電子記録債権……勘定科目が多すぎてどれをいつ使えばいいのか混乱します。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">手形って受取手形・支払手形・電子記録債権……勘定科目が多すぎてどれをいつ使えばいいのか混乱します。単語を見るだけで心が折れそうです。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">大丈夫、整理するポイントは2つだけです。まず「自分が受け取った手形か、振り出した手形か」で資産か負債かが決まります。次に「紙の手形か電子かで勘定科目名が変わる」だけで、仕訳の考え方は全く同じです。</div>
-      <img src="images/icon-otani.png" alt="大谷くん" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">大丈夫、整理するポイントは2つだけです。まず「自分が受け取った手形か、振り出した手形か」で資産か負債かが決まります。次に「紙の手形か電子かで勘定科目名が変わる」だけで、仕訳の考え方は全く同じです。単語の数に惑わされず、この2つの軸だけを見てください。</div>
+      </div>
     </div>
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
-      <div class="sq-chat-bubble">貸付金と手形の違いもよくわからなくて…。</div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">貸付金と手形の違いもよくわからなくて…同じ「お金が絡む話」に見えて区別がつきません。</div>
+      </div>
     </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">そこは混同しやすいですが、手形は「商品売買の後払い」、貸付金は「お金そのものを貸した」という違いです。問題文に「資金を貸した」と書いてあれば貸付金、「商品の代金として手形を受け取った」なら受取手形です。焦らず問題文を読めば必ず判断できますよ！</div>
-      <img src="images/icon-otani.png" alt="大谷くん" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">そこは混同しやすいですが、手形は「商品売買の後払い」、貸付金は「お金そのものを貸した」という違いです。問題文に「資金を貸した」と書いてあれば貸付金、「商品の代金として手形を受け取った」なら受取手形です。焦らず問題文を読めば必ず判断できますよ！パズルのピースを1つずつはめていく感覚で進めましょう。</div>
+      </div>
     </div>
   </div>
 
   <h2>❓ 振出人と名宛人の違い——「振り出す側」と「受け取る側」どちらが負債になるか</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-tegata-map.svg" alt="手形の仕組み：名宛人（受取手形・資産）と振出人（支払手形・負債）の関係図" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：名宛人（売った側）＝受取手形（資産）、振出人（買った側）＝支払手形（負債）と電子版の対比</figcaption>
-  </figure>
   <p>手形は<strong>振り出す側</strong>が「支払手形（負債）」、<strong>受け取る側</strong>が「受取手形（資産）」になります。満期日に双方の手形勘定を消去します。</p>
 
   <div class="role-compare">
@@ -200,21 +205,17 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
   <div class="tip-box"><strong>満期日の仕訳は「発生の逆」をやるだけ！</strong><br>受取手形を受け取ったときの逆＝当座預金に入金して受取手形を消す。支払手形を振り出したときの逆＝当座預金から引かれて支払手形を消す。</div>
 
-  <h2>💻 ④ 電子記録債権・電子記録債務——手形の電子版、勘定科目名だけが違う</h2>
-  <p>紙の約束手形に代わる電子的な仕組みで、2016年以降の簿記3級の試験範囲です。</p>
-  <div class="tip-box"><strong>でんさいの本質：「振り替え」であって新たな売上・仕入ではない</strong><br>電子記録債権・債務は、すでに計上済みの売掛金・買掛金を電子記録に切り替えるものです。金額はそのまま、勘定科目だけ変わります。売上や仕入は発生しません。</div>
-  <div class="denshi-compare">
-    <div class="denshi-card urike">
-      <div class="denshi-title">電子記録債権</div>
-      <div class="denshi-sub">売掛金から振り替え（資産）</div>
-      <div class="denshi-kamoku">売掛金 → 電子記録債権</div>
-    </div>
-    <div class="denshi-card shiike">
-      <div class="denshi-title">電子記録債務</div>
-      <div class="denshi-sub">買掛金から振り替え（負債）</div>
-      <div class="denshi-kamoku">買掛金 → 電子記録債務</div>
-    </div>
+  <div class="warn-box" style="border-color:#F6AD55;background:#FFF5EB;">
+    <strong>🚨 2026年最新トレンド：紙の約束手形が事実上廃止へ</strong><br>
+    経済産業省と全国銀行協会（全銀協）は、2026年をめどに紙の約束手形・小切手の利用を支える手形交換制度を終了し、<strong>「でんさい（電子記録債権）」への全面移行</strong>を強力に推進しています。実務では紙の手形を扱う機会が急速に減り、電子記録債権・電子記録債務が標準の決済手段になりつつあります。<br>
+    この流れを受けて、日商簿記の試験でも「電子記録債権・電子記録債務」の出題比重が今後さらに高まると予想されます。紙の手形の仕組みを理解したら、必ずこの章もセットで得点源にしておきましょう。
   </div>
+
+  <h2>💻 ④ 電子記録債権・電子記録債務——手形の電子版、勘定科目名だけが違う</h2>
+  <p>紙の約束手形に代わる電子的な仕組みで、2016年以降の簿記3級の試験範囲です。2026年の紙の手形廃止トレンドを受けて、今まさに主役に躍り出ている論点です。</p>
+  <div class="tip-box"><strong>でんさいの本質：「振り替え」であって新たな売上・仕入ではない</strong><br>電子記録債権・債務は、すでに計上済みの売掛金・買掛金を電子記録に切り替えるものです。金額はそのまま、勘定科目だけ変わります。売上や仕入は発生しません。</div>
+
+  <img src="images/boki3-tegata-map.svg" alt="紙の手形と電子記録債権のデータフロー対比図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
 
   <h3>振り替え時の仕訳——売掛金・買掛金から電子記録債権・債務へ</h3>
   <div class="mondai">
@@ -321,6 +322,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">電子記録債務（振り替え）</span><span class="result">買掛金 ／ 電子記録債務（売上・仕入は不発生）</span></div>
     <div class="matome-row"><span class="trigger">資金貸借の手形（貸す側）</span><span class="result">手形貸付金 ／ 現金（受取手形ではない）</span></div>
     <div class="matome-row"><span class="trigger">資金貸借の手形（借りる側）</span><span class="result">現金 ／ 手形借入金（支払手形ではない）</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">手形は「振出人と名宛人」の関係さえ見抜けば解ける究極のパズルです</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">単語の多さにフリーズしていた僕も、この1行の型を覚えてからは手形も電子記録債権も同じロジックで解けるようになりました。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、簿記3級マスターへの一歩を刻んでおきましょう。</p>
+    <a href="index.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
   </div>
 </div>
 <section class="faq" id="faq">

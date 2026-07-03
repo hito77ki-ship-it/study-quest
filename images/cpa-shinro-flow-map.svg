@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="800" height="650">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="800" height="650" rx="16" fill="#FEFCF9"/>
+  <text x="400" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">公認会計士試験 撤退後の進路ナビゲートフローチャート</text>
+  <text x="400" y="44" text-anchor="middle" font-size="11" fill="#94A3B8">どのルートを選んでも、積み上げてきた努力は消えません</text>
+
+  <!-- スタート -->
+  <rect x="300" y="60" width="200" height="66" rx="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2.5"/>
+  <text x="400" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">🎓 公認会計士</text>
+  <text x="400" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">撤退を考えている</text>
+
+  <line x1="400" y1="126" x2="400" y2="156" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="400,163 394,153 406,153" fill="#94A3B8"/>
+
+  <!-- Q1 ダイヤモンド -->
+  <polygon points="400,163 515,215 400,267 285,215" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+  <text x="400" y="211" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">Q1. 会計の勉強</text>
+  <text x="400" y="227" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">自体は好き？</text>
+
+  <!-- Q1 NO → 進路4 -->
+  <line x1="285" y1="215" x2="242" y2="215" stroke="#FDBA74" stroke-width="2"/>
+  <polygon points="234,215 246,209 246,221" fill="#FDBA74"/>
+  <text x="262" y="204" text-anchor="middle" font-size="9.5" font-weight="700" fill="#C2410C">NO</text>
+  <rect x="30" y="165" width="210" height="100" rx="14" fill="#FFEDD5" stroke="#FDBA74" stroke-width="2.5"/>
+  <text x="135" y="192" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9A3412">進路4</text>
+  <text x="135" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">別分野へ進路変更</text>
+  <text x="135" y="232" text-anchor="middle" font-size="9" fill="#78350F">本当は別の仕事に興味がある</text>
+  <text x="135" y="248" text-anchor="middle" font-size="9" fill="#78350F">なら、方向転換も立派な選択</text>
+
+  <!-- Q1 YES → Q2 -->
+  <line x1="400" y1="267" x2="400" y2="315" stroke="#86EFAC" stroke-width="2"/>
+  <polygon points="400,322 394,312 406,312" fill="#86EFAC"/>
+  <text x="418" y="295" text-anchor="middle" font-size="9.5" font-weight="700" fill="#15803D">YES</text>
+
+  <!-- Q2 ダイヤモンド -->
+  <polygon points="400,322 515,374 400,426 285,374" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+  <text x="400" y="370" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">Q2. 今すぐ</text>
+  <text x="400" y="386" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">働きたい？</text>
+
+  <!-- Q2 YES → 進路3 -->
+  <line x1="515" y1="374" x2="558" y2="374" stroke="#93C5FD" stroke-width="2"/>
+  <polygon points="566,374 554,368 554,380" fill="#93C5FD"/>
+  <text x="538" y="363" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">YES</text>
+  <rect x="568" y="324" width="210" height="100" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="673" y="351" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">進路3</text>
+  <text x="673" y="371" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">就職・転職</text>
+  <text x="673" y="391" text-anchor="middle" font-size="9" fill="#1E40AF">会計知識と継続力を</text>
+  <text x="673" y="407" text-anchor="middle" font-size="9" fill="#1E40AF">経理・事務系の強みに</text>
+
+  <!-- Q2 NO → 分岐点 -->
+  <line x1="400" y1="426" x2="400" y2="466" stroke="#86EFAC" stroke-width="2"/>
+  <polygon points="400,473 394,463 406,463" fill="#86EFAC"/>
+  <text x="418" y="450" text-anchor="middle" font-size="9.5" font-weight="700" fill="#15803D">NO</text>
+  <circle cx="400" cy="480" r="4" fill="#94A3B8"/>
+
+  <!-- 分岐点 → 進路1・進路2 -->
+  <line x1="400" y1="480" x2="285" y2="518" stroke="#86EFAC" stroke-width="2"/>
+  <polygon points="278,522 288,514 292,526" fill="#86EFAC"/>
+  <line x1="400" y1="480" x2="515" y2="518" stroke="#C4B5FD" stroke-width="2"/>
+  <polygon points="522,522 512,514 508,526" fill="#C4B5FD"/>
+
+  <!-- 進路1：簿記1級 -->
+  <rect x="180" y="524" width="210" height="106" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2.5"/>
+  <text x="285" y="551" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">進路1</text>
+  <text x="285" y="571" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">簿記1級へ切り替え</text>
+  <text x="285" y="591" text-anchor="middle" font-size="9" fill="#14532D">財務会計論・原価計算の</text>
+  <text x="285" y="607" text-anchor="middle" font-size="9" fill="#14532D">積み上げをそのまま活かせる</text>
+
+  <!-- 進路2：税理士 -->
+  <rect x="410" y="524" width="210" height="106" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2.5"/>
+  <text x="515" y="551" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5B21B6">進路2</text>
+  <text x="515" y="571" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">税理士を目指す</text>
+  <text x="515" y="591" text-anchor="middle" font-size="9" fill="#4C1D95">科目合格制で</text>
+  <text x="515" y="607" text-anchor="middle" font-size="9" fill="#4C1D95">自分のペースを作れる</text>
+</svg>

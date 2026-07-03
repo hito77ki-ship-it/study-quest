@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="430" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">IELTS 4技能バランス＆足切り回避マップ</text>
+  <text x="380" y="52" text-anchor="middle" font-size="11" fill="#64748B">L・R・W・Sをすべて防衛線（例：6.0）より上に揃えることが最優先</text>
+
+  <!-- chart area: scale 0-9 bands, 20px per band, baseline y=360, top y=110 -->
+  <!-- threshold at band 6.0 -> y = 360 - 6*20 = 240 -->
+  <line x1="46" y1="240" x2="714" y2="240" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="722" y="244" font-size="10.5" fill="#B91C1C">合格防衛線（6.0）</text>
+
+  <line x1="46" y1="110" x2="714" y2="110" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="40" y="114" text-anchor="end" font-size="9.5" fill="#94A3B8">9.0</text>
+  <text x="40" y="244" text-anchor="end" font-size="9.5" fill="#94A3B8">6.0</text>
+  <text x="40" y="364" text-anchor="end" font-size="9.5" fill="#94A3B8">0</text>
+  <line x1="46" y1="360" x2="714" y2="360" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Column 1: Listening target 6.5 -->
+  <text x="128" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">L</text>
+  <text x="128" y="104" text-anchor="middle" font-size="9" fill="#64748B">Listening</text>
+  <rect x="83" y="230" width="90" height="130" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="128" y="220" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D4ED8">目標 6.5</text>
+
+  <!-- Column 2: Reading target 6.5 -->
+  <text x="308" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">R</text>
+  <text x="308" y="104" text-anchor="middle" font-size="9" fill="#64748B">Reading</text>
+  <rect x="263" y="230" width="90" height="130" rx="6" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="308" y="220" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6D28D9">目標 6.5</text>
+
+  <!-- Column 3: Writing target 6.0 (priority - weakest) -->
+  <text x="488" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">W</text>
+  <text x="488" y="104" text-anchor="middle" font-size="9" fill="#64748B">Writing</text>
+  <rect x="443" y="240" width="90" height="120" rx="6" fill="#FFEDD5" stroke="#F97316" stroke-width="2.5"/>
+  <text x="488" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">目標 6.0</text>
+  <rect x="450" y="248" width="76" height="18" rx="9" fill="#F97316"/>
+  <text x="488" y="261" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fff">日本人の弱点</text>
+
+  <!-- Column 4: Speaking target 6.0 (priority - weakest) -->
+  <text x="668" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">S</text>
+  <text x="668" y="104" text-anchor="middle" font-size="9" fill="#64748B">Speaking</text>
+  <rect x="623" y="240" width="90" height="120" rx="6" fill="#FCE7F3" stroke="#EC4899" stroke-width="2.5"/>
+  <text x="668" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="#BE185D">目標 6.0</text>
+  <rect x="630" y="248" width="76" height="18" rx="9" fill="#EC4899"/>
+  <text x="668" y="261" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fff">日本人の弱点</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="46" y="382" width="668" height="38" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="406" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">総合平均 6.4 でも W・S が6.0未満なら要件未達 ── 全技能が防衛線を上回って初めて合格</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="430" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">日商簿記1級 4科目バランス戦略マップ</text>
+  <text x="380" y="52" text-anchor="middle" font-size="11" fill="#64748B">各25点満点・40%足切り防衛ラインを守りながら合計70点をもぎ取る配分戦略</text>
+
+  <!-- chart area: 0-25 points, 10px per point, baseline y=360, top y=110 -->
+  <!-- 40% threshold line at 10 points -> y = 360 - 100 = 260 -->
+  <line x1="46" y1="260" x2="714" y2="260" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="722" y="264" font-size="10.5" fill="#B91C1C">40%足切りライン（10点）</text>
+
+  <!-- 25 point reference line (top of scale) -->
+  <line x1="46" y1="110" x2="714" y2="110" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="40" y="114" text-anchor="end" font-size="9.5" fill="#94A3B8">25点</text>
+  <text x="40" y="264" text-anchor="end" font-size="9.5" fill="#94A3B8">10点</text>
+  <text x="40" y="364" text-anchor="end" font-size="9.5" fill="#94A3B8">0点</text>
+  <line x1="46" y1="360" x2="714" y2="360" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Column 1: 商業簿記 target 17 -->
+  <text x="128" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">商業簿記</text>
+  <text x="128" y="104" text-anchor="middle" font-size="9.5" fill="#64748B">25点 / ★★★★</text>
+  <rect x="83" y="190" width="90" height="170" rx="6" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="128" y="180" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D4ED8">目標 17点</text>
+
+  <!-- Column 2: 会計学 target 14 -->
+  <text x="308" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">会計学</text>
+  <text x="308" y="104" text-anchor="middle" font-size="9.5" fill="#64748B">25点 / ★★★★★</text>
+  <rect x="263" y="220" width="90" height="140" rx="6" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="308" y="210" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6D28D9">目標 14点</text>
+  <text x="308" y="238" text-anchor="middle" font-size="9" fill="#7C3AED">最難関だが+4点の安全バッファ</text>
+
+  <!-- Column 3: 工業簿記 target 20 (priority) -->
+  <text x="488" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">工業簿記</text>
+  <text x="488" y="104" text-anchor="middle" font-size="9.5" fill="#64748B">25点 / ★★★</text>
+  <rect x="443" y="160" width="90" height="200" rx="6" fill="#DCFCE7" stroke="#4ADE80" stroke-width="2.5"/>
+  <text x="488" y="150" text-anchor="middle" font-size="12.5" font-weight="700" fill="#15803D">目標 20点</text>
+  <rect x="450" y="168" width="76" height="18" rx="9" fill="#22C55E"/>
+  <text x="488" y="181" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">最優先の得点源</text>
+
+  <!-- Column 4: 原価計算 target 19 -->
+  <text x="668" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">原価計算</text>
+  <text x="668" y="104" text-anchor="middle" font-size="9.5" fill="#64748B">25点 / ★★★★</text>
+  <rect x="623" y="170" width="90" height="190" rx="6" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="668" y="160" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">目標 19点</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="46" y="382" width="668" height="38" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="406" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">合計目標：17 + 14 + 20 + 19 ＝ 70点 ── 全科目が40%ラインを安全圏で死守</text>
+</svg>

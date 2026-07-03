@@ -130,6 +130,16 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </ul>
   </div>
 
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">大</div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！初めて簿記の「消費税（税抜方式）」を習ったとき、僕は本気で「なんじゃこりゃ……！」と脳内パニックを起こしました。だって、お店で商品をひとつ買っただけなのに、仕訳の中に【仕入】と【仮払消費税】という2つの科目が同時に出現するんです。「え、ただ買っただけなのに、なんで科目が2つに分裂するの！？」と、教科書を二度見しました（笑）。<br>
+    でもこれ、正体は「国に対する預かり金」と「先払いスタンプ」の2つのドラマが同時進行しているだけなんです。売上のときは、お客さんから消費税を"預かって"いるだけ。仕入のときは、将来の納税額から差し引ける"先払いスタンプ"を押しているだけ。この2つのストーリーが決算日にガチャンとぶつかり合って、最終的な納付額が決まる——そう気づいた瞬間、一気にゲーム感覚で腹落ちしました。今日は僕がつまずいたその瞬間をそのまま攻略法に変換してお届けします！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ励みになりますしすごく嬉しいです！それでは、一緒に攻略していきましょう！</p>
+  </div>
+
   <p class="lead">簿記3級では消費税の処理として<strong>税抜方式</strong>を学びます。仕入のたびに「仮払消費税（資産）」、売上のたびに「仮受消費税（負債）」を計上し、決算時に差し引いた金額を納付します。</p>
 
   <div class="sq-chat">
@@ -143,20 +153,25 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     </div>
     <div class="sq-chat-row">
       <img src="images/icon-student.png" alt="受験生" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
-      <div class="sq-chat-bubble">決算でどちらが大きくなるかわかりません。</div>
+      <div class="sq-chat-bubble">決算になったら、この2つの仮勘定って結局どうなるんですか？消えてなくなるイメージが湧きません……</div>
     </div>
     <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">普通は仮受消費税（売上消費税）の方が大きくなります。売上 > 仕入が一般的なので、会社は消費税を預かり超過になり、その差額を国に納めます。焦らず「仮受 − 仮払＝納付額」と覚えておけば大丈夫です！</div>
+      <div class="sq-chat-bubble">ここ、実は消費税処理のクライマックスなんです！決算日に、仮受消費税（負債）と仮払消費税（資産）を、それぞれの逆サイドにひっくり返して真正面からぶつけ合う——つまり<strong>相殺消去するパズル</strong>だと思ってください。仮受消費税を借方に、仮払消費税を貸方に置いて金額の小さい方を打ち消し合うと、必ずどちらかが残ります。その残った差額が「未払消費税」という新しい負債になって姿を現すんです。</div>
+      <img src="images/icon-otani.png" alt="大谷くん" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
+    </div>
+    <div class="sq-chat-row">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
+      <div class="sq-chat-bubble">ひっくり返してぶつけ合う……！なんかRPGのバトルみたいで面白いです。普通はどっちが勝つ（残る）んですか？</div>
+    </div>
+    <div class="sq-chat-row reverse">
+      <div class="sq-chat-bubble">その感覚、完璧です！普通は仮受消費税（売上消費税）の方が大きくなります。売上 > 仕入が一般的なので、会社は消費税を預かり超過になり、その差額を国に納めます。焦らず「仮受 − 仮払＝納付額」、そして「大きい方が残って未払消費税になる」と覚えておけば、決算のパズルは絶対に負けません！</div>
       <img src="images/icon-otani.png" alt="大谷くん" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;">
     </div>
   </div>
 
   <h2>💡 ① 税抜方式の基本的な考え方——本体価格と消費税を分けて記録する理由</h2>
 
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki3-shohi-map.svg" alt="消費税（税抜方式）の3段階処理：仕入時・売上時・決算時の仕訳フロー" style="max-width:100%;height:auto;border-radius:8px;">
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：仮払消費税（資産）・仮受消費税（負債）を決算で相殺して未払消費税（負債）を計上する流れ</figcaption>
-  </figure>
+  <img src="images/boki3-shohi-map.svg" alt="消費税の税抜方式における期中仕訳と決算整理相殺の3段階フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
   <p>税抜方式では、消費税を<strong>仮払消費税（資産）</strong>と<strong>仮受消費税（負債）</strong>に分けて記録します。</p>
 
   <div class="tax-flow">
@@ -172,6 +187,11 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <div class="tip-box"><strong>消費税は「預かり金」と同じ発想！</strong><br>売上から受け取った消費税は「お客様から預かっているもの」で、後で国に納めます。仕入で支払った消費税は「先払いした分」として後で差し引けます。</div>
+
+  <div class="tip-box">
+    <strong>🖩 実戦ハック：税込総額から本体価格をブチ抜く「÷1.1ハック」</strong><br>
+    試験本番で一番の罠は、問題文に「税込総額 ¥132,000」としか書かれていないパターンです！ここでパニックになってはいけません。電卓を取り出したら、まず総額に<strong>【÷ 1.1】</strong>をしてください。一瞬で本体価格の「120,000」が出ます！あとは総額から本体を引けば、消費税の「12,000」がパズル感覚でブチ抜けます。この「÷1.1ハック」だけで、本番の計算ミスは100%ゼロになりますよ！
+  </div>
 
   <h2>📝 ② 仕入時・売上時の仕訳——仮払消費税と仮受消費税をどのタイミングで計上するか</h2>
 
@@ -241,6 +261,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="matome-row"><span class="trigger">売上時</span><span class="result">仮受消費税（負債）を計上。税抜売上額と消費税を分けて記録</span></div>
     <div class="matome-row"><span class="trigger">決算時</span><span class="result">仮受消費税 − 仮払消費税 ＝ 未払消費税（負債）に振替</span></div>
     <div class="matome-row"><span class="trigger">納付時</span><span class="result">未払消費税 ／ 現金で解消</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">ここまで読んでくれて本当にありがとうございます！この記事が少しでも役に立ったら、僕の毎日の執筆モチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
   </div>
 
   <section class="faq" id="faq">

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="800" height="500" rx="12" fill="#FAFDF6"/>
+  <text x="400" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">大谷流・習慣化のモチベーション曲線マップ</text>
+  <text x="400" y="44" text-anchor="middle" font-size="10.5" fill="#64748B">挫折（ざせつ）の谷を「最低10分ルール」で耐え抜けば、66日目に自動運転（じどううんてん）モードへ</text>
+
+  <!-- ゾーン背景 -->
+  <rect x="90" y="70" width="90" height="300" fill="#F0FFF4"/>
+  <rect x="180" y="70" width="230" height="300" fill="#FEF2F2"/>
+  <rect x="410" y="70" width="270" height="300" fill="#EFF6FF"/>
+  <rect x="680" y="70" width="90" height="300" fill="#F5F3FF"/>
+
+  <!-- ゾーン境界線 -->
+  <line x1="180" y1="70" x2="180" y2="370" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="410" y1="70" x2="410" y2="370" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="680" y1="70" x2="680" y2="370" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Y軸 -->
+  <line x1="90" y1="70" x2="90" y2="370" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="82" y="100" text-anchor="end" font-size="9" fill="#64748B">高</text>
+  <text x="82" y="340" text-anchor="end" font-size="9" fill="#64748B">低</text>
+  <text x="70" y="230" text-anchor="middle" font-size="9.5" fill="#374151" transform="rotate(-90 70 230)">モチベーション</text>
+
+  <!-- X軸 -->
+  <line x1="90" y1="370" x2="770" y2="370" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- モチベーション曲線 -->
+  <polyline points="110,95 160,110 190,200 220,255 250,290 280,303 310,305 340,300 380,288 460,245 540,215 620,176 700,146 750,140"
+    fill="none" stroke="#EA580C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- 谷底マーカー -->
+  <circle cx="310" cy="305" r="6" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+  <text x="310" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#991B1B">谷底</text>
+
+  <!-- 66日目マーカー -->
+  <circle cx="700" cy="146" r="6" fill="#7C3AED" stroke="#fff" stroke-width="2"/>
+  <line x1="700" y1="152" x2="700" y2="370" stroke="#7C3AED" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <text x="700" y="386" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6D28D9">66日目</text>
+
+  <!-- ゾーンラベル -->
+  <text x="135" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">①やる気</text>
+  <text x="135" y="103" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">MAX</text>
+  <text x="135" y="350" text-anchor="middle" font-size="8.5" fill="#276749">1〜3日目</text>
+
+  <text x="295" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991B1B">②挫折の谷（ざせつのたに）</text>
+  <text x="295" y="350" text-anchor="middle" font-size="8.5" fill="#991B1B">4〜14日目</text>
+
+  <text x="545" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E40AF">③習慣化（しゅうかんか）の入口</text>
+  <text x="545" y="350" text-anchor="middle" font-size="8.5" fill="#1E40AF">15〜65日目</text>
+
+  <text x="725" y="90" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">④自動運転</text>
+  <text x="725" y="103" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">モード</text>
+  <text x="725" y="350" text-anchor="middle" font-size="8.5" fill="#5B21B6">66日目〜</text>
+
+  <!-- 谷の生存戦略コールアウト -->
+  <rect x="195" y="200" width="200" height="42" rx="8" fill="#FCA5A5" opacity="0.9"/>
+  <text x="295" y="216" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7F1D1D">🛡 最低10分ルールで耐える</text>
+  <text x="295" y="232" text-anchor="middle" font-size="8.5" fill="#7F1D1D">ここで挫折率が最も高い危険地帯</text>
+
+  <!-- 下部サマリー -->
+  <rect x="90" y="410" width="680" height="72" rx="8" fill="#1E293B"/>
+  <text x="430" y="430" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">モチベーション曲線の攻略ポイント</text>
+  <text x="110" y="448" font-size="9" fill="#CBD5E1">① 1〜3日目の高揚感は必ず落ちる。落ちること自体を「サボりの脳の仕様」として織り込んでおく。</text>
+  <text x="110" y="463" font-size="9" fill="#CBD5E1">② 4〜14日目の谷は「最低10分だけやる」で耐える。谷を越えれば自動的にモチベーションは回復する。</text>
+  <text x="110" y="478" font-size="9" fill="#CBD5E1">③ 66日目を超えると「やらない方が気持ち悪い」自動運転モードに入り、努力感なく継続できる。</text>
+</svg>

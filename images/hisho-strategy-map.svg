@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="440" rx="16" fill="#FEFCF9"/>
+  <text x="380" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">秘書検定 合格の絶対条件——理論・実技それぞれの60%防衛線</text>
+  <text x="380" y="44" text-anchor="middle" font-size="11" fill="#94A3B8">どちらか一方でも60%未満なら、もう一方が満点でも不合格</text>
+
+  <!-- ① 理論領域 -->
+  <text x="170" y="104" text-anchor="end" font-size="13" font-weight="700" fill="#1D4ED8">① 理論領域</text>
+  <rect x="180" y="82" width="480" height="36" rx="10" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="180" y="82" width="374" height="36" rx="10" fill="#3B82F6"/>
+  <line x1="468" y1="74" x2="468" y2="126" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="568" y="104" font-size="11" font-weight="700" fill="#1D4ED8">78%（合格圏）</text>
+
+  <rect x="180" y="130" width="110" height="24" rx="12" fill="#EFF6FF" stroke="#93C5FD"/>
+  <text x="235" y="146" text-anchor="middle" font-size="9.5" fill="#1D4ED8">資質（ししつ）</text>
+  <rect x="300" y="130" width="150" height="24" rx="12" fill="#EFF6FF" stroke="#93C5FD"/>
+  <text x="375" y="146" text-anchor="middle" font-size="9.5" fill="#1D4ED8">職務知識（しょくむちしき）</text>
+  <rect x="460" y="130" width="150" height="24" rx="12" fill="#EFF6FF" stroke="#93C5FD"/>
+  <text x="535" y="146" text-anchor="middle" font-size="9.5" fill="#1D4ED8">一般知識（いっぱんちしき）</text>
+
+  <!-- ② 実技領域 -->
+  <text x="170" y="248" text-anchor="end" font-size="13" font-weight="700" fill="#9D174D">② 実技領域</text>
+  <rect x="180" y="226" width="480" height="36" rx="10" fill="#FCE7F3" stroke="#F9A8D4" stroke-width="2"/>
+  <rect x="180" y="226" width="317" height="36" rx="10" fill="#EC4899"/>
+  <line x1="468" y1="218" x2="468" y2="270" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="512" y="248" font-size="11" font-weight="700" fill="#9D174D">66%（ギリギリ危険域）</text>
+
+  <rect x="180" y="274" width="90" height="24" rx="12" fill="#FDF2F8" stroke="#F9A8D4"/>
+  <text x="225" y="290" text-anchor="middle" font-size="9.5" fill="#9D174D">マナー</text>
+  <rect x="280" y="274" width="130" height="24" rx="12" fill="#FDF2F8" stroke="#F9A8D4"/>
+  <text x="345" y="290" text-anchor="middle" font-size="9.5" fill="#9D174D">接遇（せつぐう）</text>
+  <rect x="420" y="274" width="130" height="24" rx="12" fill="#FDF2F8" stroke="#F9A8D4"/>
+  <text x="485" y="290" text-anchor="middle" font-size="9.5" fill="#9D174D">技能（ぎのう）</text>
+
+  <!-- 凡例 -->
+  <line x1="600" y1="330" x2="620" y2="330" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="628" y="334" font-size="9.5" fill="#DC2626">＝60%合格防衛線</text>
+
+  <!-- 警告ボックス -->
+  <rect x="30" y="352" width="700" height="72" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="376" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">⚠ 理論・実技は完全に独立採点</text>
+  <text x="380" y="398" text-anchor="middle" font-size="10.5" fill="#78350F">理論が90点でも、実技が59%なら不合格——両方の防衛線を同時に守り切ることが唯一の合格条件</text>
+  <text x="380" y="414" text-anchor="middle" font-size="9.5" fill="#94A3B8">特に実技の敬語（尊敬語・謙譲語）は失点しやすいので重点対策を</text>
+</svg>

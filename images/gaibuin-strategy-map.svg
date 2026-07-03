@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">証券外務員試験の配点比率と計算問題重視の合格戦略マップ</title>
+  <desc id="desc">○×問題（2点）と五肢択一の計算問題（10点）の配点差が5倍であること、および二種と一種それぞれで問われる重要計算論点の役割分担を示す図解</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:28px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:600;fill:#64748b}
+      .sectionlabel{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13.5px;font-weight:700;fill:#475569}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:800;fill:#ffffff}
+      .bigpt{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:44px;font-weight:800}
+      .ptlabel{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:600;fill:#475569}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#ffffff}
+      .topicname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13.5px;font-weight:700;fill:#1f2937}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:700;fill:#166534}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1100" cy="110" r="78" fill="#dcfce7" opacity="0.55"/>
+  <circle cx="1090" cy="760" r="88" fill="#fce7f3" opacity="0.5"/>
+  <circle cx="110" cy="750" r="70" fill="#fef3c7" opacity="0.5"/>
+
+  <text x="600" y="50" text-anchor="middle" class="title">証券外務員 配点・計算問題攻略マップ</text>
+  <text x="600" y="78" text-anchor="middle" class="sub">440点満点・308点で合格（70%）——配点バランスを見抜けば独学最速ルートが見える</text>
+
+  <!-- Section 1: 配点差 -->
+  <text x="90" y="118" class="sectionlabel">① ○×問題と五肢択一、配点は5倍違う</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="90" y="132" width="460" height="220" rx="24" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+    <rect x="118" y="156" width="130" height="34" rx="17" fill="#3b82f6"/>
+    <text x="183" y="179" text-anchor="middle" class="pill">○×問題</text>
+    <text x="320" y="240" text-anchor="middle" class="bigpt" fill="#1D4ED8">2点</text>
+    <text x="320" y="270" text-anchor="middle" class="ptbody">1問あたりの配点は小さい</text>
+    <text x="320" y="292" text-anchor="middle" class="ptbody">法規・諸規則の暗記知識が中心</text>
+    <text x="320" y="314" text-anchor="middle" class="ptbody">1問落としても影響は限定的</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="650" y="132" width="460" height="220" rx="24" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+    <rect x="678" y="156" width="180" height="34" rx="17" fill="#f59e0b"/>
+    <text x="768" y="179" text-anchor="middle" class="pill">五肢択一（計算問題中心）</text>
+    <text x="880" y="240" text-anchor="middle" class="bigpt" fill="#C2410C">10点</text>
+    <text x="880" y="270" text-anchor="middle" class="ptbody">1問あたりの配点が○×の5倍</text>
+    <text x="880" y="292" text-anchor="middle" class="ptbody">利回り計算・PER/PBR・オプション等</text>
+    <text x="880" y="314" text-anchor="middle" class="ptbody">1問の取りこぼしが合否に直結</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="600" cy="242" r="34" fill="#ffffff" stroke="#fcd34d" stroke-width="3"/>
+    <text x="600" y="248" text-anchor="middle" class="ptlabel" fill="#92400e">×5倍</text>
+  </g>
+
+  <!-- Section 2: 一種・二種の計算論点役割分担 -->
+  <text x="90" y="400" class="sectionlabel">② 一種・二種で問われる計算論点の役割分担</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="90" y="414" width="500" height="230" rx="22" fill="#ffffff" stroke="#86efac" stroke-width="3"/>
+    <rect x="114" y="434" width="90" height="32" rx="16" fill="#22c55e"/>
+    <text x="159" y="455" text-anchor="middle" class="pill">二種</text>
+    <text x="240" y="458" class="colhead" fill="#166534">現物取引の基本計算</text>
+    <rect x="114" y="482" width="452" height="46" rx="10" fill="#F0FDF4"/>
+    <text x="134" y="510" class="topicname">利回り計算（単利・複利・応募者利回り等）</text>
+    <rect x="114" y="536" width="452" height="46" rx="10" fill="#F0FDF4"/>
+    <text x="134" y="564" class="topicname">PER・PBRなど株式指標の計算</text>
+    <rect x="114" y="590" width="452" height="46" rx="10" fill="#F0FDF4"/>
+    <text x="134" y="618" class="topicname">投資信託の基準価額・手数料計算</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="610" y="414" width="500" height="230" rx="22" fill="#ffffff" stroke="#fdba74" stroke-width="3"/>
+    <rect x="634" y="434" width="90" height="32" rx="16" fill="#f97316"/>
+    <text x="679" y="455" text-anchor="middle" class="pill">一種</text>
+    <text x="770" y="458" class="colhead" fill="#9a3412">二種＋信用・デリバティブ計算</text>
+    <rect x="634" y="482" width="452" height="46" rx="10" fill="#FFF7ED"/>
+    <text x="654" y="510" class="topicname">信用取引の委託保証金・追証の計算</text>
+    <rect x="634" y="536" width="452" height="46" rx="10" fill="#FFF7ED"/>
+    <text x="654" y="564" class="topicname">先物取引の理論価格・損益計算</text>
+    <rect x="634" y="590" width="452" height="46" rx="10" fill="#FFF7ED"/>
+    <text x="654" y="618" class="topicname">オプション取引のプレミアム計算</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="90" y="674" width="1020" height="120" rx="24" fill="#f0fdf4" stroke="#86efac" stroke-width="3"/>
+    <text x="600" y="708" text-anchor="middle" class="banner">最大のチート技：五肢択一の計算問題を絶対に落とさない</text>
+    <text x="600" y="736" text-anchor="middle" class="bannersmall">○×の暗記問題を広く浅く拾うより、10点問題の公式を確実に使えるようにする方が440点の壁を早く越えられる</text>
+    <text x="600" y="760" text-anchor="middle" class="bannersmall">二種で基本計算を固め、一種ではデリバティブ計算を上乗せする——この役割分担を意識すれば独学でも迷わない</text>
+  </g>
+</svg>
