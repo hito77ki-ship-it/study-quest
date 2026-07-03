@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="500" rx="16" fill="#F8FAFC"/>
+  <text x="380" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">女性におすすめの資格ランキング10選——4象限マトリクス</text>
+  <text x="380" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">働き方の柔軟性（縦軸）×勉強時間の短さ（横軸）で選び方が一発でわかる</text>
+
+  <!-- 軸ラベル -->
+  <text x="390" y="66" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">▲ 働き方の柔軟性：在宅・時短がしやすい</text>
+  <text x="390" y="464" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">▽ 柔軟性：勤務先の環境に依存</text>
+  <text x="70" y="255" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569" transform="rotate(-90 70 255)">長期戦（500時間〜）</text>
+  <text x="710" y="255" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569" transform="rotate(90 710 255)">短期決戦（〜300時間）</text>
+
+  <!-- 4象限の背景 -->
+  <rect x="90" y="75" width="300" height="180" rx="10" fill="#FDF2F8"/>
+  <rect x="390" y="75" width="300" height="180" rx="10" fill="#EFF6FF"/>
+  <rect x="90" y="255" width="300" height="180" rx="10" fill="#F3E8FF"/>
+  <rect x="390" y="255" width="300" height="180" rx="10" fill="#F0FFF4"/>
+
+  <line x1="390" y1="75" x2="390" y2="435" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="90" y1="255" x2="690" y2="255" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- Q1 士業ゾーン -->
+  <text x="105" y="98" font-size="13" font-weight="700" fill="#9D174D">🏆 士業ゾーン</text>
+  <text x="105" y="113" font-size="9.5" fill="#9D174D">長期戦だが在宅開業・独立の自由度は最大級</text>
+  <rect x="105" y="122" width="260" height="24" rx="12" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="235" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D">社会保険労務士（社労士）</text>
+  <rect x="105" y="150" width="260" height="24" rx="12" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="235" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D">行政書士</text>
+  <text x="105" y="192" font-size="9" fill="#9D174D">※合格後は自宅開業で育児・家事と両立しやすい</text>
+
+  <!-- Q2 女性最強ゾーン -->
+  <text x="405" y="98" font-size="13" font-weight="700" fill="#1E40AF">⚡ 女性最強ゾーン</text>
+  <text x="405" y="113" font-size="9.5" fill="#1E40AF">短期間×ライフスタイルへのフィット抜群</text>
+  <rect x="405" y="122" width="260" height="24" rx="12" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="535" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">FP2級</text>
+  <rect x="405" y="150" width="260" height="24" rx="12" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="535" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">保育士</text>
+  <rect x="405" y="178" width="260" height="24" rx="12" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="535" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">医療事務</text>
+
+  <!-- Q3 専門特化ゾーン -->
+  <text x="105" y="278" font-size="13" font-weight="700" fill="#7C3AED">🔧 専門特化ゾーン</text>
+  <text x="105" y="293" font-size="9.5" fill="#7C3AED">現場常駐型だが人手不足で需要は安定</text>
+  <rect x="105" y="302" width="260" height="24" rx="12" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="235" y="318" text-anchor="middle" font-size="11" font-weight="700" fill="#7C3AED">介護福祉士</text>
+  <rect x="105" y="330" width="260" height="24" rx="12" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="235" y="346" text-anchor="middle" font-size="11" font-weight="700" fill="#7C3AED">登録販売者</text>
+
+  <!-- Q4 お手軽ゾーン -->
+  <text x="405" y="278" font-size="13" font-weight="700" fill="#166534">🎒 お手軽ゾーン</text>
+  <text x="405" y="293" font-size="9.5" fill="#166534">短期間で成功体験を積める</text>
+  <rect x="405" y="302" width="260" height="24" rx="12" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="535" y="318" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">秘書検定2級・準1級</text>
+  <rect x="405" y="330" width="260" height="24" rx="12" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="535" y="346" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">MOS</text>
+  <rect x="405" y="358" width="260" height="24" rx="12" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="535" y="374" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">日商簿記2級</text>
+</svg>

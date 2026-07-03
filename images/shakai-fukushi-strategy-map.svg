@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1094" viewBox="0 0 1200 1094" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">社会福祉士試験の18科目足切り回避と過去問重視の合格戦略マップ</title>
+  <desc id="svgdesc">共通科目11・専門科目7からなる18の得点区分すべてにかかる1点以上の足切り防衛線と、早期に得点源化すべき優先科目の位置関係を示す図解</desc>
+  <defs>
+    <linearGradient id="sBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8f4"/>
+      <stop offset="0.5" stop-color="#f4fbff"/>
+      <stop offset="1" stop-color="#f7fff4"/>
+    </linearGradient>
+    <linearGradient id="sTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="sBoss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#86EFAC"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="sCard1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFDBFE"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <linearGradient id="sCard2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBCFE8"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <filter id="sShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.10"/>
+    </filter>
+    <style>.kt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="1200" height="1094" rx="20" fill="url(#sBg)"/>
+  <circle cx="100" cy="120" r="90" fill="#FFEDD5" opacity="0.5"/>
+  <circle cx="1100" cy="140" r="100" fill="#DBEAFE" opacity="0.45"/>
+  <circle cx="600" cy="1064" r="120" fill="#D1FAE5" opacity="0.4"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="1120" height="64" rx="14" fill="url(#sTitle)"/>
+  <text x="600" y="46" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#94A3B8" letter-spacing="2">18科目すべてを均等に丸暗記しない</text>
+  <text x="600" y="72" text-anchor="middle" class="kt" font-size="19" font-weight="800" fill="#FFFFFF">社会福祉士 18科目 足切り（あしきり）回避 × 過去問重視の合格戦略マップ</text>
+  <text x="600" y="106" text-anchor="middle" class="kt" font-size="13" fill="#64748B">合格基準は「総得点60%程度」かつ「18の得点区分すべてで1点以上」。優先科目を味方にしつつ全区分の防衛線（ぼうえいせん）も死守する</text>
+
+  <!-- ============ PANEL A: 攻略優先度マップ ============ -->
+  <g filter="url(#sShadow)">
+    <rect x="40" y="110" width="1120" height="500" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+  <text x="70" y="142" class="kt" font-size="15" font-weight="800" fill="#166534">PHASE 1　攻略優先度マップ——相談援助の理論と方法（そうだんえんじょのりろんとほうほう）という巨大ボスと、早期に固まる得点源から味方にする</text>
+  <text x="70" y="163" class="kt" font-size="12" fill="#64748B">全150問中20問を占める最大科目に加え、事例問題の多い地域福祉や、暗記で早期に固まる人体・心理の科目を優先攻略する。</text>
+
+  <!-- BOSS BOX -->
+  <rect x="70" y="185" width="270" height="380" rx="16" fill="url(#sBoss)" filter="url(#sShadow)"/>
+  <text x="205" y="222" text-anchor="middle" class="kt" font-size="10.5" fill="rgba(255,255,255,.82)" letter-spacing="1">そうだんえんじょのりろんとほうほう</text>
+  <text x="205" y="255" text-anchor="middle" class="kt" font-size="19" font-weight="800" fill="#fff">相談援助の理論と方法</text>
+  <text x="205" y="345" text-anchor="middle" class="kt" font-size="56" font-weight="800" fill="#fff">20問</text>
+  <text x="205" y="383" text-anchor="middle" class="kt" font-size="13" font-weight="700" fill="#F0FDF4">全150問中 最大の得点源</text>
+  <text x="205" y="403" text-anchor="middle" class="kt" font-size="12" fill="#DCFCE7">事例問題中心。過去問演習が最も効く</text>
+  <rect x="115" y="495" width="180" height="40" rx="20" fill="rgba(255,255,255,.22)" stroke="#fff" stroke-width="1.5"/>
+  <text x="205" y="520" text-anchor="middle" class="kt" font-size="13" font-weight="800" fill="#fff">出題数 No.1 ボス</text>
+
+  <rect x="364.0" y="185.0" width="373.0" height="180.0" rx="14" fill="url(#sCard1)"/>
+  <text x="550.5" y="211.0" text-anchor="middle" class="kt" font-size="9.5" fill="rgba(0,0,0,.38)" letter-spacing=".5">ちいきふくしのりろんとほうほう</text>
+  <text x="550.5" y="235.0" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#1E3A8A">地域福祉の理論と方法</text>
+  <text x="550.5" y="327.0" text-anchor="middle" class="kt" font-size="26" font-weight="800" fill="#1E3A8A">10問</text>
+  <text x="550.5" y="349.0" text-anchor="middle" class="kt" font-size="10.5" fill="#1E3A8A">事例問題が多く早期に得点源化しやすい</text>
+  <rect x="757.0" y="185.0" width="373.0" height="180.0" rx="14" fill="url(#sCard1)"/>
+  <text x="943.5" y="211.0" text-anchor="middle" class="kt" font-size="9.5" fill="rgba(0,0,0,.38)" letter-spacing=".5">げんだいしゃかいとふくし</text>
+  <text x="943.5" y="235.0" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#1E3A8A">現代社会と福祉</text>
+  <text x="943.5" y="327.0" text-anchor="middle" class="kt" font-size="26" font-weight="800" fill="#1E3A8A">10問</text>
+  <text x="943.5" y="349.0" text-anchor="middle" class="kt" font-size="10.5" fill="#1E3A8A">福祉の全体像を理解する土台科目</text>
+  <rect x="364.0" y="385.0" width="373.0" height="180.0" rx="14" fill="url(#sCard2)"/>
+  <text x="550.5" y="411.0" text-anchor="middle" class="kt" font-size="9.5" fill="rgba(0,0,0,.38)" letter-spacing=".5">じんたいのこうぞうときのう</text>
+  <text x="550.5" y="435.0" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#831843">人体の構造と機能及び疾病</text>
+  <text x="550.5" y="527.0" text-anchor="middle" class="kt" font-size="26" font-weight="800" fill="#831843">7問</text>
+  <text x="550.5" y="549.0" text-anchor="middle" class="kt" font-size="10.5" fill="#831843">暗記中心。最優先で早期に固める</text>
+  <rect x="757.0" y="385.0" width="373.0" height="180.0" rx="14" fill="url(#sCard2)"/>
+  <text x="943.5" y="411.0" text-anchor="middle" class="kt" font-size="9.5" fill="rgba(0,0,0,.38)" letter-spacing=".5">しんりがくりろんとしんりてきしえん</text>
+  <text x="943.5" y="435.0" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#831843">心理学理論と心理的支援</text>
+  <text x="943.5" y="527.0" text-anchor="middle" class="kt" font-size="26" font-weight="800" fill="#831843">7問</text>
+  <text x="943.5" y="549.0" text-anchor="middle" class="kt" font-size="10.5" fill="#831843">人体系と合わせて得点源にする</text>
+
+  <!-- ============ PANEL B: 18の得点区分 1点死守防衛線 ============ -->
+  <g filter="url(#sShadow)">
+    <rect x="40" y="634" width="1120" height="390" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+  <text x="70" y="666" class="kt" font-size="15" font-weight="800" fill="#B45309">PHASE 2　18の得点区分、全部の「1点死守防衛線（ぼうえいせん）」——大きさに関係なく全部守る</text>
+  <text x="70" y="687" class="kt" font-size="12" fill="#64748B">共通科目11・専門科目7の合計18区分。出題数の多い少ないに関係なく、1点以上を取れなければ総合点が60%を超えても不合格になる。</text>
+
+  <text x="70" y="700" class="kt" font-size="13.5" font-weight="800" fill="#166534">共通科目（きょうつうかもく）11科目</text>
+  <g class="kt">
+    <rect x="60.0" y="730.0" width="171.7" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="78.0" cy="748.0" r="9" fill="#22C55E"/><path d="M74.0,748.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="94.0" y="752.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">人体の構造と機能</text>
+    <text x="94.0" y="771.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="241.7" y="730.0" width="171.7" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="259.7" cy="748.0" r="9" fill="#22C55E"/><path d="M255.7,748.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="275.7" y="752.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">心理学理論</text>
+    <text x="275.7" y="771.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="423.3" y="730.0" width="171.7" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="441.3" cy="748.0" r="9" fill="#22C55E"/><path d="M437.3,748.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="457.3" y="752.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">社会理論とシステム</text>
+    <text x="457.3" y="771.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="605.0" y="730.0" width="171.7" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="623.0" cy="748.0" r="9" fill="#22C55E"/><path d="M619.0,748.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="639.0" y="752.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">現代社会と福祉</text>
+    <text x="639.0" y="771.0" class="kt" font-size="9" fill="#16A34A">全10問中 1点死守</text>
+    <rect x="786.7" y="730.0" width="171.7" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="804.7" cy="748.0" r="9" fill="#22C55E"/><path d="M800.7,748.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="820.7" y="752.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">地域福祉の理論</text>
+    <text x="820.7" y="771.0" class="kt" font-size="9" fill="#16A34A">全10問中 1点死守</text>
+    <rect x="968.3" y="730.0" width="171.7" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="986.3" cy="748.0" r="9" fill="#22C55E"/><path d="M982.3,748.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1002.3" y="752.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">福祉行財政</text>
+    <text x="1002.3" y="771.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="60.0" y="804.0" width="208.0" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="78.0" cy="822.0" r="9" fill="#22C55E"/><path d="M74.0,822.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="94.0" y="826.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">社会保障</text>
+    <text x="94.0" y="845.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="278.0" y="804.0" width="208.0" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="296.0" cy="822.0" r="9" fill="#22C55E"/><path d="M292.0,822.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="312.0" y="826.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">障害者福祉</text>
+    <text x="312.0" y="845.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="496.0" y="804.0" width="208.0" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="514.0" cy="822.0" r="9" fill="#22C55E"/><path d="M510.0,822.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="530.0" y="826.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">低所得者・生活保護</text>
+    <text x="530.0" y="845.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="714.0" y="804.0" width="208.0" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="732.0" cy="822.0" r="9" fill="#22C55E"/><path d="M728.0,822.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="748.0" y="826.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">保健医療サービス</text>
+    <text x="748.0" y="845.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+    <rect x="932.0" y="804.0" width="208.0" height="58" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="950.0" cy="822.0" r="9" fill="#22C55E"/><path d="M946.0,822.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="966.0" y="826.0" class="kt" font-size="8.5" font-weight="700" fill="#166534">権利擁護・成年後見</text>
+    <text x="966.0" y="845.0" class="kt" font-size="9" fill="#16A34A">全7問中 1点死守</text>
+  </g>
+
+  <text x="70" y="906" class="kt" font-size="13.5" font-weight="800" fill="#BE185D">専門科目（せんもんかもく）7区分</text>
+  <g class="kt">
+    <rect x="60.0" y="936.0" width="145.7" height="58" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+    <circle cx="78.0" cy="954.0" r="9" fill="#EC4899"/><path d="M74.0,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="94.0" y="958.0" class="kt" font-size="8.5" font-weight="700" fill="#831843">社会調査の基礎</text>
+    <text x="94.0" y="977.0" class="kt" font-size="9" fill="#BE185D">全7問中 1点死守</text>
+    <rect x="215.7" y="936.0" width="145.7" height="58" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+    <circle cx="233.7" cy="954.0" r="9" fill="#EC4899"/><path d="M229.7,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="249.7" y="958.0" class="kt" font-size="8.5" font-weight="700" fill="#831843">相談援助の基盤</text>
+    <text x="249.7" y="977.0" class="kt" font-size="9" fill="#BE185D">全7問中 1点死守</text>
+    <rect x="371.4" y="936.0" width="145.7" height="58" rx="12" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+    <circle cx="389.4" cy="954.0" r="9" fill="#16A34A"/><path d="M385.4,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="405.4" y="958.0" class="kt" font-size="8.5" font-weight="800" fill="#14532D">相談援助の理論と方法</text>
+    <text x="405.4" y="977.0" class="kt" font-size="9" fill="#15803D">全20問中 1点死守</text>
+    <rect x="527.1" y="936.0" width="145.7" height="58" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+    <circle cx="545.1" cy="954.0" r="9" fill="#EC4899"/><path d="M541.1,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="561.1" y="958.0" class="kt" font-size="8.5" font-weight="700" fill="#831843">福祉サービス経営</text>
+    <text x="561.1" y="977.0" class="kt" font-size="9" fill="#BE185D">全7問中 1点死守</text>
+    <rect x="682.9" y="936.0" width="145.7" height="58" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+    <circle cx="700.9" cy="954.0" r="9" fill="#EC4899"/><path d="M696.9,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="716.9" y="958.0" class="kt" font-size="8.5" font-weight="700" fill="#831843">高齢者・介護保険</text>
+    <text x="716.9" y="977.0" class="kt" font-size="9" fill="#BE185D">全10問中 1点死守</text>
+    <rect x="838.6" y="936.0" width="145.7" height="58" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+    <circle cx="856.6" cy="954.0" r="9" fill="#EC4899"/><path d="M852.6,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="872.6" y="958.0" class="kt" font-size="8.5" font-weight="700" fill="#831843">児童・家庭福祉</text>
+    <text x="872.6" y="977.0" class="kt" font-size="9" fill="#BE185D">全7問中 1点死守</text>
+    <rect x="994.3" y="936.0" width="145.7" height="58" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+    <circle cx="1012.3" cy="954.0" r="9" fill="#EC4899"/><path d="M1008.3,954.0 l3,4 l7,-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1028.3" y="958.0" class="kt" font-size="8.5" font-weight="700" fill="#831843">就労支援・更生保護</text>
+    <text x="1028.3" y="977.0" class="kt" font-size="9" fill="#BE185D">全9問中 1点死守</text>
+  </g>
+
+  <text x="600" y="1050" text-anchor="middle" class="kt" font-size="12.5" fill="#374151">合計150問・18の得点区分。相談援助の理論と方法という大きな得点源を過去問で仕留めつつ、残り17区分でも足切りゼロを徹底する——</text>
+  <text x="600" y="1070" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#16A34A">それが社会福祉士試験の「バランス配分ゲーム」です。</text>
+</svg>

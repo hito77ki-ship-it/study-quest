@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="psvgtitle psvgdesc">
+  <title id="psvgtitle">スタディクエスト全資格の難易度（なんいど）ピラミッドと合格ロードマップ</title>
+  <desc id="psvgdesc">下段の★1入門資格から上段の★5最難関・公認会計士まで、サイトで扱う全資格の位置関係を示すピラミッド型の全体戦略マップ</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="800" height="600" rx="12" fill="#F8FAFC"/>
+  <text x="400" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">大谷流・全資格 難易度ピラミッドマップ</text>
+  <text x="400" y="52" text-anchor="middle" font-size="10.5" fill="#64748B">下段の★1入門ボスから上段の★5最難関ボスまで、このサイトで攻略できる全資格の位置関係が一目でわかる</text>
+
+  <text x="210" y="102" text-anchor="middle" font-size="9.5" font-weight="700" fill="#94A3B8">▲ 上に行くほど難易度・勉強時間UP</text>
+
+  <!-- Tier5: 難関 (apex triangle) y120-196 width34->0 -->
+  <polygon points="193,196 227,196 210,120" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="210" y="152" text-anchor="middle" font-size="9" font-weight="700" fill="#B91C1C">★5</text>
+  <text x="210" y="164" text-anchor="middle" font-size="7.5" fill="#B91C1C">難関</text>
+
+  <!-- Tier4: 上級 y196-272 width68->34 -->
+  <polygon points="176,272 244,272 227,196 193,196" fill="#FFEDD5" stroke="#F97316" stroke-width="2"/>
+  <text x="210" y="238" text-anchor="middle" font-size="9" font-weight="700" fill="#C2410C">★4</text>
+  <text x="210" y="250" text-anchor="middle" font-size="7.5" fill="#C2410C">上級</text>
+
+  <!-- Tier3: 中級 y272-348 width102->68 -->
+  <polygon points="159,348 261,348 244,272 176,272" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="210" y="314" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6D28D9">★3</text>
+  <text x="210" y="327" text-anchor="middle" font-size="8" fill="#6D28D9">中級</text>
+
+  <!-- Tier2: 初級 y348-424 width136->102 -->
+  <polygon points="142,424 278,424 261,348 159,348" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="210" y="390" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">★2</text>
+  <text x="210" y="404" text-anchor="middle" font-size="8.5" fill="#1D4ED8">初級</text>
+
+  <!-- Tier1: 入門 (base) y424-500 width170->136 -->
+  <polygon points="125,500 295,500 278,424 142,424" fill="#DCFCE7" stroke="#22C55E" stroke-width="2.5"/>
+  <text x="210" y="464" text-anchor="middle" font-size="10.5" font-weight="700" fill="#15803D">★1</text>
+  <text x="210" y="479" text-anchor="middle" font-size="9" fill="#15803D">入門</text>
+
+  <text x="210" y="522" text-anchor="middle" font-size="9.5" font-weight="700" fill="#15803D">👉 まずはここから始めよう</text>
+
+  <!-- divider -->
+  <line x1="330" y1="110" x2="330" y2="510" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Right side: tier detail rows -->
+  <!-- Tier5 row -->
+  <text x="350" y="150" font-size="10" font-weight="700" fill="#B91C1C">★5 最難関（2000時間以上）</text>
+  <text x="350" y="166" font-size="9.5" fill="#374151">公認会計士（こうにんかいけいし）・税理士（5科目）</text>
+
+  <!-- Tier4 row -->
+  <text x="350" y="222" font-size="10" font-weight="700" fill="#C2410C">★4 上級（600〜1500時間）</text>
+  <text x="350" y="238" font-size="9.5" fill="#374151">社会保険労務士・中小企業診断士（ちゅうしょうきぎょうしんだんし）</text>
+  <text x="350" y="253" font-size="9.5" fill="#374151">税理士（1科目）</text>
+
+  <!-- Tier3 row -->
+  <text x="350" y="296" font-size="10" font-weight="700" fill="#6D28D9">★3 中級（300〜600時間）</text>
+  <text x="350" y="312" font-size="9.5" fill="#374151">簿記2級・宅建・行政書士（ぎょうせいしょし）</text>
+  <text x="350" y="327" font-size="9.5" fill="#374151">応用情報技術者・看護師国家試験</text>
+
+  <!-- Tier2 row -->
+  <text x="350" y="368" font-size="10" font-weight="700" fill="#1D4ED8">★2 初級（100〜300時間）</text>
+  <text x="350" y="384" font-size="9.5" fill="#374151">簿記3級・FP2級・英検2級・基本情報技術者</text>
+  <text x="350" y="399" font-size="9.5" fill="#374151">保育士・ケアマネジャー・TOEIC</text>
+
+  <!-- Tier1 row -->
+  <text x="350" y="440" font-size="10" font-weight="700" fill="#15803D">★1 入門（〜100時間）</text>
+  <text x="350" y="456" font-size="9.5" fill="#374151">ITパスポート・危険物取扱者乙4・電気工事士2種</text>
+
+  <!-- Bottom summary -->
+  <rect x="46" y="536" width="708" height="50" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="400" y="558" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">★1〜2の入門ボスで「成功体験の盾」を手に入れてから、★3以上の中ボス・ラスボスへ挑むのが最速ルート</text>
+  <text x="400" y="574" text-anchor="middle" font-size="9" fill="#B45309">いきなり自分のレベルに合わないボスに挑むと挫折しやすい。まずは足元の1体を確実に倒そう</text>
+</svg>

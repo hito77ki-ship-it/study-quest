@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="760" height="500" rx="16" fill="#F8FAFC"/>
+  <text x="380" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">宅建×マンション管理士 相乗効果マップ</text>
+  <text x="380" y="48" text-anchor="middle" font-size="10.5" fill="#64748B">民法・区分所有法（くぶんしょゆうほう）の重複を活かし、同年連続受験で学習効率を最大化する</text>
+
+  <!-- ベン図 -->
+  <text x="30" y="76" font-size="12.5" font-weight="700" fill="#1E293B">① 試験範囲の重複エリア</text>
+  <ellipse cx="290" cy="185" rx="150" ry="98" fill="#F9A8D4" fill-opacity="0.45" stroke="#F472B6" stroke-width="1.5"/>
+  <ellipse cx="470" cy="185" rx="150" ry="98" fill="#93C5FD" fill-opacity="0.45" stroke="#60A5FA" stroke-width="1.5"/>
+
+  <text x="205" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">宅建</text>
+  <text x="205" y="148" text-anchor="middle" font-size="9.5" fill="#9D174D">宅建業法</text>
+  <text x="205" y="163" text-anchor="middle" font-size="9.5" fill="#9D174D">法令上の制限</text>
+  <text x="205" y="178" text-anchor="middle" font-size="9.5" fill="#9D174D">税・その他</text>
+
+  <text x="558" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">マンション管理士</text>
+  <text x="558" y="148" text-anchor="middle" font-size="9.5" fill="#1E40AF">標準管理規約</text>
+  <text x="558" y="163" text-anchor="middle" font-size="9.5" fill="#1E40AF">建物設備</text>
+  <text x="558" y="178" text-anchor="middle" font-size="9.5" fill="#1E40AF">管理組合の会計</text>
+
+  <text x="380" y="178" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7C3AED">共通の土台</text>
+  <text x="380" y="196" text-anchor="middle" font-size="9.5" fill="#7C3AED">民法</text>
+  <text x="380" y="211" text-anchor="middle" font-size="9.5" fill="#7C3AED">区分所有法</text>
+  <text x="380" y="226" text-anchor="middle" font-size="9.5" fill="#7C3AED">不動産登記法</text>
+
+  <!-- タイムライン -->
+  <text x="30" y="320" font-size="12.5" font-weight="700" fill="#1E293B">② 同年連続受験のシナジー戦略</text>
+
+  <rect x="60" y="335" width="230" height="60" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="175" y="360" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">10月</text>
+  <text x="175" y="378" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">宅建試験</text>
+
+  <line x1="290" y1="365" x2="470" y2="365" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="470,365 458,358 458,372" fill="#94A3B8"/>
+  <text x="380" y="350" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">記憶が新鮮なまま</text>
+  <text x="380" y="385" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">民法・区分所有法を直結</text>
+
+  <rect x="470" y="335" width="230" height="60" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="585" y="360" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">11月</text>
+  <text x="585" y="378" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">マンション管理士試験</text>
+
+  <!-- 下部まとめ -->
+  <rect x="30" y="420" width="700" height="60" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="380" y="444" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">🎯 相乗効果の鉄則：宅建で「民法・区分所有法」の土台を固めてから</text>
+  <text x="380" y="463" text-anchor="middle" font-size="10.5" fill="#374151">1ヶ月後のマンション管理士に直結——同年連続受験が学習効率を最大化する黄金ルート</text>
+</svg>

@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">大谷流・資格と行動の掛け算による人生変革ロジックマップ</title>
+  <desc id="svgdesc">資格の取得という武器に、次の一歩への行動という攻撃を掛け合わせることで、市場価値の拡大というリターンが生まれる仕組みを示す図解</desc>
+  <defs>
+    <linearGradient id="jBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8f4"/>
+      <stop offset="0.5" stop-color="#f4fbff"/>
+      <stop offset="1" stop-color="#f7fff4"/>
+    </linearGradient>
+    <linearGradient id="jTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="jGear1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#93C5FD"/><stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="jGear2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCA5A5"/><stop offset="1" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="jGear3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#86EFAC"/><stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <filter id="jShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1E293B" flood-opacity="0.18"/>
+    </filter>
+    <style>.kt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="900" height="700" rx="20" fill="url(#jBg)"/>
+  <circle cx="80" cy="110" r="80" fill="#FFEDD5" opacity="0.5"/>
+  <circle cx="820" cy="130" r="90" fill="#DBEAFE" opacity="0.4"/>
+  <circle cx="450" cy="660" r="110" fill="#D1FAE5" opacity="0.35"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="820" height="64" rx="14" fill="url(#jTitle)"/>
+  <text x="450" y="46" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#94A3B8" letter-spacing="2">資格は足し算ではなく掛け算（かけざん）で効く</text>
+  <text x="450" y="72" text-anchor="middle" class="kt" font-size="19" font-weight="800" fill="#FFFFFF">大谷流・資格 × 行動 人生変革（じんせいへんかく）ロジックマップ</text>
+  <text x="450" y="106" text-anchor="middle" class="kt" font-size="13" fill="#64748B">資格という武器は、行動という攻撃と掛け合わせて初めて、人生を動かすリターンに変わる</text>
+  <!-- ============ PANEL A: 歯車ドッキング掛け算フォーミュラ ============ -->
+  <g filter="url(#jShadow)">
+    <rect x="40" y="120" width="820" height="300" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+  <text x="70" y="152" class="kt" font-size="15" font-weight="800" fill="#166534">PHASE 1　歯車がガチャンとドッキングする瞬間、人生は動き出す</text>
+  <text x="70" y="173" class="kt" font-size="12" fill="#64748B">資格は単体では回らない歯車。行動という歯車と噛み合って初めて、次の歯車を回す力になる。</text>
+  <g filter="url(#jShadow)">
+<g>
+  <g transform="translate(155,295) rotate(0.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(30.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(60.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(90.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(120.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(150.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(180.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(210.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(240.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(270.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(300.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <g transform="translate(155,295) rotate(330.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear1)"/>
+  </g>
+  <circle cx="155" cy="295" r="78" fill="url(#jGear1)" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="155" cy="295" r="30" fill="#FFFFFF" opacity="0.28"/>
+</g>
+  </g>
+  <text x="155" y="289" text-anchor="middle" class="kt" font-size="28">🛡</text>
+  <text x="155" y="317" text-anchor="middle" class="kt" font-size="11" font-weight="800" fill="#ffffff">ぶき</text>
+  <text x="155" y="407" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#1E293B">資格の取得</text>
+  <text x="155" y="427" text-anchor="middle" class="kt" font-size="12" fill="#64748B">（武器）</text>
+  <g filter="url(#jShadow)">
+<g>
+  <g transform="translate(450,295) rotate(0.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(30.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(60.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(90.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(120.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(150.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(180.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(210.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(240.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(270.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(300.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <g transform="translate(450,295) rotate(330.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear2)"/>
+  </g>
+  <circle cx="450" cy="295" r="78" fill="url(#jGear2)" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="450" cy="295" r="30" fill="#FFFFFF" opacity="0.28"/>
+</g>
+  </g>
+  <text x="450" y="289" text-anchor="middle" class="kt" font-size="28">⚔</text>
+  <text x="450" y="317" text-anchor="middle" class="kt" font-size="11" font-weight="800" fill="#ffffff">こうげき</text>
+  <text x="450" y="407" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#1E293B">次の一歩への行動</text>
+  <text x="450" y="427" text-anchor="middle" class="kt" font-size="12" fill="#64748B">（攻撃）</text>
+  <g filter="url(#jShadow)">
+<g>
+  <g transform="translate(745,295) rotate(0.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(30.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(60.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(90.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(120.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(150.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(180.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(210.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(240.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(270.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(300.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <g transform="translate(745,295) rotate(330.00)">
+    <rect x="-8.0" y="-98.0" width="16.0" height="20.0" rx="2" fill="url(#jGear3)"/>
+  </g>
+  <circle cx="745" cy="295" r="78" fill="url(#jGear3)" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="745" cy="295" r="30" fill="#FFFFFF" opacity="0.28"/>
+</g>
+  </g>
+  <text x="745" y="289" text-anchor="middle" class="kt" font-size="28">🚀</text>
+  <text x="745" y="317" text-anchor="middle" class="kt" font-size="11" font-weight="800" fill="#ffffff">りたーん</text>
+  <text x="745" y="407" text-anchor="middle" class="kt" font-size="15" font-weight="800" fill="#1E293B">市場価値の拡大</text>
+  <text x="745" y="427" text-anchor="middle" class="kt" font-size="12" fill="#64748B">（リターン）</text>
+  <text x="302" y="303" text-anchor="middle" class="kt" font-size="46" font-weight="800" fill="#B45309">×</text>
+  <text x="598" y="303" text-anchor="middle" class="kt" font-size="46" font-weight="800" fill="#B45309">=</text>
+
+  <!-- ============ PANEL B: 掛け算シナリオ比較 ============ -->
+  <g filter="url(#jShadow)">
+    <rect x="40" y="444" width="820" height="250" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+  <text x="70" y="476" class="kt" font-size="15" font-weight="800" fill="#B45309">PHASE 2　足し算では起きない「ゼロ化」が、掛け算では起きる</text>
+  <text x="70" y="497" class="kt" font-size="12" fill="#64748B">資格・行動のどちらかが0点なら、答えは必ず0。これが「紙の資格で終わる人」の正体。</text>
+  <rect x="70.0" y="518" width="233.3" height="150" rx="14" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="186.7" y="548" text-anchor="middle" class="kt" font-size="13" font-weight="700" fill="#991B1B">資格 100 × 行動 0</text>
+  <text x="186.7" y="594" text-anchor="middle" class="kt" font-size="34" font-weight="800" fill="#991B1B">= 0</text>
+  <text x="186.7" y="618" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B"><tspan x="186.7" dy="0">資格を取って満足。求人にも応募せず、実</tspan><tspan x="186.7" dy="13">務にも活かさない「紙の資格」で終わるパ</tspan><tspan x="186.7" dy="13">ターン</tspan></text>
+  <rect x="333.3" y="518" width="233.3" height="150" rx="14" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="450.0" y="548" text-anchor="middle" class="kt" font-size="13" font-weight="700" fill="#991B1B">資格 0 × 行動 100</text>
+  <text x="450.0" y="594" text-anchor="middle" class="kt" font-size="34" font-weight="800" fill="#991B1B">= 0</text>
+  <text x="450.0" y="618" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B"><tspan x="450.0" dy="0">我流のガムシャラ行動だけでは信用も土台</tspan><tspan x="450.0" dy="13">も足りず、空回りして消耗するパターン</tspan></text>
+  <rect x="596.7" y="518" width="233.3" height="150" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="713.3" y="548" text-anchor="middle" class="kt" font-size="13" font-weight="700" fill="#166534">資格 80 × 行動 80</text>
+  <text x="713.3" y="594" text-anchor="middle" class="kt" font-size="34" font-weight="800" fill="#166534">= 6400</text>
+  <text x="713.3" y="618" text-anchor="middle" class="kt" font-size="9.5" fill="#166534"><tspan x="713.3" dy="0">武器を手に、求人応募・実務投入という攻</tspan><tspan x="713.3" dy="13">撃を重ねる。掛け算だからこそ跳ね上がる</tspan><tspan x="713.3" dy="13">ボーナスタイム</tspan></text>
+  <text x="450" y="728" text-anchor="middle" class="kt" font-size="12.5" fill="#374151">資格は「持っているだけ」では回らない歯車。求人への応募、実務への投入という行動を掛け合わせて——</text>
+  <text x="450" y="748" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#16A34A">初めて人生のボス戦をクリアできるチート能力に化ける。それが「行動の掛け算」です。</text>
+</svg>
