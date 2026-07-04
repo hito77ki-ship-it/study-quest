@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#22C55E"/>
+    </marker>
+  </defs>
+  <rect width="760" height="480" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">ITパスポート × 基本情報 知識の引き継ぎ相乗効果マップ</text>
+  <text x="380" y="52" text-anchor="middle" font-size="11" fill="#64748B">iパスの3分野がそのまま基本情報「科目A」の土台に。新規攻略が必要なのは「科目B」だけ</text>
+
+  <!-- Left block: ITパスポート レベル1 -->
+  <text x="148" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">ITパスポート（レベル1）</text>
+  <text x="148" y="96" text-anchor="middle" font-size="9.5" fill="#64748B">3分野・100問</text>
+  <rect x="48" y="108" width="200" height="112" rx="6" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="148" y="132" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">テクノロジ系　45%</text>
+  <rect x="48" y="220" width="200" height="88" rx="6" fill="#E0E7FF" stroke="#A5B4FC" stroke-width="1.5"/>
+  <text x="148" y="248" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4338CA">ストラテジ系　35%</text>
+  <rect x="48" y="308" width="200" height="52" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="148" y="330" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2563EB">マネジメント系　20%</text>
+
+  <!-- Synergy arrows -->
+  <path d="M 252 150 L 320 150" stroke="#22C55E" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 252 260 L 320 260" stroke="#22C55E" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="286" y="140" text-anchor="middle" font-size="8.5" font-weight="700" fill="#15803D">知識</text>
+  <text x="286" y="253" text-anchor="middle" font-size="8.5" font-weight="700" fill="#15803D">継承</text>
+
+  <!-- Right block: 基本情報 科目A -->
+  <text x="490" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">基本情報（レベル2）</text>
+  <text x="490" y="96" text-anchor="middle" font-size="9.5" fill="#64748B">科目A・科目B</text>
+  <rect x="326" y="108" width="200" height="180" rx="6" fill="#DCFCE7" stroke="#4ADE80" stroke-width="2.5"/>
+  <rect x="332" y="116" width="90" height="18" rx="9" fill="#22C55E"/>
+  <text x="377" y="129" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">iパスの延長で攻略可</text>
+  <text x="426" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">科目A（知識）</text>
+  <text x="426" y="166" text-anchor="middle" font-size="9" fill="#166534">ストラテジ・マネジメント</text>
+  <text x="426" y="180" text-anchor="middle" font-size="9" fill="#166534">・テクノロジの深掘り</text>
+  <text x="426" y="200" text-anchor="middle" font-size="9.5" fill="#166534">96問中 約70%がiパスと共通の知識</text>
+
+  <!-- 科目B highlighted as new boss -->
+  <rect x="326" y="300" width="200" height="130" rx="6" fill="#FFEDD5" stroke="#F97316" stroke-width="2.5"/>
+  <rect x="332" y="308" width="120" height="18" rx="9" fill="#F97316"/>
+  <text x="392" y="321" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">新規攻略・ここが本丸</text>
+  <text x="426" y="352" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">科目B（アルゴリズム）</text>
+  <text x="426" y="368" text-anchor="middle" font-size="9" fill="#9A3412">データ構造・擬似言語</text>
+  <text x="426" y="382" text-anchor="middle" font-size="9" fill="#9A3412">・プログラミング思考</text>
+  <text x="426" y="402" text-anchor="middle" font-size="9.5" fill="#9A3412">2023年改定で配点比率が増加した最大の関門</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="46" y="446" width="668" height="24" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="380" y="462" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">iパスで築いた知識は科目Aにそのまま使える。新たに時間を割くべきは科目Bのアルゴリズム対策だけ</text>
+</svg>
