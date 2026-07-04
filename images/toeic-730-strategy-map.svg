@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+
+  <rect width="800" height="640" rx="16" fill="#FFFFFF"/>
+
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1E293B">TOEIC 730点突破 戦略マップ</text>
+  <text x="400" y="52" text-anchor="middle" font-size="11" fill="#718096">3つの壁の防衛線（ぼうえいせん） ＆ リーディング75分のタイムライン</text>
+
+  <!-- Panel A: 3つの壁 -->
+  <rect x="40" y="68" width="720" height="270" rx="14" fill="#F5F8FF" stroke="#C7D8F5" stroke-width="1.5"/>
+  <text x="400" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#3B5BDB">① 730点突破に立ちはだかる3つの壁（防衛ライン）</text>
+
+  <!-- Column 1: Part3/4 -->
+  <rect x="60" y="112" width="220" height="150" rx="10" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="170" y="140" text-anchor="middle" font-size="28">🎧</text>
+  <text x="170" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">Part3/4 長文（意図問題）</text>
+  <text x="170" y="180" text-anchor="middle" font-size="10" fill="#1565C0">目標正答率：80%</text>
+  <text x="170" y="196" text-anchor="middle" font-size="9.5" fill="#5A7BAF">問題数：69問</text>
+  <line x1="76" y1="206" x2="264" y2="206" stroke="#BBDEFB" stroke-width="1"/>
+  <text x="170" y="224" text-anchor="middle" font-size="9.5" fill="#1565C0">先読み×意図問題対策で</text>
+  <text x="170" y="240" text-anchor="middle" font-size="9.5" fill="#1565C0">防衛ラインを死守する</text>
+
+  <!-- Column 2: Part5/6 -->
+  <rect x="290" y="112" width="220" height="150" rx="10" fill="#F3E8FD" stroke="#CBA6F7" stroke-width="1.5"/>
+  <text x="400" y="140" text-anchor="middle" font-size="28">📝</text>
+  <text x="400" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">Part5/6 文法・語彙精度</text>
+  <text x="400" y="180" text-anchor="middle" font-size="10" fill="#6D28D9">目標正答率：90%</text>
+  <text x="400" y="196" text-anchor="middle" font-size="9.5" fill="#8B6FC7">問題数：46問</text>
+  <line x1="306" y1="206" x2="494" y2="206" stroke="#E4D2FB" stroke-width="1"/>
+  <text x="400" y="224" text-anchor="middle" font-size="9.5" fill="#6D28D9">1問20秒の瞬殺精度が</text>
+  <text x="400" y="240" text-anchor="middle" font-size="9.5" fill="#6D28D9">スコアの生命線になる</text>
+
+  <!-- Column 3: Part7 -->
+  <rect x="520" y="112" width="220" height="150" rx="10" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.5"/>
+  <text x="630" y="140" text-anchor="middle" font-size="28">📚</text>
+  <text x="630" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#8A4B0B">Part7 長文読解スピード</text>
+  <text x="630" y="180" text-anchor="middle" font-size="10" fill="#B45309">目標正答率：70%</text>
+  <text x="630" y="196" text-anchor="middle" font-size="9.5" fill="#C08A4E">問題数：54問</text>
+  <line x1="536" y1="206" x2="724" y2="206" stroke="#FFE0B2" stroke-width="1"/>
+  <text x="630" y="224" text-anchor="middle" font-size="9.5" fill="#B45309">Skim&amp;Scanで時間内に</text>
+  <text x="630" y="240" text-anchor="middle" font-size="9.5" fill="#B45309">完走することが最優先</text>
+
+  <!-- Comparison bars: 目標正答率のボリューム対比 -->
+  <text x="70" y="278" text-anchor="start" font-size="9.5" fill="#5A7BAF">Part3/4 目標80%</text>
+  <rect x="70" y="284" width="200" height="14" rx="7" fill="#E9EDF5" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="70" y="284" width="160" height="14" rx="7" fill="#1565C0"/>
+
+  <text x="300" y="278" text-anchor="start" font-size="9.5" fill="#8B6FC7">Part5/6 目標90%</text>
+  <rect x="300" y="284" width="200" height="14" rx="7" fill="#E9EDF5" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="300" y="284" width="180" height="14" rx="7" fill="#6D28D9"/>
+
+  <text x="530" y="278" text-anchor="start" font-size="9.5" fill="#C08A4E">Part7 目標70%</text>
+  <rect x="530" y="284" width="200" height="14" rx="7" fill="#E9EDF5" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="530" y="284" width="140" height="14" rx="7" fill="#B45309"/>
+
+  <text x="400" y="320" text-anchor="middle" font-size="11.5" fill="#3B5BDB">3つの壁はどれも『防衛ライン』——1つでも大きく割り込むと730点には届かない</text>
+
+  <!-- Panel B: 75分タイムライン -->
+  <rect x="40" y="354" width="720" height="250" rx="14" fill="#FFF9F0" stroke="#FFD9A0" stroke-width="1.5"/>
+  <text x="400" y="380" text-anchor="middle" font-size="14" font-weight="700" fill="#B45309">② リーディング75分（ぶん）の秒単位タイムライン</text>
+  <text x="400" y="398" text-anchor="middle" font-size="10.5" fill="#C08A4E">——Part5を瞬殺し、浮いた時間をマルチパッセージへ注ぐ配分（はいぶん）ゲーム</text>
+
+  <text x="106" y="413" text-anchor="middle" font-size="9.5" fill="#1565C0">Part5</text>
+  <text x="188" y="413" text-anchor="middle" font-size="9.5" fill="#6D28D9">Part6</text>
+  <text x="315" y="413" text-anchor="middle" font-size="9.5" fill="#2E7D32">Part7 単一</text>
+  <text x="573" y="413" text-anchor="middle" font-size="9.5" fill="#1B5E20">Part7 複合（ダブル・トリプル）</text>
+
+  <rect x="60" y="418" width="91" height="40" fill="#BBDEFB" stroke="#90CAF9" stroke-width="1"/>
+  <rect x="151" y="418" width="73" height="40" fill="#D8C4F5" stroke="#CBA6F7" stroke-width="1"/>
+  <rect x="224" y="418" width="181" height="40" fill="#C8E6C9" stroke="#A5D6A7" stroke-width="1"/>
+  <rect x="405" y="418" width="335" height="40" fill="#8BC98F" stroke="#5FA36A" stroke-width="1"/>
+  <line x1="151" y1="418" x2="151" y2="458" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="224" y1="418" x2="224" y2="458" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="405" y1="418" x2="405" y2="458" stroke="#FFFFFF" stroke-width="2"/>
+
+  <text x="106" y="443" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">10分</text>
+  <text x="188" y="443" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">8分</text>
+  <text x="315" y="443" text-anchor="middle" font-size="11" font-weight="700" fill="#1B5E20">20分</text>
+  <text x="573" y="443" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">37分</text>
+
+  <text x="60" y="472" text-anchor="start" font-size="9" fill="#94756B">0分</text>
+  <text x="151" y="472" text-anchor="middle" font-size="9" fill="#94756B">10分</text>
+  <text x="224" y="472" text-anchor="middle" font-size="9" fill="#94756B">18分</text>
+  <text x="405" y="472" text-anchor="middle" font-size="9" fill="#94756B">38分</text>
+  <text x="740" y="472" text-anchor="end" font-size="9" fill="#94756B">75分</text>
+
+  <polygon points="573,484 565,494 581,494" fill="#2E7D32"/>
+  <rect x="505" y="494" width="136" height="24" rx="12" fill="#2E7D32"/>
+  <text x="573" y="510" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">浮いた時間を注入！</text>
+
+  <!-- Bottom callout -->
+  <rect x="60" y="530" width="680" height="56" rx="12" fill="#FFF6E9" stroke="#FFD9A0" stroke-width="1"/>
+  <text x="400" y="554" text-anchor="middle" font-size="12" font-weight="700" fill="#8A4B0B">だから精読より『時間配分』で勝つ。</text>
+  <text x="400" y="574" text-anchor="middle" font-size="10.5" fill="#8A4B0B">Part5を1問20秒で瞬殺し、浮いた時間をマルチパッセージの複合問題（ふくごうもんだい）へ回そう！</text>
+</svg>
