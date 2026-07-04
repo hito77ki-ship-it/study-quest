@@ -287,7 +287,7 @@ function getArticleDialogue(){
 function renderDialogue(rows){
   return rows.map(([role, name, text]) => `
     <div class="sq-chat-row ${role}">
-      <div class="sq-chat-avatar ${role}">${role === 'teacher' ? '師' : '受'}</div>
+      <div class="sq-chat-avatar ${role}"><img src="icons/avatar-${role === 'teacher' ? 'teacher' : 'student'}.png" alt="${role === 'teacher' ? '大谷' : '受験生'}" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">${_escHtml(name)}</div>
         <div class="sq-chat-bubble">${_escHtml(text)}</div>
@@ -1558,9 +1558,10 @@ html[data-theme="dark"] .sq-article-theme-group{
 /* 会話UI */
 .sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
 .sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
-.sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
 .sq-chat-avatar.student{background:linear-gradient(135deg,#E0F0FF,#BAD9F5);}
 .sq-chat-avatar.teacher{background:linear-gradient(135deg,#E8F7B8,#8CC63F);}
+.sq-chat-avatar img{width:100%;height:100%;object-fit:cover;}
 .sq-chat-name{font-size:10px;font-weight:700;color:var(--sq-muted);margin-bottom:4px;letter-spacing:.05em;}
 .sq-chat-bubble{position:relative;background:var(--sq-surface-soft);border:1px solid var(--sq-border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:var(--sq-text);line-height:1.8;max-width:calc(100% - 60px);}
 .sq-chat-row.teacher .sq-chat-bubble{background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.03));border-color:rgba(140,198,63,.3);border-radius:0 12px 12px 12px;}
