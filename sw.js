@@ -5,14 +5,14 @@
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v9';
+const VERSION = 'sq-v10';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 
 // インストール時にキャッシュするファイル
 const PRECACHE_URLS = [
   '/',
-  '/index.html',
+  '/app.html',
   '/manifest.json',
   '/icons/icon.svg',
   '/icons/app-icon.png',
@@ -63,7 +63,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   // index.html / ルート → Network First（常に最新を優先、失敗時はキャッシュ）
-  if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
+  if (url.pathname === '/' || url.pathname.endsWith('app.html')) {
     event.respondWith(networkFirst(event.request));
     return;
   }

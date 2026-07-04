@@ -10,7 +10,7 @@ import android.os.Build;
 import android.widget.RemoteViews;
 
 public class StudyQuestWidgetProvider extends AppWidgetProvider {
-    private static final String BASE_URL = "https://study-quest.net/";
+    private static final String BASE_URL = "https://study-quest.net/app.html";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {

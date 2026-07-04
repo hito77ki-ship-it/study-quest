@@ -2604,7 +2604,7 @@ function injectBreadcrumbLD(){
   }, []);
 
   // ホームのURLを正規化
-  if(items[0]) items[0].url = base + 'lp.html';
+  if(items[0]) items[0].url = base;
 
   // 現在ページをラストに追加
   const h1 = document.querySelector('h1');

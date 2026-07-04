@@ -12,7 +12,7 @@
   "navigationDividerColorDark": "#000000",
   "backgroundColor": "#0A0A0F",
   "enableNotifications": true,
-  "startUrl": "/",
+  "startUrl": "/app.html",
   "iconUrl": "https://study-quest.net/icons/icon-512.png",
   "maskableIconUrl": "https://study-quest.net/icons/app-icon.png",
   "splashScreenFadeOutDuration": 300,
@@ -26,31 +26,31 @@
     {
       "name": "一言で記録",
       "shortName": "一言記録",
-      "url": "https://study-quest.net/?tab=quest&quickLog=1",
+      "url": "https://study-quest.net/app.html?tab=quest&quickLog=1",
       "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
     },
     {
       "name": "15分を記録",
       "shortName": "+15分",
-      "url": "https://study-quest.net/?tab=quest&quickRecord=15",
+      "url": "https://study-quest.net/app.html?tab=quest&quickRecord=15",
       "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
     },
     {
       "name": "30分を記録",
       "shortName": "+30分",
-      "url": "https://study-quest.net/?tab=quest&quickRecord=30",
+      "url": "https://study-quest.net/app.html?tab=quest&quickRecord=30",
       "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
     },
     {
       "name": "タイマーを起動",
       "shortName": "タイマー",
-      "url": "https://study-quest.net/?tab=quest",
+      "url": "https://study-quest.net/app.html?tab=quest",
       "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
     },
     {
       "name": "ランキングを見る",
       "shortName": "ランキング",
-      "url": "https://study-quest.net/?tab=ranking",
+      "url": "https://study-quest.net/app.html?tab=ranking",
       "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
     }
   ],

@@ -23,7 +23,7 @@ plugins {
 def twaManifest = [
     applicationId: 'com.studyquest.app',
     hostName: 'study-quest.net', // The domain being opened in the TWA.
-    launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
+    launchUrl: '/app.html', // The start path for the TWA. Must be relative to the domain.
     name: 'スタディクエスト', // The application name.
     launcherName: 'スタクエ', // The name shown on the Android Launcher.
     themeColor: '#8CC63F', // The color used for the status bar.
@@ -39,7 +39,7 @@ def twaManifest = [
     // - short_name: Shorter string used if |name| is too long.
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
-    shortcuts: [[name:'タイマーを起動', short_name:'タイマー', url:'https://study-quest.net/?tab=quest', icon:'shortcut_0'],[name:'ランキングを見る', short_name:'ランキング', url:'https://study-quest.net/?tab=ranking', icon:'shortcut_1']],
+    shortcuts: [[name:'タイマーを起動', short_name:'タイマー', url:'https://study-quest.net/app.html?tab=quest', icon:'shortcut_0'],[name:'ランキングを見る', short_name:'ランキング', url:'https://study-quest.net/app.html?tab=ranking', icon:'shortcut_1']],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
     splashScreenFadeOutDuration: 300,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
