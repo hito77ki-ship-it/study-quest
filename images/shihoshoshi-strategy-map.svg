@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" width="900" height="460">
+  <defs>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+    <linearGradient id="gMinpo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="gKaisha" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="gMinor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="gFutoki" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="gShoto" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="gSosho" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="gBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="460" rx="16" fill="url(#gBg)"/>
+  <circle cx="24" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="876" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="24" cy="436" r="3" fill="#CBD5E1" opacity="0.5"/>
+
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1E293B">⚔ 司法書士 配点ハック＆足切り回避マップ</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12" fill="#64748B">午前・午後、それぞれ独立した基準点（足切り）を突破しないと記述式は採点すらされない</text>
+
+  <!-- Divider -->
+  <line x1="450" y1="72" x2="450" y2="410" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="6,5"/>
+
+  <!-- LEFT: 午前の部 -->
+  <rect x="60" y="70" width="360" height="26" rx="6" fill="#DBEAFE"/>
+  <text x="240" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E3A8A">午前の部（択一35問）</text>
+
+  <!-- scale + baseline -->
+  <line x1="110" y1="120" x2="370" y2="120" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,4"/>
+  <text x="370" y="116" text-anchor="end" font-size="9" fill="#94A3B8">35問</text>
+  <line x1="110" y1="380" x2="370" y2="380" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Stacked bar AM: 民法20 / 会社法9 / 憲法3 / 刑法3 (scale 260px = 35q -> 7.43px/q) -->
+  <rect x="200" y="231" width="90" height="149" fill="url(#gMinpo)"/>
+  <rect x="200" y="164" width="90" height="67" fill="url(#gKaisha)"/>
+  <rect x="200" y="142" width="90" height="22" fill="url(#gMinor)"/>
+  <rect x="200" y="120" width="90" height="22" fill="url(#gMinor)"/>
+  <rect x="200" y="120" width="90" height="260" fill="none" stroke="#94A3B8" stroke-width="1.5" rx="6"/>
+
+  <!-- AM base point (足切りライン、目安) -->
+  <line x1="180" y1="198" x2="310" y2="198" stroke="#EF4444" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="315" y="202" font-size="9.5" font-weight="700" fill="#B91C1C">基準点（目安）</text>
+
+  <!-- AM legend -->
+  <rect x="110" y="228" width="12" height="12" fill="url(#gMinpo)"/>
+  <text x="128" y="238" font-size="10.5" font-weight="700" fill="#1E3A8A">民法 20問 ★最重要</text>
+  <rect x="110" y="246" width="12" height="12" fill="url(#gKaisha)"/>
+  <text x="128" y="256" font-size="10.5" fill="#475569">会社法・商法 9問</text>
+  <rect x="110" y="264" width="12" height="12" fill="url(#gMinor)"/>
+  <text x="128" y="274" font-size="10.5" fill="#64748B">憲法・刑法 各3問</text>
+
+  <text x="240" y="398" text-anchor="middle" font-size="10" fill="#64748B">👉 民法1科目で午前の57%を占める</text>
+
+  <!-- RIGHT: 午後の部 -->
+  <rect x="480" y="70" width="360" height="26" rx="6" fill="#D1FAE5"/>
+  <text x="660" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">午後の部（択一35問＋記述2問）</text>
+
+  <line x1="530" y1="120" x2="790" y2="120" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,4"/>
+  <text x="790" y="116" text-anchor="end" font-size="9" fill="#94A3B8">35問</text>
+  <line x1="530" y1="380" x2="790" y2="380" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Stacked bar PM: 不動産登記法16 / 商業登記法8 / 訴訟法系11 -->
+  <rect x="620" y="261" width="90" height="119" fill="url(#gFutoki)"/>
+  <rect x="620" y="202" width="90" height="59" fill="url(#gShoto)"/>
+  <rect x="620" y="120" width="90" height="82" fill="url(#gSosho)"/>
+  <rect x="620" y="120" width="90" height="260" fill="none" stroke="#94A3B8" stroke-width="1.5" rx="6"/>
+
+  <!-- PM base point -->
+  <line x1="600" y1="216" x2="730" y2="216" stroke="#EF4444" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="735" y="220" font-size="9.5" font-weight="700" fill="#B91C1C">基準点（目安）</text>
+
+  <!-- PM legend -->
+  <rect x="530" y="228" width="12" height="12" fill="url(#gFutoki)"/>
+  <text x="548" y="238" font-size="10.5" font-weight="700" fill="#065F46">不動産登記法 16問+記述 ★最重要</text>
+  <rect x="530" y="246" width="12" height="12" fill="url(#gShoto)"/>
+  <text x="548" y="256" font-size="10.5" fill="#475569">商業登記法 8問+記述</text>
+  <rect x="530" y="264" width="12" height="12" fill="url(#gSosho)"/>
+  <text x="548" y="274" font-size="10.5" fill="#64748B">民事訴訟法等 11問</text>
+
+  <text x="660" y="398" text-anchor="middle" font-size="10" fill="#64748B">👉 記述式は基準点を超えないと採点されない</text>
+
+  <!-- Bottom callout -->
+  <rect x="60" y="415" width="780" height="34" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="450" y="437" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065F46">✅ 民法＋不動産登記法だけで午前・午後の出題数の約51%（36/70問）。この2科目を主戦場にするのが最短合格ルート</text>
+</svg>

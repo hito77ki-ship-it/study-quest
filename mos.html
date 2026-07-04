@@ -26,8 +26,8 @@
   "description": "MOS（Word・Excel・PowerPoint）の独学合格方法を解説。種類・難易度・勉強時間を紹介。",
   "url": "https://study-quest.net/mos.html",
   "datePublished": "2026-04-29",
-  "dateModified": "2026-06-26",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/"},
+  "dateModified": "2026-07-04",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://study-quest.net/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://study-quest.net/mos.html"}
 }
@@ -48,7 +48,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .breadcrumb a{color:var(--muted);}
 h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:8px;}
 .meta{font-size:13px;color:var(--muted);margin-bottom:32px;}
-.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;}
 h2{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);}
 h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--green2);}
 p{font-size:14px;color:#374151;margin-bottom:16px;}
@@ -67,6 +66,21 @@ tr:nth-child(even) td{background:var(--light);}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
 .app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
+.otani-lead{background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;}
+.otani-lead-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.otani-lead-head img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.otani-lead-head span{font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;}
+.otani-lead p{font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;}
+.otani-lead p:last-child{margin-bottom:0;}
+.sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
+.sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:var(--light);box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat-name{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:4px;letter-spacing:.05em;}
+.sq-chat-bubble{position:relative;background:var(--light);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:var(--text);line-height:1.8;max-width:calc(100% - 60px);}
+.sq-chat-row.teacher .sq-chat-bubble{background:rgba(140,198,63,.08);border-color:rgba(140,198,63,.3);}
+.like-cta{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border:2px solid var(--green);border-radius:14px;padding:24px 28px;margin:40px 0;text-align:center;}
+.like-cta p{color:#065F46;font-size:14px;font-weight:500;margin:0 0 6px;}
+.like-cta .sub{font-size:12px;color:var(--muted);}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -87,27 +101,65 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   </div>
 
   <h1>MOS（Microsoft Office Specialist）の独学合格ガイド【2026年版】難易度・勉強時間・おすすめテキスト</h1>
-  <p class="meta">更新日：2026年4月29日｜スタディクエスト編集部</p>
+  <p class="meta">更新日：2026年7月4日｜著者：大谷一輝（大阪経済大学3回生・公認会計士受験生）</p>
 
-  <p class="lead">MOS（マイクロソフト オフィス スペシャリスト）はWord・Excel・PowerPoint等のOfficeスキルを証明する国際資格です。就職・転職で求められるOfficeスキルを体系的に証明でき、在宅受験も可能なため社会人・学生問わず人気があります。独学でも1〜2ヶ月で合格できます。</p>
+  <div class="otani-lead">
+    <div class="otani-lead-head">
+      <img src="images/icon-otani.png" alt="大谷">
+      <span>大谷 一輝 より</span>
+    </div>
+    <p>『就活や実務の武器になるMOSを取ろう！』と決意してテキストを開いた瞬間……「うわっ、なんじゃこりゃ、科目もレベルも多すぎるし、1科目1万円超えの受験料って高すぎて頭パンクするわ！」とフリーズしていませんか？（笑）</p>
+    <p>毎日会計や法律の猛勉強と格闘し、Excelを叩きまくっている僕の視点から、かけた費用を最速で実務スキルに変えて回収できる<strong>【MOS最速独学逆算スケジュール】</strong>を優しくナビゲートします！読み終わったら、記事末尾の<strong>【いいねボタン】</strong>のプッシュをお願いします。</p>
+  </div>
 
-  <figure>
-    <img src="images/mos-map.svg" alt="MOS試験マップ：Word・Excel・PowerPoint・Accessの一般とエキスパートの難易度・勉強時間・活用場面" style="max-width:100%;height:auto;" loading="lazy">
-    <figcaption>MOS試験の科目・レベル別マップ——難易度・勉強時間・活用場面・取得優先順位</figcaption>
-  </figure>
-  <p>MOS試験はWord・Excel・PowerPoint・Accessの4科目で構成され、各科目に一般（Associate）とエキスパート（Expert）レベルがあります。就活コスパ最優先ならExcel一般から始めましょう。</p>
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生（どの科目から始めるか迷い中）</div>
+        <div class="sq-chat-bubble">大谷さん、MOSってWord・Excel・PowerPoint・Accessまであって、正直どれから手をつけていいか分かりません……。せっかくだし全部まんべんなく取っておこうと思うんですけど、それでいいですよね？</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（公認会計士受験生）</div>
+        <div class="sq-chat-bubble">ちょっと待った！その「全部均等に取ろう」という発想が、実は一番もったいない遠回りなんだ。この試験は全部均等に取る必要は一切ない！就活で圧倒的に評価されるのは「Excel」のハコなんだよ。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生（どの科目から始めるか迷い中）</div>
+        <div class="sq-chat-bubble">えっ、そうなんですか？じゃあExcelだけ一般（Associate）を取っておけば十分ってことですか？</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（公認会計士受験生）</div>
+        <div class="sq-chat-bubble">そこで止まったらもったいない！だからこそ、Excel一般からエキスパートへ繋ぐ「縦足のハコ」を最優先で味方にするのが最大のチート技なんだよ。横に科目を広げるより、Excelを縦に極める方が圧倒的にコスパが高い。この後の戦略マップを見れば、その理由が一発で分かるよ！</div>
+      </div>
+    </div>
+  </div>
+
+  <img src="images/mos-strategy-map.svg" alt="MOS試験の科目・レベル別マップと合格戦略マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+  <p style="font-size:13px;color:var(--muted);text-align:center;margin:-8px 0 24px;">Word・Excelの<ruby>一般<rt>いっぱん</rt></ruby>（Associate）と<ruby>上級<rt>じょうきゅう</rt></ruby>（Expert）のボリューム対比、および<ruby>合格基準<rt>ごうかくきじゅん</rt></ruby>700点の<ruby>防衛線<rt>ぼうえいせん</rt></ruby>とコスパ最強ルートを示した戦略マップ</p>
+
+  <p>MOS（マイクロソフト オフィス スペシャリスト）はWord・Excel・PowerPoint等のOfficeスキルを証明する国際資格です。就職・転職で求められるOfficeスキルを体系的に証明でき、在宅受験も可能なため社会人・学生問わず人気があります。<ruby>独学<rt>どくがく</rt></ruby>でも1〜2ヶ月で合格できます。上のマップの通り、3科目を均等に取る必要はありません。Excel一般→Expertの「縦のハコ」を最優先で味方につけましょう。</p>
 
   <h2>MOS試験の種類と難易度一覧</h2>
   <table>
     <tr><th>科目</th><th>レベル</th><th>難易度</th><th>勉強時間</th><th>合格率目安</th></tr>
     <tr><td>Word 365</td><td>一般（Associate）</td><td>★★</td><td>20〜40時間</td><td>約70〜80%</td></tr>
+    <tr><td>Word 365 Expert</td><td>上級（Expert）</td><td>★★★★</td><td>50〜70時間</td><td>約45〜55%</td></tr>
     <tr><td>Excel 365</td><td>一般（Associate）</td><td>★★★</td><td>30〜50時間</td><td>約60〜70%</td></tr>
     <tr><td>Excel 365 Expert</td><td>上級（Expert）</td><td>★★★★</td><td>60〜80時間</td><td>約40〜50%</td></tr>
-    <tr><td>PowerPoint 365</td><td>一般（Associate）</td><td>★★</td><td>20〜30時間</td><td>約70〜80%</td></tr>
+    <tr><td>PowerPoint 365</td><td>一般（Associate・Expertなし）</td><td>★★</td><td>20〜30時間</td><td>約70〜80%</td></tr>
     <tr><td>Access 365</td><td>一般</td><td>★★★★</td><td>50〜80時間</td><td>約40〜50%</td></tr>
   </table>
 
-  <div class="tip-box"><strong>💡 まずExcel一般から始めよう：</strong>就職・転職で最も評価されるのはExcelです。Excel一般→Excel Expert の順に取得するのが最もコスパが高いです。</div>
+  <div class="tip-box"><strong>大谷's結論：まずExcel一般から始めよう：</strong>僕自身、会計士の勉強でExcelを毎日酷使していますが、就職・転職で最も評価されるのは間違いなくExcelです。Excel一般→Excel Expert の順に縦に取得するのが最もコスパが高いルートだと断言します。</div>
 
   <h2>MOS試験の特徴と出題形式</h2>
   <ul>
@@ -118,7 +170,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <li><strong>再受験：</strong>不合格後24時間後から再受験OK</li>
   </ul>
 
-  <div class="warn-box"><strong>⚠ 操作速度が重要：</strong>MOS試験は知識ではなくOfficeの操作スキルが問われます。テキストを読むだけでなく、実際にPCで操作練習することが合格のカギです。</div>
+  <div class="warn-box"><strong>⚠ 操作速度が重要：</strong>MOS試験は知識ではなくOfficeの操作スキルが問われます。僕も最初はテキストを読むだけで分かった気になっていましたが、実際にPCで手を動かした回数がそのままスコアに直結します。テキストは地図、合格を決めるのは操作練習の量です。</div>
 
   <h2>Excel 365（一般）1ヶ月合格スケジュール</h2>
   <table>
@@ -157,15 +209,34 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <li>MOS Excelは就職・転職で最も評価される科目</li>
     <li>テキストを読むより実際の操作練習が合否を決める</li>
     <li>1日1〜2時間の練習で1ヶ月あれば合格圏内に入れる</li>
-    <li>Excel一般→Excel Expertの順に取得するのが効率的</li>
+    <li>Excel一般→Excel Expertの「縦のハコ」を最優先で取得するのが効率的</li>
     <li>随時受験できるため自分のペースで受験計画を立てられる</li>
   </ul>
+
+  <div class="otani-lead">
+    <div class="otani-lead-head">
+      <img src="images/icon-otani.png" alt="大谷">
+      <span>大谷 一輝 より</span>
+    </div>
+    <p>MOSの受験料は決して安くありません。でも、それを「出費」で終わらせるか「実務スキルという資産」に変えられるかは、これからの取り組み方次第です。会計士試験という大きな山と毎日格闘している僕自身、限られた時間とお金をどこに集中投下するかを常に考えています。だからこそ、Excelという最強のハコを縦に極めようとしているあなたは、もう最短ルートに乗っています。</p>
+    <p>自分の市場価値とPCスキルを高めるために今日も一歩を踏み出しているあなたは、最高の仲間です。この記事が受験科目選びの助けになったなら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、執筆のモチベーション維持に本当に励みになります。一緒にExcel Expertというボスを討伐しましょう！</p>
+  </div>
 </div>
+
+<section style="background:#F7FAFC;padding:0 24px 48px;">
+  <div style="max-width:800px;margin:0 auto;">
+    <div class="like-cta">
+      <p>この記事が役に立ったら、下の<strong>いいねボタン</strong>をポチッと押してください！</p>
+      <p class="sub">あなたの「合格しました」という報告が、一番の励みになります。</p>
+    </div>
+    <!-- article-widgets.js によるリアクションウィジェットが自動挿入されます -->
+  </div>
+</section>
 
 <section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
   <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">MOSは独学で取れますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">はい、独学が基本です。市販テキスト1冊とOfficeの実機練習で十分合格できます。1ヶ月程度の学習期間が目安です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">MOSはどの科目から取ればいいですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">就職・転職目的ならExcel（一般）が最優先です。仕事でよく使われ、履歴書への記載効果が最も高い科目です。次にWord、PowerPointの順がおすすめです。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">MOSはどの科目から取ればいいですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">就職・転職目的ならExcel（一般）が最優先です。仕事でよく使われ、履歴書への記載効果が最も高い科目です。そのままExcel Expertまで「縦」に取得し、次にWord、PowerPointの順がおすすめです。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">MOSの合格率はどれくらいですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">一般レベルは60〜80%程度です。ただしMicrosoftは公式な合格率を公表していないため、目安として参考にしてください。操作練習を十分にすれば高い確率で合格できます。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">MOSの試験費用はいくらですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">1科目あたり約10,780円（税込）です。学割があれば8,580円で受験できます。テキスト代を含めると1科目あたり15,000〜20,000円の費用が目安です。</div></details>
 </section>

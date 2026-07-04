@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="520" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">FP3級 6分野バランス攻略マップ</text>
+  <text x="380" y="52" text-anchor="middle" font-size="11" fill="#64748B">満点は不要。学科・実技ともに「60%の合格基準線」を死守する配点バランス戦略</text>
+
+  <!-- chart area baseline y=330, top y=90 -->
+  <line x1="46" y1="330" x2="714" y2="330" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="46" y1="90" x2="714" y2="90" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="40" y="94" text-anchor="end" font-size="9.5" fill="#94A3B8">配点大</text>
+  <text x="40" y="334" text-anchor="end" font-size="9.5" fill="#94A3B8">配点小</text>
+
+  <!-- Column 1: ライフプランニング（最優先） -->
+  <text x="101.7" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">ライフ</text>
+  <text x="101.7" y="88" text-anchor="middle" font-size="9" fill="#64748B">プランニング</text>
+  <rect x="61.7" y="90" width="80" height="240" rx="6" fill="#DCFCE7" stroke="#4ADE80" stroke-width="2.5"/>
+  <rect x="66.7" y="98" width="70" height="18" rx="9" fill="#22C55E"/>
+  <text x="101.7" y="111" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">最優先の得点源</text>
+  <text x="101.7" y="140" text-anchor="middle" font-size="9.5" fill="#15803D">年金・社保が土台</text>
+
+  <!-- Column 2: リスク管理 -->
+  <text x="213" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">リスク管理</text>
+  <text x="213" y="88" text-anchor="middle" font-size="9" fill="#64748B">生命保険・損害保険</text>
+  <rect x="173" y="186" width="80" height="144" rx="6" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+
+  <!-- Column 3: 金融資産運用 -->
+  <text x="324.3" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">金融資産運用</text>
+  <text x="324.3" y="88" text-anchor="middle" font-size="9" fill="#64748B">投資信託・株式・債券</text>
+  <rect x="284.3" y="114" width="80" height="216" rx="6" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+
+  <!-- Column 4: タックスプランニング -->
+  <text x="435.7" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">タックス</text>
+  <text x="435.7" y="88" text-anchor="middle" font-size="9" fill="#64748B">所得税・住民税</text>
+  <rect x="395.7" y="114" width="80" height="216" rx="6" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.5"/>
+
+  <!-- Column 5: 不動産 -->
+  <text x="547" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">不動産</text>
+  <text x="547" y="88" text-anchor="middle" font-size="9" fill="#64748B">取引・税金</text>
+  <rect x="507" y="186" width="80" height="144" rx="6" fill="#FCE7F3" stroke="#F9A8D4" stroke-width="1.5"/>
+
+  <!-- Column 6: 相続・事業承継 -->
+  <text x="658.3" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">相続<tspan font-size="8" fill="#94A3B8">(そうぞく)</tspan></text>
+  <text x="658.3" y="88" text-anchor="middle" font-size="9" fill="#64748B">事業承継・贈与</text>
+  <rect x="618.3" y="186" width="80" height="144" rx="6" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1.5"/>
+
+  <!-- Gauge section -->
+  <text x="380" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">両方とも60%以上をクリアすれば合格</text>
+
+  <!-- 学科試験 gauge -->
+  <text x="60" y="400" font-size="11" font-weight="700" fill="#1E293B">学科試験</text>
+  <rect x="150" y="386" width="560" height="22" rx="11" fill="#E2E8F0"/>
+  <rect x="150" y="386" width="336" height="22" rx="11" fill="#8CC63F"/>
+  <line x1="486" y1="380" x2="486" y2="414" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="486" y="425" text-anchor="middle" font-size="9.5" fill="#B91C1C">合格基準 60%</text>
+
+  <!-- 実技試験 gauge -->
+  <text x="60" y="452" font-size="11" font-weight="700" fill="#1E293B">実技試験</text>
+  <text x="60" y="464" font-size="8.5" fill="#64748B">（FP協会推奨）</text>
+  <rect x="150" y="438" width="560" height="22" rx="11" fill="#E2E8F0"/>
+  <rect x="150" y="438" width="336" height="22" rx="11" fill="#6AAF2B"/>
+  <line x1="486" y1="432" x2="486" y2="466" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="486" y="477" text-anchor="middle" font-size="9.5" fill="#B91C1C">合格基準 60%</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="46" y="490" width="668" height="22" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="380" y="505" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">満点不要。ライフプランニングを起点に6分野を60%ラインまで積み上げるのが合格の近道</text>
+</svg>

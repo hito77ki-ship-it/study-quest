@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://study-quest.net/boki3-progress.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>簿記3級 学習進捗チェック｜スタディクエスト</title>
-<meta name="description" content="日商簿記3級の記事を読んだらチェック。自分の学習進捗を一覧で確認できます。">
+<meta name="description" content="日商簿記3級の全29記事を「クエスト一覧」でチェック管理。現金過不足・貸倒引当金・精算表など、大谷一輝が全論点の学習進捗をチェックリストで完全ナビゲートします。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -32,9 +32,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdr
 .breadcrumb a{color:var(--muted);}
 
 /* ヘッダー */
-.progress-header{margin-bottom:32px;}
+.progress-header{margin-bottom:20px;}
 h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:8px;}
-.meta{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:8px;}
+
+/* 大谷からのメッセージ */
+.otani-box{background:linear-gradient(135deg,rgba(140,198,63,.14),rgba(59,130,246,.10));border:1.5px solid rgba(140,198,63,.55);border-radius:14px;padding:20px 22px;margin:20px 0 28px;}
+html[data-theme="dark"] .otani-box{background:linear-gradient(135deg,rgba(140,198,63,.10),rgba(59,130,246,.10));border-color:rgba(140,198,63,.4);}
+.otani-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.otani-avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.otani-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.otani-name{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--green2);}
+.otani-box p{font-size:14px;color:var(--text);line-height:1.9;margin-bottom:12px;}
+.otani-box p:last-child{margin-bottom:0;}
 
 /* 進捗オーバービュー */
 .overview{background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(96,165,250,.18));border:2px solid rgba(96,165,250,.55);border-radius:14px;padding:20px 24px;margin-bottom:28px;}
@@ -47,7 +57,9 @@ h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:
 .ov-message{font-size:13px;color:var(--blue);margin-top:10px;font-weight:500;}
 
 /* セクション */
-.section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--blue);}
+.section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:32px 0 10px;padding-left:10px;border-left:3px solid var(--blue);}
+.section-desc{font-size:13px;color:var(--text);line-height:1.9;margin:0 0 14px;padding:14px 16px;background:var(--light);border:1px solid var(--border);border-radius:10px;}
+.section-desc strong{color:var(--green2);}
 
 /* 記事カード */
 .article-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
@@ -102,8 +114,17 @@ footer p{font-size:11px;color:#6B7280;margin-top:8px;}
 
   <div class="progress-header">
     <p class="meta">日商簿記3級</p>
-    <h1>学習進捗チェック</h1>
-    <p class="meta">読んだ記事にチェックをつけて、学習の進み具合を確認しよう。</p>
+    <h1>学習進捗チェック｜全記事を「クエスト一覧」で完全攻略</h1>
+    <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  </div>
+
+  <div class="otani-box">
+    <div class="otani-head">
+      <div class="otani-avatar"><img src="images/icon-otani.png" alt="大谷"></div>
+      <span class="otani-name">大谷 一輝 より</span>
+    </div>
+    <p>こんにちは、大谷です！簿記3級の勉強を進めていくと、「現金過不足」「貸倒引当金」「精算表」……と次から次へと新しい言葉が飛び出してきて、正直「うわっ、なんじゃこりゃ！自分が全体のどこまで進んでいるのか、もはや分からん！」って一人でフリーズしたことありませんか？（笑）猛勉強中の身として、その「迷子になる感覚」は僕も痛いほどわかります。</p>
+    <p>だからこそ、3級の全記事を<strong>「クエスト一覧」としてシステム化</strong>しました！下のリストを1つずつクリックしてチェックを入れて、進捗率を100%に近づけていこう。チェックはこのブラウザに自動保存されるから、途中で閉じてもまた戻ってきて続きから挑戦できるよ。全記事読破の先には、合格の盾が待っているはずだ！</p>
   </div>
 
   <div class="overview">
@@ -120,9 +141,11 @@ footer p{font-size:11px;color:#6B7280;margin-top:8px;}
   </div>
 
   <div class="section-title">ゼロからの簿記シリーズ</div>
+  <p class="section-desc">⚔ 大谷の戦術アドバイス：ここは冒険の装備を整える<strong>基本概念</strong>エリア。資産・負債・純資産・収益・費用という<strong>簿記の五要素の「ハコ」</strong>を先に頭へ叩き込んでおくと、この後に出てくる仕訳が全部「どのハコが増えてどのハコが減るか」のパズルに変わっていく。ここを飛ばして論点解説に突っ込むと、後で必ずつまずくから、面倒でも①〜⑤の順番通りに読み進めよう。全体像さえ掴めば、簿記3級はもう半分クリアしたようなものだ。</p>
   <div class="article-list" id="list-zero"></div>
 
   <div class="section-title">各論点 解説記事</div>
+  <p class="section-desc">⚔ 大谷の戦術アドバイス：ここからが本編、得点源が詰まった<strong>各論点仕訳</strong>を各個撃破していくエリアだ。現金と当座預金の判定、ひっかけの多い<strong>現金過不足</strong>、見積り計算がカギの<strong>貸倒引当金</strong>、決算の集大成である<strong>精算表</strong>……どれも「知っていれば一瞬、知らなければ即死」の論点ばかり。特に現金過不足・貸倒引当金・経過勘定・精算表は本試験の第2問・第3問で繰り返し狙われる最重要ポイントだから、優先的にチェックを入れて潰していこう。上から順番でも、自分の苦手論点からでも構わない。焦らず、でも着実に、全24記事を制覇しよう！</p>
   <div class="article-list" id="list-ronten"></div>
 
   <div class="reset-wrap">

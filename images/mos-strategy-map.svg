@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">MOS試験 科目・レベル別マップと合格戦略</title>
+  <desc id="svgdesc">Word・Excel・PowerPointの一般（Associate）と上級（Expert）のボリューム対比、合格基準700点の防衛線、コスパ最強ルートを示す戦略マップ</desc>
+  <defs>
+    <linearGradient id="mosBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0FFF4"/>
+      <stop offset="0.5" stop-color="#F0F9FF"/>
+      <stop offset="1" stop-color="#FEFCE8"/>
+    </linearGradient>
+    <linearGradient id="mosTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="mosWord" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFDBFE"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="mosExcel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BBF7D0"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="mosPpt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FED7AA"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+    <linearGradient id="mosWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FCA5A5"/>
+      <stop offset="0.7" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#86EFAC"/>
+    </linearGradient>
+    <filter id="mosShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.12"/>
+    </filter>
+    <style>.mt{font-family:"Noto Sans JP",system-ui,sans-serif}.mr{font-family:"Noto Sans JP",system-ui,sans-serif;font-size:10.5px;fill:#64748b}</style>
+  </defs>
+
+  <rect width="1200" height="900" rx="20" fill="url(#mosBg)"/>
+  <circle cx="90" cy="110" r="90" fill="#DCFCE7" opacity="0.5"/>
+  <circle cx="1110" cy="130" r="100" fill="#DBEAFE" opacity="0.4"/>
+  <circle cx="600" cy="860" r="110" fill="#FEF3C7" opacity="0.3"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="1120" height="66" rx="14" fill="url(#mosTitle)"/>
+  <text x="600" y="48" text-anchor="middle" class="mt" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">大谷流・MOS攻略ナビ</text>
+  <text x="600" y="73" text-anchor="middle" class="mt" font-size="20" font-weight="800" fill="#FFFFFF">科目・レベル別マップと合格戦略</text>
+
+  <text x="600" y="116" text-anchor="middle" class="mt" font-size="13" font-weight="700" fill="#334155">3科目の<tspan font-weight="800">ボリューム対比</tspan>（一般 Associate と 上級 Expert）</text>
+
+  <!-- ================= CARD 1: Word ================= -->
+  <g filter="url(#mosShadow)">
+    <rect x="40" y="140" width="345" height="360" rx="18" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="40" y="140" width="345" height="46" rx="18" fill="url(#mosWord)"/>
+    <rect x="40" y="162" width="345" height="24" fill="#3B82F6"/>
+  </g>
+  <text x="212" y="162" text-anchor="middle" class="mt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1.5">BOX 1　文書作成のハコ</text>
+  <text x="212" y="181" text-anchor="middle" class="mt" font-size="15" font-weight="800" fill="#fff">Word（ワード）</text>
+
+  <!-- Word bar: Associate -->
+  <text x="70" y="216" class="mt" font-size="11" font-weight="700" fill="#1E3A8A">一般（Associate）</text>
+  <rect x="70" y="224" width="285" height="20" rx="6" fill="#E0F2FE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="70" y="224" width="110" height="20" rx="6" fill="#60A5FA"/>
+  <text x="360" y="239" text-anchor="end" class="mt" font-size="10.5" fill="#1E3A8A">20〜40h</text>
+
+  <!-- Word bar: Expert -->
+  <text x="70" y="268" class="mt" font-size="11" font-weight="700" fill="#1E3A8A">上級（Expert）</text>
+  <rect x="70" y="276" width="285" height="20" rx="6" fill="#E0F2FE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="70" y="276" width="215" height="20" rx="6" fill="#2563EB"/>
+  <text x="360" y="291" text-anchor="end" class="mt" font-size="10.5" fill="#1E3A8A">50〜70h</text>
+
+  <rect x="58" y="316" width="309" height="112" rx="10" fill="rgba(59,130,246,.10)" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="212" y="338" text-anchor="middle" class="mt" font-size="11" fill="#1E3A8A">事務・秘書・総務系で評価。</text>
+  <text x="212" y="356" text-anchor="middle" class="mt" font-size="11" fill="#1E3A8A">差し込み印刷や長文書式など</text>
+  <text x="212" y="374" text-anchor="middle" class="mt" font-size="11" fill="#1E3A8A">「魅せる書類」を作る<ruby>技能<rt>ぎのう</rt></ruby>。</text>
+  <text x="212" y="396" text-anchor="middle" class="mt" font-size="11" font-weight="700" fill="#1D4ED8">就活での優先度：中</text>
+  <text x="212" y="414" text-anchor="middle" class="mt" font-size="10.5" fill="#3B82F6">★★（一般）／★★★★（上級）</text>
+
+  <text x="212" y="466" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#1E3A8A">武器としては2番手</text>
+  <text x="212" y="484" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#1E3A8A">「文書作成のハコ」</text>
+
+  <!-- ================= CARD 2: Excel (highlighted) ================= -->
+  <g filter="url(#mosShadow)">
+    <rect x="410" y="132" width="380" height="376" rx="20" fill="#F0FDF4" stroke="#FBBF24" stroke-width="3.5"/>
+    <rect x="410" y="132" width="380" height="50" rx="20" fill="url(#mosExcel)"/>
+    <rect x="410" y="158" width="380" height="24" fill="#16A34A"/>
+  </g>
+  <rect x="655" y="112" width="150" height="26" rx="13" fill="#FBBF24" stroke="#B45309" stroke-width="1.5"/>
+  <text x="730" y="129" text-anchor="middle" class="mt" font-size="11" font-weight="800" fill="#78350F">★最優先ルート★</text>
+  <text x="600" y="160" text-anchor="middle" class="mt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.95)" letter-spacing="1.5">BOX 2　就活最強のハコ</text>
+  <text x="600" y="179" text-anchor="middle" class="mt" font-size="16" font-weight="800" fill="#fff">Excel（エクセル）</text>
+
+  <!-- Excel bar: Associate -->
+  <text x="440" y="212" class="mt" font-size="11" font-weight="700" fill="#14532D">一般（Associate）</text>
+  <rect x="440" y="220" width="310" height="22" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <rect x="440" y="220" width="140" height="22" rx="6" fill="#4ADE80"/>
+  <text x="758" y="236" text-anchor="end" class="mt" font-size="11" font-weight="700" fill="#14532D">30〜50h</text>
+
+  <!-- vertical connector arrow (縦のハコ) -->
+  <line x1="600" y1="246" x2="600" y2="266" stroke="#B45309" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="600,272 590,258 610,258" fill="#B45309"/>
+  <text x="700" y="264" class="mt" font-size="10.5" font-weight="800" fill="#B45309">縦足のハコ＝最大のチート技</text>
+
+  <!-- Excel bar: Expert -->
+  <text x="440" y="292" class="mt" font-size="11" font-weight="700" fill="#14532D">上級（Expert）</text>
+  <rect x="440" y="300" width="310" height="22" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <rect x="440" y="300" width="230" height="22" rx="6" fill="#16A34A"/>
+  <text x="758" y="316" text-anchor="end" class="mt" font-size="11" font-weight="700" fill="#14532D">60〜80h</text>
+
+  <rect x="428" y="340" width="344" height="112" rx="10" fill="rgba(22,163,74,.12)" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="600" y="362" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#14532D">経理・財務・データ分析職で</text>
+  <text x="600" y="380" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#14532D"><ruby>圧倒的<rt>あっとうてき</rt></ruby>に評価される最強科目。</text>
+  <text x="600" y="398" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#14532D">一般→上級と<ruby>縦<rt>たて</rt></ruby>に取り切るのが正解。</text>
+  <text x="600" y="420" text-anchor="middle" class="mt" font-size="12" font-weight="800" fill="#15803D">就活での優先度：★最高★</text>
+
+  <text x="600" y="472" text-anchor="middle" class="mt" font-size="12" font-weight="800" fill="#14532D">最優先で味方にすべき</text>
+  <text x="600" y="492" text-anchor="middle" class="mt" font-size="12" font-weight="800" fill="#14532D">「就活最強のハコ」</text>
+
+  <!-- ================= CARD 3: PowerPoint ================= -->
+  <g filter="url(#mosShadow)">
+    <rect x="815" y="140" width="345" height="360" rx="18" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+    <rect x="815" y="140" width="345" height="46" rx="18" fill="url(#mosPpt)"/>
+    <rect x="815" y="162" width="345" height="24" fill="#F97316"/>
+  </g>
+  <text x="987" y="162" text-anchor="middle" class="mt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1.5">BOX 3　伝達力のハコ</text>
+  <text x="987" y="181" text-anchor="middle" class="mt" font-size="15" font-weight="800" fill="#fff">PowerPoint（パワポ）</text>
+
+  <!-- PPT bar: Associate only -->
+  <text x="845" y="216" class="mt" font-size="11" font-weight="700" fill="#9A3412">一般（Associate）</text>
+  <rect x="845" y="224" width="285" height="20" rx="6" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1"/>
+  <rect x="845" y="224" width="100" height="20" rx="6" fill="#FB923C"/>
+  <text x="1135" y="239" text-anchor="end" class="mt" font-size="10.5" fill="#9A3412">20〜30h</text>
+
+  <text x="987" y="272" text-anchor="middle" class="mt" font-size="11" fill="#9A3412">上級（Expert）レベルは</text>
+  <text x="987" y="288" text-anchor="middle" class="mt" font-size="11" font-weight="700" fill="#C2410C">現行365では設定なし</text>
+
+  <rect x="833" y="316" width="309" height="112" rx="10" fill="rgba(249,115,22,.10)" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="987" y="338" text-anchor="middle" class="mt" font-size="11" fill="#9A3412">営業・企画・マーケティング系で</text>
+  <text x="987" y="356" text-anchor="middle" class="mt" font-size="11" fill="#9A3412">プレゼン資料の<ruby>説得力<rt>せっとくりょく</rt></ruby>を証明。</text>
+  <text x="987" y="374" text-anchor="middle" class="mt" font-size="11" fill="#9A3412">一般1科目のみで完結する。</text>
+  <text x="987" y="396" text-anchor="middle" class="mt" font-size="11" font-weight="700" fill="#C2410C">就活での優先度：中〜高</text>
+  <text x="987" y="414" text-anchor="middle" class="mt" font-size="10.5" fill="#F97316">★★（一般のみ）</text>
+
+  <text x="987" y="466" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#9A3412">短期決着で取れる</text>
+  <text x="987" y="484" text-anchor="middle" class="mt" font-size="11.5" font-weight="700" fill="#9A3412">「伝達力のハコ」</text>
+
+  <!-- ================= DEFENSE LINE ================= -->
+  <text x="600" y="546" text-anchor="middle" class="mt" font-size="13" font-weight="700" fill="#334155">全科目共通：合格基準<ruby>700<rt>ななひゃく</rt></ruby>点の<ruby>防衛線<rt>ぼうえいせん</rt></ruby>（1000点満点）</text>
+
+  <g filter="url(#mosShadow)">
+    <rect x="40" y="566" width="1120" height="180" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+
+  <text x="80" y="606" class="mt" font-size="12.5" font-weight="700" fill="#1E293B">出題：マルチプロジェクト</text>
+  <text x="80" y="624" class="mt" font-size="12.5" font-weight="700" fill="#1E293B">形式の実技試験</text>
+  <text x="80" y="646" class="mr">（50〜60分・複数ファイル操作）</text>
+
+  <!-- defense wall gauge (0-1000, marker at 700) -->
+  <rect x="330" y="600" width="760" height="30" rx="15" fill="url(#mosWall)" opacity="0.85"/>
+  <rect x="330" y="600" width="760" height="30" rx="15" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="862" y1="584" x2="862" y2="646" stroke="#1E293B" stroke-width="3"/>
+  <polygon points="862,584 852,596 872,596" fill="#1E293B"/>
+  <text x="862" y="574" text-anchor="middle" class="mt" font-size="12" font-weight="800" fill="#1E293B">700点ライン</text>
+
+  <text x="470" y="660" text-anchor="middle" class="mt" font-size="11" fill="#7F1D1D">知識だけでは届かない</text>
+  <text x="470" y="676" text-anchor="middle" class="mr">（テキスト読了だけでは危険）</text>
+  <text x="1000" y="660" text-anchor="middle" class="mt" font-size="11" fill="#14532D">操作練習で安定突破</text>
+  <text x="1000" y="676" text-anchor="middle" class="mr">（実機演習量が得点に直結）</text>
+
+  <text x="600" y="714" text-anchor="middle" class="mt" font-size="12" font-weight="700" fill="#334155">攻略：テキストを読むだけでなく実際にPCを操作した回数がそのままスコアになる。</text>
+  <text x="600" y="732" text-anchor="middle" class="mt" font-size="12" font-weight="700" fill="#334155">模擬問題の反復回数を稼ぐことが700点防衛の最短ルート。</text>
+
+  <!-- Footer note -->
+  <text x="600" y="794" text-anchor="middle" class="mt" font-size="13" fill="#374151">3科目を均等に取る必要はない。就活で評価される「Excel一般→Expert」の<ruby>縦<rt>たて</rt></ruby>のハコを最優先で味方にすれば、</text>
+  <text x="600" y="816" text-anchor="middle" class="mt" font-size="13" font-weight="700" fill="#16A34A">受験料というコストを最速で実務スキルという資産に変えられます。</text>
+</svg>

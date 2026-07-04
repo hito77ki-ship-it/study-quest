@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">社労士×行政書士 範囲対比とダブルライセンス相乗効果マップ</title>
+  <desc id="svgdesc">社労士（10科目・足切り方式）と行政書士（8科目・記述式60点）の試験範囲対比、および行政書士→社労士のワンストップ独立で生まれる相乗効果を示す戦略マップ</desc>
+  <defs>
+    <linearGradient id="sgBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF2FF"/>
+      <stop offset="0.5" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#FFFBEB"/>
+    </linearGradient>
+    <linearGradient id="sgTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="sgSharoshi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C7D2FE"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="sgGyosei" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="sgFlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F59E0B"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <filter id="sgShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.12"/>
+    </filter>
+    <style>.st{font-family:"Noto Sans JP",system-ui,sans-serif}.sr{font-family:"Noto Sans JP",system-ui,sans-serif;font-size:10.5px;fill:#64748b}</style>
+  </defs>
+
+  <rect width="1200" height="860" rx="20" fill="url(#sgBg)"/>
+  <circle cx="90" cy="110" r="90" fill="#E0E7FF" opacity="0.5"/>
+  <circle cx="1110" cy="130" r="100" fill="#FEF3C7" opacity="0.5"/>
+  <circle cx="600" cy="820" r="110" fill="#DCFCE7" opacity="0.35"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="1120" height="66" rx="14" fill="url(#sgTitle)"/>
+  <text x="600" y="48" text-anchor="middle" class="st" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">大谷流・社労士×行政書士 攻略ナビ</text>
+  <text x="600" y="73" text-anchor="middle" class="st" font-size="20" font-weight="800" fill="#FFFFFF">範囲対比とダブルライセンス相乗効果マップ</text>
+
+  <text x="600" y="116" text-anchor="middle" class="st" font-size="13" font-weight="700" fill="#334155">同じ法律系資格でも、武器の中身と合格の壁はまったく別物</text>
+
+  <!-- ================= CARD 1: 社労士 ================= -->
+  <g filter="url(#sgShadow)">
+    <rect x="40" y="140" width="520" height="380" rx="18" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="2"/>
+    <rect x="40" y="140" width="520" height="46" rx="18" fill="url(#sgSharoshi)"/>
+    <rect x="40" y="162" width="520" height="24" fill="#4F46E5"/>
+  </g>
+  <text x="300" y="162" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1.5">WEAPON A　労務・社会保険の盾</text>
+  <text x="300" y="181" text-anchor="middle" class="st" font-size="16" font-weight="800" fill="#fff">社会保険労務士（10科目）</text>
+
+  <!-- subject grid row1 -->
+  <g class="st" font-size="11" font-weight="700">
+    <rect x="75" y="206" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="116" y="223" text-anchor="middle" fill="#312E81">労基</text>
+    <rect x="167" y="206" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="208" y="223" text-anchor="middle" fill="#312E81">安衛</text>
+    <rect x="259" y="206" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="300" y="223" text-anchor="middle" fill="#312E81">労災</text>
+    <rect x="351" y="206" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="392" y="223" text-anchor="middle" fill="#312E81">雇用</text>
+    <rect x="443" y="206" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="484" y="223" text-anchor="middle" fill="#312E81">徴収</text>
+  </g>
+  <!-- subject grid row2 -->
+  <g class="st" font-size="11" font-weight="700">
+    <rect x="75" y="238" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="116" y="255" text-anchor="middle" fill="#312E81">健保</text>
+    <rect x="167" y="238" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="208" y="255" text-anchor="middle" fill="#312E81">厚年</text>
+    <rect x="259" y="238" width="82" height="26" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/><text x="300" y="255" text-anchor="middle" fill="#312E81">国年</text>
+    <rect x="351" y="238" width="82" height="26" rx="6" fill="#FCA5A5" stroke="#B91C1C" stroke-width="1.5"/><text x="392" y="255" text-anchor="middle" fill="#7F1D1D">労一</text>
+    <rect x="443" y="238" width="82" height="26" rx="6" fill="#FCA5A5" stroke="#B91C1C" stroke-width="1.5"/><text x="484" y="255" text-anchor="middle" fill="#7F1D1D">社一</text>
+  </g>
+  <text x="300" y="284" text-anchor="middle" class="st" font-size="10.5" fill="#B91C1C" font-weight="700">赤枠2科目＝足切りの二大トラップ（一般常識）</text>
+
+  <rect x="58" y="300" width="484" height="94" rx="10" fill="rgba(79,70,229,.10)" stroke="#A5B4FC" stroke-width="1.5"/>
+  <text x="300" y="322" text-anchor="middle" class="st" font-size="12" font-weight="700" fill="#312E81">合格の壁：科目ごとの足切り方式</text>
+  <text x="300" y="342" text-anchor="middle" class="st" font-size="11" fill="#3730A3">総合点が足りても、1科目でも選択式3点／</text>
+  <text x="300" y="360" text-anchor="middle" class="st" font-size="11" fill="#3730A3">択一式4点を割ると、その瞬間に即不合格。</text>
+  <text x="300" y="380" text-anchor="middle" class="st" font-size="11" font-weight="700" fill="#4338CA">＝弱点ゼロを目指す「防衛ゲーム」</text>
+
+  <text x="300" y="424" text-anchor="middle" class="st" font-size="12.5" font-weight="800" fill="#312E81">武器：労務顧問・社会保険手続き</text>
+  <text x="300" y="444" text-anchor="middle" class="st" font-size="11" fill="#4338CA">→ 顧問契約で安定収入を作りやすい</text>
+
+  <text x="300" y="484" text-anchor="middle" class="st" font-size="11.5" font-weight="700" fill="#312E81">「人事・労務」で戦いたい人の一本目</text>
+
+  <!-- divider -->
+  <line x1="600" y1="150" x2="600" y2="510" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6,6"/>
+  <circle cx="600" cy="330" r="26" fill="#334155"/>
+  <text x="600" y="336" text-anchor="middle" class="st" font-size="14" font-weight="800" fill="#fff">VS</text>
+
+  <!-- ================= CARD 2: 行政書士 ================= -->
+  <g filter="url(#sgShadow)">
+    <rect x="640" y="140" width="520" height="380" rx="18" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+    <rect x="640" y="140" width="520" height="46" rx="18" fill="url(#sgGyosei)"/>
+    <rect x="640" y="162" width="520" height="24" fill="#D97706"/>
+  </g>
+  <text x="900" y="162" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1.5">WEAPON B　許認可申請の剣</text>
+  <text x="900" y="181" text-anchor="middle" class="st" font-size="16" font-weight="800" fill="#fff">行政書士（8科目）</text>
+
+  <!-- subject grid row1 -->
+  <g class="st" font-size="10.5" font-weight="700">
+    <rect x="672" y="206" width="119" height="26" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1"/><text x="731" y="223" text-anchor="middle" fill="#78350F">基礎法学</text>
+    <rect x="799" y="206" width="119" height="26" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1"/><text x="858" y="223" text-anchor="middle" fill="#78350F">憲法</text>
+    <rect x="926" y="206" width="119" height="26" rx="6" fill="#FCA5A5" stroke="#B45309" stroke-width="1.8"/><text x="985" y="223" text-anchor="middle" fill="#78350F">行政法(112点)</text>
+  </g>
+  <!-- subject grid row2 -->
+  <g class="st" font-size="10.5" font-weight="700">
+    <rect x="672" y="238" width="119" height="26" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1"/><text x="731" y="255" text-anchor="middle" fill="#78350F">民法</text>
+    <rect x="799" y="238" width="119" height="26" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1"/><text x="858" y="255" text-anchor="middle" fill="#78350F">商法会社法</text>
+    <rect x="926" y="238" width="119" height="26" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1"/><text x="985" y="255" text-anchor="middle" fill="#78350F">一般知識</text>
+  </g>
+  <text x="900" y="284" text-anchor="middle" class="st" font-size="10.5" fill="#B45309" font-weight="700">赤枠＝全体の37%を占める最優先科目「行政法」</text>
+
+  <rect x="658" y="300" width="484" height="94" rx="10" fill="rgba(217,119,6,.10)" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="900" y="322" text-anchor="middle" class="st" font-size="12" font-weight="700" fill="#78350F">合格の壁：記述式60点（3問・各20点）</text>
+  <text x="900" y="342" text-anchor="middle" class="st" font-size="11" fill="#92400E">丸暗記では0点。「誰が・誰に・何を求めるか」</text>
+  <text x="900" y="360" text-anchor="middle" class="st" font-size="11" fill="#92400E">の3パーツを組む記述の「型」で部分点を狙う。</text>
+  <text x="900" y="380" text-anchor="middle" class="st" font-size="11" font-weight="700" fill="#B45309">＝知識を組み立てる「表現ゲーム」</text>
+
+  <text x="900" y="424" text-anchor="middle" class="st" font-size="12.5" font-weight="800" fill="#78350F">武器：許認可申請・法人設立</text>
+  <text x="900" y="444" text-anchor="middle" class="st" font-size="11" fill="#B45309">→ 受験資格なしで誰でも今すぐ挑戦できる</text>
+
+  <text x="900" y="484" text-anchor="middle" class="st" font-size="11.5" font-weight="700" fill="#78350F">「許認可・法人設立」で戦いたい人の一本目</text>
+
+  <!-- ================= SYNERGY FLOW ================= -->
+  <text x="600" y="546" text-anchor="middle" class="st" font-size="13" font-weight="700" fill="#334155">ダブルライセンスの相乗効果：行政書士 → 社労士 でワンストップ独立</text>
+
+  <g filter="url(#sgShadow)">
+    <rect x="40" y="566" width="1120" height="210" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+
+  <!-- Step boxes -->
+  <rect x="80" y="600" width="320" height="140" rx="14" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+  <text x="240" y="628" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="#B45309" letter-spacing="1">STEP 1</text>
+  <text x="240" y="652" text-anchor="middle" class="st" font-size="14" font-weight="800" fill="#78350F">行政書士</text>
+  <text x="240" y="676" text-anchor="middle" class="st" font-size="11" fill="#92400E">会社設立・許認可申請を代行</text>
+  <text x="240" y="694" text-anchor="middle" class="st" font-size="11" fill="#92400E">受験資格なしで最速スタート</text>
+  <text x="240" y="718" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="#B45309">士業デビューの入口</text>
+
+  <polygon points="410,660 450,650 450,670" fill="#94A3B8"/>
+  <line x1="400" y1="660" x2="448" y2="660" stroke="#94A3B8" stroke-width="4"/>
+
+  <rect x="440" y="600" width="320" height="140" rx="14" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="2"/>
+  <text x="600" y="628" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="#4338CA" letter-spacing="1">STEP 2</text>
+  <text x="600" y="652" text-anchor="middle" class="st" font-size="14" font-weight="800" fill="#312E81">社会保険労務士</text>
+  <text x="600" y="676" text-anchor="middle" class="st" font-size="11" fill="#3730A3">設立した会社の社会保険加入手続き</text>
+  <text x="600" y="694" text-anchor="middle" class="st" font-size="11" fill="#3730A3">＋労務管理の顧問契約へ</text>
+  <text x="600" y="718" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="#4338CA">安定収入の柱を追加</text>
+
+  <polygon points="770,660 810,650 810,670" fill="#94A3B8"/>
+  <line x1="760" y1="660" x2="808" y2="660" stroke="#94A3B8" stroke-width="4"/>
+
+  <rect x="800" y="600" width="320" height="140" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="960" y="628" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="#15803D" letter-spacing="1">STEP 3</text>
+  <text x="960" y="652" text-anchor="middle" class="st" font-size="14" font-weight="800" fill="#14532D">ワンストップ独立</text>
+  <text x="960" y="676" text-anchor="middle" class="st" font-size="11" fill="#166534">設立から労務まで一気通貫で対応</text>
+  <text x="960" y="694" text-anchor="middle" class="st" font-size="11" fill="#166534">できる事務所として競合と差別化</text>
+  <text x="960" y="718" text-anchor="middle" class="st" font-size="10.5" font-weight="700" fill="#15803D">独立後の競争力が最大化</text>
+
+  <!-- Footer note -->
+  <text x="600" y="812" text-anchor="middle" class="st" font-size="13" fill="#374151">目的で選ぶなら——労務・社会保険で戦うなら社労士、許認可・法人設立で戦うなら行政書士。</text>
+  <text x="600" y="834" text-anchor="middle" class="st" font-size="13" font-weight="700" fill="#16A34A">2つとも味方につければ、独立後の武器は「足し算」ではなく「掛け算」になります。</text>
+</svg>

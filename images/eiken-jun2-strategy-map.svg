@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+    <linearGradient id="gradPrimary" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#90CAF9"/>
+      <stop offset="50%" stop-color="#F48FB1"/>
+      <stop offset="100%" stop-color="#A5D6A7"/>
+    </linearGradient>
+    <linearGradient id="gradSpeak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F6AD9A"/>
+      <stop offset="100%" stop-color="#F08080"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="640" rx="16" fill="#FFFFFF"/>
+
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1E293B">英検準2級 合格戦略マップ</text>
+  <text x="400" y="52" text-anchor="middle" font-size="11" fill="#718096">一次試験の配点バランス ＆ 二次試験の防衛線</text>
+
+  <!-- Panel A: 一次試験 -->
+  <rect x="40" y="68" width="720" height="270" rx="14" fill="#F5F8FF" stroke="#C7D8F5" stroke-width="1.5"/>
+  <text x="400" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#3B5BDB">① 一次試験（筆記・メール英作文・リスニング）の配点（はいてん）バランス</text>
+
+  <!-- Column 1: 筆記 -->
+  <rect x="60" y="112" width="220" height="150" rx="10" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="170" y="150" text-anchor="middle" font-size="30">📖</text>
+  <text x="170" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0D47A1">筆記（読解・文法）</text>
+  <text x="170" y="193" text-anchor="middle" font-size="10.5" fill="#5A7BAF">配点目安：750点</text>
+  <line x1="76" y1="203" x2="264" y2="203" stroke="#BBDEFB" stroke-width="1"/>
+  <text x="170" y="222" text-anchor="middle" font-size="10" fill="#1565C0">単語×読解のW対策で</text>
+  <text x="170" y="238" text-anchor="middle" font-size="10" fill="#1565C0">安定した基礎点を稼ぐ</text>
+
+  <!-- Column 2: 英作文 -->
+  <rect x="290" y="112" width="220" height="150" rx="10" fill="#FCE4EC" stroke="#F48FB1" stroke-width="1.5"/>
+  <text x="400" y="150" text-anchor="middle" font-size="30">✍️</text>
+  <text x="400" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#880E4F">英作文（メール・意見文）</text>
+  <text x="400" y="193" text-anchor="middle" font-size="10.5" fill="#B15C7E">配点目安：750点</text>
+  <line x1="306" y1="203" x2="494" y2="203" stroke="#F8BBD0" stroke-width="1"/>
+  <text x="400" y="222" text-anchor="middle" font-size="10" fill="#AD1457">型（テンプレ）に当てはめて</text>
+  <text x="400" y="238" text-anchor="middle" font-size="10" fill="#AD1457">文字数を稼ぐのが最速ルート</text>
+
+  <!-- Column 3: リスニング -->
+  <rect x="520" y="112" width="220" height="150" rx="10" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1.5"/>
+  <text x="630" y="150" text-anchor="middle" font-size="30">🎧</text>
+  <text x="630" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1B5E20">リスニング</text>
+  <text x="630" y="193" text-anchor="middle" font-size="10.5" fill="#5C9165">配点目安：750点</text>
+  <line x1="536" y1="203" x2="724" y2="203" stroke="#C8E6C9" stroke-width="1"/>
+  <text x="630" y="222" text-anchor="middle" font-size="10" fill="#2E7D32">耳を慣らせば</text>
+  <text x="630" y="238" text-anchor="middle" font-size="10" fill="#2E7D32">安定した得点源に化ける</text>
+
+  <!-- Combined score bar -->
+  <text x="70" y="274" text-anchor="start" font-size="11.5" font-weight="700" fill="#3B5BDB">一次試験 合計CSEスコアの目安</text>
+  <text x="466" y="274" text-anchor="start" font-size="9.5" fill="#EF4444">← 合格基準（ごうかくきじゅん）ライン</text>
+  <rect x="60" y="284" width="680" height="24" rx="12" fill="#E9EDF5" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="60" y="284" width="400" height="24" rx="12" fill="url(#gradPrimary)"/>
+  <line x1="460" y1="278" x2="460" y2="312" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="400" y="330" text-anchor="middle" font-size="11.5" fill="#3B5BDB">3技能（ぎのう）合計で勝負！ 一つが苦手でも他の技能でカバーできる『バランスゲーム』</text>
+
+  <!-- Panel B: 二次試験 -->
+  <rect x="40" y="354" width="720" height="250" rx="14" fill="#FFF5F5" stroke="#FBC2C2" stroke-width="1.5"/>
+  <text x="400" y="380" text-anchor="middle" font-size="14" font-weight="700" fill="#C53030">② 二次試験（にじしけん）の防衛線（ぼうえいせん）</text>
+  <text x="400" y="398" text-anchor="middle" font-size="10.5" fill="#9B4444">——4コマ描写（びょうしゃ）＋ 面接（めんせつ）は一次と別勘定！</text>
+
+  <!-- 4-koma icons -->
+  <text x="70" y="410" text-anchor="start" font-size="10.5" font-weight="700" fill="#7B341E">4コマ描写のテンプレ攻略</text>
+  <rect x="70" y="416" width="56" height="56" rx="8" fill="#FFFBEA" stroke="#F6E05E" stroke-width="1.5"/>
+  <text x="98" y="450" text-anchor="middle" font-size="20" font-weight="700" fill="#B7791F">1</text>
+  <rect x="134" y="416" width="56" height="56" rx="8" fill="#FFFBEA" stroke="#F6E05E" stroke-width="1.5"/>
+  <text x="162" y="450" text-anchor="middle" font-size="20" font-weight="700" fill="#B7791F">2</text>
+  <rect x="198" y="416" width="56" height="56" rx="8" fill="#FFFBEA" stroke="#F6E05E" stroke-width="1.5"/>
+  <text x="226" y="450" text-anchor="middle" font-size="20" font-weight="700" fill="#B7791F">3</text>
+  <rect x="262" y="416" width="56" height="56" rx="8" fill="#FFFBEA" stroke="#F6E05E" stroke-width="1.5"/>
+  <text x="290" y="450" text-anchor="middle" font-size="20" font-weight="700" fill="#B7791F">4</text>
+  <text x="196" y="492" text-anchor="middle" font-size="10" fill="#7B341E">「First,→Second,→Finally,」の3段テンプレで</text>
+  <text x="196" y="506" text-anchor="middle" font-size="10" fill="#7B341E">文字数と論理性を稼ぐ</text>
+
+  <!-- Speaking gauge -->
+  <text x="390" y="410" text-anchor="start" font-size="10.5" font-weight="700" fill="#C53030">面接スコアは独立ボーダー</text>
+  <text x="574" y="406" text-anchor="middle" font-size="9.5" fill="#742A2A">足切り（あしきり）ライン</text>
+  <rect x="390" y="418" width="340" height="24" rx="12" fill="#FBEAEA" stroke="#F5B5B5" stroke-width="1"/>
+  <rect x="390" y="418" width="184" height="24" rx="12" fill="url(#gradSpeak)"/>
+  <line x1="574" y1="410" x2="574" y2="450" stroke="#742A2A" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="390" y="466" text-anchor="start" font-size="10" fill="#742A2A">一次を通過しても、ここだけは</text>
+  <text x="390" y="480" text-anchor="start" font-size="10" fill="#742A2A">単独で守らないと不合格になる関門</text>
+
+  <!-- Bottom callout -->
+  <rect x="60" y="520" width="680" height="56" rx="12" fill="#FFF0F0" stroke="#FBC2C2" stroke-width="1"/>
+  <text x="400" y="546" text-anchor="middle" font-size="12" font-weight="700" fill="#9B2C2C">だから『全部満遍なく完璧』を目指さなくていい。</text>
+  <text x="400" y="566" text-anchor="middle" font-size="11.5" fill="#9B2C2C">一次は技能（ぎのう）合計の総合力、二次は面接単体の対策で突破しよう！</text>
+</svg>

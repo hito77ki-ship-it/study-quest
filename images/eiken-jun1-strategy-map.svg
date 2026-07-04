@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" width="900" height="460">
+  <defs>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+    <linearGradient id="gVocab" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="gWrite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D8B4FE"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="gListen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <linearGradient id="gSpeak" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="gBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="460" rx="16" fill="url(#gBg)"/>
+  <circle cx="24" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="876" cy="24" r="3" fill="#CBD5E1" opacity="0.5"/>
+  <circle cx="24" cy="436" r="3" fill="#CBD5E1" opacity="0.5"/>
+
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1E293B">⚔ 英検準1級 4技能バランス＆合格ライン マップ</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12" fill="#64748B">一次は3技能の合計スコア、二次はスピーキング単独スコアで合否が決まる「別ゲーム」</text>
+
+  <!-- Divider -->
+  <line x1="580" y1="72" x2="580" y2="410" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="6,5"/>
+
+  <!-- LEFT: 一次試験 -->
+  <rect x="40" y="70" width="520" height="26" rx="6" fill="#E2E8F0"/>
+  <text x="300" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#334155">一次試験：3技能の合計スコアで判定（各技能 満点750点）</text>
+
+  <!-- scale guides -->
+  <line x1="75" y1="140" x2="545" y2="140" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,4"/>
+  <text x="545" y="136" text-anchor="end" font-size="9" fill="#94A3B8">満点750</text>
+  <line x1="75" y1="360" x2="545" y2="360" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Pass line (average per skill needed for total pass) -->
+  <line x1="75" y1="253" x2="545" y2="253" stroke="#EF4444" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="550" y="257" font-size="9.5" font-weight="700" fill="#B91C1C">合格ライン目安（合計約1792点/2250点）</text>
+
+  <!-- Bar 1: 語彙・読解 -->
+  <rect x="110" y="153" width="80" height="207" rx="8" fill="url(#gVocab)"/>
+  <text x="150" y="140" text-anchor="middle" font-size="16">📖</text>
+  <text x="150" y="378" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">語彙・読解</text>
+  <text x="150" y="392" text-anchor="middle" font-size="9" fill="#3B5A8A">（大問1〜3）</text>
+
+  <!-- Bar 2: 英作文 -->
+  <rect x="270" y="166" width="80" height="194" rx="8" fill="url(#gWrite)"/>
+  <text x="310" y="153" text-anchor="middle" font-size="16">✍️</text>
+  <text x="310" y="378" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">英作文</text>
+  <text x="310" y="392" text-anchor="middle" font-size="9" fill="#6B46A8">（大問4）</text>
+
+  <!-- Bar 3: リスニング -->
+  <rect x="430" y="161" width="80" height="199" rx="8" fill="url(#gListen)"/>
+  <text x="470" y="148" text-anchor="middle" font-size="16">🎧</text>
+  <text x="470" y="378" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">リスニング</text>
+  <text x="470" y="392" text-anchor="middle" font-size="9" fill="#9A5A2E">（会話・講義）</text>
+
+  <text x="300" y="408" text-anchor="middle" font-size="10" fill="#64748B">👉 語彙（パス単）が3技能すべての土台。最初に固めるほど全体の伸びが早い</text>
+
+  <!-- RIGHT: 二次試験 -->
+  <rect x="600" y="70" width="260" height="26" rx="6" fill="#D1FAE5"/>
+  <text x="730" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">二次試験：スピーキング単独で判定</text>
+
+  <!-- 4-panel comic mini icons -->
+  <rect x="625" y="112" width="34" height="34" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="642" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">①</text>
+  <rect x="666" y="112" width="34" height="34" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="683" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">②</text>
+  <rect x="707" y="112" width="34" height="34" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="724" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">③</text>
+  <rect x="748" y="112" width="34" height="34" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="765" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">④</text>
+  <text x="703" y="160" text-anchor="middle" font-size="9.5" fill="#64748B">4コマ漫画ナレーション（2分）→質疑応答（3〜4問）</text>
+
+  <!-- scale guides -->
+  <line x1="640" y1="195" x2="820" y2="195" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,4"/>
+  <text x="820" y="191" text-anchor="end" font-size="9" fill="#94A3B8">満点750</text>
+  <line x1="640" y1="360" x2="820" y2="360" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Pass line for speaking -->
+  <line x1="640" y1="308" x2="820" y2="308" stroke="#EF4444" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="700" y="298" text-anchor="middle" font-size="9.5" font-weight="700" fill="#B91C1C">合格ライン目安（約512点/750点）</text>
+
+  <!-- Speaking bar -->
+  <rect x="695" y="207" width="80" height="153" rx="8" fill="url(#gSpeak)"/>
+  <text x="735" y="194" text-anchor="middle" font-size="16">🎤</text>
+  <text x="735" y="378" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">スピーキング</text>
+
+  <text x="730" y="398" text-anchor="middle" font-size="10" fill="#64748B">👉 一次と並行して</text>
+  <text x="730" y="411" text-anchor="middle" font-size="10" fill="#64748B">練習しないと間に合わない</text>
+
+  <!-- Bottom caption -->
+  <rect x="40" y="418" width="820" height="30" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="450" y="437" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">一次と二次は別スコアの「別ゲーム」。だからこそ二次対策は学習初日から一次と並行させるのが正解</text>
+</svg>

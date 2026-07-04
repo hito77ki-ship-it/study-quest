@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">英検3級 試験構成と4大攻略戦略マップ</title>
+  <desc id="svgdesc">一次試験の語彙・文法・長文読解・Eメール英作文・リスニングの配点バランスと、二次試験（面接）の合格基準防衛線を示す戦略マップ</desc>
+  <defs>
+    <linearGradient id="e3Bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFBEB"/>
+      <stop offset="0.5" stop-color="#F0F9FF"/>
+      <stop offset="1" stop-color="#F5F3FF"/>
+    </linearGradient>
+    <linearGradient id="e3Title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="e3C1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="e3C2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFDBFE"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="e3C3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDD6FE"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="e3C4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#99F6E4"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="e3Wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FCA5A5"/>
+      <stop offset="0.55" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#86EFAC"/>
+    </linearGradient>
+    <filter id="e3Shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.12"/>
+    </filter>
+    <style>.et{font-family:"Noto Sans JP",system-ui,sans-serif}.er{font-family:"Noto Sans JP",system-ui,sans-serif;font-size:10.5px;fill:#64748b}</style>
+  </defs>
+
+  <rect width="1200" height="860" rx="20" fill="url(#e3Bg)"/>
+  <circle cx="90" cy="110" r="90" fill="#FEF3C7" opacity="0.5"/>
+  <circle cx="1110" cy="130" r="100" fill="#DBEAFE" opacity="0.4"/>
+  <circle cx="600" cy="820" r="110" fill="#EDE9FE" opacity="0.35"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="1120" height="66" rx="14" fill="url(#e3Title)"/>
+  <text x="600" y="48" text-anchor="middle" class="et" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">大谷流・英検3級 攻略ナビ</text>
+  <text x="600" y="73" text-anchor="middle" class="et" font-size="20" font-weight="800" fill="#FFFFFF">試験構成と4大攻略戦略マップ</text>
+
+  <text x="600" y="116" text-anchor="middle" class="et" font-size="13" font-weight="700" fill="#334155">一次試験：筆記50分＋リスニング25分・4つのハコの配点バランス</text>
+
+  <!-- ================= CARD 1: 語彙・文法 ================= -->
+  <g filter="url(#e3Shadow)">
+    <rect x="40" y="140" width="265" height="380" rx="18" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+    <rect x="40" y="140" width="265" height="46" rx="18" fill="url(#e3C1)"/>
+    <rect x="40" y="162" width="265" height="24" fill="#F59E0B"/>
+  </g>
+  <text x="172" y="162" text-anchor="middle" class="et" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1.5">HABIT 1　暗記のハコ</text>
+  <text x="172" y="181" text-anchor="middle" class="et" font-size="15" font-weight="800" fill="#fff">語彙・文法（大問1）</text>
+
+  <!-- icon: book stack -->
+  <rect x="147" y="204" width="50" height="12" rx="3" fill="#FDE68A" stroke="#B45309" stroke-width="1.5"/>
+  <rect x="150" y="216" width="50" height="12" rx="3" fill="#FCD34D" stroke="#B45309" stroke-width="1.5"/>
+  <rect x="147" y="228" width="50" height="12" rx="3" fill="#FDE68A" stroke="#B45309" stroke-width="1.5"/>
+
+  <text x="172" y="266" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#92400E">短文穴埋め15問</text>
+  <text x="172" y="284" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#92400E">中学3年間の文法が範囲</text>
+
+  <rect x="58" y="300" width="228" height="98" rx="10" fill="rgba(245,158,11,.10)" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="172" y="322" text-anchor="middle" class="et" font-size="11" fill="#92400E">攻略：「でる順パス単3級」を</text>
+  <text x="172" y="340" text-anchor="middle" class="et" font-size="11" fill="#92400E">1日20語ペースで、</text>
+  <text x="172" y="358" text-anchor="middle" class="et" font-size="11" fill="#92400E">1ヶ月で500語をマスター。</text>
+  <text x="172" y="380" text-anchor="middle" class="et" font-size="11" font-weight="700" fill="#B45309">関係代名詞・不定詞が頻出</text>
+
+  <text x="172" y="424" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#78350F">難しい言葉は不要、</text>
+  <text x="172" y="442" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#78350F">基本単語の反復が命</text>
+
+  <!-- ================= CARD 2: 長文読解 ================= -->
+  <g filter="url(#e3Shadow)">
+    <rect x="325" y="140" width="265" height="380" rx="18" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="325" y="140" width="265" height="46" rx="18" fill="url(#e3C2)"/>
+    <rect x="325" y="162" width="265" height="24" fill="#3B82F6"/>
+  </g>
+  <text x="457" y="162" text-anchor="middle" class="et" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1.5">HABIT 2　読解のハコ</text>
+  <text x="457" y="181" text-anchor="middle" class="et" font-size="15" font-weight="800" fill="#fff">長文読解（大問2・3）</text>
+
+  <!-- icon: open document lines -->
+  <rect x="432" y="204" width="50" height="36" rx="4" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.8"/>
+  <line x1="440" y1="214" x2="474" y2="214" stroke="#1D4ED8" stroke-width="2.4"/>
+  <line x1="440" y1="222" x2="474" y2="222" stroke="#1D4ED8" stroke-width="2.4"/>
+  <line x1="440" y1="230" x2="462" y2="230" stroke="#1D4ED8" stroke-width="2.4"/>
+
+  <text x="457" y="266" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#1E3A8A">掲示・Eメール・説明文</text>
+  <text x="457" y="284" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#1E3A8A">中学英語の範囲内が中心</text>
+
+  <rect x="343" y="300" width="228" height="98" rx="10" fill="rgba(59,130,246,.10)" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="457" y="322" text-anchor="middle" class="et" font-size="11" fill="#1E3A8A">攻略：先に選択肢を読み、</text>
+  <text x="457" y="340" text-anchor="middle" class="et" font-size="11" fill="#1E3A8A">誰が・何を・いつを</text>
+  <text x="457" y="358" text-anchor="middle" class="et" font-size="11" fill="#1E3A8A">意識して素早く拾う。</text>
+  <text x="457" y="380" text-anchor="middle" class="et" font-size="11" font-weight="700" fill="#1D4ED8">単語力がそのまま点になる</text>
+
+  <text x="457" y="424" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#1E3A8A">語彙のハコと連動する</text>
+  <text x="457" y="442" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#1E3A8A">「読解のハコ」</text>
+
+  <!-- ================= CARD 3: Eメール英作文 ================= -->
+  <g filter="url(#e3Shadow)">
+    <rect x="610" y="140" width="265" height="380" rx="18" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+    <rect x="610" y="140" width="265" height="46" rx="18" fill="url(#e3C3)"/>
+    <rect x="610" y="162" width="265" height="24" fill="#8B5CF6"/>
+  </g>
+  <text x="742" y="162" text-anchor="middle" class="et" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1.5">HABIT 3　テンプレのハコ</text>
+  <text x="742" y="181" text-anchor="middle" class="et" font-size="15" font-weight="800" fill="#fff">英作文（大問4）</text>
+
+  <!-- icon: pencil writing -->
+  <line x1="718" y1="236" x2="758" y2="204" stroke="#5B21B6" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="758,204 768,208 762,218" fill="#5B21B6"/>
+  <line x1="714" y1="240" x2="726" y2="238" stroke="#5B21B6" stroke-width="3"/>
+
+  <text x="742" y="266" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#4C1D95">25語程度の意見論述</text>
+  <text x="742" y="284" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#4C1D95">初めてのEメール形式</text>
+
+  <rect x="628" y="300" width="228" height="98" rx="10" fill="rgba(139,92,246,.10)" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="742" y="322" text-anchor="middle" class="et" font-size="11" fill="#4C1D95">攻略：「I think ... because</text>
+  <text x="742" y="340" text-anchor="middle" class="et" font-size="11" fill="#4C1D95">... Also, ...」の定型文に</text>
+  <text x="742" y="358" text-anchor="middle" class="et" font-size="11" fill="#4C1D95">基本単語をはめ込むだけ。</text>
+  <text x="742" y="380" text-anchor="middle" class="et" font-size="11" font-weight="700" fill="#5B21B6">難しい単語は1ミリも不要</text>
+
+  <text x="742" y="424" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#4C1D95">最大のチート技が効く</text>
+  <text x="742" y="442" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#4C1D95">「テンプレのハコ」</text>
+
+  <!-- ================= CARD 4: リスニング ================= -->
+  <g filter="url(#e3Shadow)">
+    <rect x="895" y="140" width="265" height="380" rx="18" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="2"/>
+    <rect x="895" y="140" width="265" height="46" rx="18" fill="url(#e3C4)"/>
+    <rect x="895" y="162" width="265" height="24" fill="#14B8A6"/>
+  </g>
+  <text x="1027" y="162" text-anchor="middle" class="et" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1.5">HABIT 4　継続のハコ</text>
+  <text x="1027" y="181" text-anchor="middle" class="et" font-size="15" font-weight="800" fill="#fff">リスニング</text>
+
+  <!-- icon: headphones -->
+  <path d="M1002,232 a25,25 0 0 1 50,0" fill="none" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <rect x="996" y="230" width="12" height="20" rx="5" fill="#99F6E4" stroke="#0F766E" stroke-width="2"/>
+  <rect x="1046" y="230" width="12" height="20" rx="5" fill="#99F6E4" stroke="#0F766E" stroke-width="2"/>
+
+  <text x="1027" y="266" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#134E4A">約25分・30問</text>
+  <text x="1027" y="284" text-anchor="middle" class="et" font-size="12.5" font-weight="700" fill="#134E4A">音声は2回読まれる</text>
+
+  <rect x="913" y="300" width="228" height="98" rx="10" fill="rgba(20,184,166,.10)" stroke="#5EEAD4" stroke-width="1.5"/>
+  <text x="1027" y="322" text-anchor="middle" class="et" font-size="11" fill="#134E4A">攻略：1回目で全体把握、</text>
+  <text x="1027" y="340" text-anchor="middle" class="et" font-size="11" fill="#134E4A">2回目で答えを確認。</text>
+  <text x="1027" y="358" text-anchor="middle" class="et" font-size="11" fill="#134E4A">毎日15分シャドーイング。</text>
+  <text x="1027" y="380" text-anchor="middle" class="et" font-size="11" font-weight="700" fill="#0F766E">積み上げが正直に出る</text>
+
+  <text x="1027" y="424" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#134E4A">毎日の習慣化がすべての</text>
+  <text x="1027" y="442" text-anchor="middle" class="et" font-size="11.5" font-weight="700" fill="#134E4A">「継続のハコ」</text>
+
+  <!-- ================= SECOND STAGE: 防衛線 ================= -->
+  <text x="600" y="486" text-anchor="middle" class="et" font-size="13" font-weight="700" fill="#334155">二次試験：初めての個人面接（約5分）の合格基準防衛線</text>
+
+  <g filter="url(#e3Shadow)">
+    <rect x="40" y="506" width="1120" height="180" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+
+  <text x="80" y="546" class="et" font-size="12.5" font-weight="700" fill="#1E293B">出題：音読＋内容質問＋</text>
+  <text x="80" y="564" class="et" font-size="12.5" font-weight="700" fill="#1E293B">4コマ説明＋Q&amp;A 2問</text>
+  <text x="80" y="586" class="er">（英検で初めての面接）</text>
+
+  <!-- defense wall gauge -->
+  <rect x="330" y="540" width="760" height="30" rx="15" fill="url(#e3Wall)" opacity="0.85"/>
+  <rect x="330" y="540" width="760" height="30" rx="15" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="700" y1="524" x2="700" y2="586" stroke="#1E293B" stroke-width="3"/>
+  <polygon points="700,524 690,536 710,536" fill="#1E293B"/>
+  <text x="700" y="514" text-anchor="middle" class="et" font-size="12" font-weight="800" fill="#1E293B">合格基準防衛線</text>
+
+  <text x="410" y="600" text-anchor="middle" class="et" font-size="11" fill="#7F1D1D">緊張で固まってしまう</text>
+  <text x="410" y="616" text-anchor="middle" class="er">（無言・練習不足はNG）</text>
+  <text x="950" y="600" text-anchor="middle" class="et" font-size="11" fill="#14532D">短い定型文で安定突破</text>
+  <text x="950" y="616" text-anchor="middle" class="er">（2〜3文の型で十分合格圏）</text>
+
+  <text x="600" y="654" text-anchor="middle" class="et" font-size="12" font-weight="700" fill="#334155">攻略：「He is ...ing.」「Yes, I do. Because ...」など短い定型文の型を、</text>
+  <text x="600" y="672" text-anchor="middle" class="et" font-size="12" font-weight="700" fill="#334155">オンライン英会話で1〜2ヶ月練習すれば安定して突破できる防衛戦になる。</text>
+
+  <!-- Footer note -->
+  <text x="600" y="726" text-anchor="middle" class="et" font-size="13" fill="#374151">「暗記のハコ」（語彙）と「テンプレのハコ」（英作文・面接）を最優先で味方にすれば、</text>
+  <text x="600" y="748" text-anchor="middle" class="et" font-size="13" font-weight="700" fill="#16A34A">難しい言葉を1つも使わなくても、中学英語の集大成を確実に突破できます。</text>
+</svg>

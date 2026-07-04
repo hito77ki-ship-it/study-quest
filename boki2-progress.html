@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://study-quest.net/boki2-progress.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>簿記2級 学習進捗チェック｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級の記事を読んだらチェック。商業簿記・工業簿記・試験対策に分けて、自分の学習進捗を確認できます。">
+<meta name="description" content="日商簿記2級の全記事を「商業簿記（配点60点）」「工業簿記（配点40点）」「試験対策」に分けたチェックリストで進捗を見える化。読んだ記事にチェックを入れるだけで合格までの残り距離が一目でわかります。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -27,12 +27,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdr
 .nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;}.nav-cta:hover{opacity:.85;text-decoration:none;}
 .container{max-width:760px;margin:0 auto;padding:88px 24px 80px;}
 .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}.breadcrumb a{color:var(--muted);}
-.progress-header{margin-bottom:32px;}h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:8px;}.meta{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.progress-header{margin-bottom:20px;}h1{font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.4;margin-bottom:8px;}.meta{font-size:13px;color:var(--muted);margin-bottom:8px;}
+.author-box{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:14px;padding:22px;margin:16px 0 28px;display:flex;align-items:flex-start;gap:16px;}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#6AAF2B);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;font-weight:700;}
+.author-label{color:#A0C070;font-size:12px;font-weight:700;margin-bottom:6px;letter-spacing:.08em;}
+.author-text{color:#E2F0D0;font-size:14px;line-height:1.85;margin:0;}
+.author-text strong{color:#8CC63F;}
 .overview{background:linear-gradient(135deg,rgba(139,92,246,.14),rgba(167,139,250,.18));border:2px solid rgba(139,92,246,.55);border-radius:14px;padding:20px 24px;margin-bottom:28px;}
 .ov-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}.ov-count{font-size:28px;font-weight:700;color:var(--accent);}.ov-total{font-size:14px;color:var(--muted);font-weight:500;}
 .ov-bar-wrap{height:8px;background:rgba(139,92,246,.16);border-radius:4px;overflow:hidden;}.ov-bar-fill{height:8px;background:linear-gradient(90deg,#8B5CF6,#A78BFA);border-radius:4px;transition:width .6s ease;}
 .ov-pct{font-size:12px;color:var(--accent);font-weight:700;margin-top:6px;text-align:right;}.ov-message{font-size:13px;color:var(--accent);margin-top:10px;font-weight:500;}
-.section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--accent);}
+.section-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin:28px 0 10px;padding-left:10px;border-left:3px solid var(--accent);}
+.cat-desc{font-size:13px;line-height:1.9;color:var(--text);background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:0 0 12px;}
+.cat-desc strong{color:var(--accent);}
+.cat-desc .point{display:inline-block;background:rgba(139,92,246,.14);color:var(--accent);font-weight:700;font-size:12px;padding:2px 9px;border-radius:100px;margin-right:6px;}
 .article-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}.article-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .15s;cursor:pointer;background:var(--card);}
 .article-item:hover{border-color:rgba(139,92,246,.42);background:rgba(139,92,246,.07);}.article-item.done{border-color:rgba(140,198,63,.5);background:rgba(140,198,63,.12);}
 .article-checkbox{width:22px;height:22px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}.article-item.done .article-checkbox{background:#8CC63F;border-color:#8CC63F;color:#fff;}
@@ -41,7 +49,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdr
 .reset-wrap{text-align:center;margin-top:28px;}.reset-btn{background:none;border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:12px;color:var(--muted);cursor:pointer;font-family:inherit;transition:color .2s,border-color .2s;}.reset-btn:hover{color:#E53E3E;border-color:#E53E3E;}
 .cta-card{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:24px;margin-top:32px;text-align:center;color:#fff;}.cta-card h3{color:var(--green);font-size:16px;margin-bottom:6px;}.cta-card p{color:#A0C070;font-size:13px;margin-bottom:14px;}.cta-card a{background:var(--green);color:#0A0A0F;font-weight:700;padding:10px 24px;border-radius:100px;font-size:13px;display:inline-block;}.cta-card a:hover{opacity:.85;text-decoration:none;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}footer a{font-size:12px;color:#9CA3AF;margin:0 10px;}footer p{font-size:11px;color:#6B7280;margin-top:8px;}
-@media(max-width:560px){nav{padding:0 14px}.nav-inner{height:auto;min-height:56px;gap:10px}.nav-actions{gap:6px}.theme-btn{padding:6px 8px}.nav-cta{padding:8px 12px}.article-item{padding:11px 12px}.article-link{padding:4px 8px}}
+@media(max-width:560px){nav{padding:0 14px}.nav-inner{height:auto;min-height:56px;gap:10px}.nav-actions{gap:6px}.theme-btn{padding:6px 8px}.nav-cta{padding:8px 12px}.article-item{padding:11px 12px}.article-link{padding:4px 8px}.author-box{padding:16px;gap:12px}}
 </style>
 </head>
 <body>
@@ -49,12 +57,38 @@ footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}f
 
 <div class="container">
   <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki2">日商簿記2級</a> &gt; 学習進捗チェック</div>
-  <div class="progress-header"><p class="meta">日商簿記2級</p><h1>学習進捗チェック</h1><p class="meta">商業簿記・工業簿記・試験対策を分けて、読んだ記事にチェックをつけよう。</p></div>
+  <div class="progress-header">
+    <p class="meta">日商簿記2級</p>
+    <h1>学習進捗チェック</h1>
+    <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">大</div>
+    <div>
+      <p class="author-label">著者・大谷からひとこと</p>
+      <p class="author-text">簿記2級の膨大な範囲を独学していると、「今、全体の何％まで進んでいるんだろう…」と迷子になって、モチベがフリーズしがちだよね（笑）。連結会計から標準原価計算まで論点は山盛りだし、進み具合が見えないと不安になるのは当然。<br>だからこそ僕が、このブログにある<strong>全2級記事をクエスト一覧としてシステム化</strong>しました！1つずつチェックを入れて、進捗率が100%になったとき、あなたの手元にはきっと<strong>合格の盾</strong>が握られているはず。ゲーム感覚で楽しんで埋めていってね！</p>
+    </div>
+  </div>
+
   <div class="overview"><div class="ov-row"><div><span class="ov-count" id="read-count">0</span><span class="ov-total"> / <span id="total-count">0</span> 記事読了</span></div><div id="ov-badge" style="font-size:28px;"></div></div><div class="ov-bar-wrap"><div class="ov-bar-fill" id="ov-bar" style="width:0%"></div></div><div class="ov-pct" id="ov-pct">0%</div><div class="ov-message" id="ov-message"></div></div>
-  <div class="section-title">全体・ロードマップ</div><div class="article-list" id="list-core"></div>
-  <div class="section-title">商業簿記</div><div class="article-list" id="list-commercial"></div>
-  <div class="section-title">工業簿記</div><div class="article-list" id="list-industrial"></div>
-  <div class="section-title">試験対策</div><div class="article-list" id="list-strategy"></div>
+
+  <div class="section-title">全体・ロードマップ</div>
+  <div class="cat-desc">まずは全体像から。簿記2級は商業簿記と工業簿記の2科目構成で、勉強時間の目安は独学で150〜250時間ほど。最初にロードマップ記事で試験範囲と学習の流れを掴んでおくと、あとのチェックリストが「今どこにいるか」の地図として機能するようになるよ。</div>
+  <div class="article-list" id="list-core"></div>
+
+  <div class="section-title">商業簿記</div>
+  <div class="cat-desc"><span class="point">配点60点</span>第1問（仕訳20点）・第2問（20点）・第3問（財務諸表など20点）で構成される最重要科目。連結会計・税効果会計・リース・外貨換算など出題範囲が広く、正直「ヤマを張りにくい」科目でもある。だからこそ大谷流の戦術は<strong>満点を狙わず、確実に取れる仕訳から拾って部分点を積み上げること</strong>。特に第1問の仕訳問題は基本パターンを覚えれば安定した得点源になるので、下記のチェックリストで論点を1つずつ潰していこう。</div>
+  <div class="article-list" id="list-commercial"></div>
+
+  <div class="section-title">工業簿記</div>
+  <div class="cat-desc"><span class="point">配点40点</span>第4問（仕訳・個別/総合原価計算など28点）・第5問（標準原価計算やCVP分析など12点）で構成。商業簿記に比べて出題パターンが限定的で、<strong>型を掴めば満点も狙える最強の得点源</strong>。個別原価計算・総合原価計算・標準原価計算・直接原価計算といった頻出テーマを一通り仕上げておけば、本番でも安定して稼げるエリアになる。商業簿記で焦った分をここで取り返すイメージで、優先的に固めておきたい。</div>
+  <div class="article-list" id="list-industrial"></div>
+
+  <div class="section-title">試験対策</div>
+  <div class="cat-desc">最後は試験対策。ネット試験（CBT）と統一試験（紙）では電卓の使い方や計算メモの取り方に癖があり、事前に形式を知っておくだけで本番のパフォーマンスは大きく変わる。試験日程の立て方や、万が一不合格だった場合の立て直し方も記事にまとめているので、慌てず読んでおいてほしい。</div>
+  <div class="article-list" id="list-strategy"></div>
+
   <div class="reset-wrap"><button class="reset-btn" id="reset-btn">進捗をリセットする</button></div>
   <div class="cta-card"><h3>⚔ Study Quest で簿記2級を積み上げよう</h3><p>商業簿記と工業簿記の勉強時間を分けて記録し、苦手論点を見える化できます。</p><a href="app.html">無料で始める →</a></div>
 </div>
@@ -76,6 +110,7 @@ const COMMERCIAL = [
   {file:'boki2-gaika.html', title:'外貨換算・為替差損益'},
   {file:'boki2-yukashoken.html', title:'有価証券・売買目的・満期保有'},
   {file:'boki2-kotei-shisan.html', title:'固定資産・減価償却・売却'},
+  {file:'boki2-kotei-shisan-why.html', title:'定額法・定率法はなぜ2つあるのか【本質解説】'},
   {file:'boki2-hikiatekin.html', title:'引当金・貸倒・退職給付'},
   {file:'boki2-shasai.html', title:'社債・償却原価法'},
 ];
@@ -95,6 +130,8 @@ const INDUSTRIAL = [
   {file:'boki2-kogyo-enshu.html', title:'工業簿記の演習ロードマップ'},
 ];
 const STRATEGY = [
+  {file:'boki2-next-exam.html', title:'試験日程と最速3ヶ月合格ロードマップ'},
+  {file:'boki2-cbt-vs-paper.html', title:'ネット試験(CBT) vs 統一試験(紙) どっちで受けるべき？'},
   {file:'boki2-net-test.html', title:'ネット試験の問題構成・時間配分'},
   {file:'boki2-ochita.html', title:'簿記2級に落ちたら次回合格へ立て直す'},
 ];
