@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">TOEIC L&amp;R 試験全体像とスコア帯別合格戦略マップ</title>
+  <desc id="svgdesc">Listening（Part1〜4）とReading（Part5〜7）の配点・問題数ウェイト、および500点〜990点のスコア帯別用途とCEFR基準の防衛線を示す戦略マップ</desc>
+  <defs>
+    <linearGradient id="toBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0F9FF"/>
+      <stop offset="0.5" stop-color="#FDF4FF"/>
+      <stop offset="1" stop-color="#F0FFF7"/>
+    </linearGradient>
+    <linearGradient id="toTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="toListen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="toRead" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="toScale" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FCA5A5"/>
+      <stop offset="0.3" stop-color="#FDE68A"/>
+      <stop offset="0.6" stop-color="#BEF264"/>
+      <stop offset="1" stop-color="#4ADE80"/>
+    </linearGradient>
+    <filter id="toShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.12"/>
+    </filter>
+    <style>.tt{font-family:"Noto Sans JP",system-ui,sans-serif}.tr{font-family:"Noto Sans JP",system-ui,sans-serif;font-size:10.5px;fill:#64748b}</style>
+  </defs>
+
+  <rect width="1200" height="860" rx="20" fill="url(#toBg)"/>
+  <circle cx="90" cy="100" r="90" fill="#DBEAFE" opacity="0.5"/>
+  <circle cx="1110" cy="120" r="100" fill="#FEF3C7" opacity="0.4"/>
+  <circle cx="600" cy="830" r="110" fill="#D1FAE5" opacity="0.35"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="1120" height="66" rx="14" fill="url(#toTitle)"/>
+  <text x="600" y="48" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">大谷流・TOEIC L&amp;R 攻略ナビ</text>
+  <text x="600" y="73" text-anchor="middle" class="tt" font-size="20" font-weight="800" fill="#FFFFFF">試験全体像とスコア帯別合格戦略マップ</text>
+
+  <text x="600" y="114" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#334155">試験構成：Listening vs Readingの配点・問題数ウェイト</text>
+
+  <!-- ============ WEIGHT BARS ============ -->
+  <g filter="url(#toShadow)">
+    <rect x="60" y="140" width="1080" height="130" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+
+  <!-- Listening bar -->
+  <text x="90" y="174" class="tt" font-size="13" font-weight="800" fill="#1E3A8A">Listening（約45分）</text>
+  <text x="90" y="190" class="tr">Part1写真描写6問／Part2応答25問／Part3会話39問／Part4説明30問＝100問</text>
+  <rect x="90" y="200" width="500" height="26" rx="13" fill="url(#toListen)"/>
+  <text x="340" y="218" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#fff">Listening：100問（Part1〜4）</text>
+
+  <!-- Reading bar -->
+  <text x="620" y="174" class="tt" font-size="13" font-weight="800" fill="#92400E">Reading（約75分）</text>
+  <text x="620" y="190" class="tr">Part5文法30問／Part6長文16問／Part7読解54問＝100問</text>
+  <rect x="620" y="200" width="500" height="26" rx="13" fill="url(#toRead)"/>
+  <text x="870" y="218" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#fff">Reading：100問（Part5〜7）</text>
+
+  <text x="600" y="252" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#16A34A">合計200問・2時間ノンストップ。満点を狙う必要はなく、目標スコアに必要なハコだけ確実に拾う「割り切りゲーム」。</text>
+
+  <text x="600" y="302" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#334155">スコア帯別の使い道とCEFR防衛線（10〜990点）</text>
+
+  <!-- ============ SCORE SCALE ============ -->
+  <g filter="url(#toShadow)">
+    <rect x="60" y="326" width="1080" height="180" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+
+  <rect x="100" y="360" width="1000" height="30" rx="15" fill="url(#toScale)" opacity="0.9"/>
+  <rect x="100" y="360" width="1000" height="30" rx="15" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- markers -->
+  <line x1="100" y1="352" x2="100" y2="398" stroke="#94A3B8" stroke-width="2"/>
+  <text x="100" y="416" text-anchor="middle" class="tt" font-size="11" font-weight="700" fill="#7F1D1D">10点</text>
+
+  <line x1="357" y1="352" x2="357" y2="398" stroke="#1E293B" stroke-width="2.5"/>
+  <text x="357" y="344" text-anchor="middle" class="tt" font-size="11" font-weight="800" fill="#1E293B">600点</text>
+  <text x="357" y="416" text-anchor="middle" class="tr">CEFR B1</text>
+
+  <line x1="465" y1="352" x2="465" y2="398" stroke="#1E293B" stroke-width="2.5"/>
+  <text x="465" y="344" text-anchor="middle" class="tt" font-size="11" font-weight="800" fill="#1E293B">730点</text>
+
+  <line x1="558" y1="352" x2="558" y2="398" stroke="#1E293B" stroke-width="2.5"/>
+  <text x="558" y="344" text-anchor="middle" class="tt" font-size="11" font-weight="800" fill="#1E293B">800点</text>
+  <text x="558" y="416" text-anchor="middle" class="tr">CEFR B2</text>
+
+  <line x1="700" y1="352" x2="700" y2="398" stroke="#1E293B" stroke-width="2.5"/>
+  <text x="700" y="344" text-anchor="middle" class="tt" font-size="11" font-weight="800" fill="#1E293B">860点</text>
+
+  <line x1="900" y1="352" x2="900" y2="398" stroke="#1E293B" stroke-width="2.5"/>
+  <text x="900" y="344" text-anchor="middle" class="tt" font-size="11" font-weight="800" fill="#1E293B">900点</text>
+  <text x="900" y="416" text-anchor="middle" class="tr">CEFR C1</text>
+
+  <line x1="1100" y1="352" x2="1100" y2="398" stroke="#94A3B8" stroke-width="2"/>
+  <text x="1100" y="416" text-anchor="middle" class="tt" font-size="11" font-weight="700" fill="#14532D">990点</text>
+
+  <!-- zone labels below -->
+  <text x="228" y="452" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#7F1D1D">基礎固め期</text>
+  <text x="228" y="468" text-anchor="middle" class="tr">文法・単語のハコを最優先</text>
+
+  <text x="410" y="452" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#92400E">新卒・就活評価ライン</text>
+  <text x="410" y="468" text-anchor="middle" class="tr">一般企業の採用評価基準</text>
+
+  <text x="628" y="452" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#166534">外資・グローバル企業ライン</text>
+  <text x="628" y="468" text-anchor="middle" class="tr">総合職・海外部門で有利</text>
+
+  <text x="1000" y="452" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#14532D">上級ビジネスライン</text>
+  <text x="1000" y="468" text-anchor="middle" class="tr">速度と語彙の強化が鍵</text>
+
+  <text x="600" y="498" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#334155">CEFR基準の防衛線を意識し、自分の目標スコア以上を守り切ることだけを考える</text>
+
+  <text x="600" y="546" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#334155">目標スコア別・最優先で味方にすべきハコ</text>
+
+  <!-- ================= 3 strategy cards ================= -->
+  <g filter="url(#toShadow)">
+    <rect x="60" y="570" width="340" height="230" rx="18" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="60" y="570" width="340" height="42" rx="18" fill="#3B82F6"/>
+    <rect x="60" y="590" width="340" height="22" fill="#3B82F6"/>
+  </g>
+  <text x="230" y="597" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">〜600点：基礎固め</text>
+  <rect x="80" y="628" width="300" height="150" rx="10" fill="rgba(59,130,246,.08)" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="230" y="654" text-anchor="middle" class="tt" font-size="12" fill="#1E3A8A">最優先ハコ：文法・単語</text>
+  <text x="230" y="674" text-anchor="middle" class="tt" font-size="12" fill="#1E3A8A">Part5と頻出800語を固めて</text>
+  <text x="230" y="694" text-anchor="middle" class="tt" font-size="12" fill="#1E3A8A">確実に拾える問題を増やす。</text>
+  <text x="230" y="716" text-anchor="middle" class="tt" font-size="12" fill="#1E3A8A">難しいPart7後半は</text>
+  <text x="230" y="736" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#1D4ED8">気にせずマークを塗る</text>
+  <text x="230" y="762" text-anchor="middle" class="tt" font-size="11" fill="#1E3A8A">満点思考は今すぐ手放してOK</text>
+
+  <g filter="url(#toShadow)">
+    <rect x="430" y="570" width="340" height="230" rx="18" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+    <rect x="430" y="570" width="340" height="42" rx="18" fill="#F59E0B"/>
+    <rect x="430" y="590" width="340" height="22" fill="#F59E0B"/>
+  </g>
+  <text x="600" y="597" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">600〜800点：パート戦略</text>
+  <rect x="450" y="628" width="300" height="150" rx="10" fill="rgba(245,158,11,.08)" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="600" y="654" text-anchor="middle" class="tt" font-size="12" fill="#92400E">最優先ハコ：Part5即答＋</text>
+  <text x="600" y="674" text-anchor="middle" class="tt" font-size="12" fill="#92400E">リスニング精度。設問先読み</text>
+  <text x="600" y="694" text-anchor="middle" class="tt" font-size="12" fill="#92400E">とシャドーイングで得点源を</text>
+  <text x="600" y="716" text-anchor="middle" class="tt" font-size="12" fill="#92400E">安定させる。時間切れになる</text>
+  <text x="600" y="736" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#B45309">Part7後半は割り切って進む</text>
+  <text x="600" y="762" text-anchor="middle" class="tt" font-size="11" fill="#92400E">解ける問題を全部拾う意識</text>
+
+  <g filter="url(#toShadow)">
+    <rect x="800" y="570" width="340" height="230" rx="18" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+    <rect x="800" y="570" width="340" height="42" rx="18" fill="#22C55E"/>
+    <rect x="800" y="590" width="340" height="22" fill="#22C55E"/>
+  </g>
+  <text x="970" y="597" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">800点〜：速度と語彙</text>
+  <rect x="820" y="628" width="300" height="150" rx="10" fill="rgba(34,197,94,.08)" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="970" y="654" text-anchor="middle" class="tt" font-size="12" fill="#14532D">最優先ハコ：読解速度</text>
+  <text x="970" y="674" text-anchor="middle" class="tt" font-size="12" fill="#14532D">（1分150語以上）とビジネス</text>
+  <text x="970" y="694" text-anchor="middle" class="tt" font-size="12" fill="#14532D">語彙・言い換え表現。</text>
+  <text x="970" y="716" text-anchor="middle" class="tt" font-size="12" fill="#14532D">「読めるが時間が足りない」</text>
+  <text x="970" y="736" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#15803D">壁を速度強化で突破する</text>
+  <text x="970" y="762" text-anchor="middle" class="tt" font-size="11" fill="#14532D">毎日英文を読む習慣が必須</text>
+
+  <!-- Footer note -->
+  <text x="600" y="826" text-anchor="middle" class="tt" font-size="13" fill="#374151">満点思考を手放し、自分の目標スコアの防衛線だけを守り切る。</text>
+  <text x="600" y="848" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#16A34A">それが、かけた時間を最速でスコアに変える大谷流の割り切り戦略です。</text>
+</svg>
