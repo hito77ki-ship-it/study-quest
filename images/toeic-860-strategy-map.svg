@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">TOEIC 860点 パート別許容失点数と70分完走タイムマップ</title>
+  <desc id="svgdesc">リスニング4パートの許容失点数と、リーディング70分完走に向けたPart5・6・7の時間配分を示す戦略マップ</desc>
+  <defs>
+    <linearGradient id="t8Bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0FDFA"/>
+      <stop offset="0.5" stop-color="#F0F9FF"/>
+      <stop offset="1" stop-color="#FFFBEB"/>
+    </linearGradient>
+    <linearGradient id="t8Title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="t8L" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFDBFE"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="t8R5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="t8R6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDD6FE"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="t8R7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCA5A5"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="t8Gauge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="0.4" stop-color="#DDD6FE"/>
+      <stop offset="1" stop-color="#FCA5A5"/>
+    </linearGradient>
+    <filter id="t8Shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.12"/>
+    </filter>
+    <style>.tt{font-family:"Noto Sans JP",system-ui,sans-serif}.tr{font-family:"Noto Sans JP",system-ui,sans-serif;font-size:10.5px;fill:#64748b}</style>
+  </defs>
+
+  <rect width="1200" height="920" rx="20" fill="url(#t8Bg)"/>
+  <circle cx="90" cy="110" r="90" fill="#DBEAFE" opacity="0.45"/>
+  <circle cx="1110" cy="130" r="100" fill="#FEF3C7" opacity="0.4"/>
+  <circle cx="600" cy="880" r="110" fill="#FEE2E2" opacity="0.3"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="24" width="1120" height="66" rx="14" fill="url(#t8Title)"/>
+  <text x="600" y="48" text-anchor="middle" class="tt" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">大谷流・TOEIC860点 攻略ナビ</text>
+  <text x="600" y="73" text-anchor="middle" class="tt" font-size="20" font-weight="800" fill="#FFFFFF">パート別許容失点数と70分完走タイムマップ</text>
+
+  <!-- ===== LISTENING SECTION ===== -->
+  <text x="600" y="118" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#334155">リスニング（45分・音声主導、自分でペース調整はできない）</text>
+
+  <!-- 4 listening cards -->
+  <g filter="url(#t8Shadow)">
+    <rect x="40" y="140" width="265" height="190" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="40" y="140" width="265" height="40" rx="16" fill="url(#t8L)"/>
+    <rect x="40" y="158" width="265" height="22" fill="#3B82F6"/>
+  </g>
+  <text x="172" y="158" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 1　写真描写</text>
+  <text x="172" y="177" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">6問</text>
+  <text x="172" y="212" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#1E3A8A">許容失点：0問</text>
+  <text x="172" y="234" text-anchor="middle" class="tt" font-size="11" fill="#1E3A8A">目標正答率 100%</text>
+  <text x="172" y="266" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">紛らわしい選択肢を</text>
+  <text x="172" y="284" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">消去法で確実に除外</text>
+  <text x="172" y="308" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="#1D4ED8">絶対に落とせないハコ</text>
+
+  <g filter="url(#t8Shadow)">
+    <rect x="325" y="140" width="265" height="190" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="325" y="140" width="265" height="40" rx="16" fill="url(#t8L)"/>
+    <rect x="325" y="158" width="265" height="22" fill="#3B82F6"/>
+  </g>
+  <text x="457" y="158" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 2　応答問題</text>
+  <text x="457" y="177" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">25問</text>
+  <text x="457" y="212" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#1E3A8A">許容失点：2問まで</text>
+  <text x="457" y="234" text-anchor="middle" class="tt" font-size="11" fill="#1E3A8A">目標正答率 92%以上</text>
+  <text x="457" y="266" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">間接応答・否定疑問文</text>
+  <text x="457" y="284" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">で「詰まる」をゼロに</text>
+  <text x="457" y="308" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="#1D4ED8">瞬発力で決めるハコ</text>
+
+  <g filter="url(#t8Shadow)">
+    <rect x="610" y="140" width="265" height="190" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="610" y="140" width="265" height="40" rx="16" fill="url(#t8L)"/>
+    <rect x="610" y="158" width="265" height="22" fill="#3B82F6"/>
+  </g>
+  <text x="742" y="158" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 3　会話問題</text>
+  <text x="742" y="177" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">39問</text>
+  <text x="742" y="212" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#1E3A8A">許容失点：5〜6問</text>
+  <text x="742" y="234" text-anchor="middle" class="tt" font-size="11" fill="#1E3A8A">目標正答率 85%以上</text>
+  <text x="742" y="266" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">意図問題・図表問題を</text>
+  <text x="742" y="284" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">先読みで確実に得点</text>
+  <text x="742" y="308" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="#1D4ED8">先読みが命のハコ</text>
+
+  <g filter="url(#t8Shadow)">
+    <rect x="895" y="140" width="265" height="190" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <rect x="895" y="140" width="265" height="40" rx="16" fill="url(#t8L)"/>
+    <rect x="895" y="158" width="265" height="22" fill="#3B82F6"/>
+  </g>
+  <text x="1027" y="158" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 4　説明文問題</text>
+  <text x="1027" y="177" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">30問</text>
+  <text x="1027" y="212" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#1E3A8A">許容失点：4〜5問</text>
+  <text x="1027" y="234" text-anchor="middle" class="tt" font-size="11" fill="#1E3A8A">目標正答率 85%以上</text>
+  <text x="1027" y="266" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">冒頭30秒で全体像を</text>
+  <text x="1027" y="284" text-anchor="middle" class="tt" font-size="10.5" fill="#1E3A8A">把握してから設問へ</text>
+  <text x="1027" y="308" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="#1D4ED8">全体把握が命のハコ</text>
+
+  <!-- ===== READING SECTION ===== -->
+  <text x="600" y="366" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#334155">リーディング：70分で全問完走する時間配分ゲージ（マークシート含め75分中）</text>
+
+  <!-- time gauge -->
+  <rect x="80" y="386" width="1040" height="34" rx="17" fill="url(#t8Gauge)" opacity="0.9"/>
+  <rect x="80" y="386" width="1040" height="34" rx="17" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="228" y1="378" x2="228" y2="428" stroke="#1E293B" stroke-width="2"/>
+  <line x1="376" y1="378" x2="376" y2="428" stroke="#1E293B" stroke-width="2"/>
+  <text x="154" y="410" text-anchor="middle" class="tt" font-size="12" font-weight="800" fill="#78350F">Part5：10分</text>
+  <text x="302" y="410" text-anchor="middle" class="tt" font-size="12" font-weight="800" fill="#4C1D95">Part6：8分</text>
+  <text x="748" y="410" text-anchor="middle" class="tt" font-size="12" font-weight="800" fill="#7F1D1D">Part7：52分</text>
+
+  <!-- 3 reading cards -->
+  <g filter="url(#t8Shadow)">
+    <rect x="40" y="450" width="360" height="220" rx="16" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+    <rect x="40" y="450" width="360" height="40" rx="16" fill="url(#t8R5)"/>
+    <rect x="40" y="468" width="360" height="22" fill="#F59E0B"/>
+  </g>
+  <text x="220" y="468" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 5　短文穴埋め（30問）</text>
+  <text x="220" y="487" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">10分で解き切る</text>
+  <text x="220" y="522" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#78350F">許容失点：1〜2問</text>
+  <text x="220" y="544" text-anchor="middle" class="tt" font-size="11" fill="#78350F">目標正答率 95%以上</text>
+  <text x="220" y="576" text-anchor="middle" class="tt" font-size="11" fill="#78350F">語彙問題は1問も落とさない。</text>
+  <text x="220" y="596" text-anchor="middle" class="tt" font-size="11" fill="#78350F">文法問題は1問10秒以内に判断。</text>
+  <text x="220" y="628" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#B45309">秒殺で稼ぐ「速攻のハコ」</text>
+
+  <g filter="url(#t8Shadow)">
+    <rect x="420" y="450" width="360" height="220" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+    <rect x="420" y="450" width="360" height="40" rx="16" fill="url(#t8R6)"/>
+    <rect x="420" y="468" width="360" height="22" fill="#8B5CF6"/>
+  </g>
+  <text x="600" y="468" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 6　長文穴埋め（16問）</text>
+  <text x="600" y="487" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">8分で解き切る</text>
+  <text x="600" y="522" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#4C1D95">許容失点：1〜2問</text>
+  <text x="600" y="544" text-anchor="middle" class="tt" font-size="11" fill="#4C1D95">目標正答率 90%以上</text>
+  <text x="600" y="576" text-anchor="middle" class="tt" font-size="11" fill="#4C1D95">文章全体の流れを把握してから</text>
+  <text x="600" y="596" text-anchor="middle" class="tt" font-size="11" fill="#4C1D95">空欄に適切な語句・文を選ぶ。</text>
+  <text x="600" y="628" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#5B21B6">文脈把握の「橋渡しのハコ」</text>
+
+  <g filter="url(#t8Shadow)">
+    <rect x="800" y="450" width="360" height="220" rx="16" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+    <rect x="800" y="450" width="360" height="40" rx="16" fill="url(#t8R7)"/>
+    <rect x="800" y="468" width="360" height="22" fill="#EF4444"/>
+  </g>
+  <text x="980" y="468" text-anchor="middle" class="tt" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.9)" letter-spacing="1">PART 7　読解問題（54問）</text>
+  <text x="980" y="487" text-anchor="middle" class="tt" font-size="14" font-weight="800" fill="#fff">52分で全問読み切る</text>
+  <text x="980" y="522" text-anchor="middle" class="tt" font-size="16" font-weight="800" fill="#7F1D1D">許容失点：10〜11問</text>
+  <text x="980" y="544" text-anchor="middle" class="tt" font-size="11" fill="#7F1D1D">目標正答率 80%以上かつ時間内完走</text>
+  <text x="980" y="576" text-anchor="middle" class="tt" font-size="11" fill="#7F1D1D">1パッセージ2〜3分・複数</text>
+  <text x="980" y="596" text-anchor="middle" class="tt" font-size="11" fill="#7F1D1D">パッセージ4〜5分で処理。</text>
+  <text x="980" y="628" text-anchor="middle" class="tt" font-size="11.5" font-weight="700" fill="#B91C1C">860点最大の壁「時間切れのハコ」</text>
+
+  <!-- Footer note -->
+  <text x="600" y="716" text-anchor="middle" class="tt" font-size="13" fill="#374151">800点台で伸び悩む人の9割は「Part7の時間切れ」か「意図・図表問題での失点」のどちらか。</text>
+  <text x="600" y="738" text-anchor="middle" class="tt" font-size="13" font-weight="700" fill="#16A34A">この2つのハコさえ埋めれば、860点の壁は正確な時間配分ゲームとして必ず突破できます。</text>
+
+  <!-- total tally box -->
+  <g filter="url(#t8Shadow)">
+    <rect x="300" y="770" width="600" height="110" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  </g>
+  <text x="600" y="806" text-anchor="middle" class="tt" font-size="12.5" font-weight="700" fill="#1E293B">200問中の許容失点合計の目安</text>
+  <text x="600" y="838" text-anchor="middle" class="tt" font-size="22" font-weight="800" fill="#16A34A">約22〜26問まで（正答率87〜89%相当）</text>
+  <text x="600" y="860" text-anchor="middle" class="tt" font-size="11" fill="#64748B">＝860点ラインの現実的な目安ゾーン</text>
+</svg>
