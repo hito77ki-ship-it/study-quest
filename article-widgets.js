@@ -1569,7 +1569,8 @@ html[data-theme="dark"] .sq-chat-bubble{background:rgba(255,255,255,.04);}
 html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140,198,63,.06);}
 /* 著者プロフィール */
 .sq-author{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:14px 18px;margin:24px 0 32px;}
-.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 0 24px rgba(140,198,63,.22);}
+.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;box-shadow:0 0 24px rgba(140,198,63,.22);}
+.sq-author-avatar img{width:100%;height:100%;object-fit:cover;}
 .sq-author-name{font-size:13px;font-weight:700;color:var(--sq-text);margin-bottom:2px;}
 .sq-author-title{font-size:11px;color:var(--sq-accent-bright);font-weight:700;margin-bottom:4px;letter-spacing:.06em;}
 .sq-author-bio{font-size:12px;color:var(--sq-soft);line-height:1.7;}
@@ -2639,7 +2640,7 @@ function buildAuthorBox(){
   const box = document.createElement('div');
   box.className = 'sq-author';
   box.innerHTML = `
-    <div class="sq-author-avatar">⚔</div>
+    <div class="sq-author-avatar"><img src="icons/avatar-teacher.png" alt="大谷 一輝" loading="lazy"></div>
     <div>
       <div class="sq-author-name">大谷 一輝（おおたに ひとき）</div>
       <div class="sq-author-title">大阪経済大学3回生 ／ 日商簿記1級勉強中 ／ Study Quest 開発者</div>
