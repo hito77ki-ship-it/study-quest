@@ -8,7 +8,7 @@
 - 資格試験の勉強をRPGゲーム化した無料Webアプリ
 - 勉強時間 → 経験値 → キャラクターレベルアップ
 - ライバル機能・週間ランキング・科目ボス討伐
-- URL: https://hito77ki-ship-it.github.io/study-quest/
+- URL: https://study-quest.net/
 
 ## 投稿のルール
 - 1投稿 = 140文字以内（日本語）

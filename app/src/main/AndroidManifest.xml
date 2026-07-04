@@ -151,7 +151,7 @@
                 <data android:scheme="https"
                     android:host="@string/hostName"
                 
-                    android:pathPrefix="/study-quest/"
+                    android:pathPrefix="/"
                 
                 />
             </intent-filter>

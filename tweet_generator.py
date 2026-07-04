@@ -17,7 +17,7 @@ from pathlib import Path
 
 # ---- 設定 ---------------------------------------------------------------
 
-BASE_URL = "https://hito77ki-ship-it.github.io/study-quest/"
+BASE_URL = "https://study-quest.net/"
 
 # キーワード → ハッシュタグのマッピング（先に一致したものを使用）
 HASHTAG_MAP = [

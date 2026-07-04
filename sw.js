@@ -5,17 +5,17 @@
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v8';
+const VERSION = 'sq-v9';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 
 // インストール時にキャッシュするファイル
 const PRECACHE_URLS = [
-  '/study-quest/',
-  '/study-quest/index.html',
-  '/study-quest/manifest.json',
-  '/study-quest/icons/icon.svg',
-  '/study-quest/icons/app-icon.png',
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/icons/icon.svg',
+  '/icons/app-icon.png',
 ];
 
 // キャッシュしない外部ドメイン
@@ -63,7 +63,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   // index.html / ルート → Network First（常に最新を優先、失敗時はキャッシュ）
-  if (url.pathname === '/study-quest/' || url.pathname.endsWith('index.html')) {
+  if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
     event.respondWith(networkFirst(event.request));
     return;
   }
@@ -108,9 +108,9 @@ self.addEventListener('notificationclick', event => {
   event.notification.close();
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
-      const existing = list.find(c => c.url.includes('/study-quest/'));
+      const existing = list.find(c => c.url.includes(self.location.origin));
       if (existing) return existing.focus();
-      return clients.openWindow('/study-quest/');
+      return clients.openWindow('/');
     })
   );
 });

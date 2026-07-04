@@ -2595,7 +2595,7 @@ function insertMidCTA(){
 
 /* ── BreadcrumbList JSON-LD ── */
 function injectBreadcrumbLD(){
-  const base = 'https://hito77ki-ship-it.github.io/study-quest/';
+  const base = 'https://study-quest.net/';
   const items = Array.from(document.querySelectorAll('.breadcrumb a, .breadcrumb')).reduce((acc, el) => {
     if(el.tagName === 'A'){
       acc.push({name: el.textContent.trim(), url: base.replace(/\/$/, '') + '/' + el.getAttribute('href')});

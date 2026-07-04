@@ -20,17 +20,17 @@
 <meta name="apple-mobile-web-app-title" content="スタディクエスト">
 <!-- OGP -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://hito77ki-ship-it.github.io/study-quest/">
+<meta property="og:url" content="https://study-quest.net/">
 <meta property="og:title" content="スタディクエスト｜RPG風資格勉強トラッカー">
 <meta property="og:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
-<meta property="og:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/screen1.png">
+<meta property="og:image" content="https://study-quest.net/screenshots/screen1.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="スタディクエスト">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="スタディクエスト｜RPG風資格勉強トラッカー">
 <meta name="twitter:description" content="勉強時間を経験値に変えてキャラクターを育てよう。資格勉強をRPGで楽しく続ける無料アプリ。">
-<meta name="twitter:image" content="https://hito77ki-ship-it.github.io/study-quest/screenshots/screen1.png">
+<meta name="twitter:image" content="https://study-quest.net/screenshots/screen1.png">
 <!-- Google Analytics -->
 <!-- テーマ先行適用：FOUCを防ぐため <head> 内で即時実行 -->
 <script>
@@ -7953,7 +7953,7 @@ async function signInWithGoogle(){
   try {
     const { error } = await sb.auth.signInWithOAuth({
       provider:'google',
-      options:{redirectTo: 'https://hito77ki-ship-it.github.io/study-quest/'}
+      options:{redirectTo: 'https://study-quest.net/'}
     });
     if(error) throw error;
   } catch(e) {
@@ -7967,7 +7967,7 @@ async function signInWithTwitter(){
   try {
     const { error } = await sb.auth.signInWithOAuth({
       provider:'twitter',
-      options:{redirectTo: 'https://hito77ki-ship-it.github.io/study-quest/'}
+      options:{redirectTo: 'https://study-quest.net/'}
     });
     if(error) throw error;
   } catch(e) {
@@ -9873,7 +9873,7 @@ function getJobHashtags(){
 function openXShare(text){
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
 }
-const SQ_URL = 'https://hito77ki-ship-it.github.io/study-quest/';
+const SQ_URL = 'https://study-quest.net/';
 
 async function shareLevelUpToX(){
   const totalSmins = studyMins(sessions);
@@ -9908,7 +9908,7 @@ async function shareLevelUpToThreads(){
   const lv = getLevelProgress(trackSmins).level;
   const ti = getTitleInfo(lv);
   const totalH = Math.floor(totalSmins/60);
-  const text = `${ti.emoji} レベルアップ！ Lv.${lv}「${ti.title}」に到達した。\n累計${totalH}時間の積み重ねが、今ここで報われた。\nまだ終わらない。次のレベルへ。\n\n#スタディクエスト\nhttps://hito77ki-ship-it.github.io/study-quest/`;
+  const text = `${ti.emoji} レベルアップ！ Lv.${lv}「${ti.title}」に到達した。\n累計${totalH}時間の積み重ねが、今ここで報われた。\nまだ終わらない。次のレベルへ。\n\n#スタディクエスト\nhttps://study-quest.net/`;
   window.open('https://www.threads.net/intent/post?text='+encodeURIComponent(text),'_blank');
 }
 // closeLevelUp defined above with DQ alloc trigger
@@ -10276,7 +10276,7 @@ function startPomoBreak(){
 async function tweetPomo(){
   const totalSmins = studyMins(sessions);
   const lv = getLevelProgress(levelStudyMins(sessions)).level;
-  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(totalSmins/60)}時間\n今日も勉強がんばった💪\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
+  const text = `ポモドーロ${pomoCount}/${POMO_SETS}セット完了！🍅\nLv.${lv} ｜ 累計${Math.floor(totalSmins/60)}時間\n今日も勉強がんばった💪\n#スタディクエスト #study_quest\nhttps://study-quest.net/`;
 
   if (navigator.share) {
     try {
@@ -13065,7 +13065,7 @@ function renderTimeBlock(dateStr){
 /* ════════════════════════════════════════
    プロフィールQRコード
 ════════════════════════════════════════ */
-const APP_URL = 'https://hito77ki-ship-it.github.io/study-quest/';
+const APP_URL = 'https://study-quest.net/';
 function getQRSrc(size){
   return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(APP_URL)}&bgcolor=FFFFFF&color=1A202C&margin=12`;
 }
@@ -13948,7 +13948,7 @@ function shareDeclToThreads(){
     `合計目標：${goalStr}\n\n` +
     `達成したら報告します💪\n\n` +
     `#${jobName.replace(/[（）()]/g,'')} #勉強垢\n` +
-    `https://hito77ki-ship-it.github.io/study-quest/`;
+    `https://study-quest.net/`;
   window.open('https://www.threads.net/intent/post?text='+encodeURIComponent(text),'_blank');
 }
 
@@ -13973,7 +13973,7 @@ function shareDeclResultToX(){
     (subjLines ? subjLines+'\n\n' : '') +
     `合計：${doneStr}（目標達成率 ${pct}%）\n\n` +
     `#${jobName.replace(/[（）()]/g,'')} #勉強垢\n` +
-    `https://hito77ki-ship-it.github.io/study-quest/`;
+    `https://study-quest.net/`;
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
 }
 
@@ -13997,7 +13997,7 @@ function shareDeclResultToThreads(){
     (subjLines ? subjLines+'\n\n' : '') +
     `合計：${doneStr}（目標達成率 ${pct}%）\n\n` +
     `#${jobName.replace(/[（）()]/g,'')} #勉強垢\n` +
-    `https://hito77ki-ship-it.github.io/study-quest/`;
+    `https://study-quest.net/`;
   window.open('https://www.threads.net/intent/post?text='+encodeURIComponent(text),'_blank');
 }
 
@@ -14262,7 +14262,7 @@ const AFFILIATE_DATA = {
 };
 
 /* ── 攻略記事レコメンドカード ── */
-const ARTICLE_BASE_URL = 'https://hito77ki-ship-it.github.io/study-quest/';
+const ARTICLE_BASE_URL = 'https://study-quest.net/';
 const JOB_ARTICLE_MAP = {
   'cpa':         [{f:'cpa.html',lb:'公認会計士',t:'公認会計士試験の勉強法・独学ロードマップ'},{f:'cpa-daigakusei-kakugo.html',lb:'大学生向け',t:'大学生が公認会計士試験に挑む前に知るべきリアル'},{f:'cpa-yobikou.html',lb:'勉強法',t:'公認会計士は予備校と独学どっちがいい？'}],
   'zeirishi':    [{f:'zeirishi.html',lb:'税理士',t:'税理士試験の科目選択と独学戦略'},{f:'zeirishi-vs-cpa.html',lb:'資格比較',t:'税理士 vs 公認会計士 どっちを目指すべき？'}],
@@ -16602,11 +16602,11 @@ async function _showReminderNotif(){
     if('serviceWorker' in navigator){
       const reg = await navigator.serviceWorker.ready;
       await reg.showNotification('⚔ スタディクエスト', {
-        body, icon:'/study-quest/icons/app-icon.png',
-        tag:'sq-daily-reminder', badge:'/study-quest/icons/icon.svg'
+        body, icon:'/icons/app-icon.png',
+        tag:'sq-daily-reminder', badge:'/icons/icon.svg'
       });
     } else {
-      new Notification('⚔ スタディクエスト', {body, icon:'/study-quest/icons/app-icon.png', tag:'sq-daily-reminder'});
+      new Notification('⚔ スタディクエスト', {body, icon:'/icons/app-icon.png', tag:'sq-daily-reminder'});
     }
   }catch(e){}
 }
@@ -19032,7 +19032,7 @@ function sharePostToX(postId){
     `${post.rpg_log}\n\n` +
     `📚 ${post.subject_name} ${timeStr} +${post.exp}EXP\n` +
     `Lv.${post.user_level} | #study_quest #資格勉強\n` +
-    `https://hito77ki-ship-it.github.io/study-quest/`
+    `https://study-quest.net/`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
 }
@@ -19209,7 +19209,7 @@ async function shareToX(){
   const h = Math.floor(todayMins/60), m = Math.round(todayMins%60);
   const timeStr = h>0 ? `${h}時間${m>0?m+'分':''}` : `${m}分`;
   const lv = getLevelProgress(trackSmins).level;
-  const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(totalSmins/60)}時間\n\n#スタディクエスト #study_quest\nhttps://hito77ki-ship-it.github.io/study-quest/`;
+  const text = `今日の学習時間: ${timeStr}　Lv.${lv}\n累計: ${Math.floor(totalSmins/60)}時間\n\n#スタディクエスト #study_quest\nhttps://study-quest.net/`;
 
   // Web Share API：画像付きネイティブシェア（スマホ対応）
   if (navigator.share) {
@@ -21196,7 +21196,7 @@ function shareAchieveToX(id){
     `${scoreStr}${rateStr}\n` +
     `${a.comment ? a.comment + '\n' : ''}` +
     `\n#study_quest #資格勉強\n` +
-    `https://hito77ki-ship-it.github.io/study-quest/`
+    `https://study-quest.net/`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
 }
@@ -23696,7 +23696,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/study-quest/sw.js', { scope: '/study-quest/' });
+    navigator.serviceWorker.register('/sw.js', { scope: '/' });
   });
 }
 </script>
