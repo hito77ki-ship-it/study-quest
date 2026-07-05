@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">税理士 vs 公認会計士 戦略マップ</title>
+  <desc id="svgdesc">税理士試験（5科目・科目合格制）と公認会計士試験（短答式・論文式の一括合格型）の構造の違いと、独立開業・監査法人というキャリア分岐を示した比較図</desc>
+  <defs>
+    <linearGradient id="zcBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7FAFC"/>
+      <stop offset="1" stop-color="#F0FFF4"/>
+    </linearGradient>
+    <linearGradient id="zcTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#2D4A10"/>
+    </linearGradient>
+    <linearGradient id="zcHigh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8CC63F"/>
+      <stop offset="1" stop-color="#6AAF2B"/>
+    </linearGradient>
+    <filter id="zcShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1E293B" flood-opacity="0.10"/>
+    </filter>
+    <style>.zt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="1200" height="700" rx="20" fill="url(#zcBg)"/>
+
+  <!-- Title -->
+  <rect x="40" y="24" width="1120" height="64" rx="14" fill="url(#zcTitle)"/>
+  <text x="600" y="48" text-anchor="middle" class="zt" font-size="11.5" font-weight="700" fill="#A0C070" letter-spacing="2">試験構造＆キャリア分岐マップ</text>
+  <text x="600" y="71" text-anchor="middle" class="zt" font-size="19" font-weight="800" fill="#FFFFFF">税理士（5科目・科目合格制） vs 公認会計士（短答＋論文・一括型）</text>
+
+  <!-- Hub card -->
+  <g filter="url(#zcShadow)">
+    <rect x="380" y="110" width="440" height="80" rx="16" fill="#FFFFFF" stroke="#8CC63F" stroke-width="2"/>
+  </g>
+  <text x="600" y="138" text-anchor="middle" class="zt" font-size="15" font-weight="800" fill="#1A202C">⚖ 会計・税務のプロを目指すあなたへ</text>
+  <text x="600" y="160" text-anchor="middle" class="zt" font-size="11.5" font-weight="700" fill="#6AAF2B">↓ 試験構造が全く違う、2つの道</text>
+
+  <!-- Connector lines -->
+  <line x1="500" y1="190" x2="310" y2="238" stroke="#CBD5E1" stroke-width="2.5"/>
+  <line x1="700" y1="190" x2="890" y2="238" stroke="#CBD5E1" stroke-width="2.5"/>
+
+  <!-- Left card: 税理士 -->
+  <g filter="url(#zcShadow)">
+    <rect x="60" y="238" width="500" height="260" rx="16" fill="#FDF2F8" stroke="#F472B6" stroke-width="2"/>
+  </g>
+  <rect x="60" y="238" width="500" height="40" rx="16" fill="#F472B6"/>
+  <rect x="60" y="262" width="500" height="16" fill="#F472B6"/>
+  <text x="310" y="264" text-anchor="middle" class="zt" font-size="14" font-weight="800" fill="#FFFFFF">📘 税理士試験——科目合格制（5科目）</text>
+
+  <text x="90" y="298" class="zt" font-size="11.5" font-weight="700" fill="#9D174D">🗡 試験構造</text>
+  <text x="90" y="316" class="zt" font-size="12.5" fill="#374151">必須2科目（簿記論・財務諸表論）＋選択3科目</text>
+  <text x="90" y="334" class="zt" font-size="12.5" fill="#374151">1科目ずつ受験可能・合格科目は一生有効</text>
+
+  <rect x="90" y="346" width="230" height="24" rx="12" fill="url(#zcHigh)"/>
+  <text x="205" y="362" text-anchor="middle" class="zt" font-size="11" font-weight="700" fill="#fff">合格まで平均8〜10年</text>
+
+  <text x="90" y="396" class="zt" font-size="11.5" font-weight="700" fill="#9D174D">⬆ 向いている人</text>
+  <text x="90" y="414" class="zt" font-size="12" fill="#374151">社会人・学生を続けながら長期戦で積み上げたい人</text>
+  <text x="90" y="432" class="zt" font-size="12" fill="#374151">受験資格：大卒以上・実務経験2年以上など</text>
+
+  <rect x="90" y="454" width="440" height="28" rx="14" fill="#9D174D"/>
+  <text x="310" y="473" text-anchor="middle" class="zt" font-size="12" font-weight="700" fill="#fff">🏳 主なキャリア：独立開業・中小企業の顧問</text>
+
+  <!-- Right card: 公認会計士 -->
+  <g filter="url(#zcShadow)">
+    <rect x="640" y="238" width="500" height="260" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  </g>
+  <rect x="640" y="238" width="500" height="40" rx="16" fill="#3B82F6"/>
+  <rect x="640" y="262" width="500" height="16" fill="#3B82F6"/>
+  <text x="890" y="264" text-anchor="middle" class="zt" font-size="14" font-weight="800" fill="#FFFFFF">📗 公認会計士試験——短答＋論文の一括型</text>
+
+  <text x="670" y="298" class="zt" font-size="11.5" font-weight="700" fill="#1E40AF">🗡 試験構造</text>
+  <text x="670" y="316" class="zt" font-size="12.5" fill="#374151">短答式（マーク式）→ 論文式（記述式）の2段階</text>
+  <text x="670" y="334" class="zt" font-size="12.5" fill="#374151">科目を分けて受験できず、範囲を一括で仕上げる</text>
+
+  <rect x="670" y="346" width="230" height="24" rx="12" fill="#F59E0B"/>
+  <text x="785" y="362" text-anchor="middle" class="zt" font-size="11" font-weight="700" fill="#fff">合格率約10%・2〜3年で集中合格</text>
+
+  <text x="670" y="396" class="zt" font-size="11.5" font-weight="700" fill="#1E40AF">⬆ 向いている人</text>
+  <text x="670" y="414" class="zt" font-size="12" fill="#374151">学生時代など受験に専念できる人</text>
+  <text x="670" y="432" class="zt" font-size="12" fill="#374151">受験資格：なし（誰でも受験可）</text>
+
+  <rect x="670" y="454" width="440" height="28" rx="14" fill="#1E40AF"/>
+  <text x="890" y="473" text-anchor="middle" class="zt" font-size="12" font-weight="700" fill="#fff">🏳 主なキャリア：Big4監査法人・グローバル</text>
+
+  <!-- Bridge note -->
+  <rect x="330" y="500" width="540" height="34" rx="17" fill="#FFFFFF" stroke="#8CC63F" stroke-width="2"/>
+  <text x="600" y="522" text-anchor="middle" class="zt" font-size="11.5" font-weight="700" fill="#276749">💡 会計士合格→税理士試験は全科目免除、税理士登録も可能（ダブルライセンス）</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="40" y="550" width="1120" height="120" rx="16" fill="#111827" filter="url(#zcShadow)"/>
+  <text x="600" y="582" text-anchor="middle" class="zt" font-size="14" font-weight="700" fill="#8CC63F">🧭 独立 vs 監査法人、キャリア分岐の判断軸</text>
+  <text x="600" y="608" text-anchor="middle" class="zt" font-size="12" fill="#E5E7EB">① 地元・中小企業を支えて将来は独立したい → 税理士（科目合格制で無理なく積み上げ）</text>
+  <text x="600" y="630" text-anchor="middle" class="zt" font-size="12" fill="#E5E7EB">② 大企業・グローバル案件に関わり高年収を早期に狙いたい → 公認会計士（Big4・コンサルへの一直線ルート）</text>
+  <text x="600" y="652" text-anchor="middle" class="zt" font-size="12" fill="#E5E7EB">③ 両方の武器がほしい → 公認会計士に合格し、税理士登録でダブルライセンスへ</text>
+</svg>

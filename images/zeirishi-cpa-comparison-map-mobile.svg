@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 820" width="360" height="820" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">税理士 vs 公認会計士の比較マップ（モバイル版）</title>
+  <desc id="svgdesc">試験構造・合格までの期間・向いている人・主なキャリアの4項目を、税理士と公認会計士で縦に並べて比較し、独立開業と監査法人というキャリア分岐を示した図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="820" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">税理士 vs 公認会計士</text>
+  <text x="180" y="48" text-anchor="middle" font-size="10.5" fill="#64748B">試験構造＆キャリア分岐マップ</text>
+
+  <!-- legend -->
+  <circle cx="90" cy="66" r="5" fill="#9D174D"/>
+  <text x="102" y="70" font-size="10.5" fill="#9D174D">税理士</text>
+  <circle cx="220" cy="66" r="5" fill="#1E40AF"/>
+  <text x="232" y="70" font-size="10.5" fill="#1E40AF">公認会計士</text>
+
+  <!-- Row A: 試験構造 -->
+  <rect x="16" y="82" width="328" height="118" rx="10" fill="#fff" stroke="#E2E8F0"/>
+  <text x="180" y="102" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">🗡 試験構造</text>
+  <rect x="28" y="110" width="304" height="44" rx="6" fill="#FDF2F8"/>
+  <text x="36" y="126" font-size="10" fill="#9D174D">税理士：必須2科目＋選択3科目</text>
+  <text x="36" y="140" font-size="10" fill="#9D174D">1科目ずつ受験可・合格科目は一生有効</text>
+  <rect x="28" y="158" width="304" height="44" rx="6" fill="#EFF6FF"/>
+  <text x="36" y="174" font-size="10" fill="#1E40AF">会計士：短答式→論文式の2段階</text>
+  <text x="36" y="188" font-size="10" fill="#1E40AF">科目を分けられず範囲を一括で仕上げる</text>
+
+  <!-- Row B: 合格までの期間 -->
+  <rect x="16" y="216" width="328" height="100" rx="10" fill="#fff" stroke="#E2E8F0"/>
+  <text x="180" y="236" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">⏱ 合格までの期間</text>
+  <rect x="28" y="244" width="304" height="30" rx="6" fill="#FDF2F8"/>
+  <text x="36" y="264" font-size="10" fill="#9D174D">税理士：合格まで平均8〜10年</text>
+  <rect x="28" y="280" width="304" height="30" rx="6" fill="#EFF6FF"/>
+  <text x="36" y="300" font-size="10" fill="#1E40AF">会計士：合格率約10%・2〜3年で集中合格</text>
+
+  <!-- Row C: 向いている人 -->
+  <rect x="16" y="332" width="328" height="100" rx="10" fill="#fff" stroke="#E2E8F0"/>
+  <text x="180" y="352" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">⬆ 向いている人</text>
+  <rect x="28" y="360" width="304" height="30" rx="6" fill="#FDF2F8"/>
+  <text x="36" y="380" font-size="10" fill="#9D174D">税理士：社会人・学生で長期戦向き</text>
+  <rect x="28" y="396" width="304" height="30" rx="6" fill="#EFF6FF"/>
+  <text x="36" y="416" font-size="10" fill="#1E40AF">会計士：受験に専念できる人向き</text>
+
+  <!-- Row D: 主なキャリア -->
+  <rect x="16" y="448" width="328" height="100" rx="10" fill="#fff" stroke="#E2E8F0"/>
+  <text x="180" y="468" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">🏳 主なキャリア</text>
+  <rect x="28" y="476" width="304" height="30" rx="6" fill="#FDF2F8"/>
+  <text x="36" y="496" font-size="10" fill="#9D174D">税理士：独立開業・中小企業の顧問</text>
+  <rect x="28" y="512" width="304" height="30" rx="6" fill="#EFF6FF"/>
+  <text x="36" y="532" font-size="10" fill="#1E40AF">会計士：Big4監査法人・グローバル</text>
+
+  <!-- Bridge note -->
+  <rect x="16" y="564" width="328" height="50" rx="12" fill="#FFFFFF" stroke="#8CC63F" stroke-width="2"/>
+  <text x="180" y="584" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">💡 会計士合格→税理士登録も可能</text>
+  <text x="180" y="600" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">（全科目免除のダブルライセンス）</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="630" width="328" height="174" rx="12" fill="#111827"/>
+  <text x="180" y="652" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">🧭 独立 vs 監査法人 判断軸</text>
+  <text x="180" y="674" text-anchor="middle" font-size="9.5" fill="#E5E7EB">① 地元・中小企業を支え独立したい</text>
+  <text x="180" y="688" text-anchor="middle" font-size="9.5" fill="#E5E7EB">→ 税理士（科目合格制で無理なく）</text>
+  <text x="180" y="712" text-anchor="middle" font-size="9.5" fill="#E5E7EB">② 大企業で早期に高年収を狙いたい</text>
+  <text x="180" y="726" text-anchor="middle" font-size="9.5" fill="#E5E7EB">→ 会計士（Big4への一直線ルート）</text>
+  <text x="180" y="750" text-anchor="middle" font-size="9.5" fill="#E5E7EB">③ 両方の武器がほしい</text>
+  <text x="180" y="764" text-anchor="middle" font-size="9.5" fill="#E5E7EB">→ 会計士合格→税理士登録で両取り</text>
+</svg>
