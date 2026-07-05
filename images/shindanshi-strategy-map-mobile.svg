@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="920" viewBox="0 0 360 920" role="img" aria-labelledby="title desc">
+  <title id="title">中小企業診断士試験の科目別配点と2次直結科目を最優先にする戦略マップ（モバイル版）</title>
+  <desc id="desc">1次試験7科目の勉強量の目安を横棒グラフで示し、2次試験に直結する「財務・会計」「企業経営理論」を最優先で固める戦略を表す図解</desc>
+  <defs>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:9.5px;font-weight:600;fill:#64748b}
+      .name{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#1f2937}
+      .detail{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10px;font-weight:600;fill:#64748b}
+      .badge{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:800;fill:#ffffff}
+      .hour{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:800;fill:#ffffff}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11.5px;font-weight:700;fill:#166534}
+    </style>
+  </defs>
+
+  <rect width="360" height="920" rx="16" fill="#fbfdf5"/>
+  <text x="180" y="28" text-anchor="middle" class="title">診断士 配点戦略マップ</text>
+  <text x="180" y="46" text-anchor="middle" class="sub">1次7科目の勉強量と2次直結の最優先科目</text>
+
+  <!-- Row1 経済学 -->
+  <rect x="16" y="66" width="328" height="76" rx="12" fill="#FFE4E6" stroke="#FB7185" stroke-width="2"/>
+  <text x="28" y="90" class="name">経済学・経済政策</text>
+  <text x="28" y="108" class="detail">難易度：高｜目安 100〜150時間</text>
+  <rect x="28" y="116" width="217" height="18" rx="9" fill="#FB7185"/>
+  <text x="136" y="129" text-anchor="middle" class="hour">125h</text>
+
+  <!-- Row2 財務会計 -->
+  <rect x="16" y="154" width="328" height="92" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <text x="28" y="178" class="name">財務・会計</text>
+  <rect x="140" y="168" width="70" height="20" rx="10" fill="#F59E0B"/>
+  <text x="175" y="182" text-anchor="middle" class="badge">2次直結</text>
+  <text x="28" y="198" class="detail">難易度：高｜目安 150〜200時間・最優先科目</text>
+  <rect x="28" y="206" width="304" height="18" rx="9" fill="#F59E0B"/>
+  <text x="180" y="219" text-anchor="middle" class="hour">175h</text>
+
+  <!-- Row3 企業経営理論 -->
+  <rect x="16" y="262" width="328" height="92" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <text x="28" y="286" class="name">企業経営理論</text>
+  <rect x="150" y="276" width="70" height="20" rx="10" fill="#F59E0B"/>
+  <text x="185" y="290" text-anchor="middle" class="badge">2次直結</text>
+  <text x="28" y="306" class="detail">難易度：中｜目安 100〜150時間・最優先科目</text>
+  <rect x="28" y="314" width="217" height="18" rx="9" fill="#F59E0B"/>
+  <text x="136" y="327" text-anchor="middle" class="hour">125h</text>
+
+  <!-- Row4 運営管理 -->
+  <rect x="16" y="370" width="328" height="76" rx="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="28" y="394" class="name">運営管理</text>
+  <text x="28" y="412" class="detail">難易度：中｜目安 100〜150時間</text>
+  <rect x="28" y="420" width="217" height="18" rx="9" fill="#3B82F6"/>
+  <text x="136" y="433" text-anchor="middle" class="hour">125h</text>
+
+  <!-- Row5 経営法務 -->
+  <rect x="16" y="458" width="328" height="76" rx="12" fill="#FFE4E6" stroke="#FB7185" stroke-width="2"/>
+  <text x="28" y="482" class="name">経営法務</text>
+  <text x="28" y="500" class="detail">難易度：高｜目安 80〜120時間・改正に注意</text>
+  <rect x="28" y="508" width="174" height="18" rx="9" fill="#FB7185"/>
+  <text x="115" y="521" text-anchor="middle" class="hour">100h</text>
+
+  <!-- Row6 経営情報システム -->
+  <rect x="16" y="546" width="328" height="76" rx="12" fill="#CCFBF1" stroke="#14B8A6" stroke-width="2"/>
+  <text x="28" y="570" class="name">経営情報システム</text>
+  <text x="28" y="588" class="detail">難易度：低〜中｜60〜100時間・IT経験者は得点源</text>
+  <rect x="28" y="596" width="139" height="18" rx="9" fill="#14B8A6"/>
+  <text x="97" y="609" text-anchor="middle" class="hour">80h</text>
+
+  <!-- Row7 中小企業経営政策 -->
+  <rect x="16" y="634" width="328" height="76" rx="12" fill="#F3E8FF" stroke="#A855F7" stroke-width="2"/>
+  <text x="28" y="658" class="name">中小企業経営・政策</text>
+  <text x="28" y="676" class="detail">難易度：低｜60〜80時間・直前期の暗記で得点</text>
+  <rect x="28" y="684" width="122" height="18" rx="9" fill="#A855F7"/>
+  <text x="89" y="697" text-anchor="middle" class="hour">70h</text>
+
+  <!-- Bottom -->
+  <rect x="16" y="738" width="328" height="150" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2.5"/>
+  <text x="180" y="768" text-anchor="middle" class="banner">2次試験にも直結する「財務・会計」</text>
+  <text x="180" y="788" text-anchor="middle" class="banner">「企業経営理論」を最優先で固める</text>
+  <text x="180" y="810" text-anchor="middle" class="banner">――1次・2次を独学で完全撃破する逆算ルート</text>
+  <text x="180" y="838" text-anchor="middle" class="detail">中小企業経営・政策は直前期の暗記で</text>
+  <text x="180" y="854" text-anchor="middle" class="detail">十分間に合う＝序盤は後回しでOK</text>
+</svg>

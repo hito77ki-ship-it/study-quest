@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="800" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">女性におすすめの資格ランキング10選</text>
+  <text x="180" y="44" text-anchor="middle" font-size="11" fill="#64748B">働き方の柔軟性×勉強時間の短さで整理</text>
+
+  <!-- Q1 士業ゾーン -->
+  <rect x="16" y="62" width="328" height="150" rx="10" fill="#FDF2F8"/>
+  <text x="28" y="86" font-size="13.5" font-weight="700" fill="#9D174D">🏆 士業ゾーン（長期戦・柔軟性大）</text>
+  <text x="28" y="102" font-size="10" fill="#9D174D">長期戦だが在宅開業・独立の自由度は最大級</text>
+  <rect x="28" y="112" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="129" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">社会保険労務士（社労士）</text>
+  <rect x="28" y="142" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="159" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">行政書士</text>
+  <text x="28" y="200" font-size="9.5" fill="#9D174D">※合格後は自宅開業で育児・家事と両立しやすい</text>
+
+  <!-- Q2 女性最強ゾーン -->
+  <rect x="16" y="228" width="328" height="182" rx="10" fill="#EFF6FF"/>
+  <text x="28" y="252" font-size="13.5" font-weight="700" fill="#1E40AF">⚡ 女性最強ゾーン（短期×柔軟性抜群）</text>
+  <text x="28" y="268" font-size="10" fill="#1E40AF">短期間×ライフスタイルへのフィット抜群</text>
+  <rect x="28" y="278" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="295" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">FP2級</text>
+  <rect x="28" y="308" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="325" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">保育士</text>
+  <rect x="28" y="338" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="355" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">医療事務</text>
+
+  <!-- Q3 専門特化ゾーン -->
+  <rect x="16" y="426" width="328" height="120" rx="10" fill="#F3E8FF"/>
+  <text x="28" y="450" font-size="13.5" font-weight="700" fill="#7C3AED">🔧 専門特化ゾーン（現場常駐型）</text>
+  <text x="28" y="466" font-size="10" fill="#7C3AED">現場常駐型だが人手不足で需要は安定</text>
+  <rect x="28" y="476" width="304" height="26" rx="13" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="493" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C3AED">介護福祉士</text>
+  <rect x="28" y="506" width="304" height="26" rx="13" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="523" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C3AED">登録販売者</text>
+
+  <!-- Q4 お手軽ゾーン -->
+  <rect x="16" y="566" width="328" height="212" rx="10" fill="#F0FFF4"/>
+  <text x="28" y="590" font-size="13.5" font-weight="700" fill="#166534">🎒 お手軽ゾーン（短期で成功体験）</text>
+  <text x="28" y="606" font-size="10" fill="#166534">短期間で成功体験を積める</text>
+  <rect x="28" y="616" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="633" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">秘書検定2級・準1級</text>
+  <rect x="28" y="646" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="663" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">MOS</text>
+  <rect x="28" y="676" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="693" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">日商簿記2級</text>
+</svg>

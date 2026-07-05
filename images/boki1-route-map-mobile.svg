@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 2000" width="360" height="2000">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="2000" rx="16" fill="#FCFBFF"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">日商簿記1級 予備校×独学</text>
+  <text x="180" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">生存ルート分岐マップ</text>
+  <text x="180" y="64" text-anchor="middle" font-size="9.5" fill="#64748B">「予備校 or 独学」の二択で悩まなくていい</text>
+
+  <rect x="20" y="80" width="320" height="50" rx="25" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+  <text x="180" y="110" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">START：簿記2級合格 or 同等の実力</text>
+  <text x="180" y="146" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+
+  <!-- ROUTE1 予備校 -->
+  <rect x="20" y="164" width="320" height="44" rx="14" fill="#F59E0B"/>
+  <text x="180" y="184" text-anchor="middle" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)">ROUTE1　安心重視</text>
+  <text x="180" y="200" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">予備校ルート</text>
+  <rect x="20" y="208" width="320" height="128" rx="0" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <text x="180" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">質問し放題・カリキュラム完備</text>
+  <text x="180" y="250" text-anchor="middle" font-size="11" fill="#9A3412">短期集中で一気に合格を狙う</text>
+  <rect x="36" y="262" width="288" height="60" rx="8" fill="rgba(245,158,11,.10)" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="180" y="282" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">予算目安：5〜15万円</text>
+  <text x="180" y="302" text-anchor="middle" font-size="10" fill="#9A3412">向いている人：短期合格・自走に不安がある人</text>
+
+  <rect x="20" y="344" width="320" height="60" rx="10" fill="#FFFBF5" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="46" y="370" font-size="11.5" font-weight="700" fill="#7C2D12">① 予備校に申し込み</text>
+  <text x="46" y="388" font-size="10" fill="#9A3412">TAC・大原・CPA会計学院など</text>
+  <rect x="20" y="410" width="320" height="60" rx="10" fill="#FFFBF5" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="46" y="436" font-size="11.5" font-weight="700" fill="#7C2D12">② カリキュラム通りに受講</text>
+  <text x="46" y="454" font-size="10" fill="#9A3412">迷わず順番通りに進められる</text>
+  <rect x="20" y="476" width="320" height="60" rx="10" fill="#FFFBF5" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="46" y="502" font-size="11.5" font-weight="700" fill="#7C2D12">③ 答練・模試で実戦力UP</text>
+  <text x="46" y="520" font-size="10" fill="#9A3412">本番形式に慣れておく</text>
+  <rect x="20" y="542" width="320" height="60" rx="10" fill="#FFFBF5" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="46" y="568" font-size="11.5" font-weight="700" fill="#7C2D12">④ 疑問は講師に即質問</text>
+  <text x="46" y="586" font-size="10" fill="#9A3412">詰まった日に即解消できる</text>
+
+  <!-- ROUTE2 ハイブリッド -->
+  <text x="180" y="636" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+  <rect x="20" y="654" width="320" height="44" rx="14" fill="#8B5CF6"/>
+  <text x="180" y="674" text-anchor="middle" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)">ROUTE2　いいとこ取り</text>
+  <text x="180" y="690" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">ハイブリッドルート</text>
+  <rect x="20" y="698" width="320" height="128" rx="0" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="180" y="722" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">無料講義＋苦手科目だけ課金</text>
+  <text x="180" y="740" text-anchor="middle" font-size="11" fill="#5B21B6">コストと安心感のバランス型</text>
+  <rect x="36" y="752" width="288" height="60" rx="8" fill="rgba(139,92,246,.10)" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="772" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">予算目安：3〜8万円</text>
+  <text x="180" y="792" text-anchor="middle" font-size="10" fill="#5B21B6">向いている人：コストを抑えつつ要所は手厚く</text>
+
+  <rect x="20" y="834" width="320" height="60" rx="10" fill="#FAF9FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="46" y="860" font-size="11.5" font-weight="700" fill="#4C1D95">① CPAラーニングで全範囲を独学</text>
+  <text x="46" y="878" font-size="10" fill="#5B21B6">無料講義で基礎をまず固める</text>
+  <rect x="20" y="900" width="320" height="60" rx="10" fill="#FAF9FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="46" y="926" font-size="11.5" font-weight="700" fill="#4C1D95">② 連結・原価だけ単科講座</text>
+  <text x="46" y="944" font-size="10" fill="#5B21B6">沼りやすい論点だけピンポイント課金</text>
+  <rect x="20" y="966" width="320" height="60" rx="10" fill="#FAF9FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="46" y="992" font-size="11.5" font-weight="700" fill="#4C1D95">③ AIに疑問を分解して質問</text>
+  <text x="46" y="1010" font-size="10" fill="#5B21B6">「なぜ」をその場で解消する</text>
+  <rect x="20" y="1032" width="320" height="60" rx="10" fill="#FAF9FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="46" y="1058" font-size="11.5" font-weight="700" fill="#4C1D95">④ 予備校の模試だけ単発受験</text>
+  <text x="46" y="1076" font-size="10" fill="#5B21B6">実力を客観的に測定しておく</text>
+
+  <!-- ROUTE3 独学 -->
+  <text x="180" y="1126" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+  <rect x="20" y="1144" width="320" height="44" rx="14" fill="#22C55E"/>
+  <text x="180" y="1164" text-anchor="middle" font-size="10.5" font-weight="700" fill="rgba(255,255,255,.85)">ROUTE3　コスト最小</text>
+  <text x="180" y="1180" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">独学フルコースルート</text>
+  <rect x="20" y="1188" width="320" height="128" rx="0" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="1212" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">CPAラーニング×AIをフル活用</text>
+  <text x="180" y="1230" text-anchor="middle" font-size="11" fill="#166534">自走力があれば費用ゼロも可能</text>
+  <rect x="36" y="1242" width="288" height="60" rx="8" fill="rgba(34,197,94,.10)" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="1262" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">予算目安：1〜3万円</text>
+  <text x="180" y="1282" text-anchor="middle" font-size="10" fill="#166534">向いている人：自走できる・費用を最小化したい人</text>
+
+  <rect x="20" y="1324" width="320" height="60" rx="10" fill="#F7FEFA" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="46" y="1350" font-size="11.5" font-weight="700" fill="#14532D">① CPAラーニングの無料講義</text>
+  <text x="46" y="1368" font-size="10" fill="#166534">簿記1級まで完全無料で学習できる</text>
+  <rect x="20" y="1390" width="320" height="60" rx="10" fill="#F7FEFA" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="46" y="1416" font-size="11.5" font-weight="700" fill="#14532D">② YouTube解説で理解を補強</text>
+  <text x="46" y="1434" font-size="10" fill="#166534">分かりにくい論点をピンポイント補完</text>
+  <rect x="20" y="1456" width="320" height="60" rx="10" fill="#F7FEFA" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="46" y="1482" font-size="11.5" font-weight="700" fill="#14532D">③ AIに質問して即座に疑問解消</text>
+  <text x="46" y="1500" font-size="10" fill="#166534">「聞ける人がいない」を克服する</text>
+  <rect x="20" y="1522" width="320" height="60" rx="10" fill="#F7FEFA" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="46" y="1548" font-size="11.5" font-weight="700" fill="#14532D">④ 市販の問題集・過去問で演習</text>
+  <text x="46" y="1566" font-size="10" fill="#166534">アウトプット量を確保する</text>
+
+  <text x="180" y="1610" text-anchor="middle" font-size="12" fill="#94A3B8">▼</text>
+
+  <!-- GOAL -->
+  <rect x="40" y="1626" width="280" height="130" rx="20" fill="#16A34A"/>
+  <text x="180" y="1690" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">🏆 合格</text>
+  <text x="180" y="1718" text-anchor="middle" font-size="11" fill="#DCFCE7">日商簿記1級——自分に合ったルートで着実に</text>
+
+  <rect x="16" y="1774" width="328" height="130" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="180" y="1802" text-anchor="middle" font-size="10.5" fill="#374151">「予備校か独学か」の二択で悩まなくても</text>
+  <text x="180" y="1820" text-anchor="middle" font-size="10.5" fill="#374151">大丈夫。CPAラーニング×AIを武器にした</text>
+  <text x="180" y="1846" text-anchor="middle" font-size="10.5" font-weight="700" fill="#16A34A">ハイブリッドルートなら、コストを抑えつつ</text>
+  <text x="180" y="1866" text-anchor="middle" font-size="10.5" font-weight="700" fill="#16A34A">独学の弱点だった「孤独」も解消できます。</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 840" width="360" height="840">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="840" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">挫折回避＆復活ロードマップ</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9.5" fill="#64748B">2週間目の壁・模試後の絶望ラインを越えたら、</text>
+  <text x="180" y="58" text-anchor="middle" font-size="9.5" fill="#64748B">1問ずつの接触回数で必ず戻れる</text>
+
+  <!-- ①挫折ゾーン -->
+  <rect x="16" y="74" width="328" height="200" rx="10" fill="#FDF2F8"/>
+  <text x="28" y="98" font-size="12.5" font-weight="700" fill="#9D174D">① 挫折ゾーン</text>
+  <circle cx="60" cy="130" r="6" fill="#F472B6"/>
+  <text x="76" y="134" font-size="10.5" font-weight="700" fill="#9D174D">スタート直後（やる気100%）</text>
+  <line x1="60" y1="140" x2="60" y2="168" stroke="#F472B6" stroke-width="2.5"/>
+  <circle cx="60" cy="176" r="6" fill="#F472B6"/>
+  <text x="76" y="172" font-size="10.5" font-weight="700" fill="#9D174D">2週間目の壁</text>
+  <text x="76" y="186" font-size="9.5" fill="#9D174D">（新鮮味が消える）</text>
+  <line x1="60" y1="186" x2="60" y2="214" stroke="#F472B6" stroke-width="2.5"/>
+  <circle cx="60" cy="222" r="6" fill="#F472B6"/>
+  <text x="76" y="218" font-size="10.5" font-weight="700" fill="#9D174D">模試後の絶望ライン</text>
+  <text x="76" y="232" font-size="9.5" fill="#9D174D">（点数が伸びず心が折れる）</text>
+  <text x="76" y="252" font-size="9.5" fill="#9D174D">やる気が0%近くまで落ちる</text>
+
+  <!-- ②中断期間 -->
+  <rect x="16" y="290" width="328" height="90" rx="10" fill="#F1F5F9"/>
+  <text x="28" y="314" font-size="12.5" font-weight="700" fill="#64748B">② 中断期間</text>
+  <line x1="28" y1="336" x2="332" y2="336" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6,5"/>
+  <text x="180" y="360" text-anchor="middle" font-size="10.5" fill="#64748B">止まっていた期間</text>
+
+  <!-- ③復活ゾーン -->
+  <rect x="16" y="396" width="328" height="330" rx="10" fill="#F0FFF4"/>
+  <text x="28" y="420" font-size="12.5" font-weight="700" fill="#166534">③ 復活ゾーン</text>
+  <circle cx="60" cy="450" r="6" fill="#22C55E"/>
+  <text x="76" y="454" font-size="10.5" font-weight="700" fill="#166534">①1ページだけ開く</text>
+  <line x1="60" y1="460" x2="60" y2="486" stroke="#22C55E" stroke-width="2.5"/>
+  <circle cx="60" cy="494" r="6" fill="#22C55E"/>
+  <text x="76" y="498" font-size="10.5" font-weight="700" fill="#166534">②1問だけ解く</text>
+  <line x1="60" y1="504" x2="60" y2="530" stroke="#22C55E" stroke-width="2.5"/>
+  <circle cx="60" cy="538" r="6" fill="#22C55E"/>
+  <text x="76" y="542" font-size="10.5" font-weight="700" fill="#166534">③数問こなす</text>
+  <line x1="60" y1="548" x2="60" y2="574" stroke="#22C55E" stroke-width="2.5"/>
+  <circle cx="60" cy="582" r="6" fill="#22C55E"/>
+  <text x="76" y="586" font-size="10.5" font-weight="700" fill="#166534">④短時間学習に戻る</text>
+  <line x1="60" y1="592" x2="60" y2="618" stroke="#22C55E" stroke-width="2.5"/>
+  <circle cx="60" cy="626" r="6" fill="#22C55E"/>
+  <text x="76" y="630" font-size="10.5" font-weight="700" fill="#166534">⑤習慣化して完全復帰</text>
+  <text x="180" y="680" text-anchor="middle" font-size="10" fill="#166534">やる気に頼らず、小さな接触を</text>
+  <text x="180" y="696" text-anchor="middle" font-size="10" fill="#166534">積み重ねると自然にやる気が戻る</text>
+
+  <!-- 下部まとめ -->
+  <rect x="16" y="746" width="328" height="76" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="770" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">🎯 復活の鉄則：勢いではなく</text>
+  <text x="180" y="788" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">「接触回数」を増やす——</text>
+  <text x="180" y="806" text-anchor="middle" font-size="10" fill="#92400E">小さく触れば触るほど、脳が慣れて戻ってくる</text>
+</svg>

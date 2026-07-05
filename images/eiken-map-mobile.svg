@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 780" width="360" height="780" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">英検 全7級ロードマップ（モバイル版）</title>
+  <desc id="svgdesc">英検1級から5級までのCEFR対応レベル・語彙数・合格率を縦に並べた図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="780" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">英検 全7級ロードマップ</text>
+  <text x="180" y="48" text-anchor="middle" font-size="10" fill="#64748B">CEFR対応と各級の位置づけ</text>
+
+  <!-- 1級 -->
+  <rect x="16" y="66" width="328" height="98" rx="10" fill="#7C3AED"/>
+  <text x="32" y="94" font-size="14" font-weight="700" fill="#fff">英検 1級</text>
+  <rect x="228" y="76" width="100" height="24" rx="4" fill="#6D28D9"/>
+  <text x="278" y="92" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約10%</text>
+  <text x="32" y="118" font-size="10" fill="#E9D5FF">大学上級・大学院レベル</text>
+  <text x="32" y="134" font-size="10" fill="#E9D5FF">語彙15,000語　CEFR C1〜C2</text>
+  <text x="32" y="152" font-size="10" fill="#E9D5FF"> </text>
+
+  <!-- 準1級 -->
+  <rect x="16" y="174" width="328" height="98" rx="10" fill="#8B5CF6"/>
+  <text x="32" y="202" font-size="14" font-weight="700" fill="#fff">英検 準1級</text>
+  <rect x="212" y="184" width="116" height="24" rx="4" fill="#7C3AED"/>
+  <text x="270" y="200" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約15〜20%</text>
+  <text x="32" y="226" font-size="10" fill="#EDE9FE">大学中級程度　語彙8,000語</text>
+  <text x="32" y="242" font-size="10" fill="#EDE9FE">CEFR B2　TOEIC換算約730〜850点</text>
+
+  <!-- 2級 -->
+  <rect x="16" y="282" width="328" height="98" rx="10" fill="#3B82F6"/>
+  <text x="32" y="310" font-size="14" font-weight="700" fill="#fff">英検 2級</text>
+  <rect x="212" y="292" width="116" height="24" rx="4" fill="#2563EB"/>
+  <text x="270" y="308" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約25〜35%</text>
+  <text x="32" y="334" font-size="10" fill="#DBEAFE">高校卒業程度　語彙5,000語</text>
+  <text x="32" y="350" font-size="10" fill="#DBEAFE">CEFR B1〜B2　大学入試・就活で活用</text>
+
+  <!-- 準2級 -->
+  <rect x="16" y="390" width="328" height="98" rx="10" fill="#0EA5E9"/>
+  <text x="32" y="418" font-size="14" font-weight="700" fill="#fff">英検 準2級</text>
+  <rect x="212" y="400" width="116" height="24" rx="4" fill="#0284C7"/>
+  <text x="270" y="416" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約30〜40%</text>
+  <text x="32" y="442" font-size="10" fill="#E0F2FE">高校在学程度（高1〜2）</text>
+  <text x="32" y="458" font-size="10" fill="#E0F2FE">語彙3,500語　CEFR A2〜B1</text>
+
+  <!-- 3級 -->
+  <rect x="16" y="498" width="328" height="98" rx="10" fill="#22C55E"/>
+  <text x="32" y="526" font-size="14" font-weight="700" fill="#fff">英検 3級</text>
+  <rect x="212" y="508" width="116" height="24" rx="4" fill="#16A34A"/>
+  <text x="270" y="524" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約45〜55%</text>
+  <text x="32" y="550" font-size="10" fill="#DCFCE7">中学卒業程度　語彙2,500語　CEFR A2</text>
+  <text x="32" y="566" font-size="10" fill="#DCFCE7">初の二次試験（面接）あり</text>
+
+  <!-- 4級 -->
+  <rect x="16" y="606" width="328" height="74" rx="10" fill="#F59E0B"/>
+  <text x="32" y="634" font-size="13" font-weight="700" fill="#fff">英検 4級</text>
+  <rect x="212" y="614" width="116" height="22" rx="4" fill="#D97706"/>
+  <text x="270" y="629" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約60〜65%</text>
+  <text x="32" y="654" font-size="9.5" fill="#FFFBEB">中学中級　語彙1,500語　CEFR A1〜A2　筆記＋リスニングのみ</text>
+
+  <!-- 5級 -->
+  <rect x="16" y="690" width="328" height="74" rx="10" fill="#94A3B8"/>
+  <text x="32" y="718" font-size="13" font-weight="700" fill="#fff">英検 5級</text>
+  <rect x="212" y="698" width="116" height="22" rx="4" fill="#64748B"/>
+  <text x="270" y="713" text-anchor="middle" font-size="9.5" fill="#fff">合格率 約70〜75%</text>
+  <text x="32" y="738" font-size="9.5" fill="#F1F5F9">中学初級　語彙600語　CEFR A1　英語学習の最初の目標</text>
+</svg>

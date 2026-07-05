@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1350" viewBox="0 0 360 1350" role="img" aria-labelledby="title desc">
+  <title id="title">紙の約束手形と電子記録債権（でんさい）のデータフロー対比（モバイル版）</title>
+  <desc id="desc">紙の約束手形は振出・郵送・保管・銀行持参という物理的な手間とリスクを伴うのに対し、でんさいは発生記録から決済までオンラインで完結し、2026年に紙の手形が事実上廃止されでんさいへ全面移行することを示す図解</desc>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+      .stepnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:800;fill:#ffffff}
+      .stepname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#1f2937}
+      .stepbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+      .tag{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:800}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:700;fill:#166534}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1350" rx="20" fill="url(#mbg)"/>
+
+  <text x="180" y="30" text-anchor="middle" class="title">紙の約束手形 vs でんさい</text>
+  <text x="180" y="48" text-anchor="middle" class="sub">2026年、紙の手形は「でんさい」へ全面移行する</text>
+
+  <!-- 紙の約束手形 -->
+  <rect x="16" y="66" width="328" height="38" rx="12" fill="#f87171"/>
+  <text x="180" y="90" text-anchor="middle" class="colhead">紙の約束手形（2026年に事実上廃止）</text>
+
+  <rect x="16" y="116" width="328" height="440" rx="16" fill="#ffffff" stroke="#fca5a5" stroke-width="2.5"/>
+
+  <circle cx="46" cy="150" r="15" fill="#f87171"/>
+  <text x="46" y="155" text-anchor="middle" class="stepnum">1</text>
+  <text x="68" y="146" class="stepname">振出（手書き・押印）</text>
+  <text x="68" y="164" class="stepbody">手形用紙に金額・期日を記入し押印</text>
+
+  <line x1="46" y1="166" x2="46" y2="196" stroke="#fca5a5" stroke-width="2" stroke-dasharray="3,3"/>
+  <circle cx="46" cy="212" r="15" fill="#f87171"/>
+  <text x="46" y="217" text-anchor="middle" class="stepnum">2</text>
+  <text x="68" y="208" class="stepname">郵送・手渡し（数日）</text>
+  <text x="68" y="226" class="stepbody">届くまでタイムラグ。紛失・盗難リスクあり</text>
+
+  <line x1="46" y1="228" x2="46" y2="258" stroke="#fca5a5" stroke-width="2" stroke-dasharray="3,3"/>
+  <circle cx="46" cy="274" r="15" fill="#f87171"/>
+  <text x="46" y="279" text-anchor="middle" class="stepnum">3</text>
+  <text x="68" y="270" class="stepname">金庫で保管</text>
+  <text x="68" y="288" class="stepbody">満期日まで現物を保管し続ける</text>
+
+  <line x1="46" y1="290" x2="46" y2="320" stroke="#fca5a5" stroke-width="2" stroke-dasharray="3,3"/>
+  <circle cx="46" cy="336" r="15" fill="#f87171"/>
+  <text x="46" y="341" text-anchor="middle" class="stepnum">4</text>
+  <text x="68" y="332" class="stepname">銀行へ持参・取立依頼</text>
+  <text x="68" y="350" class="stepbody">満期日に窓口へ持ち込み現金化</text>
+
+  <rect x="32" y="366" width="296" height="176" rx="12" fill="#fef2f2"/>
+  <text x="46" y="390" class="tag" fill="#b91c1c">✕ 印紙税がかかる</text>
+  <text x="46" y="414" class="tag" fill="#b91c1c">✕ 紛失・盗難リスクが常につきまとう</text>
+  <text x="46" y="438" class="tag" fill="#b91c1c">✕ 分割譲渡ができない</text>
+  <text x="46" y="462" class="tag" fill="#b91c1c">✕ 現金化まで物理的なタイムラグ</text>
+  <text x="46" y="486" class="tag" fill="#b91c1c">✕ 全銀協が2026年めどに廃止推進中</text>
+
+  <!-- でんさい -->
+  <rect x="16" y="580" width="328" height="38" rx="12" fill="#22c55e"/>
+  <text x="180" y="604" text-anchor="middle" class="colhead">でんさい（電子記録債権・移行先）</text>
+
+  <rect x="16" y="630" width="328" height="440" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+
+  <circle cx="46" cy="664" r="15" fill="#22c55e"/>
+  <text x="46" y="669" text-anchor="middle" class="stepnum">1</text>
+  <text x="68" y="660" class="stepname">発生記録（オンライン登録）</text>
+  <text x="68" y="678" class="stepbody">でんさいネットで数分で電子登録</text>
+
+  <line x1="46" y1="680" x2="46" y2="710" stroke="#86efac" stroke-width="2" stroke-dasharray="3,3"/>
+  <circle cx="46" cy="726" r="15" fill="#22c55e"/>
+  <text x="46" y="731" text-anchor="middle" class="stepnum">2</text>
+  <text x="68" y="722" class="stepname">電子データで銀行間共有</text>
+  <text x="68" y="740" class="stepbody">記録と同時に銀行間で即共有</text>
+
+  <line x1="46" y1="742" x2="46" y2="772" stroke="#86efac" stroke-width="2" stroke-dasharray="3,3"/>
+  <circle cx="46" cy="788" r="15" fill="#22c55e"/>
+  <text x="46" y="793" text-anchor="middle" class="stepnum">3</text>
+  <text x="68" y="784" class="stepname">必要な分だけ分割譲渡</text>
+  <text x="68" y="802" class="stepbody">一部だけ電子記録上で譲渡可能</text>
+
+  <line x1="46" y1="804" x2="46" y2="834" stroke="#86efac" stroke-width="2" stroke-dasharray="3,3"/>
+  <circle cx="46" cy="850" r="15" fill="#22c55e"/>
+  <text x="46" y="855" text-anchor="middle" class="stepnum">4</text>
+  <text x="68" y="846" class="stepname">満期日に口座間で自動決済</text>
+  <text x="68" y="864" class="stepbody">窓口不要、資金移動が自動処理</text>
+
+  <rect x="32" y="880" width="296" height="176" rx="12" fill="#f0fdf4"/>
+  <text x="46" y="904" class="tag" fill="#166534">◯ 印紙税は不要</text>
+  <text x="46" y="928" class="tag" fill="#166534">◯ 紛失・盗難リスクがゼロ</text>
+  <text x="46" y="952" class="tag" fill="#166534">◯ 分割譲渡ができ資金繰りが柔軟</text>
+  <text x="46" y="976" class="tag" fill="#166534">◯ 決済まで物理的なタイムラグがない</text>
+  <text x="46" y="1000" class="tag" fill="#166534">◯ 経産省・全銀協が移行を後押し</text>
+
+  <!-- Bottom banner -->
+  <rect x="16" y="1094" width="328" height="230" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2.5"/>
+  <text x="180" y="1126" text-anchor="middle" class="banner">2026年、紙の約束手形は</text>
+  <text x="180" y="1146" text-anchor="middle" class="banner">事実上の廃止へ</text>
+  <text x="180" y="1174" text-anchor="middle" class="bannersmall">経産省・全銀協の方針により、紙の手形・</text>
+  <text x="180" y="1192" text-anchor="middle" class="bannersmall">小切手を推進する制度が終了し、</text>
+  <text x="180" y="1210" text-anchor="middle" class="bannersmall">でんさいへの全面移行が進む</text>
+  <text x="180" y="1238" text-anchor="middle" class="bannersmall">簿記の学習内容も「紙の手形は過去の話、</text>
+  <text x="180" y="1256" text-anchor="middle" class="bannersmall">これからはでんさいが標準」という</text>
+  <text x="180" y="1274" text-anchor="middle" class="bannersmall">前提に置き換わりつつある</text>
+  <text x="180" y="1300" text-anchor="middle" class="bannersmall">仕訳の考え方は同じでも、勘定科目名の</text>
+  <text x="180" y="1318" text-anchor="middle" class="bannersmall">出題比重は今後さらに高まる</text>
+</svg>

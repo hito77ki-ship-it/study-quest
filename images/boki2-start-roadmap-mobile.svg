@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1360" width="360" height="1360" role="img" aria-labelledby="t d">
+  <title id="t">今日から2級合格まで——3ヶ月・最速クエストマップ（モバイル版）</title>
+  <desc id="d">商業簿記・工業簿記・PC模試・本番のネット試験という4フェーズの学習ロードマップと、大谷からの必勝アドバイスを縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1360" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">今日から2級合格まで</text>
+  <text x="180" y="44" text-anchor="middle" font-size="10" fill="#64748B">3ヶ月・最速クエストマップ（約150〜200時間）</text>
+
+  <rect x="16" y="60" width="328" height="190" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="16" y="60" width="328" height="30" rx="10" fill="#3B82F6"/>
+  <text x="30" y="80" font-size="11" font-weight="700" fill="#fff">PHASE 1（1ヶ月）</text>
+  <text x="180" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#1E40AF">商業簿記 攻略クエスト</text>
+  <text x="30" y="136" font-size="10.5" fill="#374151">▸ 仕訳の型を固める</text>
+  <text x="30" y="154" font-size="10.5" fill="#374151">▸ 固定資産・引当金・税効果</text>
+  <text x="30" y="172" font-size="10.5" fill="#374151">▸ 連結会計・本支店会計</text>
+  <text x="180" y="196" text-anchor="middle" font-size="10" fill="#64748B">目安：70〜80時間</text>
+  <rect x="30" y="208" width="300" height="24" rx="6" fill="#DBEAFE"/>
+  <text x="180" y="224" text-anchor="middle" font-size="10" fill="#1E40AF">第1・2・3問の土台を作る</text>
+
+  <text x="180" y="268" text-anchor="middle" font-size="16" fill="#8CC63F">↓</text>
+
+  <rect x="16" y="278" width="328" height="190" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="16" y="278" width="328" height="30" rx="10" fill="#7C3AED"/>
+  <text x="30" y="298" font-size="11" font-weight="700" fill="#fff">PHASE 2（3週間）</text>
+  <text x="180" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">工業簿記 攻略クエスト</text>
+  <text x="30" y="354" font-size="10.5" fill="#374151">▸ 材料費・労務費・経費の流れ</text>
+  <text x="30" y="372" font-size="10.5" fill="#374151">▸ 製造間接費・配賦差異</text>
+  <text x="30" y="390" font-size="10.5" fill="#374151">▸ 総合・個別・標準原価計算</text>
+  <text x="180" y="414" text-anchor="middle" font-size="10" fill="#64748B">目安：50〜60時間</text>
+  <rect x="30" y="426" width="300" height="24" rx="6" fill="#EDE9FE"/>
+  <text x="180" y="442" text-anchor="middle" font-size="10" font-weight="700" fill="#5B21B6">★ 40点満点を狙えるボーナス科目！</text>
+
+  <text x="180" y="486" text-anchor="middle" font-size="16" fill="#8CC63F">↓</text>
+
+  <rect x="16" y="496" width="328" height="190" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="16" y="496" width="328" height="30" rx="10" fill="#F59E0B"/>
+  <text x="30" y="516" font-size="11" font-weight="700" fill="#fff">PHASE 3（2週間）</text>
+  <text x="180" y="548" text-anchor="middle" font-size="14" font-weight="700" fill="#92400E">PC模試——直前期・総仕上げ</text>
+  <text x="30" y="572" font-size="10.5" fill="#374151">▸ CBT形式の模試を3回解く</text>
+  <text x="30" y="590" font-size="10.5" fill="#374151">▸ 90分の時間配分を染み込ませる</text>
+  <text x="30" y="608" font-size="10.5" fill="#374151">▸ 弱点論点の集中補強</text>
+  <text x="180" y="632" text-anchor="middle" font-size="10" fill="#64748B">目安：20〜30時間</text>
+  <rect x="30" y="644" width="300" height="24" rx="6" fill="#FEF3C7"/>
+  <text x="180" y="660" text-anchor="middle" font-size="10" fill="#92400E">第4問→第1問の順で演習を積む</text>
+
+  <text x="180" y="704" text-anchor="middle" font-size="16" fill="#22C55E">↓</text>
+
+  <rect x="16" y="714" width="328" height="220" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="16" y="714" width="328" height="30" rx="10" fill="#22C55E"/>
+  <text x="30" y="734" font-size="11" font-weight="700" fill="#fff">PHASE 4 — 本番突撃！</text>
+  <text x="180" y="766" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">ネット試験（CBT方式）</text>
+  <text x="180" y="784" text-anchor="middle" font-size="10" fill="#22C55E">いつでも受験できる！</text>
+  <text x="30" y="806" font-size="10.5" fill="#374151">▸ CBT会場でほぼ毎日受験可能</text>
+  <text x="30" y="824" font-size="10.5" fill="#374151">▸ 試験時間90分・70点以上で合格</text>
+  <text x="30" y="842" font-size="10.5" fill="#374151">▸ 合否はその場で画面に表示</text>
+  <text x="30" y="860" font-size="10.5" fill="#374151">▸ 不合格でも日数空ければ即再挑戦</text>
+  <rect x="30" y="874" width="300" height="24" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="890" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">★ ボス討伐！ 合格証書をゲット！</text>
+
+  <rect x="16" y="954" width="328" height="140" rx="10" fill="#1E293B"/>
+  <text x="180" y="978" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">3ヶ月 攻略スケジュール サマリー</text>
+  <text x="30" y="1000" font-size="10" fill="#CBD5E1">PHASE1 商業簿記（1ヶ月）70〜80h</text>
+  <text x="30" y="1018" font-size="10" fill="#CBD5E1">PHASE2 工業簿記（3週間）50〜60h</text>
+  <text x="30" y="1036" font-size="10" fill="#CBD5E1">PHASE3 PC模試（2週間）20〜30h</text>
+  <text x="30" y="1054" font-size="10" fill="#86EFAC">PHASE4 ネット試験（随時）ボスを撃破</text>
+  <text x="180" y="1080" text-anchor="middle" font-size="9.5" fill="#94A3B8">合計150〜200時間・試験90分・合格70点以上</text>
+
+  <rect x="16" y="1112" width="328" height="220" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="180" y="1136" text-anchor="middle" font-size="11.5" font-weight="700" fill="#374151">大谷からの必勝アドバイス</text>
+  <text x="30" y="1160" font-size="10" fill="#475569">① 工業簿記（第4・5問＝40点分）で満点を</text>
+  <text x="30" y="1176" font-size="10" fill="#475569">　狙うのが最速ルート</text>
+  <text x="30" y="1198" font-size="10" fill="#475569">② ネット試験はほぼ毎日受験OK。準備でき</text>
+  <text x="30" y="1214" font-size="10" fill="#475569">　たら即受験が最大の武器</text>
+  <text x="30" y="1236" font-size="10" fill="#475569">③ 平日2h＋休日4hで週約18時間。2〜3ヶ月</text>
+  <text x="30" y="1252" font-size="10" fill="#475569">　で150時間に到達</text>
+  <rect x="30" y="1266" width="300" height="46" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="1284" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">合計150〜200時間／90分／70点以上</text>
+  <text x="180" y="1300" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">合否は試験終了後すぐに画面表示</text>
+</svg>

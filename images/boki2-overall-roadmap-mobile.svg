@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1180" width="360" height="1180">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1180" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">⚔ 簿記2級 無敵の</text>
+  <text x="180" y="48" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">5ヶ月並行ロードマップ</text>
+  <text x="180" y="66" text-anchor="middle" font-size="9.5" fill="#64748B">2027年「大改定ライン」に巻き込まれる前に、</text>
+  <text x="180" y="80" text-anchor="middle" font-size="9.5" fill="#64748B">2026年中のネット試験で合格の盾を確保する</text>
+
+  <rect x="16" y="96" width="328" height="24" rx="6" fill="#E2E8F0"/>
+  <text x="180" y="112" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">1〜2ヶ月目：土台づくり（同時並行）</text>
+
+  <rect x="16" y="128" width="328" height="130" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="30" y="146" font-size="9.5" font-weight="700" fill="#94A3B8" letter-spacing="0.05em">SAME TIME・同時並行で進める</text>
+
+  <rect x="28" y="154" width="304" height="46" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="2"/>
+  <text x="42" y="172" font-size="12.5" font-weight="700" fill="#1E3A8A">📘 商業簿記テキスト精読</text>
+  <text x="42" y="188" font-size="9.5" fill="#3B5A8A">決算整理・株式会社特有論点の土台固め（3級復習も同時）</text>
+
+  <rect x="28" y="204" width="304" height="46" rx="10" fill="#FFF7ED" stroke="#FB923C" stroke-width="2"/>
+  <text x="42" y="222" font-size="12.5" font-weight="700" fill="#9A3412">🏭 工業簿記テキスト精読</text>
+  <text x="42" y="238" font-size="9.5" fill="#9A5A2E">材料費・労務費など原価の流れを土台固め</text>
+
+  <path d="M180,258 L180,278 M172,270 L180,278 L188,270" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="16" y="286" width="328" height="24" rx="6" fill="#E2E8F0"/>
+  <text x="180" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">3〜4ヶ月目：問題集・過去問</text>
+
+  <rect x="16" y="318" width="328" height="94" rx="14" fill="#F5F3FF" stroke="#A855F7" stroke-width="2"/>
+  <text x="32" y="342" font-size="13" font-weight="700" fill="#5B21B6">📚 問題集・過去問演習</text>
+  <text x="32" y="362" font-size="10" fill="#6B46A8">商業×工業を同時に仕上げて得点</text>
+  <text x="32" y="378" font-size="10" fill="#6B46A8">パターンを体に染み込ませる</text>
+  <text x="32" y="396" font-size="10" fill="#6B46A8">→ 弱点補強・模試で仕上げ</text>
+
+  <path d="M180,416 L180,436 M172,428 L180,436 L188,428" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="16" y="444" width="328" height="24" rx="6" fill="#D1FAE5"/>
+  <text x="180" y="460" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">5ヶ月目：合格</text>
+
+  <rect x="16" y="476" width="328" height="82" rx="14" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="180" y="502" text-anchor="middle" font-size="20">💻</text>
+  <text x="180" y="524" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">ネット試験 合格の盾GET！</text>
+  <text x="180" y="542" text-anchor="middle" font-size="9.5" fill="#0F766E">2026年度中に滑り込め</text>
+
+  <!-- Safe zone -->
+  <rect x="16" y="580" width="328" height="60" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="180" y="602" text-anchor="middle" font-size="10.5" font-weight="700" fill="#065F46">✅ ここまでが「2026年度・現行ルール」</text>
+  <text x="180" y="620" text-anchor="middle" font-size="10.5" font-weight="700" fill="#065F46">の安全地帯（手形・小切手／リースも旧ルール対応でOK）</text>
+
+  <!-- Danger zone -->
+  <rect x="16" y="656" width="328" height="130" rx="10" fill="#FEE2E2" stroke="#F87171" stroke-width="2"/>
+  <text x="180" y="682" text-anchor="middle" font-size="18">🚧</text>
+  <text x="180" y="706" text-anchor="middle" font-size="11.5" font-weight="700" fill="#B91C1C">2027年度 大改定ゾーン（突入NG！）</text>
+  <text x="180" y="726" text-anchor="middle" font-size="10" fill="#B91C1C">手形・小切手 全廃</text>
+  <text x="180" y="744" text-anchor="middle" font-size="10" fill="#B91C1C">リース会計 全面刷新</text>
+  <text x="180" y="766" text-anchor="middle" font-size="9.5" fill="#B91C1C">この改定に巻き込まれる前に取り切ろう</text>
+
+  <!-- Bottom caption -->
+  <rect x="16" y="806" width="328" height="90" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="180" y="830" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">合計 約150〜350時間</text>
+  <text x="180" y="846" text-anchor="middle" font-size="9.5" fill="#334155">（3級取得済みは少なめ、初学者は多め）</text>
+  <text x="180" y="868" text-anchor="middle" font-size="9.5" fill="#64748B">工業簿記を1ヶ月目から商業簿記と並走させるのが、</text>
+  <text x="180" y="884" text-anchor="middle" font-size="9.5" fill="#64748B">5ヶ月プラン最速攻略の最大のコツです。</text>
+</svg>

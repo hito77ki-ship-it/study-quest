@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1160" viewBox="0 0 360 1160" role="img" aria-labelledby="title desc">
+  <title id="title">漢字検定2級の配点ウェイトと合格基準死守の戦略マップ（モバイル版）</title>
+  <desc id="desc">200点満点のうち書き取り50点・四字熟語30点が突出して大きく、この2カテゴリで全体の40%を占めること、および160点の合格基準ラインが主要5カテゴリでほぼ到達できることを縦一列で示した図解</desc>
+  <defs>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800;fill:#1f2937}
+      .cardname{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800;fill:#1f2937}
+      .furigana{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:600;fill:#64748b}
+      .cardpt{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:700;fill:#166534}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1160" rx="16" fill="#FAFDFF"/>
+  <text x="180" y="30" text-anchor="middle" class="title" font-size="15">漢検2級 配点ウェイト</text>
+  <text x="180" y="50" text-anchor="middle" class="title" font-size="15">戦略マップ</text>
+  <text x="180" y="68" text-anchor="middle" font-size="10" fill="#64748b">200点満点・160点で合格（80%）</text>
+
+  <rect x="16" y="82" width="328" height="40" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="180" y="99" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c2410c">「書き取り」＋「四字熟語」＝</text>
+  <text x="180" y="114" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c2410c">全体の40%を占める2大巨頭</text>
+
+  <!-- Category cards, stacked, sorted by importance -->
+  <g>
+    <rect x="16" y="134" width="328" height="66" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+    <text x="34" y="156" class="furigana" font-size="9">かきとり</text>
+    <text x="34" y="176" class="cardname" font-size="15">書き取り</text>
+    <text x="326" y="182" text-anchor="end" class="cardpt" font-size="15" fill="#c2410c">50点</text>
+    <text x="326" y="164" text-anchor="end" font-size="9.5" fill="#c2410c">最重要</text>
+  </g>
+
+  <g>
+    <rect x="16" y="210" width="328" height="66" rx="12" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+    <text x="34" y="232" class="furigana" font-size="9">よじじゅくご</text>
+    <text x="34" y="252" class="cardname" font-size="15">四字熟語</text>
+    <text x="326" y="258" text-anchor="end" class="cardpt" font-size="15" fill="#92400e">30点</text>
+    <text x="326" y="240" text-anchor="end" font-size="9.5" fill="#92400e">200〜300語暗記</text>
+  </g>
+
+  <g>
+    <rect x="16" y="286" width="328" height="66" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <text x="34" y="308" class="furigana" font-size="9">よみ</text>
+    <text x="34" y="328" class="cardname" font-size="15">読み</text>
+    <text x="326" y="334" text-anchor="end" class="cardpt" font-size="15" fill="#1d4ed8">30点</text>
+    <text x="326" y="316" text-anchor="end" font-size="9.5" fill="#1d4ed8">音読み訓読み両方</text>
+  </g>
+
+  <rect x="16" y="362" width="328" height="30" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="180" y="382" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">◀ 合格基準ライン 160点（80%）／ここまでで110点</text>
+
+  <g>
+    <rect x="16" y="404" width="328" height="66" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+    <text x="34" y="426" class="furigana" font-size="9">じゅくごのこうせい</text>
+    <text x="34" y="446" class="cardname" font-size="15">熟語の構成</text>
+    <text x="326" y="452" text-anchor="end" class="cardpt" font-size="15" fill="#15803d">20点</text>
+    <text x="326" y="434" text-anchor="end" font-size="9.5" fill="#15803d">修飾関係を分析</text>
+  </g>
+
+  <g>
+    <rect x="16" y="480" width="328" height="66" rx="12" fill="#faf5ff" stroke="#d8b4fe" stroke-width="2"/>
+    <text x="34" y="502" class="furigana" font-size="9">たいぎご・るいぎご</text>
+    <text x="34" y="522" class="cardname" font-size="15">対義語・類義語</text>
+    <text x="326" y="528" text-anchor="end" class="cardpt" font-size="15" fill="#7e22ce">20点</text>
+    <text x="326" y="510" text-anchor="end" font-size="9.5" fill="#7e22ce">ペアで暗記</text>
+  </g>
+
+  <g>
+    <rect x="16" y="556" width="328" height="66" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+    <text x="34" y="578" class="furigana" font-size="9">どうおん・どうくんいじ</text>
+    <text x="34" y="598" class="cardname" font-size="15">同音・同訓異字</text>
+    <text x="326" y="604" text-anchor="end" class="cardpt" font-size="15" fill="#0f766e">20点</text>
+    <text x="326" y="586" text-anchor="end" font-size="9.5" fill="#0f766e">文脈で使い分け</text>
+  </g>
+
+  <rect x="16" y="632" width="328" height="30" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="180" y="652" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">ここまでで170点。以下は仕上げでOK</text>
+
+  <g>
+    <rect x="16" y="672" width="328" height="52" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="34" y="692" class="furigana" font-size="9">ぶしゅ</text>
+    <text x="34" y="710" class="cardname" font-size="13">部首</text>
+    <text x="326" y="704" text-anchor="end" class="cardpt" font-size="13" fill="#475569">10点</text>
+  </g>
+  <g>
+    <rect x="16" y="732" width="328" height="52" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="34" y="752" class="furigana" font-size="9">ごじていせい</text>
+    <text x="34" y="770" class="cardname" font-size="13">誤字訂正</text>
+    <text x="326" y="764" text-anchor="end" class="cardpt" font-size="13" fill="#475569">10点</text>
+  </g>
+  <g>
+    <rect x="16" y="792" width="328" height="52" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="34" y="812" class="furigana" font-size="9">おくりがな</text>
+    <text x="34" y="830" class="cardname" font-size="13">送り仮名</text>
+    <text x="326" y="824" text-anchor="end" class="cardpt" font-size="13" fill="#475569">10点</text>
+  </g>
+
+  <!-- Bottom banner -->
+  <rect x="16" y="866" width="328" height="278" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2.5"/>
+  <text x="180" y="894" text-anchor="middle" class="banner" font-size="13">満遍なく暗記する必要はゼロ</text>
+  <text x="180" y="912" text-anchor="middle" class="banner" font-size="13">ハコ分けして優先順位を</text>
+  <text x="180" y="940" text-anchor="middle" class="bannersmall" font-size="10.5">「書き取り」50点と「四字熟語」30点、</text>
+  <text x="180" y="956" text-anchor="middle" class="bannersmall" font-size="10.5">合わせて80点＝全体の40%を最優先で潰す</text>
+  <text x="180" y="982" text-anchor="middle" class="bannersmall" font-size="10.5">そこに「読み」30点を積めば110点。</text>
+  <text x="180" y="998" text-anchor="middle" class="bannersmall" font-size="10.5">あと50点を残りから拾えば160点に到達</text>
+  <text x="180" y="1024" text-anchor="middle" class="bannersmall" font-size="10.5">部首・誤字訂正・送り仮名（各10点）は</text>
+  <text x="180" y="1040" text-anchor="middle" class="bannersmall" font-size="10.5">最後に詰め込むだけで十分</text>
+  <text x="180" y="1066" text-anchor="middle" class="bannersmall" font-size="10.5">配点の小さいカテゴリに時間を奪われない</text>
+  <text x="180" y="1096" text-anchor="middle" class="bannersmall" font-size="10.5">これが暗記量に絶望しなくていい理由。</text>
+  <text x="180" y="1112" text-anchor="middle" class="bannersmall" font-size="10.5">配点バランスを味方につければ合格は近づく</text>
+</svg>

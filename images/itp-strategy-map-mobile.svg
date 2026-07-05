@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 560" width="360" height="560">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="560" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">ITパスポート 3分野の出題比率</text>
+  <text x="180" y="42" text-anchor="middle" font-size="9" fill="#94A3B8">出題数が多い分野から確実に得点源に</text>
+
+  <rect x="20" y="58" width="320" height="34" rx="8" fill="#BBF7D0" stroke="#4ADE80" stroke-width="2"/>
+  <text x="34" y="80" font-size="11" font-weight="700" fill="#166534">① テクノロジ系</text>
+  <text x="316" y="80" text-anchor="end" font-size="11" font-weight="700" fill="#374151">45問</text>
+
+  <rect x="20" y="100" width="248" height="34" rx="8" fill="#BFDBFE" stroke="#60A5FA" stroke-width="2"/>
+  <text x="34" y="122" font-size="11" font-weight="700" fill="#1D4ED8">② ストラテジ系</text>
+  <text x="316" y="122" text-anchor="end" font-size="11" font-weight="700" fill="#374151">35問</text>
+
+  <rect x="20" y="142" width="142" height="34" rx="8" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+  <text x="34" y="164" font-size="10.5" font-weight="700" fill="#475569">③ マネジメント系</text>
+  <text x="316" y="164" text-anchor="end" font-size="11" font-weight="700" fill="#374151">20問</text>
+
+  <rect x="20" y="196" width="320" height="128" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">🎯 合格基準と攻略の鉄則</text>
+  <text x="180" y="246" text-anchor="middle" font-size="10" font-weight="700" fill="#1E3A8A">合格基準：総合600点以上</text>
+  <text x="180" y="262" text-anchor="middle" font-size="10" font-weight="700" fill="#1E3A8A">＆各分野300点以上（1,000点満点）</text>
+  <text x="180" y="284" text-anchor="middle" font-size="9.5" fill="#374151">テクノロジ＋ストラテジで全100問中80問</text>
+  <text x="180" y="304" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1E40AF">この2分野を重点的に固めるのが最短ルート</text>
+
+  <rect x="30" y="346" width="14" height="14" rx="3" fill="#BBF7D0" stroke="#4ADE80"/>
+  <text x="50" y="357" font-size="9.5" fill="#374151">最重要</text>
+  <rect x="130" y="346" width="14" height="14" rx="3" fill="#BFDBFE" stroke="#60A5FA"/>
+  <text x="150" y="357" font-size="9.5" fill="#374151">優先度：高</text>
+  <rect x="240" y="346" width="14" height="14" rx="3" fill="#E2E8F0" stroke="#94A3B8"/>
+  <text x="260" y="357" font-size="9.5" fill="#374151">優先度：中</text>
+</svg>

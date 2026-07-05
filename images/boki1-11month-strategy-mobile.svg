@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1500" width="360" height="1500">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1500" rx="14" fill="#F8FAFC"/>
+  <text x="180" y="24" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">11月慣らし受験 → 来年6月本命！</text>
+  <text x="180" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">2ステップ攻略マップ</text>
+  <text x="180" y="60" text-anchor="middle" font-size="9.5" fill="#64748B">7月〜来年6月・合計約450時間のロードマップ</text>
+
+  <!-- STEP1 label -->
+  <rect x="16" y="76" width="328" height="30" rx="8" fill="#3B82F6"/>
+  <text x="180" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP1 ▶ 今年11月（慣らし受験）約4ヶ月</text>
+
+  <!-- Node A TODAY -->
+  <rect x="20" y="116" width="320" height="90" rx="10" fill="#D1FAE5" stroke="#34D399" stroke-width="1.5"/>
+  <text x="180" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">🎯 今ここ：TODAY</text>
+  <text x="180" y="160" text-anchor="middle" font-size="10.5" fill="#059669">7月スタート　いざ1級へ！</text>
+
+  <!-- Node B -->
+  <rect x="20" y="216" width="320" height="120" rx="10" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="238" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">7月〜9月　基礎インプット</text>
+  <text x="180" y="258" text-anchor="middle" font-size="10.5" fill="#374151">商業・会計学テキスト1周</text>
+  <text x="180" y="276" text-anchor="middle" font-size="10.5" fill="#374151">工業・原計も基礎だけ1周</text>
+  <text x="180" y="298" text-anchor="middle" font-size="10" fill="#60A5FA">1周でOK！深く追わない</text>
+  <text x="180" y="320" text-anchor="middle" font-size="10" fill="#64748B">↓</text>
+
+  <!-- Node C -->
+  <rect x="20" y="346" width="320" height="120" rx="10" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">10月〜11月　実戦・偵察</text>
+  <text x="180" y="388" text-anchor="middle" font-size="10.5" fill="#374151">過去問1〜2年分で敵の強さ確認</text>
+  <text x="180" y="406" text-anchor="middle" font-size="10.5" fill="#374151">弱点リストを作る</text>
+  <text x="180" y="428" text-anchor="middle" font-size="10" fill="#60A5FA">点数は気にしなくてOK！</text>
+  <text x="180" y="450" text-anchor="middle" font-size="10" fill="#64748B">↓</text>
+
+  <!-- Node D -->
+  <rect x="20" y="476" width="320" height="180" rx="10" fill="#EDE9FE" stroke="#A78BFA" stroke-width="2"/>
+  <text x="180" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#4C1D95">🐉 11月本番試験（中間ボス戦）</text>
+  <text x="180" y="524" text-anchor="middle" font-size="11" font-weight="700" fill="#6D28D9">「落ちても全然OK！」</text>
+  <text x="180" y="546" text-anchor="middle" font-size="10.5" fill="#374151">本番の空気・問題の難しさを</text>
+  <text x="180" y="564" text-anchor="middle" font-size="10.5" fill="#374151">一度体験するのが目的！</text>
+  <text x="180" y="588" text-anchor="middle" font-size="11" font-weight="700" fill="#7C3AED">→ 経験値MAXで帰還！</text>
+  <text x="180" y="608" text-anchor="middle" font-size="10" fill="#A78BFA">合格点70点は来年のお楽しみに</text>
+  <text x="180" y="632" text-anchor="middle" font-size="10" fill="#64748B">↓</text>
+
+  <!-- Badge -->
+  <rect x="20" y="662" width="320" height="70" rx="17" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="180" y="686" text-anchor="middle" font-size="11" font-weight="700" fill="#B45309">11月本番で「リアルなボスの強さ」を確認！</text>
+  <text x="180" y="708" text-anchor="middle" font-size="10.5" fill="#92400E">弱点リストを持ち帰り→来年6月で完全撃破！</text>
+
+  <text x="180" y="756" text-anchor="middle" font-size="12" fill="#64748B">▼</text>
+
+  <!-- STEP2 label -->
+  <rect x="16" y="770" width="328" height="30" rx="8" fill="#10B981"/>
+  <text x="180" y="790" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP2 ▶ 来年6月（本命）約7ヶ月</text>
+
+  <!-- Node E -->
+  <rect x="20" y="810" width="320" height="130" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="832" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">12月〜1月　弱点補強・総復習</text>
+  <text x="180" y="852" text-anchor="middle" font-size="10.5" fill="#374151">11月で見つけた弱点を徹底的につぶす</text>
+  <text x="180" y="870" text-anchor="middle" font-size="10.5" fill="#374151">差異分析を完全固め</text>
+  <text x="180" y="892" text-anchor="middle" font-size="10" fill="#34D399">苦手を得点源に変換！</text>
+  <text x="180" y="914" text-anchor="middle" font-size="10" fill="#64748B">↓</text>
+
+  <!-- Node F -->
+  <rect x="20" y="950" width="320" height="130" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="972" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">2月〜4月　全科目2周目</text>
+  <text x="180" y="992" text-anchor="middle" font-size="10.5" fill="#374151">商業・会計学理論を深堀り</text>
+  <text x="180" y="1010" text-anchor="middle" font-size="10.5" fill="#374151">工業・原計 応用を強化</text>
+  <text x="180" y="1032" text-anchor="middle" font-size="10" fill="#34D399">1周目の2倍速で進む！理解度UP</text>
+  <text x="180" y="1054" text-anchor="middle" font-size="10" fill="#64748B">↓</text>
+
+  <!-- Node G -->
+  <rect x="20" y="1090" width="320" height="130" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="1112" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">4月〜5月　過去問10年分</text>
+  <text x="180" y="1132" text-anchor="middle" font-size="10.5" fill="#374151">4科目を通しで解く／時間配分を体に入れる</text>
+  <text x="180" y="1154" text-anchor="middle" font-size="10.5" fill="#374151">70点安定を目指す</text>
+  <text x="180" y="1176" text-anchor="middle" font-size="10" fill="#34D399">模試1〜2回も受ける！足切り回避</text>
+  <text x="180" y="1198" text-anchor="middle" font-size="10" fill="#64748B">↓</text>
+
+  <!-- Node H -->
+  <rect x="20" y="1230" width="320" height="180" rx="10" fill="#FDF4FF" stroke="#D8B4FE" stroke-width="2"/>
+  <text x="180" y="1256" text-anchor="middle" font-size="12" font-weight="700" fill="#4C1D95">⚔ 6月本番試験（最終決戦！）</text>
+  <text x="180" y="1282" text-anchor="middle" font-size="11" font-weight="700" fill="#6B21A8">緊張ゼロの無双状態！</text>
+  <text x="180" y="1302" text-anchor="middle" font-size="10.5" fill="#374151">経験値MAXで本番に挑む</text>
+  <text x="180" y="1330" text-anchor="middle" font-size="13" font-weight="700" fill="#F59E0B">🏆 LEVEL CLEAR!</text>
+
+  <rect x="16" y="1436" width="328" height="46" rx="10" fill="#1E293B"/>
+  <text x="180" y="1456" text-anchor="middle" font-size="10" fill="#F1F5F9">合計：約450時間／11ヶ月／2ステップで攻略！</text>
+  <text x="180" y="1472" text-anchor="middle" font-size="10" fill="#F1F5F9">来年6月は緊張ゼロの無双状態で試験に臨める</text>
+</svg>

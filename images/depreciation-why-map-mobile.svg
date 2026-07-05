@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1000" width="360" height="1000" role="img" aria-labelledby="t d">
+  <title id="t">定額法 vs 定率法——価値（費用）の減り方の違い（モバイル版）</title>
+  <desc id="d">取得原価100万円・5年間の減価償却費を、毎年同額の定額法と初年度ほど大きい定率法とで比較した図解</desc>
+  <defs>
+    <linearGradient id="mBlueBar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#76BEF0"/><stop offset="1" stop-color="#4299E1"/></linearGradient>
+    <linearGradient id="mOrangeBar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6C36A"/><stop offset="1" stop-color="#ED8936"/></linearGradient>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+  </defs>
+  <rect width="360" height="1000" rx="16" fill="#F7FDF4"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">定額法 vs 定率法</text>
+  <text x="180" y="42" text-anchor="middle" font-size="9.5" fill="#718096">取得原価100万円・5年間の減価償却費</text>
+
+  <!-- 定額法 panel -->
+  <rect x="16" y="58" width="328" height="366" rx="14" fill="#EBF8FF" stroke="#90CDF4" stroke-width="2"/>
+  <rect x="16" y="58" width="328" height="46" rx="14" fill="#2B6CB0"/>
+  <text x="180" y="80" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">定額法（ていがくほう）</text>
+  <text x="180" y="96" text-anchor="middle" font-size="9.5" fill="#BEE3F8">毎年おなじ金額を費用化する</text>
+
+  <text x="35" y="128" font-size="20">🛏️</text>
+  <text x="180" y="122" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2B6CB0">「均等くん」— 建物・家具向き</text>
+  <text x="180" y="140" text-anchor="middle" font-size="9.5" fill="#4A5568">毎年おなじ速さで劣化→費用も毎年同額</text>
+
+  <!-- bars equal -->
+  <line x1="40" y1="160" x2="40" y2="240" stroke="#A0AEC0" stroke-width="1.5"/>
+  <line x1="40" y1="240" x2="320" y2="240" stroke="#A0AEC0" stroke-width="1.5"/>
+  <rect x="52"  y="200" width="34" height="40" rx="4" fill="url(#mBlueBar)"/>
+  <rect x="106" y="200" width="34" height="40" rx="4" fill="url(#mBlueBar)"/>
+  <rect x="160" y="200" width="34" height="40" rx="4" fill="url(#mBlueBar)"/>
+  <rect x="214" y="200" width="34" height="40" rx="4" fill="url(#mBlueBar)"/>
+  <rect x="268" y="200" width="34" height="40" rx="4" fill="url(#mBlueBar)"/>
+  <text x="69"  y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="123" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="177" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="231" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="285" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#2B6CB0">20万</text>
+  <text x="180" y="254" text-anchor="middle" font-size="9" fill="#718096">1年目　2年目　3年目　4年目　5年目</text>
+
+  <rect x="30" y="266" width="300" height="42" rx="8" fill="#fff" fill-opacity=".85" stroke="#90CDF4"/>
+  <text x="180" y="284" text-anchor="middle" font-size="11" font-weight="700" fill="#2B6CB0">計算式：取得原価 ÷ 耐用年数</text>
+  <text x="180" y="300" text-anchor="middle" font-size="9.5" fill="#4A5568">累計額は無視してOK。毎年同じ答え</text>
+
+  <rect x="30" y="316" width="300" height="94" rx="8" fill="#BEE3F8" fill-opacity=".65"/>
+  <text x="180" y="336" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2C5282">✅ 試験での使い方</text>
+  <text x="180" y="356" text-anchor="middle" font-size="11" font-weight="700" fill="#2B6CB0">例：100万÷5年＝20万円</text>
+  <text x="180" y="374" text-anchor="middle" font-size="9.5" fill="#2C5282">何年目でも答えは同じ</text>
+  <text x="180" y="392" text-anchor="middle" font-size="8.5" fill="#4299E1">※残存価額ありなら(原価-残存価額)÷耐用年数</text>
+
+  <!-- 定率法 panel -->
+  <rect x="16" y="440" width="328" height="400" rx="14" fill="#FFFAF0" stroke="#F6AD55" stroke-width="2"/>
+  <rect x="16" y="440" width="328" height="46" rx="14" fill="#C05621"/>
+  <text x="180" y="462" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">定率法（ていりつほう）</text>
+  <text x="180" y="478" text-anchor="middle" font-size="9.5" fill="#FEEBC8">初期ほど費用が大きく年々減る</text>
+
+  <text x="35" y="510" font-size="20">⚙️</text>
+  <text x="180" y="504" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C05621">「加速くん」— PC・機械・車両向き</text>
+  <text x="180" y="522" text-anchor="middle" font-size="9.5" fill="#4A5568">早期費用化→節税・キャッシュ確保</text>
+
+  <line x1="40" y1="542" x2="40" y2="622" stroke="#A0AEC0" stroke-width="1.5"/>
+  <line x1="40" y1="622" x2="320" y2="622" stroke="#A0AEC0" stroke-width="1.5"/>
+  <rect x="52"  y="582" width="34" height="40" rx="4" fill="url(#mOrangeBar)"/>
+  <rect x="106" y="598" width="34" height="24" rx="4" fill="url(#mOrangeBar)"/>
+  <rect x="160" y="608" width="34" height="14" rx="4" fill="url(#mOrangeBar)"/>
+  <rect x="214" y="614" width="34" height="8"  rx="4" fill="url(#mOrangeBar)"/>
+  <rect x="268" y="617" width="34" height="5"  rx="4" fill="url(#mOrangeBar)"/>
+  <text x="69"  y="578" text-anchor="middle" font-size="9" font-weight="700" fill="#C05621">40万</text>
+  <text x="123" y="594" text-anchor="middle" font-size="9" font-weight="700" fill="#C05621">24万</text>
+  <text x="177" y="604" text-anchor="middle" font-size="9" font-weight="700" fill="#C05621">14万</text>
+  <text x="231" y="610" text-anchor="middle" font-size="8.5" font-weight="700" fill="#C05621">9万</text>
+  <text x="285" y="613" text-anchor="middle" font-size="8.5" font-weight="700" fill="#C05621">5万</text>
+  <text x="180" y="636" text-anchor="middle" font-size="9" fill="#718096">1年目　2年目　3年目　4年目　5年目</text>
+
+  <rect x="30" y="648" width="300" height="46" rx="8" fill="#fff" fill-opacity=".85" stroke="#F6AD55"/>
+  <text x="180" y="667" text-anchor="middle" font-size="11" font-weight="700" fill="#C05621">計算式：未償却残高 × 償却率</text>
+  <text x="180" y="684" text-anchor="middle" font-size="9.5" fill="#4A5568">未償却残高＝取得原価－前期末累計額</text>
+
+  <rect x="30" y="702" width="300" height="122" rx="8" fill="#FEEBC8" fill-opacity=".65"/>
+  <text x="180" y="722" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7B341E">⚠️ 2年目の罠に注意！</text>
+  <text x="180" y="742" text-anchor="middle" font-size="10" fill="#7B341E">STEP1: 100万－累計40万＝残高60万</text>
+  <text x="180" y="760" text-anchor="middle" font-size="10" fill="#7B341E">STEP2: 60万×40%＝24万円</text>
+  <text x="180" y="780" text-anchor="middle" font-size="9" fill="#C05621">✗ NG：100万×40%＝40万（毎年同じはNG）</text>
+  <text x="180" y="798" text-anchor="middle" font-size="9" fill="#7B341E">毎年「前期末の残高」を引いてから掛ける</text>
+
+  <rect x="16" y="858" width="328" height="72" rx="10" fill="#111827"/>
+  <text x="180" y="884" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">資産の性質に合わせて選ぶ2つの方法</text>
+  <text x="180" y="904" text-anchor="middle" font-size="10" fill="#E5E7EB">建物→定額法／PC・車両→定率法が典型</text>
+</svg>

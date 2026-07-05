@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 620" width="360" height="620">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="620" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">行政書士試験 科目別配点</text>
+  <text x="180" y="42" text-anchor="middle" font-size="9.5" fill="#94A3B8">配点が大きい科目から確実に得点源に</text>
+
+  <rect x="20" y="56" width="320" height="34" rx="8" fill="#FED7AA" stroke="#FB923C" stroke-width="2"/>
+  <text x="34" y="77" font-size="11" font-weight="700" fill="#C2410C">① 行政法</text>
+  <text x="316" y="77" text-anchor="end" font-size="11" font-weight="700" fill="#374151">112点</text>
+
+  <rect x="20" y="98" width="230" height="34" rx="8" fill="#BFDBFE" stroke="#60A5FA" stroke-width="2"/>
+  <text x="34" y="119" font-size="11" font-weight="700" fill="#1D4ED8">② 民法</text>
+  <text x="316" y="119" text-anchor="end" font-size="11" font-weight="700" fill="#374151">76点</text>
+
+  <rect x="20" y="140" width="170" height="34" rx="8" fill="#DDD6FE" stroke="#A78BFA" stroke-width="2"/>
+  <text x="34" y="161" font-size="11" font-weight="700" fill="#5B21B6">③ 一般知識</text>
+  <text x="316" y="161" text-anchor="end" font-size="11" font-weight="700" fill="#374151">56点</text>
+  <line x1="95" y1="136" x2="95" y2="178" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="95" y="192" text-anchor="middle" font-size="8.5" font-weight="700" fill="#DC2626">足切り24点</text>
+
+  <rect x="20" y="206" width="90" height="34" rx="8" fill="#BFDBFE" stroke="#60A5FA" stroke-width="2"/>
+  <text x="34" y="227" font-size="11" font-weight="700" fill="#1D4ED8">④ 憲法</text>
+  <text x="316" y="227" text-anchor="end" font-size="11" font-weight="700" fill="#374151">28点</text>
+
+  <rect x="20" y="248" width="66" height="34" rx="8" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+  <text x="34" y="269" font-size="10.5" font-weight="700" fill="#475569">⑤ 商法・会社法</text>
+  <text x="316" y="269" text-anchor="end" font-size="11" font-weight="700" fill="#374151">20点</text>
+
+  <rect x="20" y="304" width="320" height="140" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">🎯 攻略の鉄則</text>
+  <text x="180" y="354" text-anchor="middle" font-size="10" fill="#78350F">行政法だけで全体300点満点の37%を占める</text>
+  <text x="180" y="370" text-anchor="middle" font-size="10" fill="#78350F">ここを最優先で仕上げるのが合格への近道</text>
+  <text x="180" y="398" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">攻略順：①行政法→②民法→③一般知識</text>
+  <text x="180" y="414" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">（足切り注意）→④憲法→⑤商法・会社法</text>
+
+  <rect x="30" y="466" width="14" height="14" rx="3" fill="#FED7AA" stroke="#FB923C"/>
+  <text x="50" y="477" font-size="10" fill="#374151">最優先</text>
+  <rect x="120" y="466" width="14" height="14" rx="3" fill="#BFDBFE" stroke="#60A5FA"/>
+  <text x="140" y="477" font-size="10" fill="#374151">高</text>
+  <rect x="180" y="466" width="14" height="14" rx="3" fill="#E2E8F0" stroke="#94A3B8"/>
+  <text x="200" y="477" font-size="10" fill="#374151">中</text>
+  <line x1="240" y1="473" x2="260" y2="473" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="268" y="477" font-size="9.5" fill="#374151">足切り</text>
+</svg>

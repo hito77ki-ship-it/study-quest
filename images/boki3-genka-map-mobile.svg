@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1080" width="360" height="1080">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="1080" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">減価償却——価値の目減りを</text>
+  <text x="180" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">毎年費用化する仕組み</text>
+
+  <rect x="16" y="58" width="328" height="56" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="76" text-anchor="middle" font-size="10" fill="#1E40AF">例）取得原価¥1,000,000／残存¥100,000</text>
+  <text x="180" y="90" text-anchor="middle" font-size="9.5" fill="#1E40AF">耐用年数5年→定額法</text>
+  <text x="180" y="106" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">年間償却費＝(1,000,000－100,000)÷5＝¥180,000</text>
+
+  <!-- Year cards stacked -->
+  <rect x="16" y="126" width="328" height="46" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="154" font-size="11" font-weight="700" fill="#1D4ED8">取得時</text>
+  <text x="230" y="154" text-anchor="end" font-size="11" fill="#1D4ED8">帳簿価額 ¥1,000,000</text>
+
+  <text x="180" y="184" text-anchor="middle" font-size="9.5" fill="#EF4444">↓ 毎年 ¥180,000 償却</text>
+
+  <rect x="16" y="192" width="328" height="46" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="220" font-size="11" font-weight="700" fill="#1D4ED8">1年目末</text>
+  <text x="230" y="220" text-anchor="end" font-size="11" fill="#1D4ED8">帳簿価額 ¥820,000</text>
+
+  <rect x="16" y="246" width="328" height="46" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="274" font-size="11" font-weight="700" fill="#1D4ED8">2年目末</text>
+  <text x="230" y="274" text-anchor="end" font-size="11" fill="#1D4ED8">帳簿価額 ¥640,000</text>
+
+  <rect x="16" y="300" width="328" height="46" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="328" font-size="11" font-weight="700" fill="#1D4ED8">3年目末</text>
+  <text x="230" y="328" text-anchor="end" font-size="11" fill="#1D4ED8">帳簿価額 ¥460,000</text>
+
+  <rect x="16" y="354" width="328" height="46" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="382" font-size="11" font-weight="700" fill="#1D4ED8">4年目末</text>
+  <text x="230" y="382" text-anchor="end" font-size="11" fill="#1D4ED8">帳簿価額 ¥280,000</text>
+
+  <rect x="16" y="408" width="328" height="46" rx="8" fill="#93C5FD"/>
+  <text x="30" y="436" font-size="11" font-weight="700" fill="#1E3A8A">5年目末（残存）</text>
+  <text x="230" y="436" text-anchor="end" font-size="11" font-weight="700" fill="#1E3A8A">帳簿価額 ¥100,000</text>
+
+  <!-- 毎年の仕訳 -->
+  <rect x="16" y="480" width="328" height="200" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="504" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">毎年の仕訳（間接控除法）</text>
+  <rect x="32" y="512" width="296" height="52" rx="6" fill="#FEF3C7"/>
+  <text x="180" y="530" text-anchor="middle" font-size="10.5" fill="#713F12">減価償却費 ¥180,000</text>
+  <text x="180" y="548" text-anchor="middle" font-size="10.5" fill="#713F12">／ 減価償却累計額 ¥180,000</text>
+  <text x="180" y="580" text-anchor="middle" font-size="10.5" fill="#92400E">「減価償却累計額」を使うのがポイント</text>
+  <text x="180" y="600" text-anchor="middle" font-size="10" fill="#78350F">固定資産を直接減らさずに</text>
+  <text x="180" y="616" text-anchor="middle" font-size="10" fill="#78350F">「取得原価」と「累計額」で別々に管理</text>
+  <text x="180" y="640" text-anchor="middle" font-size="9.5" fill="#A16207">→ これをB/S上で控除表示する（間接法）</text>
+
+  <!-- B/S表示 -->
+  <rect x="16" y="696" width="328" height="200" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="720" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">B/S上の表示（間接控除法）</text>
+  <rect x="32" y="728" width="296" height="110" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="748" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">【固定資産の部】</text>
+  <text x="46" y="770" font-size="10.5" fill="#374151">建　物　　　　1,000,000</text>
+  <text x="46" y="790" font-size="10.5" fill="#374151">減価償却累計額　△360,000</text>
+  <line x1="46" y1="798" x2="312" y2="798" stroke="#86EFAC" stroke-width="1"/>
+  <text x="46" y="818" font-size="10.5" font-weight="700" fill="#166534">帳簿価額　　　　640,000</text>
+  <text x="180" y="858" text-anchor="middle" font-size="9.5" fill="#15803D">（2年後の場合 ¥360,000 累計）</text>
+  <text x="180" y="874" text-anchor="middle" font-size="9.5" fill="#15803D">取得原価－累計額＝帳簿価額</text>
+</svg>

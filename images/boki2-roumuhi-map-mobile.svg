@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 760" width="360" height="760">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="760" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">労務費——直接労務費・間接</text>
+  <text x="180" y="46" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">労務費の分類と計算構造</text>
+
+  <rect x="16" y="62" width="328" height="56" rx="8" fill="#1E293B"/>
+  <text x="180" y="84" text-anchor="middle" font-size="12" fill="#F8FAFC">労務費 ＝ 製造に関わる人件費</text>
+  <text x="180" y="102" text-anchor="middle" font-size="10" fill="#94A3B8">賃金・給料・賞与・法定福利費・退職給付費用</text>
+
+  <!-- 直接労務費 -->
+  <rect x="16" y="132" width="328" height="238" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="16" y="132" width="328" height="34" rx="12" fill="#22C55E"/>
+  <rect x="16" y="152" width="328" height="14" fill="#22C55E"/>
+  <text x="180" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">直接労務費（製品に直接紐づく）</text>
+
+  <text x="180" y="188" text-anchor="middle" font-size="11.5" fill="#166534">特定の製品を直接製造した</text>
+  <text x="180" y="204" text-anchor="middle" font-size="11.5" fill="#166534">作業員の賃金</text>
+  <text x="180" y="222" text-anchor="middle" font-size="11" fill="#166534">→ 仕掛品（製品原価）に直接賦課</text>
+
+  <rect x="32" y="234" width="296" height="60" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="252" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">賃金消費額の計算</text>
+  <text x="180" y="270" text-anchor="middle" font-size="10.5" fill="#374151">当月消費額＝当月支払高－月初未払高</text>
+  <text x="180" y="284" text-anchor="middle" font-size="10.5" fill="#374151">＋月末未払高（作業時間票で集計）</text>
+
+  <rect x="32" y="302" width="296" height="42" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="320" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">仕訳例</text>
+  <text x="180" y="337" text-anchor="middle" font-size="11" fill="#166534">仕掛品 ×× ／ 賃金・給料 ××</text>
+
+  <text x="180" y="360" text-anchor="middle" font-size="10.5" fill="#64748B">外部報告に使う（製品原価に含まれる）</text>
+
+  <!-- 間接労務費 -->
+  <rect x="16" y="392" width="328" height="238" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="392" width="328" height="34" rx="12" fill="#3B82F6"/>
+  <rect x="16" y="412" width="328" height="14" fill="#3B82F6"/>
+  <text x="180" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">間接労務費（間接的に関わる）</text>
+
+  <text x="180" y="448" text-anchor="middle" font-size="11.5" fill="#1E40AF">特定の製品に直接結びつかない</text>
+  <text x="180" y="464" text-anchor="middle" font-size="11.5" fill="#1E40AF">人件費</text>
+  <text x="180" y="482" text-anchor="middle" font-size="11" fill="#1E40AF">→ 製造間接費として処理し、後で配賦</text>
+
+  <rect x="32" y="494" width="296" height="60" rx="6" fill="#DBEAFE"/>
+  <text x="180" y="512" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">間接労務費の具体例</text>
+  <text x="180" y="530" text-anchor="middle" font-size="10.5" fill="#374151">工場長・管理監督者の給料</text>
+  <text x="180" y="544" text-anchor="middle" font-size="10.5" fill="#374151">間接作業賃金・手待賃金・休暇給</text>
+
+  <rect x="32" y="562" width="296" height="42" rx="6" fill="#DBEAFE"/>
+  <text x="180" y="580" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">仕訳例</text>
+  <text x="180" y="597" text-anchor="middle" font-size="11" fill="#1D4ED8">製造間接費 ×× ／ 賃金・給料 ××</text>
+
+  <text x="180" y="620" text-anchor="middle" font-size="10.5" fill="#64748B">→ 後で製造間接費から各製品へ配賦</text>
+
+  <!-- Bottom note -->
+  <rect x="16" y="646" width="328" height="98" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+  <text x="180" y="668" text-anchor="middle" font-size="11" fill="#92400E">💡 賃金未払いの処理：</text>
+  <text x="180" y="686" text-anchor="middle" font-size="10.5" fill="#92400E">「賃金 ×× ／ 現金 ×× ＋未払賃金 ××」</text>
+  <text x="180" y="702" text-anchor="middle" font-size="10.5" fill="#92400E">翌月に未払賃金を取り崩して支払う</text>
+  <text x="180" y="722" text-anchor="middle" font-size="10.5" fill="#92400E">直接労務費＝標準賃率×直接作業時間</text>
+  <text x="180" y="736" text-anchor="middle" font-size="10.5" fill="#92400E">差異は「賃率差異」「作業時間差異」に分解</text>
+</svg>

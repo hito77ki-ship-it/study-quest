@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1240" width="360" height="1240" role="img" aria-labelledby="t d">
+  <title id="t">固定資産の「買換え」は合体パズル！（モバイル版）</title>
+  <desc id="d">古い資産の消去、売却損益の計算、新しい資産の誕生という3ステップと、買換え時の完成した仕訳を縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1240" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">固定資産の「買換え」は</text>
+  <text x="180" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">合体パズル！</text>
+  <text x="180" y="62" text-anchor="middle" font-size="9.5" fill="#64748B">古い資産の売却 ⚔ 新しい資産の購入</text>
+
+  <rect x="16" y="78" width="328" height="180" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <rect x="16" y="78" width="328" height="32" rx="10" fill="#EC4899"/>
+  <text x="180" y="99" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 古い資産を消去 🗑️</text>
+  <text x="30" y="130" font-size="10.5" font-weight="700" fill="#9D174D">備品（古）</text>
+  <rect x="30" y="136" width="298" height="26" rx="6" fill="#FCE7F3"/>
+  <text x="44" y="154" font-size="13" font-weight="700" fill="#9D174D">500,000</text>
+  <text x="30" y="182" font-size="10.5" font-weight="700" fill="#9D174D">減価償却累計額</text>
+  <rect x="30" y="188" width="298" height="26" rx="6" fill="#FCE7F3"/>
+  <text x="44" y="206" font-size="13" font-weight="700" fill="#9D174D">300,000</text>
+  <text x="180" y="234" text-anchor="middle" font-size="10" font-weight="700" fill="#DB2777">相殺して消去！帳簿価額200,000は次へ</text>
+
+  <text x="180" y="278" text-anchor="middle" font-size="14" fill="#94A3B8">↓</text>
+
+  <rect x="16" y="286" width="328" height="200" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="286" width="328" height="32" rx="10" fill="#3B82F6"/>
+  <text x="180" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 売却損益を計算 ⚖️</text>
+  <text x="30" y="338" font-size="10" font-weight="700" fill="#1E40AF">下取り価格</text>
+  <rect x="30" y="344" width="298" height="26" rx="6" fill="#DBEAFE"/>
+  <text x="44" y="362" font-size="13" font-weight="700" fill="#1E40AF">120,000</text>
+  <text x="180" y="392" text-anchor="middle" font-size="14" font-weight="700" fill="#3B82F6">－</text>
+  <text x="30" y="410" font-size="10" font-weight="700" fill="#1E40AF">帳簿価額</text>
+  <rect x="30" y="416" width="298" height="26" rx="6" fill="#DBEAFE"/>
+  <text x="44" y="434" font-size="13" font-weight="700" fill="#1E40AF">200,000</text>
+  <text x="180" y="462" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">＝ 売却損 80,000</text>
+
+  <text x="180" y="506" text-anchor="middle" font-size="14" fill="#94A3B8">↓</text>
+
+  <rect x="16" y="514" width="328" height="180" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="16" y="514" width="328" height="32" rx="10" fill="#22C55E"/>
+  <text x="180" y="535" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ 新しい資産が誕生 ✨</text>
+  <text x="30" y="566" font-size="10" font-weight="700" fill="#166534">備品（新）</text>
+  <rect x="30" y="572" width="298" height="26" rx="6" fill="#DCFCE7"/>
+  <text x="44" y="590" font-size="13" font-weight="700" fill="#166534">800,000</text>
+  <text x="30" y="614" font-size="10" font-weight="700" fill="#166534">下取り価格 120,000／残額は未払金</text>
+  <text x="180" y="636" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">未払金 680,000</text>
+
+  <text x="180" y="680" text-anchor="middle" font-size="14" fill="#94A3B8">↓</text>
+
+  <rect x="16" y="688" width="328" height="240" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="180" y="712" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">買換え時の仕訳——完成！</text>
+
+  <rect x="30" y="726" width="298" height="60" rx="6" fill="#FCE7F3"/>
+  <text x="44" y="746" font-size="10.5" fill="#1E293B">借方：減価償却累計額 300,000</text>
+  <text x="44" y="764" font-size="10.5" fill="#1E293B">貸方：備品（古）500,000</text>
+
+  <rect x="30" y="794" width="298" height="60" rx="6" fill="#DCFCE7"/>
+  <text x="44" y="814" font-size="10.5" fill="#1E293B">借方：備品（新）800,000</text>
+  <text x="44" y="832" font-size="10.5" fill="#1E293B">貸方：未払金 680,000</text>
+
+  <rect x="30" y="862" width="298" height="44" rx="6" fill="#DBEAFE"/>
+  <text x="44" y="888" font-size="10.5" font-weight="700" fill="#DC2626">借方：固定資産売却損 80,000</text>
+
+  <rect x="16" y="948" width="328" height="80" rx="10" fill="#111827"/>
+  <text x="180" y="974" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">古い資産は完全に消し、新しい資産は</text>
+  <text x="180" y="994" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">ピカピカの取得原価で登場させる</text>
+  <text x="180" y="1012" text-anchor="middle" font-size="10" fill="#E5E7EB">これが買換え仕訳の鉄則</text>
+</svg>

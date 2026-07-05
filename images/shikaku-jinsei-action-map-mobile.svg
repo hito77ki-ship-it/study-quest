@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1260" viewBox="0 0 360 1260" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">大谷流・資格と行動の掛け算による人生変革ロジックマップ（モバイル版）</title>
+  <desc id="svgdesc">資格の取得という武器に、次の一歩への行動という攻撃を掛け合わせることで、市場価値の拡大というリターンが生まれる仕組みを示す図解</desc>
+  <defs>
+    <linearGradient id="jmBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8f4"/><stop offset="1" stop-color="#f7fff4"/>
+    </linearGradient>
+    <linearGradient id="jmTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="jmGear1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93C5FD"/><stop offset="1" stop-color="#2563EB"/></linearGradient>
+    <linearGradient id="jmGear2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FCA5A5"/><stop offset="1" stop-color="#DC2626"/></linearGradient>
+    <linearGradient id="jmGear3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86EFAC"/><stop offset="1" stop-color="#16A34A"/></linearGradient>
+    <style>.kt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1260" rx="16" fill="url(#jmBg)"/>
+
+  <rect x="16" y="16" width="328" height="76" rx="12" fill="url(#jmTitle)"/>
+  <text x="180" y="38" text-anchor="middle" class="kt" font-size="9.5" font-weight="700" fill="#94A3B8" letter-spacing="1">資格は足し算ではなく掛け算で効く</text>
+  <text x="180" y="58" text-anchor="middle" class="kt" font-size="13" font-weight="800" fill="#FFFFFF">大谷流・資格 × 行動</text>
+  <text x="180" y="76" text-anchor="middle" class="kt" font-size="13" font-weight="800" fill="#FFFFFF">人生変革ロジックマップ</text>
+
+  <text x="180" y="112" text-anchor="middle" class="kt" font-size="10.5" font-weight="700" fill="#166534">PHASE 1　歯車がドッキングする瞬間、人生は動く</text>
+  <text x="180" y="130" text-anchor="middle" class="kt" font-size="9.5" fill="#64748B">資格は単体では回らない歯車。行動と噛み合って</text>
+  <text x="180" y="146" text-anchor="middle" class="kt" font-size="9.5" fill="#64748B">初めて、次の歯車を回す力になる。</text>
+
+  <!-- Gear 1 -->
+  <circle cx="180" cy="210" r="62" fill="url(#jmGear1)" stroke="#fff" stroke-width="3"/>
+  <text x="180" y="204" text-anchor="middle" class="kt" font-size="26">🛡</text>
+  <text x="180" y="230" text-anchor="middle" class="kt" font-size="10" font-weight="800" fill="#fff">ぶき</text>
+  <text x="180" y="288" text-anchor="middle" class="kt" font-size="14" font-weight="800" fill="#1E293B">資格の取得（武器）</text>
+
+  <text x="180" y="326" text-anchor="middle" class="kt" font-size="30" font-weight="800" fill="#B45309">×</text>
+
+  <!-- Gear 2 -->
+  <circle cx="180" cy="400" r="62" fill="url(#jmGear2)" stroke="#fff" stroke-width="3"/>
+  <text x="180" y="394" text-anchor="middle" class="kt" font-size="26">⚔</text>
+  <text x="180" y="420" text-anchor="middle" class="kt" font-size="10" font-weight="800" fill="#fff">こうげき</text>
+  <text x="180" y="478" text-anchor="middle" class="kt" font-size="14" font-weight="800" fill="#1E293B">次の一歩への行動（攻撃）</text>
+
+  <text x="180" y="516" text-anchor="middle" class="kt" font-size="30" font-weight="800" fill="#B45309">=</text>
+
+  <!-- Gear 3 -->
+  <circle cx="180" cy="590" r="62" fill="url(#jmGear3)" stroke="#fff" stroke-width="3"/>
+  <text x="180" y="584" text-anchor="middle" class="kt" font-size="26">🚀</text>
+  <text x="180" y="610" text-anchor="middle" class="kt" font-size="10" font-weight="800" fill="#fff">りたーん</text>
+  <text x="180" y="668" text-anchor="middle" class="kt" font-size="14" font-weight="800" fill="#1E293B">市場価値の拡大（リターン）</text>
+
+  <!-- PHASE 2 -->
+  <text x="180" y="716" text-anchor="middle" class="kt" font-size="10.5" font-weight="700" fill="#B45309">PHASE 2　掛け算だから「ゼロ化」が起きる</text>
+  <text x="180" y="734" text-anchor="middle" class="kt" font-size="9.5" fill="#64748B">資格・行動のどちらかが0点なら、答えは必ず0。</text>
+
+  <rect x="16" y="750" width="328" height="120" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="180" y="774" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#991B1B">資格 100 × 行動 0 = 0</text>
+  <text x="180" y="796" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B">資格を取って満足。求人にも応募せず、</text>
+  <text x="180" y="812" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B">実務にも活かさない「紙の資格」で終わる</text>
+  <text x="180" y="828" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B">パターン</text>
+
+  <rect x="16" y="882" width="328" height="110" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="180" y="906" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#991B1B">資格 0 × 行動 100 = 0</text>
+  <text x="180" y="928" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B">我流のガムシャラ行動だけでは信用も</text>
+  <text x="180" y="944" text-anchor="middle" class="kt" font-size="9.5" fill="#991B1B">土台も足りず、空回りして消耗するパターン</text>
+
+  <rect x="16" y="1004" width="328" height="130" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="1028" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#166534">資格 80 × 行動 80 = 6400</text>
+  <text x="180" y="1050" text-anchor="middle" class="kt" font-size="9.5" fill="#166534">武器を手に、求人応募・実務投入という</text>
+  <text x="180" y="1066" text-anchor="middle" class="kt" font-size="9.5" fill="#166534">攻撃を重ねる。掛け算だからこそ跳ね上がる</text>
+  <text x="180" y="1082" text-anchor="middle" class="kt" font-size="9.5" fill="#166534">ボーナスタイム</text>
+
+  <text x="180" y="1170" text-anchor="middle" class="kt" font-size="11" fill="#374151">資格は「持っているだけ」では回らない歯車。</text>
+  <text x="180" y="1188" text-anchor="middle" class="kt" font-size="11" fill="#374151">求人への応募、実務への投入という行動を</text>
+  <text x="180" y="1206" text-anchor="middle" class="kt" font-size="11" fill="#374151">掛け合わせて——</text>
+  <text x="180" y="1230" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#16A34A">初めて人生のボス戦をクリアできる</text>
+  <text x="180" y="1248" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#16A34A">チート能力に化ける。それが「行動の掛け算」</text>
+</svg>

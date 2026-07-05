@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1230" width="360" height="1230" role="img" aria-labelledby="tgsvgtitle tgsvgdesc">
+  <title id="tgsvgtitle">宅建と行政書士の試験範囲比較と民法共通科目の相乗効果ステップアップマップ（モバイル版）</title>
+  <desc id="tgsvgdesc">宅建の4分野という小さなハコと行政書士の8分野という大きなハコのボリューム差、そして中央で民法のハコがドッキングして知識が引き継がれる仕組みを示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1230" rx="12" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">宅建×行政書士 法律資格ステップアップ</text>
+  <text x="180" y="42" text-anchor="middle" font-size="9.5" fill="#64748B">小さなハコ（宅建）→民法ドッキング→大きなハコ（行政書士）</text>
+
+  <!-- 宅建 -->
+  <text x="180" y="66" text-anchor="middle" font-size="12.5" font-weight="700" fill="#15803D">宅建士 4分野（小さなハコ）</text>
+  <text x="180" y="82" text-anchor="middle" font-size="9.5" fill="#64748B">200〜300時間で攻略できるコンパクトな範囲</text>
+  <rect x="16" y="94" width="328" height="272" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+
+  <rect x="28" y="106" width="304" height="42" rx="8" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="180" y="128" text-anchor="middle" font-size="11.5" font-weight="700" fill="#15803D">宅建業法（20問）最優先の得点源</text>
+
+  <rect x="28" y="156" width="304" height="48" rx="8" fill="#BBF7D0" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="180" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#14532D">権利関係（民法）</text>
+  <text x="180" y="194" text-anchor="middle" font-size="9.5" fill="#14532D">14問・共通科目★</text>
+
+  <rect x="28" y="212" width="304" height="42" rx="8" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="180" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#15803D">法令上の制限（8問）暗記中心</text>
+
+  <rect x="28" y="262" width="304" height="42" rx="8" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="180" y="284" text-anchor="middle" font-size="11.5" font-weight="700" fill="#15803D">税・その他（8問）直前期に暗記</text>
+
+  <!-- Docking -->
+  <line x1="180" y1="376" x2="180" y2="404" stroke="#22C55E" stroke-width="3" stroke-dasharray="7,5"/>
+  <circle cx="180" cy="440" r="52" fill="#F0FDF4" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="180" y="432" text-anchor="middle" font-size="13" font-weight="700" fill="#14532D">🔗 民法</text>
+  <text x="180" y="448" text-anchor="middle" font-size="9.5" fill="#14532D">ドッキング</text>
+  <text x="180" y="462" text-anchor="middle" font-size="9" fill="#14532D">知識スライド</text>
+  <line x1="180" y1="492" x2="180" y2="520" stroke="#22C55E" stroke-width="3" stroke-dasharray="7,5"/>
+
+  <text x="180" y="546" text-anchor="middle" font-size="10.5" font-weight="700" fill="#15803D">宅建の権利関係で鍛えた民法の土台を</text>
+  <text x="180" y="562" text-anchor="middle" font-size="10.5" font-weight="700" fill="#B91C1C">行政書士の民法へそのまま引き継げる</text>
+
+  <!-- 行政書士 -->
+  <text x="180" y="600" text-anchor="middle" font-size="12.5" font-weight="700" fill="#B91C1C">行政書士 8分野（大きなハコ）</text>
+  <text x="180" y="616" text-anchor="middle" font-size="9.5" fill="#64748B">500〜800時間が必要な広大な範囲</text>
+  <rect x="16" y="628" width="328" height="446" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+
+  <rect x="28" y="640" width="304" height="38" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="664" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">基礎法学</text>
+
+  <rect x="28" y="684" width="304" height="38" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="708" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">憲法</text>
+
+  <rect x="28" y="728" width="304" height="48" rx="8" fill="#FECACA" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="180" y="750" text-anchor="middle" font-size="12" font-weight="700" fill="#7F1D1D">行政法（112点）</text>
+  <text x="180" y="766" text-anchor="middle" font-size="9.5" fill="#7F1D1D">最大配点・最優先</text>
+
+  <rect x="28" y="782" width="304" height="48" rx="8" fill="#BBF7D0" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="180" y="804" text-anchor="middle" font-size="12" font-weight="700" fill="#14532D">民法</text>
+  <text x="180" y="820" text-anchor="middle" font-size="9.5" fill="#14532D">共通科目★・宅建の知識が活きる</text>
+
+  <rect x="28" y="836" width="304" height="38" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="860" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">商法・会社法</text>
+
+  <rect x="28" y="880" width="304" height="38" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="904" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">政治・経済・社会</text>
+
+  <rect x="28" y="924" width="304" height="38" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="948" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">情報通信・個人情報保護</text>
+
+  <rect x="28" y="968" width="304" height="38" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="992" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C">文章理解</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="1094" width="328" height="120" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="1118" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">4分野の小さなハコで民法の基礎を固めてから、</text>
+  <text x="180" y="1136" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">8分野の大きなハコへ知識をスライドさせるのが</text>
+  <text x="180" y="1154" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">最短ルート</text>
+  <text x="180" y="1178" text-anchor="middle" font-size="9.5" fill="#B45309">行政書士から独学でいきなり挑むより、宅建の</text>
+  <text x="180" y="1194" text-anchor="middle" font-size="9.5" fill="#B45309">権利関係を経由した方が学習コストを圧縮できる</text>
+</svg>

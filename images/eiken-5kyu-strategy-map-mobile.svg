@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1560" viewBox="0 0 360 1560" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">英検5級 試験構成と3大攻略ポイント合格戦略マップ（モバイル版）</title>
+  <desc id="svgdesc">筆記とリスニングの配点ウェイト、および語彙600語・be動詞・一般動詞の基礎という3大攻略ポイントを縦に並べた戦略マップ</desc>
+  <defs>
+    <linearGradient id="me5Title" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#334155"/></linearGradient>
+    <linearGradient id="me5Write" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#93C5FD"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+    <linearGradient id="me5Listen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FDE68A"/><stop offset="1" stop-color="#F59E0B"/></linearGradient>
+    <style>.me5t{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1560" rx="16" fill="#F0F9FF"/>
+
+  <rect x="16" y="20" width="328" height="64" rx="12" fill="url(#me5Title)"/>
+  <text x="180" y="42" text-anchor="middle" class="me5t" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="2">大谷流・英検5級 攻略ナビ</text>
+  <text x="180" y="64" text-anchor="middle" class="me5t" font-size="12.5" font-weight="800" fill="#FFFFFF">試験構成と3大攻略ポイント</text>
+
+  <text x="180" y="104" text-anchor="middle" class="me5t" font-size="11" font-weight="700" fill="#334155">一次試験のみ：筆記とリスニングの配点</text>
+
+  <rect x="16" y="118" width="328" height="180" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <text x="32" y="146" class="me5t" font-size="12.5" font-weight="800" fill="#1E3A8A">筆記（25分）</text>
+  <text x="32" y="162" font-size="9.5" fill="#64748b" class="me5t">語彙15問＋会話文5問＋内容一致5問＝25問</text>
+  <rect x="32" y="172" width="296" height="24" rx="12" fill="url(#me5Write)"/>
+  <text x="180" y="188" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#fff">筆記：25問（記述・英作文なし）</text>
+
+  <text x="32" y="222" class="me5t" font-size="12.5" font-weight="800" fill="#92400E">リスニング（約20分）</text>
+  <text x="32" y="238" font-size="9.5" fill="#64748b" class="me5t">応答文10問＋内容一致5問＋イラスト5問＝20問</text>
+  <rect x="32" y="248" width="296" height="24" rx="12" fill="url(#me5Listen)"/>
+  <text x="180" y="264" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#fff">リスニング：20問</text>
+
+  <text x="180" y="288" text-anchor="middle" class="me5t" font-size="10" font-weight="700" fill="#16A34A">合計45問、全てマークシート。二次試験もなし。</text>
+
+  <text x="180" y="330" text-anchor="middle" class="me5t" font-size="12" font-weight="700" fill="#334155">最優先で味方にすべき3大攻略ポイント</text>
+
+  <!-- CARD 1: 語彙600語 -->
+  <rect x="16" y="350" width="328" height="330" rx="14" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <rect x="16" y="350" width="328" height="40" rx="14" fill="#EC4899"/>
+  <text x="180" y="368" text-anchor="middle" class="me5t" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">POINT 1　単語のハコ</text>
+  <text x="180" y="384" text-anchor="middle" class="me5t" font-size="13" font-weight="800" fill="#fff">語彙 約600語</text>
+
+  <rect x="30" y="404" width="300" height="128" rx="10" fill="rgba(236,72,153,.08)" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="424" text-anchor="middle" class="me5t" font-size="10.5" fill="#9D174D">攻略：数字・曜日・色・家族・</text>
+  <text x="180" y="440" text-anchor="middle" class="me5t" font-size="10.5" fill="#9D174D">動物・食べ物・学校関連語など、</text>
+  <text x="180" y="456" text-anchor="middle" class="me5t" font-size="10.5" fill="#9D174D">中学1年教科書レベルが出題範囲。</text>
+  <text x="180" y="472" text-anchor="middle" class="me5t" font-size="10.5" fill="#9D174D">単語帳1冊を仕上げれば十分。</text>
+  <text x="180" y="494" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#BE185D">全問に直結する最重要ハコ</text>
+
+  <text x="180" y="644" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#831843">「でる順パス単5級」を1冊仕上げれば</text>
+  <text x="180" y="660" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#831843">一瞬でクリア</text>
+
+  <!-- CARD 2: be動詞 -->
+  <rect x="16" y="700" width="328" height="330" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="16" y="700" width="328" height="40" rx="14" fill="#22C55E"/>
+  <text x="180" y="718" text-anchor="middle" class="me5t" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">POINT 2　基礎文法のハコ</text>
+  <text x="180" y="734" text-anchor="middle" class="me5t" font-size="13" font-weight="800" fill="#fff">be動詞（am/is/are）</text>
+
+  <text x="180" y="768" text-anchor="middle" class="me5t" font-size="15" font-weight="800" fill="#15803D">I am / He is / We are</text>
+
+  <rect x="30" y="784" width="300" height="128" rx="10" fill="rgba(34,197,94,.08)" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="804" text-anchor="middle" class="me5t" font-size="10.5" fill="#14532D">攻略：主語ごとの使い分け</text>
+  <text x="180" y="820" text-anchor="middle" class="me5t" font-size="10.5" fill="#14532D">（I am／You are／He, She is）</text>
+  <text x="180" y="836" text-anchor="middle" class="me5t" font-size="10.5" fill="#14532D">を例文ごと丸暗記してしまう。</text>
+  <text x="180" y="852" text-anchor="middle" class="me5t" font-size="10.5" fill="#14532D">疑問文・否定文も同じ型で対応。</text>
+  <text x="180" y="874" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#15803D">全文法問題の土台になる</text>
+
+  <text x="180" y="994" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#166534">たった3パターンを覚えるだけで</text>
+  <text x="180" y="1010" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#166534">文法問題の土台が完成</text>
+
+  <!-- CARD 3: 一般動詞 -->
+  <rect x="16" y="1050" width="328" height="330" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="16" y="1050" width="328" height="40" rx="14" fill="#8B5CF6"/>
+  <text x="180" y="1068" text-anchor="middle" class="me5t" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">POINT 3　基礎文法のハコ</text>
+  <text x="180" y="1084" text-anchor="middle" class="me5t" font-size="13" font-weight="800" fill="#fff">一般動詞の現在形</text>
+
+  <rect x="30" y="1104" width="300" height="128" rx="10" fill="rgba(139,92,246,.08)" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="1124" text-anchor="middle" class="me5t" font-size="10.5" fill="#4C1D95">攻略：I like / She likes の</text>
+  <text x="180" y="1140" text-anchor="middle" class="me5t" font-size="10.5" fill="#4C1D95">3人称単数のsを忘れない。</text>
+  <text x="180" y="1156" text-anchor="middle" class="me5t" font-size="10.5" fill="#4C1D95">疑問詞（what/where/who/</text>
+  <text x="180" y="1172" text-anchor="middle" class="me5t" font-size="10.5" fill="#4C1D95">when/how）も例文ごと暗記。</text>
+  <text x="180" y="1194" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#5B21B6">be動詞とセットで得点源</text>
+
+  <text x="180" y="1344" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#4C1D95">be動詞と合わせて覚えれば</text>
+  <text x="180" y="1360" text-anchor="middle" class="me5t" font-size="10.5" font-weight="700" fill="#4C1D95">文法問題は怖くない</text>
+
+  <!-- Footer -->
+  <text x="180" y="1420" text-anchor="middle" class="me5t" font-size="11" fill="#374151">記述も英作文も一切ない「選ぶだけパズル」。</text>
+  <text x="180" y="1438" text-anchor="middle" class="me5t" font-size="11" fill="#374151">よく出る600語とbe動詞・一般動詞の基礎さえ</text>
+  <text x="180" y="1462" text-anchor="middle" class="me5t" font-size="11" font-weight="700" fill="#16A34A">味方にしておけば、英検5級は一瞬で</text>
+  <text x="180" y="1478" text-anchor="middle" class="me5t" font-size="11" font-weight="700" fill="#16A34A">クリアできるイージーなボスです。</text>
+</svg>

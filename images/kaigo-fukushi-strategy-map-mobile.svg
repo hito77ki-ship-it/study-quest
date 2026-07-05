@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1180" width="360" height="1180">
+  <defs>
+    <linearGradient id="kmBossM" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#86EFAC"/><stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <style>text{font-family:'Noto Sans JP',system-ui,sans-serif;}</style>
+  </defs>
+  <rect width="360" height="1180" rx="16" fill="#fff8f4"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#1E293B">介護福祉士 13科目 配点ウェイト</text>
+  <text x="180" y="42" text-anchor="middle" font-size="11" font-weight="800" fill="#1E293B">×足切り回避マップ</text>
+  <text x="180" y="60" text-anchor="middle" font-size="9" fill="#64748B">合格基準：総得点60%程度＋13科目すべて1点以上</text>
+
+  <rect x="16" y="76" width="328" height="110" rx="14" fill="url(#kmBossM)"/>
+  <text x="180" y="102" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">生活支援技術（せいかつしえんぎじゅつ）</text>
+  <text x="180" y="140" text-anchor="middle" font-size="34" font-weight="800" fill="#fff">26問</text>
+  <text x="180" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#F0FDF4">全125問中 最大の得点源／出題数No.1ボス</text>
+
+  <text x="180" y="206" text-anchor="middle" font-size="11" font-weight="800" fill="#166534">PHASE1 配点ウェイト——他12科目</text>
+
+  <g font-size="10.5" fill="#1E3A8A">
+    <rect x="16" y="216" width="328" height="30" rx="6" fill="#DBEAFE"/>
+    <text x="30" y="236" font-weight="700">総合問題</text><text x="330" y="236" text-anchor="end" font-weight="800">12問</text>
+    <rect x="16" y="250" width="328" height="30" rx="6" fill="#DBEAFE"/>
+    <text x="30" y="270" font-weight="700">社会の理解</text><text x="330" y="270" text-anchor="end" font-weight="800">12問</text>
+    <rect x="16" y="284" width="328" height="30" rx="6" fill="#DBEAFE"/>
+    <text x="30" y="304" font-weight="700">こころとからだのしくみ</text><text x="330" y="304" text-anchor="end" font-weight="800">12問</text>
+  </g>
+  <g font-size="10.5" fill="#4C1D95">
+    <rect x="16" y="318" width="328" height="30" rx="6" fill="#EDE9FE"/>
+    <text x="30" y="338" font-weight="700">認知症の理解</text><text x="330" y="338" text-anchor="end" font-weight="800">10問</text>
+    <rect x="16" y="352" width="328" height="30" rx="6" fill="#EDE9FE"/>
+    <text x="30" y="372" font-weight="700">障害の理解</text><text x="330" y="372" text-anchor="end" font-weight="800">10問</text>
+    <rect x="16" y="386" width="328" height="30" rx="6" fill="#EDE9FE"/>
+    <text x="30" y="406" font-weight="700">介護の基本</text><text x="330" y="406" text-anchor="end" font-weight="800">10問</text>
+  </g>
+  <g font-size="10.5" fill="#92400E">
+    <rect x="16" y="420" width="328" height="30" rx="6" fill="#FEF3C7"/>
+    <text x="30" y="440" font-weight="700">発達と老化の理解</text><text x="330" y="440" text-anchor="end" font-weight="800">8問</text>
+    <rect x="16" y="454" width="328" height="30" rx="6" fill="#FEF3C7"/>
+    <text x="30" y="474" font-weight="700">介護過程</text><text x="330" y="474" text-anchor="end" font-weight="800">8問</text>
+    <rect x="16" y="488" width="328" height="30" rx="6" fill="#FEF3C7"/>
+    <text x="30" y="508" font-weight="700">コミュニケーション技術</text><text x="330" y="508" text-anchor="end" font-weight="800">6問</text>
+    <rect x="16" y="522" width="328" height="30" rx="6" fill="#FEF3C7"/>
+    <text x="30" y="542" font-weight="700">医療的ケア</text><text x="330" y="542" text-anchor="end" font-weight="800">5問</text>
+    <rect x="16" y="556" width="328" height="30" rx="6" fill="#FEF3C7"/>
+    <text x="30" y="576" font-weight="700">人間関係とコミュニケーション</text><text x="330" y="576" text-anchor="end" font-weight="800">4問</text>
+    <rect x="16" y="590" width="328" height="30" rx="6" fill="#FEF3C7"/>
+    <text x="30" y="610" font-weight="700">人間の尊厳と自立</text><text x="330" y="610" text-anchor="end" font-weight="800">2問</text>
+  </g>
+  <rect x="16" y="628" width="328" height="40" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="652" text-anchor="middle" font-size="9.5" fill="#92400E">最小科目「人間の尊厳と自立」も、2問だからこそ1点死守が重要</text>
+
+  <text x="180" y="694" text-anchor="middle" font-size="11" font-weight="800" fill="#B45309">PHASE2 13科目すべて「1点死守防衛線」</text>
+  <text x="180" y="712" text-anchor="middle" font-size="9" fill="#64748B">出題数の多寡に関係なく、全科目1点以上取れないと</text>
+  <text x="180" y="726" text-anchor="middle" font-size="9" fill="#64748B">総合点60%超でも不合格になる</text>
+
+  <rect x="16" y="740" width="328" height="56" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="180" y="764" text-anchor="middle" font-size="10.5" font-weight="800" fill="#14532D">生活支援技術（ボス）も例外なく1点死守</text>
+  <text x="180" y="782" text-anchor="middle" font-size="9.5" fill="#15803D">全26問中でも「取りこぼしゼロ」の意識が必要</text>
+
+  <rect x="16" y="810" width="328" height="110" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="180" y="836" text-anchor="middle" font-size="10.5" fill="#374151">合計125問・13科目。生活支援技術という</text>
+  <text x="180" y="854" text-anchor="middle" font-size="10.5" fill="#374151">大きな得点源で稼ぎながら、残り12科目でも</text>
+  <text x="180" y="872" text-anchor="middle" font-size="10.5" fill="#374151">足切りゼロを徹底する——</text>
+  <text x="180" y="896" text-anchor="middle" font-size="10.5" font-weight="700" fill="#16A34A">それが介護福祉士試験の「配点バランスゲーム」</text>
+
+  <rect x="16" y="936" width="328" height="76" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="960" text-anchor="middle" font-size="9.5" fill="#374151">すべての科目を均等に丸暗記する必要はない。</text>
+  <text x="180" y="978" text-anchor="middle" font-size="9.5" fill="#374151">問題数の大きさで優先順位をつけ、小さい科目ほど</text>
+  <text x="180" y="996" text-anchor="middle" font-size="9.5" font-weight="700" fill="#B45309">「1点だけでいいから絶対取る」意識が最短ルート</text>
+</svg>

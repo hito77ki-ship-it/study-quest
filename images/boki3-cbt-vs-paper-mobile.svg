@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" font-family="'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+  <defs>
+    <linearGradient id="cbtHm" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/></linearGradient>
+    <linearGradient id="papHm" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#B45309"/></linearGradient>
+    <linearGradient id="cbtBm" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#EFF6FF"/><stop offset="100%" stop-color="#DBEAFE"/></linearGradient>
+    <linearGradient id="papBm" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFBEB"/><stop offset="100%" stop-color="#FEF3C7"/></linearGradient>
+  </defs>
+  <rect width="360" height="900" fill="#F0F9FF"/>
+  <text x="180" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1A202C">ネット試験 vs 統一試験（紙）</text>
+  <text x="180" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">どっちのダンジョンで戦う？</text>
+
+  <!-- CBT Card -->
+  <rect x="16" y="60" width="328" height="380" rx="14" fill="url(#cbtBm)" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="16" y="60" width="328" height="64" rx="14" fill="url(#cbtHm)"/>
+  <rect x="16" y="104" width="328" height="20" fill="#1D4ED8"/>
+  <text x="180" y="88" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">💻 ネット試験（CBT）</text>
+  <text x="180" y="106" text-anchor="middle" font-size="10.5" fill="#BFDBFE">シーフ型：素早く攻略するプレイヤー</text>
+
+  <rect x="28" y="134" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <text x="42" y="156" font-size="11.5" fill="#1E3A5F">＋ほぼ毎日、全国テストセンターで受験OK</text>
+
+  <rect x="28" y="172" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <text x="42" y="194" font-size="11.5" fill="#1E3A5F">＋試験終了後すぐ画面で合否・点数確認</text>
+
+  <rect x="28" y="210" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <text x="42" y="232" font-size="11.5" fill="#1E3A5F">＋不合格でも翌日からすぐ再チャレンジ可</text>
+
+  <rect x="28" y="248" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
+  <text x="42" y="270" font-size="11.5" fill="#1E3A5F">＋学習進捗に合わせ受験日を自由に調整</text>
+
+  <rect x="28" y="290" width="304" height="46" rx="8" fill="rgba(234,88,12,0.1)" stroke="rgba(234,88,12,0.35)" stroke-width="1"/>
+  <text x="42" y="308" font-size="11" fill="#7C2D12">！画面と白紙を往復する視線移動で</text>
+  <text x="42" y="324" font-size="11" fill="#7C2D12">パニックになる罠あり！事前練習が必須</text>
+
+  <rect x="28" y="348" width="304" height="76" rx="10" fill="#1D4ED8"/>
+  <text x="180" y="372" text-anchor="middle" font-size="11.5" fill="#BFDBFE">大谷的おすすめ度</text>
+  <text x="180" y="404" text-anchor="middle" font-size="22" font-weight="700" fill="#FDE68A">★★★★★</text>
+
+  <!-- Paper Card -->
+  <rect x="16" y="452" width="328" height="400" rx="14" fill="url(#papBm)" stroke="#FCD34D" stroke-width="1.5"/>
+  <rect x="16" y="452" width="328" height="64" rx="14" fill="url(#papHm)"/>
+  <rect x="16" y="496" width="328" height="20" fill="#B45309"/>
+  <text x="180" y="480" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">📝 統一試験（紙）</text>
+  <text x="180" y="498" text-anchor="middle" font-size="10.5" fill="#FEF9C3">ナイト型：一発決戦に集中するプレイヤー</text>
+
+  <rect x="28" y="526" width="304" height="34" rx="8" fill="rgba(245,158,11,0.13)"/>
+  <text x="42" y="548" font-size="11.5" fill="#4C2A0A">＋問題用紙にメモ・計算を直接書き込める</text>
+
+  <rect x="28" y="564" width="304" height="34" rx="8" fill="rgba(245,158,11,0.13)"/>
+  <text x="42" y="586" font-size="11.5" fill="#4C2A0A">＋仲間・同期と同じ日に受験できる連帯感</text>
+
+  <rect x="28" y="602" width="304" height="34" rx="8" fill="rgba(245,158,11,0.13)"/>
+  <text x="42" y="624" font-size="11.5" fill="#4C2A0A">＋問題冊子を手元に置いて全体を俯瞰しやすい</text>
+
+  <rect x="28" y="640" width="304" height="34" rx="8" fill="rgba(220,38,38,0.1)" stroke="rgba(220,38,38,0.3)" stroke-width="1"/>
+  <text x="42" y="662" font-size="11" fill="#7C2D12">！年3回（11月・2月・6月）のみの一発勝負</text>
+
+  <rect x="28" y="678" width="304" height="46" rx="8" fill="rgba(220,38,38,0.1)" stroke="rgba(220,38,38,0.3)" stroke-width="1"/>
+  <text x="42" y="696" font-size="11" fill="#7C2D12">！合否まで2〜3週間待ち＋難易度ガチャで</text>
+  <text x="42" y="712" font-size="11" fill="#7C2D12">ハズレ回に当たるリスクあり</text>
+
+  <rect x="28" y="736" width="304" height="90" rx="10" fill="#B45309"/>
+  <text x="180" y="760" text-anchor="middle" font-size="10.5" fill="#FEF9C3">大谷的おすすめ度（PC苦手な人限定）</text>
+  <text x="180" y="792" text-anchor="middle" font-size="22" font-weight="700" fill="#FEF9C3">★★★☆☆</text>
+</svg>

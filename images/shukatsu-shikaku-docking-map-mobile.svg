@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1120" width="360" height="1120">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1120" rx="12" fill="#FAFDF6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">志望業界×資格ドッキング戦略マップ</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9.5" fill="#64748B">志望業界に、シンクロする資格をドッキングさせよう</text>
+
+  <!-- 金融保険ペア -->
+  <rect x="16" y="62" width="328" height="56" rx="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="180" y="86" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1D4ED8">🏦 金融・保険</text>
+  <text x="180" y="104" text-anchor="middle" font-size="9.5" fill="#1E40AF">数字への信頼が命</text>
+  <text x="180" y="132" text-anchor="middle" font-size="16" font-weight="700" fill="#3B82F6">↓ ガチッ</text>
+  <rect x="16" y="146" width="328" height="112" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="180" y="166" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">🔌 ドッキング武器</text>
+  <text x="180" y="190" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">簿記2級 ＋FP3級（サブ）</text>
+  <text x="180" y="212" text-anchor="middle" font-size="10" fill="#3B5BA9">「数字で語れる学生」</text>
+  <text x="180" y="228" text-anchor="middle" font-size="10" fill="#3B5BA9">という一貫したストーリー</text>
+
+  <!-- メーカー商社ペア -->
+  <rect x="16" y="276" width="328" height="56" rx="10" fill="#FFEDD5" stroke="#F97316" stroke-width="2"/>
+  <text x="180" y="300" text-anchor="middle" font-size="13.5" font-weight="700" fill="#C2410C">🏭 メーカー・商社</text>
+  <text x="180" y="318" text-anchor="middle" font-size="9.5" fill="#9A3412">グローバル×数字管理</text>
+  <text x="180" y="346" text-anchor="middle" font-size="16" font-weight="700" fill="#F97316">↓ ガチッ</text>
+  <rect x="16" y="360" width="328" height="112" rx="10" fill="#FFF7ED" stroke="#F97316" stroke-width="2.5"/>
+  <text x="180" y="380" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">🔌 ドッキング武器</text>
+  <text x="180" y="404" text-anchor="middle" font-size="15" font-weight="700" fill="#9A3412">TOEIC ＋簿記2級（サブ）</text>
+  <text x="180" y="426" text-anchor="middle" font-size="10" fill="#B45309">グローバル対応力を</text>
+  <text x="180" y="442" text-anchor="middle" font-size="10" fill="#B45309">数字で裏付けられる</text>
+
+  <!-- IT SaaSペア -->
+  <rect x="16" y="490" width="328" height="56" rx="10" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="180" y="514" text-anchor="middle" font-size="13.5" font-weight="700" fill="#6D28D9">💻 IT・SaaS</text>
+  <text x="180" y="532" text-anchor="middle" font-size="9.5" fill="#5B21B6">ITリテラシーが土台</text>
+  <text x="180" y="560" text-anchor="middle" font-size="16" font-weight="700" fill="#8B5CF6">↓ ガチッ</text>
+  <rect x="16" y="574" width="328" height="112" rx="10" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2.5"/>
+  <text x="180" y="594" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6D28D9">🔌 ドッキング武器</text>
+  <text x="180" y="618" text-anchor="middle" font-size="15" font-weight="700" fill="#5B21B6">ITパスポート ＋基本情報（サブ）</text>
+  <text x="180" y="640" text-anchor="middle" font-size="10" fill="#6D28D9">非情報系でも通用する</text>
+  <text x="180" y="656" text-anchor="middle" font-size="10" fill="#6D28D9">ITリテラシーの証明</text>
+
+  <!-- 不動産ペア -->
+  <rect x="16" y="704" width="328" height="56" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="180" y="728" text-anchor="middle" font-size="13.5" font-weight="700" fill="#15803D">🏠 不動産</text>
+  <text x="180" y="746" text-anchor="middle" font-size="9.5" fill="#166534">独占業務への本気度</text>
+  <text x="180" y="774" text-anchor="middle" font-size="16" font-weight="700" fill="#22C55E">↓ ガチッ</text>
+  <rect x="16" y="788" width="328" height="112" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="2.5"/>
+  <text x="180" y="808" text-anchor="middle" font-size="10.5" font-weight="700" fill="#15803D">🔌 ドッキング武器</text>
+  <text x="180" y="832" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">宅建（独占業務資格）</text>
+  <text x="180" y="854" text-anchor="middle" font-size="10" fill="#15803D">難易度の高さがそのまま</text>
+  <text x="180" y="870" text-anchor="middle" font-size="10" fill="#15803D">本気度の証明になる</text>
+
+  <!-- 下部サマリー -->
+  <rect x="16" y="918" width="328" height="180" rx="10" fill="#1E293B"/>
+  <text x="180" y="944" text-anchor="middle" font-size="12" font-weight="700" fill="#8CC63F">ハコを間違えると、資格は「死に武器」になる</text>
+  <text x="180" y="966" text-anchor="middle" font-size="10" fill="#CBD5E1">面接官が見ているのは資格の名前ではなく、</text>
+  <text x="180" y="982" text-anchor="middle" font-size="10" fill="#CBD5E1">志望業界のハコにシンクロした</text>
+  <text x="180" y="998" text-anchor="middle" font-size="10" fill="#CBD5E1">「なぜこれを選んだか」というストーリー。</text>
+  <text x="180" y="1018" text-anchor="middle" font-size="10" fill="#CBD5E1">簿記2級は金融・メーカーの両方でシンクロする、</text>
+  <text x="180" y="1034" text-anchor="middle" font-size="10" fill="#CBD5E1">汎用性の高い万能ドッキング武器。</text>
+  <text x="180" y="1060" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FDE68A">志望業界を決めたら、そのハコに刺さる</text>
+  <text x="180" y="1078" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FDE68A">資格から逆算して選ぼう。</text>
+</svg>

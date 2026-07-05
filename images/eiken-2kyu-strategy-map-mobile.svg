@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1900" viewBox="0 0 360 1900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">英検2級 試験構成と4大攻略戦略マップ（モバイル版）</title>
+  <desc id="svgdesc">一次試験の語彙・長文読解・英作文・リスニングの配点バランスと、二次試験（面接）の合格基準防衛線を縦に並べた戦略マップ</desc>
+  <defs>
+    <linearGradient id="me2Title" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#334155"/></linearGradient>
+    <linearGradient id="me2Wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FCA5A5"/><stop offset="0.55" stop-color="#FDE68A"/><stop offset="1" stop-color="#86EFAC"/></linearGradient>
+    <style>.met{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1900" rx="16" fill="#FFFBEB"/>
+
+  <rect x="16" y="20" width="328" height="64" rx="12" fill="url(#me2Title)"/>
+  <text x="180" y="42" text-anchor="middle" class="met" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="2">大谷流・英検2級 攻略ナビ</text>
+  <text x="180" y="64" text-anchor="middle" class="met" font-size="14" font-weight="800" fill="#FFFFFF">試験構成と4大攻略戦略マップ</text>
+
+  <text x="180" y="106" text-anchor="middle" class="met" font-size="11" font-weight="700" fill="#334155">一次試験：筆記85分＋リスニング25分</text>
+  <text x="180" y="122" text-anchor="middle" class="met" font-size="11" font-weight="700" fill="#334155">4つのハコの配点バランス</text>
+
+  <!-- CARD 1: 語彙・熟語 -->
+  <rect x="16" y="140" width="328" height="300" rx="14" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+  <rect x="16" y="140" width="328" height="40" rx="14" fill="#F59E0B"/>
+  <text x="180" y="158" text-anchor="middle" class="met" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 1　暗記のハコ</text>
+  <text x="180" y="174" text-anchor="middle" class="met" font-size="13" font-weight="800" fill="#fff">語彙・熟語（大問1）</text>
+
+  <text x="180" y="204" text-anchor="middle" class="met" font-size="11.5" font-weight="700" fill="#92400E">短文穴埋め25問／必要語彙数 約5,000語</text>
+
+  <rect x="30" y="216" width="300" height="94" rx="10" fill="rgba(245,158,11,.10)" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="180" y="236" text-anchor="middle" class="met" font-size="10.5" fill="#92400E">攻略：「でる順パス単2級」を</text>
+  <text x="180" y="252" text-anchor="middle" class="met" font-size="10.5" fill="#92400E">1日15〜20語ペースで3ヶ月で2周する。</text>
+  <text x="180" y="272" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#B45309">準2級との最大の壁がここ</text>
+
+  <text x="180" y="330" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#78350F">最優先で味方にすべき「暗記のハコ」</text>
+
+  <!-- CARD 2: 長文読解 -->
+  <rect x="16" y="460" width="328" height="300" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="460" width="328" height="40" rx="14" fill="#3B82F6"/>
+  <text x="180" y="478" text-anchor="middle" class="met" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 2　読解のハコ</text>
+  <text x="180" y="494" text-anchor="middle" class="met" font-size="13" font-weight="800" fill="#fff">長文読解（大問2〜4）</text>
+
+  <text x="180" y="524" text-anchor="middle" class="met" font-size="11.5" font-weight="700" fill="#1E3A8A">最大の得点源パート／説明文・論説・Eメール形式</text>
+
+  <rect x="30" y="536" width="300" height="94" rx="10" fill="rgba(59,130,246,.10)" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="556" text-anchor="middle" class="met" font-size="10.5" fill="#1E3A8A">攻略：設問を先読みし、</text>
+  <text x="180" y="572" text-anchor="middle" class="met" font-size="10.5" fill="#1E3A8A">トピックセンテンスを意識して段落を読む。</text>
+  <text x="180" y="592" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#1D4ED8">語彙のハコと連動する</text>
+
+  <text x="180" y="650" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#1E3A8A">過去問演習で形式に慣れる「読解のハコ」</text>
+
+  <!-- CARD 3: 英作文 -->
+  <rect x="16" y="780" width="328" height="300" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="16" y="780" width="328" height="40" rx="14" fill="#8B5CF6"/>
+  <text x="180" y="798" text-anchor="middle" class="met" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 3　テンプレのハコ</text>
+  <text x="180" y="814" text-anchor="middle" class="met" font-size="13" font-weight="800" fill="#fff">英作文（ライティング）</text>
+
+  <text x="180" y="844" text-anchor="middle" class="met" font-size="11.5" font-weight="700" fill="#4C1D95">配点25点満点／意見論述80〜100語</text>
+
+  <rect x="30" y="856" width="300" height="94" rx="10" fill="rgba(139,92,246,.10)" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="876" text-anchor="middle" class="met" font-size="10.5" fill="#4C1D95">攻略：意見→理由2つ→</text>
+  <text x="180" y="892" text-anchor="middle" class="met" font-size="10.5" fill="#4C1D95">まとめの4段落テンプレをそのまま当てはめる。</text>
+  <text x="180" y="912" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#5B21B6">完璧な文法より型が命</text>
+
+  <text x="180" y="970" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#4C1D95">最大のチート技が効く「テンプレのハコ」</text>
+
+  <!-- CARD 4: リスニング -->
+  <rect x="16" y="1100" width="328" height="300" rx="14" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="2"/>
+  <rect x="16" y="1100" width="328" height="40" rx="14" fill="#14B8A6"/>
+  <text x="180" y="1118" text-anchor="middle" class="met" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 4　継続のハコ</text>
+  <text x="180" y="1134" text-anchor="middle" class="met" font-size="13" font-weight="800" fill="#fff">リスニング</text>
+
+  <text x="180" y="1164" text-anchor="middle" class="met" font-size="11.5" font-weight="700" fill="#134E4A">約25分・30問／会話理解＋説明文理解</text>
+
+  <rect x="30" y="1176" width="300" height="94" rx="10" fill="rgba(20,184,166,.10)" stroke="#5EEAD4" stroke-width="1.5"/>
+  <text x="180" y="1196" text-anchor="middle" class="met" font-size="10.5" fill="#134E4A">攻略：過去問音声で</text>
+  <text x="180" y="1212" text-anchor="middle" class="met" font-size="10.5" fill="#134E4A">毎日15分シャドーイング。音声は1回のみ再生。</text>
+  <text x="180" y="1232" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#0F766E">積み上げが正直に出る</text>
+
+  <text x="180" y="1290" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#134E4A">毎日の習慣化がすべての「継続のハコ」</text>
+
+  <!-- SECOND STAGE -->
+  <text x="180" y="1440" text-anchor="middle" class="met" font-size="11.5" font-weight="700" fill="#334155">二次試験：個人面接（約7分）</text>
+  <text x="180" y="1456" text-anchor="middle" class="met" font-size="11.5" font-weight="700" fill="#334155">の合格基準防衛線</text>
+
+  <rect x="16" y="1472" width="328" height="270" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <text x="32" y="1502" class="met" font-size="11" font-weight="700" fill="#1E293B">出題：音読＋内容質問＋</text>
+  <text x="32" y="1518" class="met" font-size="11" font-weight="700" fill="#1E293B">3コマ描写＋意見表明2問</text>
+  <text x="32" y="1534" font-size="9.5" fill="#64748b" class="met">（一次合格者のみ受験）</text>
+
+  <rect x="32" y="1548" width="296" height="28" rx="14" fill="url(#me2Wall)" opacity="0.85"/>
+  <rect x="32" y="1548" width="296" height="28" rx="14" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="180" y1="1534" x2="180" y2="1576" stroke="#1E293B" stroke-width="3"/>
+  <text x="180" y="1600" text-anchor="middle" class="met" font-size="10.5" font-weight="800" fill="#1E293B">合格基準防衛線 460/700点</text>
+
+  <text x="90" y="1622" text-anchor="middle" class="met" font-size="9.5" fill="#7F1D1D">沈黙で失点する</text>
+  <text x="270" y="1622" text-anchor="middle" class="met" font-size="9.5" fill="#14532D">定型フレーズで安定突破</text>
+
+  <text x="180" y="1670" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#334155">攻略：「I think ... because ...」の型と</text>
+  <text x="180" y="1686" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#334155">2分スピーチの流れを固定すれば、</text>
+  <text x="180" y="1702" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#334155">一次合格者の大半が安定して突破できる</text>
+  <text x="180" y="1718" text-anchor="middle" class="met" font-size="10.5" font-weight="700" fill="#334155">防衛戦になる。</text>
+
+  <!-- Footer -->
+  <rect x="16" y="1762" width="328" height="118" rx="12" fill="#111827"/>
+  <text x="180" y="1790" text-anchor="middle" class="met" font-size="10.5" fill="#E5E7EB">「暗記のハコ」（語彙）と</text>
+  <text x="180" y="1806" text-anchor="middle" class="met" font-size="10.5" fill="#E5E7EB">「テンプレのハコ」（英作文）を</text>
+  <text x="180" y="1822" text-anchor="middle" class="met" font-size="10.5" fill="#E5E7EB">最優先で味方にすれば、</text>
+  <text x="180" y="1846" text-anchor="middle" class="met" font-size="11" font-weight="700" fill="#22C55E">合格率25〜35%の壁も、CSEスコアの</text>
+  <text x="180" y="1862" text-anchor="middle" class="met" font-size="11" font-weight="700" fill="#22C55E">バランスゲームとして確実に突破できます。</text>
+</svg>

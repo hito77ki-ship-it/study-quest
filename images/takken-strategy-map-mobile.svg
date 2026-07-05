@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1180" viewBox="0 0 360 1180" role="img" aria-labelledby="title desc">
+  <title id="title">宅建試験の科目別配点と満点を狙う戦略マップ（モバイル版）</title>
+  <desc id="desc">宅建業法20問・権利関係14問・法令制限8問・税その他8問の配点比率と、科目ごとの優先度・攻略の合言葉を縦に並べて示す図解</desc>
+  <defs>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:17px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#64748b}
+      .pill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:800;fill:#ffffff}
+      .barlabel{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+      .barsub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:700;fill:#ffffff;opacity:.92}
+      .cardname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#1f2937}
+      .cardbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11.5px;font-weight:600;fill:#334155}
+      .cardsmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#64748b}
+      .stars{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:700}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:700;fill:#166534}
+    </style>
+  </defs>
+
+  <rect width="360" height="1180" rx="20" fill="#fbfdf7"/>
+
+  <text x="180" y="34" text-anchor="middle" class="title">宅建 配点戦略マップ</text>
+  <text x="180" y="52" text-anchor="middle" class="sub">50点満点・4科目の配点比率と優先度</text>
+
+  <text x="20" y="78" class="cardsmall" font-size="10.5">出題数の内訳（全50問）</text>
+  <rect x="20" y="86" width="320" height="30" rx="8" fill="#22c55e"/>
+  <text x="180" y="106" text-anchor="middle" class="barlabel">宅建業法　20問（40%）</text>
+  <rect x="20" y="120" width="224" height="30" rx="8" fill="#3b82f6"/>
+  <text x="132" y="140" text-anchor="middle" class="barlabel" font-size="11.5">権利関係　14問（28%）</text>
+  <rect x="20" y="154" width="128" height="30" rx="8" fill="#f59e0b"/>
+  <text x="84" y="174" text-anchor="middle" class="barlabel" font-size="10.5">法令制限8問</text>
+  <rect x="20" y="188" width="128" height="30" rx="8" fill="#a855f7"/>
+  <text x="84" y="208" text-anchor="middle" class="barlabel" font-size="10.5">税その他8問</text>
+
+  <!-- Card 1: 宅建業法 -->
+  <rect x="20" y="238" width="320" height="176" rx="18" fill="#ffffff" stroke="#86efac" stroke-width="3"/>
+  <rect x="36" y="256" width="88" height="30" rx="15" fill="#22c55e"/>
+  <text x="80" y="276" text-anchor="middle" class="pill">最優先</text>
+  <text x="180" y="278" text-anchor="middle" class="cardname">宅建業法（20問）</text>
+  <text x="36" y="312" class="stars" fill="#f59e0b">難易度 ★★☆</text>
+  <text x="36" y="338" class="cardbody">出題パターンが決まっている暗記科目。</text>
+  <text x="36" y="358" class="cardsmall">ここで満点近くを取り切るのが合格の王道。</text>
+
+  <!-- Card 2: 権利関係 -->
+  <rect x="20" y="430" width="320" height="176" rx="18" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+  <rect x="36" y="448" width="60" height="30" rx="15" fill="#3b82f6"/>
+  <text x="66" y="468" text-anchor="middle" class="pill">中</text>
+  <text x="180" y="470" text-anchor="middle" class="cardname">権利関係（14問）</text>
+  <text x="36" y="504" class="stars" fill="#f59e0b">難易度 ★★★</text>
+  <text x="36" y="530" class="cardbody">最難関の民法。深追い厳禁。</text>
+  <text x="36" y="550" class="cardsmall">14問中8〜9問取れれば十分＝合格ライン。</text>
+
+  <!-- Card 3: 法令制限 -->
+  <rect x="20" y="622" width="320" height="176" rx="18" fill="#ffffff" stroke="#fcd34d" stroke-width="3"/>
+  <rect x="36" y="640" width="50" height="30" rx="15" fill="#f59e0b"/>
+  <text x="61" y="660" text-anchor="middle" class="pill">高</text>
+  <text x="180" y="662" text-anchor="middle" class="cardname">法令制限（8問）</text>
+  <text x="36" y="696" class="stars" fill="#f59e0b">難易度 ★★☆</text>
+  <text x="36" y="722" class="cardbody">都市計画法・建築基準法など数字暗記中心。</text>
+  <text x="36" y="742" class="cardsmall">語呂合わせで直前期に一気に詰め込む。</text>
+
+  <!-- Card 4: 税その他 -->
+  <rect x="20" y="814" width="320" height="176" rx="18" fill="#ffffff" stroke="#e9d5ff" stroke-width="3"/>
+  <rect x="36" y="832" width="50" height="30" rx="15" fill="#a855f7"/>
+  <text x="61" y="852" text-anchor="middle" class="pill">高</text>
+  <text x="180" y="854" text-anchor="middle" class="cardname">税その他・統計（8問）</text>
+  <text x="36" y="888" class="stars" fill="#f59e0b">難易度 ★★☆</text>
+  <text x="36" y="914" class="cardbody">税金知識＋直前の統計データ確認が中心。</text>
+  <text x="36" y="934" class="cardsmall">試験直前の最新データ暗記で得点源になる。</text>
+
+  <!-- Bottom takeaway banner -->
+  <rect x="20" y="1006" width="320" height="150" rx="18" fill="#f0fdf4" stroke="#86efac" stroke-width="2.5"/>
+  <text x="180" y="1042" text-anchor="middle" class="banner">宅建業法（20問）で満点近くを</text>
+  <text x="180" y="1064" text-anchor="middle" class="banner">取り、権利関係（14問）は</text>
+  <text x="180" y="1086" text-anchor="middle" class="banner">深追いしない――</text>
+  <text x="180" y="1112" text-anchor="middle" class="banner">これが独学・最短合格の逆算ルート</text>
+</svg>

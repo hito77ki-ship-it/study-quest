@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1010" width="360" height="1010" role="img" aria-labelledby="title desc">
+  <title id="title">英検2級×TOEIC 知識ドッキング・シナジーマップ（モバイル版）</title>
+  <desc id="desc">英検2級で鍛えた語彙・文法・4技能の基礎体力が、TOEICのListening・Reading・スコアメイク戦略にどう活きるかを縦に並べて示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1010" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">英検2級×TOEIC シナジーマップ</text>
+  <text x="180" y="46" text-anchor="middle" font-size="9.5" fill="#64748B">英検の基礎体力がTOEICに流れ込む</text>
+
+  <!-- 英検2級の武器庫 -->
+  <rect x="20" y="64" width="320" height="34" rx="10" fill="#3B82F6"/>
+  <text x="180" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">🗡 英検2級で鍛えた武器</text>
+
+  <rect x="36" y="108" width="288" height="58" rx="8" fill="#DBEAFE"/>
+  <text x="50" y="130" font-size="11.5" font-weight="700" fill="#1E40AF">約5,000語の語彙の土台</text>
+  <text x="50" y="150" font-size="10" fill="#1E3A8A">「でる順パス単」で固めた基礎ボキャブラリー</text>
+
+  <rect x="36" y="174" width="288" height="58" rx="8" fill="#DBEAFE"/>
+  <text x="50" y="196" font-size="11.5" font-weight="700" fill="#1E40AF">高校文法の正確な運用力</text>
+  <text x="50" y="216" font-size="10" fill="#1E3A8A">関係代名詞・時制・分詞構文の実戦経験</text>
+
+  <rect x="36" y="240" width="288" height="58" rx="8" fill="#DBEAFE"/>
+  <text x="50" y="262" font-size="11.5" font-weight="700" fill="#1E40AF">長文読解・リスニングの型</text>
+  <text x="50" y="282" font-size="10" fill="#1E3A8A">設問先読み・トピックセンテンス把握の習慣</text>
+
+  <rect x="36" y="306" width="288" height="70" rx="8" fill="#BFDBFE"/>
+  <text x="180" y="328" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E3A8A">⚔ 最大のボス戦</text>
+  <text x="180" y="348" text-anchor="middle" font-size="10.5" fill="#1E40AF">英作文・二次面接（W・S）</text>
+  <text x="180" y="364" text-anchor="middle" font-size="9.5" fill="#1E3A8A">4技能を鍛えた経験が地力に変わる</text>
+
+  <rect x="36" y="384" width="288" height="46" rx="8" fill="#1E3A8A"/>
+  <text x="180" y="404" text-anchor="middle" font-size="10.5" font-weight="700" fill="#93C5FD">身につく力</text>
+  <text x="180" y="420" text-anchor="middle" font-size="10" fill="#DBEAFE">英語を正確に処理する「基礎体力」</text>
+
+  <!-- arrow -->
+  <line x1="180" y1="446" x2="180" y2="480" stroke="#8CC63F" stroke-width="3" stroke-dasharray="6,3"/>
+  <polygon points="180,486 172,474 188,474" fill="#8CC63F"/>
+  <text x="180" y="502" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">ドッキング</text>
+
+  <!-- TOEICの3分野 -->
+  <rect x="20" y="522" width="320" height="34" rx="10" fill="#22C55E"/>
+  <text x="180" y="544" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">🛡 TOEICで無双する3分野</text>
+
+  <rect x="36" y="566" width="288" height="112" rx="8" fill="#DCFCE7"/>
+  <text x="50" y="588" font-size="12" font-weight="700" fill="#166534">① Listening（Part1〜4）</text>
+  <text x="50" y="608" font-size="10" fill="#374151">英検で鍛えた基礎文法・語彙の音声</text>
+  <text x="50" y="626" font-size="10" fill="#374151">処理力が、会話・アナウンスの聞き</text>
+  <text x="50" y="644" font-size="10" fill="#374151">取りにそのまま活きる。</text>
+  <text x="50" y="666" font-size="10" font-weight="700" fill="#15803D">→ あとはスピード慣れだけで得点源に</text>
+
+  <rect x="36" y="690" width="288" height="112" rx="8" fill="#DCFCE7"/>
+  <text x="50" y="712" font-size="12" font-weight="700" fill="#166534">② Reading（Part5〜7）</text>
+  <text x="50" y="732" font-size="10" fill="#374151">英検の文法問題・長文読解で培った</text>
+  <text x="50" y="750" font-size="10" fill="#374151">処理経験が、ビジネス文書・Eメール</text>
+  <text x="50" y="768" font-size="10" fill="#374151">読解の土台になる。</text>
+  <text x="50" y="790" font-size="10" font-weight="700" fill="#15803D">→「見たことある構文だ」で即座に時短</text>
+
+  <rect x="36" y="814" width="288" height="112" rx="8" fill="#DCFCE7"/>
+  <text x="50" y="836" font-size="12" font-weight="700" fill="#166534">③ スコアメイク戦略</text>
+  <text x="50" y="856" font-size="10" fill="#374151">英検で身につけた「基礎体力」があ</text>
+  <text x="50" y="874" font-size="10" fill="#374151">れば、あとはマークシート形式・時</text>
+  <text x="50" y="892" font-size="10" fill="#374151">間配分のテクニックだけ追加。</text>
+  <text x="50" y="914" font-size="10" font-weight="700" fill="#15803D">→ ゼロから始めるより圧倒的に近道</text>
+
+  <rect x="36" y="938" width="288" height="52" rx="8" fill="#166534" opacity="0.9"/>
+  <text x="180" y="958" text-anchor="middle" font-size="10.5" font-weight="700" fill="#DCFCE7">英検2級を先に取れば、TOEICの</text>
+  <text x="180" y="976" text-anchor="middle" font-size="10.5" font-weight="700" fill="#DCFCE7">スコアアップ速度が一段階アップする</text>
+</svg>

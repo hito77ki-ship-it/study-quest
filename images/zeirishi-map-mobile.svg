@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1080" width="360" height="1080" role="img" aria-labelledby="title desc">
+  <title id="title">税理士試験 5科目合格の組み合わせパズル（モバイル版）</title>
+  <desc id="desc">簿記論・財務諸表論の必須2科目、法人税法または所得税法の選択必須1科目、消費税法・国税徴収法などの自由選択2科目を組み合わせて5科目合格を目指す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1080" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">税理士5科目合格パズル</text>
+  <text x="180" y="48" text-anchor="middle" font-size="9.5" fill="#94A3B8">11科目の中から5つをドッキング！</text>
+
+  <!-- ① 簿記論 -->
+  <rect x="20" y="66" width="320" height="130" rx="14" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
+  <circle cx="52" cy="98" r="16" fill="#3B82F6"/>
+  <text x="52" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">①</text>
+  <text x="200" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">必須</text>
+  <text x="200" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">簿記論</text>
+  <text x="200" y="140" text-anchor="middle" font-size="10.5" fill="#374151">450〜600時間</text>
+  <text x="200" y="158" text-anchor="middle" font-size="10.5" fill="#374151">合格率17〜20%</text>
+
+  <!-- ② 財務諸表論 -->
+  <rect x="20" y="212" width="320" height="130" rx="14" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
+  <circle cx="52" cy="244" r="16" fill="#3B82F6"/>
+  <text x="52" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">②</text>
+  <text x="200" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">必須</text>
+  <text x="200" y="260" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">財務諸表論</text>
+  <text x="200" y="286" text-anchor="middle" font-size="10.5" fill="#374151">400〜500時間</text>
+  <text x="200" y="304" text-anchor="middle" font-size="10.5" fill="#374151">合格率15〜20%</text>
+
+  <!-- ③ 法人税法 or 所得税法 -->
+  <rect x="20" y="358" width="320" height="140" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <circle cx="52" cy="390" r="16" fill="#8B5CF6"/>
+  <text x="52" y="395" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">③</text>
+  <text x="200" y="386" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">選択必須（1つ）</text>
+  <text x="200" y="410" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">法人税法 または 所得税法</text>
+  <text x="200" y="438" text-anchor="middle" font-size="10.5" fill="#374151">600〜800時間</text>
+
+  <!-- ④ 消費税法 -->
+  <rect x="20" y="518" width="320" height="130" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <circle cx="52" cy="550" r="16" fill="#F97316"/>
+  <text x="52" y="555" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">④</text>
+  <text x="200" y="546" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">自由選択</text>
+  <text x="200" y="566" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">消費税法</text>
+  <text x="200" y="592" text-anchor="middle" font-size="10.5" fill="#374151">300〜400時間</text>
+  <text x="200" y="610" text-anchor="middle" font-size="10.5" fill="#374151">合格率13〜17%</text>
+
+  <!-- ⑤ 国税徴収法 -->
+  <rect x="20" y="664" width="320" height="130" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <circle cx="52" cy="696" r="16" fill="#22C55E"/>
+  <text x="52" y="701" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">⑤</text>
+  <text x="200" y="692" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">自由選択</text>
+  <text x="200" y="712" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">国税徴収法</text>
+  <text x="200" y="738" text-anchor="middle" font-size="10.5" fill="#374151">200〜300時間</text>
+  <text x="200" y="756" text-anchor="middle" font-size="10.5" fill="#374151">合格率13〜18%</text>
+
+  <line x1="180" y1="794" x2="180" y2="826" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="180,830 173,818 187,818" fill="#CBD5E1"/>
+
+  <!-- ゴール -->
+  <circle cx="180" cy="900" r="66" fill="#FEF9E7" stroke="#FDE68A" stroke-width="3"/>
+  <text x="180" y="890" text-anchor="middle" font-size="26">🏆</text>
+  <text x="180" y="920" text-anchor="middle" font-size="14" font-weight="700" fill="#92400E">5科目合格！</text>
+
+  <text x="180" y="994" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">必須2科目＋選択必須1科目＋</text>
+  <text x="180" y="1012" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">自由選択2科目＝5科目そろえば合格</text>
+  <text x="180" y="1038" text-anchor="middle" font-size="9.5" fill="#94A3B8">④⑤は残り8科目（消費税法・相続税法・国税徴収法・</text>
+  <text x="180" y="1054" text-anchor="middle" font-size="9.5" fill="#94A3B8">住民税・酒税法・固定資産税・事業税など）から自由に選べる</text>
+</svg>

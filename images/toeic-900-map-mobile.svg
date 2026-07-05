@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1450" width="360" height="1450" role="img" aria-labelledby="title desc">
+  <title id="title">TOEIC 900点レベルの英語力と学習戦略（モバイル版）</title>
+  <desc id="desc">CEFRレベル対応表、C1レベルの英語力、900点達成の3要素、900点への長期学習戦略を縦に並べて示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1450" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">TOEIC 900点レベルの英語力</text>
+
+  <!-- CEFR panel -->
+  <rect x="20" y="46" width="320" height="34" rx="8" fill="#1E1B4B"/>
+  <text x="180" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#A5B4FC">CEFR レベル対応</text>
+
+  <rect x="20" y="88" width="320" height="30" rx="6" fill="#94A3B8"/>
+  <text x="180" y="108" text-anchor="middle" font-size="11" fill="#fff">A1〜A2 ／ 〜350点</text>
+  <rect x="20" y="122" width="320" height="30" rx="6" fill="#22C55E"/>
+  <text x="180" y="142" text-anchor="middle" font-size="11" fill="#fff">B1 ／ 〜600点</text>
+  <rect x="20" y="156" width="320" height="30" rx="6" fill="#3B82F6"/>
+  <text x="180" y="176" text-anchor="middle" font-size="11" fill="#fff">B2 ／ 〜730点</text>
+  <rect x="20" y="190" width="320" height="30" rx="6" fill="#8B5CF6"/>
+  <text x="180" y="210" text-anchor="middle" font-size="11" fill="#fff">B2+ ／ 〜860点</text>
+  <rect x="20" y="224" width="320" height="30" rx="6" fill="#EC4899"/>
+  <text x="180" y="244" text-anchor="middle" font-size="11" fill="#fff">C1 ／ 900点以上</text>
+  <rect x="20" y="258" width="320" height="30" rx="6" fill="#F59E0B"/>
+  <text x="180" y="278" text-anchor="middle" font-size="11" fill="#fff">C2 ／ 満点990</text>
+
+  <!-- Panel 1: C1の英語力 -->
+  <rect x="20" y="308" width="320" height="380" rx="10" fill="#FDF4FF"/>
+  <rect x="20" y="308" width="320" height="34" rx="10" fill="#9333EA"/>
+  <text x="180" y="330" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">C1レベルの英語力とは</text>
+  <text x="180" y="360" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7E22CE">概ね達成している能力</text>
+  <text x="180" y="382" text-anchor="middle" font-size="10.5" fill="#374151">・ネイティブとのビジネス会話</text>
+  <text x="180" y="400" text-anchor="middle" font-size="10.5" fill="#374151">・英語でのプレゼン・交渉</text>
+  <text x="180" y="418" text-anchor="middle" font-size="10.5" fill="#374151">・技術的な英文書類の読解</text>
+  <text x="180" y="436" text-anchor="middle" font-size="10.5" fill="#374151">・英語ニュースを速読できる</text>
+  <line x1="40" y1="452" x2="320" y2="452" stroke="#E9D5FF" stroke-width="1"/>
+  <text x="180" y="474" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7E22CE">900点と990点の差</text>
+  <text x="180" y="496" text-anchor="middle" font-size="10.5" fill="#374151">いずれもC1圏内だが990点は</text>
+  <text x="180" y="514" text-anchor="middle" font-size="10.5" fill="#374151">ほぼ完全無欠の理解度が必要</text>
+  <text x="180" y="536" text-anchor="middle" font-size="10.5" fill="#374151">推測・含意の読み取りまで</text>
+  <text x="180" y="554" text-anchor="middle" font-size="10.5" fill="#374151">ミスなくこなせる実力が要る</text>
+  <rect x="40" y="606" width="280" height="30" rx="7" fill="#E9D5FF"/>
+  <text x="180" y="626" text-anchor="middle" font-size="11" font-weight="700" fill="#7E22CE">990点は上位1〜2%の壁</text>
+
+  <!-- Panel 2: 900点達成の3要素 -->
+  <rect x="20" y="714" width="320" height="380" rx="10" fill="#EFF6FF"/>
+  <rect x="20" y="714" width="320" height="34" rx="10" fill="#2563EB"/>
+  <text x="180" y="736" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">900点達成の3要素</text>
+
+  <rect x="36" y="758" width="288" height="86" rx="7" fill="#DBEAFE"/>
+  <text x="180" y="782" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">① 高度語彙・イディオム</text>
+  <text x="180" y="804" text-anchor="middle" font-size="10.5" fill="#374151">ビジネス専門語彙4,000語以上</text>
+  <text x="180" y="822" text-anchor="middle" font-size="10.5" fill="#374151">文脈推測力と言い換え認識力</text>
+
+  <rect x="36" y="856" width="288" height="86" rx="7" fill="#DBEAFE"/>
+  <text x="180" y="880" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">② 推論・含意の読み取り</text>
+  <text x="180" y="902" text-anchor="middle" font-size="10.5" fill="#374151">直接書かれていない情報を</text>
+  <text x="180" y="920" text-anchor="middle" font-size="10.5" fill="#374151">文脈・トーンから判断できる</text>
+
+  <rect x="36" y="954" width="288" height="86" rx="7" fill="#DBEAFE"/>
+  <text x="180" y="978" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">③ 処理速度の余裕</text>
+  <text x="180" y="1000" text-anchor="middle" font-size="10.5" fill="#374151">Part7を見直し時間付きで</text>
+  <text x="180" y="1018" text-anchor="middle" font-size="10.5" fill="#374151">完走できる速読力が必要</text>
+
+  <!-- Panel 3: 長期学習戦略 -->
+  <rect x="20" y="1120" width="320" height="380" rx="10" fill="#F0FDF4"/>
+  <rect x="20" y="1120" width="320" height="34" rx="10" fill="#15803D"/>
+  <text x="180" y="1142" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">900点への長期学習戦略</text>
+  <text x="180" y="1172" text-anchor="middle" font-size="11.5" font-weight="700" fill="#14532D">勉強時間の目安</text>
+
+  <rect x="36" y="1182" width="288" height="30" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="1202" text-anchor="middle" font-size="10.5" fill="#374151">600点から → 約600時間</text>
+  <rect x="36" y="1216" width="288" height="30" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="1236" text-anchor="middle" font-size="10.5" fill="#374151">730点から → 約300時間</text>
+  <rect x="36" y="1250" width="288" height="30" rx="6" fill="#DCFCE7"/>
+  <text x="180" y="1270" text-anchor="middle" font-size="10.5" fill="#374151">860点から → 約150時間</text>
+
+  <line x1="36" y1="1288" x2="324" y2="1288" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="180" y="1310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#14532D">毎日の習慣化</text>
+  <text x="180" y="1332" text-anchor="middle" font-size="10.5" fill="#374151">・英語ニュース30分/日</text>
+  <text x="180" y="1350" text-anchor="middle" font-size="10.5" fill="#374151">・ディクテーション15分/日</text>
+  <text x="180" y="1368" text-anchor="middle" font-size="10.5" fill="#374151">・模試1回/2週</text>
+  <rect x="36" y="1386" width="288" height="28" rx="7" fill="#BBF7D0"/>
+  <text x="180" y="1405" text-anchor="middle" font-size="11" font-weight="700" fill="#14532D">継続こそが唯一の近道</text>
+</svg>

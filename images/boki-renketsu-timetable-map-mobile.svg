@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1100" width="360" height="1100">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1100" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">投資と資本の相殺消去ロジック</text>
+  <text x="180" y="44" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">（タイムテーブル法のイメージ）</text>
+  <text x="180" y="62" text-anchor="middle" font-size="10" fill="#94A3B8">例：親会社が子会社株式80%を¥4,000で取得</text>
+
+  <!-- 投資 -->
+  <rect x="20" y="80" width="320" height="130" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="108" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">投資（S社株式）</text>
+  <text x="180" y="144" text-anchor="middle" font-size="22" font-weight="700" fill="#1D4ED8">¥4,000</text>
+  <text x="180" y="176" text-anchor="middle" font-size="10.5" fill="#374151">親会社が取得した子会社株式の取得原価</text>
+
+  <text x="180" y="234" text-anchor="middle" font-size="11" fill="#64748B">＋</text>
+
+  <!-- 子会社の資本 -->
+  <rect x="20" y="250" width="320" height="150" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">子会社の資本合計</text>
+  <text x="180" y="300" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">¥4,500（資本金＋利益剰余金）</text>
+  <rect x="40" y="314" width="230" height="28" rx="6" fill="#22C55E"/>
+  <text x="155" y="333" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">親会社持分80%（¥3,600）</text>
+  <rect x="278" y="314" width="62" height="28" rx="6" fill="#BBF7D0"/>
+  <text x="309" y="333" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">20%</text>
+  <text x="180" y="368" text-anchor="middle" font-size="10.5" fill="#166534">非支配株主持分 ¥900</text>
+
+  <text x="180" y="424" text-anchor="middle" font-size="11" fill="#64748B">↓</text>
+
+  <!-- 相殺消去 -->
+  <rect x="20" y="440" width="320" height="110" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="470" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">相殺消去の計算</text>
+  <text x="180" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#78350F">投資 ¥4,000 － 親会社持分 ¥3,600</text>
+  <text x="180" y="524" text-anchor="middle" font-size="13" font-weight="700" fill="#78350F">＝ のれん ¥400</text>
+
+  <text x="180" y="580" text-anchor="middle" font-size="11" fill="#64748B">↙　　　　　　　↘</text>
+
+  <!-- のれん -->
+  <rect x="20" y="596" width="320" height="120" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="2"/>
+  <text x="180" y="626" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">のれん（資産）</text>
+  <text x="180" y="658" text-anchor="middle" font-size="22" font-weight="700" fill="#92400E">¥400</text>
+  <text x="180" y="686" text-anchor="middle" font-size="10.5" fill="#78350F">投資超過額は資産として計上・償却</text>
+
+  <!-- 非支配株主持分 -->
+  <rect x="20" y="732" width="320" height="120" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="180" y="762" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">非支配株主持分（純資産）</text>
+  <text x="180" y="794" text-anchor="middle" font-size="22" font-weight="700" fill="#5B21B6">¥900</text>
+  <text x="180" y="822" text-anchor="middle" font-size="10.5" fill="#374151">子会社資本のうち親会社以外の持分</text>
+
+  <rect x="20" y="868" width="320" height="90" rx="10" fill="#111827"/>
+  <text x="180" y="898" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">連結会計は「投資と資本の相殺消去→</text>
+  <text x="180" y="918" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">差額をのれん・非支配株主持分に振り分ける」</text>
+  <text x="180" y="938" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">この1パターンの理解がカギ</text>
+</svg>

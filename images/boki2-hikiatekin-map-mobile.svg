@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1080" width="360" height="1080" role="img" aria-labelledby="t d">
+  <title id="t">引当金——4要件の確認と主な種類（モバイル版）</title>
+  <desc id="d">引当金計上の4要件と、貸倒引当金・退職給付引当金・製品保証引当金の3種類を縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1080" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">引当金</text>
+  <text x="180" y="48" text-anchor="middle" font-size="11" fill="#64748B">4要件の確認と主な種類</text>
+
+  <rect x="16" y="64" width="328" height="30" rx="8" fill="#F97316"/>
+  <text x="180" y="84" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">計上の4要件（全部満たすこと）</text>
+
+  <rect x="16" y="102" width="328" height="56" rx="8" fill="#FFEDD5"/>
+  <text x="30" y="123" font-size="12" font-weight="700" fill="#C2410C">① 将来の費用・損失である</text>
+  <text x="30" y="141" font-size="10.5" fill="#92400E">まだ発生していないが将来生じる</text>
+
+  <rect x="16" y="164" width="328" height="56" rx="8" fill="#FFEDD5"/>
+  <text x="30" y="185" font-size="12" font-weight="700" fill="#C2410C">② 発生の可能性が高い</text>
+  <text x="30" y="203" font-size="10.5" fill="#92400E">発生がほぼ確実に見込まれる</text>
+
+  <rect x="16" y="226" width="328" height="56" rx="8" fill="#FFEDD5"/>
+  <text x="30" y="247" font-size="12" font-weight="700" fill="#C2410C">③ 金額を合理的に見積もれる</text>
+  <text x="30" y="265" font-size="10.5" fill="#92400E">過去実績・統計等で計算できる</text>
+
+  <rect x="16" y="288" width="328" height="56" rx="8" fill="#FED7AA"/>
+  <text x="30" y="309" font-size="12" font-weight="700" fill="#C2410C">④ 原因が当期以前にある</text>
+  <text x="30" y="327" font-size="10.5" fill="#92400E">費用の原因が今期以前の取引にある</text>
+
+  <text x="180" y="366" text-anchor="middle" font-size="10.5" fill="#64748B">1つでも欠けると引当金は計上できない</text>
+
+  <rect x="16" y="390" width="328" height="30" rx="8" fill="#3B82F6"/>
+  <text x="180" y="410" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">主な引当金の種類</text>
+
+  <rect x="16" y="428" width="328" height="90" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="450" font-size="11.5" font-weight="700" fill="#1E40AF">貸倒引当金（評価性引当金）</text>
+  <text x="30" y="468" font-size="10.5" fill="#1D4ED8">売掛金・受取手形が回収不能になる</text>
+  <text x="30" y="486" font-size="10" fill="#64748B">繰入：貸倒引当金繰入</text>
+  <text x="30" y="502" font-size="10" fill="#64748B">残高：売掛金から控除</text>
+
+  <rect x="16" y="528" width="328" height="90" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="550" font-size="11.5" font-weight="700" fill="#1E40AF">退職給付引当金</text>
+  <text x="30" y="568" font-size="10.5" fill="#1D4ED8">従業員が将来退職する際の退職金</text>
+  <text x="30" y="586" font-size="10" fill="#64748B">繰入：退職給付費用</text>
+  <text x="30" y="602" font-size="10" fill="#64748B">残高：固定負債</text>
+
+  <rect x="16" y="628" width="328" height="90" rx="8" fill="#DBEAFE"/>
+  <text x="30" y="650" font-size="11.5" font-weight="700" fill="#1E40AF">製品保証引当金</text>
+  <text x="30" y="668" font-size="10.5" fill="#1D4ED8">販売後の修理・交換保証コスト</text>
+  <text x="30" y="686" font-size="10" fill="#64748B">繰入：製品保証引当金繰入</text>
+  <text x="30" y="702" font-size="10" fill="#64748B">残高：流動負債</text>
+
+  <text x="180" y="738" text-anchor="middle" font-size="10.5" fill="#64748B">使用時：引当金 ×× / 現金等 ×× で取り崩す</text>
+
+  <rect x="16" y="760" width="328" height="70" rx="10" fill="#111827"/>
+  <text x="180" y="786" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">「まだ払っていないが原因は発生済み」の</text>
+  <text x="180" y="806" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">費用を当期に計上するための負債</text>
+</svg>

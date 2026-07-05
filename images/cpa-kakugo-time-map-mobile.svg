@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1300" viewBox="0 0 360 1300" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">大学生のための公認会計士受験・自由時間のハコ分けマップ（モバイル版）</title>
+  <desc id="svgdesc">大学生の24時間の内訳（睡眠・授業と通学・自由時間）を円グラフで示し、さらに自由時間8〜10時間の内訳を拡大して、半分以上の巨大なハコを勉強が占領し、残りの小さなスキマでバイトや娯楽をやりくりする圧倒的なトレードオフを縦に並べて示した図解</desc>
+  <defs>
+    <linearGradient id="ktmTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#2D4A10"/>
+    </linearGradient>
+    <linearGradient id="ktmStudy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FC8181"/>
+      <stop offset="1" stop-color="#C53030"/>
+    </linearGradient>
+    <marker id="ktmArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#94A3B8"/>
+    </marker>
+    <style>.kt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1300" rx="18" fill="#FAFAFC"/>
+
+  <!-- Title -->
+  <rect x="16" y="20" width="328" height="60" rx="12" fill="url(#ktmTitle)"/>
+  <text x="180" y="42" text-anchor="middle" class="kt" font-size="9.5" font-weight="700" fill="#A0C070" letter-spacing="1">大学生の自由時間ハコ分けマトリクス</text>
+  <text x="180" y="64" text-anchor="middle" class="kt" font-size="13.5" font-weight="800" fill="#FFFFFF">24時間のうち、自由時間はこう溶けていく</text>
+
+  <!-- Chart A: 24-hour breakdown -->
+  <text x="180" y="112" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#334155">大学生の24時間</text>
+
+  <path d="M180,300 L180.0,170.0 A130,130 0 0,1 305.6,333.6 Z" fill="#C7D2FE" stroke="#818CF8" stroke-width="2"/>
+  <path d="M180,300 L305.6,333.6 A130,130 0 0,1 115.0,412.6 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M180,300 L115.0,412.6 A130,130 0 0,1 180.0,170.0 Z" fill="#BBF7D0" stroke="#4ADE80" stroke-width="2"/>
+
+  <text x="243.9" y="245.9" text-anchor="middle" class="kt" font-size="12" font-weight="700" fill="#3730A3">睡眠</text>
+  <text x="243.9" y="261.9" text-anchor="middle" class="kt" font-size="10.5" fill="#3730A3">約7時間</text>
+  <text x="210.8" y="369.5" text-anchor="middle" class="kt" font-size="12" font-weight="700" fill="#334155">授業・通学</text>
+  <text x="210.8" y="385.5" text-anchor="middle" class="kt" font-size="10.5" fill="#334155">約7時間</text>
+  <text x="102.1" y="274.1" text-anchor="middle" class="kt" font-size="12.5" font-weight="800" fill="#166534">自由時間</text>
+  <text x="102.1" y="291.1" text-anchor="middle" class="kt" font-size="10.5" font-weight="700" fill="#166534">8〜10時間</text>
+
+  <!-- Legend A -->
+  <rect x="40" y="452" width="16" height="16" rx="4" fill="#C7D2FE" stroke="#818CF8"/>
+  <text x="64" y="465" class="kt" font-size="11.5" fill="#374151">睡眠：約7時間</text>
+  <rect x="40" y="476" width="16" height="16" rx="4" fill="#E2E8F0" stroke="#94A3B8"/>
+  <text x="64" y="489" class="kt" font-size="11.5" fill="#374151">授業・通学：約7時間</text>
+  <rect x="40" y="500" width="16" height="16" rx="4" fill="#BBF7D0" stroke="#4ADE80"/>
+  <text x="64" y="513" class="kt" font-size="11.5" font-weight="700" fill="#166534">自由時間：8〜10時間（ここが勝負）</text>
+
+  <!-- Connector -->
+  <line x1="180" y1="538" x2="180" y2="576" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6,6" marker-end="url(#ktmArrow)"/>
+  <text x="180" y="602" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#475569">🔍 自由時間8〜10時間を</text>
+  <text x="180" y="618" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#475569">分解すると…</text>
+
+  <!-- Chart B: free-time breakdown -->
+  <text x="180" y="662" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#334155">自由時間8〜10時間の内訳</text>
+
+  <path d="M180,820 L180.0,690.0 A130,130 0 1,1 135.5,942.2 Z" fill="url(#ktmStudy)" stroke="#9B2C2C" stroke-width="2"/>
+  <path d="M180,820 L135.5,942.2 A130,130 0 0,1 180.0,690.0 Z" fill="#BFDBFE" stroke="#60A5FA" stroke-width="2"/>
+
+  <text x="259.4" y="828" text-anchor="middle" class="kt" font-size="12" font-weight="800" fill="#FFFFFF">勉強</text>
+  <text x="259.4" y="844" text-anchor="middle" class="kt" font-size="10.5" font-weight="700" fill="#FFFFFF">4〜5時間</text>
+  <text x="100.6" y="800" text-anchor="middle" class="kt" font-size="11.5" font-weight="700" fill="#1E40AF">バイト・娯楽</text>
+  <text x="100.6" y="816" text-anchor="middle" class="kt" font-size="10.5" fill="#1E40AF">・息抜き</text>
+
+  <!-- Legend B -->
+  <rect x="40" y="972" width="16" height="16" rx="4" fill="url(#ktmStudy)" stroke="#9B2C2C"/>
+  <text x="64" y="985" class="kt" font-size="11.5" font-weight="700" fill="#C53030">勉強：4〜5時間（絶対死守のハコ）</text>
+  <rect x="40" y="996" width="16" height="16" rx="4" fill="#BFDBFE" stroke="#60A5FA"/>
+  <text x="64" y="1009" class="kt" font-size="11.5" fill="#374151">バイト・娯楽・息抜き：残りのスキマ</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="16" y="1040" width="328" height="220" rx="16" fill="#111827"/>
+  <text x="180" y="1068" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#8CC63F">💡 覚悟（かくご）のリアル：</text>
+  <text x="180" y="1086" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#8CC63F">自由時間の半分以上を勉強に</text>
+  <text x="180" y="1104" text-anchor="middle" class="kt" font-size="12.5" font-weight="700" fill="#8CC63F">明け渡すゲーム</text>
+  <text x="180" y="1130" text-anchor="middle" class="kt" font-size="10.5" fill="#E5E7EB">自由時間8〜10時間のうち5時間前後を</text>
+  <text x="180" y="1146" text-anchor="middle" class="kt" font-size="10.5" fill="#E5E7EB">勉強が占領。残りの3〜5時間でバイト・</text>
+  <text x="180" y="1162" text-anchor="middle" class="kt" font-size="10.5" fill="#E5E7EB">娯楽・息抜きを全部やりくりする必要がある。</text>
+  <text x="180" y="1188" text-anchor="middle" class="kt" font-size="10.5" fill="#E5E7EB">これが、公認会計士試験に本気で捧げる</text>
+  <text x="180" y="1204" text-anchor="middle" class="kt" font-size="10.5" fill="#E5E7EB">ということの数字のリアルです。</text>
+</svg>

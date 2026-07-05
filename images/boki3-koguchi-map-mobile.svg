@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">小口現金（インプレスト・システム）の循環サイクル（モバイル版）</title>
+  <desc id="svgdesc">前渡し・使用・報告・補給の4ステップを繰り返すことで小口現金の残高が常に一定に保たれる仕組みを縦の循環として示した図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">小口現金の循環サイクル</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9" fill="#94A3B8">定額資金前渡制度——常に同じ金額に保たれる仕組み</text>
+
+  <!-- ① -->
+  <rect x="20" y="62" width="320" height="98" rx="14" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">① 前渡し</text>
+  <text x="180" y="106" text-anchor="middle" font-size="10.5" fill="#374151">会計係が用度係へ小口現金を前渡しする</text>
+  <text x="180" y="132" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">小口現金 ×× ／ 当座預金 ××</text>
+
+  <polygon points="160,168 200,168 180,192" fill="#93C5FD"/>
+
+  <!-- ② -->
+  <rect x="20" y="202" width="320" height="98" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">② 使用</text>
+  <text x="180" y="246" text-anchor="middle" font-size="10.5" fill="#374151">用度係が交通費・消耗品費などを支払う</text>
+  <text x="180" y="272" text-anchor="middle" font-size="10" fill="#64748B">（会計係はまだ仕訳しない）</text>
+
+  <polygon points="160,308 200,308 180,332" fill="#86EFAC"/>
+
+  <!-- ③ -->
+  <rect x="20" y="342" width="320" height="98" rx="14" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="180" y="366" text-anchor="middle" font-size="13" font-weight="700" fill="#9D174D">③ 報告</text>
+  <text x="180" y="386" text-anchor="middle" font-size="10.5" fill="#374151">用度係が支払内容を会計係へ報告する</text>
+  <text x="180" y="412" text-anchor="middle" font-size="10" font-weight="700" fill="#DB2777">★この時点で費用が確定！</text>
+
+  <polygon points="160,448 200,448 180,472" fill="#F9A8D4"/>
+
+  <!-- ④ -->
+  <rect x="20" y="482" width="320" height="98" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <text x="180" y="506" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">④ 補給</text>
+  <text x="180" y="526" text-anchor="middle" font-size="10.5" fill="#374151">会計係が使った分だけ同額を小切手で補充</text>
+  <text x="180" y="552" text-anchor="middle" font-size="10" font-weight="700" fill="#C2410C">小口現金 ×× ／ 当座預金 ××</text>
+
+  <path d="M100,590 Q30,650 100,700 L340,700" fill="none" stroke="#CBD5E1" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <polygon points="332,692 332,708 348,700" fill="#CBD5E1"/>
+  <text x="180" y="726" text-anchor="middle" font-size="9.5" fill="#94A3B8">④の後は再び①前渡し（または残高そのまま）へ</text>
+
+  <!-- caption -->
+  <rect x="20" y="750" width="320" height="76" rx="10" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="2"/>
+  <text x="180" y="778" text-anchor="middle" font-size="11" font-weight="700" fill="#6D28D9">🔁 常に一定額をキープ！</text>
+  <text x="180" y="800" text-anchor="middle" font-size="10" fill="#374151">①→②→③→④を繰り返し、小口現金の</text>
+  <text x="180" y="816" text-anchor="middle" font-size="10" fill="#374151">残高は常に同じ金額に保たれる</text>
+</svg>

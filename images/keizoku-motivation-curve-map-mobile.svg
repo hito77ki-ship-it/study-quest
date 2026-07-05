@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 752" width="360" height="752" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">大谷流・習慣化のモチベーション曲線マップ（モバイル版）</title>
+  <desc id="svgdesc">やる気MAX、挫折の谷、習慣化の入口、自動運転モードの4段階を縦に並べ、66日目で自動運転モードに入ることを示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="752" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">習慣化のモチベーション曲線マップ</text>
+  <text x="180" y="50" text-anchor="middle" font-size="10" fill="#64748B">「最低10分ルール」で挫折の谷を耐え抜けば、</text>
+  <text x="180" y="64" text-anchor="middle" font-size="10" fill="#64748B">66日目に自動運転モードへ</text>
+
+  <!-- Zone 1 -->
+  <rect x="16" y="82" width="328" height="70" rx="12" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="32" y="106" font-size="13" font-weight="700" fill="#166534">① やる気MAX</text>
+  <text x="32" y="124" font-size="10.5" fill="#276749">1〜3日目：高揚感でどんどん進む</text>
+  <text x="326" y="140" text-anchor="end" font-size="9.5" fill="#276749">必ず落ちる想定内のフェーズ</text>
+
+  <polygon points="180,156 172,168 188,168" fill="#94A3B8"/>
+
+  <!-- Zone 2 -->
+  <rect x="16" y="174" width="328" height="128" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="32" y="198" font-size="13" font-weight="700" fill="#991B1B">② 挫折の谷</text>
+  <text x="32" y="216" font-size="10.5" fill="#991B1B">4〜14日目：挫折率が最も高い危険地帯</text>
+  <rect x="32" y="228" width="296" height="58" rx="8" fill="#FCA5A5"/>
+  <text x="180" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#7F1D1D">🛡 最低10分ルールで耐える</text>
+  <text x="180" y="272" text-anchor="middle" font-size="10" fill="#7F1D1D">ここさえ越えれば回復する</text>
+
+  <polygon points="180,318 172,330 188,330" fill="#94A3B8"/>
+
+  <!-- Zone 3 -->
+  <rect x="16" y="336" width="328" height="70" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="32" y="360" font-size="13" font-weight="700" fill="#1E40AF">③ 習慣化の入口</text>
+  <text x="32" y="378" font-size="10.5" fill="#1E40AF">15〜65日目：モチベーションが</text>
+  <text x="32" y="394" font-size="10.5" fill="#1E40AF">じわじわ回復していく</text>
+
+  <polygon points="180,418 172,430 188,430" fill="#94A3B8"/>
+
+  <!-- Zone 4 -->
+  <rect x="16" y="436" width="328" height="80" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="32" y="460" font-size="13" font-weight="700" fill="#5B21B6">④ 自動運転モード</text>
+  <text x="32" y="478" font-size="10.5" fill="#5B21B6">66日目〜：「やらない方が</text>
+  <text x="32" y="494" font-size="10.5" fill="#5B21B6">気持ち悪い」状態に入る</text>
+  <circle cx="308" cy="466" r="5" fill="#7C3AED"/>
+  <text x="308" y="500" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6D28D9">66日目</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="536" width="328" height="200" rx="12" fill="#1E293B"/>
+  <text x="180" y="562" text-anchor="middle" font-size="12" font-weight="700" fill="#8CC63F">モチベーション曲線の攻略ポイント</text>
+  <text x="32" y="588" font-size="10" fill="#CBD5E1">① 1〜3日目の高揚感は必ず落ちる。</text>
+  <text x="32" y="602" font-size="10" fill="#CBD5E1">「サボりの脳の仕様」として織り込む。</text>
+  <text x="32" y="626" font-size="10" fill="#CBD5E1">② 4〜14日目の谷は「最低10分だけ</text>
+  <text x="32" y="640" font-size="10" fill="#CBD5E1">やる」で耐える。越えれば回復する。</text>
+  <text x="32" y="664" font-size="10" fill="#CBD5E1">③ 66日目を超えると「やらない方が</text>
+  <text x="32" y="678" font-size="10" fill="#CBD5E1">気持ち悪い」自動運転モードに入り、</text>
+  <text x="32" y="692" font-size="10" fill="#CBD5E1">努力感なく継続できる。</text>
+</svg>

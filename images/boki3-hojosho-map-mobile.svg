@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 980" width="360" height="980" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">補助簿6種類の分類・関係図（モバイル版）</title>
+  <desc id="svgdesc">補助簿を「時系列で記録」する補助記入帳3種と「取引先・商品ごとに記録」する補助元帳3種に分類して縦に並べた図解</desc>
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="980" rx="14" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">補助簿6種類の分類図</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9.5" fill="#64748B">補助記入帳（時系列）と補助元帳（取引先・商品別）</text>
+
+  <rect x="130" y="58" width="100" height="38" rx="19" fill="#1E293B"/>
+  <text x="180" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">補助簿</text>
+  <line x1="180" y1="96" x2="180" y2="112" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Category 1: 補助記入帳 -->
+  <rect x="20" y="112" width="320" height="56" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="134" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">補助記入帳（ほじょきにゅうちょう）</text>
+  <text x="180" y="152" text-anchor="middle" font-size="10" fill="#374151">取引を時系列で記録する</text>
+
+  <rect x="20" y="180" width="320" height="76" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="46" y="216" font-size="20">💰</text>
+  <text x="70" y="210" font-size="12" font-weight="700" fill="#1E40AF">現金出納帳（げんきんすいとうちょう）</text>
+  <text x="70" y="228" font-size="10.5" fill="#374151">現金の出入りを記録</text>
+
+  <rect x="20" y="264" width="320" height="64" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="46" y="298" font-size="20">🧾</text>
+  <text x="70" y="292" font-size="12" font-weight="700" fill="#1E40AF">売上帳（うりあげちょう）</text>
+  <text x="70" y="310" font-size="10.5" fill="#374151">商品を売った明細</text>
+
+  <rect x="20" y="336" width="320" height="64" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="46" y="370" font-size="20">📦</text>
+  <text x="70" y="364" font-size="12" font-weight="700" fill="#1E40AF">仕入帳（しいれちょう）</text>
+  <text x="70" y="382" font-size="10.5" fill="#374151">商品を仕入れた明細</text>
+
+  <!-- Category 2: 補助元帳 -->
+  <rect x="20" y="418" width="320" height="56" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="180" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#9D174D">補助元帳（ほじょもとちょう）</text>
+  <text x="180" y="458" text-anchor="middle" font-size="10" fill="#374151">取引先・商品ごとに記録する</text>
+
+  <rect x="20" y="486" width="320" height="86" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <circle cx="322" cy="498" r="12" fill="#F59E0B" stroke="#fff" stroke-width="2"/>
+  <text x="322" y="503" text-anchor="middle" font-size="12" fill="#fff">⚠</text>
+  <text x="46" y="522" font-size="20">📊</text>
+  <text x="70" y="516" font-size="12" font-weight="700" fill="#9D174D">商品有高帳（しょうひんありだかちょう）</text>
+  <text x="70" y="534" font-size="10.5" fill="#374151">数量・原価を記録</text>
+  <text x="70" y="552" font-size="10.5" font-weight="700" fill="#C2410C">原価で記入に注意！</text>
+
+  <rect x="20" y="588" width="320" height="64" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="46" y="622" font-size="20">🤝</text>
+  <text x="70" y="616" font-size="12" font-weight="700" fill="#9D174D">売掛金元帳（うりかけきんもとちょう）</text>
+  <text x="70" y="634" font-size="10.5" fill="#374151">得意先ごとの残高</text>
+
+  <rect x="20" y="660" width="320" height="64" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="46" y="694" font-size="20">📋</text>
+  <text x="70" y="688" font-size="12" font-weight="700" fill="#9D174D">買掛金元帳（かいかけきんもとちょう）</text>
+  <text x="70" y="706" font-size="10.5" fill="#374151">仕入先ごとの残高</text>
+
+  <!-- Bottom legend -->
+  <rect x="20" y="744" width="320" height="96" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="180" y="768" text-anchor="middle" font-size="11" fill="#374151">🔵 補助記入帳＝時系列で記録</text>
+  <text x="180" y="786" text-anchor="middle" font-size="11" fill="#374151">🩷 補助元帳＝取引先・商品ごとに記録</text>
+  <text x="180" y="808" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">⚠ 商品有高帳は「売価」と「原価」の</text>
+  <text x="180" y="826" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">混同に要注意！</text>
+</svg>

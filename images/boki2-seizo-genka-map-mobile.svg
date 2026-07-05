@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 820" width="360" height="820">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="820" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">製造原価報告書からP/L売上原価へ</text>
+  <text x="180" y="44" text-anchor="middle" font-size="10.5" fill="#94A3B8">材料費・労務費・経費が仕掛品（CR）を</text>
+  <text x="180" y="58" text-anchor="middle" font-size="10.5" fill="#94A3B8">経て、製品→売上原価（P/L）へ旅をする</text>
+
+  <!-- 3費目 stacked -->
+  <rect x="24" y="76" width="312" height="46" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">材料費</text>
+  <text x="180" y="114" text-anchor="middle" font-size="9.5" fill="#78350F">直接・間接材料費</text>
+
+  <rect x="24" y="130" width="312" height="46" rx="10" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="180" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">労務費</text>
+  <text x="180" y="168" text-anchor="middle" font-size="9.5" fill="#4C1D95">直接・間接労務費</text>
+
+  <rect x="24" y="184" width="312" height="46" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="206" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">経費</text>
+  <text x="180" y="222" text-anchor="middle" font-size="9.5" fill="#14532D">直接・間接経費</text>
+
+  <path d="M180,232 L180,254 M172,246 L180,254 L188,246" fill="none" stroke="#93C5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 仕掛品 -->
+  <rect x="24" y="262" width="312" height="192" rx="16" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="180" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">仕掛品（製造原価報告書 CR）</text>
+  <text x="180" y="314" text-anchor="middle" font-size="11" fill="#374151">月初仕掛品 ＋ 当期総製造費用</text>
+  <text x="180" y="332" text-anchor="middle" font-size="11" fill="#374151">－ 月末仕掛品</text>
+  <line x1="50" y1="344" x2="310" y2="344" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="368" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1D4ED8">＝ 当期製品製造原価</text>
+  <text x="180" y="386" text-anchor="middle" font-size="9.5" fill="#64748B">（CRのゴール）</text>
+  <text x="180" y="410" text-anchor="middle" font-size="9.5" fill="#64748B">工場での原価集計はここまで</text>
+  <text x="180" y="426" text-anchor="middle" font-size="8.5" fill="#94A3B8">（ひな形は2パターン、本文で解説）</text>
+
+  <path d="M180,462 L180,484 M172,476 L180,484 L188,476" fill="none" stroke="#86EFAC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="180" y="500" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">バトンリレー</text>
+
+  <!-- 製品 -->
+  <rect x="24" y="512" width="312" height="176" rx="16" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2.5"/>
+  <text x="180" y="538" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">製品（P/L 売上原価計算）</text>
+  <text x="180" y="564" text-anchor="middle" font-size="11" fill="#374151">月初製品 ＋ 当期製品製造原価</text>
+  <text x="180" y="582" text-anchor="middle" font-size="11" fill="#374151">－ 月末製品</text>
+  <line x1="50" y1="594" x2="310" y2="594" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="618" text-anchor="middle" font-size="13.5" font-weight="700" fill="#166534">＝ 売上原価</text>
+  <text x="180" y="636" text-anchor="middle" font-size="9.5" fill="#64748B">（P/Lへ計上）</text>
+  <text x="180" y="656" text-anchor="middle" font-size="9.5" fill="#64748B">販売された分のコストがここに出る</text>
+
+  <!-- summary -->
+  <rect x="24" y="704" width="312" height="100" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="726" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">📋 製造原価報告書（CR）の範囲</text>
+  <text x="180" y="748" text-anchor="middle" font-size="10.5" fill="#78350F">材料費＋労務費＋経費</text>
+  <text x="180" y="764" text-anchor="middle" font-size="10.5" fill="#78350F">＋月初仕掛品－月末仕掛品</text>
+  <text x="180" y="780" text-anchor="middle" font-size="10.5" fill="#78350F">＝当期製品製造原価</text>
+  <text x="180" y="796" text-anchor="middle" font-size="9.5" fill="#78350F">←この記事はここを完全攻略します</text>
+</svg>

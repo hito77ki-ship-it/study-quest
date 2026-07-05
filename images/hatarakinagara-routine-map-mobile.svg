@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 780" width="360" height="780">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="780" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">働きながら合格を掴む</text>
+  <text x="180" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">24時間ドッキングマップ</text>
+  <text x="180" y="64" text-anchor="middle" font-size="9.5" fill="#64748B">生活の導線に15〜30分の「小さなハコ」を固定で埋め込む</text>
+
+  <rect x="30" y="80" width="300" height="52" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="180" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">7:00 出勤前</text>
+  <text x="180" y="118" text-anchor="middle" font-size="9.5" fill="#64748B">身支度・朝食</text>
+
+  <rect x="30" y="146" width="300" height="66" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="180" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">9:00 通勤電車 15分</text>
+  <text x="180" y="186" text-anchor="middle" font-size="9.5" fill="#1E40AF">スマホで1講義</text>
+
+  <rect x="30" y="226" width="300" height="66" rx="8" fill="#FEF9C3" stroke="#EAB308" stroke-width="2"/>
+  <text x="180" y="246" text-anchor="middle" font-size="11" font-weight="700" fill="#A16207">12:30 昼休憩 1問だけ</text>
+  <text x="180" y="266" text-anchor="middle" font-size="9.5" fill="#854D0E">スマホで演習アプリ</text>
+
+  <rect x="30" y="306" width="300" height="86" rx="8" fill="#DCFCE7" stroke="#22C55E" stroke-width="2.5"/>
+  <text x="180" y="326" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">19:00 帰りのカフェ 20分</text>
+  <text x="180" y="344" text-anchor="middle" font-size="9.5" fill="#166534">その日一番の集中枠</text>
+  <rect x="140" y="352" width="80" height="16" rx="8" fill="#22C55E"/>
+  <text x="180" y="364" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fff">1日の主戦場</text>
+
+  <rect x="30" y="406" width="300" height="52" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="180" y="426" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">23:00 帰宅後</text>
+  <text x="180" y="444" text-anchor="middle" font-size="9.5" fill="#64748B">お風呂・就寝準備</text>
+
+  <rect x="20" y="480" width="320" height="76" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="504" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">合計 約55分／日</text>
+  <text x="180" y="522" text-anchor="middle" font-size="9.5" fill="#B45309">新しい時間を作らず、既存の導線に</text>
+  <text x="180" y="538" text-anchor="middle" font-size="9.5" fill="#B45309">勉強をドッキングするだけ</text>
+</svg>

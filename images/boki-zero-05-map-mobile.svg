@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1360" width="360" height="1360">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="1360" rx="14" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">仕訳を積み重ねると</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">財務諸表になる</text>
+
+  <!-- 日々の仕訳 -->
+  <rect x="20" y="64" width="320" height="290" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="20" y="64" width="320" height="34" rx="10" fill="#F97316"/>
+  <rect x="20" y="86" width="320" height="12" fill="#F97316"/>
+  <text x="180" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">日々の仕訳</text>
+
+  <rect x="36" y="108" width="288" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="180" y="128" text-anchor="middle" font-size="10.5" fill="#C2410C">1/5　現金150 / 売上150</text>
+  <rect x="36" y="144" width="288" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="180" y="164" text-anchor="middle" font-size="10.5" fill="#C2410C">1/8　仕入100 / 買掛金100</text>
+  <rect x="36" y="180" width="288" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="180" y="200" text-anchor="middle" font-size="10.5" fill="#C2410C">1/25　給料費用50 / 現金50</text>
+  <rect x="36" y="216" width="288" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="180" y="236" text-anchor="middle" font-size="10.5" fill="#C2410C">1/31　買掛金100 / 現金100</text>
+  <text x="180" y="264" text-anchor="middle" font-size="11" fill="#94A3B8">…（数百件）</text>
+  <rect x="36" y="272" width="288" height="30" rx="5" fill="#FFEDD5"/>
+  <text x="180" y="292" text-anchor="middle" font-size="10.5" fill="#C2410C">12/31（決算）減価償却費18 / 累計額18</text>
+  <text x="180" y="326" text-anchor="middle" font-size="10.5" fill="#92400E">1年間のすべての仕訳を集計すると…</text>
+
+  <text x="180" y="378" text-anchor="middle" font-size="11" fill="#64748B">↓ 集計・整理 ↓</text>
+
+  <!-- P/L -->
+  <rect x="20" y="396" width="320" height="230" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="396" width="320" height="34" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="418" width="320" height="12" fill="#3B82F6"/>
+  <text x="180" y="418" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">損益計算書（P/L）</text>
+  <text x="180" y="452" text-anchor="middle" font-size="11" fill="#1E40AF">「どれだけ儲かったか」の報告書</text>
+  <rect x="36" y="462" width="288" height="140" rx="6" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="180" y="484" text-anchor="middle" font-size="11" fill="#374151">売　上　　　　150</text>
+  <line x1="36" y1="492" x2="324" y2="492" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="180" y="512" text-anchor="middle" font-size="11" fill="#374151">仕　入　△100</text>
+  <text x="180" y="532" text-anchor="middle" font-size="11" fill="#374151">給料費用　△50</text>
+  <text x="180" y="552" text-anchor="middle" font-size="11" fill="#374151">減価償却費 △18</text>
+  <line x1="36" y1="562" x2="324" y2="562" stroke="#BFDBFE" stroke-width="1"/>
+  <rect x="36" y="562" width="288" height="34" fill="#DBEAFE"/>
+  <text x="180" y="585" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">当期純利益　▲18（赤字）</text>
+
+  <text x="180" y="646" text-anchor="middle" font-size="10" fill="#64748B">↓ 当期純利益が純資産へ ↓</text>
+
+  <!-- B/S -->
+  <rect x="20" y="662" width="320" height="230" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="20" y="662" width="320" height="34" rx="10" fill="#22C55E"/>
+  <rect x="20" y="684" width="320" height="12" fill="#22C55E"/>
+  <text x="180" y="684" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">貸借対照表（B/S）</text>
+  <text x="180" y="718" text-anchor="middle" font-size="11" fill="#166534">「財産と負債・純資産」の残高表</text>
+  <rect x="36" y="728" width="288" height="140" rx="6" fill="#fff" stroke="#86EFAC" stroke-width="1"/>
+  <line x1="180" y1="728" x2="180" y2="868" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="106" y="748" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">資産</text>
+  <text x="254" y="748" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">負債＋純資産</text>
+  <text x="106" y="770" text-anchor="middle" font-size="10.5" fill="#374151">現金 xxx</text>
+  <text x="106" y="790" text-anchor="middle" font-size="10.5" fill="#374151">建物 xxx</text>
+  <text x="254" y="770" text-anchor="middle" font-size="10.5" fill="#374151">買掛金 xxx</text>
+  <text x="254" y="790" text-anchor="middle" font-size="10.5" fill="#374151">純資産 xxx</text>
+  <line x1="36" y1="806" x2="324" y2="806" stroke="#86EFAC" stroke-width="1"/>
+  <text x="106" y="826" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">合計</text>
+  <text x="254" y="826" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">合計</text>
+  <text x="180" y="852" text-anchor="middle" font-size="10" fill="#94A3B8">←必ず一致する→</text>
+
+  <!-- まとめ -->
+  <rect x="20" y="912" width="320" height="410" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="942" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">財務諸表から分かること</text>
+  <line x1="36" y1="954" x2="324" y2="954" stroke="#FDE68A" stroke-width="1"/>
+
+  <text x="180" y="984" text-anchor="middle" font-size="24" fill="#D97706">📈</text>
+  <text x="180" y="1010" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">P/Lで分かること</text>
+  <text x="50" y="1032" font-size="10.5" fill="#78350F">・売上はいくらだったか</text>
+  <text x="50" y="1050" font-size="10.5" fill="#78350F">・コストはいくらかかったか</text>
+  <text x="50" y="1068" font-size="10.5" fill="#78350F">・最終的な利益（損失）はいくらか</text>
+
+  <line x1="36" y1="1090" x2="324" y2="1090" stroke="#FDE68A" stroke-width="1"/>
+
+  <text x="180" y="1116" text-anchor="middle" font-size="24" fill="#D97706">📊</text>
+  <text x="180" y="1142" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">B/Sで分かること</text>
+  <text x="50" y="1164" font-size="10.5" fill="#78350F">・今どれだけ財産があるか</text>
+  <text x="50" y="1182" font-size="10.5" fill="#78350F">・借金はいくら残っているか</text>
+  <text x="50" y="1200" font-size="10.5" fill="#78350F">・返済能力はあるか</text>
+
+  <line x1="36" y1="1222" x2="324" y2="1222" stroke="#FDE68A" stroke-width="1"/>
+  <text x="180" y="1248" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">これを読めるのが</text>
+  <text x="180" y="1268" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">「簿記を学んだ人」</text>
+  <text x="180" y="1290" text-anchor="middle" font-size="10.5" fill="#A16207">株式投資・就職・経営判断に</text>
+  <text x="180" y="1308" text-anchor="middle" font-size="10.5" fill="#A16207">直結するスキルです</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1400" width="360" height="1400" role="img" aria-labelledby="t d">
+  <title id="t">決算整理——6大整理事項と財務諸表への影響（モバイル版）</title>
+  <desc id="d">売上原価の算定・減価償却・貸倒引当金・経過勘定・有価証券評価・法人税等消費税の6つの決算整理事項を縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1400" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">決算整理</text>
+  <text x="180" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">6大整理事項と財務諸表への影響</text>
+
+  <rect x="16" y="62" width="328" height="120" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="30" y="86" font-size="12" font-weight="700" fill="#C2410C">① 売上原価の算定（しくりくりし）</text>
+  <text x="30" y="108" font-size="10.5" fill="#374151">仕入 ／ 繰越商品（期首戻し）</text>
+  <text x="30" y="126" font-size="10.5" fill="#374151">繰越商品 ／ 仕入（期末振替）</text>
+  <text x="30" y="150" font-size="10" fill="#64748B">→ P/L：売上原価が確定</text>
+
+  <rect x="16" y="198" width="328" height="120" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="30" y="222" font-size="12" font-weight="700" fill="#1E40AF">② 減価償却</text>
+  <text x="30" y="244" font-size="10.5" fill="#374151">減価償却費 ／ 減価償却累計額</text>
+  <text x="30" y="262" font-size="10.5" fill="#374151">定額法：取得原価×率／定率法：帳簿価額×率</text>
+  <text x="30" y="286" font-size="10" fill="#64748B">→ P/L：費用計上／B/S：資産減少</text>
+
+  <rect x="16" y="334" width="328" height="120" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="30" y="358" font-size="12" font-weight="700" fill="#5B21B6">③ 貸倒引当金</text>
+  <text x="30" y="380" font-size="10.5" fill="#374151">貸倒引当金繰入 ／ 貸倒引当金</text>
+  <text x="30" y="398" font-size="10.5" fill="#374151">差額補充法：残高との差額を繰入</text>
+  <text x="30" y="416" font-size="10" fill="#374151">設定額＝受取手形・売掛金×率</text>
+  <text x="30" y="436" font-size="10" fill="#64748B">→ P/L：費用／B/S：債権から控除</text>
+
+  <rect x="16" y="470" width="328" height="130" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="30" y="494" font-size="12" font-weight="700" fill="#92400E">④ 経過勘定</text>
+  <text x="30" y="516" font-size="10.5" fill="#374151">前払費用：支払済み未経過分</text>
+  <text x="30" y="534" font-size="10.5" fill="#374151">未払費用：未払いの発生済み分</text>
+  <text x="30" y="552" font-size="10.5" fill="#374151">前受収益・未収収益も対称に処理</text>
+  <text x="30" y="574" font-size="10" fill="#64748B">→ 費用・収益を正しい期間に配分</text>
+
+  <rect x="16" y="614" width="328" height="130" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="30" y="638" font-size="12" font-weight="700" fill="#166534">⑤ 有価証券の評価</text>
+  <text x="30" y="660" font-size="10.5" fill="#374151">売買目的：時価評価→評価損益</text>
+  <text x="30" y="678" font-size="10.5" fill="#374151">満期保有目的：償却原価法</text>
+  <text x="30" y="696" font-size="10.5" fill="#374151">その他：評価差額を純資産直入</text>
+  <text x="30" y="718" font-size="10" fill="#64748B">→ 保有目的ごとに処理が異なる</text>
+
+  <rect x="16" y="758" width="328" height="130" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="30" y="782" font-size="12" font-weight="700" fill="#DC2626">⑥ 法人税等・消費税</text>
+  <text x="30" y="804" font-size="10.5" fill="#374151">法人税等 ／ 未払法人税等</text>
+  <text x="30" y="822" font-size="10.5" fill="#374151">仮受消費税 ／ 仮払消費税</text>
+  <text x="30" y="840" font-size="10.5" fill="#374151">　　　　　／ 未払消費税（差額）</text>
+  <text x="30" y="862" font-size="10" fill="#64748B">→ P/L：税費用／B/S：未払負債</text>
+
+  <rect x="16" y="902" width="328" height="86" rx="10" fill="#1E293B"/>
+  <text x="180" y="928" text-anchor="middle" font-size="11.5" font-weight="700" fill="#F8FAFC">6大整理を経て財務諸表が完成</text>
+  <text x="180" y="950" text-anchor="middle" font-size="10" fill="#94A3B8">損益計算書（P/L）／貸借対照表（B/S）</text>
+  <text x="180" y="968" text-anchor="middle" font-size="10" fill="#94A3B8">株主資本等変動計算書</text>
+
+  <rect x="16" y="1010" width="328" height="90" rx="10" fill="#111827"/>
+  <text x="180" y="1034" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">決算整理＝期中帳簿を正しい数字に</text>
+  <text x="180" y="1052" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">修正する作業</text>
+  <text x="180" y="1072" text-anchor="middle" font-size="10" fill="#E5E7EB">第3問では精算表上での処理速度が重要</text>
+</svg>

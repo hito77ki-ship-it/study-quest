@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" width="360" height="720" role="img" aria-labelledby="title desc">
+  <title id="title">TOEFL iBT 4技能バランス&足切り回避マップ（モバイル版）</title>
+  <desc id="desc">TOEICが2技能のみなのに対し、TOEFLはReading・Listening・Speaking・Writingの4技能均等配点で、各技能20点の足切りラインがあることを縦に示す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="720" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">TOEFL iBT 4技能バランス</text>
+  <text x="180" y="48" text-anchor="middle" font-size="10" fill="#94A3B8">TOEICとの配点構造の違いと足切り防衛線</text>
+
+  <!-- TOEIC panel -->
+  <rect x="20" y="66" width="320" height="192" rx="12" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="180" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">TOEIC L&amp;R（合計990点）</text>
+  <text x="180" y="104" text-anchor="middle" font-size="9.5" fill="#94A3B8">Reading・Listeningの2技能のみ</text>
+  <rect x="36" y="114" width="288" height="34" rx="8" fill="#BEE3F8" stroke="#63B3ED" stroke-width="2"/>
+  <text x="180" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#2C5282">Listening（495点）</text>
+  <rect x="36" y="152" width="288" height="34" rx="8" fill="#B2F5EA" stroke="#319795" stroke-width="2"/>
+  <text x="180" y="174" text-anchor="middle" font-size="12" font-weight="700" fill="#234E52">Reading（495点）</text>
+  <rect x="36" y="190" width="288" height="30" rx="8" fill="#EDF2F7" stroke="#A0AEC0" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="180" y="210" text-anchor="middle" font-size="10.5" font-weight="700" fill="#718096">Speaking／Writing（試験科目なし）</text>
+  <text x="180" y="238" text-anchor="middle" font-size="9.5" fill="#4A5568">この2技能を極めてもTOEFLの合否には直結しない</text>
+
+  <!-- VS badge -->
+  <circle cx="180" cy="272" r="18" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="180" y="277" text-anchor="middle" font-size="12" font-weight="700" fill="#718096">VS</text>
+
+  <!-- TOEFL panel -->
+  <text x="180" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">TOEFL iBT（合計120点／4技能均等）</text>
+  <text x="180" y="324" text-anchor="middle" font-size="9.5" fill="#94A3B8">4技能が横並びで勝負・各30点満点</text>
+
+  <!-- threshold line reference -->
+  <text x="20" y="346" font-size="9.5" fill="#E53E3E" font-weight="700">足切りライン目安：20点／30点</text>
+
+  <!-- Reading bar: 26/30 -->
+  <rect x="20" y="358" width="320" height="46" rx="10" fill="#F7FAFC"/>
+  <text x="30" y="376" font-size="11.5" font-weight="700" fill="#1E293B">Reading</text>
+  <rect x="30" y="382" width="280" height="16" rx="8" fill="#EDF2F7"/>
+  <rect x="30" y="382" width="243" height="16" rx="8" fill="#90CDF4" stroke="#3182CE" stroke-width="1.5"/>
+  <line x1="217" y1="378" x2="217" y2="402" stroke="#E53E3E" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="318" y="395" text-anchor="end" font-size="11" font-weight="700" fill="#2C5282">26/30 ✅</text>
+
+  <!-- Listening bar: 25/30 -->
+  <rect x="20" y="410" width="320" height="46" rx="10" fill="#F7FAFC"/>
+  <text x="30" y="428" font-size="11.5" font-weight="700" fill="#1E293B">Listening</text>
+  <rect x="30" y="434" width="280" height="16" rx="8" fill="#EDF2F7"/>
+  <rect x="30" y="434" width="233" height="16" rx="8" fill="#9AE6B4" stroke="#38A169" stroke-width="1.5"/>
+  <line x1="217" y1="430" x2="217" y2="454" stroke="#E53E3E" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="318" y="447" text-anchor="end" font-size="11" font-weight="700" fill="#276749">25/30 ✅</text>
+
+  <!-- Speaking bar: 18/30 (below threshold) -->
+  <rect x="20" y="462" width="320" height="46" rx="10" fill="#FEF2F2"/>
+  <text x="30" y="480" font-size="11.5" font-weight="700" fill="#C53030">Speaking</text>
+  <rect x="30" y="486" width="280" height="16" rx="8" fill="#EDF2F7"/>
+  <rect x="30" y="486" width="168" height="16" rx="8" fill="#FEB2B2" stroke="#E53E3E" stroke-width="1.5"/>
+  <line x1="217" y1="482" x2="217" y2="506" stroke="#E53E3E" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="318" y="499" text-anchor="end" font-size="11" font-weight="700" fill="#C53030">18/30 ❌</text>
+
+  <!-- Writing bar: 22/30 -->
+  <rect x="20" y="514" width="320" height="46" rx="10" fill="#F7FAFC"/>
+  <text x="30" y="532" font-size="11.5" font-weight="700" fill="#1E293B">Writing</text>
+  <rect x="30" y="538" width="280" height="16" rx="8" fill="#EDF2F7"/>
+  <rect x="30" y="538" width="205" height="16" rx="8" fill="#D6BCFA" stroke="#805AD5" stroke-width="1.5"/>
+  <line x1="217" y1="534" x2="217" y2="558" stroke="#E53E3E" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="318" y="551" text-anchor="end" font-size="11" font-weight="700" fill="#553C9A">22/30 ✅</text>
+
+  <!-- caption -->
+  <rect x="20" y="586" width="320" height="118" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="30" y="610" font-size="10.5" fill="#78350F">Speakingが1科目でも防衛線</text>
+  <text x="30" y="628" font-size="10.5" fill="#78350F">（目安20点）を割ると、他が高</text>
+  <text x="30" y="646" font-size="10.5" fill="#78350F">得点でも出願NGになるケース</text>
+  <text x="30" y="664" font-size="10.5" fill="#78350F">がある――だからこそ4技能を</text>
+  <text x="30" y="682" font-size="10.5" font-weight="700" fill="#78350F">均等に鍛えるのが最速の合格ルート</text>
+</svg>

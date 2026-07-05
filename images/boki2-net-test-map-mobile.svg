@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1040" width="360" height="1040" role="img" aria-labelledby="t d">
+  <title id="t">簿記2級ネット試験——90分の時間配分と解く順番（モバイル版）</title>
+  <desc id="d">第1問・第3問・第4問の時間配分イメージと、第1問→第4/5問→第3問→第2問の順で解く推奨順番を縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1040" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">簿記2級ネット試験</text>
+  <text x="180" y="44" text-anchor="middle" font-size="10" fill="#64748B">90分の時間配分と解く順番</text>
+
+  <text x="180" y="70" text-anchor="middle" font-size="11.5" font-weight="700" fill="#374151">90分の時間配分イメージ</text>
+
+  <rect x="40" y="84" width="80" height="110" rx="4" fill="#E2E8F0"/>
+  <rect x="40" y="154" width="80" height="40" rx="4" fill="#3B82F6"/>
+  <text x="80" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">第1問</text>
+  <text x="80" y="212" text-anchor="middle" font-size="10" fill="#3B82F6">仕訳×5・15分・20点</text>
+
+  <rect x="140" y="84" width="80" height="110" rx="4" fill="#E2E8F0"/>
+  <rect x="140" y="114" width="80" height="80" rx="4" fill="#F97316"/>
+  <text x="180" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">第3問</text>
+  <text x="180" y="212" text-anchor="middle" font-size="10" fill="#F97316">財務諸表・30分・20点</text>
+
+  <rect x="240" y="84" width="80" height="110" rx="4" fill="#E2E8F0"/>
+  <rect x="240" y="154" width="80" height="40" rx="4" fill="#22C55E"/>
+  <text x="280" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">第4問</text>
+  <text x="280" y="212" text-anchor="middle" font-size="10" fill="#22C55E">工業仕訳・15分・28点</text>
+
+  <text x="180" y="240" text-anchor="middle" font-size="10" fill="#64748B">第2問(15分)・第5問(15分)・見直し(5分)は省略</text>
+
+  <text x="180" y="278" text-anchor="middle" font-size="11.5" font-weight="700" fill="#374151">推奨する解く順番</text>
+
+  <rect x="16" y="292" width="328" height="60" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="30" y="316" font-size="12" font-weight="700" fill="#1E40AF">① 第1問（仕訳）10〜15分</text>
+  <text x="30" y="336" font-size="10.5" fill="#374151">確実に5問全部解く。分からなければ後回し</text>
+
+  <rect x="16" y="364" width="328" height="60" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="30" y="388" font-size="12" font-weight="700" fill="#166534">② 第4問・第5問（工業）30分</text>
+  <text x="30" y="408" font-size="10.5" fill="#374151">型が決まっており得点しやすい</text>
+
+  <rect x="16" y="436" width="328" height="60" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="30" y="460" font-size="12" font-weight="700" fill="#713F12">③ 第3問（財務諸表）25〜30分</text>
+  <text x="30" y="480" font-size="10.5" fill="#374151">完璧を目指さず分かる箇所から埋める</text>
+
+  <rect x="16" y="508" width="328" height="60" rx="8" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="30" y="532" font-size="12" font-weight="700" fill="#5B21B6">④ 第2問（個別論点）残り時間</text>
+  <text x="30" y="552" font-size="10.5" fill="#374151">取れそうな小問から部分点を狙う</text>
+
+  <rect x="16" y="588" width="328" height="60" rx="10" fill="#F1F5F9"/>
+  <text x="180" y="612" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">合格ライン70点。難問より基本問題を</text>
+  <text x="180" y="630" text-anchor="middle" font-size="10.5" font-weight="700" fill="#475569">確実に取る「捨てる勇気」が合格を引き寄せる</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 890" width="360" height="890">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="890" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">コスパがいい資格 4象限マトリクス</text>
+  <text x="180" y="46" text-anchor="middle" font-size="10" fill="#64748B">活かしやすさ×勉強時間の短さで4ゾーンに分類</text>
+
+  <!-- Zone 1: 最強コスパゾーン -->
+  <rect x="16" y="62" width="328" height="256" rx="12" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="2"/>
+  <rect x="16" y="62" width="328" height="34" rx="12" fill="#22C55E"/>
+  <rect x="16" y="84" width="328" height="12" fill="#22C55E"/>
+  <text x="180" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">🏆 最強コスパゾーン</text>
+  <text x="180" y="112" text-anchor="middle" font-size="10.5" fill="#166534">短時間×高汎用性</text>
+  <text x="34" y="136" font-size="12" font-weight="700" fill="#166534">① 簿記3級</text>
+  <text x="34" y="160" font-size="12" font-weight="700" fill="#166534">② ITパスポート</text>
+  <text x="34" y="184" font-size="11.5" fill="#166534">③ FP3級</text>
+  <text x="34" y="208" font-size="11" fill="#166534">④ MOS</text>
+  <text x="34" y="230" font-size="11" fill="#166534">⑤ 危険物乙4</text>
+  <rect x="30" y="248" width="72" height="24" rx="8" fill="#F59E0B" opacity="0.85"/>
+  <text x="66" y="264" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">王座</text>
+  <text x="180" y="298" text-anchor="middle" font-size="10" fill="#166534">50〜100時間の短期投資で、業界を問わず</text>
+  <text x="180" y="312" text-anchor="middle" font-size="10" fill="#166534">評価される汎用性を両立</text>
+
+  <!-- Zone 2: じっくり投資ゾーン -->
+  <rect x="16" y="334" width="328" height="220" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="334" width="328" height="34" rx="12" fill="#3B82F6"/>
+  <rect x="16" y="356" width="328" height="12" fill="#3B82F6"/>
+  <text x="180" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">💪 じっくり投資ゾーン</text>
+  <text x="180" y="384" text-anchor="middle" font-size="10.5" fill="#1E3A8A">長時間だが高リターン</text>
+  <text x="34" y="408" font-size="12" font-weight="700" fill="#1E3A8A">⑥ 簿記2級</text>
+  <text x="34" y="432" font-size="12" font-weight="700" fill="#1E3A8A">⑦ 宅建</text>
+  <text x="34" y="456" font-size="11" fill="#1E3A8A">⑧ 登録販売者</text>
+  <text x="34" y="480" font-size="11" fill="#1E3A8A">⑨ 基本情報</text>
+  <text x="34" y="504" font-size="11" fill="#1E3A8A">⑩ TOEIC</text>
+  <text x="180" y="536" text-anchor="middle" font-size="10" fill="#1E3A8A">時間はかかるが高リターン。じっくり投資する価値あり</text>
+
+  <!-- Zone 3: お手軽ゾーン -->
+  <rect x="16" y="570" width="328" height="86" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="16" y="570" width="328" height="34" rx="12" fill="#F59E0B"/>
+  <rect x="16" y="592" width="328" height="12" fill="#F59E0B"/>
+  <text x="180" y="592" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">⚡ お手軽ゾーン</text>
+  <text x="180" y="620" text-anchor="middle" font-size="10.5" fill="#92400E">短時間・限定的な汎用性</text>
+  <text x="180" y="640" text-anchor="middle" font-size="9.5" fill="#92400E">（該当する例は今回のマップにはなし）</text>
+
+  <!-- Zone 4: 要注意ゾーン -->
+  <rect x="16" y="672" width="328" height="86" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="16" y="672" width="328" height="34" rx="12" fill="#EF4444"/>
+  <rect x="16" y="694" width="328" height="12" fill="#EF4444"/>
+  <text x="180" y="694" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">⚠ 要注意ゾーン</text>
+  <text x="180" y="722" text-anchor="middle" font-size="10.5" fill="#991B1B">長時間の割に汎用性低い</text>
+  <text x="180" y="742" text-anchor="middle" font-size="9.5" fill="#991B1B">（該当する例は今回のマップにはなし）</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="774" width="328" height="90" rx="10" fill="#1E293B"/>
+  <text x="180" y="798" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">なぜ簿記3級・ITパスポートが「王座」にいるのか</text>
+  <text x="180" y="820" text-anchor="middle" font-size="10" fill="#CBD5E1">50〜100時間という短期投資で、業界を問わず</text>
+  <text x="180" y="836" text-anchor="middle" font-size="10" fill="#CBD5E1">評価される汎用性の高さを両立しているから。</text>
+  <text x="180" y="852" text-anchor="middle" font-size="10" fill="#CBD5E1">簿記2級・宅建はじっくり投資する価値がある。</text>
+</svg>

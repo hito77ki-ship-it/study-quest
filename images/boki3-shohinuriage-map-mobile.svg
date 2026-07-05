@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 980" width="360" height="980">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="980" fill="#FAFAFA" rx="16"/>
+
+  <!-- Title -->
+  <rect x="16" y="14" width="328" height="52" fill="#EDE9FE" rx="8"/>
+  <text x="180" y="36" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1A202C">先入先出法 vs 移動平均法</text>
+  <text x="180" y="56" text-anchor="middle" font-size="11" fill="#5B21B6">払出単価の決め方の違い</text>
+
+  <!-- 共通データ -->
+  <rect x="16" y="76" width="328" height="44" fill="#F3F4F6" rx="6"/>
+  <text x="180" y="94" text-anchor="middle" font-size="10.5" fill="#374151">【共通データ】4/1 前月繰越 10個 @100円</text>
+  <text x="180" y="110" text-anchor="middle" font-size="10.5" fill="#374151">4/10 仕入 10個 @120円</text>
+
+  <!-- ── 先入先出法 ── -->
+  <rect x="16" y="132" width="328" height="32" fill="#7C3AED" rx="8"/>
+  <text x="180" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">先入先出法（FIFO）</text>
+
+  <rect x="30" y="176" width="300" height="56" fill="#C4B5FD" rx="6"/>
+  <text x="180" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#4C1D95">4/10 仕入 10個　@120円 / 個</text>
+
+  <rect x="30" y="240" width="300" height="56" fill="#DDD6FE" rx="6"/>
+  <text x="180" y="264" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">前月繰越 10個　@100円 / 個</text>
+  <text x="230" y="284" text-anchor="middle" font-size="10.5" fill="#5B21B6">↑ 古い順に払い出す</text>
+
+  <rect x="60" y="306" width="240" height="60" fill="#EDE9FE" rx="6" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="180" y="326" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">払出単価</text>
+  <text x="180" y="348" text-anchor="middle" font-size="16" font-weight="700" fill="#4C1D95">@100円（古いロットから）</text>
+
+  <rect x="30" y="378" width="300" height="76" fill="#F5F3FF" rx="6"/>
+  <text x="180" y="398" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5B21B6">先に仕入れた在庫から先に払い出す</text>
+  <text x="180" y="418" text-anchor="middle" font-size="11" fill="#374151">古いロット（@100円）が先に出るため</text>
+  <text x="180" y="436" text-anchor="middle" font-size="11" fill="#374151">売上原価が低め → 利益が多めに出る傾向</text>
+
+  <!-- ── 移動平均法 ── -->
+  <rect x="16" y="474" width="328" height="32" fill="#0369A1" rx="8"/>
+  <text x="180" y="495" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">移動平均法（いどうへいきんほう）</text>
+
+  <rect x="30" y="518" width="140" height="56" fill="#BAE6FD" rx="6"/>
+  <text x="100" y="540" text-anchor="middle" font-size="11" font-weight="700" fill="#0C4A6E">旧10個</text>
+  <text x="100" y="558" text-anchor="middle" font-size="11" fill="#0C4A6E">@100円</text>
+  <rect x="190" y="518" width="140" height="56" fill="#075985" rx="6"/>
+  <text x="260" y="540" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">新10個</text>
+  <text x="260" y="558" text-anchor="middle" font-size="11" fill="#BAE6FD">@120円</text>
+  <text x="180" y="592" text-anchor="middle" font-size="12" fill="#0369A1">↓ 混ぜて平均化</text>
+
+  <rect x="60" y="604" width="240" height="60" fill="#0EA5E9" rx="6"/>
+  <text x="180" y="628" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">混合 20個　平均単価</text>
+  <text x="180" y="650" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">@110円</text>
+
+  <rect x="30" y="678" width="300" height="50" fill="#E0F2FE" rx="6"/>
+  <text x="180" y="698" text-anchor="middle" font-size="11" fill="#374151">平均単価 ＝（10×100 ＋ 10×120）÷ 20</text>
+  <text x="180" y="716" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0369A1">＝ 2,200 ÷ 20 ＝ 110円 / 個</text>
+
+  <rect x="30" y="742" width="300" height="76" fill="#F0F9FF" rx="6"/>
+  <text x="180" y="762" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0369A1">仕入のたびに平均単価を再計算する</text>
+  <text x="180" y="782" text-anchor="middle" font-size="11" fill="#374151">混ぜて平均化するため単価が安定する</text>
+  <text x="180" y="800" text-anchor="middle" font-size="11" fill="#374151">計算が多いが、価格変動の影響を均せる</text>
+
+  <!-- 下部まとめ -->
+  <rect x="16" y="838" width="328" height="120" fill="#FFF7ED" rx="10" stroke="#FCD34D" stroke-width="1"/>
+  <text x="180" y="862" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">🎯 先入先出法：古い順に払出し</text>
+  <text x="180" y="880" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">→ 単価は変わらない</text>
+  <text x="180" y="900" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">移動平均法：仕入のたびに再計算</text>
+  <text x="180" y="918" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">→ 単価がなだらかに変化</text>
+  <text x="180" y="944" text-anchor="middle" font-size="10.5" fill="#374151">どちらの方法も問題文に指定がある</text>
+  <text x="180" y="960" text-anchor="middle" font-size="10.5" fill="#374151">——指示通りの方法で計算してください</text>
+</svg>

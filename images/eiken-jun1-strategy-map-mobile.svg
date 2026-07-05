@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" width="360" height="720" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">英検準1級 4技能バランス＆合格ラインマップ（モバイル版）</title>
+  <desc id="svgdesc">一次試験の語彙読解・英作文・リスニングの3技能と、二次試験のスピーキング単独評価を縦に並べて示した図解</desc>
+  <defs>
+    <style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style>
+    <linearGradient id="mgVocab" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#93C5FD"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+    <linearGradient id="mgWrite" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D8B4FE"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
+    <linearGradient id="mgListen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FDBA74"/><stop offset="1" stop-color="#F97316"/></linearGradient>
+    <linearGradient id="mgSpeak" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6EE7B7"/><stop offset="1" stop-color="#10B981"/></linearGradient>
+  </defs>
+
+  <rect width="360" height="720" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">⚔ 英検準1級 4技能バランス</text>
+  <text x="180" y="50" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">＆合格ラインマップ</text>
+  <text x="180" y="70" text-anchor="middle" font-size="10" fill="#64748B">一次と二次は別スコアの「別ゲーム」</text>
+
+  <!-- 一次試験 header -->
+  <rect x="16" y="90" width="328" height="30" rx="8" fill="#E2E8F0"/>
+  <text x="180" y="110" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">一次試験：3技能の合計で判定（各満点750点）</text>
+
+  <!-- 語彙・読解 -->
+  <text x="16" y="146" font-size="15">📖</text>
+  <text x="40" y="146" font-size="12" font-weight="700" fill="#1E3A8A">語彙・読解（大問1〜3）</text>
+  <rect x="16" y="154" width="328" height="24" rx="6" fill="#E2E8F0"/>
+  <rect x="16" y="154" width="270" height="24" rx="6" fill="url(#mgVocab)"/>
+  <line x1="246" y1="150" x2="246" y2="182" stroke="#EF4444" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- 英作文 -->
+  <text x="16" y="200" font-size="15">✍️</text>
+  <text x="40" y="200" font-size="12" font-weight="700" fill="#5B21B6">英作文（大問4）</text>
+  <rect x="16" y="208" width="328" height="24" rx="6" fill="#E2E8F0"/>
+  <rect x="16" y="208" width="254" height="24" rx="6" fill="url(#mgWrite)"/>
+  <line x1="246" y1="204" x2="246" y2="236" stroke="#EF4444" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- リスニング -->
+  <text x="16" y="254" font-size="15">🎧</text>
+  <text x="40" y="254" font-size="12" font-weight="700" fill="#9A3412">リスニング（会話・講義）</text>
+  <rect x="16" y="262" width="328" height="24" rx="6" fill="#E2E8F0"/>
+  <rect x="16" y="262" width="260" height="24" rx="6" fill="url(#mgListen)"/>
+  <line x1="246" y1="258" x2="246" y2="290" stroke="#EF4444" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <text x="180" y="308" text-anchor="middle" font-size="9.5" fill="#B91C1C">赤い点線＝合格ライン目安（合計約1792点/2250点）</text>
+  <rect x="16" y="320" width="328" height="46" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <text x="180" y="340" text-anchor="middle" font-size="10.5" fill="#64748B">👉 語彙（パス単）が3技能すべての土台。</text>
+  <text x="180" y="356" text-anchor="middle" font-size="10.5" fill="#64748B">最初に固めるほど全体の伸びが早い</text>
+
+  <!-- 二次試験 header -->
+  <rect x="16" y="382" width="328" height="30" rx="8" fill="#D1FAE5"/>
+  <text x="180" y="402" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065F46">二次試験：スピーキング単独で判定</text>
+
+  <rect x="16" y="424" width="328" height="52" rx="8" fill="#fff" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="32" y="446" font-size="11" font-weight="700" fill="#475569">①→②→③→④</text>
+  <text x="32" y="464" font-size="10" fill="#64748B">4コマ漫画ナレーション（2分）→質疑応答（3〜4問）</text>
+
+  <!-- スピーキング -->
+  <text x="16" y="500" font-size="15">🎤</text>
+  <text x="40" y="500" font-size="12" font-weight="700" fill="#065F46">スピーキング</text>
+  <rect x="16" y="508" width="328" height="24" rx="6" fill="#E2E8F0"/>
+  <rect x="16" y="508" width="224" height="24" rx="6" fill="url(#mgSpeak)"/>
+  <line x1="219" y1="504" x2="219" y2="536" stroke="#EF4444" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="180" y="552" text-anchor="middle" font-size="9.5" fill="#B91C1C">合格ライン目安（約512点/750点）</text>
+
+  <rect x="16" y="566" width="328" height="46" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <text x="180" y="586" text-anchor="middle" font-size="10.5" fill="#64748B">👉 一次と並行して練習しないと</text>
+  <text x="180" y="602" text-anchor="middle" font-size="10.5" fill="#64748B">間に合わない</text>
+
+  <!-- Bottom caption -->
+  <rect x="16" y="630" width="328" height="70" rx="10" fill="#111827"/>
+  <text x="180" y="656" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">一次と二次は別スコアの「別ゲーム」</text>
+  <text x="180" y="676" text-anchor="middle" font-size="10" fill="#E5E7EB">だからこそ二次対策は学習初日から</text>
+  <text x="180" y="692" text-anchor="middle" font-size="10" fill="#E5E7EB">一次と並行させるのが正解</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1600" width="360" height="1600">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1600" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">短答を3秒で解くための</text>
+  <text x="180" y="48" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">無敵の4マスマトリクス</text>
+  <text x="180" y="66" text-anchor="middle" font-size="10.5" fill="#64748B">STEP①→STEP②の順に見れば機関設計が一瞬で分かる</text>
+
+  <!-- STEP legend -->
+  <rect x="20" y="82" width="320" height="128" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="32" y="92" width="296" height="52" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="44" y="110" font-size="12" font-weight="700" fill="#166534">STEP①</text>
+  <text x="44" y="128" font-size="11" fill="#15803D">「大会社」を見たら → 会計監査人は義務</text>
+  <rect x="32" y="150" width="296" height="52" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="44" y="168" font-size="12" font-weight="700" fill="#1E40AF">STEP②</text>
+  <text x="44" y="186" font-size="11" fill="#1E3A8A">「公開会社」を見たら → 取締役会は義務</text>
+
+  <!-- Quadrant 1: 公開×非大 -->
+  <rect x="20" y="228" width="320" height="200" rx="12" fill="#FAFBFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="20" y="228" width="320" height="34" rx="12" fill="#DBEAFE"/>
+  <text x="180" y="250" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">公開会社 × 非大会社</text>
+  <rect x="40" y="274" width="280" height="30" rx="15" fill="#DCFCE7"/>
+  <text x="180" y="294" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">取締役会：義務</text>
+  <rect x="40" y="312" width="280" height="30" rx="15" fill="#F1F5F9"/>
+  <text x="180" y="332" text-anchor="middle" font-size="12.5" font-weight="700" fill="#64748B">会計監査人：任意</text>
+  <text x="180" y="372" text-anchor="middle" font-size="10.5" fill="#94A3B8">＝取締役会設置会社</text>
+  <text x="180" y="396" text-anchor="middle" font-size="10.5" fill="#94A3B8">（例：非上場の中規模会社）</text>
+
+  <!-- Quadrant 2: 公開×大会社 -->
+  <rect x="20" y="448" width="320" height="222" rx="12" fill="#F0FFF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="20" y="448" width="320" height="34" rx="12" fill="#DCFCE7"/>
+  <text x="180" y="470" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">公開会社 × 大会社（公開大会社）</text>
+  <rect x="40" y="494" width="280" height="28" rx="14" fill="#DCFCE7"/>
+  <text x="180" y="512" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">取締役会：義務</text>
+  <rect x="40" y="528" width="280" height="28" rx="14" fill="#DCFCE7"/>
+  <text x="180" y="546" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">会計監査人：義務</text>
+  <rect x="40" y="562" width="280" height="28" rx="14" fill="#DCFCE7"/>
+  <text x="180" y="580" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">監査役会：義務</text>
+  <text x="180" y="616" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">⭐ 最も規制が厳しい組み合わせ</text>
+  <text x="180" y="638" text-anchor="middle" font-size="10" fill="#94A3B8">（例：上場企業の多くがここ）</text>
+
+  <!-- Quadrant 3: 非公開×非大 -->
+  <rect x="20" y="694" width="320" height="200" rx="12" fill="#FAFBFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="20" y="694" width="320" height="34" rx="12" fill="#F1F5F9"/>
+  <text x="180" y="716" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">非公開会社 × 非大会社</text>
+  <rect x="40" y="740" width="280" height="30" rx="15" fill="#F1F5F9"/>
+  <text x="180" y="760" text-anchor="middle" font-size="12.5" font-weight="700" fill="#64748B">取締役会：任意</text>
+  <rect x="40" y="778" width="280" height="30" rx="15" fill="#F1F5F9"/>
+  <text x="180" y="798" text-anchor="middle" font-size="12.5" font-weight="700" fill="#64748B">会計監査人：任意</text>
+  <text x="180" y="838" text-anchor="middle" font-size="10.5" fill="#94A3B8">＝定款自治が最も広い</text>
+  <text x="180" y="862" text-anchor="middle" font-size="10.5" fill="#94A3B8">（例：中小企業の多くがここ）</text>
+
+  <!-- Quadrant 4: 非公開×大会社 -->
+  <rect x="20" y="914" width="320" height="200" rx="12" fill="#FAFBFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="20" y="914" width="320" height="34" rx="12" fill="#F1F5F9"/>
+  <text x="180" y="936" text-anchor="middle" font-size="11.5" font-weight="700" fill="#475569">非公開会社 × 大会社（非公開大会社）</text>
+  <rect x="40" y="960" width="280" height="28" rx="14" fill="#F1F5F9"/>
+  <text x="180" y="978" text-anchor="middle" font-size="12" font-weight="700" fill="#64748B">取締役会：任意</text>
+  <rect x="40" y="994" width="280" height="28" rx="14" fill="#DCFCE7"/>
+  <text x="180" y="1012" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">会計監査人：義務</text>
+  <text x="180" y="1052" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">⚠ 見落とし注意ポイント</text>
+  <text x="180" y="1074" text-anchor="middle" font-size="10" fill="#94A3B8">（大会社なら非公開でも会計監査人は必須）</text>
+
+  <!-- bottom caption -->
+  <rect x="20" y="1136" width="320" height="70" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="1162" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">💡 このハコに当てはめて、選択肢の</text>
+  <text x="180" y="1182" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">語尾（義務・任意・禁止）と照合するだけ！</text>
+</svg>

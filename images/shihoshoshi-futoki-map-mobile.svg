@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1500" width="360" height="1500">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1500" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">不動産登記法——登記の種類・</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">申請情報・添付情報マップ</text>
+
+  <text x="180" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">登記申請の流れ</text>
+
+  <rect x="20" y="86" width="320" height="50" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="36" y="108" font-size="11.5" font-weight="700" fill="#1E40AF">① 物権変動発生</text>
+  <text x="36" y="126" font-size="10.5" fill="#374151">売買・相続・贈与</text>
+
+  <rect x="20" y="146" width="320" height="50" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="36" y="168" font-size="11.5" font-weight="700" fill="#1E40AF">② 申請情報を作成</text>
+  <text x="36" y="186" font-size="10.5" fill="#374151">登記原因・申請人を記載</text>
+
+  <rect x="20" y="206" width="320" height="50" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="36" y="228" font-size="11.5" font-weight="700" fill="#1E40AF">③ 添付情報を準備</text>
+  <text x="36" y="246" font-size="10.5" fill="#374151">証明書類を添付</text>
+
+  <rect x="20" y="266" width="320" height="50" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="36" y="288" font-size="11.5" font-weight="700" fill="#1E40AF">④ 法務局に申請</text>
+  <text x="36" y="306" font-size="10.5" fill="#374151">書面 or オンライン</text>
+
+  <rect x="20" y="326" width="320" height="50" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="36" y="348" font-size="11.5" font-weight="700" fill="#166534">⑤ 登記完了</text>
+  <text x="36" y="366" font-size="10.5" fill="#374151">登記識別情報が通知</text>
+
+  <!-- 登記の種類 -->
+  <rect x="20" y="398" width="320" height="500" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="398" width="320" height="32" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="418" width="320" height="12" fill="#3B82F6"/>
+  <text x="180" y="420" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">主な登記の種類と申請人</text>
+
+  <rect x="36" y="440" width="288" height="94" rx="6" fill="#DBEAFE"/>
+  <text x="46" y="460" font-size="11" font-weight="700" fill="#1D4ED8">所有権保存登記</text>
+  <text x="46" y="478" font-size="10" fill="#1D4ED8">表題部所有者が単独申請</text>
+  <text x="46" y="498" font-size="10" fill="#374151">新築建物などの最初の所有権登記。</text>
+  <text x="46" y="514" font-size="10" fill="#374151">登記権利者が単独で申請。</text>
+
+  <rect x="36" y="546" width="288" height="94" rx="6" fill="#DBEAFE"/>
+  <text x="46" y="566" font-size="11" font-weight="700" fill="#1D4ED8">所有権移転登記</text>
+  <text x="46" y="584" font-size="10" fill="#1D4ED8">登記義務者＋登記権利者の共同申請</text>
+  <text x="46" y="604" font-size="10" fill="#374151">売買・贈与・相続など。原則として</text>
+  <text x="46" y="620" font-size="10" fill="#374151">義務者と権利者が共同申請。</text>
+
+  <rect x="36" y="652" width="288" height="94" rx="6" fill="#DBEAFE"/>
+  <text x="46" y="672" font-size="11" font-weight="700" fill="#1D4ED8">抵当権設定登記</text>
+  <text x="46" y="690" font-size="10" fill="#1D4ED8">債権者（権利者）＋債務者（義務者）</text>
+  <text x="46" y="710" font-size="10" fill="#374151">金融機関が債権者として登記権利者となる。</text>
+
+  <rect x="36" y="758" width="288" height="94" rx="6" fill="#DBEAFE"/>
+  <text x="46" y="778" font-size="11" font-weight="700" fill="#1D4ED8">相続による登記</text>
+  <text x="46" y="796" font-size="10" fill="#1D4ED8">相続人が単独申請</text>
+  <text x="46" y="816" font-size="10" fill="#374151">登記義務者が死亡しているため</text>
+  <text x="46" y="832" font-size="10" fill="#374151">単独申請が可能。</text>
+
+  <!-- 添付情報 -->
+  <rect x="20" y="918" width="320" height="500" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="20" y="918" width="320" height="32" rx="10" fill="#F97316"/>
+  <rect x="20" y="938" width="320" height="12" fill="#F97316"/>
+  <text x="180" y="940" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">主な添付情報</text>
+
+  <rect x="36" y="960" width="288" height="94" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="980" font-size="11" font-weight="700" fill="#C2410C">登記原因証明情報</text>
+  <text x="46" y="1000" font-size="10" fill="#374151">売買契約書・贈与契約書・</text>
+  <text x="46" y="1016" font-size="10" fill="#374151">遺産分割協議書など</text>
+
+  <rect x="36" y="1066" width="288" height="94" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="1086" font-size="11" font-weight="700" fill="#C2410C">登記識別情報（旧：権利証）</text>
+  <text x="46" y="1106" font-size="10" fill="#374151">前回の登記完了時に通知。</text>
+  <text x="46" y="1122" font-size="10" fill="#374151">義務者側が提供。</text>
+
+  <rect x="36" y="1172" width="288" height="94" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="1192" font-size="11" font-weight="700" fill="#C2410C">印鑑証明書（義務者）</text>
+  <text x="46" y="1212" font-size="10" fill="#374151">登記義務者の本人確認に使用。</text>
+  <text x="46" y="1228" font-size="10" fill="#374151">3ヶ月以内のもの。</text>
+
+  <rect x="36" y="1278" width="288" height="94" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="1298" font-size="11" font-weight="700" fill="#C2410C">住所証明情報（権利者）</text>
+  <text x="46" y="1318" font-size="10" fill="#374151">住民票など。新しく登記名義人と</text>
+  <text x="46" y="1334" font-size="10" fill="#374151">なる人が提供。</text>
+</svg>

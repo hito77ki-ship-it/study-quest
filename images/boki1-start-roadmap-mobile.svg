@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1180" width="360" height="1180">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1180" rx="14" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">⚔ 1級合格への最速クエストマップ</text>
+  <text x="180" y="46" text-anchor="middle" font-size="10" fill="#64748B">今から約5ヶ月で11月試験を狙う（合計約300〜400時間）</text>
+
+  <!-- START -->
+  <rect x="20" y="62" width="320" height="90" rx="12" fill="#D1FAE5" stroke="#34D399" stroke-width="2"/>
+  <text x="180" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">🎓 START：2級合格！</text>
+  <text x="180" y="110" text-anchor="middle" font-size="10.5" fill="#059669">いざ1級へ→</text>
+  <text x="180" y="134" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+
+  <!-- Phase1 -->
+  <rect x="20" y="160" width="320" height="150" rx="12" fill="#EFF6FF" stroke="#60A5FA" stroke-width="2"/>
+  <text x="180" y="184" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">PHASE1（約2ヶ月・7月〜8月）</text>
+  <text x="180" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">商業・会計学　理論をマスター</text>
+  <text x="180" y="226" text-anchor="middle" font-size="10.5" fill="#374151">連結・企業結合／会計基準の理論</text>
+  <text x="180" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">約120〜160h</text>
+  <text x="180" y="280" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+
+  <!-- Phase2 -->
+  <rect x="20" y="326" width="320" height="150" rx="12" fill="#F5F3FF" stroke="#A78BFA" stroke-width="2"/>
+  <text x="180" y="350" text-anchor="middle" font-size="11" font-weight="700" fill="#3B1D8A">PHASE2（約1.5ヶ月・9月〜10月上旬）</text>
+  <text x="180" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#3B1D8A">工業・原価計算　差異分析を制覇</text>
+  <text x="180" y="392" text-anchor="middle" font-size="10.5" fill="#374151">標準原価・差異分析／意思決定・CVP</text>
+  <text x="180" y="416" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">約90〜120h</text>
+  <text x="180" y="446" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+
+  <!-- Phase3 -->
+  <rect x="20" y="492" width="320" height="150" rx="12" fill="#FFFBEB" stroke="#FBBF24" stroke-width="2"/>
+  <text x="180" y="516" text-anchor="middle" font-size="11" font-weight="700" fill="#78350F">PHASE3（約1.5ヶ月・10月上旬〜11月）</text>
+  <text x="180" y="536" text-anchor="middle" font-size="12" font-weight="700" fill="#78350F">過去問・全範囲模試　本番感覚</text>
+  <text x="180" y="558" text-anchor="middle" font-size="10.5" fill="#374151">4科目横断演習／時間配分の徹底訓練</text>
+  <text x="180" y="582" text-anchor="middle" font-size="11" font-weight="700" fill="#D97706">約90〜120h</text>
+  <text x="180" y="612" text-anchor="middle" font-size="11" fill="#94A3B8">↓</text>
+
+  <!-- GOAL -->
+  <rect x="20" y="638" width="320" height="110" rx="12" fill="#FDF2F8" stroke="#F472B6" stroke-width="2.5"/>
+  <text x="180" y="668" text-anchor="middle" font-size="13" font-weight="700" fill="#831843">🏆 GOAL：11月試験 本番突撃！</text>
+  <text x="180" y="694" text-anchor="middle" font-size="11" fill="#F9A8D4">合格を掴め！</text>
+
+  <rect x="16" y="766" width="328" height="70" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="180" y="792" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">合計：約300〜400時間／最短5ヶ月</text>
+  <text x="180" y="814" text-anchor="middle" font-size="10.5" fill="#64748B">合格基準：4科目合計70点以上／各10点以上必須</text>
+
+  <!-- 3 info cards -->
+  <rect x="20" y="854" width="320" height="96" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="180" y="878" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">商業・会計学（50点分）</text>
+  <text x="180" y="896" text-anchor="middle" font-size="10" fill="#1E3A8A">連結・企業結合・資産除去</text>
+  <text x="180" y="912" text-anchor="middle" font-size="10" fill="#374151">理論問題が最難関ゾーン</text>
+  <text x="180" y="934" text-anchor="middle" font-size="9.5" fill="#3B82F6">★最初に全体像を掴む戦略</text>
+
+  <rect x="20" y="960" width="320" height="96" rx="8" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1"/>
+  <text x="180" y="984" text-anchor="middle" font-size="11" font-weight="700" fill="#6D28D9">工業・原価計算（50点分）</text>
+  <text x="180" y="1002" text-anchor="middle" font-size="10" fill="#3B1D8A">標準原計・差異・意思決定</text>
+  <text x="180" y="1018" text-anchor="middle" font-size="10" fill="#374151">ABC原価計算も出題</text>
+  <text x="180" y="1040" text-anchor="middle" font-size="9.5" fill="#7C3AED">★2級の知識が最も活きる！</text>
+
+  <rect x="20" y="1066" width="320" height="96" rx="8" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+  <text x="180" y="1090" text-anchor="middle" font-size="11" font-weight="700" fill="#B45309">過去問・本番演習（全科目）</text>
+  <text x="180" y="1108" text-anchor="middle" font-size="10" fill="#78350F">3時間×本番形式で解く</text>
+  <text x="180" y="1124" text-anchor="middle" font-size="10" fill="#374151">足切り回避意識を鍛える</text>
+  <text x="180" y="1146" text-anchor="middle" font-size="9.5" fill="#D97706">★最低5〜10年分を反復する</text>
+</svg>

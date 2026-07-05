@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1020" width="360" height="1020">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="1020" rx="14" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">簿記の流れ——3ステップで理解する</text>
+
+  <!-- Step 1 -->
+  <rect x="20" y="50" width="320" height="230" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="50" width="320" height="36" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="74" width="320" height="12" fill="#3B82F6"/>
+  <text x="180" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP 1　取引をメモ（仕訳）</text>
+  <text x="180" y="112" text-anchor="middle" font-size="26" fill="#3B82F6">✏️</text>
+  <text x="180" y="140" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E40AF">仕訳（しわけ）</text>
+  <text x="180" y="160" text-anchor="middle" font-size="11" fill="#374151">取引が起きるたびに「何が増えて</text>
+  <text x="180" y="178" text-anchor="middle" font-size="11" fill="#374151">何が減ったか」を決まったルールで記録</text>
+  <rect x="40" y="192" width="280" height="66" rx="6" fill="#DBEAFE"/>
+  <text x="180" y="214" text-anchor="middle" font-size="10.5" fill="#1D4ED8">（例）現金¥150を受け取った</text>
+  <text x="180" y="238" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">現金150 ／ 売上150</text>
+
+  <text x="180" y="300" text-anchor="middle" font-size="11" fill="#64748B">↓ 集計 ↓</text>
+
+  <!-- Step 2 -->
+  <rect x="20" y="316" width="320" height="230" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="20" y="316" width="320" height="36" rx="10" fill="#22C55E"/>
+  <rect x="20" y="340" width="320" height="12" fill="#22C55E"/>
+  <text x="180" y="340" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP 2　科目ごとに整理</text>
+  <text x="180" y="378" text-anchor="middle" font-size="26" fill="#22C55E">📊</text>
+  <text x="180" y="406" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">総勘定元帳（T字）</text>
+  <text x="180" y="426" text-anchor="middle" font-size="11" fill="#374151">「現金」「売上」など勘定科目ごとに</text>
+  <text x="180" y="444" text-anchor="middle" font-size="11" fill="#374151">仕訳を集計。期末の残高を算出する。</text>
+  <rect x="60" y="458" width="240" height="66" rx="6" fill="#DCFCE7"/>
+  <line x1="180" y1="458" x2="180" y2="524" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="130" y="480" text-anchor="middle" font-size="10.5" fill="#166534">借方</text>
+  <text x="230" y="480" text-anchor="middle" font-size="10.5" fill="#166534">貸方</text>
+  <text x="130" y="504" text-anchor="middle" font-size="11" fill="#166534">＋300</text>
+  <text x="230" y="504" text-anchor="middle" font-size="11" fill="#166534">△150</text>
+
+  <text x="180" y="566" text-anchor="middle" font-size="11" fill="#64748B">↓ まとめ ↓</text>
+
+  <!-- Step 3 -->
+  <rect x="20" y="582" width="320" height="230" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="20" y="582" width="320" height="36" rx="10" fill="#F97316"/>
+  <rect x="20" y="606" width="320" height="12" fill="#F97316"/>
+  <text x="180" y="606" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP 3　報告書を作る</text>
+  <text x="180" y="644" text-anchor="middle" font-size="26" fill="#F97316">📋</text>
+  <text x="180" y="672" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">財務諸表（決算書）</text>
+  <text x="180" y="692" text-anchor="middle" font-size="11" fill="#374151">1年分の仕訳をまとめて「損益計算書</text>
+  <text x="180" y="710" text-anchor="middle" font-size="11" fill="#374151">（P/L）」と「貸借対照表（B/S）」を作成</text>
+  <rect x="40" y="724" width="280" height="66" rx="6" fill="#FFEDD5"/>
+  <text x="180" y="748" text-anchor="middle" font-size="10.5" fill="#C2410C">P/L → 儲けはいくらか</text>
+  <text x="180" y="768" text-anchor="middle" font-size="10.5" fill="#C2410C">B/S → 財産はいくらあるか</text>
+
+  <!-- bottom -->
+  <rect x="16" y="828" width="328" height="176" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="180" y="852" text-anchor="middle" font-size="10.5" fill="#475569">💡 勉強ではこの3ステップを</text>
+  <text x="180" y="870" text-anchor="middle" font-size="10.5" fill="#475569">逆順にたどると理解が深まります</text>
+  <text x="180" y="894" text-anchor="middle" font-size="10.5" fill="#475569">「財務諸表（ゴール）を先にイメージ →</text>
+  <text x="180" y="912" text-anchor="middle" font-size="10.5" fill="#475569">元帳の仕組みを理解 → 仕訳ルールを覚える」</text>
+  <text x="180" y="936" text-anchor="middle" font-size="10" fill="#94A3B8">ゴールが見えてから作業手順を学ぶと、</text>
+  <text x="180" y="954" text-anchor="middle" font-size="10" fill="#94A3B8">なぜこのルールが必要なのかが分かりやすい</text>
+</svg>

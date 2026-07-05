@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 950" width="360" height="950" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">FP3級——「意味ない」は本当？取得メリット4つ（モバイル版）</title>
+  <desc id="svgdesc">実生活・就活・FP2級への道・コスパの良さという4つの取得メリットを縦に並べた図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="950" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">FP3級——「意味ない」は本当？</text>
+  <text x="180" y="46" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">取得メリット4つ</text>
+
+  <!-- ① 実生活 -->
+  <rect x="16" y="62" width="328" height="204" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="62" width="328" height="30" rx="10" fill="#3B82F6"/>
+  <text x="180" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">① 実生活に直結する知識が身につく</text>
+  <text x="180" y="108" text-anchor="middle" font-size="10" fill="#374151">保険・税金・年金・NISAを「体系的に」理解できる</text>
+  <text x="180" y="128" text-anchor="middle" font-size="9.5" fill="#64748B">社会保険の仕組みを知らないと損する場面が多い</text>
+  <text x="180" y="144" text-anchor="middle" font-size="9.5" fill="#64748B">住宅購入・相続・資産運用の判断力が上がる</text>
+  <text x="180" y="160" text-anchor="middle" font-size="9.5" fill="#64748B">「お金のリテラシー」として一生使える知識</text>
+  <text x="180" y="188" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">→ 資格の「使えなさ」ではなく</text>
+  <text x="180" y="204" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">知識の有益さを評価</text>
+
+  <!-- ② 就活 -->
+  <rect x="16" y="284" width="328" height="204" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="16" y="284" width="328" height="30" rx="10" fill="#EAB308"/>
+  <text x="180" y="304" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">② 就活・転職で差別化できる</text>
+  <text x="180" y="330" text-anchor="middle" font-size="10" fill="#374151">金融・保険・不動産業界では評価されやすい</text>
+  <text x="180" y="350" text-anchor="middle" font-size="9.5" fill="#64748B">「勉強する姿勢・計画性」のアピールになる</text>
+  <text x="180" y="366" text-anchor="middle" font-size="9.5" fill="#64748B">大学生のうちに取れば就活前に武器になる</text>
+  <text x="180" y="382" text-anchor="middle" font-size="9.5" fill="#64748B">「国家資格」の実績として履歴書に書ける</text>
+  <text x="180" y="410" text-anchor="middle" font-size="9.5" font-weight="700" fill="#713F12">→ 取得難度が低い分、2級取得への</text>
+  <text x="180" y="426" text-anchor="middle" font-size="9.5" font-weight="700" fill="#713F12">足がかりとして活用</text>
+
+  <!-- ③ FP2への道 -->
+  <rect x="16" y="506" width="328" height="204" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="16" y="506" width="328" height="30" rx="10" fill="#22C55E"/>
+  <text x="180" y="526" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">③ FP2級合格への確実な足がかり</text>
+  <text x="180" y="552" text-anchor="middle" font-size="10" fill="#374151">FP2級の受験資格：3級合格が最も手軽なルート</text>
+  <text x="180" y="572" text-anchor="middle" font-size="9.5" fill="#64748B">3級で全分野の土台を作ってから2級へ進む</text>
+  <text x="180" y="588" text-anchor="middle" font-size="9.5" fill="#64748B">FP2級は就活・転職でより強力な評価を受ける</text>
+  <text x="180" y="604" text-anchor="middle" font-size="9.5" fill="#64748B">FP1級やCFPへの最初のステップでもある</text>
+  <text x="180" y="632" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">→ 3級単体ではなく「2級合格セット」</text>
+  <text x="180" y="648" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">で考える</text>
+
+  <!-- ④ コスパ -->
+  <rect x="16" y="728" width="328" height="204" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="16" y="728" width="328" height="30" rx="10" fill="#EF4444"/>
+  <text x="180" y="748" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">④ 短期間・低コストで取れる国家資格</text>
+  <text x="180" y="774" text-anchor="middle" font-size="10" fill="#374151">勉強期間：1〜3ヶ月（1日1時間程度）</text>
+  <text x="180" y="794" text-anchor="middle" font-size="9.5" fill="#64748B">合格率：60〜70%台（挑戦しやすい難易度）</text>
+  <text x="180" y="810" text-anchor="middle" font-size="9.5" fill="#64748B">受験料：6,000円程度（学科＋実技）</text>
+  <text x="180" y="826" text-anchor="middle" font-size="9.5" fill="#64748B">年3回受験機会（1・5・9月）</text>
+  <text x="180" y="854" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DC2626">→ 「意味ない」より</text>
+  <text x="180" y="870" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DC2626">「取らない理由がない」レベル</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 806" width="360" height="806">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="806" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">FP3級 ライフプランニング</text>
+  <text x="180" y="48" text-anchor="middle" font-size="11" fill="#64748B">6つの係数と年金3階建て</text>
+
+  <text x="180" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">頻出！6つの係数——「何を求めるか」で使い分け</text>
+
+  <rect x="16" y="84" width="328" height="64" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">終価係数</text>
+  <text x="180" y="119" text-anchor="middle" font-size="10" fill="#374151">現在の元本→将来いくら？</text>
+  <text x="180" y="135" text-anchor="middle" font-size="9.5" fill="#64748B">例：100万円を5年運用すると？</text>
+
+  <rect x="16" y="156" width="328" height="64" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="175" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">現価係数</text>
+  <text x="180" y="191" text-anchor="middle" font-size="10" fill="#374151">将来の金額→現在いくら必要？</text>
+  <text x="180" y="207" text-anchor="middle" font-size="9.5" fill="#64748B">例：5年後の500万を準備するには？</text>
+
+  <rect x="16" y="228" width="328" height="64" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="247" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">年金終価係数</text>
+  <text x="180" y="263" text-anchor="middle" font-size="10" fill="#374151">毎年積立→将来いくらに？</text>
+  <text x="180" y="279" text-anchor="middle" font-size="9.5" fill="#64748B">例：毎年10万を5年積立すると？</text>
+
+  <rect x="16" y="300" width="328" height="64" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="319" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">減債基金係数</text>
+  <text x="180" y="335" text-anchor="middle" font-size="10" fill="#374151">将来の目標額→毎年いくら積立？</text>
+  <text x="180" y="351" text-anchor="middle" font-size="9.5" fill="#64748B">例：5年後500万のために毎年いくら？</text>
+
+  <rect x="16" y="372" width="328" height="64" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="391" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">年金現価係数</text>
+  <text x="180" y="407" text-anchor="middle" font-size="10" fill="#374151">毎年受取額→元本いくら必要？</text>
+  <text x="180" y="423" text-anchor="middle" font-size="9.5" fill="#64748B">例：毎年100万受け取るには元本は？</text>
+
+  <rect x="16" y="444" width="328" height="64" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="463" text-anchor="middle" font-size="11" font-weight="700" fill="#713F12">資本回収係数</text>
+  <text x="180" y="479" text-anchor="middle" font-size="10" fill="#374151">元本→毎年いくら受け取れる？</text>
+  <text x="180" y="495" text-anchor="middle" font-size="9.5" fill="#64748B">例：住宅ローンの毎年返済額は？</text>
+
+  <text x="180" y="536" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">公的年金——3階建て構造</text>
+
+  <rect x="60" y="550" width="240" height="50" rx="8" fill="#EDE9FE" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="180" y="570" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">3階：企業年金・iDeCo（任意）</text>
+  <text x="180" y="586" text-anchor="middle" font-size="9.5" fill="#64748B">確定給付年金・DCなど</text>
+
+  <rect x="30" y="608" width="300" height="50" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="628" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">2階：厚生年金（会社員・公務員）</text>
+  <text x="180" y="644" text-anchor="middle" font-size="9.5" fill="#64748B">報酬比例部分/国民年金の上乗せ</text>
+
+  <rect x="16" y="666" width="328" height="56" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="686" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">1階：国民年金（基礎年金）全員加入</text>
+  <text x="180" y="702" text-anchor="middle" font-size="9.5" fill="#64748B">20歳〜60歳の全国民/満額 月約67,000円</text>
+  <text x="180" y="716" text-anchor="middle" font-size="9" fill="#64748B">（2025年度）</text>
+
+  <rect x="16" y="742" width="328" height="46" rx="8" fill="#F1F5F9"/>
+  <text x="30" y="762" font-size="10.5" fill="#475569">💡 国民年金は全員・厚生年金は会社員追加・</text>
+  <text x="30" y="778" font-size="10.5" fill="#475569">企業年金は任意。3つ揃うのは企業年金ありの会社員。</text>
+</svg>

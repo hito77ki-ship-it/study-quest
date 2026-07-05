@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">FP3級 6分野バランス攻略マップ</text>
+  <text x="180" y="46" text-anchor="middle" font-size="10" fill="#64748B">満点不要。60%の合格基準線を死守する配点戦略</text>
+
+  <rect x="16" y="60" width="328" height="46" rx="8" fill="#DCFCE7" stroke="#4ADE80" stroke-width="2"/>
+  <text x="30" y="80" font-size="11" font-weight="700" fill="#15803D">ライフプランニング</text>
+  <text x="30" y="97" font-size="9.5" fill="#166534">最優先の得点源／年金・社保が土台</text>
+
+  <rect x="16" y="112" width="328" height="34" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="30" y="133" font-size="10.5" fill="#1E293B">リスク管理（生命保険・損害保険）</text>
+
+  <rect x="16" y="152" width="328" height="34" rx="8" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="30" y="173" font-size="10.5" fill="#1E293B">金融資産運用（投資信託・株式・債券）</text>
+
+  <rect x="16" y="192" width="328" height="34" rx="8" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="30" y="213" font-size="10.5" fill="#1E293B">タックスプランニング（所得税・住民税）</text>
+
+  <rect x="16" y="232" width="328" height="34" rx="8" fill="#FCE7F3" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="30" y="253" font-size="10.5" fill="#1E293B">不動産（取引・税金）</text>
+
+  <rect x="16" y="272" width="328" height="34" rx="8" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="30" y="293" font-size="10.5" fill="#1E293B">相続・事業承継・贈与</text>
+
+  <text x="180" y="336" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">両方とも60%以上をクリアすれば合格</text>
+
+  <text x="30" y="372" font-size="11" font-weight="700" fill="#1E293B">学科試験</text>
+  <rect x="30" y="380" width="300" height="22" rx="11" fill="#E2E8F0"/>
+  <rect x="30" y="380" width="180" height="22" rx="11" fill="#8CC63F"/>
+  <line x1="210" y1="374" x2="210" y2="408" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="210" y="420" text-anchor="middle" font-size="9.5" fill="#B91C1C">合格基準 60%</text>
+
+  <text x="30" y="452" font-size="11" font-weight="700" fill="#1E293B">実技試験</text>
+  <text x="30" y="464" font-size="8.5" fill="#64748B">（FP協会推奨）</text>
+  <rect x="30" y="472" width="300" height="22" rx="11" fill="#E2E8F0"/>
+  <rect x="30" y="472" width="180" height="22" rx="11" fill="#6AAF2B"/>
+  <line x1="210" y1="466" x2="210" y2="500" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="210" y="512" text-anchor="middle" font-size="9.5" fill="#B91C1C">合格基準 60%</text>
+
+  <rect x="16" y="540" width="328" height="50" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="562" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">満点不要。ライフプランニングを起点に</text>
+  <text x="180" y="578" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">6分野を60%ラインまで積み上げるのが近道</text>
+</svg>

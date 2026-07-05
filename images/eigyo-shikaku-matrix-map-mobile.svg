@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1000" width="360" height="1000">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1000" rx="12" fill="#FAFDF6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">営業職におすすめ資格 4象限マトリクス</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9.5" fill="#64748B">汎用性×取得時間で整理</text>
+
+  <!-- 即戦力ゾーン -->
+  <rect x="16" y="62" width="328" height="130" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <text x="28" y="86" font-size="12" font-weight="700" fill="#166534">⚡ 即戦力ゾーン（短時間×高汎用性）</text>
+  <rect x="28" y="96" width="304" height="34" rx="8" fill="#DCFCE7" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="180" y="118" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">👑①FP2級（王座）</text>
+  <rect x="28" y="136" width="304" height="30" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="156" text-anchor="middle" font-size="11" fill="#166534">⑧秘書検定準1級</text>
+
+  <!-- じっくり投資ゾーン -->
+  <rect x="16" y="208" width="328" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="28" y="232" font-size="12" font-weight="700" fill="#1D4ED8">💪 じっくり投資ゾーン（長時間・高リターン）</text>
+  <rect x="28" y="242" width="304" height="34" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="180" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E3A8A">③中小企業診断士</text>
+  <rect x="28" y="282" width="304" height="30" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="302" text-anchor="middle" font-size="11" fill="#1E3A8A">⑤簿記2級</text>
+
+  <!-- 特化スピードゾーン -->
+  <rect x="16" y="354" width="328" height="164" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="28" y="378" font-size="12" font-weight="700" fill="#92400E">🎯 特化スピードゾーン（短時間・特定業種で効く）</text>
+  <rect x="28" y="388" width="304" height="30" rx="8" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="180" y="408" text-anchor="middle" font-size="11" fill="#92400E">④ITパスポート</text>
+  <rect x="28" y="424" width="304" height="30" rx="8" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="180" y="444" text-anchor="middle" font-size="11" fill="#92400E">⑥証券外務員</text>
+  <rect x="28" y="460" width="304" height="30" rx="8" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="180" y="480" text-anchor="middle" font-size="11" fill="#92400E">⑦TOEIC800</text>
+
+  <!-- 専門特化ゾーン -->
+  <rect x="16" y="534" width="328" height="98" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="28" y="558" font-size="12" font-weight="700" fill="#991B1B">🏠 専門特化ゾーン（長時間・業種内で必須）</text>
+  <rect x="28" y="568" width="304" height="34" rx="8" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="590" text-anchor="middle" font-size="11.5" font-weight="700" fill="#991B1B">②宅建</text>
+
+  <!-- 下部サマリー -->
+  <rect x="16" y="656" width="328" height="94" rx="8" fill="#1E293B"/>
+  <text x="180" y="678" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">なぜFP2級が「即戦力ゾーン」の王座にいるのか</text>
+  <text x="180" y="696" text-anchor="middle" font-size="9.5" fill="#CBD5E1">150〜200時間という投資で、保険・金融に限らず</text>
+  <text x="180" y="712" text-anchor="middle" font-size="9.5" fill="#CBD5E1">どの営業でも顧客の資産を語れる武器になるから。</text>
+  <text x="180" y="730" text-anchor="middle" font-size="9.5" fill="#CBD5E1">中小企業診断士は法人営業からコンサルへの転身も見据えられる。</text>
+</svg>

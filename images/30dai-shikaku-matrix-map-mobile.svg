@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 880" width="360" height="880">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="880" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">30代におすすめの資格ランキング10選</text>
+  <text x="180" y="44" text-anchor="middle" font-size="11" fill="#64748B">取得期間×実務経験との掛け算インパクトで整理</text>
+
+  <!-- Q1 本命ゾーン -->
+  <rect x="16" y="62" width="328" height="182" rx="10" fill="#FDF2F8"/>
+  <text x="28" y="86" font-size="13.5" font-weight="700" fill="#9D174D">🏆 本命ゾーン（長期戦・掛け算インパクト大）</text>
+  <text x="28" y="102" font-size="10" fill="#9D174D">長期戦だが実務×資格で圧倒的差別化</text>
+  <rect x="28" y="112" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="129" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">中小企業診断士</text>
+  <rect x="28" y="142" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="159" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">社会保険労務士（社労士）</text>
+  <rect x="28" y="172" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="189" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">行政書士</text>
+  <rect x="28" y="202" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="219" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">税理士（科目合格）</text>
+
+  <!-- Q2 即戦力ゾーン -->
+  <rect x="16" y="260" width="328" height="150" rx="10" fill="#EFF6FF"/>
+  <text x="28" y="284" font-size="13.5" font-weight="700" fill="#1E40AF">⚡ 即戦力ゾーン（短〜中期）</text>
+  <text x="28" y="300" font-size="10" fill="#1E40AF">短〜中期で市場価値に直結</text>
+  <rect x="28" y="310" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="327" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">宅地建物取引士（宅建）</text>
+  <rect x="28" y="340" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="357" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">応用情報技術者</text>
+
+  <!-- Q3 専門特化ゾーン -->
+  <rect x="16" y="426" width="328" height="150" rx="10" fill="#F3E8FF"/>
+  <text x="28" y="450" font-size="13.5" font-weight="700" fill="#7C3AED">🔧 専門特化ゾーン（受験資格あり）</text>
+  <text x="28" y="466" font-size="10" fill="#7C3AED">実務要件はあるが専門性は圧倒的</text>
+  <rect x="28" y="476" width="304" height="26" rx="13" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="493" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C3AED">二級建築士</text>
+  <text x="28" y="520" font-size="9.5" fill="#6D28D9">※受験資格に建築系学科卒 or 実務2年以上が必要</text>
+
+  <!-- Q4 お手軽ゾーン -->
+  <rect x="16" y="592" width="328" height="212" rx="10" fill="#F0FFF4"/>
+  <text x="28" y="616" font-size="13.5" font-weight="700" fill="#166534">🎒 お手軽ゾーン（短期・汎用）</text>
+  <text x="28" y="632" font-size="10" fill="#166534">短期で汎用的な武器になる</text>
+  <rect x="28" y="642" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="659" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">FP2級</text>
+  <rect x="28" y="672" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="689" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">日商簿記2級</text>
+  <rect x="28" y="702" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="719" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">TOEIC 800点以上</text>
+</svg>

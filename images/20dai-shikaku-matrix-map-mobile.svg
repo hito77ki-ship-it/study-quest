@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 830" width="360" height="830">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="830" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">20代におすすめの資格ランキング10選</text>
+  <text x="180" y="44" text-anchor="middle" font-size="11" fill="#64748B">就活・転職への即効性×勉強時間の短さで整理</text>
+
+  <!-- Q1 本命ゾーン -->
+  <rect x="16" y="62" width="328" height="150" rx="10" fill="#FDF2F8"/>
+  <text x="28" y="86" font-size="13.5" font-weight="700" fill="#9D174D">🏆 本命ゾーン（長期戦・高い即効性）</text>
+  <text x="28" y="102" font-size="10" fill="#9D174D">長期戦だが在学中に決めれば圧倒的差別化</text>
+  <rect x="28" y="112" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="129" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">公認会計士</text>
+  <rect x="28" y="142" width="304" height="26" rx="13" fill="#fff" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="180" y="159" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9D174D">行政書士</text>
+  <text x="28" y="200" font-size="9.5" fill="#9D174D">※会計士は3,000〜4,000時間。20代前半での合格が最多</text>
+
+  <!-- Q2 20代最強ゾーン -->
+  <rect x="16" y="228" width="328" height="182" rx="10" fill="#EFF6FF"/>
+  <text x="28" y="252" font-size="13.5" font-weight="700" fill="#1E40AF">⚡ 20代最強ゾーン（短期×即効性）</text>
+  <text x="28" y="268" font-size="10" fill="#1E40AF">短期間×就活・転職に直結</text>
+  <rect x="28" y="278" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="295" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">日商簿記2級</text>
+  <rect x="28" y="308" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="325" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">宅地建物取引士（宅建）</text>
+  <rect x="28" y="338" width="304" height="26" rx="13" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="355" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">FP2級</text>
+
+  <!-- Q3 IT実務特化ゾーン -->
+  <rect x="16" y="426" width="328" height="150" rx="10" fill="#F3E8FF"/>
+  <text x="28" y="450" font-size="13.5" font-weight="700" fill="#7C3AED">🔧 IT実務特化ゾーン（積み上げ型）</text>
+  <text x="28" y="466" font-size="10" fill="#7C3AED">積み上げ型でキャリアアップに直結</text>
+  <rect x="28" y="476" width="304" height="26" rx="13" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="493" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C3AED">応用情報技術者（AP）</text>
+  <rect x="28" y="506" width="304" height="26" rx="13" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="523" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C3AED">基本情報技術者（FE）</text>
+
+  <!-- Q4 お手軽スタートゾーン -->
+  <rect x="16" y="592" width="328" height="212" rx="10" fill="#F0FFF4"/>
+  <text x="28" y="616" font-size="13.5" font-weight="700" fill="#166534">🎒 お手軽スタートゾーン（短期・易しめ）</text>
+  <text x="28" y="632" font-size="10" fill="#166534">短期間で成功体験を積める</text>
+  <rect x="28" y="642" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="659" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">ITパスポート</text>
+  <rect x="28" y="672" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="689" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">MOS</text>
+  <rect x="28" y="702" width="304" height="26" rx="13" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="180" y="719" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">TOEIC 800点以上</text>
+</svg>

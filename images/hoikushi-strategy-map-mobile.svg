@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1560" width="360" height="1560">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1560" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">保育士試験 合格戦略マップ</text>
+  <text x="180" y="42" text-anchor="middle" font-size="9.5" fill="#64748B">筆記9科目の各個撃破＆実技選択</text>
+  <text x="180" y="56" text-anchor="middle" font-size="9" fill="#64748B">科目合格制（3年間有効）をフル活用</text>
+
+  <rect x="16" y="70" width="328" height="24" rx="8" fill="#3B4DA8"/>
+  <text x="180" y="87" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">📝 筆記9科目・攻略優先度</text>
+
+  <rect x="16" y="102" width="328" height="76" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="30" y="122" font-size="10" font-weight="700" fill="#991B1B">🔥 最優先（2大ボス）——全科目の土台</text>
+  <text x="30" y="140" font-size="9.5" fill="#7F1D1D">保育原理・保育の心理学</text>
+  <text x="30" y="156" font-size="9" fill="#991B1B">30〜50h/科目</text>
+
+  <rect x="16" y="186" width="328" height="76" rx="8" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1"/>
+  <text x="30" y="206" font-size="10" font-weight="700" fill="#9A3412">⏱ 早め着手——暗記量が多い</text>
+  <text x="30" y="224" font-size="9.5" fill="#7C2D12">子どもの保健・子どもの食と栄養</text>
+  <text x="30" y="240" font-size="9" fill="#9A3412">30〜50h/科目</text>
+
+  <rect x="16" y="270" width="328" height="92" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="30" y="290" font-size="10" font-weight="700" fill="#1E40AF">🔗 並行で進める——内容重複、まとめ学習が効率的</text>
+  <text x="30" y="308" font-size="9.5" fill="#1E3A8A">子ども家庭福祉・社会福祉</text>
+  <text x="30" y="324" font-size="9.5" fill="#1E3A8A">社会的養護</text>
+  <text x="30" y="340" font-size="9" fill="#1E40AF">25〜40h/科目</text>
+
+  <rect x="16" y="378" width="328" height="76" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="30" y="398" font-size="10" font-weight="700" fill="#166534">✅ 後半で固める——ボリューム少なめ</text>
+  <text x="30" y="416" font-size="9.5" fill="#14532D">教育原理・保育実習理論</text>
+  <text x="30" y="432" font-size="9" fill="#166534">20〜50h/科目</text>
+
+  <rect x="16" y="470" width="328" height="140" rx="8" fill="#1E293B"/>
+  <text x="180" y="494" text-anchor="middle" font-size="11" font-weight="700" fill="#FCA5A5">⚠ 足切り防衛線</text>
+  <text x="180" y="516" text-anchor="middle" font-size="9.5" fill="#E2E8F0">各科目100点満点中、1科目でも</text>
+  <text x="180" y="532" text-anchor="middle" font-size="9.5" fill="#E2E8F0">60点未満だとその科目のみ不合格</text>
+  <text x="180" y="548" text-anchor="middle" font-size="9.5" fill="#E2E8F0">合格科目は3年間有効</text>
+  <text x="180" y="570" text-anchor="middle" font-size="9.5" font-weight="700" fill="#86EFAC">→ 1回で9科目全部を狙わず、</text>
+  <text x="180" y="586" text-anchor="middle" font-size="9.5" font-weight="700" fill="#86EFAC">6〜7科目→残り2回に分けるのが近道</text>
+
+  <rect x="16" y="628" width="328" height="24" rx="8" fill="#EA580C"/>
+  <text x="180" y="645" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">🎨 実技試験・得意分野ドッキング</text>
+  <text x="180" y="670" text-anchor="middle" font-size="9.5" fill="#9A3412">3分野から得意な2つを選んでドッキング</text>
+
+  <rect x="16" y="682" width="328" height="66" rx="8" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.2"/>
+  <text x="180" y="702" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9A3412">🎹 音楽表現</text>
+  <text x="180" y="720" text-anchor="middle" font-size="9" fill="#7C2D12">課題曲の弾き歌い（ピアノ等）</text>
+  <text x="180" y="736" text-anchor="middle" font-size="8.5" fill="#B45309">楽器が弾ける人向け</text>
+
+  <rect x="16" y="758" width="328" height="66" rx="8" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+  <text x="180" y="778" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">🖍 造形表現</text>
+  <text x="180" y="796" text-anchor="middle" font-size="9" fill="#78350F">45分でテーマに沿った絵を描く</text>
+  <text x="180" y="812" text-anchor="middle" font-size="8.5" fill="#B45309">絵が得意・練習で伸びやすい</text>
+
+  <rect x="16" y="834" width="328" height="66" rx="8" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.2"/>
+  <text x="180" y="854" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9A3412">📖 言語表現</text>
+  <text x="180" y="872" text-anchor="middle" font-size="9" fill="#7C2D12">3分間の素話（暗記）</text>
+  <text x="180" y="888" text-anchor="middle" font-size="8.5" fill="#B45309">暗記・話すのが好きな人向け</text>
+
+  <rect x="16" y="912" width="328" height="66" rx="8" fill="#EA580C"/>
+  <text x="180" y="934" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">🏆 王道の組み合わせ：造形＋言語</text>
+  <text x="180" y="954" text-anchor="middle" font-size="9.5" fill="#FED7AA">ピアノが弾けなくても対策しやすい</text>
+  <text x="180" y="968" text-anchor="middle" font-size="8.5" fill="#FED7AA">実技合格率は高め（80%以上）</text>
+
+  <rect x="16" y="994" width="328" height="30" rx="8" fill="#166534"/>
+  <text x="180" y="1006" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DCFCE7">筆記は科目合格制で分割、実技は得意</text>
+  <text x="180" y="1018" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DCFCE7">2分野を選ぶ——各個撃破が鉄則</text>
+</svg>

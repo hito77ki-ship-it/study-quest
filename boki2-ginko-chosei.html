@@ -183,7 +183,10 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px}
 
   <!-- SVG図解 -->
   <figure style="margin:1.5rem 0;text-align:center;">
-    <img src="images/boki2-ginko-chosei-map.svg" alt="銀行勘定調整表4パターン分類マップ" style="max-width:100%;height:auto;border-radius:8px;">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/boki2-ginko-chosei-map-mobile.svg">
+      <img src="images/boki2-ginko-chosei-map.svg" alt="銀行勘定調整表4パターン分類マップ" style="max-width:100%;height:auto;border-radius:8px;">
+    </picture>
     <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：未渡小切手・未記帳（会社側修正）と未取付小切手・時間外預入（銀行側未反映）の4パターン</figcaption>
   </figure>
 

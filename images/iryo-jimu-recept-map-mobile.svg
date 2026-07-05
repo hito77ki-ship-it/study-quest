@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 940" width="360" height="940">
+  <defs><style>text{font-family:'Noto Sans JP',system-ui,sans-serif;}</style></defs>
+  <rect width="360" height="940" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#1f2937">レセプト作成</text>
+  <text x="180" y="48" text-anchor="middle" font-size="12" font-weight="800" fill="#1f2937">最速逆算攻略マップ</text>
+  <text x="180" y="66" text-anchor="middle" font-size="9.5" fill="#64748b">点数表は「読む」ものじゃなく「引く」もの</text>
+
+  <rect x="16" y="82" width="328" height="150" rx="16" fill="#ffffff" stroke="#93c5fd" stroke-width="2.5"/>
+  <rect x="30" y="96" width="90" height="26" rx="13" fill="#3b82f6"/>
+  <text x="75" y="113" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">STEP 1</text>
+  <text x="290" y="112" text-anchor="middle" font-size="24">📋</text>
+  <text x="180" y="146" text-anchor="middle" font-size="12" font-weight="800" fill="#1f2937">カルテを確認</text>
+  <text x="30" y="168" font-size="9.5" fill="#475569">診療内容（初診・検査・投薬など）を</text>
+  <text x="30" y="184" font-size="9.5" fill="#475569">1つずつリストアップするだけ。</text>
+  <text x="30" y="200" font-size="9.5" fill="#475569">暗記した知識は不要。</text>
+
+  <text x="180" y="252" text-anchor="middle" font-size="16" fill="#94a3b8">↓</text>
+
+  <rect x="16" y="264" width="328" height="150" rx="16" fill="#ffffff" stroke="#fdba74" stroke-width="3"/>
+  <rect x="30" y="278" width="90" height="26" rx="13" fill="#f97316"/>
+  <text x="75" y="295" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">STEP 2</text>
+  <text x="290" y="294" text-anchor="middle" font-size="24">🔎</text>
+  <text x="180" y="328" text-anchor="middle" font-size="12" font-weight="800" fill="#1f2937">索引で検索</text>
+  <text x="30" y="350" font-size="9.5" fill="#475569">点数表の巻末インデックスから</text>
+  <text x="30" y="366" font-size="9.5" fill="#475569">診療行為名で逆引き。ここが</text>
+  <text x="30" y="382" font-size="9.5" fill="#475569">最大のスピード勝負ポイント。</text>
+
+  <text x="180" y="434" text-anchor="middle" font-size="16" fill="#94a3b8">↓</text>
+
+  <rect x="16" y="446" width="328" height="150" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+  <rect x="30" y="460" width="90" height="26" rx="13" fill="#22c55e"/>
+  <text x="75" y="477" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">STEP 3</text>
+  <text x="290" y="476" text-anchor="middle" font-size="24">✍️</text>
+  <text x="180" y="510" text-anchor="middle" font-size="12" font-weight="800" fill="#1f2937">点数を転記</text>
+  <text x="30" y="532" font-size="9.5" fill="#475569">見つけたページの点数を</text>
+  <text x="30" y="548" font-size="9.5" fill="#475569">レセプトの該当欄へそのまま書き写す。</text>
+  <text x="30" y="564" font-size="9.5" fill="#475569">計算より作業に近い。</text>
+
+  <text x="180" y="616" text-anchor="middle" font-size="16" fill="#94a3b8">↓</text>
+
+  <rect x="16" y="628" width="328" height="150" rx="16" fill="#ffffff" stroke="#d8b4fe" stroke-width="2.5"/>
+  <rect x="30" y="642" width="90" height="26" rx="13" fill="#a855f7"/>
+  <text x="75" y="659" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">STEP 4</text>
+  <text x="290" y="658" text-anchor="middle" font-size="24">✅</text>
+  <text x="180" y="692" text-anchor="middle" font-size="12" font-weight="800" fill="#1f2937">合算・検算</text>
+  <text x="30" y="714" font-size="9.5" fill="#475569">点数を合計し、記載漏れがないか</text>
+  <text x="30" y="730" font-size="9.5" fill="#475569">見直す。ここまで来たら</text>
+  <text x="30" y="746" font-size="9.5" fill="#475569">1枚のレセプト完成。</text>
+
+  <rect x="16" y="800" width="328" height="126" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2.5"/>
+  <text x="180" y="826" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">実技試験は「暗記不要の検索スピードゲーム」</text>
+  <text x="180" y="848" text-anchor="middle" font-size="9.5" fill="#475569">点数表は持ち込み可能。目安は1項目30秒以内。</text>
+  <text x="180" y="866" text-anchor="middle" font-size="9.5" fill="#475569">索引の使い方に慣れるほど1枚を書く時間が短くなる。</text>
+  <text x="180" y="884" text-anchor="middle" font-size="9.5" fill="#475569">外来・入院それぞれ20枚以上書いて型を体に</text>
+  <text x="180" y="900" text-anchor="middle" font-size="9.5" fill="#475569">染み込ませるのが最短ルート。</text>
+</svg>

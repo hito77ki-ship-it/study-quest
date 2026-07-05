@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1000" width="360" height="1000" role="img" aria-labelledby="title desc">
+  <title id="title">登録販売者試験 5科目配点ウェイトと足切り回避マップ（モバイル版）</title>
+  <desc id="desc">医薬品総論・人体と医薬品・医薬品各論・薬事関係法規・適正使用安全対策の5科目の問題数と35%足切りラインを縦に並べて示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1000" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">登録販売者 5科目配点マップ</text>
+  <text x="180" y="46" text-anchor="middle" font-size="9.5" fill="#64748B">各科目35%の足切りラインを越えつつ最重要科目に厚く配分</text>
+
+  <!-- 科目1 -->
+  <rect x="20" y="66" width="320" height="130" rx="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="180" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">医薬品総論（20問）</text>
+  <text x="180" y="112" text-anchor="middle" font-size="10" fill="#64748B">特性と基本的な知識</text>
+  <text x="180" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">足切りライン：35%</text>
+  <rect x="40" y="150" width="280" height="26" rx="6" fill="#3B82F6"/>
+  <text x="180" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">通常配分の科目</text>
+
+  <!-- 科目2 -->
+  <rect x="20" y="212" width="320" height="130" rx="10" fill="#FFEDD5" stroke="#F97316" stroke-width="2"/>
+  <text x="180" y="238" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">人体と医薬品（20問）</text>
+  <text x="180" y="258" text-anchor="middle" font-size="10" fill="#64748B">臓器の働き・副作用</text>
+  <text x="180" y="286" text-anchor="middle" font-size="13" font-weight="700" fill="#9A3412">足切りライン：35%</text>
+  <rect x="40" y="296" width="280" height="26" rx="6" fill="#F97316"/>
+  <text x="180" y="314" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">通常配分の科目</text>
+
+  <!-- 科目3 最重要 -->
+  <rect x="20" y="358" width="320" height="176" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <rect x="130" y="346" width="100" height="26" rx="13" fill="#F59E0B"/>
+  <text x="180" y="364" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">★ 最重要科目</text>
+  <text x="180" y="398" text-anchor="middle" font-size="14" font-weight="700" fill="#92400E">医薬品各論（40問）</text>
+  <text x="180" y="418" text-anchor="middle" font-size="10" fill="#64748B">主な医薬品とその作用</text>
+  <text x="180" y="446" text-anchor="middle" font-size="13" font-weight="700" fill="#B45309">足切りライン：35%</text>
+  <rect x="40" y="456" width="280" height="30" rx="7" fill="#F59E0B"/>
+  <text x="180" y="476" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">全体の1/3・学習時間の50%を投入</text>
+  <text x="180" y="512" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">配点が最も高い、合否を分ける科目</text>
+
+  <!-- 科目4 -->
+  <rect x="20" y="550" width="320" height="130" rx="10" fill="#F3E8FF" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="180" y="576" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">薬事関係法規（20問）</text>
+  <text x="180" y="596" text-anchor="middle" font-size="10" fill="#64748B">薬機法・販売区分</text>
+  <text x="180" y="624" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">足切りライン：35%</text>
+  <rect x="40" y="634" width="280" height="26" rx="6" fill="#8B5CF6"/>
+  <text x="180" y="652" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">通常配分の科目</text>
+
+  <!-- 科目5 -->
+  <rect x="20" y="696" width="320" height="130" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="180" y="722" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">適正使用・安全対策（20問）</text>
+  <text x="180" y="742" text-anchor="middle" font-size="10" fill="#64748B">添付文書・副作用報告</text>
+  <text x="180" y="770" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">足切りライン：35%</text>
+  <rect x="40" y="780" width="280" height="26" rx="6" fill="#22C55E"/>
+  <text x="180" y="798" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">通常配分の科目</text>
+
+  <!-- 下部サマリー -->
+  <rect x="20" y="844" width="320" height="130" rx="10" fill="#1E293B"/>
+  <text x="180" y="874" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">合格の鉄則：全科目「35%」の</text>
+  <text x="180" y="892" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">足切りラインを越えつつ、全体の1/3を</text>
+  <text x="180" y="910" text-anchor="middle" font-size="11" font-weight="700" fill="#8CC63F">占める「医薬品各論」を最優先で仕上げる</text>
+  <text x="180" y="936" text-anchor="middle" font-size="10" fill="#CBD5E1">配点が高い科目を制する者が、登録販売者</text>
+  <text x="180" y="952" text-anchor="middle" font-size="10" fill="#CBD5E1">試験を制する。40問科目を得点源にすれば、</text>
+  <text x="180" y="968" text-anchor="middle" font-size="10" fill="#CBD5E1">他4科目は35%クリアで十分。</text>
+</svg>

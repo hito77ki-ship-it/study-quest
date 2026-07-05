@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 700" width="360" height="700">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="700" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">3ヶ月資格 限界突破マトリクス</text>
+  <text x="180" y="44" text-anchor="middle" font-size="10" fill="#94A3B8">市場価値×必要勉強時間（3ヶ月の限界＝135時間）</text>
+
+  <!-- 安全圏 -->
+  <rect x="16" y="62" width="328" height="26" rx="13" fill="#68D391"/>
+  <text x="180" y="79.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">✅ 安全圏（余裕で収まる）</text>
+  <rect x="16" y="96" width="328" height="180" rx="10" fill="#F0FBF4" stroke="#68D391" stroke-width="1.5"/>
+  <rect x="28" y="106" width="304" height="30" rx="8" fill="#E6FFFA" stroke="#68D391" stroke-width="2"/>
+  <text x="180" y="122" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">ITパスポート</text>
+  <text x="180" y="133" text-anchor="middle" font-size="9" fill="#2F855A">50〜100h</text>
+  <rect x="28" y="140" width="304" height="30" rx="8" fill="#E6FFFA" stroke="#68D391" stroke-width="2"/>
+  <text x="180" y="156" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">簿記3級</text>
+  <text x="180" y="167" text-anchor="middle" font-size="9" fill="#2F855A">60〜100h</text>
+  <rect x="28" y="174" width="304" height="30" rx="8" fill="#E6FFFA" stroke="#68D391" stroke-width="2"/>
+  <text x="180" y="190" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">危険物乙4</text>
+  <text x="180" y="201" text-anchor="middle" font-size="9" fill="#2F855A">40〜80h</text>
+  <rect x="28" y="208" width="304" height="30" rx="8" fill="#E6FFFA" stroke="#68D391" stroke-width="2"/>
+  <text x="180" y="224" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">FP3級</text>
+  <text x="180" y="235" text-anchor="middle" font-size="9" fill="#2F855A">50〜80h</text>
+  <rect x="28" y="242" width="304" height="26" rx="8" fill="#E6FFFA" stroke="#68D391" stroke-width="2"/>
+  <text x="180" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">MOS（40〜80h）</text>
+
+  <!-- ギリギリ -->
+  <rect x="16" y="298" width="328" height="26" rx="13" fill="#F6C85F"/>
+  <text x="180" y="315.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">⚠ ギリギリ</text>
+  <rect x="16" y="332" width="328" height="100" rx="10" fill="#FFFBEA" stroke="#F6C85F" stroke-width="1.5"/>
+  <rect x="28" y="342" width="304" height="30" rx="8" fill="#FFF7D6" stroke="#F6C85F" stroke-width="2"/>
+  <text x="180" y="358" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">基本情報</text>
+  <text x="180" y="369" text-anchor="middle" font-size="9" fill="#92400E">150〜200h</text>
+  <rect x="28" y="376" width="304" height="30" rx="8" fill="#FFF7D6" stroke="#F6C85F" stroke-width="2"/>
+  <text x="180" y="392" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">FP2級</text>
+  <text x="180" y="403" text-anchor="middle" font-size="9" fill="#92400E">150〜200h</text>
+
+  <!-- はみ出し -->
+  <rect x="16" y="452" width="328" height="26" rx="13" fill="#FC8181"/>
+  <text x="180" y="469.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">🚫 はみ出しゾーン</text>
+  <rect x="16" y="486" width="328" height="100" rx="10" fill="#FFF1F0" stroke="#FC8181" stroke-width="1.5"/>
+  <rect x="28" y="496" width="304" height="30" rx="8" fill="#FFE4E1" stroke="#FC8181" stroke-width="2"/>
+  <text x="180" y="512" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9B2C2C">簿記2級</text>
+  <text x="180" y="523" text-anchor="middle" font-size="9" fill="#9B2C2C">200〜350h</text>
+  <rect x="28" y="530" width="304" height="30" rx="8" fill="#FFE4E1" stroke="#FC8181" stroke-width="2"/>
+  <text x="180" y="546" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9B2C2C">宅建</text>
+  <text x="180" y="557" text-anchor="middle" font-size="9" fill="#9B2C2C">300〜400h</text>
+
+  <!-- caption -->
+  <rect x="16" y="608" width="328" height="70" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="632" text-anchor="middle" font-size="10" fill="#78350F">緑ゾーンから確実に各個撃破するのが</text>
+  <text x="180" y="648" text-anchor="middle" font-size="10" fill="#78350F">最速攻略のセオリー。赤ゾーンは専念できる</text>
+  <text x="180" y="664" text-anchor="middle" font-size="10" fill="#78350F">環境がない限り3ヶ月では厳しい</text>
+</svg>

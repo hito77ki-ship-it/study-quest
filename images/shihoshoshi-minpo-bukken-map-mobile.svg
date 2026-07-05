@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1720" width="360" height="1720">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1720" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">物権・担保物権——対抗要件と</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">抵当権の頻出論点マップ</text>
+
+  <!-- 物権の種類 -->
+  <rect x="20" y="64" width="320" height="470" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="64" width="320" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="84" width="320" height="10" fill="#3B82F6"/>
+  <text x="180" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">物権の種類と対抗要件</text>
+
+  <text x="36" y="112" font-size="11.5" font-weight="700" fill="#1E40AF">所有権</text>
+  <text x="36" y="130" font-size="10.5" fill="#374151">完全な支配権。不動産：登記、動産：引渡し</text>
+  <line x1="36" y1="140" x2="324" y2="140" stroke="#BFDBFE" stroke-width="1"/>
+
+  <text x="36" y="164" font-size="11.5" font-weight="700" fill="#1E40AF">地上権・賃借権</text>
+  <text x="36" y="182" font-size="10.5" fill="#374151">地上権：物権（第三者対抗○）</text>
+  <text x="36" y="198" font-size="10.5" fill="#374151">賃借権：債権（登記で対抗可能）</text>
+  <line x1="36" y1="208" x2="324" y2="208" stroke="#BFDBFE" stroke-width="1"/>
+
+  <text x="36" y="232" font-size="11.5" font-weight="700" fill="#1E40AF">物権変動の対抗要件</text>
+  <rect x="36" y="240" width="288" height="50" rx="6" fill="#DBEAFE"/>
+  <text x="180" y="260" text-anchor="middle" font-size="10.5" fill="#1D4ED8">不動産：登記（先に登記した方が勝ち）</text>
+  <text x="180" y="278" text-anchor="middle" font-size="10.5" fill="#1D4ED8">動産：引渡し（即時取得含む）</text>
+
+  <text x="36" y="322" font-size="11.5" font-weight="700" fill="#1E40AF">二重譲渡</text>
+  <text x="36" y="340" font-size="10.5" fill="#374151">AがBにもCにも売った</text>
+  <text x="36" y="356" font-size="10.5" fill="#374151">→ 先に登記した方勝ち</text>
+  <text x="36" y="376" font-size="10.5" fill="#64748B">登記なければ第三者に主張できない</text>
+  <text x="36" y="394" font-size="10.5" fill="#64748B">「第三者」の範囲が頻出論点</text>
+  <text x="36" y="412" font-size="10.5" fill="#64748B">（背信的悪意者は第三者から除く）</text>
+
+  <!-- 抵当権 -->
+  <rect x="20" y="558" width="320" height="470" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="20" y="558" width="320" height="30" rx="10" fill="#F97316"/>
+  <rect x="20" y="578" width="320" height="10" fill="#F97316"/>
+  <text x="180" y="578" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">抵当権（§369〜）</text>
+
+  <rect x="36" y="596" width="288" height="80" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="616" font-size="11" font-weight="700" fill="#C2410C">抵当権の設定</text>
+  <text x="46" y="634" font-size="10" fill="#374151">債権担保のため不動産に設定</text>
+  <text x="46" y="650" font-size="10" fill="#374151">占有を移転しない（使い続けられる）</text>
+
+  <rect x="36" y="686" width="288" height="80" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="706" font-size="11" font-weight="700" fill="#C2410C">法定地上権</text>
+  <text x="46" y="724" font-size="10" fill="#374151">土地と建物が同一所有者の場合</text>
+  <text x="46" y="740" font-size="10" fill="#374151">競売→建物に法定地上権が発生</text>
+
+  <rect x="36" y="776" width="288" height="80" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="796" font-size="11" font-weight="700" fill="#C2410C">抵当権の効力範囲</text>
+  <text x="46" y="814" font-size="10" fill="#374151">付加一体物（増改築など）に及ぶ</text>
+  <text x="46" y="830" font-size="10" fill="#374151">従物：抵当権設定時に存在→及ぶ</text>
+
+  <rect x="36" y="866" width="288" height="80" rx="6" fill="#FFEDD5"/>
+  <text x="46" y="886" font-size="11" font-weight="700" fill="#C2410C">根抵当権（§398の2）</text>
+  <text x="46" y="904" font-size="10" fill="#374151">極度額の範囲で継続的に担保</text>
+  <text x="46" y="920" font-size="10" fill="#374151">確定前は元本が増減する</text>
+
+  <!-- 不動産登記との連動 -->
+  <rect x="20" y="1052" width="320" height="530" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="20" y="1052" width="320" height="30" rx="10" fill="#22C55E"/>
+  <rect x="20" y="1072" width="320" height="10" fill="#22C55E"/>
+  <text x="180" y="1072" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">不動産登記法との連動</text>
+
+  <rect x="36" y="1090" width="288" height="92" rx="6" fill="#DCFCE7"/>
+  <text x="46" y="1110" font-size="11" font-weight="700" fill="#166534">物権変動 → 登記申請</text>
+  <text x="46" y="1128" font-size="10" fill="#374151">売買による所有権移転 → 移転登記</text>
+  <text x="46" y="1144" font-size="10" fill="#374151">抵当権設定 → 抵当権設定登記</text>
+  <text x="46" y="1160" font-size="10" fill="#374151">抵当権抹消 → 抵当権抹消登記</text>
+
+  <rect x="36" y="1192" width="288" height="70" rx="6" fill="#DCFCE7"/>
+  <text x="46" y="1212" font-size="11" font-weight="700" fill="#166534">申請人（共同申請の原則）</text>
+  <text x="46" y="1230" font-size="10" fill="#374151">所有権移転：登記義務者と登記権利者</text>
+  <text x="46" y="1246" font-size="10" fill="#374151">保存登記：登記名義人となる者が単独</text>
+
+  <rect x="36" y="1276" width="288" height="70" rx="6" fill="#DCFCE7"/>
+  <text x="46" y="1296" font-size="11" font-weight="700" fill="#166534">添付情報</text>
+  <text x="46" y="1314" font-size="10" fill="#374151">登記原因証明情報（売買契約書等）</text>
+  <text x="46" y="1330" font-size="10" fill="#374151">代理権限証書・印鑑証明・住所証明</text>
+
+  <text x="180" y="1372" text-anchor="middle" font-size="10.5" fill="#374151">民法の物権変動の理解があって</text>
+  <text x="180" y="1390" text-anchor="middle" font-size="10.5" fill="#374151">初めて不動産登記法が理解できる</text>
+
+  <!-- Bottom -->
+  <rect x="20" y="1602" width="320" height="86" rx="8" fill="#F1F5F9"/>
+  <text x="180" y="1626" text-anchor="middle" font-size="10.5" fill="#475569">💡 「物権変動がなければ登記不要、</text>
+  <text x="180" y="1644" text-anchor="middle" font-size="10.5" fill="#475569">物権変動があれば対抗要件として</text>
+  <text x="180" y="1662" text-anchor="middle" font-size="10.5" fill="#475569">登記が必要」が物権と登記をつなぐ核心。</text>
+</svg>

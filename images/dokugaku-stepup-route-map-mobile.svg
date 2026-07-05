@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1210" width="360" height="1210" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">独学ステップアップ攻略マップ——初心者から難関資格まで最速ルート（モバイル版）</title>
+  <desc id="svgdesc">成功体験ゾーン、実務直結ゾーン、難関ラスボスの3ステップで独学資格を攻略するルートを縦に並べた図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1210" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">独学ステップアップ攻略マップ</text>
+  <text x="180" y="48" text-anchor="middle" font-size="10.5" fill="#64748B">成功体験の盾を先に手に入れるのが鉄則</text>
+
+  <!-- STEP1 -->
+  <rect x="16" y="66" width="328" height="330" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="16" y="66" width="328" height="34" rx="12" fill="#3B82F6"/>
+  <rect x="16" y="86" width="328" height="14" fill="#3B82F6"/>
+  <text x="180" y="89" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP1｜成功体験ゾーン</text>
+  <text x="180" y="118" text-anchor="middle" font-size="10.5" fill="#1D4ED8">過去問データが使い回され、合格率が高いイージー資格</text>
+
+  <rect x="30" y="130" width="300" height="38" rx="6" fill="#DBEAFE"/>
+  <text x="42" y="147" font-size="11.5" font-weight="700" fill="#1E3A8A">ITパスポート</text>
+  <text x="42" y="161" font-size="10" fill="#1E40AF">50〜100h・合格率約50%</text>
+
+  <rect x="30" y="174" width="300" height="38" rx="6" fill="#DBEAFE"/>
+  <text x="42" y="191" font-size="11.5" font-weight="700" fill="#1E3A8A">危険物乙4</text>
+  <text x="42" y="205" font-size="10" fill="#1E40AF">40〜80h・合格率約40%</text>
+
+  <rect x="30" y="218" width="300" height="38" rx="6" fill="#DBEAFE"/>
+  <text x="42" y="235" font-size="11.5" font-weight="700" fill="#1E3A8A">MOS</text>
+  <text x="42" y="249" font-size="10" fill="#1E40AF">40〜80h・合格率約70%</text>
+
+  <rect x="30" y="262" width="300" height="38" rx="6" fill="#DBEAFE"/>
+  <text x="42" y="279" font-size="11.5" font-weight="700" fill="#1E3A8A">漢検2級</text>
+  <text x="42" y="293" font-size="10" fill="#1E40AF">50〜100h・合格率約20〜25%</text>
+
+  <rect x="30" y="308" width="300" height="76" rx="8" fill="#1E3A8A"/>
+  <text x="180" y="328" text-anchor="middle" font-size="11" font-weight="700" fill="#93C5FD">ここで得るもの</text>
+  <text x="180" y="345" text-anchor="middle" font-size="10" fill="#DBEAFE">「独学でも受かるんだ」という成功体験の盾。継続力の土台。</text>
+  <text x="180" y="368" text-anchor="middle" font-size="10.5" font-weight="700" fill="#BFDBFE">最初の1〜2ヶ月で1つ取ろう</text>
+
+  <path d="M180,396 L180,420 M170,410 L180,420 L190,410" fill="none" stroke="#8CC63F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- STEP2 -->
+  <rect x="16" y="432" width="328" height="330" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="16" y="432" width="328" height="34" rx="12" fill="#F59E0B"/>
+  <rect x="16" y="452" width="328" height="14" fill="#F59E0B"/>
+  <text x="180" y="455" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP2｜実務直結ゾーン</text>
+  <text x="180" y="484" text-anchor="middle" font-size="10.5" fill="#B45309">成功体験を武器に、転職・実務で効く資格へ</text>
+
+  <rect x="30" y="496" width="300" height="38" rx="6" fill="#FEF3C7"/>
+  <text x="42" y="513" font-size="11.5" font-weight="700" fill="#92400E">簿記3級→2級</text>
+  <text x="42" y="527" font-size="10" fill="#78350F">60〜350h・段階的にステップ</text>
+
+  <rect x="30" y="540" width="300" height="38" rx="6" fill="#FEF3C7"/>
+  <text x="42" y="557" font-size="11.5" font-weight="700" fill="#92400E">FP3級→2級</text>
+  <text x="42" y="571" font-size="10" fill="#78350F">50〜200h・お金の知識が実生活にも</text>
+
+  <rect x="30" y="584" width="300" height="38" rx="6" fill="#FEF3C7"/>
+  <text x="42" y="601" font-size="11.5" font-weight="700" fill="#92400E">基本情報技術者</text>
+  <text x="42" y="615" font-size="10" fill="#78350F">150〜200h・IT就職の登竜門</text>
+
+  <rect x="30" y="628" width="300" height="38" rx="6" fill="#FEF3C7"/>
+  <text x="42" y="645" font-size="11" font-weight="700" fill="#92400E">登録販売者・衛生管理者・英検2級</text>
+  <text x="42" y="659" font-size="10" fill="#78350F">100〜350h・業界別に強い武器</text>
+
+  <rect x="30" y="674" width="300" height="76" rx="8" fill="#92400E"/>
+  <text x="180" y="694" text-anchor="middle" font-size="11" font-weight="700" fill="#FDE68A">ここで得るもの</text>
+  <text x="180" y="711" text-anchor="middle" font-size="10" fill="#FEF3C7">実務に直結する専門知識と、長期学習に耐える持久力。</text>
+  <text x="180" y="734" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FDE68A">3〜8ヶ月かけてじっくり攻略</text>
+
+  <path d="M180,762 L180,786 M170,776 L180,786 L190,776" fill="none" stroke="#8CC63F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- STEP3 -->
+  <rect x="16" y="798" width="328" height="300" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="16" y="798" width="328" height="34" rx="12" fill="#EF4444"/>
+  <rect x="16" y="818" width="328" height="14" fill="#EF4444"/>
+  <text x="180" y="821" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">STEP3｜難関ラスボス</text>
+  <text x="180" y="850" text-anchor="middle" font-size="10.5" fill="#DC2626">STEP1・2で鍛えた継続力で最終ボスへ挑む</text>
+
+  <rect x="30" y="862" width="300" height="46" rx="6" fill="#FEE2E2"/>
+  <text x="42" y="882" font-size="11.5" font-weight="700" fill="#991B1B">宅地建物取引士（宅建）</text>
+  <text x="42" y="898" font-size="10" fill="#7F1D1D">300〜400h・合格率約15〜17%</text>
+
+  <rect x="30" y="912" width="300" height="46" rx="6" fill="#FEE2E2"/>
+  <text x="42" y="932" font-size="11.5" font-weight="700" fill="#991B1B">行政書士</text>
+  <text x="42" y="948" font-size="10" fill="#7F1D1D">500〜800h・合格率約10〜15%</text>
+
+  <rect x="30" y="962" width="300" height="30" rx="6" fill="#FCA5A5"/>
+  <text x="180" y="982" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7F1D1D">独学合格者が多い難関資格</text>
+
+  <rect x="30" y="1000" width="300" height="82" rx="8" fill="#7F1D1D"/>
+  <text x="180" y="1022" text-anchor="middle" font-size="11" font-weight="700" fill="#FCA5A5">ここで得るもの</text>
+  <text x="180" y="1039" text-anchor="middle" font-size="10" fill="#FEE2E2">独立・専門職も視野に入るキャリアの決定打。</text>
+  <text x="180" y="1062" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FCA5A5">1〜1.5年計画でじっくり</text>
+
+  <!-- 下部サマリー -->
+  <rect x="16" y="1114" width="328" height="70" rx="10" fill="#166534"/>
+  <text x="180" y="1140" text-anchor="middle" font-size="11" font-weight="700" fill="#DCFCE7">STEP1の成功体験 → STEP2の実務力</text>
+  <text x="180" y="1160" text-anchor="middle" font-size="11" font-weight="700" fill="#DCFCE7">→ STEP3の難関突破</text>
+  <text x="180" y="1178" text-anchor="middle" font-size="10" fill="#BBF7D0">焦らず一段ずつ登るのが独学最速ルート</text>
+</svg>

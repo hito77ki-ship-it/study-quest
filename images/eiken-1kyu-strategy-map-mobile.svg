@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1900" viewBox="0 0 360 1900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">英検1級 試験構成と4大攻略戦略マップ（モバイル版）</title>
+  <desc id="svgdesc">一次試験の語彙・読解・要約英作文・リスニングの配点バランスと、二次試験2分間スピーチの合格基準防衛線を縦に並べた戦略マップ</desc>
+  <defs>
+    <linearGradient id="mekTitle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#334155"/></linearGradient>
+    <linearGradient id="mekWall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FCA5A5"/><stop offset="0.55" stop-color="#FDE68A"/><stop offset="1" stop-color="#86EFAC"/></linearGradient>
+    <style>.mekt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1900" rx="16" fill="#FFFBEB"/>
+
+  <rect x="16" y="20" width="328" height="64" rx="12" fill="url(#mekTitle)"/>
+  <text x="180" y="42" text-anchor="middle" class="mekt" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="2">大谷流・英検1級 攻略ナビ</text>
+  <text x="180" y="64" text-anchor="middle" class="mekt" font-size="14" font-weight="800" fill="#FFFFFF">試験構成と4大攻略戦略マップ</text>
+
+  <text x="180" y="106" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#334155">一次試験：4つのハコの配点バランス</text>
+
+  <!-- CARD 1: 語彙 -->
+  <rect x="16" y="130" width="328" height="300" rx="14" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+  <rect x="16" y="130" width="328" height="40" rx="14" fill="#F59E0B"/>
+  <text x="180" y="148" text-anchor="middle" class="mekt" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 1　暗記のハコ</text>
+  <text x="180" y="164" text-anchor="middle" class="mekt" font-size="13" font-weight="800" fill="#fff">語彙（25問）</text>
+
+  <text x="180" y="194" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#92400E">Reading配点850点の一部／最大10,000〜15,000語</text>
+
+  <rect x="30" y="206" width="300" height="94" rx="10" fill="rgba(245,158,11,.10)" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="180" y="226" text-anchor="middle" class="mekt" font-size="10.5" fill="#92400E">攻略：「でる順パス単」を</text>
+  <text x="180" y="242" text-anchor="middle" class="mekt" font-size="10.5" fill="#92400E">1日30〜50語ペースで2年継続して回し切る。</text>
+  <text x="180" y="262" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#B45309">語彙が落ちれば全滅注意</text>
+
+  <text x="180" y="320" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#78350F">最優先で味方にすべき「暗記のハコ」その1</text>
+
+  <!-- CARD 2: 読解 -->
+  <rect x="16" y="450" width="328" height="300" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="450" width="328" height="40" rx="14" fill="#3B82F6"/>
+  <text x="180" y="468" text-anchor="middle" class="mekt" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 2　読解のハコ</text>
+  <text x="180" y="484" text-anchor="middle" class="mekt" font-size="13" font-weight="800" fill="#fff">読解（長文）</text>
+
+  <text x="180" y="514" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#1E3A8A">Reading配点850点の一部／社会・科学・哲学系1,000語超</text>
+
+  <rect x="30" y="526" width="300" height="94" rx="10" fill="rgba(59,130,246,.10)" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="546" text-anchor="middle" class="mekt" font-size="10.5" fill="#1E3A8A">攻略：The Economist等の</text>
+  <text x="180" y="562" text-anchor="middle" class="mekt" font-size="10.5" fill="#1E3A8A">精読・多読を習慣化し、主旨を掴む。</text>
+  <text x="180" y="582" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#1D4ED8">語彙と両輪で伸びる分野</text>
+
+  <text x="180" y="640" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#1E3A8A">語彙のハコと連動する「読解のハコ」</text>
+
+  <!-- CARD 3: 要約・英作文 -->
+  <rect x="16" y="770" width="328" height="300" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="16" y="770" width="328" height="40" rx="14" fill="#8B5CF6"/>
+  <text x="180" y="788" text-anchor="middle" class="mekt" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 3　量産のハコ</text>
+  <text x="180" y="804" text-anchor="middle" class="mekt" font-size="13" font-weight="800" fill="#fff">要約・英作文（400語）</text>
+
+  <text x="180" y="834" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#4C1D95">Writing配点850点／要約60〜70語＋意見論述</text>
+
+  <rect x="30" y="846" width="300" height="94" rx="10" fill="rgba(139,92,246,.10)" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="180" y="866" text-anchor="middle" class="mekt" font-size="10.5" fill="#4C1D95">攻略：主張→理由2つ→</text>
+  <text x="180" y="882" text-anchor="middle" class="mekt" font-size="10.5" fill="#4C1D95">まとめの4段落構成を型化。AI添削で見直す。</text>
+  <text x="180" y="902" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#5B21B6">減点されない型が命</text>
+
+  <text x="180" y="960" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#4C1D95">最優先で味方にすべき「要約・英作文のハコ」</text>
+
+  <!-- CARD 4: リスニング -->
+  <rect x="16" y="1090" width="328" height="300" rx="14" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="2"/>
+  <rect x="16" y="1090" width="328" height="40" rx="14" fill="#14B8A6"/>
+  <text x="180" y="1108" text-anchor="middle" class="mekt" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.85)" letter-spacing="1">HABIT 4　継続のハコ</text>
+  <text x="180" y="1124" text-anchor="middle" class="mekt" font-size="13" font-weight="800" fill="#fff">リスニング</text>
+
+  <text x="180" y="1154" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#134E4A">独立配点850点／会話・インタビュー・講義</text>
+
+  <rect x="30" y="1166" width="300" height="94" rx="10" fill="rgba(20,184,166,.10)" stroke="#5EEAD4" stroke-width="1.5"/>
+  <text x="180" y="1186" text-anchor="middle" class="mekt" font-size="10.5" fill="#134E4A">攻略：BBC・TED Talksを</text>
+  <text x="180" y="1202" text-anchor="middle" class="mekt" font-size="10.5" fill="#134E4A">毎日30分以上インプット。ディクテーションで精聴。</text>
+  <text x="180" y="1222" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#0F766E">積み上げが正直に出る</text>
+
+  <text x="180" y="1280" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#134E4A">毎日の習慣化がすべての「継続のハコ」</text>
+
+  <!-- SECOND STAGE -->
+  <text x="180" y="1430" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#334155">二次試験：2分間スピーチの</text>
+  <text x="180" y="1446" text-anchor="middle" class="mekt" font-size="11.5" font-weight="700" fill="#334155">合格基準防衛線</text>
+
+  <rect x="16" y="1462" width="328" height="270" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <text x="32" y="1492" class="mekt" font-size="11" font-weight="700" fill="#1E293B">出題：社会問題について</text>
+  <text x="32" y="1508" class="mekt" font-size="11" font-weight="700" fill="#1E293B">2分間スピーチ＋Q&amp;A 4問</text>
+  <text x="32" y="1524" font-size="9.5" fill="#64748b" class="mekt">（1次合格者の受験）</text>
+
+  <rect x="32" y="1538" width="296" height="28" rx="14" fill="url(#mekWall)" opacity="0.85"/>
+  <rect x="32" y="1538" width="296" height="28" rx="14" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="180" y1="1524" x2="180" y2="1566" stroke="#1E293B" stroke-width="3"/>
+  <text x="180" y="1590" text-anchor="middle" class="mekt" font-size="10.5" font-weight="800" fill="#1E293B">合格基準防衛線</text>
+
+  <text x="90" y="1612" text-anchor="middle" class="mekt" font-size="9.5" fill="#7F1D1D">スピーチが崩れる</text>
+  <text x="270" y="1612" text-anchor="middle" class="mekt" font-size="9.5" fill="#14532D">型で安定突破</text>
+
+  <text x="180" y="1660" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#334155">攻略：PREP法（主張→理由→例→</text>
+  <text x="180" y="1676" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#334155">まとめ）で型を固定すれば、</text>
+  <text x="180" y="1692" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#334155">一次合格者の65%が突破できる</text>
+  <text x="180" y="1708" text-anchor="middle" class="mekt" font-size="10.5" font-weight="700" fill="#334155">防衛戦になる。</text>
+
+  <!-- Footer -->
+  <rect x="16" y="1752" width="328" height="118" rx="12" fill="#111827"/>
+  <text x="180" y="1780" text-anchor="middle" class="mekt" font-size="10.5" fill="#E5E7EB">「暗記のハコ」（語彙）と</text>
+  <text x="180" y="1796" text-anchor="middle" class="mekt" font-size="10.5" fill="#E5E7EB">「量産のハコ」（要約・英作文）を</text>
+  <text x="180" y="1812" text-anchor="middle" class="mekt" font-size="10.5" fill="#E5E7EB">最優先で味方にすれば、</text>
+  <text x="180" y="1836" text-anchor="middle" class="mekt" font-size="11" font-weight="700" fill="#22C55E">合格率10%以下の壁も、本質を掴んだ人から</text>
+  <text x="180" y="1852" text-anchor="middle" class="mekt" font-size="11" font-weight="700" fill="#22C55E">確実に登りきれます。</text>
+</svg>

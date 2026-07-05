@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1620" viewBox="0 0 360 1620" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">社労士×中小企業診断士 試験範囲・専門領域対比と相乗効果ダブルライセンスマップ（モバイル版）</title>
+  <desc id="svgdesc">社労士の労務・人事・社会保険の専門領域と、中小企業診断士の経営・財務・マーケティング・ITの専門領域を対比し、重なり合う相乗効果を縦に並べて示すダブルライセンスマップ</desc>
+  <defs>
+    <style>.mst{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1620" rx="20" fill="#F0F9FF"/>
+
+  <rect x="16" y="20" width="328" height="70" rx="14" fill="#1E293B"/>
+  <text x="180" y="42" text-anchor="middle" class="mst" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1">大谷流・ダブルライセンス戦略ナビ</text>
+  <text x="180" y="64" text-anchor="middle" class="mst" font-size="13" font-weight="800" fill="#FFFFFF">社労士×中小企業診断士</text>
+  <text x="180" y="80" text-anchor="middle" class="mst" font-size="13" font-weight="800" fill="#FFFFFF">専門領域対比と相乗効果マップ</text>
+
+  <!-- 社労士 -->
+  <circle cx="180" cy="240" r="130" fill="#3B82F6" opacity="0.9"/>
+  <text x="180" y="150" text-anchor="middle" class="mst" font-size="16" font-weight="800" fill="#fff">社会保険労務士</text>
+  <text x="180" y="170" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="rgba(255,255,255,.9)">「人」を法律で守る専門家</text>
+
+  <text x="180" y="200" text-anchor="middle" class="mst" font-size="11" fill="#fff">・労働基準法／社会保険法</text>
+  <text x="180" y="218" text-anchor="middle" class="mst" font-size="11" fill="#fff">・就業規則の作成</text>
+  <text x="180" y="236" text-anchor="middle" class="mst" font-size="11" fill="#fff">・給与計算・人事労務</text>
+  <text x="180" y="254" text-anchor="middle" class="mst" font-size="11" fill="#fff">・ハラスメント対応</text>
+
+  <rect x="65" y="272" width="230" height="56" rx="10" fill="rgba(255,255,255,.9)" stroke="#1E3A8A" stroke-width="1.5"/>
+  <text x="180" y="292" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#1E3A8A">稼ぎ方：顧問契約</text>
+  <text x="180" y="310" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#1E3A8A">＝サブスク型（月次安定収入）</text>
+
+  <text x="180" y="400" text-anchor="middle" font-size="16" fill="#94A3B8">＋</text>
+
+  <!-- 中小企業診断士 -->
+  <circle cx="180" cy="500" r="130" fill="#F59E0B" opacity="0.9"/>
+  <text x="180" y="410" text-anchor="middle" class="mst" font-size="16" font-weight="800" fill="#fff">中小企業診断士</text>
+  <text x="180" y="430" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="rgba(255,255,255,.9)">「会社」を経営で伸ばす専門家</text>
+
+  <text x="180" y="460" text-anchor="middle" class="mst" font-size="11" fill="#fff">・経営戦略／財務会計</text>
+  <text x="180" y="478" text-anchor="middle" class="mst" font-size="11" fill="#fff">・マーケティング・運営管理</text>
+  <text x="180" y="496" text-anchor="middle" class="mst" font-size="11" fill="#fff">・IT・DX推進支援</text>
+  <text x="180" y="514" text-anchor="middle" class="mst" font-size="11" fill="#fff">・補助金・事業計画策定</text>
+
+  <rect x="65" y="532" width="230" height="56" rx="10" fill="rgba(255,255,255,.9)" stroke="#92400E" stroke-width="1.5"/>
+  <text x="180" y="552" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#92400E">稼ぎ方：コンサル・研修</text>
+  <text x="180" y="570" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#92400E">＝ショット型（単発・成果報酬）</text>
+
+  <!-- Overlap -->
+  <rect x="30" y="656" width="300" height="176" rx="16" fill="#FFFFFF" stroke="#8CC63F" stroke-width="2.5"/>
+  <text x="180" y="684" text-anchor="middle" class="mst" font-size="12" font-weight="800" fill="#276749" letter-spacing="1">相乗効果ゾーン</text>
+  <text x="180" y="708" text-anchor="middle" class="mst" font-size="13" font-weight="700" fill="#1A202C">労務も経営も丸ごと</text>
+  <text x="180" y="728" text-anchor="middle" class="mst" font-size="13" font-weight="700" fill="#1A202C">支援できる希少な専門家</text>
+  <text x="180" y="758" text-anchor="middle" class="mst" font-size="11" fill="#276749">サブスク×ショットの複合提案</text>
+  <text x="180" y="776" text-anchor="middle" class="mst" font-size="11" fill="#276749">＝収入源が二重化して安定</text>
+  <text x="180" y="800" text-anchor="middle" class="mst" font-size="11" fill="#276749">＝この組み合わせだけの強み</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="862" width="328" height="360" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="180" y="892" text-anchor="middle" class="mst" font-size="12" font-weight="700" fill="#334155">試験範囲は重ならない。</text>
+  <text x="180" y="910" text-anchor="middle" class="mst" font-size="12" font-weight="700" fill="#334155">だからこそ武器が2倍になる。</text>
+
+  <text x="36" y="944" class="mst" font-size="12" font-weight="700" fill="#1E3A8A">社労士の試験範囲</text>
+  <text x="36" y="964" class="mst" font-size="11" fill="#374151">労働基準法・労災保険・雇用保険・</text>
+  <text x="36" y="982" class="mst" font-size="11" fill="#374151">健康保険・厚生年金・国民年金 等</text>
+
+  <line x1="36" y1="1000" x2="324" y2="1000" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <text x="36" y="1030" class="mst" font-size="12" font-weight="700" fill="#92400E">中小企業診断士の試験範囲</text>
+  <text x="36" y="1050" class="mst" font-size="11" fill="#374151">経済学・財務会計・企業経営理論・</text>
+  <text x="36" y="1068" class="mst" font-size="11" fill="#374151">運営管理・経営法務・情報システム 等</text>
+
+  <text x="180" y="1104" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#16A34A">重複ゼロだから、片方の学習がもう</text>
+  <text x="180" y="1122" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#16A34A">片方の得点源を食い合わない</text>
+  <text x="180" y="1150" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#374151">労務の「守り」と経営の「攻め」、</text>
+  <text x="180" y="1168" text-anchor="middle" class="mst" font-size="11" font-weight="700" fill="#374151">両方持てるのはこの組み合わせだけ。</text>
+</svg>

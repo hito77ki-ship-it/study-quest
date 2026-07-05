@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 840" width="360" height="840">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="840" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="32" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">債権・債務と諸勘定の分類マップ</text>
+
+  <!-- 資産（債権） -->
+  <rect x="16" y="52" width="328" height="32" rx="8" fill="#3B82F6"/>
+  <text x="180" y="73" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">資産（債権）— 受け取る権利</text>
+
+  <rect x="24" y="92" width="312" height="70" rx="8" fill="#DBEAFE"/>
+  <text x="180" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">前払金（まえばらいきん）</text>
+  <text x="180" y="134" text-anchor="middle" font-size="10.5" fill="#1E3A8A">商品受取前に手付金を払った</text>
+  <text x="180" y="150" text-anchor="middle" font-size="10.5" fill="#1E3A8A">→ 後で商品を受け取る権利</text>
+
+  <rect x="24" y="170" width="312" height="70" rx="8" fill="#DBEAFE"/>
+  <text x="180" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">仮払金（かりばらいきん）</text>
+  <text x="180" y="212" text-anchor="middle" font-size="10.5" fill="#1E3A8A">内容不明・金額未確定で払った</text>
+  <text x="180" y="228" text-anchor="middle" font-size="10.5" fill="#1E3A8A">→ 内容確定後に正科目へ振替</text>
+
+  <rect x="24" y="248" width="312" height="70" rx="8" fill="#DBEAFE"/>
+  <text x="180" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">立替金（たてかえきん）</text>
+  <text x="180" y="290" text-anchor="middle" font-size="10.5" fill="#1E3A8A">第三者の費用を一時的に立替</text>
+  <text x="180" y="306" text-anchor="middle" font-size="10.5" fill="#1E3A8A">→ 後で返してもらう権利</text>
+
+  <rect x="24" y="326" width="312" height="40" rx="6" fill="#BFDBFE"/>
+  <text x="180" y="343" text-anchor="middle" font-size="10.5" fill="#1E3A8A">未収収益（未収入金）</text>
+  <text x="180" y="359" text-anchor="middle" font-size="10.5" fill="#1E3A8A">— まだ受け取っていない収益</text>
+
+  <text x="180" y="404" text-anchor="middle" font-size="22" fill="#CBD5E1">⇄</text>
+
+  <!-- 負債（債務） -->
+  <rect x="16" y="424" width="328" height="32" rx="8" fill="#F97316"/>
+  <text x="180" y="445" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">負債（債務）— 支払う義務</text>
+
+  <rect x="24" y="464" width="312" height="70" rx="8" fill="#FFEDD5"/>
+  <text x="180" y="486" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">前受金（まえうけきん）</text>
+  <text x="180" y="506" text-anchor="middle" font-size="10.5" fill="#7C2D12">商品渡す前に手付金を受取った</text>
+  <text x="180" y="522" text-anchor="middle" font-size="10.5" fill="#7C2D12">→ 後で商品を渡す義務</text>
+
+  <rect x="24" y="542" width="312" height="70" rx="8" fill="#FFEDD5"/>
+  <text x="180" y="564" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">仮受金（かりうけきん）</text>
+  <text x="180" y="584" text-anchor="middle" font-size="10.5" fill="#7C2D12">内容不明・金額未確定で受取った</text>
+  <text x="180" y="600" text-anchor="middle" font-size="10.5" fill="#7C2D12">→ 内容確定後に正科目へ振替</text>
+
+  <rect x="24" y="620" width="312" height="70" rx="8" fill="#FFEDD5"/>
+  <text x="180" y="642" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">預り金（あずかりきん）</text>
+  <text x="180" y="662" text-anchor="middle" font-size="10.5" fill="#7C2D12">従業員の所得税・社会保険料等</text>
+  <text x="180" y="678" text-anchor="middle" font-size="10.5" fill="#7C2D12">→ 後で納付する義務</text>
+
+  <rect x="24" y="698" width="312" height="40" rx="6" fill="#FED7AA"/>
+  <text x="180" y="715" text-anchor="middle" font-size="10.5" fill="#7C2D12">未払費用（未払金）</text>
+  <text x="180" y="731" text-anchor="middle" font-size="10.5" fill="#7C2D12">— まだ支払っていない費用</text>
+
+  <!-- bottom note -->
+  <rect x="16" y="758" width="328" height="60" rx="8" fill="#F1F5F9"/>
+  <text x="180" y="782" text-anchor="middle" font-size="11" fill="#64748B">💡「仮払・仮受」は後で必ず</text>
+  <text x="180" y="800" text-anchor="middle" font-size="11" fill="#64748B">正しい科目へ振り替える——決算で残ったままはNG</text>
+</svg>

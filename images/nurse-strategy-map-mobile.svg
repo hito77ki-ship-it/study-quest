@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="360" height="640" role="img" aria-labelledby="nsvgtitle nsvgdesc">
+  <title id="nsvgtitle">看護師国家試験の必修足切り回避と状況設定問題重視の合格戦略マップ（モバイル版）</title>
+  <desc id="nsvgdesc">必修問題50点の80%足切り防衛線と、一般問題・状況設定問題が合算されて合格ラインを超える3問構成の力関係を縦に示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="640" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">看護師国試 必修防衛線＆</text>
+  <text x="180" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">状況設定攻略マップ</text>
+  <text x="180" y="62" text-anchor="middle" font-size="9.5" fill="#64748B">必修50点の80%防衛線と、一般＋状況設定の合算で</text>
+  <text x="180" y="76" text-anchor="middle" font-size="9.5" fill="#64748B">合格ラインを超える力関係</text>
+
+  <text x="16" y="102" font-size="12" font-weight="700" fill="#1E293B">① 必修問題（50点）は単独の足切り壁</text>
+
+  <rect x="16" y="112" width="328" height="90" rx="12" fill="#FFEDD5" stroke="#F97316" stroke-width="2.5"/>
+  <rect x="32" y="130" width="296" height="18" rx="9" fill="#FFFFFF"/>
+  <rect x="32" y="130" width="260" height="18" rx="9" fill="#F97316"/>
+  <text x="328" y="144" text-anchor="end" font-size="10.5" font-weight="700" fill="#C2410C">目標 44/50点</text>
+  <line x1="256" y1="126" x2="256" y2="152" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="180" y="172" text-anchor="middle" font-size="9.5" fill="#B91C1C">‐ ‐ 80%防衛線（40点）</text>
+  <text x="180" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">他が高得点でも、これを割った瞬間に不合格</text>
+
+  <text x="180" y="226" text-anchor="middle" font-size="16" fill="#94A3B8" font-weight="700">＋</text>
+
+  <text x="16" y="252" font-size="12" font-weight="700" fill="#1E293B">② 一般＋状況設定（計250点）は合算勝負</text>
+
+  <rect x="16" y="262" width="328" height="150" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <rect x="32" y="280" width="296" height="24" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="48" y="296" font-size="10.5" font-weight="700" fill="#1D4ED8">一般問題（1問1点・コツコツ型）</text>
+  <rect x="32" y="310" width="296" height="24" rx="8" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="48" y="326" font-size="10.5" font-weight="700" fill="#15803D">状況設定（1問2点・効率MAX）</text>
+  <rect x="240" y="342" width="88" height="18" rx="9" fill="#22C55E"/>
+  <text x="284" y="355" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">最優先の得点源</text>
+  <text x="180" y="392" text-anchor="middle" font-size="9.5" fill="#B91C1C">‐ ‐ 合格ライン 約60%（150点）</text>
+
+  <text x="180" y="432" text-anchor="middle" font-size="10" font-weight="700" fill="#15803D">状況設定を味方にすれば、少ない問題数で</text>
+  <text x="180" y="448" text-anchor="middle" font-size="10" font-weight="700" fill="#15803D">ラインを超えやすい</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="474" width="328" height="150" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="500" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">必修（40/50点）は単独死守、</text>
+  <text x="180" y="518" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">一般＋状況設定（150/250点）は</text>
+  <text x="180" y="536" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">合算で突破するのが最短ルート</text>
+  <text x="180" y="562" text-anchor="middle" font-size="10" fill="#B45309">必修は基礎知識の反復で確実に固め、</text>
+  <text x="180" y="578" text-anchor="middle" font-size="10" fill="#B45309">状況設定は臨床判断のパターンで高配点を狙う</text>
+  <text x="180" y="600" text-anchor="middle" font-size="10" fill="#B45309">一般問題は最後に苦手分野だけを潰せば十分</text>
+</svg>

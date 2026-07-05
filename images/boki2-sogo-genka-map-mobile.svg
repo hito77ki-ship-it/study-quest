@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1180" width="360" height="1180">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="1180" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">総合原価計算——ボックス図の</text>
+  <text x="180" y="44" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">構造と材料費・加工費の違い</text>
+
+  <!-- ボックス図 -->
+  <rect x="30" y="60" width="300" height="188" rx="10" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
+  <text x="180" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">仕掛品ボックス図</text>
+  <line x1="30" y1="88" x2="330" y2="88" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="180" y1="88" x2="180" y2="248" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="105" y="106" text-anchor="middle" font-size="10.5" font-weight="700" fill="#374151">借方</text>
+  <text x="105" y="122" text-anchor="middle" font-size="9.5" fill="#374151">月初仕掛品</text>
+  <text x="105" y="138" text-anchor="middle" font-size="9" fill="#3B82F6">材料費(始点投入)</text>
+  <text x="105" y="152" text-anchor="middle" font-size="9" fill="#F97316">加工費(進捗度配分)</text>
+  <text x="105" y="170" text-anchor="middle" font-size="9.5" fill="#374151">合計（月初＋当月）</text>
+  <text x="255" y="106" text-anchor="middle" font-size="10.5" font-weight="700" fill="#374151">貸方</text>
+  <text x="255" y="126" text-anchor="middle" font-size="9.5" fill="#22C55E">完成品原価（製品へ）</text>
+  <text x="255" y="150" text-anchor="middle" font-size="9.5" fill="#EF4444">月末仕掛品原価（繰越）</text>
+  <text x="255" y="174" text-anchor="middle" font-size="9.5" fill="#374151">合計（借方と一致）</text>
+
+  <!-- 材料費 -->
+  <rect x="16" y="266" width="328" height="180" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="266" width="328" height="28" rx="10" fill="#3B82F6"/>
+  <rect x="16" y="284" width="328" height="10" fill="#3B82F6"/>
+  <text x="180" y="285" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">材料費（始点投入）</text>
+  <text x="180" y="312" text-anchor="middle" font-size="10.5" fill="#1E40AF">製造の最初に全量投入</text>
+  <text x="180" y="328" text-anchor="middle" font-size="10" fill="#374151">仕掛品50%でも材料は100%消費済み</text>
+  <rect x="32" y="336" width="296" height="42" rx="6" fill="#DBEAFE"/>
+  <text x="180" y="354" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">月末仕掛品の換算量＝個数</text>
+  <text x="180" y="370" text-anchor="middle" font-size="10" fill="#1D4ED8">（進捗度×無関係）</text>
+  <text x="180" y="392" text-anchor="middle" font-size="9.5" fill="#64748B">例：月末50個(50%)→材料費は50個分</text>
+  <text x="180" y="428" text-anchor="middle" font-size="10" fill="#374151">↑ 進捗度を掛けない！</text>
+
+  <!-- 加工費 -->
+  <rect x="16" y="462" width="328" height="180" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <rect x="16" y="462" width="328" height="28" rx="10" fill="#F97316"/>
+  <rect x="16" y="480" width="328" height="10" fill="#F97316"/>
+  <text x="180" y="481" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">加工費（進捗度配分）</text>
+  <text x="180" y="508" text-anchor="middle" font-size="10.5" fill="#C2410C">製造の進み具合に応じて発生</text>
+  <text x="180" y="524" text-anchor="middle" font-size="10" fill="#374151">仕掛品50%なら加工費も50%分</text>
+  <rect x="32" y="532" width="296" height="42" rx="6" fill="#FFEDD5"/>
+  <text x="180" y="550" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">月末仕掛品の換算量＝個数×進捗度</text>
+  <text x="180" y="588" text-anchor="middle" font-size="9.5" fill="#64748B">例：月末50個(50%)→加工費は25個分</text>
+  <text x="180" y="624" text-anchor="middle" font-size="10" fill="#374151">↑ 進捗度を掛ける！</text>
+
+  <text x="180" y="672" text-anchor="middle" font-size="11.5" font-weight="700" fill="#374151">2つの計算方法</text>
+
+  <!-- 平均法 -->
+  <rect x="16" y="686" width="328" height="150" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="708" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">平均法</text>
+  <text x="180" y="726" text-anchor="middle" font-size="10" fill="#374151">月初仕掛品＋当月投入を「混ぜて」</text>
+  <text x="180" y="740" text-anchor="middle" font-size="10" fill="#374151">平均単価を出す</text>
+  <rect x="32" y="748" width="296" height="30" rx="5" fill="#DCFCE7"/>
+  <text x="180" y="768" text-anchor="middle" font-size="9.5" fill="#166534">単価＝(月初原価＋当月原価)÷(完成品＋月末換算)</text>
+  <text x="180" y="798" text-anchor="middle" font-size="9.5" fill="#64748B">計算がシンプル。月初仕掛品の進捗度は不要</text>
+  <text x="180" y="814" text-anchor="middle" font-size="9.5" fill="#64748B">完成品・月末どちらも同じ単価</text>
+
+  <!-- 先入先出法 -->
+  <rect x="16" y="850" width="328" height="150" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="180" y="872" text-anchor="middle" font-size="11.5" font-weight="700" fill="#DC2626">先入先出法</text>
+  <text x="180" y="890" text-anchor="middle" font-size="10" fill="#374151">月初仕掛品を「先に完成させる」</text>
+  <text x="180" y="904" text-anchor="middle" font-size="10" fill="#374151">考え方で計算</text>
+  <rect x="32" y="912" width="296" height="30" rx="5" fill="#FEE2E2"/>
+  <text x="180" y="932" text-anchor="middle" font-size="9.5" fill="#DC2626">当月単価＝当月投入原価÷当月換算量のみ</text>
+  <text x="180" y="962" text-anchor="middle" font-size="9.5" fill="#64748B">月初仕掛品の残り加工分を当月で完成させる</text>
+  <text x="180" y="978" text-anchor="middle" font-size="9.5" fill="#64748B">計算がやや複雑。当月完成分のみ当月単価適用</text>
+</svg>

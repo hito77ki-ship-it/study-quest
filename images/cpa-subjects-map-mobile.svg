@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1360" viewBox="0 0 360 1360" role="img" aria-labelledby="title desc">
+  <title id="title">財務会計論の計算と理論、短答式と論文式の全体マップ（モバイル版）</title>
+  <desc id="desc">計算と理論が合体して財務会計論になり、短答式と論文式で問われ方が変わることを縦に並べて示す図解</desc>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.48" stop-color="#fff7fb"/>
+      <stop offset="1" stop-color="#f7fff0"/>
+    </linearGradient>
+    <linearGradient id="mjob" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8f7ff"/>
+      <stop offset="1" stop-color="#dbffd8"/>
+    </linearGradient>
+    <style>
+      .mtitle{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#1f2937}
+      .msub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:600;fill:#64748b}
+      .mlabel{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#1f2937}
+      .mruby{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:700;fill:#64748b}
+      .mbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:600;fill:#334155}
+      .msmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+      .mpill{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+    </style>
+  </defs>
+
+  <rect width="360" height="1360" rx="20" fill="url(#mbg)"/>
+
+  <text x="180" y="34" text-anchor="middle" class="mtitle">財務会計論は「2心同体」の最強ジョブ</text>
+  <text x="180" y="54" text-anchor="middle" class="msub">計算と理論を一括りで育てると強い</text>
+
+  <!-- 計算 -->
+  <rect x="20" y="72" width="320" height="180" rx="20" fill="#ffffff" stroke="#bae6fd" stroke-width="3"/>
+  <rect x="40" y="90" width="90" height="30" rx="15" fill="#38bdf8"/>
+  <text x="85" y="111" text-anchor="middle" class="mpill">計算</text>
+  <text x="230" y="106" text-anchor="middle" class="mlabel">基本の剣技</text>
+  <text x="230" y="124" text-anchor="middle" class="mruby">（きほんのけんぎ）</text>
+  <path d="M70 176 L108 138 L122 152 L84 190 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="3"/>
+  <text x="230" y="176" text-anchor="middle" class="mbody">会計処理の手続を学ぶ</text>
+  <text x="230" y="200" text-anchor="middle" class="msmall">仕訳や処理の「どうやるか」を</text>
+  <text x="230" y="220" text-anchor="middle" class="msmall">正確に動かすフィールド</text>
+
+  <text x="180" y="278" text-anchor="middle" class="mlabel" fill="#16a34a">＋</text>
+
+  <!-- 理論 -->
+  <rect x="20" y="296" width="320" height="180" rx="20" fill="#ffffff" stroke="#e9d5ff" stroke-width="3"/>
+  <rect x="40" y="314" width="90" height="30" rx="15" fill="#c084fc"/>
+  <text x="85" y="335" text-anchor="middle" class="mpill">理論</text>
+  <text x="230" y="330" text-anchor="middle" class="mlabel">白魔法の呪文</text>
+  <text x="230" y="348" text-anchor="middle" class="mruby">（しろまほうのじゅもん）</text>
+  <circle cx="85" cy="404" r="28" fill="#f3e8ff" stroke="#a855f7" stroke-width="3"/>
+  <path d="M85 380 L85 428" stroke="#a855f7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M67 404 L103 404" stroke="#a855f7" stroke-width="5" stroke-linecap="round"/>
+  <text x="230" y="400" text-anchor="middle" class="mbody">背景にある理由を問う</text>
+  <text x="230" y="424" text-anchor="middle" class="msmall">「なぜその処理をするのか」を</text>
+  <text x="230" y="444" text-anchor="middle" class="msmall">自分の言葉で説明する力</text>
+
+  <text x="180" y="500" text-anchor="middle" class="mlabel" fill="#16a34a">↓ 合体</text>
+
+  <!-- 財務会計論 -->
+  <rect x="20" y="518" width="320" height="140" rx="24" fill="url(#mjob)" stroke="#86efac" stroke-width="4"/>
+  <text x="180" y="560" text-anchor="middle" class="mlabel">最強ジョブ：財務会計論</text>
+  <text x="180" y="580" text-anchor="middle" class="mruby">（ざいむかいけいろん）</text>
+  <text x="180" y="606" text-anchor="middle" class="mbody">計算と理論を分けず、一括りで学ぶ</text>
+
+  <text x="180" y="694" text-anchor="middle" class="msmall">試験では問われ方が変わる</text>
+
+  <!-- 短答 -->
+  <rect x="20" y="712" width="320" height="180" rx="20" fill="#ffffff" stroke="#bfdbfe" stroke-width="3"/>
+  <rect x="40" y="730" width="90" height="30" rx="15" fill="#60a5fa"/>
+  <text x="85" y="751" text-anchor="middle" class="mpill">短答</text>
+  <text x="190" y="751" class="mruby">（たんとう）</text>
+  <text x="40" y="792" class="mbody">配点：約80点 / 500点満点中</text>
+  <text x="40" y="818" class="msmall">マークシート形式。広い範囲から細かく出題。</text>
+  <text x="40" y="842" class="msmall">理論は1問3分以内、全体30分のタイムアタック。</text>
+
+  <!-- 論文 -->
+  <rect x="20" y="912" width="320" height="180" rx="20" fill="#ffffff" stroke="#fecaca" stroke-width="3"/>
+  <rect x="40" y="930" width="90" height="30" rx="15" fill="#fb7185"/>
+  <text x="85" y="951" text-anchor="middle" class="mpill">論文</text>
+  <text x="190" y="951" class="mruby">（ろんぶん）</text>
+  <text x="40" y="992" class="mbody">配点：約110点 / 700点満点中</text>
+  <text x="40" y="1018" class="msmall">大問3問、180分。文章を記述する形式。</text>
+  <text x="40" y="1042" class="msmall">思考力・判断力・応用能力・論述力が問われる。</text>
+</svg>

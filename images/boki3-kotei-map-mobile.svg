@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">固定資産の売却損益——帳簿価額 vs 売却価格の比較マップ（モバイル版）</title>
+  <desc id="svgdesc">帳簿価額と売却価格を比較し、どちらが大きいかで売却損か売却益かを判定する仕組みを縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">固定資産の売却損益マップ</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9.5" fill="#64748B">帳簿価額 と 売却価格 を比べるだけ</text>
+
+  <!-- 売却損ケース -->
+  <rect x="20" y="60" width="320" height="26" rx="13" fill="#FDF2F8"/>
+  <text x="180" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">❌ 売却損のケース</text>
+
+  <rect x="20" y="96" width="320" height="70" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="180" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">帳簿価額 400,000円</text>
+  <text x="180" y="140" text-anchor="middle" font-size="10" fill="#1E40AF">（帳簿価額の方が大きい＝重い）</text>
+
+  <text x="180" y="182" text-anchor="middle" font-size="16" font-weight="700" fill="#94A3B8">＞</text>
+
+  <rect x="20" y="196" width="320" height="60" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2.5"/>
+  <text x="180" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D">売却価格 350,000円</text>
+  <text x="180" y="240" text-anchor="middle" font-size="10" fill="#9D174D">（軽い）</text>
+
+  <rect x="20" y="266" width="320" height="52" rx="8" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="180" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9D174D">400,000－350,000＝差額50,000円</text>
+  <text x="180" y="306" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D">→ 固定資産売却損（費用）</text>
+
+  <line x1="20" y1="340" x2="340" y2="340" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- 売却益ケース -->
+  <rect x="20" y="358" width="320" height="26" rx="13" fill="#F0FFF4"/>
+  <text x="180" y="376" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">⭕ 売却益のケース</text>
+
+  <rect x="20" y="394" width="320" height="60" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="180" y="418" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">帳簿価額 400,000円</text>
+  <text x="180" y="438" text-anchor="middle" font-size="10" fill="#1E40AF">（軽い）</text>
+
+  <text x="180" y="480" text-anchor="middle" font-size="16" font-weight="700" fill="#94A3B8">＜</text>
+
+  <rect x="20" y="494" width="320" height="70" rx="10" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2.5"/>
+  <text x="180" y="518" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">売却価格 500,000円</text>
+  <text x="180" y="538" text-anchor="middle" font-size="10" fill="#166534">（売却価格の方が大きい＝重い）</text>
+
+  <rect x="20" y="574" width="320" height="52" rx="8" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="596" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">500,000－400,000＝差額100,000円</text>
+  <text x="180" y="614" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">→ 固定資産売却益（収益）</text>
+
+  <!-- summary -->
+  <rect x="20" y="648" width="320" height="90" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="672" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">🎯 計算の鉄則：帳簿価額（取得原価－</text>
+  <text x="180" y="688" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">減価償却累計額）と売却価格を比べる</text>
+  <text x="180" y="710" text-anchor="middle" font-size="9.5" fill="#374151">売却価格が大きければ売却益、帳簿価額が</text>
+  <text x="180" y="726" text-anchor="middle" font-size="9.5" fill="#374151">大きければ売却損——それだけで判断できる</text>
+</svg>

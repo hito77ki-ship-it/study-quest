@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1280" viewBox="0 0 360 1280" role="img" aria-labelledby="titlem descm">
+  <title id="titlem">銀行勘定調整表の不一致4原因と調整方向の全体マップ（モバイル版）</title>
+  <desc id="descm">未渡小切手・未記帳入金は自社帳簿の修正が必要、未取立小切手・未取付小切手は銀行側の調整のみで自社の仕訳は不要であることを縦に並べて示した図解</desc>
+  <defs>
+    <linearGradient id="bgm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#fff7fb"/>
+    </linearGradient>
+    <style>
+      .titlem{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800;fill:#1f2937}
+      .subm{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:600;fill:#64748b}
+      .pillm{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800;fill:#ffffff}
+      .colheadm{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800;fill:#ffffff}
+      .cardnamem{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800;fill:#1f2937}
+      .cardbodym{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:600;fill:#334155}
+      .cardresultm{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:800}
+      .bannerm{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:700;fill:#166534}
+      .bannersmallm{font-family:"Noto Sans JP", system-ui, sans-serif;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1280" rx="20" fill="url(#bgm)"/>
+
+  <text x="180" y="30" text-anchor="middle" class="titlem" font-size="15">銀行勘定調整表</text>
+  <text x="180" y="50" text-anchor="middle" class="titlem" font-size="15">不一致4原因マップ</text>
+  <text x="180" y="70" text-anchor="middle" class="subm" font-size="9.5">「自社が知らないだけ」か「銀行が知らないだけ」か</text>
+  <text x="180" y="84" text-anchor="middle" class="subm" font-size="9.5">で、仕訳の要・不要が分かれる</text>
+
+  <rect x="16" y="100" width="328" height="34" rx="12" fill="#3b82f6"/>
+  <text x="180" y="122" text-anchor="middle" class="colheadm" font-size="12.5">自社帳簿を修正（仕訳あり）</text>
+
+  <rect x="16" y="144" width="328" height="196" rx="16" fill="#ffffff" stroke="#93c5fd" stroke-width="2.5"/>
+  <rect x="32" y="160" width="70" height="26" rx="13" fill="#3b82f6"/>
+  <text x="67" y="178" text-anchor="middle" class="pillm" font-size="11">原因①</text>
+  <text x="112" y="180" class="cardnamem" font-size="13">未渡小切手</text>
+  <text x="32" y="206" class="cardbodym" font-size="10.5">振り出して「当座預金を減らす」と記帳</text>
+  <text x="32" y="222" class="cardbodym" font-size="10.5">したが、相手にまだ手渡していない。</text>
+  <text x="32" y="244" class="cardbodym" font-size="10.5">＝支払った"つもり"だが、</text>
+  <text x="32" y="260" class="cardbodym" font-size="10.5">実際は支払っていない。</text>
+  <text x="32" y="288" class="cardresultm" font-size="11" fill="#1D4ED8">→ 当座預金を＋修正</text>
+  <text x="32" y="306" class="cardresultm" font-size="11" fill="#1D4ED8">（当座預金／未払金）</text>
+
+  <rect x="16" y="356" width="328" height="196" rx="16" fill="#ffffff" stroke="#93c5fd" stroke-width="2.5"/>
+  <rect x="32" y="372" width="70" height="26" rx="13" fill="#3b82f6"/>
+  <text x="67" y="390" text-anchor="middle" class="pillm" font-size="11">原因②</text>
+  <text x="112" y="392" class="cardnamem" font-size="12.5">未記帳の入金・利息など</text>
+  <text x="32" y="418" class="cardbodym" font-size="10.5">銀行は振込入金や利息の入金・</text>
+  <text x="32" y="434" class="cardbodym" font-size="10.5">手数料の引落を処理済みだが、</text>
+  <text x="32" y="454" class="cardbodym" font-size="10.5">自社がまだ気づいておらず</text>
+  <text x="32" y="470" class="cardbodym" font-size="10.5">帳簿に書いていない。</text>
+  <text x="32" y="500" class="cardresultm" font-size="11" fill="#1D4ED8">→ 判明した内容で自社帳簿を</text>
+  <text x="32" y="518" class="cardresultm" font-size="11" fill="#1D4ED8">＋／－修正</text>
+
+  <rect x="16" y="576" width="328" height="34" rx="12" fill="#22c55e"/>
+  <text x="180" y="598" text-anchor="middle" class="colheadm" font-size="12.5">銀行側の調整のみ（仕訳不要）</text>
+
+  <rect x="16" y="620" width="328" height="196" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+  <rect x="32" y="636" width="70" height="26" rx="13" fill="#22c55e"/>
+  <text x="67" y="654" text-anchor="middle" class="pillm" font-size="11">原因③</text>
+  <text x="112" y="656" class="cardnamem" font-size="13">未取立小切手</text>
+  <text x="32" y="682" class="cardbodym" font-size="10.5">受け取った小切手を「入金した」と</text>
+  <text x="32" y="698" class="cardbodym" font-size="10.5">自社は記帳済みだが、</text>
+  <text x="32" y="718" class="cardbodym" font-size="10.5">まだ銀行に持ち込んでいない＝</text>
+  <text x="32" y="734" class="cardbodym" font-size="10.5">銀行側が未処理なだけ。</text>
+  <text x="32" y="764" class="cardresultm" font-size="11" fill="#166534">→ 銀行残高に＋</text>
+  <text x="32" y="782" class="cardresultm" font-size="11" fill="#166534">（自社の仕訳は不要）</text>
+
+  <rect x="16" y="832" width="328" height="196" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+  <rect x="32" y="848" width="70" height="26" rx="13" fill="#22c55e"/>
+  <text x="67" y="866" text-anchor="middle" class="pillm" font-size="11">原因④</text>
+  <text x="112" y="868" class="cardnamem" font-size="13">未取付小切手</text>
+  <text x="32" y="894" class="cardbodym" font-size="10.5">小切手を振り出して相手にきちんと</text>
+  <text x="32" y="910" class="cardbodym" font-size="10.5">渡した（自社の記帳は正しい）。</text>
+  <text x="32" y="930" class="cardbodym" font-size="10.5">相手がまだ銀行に呈示していない＝</text>
+  <text x="32" y="946" class="cardbodym" font-size="10.5">銀行側が未処理なだけ。</text>
+  <text x="32" y="976" class="cardresultm" font-size="11" fill="#166534">→ 銀行残高に－</text>
+  <text x="32" y="994" class="cardresultm" font-size="11" fill="#166534">（自社の仕訳は不要）</text>
+
+  <!-- Puzzle note -->
+  <rect x="16" y="1044" width="328" height="150" rx="18" fill="#fffbeb" stroke="#fcd34d" stroke-width="2.5"/>
+  <text x="180" y="1068" text-anchor="middle" class="bannerm" font-size="11.5" fill="#92400e">最大の引っかけ：「未渡小切手」と</text>
+  <text x="180" y="1086" text-anchor="middle" class="bannerm" font-size="11.5" fill="#92400e">「未取付小切手」を混同しない</text>
+  <text x="180" y="1108" text-anchor="middle" class="bannersmallm" font-size="9.5">どちらも"振り出した小切手"だが、運命の</text>
+  <text x="180" y="1122" text-anchor="middle" class="bannersmallm" font-size="9.5">分かれ目は「相手に渡したかどうか」</text>
+  <text x="180" y="1142" text-anchor="middle" class="bannersmallm" font-size="9.5">渡していない→自社の記帳が先走った</text>
+  <text x="180" y="1156" text-anchor="middle" class="bannersmallm" font-size="9.5">だけ＝自社側で修正／渡した→あとは</text>
+  <text x="180" y="1170" text-anchor="middle" class="bannersmallm" font-size="9.5">銀行の処理待ち＝銀行側の調整のみ</text>
+  <text x="180" y="1186" text-anchor="middle" class="bannersmallm" font-size="9.5">この1点さえ判断できればパズル感覚で解ける</text>
+
+  <!-- Bottom takeaway -->
+  <rect x="16" y="1210" width="328" height="60" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2.5"/>
+  <text x="180" y="1232" text-anchor="middle" class="bannerm" font-size="10.5">自社の正しい残高＝銀行の正しい残高</text>
+  <text x="180" y="1250" text-anchor="middle" class="bannersmallm" font-size="9.5">一致しなければ原因分類か金額計算にミスがある</text>
+</svg>

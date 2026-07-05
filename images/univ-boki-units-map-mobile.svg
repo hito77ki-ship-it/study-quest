@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1620" width="360" height="1620" role="img" aria-labelledby="title desc">
+  <title id="title">自習×大学の講義：合体シナジーマップ（モバイル版）</title>
+  <desc id="desc">資格の自習と大学講義が「予習→復習→単位ハック→教授活用」の4ステップで好循環になる流れと、そこから得られる5つのメリットを縦に並べて示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1620" rx="14" fill="#FAFDF6"/>
+
+  <text x="180" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">自習×大学講義 合体シナジー</text>
+  <text x="180" y="46" text-anchor="middle" font-size="9.5" fill="#64748B">資格勉強×授業＝単位も合格も「両取り」</text>
+
+  <!-- STEP 1 -->
+  <rect x="20" y="64" width="320" height="220" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="20" y="64" width="320" height="30" rx="10" fill="#7C3AED"/>
+  <text x="180" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 1</text>
+  <text x="180" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">自習が予習になる</text>
+  <text x="180" y="134" text-anchor="middle" font-size="9.5" fill="#7C3AED">（じしゅうがよしゅうになる）</text>
+  <line x1="36" y1="146" x2="324" y2="146" stroke="#DDD6FE" stroke-width="0.8"/>
+  <text x="50" y="164" font-size="10.5" fill="#374151">・資格テキストで予備知識をゲット</text>
+  <text x="50" y="182" font-size="10.5" fill="#374151">・授業内容がスラスラ入ってくる</text>
+  <text x="50" y="200" font-size="10.5" fill="#374151">・手応えで自然とやる気がUP</text>
+  <rect x="36" y="222" width="288" height="26" rx="7" fill="#EDE9FE"/>
+  <text x="180" y="239" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">準備万端で講義へ出発！</text>
+
+  <line x1="180" y1="284" x2="180" y2="300" stroke="#94A3B8" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="180,304 173,290 187,290" fill="#8CC63F"/>
+
+  <!-- STEP 2 -->
+  <rect x="20" y="308" width="320" height="220" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="20" y="308" width="320" height="30" rx="10" fill="#3B82F6"/>
+  <text x="180" y="328" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 2</text>
+  <text x="180" y="362" text-anchor="middle" font-size="14" font-weight="700" fill="#1E40AF">講義が復習になる</text>
+  <text x="180" y="378" text-anchor="middle" font-size="9.5" fill="#3B82F6">（こうぎがふくしゅうになる）</text>
+  <line x1="36" y1="390" x2="324" y2="390" stroke="#BFDBFE" stroke-width="0.8"/>
+  <text x="50" y="408" font-size="10.5" fill="#374151">・「知ってる！」で定着率が2倍に</text>
+  <text x="50" y="426" font-size="10.5" fill="#374151">・脳への刻み込みが一気に深まる</text>
+  <text x="50" y="444" font-size="10.5" fill="#374151">・その場で疑問を講師に聞ける</text>
+  <rect x="36" y="466" width="288" height="26" rx="7" fill="#DBEAFE"/>
+  <text x="180" y="483" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">理解度が爆発的に深まる！</text>
+
+  <line x1="180" y1="528" x2="180" y2="544" stroke="#94A3B8" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="180,548 173,534 187,534" fill="#8CC63F"/>
+
+  <!-- STEP 3 -->
+  <rect x="20" y="552" width="320" height="220" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="20" y="552" width="320" height="30" rx="10" fill="#22C55E"/>
+  <text x="180" y="572" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 3</text>
+  <text x="180" y="606" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">単位イージーモード</text>
+  <text x="180" y="622" text-anchor="middle" font-size="9.5" fill="#22C55E">（たんいいーじーもーど）</text>
+  <line x1="36" y1="634" x2="324" y2="634" stroke="#BBF7D0" stroke-width="0.8"/>
+  <text x="50" y="652" font-size="10.5" fill="#374151">・周囲が苦しむ中、一人だけ余裕</text>
+  <text x="50" y="670" font-size="10.5" fill="#374151">・試験で「優・秀」を狙い打てる</text>
+  <text x="50" y="688" font-size="10.5" fill="#374151">・GPAが押し上がり就活にも有利</text>
+  <rect x="36" y="710" width="288" height="26" rx="7" fill="#DCFCE7"/>
+  <text x="180" y="727" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">単位（優）を楽にもぎ取れ！</text>
+
+  <line x1="180" y1="772" x2="180" y2="788" stroke="#94A3B8" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="180,792 173,778 187,778" fill="#8CC63F"/>
+
+  <!-- STEP 4 -->
+  <rect x="20" y="796" width="320" height="220" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="20" y="796" width="320" height="30" rx="10" fill="#F59E0B"/>
+  <text x="180" y="816" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STEP 4</text>
+  <text x="180" y="850" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">教授＝無料の個別指導塾</text>
+  <text x="180" y="866" text-anchor="middle" font-size="9.5" fill="#B45309">（むりょうのこべつしどうじゅく）</text>
+  <line x1="36" y1="878" x2="324" y2="878" stroke="#FDE68A" stroke-width="0.8"/>
+  <text x="50" y="896" font-size="10.5" fill="#374151">・オフィスアワーで質問し放題</text>
+  <text x="50" y="914" font-size="10.5" fill="#374151">・難問（連結・定率法）をプロが解説</text>
+  <text x="50" y="932" font-size="10.5" fill="#374151">・独学最大の弱点を確実にカバー</text>
+  <rect x="36" y="954" width="288" height="26" rx="7" fill="#FEF3C7"/>
+  <text x="180" y="971" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">最強の無料ギルドに入隊せよ！</text>
+
+  <!-- loop note -->
+  <rect x="30" y="1002" width="300" height="30" rx="8" fill="#F0FFF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="180" y="1022" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">↩ 好循環ループ：4ステップが自動的に回り続ける</text>
+
+  <!-- 5 benefits header -->
+  <rect x="20" y="1050" width="320" height="34" rx="10" fill="#1E293B"/>
+  <text x="180" y="1072" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8CC63F">大谷が確信する「一石五鳥」</text>
+
+  <rect x="20" y="1098" width="320" height="80" rx="8" fill="#1E293B"/>
+  <text x="180" y="1124" text-anchor="middle" font-size="11" font-weight="700" fill="#C4B5FD">① 最高の復習：脳への定着率2倍</text>
+  <text x="180" y="1146" text-anchor="middle" font-size="10" fill="#94A3B8">同じ論点を2度学習</text>
+
+  <rect x="20" y="1186" width="320" height="80" rx="8" fill="#1E293B"/>
+  <text x="180" y="1212" text-anchor="middle" font-size="11" font-weight="700" fill="#93C5FD">② 登校の動機：自然とサボらなくなる</text>
+  <text x="180" y="1234" text-anchor="middle" font-size="10" fill="#94A3B8">講義が資格の時間に変わる</text>
+
+  <rect x="20" y="1274" width="320" height="80" rx="8" fill="#1E293B"/>
+  <text x="180" y="1300" text-anchor="middle" font-size="11" font-weight="700" fill="#86EFAC">③ 単位ハック：優・秀を楽に取得</text>
+  <text x="180" y="1322" text-anchor="middle" font-size="10" fill="#94A3B8">GPA向上で就活に有利</text>
+
+  <rect x="20" y="1362" width="320" height="80" rx="8" fill="#1E293B"/>
+  <text x="180" y="1388" text-anchor="middle" font-size="11" font-weight="700" fill="#FDE68A">④ 無料個別指導：教授がプロ家庭教師に</text>
+  <text x="180" y="1410" text-anchor="middle" font-size="10" fill="#94A3B8">難問をマンツーマン解説</text>
+
+  <rect x="20" y="1450" width="320" height="80" rx="8" fill="#1E293B"/>
+  <text x="180" y="1476" text-anchor="middle" font-size="11" font-weight="700" fill="#FCA5A5">⑤ モチベ維持：仲間と熱講師に出会う</text>
+  <text x="180" y="1498" text-anchor="middle" font-size="10" fill="#94A3B8">孤独な勉強が楽しくなる</text>
+
+  <!-- closing line -->
+  <rect x="20" y="1548" width="320" height="56" rx="8" fill="#0F2918"/>
+  <text x="180" y="1570" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">単位×資格合格×モチベ×GPA×人脈</text>
+  <text x="180" y="1588" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">＝一石五鳥を全部まとめてゲット！</text>
+</svg>

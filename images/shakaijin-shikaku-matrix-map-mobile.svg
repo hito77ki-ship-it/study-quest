@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">社会人におすすめの資格ランキング10選：4象限マトリクス（モバイル版）</title>
+  <desc id="svgdesc">キャリアの破壊力とタイパの2軸で資格を4ゾーンに分類し、社会人最強ゾーン・じっくり投資ゾーン・お手軽ゾーン・要検討ゾーンとして縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">社会人おすすめ資格10選</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">4象限マトリクス</text>
+  <text x="180" y="64" text-anchor="middle" font-size="9.5" fill="#94A3B8">縦軸＝キャリアの破壊力／横軸＝タイパ（勉強時間の短さ）</text>
+
+  <!-- Zone: 最強 -->
+  <rect x="16" y="82" width="328" height="188" rx="14" fill="#FFF9E6" stroke="#F6AD55" stroke-width="2.5"/>
+  <rect x="32" y="96" width="220" height="28" rx="14" fill="#F6AD55"/>
+  <text x="142" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">🏆 社会人 最強ゾーン</text>
+  <text x="180" y="140" text-anchor="middle" font-size="9.5" fill="#7C4A03">高リターン×高タイパ</text>
+
+  <rect x="32" y="150" width="140" height="46" rx="10" fill="#FFF3D6" stroke="#F6AD55" stroke-width="2"/>
+  <text x="102" y="169" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C4A03">簿記2級</text>
+  <text x="102" y="184" text-anchor="middle" font-size="9" fill="#92400E">転職最強</text>
+
+  <rect x="188" y="150" width="140" height="46" rx="10" fill="#FFF3D6" stroke="#F6AD55" stroke-width="2"/>
+  <text x="258" y="169" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C4A03">宅建</text>
+  <text x="258" y="184" text-anchor="middle" font-size="9" fill="#92400E">独占業務</text>
+
+  <rect x="32" y="202" width="140" height="46" rx="10" fill="#FFF3D6" stroke="#F6AD55" stroke-width="2"/>
+  <text x="102" y="221" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C4A03">FP2級</text>
+  <text x="102" y="236" text-anchor="middle" font-size="9" fill="#92400E">汎用性高</text>
+
+  <rect x="188" y="202" width="140" height="46" rx="10" fill="#FEF9E7" stroke="#F6C85F" stroke-width="1.5"/>
+  <text x="258" y="221" text-anchor="middle" font-size="11" font-weight="700" fill="#7C4A03">基本情報</text>
+  <text x="258" y="236" text-anchor="middle" font-size="9" fill="#92400E">IT転職</text>
+
+  <!-- Zone: じっくり投資 -->
+  <rect x="16" y="286" width="328" height="238" rx="14" fill="#FAF5FF" stroke="#B794F4" stroke-width="2.5"/>
+  <rect x="32" y="300" width="220" height="28" rx="14" fill="#B794F4"/>
+  <text x="142" y="319" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">💎 じっくり投資ゾーン</text>
+  <text x="180" y="344" text-anchor="middle" font-size="9.5" fill="#553C9A">高リターン×時間がかかる</text>
+
+  <rect x="32" y="354" width="140" height="46" rx="10" fill="#F3E8FF" stroke="#B794F4" stroke-width="2"/>
+  <text x="102" y="373" text-anchor="middle" font-size="11.5" font-weight="700" fill="#553C9A">税理士</text>
+  <text x="102" y="388" text-anchor="middle" font-size="9" fill="#6B46C1">独立最強</text>
+
+  <rect x="188" y="354" width="140" height="46" rx="10" fill="#F3E8FF" stroke="#B794F4" stroke-width="2"/>
+  <text x="258" y="373" text-anchor="middle" font-size="11.5" font-weight="700" fill="#553C9A">社労士</text>
+  <text x="258" y="388" text-anchor="middle" font-size="9" fill="#6B46C1">HR・労務</text>
+
+  <rect x="32" y="406" width="140" height="46" rx="10" fill="#F3E8FF" stroke="#B794F4" stroke-width="2"/>
+  <text x="102" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">行政書士</text>
+  <text x="102" y="440" text-anchor="middle" font-size="9" fill="#6B46C1">独立開業</text>
+
+  <rect x="188" y="406" width="140" height="46" rx="10" fill="#F3E8FF" stroke="#B794F4" stroke-width="2"/>
+  <text x="258" y="425" text-anchor="middle" font-size="10.5" font-weight="700" fill="#553C9A">中小企業診断士</text>
+  <text x="258" y="440" text-anchor="middle" font-size="9" fill="#6B46C1">経営コンサル</text>
+
+  <!-- Zone: お手軽 -->
+  <rect x="16" y="538" width="328" height="112" rx="14" fill="#F0FBF4" stroke="#68D391" stroke-width="2.5"/>
+  <rect x="32" y="552" width="200" height="28" rx="14" fill="#68D391"/>
+  <text x="132" y="571" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">🌱 お手軽ゾーン</text>
+  <text x="180" y="596" text-anchor="middle" font-size="9.5" fill="#276749">低リターンだが高タイパ</text>
+
+  <rect x="110" y="606" width="140" height="34" rx="10" fill="#E6FFFA" stroke="#68D391" stroke-width="2"/>
+  <text x="180" y="623" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">ITパスポート</text>
+  <text x="180" y="636" text-anchor="middle" font-size="8.5" fill="#2F855A">文系OK</text>
+
+  <!-- Zone: 要検討 -->
+  <rect x="16" y="664" width="328" height="112" rx="14" fill="#F7FAFC" stroke="#A0AEC0" stroke-width="2.5"/>
+  <rect x="32" y="678" width="200" height="28" rx="14" fill="#A0AEC0"/>
+  <text x="132" y="697" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">△ 要検討ゾーン</text>
+  <text x="180" y="722" text-anchor="middle" font-size="9.5" fill="#4A5568">低リターン×時間がかかる</text>
+
+  <rect x="110" y="732" width="140" height="34" rx="10" fill="#EDF2F7" stroke="#A0AEC0" stroke-width="2"/>
+  <text x="180" y="749" text-anchor="middle" font-size="11" font-weight="700" fill="#4A5568">TOEIC700</text>
+  <text x="180" y="762" text-anchor="middle" font-size="8.5" fill="#4A5568">グローバル</text>
+
+  <!-- caption -->
+  <rect x="16" y="794" width="328" height="80" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="820" text-anchor="middle" font-size="10.5" fill="#78350F">短期間の投資で市場価値を</text>
+  <text x="180" y="838" text-anchor="middle" font-size="10.5" fill="#78350F">最速回収できるのが「社会人最強ゾーン」</text>
+  <text x="180" y="858" text-anchor="middle" font-size="10.5" font-weight="700" fill="#78350F">——簿記2級・宅建・FP2級が代表格</text>
+</svg>

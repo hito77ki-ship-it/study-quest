@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1160" width="360" height="1160" role="img" aria-labelledby="t d">
+  <title id="t">工業簿記とは——商業簿記との違いと原価計算の全体像（モバイル版）</title>
+  <desc id="d">商業簿記と工業簿記の違い、材料費・労務費・経費から製造間接費・仕掛品・製品・売上原価に至る製造原価フローを縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1160" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">工業簿記とは</text>
+  <text x="180" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">商業簿記との違いと原価計算の全体像</text>
+
+  <rect x="16" y="64" width="328" height="120" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="16" y="64" width="328" height="28" rx="10" fill="#64748B"/>
+  <text x="180" y="83" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">商業簿記（小売・卸売業）</text>
+  <text x="180" y="110" text-anchor="middle" font-size="11" fill="#374151">仕入れる → そのまま売る</text>
+  <text x="180" y="128" text-anchor="middle" font-size="10" fill="#64748B">【勘定】仕入→商品→売上原価</text>
+  <text x="180" y="146" text-anchor="middle" font-size="10" fill="#64748B">仕訳帳・総勘定元帳中心</text>
+  <text x="180" y="166" text-anchor="middle" font-size="9.5" fill="#94A3B8">「作る」プロセスは記録しない</text>
+
+  <text x="180" y="200" text-anchor="middle" font-size="16" fill="#94A3B8">↓ VS</text>
+
+  <rect x="16" y="214" width="328" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="16" y="214" width="328" height="28" rx="10" fill="#3B82F6"/>
+  <text x="180" y="233" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">工業簿記（製造業）</text>
+  <text x="180" y="260" text-anchor="middle" font-size="11" fill="#374151">材料を買う→加工する→製品を売る</text>
+  <text x="180" y="278" text-anchor="middle" font-size="10" fill="#1E40AF">【勘定】材料→仕掛品→製品→売上原価</text>
+  <text x="180" y="296" text-anchor="middle" font-size="10" fill="#1E40AF">原価計算を組み合わせて記録</text>
+  <text x="180" y="316" text-anchor="middle" font-size="9.5" fill="#1D4ED8">「1個いくらで作れたか」を計算できる</text>
+
+  <text x="180" y="366" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">工業簿記の製造原価フロー</text>
+
+  <rect x="16" y="382" width="328" height="46" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="30" y="404" font-size="11" font-weight="700" fill="#713F12">材料費</text>
+  <text x="30" y="420" font-size="10" fill="#374151">直接材料費／間接材料費</text>
+
+  <rect x="16" y="436" width="328" height="46" rx="8" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="30" y="458" font-size="11" font-weight="700" fill="#5B21B6">労務費</text>
+  <text x="30" y="474" font-size="10" fill="#374151">賃金・給与等</text>
+
+  <rect x="16" y="490" width="328" height="46" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="30" y="512" font-size="11" font-weight="700" fill="#166534">経費</text>
+  <text x="30" y="528" font-size="10" fill="#374151">電力料・外注等</text>
+
+  <text x="180" y="558" text-anchor="middle" font-size="13" fill="#64748B">↓（間接費）</text>
+
+  <rect x="16" y="568" width="328" height="66" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="30" y="590" font-size="11" font-weight="700" fill="#DC2626">製造間接費</text>
+  <text x="30" y="608" font-size="10" fill="#374151">間接費を集めて配賦基準で按分</text>
+  <text x="30" y="624" font-size="9.5" fill="#64748B">↓ 予定配賦率×時間</text>
+
+  <text x="180" y="654" text-anchor="middle" font-size="13" fill="#64748B">↓</text>
+
+  <rect x="16" y="664" width="328" height="110" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <text x="30" y="686" font-size="11.5" font-weight="700" fill="#1E40AF">仕掛品</text>
+  <text x="30" y="704" font-size="10" fill="#374151">直接材料費＋直接労務費＋直接経費</text>
+  <text x="30" y="720" font-size="10" fill="#374151">＋製造間接費配賦</text>
+  <text x="30" y="738" font-size="9.5" fill="#64748B">製造中の半製品、完成→製品へ</text>
+
+  <text x="180" y="798" text-anchor="middle" font-size="13" fill="#22C55E">↓</text>
+
+  <rect x="16" y="808" width="328" height="84" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="30" y="830" font-size="11.5" font-weight="700" fill="#166534">製品</text>
+  <text x="30" y="848" font-size="10" fill="#374151">完成した製品（在庫として保管）</text>
+  <text x="30" y="864" font-size="10" fill="#374151">販売されると売上原価へ</text>
+
+  <text x="180" y="916" text-anchor="middle" font-size="13" fill="#EF4444">↓</text>
+
+  <rect x="16" y="926" width="328" height="66" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="30" y="948" font-size="11.5" font-weight="700" fill="#DC2626">売上原価</text>
+  <text x="30" y="966" font-size="10" fill="#374151">販売済みの製品原価 → P/Lへ</text>
+
+  <rect x="16" y="1012" width="328" height="80" rx="10" fill="#111827"/>
+  <text x="180" y="1038" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">核心は「材料→加工→製品→販売」の</text>
+  <text x="180" y="1056" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8CC63F">流れを勘定で正確に追うこと</text>
+  <text x="180" y="1076" text-anchor="middle" font-size="10" fill="#E5E7EB">第4問（仕訳）・第5問（原価計算）の基礎</text>
+</svg>

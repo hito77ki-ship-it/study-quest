@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1080" width="360" height="1080" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">法人税等——中間申告から確定申告までの3段階処理フロー（モバイル版）</title>
+  <desc id="svgdesc">同じ税金が中間申告・決算整理・確定申告のタイミングによって資産・費用・負債と姿を変える3ステップの図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="1080" rx="16" fill="#FEFCF9"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">法人税等の3段階処理フロー</text>
+  <text x="180" y="44" text-anchor="middle" font-size="10" fill="#94A3B8">同じ税金が資産→費用→負債と姿を変える</text>
+
+  <!-- STEP1 -->
+  <circle cx="180" cy="70" r="18" fill="#FDBA74"/>
+  <text x="180" y="66" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">STEP</text>
+  <text x="180" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text>
+  <rect x="20" y="98" width="320" height="72" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <text x="180" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">① 中間申告（年度の途中）</text>
+  <text x="180" y="136" text-anchor="middle" font-size="10.5" fill="#374151">仮払法人税等（資産）として納付</text>
+  <text x="180" y="153" text-anchor="middle" font-size="10.5" fill="#374151">例：税額の約半分を先払い</text>
+  <rect x="20" y="178" width="320" height="42" rx="8" fill="#FFF7ED"/>
+  <text x="180" y="196" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">仮払法人税等　150,000</text>
+  <text x="180" y="212" text-anchor="middle" font-size="11" fill="#C2410C">／ 現金　　　　150,000</text>
+
+  <line x1="180" y1="230" x2="180" y2="256" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="172,248 188,248 180,260" fill="#CBD5E1"/>
+
+  <!-- STEP2 -->
+  <circle cx="180" cy="284" r="18" fill="#C4B5FD"/>
+  <text x="180" y="280" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">STEP</text>
+  <text x="180" y="292" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text>
+  <rect x="20" y="312" width="320" height="82" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="180" y="332" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5B21B6">② 決算整理（期末）</text>
+  <text x="180" y="350" text-anchor="middle" font-size="10.5" fill="#374151">年税額を確定・未払法人税等（負債）を計上</text>
+  <text x="180" y="366" text-anchor="middle" font-size="10.5" fill="#374151">年税額300,000－仮払150,000</text>
+  <text x="180" y="382" text-anchor="middle" font-size="10.5" fill="#374151">＝未払150,000</text>
+  <rect x="20" y="402" width="320" height="56" rx="8" fill="#F5F3FF"/>
+  <text x="180" y="420" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">法人税等　　　　300,000</text>
+  <text x="180" y="436" text-anchor="middle" font-size="11" fill="#5B21B6">／ 仮払法人税等　150,000</text>
+  <text x="180" y="452" text-anchor="middle" font-size="11" fill="#5B21B6">　未払法人税等　150,000</text>
+
+  <line x1="180" y1="470" x2="180" y2="496" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="172,488 188,488 180,500" fill="#CBD5E1"/>
+
+  <!-- STEP3 -->
+  <circle cx="180" cy="524" r="18" fill="#86EFAC"/>
+  <text x="180" y="520" text-anchor="middle" font-size="8" font-weight="700" fill="#14532D">STEP</text>
+  <text x="180" y="532" text-anchor="middle" font-size="11" font-weight="700" fill="#14532D">3</text>
+  <rect x="20" y="552" width="320" height="82" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="572" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">③ 確定申告・納付（翌年5月）</text>
+  <text x="180" y="590" text-anchor="middle" font-size="10.5" fill="#374151">未払法人税等を現金で納付して消去</text>
+  <text x="180" y="608" text-anchor="middle" font-size="10.5" fill="#374151">未払分だけを追加で支払う</text>
+  <rect x="20" y="642" width="320" height="42" rx="8" fill="#F0FDF4"/>
+  <text x="180" y="660" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">未払法人税等　150,000</text>
+  <text x="180" y="676" text-anchor="middle" font-size="11" fill="#166534">／ 現金　　　　150,000</text>
+
+  <!-- まとめ -->
+  <rect x="16" y="716" width="328" height="348" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="180" y="742" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">🎯 3つの勘定の役割まとめ</text>
+
+  <rect x="30" y="756" width="300" height="94" rx="10" fill="#FFF7ED" stroke="#FDBA74"/>
+  <text x="180" y="778" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">仮払法人税等</text>
+  <text x="180" y="796" text-anchor="middle" font-size="10.5" fill="#374151">資産（ざいさん）</text>
+  <text x="180" y="814" text-anchor="middle" font-size="10.5" fill="#374151">中間で先払いした税金</text>
+  <text x="180" y="832" text-anchor="middle" font-size="10.5" fill="#374151">決算で打ち消される</text>
+
+  <rect x="30" y="862" width="300" height="94" rx="10" fill="#F5F3FF" stroke="#C4B5FD"/>
+  <text x="180" y="884" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5B21B6">法人税等</text>
+  <text x="180" y="902" text-anchor="middle" font-size="10.5" fill="#374151">費用（ひよう）</text>
+  <text x="180" y="920" text-anchor="middle" font-size="10.5" fill="#374151">決算で確定した年税額</text>
+  <text x="180" y="938" text-anchor="middle" font-size="10.5" fill="#374151">P/L（損益計算書）に計上</text>
+
+  <rect x="30" y="968" width="300" height="80" rx="10" fill="#F0FDF4" stroke="#86EFAC"/>
+  <text x="180" y="990" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">未払法人税等</text>
+  <text x="180" y="1008" text-anchor="middle" font-size="10.5" fill="#374151">負債（ふさい）／確定申告で現金納付</text>
+  <text x="180" y="1026" text-anchor="middle" font-size="10.5" fill="#374151">決算後にまだ払っていない税金</text>
+</svg>

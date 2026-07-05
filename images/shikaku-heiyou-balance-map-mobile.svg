@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 780" width="360" height="780">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="780" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">大谷流・資格併用の</text>
+  <text x="180" y="48" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">8:2黄金比バランスマップ</text>
+  <text x="180" y="68" text-anchor="middle" font-size="10.5" fill="#64748B">本命8割・サブ2割に配分し、直前期のバッティングを防ぐ</text>
+
+  <rect x="20" y="86" width="320" height="482" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="180" y="110" text-anchor="middle" font-size="11.5" font-weight="700" fill="#475569">脳内エネルギー 100% のハコ</text>
+
+  <!-- 本命資格 80% -->
+  <rect x="36" y="124" width="288" height="230" rx="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="180" y="154" text-anchor="middle" font-size="16" font-weight="700" fill="#1D4ED8">本命資格</text>
+  <text x="180" y="174" text-anchor="middle" font-size="12" fill="#1E40AF">レベル上げの主軸 ── 難関・重量級</text>
+  <rect x="80" y="188" width="200" height="32" rx="16" fill="#3B82F6"/>
+  <text x="180" y="210" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">80%</text>
+  <text x="180" y="242" text-anchor="middle" font-size="11" fill="#1E40AF">例：公認会計士・税理士</text>
+  <text x="180" y="260" text-anchor="middle" font-size="11" fill="#1E40AF">簿記1級 など</text>
+  <text x="180" y="282" text-anchor="middle" font-size="10.5" fill="#3B82F6">毎日の学習時間の大半をここに投下</text>
+  <rect x="80" y="296" width="200" height="18" rx="9" fill="#93C5FD"/>
+  <text x="180" y="309" text-anchor="middle" font-size="9.5" fill="#1E3A8A">直前期は他を止めてでも本命を守る</text>
+
+  <!-- 区切り -->
+  <line x1="60" y1="368" x2="300" y2="368" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- サブ資格 20% -->
+  <rect x="36" y="382" width="288" height="170" rx="12" fill="#FEF9C3" stroke="#EAB308" stroke-width="2.5"/>
+  <text x="180" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#A16207">サブ資格　息抜きのノーコスト</text>
+  <rect x="130" y="420" width="100" height="28" rx="14" fill="#EAB308"/>
+  <text x="180" y="440" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">20%</text>
+  <text x="180" y="468" text-anchor="middle" font-size="11" fill="#854D0E">例：ITパスポート・TOEIC・MOS など</text>
+  <text x="180" y="490" text-anchor="middle" font-size="10.5" fill="#A16207">疲れた日に軽く触る程度</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="596" width="320" height="120" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="622" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">主従を先に固定してから逆算</text>
+  <text x="180" y="642" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">8:2の比率を崩さなければ</text>
+  <text x="180" y="662" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400E">併用は破綻しない</text>
+  <text x="180" y="688" text-anchor="middle" font-size="10" fill="#B45309">両方を「本命」にした瞬間、この比率が</text>
+  <text x="180" y="704" text-anchor="middle" font-size="10" fill="#B45309">1:1に崩れて計画が破綻する</text>
+</svg>

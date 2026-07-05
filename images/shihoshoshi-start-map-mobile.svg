@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1220" width="360" height="1220">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1220" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">司法書士——最初の7日間でやること</text>
+
+  <!-- Day1-7 vertical timeline -->
+  <rect x="16" y="50" width="328" height="46" rx="8" fill="#3B82F6"/>
+  <text x="36" y="70" font-size="11" font-weight="700" fill="#fff">Day 1</text>
+  <text x="140" y="70" font-size="10.5" fill="#DBEAFE">試験の全体像を見る</text>
+  <polygon points="180,100 175,105 185,105" fill="#94A3B8"/>
+
+  <rect x="16" y="110" width="328" height="46" rx="8" fill="#3B82F6"/>
+  <text x="36" y="130" font-size="11" font-weight="700" fill="#fff">Day 2</text>
+  <text x="140" y="130" font-size="10.5" fill="#DBEAFE">民法からスタート</text>
+  <polygon points="180,160 175,165 185,165" fill="#94A3B8"/>
+
+  <rect x="16" y="170" width="328" height="46" rx="8" fill="#22C55E"/>
+  <text x="36" y="190" font-size="11" font-weight="700" fill="#fff">Day 3</text>
+  <text x="140" y="190" font-size="10.5" fill="#DCFCE7">教材を絞る</text>
+  <polygon points="180,220 175,225 185,225" fill="#94A3B8"/>
+
+  <rect x="16" y="230" width="328" height="46" rx="8" fill="#22C55E"/>
+  <text x="36" y="250" font-size="11" font-weight="700" fill="#fff">Day 4</text>
+  <text x="140" y="250" font-size="10.5" fill="#DCFCE7">過去問の使い方を知る</text>
+  <polygon points="180,280 175,285 185,285" fill="#94A3B8"/>
+
+  <rect x="16" y="290" width="328" height="46" rx="8" fill="#F97316"/>
+  <text x="36" y="310" font-size="11" font-weight="700" fill="#fff">Day 5</text>
+  <text x="140" y="310" font-size="10.5" fill="#FFEDD5">民法総則を1周する</text>
+  <polygon points="180,340 175,345 185,345" fill="#94A3B8"/>
+
+  <rect x="16" y="350" width="328" height="46" rx="8" fill="#F97316"/>
+  <text x="36" y="370" font-size="11" font-weight="700" fill="#fff">Day 6</text>
+  <text x="140" y="370" font-size="10.5" fill="#FFEDD5">意思表示・代理を演習</text>
+  <polygon points="180,400 175,405 185,405" fill="#94A3B8"/>
+
+  <rect x="16" y="410" width="328" height="46" rx="8" fill="#EF4444"/>
+  <text x="36" y="430" font-size="11" font-weight="700" fill="#fff">Day 7</text>
+  <text x="140" y="430" font-size="10.5" fill="#FEE2E2">1週間を振り返る</text>
+
+  <!-- Detail 1 -->
+  <rect x="16" y="474" width="328" height="270" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="496" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E40AF">最初にやるべきこと</text>
+  <rect x="28" y="506" width="304" height="26" rx="5" fill="#DBEAFE"/>
+  <text x="180" y="523" text-anchor="middle" font-size="10.5" fill="#1D4ED8">試験の仕組みを把握する（Day1）</text>
+  <text x="28" y="546" font-size="10.5" fill="#374151">午前35問（民法・会社法・憲法・刑法）</text>
+  <text x="28" y="564" font-size="10.5" fill="#374151">午後35問（不動産登記法・商業登記法・訴訟法系）</text>
+  <text x="28" y="582" font-size="10.5" fill="#374151">記述式2問（不動産登記・商業登記）</text>
+  <text x="28" y="600" font-size="10.5" fill="#374151">口述試験（筆記合格者のみ・ほぼ全員合格）</text>
+  <text x="28" y="622" font-size="10.5" fill="#64748B">合格率約4〜5%。毎年約2万人受験、約700人合格。</text>
+  <text x="28" y="640" font-size="10.5" fill="#64748B">合格まで平均4〜5年。本試験は年1回（7月）。</text>
+  <text x="28" y="658" font-size="10.5" fill="#64748B">基準点制（午前・午後・記述それぞれに足切りあり）。</text>
+
+  <!-- Detail 2 -->
+  <rect x="16" y="762" width="328" height="270" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="180" y="784" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C2410C">学習ルールを決める（Day2〜4）</text>
+  <rect x="28" y="794" width="304" height="26" rx="5" fill="#FFEDD5"/>
+  <text x="180" y="811" text-anchor="middle" font-size="10.5" fill="#C2410C">教材は1セットに絞る（複数は NG）</text>
+  <text x="28" y="834" font-size="10.5" fill="#374151">テキスト1冊 ＋ 過去問1冊に固定</text>
+  <text x="28" y="852" font-size="10.5" fill="#374151">過去問は「なぜ正解か」まで理解する</text>
+  <text x="28" y="870" font-size="10.5" fill="#374151">正答率より「理解の深さ」を優先する</text>
+  <text x="28" y="892" font-size="10.5" fill="#64748B">民法から始める理由：</text>
+  <text x="28" y="910" font-size="10.5" fill="#64748B">民法は全科目の土台。民法を制する者が</text>
+  <text x="28" y="928" font-size="10.5" fill="#64748B">不動産登記法・会社法を制する。</text>
+  <text x="28" y="946" font-size="10.5" fill="#64748B">最初の1週間は「型を作る」フェーズ。</text>
+
+  <!-- Bottom -->
+  <rect x="16" y="1058" width="328" height="60" rx="8" fill="#F1F5F9"/>
+  <text x="180" y="1082" text-anchor="middle" font-size="10.5" fill="#475569">💡 7日目のゴール：「民法総則を読んだ」</text>
+  <text x="180" y="1100" text-anchor="middle" font-size="10.5" fill="#475569">「毎日机に向かった」——この2つだけ達成すれば完璧な1週間。</text>
+</svg>

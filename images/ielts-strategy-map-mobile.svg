@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 620" width="360" height="620">
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="620" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">IELTS 4技能バランス＆足切り回避</text>
+  <text x="180" y="46" text-anchor="middle" font-size="9.5" fill="#64748B">L・R・W・Sをすべて防衛線（例：6.0）より上に</text>
+
+  <rect x="16" y="60" width="328" height="70" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="30" y="82" font-size="12" font-weight="700" fill="#1D4ED8">L Listening</text>
+  <text x="316" y="82" text-anchor="end" font-size="11" font-weight="700" fill="#1D4ED8">目標 6.5</text>
+  <text x="30" y="102" font-size="9.5" fill="#374151">総合バランス型。防衛線には余裕あり</text>
+
+  <rect x="16" y="140" width="328" height="70" rx="8" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="30" y="162" font-size="12" font-weight="700" fill="#6D28D9">R Reading</text>
+  <text x="316" y="162" text-anchor="end" font-size="11" font-weight="700" fill="#6D28D9">目標 6.5</text>
+  <text x="30" y="182" font-size="9.5" fill="#374151">総合バランス型。防衛線には余裕あり</text>
+
+  <rect x="16" y="220" width="328" height="86" rx="8" fill="#FFEDD5" stroke="#F97316" stroke-width="2.5"/>
+  <text x="30" y="242" font-size="12" font-weight="700" fill="#C2410C">W Writing</text>
+  <text x="316" y="242" text-anchor="end" font-size="11" font-weight="700" fill="#C2410C">目標 6.0</text>
+  <rect x="30" y="252" width="90" height="20" rx="10" fill="#F97316"/>
+  <text x="75" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">日本人の弱点</text>
+  <text x="30" y="292" font-size="9.5" fill="#374151">防衛線ギリギリ。重点対策が必要</text>
+
+  <rect x="16" y="316" width="328" height="86" rx="8" fill="#FCE7F3" stroke="#EC4899" stroke-width="2.5"/>
+  <text x="30" y="338" font-size="12" font-weight="700" fill="#BE185D">S Speaking</text>
+  <text x="316" y="338" text-anchor="end" font-size="11" font-weight="700" fill="#BE185D">目標 6.0</text>
+  <rect x="30" y="348" width="90" height="20" rx="10" fill="#EC4899"/>
+  <text x="75" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">日本人の弱点</text>
+  <text x="30" y="388" font-size="9.5" fill="#374151">防衛線ギリギリ。重点対策が必要</text>
+
+  <line x1="16" y1="420" x2="344" y2="420" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="180" y="436" text-anchor="middle" font-size="10" fill="#B91C1C">合格防衛線（6.0）はここ</text>
+
+  <rect x="16" y="454" width="328" height="60" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="478" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">総合平均6.4でもW・Sが6.0未満なら要件未達</text>
+  <text x="180" y="498" text-anchor="middle" font-size="10" fill="#92400E">全技能が防衛線を上回って初めて合格</text>
+</svg>

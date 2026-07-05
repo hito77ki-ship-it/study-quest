@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 960" width="360" height="960" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">株式会社の純資産4要素——積み上げ構造と繰越利益剰余金の増減フロー（モバイル版）</title>
+  <desc id="svgdesc">資本金・資本準備金・利益準備金・繰越利益剰余金の4要素の構造と、繰越利益剰余金が増減する流れを縦に並べた図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="960" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">純資産4要素と繰越利益剰余金の増減</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9" fill="#64748B">外からの元手と、中で稼いだ利益の2グループ</text>
+
+  <text x="20" y="70" font-size="12" font-weight="700" fill="#1E293B">純資産の4要素（積み上げ構造）</text>
+  <text x="20" y="92" font-size="11" font-weight="700" fill="#1E40AF">🔵 外からの元手（株主からの入金）</text>
+
+  <rect x="20" y="102" width="320" height="72" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="124" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E40AF">資本金（しほんきん）</text>
+  <text x="180" y="142" text-anchor="middle" font-size="10" fill="#374151">株主からの出資のうち払込金額の1/2以上</text>
+  <text x="180" y="160" text-anchor="middle" font-size="9.5" fill="#64748B">→ 株式発行時に計上</text>
+
+  <rect x="20" y="182" width="320" height="72" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="204" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E40AF">資本準備金（しほんじゅんびきん）</text>
+  <text x="180" y="222" text-anchor="middle" font-size="10" fill="#374151">払込金額のうち資本金にしなかった残り</text>
+  <text x="180" y="240" text-anchor="middle" font-size="9.5" fill="#64748B">（払込金額の1/2以下）</text>
+
+  <text x="20" y="278" font-size="11" font-weight="700" fill="#166534">🟢 中で稼いだ利益（会社の内部留保）</text>
+
+  <rect x="20" y="288" width="320" height="72" rx="10" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="310" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">利益準備金（りえきじゅんびきん）</text>
+  <text x="180" y="328" text-anchor="middle" font-size="10" fill="#374151">配当のたびに配当額の1/10を強制積立</text>
+  <text x="180" y="346" text-anchor="middle" font-size="9.5" fill="#64748B">（資本金の1/4まで）</text>
+
+  <rect x="20" y="368" width="320" height="72" rx="10" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="390" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">繰越利益剰余金（くりこしりえきじょうよきん）</text>
+  <text x="180" y="408" text-anchor="middle" font-size="10" fill="#374151">毎期の純利益を積み上げた内部留保</text>
+
+  <line x1="30" y1="456" x2="330" y2="456" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <text x="180" y="484" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">繰越利益剰余金の増減フロー</text>
+
+  <rect x="20" y="500" width="320" height="72" rx="10" fill="#F0FFF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="522" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">↑ 増える</text>
+  <text x="180" y="540" text-anchor="middle" font-size="10.5" fill="#374151">当期純利益（決算時に振替）</text>
+  <text x="180" y="558" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">損益 → 繰越利益剰余金</text>
+
+  <line x1="180" y1="572" x2="180" y2="598" stroke="#22C55E" stroke-width="2.5"/>
+  <polygon points="172,590 188,590 180,602" fill="#22C55E"/>
+
+  <rect x="50" y="608" width="260" height="60" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2.5"/>
+  <text x="180" y="632" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">繰越利益剰余金</text>
+  <text x="180" y="650" text-anchor="middle" font-size="10" fill="#166534">（残高）</text>
+
+  <line x1="180" y1="668" x2="180" y2="694" stroke="#DB2777" stroke-width="2.5"/>
+  <polygon points="172,686 188,686 180,698" fill="#DB2777"/>
+
+  <rect x="20" y="704" width="320" height="118" rx="10" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <text x="180" y="726" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">↓ 減る</text>
+  <text x="180" y="746" text-anchor="middle" font-size="10.5" fill="#374151">① 株主への配当（未払配当金）</text>
+  <text x="180" y="764" text-anchor="middle" font-size="10.5" fill="#374151">② 利益準備金の積立</text>
+  <text x="180" y="786" text-anchor="middle" font-size="10" font-weight="700" fill="#9D174D">繰越利益剰余金 →</text>
+  <text x="180" y="804" text-anchor="middle" font-size="10" font-weight="700" fill="#9D174D">未払配当金＋利益準備金</text>
+
+  <!-- summary -->
+  <rect x="20" y="846" width="320" height="96" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="870" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">🎯 資本金・資本準備金＝株主の元手</text>
+  <text x="180" y="888" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">利益準備金・繰越利益剰余金＝会社が稼いだ利益</text>
+  <text x="180" y="912" text-anchor="middle" font-size="10.5" fill="#374151">純資産の合計＝総資産－総負債</text>
+  <text x="180" y="928" text-anchor="middle" font-size="10.5" fill="#374151">（貸借対照表の右下に表示）</text>
+</svg>

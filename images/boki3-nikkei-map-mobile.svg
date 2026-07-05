@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1120" width="360" height="1120">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1120" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="32" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">仕訳日計表の集計構造</text>
+  <text x="180" y="50" text-anchor="middle" font-size="11" fill="#64748B">伝票から元帳まで</text>
+
+  <!-- 伝票 -->
+  <rect x="20" y="66" width="320" height="220" rx="12" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <text x="180" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">伝票（その日に起票）</text>
+
+  <rect x="36" y="100" width="288" height="40" rx="6" fill="#FFEDD5"/>
+  <text x="48" y="120" font-size="12" font-weight="700" fill="#C2410C">入金伝票</text>
+  <text x="48" y="134" font-size="10.5" fill="#9A3412">現金受取の取引</text>
+
+  <rect x="36" y="148" width="288" height="40" rx="6" fill="#FFEDD5"/>
+  <text x="48" y="168" font-size="12" font-weight="700" fill="#C2410C">出金伝票</text>
+  <text x="48" y="182" font-size="10.5" fill="#9A3412">現金支払の取引</text>
+
+  <rect x="36" y="196" width="288" height="40" rx="6" fill="#FFEDD5"/>
+  <text x="48" y="216" font-size="12" font-weight="700" fill="#C2410C">振替伝票</text>
+  <text x="48" y="230" font-size="10.5" fill="#9A3412">現金以外の取引</text>
+
+  <text x="180" y="270" text-anchor="middle" font-size="18" fill="#F97316">📄📄📄 1日に多数の伝票</text>
+
+  <!-- arrow -->
+  <text x="180" y="308" text-anchor="middle" font-size="11" font-weight="700" fill="#64748B">↓ 集計</text>
+
+  <!-- 仕訳日計表 -->
+  <rect x="20" y="322" width="320" height="330" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="180" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">仕訳日計表</text>
+  <text x="180" y="360" text-anchor="middle" font-size="10.5" fill="#3B82F6">（1日1枚・勘定科目別に集計）</text>
+
+  <rect x="36" y="372" width="288" height="216" rx="6" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
+  <rect x="36" y="372" width="288" height="26" rx="6" fill="#DBEAFE"/>
+  <text x="80" y="390" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">借方</text>
+  <text x="180" y="390" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">勘定科目</text>
+  <text x="280" y="390" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">貸方</text>
+
+  <line x1="36" y1="398" x2="324" y2="398" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="80" y="414" text-anchor="middle" font-size="10.5" fill="#374151">¥50,000</text>
+  <text x="180" y="414" text-anchor="middle" font-size="10.5" fill="#374151">現　金</text>
+  <text x="280" y="414" text-anchor="middle" font-size="10.5" fill="#374151">¥30,000</text>
+
+  <line x1="36" y1="422" x2="324" y2="422" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="80" y="438" text-anchor="middle" font-size="10.5" fill="#374151">¥30,000</text>
+  <text x="180" y="438" text-anchor="middle" font-size="10.5" fill="#374151">売掛金</text>
+  <text x="280" y="438" text-anchor="middle" font-size="10.5" fill="#374151">—</text>
+
+  <line x1="36" y1="446" x2="324" y2="446" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="80" y="462" text-anchor="middle" font-size="10.5" fill="#374151">—</text>
+  <text x="180" y="462" text-anchor="middle" font-size="10.5" fill="#374151">売　上</text>
+  <text x="280" y="462" text-anchor="middle" font-size="10.5" fill="#374151">¥50,000</text>
+
+  <line x1="36" y1="470" x2="324" y2="470" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="80" y="486" text-anchor="middle" font-size="10.5" fill="#374151">—</text>
+  <text x="180" y="486" text-anchor="middle" font-size="10.5" fill="#374151">買掛金</text>
+  <text x="280" y="486" text-anchor="middle" font-size="10.5" fill="#374151">¥30,000</text>
+
+  <line x1="36" y1="494" x2="324" y2="494" stroke="#BFDBFE" stroke-width="1"/>
+  <rect x="36" y="530" width="288" height="30" rx="0" fill="#DBEAFE"/>
+  <text x="80" y="550" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">¥80,000</text>
+  <text x="180" y="550" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">合　計</text>
+  <text x="280" y="550" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">¥80,000</text>
+
+  <line x1="140" y1="372" x2="140" y2="588" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="220" y1="372" x2="220" y2="588" stroke="#BFDBFE" stroke-width="1"/>
+
+  <!-- arrow -->
+  <text x="180" y="682" text-anchor="middle" font-size="11" font-weight="700" fill="#64748B">↓ 転記</text>
+
+  <!-- 元帳 -->
+  <rect x="20" y="696" width="320" height="228" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="180" y="718" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">各種元帳（科目ごとに転記）</text>
+
+  <rect x="36" y="730" width="288" height="40" rx="6" fill="#DCFCE7"/>
+  <text x="48" y="750" font-size="12" font-weight="700" fill="#15803D">現金出納帳</text>
+  <text x="48" y="764" font-size="10.5" fill="#166534">現金の収支記録</text>
+
+  <rect x="36" y="778" width="288" height="40" rx="6" fill="#DCFCE7"/>
+  <text x="48" y="798" font-size="12" font-weight="700" fill="#15803D">得意先元帳</text>
+  <text x="48" y="812" font-size="10.5" fill="#166534">売掛金の得意先別</text>
+
+  <rect x="36" y="826" width="288" height="40" rx="6" fill="#DCFCE7"/>
+  <text x="48" y="846" font-size="12" font-weight="700" fill="#15803D">仕入先元帳</text>
+  <text x="48" y="860" font-size="10.5" fill="#166534">買掛金の仕入先別</text>
+
+  <text x="180" y="900" text-anchor="middle" font-size="26" fill="#22C55E">📚</text>
+
+  <!-- bottom note -->
+  <rect x="20" y="944" width="320" height="150" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="180" y="972" text-anchor="middle" font-size="11" fill="#475569">💡 借方合計＝貸方合計に</text>
+  <text x="180" y="990" text-anchor="middle" font-size="11" fill="#475569">ならない場合は、仕訳の</text>
+  <text x="180" y="1008" text-anchor="middle" font-size="11" fill="#475569">転記ミスや記入漏れが</text>
+  <text x="180" y="1026" text-anchor="middle" font-size="11" fill="#475569">発見できる（検証機能）</text>
+  <text x="180" y="1054" text-anchor="middle" font-size="11" fill="#475569">仕訳日計表は「1日1枚」作成し、</text>
+  <text x="180" y="1072" text-anchor="middle" font-size="11" fill="#475569">翌日に元帳へ転記するのが原則</text>
+</svg>

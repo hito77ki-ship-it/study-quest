@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1000" width="360" height="1000" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">基本情報技術者試験 攻略マップ——科目A「知識の盾」×科目B「アルゴリズムの剣」（モバイル版）</title>
+  <desc id="svgdesc">科目Aを知識の盾、科目Bをアルゴリズムの剣に見立てた攻略ポイントを縦に並べた図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1000" rx="16" fill="#FAFDF6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">基本情報 攻略マップ</text>
+  <text x="180" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">科目A「知識の盾」×科目B「アルゴリズムの剣」</text>
+  <text x="180" y="60" text-anchor="middle" font-size="9.5" fill="#64748B">合格基準：両科目600点以上／CBT方式で通年受験可能</text>
+
+  <!-- 科目A -->
+  <rect x="16" y="74" width="328" height="404" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="16" y="74" width="328" height="34" rx="10" fill="#3B82F6"/>
+  <text x="180" y="96" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">🛡 科目A（知識の盾）</text>
+
+  <rect x="30" y="122" width="300" height="26" rx="5" fill="#DBEAFE"/>
+  <text x="40" y="139" font-size="9.5" fill="#1E3A8A">60問／テクノロジ・マネジメント・ストラテジ</text>
+  <rect x="30" y="152" width="300" height="26" rx="5" fill="#BFDBFE"/>
+  <text x="40" y="169" font-size="9.5" font-weight="700" fill="#1D4ED8">目標：6割以上の正解率で守り切る</text>
+
+  <text x="30" y="200" font-size="11" font-weight="700" fill="#1D4ED8">盾を構成する知識パーツ</text>
+  <text x="40" y="218" font-size="9" fill="#374151">▸ テクノロジ系：2進数・論理回路・NW（TCP/IP）</text>
+  <text x="40" y="234" font-size="9" fill="#374151">▸ テクノロジ系：DB（SQL・正規化）・セキュリティ</text>
+  <text x="40" y="250" font-size="9" fill="#374151">▸ マネジメント系：プロジェクト管理・開発工程</text>
+  <text x="40" y="266" font-size="9" fill="#374151">▸ ストラテジ系：経営戦略・システム戦略</text>
+
+  <rect x="30" y="282" width="300" height="54" rx="8" fill="#DBEAFE"/>
+  <text x="180" y="300" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">盾の鍛え方</text>
+  <text x="40" y="318" font-size="9" fill="#1E3A8A">過去問道場を反復するほど盾は厚くなる。</text>
+  <text x="40" y="332" font-size="9" fill="#1E3A8A">丸暗記ではなく「なぜそうなるか」で理解。</text>
+
+  <rect x="30" y="350" width="300" height="112" rx="8" fill="#1E3A8A"/>
+  <text x="180" y="370" text-anchor="middle" font-size="10.5" font-weight="700" fill="#93C5FD">科目Aの役割</text>
+  <text x="40" y="390" font-size="9" fill="#DBEAFE">知識問題は「暗記量＝防御力」に直結する</text>
+  <text x="40" y="406" font-size="9" fill="#DBEAFE">ストレートな戦い。奇をてらわず反復あるのみ。</text>
+  <text x="40" y="428" font-size="9" font-weight="700" fill="#BFDBFE">攻略の主戦場は科目B。科目Aは守り切ろう。</text>
+
+  <!-- 科目B -->
+  <rect x="16" y="496" width="328" height="404" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <rect x="16" y="496" width="328" height="34" rx="10" fill="#EF4444"/>
+  <text x="180" y="518" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">⚔ 科目B（アルゴリズムの剣）</text>
+
+  <rect x="30" y="544" width="300" height="26" rx="5" fill="#FEE2E2"/>
+  <text x="40" y="561" font-size="9.5" fill="#7F1D1D">アルゴリズム16問＋セキュリティ4問＝20問</text>
+  <rect x="30" y="574" width="300" height="26" rx="5" fill="#FECACA"/>
+  <text x="40" y="591" font-size="9.5" font-weight="700" fill="#991B1B">最難関・最重要：合否はここで決まる</text>
+
+  <text x="30" y="622" font-size="11" font-weight="700" fill="#B91C1C">剣を研ぐ＝疑似言語トレース力</text>
+  <text x="40" y="640" font-size="9" fill="#374151">▸ ソート・探索アルゴリズムを手で追う</text>
+  <text x="40" y="656" font-size="9" fill="#374151">▸ 再帰処理・文字列処理のパターンを覚える</text>
+  <text x="40" y="672" font-size="9" fill="#374151">▸ 変数の値の変化を紙にトレースする練習</text>
+  <text x="40" y="688" font-size="9" fill="#374151">▸ セキュリティ4問は知識で確実に得点</text>
+
+  <rect x="30" y="704" width="300" height="54" rx="8" fill="#FECACA"/>
+  <text x="180" y="722" text-anchor="middle" font-size="10.5" font-weight="700" fill="#991B1B">剣の研ぎ方</text>
+  <text x="40" y="740" font-size="9" fill="#7F1D1D">「キタミ式」「アルゴリズム図鑑」で直感理解。</text>
+  <text x="40" y="754" font-size="9" fill="#7F1D1D">手を止めず、計算用紙に書きながら反復する。</text>
+
+  <rect x="30" y="772" width="300" height="112" rx="8" fill="#7F1D1D"/>
+  <text x="180" y="792" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FCA5A5">科目Bの役割</text>
+  <text x="40" y="812" font-size="9" fill="#FEE2E2">知識だけでは殴れない「頭脳戦」の主戦場。</text>
+  <text x="40" y="828" font-size="9" fill="#FEE2E2">パズルを解く快感がクセになる領域でもある。</text>
+  <text x="40" y="850" font-size="9" font-weight="700" fill="#FECACA">ここに学習時間の半分以上を投資すべし。</text>
+
+  <!-- 下部バナー -->
+  <rect x="16" y="920" width="328" height="46" rx="8" fill="#DCFCE7"/>
+  <text x="180" y="940" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">盾（科目A）で守り、剣（科目B）で決める</text>
+  <text x="180" y="956" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">——両輪が揃って初めて600点ラインを超える</text>
+</svg>

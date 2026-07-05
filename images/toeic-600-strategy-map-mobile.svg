@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1290" width="360" height="1290" role="img" aria-labelledby="title desc">
+  <title id="title">TOEIC600点突破 3本柱×3ヶ月タイムライン戦略マップ（モバイル版）</title>
+  <desc id="desc">単語力・リスニング・リーディングの3本柱と、リーディング75分の時間配分、3ヶ月の学習フェーズを縦に並べて示す図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="1290" rx="16" fill="#FAFAFC"/>
+  <text x="180" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">TOEIC600点突破 3本柱＆3ヶ月戦略</text>
+
+  <!-- Pillar 1 -->
+  <rect x="20" y="50" width="320" height="126" rx="12" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
+  <rect x="20" y="50" width="320" height="30" rx="12" fill="#F472B6"/>
+  <rect x="20" y="68" width="320" height="12" fill="#F472B6"/>
+  <text x="180" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 単語力（最優先）</text>
+  <text x="180" y="98" text-anchor="middle" font-size="11" fill="#374151">「金フレ」600点レベルを完璧に</text>
+  <text x="180" y="116" text-anchor="middle" font-size="11" fill="#374151">毎日30語×2ヶ月で1周</text>
+  <text x="180" y="140" text-anchor="middle" font-size="10" fill="#9D174D">全パートの土台になる最重要ハコ</text>
+  <text x="180" y="158" text-anchor="middle" font-size="10" fill="#9D174D">ここを飛ばすと何も伸びない</text>
+
+  <!-- Pillar 2 -->
+  <rect x="20" y="192" width="320" height="126" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="192" width="320" height="30" rx="12" fill="#60A5FA"/>
+  <rect x="20" y="210" width="320" height="12" fill="#60A5FA"/>
+  <text x="180" y="212" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② リスニング（Part1-4）</text>
+  <text x="180" y="240" text-anchor="middle" font-size="11" fill="#374151">1日10〜15分シャドーイング</text>
+  <text x="180" y="258" text-anchor="middle" font-size="11" fill="#374151">設問の先読みを習慣化</text>
+  <text x="180" y="282" text-anchor="middle" font-size="10" fill="#1E40AF">600点帯の最速得点源</text>
+  <text x="180" y="300" text-anchor="middle" font-size="10" fill="#1E40AF">「慣れ」で一番スコアが伸びる</text>
+
+  <!-- Pillar 3 -->
+  <rect x="20" y="334" width="320" height="126" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="20" y="334" width="320" height="30" rx="12" fill="#EAB308"/>
+  <rect x="20" y="352" width="320" height="12" fill="#EAB308"/>
+  <text x="180" y="354" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ リーディング（Part5-7）</text>
+  <text x="180" y="382" text-anchor="middle" font-size="11" fill="#374151">Part5は15分以内で解き切る</text>
+  <text x="180" y="400" text-anchor="middle" font-size="11" fill="#374151">Part7は満点を狙わない</text>
+  <text x="180" y="424" text-anchor="middle" font-size="10" fill="#92400E">最後は割り切って塗り絵もOK</text>
+  <text x="180" y="442" text-anchor="middle" font-size="10" fill="#92400E">時間配分の管理が最大の課題</text>
+
+  <!-- Reading time allocation -->
+  <text x="180" y="492" text-anchor="middle" font-size="12.5" font-weight="700" fill="#64748B">リーディング75分の時間配分</text>
+  <rect x="20" y="504" width="320" height="34" rx="8" fill="#FDE68A"/>
+  <text x="180" y="526" text-anchor="middle" font-size="11.5" font-weight="700" fill="#78350F">Part5：15分</text>
+  <rect x="20" y="542" width="320" height="34" rx="8" fill="#FEF3C7"/>
+  <text x="180" y="564" text-anchor="middle" font-size="11.5" font-weight="700" fill="#78350F">Part6：10分</text>
+  <rect x="20" y="580" width="320" height="34" rx="8" fill="#FEF9E7" stroke="#FDE68A" stroke-width="1"/>
+  <text x="180" y="602" text-anchor="middle" font-size="11" font-weight="700" fill="#78350F">Part7：残り50分（シングル→ダブル→トリプル）</text>
+
+  <!-- 3-month timeline -->
+  <text x="180" y="654" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">合格までの3ヶ月タイムライン</text>
+
+  <rect x="20" y="668" width="320" height="150" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="20" y="668" width="320" height="30" rx="10" fill="#22C55E"/>
+  <rect x="20" y="688" width="320" height="10" fill="#22C55E"/>
+  <text x="180" y="688" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Phase1（1ヶ月目）：基礎固め</text>
+  <text x="180" y="716" text-anchor="middle" font-size="10.5" fill="#374151">金フレ前半・文法の穴埋め</text>
+  <text x="180" y="734" text-anchor="middle" font-size="10.5" fill="#374151">公式問題集1回分で現状把握</text>
+  <text x="180" y="756" text-anchor="middle" font-size="10" fill="#166534">1日1時間を確実に継続</text>
+  <text x="180" y="774" text-anchor="middle" font-size="10" fill="#166534">量より「毎日やる」を優先</text>
+  <polygon points="172,830 188,830 180,844" fill="#CBD5E1"/>
+
+  <rect x="20" y="838" width="320" height="150" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="838" width="320" height="30" rx="10" fill="#3B82F6"/>
+  <rect x="20" y="858" width="320" height="10" fill="#3B82F6"/>
+  <text x="180" y="858" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Phase2（2ヶ月目）：パート別演習</text>
+  <text x="180" y="886" text-anchor="middle" font-size="10.5" fill="#374151">金フレ後半・復習を並行</text>
+  <text x="180" y="904" text-anchor="middle" font-size="10.5" fill="#374151">毎日15分シャドーイング開始</text>
+  <text x="180" y="926" text-anchor="middle" font-size="10" fill="#1E40AF">公式問題集2〜3回分を実施</text>
+  <text x="180" y="944" text-anchor="middle" font-size="10" fill="#1E40AF">弱点パートが見え始める時期</text>
+  <polygon points="172,1000 188,1000 180,1014" fill="#CBD5E1"/>
+
+  <rect x="20" y="1008" width="320" height="150" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="20" y="1008" width="320" height="30" rx="10" fill="#8B5CF6"/>
+  <rect x="20" y="1028" width="320" height="10" fill="#8B5CF6"/>
+  <text x="180" y="1028" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Phase3（3ヶ月目）：模試仕上げ</text>
+  <text x="180" y="1056" text-anchor="middle" font-size="10.5" fill="#374151">弱点パートを集中練習</text>
+  <text x="180" y="1074" text-anchor="middle" font-size="10.5" fill="#374151">公式問題集5回分を時間計測</text>
+  <text x="180" y="1096" text-anchor="middle" font-size="10" fill="#5B21B6">本番形式でマーキング練習</text>
+  <text x="180" y="1114" text-anchor="middle" font-size="10" fill="#5B21B6">仕上げは「慣れ」の完成度</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="1178" width="320" height="80" rx="10" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="180" y="1206" text-anchor="middle" font-size="11" fill="#1E40AF">💡 600点は満点を狙わない</text>
+  <text x="180" y="1226" text-anchor="middle" font-size="11" fill="#1E40AF">割り切りゲーム。3本柱を固めて、</text>
+  <text x="180" y="1246" text-anchor="middle" font-size="11" fill="#1E40AF">防衛ラインを守れば必ず届く。</text>
+</svg>

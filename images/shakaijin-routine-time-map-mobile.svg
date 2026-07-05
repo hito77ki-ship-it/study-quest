@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">社会人のための24時間スキマ時間ドッキングマップ（モバイル版）</title>
+  <desc id="svgdesc">出勤前・通勤・昼休憩・帰宅後・就寝前の5つの生活動線に、毎日固定の勉強時間を組み込む方法を縦に示した図解</desc>
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="360" height="900" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">社会人の24時間</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">スキマ時間ドッキングマップ</text>
+  <text x="180" y="64" text-anchor="middle" font-size="9.5" fill="#64748B">生活動線に15〜30分の「小さなハコ」を毎日固定する</text>
+
+  <rect x="16" y="82" width="328" height="70" rx="10" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2.5"/>
+  <text x="32" y="104" font-size="10.5" font-weight="700" fill="#6D28D9">6:30 出勤前</text>
+  <text x="328" y="104" text-anchor="end" font-size="13" font-weight="700" fill="#5B21B6">朝15分</text>
+  <text x="32" y="128" font-size="9.5" fill="#5B21B6">起床を15分早めるだけ</text>
+
+  <rect x="16" y="164" width="328" height="80" rx="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="32" y="186" font-size="10.5" font-weight="700" fill="#1D4ED8">8:00 通勤</text>
+  <text x="328" y="186" text-anchor="end" font-size="13" font-weight="700" fill="#1E40AF">往復20分</text>
+  <text x="32" y="210" font-size="9.5" fill="#1E40AF">行き10分＋帰り10分</text>
+  <text x="32" y="226" font-size="9.5" fill="#1E40AF">動画講義・音声学習</text>
+
+  <rect x="16" y="256" width="328" height="70" rx="10" fill="#FEF9C3" stroke="#EAB308" stroke-width="2"/>
+  <text x="32" y="278" font-size="10.5" font-weight="700" fill="#A16207">12:30 昼休憩</text>
+  <text x="328" y="278" text-anchor="end" font-size="13" font-weight="700" fill="#854D0E">スマホで1問</text>
+  <text x="32" y="302" font-size="9.5" fill="#854D0E">一問一答・用語確認</text>
+
+  <rect x="16" y="338" width="328" height="90" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2.5"/>
+  <text x="32" y="360" font-size="10.5" font-weight="700" fill="#15803D">21:30 帰宅後</text>
+  <text x="328" y="360" text-anchor="end" font-size="13" font-weight="700" fill="#166534">予約枠20分</text>
+  <text x="32" y="384" font-size="9.5" fill="#166534">21:30〜21:50固定</text>
+  <rect x="32" y="392" width="90" height="18" rx="9" fill="#22C55E"/>
+  <text x="77" y="405" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">1日の主戦場</text>
+
+  <rect x="16" y="446" width="328" height="70" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="32" y="468" font-size="10.5" font-weight="700" fill="#475569">23:00 就寝前</text>
+  <text x="328" y="468" text-anchor="end" font-size="12" font-weight="700" fill="#334155">入浴・準備</text>
+  <text x="32" y="492" font-size="9.5" fill="#64748B">頑張った自分を労う</text>
+
+  <!-- Bottom summary -->
+  <rect x="16" y="534" width="328" height="90" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <text x="180" y="560" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">合計 約60分／日</text>
+  <text x="180" y="578" text-anchor="middle" font-size="10" fill="#92400E">新しい時間を探さず、生活動線に</text>
+  <text x="180" y="594" text-anchor="middle" font-size="10" fill="#92400E">勉強をドッキングするだけ</text>
+  <text x="180" y="614" text-anchor="middle" font-size="9" fill="#B45309">朝15分＋通勤20分＋昼1問＋帰宅後20分の合計</text>
+</svg>
