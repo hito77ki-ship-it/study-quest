@@ -1,72 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1400" width="360" height="1400" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1680" width="360" height="1680" role="img" aria-labelledby="t d">
   <title id="t">原因の「ハコ分け」× 次回合格への4ステップ・リベンジ戦略マップ（モバイル版）</title>
-  <desc id="d">理解不足・演習量不足・特定論点の失点・時間切れという4つの失点原因と、休む・ハコだけ補強・解き直し・時間制限演習という4ステップのリベンジ戦略を縦に並べた図解</desc>
+  <desc id="d">理解不足・演習量不足・特定論点の失点・時間切れという4つの失点原因と、休む・ハコだけ補強・解き直し・時間制限演習という4ステップのリベンジ戦略を、アイコン付きの円形バッジと六角形バッジのタイムラインで示した図解</desc>
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
-  <rect width="360" height="1400" rx="16" fill="#F8FAFC"/>
-  <text x="180" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">原因のハコ分け×次回合格への</text>
-  <text x="180" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">4ステップ・リベンジ戦略</text>
+  <rect width="360" height="1680" rx="16" fill="#F8FAFC"/>
 
-  <text x="180" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">STEP0：失点の原因を4つのハコに分ける</text>
+  <text x="180" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">原因のハコ分け×次回合格への</text>
+  <text x="180" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">4ステップ・リベンジ戦略</text>
 
-  <rect x="16" y="82" width="328" height="106" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
-  <text x="30" y="104" font-size="12" font-weight="700" fill="#DC2626">ハコA：理解不足</text>
-  <text x="30" y="124" font-size="10.5" fill="#374151">仕訳の意味を理解せず丸暗記していた</text>
-  <text x="30" y="146" font-size="10" fill="#DC2626">→ 仕訳の理由から学び直す</text>
-  <text x="30" y="164" font-size="10" fill="#64748B">テキストは買い直さない</text>
+  <text x="180" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">STEP0：失点の原因を4つのハコに分ける</text>
 
-  <rect x="16" y="198" width="328" height="106" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
-  <text x="30" y="220" font-size="12" font-weight="700" fill="#92400E">ハコB：演習量不足</text>
-  <text x="30" y="240" font-size="10.5" fill="#374151">テキストを読んだだけで演習が少なかった</text>
-  <text x="30" y="262" font-size="10" fill="#92400E">→ 過去問・予想問を3回転</text>
-  <text x="30" y="280" font-size="10" fill="#64748B">間違えた問題に絞って</text>
+  <!-- ハコA：理解不足（？アイコン） -->
+  <rect x="16" y="110" width="328" height="116" rx="16" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <circle cx="50" cy="110" r="18" fill="#EF4444"/>
+  <text x="50" y="117" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">?</text>
+  <text x="84" y="116" font-size="13" font-weight="700" fill="#DC2626">ハコA：理解不足</text>
+  <text x="30" y="152" font-size="10.5" fill="#374151">仕訳の意味を理解せず丸暗記していた</text>
+  <text x="30" y="174" font-size="10" font-weight="700" fill="#DC2626">→ 仕訳の理由から学び直す</text>
+  <text x="30" y="194" font-size="10" fill="#64748B">テキストは買い直さない</text>
 
-  <rect x="16" y="314" width="328" height="106" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-  <text x="30" y="336" font-size="12" font-weight="700" fill="#1E40AF">ハコC：特定論点の失点</text>
-  <text x="30" y="356" font-size="10.5" fill="#374151">工業簿記・連結など苦手単元で失点</text>
-  <text x="30" y="378" font-size="10" fill="#1E40AF">→ その論点だけ集中補強</text>
-  <text x="30" y="396" font-size="10" fill="#64748B">1〜2週間の短期集中</text>
+  <!-- ハコB：演習量不足（棒グラフアイコン） -->
+  <rect x="16" y="260" width="328" height="116" rx="16" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <circle cx="50" cy="260" r="18" fill="#EAB308"/>
+  <rect x="41" y="261" width="4" height="8" rx="1" fill="#fff"/>
+  <rect x="48" y="256" width="4" height="13" rx="1" fill="#fff"/>
+  <rect x="55" y="251" width="4" height="18" rx="1" fill="#fff"/>
+  <text x="84" y="266" font-size="13" font-weight="700" fill="#92400E">ハコB：演習量不足</text>
+  <text x="30" y="302" font-size="10.5" fill="#374151">テキストを読んだだけで演習が少なかった</text>
+  <text x="30" y="324" font-size="10" font-weight="700" fill="#92400E">→ 過去問・予想問を3回転</text>
+  <text x="30" y="344" font-size="10" fill="#64748B">間違えた問題に絞って</text>
 
-  <rect x="16" y="430" width="328" height="106" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
-  <text x="30" y="452" font-size="12" font-weight="700" fill="#5B21B6">ハコD：時間切れ</text>
-  <text x="30" y="472" font-size="10.5" fill="#374151">知識はあるが90分で解き切れなかった</text>
-  <text x="30" y="494" font-size="10" fill="#5B21B6">→ 時間制限つき演習</text>
-  <text x="30" y="512" font-size="10" fill="#64748B">解く順番を固定する</text>
+  <!-- ハコC：特定論点の失点（的アイコン） -->
+  <rect x="16" y="410" width="328" height="116" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <circle cx="50" cy="410" r="18" fill="#3B82F6"/>
+  <circle cx="50" cy="410" r="11" fill="#fff"/>
+  <circle cx="50" cy="410" r="5" fill="#3B82F6"/>
+  <text x="84" y="416" font-size="13" font-weight="700" fill="#1E40AF">ハコC：特定論点の失点</text>
+  <text x="30" y="452" font-size="10.5" fill="#374151">工業簿記・連結など苦手単元で失点</text>
+  <text x="30" y="474" font-size="10" font-weight="700" fill="#1E40AF">→ その論点だけ集中補強</text>
+  <text x="30" y="494" font-size="10" fill="#64748B">1〜2週間の短期集中</text>
 
-  <text x="180" y="552" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">リベンジ4ステップ（ハコを潰したら合格ラインへ）</text>
+  <!-- ハコD：時間切れ（時計アイコン） -->
+  <rect x="16" y="560" width="328" height="116" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <circle cx="50" cy="560" r="18" fill="#7C3AED"/>
+  <circle cx="50" cy="560" r="13" fill="#fff"/>
+  <line x1="50" y1="560" x2="50" y2="553" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <line x1="50" y1="560" x2="55" y2="557" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="50" cy="560" r="1.5" fill="#7C3AED"/>
+  <text x="84" y="566" font-size="13" font-weight="700" fill="#5B21B6">ハコD：時間切れ</text>
+  <text x="30" y="602" font-size="10.5" fill="#374151">知識はあるが90分で解き切れなかった</text>
+  <text x="30" y="624" font-size="10" font-weight="700" fill="#5B21B6">→ 時間制限つき演習</text>
+  <text x="30" y="644" font-size="10" fill="#64748B">解く順番を固定する</text>
 
-  <rect x="16" y="566" width="328" height="130" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
-  <text x="30" y="590" font-size="12" font-weight="700" fill="#C2410C">STEP 1：休む（1〜2週間）</text>
-  <text x="30" y="612" font-size="10.5" fill="#374151">脳と気持ちをリセット</text>
-  <text x="30" y="630" font-size="10.5" fill="#374151">焦って再開しない</text>
-  <text x="30" y="648" font-size="10.5" fill="#374151">感情を落ち着かせる</text>
-  <text x="30" y="670" font-size="10" fill="#C2410C">長期継続のための助走</text>
+  <!-- 区切り三角 -->
+  <polygon points="172,690 188,690 180,703" fill="#CBD5E1"/>
 
-  <text x="180" y="712" text-anchor="middle" font-size="14" fill="#CBD5E1">↓</text>
+  <text x="180" y="726" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">リベンジ4ステップ（ハコを潰したら合格ラインへ）</text>
 
-  <rect x="16" y="720" width="328" height="130" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-  <text x="30" y="744" font-size="12" font-weight="700" fill="#1E40AF">STEP 2：ハコだけ補強</text>
-  <text x="30" y="766" font-size="10.5" fill="#374151">該当したハコの論点を</text>
-  <text x="30" y="784" font-size="10.5" fill="#374151">1〜2週間で集中反復</text>
-  <text x="30" y="802" font-size="10.5" fill="#374151">得意分野は触らない</text>
-  <text x="30" y="824" font-size="10" fill="#1E40AF">全部やり直さなくていい</text>
+  <!-- STEP 1（六角形バッジ：休む） -->
+  <rect x="16" y="776" width="328" height="150" rx="16" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
+  <polygon points="70,776 60,793.3 40,793.3 30,776 40,758.7 60,758.7" fill="#F97316"/>
+  <text x="50" y="782" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">1</text>
+  <text x="84" y="782" font-size="13" font-weight="700" fill="#C2410C">STEP 1：休む（1〜2週間）</text>
+  <text x="30" y="820" font-size="10.5" fill="#374151">脳と気持ちをリセット</text>
+  <text x="30" y="838" font-size="10.5" fill="#374151">焦って再開しない</text>
+  <text x="30" y="856" font-size="10.5" fill="#374151">感情を落ち着かせる</text>
+  <text x="30" y="880" font-size="10" font-weight="700" fill="#C2410C">長期継続のための助走</text>
 
-  <text x="180" y="866" text-anchor="middle" font-size="14" fill="#CBD5E1">↓</text>
+  <line x1="50" y1="926" x2="50" y2="964" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="42,964 58,964 50,976" fill="#CBD5E1"/>
 
-  <rect x="16" y="874" width="328" height="130" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
-  <text x="30" y="898" font-size="12" font-weight="700" fill="#5B21B6">STEP 3：解き直し</text>
-  <text x="30" y="920" font-size="10.5" fill="#374151">前回の点数に応じて</text>
-  <text x="30" y="938" font-size="10.5" fill="#374151">問題集にメリハリをつけ1周解き直す</text>
-  <text x="30" y="960" font-size="10" fill="#5B21B6">全部より狙い撃ち</text>
+  <!-- STEP 2（六角形バッジ：ハコだけ補強） -->
+  <rect x="16" y="976" width="328" height="150" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <polygon points="70,976 60,993.3 40,993.3 30,976 40,958.7 60,958.7" fill="#3B82F6"/>
+  <text x="50" y="982" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">2</text>
+  <text x="84" y="982" font-size="13" font-weight="700" fill="#1E40AF">STEP 2：ハコだけ補強</text>
+  <text x="30" y="1020" font-size="10.5" fill="#374151">該当したハコの論点を</text>
+  <text x="30" y="1038" font-size="10.5" fill="#374151">1〜2週間で集中反復</text>
+  <text x="30" y="1056" font-size="10.5" fill="#374151">得意分野は触らない</text>
+  <text x="30" y="1080" font-size="10" font-weight="700" fill="#1E40AF">全部やり直さなくていい</text>
 
-  <text x="180" y="1002" text-anchor="middle" font-size="14" fill="#CBD5E1">↓</text>
+  <line x1="50" y1="1126" x2="50" y2="1164" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="42,1164 58,1164 50,1176" fill="#CBD5E1"/>
 
-  <rect x="16" y="1010" width="328" height="130" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
-  <text x="30" y="1034" font-size="12" font-weight="700" fill="#166534">STEP 4：時間制限演習</text>
-  <text x="30" y="1056" font-size="10.5" fill="#374151">90分の過去問を本番同様に演習</text>
-  <text x="30" y="1074" font-size="10.5" fill="#374151">ネット試験で即再挑戦</text>
-  <text x="30" y="1096" font-size="10" fill="#166534">合格ラインが見えてくる</text>
+  <!-- STEP 3（六角形バッジ：解き直し） -->
+  <rect x="16" y="1176" width="328" height="150" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+  <polygon points="70,1176 60,1193.3 40,1193.3 30,1176 40,1158.7 60,1158.7" fill="#7C3AED"/>
+  <text x="50" y="1182" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">3</text>
+  <text x="84" y="1182" font-size="13" font-weight="700" fill="#5B21B6">STEP 3：解き直し</text>
+  <text x="30" y="1220" font-size="10.5" fill="#374151">前回の点数に応じて</text>
+  <text x="30" y="1238" font-size="10.5" fill="#374151">問題集にメリハリをつけ1周解き直す</text>
+  <text x="30" y="1280" font-size="10" font-weight="700" fill="#5B21B6">全部より狙い撃ち</text>
 
-  <rect x="16" y="1160" width="328" height="60" rx="10" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
-  <text x="180" y="1184" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">積み上げた知識はゼロにならない</text>
-  <text x="180" y="1202" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">ハコを潰せば「強くてニューゲーム」で合格へ</text>
+  <line x1="50" y1="1326" x2="50" y2="1364" stroke="#CBD5E1" stroke-width="3"/>
+  <polygon points="42,1364 58,1364 50,1376" fill="#CBD5E1"/>
+
+  <!-- STEP 4（六角形バッジ：時間制限演習） -->
+  <rect x="16" y="1376" width="328" height="150" rx="16" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <polygon points="70,1376 60,1393.3 40,1393.3 30,1376 40,1358.7 60,1358.7" fill="#22C55E"/>
+  <text x="50" y="1382" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">4</text>
+  <text x="84" y="1382" font-size="13" font-weight="700" fill="#166534">STEP 4：時間制限演習</text>
+  <text x="30" y="1420" font-size="10.5" fill="#374151">90分の過去問を本番同様に演習</text>
+  <text x="30" y="1438" font-size="10.5" fill="#374151">ネット試験で即再挑戦</text>
+  <text x="30" y="1480" font-size="10" font-weight="700" fill="#166534">合格ラインが見えてくる</text>
+
+  <!-- 締めのリボン（星アイコン付き） -->
+  <rect x="16" y="1576" width="328" height="70" rx="20" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <polygon points="44,1597 47.5,1606.2 57.3,1606.7 49.7,1612.9 52.2,1622.3 44,1617 35.8,1622.3 38.3,1612.9 30.7,1606.7 40.5,1606.2" fill="#F59E0B"/>
+  <text x="76" y="1604" font-size="11" font-weight="700" fill="#1E40AF">積み上げた知識はゼロにならない</text>
+  <text x="76" y="1624" font-size="11" font-weight="700" fill="#1E40AF">ハコを潰せば「強くてニューゲーム」で合格へ</text>
 </svg>
