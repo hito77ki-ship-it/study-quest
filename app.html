@@ -23941,21 +23941,21 @@ const TUT_STEPS = [
     target: ()=> findVisibleEl('#pcnav-profile', '[data-tab="profile"]', '#tab-profile'),
   },
   {
+    icon:'⚡',
+    title:'まずはコレだけ！ワンタップ記録',
+    desc:'勉強し終えたら、ここの「+15分」「+30分」などのボタンをタップするだけで記録完了！難しいことは考えず、まずはこれだけ覚えればOKです。',
+    target: ()=> findVisibleEl('.quick-rec-btns'),
+  },
+  {
     icon:'📂',
     title:'他アプリの記録を引き継ごう',
     desc:'スタディプラスなど他のアプリで記録してきた勉強時間がある方は、<strong>プロフ</strong>タブの「過去の勉強時間を引き継ぐ」から入力できます。今までの努力をそのまま引き継げます！',
     target: ()=> findVisibleEl('#pcnav-profile', '[data-tab="profile"]', '#tab-profile'),
   },
   {
-    icon:'📣',
-    title:'今日の目標を宣言しよう',
-    desc:'QUESTタブを開いて、今日の目標を宣言してから勉強スタート！',
-    target: ()=> findVisibleEl('#pcnav-quest', '[data-tab="quest"]', '#tab-quest'),
-  },
-  {
     icon:'⏱',
-    title:'ポモドーロで集中しよう',
-    desc:'QUESTタブの中にポモドーロタイマーがあります。<strong>25分集中→5分休憩</strong>で勉強時間を自動記録！',
+    title:'慣れてきたら、タイマーで集中しよう',
+    desc:'QUESTタブでは、今日の目標を宣言してからポモドーロタイマー（<strong>25分集中→5分休憩</strong>）で勉強すると自動で記録されます。ワンタップ記録に慣れたら試してみてください。',
     target: ()=> findVisibleEl('#pcnav-quest', '[data-tab="quest"]', '#tab-quest'),
   },
   {
