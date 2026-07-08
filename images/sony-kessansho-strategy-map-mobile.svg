@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 620" width="360" height="620">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="360" height="620" rx="16" fill="#F8FAFC"/>
+  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">ソニーグループの「のれん」推移</text>
+  <text x="180" y="44" text-anchor="middle" font-size="10.5" fill="#64748B">買収で積み上がり、減損で見直される</text>
+
+  <!-- バンジー買収コールアウト -->
+  <rect x="20" y="60" width="320" height="46" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="180" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">2022年 バンジー買収完了</text>
+  <text x="180" y="96" text-anchor="middle" font-size="9.5" fill="#9A3412">取得関連費用 約5,140億円規模</text>
+
+  <!-- 横棒グラフ（年度別） -->
+  <text x="30" y="132" font-size="11" fill="#475569">2023年3月期</text>
+  <rect x="30" y="140" width="230" height="26" rx="4" fill="#93C5FD"/>
+  <text x="145" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">1兆2,751億円</text>
+
+  <text x="30" y="192" font-size="11" fill="#475569">2024年3月期</text>
+  <rect x="30" y="200" width="268" height="26" rx="4" fill="#60A5FA"/>
+  <text x="180" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1兆4,871億円</text>
+
+  <text x="30" y="252" font-size="11" fill="#475569">2025年3月期</text>
+  <rect x="30" y="260" width="272" height="26" rx="4" fill="#3B82F6"/>
+  <text x="180" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1兆5,087億円</text>
+
+  <text x="30" y="312" font-size="11" fill="#475569">2026年3月期</text>
+  <rect x="30" y="320" width="300" height="26" rx="4" fill="#2563EB"/>
+  <text x="180" y="338" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1兆6,739億円</text>
+
+  <!-- 減損コールアウト -->
+  <rect x="20" y="368" width="320" height="46" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="180" y="386" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">2026年1〜3月期 のれん減損</text>
+  <text x="180" y="404" text-anchor="middle" font-size="9.5" fill="#991B1B">ゲーム事業の一部で886億円を計上</text>
+
+  <text x="180" y="440" text-anchor="middle" font-size="10" fill="#475569">「のれん」は買収のたびに積み上がる一方、</text>
+  <text x="180" y="456" text-anchor="middle" font-size="10" fill="#475569">状況が変われば減損で価値を見直すこともある</text>
+  <text x="180" y="478" text-anchor="middle" font-size="9" fill="#94A3B8">※出典：IRBANKの集計データ（2026年7月時点）をもとに作成</text>
+</svg>

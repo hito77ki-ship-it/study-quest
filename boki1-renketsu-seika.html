@@ -85,6 +85,13 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <p>2級で学んだ資本連結は「親会社と子会社という関係そのもの」を整理するものでした。成果連結はそれとは別に、「今期グループ内でどんな取引があったか」を毎回チェックして消していく作業です。</p>
 
   <h2>ダウンストリームとアップストリーム——「誰が売ったか」で処理が変わる</h2>
+  <figure style="margin:1.5rem 0;text-align:center;">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/boki1-seikarenketsu-strategy-map-mobile.svg">
+      <img src="images/boki1-seikarenketsu-strategy-map.svg" alt="簿記1級の成果連結におけるアップ・ダウンストリーム未実現利益消去の合格戦略マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+    </picture>
+    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：①②の仕訳は共通、違いは「③非支配株主持分の調整」があるかどうかの1点だけ</figcaption>
+  </figure>
   <p>グループ内取引には、必ず「売り手」と「買い手」がいます。この売り手が親会社か子会社かによって、呼び方と処理の一部が変わります。</p>
   <table>
     <tr><th>用語</th><th>売り手</th><th>買い手</th><th>利益は誰のもの？</th></tr>
@@ -116,6 +123,23 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   </div>
   <div class="tip-box"><strong>ダウンストリームでは非支配株主持分は動かさない：</strong>この200円の利益は、そもそも親会社（P社）が生み出した利益です。非支配株主は子会社S社の外部株主であって、親会社の利益には関与しません。だから、ダウンストリームの未実現利益消去では非支配株主持分を調整する仕訳は不要です。</div>
 
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">ダウンストリームは2本で終わるんですね、意外とシンプルでした。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その通りです。ここで気を抜かず、「親会社が売り手＝非支配株主は無関係」という感覚を体に染み込ませておいてください。次のアップストリームで、この感覚があるかないかで解答スピードが全然変わってきますよ。</div>
+      </div>
+    </div>
+  </div>
+
   <h2>アップストリームの例題——子会社が売り手のケース</h2>
   <div class="formula"><strong>例題：</strong>子会社S社（親会社P社が株式80%を保有、非支配株主持分20%）が、原価800円の商品をP社に1,000円で販売した。期末時点で、P社はこの商品を外部にまだ販売しておらず、全額が在庫として残っている。</div>
   <p>グループ内の売上・仕入の相殺、未実現利益の消去そのものは、ダウンストリームと全く同じ仕訳です。</p>
@@ -135,6 +159,23 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     </table>
   </div>
   <p>この仕訳で、貸借対照表上の非支配株主持分（純資産）を40円減らし、損益計算書上で非支配株主に配分される利益も40円減らします。結果として、未実現利益200円の消去のうち、160円は親会社株主に帰属する当期純利益から、40円は非支配株主持分・非支配株主に帰属する当期純利益から、それぞれ正しく減額されます。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">正直、この「非支配株主持分／非支配株主に帰属する当期純利益」の仕訳、借方・貸方のどっちに何を書くのか毎回混乱します……。理屈は分かった気がするんですけど、本番で瞬時に書ける自信がないです。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その混乱、公認会計士試験の勉強をしていても未だに一瞬立ち止まるところなので、安心してください。僕はこれを「ハコ分けパズル」として解いています。まず未実現利益200円を1つの大きなハコだと考えて、それを持分割合（80：20）でそのまま2つの小さなハコに割るだけ、と考えるんです。160円のハコは親会社株主の取り分だから、①②の仕訳の中で自動的に減っている。残った40円のハコが非支配株主の取り分なので、これを「非支配株主持分（減らす）／非支配株主に帰属する当期純利益（減らす）」という1本で外に出してあげる——それだけです。「借方・貸方どっちだっけ」と丸暗記するのではなく、「大きいハコから40円のハコを取り出して、非支配株主側に渡すだけ」とイメージすると、迷わなくなりますよ。</div>
+      </div>
+    </div>
+  </div>
 
   <div class="warn-box"><strong>判断の軸：</strong>「売り手が親会社か子会社か」を必ず最初に確認してください。親会社が売り手（ダウンストリーム）なら仕訳は2本、子会社が売り手（アップストリーム）なら非支配株主持分の調整を含めて仕訳は3本。本数を先に決めてから解き始めると、書き忘れを防げます。</div>
 

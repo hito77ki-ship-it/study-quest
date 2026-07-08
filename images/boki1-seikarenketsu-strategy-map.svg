@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs><style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style></defs>
+  <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
+  <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">ダウンストリーム vs アップストリーム——仕訳の本数がひと目でわかる比較</text>
+
+  <!-- ダウンストリーム側 -->
+  <rect x="30" y="50" width="330" height="345" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="195" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">ダウンストリーム（親→子）</text>
+  <text x="195" y="94" text-anchor="middle" font-size="10" fill="#3B5A8A">売り手＝親会社／利益は親会社のもの</text>
+
+  <rect x="50" y="110" width="290" height="56" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
+  <text x="195" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">① 売上高 ／ 売上原価</text>
+  <text x="195" y="150" text-anchor="middle" font-size="9.5" fill="#3B5A8A">グループ内の売上・仕入を相殺</text>
+
+  <rect x="50" y="176" width="290" height="56" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
+  <text x="195" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">② 売上原価 ／ 商品</text>
+  <text x="195" y="216" text-anchor="middle" font-size="9.5" fill="#3B5A8A">未実現利益を消去</text>
+
+  <rect x="50" y="244" width="290" height="78" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-dasharray="4,3"/>
+  <text x="195" y="278" text-anchor="middle" font-size="11" fill="#94A3B8">③ 非支配株主持分の調整</text>
+  <text x="195" y="298" text-anchor="middle" font-size="9.5" fill="#94A3B8">不要（親会社の利益のため）</text>
+
+  <rect x="50" y="332" width="290" height="50" rx="8" fill="#1E40AF"/>
+  <text x="195" y="363" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">仕訳は2本だけ</text>
+
+  <!-- アップストリーム側 -->
+  <rect x="400" y="50" width="330" height="345" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="565" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#9A3412">アップストリーム（子→親）</text>
+  <text x="565" y="94" text-anchor="middle" font-size="10" fill="#9A6B2E">売り手＝子会社／利益は子会社のもの</text>
+
+  <rect x="420" y="110" width="290" height="56" rx="8" fill="#FFEDD5" stroke="#FDBA74"/>
+  <text x="565" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">① 売上高 ／ 売上原価</text>
+  <text x="565" y="150" text-anchor="middle" font-size="9.5" fill="#9A6B2E">グループ内の売上・仕入を相殺</text>
+
+  <rect x="420" y="176" width="290" height="56" rx="8" fill="#FFEDD5" stroke="#FDBA74"/>
+  <text x="565" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">② 売上原価 ／ 商品</text>
+  <text x="565" y="216" text-anchor="middle" font-size="9.5" fill="#9A6B2E">未実現利益を消去</text>
+
+  <rect x="420" y="244" width="290" height="78" rx="8" fill="#FED7AA" stroke="#F97316" stroke-width="2"/>
+  <text x="565" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#7C2D12">③ 非支配株主持分 ／</text>
+  <text x="565" y="280" text-anchor="middle" font-size="11" font-weight="700" fill="#7C2D12">非支配株主に帰属する当期純利益</text>
+  <text x="565" y="300" text-anchor="middle" font-size="9.5" fill="#7C2D12">未実現利益 × 非支配株主持分割合 だけ追加調整</text>
+
+  <rect x="420" y="332" width="290" height="50" rx="8" fill="#C2410C"/>
+  <text x="565" y="363" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">仕訳は3本になる</text>
+
+  <text x="380" y="408" text-anchor="middle" font-size="10.5" fill="#475569">①②は共通、違いは「③非支配株主持分の調整」があるかどうかの1点だけ</text>
+</svg>
