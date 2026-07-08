@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://study-quest.net/boki3-ginko.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>【日商簿記3級】銀行勘定調整表とは？4つの調整パターンを例題つきで完全解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の銀行勘定調整表を例題つきで完全解説。なぜ残高が一致しないのか、4つの調整パターン（未取立小切手・未渡小切手・時間外入金・未取付小切手）を図解で丁寧に解説。">
+<meta name="description" content="簿記3級の銀行勘定調整表を例題つきで完全解説。なぜ残高が一致しないのか、4つの調整パターン（未取立小切手・未渡小切手・未取付小切手・誤記入や未通知）を図解で丁寧に解説。">
 <meta name="keywords" content="銀行勘定調整表 書き方 簿記3級,当座預金 不一致 原因,未取立小切手 未渡小切手,銀行勘定調整表 仕訳">
 <meta property="og:title" content="銀行勘定調整表の書き方【日商簿記3級】不一致の原因と仕訳">
 <meta property="og:description" content="銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。">
@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"銀行勘定調整表の書き方【日商簿記3級】","description":"銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。","url":"https://study-quest.net/boki3-ginko.html","datePublished":"2026-05-07","dateModified": "2026-07-02","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context":"https://schema.org","@type":"Article","headline":"銀行勘定調整表の書き方【日商簿記3級】","description":"銀行勘定調整表の書き方と修正仕訳を例題つきで図解解説。","url":"https://study-quest.net/boki3-ginko.html","datePublished":"2026-05-07","dateModified": "2026-07-08","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -175,7 +175,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <div class="reason-card ginko">
       <span class="rc-badge">銀行側を調整</span>
       <div class="rc-title">① 未取立小切手</div>
-      <div class="rc-desc">受け取った小切手をまだ銀行に持ち込んでいない。自社は入金済みでも銀行はまだ未処理。<br>→ 自社の修正仕訳は不要（銀行側に＋）</div>
+      <div class="rc-desc">受け取った小切手を銀行に預け入れ、自社は入金済みとして処理したが、銀行側の取立て（回収）手続きがまだ完了していない。<br>→ 自社の修正仕訳は不要（銀行側に＋）</div>
     </div>
     <div class="reason-card jisha">
       <span class="rc-badge">自社側の修正が必要</span>
@@ -199,7 +199,7 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <h2>📊 ② 銀行勘定調整表（例題）——両者区分調整法で残高を一致させる手順</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
-    <p>当座預金の帳簿残高 ¥320,000、銀行残高証明書 ¥350,000。差異の原因は以下のとおり。</p>
+    <p>当座預金の帳簿残高 ¥320,000、銀行残高証明書 ¥340,000。差異の原因は以下のとおり。</p>
     <ul>
       <li>未取立小切手 ¥40,000（受け取ったが未入金）</li>
       <li>未渡小切手 ¥20,000（振り出したが未渡し）</li>
@@ -218,13 +218,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
 
   <table class="chosei-table">
     <tr><th colspan="2">【銀行残高証明書の調整】</th></tr>
-    <tr class="row-start"><td>銀行残高</td><td class="col-amt">350,000</td></tr>
+    <tr class="row-start"><td>銀行残高</td><td class="col-amt">340,000</td></tr>
     <tr class="row-add"><td>＋ 未取立小切手（銀行がまだ受け取っていない）</td><td class="col-amt">＋ 40,000</td></tr>
     <tr class="row-sub"><td>－ 未取付小切手（銀行がまだ引き落としていない）</td><td class="col-amt">－ 30,000</td></tr>
-    <tr class="row-result"><td>正しい残高</td><td class="col-amt">360,000</td></tr>
+    <tr class="row-result"><td>正しい残高</td><td class="col-amt">350,000</td></tr>
   </table>
 
-  <div class="warn-box"><strong>両者の正しい残高が一致しなければ誤り！</strong><br>上の例では自社側350,000・銀行側360,000で一致していません。これは説明用の数字のため。実際の試験では必ず一致します。一致しない場合は計算ミスを疑いましょう。</div>
+  <div class="tip-box"><strong>両者の正しい残高が一致すれば完成！</strong><br>上の例では自社側・銀行側どちらも350,000で一致しています。これが銀行勘定調整表のゴールです。一致しない場合はどこかの調整項目の分類（銀行側か自社側か）か計算にミスがあるので見直しましょう。</div>
 
   <h2>✏️ ③ 修正仕訳——自社帳簿の誤りや未記入だけが仕訳の対象になる</h2>
   <p>調整表で自社側の修正が必要な項目は、実際に仕訳を切って帳簿を修正します。</p>
@@ -334,13 +334,13 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">銀行残高と帳簿残高はなぜ一致しないのですか？</h3>
     <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">未取立小切手・未渡小切手・時間外入金・未取付小切手などにより、銀行側と会社側でタイミングのズレが生じるためです。銀行勘定調整表でこれらの差異を整理します。</p>
+      <p itemprop="text">未取立小切手・未渡小切手・未取付小切手・誤記入や未通知などにより、銀行側と会社側でタイミングのズレが生じるためです。銀行勘定調整表でこれらの差異を整理します。</p>
     </div>
   </div>
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">銀行勘定調整表の主な調整パターンを教えてください</h3>
     <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">①未取立小切手：銀行側に加算。②未渡小切手：銀行側から減算（帳簿側も修正必要）。③時間外入金：銀行側に加算。④未取付小切手：銀行側から減算。それぞれどちらを調整するかを区別しましょう。</p>
+      <p itemprop="text">①未取立小切手：銀行側に加算（自社の修正仕訳は不要）。②未渡小切手：自社帳簿を修正（当座預金を増やす。銀行側の調整には関与しない）。③未取付小切手：銀行側から減算（自社の修正仕訳は不要）。④誤記入・未通知：内容に応じて自社帳簿を修正。「銀行側の調整」か「自社帳簿の修正」かを区別しましょう。</p>
     </div>
   </div>
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

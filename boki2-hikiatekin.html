@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の引当金とは？貸倒引当金・退職給付引当金の仕訳を解説","description":"日商簿記2級 商業簿記の引当金を初心者向けに解説。貸倒引当金、差額補充法、洗替法、貸倒処理、退職給付引当金、退職給付費用の仕訳を整理します。","url":"https://study-quest.net/boki2-hikiatekin.html","datePublished":"2026-05-09","dateModified": "2026-06-30","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の引当金とは？貸倒引当金・退職給付引当金の仕訳を解説","description":"日商簿記2級 商業簿記の引当金を初心者向けに解説。貸倒引当金、差額補充法、洗替法、貸倒処理、退職給付引当金、退職給付費用の仕訳を整理します。","url":"https://study-quest.net/boki2-hikiatekin.html","datePublished":"2026-05-09","dateModified": "2026-07-08","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -98,6 +98,17 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     </table>
   </div>
 
+  <h2>一般債権と個別評価が必要な債権の違い（2級の重要ポイント）</h2>
+  <p>先ほどの「期末残高×貸倒見積率」という計算は、実は<strong>一般債権</strong>（経営状態に特に問題のない、通常の売掛金・受取手形）にのみ使う方法です。2級では、債権を状態に応じて2つに区分し、それぞれ別の方法で見積もることが問われます。</p>
+  <table>
+    <tr><th>区分</th><th>対象</th><th>見積方法</th></tr>
+    <tr><td><strong>一般債権</strong></td><td>回収に特に問題がない通常の債権</td><td><strong>貸倒実績率法</strong>：期末残高×過去の貸倒実績率</td></tr>
+    <tr><td><strong>貸倒懸念債権</strong></td><td>経営破綻の状態にはないが、返済に重大な問題が生じている（または生じる可能性が高い）債権</td><td><strong>財務内容評価法</strong>：債権額から担保処分見込額・保証回収見込額を差し引き、残額に見積率を掛ける</td></tr>
+    <tr><td><strong>破産更生債権等</strong></td><td>経営破綻・実質的に経営破綻している債務者に対する債権</td><td>債権額から担保処分見込額・保証回収見込額を差し引いた残額の全額</td></tr>
+  </table>
+  <div class="formula"><strong>財務内容評価法の例：</strong>債権額500,000円、担保処分見込額200,000円、見積率50%の場合<br>（500,000円－200,000円）× 50% ＝ 150,000円</div>
+  <div class="tip-box"><strong>2級で問われるポイント：</strong>問題文に「経営状態が悪化している」「担保を徴収している」などの記述があれば、貸倒懸念債権として財務内容評価法を使うサインです。何も問題がなければ一般債権として貸倒実績率法（期末残高×見積率）で計算します。</div>
+
   <h2>差額補充法</h2>
   <p>差額補充法とは、期末に必要な貸倒引当金の残高と、現在の貸倒引当金残高との差額だけを追加で繰り入れる方法です。</p>
   <p>必要額が20,000円、現在の貸倒引当金残高が8,000円なら、追加で繰り入れる金額は12,000円です。</p>
@@ -157,6 +168,11 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <p>退職給付引当金とは、従業員が将来退職するときに支払う退職金に備えて計上する引当金です。</p>
   <p>退職金は退職時にまとめて支払われますが、その原因は従業員が毎期働いていることにあります。そのため、勤務期間に応じて退職給付費用を計上し、退職給付引当金を積み立てます。</p>
 
+  <h2>簡便法による退職給付引当金の計算</h2>
+  <p>2級では、中小企業向けの<strong>簡便法</strong>を使った計算が出題されます。簡便法では、期末時点で自己都合により全従業員が退職すると仮定した場合の退職金要支給額をもとに、退職給付引当金の残高を求めます。</p>
+  <div class="formula"><strong>退職給付引当金（期末残高） = 退職給付債務（期末要支給額） － 年金資産（外部積立分）</strong></div>
+  <p>年金資産を外部（信託銀行等）に積み立てていない会社では、年金資産はゼロとして扱うため、退職給付引当金＝退職給付債務（期末要支給額）となります。</p>
+
   <h2>退職給付引当金の仕訳</h2>
   <p>当期の退職給付費用を100,000円と見積もった場合、次のように仕訳します。</p>
   <div class="journal">
@@ -175,6 +191,16 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
       <tr><td>退職給付引当金</td><td>300,000</td><td>現金預金</td><td>300,000</td></tr>
     </table>
   </div>
+
+  <h2>年金掛金を拠出したとき</h2>
+  <p>会社が外部の年金基金に掛金50,000円を現金で拠出した場合も、退職金を支払ったときと同じ考え方で、退職給付引当金を取り崩します。掛金を払った時点で会社の将来の退職金支払い義務が外部に移るためです。</p>
+  <div class="journal">
+    <table>
+      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      <tr><td>退職給付引当金</td><td>50,000</td><td>現金預金</td><td>50,000</td></tr>
+    </table>
+  </div>
+  <div class="tip-box"><strong>退職金の直接支払いと年金掛金拠出は同じ仕訳の型：</strong>「退職給付引当金／現金預金」という型は、会社が直接退職金を支払う場合も、外部の年金基金に掛金を拠出する場合も共通です。「退職給付引当金を取り崩す原因が何か」を問題文から読み取りましょう。</div>
 
   <h2>貸倒引当金と退職給付引当金の違い</h2>
   <table>
