@@ -17,11 +17,11 @@
   "maskableIconUrl": "https://study-quest.net/icons/app-icon.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "/Users/hitoki/shikaku-quest/android.keystore",
-    "alias": "android"
+    "path": "/Users/hitoki/study-quest/signing.keystore",
+    "alias": "my-key-alias"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "3",
+  "appVersionCode": 3,
   "shortcuts": [
     {
       "name": "一言で記録",
@@ -46,12 +46,6 @@
       "shortName": "タイマー",
       "url": "https://study-quest.net/app.html?tab=quest",
       "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
-    },
-    {
-      "name": "ランキングを見る",
-      "shortName": "ランキング",
-      "url": "https://study-quest.net/app.html?tab=ranking",
-      "chosenIconUrl": "https://study-quest.net/icons/app-icon.png"
     }
   ],
   "generatorApp": "bubblewrap-cli",
@@ -74,5 +68,5 @@
   "fileHandlers": [],
   "launchHandlerClientMode": "",
   "displayOverride": [],
-  "appVersion": "1"
+  "appVersion": "3"
 }

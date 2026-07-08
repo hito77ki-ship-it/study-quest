@@ -39,7 +39,7 @@ def twaManifest = [
     // - short_name: Shorter string used if |name| is too long.
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
-    shortcuts: [[name:'タイマーを起動', short_name:'タイマー', url:'https://study-quest.net/app.html?tab=quest', icon:'shortcut_0'],[name:'ランキングを見る', short_name:'ランキング', url:'https://study-quest.net/app.html?tab=ranking', icon:'shortcut_1']],
+    shortcuts: [[name:'一言で記録', short_name:'一言記録', url:'https://study-quest.net/app.html?tab=quest&quickLog=1', icon:'shortcut_0'],[name:'15分を記録', short_name:'+15分', url:'https://study-quest.net/app.html?tab=quest&quickRecord=15', icon:'shortcut_1'],[name:'30分を記録', short_name:'+30分', url:'https://study-quest.net/app.html?tab=quest&quickRecord=30', icon:'shortcut_2'],[name:'タイマーを起動', short_name:'タイマー', url:'https://study-quest.net/app.html?tab=quest', icon:'shortcut_3']],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
     splashScreenFadeOutDuration: 300,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
@@ -57,8 +57,8 @@ android {
         applicationId "com.studyquest.app"
         minSdkVersion 21
         targetSdkVersion 35
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "3"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -150,21 +150,9 @@ android {
 
         
     }
-    signingConfigs {
-        release {
-            def props = new Properties()
-            def propFile = rootProject.file('local.properties')
-            if (propFile.exists()) { props.load(propFile.newInputStream()) }
-            storeFile file(props.getProperty('KEYSTORE_PATH', '../signing.keystore'))
-            storePassword props.getProperty('KEYSTORE_PASSWORD', '')
-            keyAlias props.getProperty('KEY_ALIAS', 'my-key-alias')
-            keyPassword props.getProperty('KEY_PASSWORD', '')
-        }
-    }
     buildTypes {
         release {
             minifyEnabled true
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {
