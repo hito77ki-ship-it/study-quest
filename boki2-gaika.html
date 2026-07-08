@@ -9,18 +9,18 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-gaika.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>簿記2級の外貨換算会計とは？為替差損益・決算時換算を解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 商業簿記の外貨換算会計を初心者向けに解説。外貨建取引、取引発生日レート、決算時換算、為替差損益、外貨建売掛金・買掛金の仕訳を整理します。">
-<meta name="keywords" content="簿記2級 外貨換算会計,外貨建取引 仕訳,為替差損益 簿記2級,決算時換算,外貨建売掛金">
-<meta property="og:title" content="簿記2級の外貨換算会計とは？為替差損益・決算時換算を解説">
-<meta property="og:description" content="簿記2級 商業簿記の外貨換算会計を、外貨建取引・決算時換算・為替差損益からやさしく解説。">
+<title>簿記2級の外貨換算会計とは？為替差損益・決算時換算・為替予約を解説｜スタディクエスト</title>
+<meta name="description" content="日商簿記2級 商業簿記の外貨換算会計を初心者向けに解説。外貨建取引、取引発生日レート、決算時換算、為替差損益、外貨建売掛金・買掛金、為替予約の振当処理の仕訳を整理します。">
+<meta name="keywords" content="簿記2級 外貨換算会計,外貨建取引 仕訳,為替差損益 簿記2級,決算時換算,外貨建売掛金,為替予約 振当処理">
+<meta property="og:title" content="簿記2級の外貨換算会計とは？為替差損益・決算時換算・為替予約を解説">
+<meta property="og:description" content="簿記2級 商業簿記の外貨換算会計を、外貨建取引・決算時換算・為替差損益・為替予約（振当処理）からやさしく解説。">
 <meta property="og:url" content="https://study-quest.net/boki2-gaika.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の外貨換算会計とは？為替差損益・決算時換算を解説","description":"日商簿記2級 商業簿記の外貨換算会計を初心者向けに解説。外貨建取引、取引発生日レート、決算時換算、為替差損益、外貨建売掛金・買掛金の仕訳を整理します。","url":"https://study-quest.net/boki2-gaika.html","datePublished":"2026-05-09","dateModified": "2026-06-26","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の外貨換算会計とは？為替差損益・決算時換算・為替予約を解説","description":"日商簿記2級 商業簿記の外貨換算会計を初心者向けに解説。外貨建取引、取引発生日レート、決算時換算、為替差損益、外貨建売掛金・買掛金、為替予約の振当処理の仕訳を整理します。","url":"https://study-quest.net/boki2-gaika.html","datePublished":"2026-05-09","dateModified": "2026-07-07","author":{"@type":"Person","name":"大谷 一輝"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -148,6 +148,32 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     <tr><td>外貨建買掛金</td><td>為替差損</td><td>為替差益</td></tr>
   </table>
 
+  <h2>為替予約（振当処理）</h2>
+  <p>為替予約とは、将来の決済日に適用する為替レートをあらかじめ金融機関と約束しておく取引です。円安・円高による為替差損益のブレをなくすために使われ、簿記2級では「振当処理」という方法で会計処理します。振当処理は、外貨建取引の金額を予約レート（先物レート）で確定させてしまう処理と考えると理解しやすいです。</p>
+
+  <h3>パターン1：取引発生と同時に為替予約を締結</h3>
+  <p>商品の売買と同時に為替予約を結んだ場合、最初から予約レートで円換算します。決算時・決済時にレートが変わっても再換算は不要です。</p>
+  <div class="formula"><strong>円換算額 = 外貨金額 × 予約レート（先物レート）</strong></div>
+  <p>たとえば3,000ドルの商品を輸入すると同時に為替予約を締結し、予約レートが1ドル=102円だった場合、買掛金は306,000円（3,000×102円）で確定します。</p>
+  <div class="journal">
+    <table>
+      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      <tr><td>仕入</td><td>306,000</td><td>買掛金</td><td>306,000</td></tr>
+    </table>
+  </div>
+
+  <h3>パターン2：取引発生後に為替予約を締結</h3>
+  <p>取引時にはいったん直物レートで計上し、あとから為替予約を結ぶケースです。予約を締結した時点で、帳簿価額を予約レートに振り当て直し、その差額を為替差損益として処理します（簿記2級では、差額を直々差額・直先差額に分けず、まとめて当期の為替差損益とするのがポイントです）。</p>
+  <p>9月1日に1,000ドルの売掛金を直物レート1ドル=140円で140,000円計上し、9月15日に予約レート1ドル=142円で為替予約を締結したとします。振当処理では、売掛金を142,000円に振り当て、差額2,000円を為替差益として計上します。以後は決済まで142,000円のまま据え置きます。</p>
+  <div class="formula"><strong>振当後の円換算額 142,000円 - 帳簿価額 140,000円 = 2,000円の為替差益</strong></div>
+  <div class="journal">
+    <table>
+      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      <tr><td>売掛金</td><td>2,000</td><td>為替差益</td><td>2,000</td></tr>
+    </table>
+  </div>
+  <div class="tip-box"><strong>覚え方：</strong>為替予約が絡む問題を見たら、「予約レートで確定させて、それ以降は動かさない」と考えれば整理できます。予約締結が取引と同時か後かだけを見極めましょう。</div>
+
   <h2>よくあるミス</h2>
   <ul>
     <li>取引時と決済時で同じレートを使ってしまう</li>
@@ -155,6 +181,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     <li>売掛金と買掛金で、円安・円高の有利不利を逆に判断する</li>
     <li>為替差益と為替差損を逆に仕訳する</li>
     <li>外貨金額にレートをかけず、外貨金額のまま記録してしまう</li>
+    <li>為替予約締結後も、決算日レートで再換算してしまう（予約レートで確定しているため不要）</li>
   </ul>
 
   <div class="warn-box"><strong>判断の軸：</strong>外貨換算は「自分にとって得か損か」で考えると整理できます。売掛金は外貨を受け取る権利、買掛金は外貨を支払う義務です。</div>
@@ -166,6 +193,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     <li>決済時にレートが変わると、差額を為替差損益で処理する</li>
     <li>決算日に外貨建金銭債権債務が残っていれば、決算日レートで換算する</li>
     <li>売掛金と買掛金では、円安・円高の有利不利が逆になる</li>
+    <li>為替予約を締結すると、振当処理により円換算額が予約レートで確定する</li>
   </ul>
 
   <div class="app-cta">
@@ -186,9 +214,10 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">外貨建取引はいつのレートで換算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">取引発生時は、原則として取引発生日の為替レートで円に換算します。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">為替差損益とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">取引時・決済時・決算時の為替レートの違いによって生じる損益です。有利な差額は為替差益、不利な差額は為替差損です。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">決算時換算では何をしますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">決算日に残っている外貨建売掛金・買掛金・外貨預金などを決算日レートで換算し、差額を為替差損益で処理します。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">為替予約の振当処理とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">外貨建取引の円換算額を、あらかじめ約束した予約レート（先物レート）で確定させる処理です。取引と同時に予約を結べば最初から予約レートで計上し、取引後に予約を結べば帳簿価額を予約レートに振り当て、差額を為替差損益として処理します。</div></details>
 </section>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"外貨換算会計とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"外国通貨で行った取引や外貨建ての債権債務を、日本円に換算して記録する会計処理です。"}},{"@type":"Question","name":"外貨建取引はいつのレートで換算しますか？","acceptedAnswer":{"@type":"Answer","text":"取引発生時は、原則として取引発生日の為替レートで円に換算します。"}},{"@type":"Question","name":"為替差損益とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"取引時・決済時・決算時の為替レートの違いによって生じる損益です。有利な差額は為替差益、不利な差額は為替差損です。"}},{"@type":"Question","name":"決算時換算では何をしますか？","acceptedAnswer":{"@type":"Answer","text":"決算日に残っている外貨建売掛金・買掛金・外貨預金などを決算日レートで換算し、差額を為替差損益で処理します。"}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"外貨換算会計とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"外国通貨で行った取引や外貨建ての債権債務を、日本円に換算して記録する会計処理です。"}},{"@type":"Question","name":"外貨建取引はいつのレートで換算しますか？","acceptedAnswer":{"@type":"Answer","text":"取引発生時は、原則として取引発生日の為替レートで円に換算します。"}},{"@type":"Question","name":"為替差損益とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"取引時・決済時・決算時の為替レートの違いによって生じる損益です。有利な差額は為替差益、不利な差額は為替差損です。"}},{"@type":"Question","name":"決算時換算では何をしますか？","acceptedAnswer":{"@type":"Answer","text":"決算日に残っている外貨建売掛金・買掛金・外貨預金などを決算日レートで換算し、差額を為替差損益で処理します。"}},{"@type":"Question","name":"為替予約の振当処理とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"外貨建取引の円換算額を、あらかじめ約束した予約レート（先物レート）で確定させる処理です。取引と同時に予約を結べば最初から予約レートで計上し、取引後に予約を結べば帳簿価額を予約レートに振り当て、差額を為替差損益として処理します。"}}]}
 </script>
 <section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
   <a href="boki2-lease.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">リース取引とは？ファイナンス・リース</div></a>

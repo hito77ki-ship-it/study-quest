@@ -28,7 +28,7 @@
   "description": "耐用年数・残存価額の意味から計算式、間接法の仕訳、固定資産売却まで完全解説。",
   "url": "https://study-quest.net/boki3-genka.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-06-26",
+  "dateModified": "2026-07-08",
   "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://study-quest.net/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
 }
@@ -329,6 +329,52 @@ footer p{font-size:11px;color:#2D3748;margin-top:8px;}
     <strong>直接法</strong>：建物の残高を直接減らす → 取得原価がB/Sから見えなくなる<br>
     <strong>間接法★</strong>：「建物3,000 △累計額2,000」のように対照表示 → 取得原価と累計額の両方がわかる<br>
     試験では<strong>間接法</strong>が標準。B/Sを見た人が「いくらで買って今いくら価値が残っているか」を把握できる。
+  </div>
+
+  <h2>決算整理後残高試算表から逆算する</h2>
+
+  <p>ここまでは「取得原価→年間の減価償却費→減価償却累計額」という<strong>順算</strong>でした。しかし精算表・決算整理の問題では、<strong>決算整理後残高試算表に記載された減価償却累計額から、逆に取得原価や経過年数を求める</strong>タイプの出題があり、多くの受験生がここで手が止まります。考え方の向きを逆にするだけなので、矢印を逆にたどるイメージで整理しましょう。</p>
+
+  <div class="calc-box">
+    <div class="calc-title">📐 順算と逆算の関係</div>
+    <p style="font-size:14px;margin:8px 0;">順算：<strong>取得原価 → 年間の減価償却費 → 減価償却累計額</strong></p>
+    <p style="font-size:14px;margin:8px 0;">逆算：<strong>減価償却累計額 ÷ 経過年数 → 年間の減価償却費 → 取得原価</strong></p>
+  </div>
+
+  <div class="mondai">
+    <div class="mondai-label">例題</div>
+    <p>決算整理後残高試算表に「減価償却累計額 ¥2,700」と記載されている。この備品は定額法（残存価額は取得原価の10%、耐用年数5年）で減価償却しており、取得から当期末まで3年が経過している。この備品の取得原価はいくらか。</p>
+  </div>
+
+  <div class="kaitou-label">▶ 逆算の手順</div>
+  <div class="calc-box">
+    <div class="calc-title">📐 STEP1：年間の減価償却費を求める</div>
+    <div class="calc-formula">
+      <span class="num">2,700</span>
+      <span class="op">÷</span>
+      <span class="num">3年</span>
+      <span class="op">=</span>
+      <span class="result">900</span>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0;">累計額は「毎年の償却費 × 経過年数」の合計。定額法なら毎年同じ金額なので、経過年数で割れば1年分が出てくる。</p>
+  </div>
+  <div class="calc-box">
+    <div class="calc-title">📐 STEP2：年間の減価償却費の式から取得原価を逆算する</div>
+    <p style="font-size:14px;margin:8px 0;">年間の減価償却費の公式：<strong>（取得原価 − 残存価額）÷ 耐用年数 ＝ 年間の減価償却費</strong></p>
+    <p style="font-size:14px;margin:8px 0;">残存価額は「取得原価の10%」なので、（取得原価 × 0.9）÷ 5年 ＝ 900 という式が成り立つ。</p>
+    <div class="calc-formula">
+      <span class="num">900</span>
+      <span class="op">×</span>
+      <span class="num">5年</span>
+      <span class="op">÷</span>
+      <span class="num">0.9</span>
+      <span class="op">=</span>
+      <span class="result">5,000</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>逆算問題を解くコツ：</strong>いきなり式を1本で立てようとせず、<strong>「累計額 → 1年分の償却費 → 取得原価」の2段階</strong>に分けるのがポイントです。1年分の償却費さえ出せれば、あとは普段の公式を逆向きに使うだけです。焦らず順番に図をたどりましょう。
   </div>
 
   <h2>固定資産を売却したときの仕訳</h2>

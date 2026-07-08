@@ -353,6 +353,39 @@ function _loginGoogle() {
   _sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.href } });
 }
 
+async function _loginAnonymous(nickname) {
+  if (!_sb) return;
+  const { data, error } = await _sb.auth.signInAnonymously();
+  if (error || !data?.user) {
+    alert('エラーが発生しました。時間をおいて再度お試しください。');
+    return;
+  }
+  await _sb.auth.updateUser({ data: { full_name: nickname } });
+  location.reload();
+}
+
+// ニックネーム入力フォーム（Googleログイン不要の匿名投稿用）
+function _buildNicknameForm(container) {
+  const wrap = document.createElement('div');
+  wrap.className = 'sq-anon-login';
+  wrap.innerHTML = `
+    <input type="text" class="sq-anon-nickname" placeholder="ニックネーム" maxlength="20">
+    <button class="sq-anon-start-btn">この名前で始める</button>
+  `;
+  container.appendChild(wrap);
+  const input = wrap.querySelector('.sq-anon-nickname');
+  const btn = wrap.querySelector('.sq-anon-start-btn');
+  const start = () => {
+    const name = input.value.trim();
+    if (!name) { input.focus(); return; }
+    btn.disabled = true;
+    btn.textContent = '開始中...';
+    _loginAnonymous(name);
+  };
+  btn.addEventListener('click', start);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') start(); });
+}
+
 async function _logoutArt() {
   if (_sb) await _sb.auth.signOut();
   _artUser = null;
@@ -1641,6 +1674,16 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-art-user-name{font-size:13px;font-weight:700;color:var(--sq-text);}
 .sq-art-logout-btn{font-size:11px;color:var(--sq-muted);background:none;border:1px solid var(--sq-border);border-radius:100px;padding:4px 10px;cursor:pointer;font-family:inherit;transition:color .2s;}
 .sq-art-logout-btn:hover{color:var(--sq-text);}
+/* 匿名（ニックネーム）ログイン */
+.sq-anon-or{font-size:11px;color:var(--sq-muted);}
+.sq-anon-login{display:inline-flex;align-items:center;gap:6px;}
+.sq-anon-nickname{width:140px;padding:7px 10px;border-radius:100px;border:1px solid var(--sq-border-strong);background:var(--sq-surface);color:var(--sq-text);font-size:13px;font-family:inherit;box-sizing:border-box;}
+.sq-anon-nickname:focus{outline:none;border-color:#8CC63F;}
+.sq-anon-start-btn{background:#8CC63F;color:#0A0A0F;border:none;border-radius:100px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .2s;white-space:nowrap;}
+.sq-anon-start-btn:hover{opacity:.88;}
+.sq-anon-start-btn:disabled{opacity:.5;cursor:default;}
+.sq-comment-login-prompt .sq-anon-login{margin-top:12px;justify-content:center;}
+.sq-comment-login-prompt .sq-anon-or{display:block;margin:10px 0;}
 /* Comments */
 .sq-comment-section{padding:32px 24px;background:var(--sq-surface-soft);border-top:1px solid var(--sq-border);}
 .sq-comment-inner{max-width:800px;margin:0 auto;}
@@ -2716,8 +2759,9 @@ function buildAuthBar(container) {
   const bar = document.createElement('div');
   bar.className = 'sq-art-auth-bar';
   if (!_artUser) {
-    bar.innerHTML = `<button class="sq-google-login-btn">${_GOOGLE_ICON}Googleでログイン</button>`;
+    bar.innerHTML = `<button class="sq-google-login-btn">${_GOOGLE_ICON}Googleでログイン</button><span class="sq-anon-or">または</span>`;
     bar.querySelector('button').addEventListener('click', _loginGoogle);
+    _buildNicknameForm(bar);
   } else {
     const name = _artUser.user_metadata?.full_name || _artUser.email || 'ユーザー';
     const avatarUrl = _artUser.user_metadata?.avatar_url;
@@ -2760,7 +2804,7 @@ async function buildReactionWidget() {
         <span class="sq-reaction-count" id="sqRc-${r.type}">—</span>
       </button>`).join('')}
     </div>
-    <div class="sq-reaction-note" id="sqRNote">${!_artUser ? '<span class="sq-reaction-login-hint">↑ Googleログインでリアクションできます</span>' : ''}</div>
+    <div class="sq-reaction-note" id="sqRNote">${!_artUser ? '<span class="sq-reaction-login-hint">↑ ニックネーム入力またはGoogleログインでリアクションできます</span>' : ''}</div>
   `);
 
   // カウント表示（認証不要）
@@ -2892,12 +2936,15 @@ async function buildCommentWidget() {
   if (!_artUser) {
     inner.insertAdjacentHTML('beforeend', `
       <div class="sq-comment-login-prompt">
-        コメント・いいねをするには <strong>Googleログイン</strong> が必要です。<br>
+        コメント・いいねをするには、ニックネームを入力するか<strong>Googleログイン</strong>してください。<br>
         記事の閲覧はログインなしでできます。<br><br>
         <button class="sq-google-login-btn" id="sqCommentLoginBtn">${_GOOGLE_ICON}Googleでログインする</button>
+        <span class="sq-anon-or">または</span>
+        <div id="sqCommentAnonForm"></div>
       </div>
     `);
     document.getElementById('sqCommentLoginBtn').addEventListener('click', _loginGoogle);
+    _buildNicknameForm(document.getElementById('sqCommentAnonForm'));
   } else {
     const userName = _escHtml(_artUser.user_metadata?.full_name || _artUser.email || 'ユーザー');
     const formWrap = document.createElement('div');
@@ -2924,6 +2971,22 @@ async function buildCommentWidget() {
     submitBtn.addEventListener('click', async () => {
       const body = textarea.value.trim();
       if (!body) return;
+
+      // 簡易スパム対策：URLを含むコメントは弾く
+      if (/https?:\/\/|www\./i.test(body)) {
+        alert('リンクを含むコメントは投稿できません。');
+        return;
+      }
+
+      // 連投防止：60秒に1回まで
+      const lastPostKey = 'sq_last_comment_ts';
+      const lastPostAt = parseInt(localStorage.getItem(lastPostKey) || '0', 10);
+      const now = Date.now();
+      if (now - lastPostAt < 60000) {
+        alert('連続投稿はできません。少し時間をおいてから投稿してください。');
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = '投稿中...';
       try {
@@ -2945,6 +3008,7 @@ async function buildCommentWidget() {
           })
         });
         if (res.ok) {
+          localStorage.setItem(lastPostKey, String(now));
           const [newComment] = await res.json();
           textarea.value = '';
           lenSpan.textContent = '0';
