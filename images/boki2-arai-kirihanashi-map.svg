@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">洗替方式と切放方式、認識タイミングからわかる違い</title>
+  <desc id="desc">洗替方式は翌期首に再振替仕訳を行い帳簿価額を取得原価に戻すため売却損益は取得原価との差額で算定するのに対し、切放方式は翌期首に何もせず期末時価をそのまま帳簿価額とするため売却損益は前期末時価との差額で算定するという違いを対比する図解。2年間の損益合計はどちらの方式でも一致する</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0fdf4"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#f4f9ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:27px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16.5px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#dcfce7" opacity="0.6"/>
+  <circle cx="1100" cy="110" r="78" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1090" cy="740" r="88" fill="#dcfce7" opacity="0.45"/>
+  <circle cx="110" cy="730" r="70" fill="#dbeafe" opacity="0.45"/>
+
+  <text x="600" y="50" text-anchor="middle" class="title">洗替方式 vs 切放方式 認識タイミングからわかる違い</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">翌期首に「元に戻す」か「そのまま」か——2年間の損益合計はどちらも同じ</text>
+
+  <!-- Left column: 洗替方式 -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="104" width="500" height="46" rx="16" fill="#22c55e"/>
+    <text x="320" y="133" text-anchor="middle" class="colhead">洗替方式（翌期首に取得原価へ戻す）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="70" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#86efac" stroke-width="3"/>
+
+    <circle cx="108" cy="206" r="17" fill="#22c55e"/>
+    <text x="108" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="136" y="202" class="ptname">翌期首の処理</text>
+    <text x="136" y="222" class="ptbody">再振替仕訳を行い、帳簿価額を取得原価に戻す</text>
+
+    <line x1="96" y1="240" x2="546" y2="240" stroke="#dcfce7" stroke-width="2"/>
+
+    <circle cx="108" cy="278" r="17" fill="#22c55e"/>
+    <text x="108" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="136" y="274" class="ptname">売却損益の算定基準</text>
+    <text x="136" y="294" class="ptbody">取得原価との差額で算定する</text>
+
+    <line x1="96" y1="312" x2="546" y2="312" stroke="#dcfce7" stroke-width="2"/>
+
+    <circle cx="108" cy="350" r="17" fill="#22c55e"/>
+    <text x="108" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="136" y="346" class="ptname">適用できる有価証券</text>
+    <text x="136" y="366" class="ptbody">売買目的有価証券・その他有価証券の両方</text>
+
+    <rect x="96" y="466" width="450" height="176" rx="14" fill="#f0fdf4"/>
+    <text x="120" y="496" class="ptname" fill="#166534">数値例（取得原価100→期末時価120）</text>
+    <text x="120" y="522" class="ptbody">X1期末：評価益+20（100→120）</text>
+    <text x="120" y="544" class="ptbody">X2期首：再振替で120→100に戻す（△20）</text>
+    <text x="120" y="576" class="ptbody">X2年度に150で売却</text>
+    <text x="120" y="602" class="ptbody">→ 売却益50（150－取得原価100）</text>
+    <text x="120" y="624" class="ptname" fill="#166534">X2年度の損益：△20＋50＝30</text>
+  </g>
+
+  <!-- Right column: 切放方式 -->
+  <g filter="url(#softShadow)">
+    <rect x="630" y="104" width="500" height="46" rx="16" fill="#3B82F6"/>
+    <text x="880" y="133" text-anchor="middle" class="colhead">切放方式（翌期首はそのまま）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="630" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+
+    <circle cx="668" cy="206" r="17" fill="#3B82F6"/>
+    <text x="668" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="696" y="202" class="ptname">翌期首の処理</text>
+    <text x="696" y="222" class="ptbody">何もしない。期末時価がそのまま帳簿価額になる</text>
+
+    <line x1="656" y1="240" x2="1106" y2="240" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="668" cy="278" r="17" fill="#3B82F6"/>
+    <text x="668" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="696" y="274" class="ptname">売却損益の算定基準</text>
+    <text x="696" y="294" class="ptbody">前期末時価との差額で算定する</text>
+
+    <line x1="656" y1="312" x2="1106" y2="312" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="668" cy="350" r="17" fill="#3B82F6"/>
+    <text x="668" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="696" y="346" class="ptname">適用できる有価証券</text>
+    <text x="696" y="366" class="ptbody">売買目的有価証券のみ（その他有価証券は不可）</text>
+
+    <rect x="656" y="466" width="450" height="176" rx="14" fill="#eff6ff"/>
+    <text x="680" y="496" class="ptname" fill="#1d4ed8">数値例（取得原価100→期末時価120）</text>
+    <text x="680" y="522" class="ptbody">X1期末：評価益+20（100→120）</text>
+    <text x="680" y="544" class="ptbody">X2期首：再振替なし（帳簿価額120のまま）</text>
+    <text x="680" y="576" class="ptbody">X2年度に150で売却</text>
+    <text x="680" y="602" class="ptbody">→ 売却益30（150－前期末時価120）</text>
+    <text x="680" y="624" class="ptname" fill="#1d4ed8">X2年度の損益：0＋30＝30</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="690" width="1060" height="92" rx="24" fill="#fffbeb" stroke="#fcd34d" stroke-width="3"/>
+    <text x="600" y="724" text-anchor="middle" class="banner">2年間の損益合計はどちらの方式でも一致する——違うのは認識するタイミングだけ</text>
+    <text x="600" y="750" text-anchor="middle" class="bannersmall">洗替方式：X1年度+20／X2年度+30（合計50）　切放方式：X1年度+20／X2年度+30（合計50）——その他有価証券は洗替方式のみ選択可</text>
+  </g>
+</svg>
