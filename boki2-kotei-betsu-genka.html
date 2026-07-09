@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="canonical" href="https://study-quest.net/boki2-kotei-betsu-genka.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工程別総合原価計算とは？累加法と前工程費の流れを図解で解説【簿記2級】｜スタディクエスト</title>
+<meta name="description" content="日商簿記2級の工程別総合原価計算（累加法）を初心者向けに解説。前工程費の引き継ぎ方、第1工程・第2工程のボックス図の書き方を例題つきで整理します。">
+<meta name="keywords" content="工程別総合原価計算とは,累加法とは,前工程費,工程別総合原価計算 簿記2級,累加法 非累加法">
+<meta property="og:title" content="工程別総合原価計算とは？累加法と前工程費の流れを図解で解説【簿記2級】">
+<meta property="og:description" content="前工程費の引き継ぎ方、第1工程・第2工程のボックス図の書き方を例題つきで解説。">
+<meta property="og:url" content="https://study-quest.net/boki2-kotei-betsu-genka.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"工程別総合原価計算とは？累加法と前工程費の流れを図解で解説","description":"前工程費の引き継ぎ方、第1工程・第2工程のボックス図の書き方を例題つきで整理します。","url":"https://study-quest.net/boki2-kotei-betsu-genka.html","datePublished":"2026-07-09","dateModified":"2026-07-09","author":{"@type":"Person","name":"大谷 一輝","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"工程別総合原価計算とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"製造工程が複数（第1工程・第2工程など）に分かれている場合に、工程ごとに原価を集計する総合原価計算の方法です。前の工程で完成した製品の原価を「前工程費」として次の工程に引き継ぎながら計算します。"}},
+    {"@type":"Question","name":"累加法とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"前工程の完成品原価を、次工程では前工程費として引き継ぎ、工程を追うごとに原価が積み重なっていく計算方法です。日商簿記2級で出題されるのは累加法のみで、非累加法は簿記1級の範囲です。"}},
+    {"@type":"Question","name":"前工程費はボックス図でどう扱いますか？","acceptedAnswer":{"@type":"Answer","text":"前工程費は、次工程にとって「始点で投入した材料」と同じように扱います。すでに100%投入済みとして、完成品と月末仕掛品の間で数量按分し、加工進捗度は考慮しません。"}}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);line-height:1.9}a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px}.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-size:15px;font-weight:700;color:var(--green2)}.nav-cta{background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px}.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px}.breadcrumb a{color:var(--muted)}h1{font-size:clamp(20px,4vw,30px);line-height:1.4;margin-bottom:8px}.meta{font-size:13px;color:var(--muted);margin-bottom:16px}.lead{font-size:15px;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--green);border-radius:0 8px 8px 0}h2{font-size:20px;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green)}h3{font-size:16px;margin:28px 0 10px;color:var(--green2)}p,li{font-size:14px;color:#374151}p{margin-bottom:16px}ul,ol{margin:0 0 16px 20px}li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{background:var(--green);color:#fff;padding:10px 12px;text-align:left}td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}tr:nth-child(even) td{background:var(--light)}.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px}.tip-box strong{color:#276749}.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px}.warn-box strong{color:#975A16}
+.mondai{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0}.mondai .m-label{font-size:11px;font-weight:700;color:#3B4DA8;letter-spacing:.08em;margin-bottom:8px}.mondai p{font-size:14px;color:#374151;margin:0}
+.flow{counter-reset:flow;margin:20px 0}.flow-item{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:#374151}.flow-item::before{counter-increment:flow;content:counter(flow);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.compare-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}@media(max-width:540px){.compare-2{grid-template-columns:1fr}}
+.c2-card{border-radius:12px;padding:18px 20px}.c2-card.a{background:#EBF8FF;border:1px solid #90CDF4}.c2-card.b{background:#F0FFF4;border:1px solid #9AE6B4}
+.c2-title{font-size:13px;font-weight:700;margin-bottom:8px}.c2-card.a .c2-title{color:#1D4ED8}.c2-card.b .c2-title{color:#276749}
+.box-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}@media(max-width:640px){.box-pair{grid-template-columns:1fr}}
+.tbox{border-radius:10px;overflow:hidden}.tbox-mat{border:2px solid #3B4DA8}.tbox-kak{border:2px solid #276749}
+.tbox-head{padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff}.tbox-mat .tbox-head{background:#3B4DA8}.tbox-kak .tbox-head{background:#276749}
+.tbox-body{display:grid;grid-template-columns:1fr 1fr}.tbox-col{padding:12px 14px;font-size:12px}.tbox-col.l{border-right:1px solid rgba(0,0,0,.12)}.tbox-mat .tbox-col.l{background:#EBF8FF}.tbox-kak .tbox-col.l{background:#F0FFF4}.tbox-col.r{background:#FFF9F0}
+.tbox-col-title{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:6px;letter-spacing:.06em}
+.tbox-item{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed rgba(0,0,0,.08);font-size:12px}.tbox-item:last-child{border-bottom:none}
+.tbox-item.total{border-top:1px solid rgba(0,0,0,.15);margin-top:4px;padding-top:4px;border-bottom:none;font-weight:700}.tbox-item.answer{color:#276749;font-weight:700}.tbox-item.sub{color:var(--muted);font-size:11px}
+.result-box{background:#F0FFF4;border:2px solid #9AE6B4;border-radius:10px;padding:16px 20px;margin:16px 0;font-size:14px}.result-box .r-label{font-size:11px;font-weight:700;color:#276749;letter-spacing:.08em;margin-bottom:8px}.result-box p{margin:0;font-size:14px;color:#1A202C}
+.matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0}.matome h3{color:#276749;font-size:16px;margin:0 0 16px}.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06)}.matome-row:last-child{border-bottom:none}.matome-row .trigger{font-weight:700;min-width:200px;flex-shrink:0}.matome-row .result{color:#276749;font-weight:700}@media(max-width:560px){.matome-row{flex-direction:column;gap:2px}.matome-row .trigger{min-width:auto}}
+.app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff}.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px}.app-cta p{color:#A0C070;font-size:13px}.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block}
+.point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0}.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px}
+footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px}footer a{font-size:12px;color:#4A5568;margin:0 10px}footer p{font-size:11px;color:#2D3748;margin-top:8px}
+.chat-icon{width:100%;height:100%;border-radius:50%;object-fit:cover}
+@media(max-width:640px){table{font-size:12px}th,td{padding:8px}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 工程別総合原価計算</div>
+  <p class="meta">日商簿記2級 | 公開：2026年7月9日</p>
+  <h1>工程別総合原価計算とは？<br>累加法と前工程費の流れを図解で解説</h1>
+  <p class="meta">著者：大谷 一輝（大阪経済大学3回生・日商簿記1級勉強中）</p>
+
+  <div class="point-card">
+    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
+    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
+      <li><strong>工程別総合原価計算</strong>——製造工程が複数ある場合に、工程ごとに原価を集計する方法</li>
+      <li><strong>累加法</strong>——前工程の完成品原価を、次工程では「前工程費」として引き継ぐ計算方法</li>
+      <li>前工程費は、次工程にとって<strong>「始点投入の材料」と同じ扱い</strong>——進捗度は関係なく数量按分する</li>
+      <li>日商簿記2級で出題されるのは<strong>累加法のみ</strong>——非累加法は簿記1級の範囲</li>
+    </ul>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-otani.png" alt="大谷" style="width:100%;height:100%;object-fit:cover;"></div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">大谷 一輝 より</span>
+    </div>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、大谷です！<br>
+    総合原価計算のボックス図をやっと1枚描けるようになった頃、「工程別」という言葉が出てきて「え、ボックス図がもう1セット増えるの……？」と一瞬うんざりした記憶があります。しかも「前工程費」という新しい謎ワードまで登場して、「これは材料費なの？加工費なの？」と混乱しました。<br>
+    でも実は、答えはシンプルでした。<strong>前工程費は、材料費と同じ場所に置けばいい</strong>——ただそれだけです。第1工程の完成品を、第2工程では「外から買ってきた材料」と同じ扱いにするだけ。今日は、この1行の理解でボックス図がもう1枚描けるようになる感覚を、一緒に確認していきましょう！</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">また、記事の末尾のほうにある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！</p>
+  </div>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">総合原価計算のボックス図はなんとか描けるようになったんですが、「工程別」になった途端、前工程費という知らない言葉が出てきて手が止まります……。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">大丈夫です、実は新しく覚えることはほとんどありません。前工程費とは「前の工程で完成した製品の原価」のことで、第2工程からすると、これは外部から買ってきた材料と同じ役割なんです。だから、ボックス図の中では材料費の位置にそのまま置けます。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">材料費と同じ場所でいいんですね！じゃあ「累加法」っていうのは何なんですか？</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷" class="chat-icon"></div>
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">「累加」は「積み重なって増えていく」という意味です。第1工程の完成品原価が第2工程に前工程費として引き継がれ、そこに第2工程の加工費が加わって、また次の工程へ……というふうに、工程を追うごとに原価が雪だるま式に積み上がっていくので累加法と呼ばれます。ちなみに簿記2級で出題されるのはこの累加法だけなので、まずはここに集中すれば大丈夫ですよ。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>❓ 工程別総合原価計算とは——工程が増えても考え方は同じ</h2>
+  <p>工程別総合原価計算とは、製造工程が第1工程・第2工程のように複数に分かれている場合に、<a href="boki2-sogo-genka.html">総合原価計算</a>を工程ごとに繰り返す方法です。1つの工程で完結する単一工程の総合原価計算に、「前工程からの引き継ぎ」というステップが1つ加わるだけと考えると理解しやすくなります。</p>
+
+  <h2>🔗 累加法とは——前工程費の引き継ぎ方</h2>
+  <div class="compare-2">
+    <div class="c2-card a">
+      <div class="c2-title">第1工程</div>
+      直接材料費と加工費を投入して製品を作る。完成した分の原価はすべて第2工程へ振り替える。
+    </div>
+    <div class="c2-card b">
+      <div class="c2-title">第2工程</div>
+      第1工程の完成品原価を「前工程費」として受け入れ、そこに第2工程の加工費を追加して最終完成品原価を計算する。
+    </div>
+  </div>
+  <div class="tip-box"><strong>累加法の名前の由来：</strong>工程を進むたびに前工程費が積み重なっていく（＝累加していく）ことから、この名前がついています。日商簿記2級ではこの累加法のみが出題対象です。</div>
+  <div class="warn-box"><strong>非累加法について：</strong>「累加法」と対で紹介されることがある「非累加法」は、最終完成品原価の内訳を工程費ごとに把握し直す簡便的な計算方法で、<strong>日商簿記1級の範囲</strong>です。2級受験生は累加法の理解に集中すれば十分です。</div>
+
+  <h2>📝 計算の流れ</h2>
+  <div class="flow">
+    <div class="flow-item"><strong>第1工程の完成品原価を計算する：</strong>直接材料費・加工費を単一工程と同じ方法（ボックス図）で計算する。</div>
+    <div class="flow-item"><strong>第1工程の完成品原価を第2工程へ振り替える：</strong>この金額が第2工程の「前工程費」になる。</div>
+    <div class="flow-item"><strong>前工程費を第2工程の材料費と同じ位置に置く：</strong>始点投入の材料として扱い、進捗度は考慮しない。</div>
+    <div class="flow-item"><strong>第2工程の加工費を投入し、ボックス図で完成品原価を計算する：</strong>前工程費ボックスと加工費ボックスの2枚で計算する。</div>
+  </div>
+
+  <h2>🧮 例題で確認</h2>
+  <div class="mondai">
+    <div class="m-label">例題</div>
+    <p>第1工程：直接材料費400,000円、加工費200,000円を投入し、600個すべてが完成して第2工程へ振り替えられた（月末仕掛品なし）。<br>
+    第2工程：前工程費として600,000円を受け入れ、当工程加工費660,000円を投入。完成品500個、月末仕掛品100個（加工進捗度50%）。平均法で計算する。</p>
+  </div>
+
+  <div class="result-box">
+    <div class="r-label">第1工程の結果</div>
+    <p>完成品原価 ＝ 400,000円（材料費）＋ 200,000円（加工費）＝ <strong>600,000円</strong><br>この600,000円が、そのまま第2工程の「前工程費」になります。</p>
+  </div>
+
+  <div class="box-pair">
+    <div class="tbox tbox-mat">
+      <div class="tbox-head">① 前工程費ボックス（始点投入と同じ扱い）</div>
+      <div class="tbox-body">
+        <div class="tbox-col l">
+          <div class="tbox-col-title">借方（投入）</div>
+          <div class="tbox-item"><span>前工程費</span><span>600個　600,000</span></div>
+          <div class="tbox-item total"><span>合　計</span><span>600個　600,000</span></div>
+          <div class="tbox-item sub"><span>単価：600,000÷600＝</span><span>1,000円/個</span></div>
+        </div>
+        <div class="tbox-col r">
+          <div class="tbox-col-title">貸方（完成・月末）</div>
+          <div class="tbox-item answer"><span>完成品 500個</span><span>500,000</span></div>
+          <div class="tbox-item"><span>月末仕掛品 100個</span><span>100,000</span></div>
+          <div class="tbox-item total"><span>合　計</span><span>600,000</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tbox tbox-kak">
+      <div class="tbox-head">② 加工費ボックス（進捗度で換算）</div>
+      <div class="tbox-body">
+        <div class="tbox-col l">
+          <div class="tbox-col-title">借方（投入）</div>
+          <div class="tbox-item"><span>当工程加工費</span><span>550換算　660,000</span></div>
+          <div class="tbox-item total"><span>合　計</span><span>550換算　660,000</span></div>
+          <div class="tbox-item sub"><span>単価：660,000÷550＝</span><span>1,200円/換算</span></div>
+        </div>
+        <div class="tbox-col r">
+          <div class="tbox-col-title">貸方（完成・月末）</div>
+          <div class="tbox-item answer"><span>完成品 500個</span><span>600,000</span></div>
+          <div class="tbox-item"><span>月末換算 50個分</span><span>60,000</span></div>
+          <div class="tbox-item total"><span>合　計</span><span>660,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-box">
+    <div class="r-label">最終結果——合算</div>
+    <p>完成品総合原価 ＝ 500,000円（前工程費）＋ 600,000円（加工費）＝ <strong>1,100,000円</strong><br>
+    月末仕掛品原価 ＝ 100,000円（前工程費）＋ 60,000円（加工費）＝ <strong>160,000円</strong></p>
+  </div>
+  <div class="tip-box"><strong>検算：</strong>投入合計 600,000円（前工程費）＋ 660,000円（加工費）＝ 1,260,000円 ＝ 完成品1,100,000円 ＋ 月末仕掛品160,000円。ぴったり一致すれば計算ミスなしです。</div>
+
+  <h2>⚠ よくあるミス</h2>
+  <ul>
+    <li>前工程費を加工費のように進捗度で換算してしまう（前工程費は材料費と同じく数量按分）</li>
+    <li>第1工程の完成品原価を、第2工程で改めて材料費として計算し直してしまう</li>
+    <li>第1工程に月末仕掛品がある場合に、振り替える完成品原価と混同してしまう</li>
+    <li>非累加法の話だと思い込んで、2級の範囲外まで手を広げてしまう</li>
+  </ul>
+
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記2級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
+
+  <div class="matome">
+    <h3>📋 まとめ：工程別総合原価計算（累加法）早見表</h3>
+    <div class="matome-row"><span class="trigger">工程別総合原価計算とは</span><span class="result">複数工程で総合原価計算を繰り返す方法</span></div>
+    <div class="matome-row"><span class="trigger">累加法とは</span><span class="result">前工程費を次工程に引き継ぎ積み上げる方法</span></div>
+    <div class="matome-row"><span class="trigger">前工程費の扱い</span><span class="result">材料費と同じ位置、進捗度は考慮しない</span></div>
+    <div class="matome-row"><span class="trigger">2級の出題範囲</span><span class="result">累加法のみ（非累加法は1級）</span></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
+    <div style="font-size:32px;margin-bottom:12px;">🔗</div>
+    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">「前工程費＝材料費と同じ場所」——この1行でボックス図がもう1枚描けます</p>
+    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">工程が増えても、やることは単一工程のボックス図の繰り返しです。前工程費の置き場所さえ間違えなければ、工程別総合原価計算はもう怖くありません。この記事が「あ、そういうことか！」につながったら、僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！<br>Study Questで今日の学習時間を記録して、簿記2級マスターへの一歩を刻んでおきましょう。</p>
+    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
+  </div>
+</div>
+<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
+  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">工程別総合原価計算とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">製造工程が複数（第1工程・第2工程など）に分かれている場合に、工程ごとに原価を集計する総合原価計算の方法です。前の工程で完成した製品の原価を「前工程費」として次の工程に引き継ぎながら計算します。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">累加法とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">前工程の完成品原価を、次工程では前工程費として引き継ぎ、工程を追うごとに原価が積み重なっていく計算方法です。日商簿記2級で出題されるのは累加法のみで、非累加法は簿記1級の範囲です。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">前工程費はボックス図でどう扱いますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">前工程費は、次工程にとって「始点で投入した材料」と同じように扱います。すでに100%投入済みとして、完成品と月末仕掛品の間で数量按分し、加工進捗度は考慮しません。</div></details>
+</section>
+<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+  <a href="boki2-sogo-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">総合原価計算を完全解説｜ボックス図・平均法</div></a>
+  <a href="boki2-kobetsu-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">個別原価計算とは？製造指図書・仕掛品の流れ</div></a>
+  <a href="boki2-hyojun-vs-jissai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">標準原価計算と実際原価計算の違い</div></a>
+  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
+</div></div></section>
+<footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>
