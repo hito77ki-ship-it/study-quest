@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">標準原価計算と実際原価計算、目的からわかる3つの違い</title>
+  <desc id="desc">標準原価計算はあらかじめ設定した目標原価をもとに原価管理・差異分析を行うのに対し、実際原価計算は実際に発生した原価をそのまま集計するという、算定タイミングと目的の違いを対比する図解</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#f4f9ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:27px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16.5px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#ede9fe" opacity="0.6"/>
+  <circle cx="1100" cy="110" r="78" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1090" cy="740" r="88" fill="#dcfce7" opacity="0.45"/>
+  <circle cx="110" cy="730" r="70" fill="#ede9fe" opacity="0.45"/>
+
+  <text x="600" y="50" text-anchor="middle" class="title">標準原価計算 vs 実際原価計算 目的からわかる3つの違い</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">「事前に決めた目標」か「事後に集計した実績」か——算定するタイミングが全ての起点</text>
+
+  <!-- Left column: 標準原価計算 -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="104" width="500" height="46" rx="16" fill="#8B5CF6"/>
+    <text x="320" y="133" text-anchor="middle" class="colhead">標準原価計算（事前に決めた目標原価）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="70" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#c4b5fd" stroke-width="3"/>
+
+    <circle cx="108" cy="206" r="17" fill="#8B5CF6"/>
+    <text x="108" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="136" y="202" class="ptname">算定タイミング</text>
+    <text x="136" y="222" class="ptbody">期首など、製造が始まる前に「本来これくらい」と設定</text>
+
+    <line x1="96" y1="240" x2="546" y2="240" stroke="#ede9fe" stroke-width="2"/>
+
+    <circle cx="108" cy="278" r="17" fill="#8B5CF6"/>
+    <text x="108" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="136" y="274" class="ptname">目的</text>
+    <text x="136" y="294" class="ptbody">原価管理——ズレの原因を分析し、ムダを見つける</text>
+
+    <line x1="96" y1="312" x2="546" y2="312" stroke="#ede9fe" stroke-width="2"/>
+
+    <circle cx="108" cy="350" r="17" fill="#8B5CF6"/>
+    <text x="108" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="136" y="346" class="ptname">差異分析</text>
+    <text x="136" y="366" class="ptbody">標準と実際の差を、価格差異・数量差異等に分解する</text>
+
+    <line x1="96" y1="384" x2="546" y2="384" stroke="#ede9fe" stroke-width="2"/>
+
+    <circle cx="108" cy="422" r="17" fill="#8B5CF6"/>
+    <text x="108" y="427" text-anchor="middle" class="ptnum">4</text>
+    <text x="136" y="418" class="ptname">記帳方法</text>
+    <text x="136" y="438" class="ptbody">シングルプラン——仕掛品を標準原価だけで記録する</text>
+
+    <rect x="96" y="466" width="450" height="176" rx="14" fill="#f5f3ff"/>
+    <text x="120" y="496" class="ptname" fill="#6d28d9">見分けるキーワード</text>
+    <text x="120" y="522" class="ptbody">「標準原価」「原価差異」「有利差異」</text>
+    <text x="120" y="544" class="ptbody">「不利差異」「価格差異」「数量差異」</text>
+    <text x="120" y="576" class="ptname" fill="#6d28d9">問いかけ</text>
+    <text x="120" y="602" class="ptbody">「本来いくらで作れるはずだったか？」</text>
+    <text x="120" y="624" class="ptbody">→ 目標との比較がテーマ</text>
+  </g>
+
+  <!-- Right column: 実際原価計算 -->
+  <g filter="url(#softShadow)">
+    <rect x="630" y="104" width="500" height="46" rx="16" fill="#3B82F6"/>
+    <text x="880" y="133" text-anchor="middle" class="colhead">実際原価計算（事後に集計した実績原価）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="630" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+
+    <circle cx="668" cy="206" r="17" fill="#3B82F6"/>
+    <text x="668" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="696" y="202" class="ptname">算定タイミング</text>
+    <text x="696" y="222" class="ptbody">材料・労務費・経費が実際に発生した後に集計</text>
+
+    <line x1="656" y1="240" x2="1106" y2="240" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="668" cy="278" r="17" fill="#3B82F6"/>
+    <text x="668" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="696" y="274" class="ptname">目的</text>
+    <text x="696" y="294" class="ptbody">実際にいくらかかったかを、そのまま製品原価にする</text>
+
+    <line x1="656" y1="312" x2="1106" y2="312" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="668" cy="350" r="17" fill="#3B82F6"/>
+    <text x="668" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="696" y="346" class="ptname">差異分析</text>
+    <text x="696" y="366" class="ptbody">「差異」という概念自体がない——実績のみを記録</text>
+
+    <line x1="656" y1="384" x2="1106" y2="384" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="668" cy="422" r="17" fill="#3B82F6"/>
+    <text x="668" y="427" text-anchor="middle" class="ptnum">4</text>
+    <text x="696" y="418" class="ptname">記帳方法</text>
+    <text x="696" y="438" class="ptbody">個別原価計算・総合原価計算など実際発生額で記録</text>
+
+    <rect x="656" y="466" width="450" height="176" rx="14" fill="#eff6ff"/>
+    <text x="680" y="496" class="ptname" fill="#1d4ed8">見分けるキーワード</text>
+    <text x="680" y="522" class="ptbody">「実際にかかった」「実際原価」</text>
+    <text x="680" y="544" class="ptbody">「個別原価計算」「総合原価計算」</text>
+    <text x="680" y="576" class="ptname" fill="#1d4ed8">問いかけ</text>
+    <text x="680" y="602" class="ptbody">「実際いくらかかったのか？」</text>
+    <text x="680" y="624" class="ptbody">→ 事実の集計がテーマ</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="690" width="1060" height="92" rx="24" fill="#fffbeb" stroke="#fcd34d" stroke-width="3"/>
+    <text x="600" y="724" text-anchor="middle" class="banner">個別原価計算・総合原価計算は「実際原価計算」の仲間——標準原価計算だけが別枠</text>
+    <text x="600" y="750" text-anchor="middle" class="bannersmall">工業簿記で先に習う個別・総合原価計算は実際原価の集計方法。標準原価計算は「目標と比べる」という別の目的で追加される仕組み</text>
+  </g>
+</svg>
