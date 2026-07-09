@@ -93,7 +93,7 @@
 
     <circle cx="668" cy="278" r="17" fill="#f59e0b"/>
     <text x="668" y="283" text-anchor="middle" class="ptnum">2</text>
-    <text x="696" y="274" class="ptname">資産区分</text>
+    <text x="696" y="274" class="ptname">資産区分（2級知識）</text>
     <text x="696" y="294" class="ptbody">返済期日が1年以内→流動資産／1年超→固定資産（長期貸付金）</text>
 
     <line x1="656" y1="312" x2="1106" y2="312" stroke="#fef3c7" stroke-width="2"/>

@@ -78,7 +78,7 @@
 
   <circle cx="44" cy="794" r="15" fill="#f59e0b"/>
   <text x="44" y="799" text-anchor="middle" class="ptnum">2</text>
-  <text x="66" y="790" class="ptname">資産区分</text>
+  <text x="66" y="790" class="ptname">資産区分（2級知識）</text>
   <text x="66" y="808" class="ptbody">1年以内は流動資産／1年超は</text>
   <text x="66" y="824" class="ptbody">固定資産（長期貸付金）</text>
 
