@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1480" viewBox="0 0 360 1480" role="img" aria-labelledby="title desc">
+  <title id="title">売掛金と貸付金、発生原因からわかる3つの違い（モバイル版）</title>
+  <desc id="desc">売掛金は商品・サービスの掛け売りから発生し常に流動資産で利息が原則なしなのに対し、貸付金は金銭そのものの貸し付けから発生し返済期日が1年超なら固定資産（長期貸付金）に区分され受取利息が生じることが多いという、発生原因を起点にした3つの違いを対比する図解</desc>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f9ff"/>
+      <stop offset="1" stop-color="#fff9f0"/>
+    </linearGradient>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15.5px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1480" rx="20" fill="url(#mbg)"/>
+
+  <text x="180" y="28" text-anchor="middle" class="title">売掛金 vs 貸付金</text>
+  <text x="180" y="46" text-anchor="middle" class="sub">発生原因からわかる3つの違い</text>
+
+  <!-- 売掛金 -->
+  <rect x="16" y="64" width="328" height="40" rx="12" fill="#3B82F6"/>
+  <text x="180" y="89" text-anchor="middle" class="colhead">売掛金（掛け売りから発生）</text>
+
+  <rect x="16" y="116" width="328" height="500" rx="16" fill="#ffffff" stroke="#93c5fd" stroke-width="2.5"/>
+
+  <circle cx="44" cy="150" r="15" fill="#3B82F6"/>
+  <text x="44" y="155" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="146" class="ptname">発生原因</text>
+  <text x="66" y="164" class="ptbody">商品・サービスの掛け売り代金</text>
+
+  <line x1="30" y1="180" x2="330" y2="180" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="212" r="15" fill="#3B82F6"/>
+  <text x="44" y="217" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="208" class="ptname">資産区分</text>
+  <text x="66" y="226" class="ptbody">常に流動資産（短期回収前提）</text>
+
+  <line x1="30" y1="242" x2="330" y2="242" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="274" r="15" fill="#3B82F6"/>
+  <text x="44" y="279" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="270" class="ptname">利息</text>
+  <text x="66" y="288" class="ptbody">原則として発生しない</text>
+
+  <line x1="30" y1="304" x2="330" y2="304" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="336" r="15" fill="#3B82F6"/>
+  <text x="44" y="341" text-anchor="middle" class="ptnum">4</text>
+  <text x="66" y="332" class="ptname">貸倒引当金</text>
+  <text x="66" y="350" class="ptbody">売上債権として設定対象</text>
+
+  <rect x="30" y="374" width="300" height="226" rx="12" fill="#eff6ff"/>
+  <text x="46" y="400" class="ptname" fill="#1d4ed8">見分けるキーワード</text>
+  <text x="46" y="422" class="ptbody">「商品を売った」「サービスを提供」</text>
+  <text x="46" y="440" class="ptbody">「代金は掛けとした」</text>
+  <text x="46" y="470" class="ptname" fill="#1d4ed8">仕訳の相手科目</text>
+  <text x="46" y="494" class="ptbody">（借）売掛金 ／（貸）売上</text>
+  <text x="46" y="512" class="ptbody">→ 貸方に必ず収益科目が来る</text>
+
+  <!-- 貸付金 -->
+  <rect x="16" y="646" width="328" height="40" rx="12" fill="#f59e0b"/>
+  <text x="180" y="671" text-anchor="middle" class="colhead">貸付金（金銭の貸付から発生）</text>
+
+  <rect x="16" y="698" width="328" height="530" rx="16" fill="#ffffff" stroke="#fcd34d" stroke-width="2.5"/>
+
+  <circle cx="44" cy="732" r="15" fill="#f59e0b"/>
+  <text x="44" y="737" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="728" class="ptname">発生原因</text>
+  <text x="66" y="746" class="ptbody">金銭そのものを貸し付けた</text>
+
+  <line x1="30" y1="762" x2="330" y2="762" stroke="#fef3c7" stroke-width="2"/>
+
+  <circle cx="44" cy="794" r="15" fill="#f59e0b"/>
+  <text x="44" y="799" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="790" class="ptname">資産区分</text>
+  <text x="66" y="808" class="ptbody">1年以内は流動資産／1年超は</text>
+  <text x="66" y="824" class="ptbody">固定資産（長期貸付金）</text>
+
+  <line x1="30" y1="840" x2="330" y2="840" stroke="#fef3c7" stroke-width="2"/>
+
+  <circle cx="44" cy="872" r="15" fill="#f59e0b"/>
+  <text x="44" y="877" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="868" class="ptname">利息</text>
+  <text x="66" y="886" class="ptbody">受取利息が発生することが多い</text>
+
+  <line x1="30" y1="902" x2="330" y2="902" stroke="#fef3c7" stroke-width="2"/>
+
+  <circle cx="44" cy="934" r="15" fill="#f59e0b"/>
+  <text x="44" y="939" text-anchor="middle" class="ptnum">4</text>
+  <text x="66" y="930" class="ptname">貸倒引当金</text>
+  <text x="66" y="948" class="ptbody">金銭債権として設定対象だが</text>
+  <text x="66" y="964" class="ptbody">売上債権とは別区分</text>
+
+  <rect x="30" y="988" width="300" height="226" rx="12" fill="#fffbeb"/>
+  <text x="46" y="1014" class="ptname" fill="#b45309">見分けるキーワード</text>
+  <text x="46" y="1036" class="ptbody">「資金を貸した」「貸し付けた」</text>
+  <text x="46" y="1054" class="ptbody">「借用証書を受け取った」</text>
+  <text x="46" y="1084" class="ptname" fill="#b45309">仕訳の相手科目</text>
+  <text x="46" y="1108" class="ptbody">（借）貸付金 ／（貸）現金・当座預金</text>
+  <text x="46" y="1126" class="ptbody">→ 貸方に収益科目は来ない</text>
+
+  <!-- Bottom banner -->
+  <rect x="16" y="1250" width="328" height="200" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2.5"/>
+  <text x="180" y="1282" text-anchor="middle" class="banner">迷ったら「何が動いたか」</text>
+  <text x="180" y="1302" text-anchor="middle" class="banner">だけを見る</text>
+  <text x="180" y="1330" text-anchor="middle" class="bannersmall">問題文に「売上」「販売」があれば</text>
+  <text x="180" y="1348" text-anchor="middle" class="bannersmall">売掛金、「貸し付けた」「資金」が</text>
+  <text x="180" y="1366" text-anchor="middle" class="bannersmall">あれば貸付金</text>
+  <text x="180" y="1394" text-anchor="middle" class="bannersmall">発生原因が全ての判断基準になる</text>
+</svg>
