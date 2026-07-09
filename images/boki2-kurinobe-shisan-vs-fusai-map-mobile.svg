@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1420" viewBox="0 0 360 1420" role="img" aria-labelledby="title desc">
+  <title id="title">繰延税金資産と繰延税金負債、将来の税金への影響からわかる違い（モバイル版）</title>
+  <desc id="desc">繰延税金資産は将来支払う法人税等が減少することを意味する資産で将来減算一時差異から生じるのに対し、繰延税金負債は将来支払う法人税等が増加することを意味する負債で将来加算一時差異から生じるという違いを対比する図解</desc>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0fdf4"/>
+      <stop offset="1" stop-color="#fef2f2"/>
+    </linearGradient>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1420" rx="20" fill="url(#mbg)"/>
+
+  <text x="180" y="26" text-anchor="middle" class="title">繰延税金資産 vs 繰延税金負債</text>
+  <text x="180" y="44" text-anchor="middle" class="sub">将来の税金への影響からわかる違い</text>
+
+  <!-- 繰延税金資産 -->
+  <rect x="16" y="62" width="328" height="40" rx="12" fill="#22c55e"/>
+  <text x="180" y="87" text-anchor="middle" class="colhead">繰延税金資産（税金が減る）</text>
+
+  <rect x="16" y="114" width="328" height="480" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+
+  <circle cx="44" cy="148" r="15" fill="#22c55e"/>
+  <text x="44" y="153" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="144" class="ptname">意味</text>
+  <text x="66" y="162" class="ptbody">将来支払う法人税等が減少する資産</text>
+
+  <line x1="30" y1="178" x2="330" y2="178" stroke="#dcfce7" stroke-width="2"/>
+
+  <circle cx="44" cy="210" r="15" fill="#22c55e"/>
+  <text x="44" y="215" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="206" class="ptname">発生する一時差異</text>
+  <text x="66" y="224" class="ptbody">将来減算一時差異</text>
+
+  <line x1="30" y1="240" x2="330" y2="240" stroke="#dcfce7" stroke-width="2"/>
+
+  <circle cx="44" cy="272" r="15" fill="#22c55e"/>
+  <text x="44" y="277" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="268" class="ptname">直感的なイメージ</text>
+  <text x="66" y="286" class="ptbody">税金の前払いのようなもの</text>
+
+  <rect x="30" y="354" width="300" height="226" rx="12" fill="#f0fdf4"/>
+  <text x="46" y="380" class="ptname" fill="#166534">よくある発生例</text>
+  <text x="46" y="402" class="ptbody">・貸倒引当金の損金不算入</text>
+  <text x="46" y="420" class="ptbody">・減価償却費の償却限度超過額</text>
+  <text x="46" y="450" class="ptname" fill="#166534">仕訳の型</text>
+  <text x="46" y="474" class="ptbody">（借）繰延税金資産</text>
+  <text x="46" y="492" class="ptbody">（貸）法人税等調整額</text>
+  <text x="46" y="514" class="ptbody">→ 調整額はマイナス（税金を減らす）</text>
+
+  <!-- 繰延税金負債 -->
+  <rect x="16" y="614" width="328" height="40" rx="12" fill="#ef4444"/>
+  <text x="180" y="639" text-anchor="middle" class="colhead">繰延税金負債（税金が増える）</text>
+
+  <rect x="16" y="666" width="328" height="480" rx="16" fill="#ffffff" stroke="#fca5a5" stroke-width="2.5"/>
+
+  <circle cx="44" cy="700" r="15" fill="#ef4444"/>
+  <text x="44" y="705" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="696" class="ptname">意味</text>
+  <text x="66" y="714" class="ptbody">将来支払う法人税等が増加する負債</text>
+
+  <line x1="30" y1="730" x2="330" y2="730" stroke="#fee2e2" stroke-width="2"/>
+
+  <circle cx="44" cy="762" r="15" fill="#ef4444"/>
+  <text x="44" y="767" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="758" class="ptname">発生する一時差異</text>
+  <text x="66" y="776" class="ptbody">将来加算一時差異</text>
+
+  <line x1="30" y1="792" x2="330" y2="792" stroke="#fee2e2" stroke-width="2"/>
+
+  <circle cx="44" cy="824" r="15" fill="#ef4444"/>
+  <text x="44" y="829" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="820" class="ptname">直感的なイメージ</text>
+  <text x="66" y="838" class="ptbody">税金の未払いのようなもの</text>
+
+  <rect x="30" y="906" width="300" height="226" rx="12" fill="#fef2f2"/>
+  <text x="46" y="932" class="ptname" fill="#b91c1c">よくある発生例</text>
+  <text x="46" y="954" class="ptbody">・その他有価証券の評価差益</text>
+  <text x="46" y="972" class="ptbody">・積立金方式の圧縮記帳</text>
+  <text x="46" y="1002" class="ptname" fill="#b91c1c">仕訳の型</text>
+  <text x="46" y="1026" class="ptbody">（借）法人税等調整額</text>
+  <text x="46" y="1044" class="ptbody">（貸）繰延税金負債</text>
+  <text x="46" y="1066" class="ptbody">→ 調整額はプラス（税金を増やす）</text>
+
+  <!-- Bottom banner -->
+  <rect x="16" y="1200" width="328" height="180" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2.5"/>
+  <text x="180" y="1230" text-anchor="middle" class="banner">迷ったら「将来の税金が</text>
+  <text x="180" y="1250" text-anchor="middle" class="banner">減るか、増えるか」だけ</text>
+  <text x="180" y="1278" text-anchor="middle" class="bannersmall">両方が同時に発生した場合は</text>
+  <text x="180" y="1296" text-anchor="middle" class="bannersmall">貸借対照表上で相殺して</text>
+  <text x="180" y="1314" text-anchor="middle" class="bannersmall">表示することがある</text>
+</svg>
