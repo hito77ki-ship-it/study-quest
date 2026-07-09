@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">総合償却と個別償却の違い</title>
+  <desc id="desc">個別償却は各固定資産を個別に減価償却する方法であるのに対し、総合償却は複数の固定資産を一つの償却単位としてまとめて平均耐用年数を算定し一括で減価償却費を計算する方法であり、端数処理の関係で個別償却の合計額とは一致しないという違いを対比する図解</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:26px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#dbeafe" opacity="0.6"/>
+  <circle cx="1100" cy="110" r="78" fill="#dcfce7" opacity="0.55"/>
+  <circle cx="1090" cy="740" r="88" fill="#dcfce7" opacity="0.4"/>
+  <circle cx="110" cy="730" r="70" fill="#dbeafe" opacity="0.45"/>
+
+  <text x="600" y="50" text-anchor="middle" class="title">個別償却 vs 総合償却 計算単位の違い</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">資産ごとに計算するか、まとめて1つの単位として計算するか</text>
+
+  <!-- Left column: 個別償却 -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="104" width="500" height="46" rx="16" fill="#1D4ED8"/>
+    <text x="320" y="133" text-anchor="middle" class="colhead">個別償却（簿記2級までの前提）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="70" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+
+    <circle cx="108" cy="206" r="17" fill="#1D4ED8"/>
+    <text x="108" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="136" y="202" class="ptname">計算単位</text>
+    <text x="136" y="222" class="ptbody">資産1つ1つを個別に減価償却する</text>
+
+    <line x1="96" y1="240" x2="546" y2="240" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="108" cy="278" r="17" fill="#1D4ED8"/>
+    <text x="108" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="136" y="274" class="ptname">除却時の処理</text>
+    <text x="136" y="294" class="ptbody">その資産の未償却残高がそのまま除却損になる</text>
+
+    <line x1="96" y1="312" x2="546" y2="312" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="108" cy="350" r="17" fill="#1D4ED8"/>
+    <text x="108" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="136" y="346" class="ptname">向いている場面</text>
+    <text x="136" y="366" class="ptbody">資産の入れ替えが少なく、資産ごとの管理が必要な場合</text>
+
+    <rect x="96" y="466" width="450" height="176" rx="14" fill="#eff6ff"/>
+    <text x="120" y="496" class="ptname" fill="#1d4ed8">計算式</text>
+    <text x="120" y="522" class="ptbody">各資産の年間償却費＝要償却額÷耐用年数</text>
+    <text x="120" y="554" class="ptname" fill="#1d4ed8">見分けるキーワード</text>
+    <text x="120" y="580" class="ptbody">「各資産ごとに」「1台ずつ」</text>
+    <text x="120" y="606" class="ptbody">出題範囲：簿記2級までの標準的な方法</text>
+  </g>
+
+  <!-- Right column: 総合償却 -->
+  <g filter="url(#softShadow)">
+    <rect x="630" y="104" width="500" height="46" rx="16" fill="#166534"/>
+    <text x="880" y="133" text-anchor="middle" class="colhead">総合償却（簿記1級で追加）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="630" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#86efac" stroke-width="3"/>
+
+    <circle cx="668" cy="206" r="17" fill="#166534"/>
+    <text x="668" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="696" y="202" class="ptname">計算単位</text>
+    <text x="696" y="222" class="ptbody">複数の資産を1つの償却単位としてまとめて計算</text>
+
+    <line x1="656" y1="240" x2="1106" y2="240" stroke="#dcfce7" stroke-width="2"/>
+
+    <circle cx="668" cy="278" r="17" fill="#166534"/>
+    <text x="668" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="696" y="274" class="ptname">除却時の処理</text>
+    <text x="696" y="294" class="ptbody">その資産の未償却残高はわからない（貯蔵品で処理）</text>
+
+    <line x1="656" y1="312" x2="1106" y2="312" stroke="#dcfce7" stroke-width="2"/>
+
+    <circle cx="668" cy="350" r="17" fill="#166534"/>
+    <text x="696" y="346" class="ptname">向いている場面</text>
+    <text x="696" y="366" class="ptbody">性質の近い資産が多数あり、入れ替えが多い場合</text>
+    <text x="668" y="355" text-anchor="middle" class="ptnum">3</text>
+
+    <rect x="656" y="466" width="450" height="176" rx="14" fill="#f0fdf4"/>
+    <text x="680" y="496" class="ptname" fill="#166534">計算式</text>
+    <text x="680" y="522" class="ptbody">平均耐用年数＝要償却額合計÷年間償却額合計</text>
+    <text x="680" y="554" class="ptname" fill="#166534">見分けるキーワード</text>
+    <text x="680" y="580" class="ptbody">「償却単位」「平均耐用年数」</text>
+    <text x="680" y="606" class="ptbody">出題範囲：簿記1級のみ</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="690" width="1060" height="92" rx="24" fill="#fffbeb" stroke="#fcd34d" stroke-width="3"/>
+    <text x="600" y="724" text-anchor="middle" class="banner">端数処理のせいで、総合償却費は個別償却の合計額と一致しない</text>
+    <text x="600" y="750" text-anchor="middle" class="bannersmall">平均耐用年数を計算する過程で端数を切り捨てるため、まとめて計算した金額と、資産ごとに計算した金額の合計は必ずしも同じにならない</text>
+  </g>
+</svg>
