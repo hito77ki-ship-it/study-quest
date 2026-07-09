@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1480" viewBox="0 0 360 1480" role="img" aria-labelledby="title desc">
+  <title id="title">のれんと負ののれんの違い（モバイル版）</title>
+  <desc id="desc">合併対価が受け入れた純資産額を上回る場合はのれんとして資産計上し、逆に受け入れた純資産額が合併対価を上回る場合は負ののれん発生益として収益にすぐ計上するという、正反対の処理を対比する図解</desc>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:9.5px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1480" rx="20" fill="url(#mbg)"/>
+
+  <text x="180" y="26" text-anchor="middle" class="title">のれん vs 負ののれん</text>
+  <text x="180" y="44" text-anchor="middle" class="sub">対価と純資産の大小関係</text>
+
+  <!-- のれん -->
+  <rect x="16" y="62" width="328" height="42" rx="12" fill="#1D4ED8"/>
+  <text x="180" y="88" text-anchor="middle" class="colhead">のれん（対価＞受入純資産）</text>
+
+  <rect x="16" y="116" width="328" height="500" rx="16" fill="#ffffff" stroke="#93c5fd" stroke-width="2.5"/>
+
+  <circle cx="44" cy="150" r="15" fill="#1D4ED8"/>
+  <text x="44" y="155" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="146" class="ptname">発生条件</text>
+  <text x="66" y="164" class="ptbody">合併対価が受入純資産額より大きい</text>
+
+  <line x1="30" y1="180" x2="330" y2="180" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="212" r="15" fill="#1D4ED8"/>
+  <text x="44" y="217" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="208" class="ptname">勘定科目の分類</text>
+  <text x="66" y="226" class="ptbody">資産（貸借対照表に計上・償却）</text>
+
+  <line x1="30" y1="242" x2="330" y2="242" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="274" r="15" fill="#1D4ED8"/>
+  <text x="44" y="279" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="270" class="ptname">直感的なイメージ</text>
+  <text x="66" y="288" class="ptbody">ブランド力にプレミアムを払った</text>
+
+  <rect x="30" y="374" width="300" height="226" rx="12" fill="#eff6ff"/>
+  <text x="46" y="400" class="ptname" fill="#1d4ed8">仕訳の型</text>
+  <text x="46" y="424" class="ptbody">（借）諸資産・のれん</text>
+  <text x="46" y="442" class="ptbody">（貸）諸負債・対価</text>
+  <text x="46" y="470" class="ptname" fill="#1d4ed8">見分けるキーワード</text>
+  <text x="46" y="494" class="ptbody">「割高で買った」「プレミアム」</text>
+  <text x="46" y="512" class="ptbody">→ 対価の方が大きい</text>
+
+  <!-- 負ののれん -->
+  <rect x="16" y="646" width="328" height="42" rx="12" fill="#166534"/>
+  <text x="180" y="672" text-anchor="middle" class="colhead">負ののれん（受入純資産＞対価）</text>
+
+  <rect x="16" y="700" width="328" height="500" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+
+  <circle cx="44" cy="734" r="15" fill="#166534"/>
+  <text x="44" y="739" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="730" class="ptname">発生条件</text>
+  <text x="66" y="748" class="ptbody">受入純資産額が合併対価より大きい</text>
+
+  <line x1="30" y1="764" x2="330" y2="764" stroke="#dcfce7" stroke-width="2"/>
+
+  <circle cx="44" cy="796" r="15" fill="#166534"/>
+  <text x="44" y="801" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="792" class="ptname">勘定科目の分類</text>
+  <text x="66" y="810" class="ptbody">収益（発生益として即座に計上）</text>
+
+  <line x1="30" y1="826" x2="330" y2="826" stroke="#dcfce7" stroke-width="2"/>
+
+  <circle cx="44" cy="858" r="15" fill="#166534"/>
+  <text x="44" y="863" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="854" class="ptname">直感的なイメージ</text>
+  <text x="66" y="872" class="ptbody">割安で買えて得をした分</text>
+
+  <rect x="30" y="956" width="300" height="226" rx="12" fill="#f0fdf4"/>
+  <text x="46" y="982" class="ptname" fill="#166534">仕訳の型</text>
+  <text x="46" y="1006" class="ptbody">（借）諸資産・対価</text>
+  <text x="46" y="1024" class="ptbody">（貸）諸負債・発生益</text>
+  <text x="46" y="1052" class="ptname" fill="#166534">見分けるキーワード</text>
+  <text x="46" y="1076" class="ptbody">「割安で買収できた」</text>
+  <text x="46" y="1094" class="ptbody">→ 受入純資産額の方が大きい</text>
+
+  <!-- Bottom banner -->
+  <rect x="16" y="1250" width="328" height="200" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2.5"/>
+  <text x="180" y="1280" text-anchor="middle" class="banner">負ののれんは「負債」でなく</text>
+  <text x="180" y="1298" text-anchor="middle" class="banner">「収益」</text>
+  <text x="180" y="1326" text-anchor="middle" class="bannersmall">「負」がつくが返す義務のある</text>
+  <text x="180" y="1344" text-anchor="middle" class="bannersmall">お金ではなく、得をした分</text>
+  <text x="180" y="1362" text-anchor="middle" class="bannersmall">なので収益として計上する</text>
+</svg>
