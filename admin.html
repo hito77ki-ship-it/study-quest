@@ -819,7 +819,14 @@ async function initAuth() {
     return;
   }
   const { data: { session } } = await sb.auth.getSession();
-  if (session) showAdminScreen();
+  if (session) {
+    const { data: isAdmin } = await sb.rpc('is_admin');
+    if (isAdmin) {
+      showAdminScreen();
+    } else {
+      await sb.auth.signOut();
+    }
+  }
 }
 initAuth();
 
@@ -844,7 +851,6 @@ const LOCK_KEY = 'sq_admin_lock';
 const FAIL_KEY = 'sq_admin_fails';
 const MAX_FAILS = 5;
 const LOCK_MINS = 15;
-const ADMIN_EMAILS = ['hitoki2477@yahoo.co.jp', 'hito77ki@gmail.com'];
 
 function getLockState() {
   try {
@@ -879,12 +885,6 @@ async function handleLogin(e) {
     showError(`ロック中です。${rem}分後に再試行してください。`);
     return;
   }
-  if (!ADMIN_EMAILS.includes(email)) {
-    recordFail();
-    showError('このアカウントには管理者権限がありません。');
-    document.getElementById('adminPw').value = '';
-    return;
-  }
   const { error } = await sb.auth.signInWithPassword({ email, password: pw });
   if (error) {
     const count = recordFail();
@@ -892,6 +892,14 @@ async function handleLogin(e) {
     showError(rem <= 0
       ? `ロックしました。${LOCK_MINS}分後に再試行してください。`
       : `メールアドレスまたはパスワードが違います。（残り${rem}回）`);
+    document.getElementById('adminPw').value = '';
+    return;
+  }
+  const { data: isAdmin, error: adminCheckError } = await sb.rpc('is_admin');
+  if (adminCheckError || !isAdmin) {
+    await sb.auth.signOut();
+    recordFail();
+    showError('このアカウントには管理者権限がありません。');
     document.getElementById('adminPw').value = '';
     return;
   }
@@ -920,10 +928,7 @@ async function loadData() {
   document.getElementById('mainContent').style.display = 'none';
 
   try {
-    const { data, error } = await sb.from('profiles')
-      .select('*')
-      .order('total_study_mins', { ascending: false })
-      .limit(1000);
+    const { data, error } = await sb.rpc('admin_get_all_profiles');
 
     if (error) throw error;
     if (!data || !data.length) {
