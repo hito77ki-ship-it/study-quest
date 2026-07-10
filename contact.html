@@ -2,14 +2,22 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://study-quest.net/contact.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お問い合わせ｜スタディクエスト</title>
+<meta name="description" content="スタディクエストへのバグ報告・機能のご要望・その他ご質問はこちらのフォームからどうぞ。通常2〜3日以内にご返信します。">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.8;}
 a{text-decoration:none;color:var(--green2);}
+a:hover{text-decoration:underline;}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;}
 .nav-inner{max-width:1080px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;}
@@ -18,26 +26,45 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-back{color:var(--muted);font-size:13px;padding:9px 20px;border-radius:100px;border:1px solid var(--border);transition:all .2s;}
 .nav-back:hover{border-color:var(--green);color:var(--green);}
 
-.container{max-width:640px;margin:0 auto;padding:100px 24px 64px;text-align:center;}
-h1{font-size:28px;font-weight:700;margin-bottom:12px;}
-.lead{color:var(--muted);font-size:15px;margin-bottom:48px;line-height:1.8;}
+.container{max-width:680px;margin:0 auto;padding:100px 24px 64px;}
 
-.contact-card{background:#F8FDF0;border:1px solid #D4EDAD;border-radius:16px;padding:36px 32px;text-align:left;}
-.contact-card h2{font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
-.contact-card p{font-size:14px;color:#374151;margin-bottom:20px;}
+.hero{text-align:center;margin-bottom:40px;}
+.hero-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#4A9D2B);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;box-shadow:0 8px 20px rgba(140,198,63,.25);}
+h1{font-size:28px;font-weight:700;margin-bottom:10px;}
+.lead{color:var(--muted);font-size:15px;line-height:1.8;}
+
+.quick-routes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+@media(max-width:520px){.quick-routes{grid-template-columns:1fr;}}
+.route-card{background:var(--light);border:1px solid var(--border);border-radius:12px;padding:16px 18px;font-size:13px;color:#374151;}
+.route-card strong{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);margin-bottom:4px;}
+.route-card a{font-weight:700;}
+
+.contact-card{background:#F8FDF0;border:1px solid #D4EDAD;border-radius:18px;padding:36px 32px;}
+.contact-card h2{font-size:16px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.contact-card>p{font-size:14px;color:#374151;margin-bottom:24px;}
 
 .form-group{margin-bottom:20px;}
 .form-group label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--text);}
+.form-group label .req{color:#EF4444;margin-left:2px;}
 .form-group input,
 .form-group select,
-.form-group textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:'Noto Sans JP',sans-serif;color:var(--text);transition:border-color .2s;outline:none;background:#fff;}
+.form-group textarea{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:'Noto Sans JP',sans-serif;color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none;background:#fff;}
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus{border-color:var(--green);}
+.form-group textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(140,198,63,.15);}
 .form-group textarea{resize:vertical;min-height:140px;}
 
-.btn-submit{width:100%;background:var(--green);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:100px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:background .2s;margin-top:8px;}
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:520px){.type-grid{grid-template-columns:1fr;}}
+.type-option{position:relative;}
+.type-option input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;}
+.type-option label{display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:500;color:#374151;cursor:pointer;transition:all .15s;margin:0;}
+.type-option input:checked+label{border-color:var(--green);background:#F0FFF4;color:#276749;font-weight:700;}
+.type-option .ti{font-size:16px;}
+
+.btn-submit{width:100%;background:var(--green);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:100px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:background .2s,transform .1s;margin-top:8px;}
 .btn-submit:hover{background:var(--green2);}
+.btn-submit:active{transform:scale(.98);}
 .btn-submit:disabled{opacity:.6;cursor:not-allowed;}
 
 .note{font-size:12px;color:var(--muted);margin-top:16px;text-align:center;}
@@ -62,16 +89,24 @@ footer{background:#111827;padding:32px 24px;text-align:center;margin-top:64px;}
 </nav>
 
 <div class="container">
-  <h1>お問い合わせ</h1>
-  <p class="lead">バグの報告・機能のご要望・その他ご質問はこちらからどうぞ。<br>通常2〜3日以内にご返信します。</p>
+  <div class="hero">
+    <div class="hero-icon">📬</div>
+    <h1>お問い合わせ</h1>
+    <p class="lead">バグの報告・機能のご要望・その他ご質問はこちらからどうぞ。<br>通常2〜3日以内にご返信します。</p>
+  </div>
+
+  <div class="quick-routes">
+    <div class="route-card"><strong>🐛 バグ・不具合</strong>いつ・どの画面で・何をしたときに起きたかを書いていただけるとすぐ調査できます。</div>
+    <div class="route-card"><strong>⚡ お急ぎの方</strong>フォームが使えない場合は<a href="https://x.com/ichiro_cpa_st" target="_blank" rel="noopener">@ichiro_cpa_st</a>（X）にDMもOKです。</div>
+  </div>
 
   <div class="contact-card">
-    <h2>📬 お問い合わせフォーム</h2>
+    <h2>お問い合わせフォーム</h2>
     <p>以下のフォームに必要事項を入力して送信してください。</p>
 
     <form id="contactForm" onsubmit="handleSubmit(event)">
       <div class="form-group">
-        <label>お名前（ニックネーム可）<span style="color:#EF4444">*</span></label>
+        <label>お名前（ニックネーム可）<span class="req">*</span></label>
         <input type="text" id="f_name" placeholder="冒険者名など" required>
       </div>
       <div class="form-group">
@@ -79,17 +114,16 @@ footer{background:#111827;padding:32px 24px;text-align:center;margin-top:64px;}
         <input type="email" id="f_email" placeholder="任意">
       </div>
       <div class="form-group">
-        <label>お問い合わせ種別<span style="color:#EF4444">*</span></label>
-        <select id="f_type" required>
-          <option value="">選択してください</option>
-          <option value="バグ報告">バグ・不具合の報告</option>
-          <option value="機能要望">機能のご要望</option>
-          <option value="アカウントについて">アカウント・データについて</option>
-          <option value="その他">その他</option>
-        </select>
+        <label>お問い合わせ種別<span class="req">*</span></label>
+        <div class="type-grid" id="typeGrid">
+          <div class="type-option"><input type="radio" name="f_type_radio" id="type1" value="バグ・不具合の報告" required><label for="type1"><span class="ti">🐛</span>バグ・不具合の報告</label></div>
+          <div class="type-option"><input type="radio" name="f_type_radio" id="type2" value="機能のご要望"><label for="type2"><span class="ti">💡</span>機能のご要望</label></div>
+          <div class="type-option"><input type="radio" name="f_type_radio" id="type3" value="アカウント・データについて"><label for="type3"><span class="ti">🔑</span>アカウント・データについて</label></div>
+          <div class="type-option"><input type="radio" name="f_type_radio" id="type4" value="その他"><label for="type4"><span class="ti">💬</span>その他</label></div>
+        </div>
       </div>
       <div class="form-group">
-        <label>お問い合わせ内容<span style="color:#EF4444">*</span></label>
+        <label>お問い合わせ内容<span class="req">*</span></label>
         <textarea id="f_message" placeholder="詳しく教えていただけると助かります。" required></textarea>
       </div>
       <button type="submit" class="btn-submit" id="submitBtn">送信する</button>
@@ -97,7 +131,7 @@ footer{background:#111827;padding:32px 24px;text-align:center;margin-top:64px;}
     </form>
 
     <div id="successMsg" style="display:none;text-align:center;padding:32px 0;">
-      <div style="font-size:48px;margin-bottom:16px;">✅</div>
+      <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#4A9D2B);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;">✓</div>
       <div style="font-size:18px;font-weight:700;margin-bottom:8px;">送信しました！</div>
       <div style="font-size:14px;color:#718096;">お問い合わせありがとうございます。確認次第ご連絡します。</div>
     </div>
@@ -126,10 +160,12 @@ async function handleSubmit(e) {
   btn.textContent = '送信中...';
   btn.disabled = true;
 
+  const typeEl = document.querySelector('input[name="f_type_radio"]:checked');
+
   const body = new FormData();
   body.append('entry.206498477',  document.getElementById('f_name').value);
   body.append('entry.1572080067', document.getElementById('f_email').value);
-  body.append('entry.1970467623', document.getElementById('f_type').value);
+  body.append('entry.1970467623', typeEl ? typeEl.value : '');
   body.append('entry.1205251950', document.getElementById('f_message').value);
 
   try {

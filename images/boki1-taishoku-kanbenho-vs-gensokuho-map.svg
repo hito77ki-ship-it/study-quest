@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">退職給付会計の簡便法と原則法の違い</title>
+  <desc id="desc">簡便法は期末の退職給付債務から年金資産を引いた期末要支給額のみで退職給付引当金を計算する方法であるのに対し、原則法は勤務費用・利息費用・期待運用収益を毎期積み上げて退職給付費用を計算する方法であるという違いを対比する図解</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="0.5" stop-color="#fbfdf5"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#667085" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:26px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:16px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:13px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:15px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" rx="40" fill="url(#bg)"/>
+  <circle cx="100" cy="90" r="64" fill="#dbeafe" opacity="0.6"/>
+  <circle cx="1100" cy="110" r="78" fill="#dcfce7" opacity="0.55"/>
+  <circle cx="1090" cy="740" r="88" fill="#dcfce7" opacity="0.4"/>
+  <circle cx="110" cy="730" r="70" fill="#dbeafe" opacity="0.45"/>
+
+  <text x="600" y="50" text-anchor="middle" class="title">簡便法 vs 原則法 退職給付会計の違い</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">期末の帳尻を合わせるか、毎期の動きを積み上げるか</text>
+
+  <!-- Left column: 簡便法 -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="104" width="500" height="46" rx="16" fill="#1D4ED8"/>
+    <text x="320" y="133" text-anchor="middle" class="colhead">簡便法（簿記2級までの前提）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="70" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
+
+    <circle cx="108" cy="206" r="17" fill="#1D4ED8"/>
+    <text x="108" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="136" y="202" class="ptname">計算方法</text>
+    <text x="136" y="222" class="ptbody">期末の要支給額から年金資産を引くだけ</text>
+
+    <line x1="96" y1="240" x2="546" y2="240" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="108" cy="278" r="17" fill="#1D4ED8"/>
+    <text x="108" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="136" y="274" class="ptname">費用の内訳</text>
+    <text x="136" y="294" class="ptbody">残高の変動額をそのまま費用にする（分解しない）</text>
+
+    <line x1="96" y1="312" x2="546" y2="312" stroke="#dbeafe" stroke-width="2"/>
+
+    <circle cx="108" cy="350" r="17" fill="#1D4ED8"/>
+    <text x="108" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="136" y="346" class="ptname">向いている場面</text>
+    <text x="136" y="366" class="ptbody">中小企業など、制度がシンプルな場合</text>
+
+    <rect x="96" y="466" width="450" height="176" rx="14" fill="#eff6ff"/>
+    <text x="120" y="496" class="ptname" fill="#1d4ed8">計算式</text>
+    <text x="120" y="522" class="ptbody">退職給付引当金＝期末要支給額－年金資産</text>
+    <text x="120" y="554" class="ptname" fill="#1d4ed8">見分けるキーワード</text>
+    <text x="120" y="580" class="ptbody">「期末要支給額」「中小企業」</text>
+    <text x="120" y="606" class="ptbody">出題範囲：簿記2級までの標準的な方法</text>
+  </g>
+
+  <!-- Right column: 原則法 -->
+  <g filter="url(#softShadow)">
+    <rect x="630" y="104" width="500" height="46" rx="16" fill="#166534"/>
+    <text x="880" y="133" text-anchor="middle" class="colhead">原則法（簿記1級で追加）</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="630" y="166" width="500" height="500" rx="22" fill="#ffffff" stroke="#86efac" stroke-width="3"/>
+
+    <circle cx="668" cy="206" r="17" fill="#166534"/>
+    <text x="668" y="211" text-anchor="middle" class="ptnum">1</text>
+    <text x="696" y="202" class="ptname">計算方法</text>
+    <text x="696" y="222" class="ptbody">勤務費用・利息費用・期待運用収益を毎期積み上げる</text>
+
+    <line x1="656" y1="240" x2="1106" y2="240" stroke="#dcfce7" stroke-width="2"/>
+
+    <circle cx="668" cy="278" r="17" fill="#166534"/>
+    <text x="668" y="283" text-anchor="middle" class="ptnum">2</text>
+    <text x="696" y="274" class="ptname">費用の内訳</text>
+    <text x="696" y="294" class="ptbody">3つの要素に分けて動きを追う</text>
+
+    <line x1="656" y1="312" x2="1106" y2="312" stroke="#dcfce7" stroke-width="2"/>
+
+    <circle cx="668" cy="350" r="17" fill="#166534"/>
+    <text x="668" y="355" text-anchor="middle" class="ptnum">3</text>
+    <text x="696" y="346" class="ptname">向いている場面</text>
+    <text x="696" y="366" class="ptbody">大企業・上場企業など、詳細な開示が必要な場合</text>
+
+    <rect x="656" y="466" width="450" height="176" rx="14" fill="#f0fdf4"/>
+    <text x="680" y="496" class="ptname" fill="#166534">計算式</text>
+    <text x="680" y="522" class="ptbody">退職給付費用＝勤務費用＋利息費用－期待運用収益</text>
+    <text x="680" y="554" class="ptname" fill="#166534">見分けるキーワード</text>
+    <text x="680" y="580" class="ptbody">「勤務費用」「利息費用」「期待運用収益」</text>
+    <text x="680" y="606" class="ptbody">出題範囲：簿記1級のみ</text>
+  </g>
+
+  <!-- Bottom takeaway banner -->
+  <g filter="url(#softShadow)">
+    <rect x="70" y="690" width="1060" height="92" rx="24" fill="#fffbeb" stroke="#fcd34d" stroke-width="3"/>
+    <text x="600" y="724" text-anchor="middle" class="banner">簡便法は「期末の帳尻合わせ」、原則法は「毎期の動きの積み上げ」</text>
+    <text x="600" y="750" text-anchor="middle" class="bannersmall">簡便法は期末残高の差額だけを見るが、原則法は勤務費用・利息費用・期待運用収益という3つの動きを毎期計算して積み上げる</text>
+  </g>
+</svg>

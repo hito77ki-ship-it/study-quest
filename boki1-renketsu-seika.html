@@ -55,7 +55,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
       <div class="sq-chat-avatar teacher"><img src="images/icon-otani.png" alt="大谷"></div>
       <div>
         <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">その気持ち、すごくよく分かります。でも実は、2級で学んだ「資本連結」（投資と資本の相殺）と、1級で新しく出てくる「成果連結」は、目的が全然違うんです。資本連結は「親会社が子会社を持っている」という状態を1回だけ整理するもの。成果連結は「今年1年、グループ内でやり取りした取引」を毎期消していくもの。この違いさえ最初に押さえれば、あとは怖くありません。</div>
+        <div class="sq-chat-bubble">その気持ち、すごくよく分かります。でも実は、2級で学んだ「資本連結」（投資と資本の相殺）と、1級で新しく出てくる「成果連結」は、目的が全然違うんです。資本連結は「親会社が子会社を持っている」という状態を、取得時の金額のまま毎期同じ形で繰り返し整理するもの。成果連結は「今年1年、グループ内でやり取りした取引」を、その期ごとに新しく消していくもの。どちらも毎期の連結決算で必要になりますが、「金額が基本的に変わらないか、毎回変わるか」が違います。この違いさえ最初に押さえれば、あとは怖くありません。</div>
       </div>
     </div>
     <div class="sq-chat-row student">
@@ -79,10 +79,10 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
   <h2>資本連結との違い——「状態」を整理するか「取引」を消すか</h2>
   <table>
     <tr><th>区分</th><th>目的</th><th>タイミング</th></tr>
-    <tr><td>資本連結</td><td>親会社の投資と子会社の資本を相殺する</td><td>支配獲得時に1回（以後は変動があれば都度）</td></tr>
-    <tr><td>成果連結</td><td>グループ内取引・そこから生じた未実現利益を消す</td><td>毎期の連結決算のたびに</td></tr>
+    <tr><td>資本連結</td><td>親会社の投資と子会社の資本を相殺する</td><td>毎期の連結決算のたびに（取得時の金額を「開始仕訳」として繰り返す）</td></tr>
+    <tr><td>成果連結</td><td>グループ内取引・そこから生じた未実現利益を消す</td><td>毎期の連結決算のたびに（その期の取引をもとに毎回計算し直す）</td></tr>
   </table>
-  <p>2級で学んだ資本連結は「親会社と子会社という関係そのもの」を整理するものでした。成果連結はそれとは別に、「今期グループ内でどんな取引があったか」を毎回チェックして消していく作業です。</p>
+  <p>2級で学んだ資本連結も、実は毎期の連結決算のたびに繰り返す処理です。ただし取得時に決まった金額をそのまま「開始仕訳」として毎回持ち越すだけなので、実質的には1回整理した内容の繰り返しに近い形になります。一方の成果連結は、「今期グループ内でどんな取引があったか」を毎回新しくチェックして消していく作業です。</p>
 
   <h2>ダウンストリームとアップストリーム——「誰が売ったか」で処理が変わる</h2>
   <figure style="margin:1.5rem 0;text-align:center;">
@@ -189,7 +189,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
     <li>ダウンストリームなのに非支配株主持分の調整仕訳を書いてしまう（親会社の利益には非支配株主は関与しない）</li>
     <li>アップストリームで非支配株主持分の調整を忘れる</li>
     <li>期末在庫が一部だけ残っているのに、取引額全体に利益率を掛けてしまう</li>
-    <li>資本連結（支配獲得時の処理）と成果連結（毎期の処理）を混同し、毎期資本連結をやり直そうとしてしまう</li>
+    <li>資本連結の「開始仕訳」（取得時からの累積仕訳）を毎期繰り返すのを忘れ、その期の成果連結だけで連結財務諸表を作ろうとしてしまう</li>
   </ul>
 
   <h2>勉強の順番</h2>
@@ -224,13 +224,13 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
 
 <section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
   <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">成果連結と資本連結はどう違いますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">資本連結は親会社の投資と子会社の資本を相殺する「状態の整理」で、支配獲得時が中心です。成果連結はグループ内取引と未実現利益を消す「取引の整理」で、毎期の連結決算のたびに行います。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">成果連結と資本連結はどう違いますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">どちらも毎期の連結決算のたびに行う処理です。資本連結は親会社の投資と子会社の資本を相殺する「状態の整理」で、取得時に決まった金額を「開始仕訳」として毎期繰り返します。成果連結はグループ内取引と未実現利益を消す「取引の整理」で、その期の取引をもとに毎回新しく計算します。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">ダウンストリームとアップストリームの違いは？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">親会社が売り手・子会社が買い手ならダウンストリーム、子会社が売り手・親会社が買い手ならアップストリームです。利益が親会社のものか子会社のものかが変わるため、非支配株主持分への影響の有無が異なります。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">なぜアップストリームだけ非支配株主持分を調整するのですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">アップストリームでは利益を生んだのは子会社です。子会社の利益には非支配株主も持分割合に応じて権利を持つため、利益を消去する際は非支配株主の取り分も同じ割合で減らす必要があります。ダウンストリームの利益は親会社のものなので、非支配株主には関係がありません。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">未実現利益はどうやって計算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">グループ内取引の売価と原価の差額（利益）のうち、期末時点でまだ外部に売却されず在庫として残っている部分にあたる利益です。在庫が一部だけ残っている場合は、利益率を残っている在庫の金額に掛けて計算します。</div></details>
 </section>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"成果連結と資本連結はどう違いますか？","acceptedAnswer":{"@type":"Answer","text":"資本連結は親会社の投資と子会社の資本を相殺する「状態の整理」で、支配獲得時が中心です。成果連結はグループ内取引と未実現利益を消す「取引の整理」で、毎期の連結決算のたびに行います。"}},{"@type":"Question","name":"ダウンストリームとアップストリームの違いは？","acceptedAnswer":{"@type":"Answer","text":"親会社が売り手・子会社が買い手ならダウンストリーム、子会社が売り手・親会社が買い手ならアップストリームです。利益が親会社のものか子会社のものかが変わるため、非支配株主持分への影響の有無が異なります。"}},{"@type":"Question","name":"なぜアップストリームだけ非支配株主持分を調整するのですか？","acceptedAnswer":{"@type":"Answer","text":"アップストリームでは利益を生んだのは子会社です。子会社の利益には非支配株主も持分割合に応じて権利を持つため、利益を消去する際は非支配株主の取り分も同じ割合で減らす必要があります。"}},{"@type":"Question","name":"未実現利益はどうやって計算しますか？","acceptedAnswer":{"@type":"Answer","text":"グループ内取引の売価と原価の差額（利益）のうち、期末時点でまだ外部に売却されず在庫として残っている部分にあたる利益です。在庫が一部だけ残っている場合は、利益率を残っている在庫の金額に掛けて計算します。"}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"成果連結と資本連結はどう違いますか？","acceptedAnswer":{"@type":"Answer","text":"どちらも毎期の連結決算のたびに行う処理です。資本連結は親会社の投資と子会社の資本を相殺する「状態の整理」で、取得時に決まった金額を「開始仕訳」として毎期繰り返します。成果連結はグループ内取引と未実現利益を消す「取引の整理」で、その期の取引をもとに毎回新しく計算します。"}},{"@type":"Question","name":"ダウンストリームとアップストリームの違いは？","acceptedAnswer":{"@type":"Answer","text":"親会社が売り手・子会社が買い手ならダウンストリーム、子会社が売り手・親会社が買い手ならアップストリームです。利益が親会社のものか子会社のものかが変わるため、非支配株主持分への影響の有無が異なります。"}},{"@type":"Question","name":"なぜアップストリームだけ非支配株主持分を調整するのですか？","acceptedAnswer":{"@type":"Answer","text":"アップストリームでは利益を生んだのは子会社です。子会社の利益には非支配株主も持分割合に応じて権利を持つため、利益を消去する際は非支配株主の取り分も同じ割合で減らす必要があります。"}},{"@type":"Question","name":"未実現利益はどうやって計算しますか？","acceptedAnswer":{"@type":"Answer","text":"グループ内取引の売価と原価の差額（利益）のうち、期末時点でまだ外部に売却されず在庫として残っている部分にあたる利益です。在庫が一部だけ残っている場合は、利益率を残っている在庫の金額に掛けて計算します。"}}]}
 </script>
 <section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
   <a href="boki1-kigyoketsugo-vs-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">企業結合会計と連結会計の違い</div></a>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1480" viewBox="0 0 360 1480" role="img" aria-labelledby="title desc">
+  <title id="title">為替予約の振当処理と独立処理の違い（モバイル版）</title>
+  <desc id="desc">振当処理は外貨建取引の円換算額を予約レートで確定させ以後動かさない方法であるのに対し、独立処理はヘッジ対象である外貨建金銭債権債務を決算時レートで換算し、ヘッジ手段である為替予約を時価評価するという2本立てで会計処理する方法であるという違いを対比する図解</desc>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <style>
+      .title{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:14px;font-weight:800;fill:#1f2937}
+      .sub{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:9.5px;font-weight:600;fill:#64748b}
+      .colhead{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:800;fill:#ffffff}
+      .ptnum{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:11px;font-weight:800;fill:#ffffff}
+      .ptname{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12.5px;font-weight:800;fill:#1f2937}
+      .ptbody{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10.5px;font-weight:600;fill:#475569}
+      .banner{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:12px;font-weight:800;fill:#92400e}
+      .bannersmall{font-family:"Noto Sans JP", system-ui, sans-serif;font-size:10px;font-weight:600;fill:#475569}
+    </style>
+  </defs>
+
+  <rect width="360" height="1480" rx="20" fill="url(#mbg)"/>
+
+  <text x="180" y="26" text-anchor="middle" class="title">振当処理 vs 独立処理</text>
+  <text x="180" y="44" text-anchor="middle" class="sub">為替予約、会計処理の違い</text>
+
+  <!-- 振当処理 -->
+  <rect x="16" y="62" width="328" height="42" rx="12" fill="#1D4ED8"/>
+  <text x="180" y="88" text-anchor="middle" class="colhead">振当処理（簿記2級までの前提）</text>
+
+  <rect x="16" y="116" width="328" height="500" rx="16" fill="#ffffff" stroke="#93c5fd" stroke-width="2.5"/>
+
+  <circle cx="44" cy="150" r="15" fill="#1D4ED8"/>
+  <text x="44" y="155" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="146" class="ptname">基本の発想</text>
+  <text x="66" y="164" class="ptbody">予約レートで円換算額を確定</text>
+
+  <line x1="30" y1="180" x2="330" y2="180" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="212" r="15" fill="#1D4ED8"/>
+  <text x="44" y="217" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="208" class="ptname">決算時の処理</text>
+  <text x="66" y="226" class="ptbody">確定済みのため再換算は不要</text>
+
+  <line x1="30" y1="242" x2="330" y2="242" stroke="#dbeafe" stroke-width="2"/>
+
+  <circle cx="44" cy="274" r="15" fill="#1D4ED8"/>
+  <text x="44" y="279" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="270" class="ptname">勘定科目</text>
+  <text x="66" y="288" class="ptbody">買掛金・売掛金を振り当てるだけ</text>
+
+  <rect x="30" y="374" width="300" height="226" rx="12" fill="#eff6ff"/>
+  <text x="46" y="400" class="ptname" fill="#1d4ed8">考え方</text>
+  <text x="46" y="424" class="ptbody">外貨建取引の金額を</text>
+  <text x="46" y="442" class="ptbody">予約レートで確定</text>
+  <text x="46" y="470" class="ptname" fill="#1d4ed8">見分けるキーワード</text>
+  <text x="46" y="494" class="ptbody">「振当処理」「予約レートで固定」</text>
+  <text x="46" y="512" class="ptbody">出題範囲：簿記2級まで</text>
+
+  <!-- 独立処理 -->
+  <rect x="16" y="646" width="328" height="42" rx="12" fill="#166534"/>
+  <text x="180" y="672" text-anchor="middle" class="colhead">独立処理（簿記1級で追加）</text>
+
+  <rect x="16" y="700" width="328" height="500" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2.5"/>
+
+  <circle cx="44" cy="734" r="15" fill="#166534"/>
+  <text x="44" y="739" text-anchor="middle" class="ptnum">1</text>
+  <text x="66" y="730" class="ptname">基本の発想</text>
+  <text x="66" y="748" class="ptbody">ヘッジ対象と手段を別々に処理</text>
+
+  <line x1="30" y1="764" x2="330" y2="764" stroke="#dcfce7" stroke-width="2"/>
+
+  <circle cx="44" cy="796" r="15" fill="#166534"/>
+  <text x="44" y="801" text-anchor="middle" class="ptnum">2</text>
+  <text x="66" y="792" class="ptname">決算時の処理</text>
+  <text x="66" y="810" class="ptbody">買掛金は決算時レートで再換算</text>
+
+  <line x1="30" y1="826" x2="330" y2="826" stroke="#dcfce7" stroke-width="2"/>
+
+  <circle cx="44" cy="858" r="15" fill="#166534"/>
+  <text x="44" y="863" text-anchor="middle" class="ptnum">3</text>
+  <text x="66" y="854" class="ptname">勘定科目</text>
+  <text x="66" y="872" class="ptbody">為替予約資産／負債で時価評価</text>
+
+  <rect x="30" y="956" width="300" height="226" rx="12" fill="#f0fdf4"/>
+  <text x="46" y="982" class="ptname" fill="#166534">考え方</text>
+  <text x="46" y="1006" class="ptbody">ヘッジ対象＝決算時レートで</text>
+  <text x="46" y="1024" class="ptbody">換算し為替差損益を計上</text>
+  <text x="46" y="1052" class="ptname" fill="#166534">見分けるキーワード</text>
+  <text x="46" y="1076" class="ptbody">「ヘッジ対象」「ヘッジ手段」</text>
+  <text x="46" y="1094" class="ptbody">出題範囲：簿記1級のみ</text>
+
+  <!-- Bottom banner -->
+  <rect x="16" y="1250" width="328" height="200" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2.5"/>
+  <text x="180" y="1280" text-anchor="middle" class="banner">振当処理は固定して終わり、</text>
+  <text x="180" y="1298" text-anchor="middle" class="banner">独立処理は2つを動かし続ける</text>
+  <text x="180" y="1326" text-anchor="middle" class="bannersmall">振当処理は買掛金を予約レートで</text>
+  <text x="180" y="1344" text-anchor="middle" class="bannersmall">固定するが、独立処理は買掛金と</text>
+  <text x="180" y="1362" text-anchor="middle" class="bannersmall">為替予約を決算のたび評価し直す</text>
+</svg>
