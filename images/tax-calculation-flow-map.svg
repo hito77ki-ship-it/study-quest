@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+    <marker id="arrow3" markerWidth="9" markerHeight="9" refX="7" refY="2.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,5 L8,2.5 z" fill="#A0AEC0"/>
+    </marker>
+  </defs>
+  <rect width="760" height="460" rx="12" fill="#FAFBFC"/>
+
+  <text x="380" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#1A202C">大谷流・所得税の引き算ハコ分け構造</text>
+
+  <!-- 1: 売上 -->
+  <rect x="16" y="150" width="128" height="120" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="80" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">
+    <tspan x="80" dy="0">売上</tspan>
+  </text>
+  <text x="80" y="222" text-anchor="middle" font-size="10.5" fill="#2563EB">（収入）</text>
+
+  <text x="156" y="216" text-anchor="middle" font-size="18" font-weight="700" fill="#718096">−</text>
+
+  <!-- 2: 経費 -->
+  <rect x="172" y="150" width="128" height="120" rx="12" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="236" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#92400E">
+    <tspan x="236" dy="0">経費</tspan>
+  </text>
+  <text x="236" y="222" text-anchor="middle" font-size="10.5" fill="#B45309">
+    <tspan x="236" dy="0">（家事按分</tspan>
+    <tspan x="236" dy="14">含む）</tspan>
+  </text>
+
+  <text x="312" y="216" text-anchor="middle" font-size="18" font-weight="700" fill="#718096">−</text>
+
+  <!-- 3: 青色申告特別控除 -->
+  <rect x="328" y="150" width="140" height="120" rx="12" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="398" y="192" text-anchor="middle" font-size="13.5" font-weight="700" fill="#065F46">
+    <tspan x="398" dy="0">青色申告</tspan>
+    <tspan x="398" dy="18">特別控除</tspan>
+  </text>
+  <text x="398" y="238" text-anchor="middle" font-size="17" font-weight="700" fill="#065F46">最大65万円</text>
+
+  <text x="484" y="216" text-anchor="middle" font-size="18" font-weight="700" fill="#718096">−</text>
+
+  <!-- 4: 基礎控除 -->
+  <rect x="500" y="150" width="128" height="120" rx="12" fill="#E9D8FD" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="564" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">
+    <tspan x="564" dy="0">基礎控除</tspan>
+  </text>
+  <text x="564" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">58万円</text>
+
+  <path d="M 636 210 L 660 210" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow3)"/>
+
+  <!-- 5: 課税所得 -->
+  <rect x="656" y="150" width="88" height="120" rx="12" fill="#1A202C"/>
+  <text x="700" y="196" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">
+    <tspan x="700" dy="0">残った</tspan>
+    <tspan x="700" dy="16">課税所得</tspan>
+  </text>
+  <text x="700" y="240" text-anchor="middle" font-size="11" fill="#8CC63F">ここに課税</text>
+
+  <rect x="16" y="310" width="728" height="118" rx="14" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="380" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">売上から経費・青色申告特別控除・基礎控除を順番に引いていって、</text>
+  <text x="380" y="368" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">最後に残った金額（課税所得）にだけ税金がかかるよ。</text>
+  <text x="380" y="398" text-anchor="middle" font-size="12" fill="#4A5568">青色申告特別控除は「青色申告」を選んだ人だけが使える追加のハコ。</text>
+</svg>
