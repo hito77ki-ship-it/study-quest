@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="440" rx="12" fill="#FAFBFC"/>
+
+  <text x="380" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#1A202C">控除額の格差が扶養の壁を左右する</text>
+
+  <!-- ベースライン -->
+  <line x1="50" y1="340" x2="710" y2="340" stroke="#CBD5E0" stroke-width="2"/>
+
+  <!-- Bar1: アルバイト 65万円 -->
+  <rect x="80" y="160" width="130" height="180" rx="10" fill="#BFDBFE" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="145" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#1E40AF">65万円</text>
+  <text x="145" y="212" text-anchor="middle" font-size="11" fill="#1E40AF">自動で保証</text>
+
+  <!-- Bar2: 白色申告 0円 -->
+  <rect x="235" y="330" width="130" height="10" rx="4" fill="#FBCACA" stroke="#F87171" stroke-width="1.5"/>
+  <text x="300" y="316" text-anchor="middle" font-size="20" font-weight="700" fill="#B91C1C">0円</text>
+  <text x="300" y="298" text-anchor="middle" font-size="11" fill="#B91C1C">控除の保証なし</text>
+
+  <!-- Bar3: 青色申告55万円 -->
+  <rect x="390" y="188" width="130" height="152" rx="10" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="455" y="216" text-anchor="middle" font-size="20" font-weight="700" fill="#92400E">55万円</text>
+  <text x="455" y="238" text-anchor="middle" font-size="11" fill="#92400E">複式簿記＋期限内申告</text>
+
+  <!-- Bar4: 青色申告65万円 -->
+  <rect x="545" y="160" width="130" height="180" rx="10" fill="#BBF7D0" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="610" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#065F46">65万円</text>
+  <text x="610" y="212" text-anchor="middle" font-size="11" fill="#065F46">
+    <tspan x="610" dy="0">＋e-Tax申告等</tspan>
+  </text>
+
+  <!-- ラベル(ハコ、幅広め、tspanで2行) -->
+  <rect x="70" y="362" width="150" height="58" rx="10" fill="#ffffff" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="145" y="384" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">
+    <tspan x="145" dy="0">アルバイト</tspan>
+    <tspan x="145" dy="17">（給与所得控除）</tspan>
+  </text>
+
+  <rect x="225" y="362" width="150" height="58" rx="10" fill="#ffffff" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="300" y="384" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">
+    <tspan x="300" dy="0">個人事業主</tspan>
+    <tspan x="300" dy="17">（白色申告）</tspan>
+  </text>
+
+  <rect x="380" y="362" width="150" height="58" rx="10" fill="#ffffff" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="455" y="384" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">
+    <tspan x="455" dy="0">個人事業主</tspan>
+    <tspan x="455" dy="17">（青色申告55万円）</tspan>
+  </text>
+
+  <rect x="535" y="362" width="150" height="58" rx="10" fill="#ffffff" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="610" y="384" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">
+    <tspan x="610" dy="0">個人事業主</tspan>
+    <tspan x="610" dy="17">（青色申告65万円）</tspan>
+  </text>
+</svg>
