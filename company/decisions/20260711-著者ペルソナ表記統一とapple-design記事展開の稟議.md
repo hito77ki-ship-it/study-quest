@@ -42,7 +42,7 @@
 
 - [x] 73記事＋about.htmlの一括置換を実施
 - [x] 置換後、grep で表記ゆれが残っていないか再確認
-- [ ] 今後の再発防止として、hooksの著者ペルソナ整合性チェック（PostToolUse、Edit/Write対象）を実装し、`.claude/hooks/`に追加する（HTMLタグバランスチェックのみ先行実装済み、著者ペルソナ版は未着手）
+- [x] 今後の再発防止として、hooksの著者ペルソナ整合性チェック（PostToolUse、Edit/Write対象）を実装し、`.claude/hooks/`に追加する（2026-07-11完了。JSON-LD author・著者：行・sq-chat-nameを照合、既存199ファイルで誤検知ゼロを確認）
 
 **実行時の追加発見：** 事前調査では捕捉しきれていなかった旧著者名「若葉」の残存が、実行段階でさらに6ファイル見つかった（`boki2.html`・`cpa.html`・`cpa-yobikou.html`・`eiken3-grammar.html`のJSON-LD author、および**トップページ`index.html`のFOUNDERセクション**）。稟議の趣旨（表記統一）の範囲内と判断しその場で追加修正した。`app.html`内の「若葉ちゃん」はアプリ内NPCキャラクター名で別物のため対象外。`cpa.html`本文の「同じ公認会計士受験生と」は読者向けの文脈的に正しい表現のため据え置き。
 
