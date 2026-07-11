@@ -47,6 +47,18 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$(git rev-parse --show-toplevel)\"/.claude/hooks/check-html-balance.sh",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }
