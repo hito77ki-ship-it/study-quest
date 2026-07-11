@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#A0AEC0"/>
+    </marker>
+  </defs>
+  <rect width="760" height="420" rx="12" fill="#FAFBFC"/>
+
+  <text x="380" y="38" text-anchor="middle" font-size="16" font-weight="700" fill="#1A202C">学生納付特例から追納までの流れ</text>
+
+  <!-- Box1: 20歳〜学生納付特例で一時的に0円 -->
+  <rect x="24" y="90" width="220" height="170" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="134" y="128" text-anchor="middle" font-size="17" font-weight="700" fill="#1E40AF">20歳〜</text>
+  <text x="134" y="160" text-anchor="middle" font-size="13" fill="#2563EB">
+    <tspan x="134" dy="0">学生納付特例で</tspan>
+    <tspan x="134" dy="20">保険料の支払いが</tspan>
+  </text>
+  <text x="134" y="216" text-anchor="middle" font-size="22" font-weight="700" fill="#1E40AF">一時的に0円</text>
+
+  <path d="M 250 175 L 286 175" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow2)"/>
+
+  <!-- Box2: 10年以内(砂時計) 追納チャンス -->
+  <rect x="292" y="90" width="220" height="170" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <!-- 簡易砂時計アイコン -->
+  <g transform="translate(402,112)">
+    <path d="M0,0 L40,0 L22,20 L40,40 L0,40 L18,20 Z" fill="#F59E0B" opacity="0.85"/>
+    <path d="M6,6 L34,6 L20,20 Z" fill="#FEF3C7"/>
+    <path d="M6,34 L34,34 L20,20 Z" fill="#FEF3C7"/>
+  </g>
+  <text x="402" y="176" text-anchor="middle" font-size="17" font-weight="700" fill="#92400E">10年以内</text>
+  <text x="402" y="200" text-anchor="middle" font-size="13" fill="#B45309">
+    <tspan x="402" dy="0">なら追納できる</tspan>
+    <tspan x="402" dy="20">チャンスタイム</tspan>
+  </text>
+  <text x="402" y="240" text-anchor="middle" font-size="11.5" fill="#B45309">（2年度目までなら加算額なし）</text>
+
+  <path d="M 518 175 L 554 175" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow2)"/>
+
+  <!-- Box3: 追納成功で満額復活 -->
+  <rect x="560" y="90" width="176" height="170" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="648" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">
+    <tspan x="648" dy="0">追納成功で</tspan>
+  </text>
+  <text x="648" y="158" text-anchor="middle" font-size="13" fill="#059669">
+    <tspan x="648" dy="0">将来の老齢基礎</tspan>
+    <tspan x="648" dy="20">年金が</tspan>
+  </text>
+  <text x="648" y="216" text-anchor="middle" font-size="20" font-weight="700" fill="#065F46">満額へ復活</text>
+
+  <rect x="24" y="300" width="712" height="90" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="380" y="332" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">追納しないまま10年を過ぎると、その期間分は将来の年金額に</text>
+  <text x="380" y="354" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">反映されないまま確定（受給資格期間には算入される）</text>
+</svg>
