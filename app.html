@@ -204,6 +204,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .user-bar-sync{font-family:'Share Tech Mono',monospace;font-size:9px;color:#7cff6e;}
 .user-bar-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Share Tech Mono',monospace;font-size:9px;padding:5px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .user-bar-btn:hover{border-color:var(--muted);color:var(--text);}
+.user-bar-btn:active{transform:scale(.94);}
 .user-bar-btn.sync-btn{border-color:rgba(124,255,110,.3);color:#7cff6e;}
 .user-bar-btn.sync-btn:hover{background:rgba(124,255,110,.07);}
 
@@ -390,6 +391,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',serif;mi
 .tab-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 3px 12px rgba(140,198,63,.4);transform:translateY(-1px);}
 .tab-btn.active .tab-icon{transform:scale(1.15);}
 .tab-btn:hover:not(.active){color:var(--text);background:var(--panel2);}
+.tab-btn:active{transform:scale(.93);}
+.tab-btn.active:active{transform:translateY(-1px) scale(.96);}
 .tab-btn.active::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:20px;height:3px;background:var(--accent);border-radius:2px;opacity:0;}
 
 /* Weekly plan styles */
@@ -735,6 +738,7 @@ body[data-theme="dark"] .eb-prog-labels{color:#9ae6b4;}
 .modal-btn.confirm{border-color:var(--accent);color:#fff;background:var(--accent);border-radius:var(--radius-sm);}
 .modal-btn.confirm:hover{background:var(--gold2);}
 .modal-btn:hover{border-color:var(--muted);color:var(--text);}
+.modal-btn:active{transform:scale(.96);}
 .modal-btn.danger{border-color:#5a1515;color:#ff6e6e;}
 
 /* LEVEL UP */
