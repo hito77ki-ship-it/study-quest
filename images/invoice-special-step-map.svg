@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+  </defs>
+  <rect width="760" height="500" rx="12" fill="#FAFBFC"/>
+
+  <text x="380" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#1A202C">インボイス特例のバトンリレー</text>
+
+  <!-- 上段：2割特例 → 3割特例 → 本則/簡易課税 の階段状バトンリレー -->
+  <!-- Box1 -->
+  <rect x="30" y="140" width="200" height="100" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="130" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#1E40AF">2割特例</text>
+  <text x="130" y="202" text-anchor="middle" font-size="12.5" fill="#2563EB">
+    <tspan x="130" dy="0">〜令和8年</tspan>
+    <tspan x="130" dy="16">（2026年）9月</tspan>
+  </text>
+
+  <!-- Arrow 1 -->
+  <path d="M 236 190 L 276 190" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Box2 -->
+  <rect x="282" y="110" width="200" height="100" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="382" y="148" text-anchor="middle" font-size="17" font-weight="700" fill="#065F46">3割特例</text>
+  <text x="382" y="172" text-anchor="middle" font-size="12.5" fill="#059669">
+    <tspan x="382" dy="0">令和9年・10年分</tspan>
+    <tspan x="382" dy="16">（2027・2028年）</tspan>
+  </text>
+
+  <!-- Arrow 2 -->
+  <path d="M 488 160 L 528 160" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Box3 -->
+  <rect x="534" y="80" width="200" height="100" rx="14" fill="#FCE7F3" stroke="#F9A8D4" stroke-width="1.5"/>
+  <text x="634" y="118" text-anchor="middle" font-size="16" font-weight="700" fill="#9D174D">
+    <tspan x="634" dy="0">本則課税・</tspan>
+    <tspan x="634" dy="20">簡易課税へ</tspan>
+  </text>
+  <text x="634" y="158" text-anchor="middle" font-size="12.5" fill="#BE185D">令和11年分〜</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#A0AEC0"/>
+    </marker>
+  </defs>
+
+  <!-- 下段：仕入税額控除の経過措置タイムライン -->
+  <text x="380" y="278" text-anchor="middle" font-size="14" font-weight="700" fill="#1A202C">仕入税額控除の経過措置（免税事業者等からの仕入れ）</text>
+
+  <rect x="30" y="300" width="136" height="72" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+  <text x="98" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#92400E">80%</text>
+  <text x="98" y="352" text-anchor="middle" font-size="10.5" fill="#B45309">
+    <tspan x="98" dy="0">〜2026年</tspan>
+    <tspan x="98" dy="13">9月</tspan>
+  </text>
+
+  <rect x="176" y="300" width="136" height="72" rx="10" fill="#FDE9C8" stroke="#FBBF6A" stroke-width="1.2"/>
+  <text x="244" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#92400E">70%</text>
+  <text x="244" y="352" text-anchor="middle" font-size="10.5" fill="#B45309">
+    <tspan x="244" dy="0">2026年10月</tspan>
+    <tspan x="244" dy="13">〜</tspan>
+  </text>
+
+  <rect x="322" y="300" width="136" height="72" rx="10" fill="#FDDFA8" stroke="#F9A94A" stroke-width="1.2"/>
+  <text x="390" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#7C3E10">50%</text>
+  <text x="390" y="352" text-anchor="middle" font-size="10.5" fill="#9A4A0C">
+    <tspan x="390" dy="0">2028年10月</tspan>
+    <tspan x="390" dy="13">〜</tspan>
+  </text>
+
+  <rect x="468" y="300" width="136" height="72" rx="10" fill="#FBD0B8" stroke="#F58A5C" stroke-width="1.2"/>
+  <text x="536" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#7C2D12">30%</text>
+  <text x="536" y="352" text-anchor="middle" font-size="10.5" fill="#9A3412">
+    <tspan x="536" dy="0">2030年10月</tspan>
+    <tspan x="536" dy="13">〜</tspan>
+  </text>
+
+  <rect x="614" y="300" width="120" height="72" rx="10" fill="#FBC5C5" stroke="#F58A8A" stroke-width="1.2"/>
+  <text x="674" y="330" text-anchor="middle" font-size="15" font-weight="700" fill="#7C1D1D">控除不可</text>
+  <text x="674" y="352" text-anchor="middle" font-size="10.5" fill="#9A2C2C">
+    <tspan x="674" dy="0">2031年10月</tspan>
+    <tspan x="674" dy="13">〜</tspan>
+  </text>
+
+  <path d="M 166 336 L 176 336" stroke="#CBD5E0" stroke-width="2"/>
+  <path d="M 312 336 L 322 336" stroke="#CBD5E0" stroke-width="2"/>
+  <path d="M 458 336 L 468 336" stroke="#CBD5E0" stroke-width="2"/>
+  <path d="M 604 336 L 614 336" stroke="#CBD5E0" stroke-width="2"/>
+
+  <rect x="30" y="404" width="704" height="70" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="382" y="432" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">2026年10月以降は1事業者あたりの年間控除上限額も</text>
+  <text x="382" y="452" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">1億円に引き下げ</text>
+</svg>
