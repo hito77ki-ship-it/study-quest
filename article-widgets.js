@@ -1594,7 +1594,7 @@ html[data-theme="dark"] .sq-article-theme-group{
   /* リアクションモバイル */
   .sq-reaction{padding:24px 16px;}
   .sq-reaction-btn{padding:14px 16px;flex:1;min-width:90px;}
-  .sq-reaction-emoji svg{width:19px;height:19px;}
+  .sq-reaction-emoji{font-size:22px;}
   .sq-reaction-btns{gap:8px;}
   /* 関連記事グリッドモバイル */
   .sq-card-grid{grid-template-columns:1fr !important;}
@@ -1661,7 +1661,7 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-reaction-btn:hover{border-color:#8CC63F;transform:translateY(-2px);box-shadow:0 6px 18px rgba(140,198,63,.15);}
 .sq-reaction-btn:active{transform:scale(.95);}
 .sq-reaction-btn.sq-reacted{border-color:#8CC63F;background:rgba(140,198,63,.12);color:var(--sq-accent-bright);box-shadow:0 4px 14px rgba(140,198,63,.18);}
-.sq-reaction-emoji{display:flex;align-items:center;justify-content:center;line-height:1;}
+.sq-reaction-emoji{font-size:26px;line-height:1;}
 .sq-reaction-label{font-size:11px;font-weight:700;letter-spacing:.04em;}
 .sq-reaction-count{font-size:14px;font-weight:700;color:#8CC63F;font-family:'Share Tech Mono',monospace;}
 .sq-reaction-note{font-size:12px;color:#8CC63F;margin-top:12px;min-height:18px;font-weight:700;}
@@ -2791,9 +2791,9 @@ async function buildReactionWidget() {
   if (!PAGE) return;
   const articleId = PAGE;
   const REACTIONS = [
-    { type: 'helpful',   icon: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M2 21h3V9H2v12zm19-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L11.83 1 6.41 6.42C6.15 6.69 6 7.05 6 7.44V19c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>', label: '参考になった' },
-    { type: 'learned',   icon: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>', label: '勉強になった' },
-    { type: 'motivated', icon: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>', label: 'モチベ上がった' },
+    { type: 'helpful',   emoji: '👍', label: '参考になった' },
+    { type: 'learned',   emoji: '💡', label: '勉強になった' },
+    { type: 'motivated', emoji: '🔥', label: 'モチベ上がった' },
   ];
 
   const wrap = document.createElement('div');
@@ -2811,7 +2811,7 @@ async function buildReactionWidget() {
     <div class="sq-reaction-title">この記事はどうでしたか？</div>
     <div class="sq-reaction-btns">
       ${REACTIONS.map(r => `<button class="sq-reaction-btn" data-type="${r.type}">
-        <span class="sq-reaction-emoji">${r.icon}</span>
+        <span class="sq-reaction-emoji">${r.emoji}</span>
         <span class="sq-reaction-label">${r.label}</span>
         <span class="sq-reaction-count" id="sqRc-${r.type}">—</span>
       </button>`).join('')}
