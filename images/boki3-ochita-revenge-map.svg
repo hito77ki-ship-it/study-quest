@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480">
+  <defs>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
+    <marker id="arrow4" markerWidth="9" markerHeight="9" refX="7" refY="2.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,5 L8,2.5 z" fill="#A0AEC0"/>
+    </marker>
+  </defs>
+  <rect width="760" height="480" rx="12" fill="#FAFBFC"/>
+
+  <text x="380" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#1A202C">不合格4パターン → リベンジルート戦略マップ</text>
+
+  <!-- 4つの原因ハコ -->
+  <rect x="20" y="66" width="168" height="128" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="104" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">
+    <tspan x="104" dy="0">①仕訳の</tspan>
+    <tspan x="104" dy="18">基礎が甘い</tspan>
+  </text>
+  <text x="104" y="140" text-anchor="middle" font-size="10.5" fill="#2563EB">
+    <tspan x="104" dy="0">第1問で</tspan>
+    <tspan x="104" dy="14">複数失点</tspan>
+  </text>
+
+  <rect x="198" y="66" width="168" height="128" rx="12" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="282" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">
+    <tspan x="282" dy="0">②決算整理で</tspan>
+    <tspan x="282" dy="18">つまずいた</tspan>
+  </text>
+  <text x="282" y="140" text-anchor="middle" font-size="10.5" fill="#B45309">
+    <tspan x="282" dy="0">経過勘定・</tspan>
+    <tspan x="282" dy="14">減価償却が混乱</tspan>
+  </text>
+
+  <rect x="376" y="66" width="168" height="128" rx="12" fill="#FED7AA" stroke="#FB923C" stroke-width="1.5"/>
+  <text x="460" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#9A3412">
+    <tspan x="460" dy="0">③時間配分</tspan>
+    <tspan x="460" dy="18">が悪かった</tspan>
+  </text>
+  <text x="460" y="140" text-anchor="middle" font-size="10.5" fill="#9A3412">
+    <tspan x="460" dy="0">第2問に</tspan>
+    <tspan x="460" dy="14">時間をかけすぎ</tspan>
+  </text>
+
+  <rect x="554" y="66" width="186" height="128" rx="12" fill="#FBCFE8" stroke="#F472B6" stroke-width="1.5"/>
+  <text x="647" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#9D174D">
+    <tspan x="647" dy="0">④ケアレス</tspan>
+    <tspan x="647" dy="18">ミスに気づけず</tspan>
+  </text>
+  <text x="647" y="140" text-anchor="middle" font-size="10.5" fill="#BE185D">
+    <tspan x="647" dy="0">貸借不一致に</tspan>
+    <tspan x="647" dy="14">終盤まで未発見</tspan>
+  </text>
+
+  <!-- 矢印(4本→1本に収束) -->
+  <path d="M 104 194 L 104 230 Q 104 250 200 250 L 340 250" stroke="#A0AEC0" stroke-width="2.5" fill="none"/>
+  <path d="M 282 194 L 282 240 L 340 240" stroke="#A0AEC0" stroke-width="2.5" fill="none"/>
+  <path d="M 460 194 L 460 240 L 400 240" stroke="#A0AEC0" stroke-width="2.5" fill="none"/>
+  <path d="M 647 194 L 647 230 Q 647 250 420 250 L 400 250" stroke="#A0AEC0" stroke-width="2.5" fill="none"/>
+  <path d="M 380 245 L 380 274" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow4)"/>
+
+  <!-- リベンジルート -->
+  <rect x="150" y="280" width="460" height="90" rx="16" fill="#D1FAE5" stroke="#4ADE80" stroke-width="2"/>
+  <text x="380" y="316" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">
+    <tspan x="380" dy="0">弱点ハコ分け → その論点だけ集中補強</tspan>
+  </text>
+  <text x="380" y="348" text-anchor="middle" font-size="12" fill="#059669">
+    <tspan x="380" dy="0">全部やり直す必要はない。原因のハコが分かれば、そこだけ潰せば十分</tspan>
+  </text>
+
+  <rect x="24" y="398" width="712" height="66" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="380" y="426" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">不合格は「弱点ハコ分けチャンス」。強くてニューゲームで、原因を1つずつ潰していこう</text>
+  <text x="380" y="448" text-anchor="middle" font-size="11" fill="#4A5568">4パターンのうち自分がどれに近いか、下の表で確認してみよう</text>
+</svg>
