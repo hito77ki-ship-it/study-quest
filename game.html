@@ -728,6 +728,13 @@ body{
   padding:4px 12px;letter-spacing:.15em;text-align:center;
 }
 /* back-btn merged into pause menu */
+details summary{transition:background 100ms ease-out;}
+details summary:active{background:var(--light);}
+@media(prefers-reduced-motion:reduce){
+.nav-cta,.app-cta a{transition:opacity 100ms ease;}
+.nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
+}
+@media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>

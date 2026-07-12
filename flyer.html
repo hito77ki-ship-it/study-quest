@@ -179,6 +179,13 @@
     background:linear-gradient(90deg,transparent,rgba(140,198,63,.5),rgba(201,168,76,.3),transparent);
     margin-bottom:6mm;
   }
+details summary{transition:background 100ms ease-out;}
+details summary:active{background:var(--light);}
+@media(prefers-reduced-motion:reduce){
+.nav-cta,.app-cta a{transition:opacity 100ms ease;}
+.nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
+}
+@media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
 </head>
 <body>

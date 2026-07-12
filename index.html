@@ -770,6 +770,13 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-title{font-size:13px;font-weight:500;line-height:1.5;color:var(--ink);}
 .lp-search-empty{padding:24px;text-align:center;color:var(--ink3);font-size:13px;}
 .lp-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--ink3);text-align:right;border-top:1px solid var(--border);}
+details summary{transition:background 100ms ease-out;}
+details summary:active{background:var(--light);}
+@media(prefers-reduced-motion:reduce){
+.nav-cta,.app-cta a{transition:opacity 100ms ease;}
+.nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
+}
+@media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
