@@ -546,8 +546,18 @@ html[data-theme="light"] body{
   color:var(--sq-text) !important;
 }
 html[data-theme="light"] nav{
-  background:#FFFFFF !important;
+  background:rgba(255,255,255,.75) !important;
+  backdrop-filter:blur(20px) saturate(200%) !important;
+  -webkit-backdrop-filter:blur(20px) saturate(200%) !important;
   border-bottom:1px solid rgba(26,32,44,.08) !important;
+}
+nav{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(255,255,255,.06);
+}
+html[data-theme="dark"] nav{
+  backdrop-filter:blur(20px) saturate(200%);
+  -webkit-backdrop-filter:blur(20px) saturate(200%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10), inset 0 -1px 0 rgba(0,0,0,.15);
 }
 html[data-theme="light"] .nav-inner{max-width:1100px;}
 html[data-theme="light"] .nav-logo{color:#8CC63F;}
