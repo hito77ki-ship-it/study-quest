@@ -15,8 +15,12 @@ const ARTICLES = {
   'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦'},
   'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書'},
   'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の問題構成・時間配分'},
+  'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ'},
+  'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
+  'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
+  'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
   'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド'},
@@ -71,6 +75,7 @@ const ARTICLES = {
   'hatarakinagara-shikaku.html': {label:'社会人向け', title:'働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選'},
   'shukatsu-shikaku.html': {label:'大学生向け', title:'就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選'},
   'daigakusei-keizoku.html': {label:'大学生向け', title:'大学生が資格勉強を続ける方法｜授業・バイト・就活と両立するコツ'},
+  'univ-boki-units.html':  {label:'大学生向け', title:'大学の簿記・会計の講義は「神ボーナスステージ」！自習×大学で一石五鳥ハック'},
   'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026'},
   'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026'},
   'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026'},
@@ -126,6 +131,8 @@ const ARTICLES = {
   'boki3-hojosho.html':      {label:'簿記3級', title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）'},
   'boki3-hojinzei.html':     {label:'簿記3級', title:'法人税等の仕訳（仮払法人税等・未払法人税等）'},
   'boki3-credit.html':       {label:'簿記3級', title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
+  'univ-ai-report-hack.html':        {label:'AIライフハック', title:'ボイスメモ×AIでレポート無双！単位修得ハックを完全公開'},
+  'univ-qualification-strategy.html':{label:'大学生向け',    title:'将来から逆算する最強の資格戦略'},
 };
 
 const CATS = {
@@ -138,7 +145,7 @@ const CATS = {
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
-let LATEST = ['boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html','cpa-akirameta-shinro.html','cpa-akirameta-boki1.html','daigakusei-shikaku-heiyou.html'];
+let LATEST = ['univ-boki-units.html','univ-ai-report-hack.html','univ-qualification-strategy.html','boki1-yobikou.html','daigakusei-keizoku.html','shukatsu-shikaku.html','hatarakinagara-shikaku.html','shikaku-zasetsu-riyu.html'];
 
 async function loadLatestFromSitemap() {
   try {
@@ -173,6 +180,44 @@ async function loadPopularArticles() {
 const PAGE = location.pathname.split('/').pop() || '';
 
 const ARTICLE_DIALOGUES = {
+  'toeic-600.html': [
+    ['student', '受験生', '公式問題集のPart7を開いたら、長文が大量すぎて……全部ちゃんと読まなきゃと思ったら、それだけで心が折れました。'],
+    ['teacher', '大谷', 'その気持ち、めちゃくちゃ分かります。でも600点突破のチート技は、満点を狙いにいかないことなんだ！全部読もうとするから絶望するんだよ。'],
+    ['student', '受験生', 'え、読まなくていいんですか……？'],
+    ['teacher', '大谷', 'まずは点数が伸びやすいリスニングと、パターンで秒殺できるPart5の「文法・単語のハコ」を最優先で味方につける。そしてPart7の最後は、綺麗に塗り絵（選択肢を統一してマーク）する。600点はそういう割り切りゲームなんだよ。']
+  ],
+  'fe-vs-ap.html': [
+    ['student', '受験生', 'プログラミングが本当に苦手で、基本情報の午後試験（アルゴリズム必須）が不安すぎます……。'],
+    ['teacher', '大谷', 'その悩み、めちゃくちゃ分かります。実はプログラミングが苦手なら、無理に基本情報で消耗するより、最初から応用情報を狙う手もあるんだよ。'],
+    ['student', '受験生', 'え、応用情報の方が難しいんじゃないんですか？'],
+    ['teacher', '大谷', '応用情報の午後試験は11題から5題を選べるから、「経営戦略」「サービスマネジメント」みたいな文系科目だけで固めれば、プログラミングなしで合格ラインに届く。実は基本情報より戦いやすいケースもあるんだよ。']
+  ],
+  'daigakusei-keizai-shikaku.html': [
+    ['student', '後輩', 'なんとなく周りに流されて、就活のためにTOEICでも受けようかなと思ってます……600点くらい取れれば安心ですよね？'],
+    ['teacher', '大谷', 'ちょっと待って。経済・経営学部の最大の強みは「数字（会計）が読めること」なんだ。評価のブレが大きい英語に先に逃げる前に、市場価値がほぼ確定している日商簿記2級のハコ（盾）を最優先で回収しにいくのが、一番賢いチート戦略だよ。'],
+    ['student', '後輩', 'TOEICより簿記の方が優先なんですか？意外です……。'],
+    ['teacher', '大谷', 'TOEIC600点台は、正直なところ就活市場ではほとんど評価されないのが現実。同じ時間を使うなら簿記2級を取った方が、面接官の反応は全然違う。英語は簿記を固めてから、730点以上を本気で狙う方が費用対効果が高いよ。']
+  ],
+  'boki2-ochita.html': [
+    ['student', '受験生', '結果画面に「不合格」って出た瞬間、本当に頭が真っ白になりました……。もうテキストから買い直した方がいいですかね？'],
+    ['teacher', '大谷', 'その気持ち、痛いほどわかります。でも断言します、テキストの買い直しは9割不要です。落ちた原因って、実は教材じゃなくて「どこで何点落としたか」を整理できていないだけなんですよ。'],
+    ['student', '受験生', '整理、ですか……全部あやふやな気がして、どこから手をつけていいか分かりません。'],
+    ['teacher', '大谷', 'だからこそ「ハコ分け」です。理解不足・演習量不足・特定論点の失点・時間切れ、この4つのハコのどれに当てはまるかを先に決める。ハコさえ特定できれば、直す場所はピンポイントで済みます。'],
+    ['student', '受験生', '全範囲やり直さなくても、本当に合格できますか？'],
+    ['teacher', '大谷', 'できます。今のあなたは知識ゼロの初学者じゃなくて、一度本番を経験して弱点まで分かっている状態です。ハコを潰せば、いわば「強くてニューゲーム」。次はもっと有利な位置からスタートできますよ。']
+  ],
+  'boki2-cbt-vs-paper.html': [
+    ['student', '受験生', 'ネット試験と紙の試験、どっちの方が合格しやすいですか？'],
+    ['teacher', '大谷', '難易度の安定性はCBTが有利です。ただし2級は複雑な下書きが増えるので、PC画面だと計算用紙のやりくりが大変になります。どちらが合うかは自分のスタイル次第です。'],
+    ['student', '受験生', '計算用紙って、どうやって工夫すればいいですか？'],
+    ['teacher', '大谷', '1枚を4分割して、問題番号ごとにエリアを決めておくのが一番です。本番前の模試で練習しておくと焦らなくなります。']
+  ],
+  'boki2-next-exam.html': [
+    ['student', '受験生', 'ネット試験って、統一試験より難しかったりしますか？'],
+    ['teacher', '大谷', '試験範囲も合格基準（70点）も同じです。問題がランダム出題なのでヤマを張りにくいですが、それはお互い様なので気にしなくていいです。'],
+    ['student', '受験生', '3ヶ月で本当に間に合いますか？'],
+    ['teacher', '大谷', '1日2〜3時間確保できれば十分狙えます。ネット試験は「準備できたら受ける」ができるので、3ヶ月があくまで目安。仕上がったタイミングで即申し込みが最速ルートです。']
+  ],
   'boki2.html': [
     ['student', '受験生', '簿記2級って、3級の延長だと思って始めても大丈夫ですか？'],
     ['teacher', '大谷', '半分はその通りです。ただ、工業簿記はまったく新しい科目なので、3級の延長だけで考えると途中で止まりやすいです。'],
@@ -220,6 +265,12 @@ const ARTICLE_DIALOGUES = {
     ['teacher', '大谷', '資格単体ではなく、実務経験と組み合わせて強くなります。経理なら簿記、不動産なら宅建、ITなら基本情報のように、職種とつなげて選ぶのが大事です。'],
     ['student', '社会人', '迷ったらどの資格を選ぶべきですか？'],
     ['teacher', '大谷', '転職先の求人票を見て、よく出てくる資格を選んでください。市場が求めている言葉に合わせるのが一番堅いです。']
+  ],
+  'univ-boki-units.html': [
+    ['student', '大学生', '大学の会計の授業って、資格勉強と一緒に進めた方がいいですか？'],
+    ['teacher', '大谷', '絶対に一緒に進めた方がいいです。資格テキストで予備知識があると、同じ内容が講義で出たとき「知ってる！」となって定着率が全然違います。'],
+    ['student', '大学生', '教授への質問って、実際に行ったことありますか？'],
+    ['teacher', '大谷', 'あります。連結会計の内部取引消去で詰まっていたとき、オフィスアワーで教授に聞いたら1時間みっちり教えてもらいました。無料の個別指導は本当に最強です。']
   ]
 };
 
@@ -262,7 +313,7 @@ function getArticleDialogue(){
 function renderDialogue(rows){
   return rows.map(([role, name, text]) => `
     <div class="sq-chat-row ${role}">
-      <div class="sq-chat-avatar ${role}">${role === 'teacher' ? '師' : '受'}</div>
+      <div class="sq-chat-avatar ${role}"><img src="icons/avatar-${role === 'teacher' ? 'teacher' : 'student'}.png" alt="${role === 'teacher' ? '大谷' : '受験生'}" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">${_escHtml(name)}</div>
         <div class="sq-chat-bubble">${_escHtml(text)}</div>
@@ -300,6 +351,39 @@ async function _initSB() {
 function _loginGoogle() {
   if (!_sb) return;
   _sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.href } });
+}
+
+async function _loginAnonymous(nickname) {
+  if (!_sb) return;
+  const { data, error } = await _sb.auth.signInAnonymously();
+  if (error || !data?.user) {
+    alert('エラーが発生しました。時間をおいて再度お試しください。');
+    return;
+  }
+  await _sb.auth.updateUser({ data: { full_name: nickname } });
+  location.reload();
+}
+
+// ニックネーム入力フォーム（Googleログイン不要の匿名投稿用）
+function _buildNicknameForm(container) {
+  const wrap = document.createElement('div');
+  wrap.className = 'sq-anon-login';
+  wrap.innerHTML = `
+    <input type="text" class="sq-anon-nickname" placeholder="ニックネーム" maxlength="20">
+    <button class="sq-anon-start-btn">この名前で始める</button>
+  `;
+  container.appendChild(wrap);
+  const input = wrap.querySelector('.sq-anon-nickname');
+  const btn = wrap.querySelector('.sq-anon-start-btn');
+  const start = () => {
+    const name = input.value.trim();
+    if (!name) { input.focus(); return; }
+    btn.disabled = true;
+    btn.textContent = '開始中...';
+    _loginAnonymous(name);
+  };
+  btn.addEventListener('click', start);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') start(); });
 }
 
 async function _logoutArt() {
@@ -761,6 +845,10 @@ html[data-theme="dark"] .sq-sidebar [style*="background:#F0FFF4"]{
   border-color:rgba(140,198,63,.16) !important;
   box-shadow:0 0 0 1px rgba(140,198,63,.03), 0 12px 28px rgba(5,10,20,.12) !important;
 }
+/* ── 著者カード / いいね誘導ボックス (linear-gradient #F0FFF4,#EBF5FB) ダークモード ── */
+html[data-theme="dark"] [style*="#EBF5FB"]{background:linear-gradient(135deg,#0A1E14,#0D1A3A) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] [style*="#EBF5FB"] [style*="color:#276749"]{color:#B6E27C !important;}
+html[data-theme="dark"] [style*="#EBF5FB"] [style*="color:#1A202C"]{color:#CCD6E5 !important;}
 html[data-theme="dark"] section[style*="background:#F7FAFC"] a[style*="background:#fff"],
 html[data-theme="dark"] section[style*="background:#F7FAFC"] div[style*="background:#fff"],
 html[data-theme="dark"] div[style*="background:#F7FAFC"] a[style*="background:#fff"],
@@ -1462,30 +1550,30 @@ html[data-theme="dark"] .sq-article-theme-group{
   .sq-sidebar-left::-webkit-scrollbar{width:3px;}
   .sq-sidebar-left::-webkit-scrollbar-thumb{background:rgba(140,198,63,.28);}
   .sq-sidebar-box{background:linear-gradient(180deg,var(--sq-surface-soft) 0%, var(--sq-surface-strong) 100%);border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow-strong);border-radius:12px;padding:16px;}
-  .sq-sidebar-box-title{font-size:10px;font-weight:700;color:var(--sq-accent-bright);margin-bottom:10px;letter-spacing:.14em;text-transform:uppercase;}
+  .sq-sidebar-box-title{font-size:12px;font-weight:700;color:var(--sq-accent-bright);margin-bottom:10px;letter-spacing:.12em;text-transform:uppercase;}
   .sq-sidebar-box p,
   .sq-sidebar-box div,
   .sq-sidebar-box li,
   .sq-sidebar-box span{color:var(--sq-soft);}
   .sq-sidebar-cta{background:radial-gradient(circle at top right, rgba(140,198,63,.16), transparent 38%),linear-gradient(135deg,var(--sq-surface) 0%, var(--sq-surface-soft) 60%, color-mix(in srgb, var(--sq-surface-strong) 70%, #20311a 30%) 100%);border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow-strong);border-radius:12px;padding:18px 16px;text-align:center;}
-  .sq-sidebar-cta p{font-size:12px;color:var(--sq-text);margin-bottom:12px;line-height:1.75;}
-  .sq-sidebar-cta a{background:#8CC63F;color:var(--sq-cta-text);font-size:12px;font-weight:700;padding:8px 16px;border-radius:100px;text-decoration:none;display:inline-block;transition:opacity .2s, transform .2s, box-shadow .2s;box-shadow:0 8px 22px rgba(140,198,63,.22);}
+  .sq-sidebar-cta p{font-size:13.5px;color:var(--sq-text);margin-bottom:12px;line-height:1.75;}
+  .sq-sidebar-cta a{background:#8CC63F;color:var(--sq-cta-text);font-size:13.5px;font-weight:700;padding:8px 16px;border-radius:100px;text-decoration:none;display:inline-block;transition:opacity .2s, transform .2s, box-shadow .2s;box-shadow:0 8px 22px rgba(140,198,63,.22);}
   .sq-sidebar-cta a:hover{opacity:.85;text-decoration:none;transform:translateY(-1px);box-shadow:0 10px 26px rgba(140,198,63,.28);}
   .sq-sidebar-ad{background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px dashed var(--sq-border-strong);border-radius:12px;min-height:250px;display:flex;align-items:center;justify-content:center;color:var(--sq-muted);font-size:11px;}
   .sq-mini-card{background:radial-gradient(circle at top left, rgba(140,198,63,.12), transparent 34%),linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow-strong);border-radius:12px;padding:16px;}
-  .sq-mini-card-title{font-size:13px;font-weight:700;color:var(--sq-text);line-height:1.65;margin-bottom:8px;}
-  .sq-mini-card-text{font-size:12px;color:var(--sq-soft);line-height:1.85;}
+  .sq-mini-card-title{font-size:14px;font-weight:700;color:var(--sq-text);line-height:1.65;margin-bottom:8px;}
+  .sq-mini-card-text{font-size:13px;color:var(--sq-soft);line-height:1.85;}
   .sq-side-links{display:flex;flex-direction:column;gap:8px;}
   .sq-side-link{display:block;background:linear-gradient(180deg, color-mix(in srgb, var(--sq-surface) 82%, transparent 18%), color-mix(in srgb, var(--sq-surface-soft) 88%, transparent 12%));border:1px solid var(--sq-border);border-radius:10px;padding:12px 13px;text-decoration:none;color:inherit;transition:box-shadow .2s,border-color .2s,transform .2s;}
   .sq-side-link:hover{box-shadow:0 10px 24px rgba(0,0,0,.16);border-color:rgba(140,198,63,.32);transform:translateY(-1px);text-decoration:none;}
-  .sq-side-link-label{font-size:10px;font-weight:700;color:var(--sq-accent-bright);letter-spacing:.08em;margin-bottom:4px;}
-  .sq-side-link-title{font-size:12px;font-weight:700;color:var(--sq-text);line-height:1.65;}
+  .sq-side-link-label{font-size:11px;font-weight:700;color:var(--sq-accent-bright);letter-spacing:.06em;margin-bottom:4px;}
+  .sq-side-link-title{font-size:13.5px;font-weight:700;color:var(--sq-text);line-height:1.65;}
 }
 /* TOC（サイドバー内） */
-.sq-toc-title{font-weight:700;color:var(--sq-text);margin-bottom:10px;font-size:12px;letter-spacing:.08em;}
+.sq-toc-title{font-weight:700;color:var(--sq-text);margin-bottom:10px;font-size:13px;letter-spacing:.06em;}
 .sq-toc ol{margin:0;padding-left:16px;}
 .sq-toc li{margin-bottom:5px;line-height:1.6;}
-.sq-toc a{font-size:12px;color:var(--sq-accent-bright);text-decoration:none;}
+.sq-toc a{font-size:13.5px;color:var(--sq-accent-bright);text-decoration:none;}
 .sq-toc a:hover{text-decoration:underline;}
 /* TOC（モバイル：アコーディオン） */
 @media(max-width:959px){
@@ -1506,7 +1594,7 @@ html[data-theme="dark"] .sq-article-theme-group{
   /* リアクションモバイル */
   .sq-reaction{padding:24px 16px;}
   .sq-reaction-btn{padding:14px 16px;flex:1;min-width:90px;}
-  .sq-reaction-emoji{font-size:22px;}
+  .sq-reaction-emoji{width:22px;height:22px;}
   .sq-reaction-btns{gap:8px;}
   /* 関連記事グリッドモバイル */
   .sq-card-grid{grid-template-columns:1fr !important;}
@@ -1529,9 +1617,10 @@ html[data-theme="dark"] .sq-article-theme-group{
 /* 会話UI */
 .sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
 .sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
-.sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
 .sq-chat-avatar.student{background:linear-gradient(135deg,#E0F0FF,#BAD9F5);}
 .sq-chat-avatar.teacher{background:linear-gradient(135deg,#E8F7B8,#8CC63F);}
+.sq-chat-avatar img{width:100%;height:100%;object-fit:cover;}
 .sq-chat-name{font-size:10px;font-weight:700;color:var(--sq-muted);margin-bottom:4px;letter-spacing:.05em;}
 .sq-chat-bubble{position:relative;background:var(--sq-surface-soft);border:1px solid var(--sq-border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:var(--sq-text);line-height:1.8;max-width:calc(100% - 60px);}
 .sq-chat-row.teacher .sq-chat-bubble{background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.03));border-color:rgba(140,198,63,.3);border-radius:0 12px 12px 12px;}
@@ -1539,7 +1628,8 @@ html[data-theme="dark"] .sq-chat-bubble{background:rgba(255,255,255,.04);}
 html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140,198,63,.06);}
 /* 著者プロフィール */
 .sq-author{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:14px 18px;margin:24px 0 32px;}
-.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 0 24px rgba(140,198,63,.22);}
+.sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;box-shadow:0 0 24px rgba(140,198,63,.22);}
+.sq-author-avatar img{width:100%;height:100%;object-fit:cover;}
 .sq-author-name{font-size:13px;font-weight:700;color:var(--sq-text);margin-bottom:2px;}
 .sq-author-title{font-size:11px;color:var(--sq-accent-bright);font-weight:700;margin-bottom:4px;letter-spacing:.06em;}
 .sq-author-bio{font-size:12px;color:var(--sq-soft);line-height:1.7;}
@@ -1549,6 +1639,7 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-share-btns{display:flex;gap:10px;flex-wrap:wrap;}
 .sq-share-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .2s, transform .2s, box-shadow .2s;}
 .sq-share-btn:hover{opacity:.9;text-decoration:none;transform:translateY(-1px);}
+.sq-share-btn:active{transform:scale(.96);}
 .sq-share-btn-x{background:#000;color:#fff;}
 .sq-share-btn-line{background:#06C755;color:#fff;}
 /* 新着・同カテゴリ */
@@ -1567,9 +1658,11 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-reaction-title{font-size:14px;font-weight:700;color:var(--sq-muted);letter-spacing:.06em;margin-bottom:16px;}
 .sq-reaction-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 .sq-reaction-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 22px;background:var(--sq-surface);border:1.5px solid var(--sq-border);border-radius:14px;cursor:pointer;transition:border-color .2s,background .2s,transform .2s,box-shadow .2s;font-family:inherit;color:var(--sq-muted);}
-.sq-reaction-btn:hover{border-color:#8CC63F;transform:translateY(-2px);box-shadow:0 6px 18px rgba(140,198,63,.15);}
+.sq-reaction-btn:hover{border-color:#8CC63F;color:var(--sq-accent-bright);transform:translateY(-2px);box-shadow:0 6px 18px rgba(140,198,63,.15);}
+.sq-reaction-btn:active{transform:scale(.95);}
 .sq-reaction-btn.sq-reacted{border-color:#8CC63F;background:rgba(140,198,63,.12);color:var(--sq-accent-bright);box-shadow:0 4px 14px rgba(140,198,63,.18);}
-.sq-reaction-emoji{font-size:26px;line-height:1;}
+.sq-reaction-emoji{width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:inherit;transition:color .2s;}
+.sq-reaction-emoji svg{width:100%;height:100%;}
 .sq-reaction-label{font-size:11px;font-weight:700;letter-spacing:.04em;}
 .sq-reaction-count{font-size:14px;font-weight:700;color:#8CC63F;font-family:'Share Tech Mono',monospace;}
 .sq-reaction-note{font-size:12px;color:#8CC63F;margin-top:12px;min-height:18px;font-weight:700;}
@@ -1578,12 +1671,25 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-art-auth-bar{display:flex;align-items:center;justify-content:flex-end;gap:10px;max-width:800px;margin:0 auto 12px;}
 .sq-google-login-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--sq-border-strong);background:var(--sq-surface);color:var(--sq-text);font-size:13px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;}
 .sq-google-login-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.14);}
+.sq-google-login-btn:active{transform:scale(.97);}
 .sq-art-user-info{display:flex;align-items:center;gap:8px;}
 .sq-art-avatar{width:28px;height:28px;border-radius:50%;object-fit:cover;}
 .sq-art-avatar-ph{width:28px;height:28px;border-radius:50%;background:#8CC63F;color:#0A0A0F;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
 .sq-art-user-name{font-size:13px;font-weight:700;color:var(--sq-text);}
 .sq-art-logout-btn{font-size:11px;color:var(--sq-muted);background:none;border:1px solid var(--sq-border);border-radius:100px;padding:4px 10px;cursor:pointer;font-family:inherit;transition:color .2s;}
 .sq-art-logout-btn:hover{color:var(--sq-text);}
+.sq-art-logout-btn:active{transform:scale(.95);}
+/* 匿名（ニックネーム）ログイン */
+.sq-anon-or{font-size:11px;color:var(--sq-muted);}
+.sq-anon-login{display:inline-flex;align-items:center;gap:6px;}
+.sq-anon-nickname{width:140px;padding:7px 10px;border-radius:100px;border:1px solid var(--sq-border-strong);background:var(--sq-surface);color:var(--sq-text);font-size:13px;font-family:inherit;box-sizing:border-box;}
+.sq-anon-nickname:focus{outline:none;border-color:#8CC63F;}
+.sq-anon-start-btn{background:#8CC63F;color:#0A0A0F;border:none;border-radius:100px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .2s;white-space:nowrap;}
+.sq-anon-start-btn:hover{opacity:.88;}
+.sq-anon-start-btn:active{transform:scale(.96);}
+.sq-anon-start-btn:disabled{opacity:.5;cursor:default;}
+.sq-comment-login-prompt .sq-anon-login{margin-top:12px;justify-content:center;}
+.sq-comment-login-prompt .sq-anon-or{display:block;margin:10px 0;}
 /* Comments */
 .sq-comment-section{padding:32px 24px;background:var(--sq-surface-soft);border-top:1px solid var(--sq-border);}
 .sq-comment-inner{max-width:800px;margin:0 auto;}
@@ -1597,6 +1703,7 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-comment-char{font-size:11px;color:var(--sq-muted);}
 .sq-comment-submit{background:#8CC63F;color:#0A0A0F;border:none;border-radius:100px;padding:9px 20px;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .2s;font-family:inherit;}
 .sq-comment-submit:hover{opacity:.88;transform:translateY(-1px);}
+.sq-comment-submit:active{transform:scale(.96);}
 .sq-comment-submit:disabled{opacity:.45;cursor:default;transform:none;}
 .sq-comment-login-prompt{text-align:center;padding:20px;color:var(--sq-muted);font-size:13px;background:var(--sq-surface);border:1px solid var(--sq-border);border-radius:12px;margin-bottom:24px;line-height:1.8;}
 .sq-comment-list{display:flex;flex-direction:column;gap:12px;}
@@ -1610,12 +1717,15 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-comment-c-actions{display:flex;gap:8px;align-items:center;}
 .sq-comment-like-btn,.sq-comment-report-btn,.sq-comment-del-btn{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;border:1px solid var(--sq-border);background:transparent;color:var(--sq-muted);font-size:12px;cursor:pointer;transition:border-color .2s,color .2s,background .2s;font-family:inherit;}
 .sq-comment-like-btn:hover{border-color:#8CC63F;color:#8CC63F;}
+.sq-comment-like-btn:active{transform:scale(.93);}
 .sq-comment-like-btn.sq-liked{border-color:#8CC63F;color:#8CC63F;background:rgba(140,198,63,.1);}
 .sq-comment-like-btn:disabled{opacity:.5;cursor:default;}
 .sq-comment-report-btn{margin-left:auto;}
 .sq-comment-report-btn:hover{border-color:#EF4444;color:#EF4444;}
+.sq-comment-report-btn:active{transform:scale(.93);}
 .sq-comment-report-btn.sq-reported{border-color:#EF4444;color:#EF4444;opacity:.6;cursor:default;}
 .sq-comment-del-btn:hover{border-color:#EF4444;color:#EF4444;}
+.sq-comment-del-btn:active{transform:scale(.93);}
 .sq-comment-empty{text-align:center;color:var(--sq-muted);font-size:13px;padding:24px 0;}
 @media(max-width:959px){
   .sq-art-auth-bar{justify-content:flex-start;}
@@ -1627,6 +1737,7 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-prevnext{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:36px 0 8px;max-width:800px;margin-left:auto;margin-right:auto;padding:0 24px;}
 .sq-pn-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1px solid var(--sq-border);border-radius:12px;text-decoration:none;color:var(--sq-text);transition:border-color .2s,background .2s;}
 .sq-pn-btn:hover{border-color:#8CC63F;background:var(--sq-surface-soft);text-decoration:none;}
+.sq-pn-btn:active{transform:scale(.98);}
 .sq-pn-next{justify-content:flex-end;}
 .sq-pn-arrow{font-size:18px;color:#8CC63F;flex-shrink:0;font-weight:700;line-height:1;}
 .sq-pn-info{display:flex;flex-direction:column;gap:3px;min-width:0;}
@@ -1642,11 +1753,13 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-read-btn-wrap{max-width:800px;margin:0 auto 8px;padding:0 24px;text-align:center;}
 .sq-read-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:2px solid var(--sq-border);border-radius:100px;background:transparent;color:var(--sq-muted);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;}
 .sq-read-btn:hover{border-color:#8CC63F;color:#8CC63F;}
+.sq-read-btn:active{transform:scale(.96);}
 .sq-read-btn.sq-read-btn--done{border-color:#8CC63F;background:rgba(140,198,63,.12);color:#276749;}
 .sq-read-btn .sq-rb-icon{font-size:16px;}
 /* ── 検索モーダル ── */
 .sq-search-btn{background:none;border:none;cursor:pointer;padding:6px 10px;color:var(--sq-muted);border-radius:8px;transition:color .15s,background .15s;display:flex;align-items:center;gap:5px;font-size:14px;font-family:inherit;line-height:1;}
 .sq-search-btn:hover{color:var(--sq-text);background:var(--sq-surface-soft);}
+.sq-search-btn:active{transform:scale(.92);}
 .sq-search-btn svg{flex-shrink:0;}
 .sq-search-modal{display:none;position:fixed;inset:0;z-index:9999;}
 .sq-search-modal.open{display:block;}
@@ -1670,6 +1783,348 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-state{padding:10px 20px;font-size:11px;color:var(--sq-muted);border-bottom:1px solid var(--sq-border);}
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
+
+/* ── 法人税等・消費税記事 (boki2-hojinzei-shohizei) 固有コンポーネント ダークモード ── */
+/* step-flow (3ステップ) */
+html[data-theme="dark"] .step-card.s1{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .step-card.s2{background:rgba(124,58,237,.10) !important;border-color:rgba(124,58,237,.35) !important;}
+html[data-theme="dark"] .step-card.s3{background:rgba(39,103,73,.12) !important;border-color:rgba(39,103,73,.4) !important;}
+html[data-theme="dark"] .step-card.s1 .step-kamoku,html[data-theme="dark"] .step-card.s1 .step-amt{color:#90CDF4 !important;}
+html[data-theme="dark"] .step-card.s2 .step-kamoku,html[data-theme="dark"] .step-card.s2 .step-amt{color:#C4B5FD !important;}
+html[data-theme="dark"] .step-card.s3 .step-kamoku,html[data-theme="dark"] .step-card.s3 .step-amt{color:#B6E27C !important;}
+html[data-theme="dark"] .step-timing,html[data-theme="dark"] .step-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .step-note{color:#CCD6E5 !important;}
+html[data-theme="dark"] .step-arrow{color:#B6E27C !important;}
+/* calc-bar */
+html[data-theme="dark"] .calc-bar{background:rgba(59,130,246,.08) !important;border-color:rgba(59,130,246,.25) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .calc-bar strong{color:#90CDF4 !important;}
+/* sousai-box (消費税相殺パズル) */
+html[data-theme="dark"] .sousai-card.kari-uke{background:rgba(79,209,197,.08) !important;border-color:rgba(79,209,197,.35) !important;}
+html[data-theme="dark"] .sousai-card.kari-barai{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-badge{background:rgba(79,209,197,.2) !important;color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-badge{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-name{color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-name{color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-amt{color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-amt{color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-desc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .sousai-card.kari-uke .sousai-move{background:rgba(79,209,197,.15) !important;color:#81E6D9 !important;}
+html[data-theme="dark"] .sousai-card.kari-barai .sousai-move{background:rgba(252,129,129,.12) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .sousai-center .sc-label{color:#9BA7BB !important;}
+html[data-theme="dark"] .sousai-result{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .sousai-result .sr-calc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .sousai-result .sr-name,html[data-theme="dark"] .sousai-result .sr-amt{color:#F6AD55 !important;}
+html[data-theme="dark"] .sousai-result .sr-note{color:#9BA7BB !important;}
+/* ── ここまで ── */
+
+/* ── 純資産・剰余金配当記事 (boki2-junshisan) 固有コンポーネント ダークモード ── */
+/* group-map (2グループ) */
+html[data-theme="dark"] .gm-card.blue{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .gm-card.orange{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .gm-card.blue .gm-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .gm-card.orange .gm-title{color:#F6AD55 !important;}
+html[data-theme="dark"] .gm-item{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .gm-item .gm-name{color:#F8FAFC !important;}
+html[data-theme="dark"] .gm-item .gm-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .gm-item .gm-desc{color:#CCD6E5 !important;}
+/* minus-box (自己株式) */
+html[data-theme="dark"] .minus-box{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.4) !important;}
+html[data-theme="dark"] .minus-badge{background:rgba(252,129,129,.6) !important;}
+html[data-theme="dark"] .minus-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .minus-body strong{color:#FC8181 !important;}
+/* haito-flow (配当フロー) */
+html[data-theme="dark"] .haito-flow{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .hf-title{color:#F6AD55 !important;}
+html[data-theme="dark"] .hf-center{color:#F6AD55 !important;}
+html[data-theme="dark"] .hf-arrow-row{color:#F6AD55 !important;}
+html[data-theme="dark"] .hf-card.red{background:rgba(252,129,129,.10) !important;border-color:rgba(252,129,129,.35) !important;}
+html[data-theme="dark"] .hf-card.teal{background:rgba(79,209,197,.08) !important;border-color:rgba(79,209,197,.35) !important;}
+html[data-theme="dark"] .hf-card.red .hf-name{color:#FC8181 !important;}
+html[data-theme="dark"] .hf-card.teal .hf-name{color:#81E6D9 !important;}
+html[data-theme="dark"] .hf-card .hf-yomi{color:#9BA7BB !important;}
+html[data-theme="dark"] .hf-card.red .hf-amt{color:#FC8181 !important;}
+html[data-theme="dark"] .hf-card.teal .hf-amt{color:#81E6D9 !important;}
+html[data-theme="dark"] .hf-card .hf-note{color:#9BA7BB !important;}
+html[data-theme="dark"] .hf-sum{background:rgba(255,255,255,.05) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .hf-sum strong{color:#F8FAFC !important;}
+/* ── ここまで ── */
+
+/* ── 工業簿記4記事 共通コンポーネント ダークモード ── */
+/* mondai (boki2版 — liも対象) */
+html[data-theme="dark"] .mondai li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .mondai .m-label{color:#90CDF4 !important;}
+/* faq */
+html[data-theme="dark"] .faq-item{border-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .faq-q{background:linear-gradient(180deg,#151A2A,#111728) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .faq-a{color:#CCD6E5 !important;background:#0F1421 !important;}
+/* c2-card.a / c2-card.b (工業簿記記事のバリアント — .buy/.sellとは別) */
+html[data-theme="dark"] .c2-card.a{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.25) !important;}
+html[data-theme="dark"] .c2-card.b{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.25) !important;}
+html[data-theme="dark"] .c2-card.a .c2-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .c2-card.b .c2-title{color:#B6E27C !important;}
+html[data-theme="dark"] .c2-card p,html[data-theme="dark"] .c2-card li{color:#CCD6E5 !important;}
+/* table highlight rows */
+html[data-theme="dark"] .td-total{background:rgba(140,198,63,.15) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .td-goal{background:rgba(59,130,246,.15) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .td-sub{background:rgba(59,130,246,.10) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] td.td-red{color:#FC8181 !important;}
+html[data-theme="dark"] td.td-green{color:#B6E27C !important;}
+html[data-theme="dark"] td.td-plus{color:#B6E27C !important;}
+html[data-theme="dark"] td.td-minus{color:#FC8181 !important;}
+
+/* ── 総合原価計算記事 (boki2-sogo-genka) 固有コンポーネント ── */
+/* tbox (材料費・加工費ボックス図) */
+html[data-theme="dark"] .tbox-mat{border-color:rgba(59,130,246,.45) !important;}
+html[data-theme="dark"] .tbox-kak{border-color:rgba(39,103,73,.55) !important;}
+html[data-theme="dark"] .tbox-mat .tbox-col.l{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .tbox-kak .tbox-col.l{background:rgba(39,103,73,.12) !important;}
+html[data-theme="dark"] .tbox-col.r{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .tbox-col{border-right-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .tbox-col-title{color:#9BA7BB !important;}
+html[data-theme="dark"] .tbox-item{color:#CCD6E5 !important;border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .tbox-item.total{border-top-color:rgba(255,255,255,.15) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .tbox-item.answer{color:#B6E27C !important;}
+html[data-theme="dark"] .tbox-item.pass{color:#F6AD55 !important;}
+html[data-theme="dark"] .tbox-item.newitem{color:#90CDF4 !important;}
+html[data-theme="dark"] .tbox-item.sub{color:#9BA7BB !important;}
+html[data-theme="dark"] .tbox-badge{background:rgba(255,255,255,.08) !important;color:#9BA7BB !important;}
+/* result-box (STEP3合算) */
+html[data-theme="dark"] .result-box{background:linear-gradient(180deg,#0E2218,#0B1A14) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .result-box .r-label{color:#B6E27C !important;}
+html[data-theme="dark"] .result-box p{color:#E8EEF8 !important;}
+
+/* ── 製造原価報告書記事 (boki2-seizo-genka-hokokusho) 固有コンポーネント ── */
+/* box-grid (仕掛品T字ボックス) */
+html[data-theme="dark"] .box-grid{border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .box-left{background:rgba(59,130,246,.10) !important;border-right-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .box-right{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .box-header{color:#9BA7BB !important;}
+html[data-theme="dark"] .box-row{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .box-row.total{border-top-color:rgba(59,130,246,.4) !important;}
+html[data-theme="dark"] .box-row .label{color:#CCD6E5 !important;}
+html[data-theme="dark"] .box-row .num{color:#F8FAFC !important;}
+html[data-theme="dark"] .box-row.highlight .label,html[data-theme="dark"] .box-row.highlight .num{color:#F6AD55 !important;}
+html[data-theme="dark"] .box-row.answer .label,html[data-theme="dark"] .box-row.answer .num{color:#90CDF4 !important;}
+/* combo-relay (仕掛品→製品バトンリレーボックス) */
+html[data-theme="dark"] .relay-card.wip{border-color:rgba(59,130,246,.4) !important;}
+html[data-theme="dark"] .relay-card.prod{border-color:rgba(39,103,73,.45) !important;}
+html[data-theme="dark"] .relay-card.wip .relay-col.l{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .relay-card.prod .relay-col.l{background:rgba(39,103,73,.12) !important;}
+html[data-theme="dark"] .relay-col.r{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .relay-col{border-right-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .relay-col-title{color:#9BA7BB !important;}
+html[data-theme="dark"] .relay-item{color:#CCD6E5 !important;border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .relay-item.move{color:#F6AD55 !important;}
+html[data-theme="dark"] .relay-item.answer{color:#B6E27C !important;}
+html[data-theme="dark"] .relay-item.out{color:#FC8181 !important;}
+html[data-theme="dark"] .relay-arrow-col .arr-label{color:#9BA7BB !important;}
+/* img-explain (図解説明) */
+html[data-theme="dark"] .img-explain{background:#111826 !important;}
+html[data-theme="dark"] .ie-row{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .ie-label.ie-left{background:rgba(59,130,246,.18) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .ie-label.ie-right{background:rgba(140,198,63,.16) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .ie-desc{color:#CCD6E5 !important;}
+/* baton-box (バトンリレー説明) */
+html[data-theme="dark"] .baton-left{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .baton-right{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .baton-left .baton-title{color:#90CDF4 !important;}
+html[data-theme="dark"] .baton-right .baton-title{color:#F6AD55 !important;}
+html[data-theme="dark"] .baton-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .baton-body strong{color:#B6E27C !important;}
+html[data-theme="dark"] .baton-arrow{color:#B6E27C !important;}
+html[data-theme="dark"] .baton-arrow span{color:#9BA7BB !important;}
+/* cross-link */
+html[data-theme="dark"] .cross-link{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .cross-link .cl-label{color:#F6AD55 !important;}
+html[data-theme="dark"] .cross-link p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .cross-link a{background:#D97706 !important;color:#0A0A0F !important;}
+
+/* ── 製造間接費記事 (boki2-seizo-kansetsuhi) 固有コンポーネント ── */
+/* t-account (T字勘定ビジュアル) */
+html[data-theme="dark"] .t-account{border-color:rgba(255,255,255,.15) !important;}
+html[data-theme="dark"] .t-left{background:rgba(252,129,129,.08) !important;border-right-color:rgba(255,255,255,.15) !important;}
+html[data-theme="dark"] .t-right{background:rgba(140,198,63,.08) !important;}
+html[data-theme="dark"] .t-row{border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .t-row.balance{border-top-color:rgba(255,255,255,.2) !important;}
+html[data-theme="dark"] .t-row .label{color:#CCD6E5 !important;}
+html[data-theme="dark"] .t-row .num{color:#F8FAFC !important;}
+html[data-theme="dark"] .t-row.unfav .label,html[data-theme="dark"] .t-row.unfav .num{color:#FC8181 !important;}
+html[data-theme="dark"] .t-row.fav .label,html[data-theme="dark"] .t-row.fav .num{color:#B6E27C !important;}
+html[data-theme="dark"] .t-badge.unfav{background:rgba(252,129,129,.18) !important;color:#FC8181 !important;}
+html[data-theme="dark"] .t-badge.fav{background:rgba(140,198,63,.18) !important;color:#B6E27C !important;}
+/* story-card (社長ストーリー) */
+html[data-theme="dark"] .story-card.bad{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.3) !important;}
+html[data-theme="dark"] .story-card.good{background:rgba(140,198,63,.08) !important;border-color:rgba(140,198,63,.3) !important;}
+html[data-theme="dark"] .story-card.bad .story-title{color:#FC8181 !important;}
+html[data-theme="dark"] .story-card.good .story-title{color:#B6E27C !important;}
+html[data-theme="dark"] .story-card p{color:#CCD6E5 !important;}
+/* box-card (シュラッター図ボックス) */
+html[data-theme="dark"] .box-card{border-color:rgba(59,130,246,.35) !important;}
+html[data-theme="dark"] .box-card.product{border-color:rgba(39,103,73,.4) !important;}
+html[data-theme="dark"] .box-card .bc-col.left{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .box-card.product .bc-col.left{background:rgba(39,103,73,.12) !important;}
+html[data-theme="dark"] .bc-col.right{background:rgba(255,255,255,.04) !important;}
+html[data-theme="dark"] .bc-col{border-right-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .bc-item{color:#CCD6E5 !important;border-bottom-color:rgba(255,255,255,.06) !important;}
+html[data-theme="dark"] .bc-item.highlight{color:#90CDF4 !important;}
+html[data-theme="dark"] .bc-item.answer{color:#B6E27C !important;}
+html[data-theme="dark"] .bc-item.move{color:#F6AD55 !important;}
+
+/* ── 部門別原価計算記事 (boki2-bumonbetsu) 固有コンポーネント ── */
+/* flow-box (部門フロー図) */
+html[data-theme="dark"] .flow-box.sub{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.35) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .flow-box.prod{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.3) !important;color:#B6E27C !important;}
+html[data-theme="dark"] .flow-box.item{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.35) !important;color:#F6AD55 !important;}
+/* ── boki-zero-04 仕訳のしくみ 図解追加コンポーネント ── */
+html[data-theme="dark"] .or-card.result{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .or-card.reason{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.3) !important;}
+html[data-theme="dark"] .or-card.result .or-kamoku{color:#90CDF4 !important;}
+html[data-theme="dark"] .or-card.reason .or-kamoku{color:#F6AD55 !important;}
+html[data-theme="dark"] .or-note{color:#8899AA !important;}
+html[data-theme="dark"] .or-balance{background:rgba(39,103,73,.12) !important;color:#9AE6B4 !important;}
+html[data-theme="dark"] .memory-half.left{background:rgba(59,130,246,.10) !important;}
+html[data-theme="dark"] .memory-half.right{background:rgba(217,119,6,.08) !important;}
+html[data-theme="dark"] .faq-item{border-color:rgba(255,255,255,.08) !important;}
+html[data-theme="dark"] .faq-item h3{background:rgba(255,255,255,.04) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .faq-answer{color:#CCD6E5 !important;}
+/* ── 総合原価計算記事 (boki2-sogo-genka) 図解ナビ追加コンポーネント ── */
+html[data-theme="dark"] .box-guide{background:rgba(59,130,246,.06) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bg-lead{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bg-card.mat{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bg-card.kak{background:rgba(39,103,73,.12) !important;border-color:rgba(39,103,73,.35) !important;}
+html[data-theme="dark"] .bg-note{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bg-card.mat .bg-eq{background:rgba(59,130,246,.15) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .bg-card.kak .bg-eq{background:rgba(39,103,73,.15) !important;color:#9AE6B4 !important;}
+html[data-theme="dark"] .keiro-box{background:rgba(217,119,6,.08) !important;border-color:rgba(217,119,6,.35) !important;}
+html[data-theme="dark"] .kb-text{color:#CCD6E5 !important;}
+html[data-theme="dark"] .kb-row{color:#CCD6E5 !important;}
+html[data-theme="dark"] .kb-note{color:#F6AD55 !important;}
+html[data-theme="dark"] .block-map{background:rgba(59,130,246,.06) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bm-intro{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bm-block.i1{background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .bm-block.i2{background:rgba(39,103,73,.12) !important;border-color:rgba(39,103,73,.3) !important;}
+html[data-theme="dark"] .bm-block.i3{background:rgba(217,119,6,.10) !important;border-color:rgba(217,119,6,.3) !important;}
+html[data-theme="dark"] .bm-calc{color:#CCD6E5 !important;}
+html[data-theme="dark"] .bm-desc{color:#8899AA !important;}
+html[data-theme="dark"] .bm-total{background:rgba(124,58,237,.10) !important;border-color:rgba(124,58,237,.3) !important;color:#C4B5FD !important;}
+/* ── カスタムボックス類のダークモード対応 ── */
+html[data-theme="dark"] .container .warning-box{background:linear-gradient(180deg,#2A1D09,#1C1306) !important;border-color:rgba(245,158,11,.45) !important;}
+html[data-theme="dark"] .container .warning-box p,html[data-theme="dark"] .container .warning-box .wb-title{color:#FDE68A !important;}
+html[data-theme="dark"] .container .trap-box{background:linear-gradient(180deg,#2A0F0F,#1C0A0A) !important;border-color:rgba(252,129,129,.4) !important;}
+html[data-theme="dark"] .container .trap-box p,html[data-theme="dark"] .container .trap-box .trap-title{color:#FCA5A5 !important;}
+html[data-theme="dark"] .container .noneed-box{background:linear-gradient(180deg,#0C2414,#091A0E) !important;border-color:rgba(104,211,145,.3) !important;}
+html[data-theme="dark"] .container .noneed-box p,html[data-theme="dark"] .container .noneed-box .nn-title{color:#86EFAC !important;}
+html[data-theme="dark"] .container .logic-box{background:linear-gradient(180deg,#0C1A2E,#091422) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .container .logic-box p,html[data-theme="dark"] .container .logic-box .lb-title{color:#93C5FD !important;}
+html[data-theme="dark"] .container .checklist li{background:linear-gradient(180deg,#0C2414,#091A0E) !important;border-color:rgba(104,211,145,.22) !important;color:#86EFAC !important;}
+html[data-theme="dark"] .container .rule-card.self-use,html[data-theme="dark"] .container .rule-card.self{background:linear-gradient(180deg,#0C2414,#091A0E) !important;border-color:rgba(104,211,145,.3) !important;}
+html[data-theme="dark"] .container .rule-card.market,html[data-theme="dark"] .container .rule-card.sell{background:linear-gradient(180deg,#0C1A2E,#091422) !important;border-color:rgba(59,130,246,.3) !important;}
+html[data-theme="dark"] .container .rule-card p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .container .rule-card .rc-title{color:#B6E27C !important;}
+html[data-theme="dark"] .container .calc-box em{background:rgba(99,102,241,.28) !important;color:#A5B4FC !important;}
+html[data-theme="dark"] .container .calc-box .calc-formula{color:#E8EEF8 !important;}
+html[data-theme="dark"] .container .calc-box .calc-note{color:#9BA7BB !important;}
+html[data-theme="dark"] .container .classify-table .type-r,html[data-theme="dark"] .container .classify-table .type-g,html[data-theme="dark"] .container .classify-table .type-b{background:transparent !important;}
+html[data-theme="dark"] .container .classify-table td{color:#CCD6E5 !important;}
+html[data-theme="dark"] .container .adj-col{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.2) !important;}
+html[data-theme="dark"] .container .adj-col td{color:#CCD6E5 !important;background:transparent !important;}
+html[data-theme="dark"] .container .adj-col .adj-total td{background:rgba(255,255,255,.06) !important;color:#F8FAFC !important;}
+html[data-theme="dark"] .container .adj-col-title.bank{background:#1565C0 !important;}
+html[data-theme="dark"] .container .adj-col-title.co{background:#276749 !important;}
+html[data-theme="dark"] .container .pattern-table td{color:#CCD6E5 !important;}
+html[data-theme="dark"] .container .badge-bank,html[data-theme="dark"] .container .badge-co{color:#fff !important;}
+html[data-theme="dark"] .container .badge-need,html[data-theme="dark"] .container .badge-noneed{color:#fff !important;}
+/* ── ここまで ── */
+/* ── Phase cards ダークモード ── */
+html[data-theme="dark"] .phase-p1{background:linear-gradient(180deg,#0D1A3A,#0A1530) !important;border-color:rgba(59,130,246,.28) !important;}
+html[data-theme="dark"] .phase-p1 h3{color:#90CDF4 !important;}
+html[data-theme="dark"] .phase-p1 .phase-badge{background:rgba(59,130,246,.20) !important;color:#90CDF4 !important;}
+html[data-theme="dark"] .phase-p2{background:linear-gradient(180deg,#1A0D3A,#150A2E) !important;border-color:rgba(124,58,237,.28) !important;}
+html[data-theme="dark"] .phase-p2 h3{color:#C4B5FD !important;}
+html[data-theme="dark"] .phase-p2 .phase-badge{background:rgba(124,58,237,.20) !important;color:#C4B5FD !important;}
+html[data-theme="dark"] .phase-p3{background:linear-gradient(180deg,#2A1D07,#1C1305) !important;border-color:rgba(245,158,11,.28) !important;}
+html[data-theme="dark"] .phase-p3 h3{color:#F7D774 !important;}
+html[data-theme="dark"] .phase-p3 .phase-badge{background:rgba(245,158,11,.18) !important;color:#F7D774 !important;}
+html[data-theme="dark"] .phase-card p,
+html[data-theme="dark"] .phase-card li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .phase-card strong{color:#F8FAFC !important;}
+html[data-theme="dark"] .phase-meta span{color:#9BA7BB !important;}
+/* ── ここまで ── */
+/* ── Subject cards ダークモード ── */
+html[data-theme="dark"] .subject-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
+html[data-theme="dark"] .subject-card__title{color:#F8FAFC !important;}
+html[data-theme="dark"] .subject-card__note{color:#9BA7BB !important;}
+/* ── ここまで ── */
+/* ── Exam next / Like CTA / Alert box ダークモード ── */
+html[data-theme="dark"] .exam-next{background:linear-gradient(135deg,#0A1E14,#0C2018) !important;border-color:rgba(52,211,153,.30) !important;}
+html[data-theme="dark"] .exam-next__date{color:#6EE7B7 !important;}
+html[data-theme="dark"] .exam-next__label{color:#34D399 !important;}
+html[data-theme="dark"] .exam-next__note{color:#9BA7BB !important;}
+html[data-theme="dark"] .like-cta{background:linear-gradient(135deg,#0A1E14,#0D2519) !important;border-color:rgba(140,198,63,.28) !important;}
+html[data-theme="dark"] .like-cta p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .like-cta .like-note{color:#9BA7BB !important;}
+html[data-theme="dark"] .alert-box{background:linear-gradient(180deg,#2A0E0E,#1E0A0A) !important;border-color:rgba(252,129,129,.28) !important;}
+html[data-theme="dark"] .alert-box strong{color:#FC8181 !important;}
+html[data-theme="dark"] .alert-box p,
+html[data-theme="dark"] .alert-box li{color:#F0C6C6 !important;}
+/* ── ここまで ── */
+/* ── Caution card / Trap box ダークモード ── */
+html[data-theme="dark"] .caution-card{background:linear-gradient(135deg,#2A1D07,#1C1305) !important;border-color:rgba(246,173,85,.28) !important;}
+html[data-theme="dark"] .caution-card h3{color:#F7D774 !important;}
+html[data-theme="dark"] .caution-card p,
+html[data-theme="dark"] .caution-card li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .caution-card strong{color:#F8FAFC !important;}
+html[data-theme="dark"] .trap-box{background:linear-gradient(180deg,#2A0E0E,#1E0A0A) !important;border-color:rgba(252,129,129,.28) !important;}
+html[data-theme="dark"] .trap-box strong{color:#FC8181 !important;}
+html[data-theme="dark"] .trap-box p,
+html[data-theme="dark"] .trap-box li{color:#F0C6C6 !important;}
+/* ── ここまで ── */
+/* ── Phase boxes / Link cards (boki2-next-exam.html) ダークモード ── */
+html[data-theme="dark"] .phase-box.blue{background:linear-gradient(180deg,#0D1A3A,#0A1530) !important;border-color:rgba(59,130,246,.28) !important;}
+html[data-theme="dark"] .phase-box.purple{background:linear-gradient(180deg,#1A0D3A,#150A2E) !important;border-color:rgba(124,58,237,.28) !important;}
+html[data-theme="dark"] .phase-box.amber{background:linear-gradient(180deg,#2A1D07,#1C1305) !important;border-color:rgba(245,158,11,.28) !important;}
+html[data-theme="dark"] .phase-box.green{background:linear-gradient(180deg,#0A1E14,#0C2018) !important;border-color:rgba(34,197,94,.24) !important;}
+html[data-theme="dark"] .phase-title.blue{color:#90CDF4 !important;}
+html[data-theme="dark"] .phase-title.purple{color:#C4B5FD !important;}
+html[data-theme="dark"] .phase-title.amber{color:#F7D774 !important;}
+html[data-theme="dark"] .phase-title.green{color:#86EFAC !important;}
+html[data-theme="dark"] .phase-box p,
+html[data-theme="dark"] .phase-box li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .phase-box strong{color:#F8FAFC !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#1E40AF"]{color:#90CDF4 !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#5B21B6"]{color:#C4B5FD !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#92400E"]{color:#F7D774 !important;}
+html[data-theme="dark"] .container .phase-box [style*="color:#166534"]{color:#86EFAC !important;}
+html[data-theme="dark"] .link-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
+/* ── ここまで ── */
+/* ── Like nudge / Office steps / Related cards ダークモード ── */
+html[data-theme="dark"] .like-nudge{background:linear-gradient(180deg,#2A210E,#1C160A) !important;border-color:rgba(246,224,94,.30) !important;}
+html[data-theme="dark"] .like-nudge p{color:#F7D774 !important;}
+html[data-theme="dark"] .like-nudge span{color:#E8C866 !important;}
+html[data-theme="dark"] .office-step{background:linear-gradient(180deg,#151A2A,#111728) !important;}
+html[data-theme="dark"] .office-step strong{color:#B6E27C !important;}
+html[data-theme="dark"] .office-step p{color:#CCD6E5 !important;}
+html[data-theme="dark"] .related-card{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;}
+html[data-theme="dark"] .related-card-title{color:#F8FAFC !important;}
+html[data-theme="dark"] .related{background:#0D1117 !important;}
+html[data-theme="dark"] .related h2{color:#E8EEF8 !important;}
+html[data-theme="dark"] .related-section{background:#0D1117 !important;}
+html[data-theme="dark"] .related-section h2{color:#E8EEF8 !important;}
+html[data-theme="dark"] .faq-answer{color:#CCD6E5 !important;}
+/* ── ここまで ── */
+/* ── インライングラデーション背景 ダークモード ── */
+html[data-theme="dark"] .container [style*="#DBEAFE"],
+html[data-theme="dark"] .container [style*="#EFF6FF"]{background:linear-gradient(135deg,#0D1A3A,#0A1530) !important;}
+html[data-theme="dark"] .container [style*="#DBEAFE"] [style*="color:#1D4ED8"],
+html[data-theme="dark"] .container [style*="#EFF6FF"] [style*="color:#1D4ED8"]{color:#90CDF4 !important;}
+html[data-theme="dark"] .container [style*="#DBEAFE"] a[style*="background:#1D4ED8"],
+html[data-theme="dark"] .container [style*="#EFF6FF"] a[style*="background:#1D4ED8"]{background:#3B82F6 !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"]{background:linear-gradient(135deg,#0A1E14,#0C2018) !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"] [style*="color:#22543D"]{color:#6EE7B7 !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"] [style*="color:#276749"]{color:#9BA7BB !important;}
+html[data-theme="dark"] section [style*="#C6F6D5"] a[style*="background:#fff"]{background:rgba(255,255,255,.08) !important;color:#6EE7B7 !important;}
+/* ── ここまで ── */
 `;
   document.head.appendChild(s);
 }
@@ -2224,7 +2679,7 @@ function insertMidCTA(){
 
 /* ── BreadcrumbList JSON-LD ── */
 function injectBreadcrumbLD(){
-  const base = 'https://hito77ki-ship-it.github.io/study-quest/';
+  const base = 'https://study-quest.net/';
   const items = Array.from(document.querySelectorAll('.breadcrumb a, .breadcrumb')).reduce((acc, el) => {
     if(el.tagName === 'A'){
       acc.push({name: el.textContent.trim(), url: base.replace(/\/$/, '') + '/' + el.getAttribute('href')});
@@ -2233,7 +2688,7 @@ function injectBreadcrumbLD(){
   }, []);
 
   // ホームのURLを正規化
-  if(items[0]) items[0].url = base + 'lp.html';
+  if(items[0]) items[0].url = base;
 
   // 現在ページをラストに追加
   const h1 = document.querySelector('h1');
@@ -2267,10 +2722,10 @@ function buildAuthorBox(){
   const box = document.createElement('div');
   box.className = 'sq-author';
   box.innerHTML = `
-    <div class="sq-author-avatar">⚔</div>
+    <div class="sq-author-avatar"><img src="icons/avatar-teacher.png" alt="大谷 一輝" loading="lazy"></div>
     <div>
       <div class="sq-author-name">大谷 一輝（おおたに ひとき）</div>
-      <div class="sq-author-title">大阪経済大学3回生 ／ 日商簿記1級勉強中 ／ Study Quest 開発者</div>
+      <div class="sq-author-title">関西の大学3回生 ／ 日商簿記1級勉強中 ／ Study Quest 開発者</div>
       <div class="sq-author-bio">公認会計士試験を約1年間勉強し、現在は日商簿記1級を目標に学習中。「勉強が続かない」課題を解決するため、資格学習RPGアプリ Study Quest を個人開発。実際の受験経験をもとに、各資格の勉強法・スケジュールを発信中。X: @wakaba_sq</div>
     </div>`;
   meta.insertAdjacentElement('afterend', box);
@@ -2317,8 +2772,9 @@ function buildAuthBar(container) {
   const bar = document.createElement('div');
   bar.className = 'sq-art-auth-bar';
   if (!_artUser) {
-    bar.innerHTML = `<button class="sq-google-login-btn">${_GOOGLE_ICON}Googleでログイン</button>`;
+    bar.innerHTML = `<button class="sq-google-login-btn">${_GOOGLE_ICON}Googleでログイン</button><span class="sq-anon-or">または</span>`;
     bar.querySelector('button').addEventListener('click', _loginGoogle);
+    _buildNicknameForm(bar);
   } else {
     const name = _artUser.user_metadata?.full_name || _artUser.email || 'ユーザー';
     const avatarUrl = _artUser.user_metadata?.avatar_url;
@@ -2336,9 +2792,9 @@ async function buildReactionWidget() {
   if (!PAGE) return;
   const articleId = PAGE;
   const REACTIONS = [
-    { type: 'helpful',   emoji: '👍', label: '参考になった' },
-    { type: 'learned',   emoji: '💡', label: '勉強になった' },
-    { type: 'motivated', emoji: '🔥', label: 'モチベ上がった' },
+    { type: 'helpful',   emoji: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>', label: '参考になった' },
+    { type: 'learned',   emoji: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>', label: '勉強になった' },
+    { type: 'motivated', emoji: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>', label: 'モチベ上がった' },
   ];
 
   const wrap = document.createElement('div');
@@ -2361,7 +2817,7 @@ async function buildReactionWidget() {
         <span class="sq-reaction-count" id="sqRc-${r.type}">—</span>
       </button>`).join('')}
     </div>
-    <div class="sq-reaction-note" id="sqRNote">${!_artUser ? '<span class="sq-reaction-login-hint">↑ Googleログインでリアクションできます</span>' : ''}</div>
+    <div class="sq-reaction-note" id="sqRNote">${!_artUser ? '<span class="sq-reaction-login-hint">↑ ニックネーム入力またはGoogleログインでリアクションできます</span>' : ''}</div>
   `);
 
   // カウント表示（認証不要）
@@ -2493,12 +2949,15 @@ async function buildCommentWidget() {
   if (!_artUser) {
     inner.insertAdjacentHTML('beforeend', `
       <div class="sq-comment-login-prompt">
-        コメント・いいねをするには <strong>Googleログイン</strong> が必要です。<br>
+        コメント・いいねをするには、ニックネームを入力するか<strong>Googleログイン</strong>してください。<br>
         記事の閲覧はログインなしでできます。<br><br>
         <button class="sq-google-login-btn" id="sqCommentLoginBtn">${_GOOGLE_ICON}Googleでログインする</button>
+        <span class="sq-anon-or">または</span>
+        <div id="sqCommentAnonForm"></div>
       </div>
     `);
     document.getElementById('sqCommentLoginBtn').addEventListener('click', _loginGoogle);
+    _buildNicknameForm(document.getElementById('sqCommentAnonForm'));
   } else {
     const userName = _escHtml(_artUser.user_metadata?.full_name || _artUser.email || 'ユーザー');
     const formWrap = document.createElement('div');
@@ -2525,6 +2984,22 @@ async function buildCommentWidget() {
     submitBtn.addEventListener('click', async () => {
       const body = textarea.value.trim();
       if (!body) return;
+
+      // 簡易スパム対策：URLを含むコメントは弾く
+      if (/https?:\/\/|www\./i.test(body)) {
+        alert('リンクを含むコメントは投稿できません。');
+        return;
+      }
+
+      // 連投防止：60秒に1回まで
+      const lastPostKey = 'sq_last_comment_ts';
+      const lastPostAt = parseInt(localStorage.getItem(lastPostKey) || '0', 10);
+      const now = Date.now();
+      if (now - lastPostAt < 60000) {
+        alert('連続投稿はできません。少し時間をおいてから投稿してください。');
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = '投稿中...';
       try {
@@ -2546,6 +3021,7 @@ async function buildCommentWidget() {
           })
         });
         if (res.ok) {
+          localStorage.setItem(lastPostKey, String(now));
           const [newComment] = await res.json();
           textarea.value = '';
           lenSpan.textContent = '0';
