@@ -14,3 +14,8 @@ build/
 # Misc
 *.txt
 次.json
+
+# Google service account keys (GSC report script)
+*service-account*.json
+gsc-key*.json
+secrets/
