@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
   <defs>
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
-  <rect width="760" height="380" rx="12" fill="#F8FAFC"/>
+  <rect width="760" height="400" rx="12" fill="#F8FAFC"/>
   <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">民法総則——意思表示・代理・時効の頻出論点マップ</text>
 
   <!-- 意思表示 -->
-  <rect x="20" y="52" width="224" height="272" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <rect x="20" y="52" width="224" height="292" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
   <rect x="20" y="52" width="224" height="28" rx="10" fill="#3B82F6"/>
   <rect x="20" y="70" width="224" height="10" fill="#3B82F6"/>
   <text x="132" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">意思表示の瑕疵</text>
@@ -28,18 +28,18 @@
   <text x="36" y="254" font-size="10" fill="#374151">詐欺：善意無過失の第三者に対抗不可</text>
   <text x="36" y="270" font-size="10" fill="#374151">強迫：第三者にも対抗可（善意でも）</text>
 
-  <text x="132" y="306" text-anchor="middle" font-size="10" fill="#64748B">判断軸：</text>
-  <text x="132" y="322" text-anchor="middle" font-size="10" fill="#374151">①有効 ②無効 ③取消</text>
+  <text x="132" y="326" text-anchor="middle" font-size="10" fill="#64748B">判断軸：</text>
+  <text x="132" y="342" text-anchor="middle" font-size="10" fill="#374151">①有効 ②無効 ③取消</text>
 
   <!-- 代理 -->
-  <rect x="268" y="52" width="224" height="272" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
+  <rect x="268" y="52" width="224" height="292" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
   <rect x="268" y="52" width="224" height="28" rx="10" fill="#EAB308"/>
   <rect x="268" y="70" width="224" height="10" fill="#EAB308"/>
   <text x="380" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">代理</text>
 
   <rect x="284" y="88" width="192" height="26" rx="5" fill="#FEF9C3"/>
   <text x="380" y="105" text-anchor="middle" font-size="10.5" font-weight="700" fill="#713F12">有権代理の3要件</text>
-  <text x="284" y="122" font-size="10" fill="#374151">①代理権の存在 ②顕名（本人のため）③代理行為</text>
+  <text x="284" y="122" font-size="9.5" fill="#374151">①代理権の存在 ②顕名（本人のため）③代理行為</text>
 
   <rect x="284" y="132" width="192" height="26" rx="5" fill="#FEF9C3"/>
   <text x="380" y="149" text-anchor="middle" font-size="10.5" font-weight="700" fill="#713F12">無権代理（§113）</text>
@@ -55,11 +55,11 @@
   <text x="380" y="269" text-anchor="middle" font-size="10.5" font-weight="700" fill="#713F12">自己契約・双方代理の禁止</text>
   <text x="284" y="286" font-size="10" fill="#374151">原則無権代理。本人の許諾あれば可</text>
 
-  <text x="380" y="310" text-anchor="middle" font-size="10" fill="#374151">司法書士試験での頻出：</text>
-  <text x="380" y="326" text-anchor="middle" font-size="10" fill="#64748B">無権代理＋相続の組み合わせ問題</text>
+  <text x="380" y="330" text-anchor="middle" font-size="10" fill="#374151">司法書士試験での頻出：</text>
+  <text x="380" y="346" text-anchor="middle" font-size="10" fill="#64748B">無権代理＋相続の組み合わせ問題</text>
 
   <!-- 時効 -->
-  <rect x="516" y="52" width="224" height="272" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <rect x="516" y="52" width="224" height="292" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
   <rect x="516" y="52" width="224" height="28" rx="10" fill="#22C55E"/>
   <rect x="516" y="70" width="224" height="10" fill="#22C55E"/>
   <text x="628" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">時効</text>
@@ -67,23 +67,25 @@
   <rect x="532" y="88" width="192" height="26" rx="5" fill="#DCFCE7"/>
   <text x="628" y="105" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">取得時効</text>
   <text x="532" y="122" font-size="10" fill="#374151">所有の意思・平穏・公然・占有継続</text>
-  <text x="532" y="138" font-size="10" fill="#374151">善意無過失10年、悪意（有過失）20年</text>
+  <text x="532" y="138" font-size="9.5" fill="#374151">善意無過失10年、悪意（有過失）20年</text>
 
   <rect x="532" y="148" width="192" height="26" rx="5" fill="#DCFCE7"/>
   <text x="628" y="165" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">消滅時効</text>
-  <text x="532" y="182" font-size="10" fill="#374151">債権：知ったときから5年 or 権利行使可能から10年</text>
-  <text x="532" y="198" font-size="10" fill="#374151">不法行為：損害・加害者知ったから3年（人身20年）</text>
+  <text x="532" y="182" font-size="10" fill="#374151">債権：知った時から5年</text>
+  <text x="532" y="198" font-size="10" fill="#374151">または権利行使可能から10年</text>
+  <text x="532" y="214" font-size="10" fill="#374151">不法行為：損害・加害者を</text>
+  <text x="532" y="230" font-size="10" fill="#374151">知った時から3年（人身20年）</text>
 
-  <rect x="532" y="208" width="192" height="26" rx="5" fill="#DCFCE7"/>
-  <text x="628" y="225" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">時効の完成猶予・更新</text>
-  <text x="532" y="242" font-size="10" fill="#374151">裁判上の請求→完成猶予（訴訟中は進まない）</text>
-  <text x="532" y="258" font-size="10" fill="#374151">確定判決→更新（ゼロからカウント）</text>
-  <text x="532" y="274" font-size="10" fill="#374151">承認→更新（権利を認めると振出しに）</text>
+  <rect x="532" y="240" width="192" height="26" rx="5" fill="#DCFCE7"/>
+  <text x="628" y="257" text-anchor="middle" font-size="10.5" font-weight="700" fill="#166534">時効の完成猶予・更新</text>
+  <text x="532" y="274" font-size="10" fill="#374151">裁判上の請求→完成猶予（訴訟中は進まない）</text>
+  <text x="532" y="290" font-size="10" fill="#374151">確定判決→更新（ゼロからカウント）</text>
+  <text x="532" y="306" font-size="10" fill="#374151">承認→更新（権利を認めると振出しに）</text>
 
-  <text x="628" y="306" text-anchor="middle" font-size="10" fill="#374151">試験頻出：</text>
-  <text x="628" y="322" text-anchor="middle" font-size="10" fill="#64748B">援用権者の範囲・時効の利益の放棄</text>
+  <text x="628" y="326" text-anchor="middle" font-size="10" fill="#374151">試験頻出：</text>
+  <text x="628" y="342" text-anchor="middle" font-size="10" fill="#64748B">援用権者の範囲・時効の利益の放棄</text>
 
   <!-- Bottom -->
-  <rect x="20" y="336" width="720" height="24" rx="5" fill="#F1F5F9"/>
-  <text x="380" y="352" text-anchor="middle" font-size="10.5" fill="#475569">💡 意思表示の「無効 vs 取消」は第三者保護の範囲が違う。取消は取消権者のみ主張可、無効は誰でも主張可。</text>
+  <rect x="20" y="356" width="720" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="380" y="372" text-anchor="middle" font-size="10.5" fill="#475569">💡 意思表示の「無効 vs 取消」は第三者保護の範囲が違う。取消は取消権者のみ主張可、無効は誰でも主張可。</text>
 </svg>
