@@ -4915,11 +4915,6 @@ details summary:active{background:var(--light);}
         <button class="quick-rec-btn" onclick="quickRecord(60)">+1時間</button>
       </div>
       <div id="quickRecResult" style="font-size:10px;color:var(--accent2);font-family:'Share Tech Mono',monospace;margin-top:6px;min-height:16px;"></div>
-      <!-- 通知許可バナー（Quick Record成功時） -->
-      <div class="notif-banner" id="notifBannerQuick" style="margin-top:8px;">
-        <span>⏰ ストリークが途切れそうな日だけ通知でお知らせ</span>
-        <button class="notif-allow-btn" onclick="requestNotifPerm()">通知を許可する</button>
-      </div>
     </div>
     <!-- 攻略記事レコメンド -->
     <div id="articleRecommendCard" style="grid-column:1/-1;"></div>
@@ -14565,7 +14560,7 @@ function renderTutorialQuestCard(){
       saveAll();
       spawnDmgNumber('🎉 初心者クエスト全達成！ +'+TUTORIAL_REWARD+'G', '#c9a84c', true);
     }
-    renderNextGoalCard(el);
+    el.style.display='none';
     return;
   }
   el.style.display='';
@@ -14588,38 +14583,6 @@ function renderTutorialQuestCard(){
     </div>
     <div class="tq-prog-label"><span>PROGRESS</span><span>${doneCnt} / ${TUTORIAL_QUESTS.length}</span></div>
     <div class="tq-prog-track"><div class="tq-prog-fill" style="width:${pct}%"></div></div>
-  </div></div>`;
-}
-
-/* 初心者クエスト達成後の中期目標カード（燃え尽き防止） */
-const NEXT_GOALS = [
-  { badgeId:'streak7', action:"switchTab('quest')" },
-  { badgeId:'lv10', action:"switchTab('status')" },
-];
-function renderNextGoalCard(el){
-  if(localStorage.getItem('sq2_next_goal_dismissed')){ el.style.display='none'; return; }
-  const goals = NEXT_GOALS.map(g=>{
-    const b = BADGES.find(x=>x.id===g.badgeId);
-    return { ...g, icon:b.icon, title:b.name, desc:b.cond, done:b.chk(char,sessions,selectedSubjectKeys) };
-  });
-  if(goals.every(g=>g.done)){ el.style.display='none'; return; }
-  el.style.display='';
-  el.innerHTML = `<div class="tq-card"><div class="tq-card-inner">
-    <div class="tq-head">
-      <div class="tq-title">🚩 次の目標</div>
-      <div class="tq-item-check" style="cursor:pointer;font-size:11px;color:var(--muted);" onclick="localStorage.setItem('sq2_next_goal_dismissed','1');renderTutorialQuestCard();">✕ 閉じる</div>
-    </div>
-    <div class="tq-list">
-      ${goals.map(g=>`
-      <div class="tq-item${g.done?' done':''}" ${!g.done?`onclick="${g.action}"`:''}>
-        <div class="tq-item-icon">${g.icon}</div>
-        <div class="tq-item-body">
-          <div class="tq-item-title">${escHtml(g.title)}</div>
-          <div class="tq-item-desc">${escHtml(g.desc)}</div>
-        </div>
-        <div class="tq-item-check">${g.done?'✅':'▶'}</div>
-      </div>`).join('')}
-    </div>
   </div></div>`;
 }
 
@@ -16598,7 +16561,7 @@ function requestNotifPerm(){
   }
   Notification.requestPermission().then(perm=>{
     notifGranted=(perm==='granted');
-    document.querySelectorAll('.notif-banner').forEach(el=>el.classList.remove('show'));
+    document.getElementById('notifBanner')?.classList.remove('show');
     if(notifGranted) showAutosaveToast();
   });
 }
@@ -16703,7 +16666,7 @@ function cancelStudyReminder(){
 function checkNotifBanner(){
   if(!('Notification' in window)) return;
   if(Notification.permission==='default'){
-    document.querySelectorAll('.notif-banner').forEach(el=>el.classList.add('show'));
+    document.getElementById('notifBanner')?.classList.add('show');
   } else if(Notification.permission==='granted'){
     notifGranted=true;
   }
@@ -18005,7 +17968,6 @@ async function quickRecord(mins){
     resultEl.textContent = praise;
     setTimeout(()=>{ if(resultEl) resultEl.textContent=''; }, 3000);
   }
-  checkNotifBanner();
 }
 
 /* ── ローカルタイムライン（localStorage） ── */
