@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="tlvtitle tlvdesc">
+  <title id="tlvtitle">管理濃度・許容濃度（TLV）を身近な話で理解する図解</title>
+  <desc id="tlvdesc">コーヒーのカフェイン許容量から飲食店厨房の換気の例を経て、管理濃度・許容濃度（TLV）という試験用語に着地する3段階のたとえ話マップ</desc>
+  <defs>
+    <linearGradient id="tvBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.5" stop-color="#f7fff4"/>
+      <stop offset="1" stop-color="#fff9f4"/>
+    </linearGradient>
+    <linearGradient id="tvTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="tvGoal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ADE80"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <filter id="tvShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.10"/>
+    </filter>
+    <style>.tvt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="1200" height="620" rx="20" fill="url(#tvBg)"/>
+  <circle cx="90" cy="100" r="80" fill="#DBEAFE" opacity="0.4"/>
+  <circle cx="1110" cy="120" r="90" fill="#D1FAE5" opacity="0.4"/>
+
+  <!-- Title -->
+  <rect x="40" y="24" width="1120" height="64" rx="14" fill="url(#tvTitle)"/>
+  <text x="600" y="48" text-anchor="middle" class="tvt" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="3">たとえ話で理解する2段階ステップ</text>
+  <text x="600" y="72" text-anchor="middle" class="tvt" font-size="20" font-weight="800" fill="#FFFFFF">「管理濃度・許容濃度（TLV）」を身近な話で理解する</text>
+
+  <!-- ===== PANEL 1: コーヒーのカフェイン ===== -->
+  <g filter="url(#tvShadow)">
+    <rect x="40" y="112" width="336" height="420" rx="18" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+    <rect x="40" y="112" width="336" height="40" rx="18" fill="#3B82F6"/>
+    <rect x="40" y="132" width="336" height="20" fill="#3B82F6"/>
+  </g>
+  <text x="208" y="138" text-anchor="middle" class="tvt" font-size="13" font-weight="800" fill="#fff">① 身近な例：コーヒーのカフェイン</text>
+
+  <!-- cup 1 (OK) -->
+  <g>
+    <rect x="90" y="190" width="70" height="70" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+    <text x="125" y="234" text-anchor="middle" font-size="30">☕</text>
+    <text x="125" y="278" text-anchor="middle" class="tvt" font-size="12" font-weight="800" fill="#166534">1杯</text>
+    <text x="125" y="296" text-anchor="middle" class="tvt" font-size="11" fill="#166534">問題なし</text>
+  </g>
+  <!-- arrow -->
+  <text x="208" y="235" text-anchor="middle" font-size="20" fill="#94A3B8">→</text>
+  <!-- cup 10 (NG) -->
+  <g>
+    <rect x="256" y="190" width="70" height="70" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+    <text x="291" y="234" text-anchor="middle" font-size="30">☕☕</text>
+    <text x="291" y="278" text-anchor="middle" class="tvt" font-size="12" font-weight="800" fill="#B91C1C">10杯</text>
+    <text x="291" y="296" text-anchor="middle" class="tvt" font-size="11" fill="#B91C1C">動悸・不眠</text>
+  </g>
+
+  <line x1="90" y1="320" x2="326" y2="320" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="208" y="348" text-anchor="middle" class="tvt" font-size="12" font-weight="700" fill="#374151">「ここまでの量なら平気」という</text>
+  <text x="208" y="368" text-anchor="middle" class="tvt" font-size="12" font-weight="700" fill="#374151">線引きが、誰にでもありますよね</text>
+
+  <rect x="70" y="400" width="276" height="112" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="90" y="426" class="tvt" font-size="11.5" fill="#1E40AF" font-weight="700">量が少なければ平気でも、</text>
+  <text x="90" y="446" class="tvt" font-size="11.5" fill="#1E40AF" font-weight="700">一定量を超えると体に</text>
+  <text x="90" y="466" class="tvt" font-size="11.5" fill="#1E40AF" font-weight="700">影響が出始める——これが</text>
+  <text x="90" y="486" class="tvt" font-size="11.5" fill="#1E40AF" font-weight="700">濃度基準の一番シンプルな姿</text>
+
+  <!-- arrow to panel 2 -->
+  <polygon points="380,308 380,332 400,320" fill="#8B5CF6"/>
+
+  <!-- ===== PANEL 2: 飲食店厨房の換気 ===== -->
+  <g filter="url(#tvShadow)">
+    <rect x="412" y="112" width="376" height="420" rx="18" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="2"/>
+    <rect x="412" y="112" width="376" height="40" rx="18" fill="#8B5CF6"/>
+    <rect x="412" y="132" width="376" height="20" fill="#8B5CF6"/>
+  </g>
+  <text x="600" y="138" text-anchor="middle" class="tvt" font-size="13" font-weight="800" fill="#fff">② バイト先の現場：飲食店の換気</text>
+  <text x="600" y="172" text-anchor="middle" class="tvt" font-size="11" fill="#5B21B6">換気扇を止めたままガスコンロを使い続けると…</text>
+
+  <!-- line graph -->
+  <g>
+    <line x1="450" y1="320" x2="750" y2="320" stroke="#94A3B8" stroke-width="1.5"/>
+    <text x="600" y="342" text-anchor="middle" class="tvt" font-size="10.5" fill="#64748B">時間の経過 →</text>
+    <line x1="450" y1="200" x2="450" y2="320" stroke="#94A3B8" stroke-width="1.5"/>
+    <text x="440" y="200" text-anchor="end" class="tvt" font-size="10.5" fill="#64748B">濃度</text>
+
+    <!-- danger threshold -->
+    <line x1="450" y1="250" x2="750" y2="250" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="754" y="254" class="tvt" font-size="10.5" font-weight="800" fill="#DC2626">危険ライン</text>
+
+    <!-- rising curve -->
+    <path d="M 450,310 C 540,300 590,280 630,250 C 670,220 700,205 750,200" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="450" cy="310" r="5" fill="#22C55E"/>
+    <circle cx="630" cy="250" r="5" fill="#F59E0B"/>
+    <circle cx="750" cy="200" r="5" fill="#DC2626"/>
+
+    <text x="450" y="330" text-anchor="middle" class="tvt" font-size="10" font-weight="700" fill="#166534">換気扇OFF</text>
+    <text x="630" y="238" text-anchor="middle" class="tvt" font-size="10" font-weight="700" fill="#C2410C">徐々に危険域へ</text>
+    <text x="750" y="186" text-anchor="middle" class="tvt" font-size="10" font-weight="700" fill="#B91C1C">体調不良</text>
+  </g>
+
+  <rect x="432" y="400" width="336" height="112" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="452" y="426" class="tvt" font-size="11.5" fill="#5B21B6" font-weight="700">有害物質を扱う現場も同じ。</text>
+  <text x="452" y="446" class="tvt" font-size="11.5" fill="#5B21B6" font-weight="700">「この濃度までなら、これくらいの</text>
+  <text x="452" y="466" class="tvt" font-size="11.5" fill="#5B21B6" font-weight="700">時間働いても健康に影響が</text>
+  <text x="452" y="486" class="tvt" font-size="11.5" fill="#5B21B6" font-weight="700">出ない」という基準値がある</text>
+
+  <!-- arrow to panel 3 -->
+  <polygon points="792,308 792,332 812,320" fill="#16A34A"/>
+
+  <!-- ===== PANEL 3: 試験用語への着地 ===== -->
+  <g filter="url(#tvShadow)">
+    <rect x="824" y="112" width="336" height="420" rx="18" fill="url(#tvGoal)"/>
+  </g>
+  <text x="992" y="146" text-anchor="middle" class="tvt" font-size="13" font-weight="800" fill="#fff">③ 試験用語に着地</text>
+
+  <rect x="850" y="176" width="284" height="150" rx="12" fill="#ffffff" opacity="0.95"/>
+  <text x="870" y="204" class="tvt" font-size="13" font-weight="800" fill="#166534">管理濃度</text>
+  <text x="870" y="226" class="tvt" font-size="11" fill="#374151">作業環境測定の結果を</text>
+  <text x="870" y="244" class="tvt" font-size="11" fill="#374151">評価するための基準値</text>
+
+  <line x1="870" y1="260" x2="1114" y2="260" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="870" y="284" class="tvt" font-size="13" font-weight="800" fill="#166534">許容濃度（TLV）</text>
+  <text x="870" y="304" class="tvt" font-size="11" fill="#374151">労働者が有害物質にさらされても</text>
+  <text x="870" y="320" class="tvt" font-size="11" fill="#374151">健康に影響が出ないとされる濃度</text>
+
+  <rect x="850" y="344" width="284" height="164" rx="12" fill="#ffffff" opacity="0.95"/>
+  <text x="870" y="372" class="tvt" font-size="12" font-weight="800" fill="#166534">覚え方のコツ</text>
+  <text x="870" y="396" class="tvt" font-size="11" fill="#374151">数字を丸暗記する前に、</text>
+  <text x="870" y="414" class="tvt" font-size="11" fill="#374151">「濃度 × 時間」のかけ算で</text>
+  <text x="870" y="432" class="tvt" font-size="11" fill="#374151">体への影響が決まる、という</text>
+  <text x="870" y="450" class="tvt" font-size="11" fill="#374151">この感覚を先につかんでおくと、</text>
+  <text x="870" y="468" class="tvt" font-size="11" fill="#374151">関係法令の条文を読んだときの</text>
+  <text x="870" y="486" class="tvt" font-size="11" fill="#374151">理解度がまったく変わります。</text>
+
+  <!-- Footer -->
+  <text x="600" y="570" text-anchor="middle" class="tvt" font-size="13" fill="#374151">身近な例 → 現場の例 → 公式の定義。この順番で理解すると、丸暗記より圧倒的に忘れにくくなります。</text>
+</svg>

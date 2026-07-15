@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1240" viewBox="0 0 360 1240" role="img" aria-labelledby="tlvmtitle tlvmdesc">
+  <title id="tlvmtitle">管理濃度・許容濃度（TLV）を身近な話で理解する図解（モバイル版）</title>
+  <desc id="tlvmdesc">コーヒーのカフェイン許容量から飲食店厨房の換気の例を経て、管理濃度・許容濃度（TLV）という試験用語に着地する3段階のたとえ話を縦に並べた図解</desc>
+  <defs>
+    <linearGradient id="mtvTitle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#334155"/></linearGradient>
+    <linearGradient id="mtvGoal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4ADE80"/><stop offset="1" stop-color="#16A34A"/></linearGradient>
+    <style>.mtvt{font-family:"Noto Sans JP",system-ui,sans-serif}</style>
+  </defs>
+
+  <rect width="360" height="1240" rx="16" fill="#f4fbff"/>
+
+  <rect x="16" y="20" width="328" height="68" rx="12" fill="url(#mtvTitle)"/>
+  <text x="180" y="42" text-anchor="middle" class="mtvt" font-size="9.5" font-weight="700" fill="#94A3B8" letter-spacing="1">たとえ話で理解する2段階ステップ</text>
+  <text x="180" y="64" text-anchor="middle" class="mtvt" font-size="13" font-weight="800" fill="#FFFFFF">「管理濃度・許容濃度（TLV）」</text>
+  <text x="180" y="80" text-anchor="middle" class="mtvt" font-size="11" fill="#CBD5E1">を身近な話で理解する</text>
+
+  <!-- PANEL 1 -->
+  <rect x="16" y="108" width="328" height="330" rx="14" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+  <rect x="16" y="108" width="328" height="36" rx="14" fill="#3B82F6"/>
+  <rect x="16" y="126" width="328" height="18" fill="#3B82F6"/>
+  <text x="180" y="132" text-anchor="middle" class="mtvt" font-size="12.5" font-weight="800" fill="#fff">① 身近な例：コーヒーのカフェイン</text>
+
+  <rect x="40" y="160" width="100" height="90" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="90" y="214" text-anchor="middle" font-size="30">☕</text>
+  <text x="90" y="200" text-anchor="middle" class="mtvt" font-size="11" font-weight="800" fill="#166534">1杯</text>
+  <text x="90" y="236" text-anchor="middle" class="mtvt" font-size="10" fill="#166534">問題なし</text>
+
+  <text x="180" y="212" text-anchor="middle" font-size="18" fill="#94A3B8">→</text>
+
+  <rect x="220" y="160" width="100" height="90" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+  <text x="270" y="210" text-anchor="middle" font-size="26">☕☕</text>
+  <text x="270" y="200" text-anchor="middle" class="mtvt" font-size="11" font-weight="800" fill="#B91C1C">10杯</text>
+  <text x="270" y="236" text-anchor="middle" class="mtvt" font-size="10" fill="#B91C1C">動悸・不眠</text>
+
+  <text x="180" y="278" text-anchor="middle" class="mtvt" font-size="11.5" font-weight="700" fill="#374151">「ここまでの量なら平気」という</text>
+  <text x="180" y="296" text-anchor="middle" class="mtvt" font-size="11.5" font-weight="700" fill="#374151">線引きが、誰にでもありますよね</text>
+
+  <rect x="32" y="316" width="312" height="106" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="48" y="340" class="mtvt" font-size="11" fill="#1E40AF" font-weight="700">量が少なければ平気でも、一定量</text>
+  <text x="48" y="358" class="mtvt" font-size="11" fill="#1E40AF" font-weight="700">を超えると体に影響が出始める</text>
+  <text x="48" y="376" class="mtvt" font-size="11" fill="#1E40AF" font-weight="700">——これが濃度基準の一番</text>
+  <text x="48" y="394" class="mtvt" font-size="11" fill="#1E40AF" font-weight="700">シンプルな姿</text>
+
+  <polygon points="170,460 180,478 190,460" fill="#8B5CF6"/>
+
+  <!-- PANEL 2 -->
+  <rect x="16" y="490" width="328" height="360" rx="14" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="16" y="490" width="328" height="36" rx="14" fill="#8B5CF6"/>
+  <rect x="16" y="508" width="328" height="18" fill="#8B5CF6"/>
+  <text x="180" y="514" text-anchor="middle" class="mtvt" font-size="12.5" font-weight="800" fill="#fff">② バイト先の現場：飲食店の換気</text>
+  <text x="180" y="546" text-anchor="middle" class="mtvt" font-size="10.5" fill="#5B21B6">換気扇を止めたままガスコンロを使い続けると…</text>
+
+  <line x1="60" y1="660" x2="300" y2="660" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="180" y="680" text-anchor="middle" class="mtvt" font-size="10" fill="#64748B">時間の経過 →</text>
+  <line x1="60" y1="580" x2="60" y2="660" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="55" y="580" text-anchor="end" class="mtvt" font-size="10" fill="#64748B">濃度</text>
+
+  <line x1="60" y1="610" x2="300" y2="610" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="180" y="604" text-anchor="middle" class="mtvt" font-size="10" font-weight="800" fill="#DC2626">危険ライン</text>
+
+  <path d="M 60,652 C 130,644 170,624 200,610 C 230,596 260,586 300,580" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="652" r="5" fill="#22C55E"/>
+  <circle cx="200" cy="610" r="5" fill="#F59E0B"/>
+  <circle cx="300" cy="580" r="5" fill="#DC2626"/>
+
+  <text x="60" y="700" text-anchor="middle" class="mtvt" font-size="9.5" font-weight="700" fill="#166534">換気扇OFF</text>
+  <text x="200" y="700" text-anchor="middle" class="mtvt" font-size="9.5" font-weight="700" fill="#C2410C">徐々に危険域へ</text>
+  <text x="300" y="700" text-anchor="middle" class="mtvt" font-size="9.5" font-weight="700" fill="#B91C1C">体調不良</text>
+
+  <rect x="32" y="720" width="312" height="112" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text x="48" y="744" class="mtvt" font-size="11" fill="#5B21B6" font-weight="700">有害物質を扱う現場も同じ。</text>
+  <text x="48" y="762" class="mtvt" font-size="11" fill="#5B21B6" font-weight="700">「この濃度までなら、これくらいの</text>
+  <text x="48" y="780" class="mtvt" font-size="11" fill="#5B21B6" font-weight="700">時間働いても健康に影響が</text>
+  <text x="48" y="798" class="mtvt" font-size="11" fill="#5B21B6" font-weight="700">出ない」という基準値がある</text>
+
+  <polygon points="170,870 180,888 190,870" fill="#16A34A"/>
+
+  <!-- PANEL 3 -->
+  <rect x="16" y="900" width="328" height="320" rx="14" fill="url(#mtvGoal)"/>
+  <text x="180" y="930" text-anchor="middle" class="mtvt" font-size="12.5" font-weight="800" fill="#fff">③ 試験用語に着地</text>
+
+  <rect x="32" y="950" width="296" height="130" rx="12" fill="#ffffff" opacity="0.95"/>
+  <text x="48" y="976" class="mtvt" font-size="12.5" font-weight="800" fill="#166534">管理濃度</text>
+  <text x="48" y="996" class="mtvt" font-size="10.5" fill="#374151">作業環境測定の結果を</text>
+  <text x="48" y="1012" class="mtvt" font-size="10.5" fill="#374151">評価するための基準値</text>
+  <line x1="48" y1="1024" x2="312" y2="1024" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="48" y="1046" class="mtvt" font-size="12.5" font-weight="800" fill="#166534">許容濃度（TLV）</text>
+  <text x="48" y="1064" class="mtvt" font-size="10.5" fill="#374151">健康に影響が出ないとされる</text>
+  <text x="48" y="1078" class="mtvt" font-size="10.5" fill="#374151">濃度の目安</text>
+
+  <rect x="32" y="1090" width="296" height="130" rx="12" fill="#ffffff" opacity="0.95"/>
+  <text x="48" y="1114" class="mtvt" font-size="11.5" font-weight="800" fill="#166534">覚え方のコツ</text>
+  <text x="48" y="1134" class="mtvt" font-size="10.5" fill="#374151">数字を丸暗記する前に、</text>
+  <text x="48" y="1150" class="mtvt" font-size="10.5" fill="#374151">「濃度×時間」のかけ算で</text>
+  <text x="48" y="1166" class="mtvt" font-size="10.5" fill="#374151">体への影響が決まる感覚を</text>
+  <text x="48" y="1182" class="mtvt" font-size="10.5" fill="#374151">先につかむと、条文を読んだ</text>
+  <text x="48" y="1198" class="mtvt" font-size="10.5" fill="#374151">ときの理解度が変わります</text>
+</svg>
