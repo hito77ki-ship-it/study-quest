@@ -46,6 +46,12 @@ th{background:var(--green);color:#fff;padding:10px 14px;text-align:left;}
 td{padding:10px 14px;border-bottom:1px solid var(--border);}
 tr:nth-child(even) td{background:var(--light);}
 .tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:16px 20px;margin:24px 0;}.tip-box strong{color:#276749;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:#F7FAFC;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
+.sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
+.sq-chat-name{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:4px;letter-spacing:.05em;}
+.sq-chat-bubble{background:var(--light);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:#374151;line-height:1.8;max-width:calc(100% - 60px);}
+.sq-chat-row.teacher .sq-chat-bubble{background:#F0FFF4;border-color:#9AE6B4;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
 .app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
@@ -132,12 +138,36 @@ details summary:active{background:var(--light);}
   <h3>物理学・化学の基礎</h3>
   <p>引火点・燃焼点・発火点の違い、燃焼の三要素（可燃物・酸素・点火源）、燃焼範囲（爆発限界）の上限・下限、静電気の発生と防止策が頻出です。計算問題は少なく、概念の理解が中心です。</p>
 
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">引火点と発火点の違いがいつも頭の中でごちゃごちゃになります……。結局どっちがどっちなんですか？</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（日商簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">キッチンをイメージすると一発で整理できますよ。引火点は「ガスコンロにマッチの火を近づけたら燃え始める温度」——外から火種を持ってきて初めて燃える温度です。一方の発火点は「フライパンの油を火種なしで放置していても、温度が上がりすぎて勝手に燃え出す温度」。つまり引火点は"人が火をつける温度"、発火点は"ほっといても自然に燃える温度"なんです。ガソリンは発火点より引火点の方がずっと低いので、試験では「常温でも引火の危険がある」という文脈でよく問われますよ。</div>
+      </div>
+    </div>
+  </div>
+
   <h2>おすすめ教材</h2>
   <ul>
     <li><strong>わかりやすい！乙種4類危険物取扱者試験（弘文社）：</strong>イラストが豊富でわかりやすい。乙4受験者の定番テキスト。<br><span style="color:#6AAF2B;">→大谷の一言：会計士の分厚い専門書に慣れた僕でも「これなら1周が早い」と思えるくらい、図解が直感的でストレスなく読めました。</span></li>
     <li><strong>本試験によく出る！第4類危険物取扱者試験問題集（弘文社）：</strong>過去問ベースの問題集。解説が詳しく独学に最適。<br><span style="color:#6AAF2B;">→大谷の一言：解説が「なぜその消火剤がNGなのか」まで書いてあるので、丸暗記じゃなく理屈で覚えられるのが地味に効きます。</span></li>
     <li><strong>危険物乙4 過去問アプリ（無料）：</strong>スマートフォンで隙間時間に演習できる。通勤・通学中の活用に最適。<br><span style="color:#6AAF2B;">→大谷の一言：電車の中でポチポチやるだけで「属性相性」の暗記が定着するので、テキストを開く気力がない日の保険として重宝しています。</span></li>
   </ul>
+
+  <h2>受験生がよく引っかかる3つの落とし穴</h2>
+  <ol>
+    <li><strong>引火点・発火点・燃焼点を丸暗記だけで済ませようとする：</strong>用語の定義を語呂で覚えても、問題文の言い回しが変わると対応できません。「誰が火をつけるのか（人か自然か）」という原理を理解しておくと、初見の問題にも応用できます。</li>
+    <li><strong>合格基準を「全体の60%」だと勘違いする：</strong>乙4は3科目それぞれで60%以上必要です。得意科目で高得点を取っても、苦手科目が59%なら不合格になります。科目別の得点管理を必ず行ってください。</li>
+    <li><strong>「危険物の性質・消火方法」を後回しにしてしまう：</strong>法令や物理化学から手をつけたくなりますが、20問と最も配点が大きいのはこの科目です。特性を表で一覧化する作業を最優先で進めてください。</li>
+  </ol>
 
   <div class="app-cta">
     <h3>⚔ 危険物乙4の学習時間を記録しよう</h3>
