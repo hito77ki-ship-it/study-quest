@@ -48,6 +48,12 @@ tr:nth-child(even) td{background:var(--light);}
 .tip-box strong{color:#276749;}
 .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:8px;padding:16px 20px;margin:24px 0;}
 .warn-box strong{color:#975A16;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:#F7FAFC;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
+.sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
+.sq-chat-name{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:4px;letter-spacing:.05em;}
+.sq-chat-bubble{background:var(--light);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:#374151;line-height:1.8;max-width:calc(100% - 60px);}
+.sq-chat-row.teacher .sq-chat-bubble{background:#F0FFF4;border-color:#9AE6B4;}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff;}
 .app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px;}
 .app-cta p{color:#A0C070;font-size:13px;margin-bottom:16px;}
@@ -117,6 +123,23 @@ details summary:active{background:var(--light);}
     <tr><td>一般用電気工作物の検査</td><td>約5問</td><td>★★☆☆☆</td><td>絶縁抵抗値・接地抵抗値の基準を数字で記憶</td></tr>
   </table>
 
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">電気理論のオームの法則の計算、電卓が使えないんですよね？割り算とか苦手なので、本番でテンパって計算ミスしそうで不安です……。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（日商簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">その気持ち、めちゃくちゃわかります！僕も簿記の電卓が使えない検算練習を始めたときは同じように焦りました。でも電気理論の計算問題は、実は「割り切れるように」問題側が数字を設計してくれています。100V÷20Ω、200V÷40Ωのように、過去問で頻出の数値パターンは10種類もありません。暗算力を鍛えるというより、掛け算九九のように「よく出る組み合わせ」を先に覚えてしまう方が、本番で慌てず一発で答えを出せますよ。</div>
+      </div>
+    </div>
+  </div>
+
   <div class="tip-box">
     <strong>筆記試験は過去問だけで合格できる：</strong>出題パターンが毎年似ており、過去問5〜10年分を3周すれば60点は確実に超えます。テキストを通読するより先に過去問から始める戦略が最速です。
   </div>
@@ -164,6 +187,13 @@ details summary:active{background:var(--light);}
   <div class="warn-box">
     <strong>技能試験の材料費に注意：</strong>候補問題13問分を練習するには、材料セット（市販品で1〜2万円）が必要です。2〜3周練習することを考えると、材料費の予算を事前に確保しておきましょう。
   </div>
+
+  <h2>受験生がよく引っかかる3つの落とし穴</h2>
+  <ol>
+    <li><strong>複線図を書かずに単線図のまま作業を始めてしまう：</strong>単線図を見ただけで「なんとなく」配線を始めると、途中で結線を間違えて時間切れになります。面倒でも必ず複線図（完全な地図）を描き切ってから手を動かす習慣をつけてください。</li>
+    <li><strong>電気理論を「捨て科目」にして技能だけに時間を使う：</strong>技能試験のインパクトが大きいため軽視されがちですが、電気理論は筆記50問中約10問と配点が大きく、ここを捨てると60点ラインを割り込みます。技能対策と並行して計算問題は最後まで解き続けてください。</li>
+    <li><strong>候補問題13問を「1周しただけ」で満足してしまう：</strong>1回完成させただけでは、本番の緊張下で手が止まります。工具の使い方やリングスリーブの刻印判断が反射的に出るまで、最低3周は繰り返し練習することが合格の分かれ目です。</li>
+  </ol>
 
   <div class="app-cta">
     <h3>⚔ 筆記・技能の両方を記録して合格を掴もう</h3>
