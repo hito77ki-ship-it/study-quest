@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">学生納付特例から追納までの流れ（モバイル版）</title>
+  <desc id="svgdesc">20歳から学生納付特例で年金保険料の支払いが一時的に0円になり、10年以内なら追納できるチャンスタイムがあり（2年度目までは加算額なし）、追納に成功すると将来の老齢基礎年金が満額へ復活するという流れを示す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#FAFBFC"/>
+
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">学生納付特例から</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">追納までの流れ</text>
+
+  <rect x="16" y="66" width="328" height="184" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">20歳〜</text>
+  <text x="180" y="126" text-anchor="middle" font-size="12" fill="#2563EB">学生納付特例で保険料の</text>
+  <text x="180" y="146" text-anchor="middle" font-size="12" fill="#2563EB">支払いが</text>
+  <text x="180" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#1E40AF">一時的に0円</text>
+
+  <text x="180" y="278" text-anchor="middle" font-size="18" fill="#94A3B8">↓</text>
+
+  <rect x="16" y="292" width="328" height="204" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <g transform="translate(160,312)">
+    <path d="M0,0 L40,0 L22,20 L40,40 L0,40 L18,20 Z" fill="#F59E0B" opacity="0.85"/>
+    <path d="M6,6 L34,6 L20,20 Z" fill="#FEF3C7"/>
+    <path d="M6,34 L34,34 L20,20 Z" fill="#FEF3C7"/>
+  </g>
+  <text x="180" y="384" text-anchor="middle" font-size="15" font-weight="700" fill="#92400E">10年以内</text>
+  <text x="180" y="406" text-anchor="middle" font-size="12" fill="#B45309">なら追納できる</text>
+  <text x="180" y="426" text-anchor="middle" font-size="12" fill="#B45309">チャンスタイム</text>
+  <text x="180" y="468" text-anchor="middle" font-size="10.5" fill="#B45309">（2年度目までなら加算額なし）</text>
+
+  <text x="180" y="530" text-anchor="middle" font-size="18" fill="#94A3B8">↓</text>
+
+  <rect x="16" y="544" width="328" height="184" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="180" y="580" text-anchor="middle" font-size="13.5" font-weight="700" fill="#065F46">追納成功で</text>
+  <text x="180" y="608" text-anchor="middle" font-size="12" fill="#059669">将来の老齢基礎年金が</text>
+  <text x="180" y="662" text-anchor="middle" font-size="18" font-weight="700" fill="#065F46">満額へ復活</text>
+
+  <rect x="16" y="758" width="328" height="110" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="180" y="790" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">追納しないまま10年を過ぎると、その</text>
+  <text x="180" y="810" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">期間分は将来の年金額に反映されない</text>
+  <text x="180" y="830" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">まま確定（受給資格期間には算入）</text>
+</svg>

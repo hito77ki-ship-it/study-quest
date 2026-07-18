@@ -8,7 +8,7 @@
 
   <!-- スタート -->
   <rect x="90" y="60" width="180" height="80" rx="16" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2.5"/>
-  <text x="180" y="90" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">🎓 簿記3級 合格！</text>
+  <text x="180" y="90" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">簿記3級 合格！</text>
   <text x="180" y="110" text-anchor="middle" font-size="9.5" fill="#14532D">ここがスタート地点</text>
 
   <line x1="180" y1="140" x2="180" y2="166" stroke="#94A3B8" stroke-width="2.5"/>
@@ -34,7 +34,7 @@
   <text x="180" y="332" text-anchor="middle" font-size="9" fill="#64748B">または</text>
 
   <rect x="190" y="302" width="150" height="88" rx="14" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2"/>
-  <text x="265" y="324" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">🔗 FP2級</text>
+  <text x="265" y="324" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B21B6">FP2級</text>
   <text x="265" y="342" text-anchor="middle" font-size="8.5" fill="#4C1D95">ドッキングゴール</text>
   <text x="265" y="358" text-anchor="middle" font-size="8" fill="#374151">会計＋個人財務で最強</text>
   <text x="265" y="372" text-anchor="middle" font-size="8" fill="#374151">150〜200時間</text>
@@ -54,13 +54,13 @@
 
   <!-- FP2級 合流ゴール -->
   <rect x="70" y="576" width="220" height="100" rx="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2.5"/>
-  <text x="180" y="604" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">🔗 ③ FP2級</text>
+  <text x="180" y="604" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">③ FP2級</text>
   <text x="180" y="624" text-anchor="middle" font-size="10" fill="#4C1D95">2ルートのドッキングゴール</text>
   <text x="180" y="642" text-anchor="middle" font-size="9.5" fill="#374151">会計＋個人財務知識で最強</text>
   <text x="180" y="658" text-anchor="middle" font-size="9.5" fill="#374151">150〜200時間（FP3級後）</text>
 
   <!-- まとめ -->
   <rect x="20" y="700" width="320" height="64" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
-  <text x="180" y="726" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">🎯「簿記2級ルート」も「FP3級ルート」も、</text>
+  <text x="180" y="726" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">「簿記2級ルート」も「FP3級ルート」も、</text>
   <text x="180" y="746" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400E">最後はFP2級で合流できる無敵の設計</text>
 </svg>

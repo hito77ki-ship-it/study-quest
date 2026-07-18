@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 700" width="360" height="700" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">2027年度出題区分改定タイムライン（モバイル版）</title>
+  <desc id="svgdesc">2027年3月までは現行の出題区分（手形あり、定率法・固定資産除却は2級の範囲）が適用される安全ネット期間で、2027年4月以降は新区分表が適用され手形が全範囲から除外、定率法・固定資産除却が2級から3級に移行する大改定が行われることを示すタイムライン図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="700" rx="16" fill="#FAFBFC"/>
+
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">2027年度</text>
+  <text x="180" y="44" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">出題区分改定タイムライン</text>
+
+  <!-- ゾーン1: 安全ネット試験ゾーン -->
+  <rect x="20" y="62" width="320" height="222" rx="14" fill="#D1FAE5" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="180" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">〜2027年3月</text>
+  <text x="180" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">安全ネット試験ゾーン</text>
+  <text x="180" y="134" text-anchor="middle" font-size="10" fill="#059669">現行の出題区分（2022年度版）</text>
+  <text x="180" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">「手形」あり</text>
+  <text x="180" y="188" text-anchor="middle" font-size="10" fill="#065F46">定率法・固定資産除却は</text>
+  <text x="180" y="206" text-anchor="middle" font-size="10" fill="#065F46">2級の範囲のまま</text>
+  <text x="180" y="256" text-anchor="middle" font-size="9.5" fill="#047857">今のうちに受けるなら3級はここ</text>
+
+  <line x1="180" y1="300" x2="180" y2="324" stroke="#CBD5E1" stroke-width="2.5"/>
+  <polygon points="172,316 188,316 180,328" fill="#CBD5E1"/>
+
+  <!-- ゾーン2: 大改定の爆風ゾーン -->
+  <rect x="20" y="338" width="320" height="242" rx="14" fill="#FED7D7" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="366" text-anchor="middle" font-size="12" font-weight="700" fill="#7F1D1D">2027年4月〜</text>
+  <text x="180" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#7F1D1D">大改定の爆風ゾーン</text>
+  <text x="180" y="410" text-anchor="middle" font-size="10" fill="#B91C1C">新区分表（暫定版・2027年度適用）</text>
+  <text x="180" y="442" text-anchor="middle" font-size="11" font-weight="700" fill="#7F1D1D">「手形」が全範囲から除外</text>
+  <text x="180" y="464" text-anchor="middle" font-size="10" fill="#7F1D1D">定率法・固定資産除却が</text>
+  <text x="180" y="482" text-anchor="middle" font-size="10" fill="#7F1D1D">2級から3級に移行</text>
+  <text x="180" y="548" text-anchor="middle" font-size="9.5" fill="#991B1B">ネット試験は4月〜、統一試験は6月〜適用</text>
+
+  <!-- 出典 -->
+  <rect x="20" y="600" width="320" height="76" rx="10" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="180" y="628" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1A202C">出典：日本商工会議所「2027年度適用の</text>
+  <text x="180" y="646" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1A202C">出題区分表等（暫定版）」</text>
+  <text x="180" y="664" text-anchor="middle" font-size="9" fill="#4A5568">（2025年12月25日公開）</text>
+</svg>

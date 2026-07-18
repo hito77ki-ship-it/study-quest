@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">「所得」に至るまでの計算方法の違い（モバイル版）</title>
+  <desc id="svgdesc">アルバイトの給与所得は収入から自動で最低65万円が保証される給与所得控除を引くだけで所得が決まるのに対し、個人事業主の事業所得は収入から必要経費と青色申告特別控除を自分で確保する必要があるという計算方法の違いを示す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#F8FAFC"/>
+
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">「所得」に至るまでの</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">計算方法の違い</text>
+
+  <!-- アルバイト側 -->
+  <rect x="16" y="64" width="328" height="380" rx="12" fill="#EBF8FF" stroke="#BEE3F8" stroke-width="1.5"/>
+  <text x="180" y="94" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2C5282">アルバイト（給与所得）</text>
+
+  <rect x="32" y="112" width="296" height="46" rx="8" fill="#ffffff" stroke="#CBD5E0"/>
+  <text x="180" y="140" text-anchor="middle" font-size="12.5" fill="#1A202C">収入（給与）</text>
+
+  <text x="180" y="182" text-anchor="middle" font-size="18" fill="#2C5282">−</text>
+
+  <rect x="32" y="192" width="296" height="60" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
+  <text x="180" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">給与所得控除</text>
+  <text x="180" y="236" text-anchor="middle" font-size="10.5" fill="#2563EB">（自動・最低65万円保証）</text>
+
+  <text x="180" y="278" text-anchor="middle" font-size="18" fill="#2C5282">=</text>
+
+  <rect x="32" y="288" width="296" height="46" rx="8" fill="#1E40AF"/>
+  <text x="180" y="316" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">合計所得金額</text>
+
+  <text x="180" y="376" text-anchor="middle" font-size="11" fill="#2C5282">誰でも自動的に控除される</text>
+  <text x="180" y="396" text-anchor="middle" font-size="11" fill="#2C5282">→ 収入188万円でも所得123万円</text>
+
+  <!-- 個人事業主側 -->
+  <rect x="16" y="464" width="328" height="400" rx="12" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <text x="180" y="494" text-anchor="middle" font-size="13.5" font-weight="700" fill="#276749">個人事業主（事業所得）</text>
+
+  <rect x="32" y="512" width="296" height="46" rx="8" fill="#ffffff" stroke="#CBD5E0"/>
+  <text x="180" y="540" text-anchor="middle" font-size="12.5" fill="#1A202C">収入（売上）</text>
+
+  <text x="180" y="582" text-anchor="middle" font-size="18" fill="#276749">−</text>
+
+  <rect x="32" y="592" width="296" height="68" rx="8" fill="#FFFBEB" stroke="#F6E05E"/>
+  <text x="180" y="616" text-anchor="middle" font-size="11.5" font-weight="700" fill="#975A16">必要経費＋青色申告特別控除</text>
+  <text x="180" y="636" text-anchor="middle" font-size="10" fill="#B7791F">（自分で確保する必要あり・最大65万円）</text>
+
+  <text x="180" y="686" text-anchor="middle" font-size="18" fill="#276749">=</text>
+
+  <rect x="32" y="696" width="296" height="46" rx="8" fill="#276749"/>
+  <text x="180" y="724" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">合計所得金額</text>
+
+  <text x="180" y="798" text-anchor="middle" font-size="11" fill="#276749">白色申告だと控除の保証なし</text>
+  <text x="180" y="818" text-anchor="middle" font-size="11" fill="#276749">青色申告なら同水準を確保できる</text>
+</svg>

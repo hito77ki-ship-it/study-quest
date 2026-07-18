@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">ペナルティ4段階境界線マップ（モバイル版）</title>
+  <desc id="svgdesc">延滞税・無申告加算税・重加算税までは行政罰でお金を払うだけで前科がつかないのに対し、意図的な隠蔽・仮装が悪質と判断されると刑事罰ゾーンに入り逮捕・起訴され前科がつくという4段階の境界線を示す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="900" rx="16" fill="#FAFBFC"/>
+
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">大谷流・ペナルティ</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">4段階境界線マップ</text>
+
+  <!-- 行政罰ゾーン -->
+  <rect x="16" y="64" width="328" height="480" rx="14" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+  <text x="180" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">行政罰ゾーン</text>
+  <text x="180" y="110" text-anchor="middle" font-size="10" fill="#166534">（お金を払うだけ・前科なし）</text>
+
+  <rect x="32" y="126" width="296" height="90" rx="10" fill="#BFDBFE" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="180" y="158" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">①延滞税</text>
+  <text x="180" y="180" text-anchor="middle" font-size="11" fill="#1E40AF">2.4%〜</text>
+
+  <rect x="32" y="228" width="296" height="100" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="180" y="260" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">②無申告加算税</text>
+  <text x="180" y="284" text-anchor="middle" font-size="11" fill="#92400E">5%〜</text>
+
+  <rect x="32" y="340" width="296" height="184" rx="10" fill="#FED7AA" stroke="#FB923C" stroke-width="1.5"/>
+  <text x="180" y="372" text-anchor="middle" font-size="13" font-weight="700" fill="#9A3412">③重加算税</text>
+  <text x="180" y="394" text-anchor="middle" font-size="10.5" fill="#9A3412">（意図的な隠蔽・仮装）</text>
+  <text x="180" y="440" text-anchor="middle" font-size="22" font-weight="700" fill="#9A3412">40%</text>
+
+  <!-- 境界線 -->
+  <rect x="90" y="562" width="180" height="42" rx="21" fill="#DC2626"/>
+  <text x="180" y="588" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">↓ 境界線を越えると ↓</text>
+
+  <!-- 刑事罰ゾーン -->
+  <rect x="16" y="624" width="328" height="184" rx="14" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <text x="180" y="652" text-anchor="middle" font-size="12.5" font-weight="700" fill="#991B1B">刑事罰ゾーン（逮捕・前科あり）</text>
+
+  <rect x="32" y="666" width="296" height="126" rx="10" fill="#FECACA" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="694" text-anchor="middle" font-size="13" font-weight="700" fill="#7F1D1D">④刑事罰</text>
+  <text x="180" y="716" text-anchor="middle" font-size="11" fill="#7F1D1D">逮捕・起訴、前科がつく</text>
+  <text x="180" y="740" text-anchor="middle" font-size="10.5" fill="#7F1D1D">拘禁刑10年以下</text>
+  <text x="180" y="758" text-anchor="middle" font-size="10.5" fill="#7F1D1D">罰金1000万円以下</text>
+
+  <!-- まとめ -->
+  <rect x="16" y="826" width="328" height="58" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="180" y="850" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">「うっかりミス」か「意図的な偽装」かが</text>
+  <text x="180" y="868" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">境界線を越えるかどうかの分かれ目</text>
+</svg>

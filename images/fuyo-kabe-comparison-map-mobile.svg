@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 760" width="360" height="760" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">控除額の格差が扶養の壁を左右する（モバイル版）</title>
+  <desc id="svgdesc">アルバイトの給与所得控除は自動で65万円が保証されるのに対し、個人事業主は白色申告だと控除の保証が0円、青色申告なら55万円、e-Tax申告等の要件を満たせば65万円まで確保できるという控除額の差を示す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="760" rx="16" fill="#FAFBFC"/>
+
+  <text x="180" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">控除額の格差が</text>
+  <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">扶養の壁を左右する</text>
+
+  <!-- アルバイト 65万円 -->
+  <rect x="16" y="66" width="328" height="110" rx="12" fill="#BFDBFE" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="180" y="102" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">アルバイト（給与所得控除）</text>
+  <text x="180" y="134" text-anchor="middle" font-size="20" font-weight="700" fill="#1E40AF">65万円</text>
+  <text x="180" y="156" text-anchor="middle" font-size="10.5" fill="#1E40AF">自動で保証</text>
+
+  <!-- 白色申告 0円 -->
+  <rect x="16" y="192" width="328" height="110" rx="12" fill="#FBCACA" stroke="#F87171" stroke-width="1.5"/>
+  <text x="180" y="228" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">個人事業主（白色申告）</text>
+  <text x="180" y="260" text-anchor="middle" font-size="20" font-weight="700" fill="#B91C1C">0円</text>
+  <text x="180" y="282" text-anchor="middle" font-size="10.5" fill="#B91C1C">控除の保証なし</text>
+
+  <!-- 青色申告55万円 -->
+  <rect x="16" y="318" width="328" height="110" rx="12" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="180" y="354" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">個人事業主（青色申告55万円）</text>
+  <text x="180" y="386" text-anchor="middle" font-size="20" font-weight="700" fill="#92400E">55万円</text>
+  <text x="180" y="408" text-anchor="middle" font-size="10.5" fill="#92400E">複式簿記＋期限内申告</text>
+
+  <!-- 青色申告65万円 -->
+  <rect x="16" y="444" width="328" height="110" rx="12" fill="#BBF7D0" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="180" y="480" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">個人事業主（青色申告65万円）</text>
+  <text x="180" y="512" text-anchor="middle" font-size="20" font-weight="700" fill="#065F46">65万円</text>
+  <text x="180" y="534" text-anchor="middle" font-size="10.5" fill="#065F46">＋e-Tax申告等</text>
+
+  <!-- まとめ -->
+  <rect x="16" y="580" width="328" height="80" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="180" y="612" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">アルバイトは自動保証、個人事業主は</text>
+  <text x="180" y="632" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">申告方法次第で控除額が変わる</text>
+</svg>

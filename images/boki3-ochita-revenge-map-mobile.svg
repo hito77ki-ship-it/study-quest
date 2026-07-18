@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">不合格4パターンからリベンジルートへの戦略マップ（モバイル版）</title>
+  <desc id="svgdesc">簿記3級不合格の主な4パターン（仕訳の基礎不足・決算整理でのつまずき・時間配分の失敗・ケアレスミス）を縦に並べ、原因のハコが分かればそこだけ集中的に潰せばよいというリベンジ戦略を示す図解</desc>
+  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
+  <rect width="360" height="800" rx="16" fill="#FAFBFC"/>
+
+  <text x="180" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">不合格4パターン</text>
+  <text x="180" y="44" text-anchor="middle" font-size="9" fill="#94A3B8">→ リベンジルート戦略マップ</text>
+
+  <!-- ①仕訳の基礎が甘い -->
+  <rect x="20" y="62" width="320" height="96" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="180" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">①仕訳の基礎が甘い</text>
+  <text x="180" y="112" text-anchor="middle" font-size="10" fill="#2563EB">第1問で複数失点</text>
+
+  <!-- ②決算整理でつまずいた -->
+  <rect x="20" y="170" width="320" height="96" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <text x="180" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">②決算整理でつまずいた</text>
+  <text x="180" y="220" text-anchor="middle" font-size="10" fill="#B45309">経過勘定・減価償却が混乱</text>
+
+  <!-- ③時間配分が悪かった -->
+  <rect x="20" y="278" width="320" height="96" rx="14" fill="#FED7AA" stroke="#FB923C" stroke-width="1.5"/>
+  <text x="180" y="306" text-anchor="middle" font-size="12" font-weight="700" fill="#9A3412">③時間配分が悪かった</text>
+  <text x="180" y="328" text-anchor="middle" font-size="10" fill="#9A3412">第2問に時間をかけすぎ</text>
+
+  <!-- ④ケアレスミスに気づけず -->
+  <rect x="20" y="386" width="320" height="96" rx="14" fill="#FBCFE8" stroke="#F472B6" stroke-width="1.5"/>
+  <text x="180" y="414" text-anchor="middle" font-size="12" font-weight="700" fill="#9D174D">④ケアレスミスに気づけず</text>
+  <text x="180" y="436" text-anchor="middle" font-size="10" fill="#BE185D">貸借不一致に終盤まで未発見</text>
+
+  <line x1="180" y1="482" x2="180" y2="506" stroke="#A0AEC0" stroke-width="2.5"/>
+  <polygon points="172,498 188,498 180,510" fill="#A0AEC0"/>
+
+  <!-- リベンジルート -->
+  <rect x="20" y="520" width="320" height="104" rx="16" fill="#D1FAE5" stroke="#4ADE80" stroke-width="2"/>
+  <text x="180" y="552" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">弱点ハコ分け →</text>
+  <text x="180" y="574" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">その論点だけ集中補強</text>
+  <text x="180" y="600" text-anchor="middle" font-size="9.5" fill="#059669">原因のハコが分かれば、そこだけ</text>
+  <text x="180" y="614" text-anchor="middle" font-size="9.5" fill="#059669">潰せば十分</text>
+
+  <!-- まとめ -->
+  <rect x="20" y="648" width="320" height="112" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="180" y="678" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">不合格は「弱点ハコ分けチャンス」。</text>
+  <text x="180" y="698" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">強くてニューゲームで、原因を</text>
+  <text x="180" y="718" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">1つずつ潰していこう</text>
+  <text x="180" y="742" text-anchor="middle" font-size="9" fill="#4A5568">4パターンのうち自分がどれに近いか、</text>
+  <text x="180" y="756" text-anchor="middle" font-size="9" fill="#4A5568">下の表で確認してみよう</text>
+</svg>
