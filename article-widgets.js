@@ -1933,6 +1933,11 @@ html[data-theme="dark"] .relay-item.move{color:#F6AD55 !important;}
 html[data-theme="dark"] .relay-item.answer{color:#B6E27C !important;}
 html[data-theme="dark"] .relay-item.out{color:#FC8181 !important;}
 html[data-theme="dark"] .relay-arrow-col .arr-label{color:#9BA7BB !important;}
+/* 図解SVGのカード化（ダークモードで白図解が浮いて見づらい問題への対応） */
+.container picture{display:block;background:#fff;border-radius:14px;padding:16px;margin:20px 0;box-shadow:0 4px 16px rgba(0,0,0,.06);}
+.container picture img{margin:0 auto !important;}
+html[data-theme="dark"] .container picture{box-shadow:0 8px 28px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);}
+
 /* img-explain (図解説明) */
 html[data-theme="dark"] .img-explain{background:#111826 !important;}
 html[data-theme="dark"] .ie-row{border-bottom-color:rgba(255,255,255,.06) !important;}
