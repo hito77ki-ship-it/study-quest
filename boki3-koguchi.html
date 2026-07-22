@@ -93,6 +93,11 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
+
+/* 図解キャラクターリアクション */
+.diagram-reaction{display:flex;align-items:flex-start;gap:10px;margin:-4px 0 20px;padding:0 4px;}
+.diagram-reaction img{width:32px;height:32px;border-radius:50%;flex-shrink:0;object-fit:cover;}
+.diagram-reaction .dr-bubble{background:var(--light);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:8px 14px;font-size:12.5px;color:#374151;line-height:1.6;}
 .faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}details summary{transition:background 100ms ease-out;}
 details summary:active{background:var(--light);}
 @media(prefers-reduced-motion:reduce){
@@ -144,6 +149,10 @@ details summary:active{background:var(--light);}
     <source media="(max-width: 600px)" srcset="images/boki3-koguchi-map-mobile.svg">
     <img src="images/boki3-koguchi-map.svg" alt="小口現金のインプレストシステム循環サイクル図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy">
   </picture>
+  <div class="diagram-reaction">
+    <img src="images/icon-student.png" alt="受験生">
+    <div class="dr-bubble">ぐるぐる回ってる矢印がインプレストシステムってことか、なんかイメージできてきたかも！</div>
+  </div>
   <p>図の通り、会計係が現金を「前渡し」し、用度係が日々の小口支払いを行い、<strong>支払内容の報告を受けた時点</strong>で会計係が仕訳を計上します。</p>
 
   <div class="role-flow">
