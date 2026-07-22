@@ -541,6 +541,12 @@ html[data-theme="dark"]{
   --green:#8CC63F;
   --green2:#B6E27C;
 }
+html[data-theme="dark"]{
+  background:var(--sq-page) !important;
+}
+html[data-theme="light"]{
+  background:#FFFFFF !important;
+}
 html[data-theme="light"] body{
   background:#FFFFFF !important;
   color:var(--sq-text) !important;

@@ -93,33 +93,6 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
-
-/* シェアボタン */
-.share-row{display:flex;align-items:center;gap:10px;margin:16px 0 28px;}
-.share-label{font-size:12px;color:var(--muted);font-weight:700;}
-.share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:100px;font-size:12px;font-weight:700;color:#fff;transition:opacity .2s;}
-.share-btn:hover{opacity:.85;text-decoration:none;}
-.share-btn.x{background:#000;}
-.share-btn.line{background:#06C755;}
-
-/* 目次＋読了時間 */
-.toc-box{background:var(--light);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:20px 0 32px;}
-.toc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-.toc-title{font-size:13px;font-weight:700;color:var(--text);}
-.toc-time{font-size:11px;color:var(--muted);background:#fff;border:1px solid var(--border);padding:3px 10px;border-radius:100px;}
-.toc-list{list-style:none;margin:0;padding:0;font-size:13px;}
-.toc-list li{margin-bottom:6px;}
-.toc-list a{color:var(--green2);font-weight:700;}
-
-/* 続けて学ぶナビ */
-.continue-nav{margin:40px 0;}
-.continue-nav-title{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:12px;}
-.continue-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-@media(max-width:540px){.continue-cards{grid-template-columns:1fr;}}
-.continue-card{display:block;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--text);}
-.continue-card:hover{border-color:var(--green);text-decoration:none;}
-.continue-card .cc-label{font-size:10px;font-weight:700;color:var(--green2);letter-spacing:.05em;margin-bottom:4px;}
-.continue-card .cc-title{font-weight:700;}
 .faq{max-width:800px;margin:40px auto 0;padding:0 24px 48px;}.faq-item{background:var(--light);border-radius:10px;padding:16px 20px;margin-bottom:12px;}.faq-item h3{font-size:14px;font-weight:700;color:var(--text);margin:0 0 8px;}.faq-answer p{font-size:14px;color:#374151;margin:0;}details summary{transition:background 100ms ease-out;}
 details summary:active{background:var(--light);}
 @media(prefers-reduced-motion:reduce){
@@ -140,24 +113,6 @@ details summary:active{background:var(--light);}
   <figure style="margin:24px 0;">
     <img src="images/hero-koguchi.jpg" alt="小口現金のインプレストシステムをイメージしたRPG風イラスト" style="width:100%;border-radius:14px;display:block;" loading="lazy">
   </figure>
-
-  <div class="share-row">
-    <span class="share-label">この記事をシェア：</span>
-    <a class="share-btn x" href="https://twitter.com/intent/tweet?url=https://study-quest.net/boki3-koguchi.html&text=小口現金の仕訳（定額資金前渡制度）【日商簿記3級】" target="_blank" rel="noopener">𝕏 シェア</a>
-    <a class="share-btn line" href="https://social-plugins.line.me/lineit/share?url=https://study-quest.net/boki3-koguchi.html" target="_blank" rel="noopener">LINE</a>
-  </div>
-
-  <div class="toc-box">
-    <div class="toc-head">
-      <span class="toc-title">📖 目次</span>
-      <span class="toc-time">読了目安：約7分</span>
-    </div>
-    <ul class="toc-list">
-      <li><a href="#sec1">① 仕組みと登場人物</a></li>
-      <li><a href="#sec2">② 3つのタイミングで仕訳を切る</a></li>
-      <li><a href="#sec3">③ 小口現金出納帳の書き方</a></li>
-    </ul>
-  </div>
 
   <div class="point-card">
     <div class="pc-label">この記事でわかること（5秒まとめ）</div>
@@ -326,14 +281,6 @@ details summary:active{background:var(--light);}
     <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">小口現金は、横文字に惑わされず「会社のサイフをどう管理するか」というシンプルなパズルだと気づけば、決算問題の未補給トラップも含めて確実な得点源になります。<br>
     僕の執筆のモチベーション維持のために、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！ そして、Study Questで学習時間を記録しながら、①〜④のサイクルを何度も手を動かして体に染み込ませていきましょう。</p>
-  </div>
-
-  <div class="continue-nav">
-    <div class="continue-nav-title">続けて学ぶ</div>
-    <div class="continue-cards">
-      <a class="continue-card" href="boki3-kyuryo.html"><div class="cc-label">日商簿記3級</div><div class="cc-title">給料の仕訳と従業員立替金</div></a>
-      <a class="continue-card" href="boki3-kafusoku.html"><div class="cc-label">日商簿記3級</div><div class="cc-title">現金過不足の仕訳</div></a>
-    </div>
   </div>
 </div>
 <section class="faq" id="faq">
