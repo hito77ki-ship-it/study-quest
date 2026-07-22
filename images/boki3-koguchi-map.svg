@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 720" width="700" height="720">
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
   <rect width="700" height="720" rx="16" fill="#FEFCF9"/>
-  <text x="350" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">小口現金（インプレスト・システム）の循環サイクル</text>
-  <text x="350" y="53" text-anchor="middle" font-size="11" fill="#94A3B8">定額資金前渡制度——常に同じ金額に保たれる仕組み</text>
+  <text x="350" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1E293B">小口現金（インプレスト・システム）の循環サイクル</text>
+  <text x="350" y="53" text-anchor="middle" font-size="13" fill="#94A3B8">定額資金前渡制度——常に同じ金額に保たれる仕組み</text>
 
   <!-- 循環トラック -->
   <circle cx="350" cy="370" r="240" fill="none" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3,6"/>
 
   <!-- 中央ハブ -->
   <circle cx="350" cy="370" r="75" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="2"/>
-  <text x="350" y="364" text-anchor="middle" font-size="13" font-weight="700" fill="#6D28D9">常に一定額を</text>
-  <text x="350" y="382" text-anchor="middle" font-size="13" font-weight="700" fill="#6D28D9">キープ！</text>
+  <text x="350" y="364" text-anchor="middle" font-size="15" font-weight="700" fill="#6D28D9">常に一定額を</text>
+  <text x="350" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="#6D28D9">キープ！</text>
 
   <!-- 4つの矢印アーク（時計回り） -->
   <path d="M447.6,150.8 A240,240 0 0,1 569.2,272.4" fill="none" stroke="#93C5FD" stroke-width="3"/>
@@ -27,28 +27,28 @@
 
   <!-- 北：① 前渡し（パステルブルー） -->
   <rect x="260" y="70" width="180" height="120" rx="18" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
-  <text x="350" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">① 前渡し</text>
+  <text x="350" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1D4ED8">① 前渡し</text>
   <text x="350" y="118" text-anchor="middle" font-size="10.5" fill="#374151">会計係が用度係へ</text>
   <text x="350" y="134" text-anchor="middle" font-size="10.5" fill="#374151">小口現金を前渡しする</text>
   <text x="350" y="160" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">小口現金 ×× ／ 当座預金 ××</text>
 
   <!-- 東：② 使用（パステルグリーン） -->
   <rect x="510" y="310" width="180" height="120" rx="18" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
-  <text x="600" y="338" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">② 使用</text>
+  <text x="600" y="338" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">② 使用</text>
   <text x="600" y="358" text-anchor="middle" font-size="10.5" fill="#374151">用度係が交通費・</text>
   <text x="600" y="374" text-anchor="middle" font-size="10.5" fill="#374151">消耗品費などを支払う</text>
   <text x="600" y="400" text-anchor="middle" font-size="9.5" fill="#64748B">（会計係はまだ仕訳しない）</text>
 
   <!-- 南：③ 報告（パステルピンク） -->
   <rect x="260" y="550" width="180" height="120" rx="18" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="2"/>
-  <text x="350" y="578" text-anchor="middle" font-size="13" font-weight="700" fill="#9D174D">③ 報告</text>
+  <text x="350" y="578" text-anchor="middle" font-size="15" font-weight="700" fill="#9D174D">③ 報告</text>
   <text x="350" y="598" text-anchor="middle" font-size="10.5" fill="#374151">用度係が支払内容を</text>
   <text x="350" y="614" text-anchor="middle" font-size="10.5" fill="#374151">会計係へ報告する</text>
   <text x="350" y="640" text-anchor="middle" font-size="9.5" font-weight="700" fill="#DB2777">★この時点で費用が確定！</text>
 
   <!-- 西：④ 補給（パステルオレンジ） -->
   <rect x="10" y="310" width="180" height="120" rx="18" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
-  <text x="100" y="338" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">④ 補給</text>
+  <text x="100" y="338" text-anchor="middle" font-size="15" font-weight="700" fill="#C2410C">④ 補給</text>
   <text x="100" y="358" text-anchor="middle" font-size="10.5" fill="#374151">会計係が使った分だけ</text>
   <text x="100" y="374" text-anchor="middle" font-size="10.5" fill="#374151">同額を小切手で補充</text>
   <text x="100" y="400" text-anchor="middle" font-size="9.5" font-weight="700" fill="#C2410C">小口現金 ×× ／ 当座預金 ××</text>
