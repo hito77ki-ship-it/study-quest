@@ -18,6 +18,7 @@ const ARTICLES = {
   'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ'},
   'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ'},
+  'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
   'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
@@ -213,6 +214,12 @@ const ARTICLE_DIALOGUES = {
     ['teacher', '大谷', 'だからこそ「ハコ分け」です。理解不足・演習量不足・特定論点の失点・時間切れ、この4つのハコのどれに当てはまるかを先に決める。ハコさえ特定できれば、直す場所はピンポイントで済みます。'],
     ['student', '受験生', '全範囲やり直さなくても、本当に合格できますか？'],
     ['teacher', '大谷', 'できます。今のあなたは知識ゼロの初学者じゃなくて、一度本番を経験して弱点まで分かっている状態です。ハコを潰せば、いわば「強くてニューゲーム」。次はもっと有利な位置からスタートできますよ。']
+  ],
+  'boki2-moshi-honban.html': [
+    ['student', '受験生', '模試だと7割取れるのに、本番の過去問だと急に解けなくなります……。自分は本番に弱いんでしょうか？'],
+    ['teacher', '大谷', 'その結論、実はちょっと早いです。原因は「性格」じゃなく、①言い回しへの対応力②時間配分③特定分野の穴のどれかであることがほとんどですよ。'],
+    ['student', '受験生', 'どうやって見分ければいいですか？'],
+    ['teacher', '大谷', '直近の模試の間違いを「知識不足・読み取りミス・計算ミス・時間切れ」に分類してみてください。どれが一番多いかで、直す場所がかなり絞れます。']
   ],
   'boki2-cbt-vs-paper.html': [
     ['student', '受験生', 'ネット試験と紙の試験、どっちの方が合格しやすいですか？'],
@@ -2535,8 +2542,8 @@ const BOKI2_INDUSTRIAL_FILES = [
   'boki2-kogyo-enshu.html',
 ];
 
-const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-ochita.html'];
-const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html');
+const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-moshi-honban.html', 'boki2-ochita.html'];
+const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html');
 
 const SHIHOSHO_FILES = [
   'shihoshoshi.html',
