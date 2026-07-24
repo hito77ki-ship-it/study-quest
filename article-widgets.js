@@ -2,6 +2,7 @@
 'use strict';
 
 const ARTICLES = {
+  'ai-shiwake-kikikata.html': {label:'AI活用・時短術', title:'Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ'},
   'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール'},
   'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ'},
   'boki2-progress.html': {label:'簿記2級',          title:'簿記2級 学習進捗チェック'},

@@ -19,3 +19,4 @@ build/
 *service-account*.json
 gsc-key*.json
 secrets/
+.claude/settings.local.json

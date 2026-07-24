@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ｜スタディクエスト</title>
+<meta name="description" content="簿記の仕訳がテキストを読んでも理解できないとき、ClaudeやChatGPTへの「聞き方」を変えるだけで理解度が変わります。コピペで使える論点別プロンプト集と、AIに聞いてはいけないことまで具体的に解説します。">
+<meta name="keywords" content="簿記 AI 活用,簿記 ChatGPT,簿記 Claude,仕訳 わからない AI,簿記 勉強法 AI">
+<meta property="og:title" content="Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ">
+<meta property="og:description" content="仕訳が理解できないとき、AIへの聞き方を変えるだけで理解度が変わります。コピペで使える論点別プロンプト集付き。">
+<meta property="og:url" content="https://study-quest.net/ai-shiwake-kikikata.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
+<link rel="canonical" href="https://study-quest.net/ai-shiwake-kikikata.html">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ",
+  "description": "簿記の仕訳がテキストを読んでも理解できないとき、ClaudeやChatGPTへの「聞き方」を変えるだけで理解度が変わります。コピペで使える論点別プロンプト集と、AIに聞いてはいけないことまで具体的に解説します。",
+  "url": "https://study-quest.net/ai-shiwake-kikikata.html",
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "author": {"@type": "Person", "name": "大谷 一輝", "url": "https://study-quest.net/about.html"},
+  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://study-quest.net/ai-shiwake-kikikata.html"}
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--green:#8CC63F;--green2:#6AAF2B;--text:var(--sq-text,#1A202C);--muted:var(--sq-muted,#718096);--border:var(--sq-border,#E2E8F0);--bg:var(--sq-page,#FFFFFF);--light:var(--sq-surface-soft,#F7FAFC);}
+body{font-family:'M PLUS 1',sans-serif;color:var(--text);background:var(--bg);line-height:1.9;}
+a{color:var(--sq-accent,#6AAF2B);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in srgb, var(--sq-page,#FFFFFF) 92%, transparent);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:15px;font-weight:700;color:var(--sq-accent-bright,#6AAF2B);}
+.nav-cta{background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text,#fff);font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;transition:opacity .2s,transform 100ms ease-out}.nav-cta:active{transform:scale(.96);}
+.nav-cta:hover{opacity:.85;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:88px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px;}
+.breadcrumb a{color:var(--muted);}
+h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.35;letter-spacing:-0.02em;margin-bottom:8px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:32px;}
+.lead{font-size:15px;line-height:1.9;margin-bottom:40px;padding:20px;background:var(--light);border-left:3px solid var(--sq-accent,#8CC63F);border-radius:0 8px 8px 0;}
+h2{font-size:20px;font-weight:700;letter-spacing:-0.01em;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F);}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--sq-accent,#6AAF2B);}
+p{font-size:14px;color:var(--sq-text-soft,#374151);margin-bottom:16px;}
+ul,ol{font-size:14px;color:var(--sq-text-soft,#374151);margin:0 0 16px 20px;}
+li{margin-bottom:6px;}
+.tip-box{background:var(--sq-highlight-bg,#F0FFF4);border:1px solid var(--sq-border-strong,#9AE6B4);border-radius:8px;padding:16px 20px;margin:24px 0;}
+.tip-box strong{color:var(--sq-highlight-text,#276749);}
+.warn-box{background:color-mix(in srgb, #f59e0b 10%, var(--sq-surface,#FFFFFF));border:1px solid color-mix(in srgb, #f59e0b 35%, var(--border));border-radius:8px;padding:16px 20px;margin:24px 0;}
+.warn-box strong{color:color-mix(in srgb, #975A16 72%, var(--sq-text,#1A202C));}
+.check-list{list-style:none;margin:0 0 16px;padding:0}
+.check-list li{font-size:14px;padding:4px 0;display:flex;align-items:flex-start;gap:8px;color:var(--sq-text-soft,#374151)}
+.check-list li::before{content:'☑';color:var(--green);font-size:14px;flex-shrink:0;line-height:1.6}
+.checklist{counter-reset:item;margin:20px 0;}
+.check{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:var(--sq-text-soft,#374151);}
+.check::before{counter-increment:item;content:counter(item);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;}
+.prompt-box{background:var(--sq-surface,#FFFFFF);border:1px solid var(--border);border-left:3px solid #6AAF2B;border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:12px;}
+.prompt-box .prompt-label{font-size:11px;font-weight:700;color:var(--sq-accent,#6AAF2B);margin-bottom:6px;letter-spacing:.04em;}
+.prompt-box p{font-size:13px;color:var(--sq-text-soft,#374151);margin-bottom:0;line-height:1.8;}
+.app-cta{background:linear-gradient(135deg,var(--sq-surface-strong,#1A2A0A),color-mix(in srgb, var(--sq-accent,#8CC63F) 28%, var(--sq-surface-strong,#2D4A10)));border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:var(--sq-cta-text,#fff);}
+.app-cta h3{color:var(--sq-accent,#8CC63F);font-size:18px;margin-bottom:8px;}
+.app-cta p{color:var(--sq-highlight-text,#A0C070);font-size:13px;margin-bottom:16px;}
+.app-cta a{background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#0A0A0F);font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s,transform 100ms ease-out}.app-cta a:active{transform:scale(.96);}
+.app-cta a:hover{opacity:.85;text-decoration:none;}
+.faq-section{max-width:800px;margin:0 auto;padding:0 24px 48px;}
+.faq-title{font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F);color:var(--sq-text,#1A202C);}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;background:var(--sq-surface,#FFFFFF);}
+.faq-summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:var(--sq-text,#1A202C);list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-answer{padding:0 16px 14px;font-size:13px;color:var(--sq-text-soft,#374151);line-height:1.8;}
+.faq-plus{color:var(--sq-accent,#8CC63F);font-size:18px;flex-shrink:0;margin-left:8px;}
+.related-section{background:var(--sq-surface-soft,#F7FAFC);padding:48px 24px;}
+.related-inner{max-width:800px;margin:0 auto;}
+.related-title{font-size:15px;font-weight:700;color:var(--sq-text,#1A202C);margin-bottom:20px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F);}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.related-card{display:block;background:var(--sq-surface,#FFFFFF);border:1px solid var(--border);border-radius:10px;padding:16px;color:inherit;text-decoration:none;}
+.related-kicker{font-size:10px;color:var(--sq-accent,#8CC63F);font-weight:700;margin-bottom:6px;letter-spacing:.08em;}
+.related-card-title{font-size:13px;font-weight:700;color:var(--sq-text,#1A202C);line-height:1.5;}
+.otani-lead{background:linear-gradient(135deg,var(--sq-highlight-bg,#F0FFF4),var(--sq-surface-soft,#EBF5FB));border:1.5px solid var(--sq-border-strong,#9AE6B4);border-radius:14px;padding:20px 22px;margin:24px 0;}
+.otani-lead-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.otani-lead-head img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.otani-lead-head span{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--sq-highlight-text,#276749);}
+.otani-lead p{font-size:14px;color:var(--sq-text,#1A202C);line-height:1.9;margin-bottom:12px;}
+.otani-lead p:last-child{margin-bottom:0;}
+.sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
+.sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
+.chat-icon{width:44px;height:44px;border-radius:50%;flex-shrink:0;object-fit:cover;background:var(--light);box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat-name{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:4px;letter-spacing:.05em;}
+.sq-chat-bubble{position:relative;background:var(--light);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:var(--text);line-height:1.8;max-width:calc(100% - 60px);}
+.sq-chat-row.teacher .sq-chat-bubble{background:color-mix(in srgb, var(--sq-accent,#8CC63F) 8%, transparent);border-color:color-mix(in srgb, var(--sq-accent,#8CC63F) 30%, transparent);}
+footer{background:var(--sq-surface-strong,#111827);padding:28px 24px;text-align:center;margin-top:64px;}
+footer a{font-size:12px;color:var(--sq-muted,#4A5568);margin:0 10px;}
+footer p{font-size:11px;color:var(--sq-muted-strong,#2D3748);margin-top:8px;}
+details summary{transition:background 100ms ease-out;}
+details summary:active{background:var(--light);}
+html[data-theme="dark"] .check-list li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .check{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;color:#CCD6E5 !important;}
+html[data-theme="dark"] .prompt-box{background:#111827 !important;border-color:rgba(255,255,255,.1) !important;}
+html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
+@media(prefers-reduced-motion:reduce){
+.nav-cta,.app-cta a{transition:opacity 100ms ease;}
+.nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
+}
+@media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
+    <a class="nav-cta" href="app.html">無料で始める</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">ホーム</a> &rsaquo;
+    <a href="shikaku-list.html">資格一覧</a> &rsaquo; AI活用・時短術
+  </div>
+
+  <h1>Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ</h1>
+  <p class="meta">更新日：2026年7月24日｜著者：大谷一輝（関西の大学3回生・日商簿記1級勉強中）</p>
+
+  <div class="otani-lead">
+    <div class="otani-lead-head">
+      <img src="images/icon-otani.png" alt="大谷">
+      <span>大谷 一輝 より</span>
+    </div>
+    <p>こんにちは、大谷です。実は僕自身、Study Questというこのアプリを作るときに、ClaudeやChatGPTに教科書には載っていない疑問をぶつけまくって理解を進めてきた人間です。仕訳の理解でつまずくのと、コードの仕組みが分からなくてつまずくのは、実はやっていることがそっくり同じなんじゃないかと最近気づきました。</p>
+    <p>「テキストを読む」と「AIに聞く」は似ているようで全然違います。今日はその違いと、実際に僕が使っている「聞き方」をそのまま共有します。</p>
+  </div>
+
+  <p class="lead">簿記のテキストは何度読んでも頭に入らないのに、AIに「なぜ」を聞いた瞬間に急に腑に落びる——そんな経験はありませんか？<strong>大事なのはAIに答えを聞くことではなく、自分がどこで、なぜつまずいているのかを具体的に伝えること</strong>です。この記事では、そのままコピペして使える論点別プロンプト集も紹介します。</p>
+
+  <div class="sq-chat">
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">テキストの説明、何回読んでも頭に入らないんですよね……。なんで借方にこの勘定科目が来るのか、正直まだピンと来てなくて。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">それ、僕もStudy Questを作っているときにAIによく同じことをしていました。テキストは「正解」は教えてくれるけど「なぜそうなるか」までは対話してくれませんからね。AIへの聞き方を少し変えるだけで、理解度がかなり変わりますよ。</div>
+      </div>
+    </div>
+    <div class="sq-chat-row student">
+      <img src="images/icon-student.png" alt="受験生" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">受験生</div>
+        <div class="sq-chat-bubble">聞き方を変えるだけで、そんなに変わるものなんですか？</div>
+      </div>
+    </div>
+    <div class="sq-chat-row teacher">
+      <img src="images/icon-otani.png" alt="大谷" class="chat-icon">
+      <div>
+        <div class="sq-chat-name">大谷（簿記1級勉強中）</div>
+        <div class="sq-chat-bubble">はい、全然違います。実際に使っているコツと、コピペで使えるプロンプトをまとめたので、一緒に見ていきましょう。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>なぜ「テキストを読む」だけでは仕訳が理解できないのか</h2>
+  <p>簿記のテキストは、基本的に「正解」を教えてくれます。「現金過不足が生じたら、借方または貸方に現金過不足勘定を使う」——これは書いてあります。でも「なぜそう処理するのか」「自分がつまずいているのはどの部分なのか」までは、テキストは答えてくれません。テキストは対話してくれないからです。</p>
+  <p>僕がStudy Questを開発しているとき、AIに聞いていたのはコードの書き方そのものより「なぜこのコードだとエラーになるのか」「このロジックは何をしたいのか」でした。簿記の勉強でも同じで、AIに「答え」を聞くのではなく「理由」を聞くと、テキストにはない角度から理解が進みます。</p>
+
+  <div class="tip-box">
+    <strong>まず持っておきたい前提：</strong>AIは「テキストの代わりに答えを教えてくれる道具」ではなく、「自分の疑問に付き合ってくれる対話相手」として使うと、理解の質がまったく変わります。
+  </div>
+
+  <h2>AIへの「聞き方」で理解度がまったく変わる</h2>
+  <p>ここが今日の記事の一番大事なところです。同じAIに同じ論点を聞いても、聞き方次第で返ってくる説明の質が全然違います。</p>
+
+  <h3>悪い聞き方と良い聞き方の違い</h3>
+  <div class="warn-box">
+    <strong>悪い聞き方の例：</strong>「貸倒引当金の仕訳を教えて」——これだと、AIはテキストと同じような一般論を返してくるだけで、正直あまり意味がありません。
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">良い聞き方の例</div>
+    <p>「貸倒引当金がなぜ『費用』として計上されるのか、まだ回収できていないお金なのに損失扱いになる理由を、簿記初心者にも分かるように具体的な数字を使って説明して」</p>
+  </div>
+  <p>このように「何が分からないのか」「どんな形で説明してほしいのか」まで具体的に書くと、AIはその疑問にピンポイントで答えてくれます。</p>
+
+  <h3>分からない部分だけを深掘りする「対話の続け方」</h3>
+  <p>一回の質問で完璧に理解しようとしなくて大丈夫です。分からない部分が残っていたら、それで終わりにせず「その説明のうち、〇〇の部分がまだ分からない、もっと簡単な例で説明して」と続けて聞くのも効果的です。対話を重ねていく感覚で使ってみてください。</p>
+
+  <h2>すぐ使える「仕訳理解プロンプト集」</h2>
+  <p>論点ごとに、そのままコピペして使えるプロンプト例をまとめました。自分がつまずいている論点名を当てはめて使ってください。</p>
+
+  <div class="prompt-box">
+    <div class="prompt-label">① 現金過不足</div>
+    <p>「現金過不足がなぜ一時的な勘定科目で、最終的に雑損・雑益に振り替わるのか、お小遣い帳に例えて説明して」</p>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">② 貸倒引当金</div>
+    <p>「貸倒引当金の『差額補充法』を、去年の残高と今年の見積額の差だけ仕訳する理由も含めて説明して」</p>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">③ 経過勘定（前払費用・未払費用）</div>
+    <p>「なぜまだ支払っていないお金を今期の費用にするのか、前払費用と未払費用の違いを対比しながら説明して」</p>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">④ 固定資産の減価償却</div>
+    <p>「定額法の減価償却費が毎年同じ金額になる理由を、実際に数字を当てはめた例で計算過程ごと説明して」</p>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">⑤ 株式会社の取引（利益準備金）</div>
+    <p>「配当のときになぜ利益準備金を積み立てる必要があるのか、会社法の趣旨も含めて簿記初心者向けに説明して」</p>
+  </div>
+  <p>これらはあくまで出発点です。自分の言葉に置き換えて聞くのが一番効果的です。</p>
+
+  <h2>AIに聞いてはいけないこと・注意点</h2>
+  <p>正直に言っておきたいことがあります。AIは万能ではありません。</p>
+  <ul class="check-list">
+    <li><strong>本試験の答えをそのまま聞いて丸暗記しようとしない。</strong>AIとの対話は「理解のプロセス」に使うものであって、「答えを手に入れる手段」ではありません。試験本番でAIは使えません。</li>
+    <li><strong>AIの説明を鵜呑みにしない。</strong>簿記の論点は会計基準に基づく厳密なルールがあるので、AIの説明とテキスト・公式の解説が食い違っていたら、必ずテキスト側を優先してください。</li>
+  </ul>
+  <p>AIは「理解の補助輪」であって、教科書の代わりにはなりません。</p>
+
+  <h2>AI活用と、学習記録を組み合わせる</h2>
+  <p>AIで理解を深めても、それを「分かった」で終わらせず、実際に問題を解いて記録に残すことが大事です。Study Questでは、論点ごとの理解度を学習記録として残せるので、AIで理解した論点をそのまま経験値として積み上げていけます。AIは理解のスピードを上げてくれる道具で、継続の仕組みはまた別に用意しておく方がいいです。</p>
+
+  <div class="app-cta">
+    <h3>⚔ AIで理解した論点を、経験値として積み上げる</h3>
+    <p>AIで理解を深めるだけで終わらせず、Study Questなら学習の記録をRPGの経験値として残せます。<br>「分かった」を「積み上がった」に変えていきましょう。</p>
+    <a href="app.html">今すぐ無料で始める →</a>
+  </div>
+
+  <h2>まとめ：今日からできる3つのアクション</h2>
+  <ul class="check-list">
+    <li>AIには「答え」ではなく「なぜ」「何が分からないか」を具体的に聞く</li>
+    <li>今日紹介したプロンプトを、自分がつまずいている論点にそのまま当てはめて使ってみる</li>
+    <li>AIで理解した論点は、テキスト・公式解説と必ず照らし合わせてから記録に残す</li>
+  </ul>
+
+  <div class="otani-lead">
+    <div class="otani-lead-head">
+      <img src="images/icon-otani.png" alt="大谷">
+      <span>大谷 一輝 より</span>
+    </div>
+    <p>テキストを何度読んでも分からなかった仕訳が、AIに「なぜ」を聞くだけで急に腑に落ちることがあります。大事なのは、AIに答えを聞くのではなく、自分がどこで、なぜつまずいているのかを具体的に伝えることです。ぜひ試してみてください。</p>
+    <p>この記事が少しでも役に立ったなら、この下にある<strong>【いいねボタン】</strong>を押してもらえると嬉しいです。</p>
+  </div>
+</div>
+
+<section class="faq-section">
+  <h2 class="faq-title">よくある質問</h2>
+  <details class="faq-item"><summary class="faq-summary">簿記の勉強にAIを使うのは、カンニングにならないですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">本試験中にAIを使うのは当然できませんし、それはこの記事の趣旨ではありません。ここで紹介しているのは、普段の学習中に「理解を深める対話相手」としてAIを使う方法です。答えを丸暗記するのではなく、なぜそうなるかを理解するプロセスに使うことが大切です。</div></details>
+  <details class="faq-item"><summary class="faq-summary">ChatGPTとClaude、どちらを使えばいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">どちらでも、この記事で紹介しているプロンプトの考え方（何が分からないかを具体的に伝える）は同じように使えます。使い慣れている方、無料で使える範囲のものを選べば問題ありません。</div></details>
+  <details class="faq-item"><summary class="faq-summary">AIの説明が教科書の内容と違っていたらどうすればいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">その場合は必ずテキストや公式の解説を優先してください。AIの説明は理解の補助として使うものであり、簿記の論点は会計基準に基づく厳密なルールがあるため、最終的な正確性はテキスト側で確認する必要があります。</div></details>
+  <details class="faq-item"><summary class="faq-summary">プロンプトを送っても、期待した説明が返ってこない場合はどうすればいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">一回で完璧な答えを求めず、「その説明のうち〇〇がまだ分からない、もっと簡単な例で説明して」と対話を続けてみてください。具体的にどこが分からないかを伝えるほど、AIの説明の精度は上がります。</div></details>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"簿記の勉強にAIを使うのは、カンニングにならないですか？","acceptedAnswer":{"@type":"Answer","text":"本試験中にAIを使うのは当然できませんし、それはこの記事の趣旨ではありません。ここで紹介しているのは、普段の学習中に「理解を深める対話相手」としてAIを使う方法です。答えを丸暗記するのではなく、なぜそうなるかを理解するプロセスに使うことが大切です。"}},{"@type":"Question","name":"ChatGPTとClaude、どちらを使えばいいですか？","acceptedAnswer":{"@type":"Answer","text":"どちらでも、この記事で紹介しているプロンプトの考え方（何が分からないかを具体的に伝える）は同じように使えます。使い慣れている方、無料で使える範囲のものを選べば問題ありません。"}},{"@type":"Question","name":"AIの説明が教科書の内容と違っていたらどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"その場合は必ずテキストや公式の解説を優先してください。AIの説明は理解の補助として使うものであり、簿記の論点は会計基準に基づく厳密なルールがあるため、最終的な正確性はテキスト側で確認する必要があります。"}},{"@type":"Question","name":"プロンプトを送っても、期待した説明が返ってこない場合はどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"一回で完璧な答えを求めず、「その説明のうち〇〇がまだ分からない、もっと簡単な例で説明して」と対話を続けてみてください。具体的にどこが分からないかを伝えるほど、AIの説明の精度は上がります。"}}]}
+</script>
+
+<section class="related-section">
+  <div class="related-inner">
+    <h2 class="related-title">関連記事</h2>
+    <div class="related-grid">
+      <a href="boki.html" class="related-card">
+        <div class="related-kicker">日商簿記3級・2級</div>
+        <div class="related-card-title">簿記3級・2級の独学スケジュール</div>
+      </a>
+      <a href="boki2.html" class="related-card">
+        <div class="related-kicker">日商簿記2級</div>
+        <div class="related-card-title">簿記2級・独学スケジュール</div>
+      </a>
+      <a href="keizoku.html" class="related-card">
+        <div class="related-kicker">継続のコツ</div>
+        <div class="related-card-title">勉強が続かない人へ</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="shikaku-list.html">資格一覧</a>
+    <a href="boki.html">簿記3級・2級</a>
+    <a href="about.html">運営者情報</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <p>© 2026 スタディクエスト. All rights reserved.</p>
+</footer>
+<script src="article-widgets.js"></script>
+</body>
+</html>
