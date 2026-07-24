@@ -22,6 +22,7 @@ const ARTICLES = {
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
   'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
+  'boki1-akirameta-tatenaoshi.html': {label:'簿記1級', title:'簿記1級に落ちた後、何をすればいい？向いてないかもと思ったときの立て直し方'},
   'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:'企業結合会計と連結会計の違い'},
   'boki1-renketsu-seika.html': {label:'簿記1級',     title:'成果連結｜未実現利益の消去'},
   'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:'社債｜定額法と利息法の違い'},
@@ -2566,6 +2567,7 @@ const SHIHOSHO_TOKI_FILES = [
 /* ── 簿記1級 記事一覧サイドバー ── */
 const BOKI1_OVERVIEW_FILES = [
   'boki1.html','boki1-yobikou.html','boki1-11month-strategy.html','boki1-next-exam.html',
+  'boki1-akirameta-tatenaoshi.html',
 ];
 const BOKI1_TOPIC_FILES = [
   'boki1-kigyoketsugo-vs-renketsu.html','boki1-renketsu-seika.html',
