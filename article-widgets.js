@@ -22,6 +22,13 @@ const ARTICLES = {
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
   'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
+  'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:'企業結合会計と連結会計の違い'},
+  'boki1-renketsu-seika.html': {label:'簿記1級',     title:'成果連結｜未実現利益の消去'},
+  'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:'社債｜定額法と利息法の違い'},
+  'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:'簿記1級', title:'圧縮記帳｜直接減額方式と積立金方式の違い'},
+  'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い'},
+  'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い'},
+  'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
   'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド'},
   'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール'},
@@ -2191,7 +2198,11 @@ function buildReadProgress(){
 
 /* ── 前後記事ナビ（簿記3級・2級・司法書士シリーズ） ── */
 function buildPrevNextNav(){
-  const sequence = BOKI3_FILES.includes(PAGE) ? BOKI3_FILES : (BOKI2_FILES.includes(PAGE) ? BOKI2_FILES : (SHIHOSHO_FILES.includes(PAGE) ? SHIHOSHO_FILES : null));
+  const sequence = BOKI3_FILES.includes(PAGE) ? BOKI3_FILES
+    : (BOKI2_FILES.includes(PAGE) ? BOKI2_FILES
+    : (SHIHOSHO_FILES.includes(PAGE) ? SHIHOSHO_FILES
+    : (BOKI1_FILES.includes(PAGE) ? BOKI1_FILES
+    : (MISC_GUIDE_FILES.includes(PAGE) ? MISC_GUIDE_FILES : null))));
   if(!sequence) return;
   const idx = sequence.indexOf(PAGE);
   const prev = idx > 0 ? sequence[idx - 1] : null;
@@ -2552,6 +2563,25 @@ const SHIHOSHO_TOKI_FILES = [
   'shihoshoshi-kaishaho.html',
 ];
 
+/* ── 簿記1級 記事一覧サイドバー ── */
+const BOKI1_OVERVIEW_FILES = [
+  'boki1.html','boki1-yobikou.html','boki1-11month-strategy.html','boki1-next-exam.html',
+];
+const BOKI1_TOPIC_FILES = [
+  'boki1-kigyoketsugo-vs-renketsu.html','boki1-renketsu-seika.html',
+  'boki1-shasai-teigaku-vs-risokuho.html','boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html',
+  'boki1-sogo-vs-kobetsu-shokyaku.html','boki1-taishoku-kanbenho-vs-gensokuho.html',
+  'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html',
+];
+const BOKI1_FILES = [...BOKI1_OVERVIEW_FILES, ...BOKI1_TOPIC_FILES];
+
+/* ── 資格ガイド追加（単発記事群）相互リンク ── */
+const MISC_GUIDE_FILES = [
+  'eisei-kanri.html','toroku-hanbai.html','iryo-jimu.html',
+  'chori.html','kenchiku.html','mansion.html',
+  'gaibuin.html','hisho.html','kanken.html',
+];
+
 function buildShihoshoSidebar(sidebar){
   if(!sidebar) return;
   if(!SHIHOSHO_FILES.includes(PAGE)) return;
@@ -2637,6 +2667,47 @@ function buildBoki3Sidebar(sidebar){
     const isCurrent = f === PAGE;
     const isRead = !!localStorage.getItem(_READ_KEY(f));
     list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${isRead ? '✓ ' : ''}${a.title}</div></a>`;
+  });
+  sidebar.appendChild(box);
+}
+
+function buildBoki1Sidebar(sidebar){
+  if(!sidebar) return;
+  if(!BOKI1_FILES.includes(PAGE)) return;
+
+  const box = document.createElement('div');
+  box.className = 'sq-sidebar-box';
+  box.innerHTML =
+    `<div class="sq-sidebar-box-title">📕 日商簿記1級 記事一覧</div>` +
+    `<div class="sq-side-link-label" style="margin:8px 0 6px;">総論・スケジュール</div><div class="sq-side-links sq-boki1-overview"></div>` +
+    `<div class="sq-side-link-label" style="margin:12px 0 6px;">個別論点の違いを整理</div><div class="sq-side-links sq-boki1-topic"></div>`;
+
+  const render = (selector, files) => {
+    const list = box.querySelector(selector);
+    files.forEach(f => {
+      const a = ARTICLES[f]; if(!a) return;
+      const isCurrent = f === PAGE;
+      list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${a.title}</div></a>`;
+    });
+  };
+  render('.sq-boki1-overview', BOKI1_OVERVIEW_FILES);
+  render('.sq-boki1-topic', BOKI1_TOPIC_FILES);
+  sidebar.appendChild(box);
+}
+
+function buildMiscGuideSidebar(sidebar){
+  if(!sidebar) return;
+  if(!MISC_GUIDE_FILES.includes(PAGE)) return;
+
+  const box = document.createElement('div');
+  box.className = 'sq-sidebar-box';
+  box.innerHTML = `<div class="sq-sidebar-box-title">🧾 資格ガイド 関連記事</div><div class="sq-side-links"></div>`;
+
+  const list = box.querySelector('.sq-side-links');
+  MISC_GUIDE_FILES.forEach(f => {
+    const a = ARTICLES[f]; if(!a) return;
+    const isCurrent = f === PAGE;
+    list.innerHTML += `<a href="${f}" class="sq-side-link${isCurrent ? ' sq-side-link--active' : ''}"><div class="sq-side-link-title" style="font-size:0.82rem">${a.label}｜${a.title}</div></a>`;
   });
   sidebar.appendChild(box);
 }
@@ -3290,6 +3361,8 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildBoki2Sidebar(layout.right);
   buildBoki3Sidebar(layout.right);
   buildShihoshoSidebar(layout.right);
+  buildBoki1Sidebar(layout.right);
+  buildMiscGuideSidebar(layout.right);
   buildCatBadge();
   buildArticleDialogue();
   buildSidebarCTA(layout.right);
