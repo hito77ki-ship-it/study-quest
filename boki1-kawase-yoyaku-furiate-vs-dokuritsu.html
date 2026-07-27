@@ -50,7 +50,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:13px}th{b
 .origin-kamoku{font-size:13px;font-weight:700;margin-bottom:4px}.origin-card.furiate .origin-kamoku{color:#2B6CB0}.origin-card.dokuritsu .origin-kamoku{color:#15803D}
 .origin-desc{font-size:12px;color:#374151;line-height:1.7}
 .formula{background:#F7F9FF;border:1px solid #C3DAFE;border-radius:10px;padding:16px 20px;margin:20px 0;font-size:14px;color:#374151}
-.journal{background:var(--light);border-radius:10px;padding:14px 18px;margin:16px 0}
+.journal-light{background:var(--light);border-radius:10px;padding:14px 18px;margin:16px 0}
 .matome{background:linear-gradient(135deg,#F0FFF4,#E8F7B8);border:2px solid #9AE6B4;border-radius:14px;padding:24px 28px;margin:32px 0}.matome h3{color:#276749;font-size:16px;margin:0 0 16px}.matome-row{display:flex;align-items:baseline;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06)}.matome-row:last-child{border-bottom:none}.matome-row .trigger{font-weight:700;min-width:200px;flex-shrink:0}.matome-row .result{color:#276749;font-weight:700}@media(max-width:560px){.matome-row{flex-direction:column;gap:2px}.matome-row .trigger{min-width:auto}}
 .app-cta{background:linear-gradient(135deg,#1A2A0A,#2D4A10);border-radius:12px;padding:28px;margin:40px 0;text-align:center;color:#fff}.app-cta h3{color:var(--green);font-size:18px;margin-bottom:8px}.app-cta p{color:#A0C070;font-size:13px}.app-cta a{background:var(--green);color:#0A0A0F;font-weight:700;padding:12px 28px;border-radius:100px;font-size:14px;display:inline-block;transition:opacity .2s,transform 100ms ease-out}.app-cta a:active{transform:scale(.96);}
 .point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0}.point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px}
@@ -170,7 +170,7 @@ details summary:active{background:var(--light);}
     <strong>①仕入時：</strong>2,000ドル×108円（仕入時HR）＝216,000円<br>
     <strong>②予約時：</strong>仕訳なし（独立処理では、予約時点では為替予約の時価はゼロと考える）
   </div>
-  <div class="journal">
+  <div class="journal-light">
     <table>
       <tr><th>タイミング</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
       <tr><td>仕入時（2/1）</td><td>仕入</td><td>216,000</td><td>買掛金</td><td>216,000</td></tr>
@@ -182,7 +182,7 @@ details summary:active{background:var(--light);}
     <strong>①ヘッジ対象（買掛金）の換算：</strong>{112円（決算時CR）－108円（仕入時HR）}×2,000ドル＝8,000円（為替差損）<br>
     <strong>②ヘッジ手段（為替予約）の時価評価：</strong>{113円（決算時FR）－112円（予約時FR）}×2,000ドル＝2,000円（為替差益）
   </div>
-  <div class="journal">
+  <div class="journal-light">
     <table>
       <tr><th>タイミング</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
       <tr><td>決算時：買掛金の換算</td><td>為替差損益</td><td>8,000</td><td>買掛金</td><td>8,000</td></tr>

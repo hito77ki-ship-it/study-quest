@@ -124,6 +124,8 @@ company/reports/ に結果を記録
 - 外部ライブラリの追加は「本当に必要か」を最初に問う
 - データはlocalStorageに保存（サーバーレス構成）
 - モバイルファーストのUI設計
+- **新規記事のCSSは`article-widgets.js`が提供する`--sq-*`CSS変数（例：`var(--sq-text, #1A202C)`）にフォールバック付きで連携させる（2026-07-27決定）。記事ローカルの固定`:root`変数＋16進カラー直書きの旧方式は使わない。既存記事の移行は別途優先度付き計画で対応する（`company/decisions/`参照）
+- **記事固有の`<style>`でクラス名を定義する際は、`article-widgets.js`側の標準クラス名（`.tip-box`, `.warn-box`, `.formula`, `.flow-item`, `.journal`, `.num-box`, `.rank-card`等）と重複しないか確認する。**重複すると`!important`付きの共通スタイルに上書きされ、記事側の意図したデザインが無効になる（2026-07-27、`.journal`クラス衝突の反省より）
 
 ---
 
