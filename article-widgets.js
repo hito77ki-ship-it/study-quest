@@ -2825,11 +2825,11 @@ function buildAuthorBox(){
   const box = document.createElement('div');
   box.className = 'sq-author';
   box.innerHTML = `
-    <div class="sq-author-avatar"><img src="icons/avatar-teacher.png" alt="若葉" loading="lazy"></div>
+    <div class="sq-author-avatar"><img src="images/icon-wakaba.png" alt="若葉" loading="lazy"></div>
     <div>
-      <div class="sq-author-name">若葉（おおたに ひとき）</div>
+      <div class="sq-author-name">若葉（わかば）</div>
       <div class="sq-author-title">関西の大学3回生 ／ 日商簿記1級勉強中 ／ Study Quest 開発者</div>
-      <div class="sq-author-bio">公認会計士試験を約1年間勉強し、現在は日商簿記1級を目標に学習中。「勉強が続かない」課題を解決するため、資格学習RPGアプリ Study Quest を個人開発。実際の受験経験をもとに、各資格の勉強法・スケジュールを発信中。X: @wakaba_sq</div>
+      <div class="sq-author-bio">公認会計士試験を約1年半勉強し、現在は日商簿記1級を目標に学習中。「勉強が続かない」課題を解決するため、資格学習RPGアプリ Study Quest を個人開発。実際の受験経験をもとに、各資格の勉強法・スケジュールを発信中。X: @wakaba_sq</div>
     </div>`;
   meta.insertAdjacentElement('afterend', box);
 }
