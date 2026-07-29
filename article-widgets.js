@@ -20,6 +20,7 @@ const ARTICLES = {
   'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ'},
   'boki2-oyoryoku-kabe.html': {label:'簿記2級',     title:'仕訳はわかるのに過去問になると解けない「理解」と「得点力」のギャップを埋める演習法'},
+  'boki2-renketsu-suteru.html': {label:'簿記2級',   title:'簿記2級の連結会計、捨てるべき？心が折れそうな人のための「部分点」戦略'},
   'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
   'boki-careless-miss.html': {label:'簿記3級・2級',  title:'電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方'},
   'boki-zasetsu-type.html':  {label:'簿記3級・2級',  title:'勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方'},
@@ -2548,8 +2549,8 @@ const BOKI2_INDUSTRIAL_FILES = [
   'boki2-kogyo-enshu.html',
 ];
 
-const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-zasetsu-type.html'];
-const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html' && f !== 'boki-careless-miss.html' && f !== 'boki-zasetsu-type.html' && f !== 'boki2-oyoryoku-kabe.html');
+const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-zasetsu-type.html'];
+const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html' && f !== 'boki-careless-miss.html' && f !== 'boki-zasetsu-type.html' && f !== 'boki2-oyoryoku-kabe.html' && f !== 'boki2-renketsu-suteru.html');
 
 const SHIHOSHO_FILES = [
   'shihoshoshi.html',
