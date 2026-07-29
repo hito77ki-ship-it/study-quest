@@ -334,7 +334,7 @@ function getArticleDialogue(){
 function renderDialogue(rows){
   return rows.map(([role, name, text]) => `
     <div class="sq-chat-row ${role}">
-      <div class="sq-chat-avatar ${role}"><img src="icons/avatar-${role === 'teacher' ? 'teacher' : 'student'}.png" alt="${role === 'teacher' ? '若葉' : '受験生'}" loading="lazy"></div>
+      <div class="sq-chat-avatar ${role}"><img src="${role === 'teacher' ? 'images/icon-wakaba.png' : 'images/icon-student.png'}" alt="${role === 'teacher' ? '若葉' : '受験生'}" width="44" height="44" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">${_escHtml(name)}</div>
         <div class="sq-chat-bubble">${_escHtml(text)}</div>

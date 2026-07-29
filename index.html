@@ -829,7 +829,7 @@ details summary:active{background:var(--light);}
     <div class="ph side side-l">
       <div class="pf">
         <div class="ps">
-          <img src="screenshots/screen2.png" alt="QUESTタブ" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <picture><source srcset="screenshots/screen2-lp.webp" type="image/webp"><img src="screenshots/screen2-lp.png" alt="QUESTタブ" width="520" height="1125" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'"></picture>
           <div class="ps-ph" style="display:none">⏱</div>
         </div>
       </div>
@@ -837,7 +837,7 @@ details summary:active{background:var(--light);}
     <div class="ph main">
       <div class="pf">
         <div class="ps">
-          <img src="screenshots/screen1.png" alt="STATUSタブ" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <picture><source srcset="screenshots/screen1-lp.webp" type="image/webp"><img src="screenshots/screen1-lp.png" fetchpriority="high" alt="STATUSタブ" width="520" height="1125" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'"></picture>
           <div class="ps-ph" style="display:none">⚔</div>
         </div>
       </div>
@@ -845,7 +845,7 @@ details summary:active{background:var(--light);}
     <div class="ph side side-r">
       <div class="pf">
         <div class="ps">
-          <img src="screenshots/screen3.png" alt="タイムライン" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <picture><source srcset="screenshots/screen3-lp.webp" type="image/webp"><img src="screenshots/screen3-lp.png" alt="タイムライン" width="520" height="1125" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'" loading="lazy"></picture>
           <div class="ps-ph" style="display:none">🌐</div>
         </div>
       </div>
@@ -1823,7 +1823,7 @@ details summary:active{background:var(--light);}
     <div class="showcase-phone-wrap fi">
       <div class="pf">
         <div class="ps">
-          <img src="screenshots/screen1.png" alt="スタディクエスト スクリーンショット" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <picture><source srcset="screenshots/screen1-lp.webp" type="image/webp"><img src="screenshots/screen1-lp.png" alt="スタディクエスト スクリーンショット" width="520" height="1125" loading="lazy" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'"></picture>
           <div class="ps-ph" style="display:none">⚔ STATUS</div>
         </div>
       </div>
@@ -1913,7 +1913,7 @@ details summary:active{background:var(--light);}
   <div class="founder-inner fi">
     <div class="sec-label" style="text-align:center;margin-bottom:48px;">FOUNDER</div>
     <div class="founder-avatar">
-      <img src="icons/app-icon.png" alt="スタディクエスト">
+      <picture><source srcset="icons/app-icon-lp.webp" type="image/webp"><img src="icons/app-icon-lp.png" alt="スタディクエスト" width="160" height="160" loading="lazy" decoding="async"></picture>
     </div>
     <div class="founder-name">若葉 | Study Quest</div>
     <div class="founder-role">関西の大学3年生 · 日商簿記1級勉強中</div>
@@ -2048,6 +2048,16 @@ details summary:active{background:var(--light);}
     <h2 class="sec-title" style="margin-bottom:0;">更新情報</h2>
     <p class="updates-sub">Study Quest の最近のアップデート</p>
     <div class="updates-list">
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.07.29</span><span class="update-badge improve">改善</span></div>
+        <div class="update-title">⚡ ページの表示速度を大幅に改善しました</div>
+        <div class="update-desc">トップページの画像を最適化し、読み込む容量を約95%削減しました。あわせて全ページの画像に表示サイズを指定し、読み込み中に本文がガタつく現象を解消しています。特にスマホでの表示が軽くなりました。</div>
+      </div>
+      <div class="update-item fi">
+        <div class="update-meta"><span class="update-date">2026.07.29</span><span class="update-badge fix">修正</span></div>
+        <div class="update-title">🙋‍♀️ 一部記事で著者アイコンが古い画像のままだった問題を修正しました</div>
+        <div class="update-desc">会話形式の解説パートで、著者アイコンが以前のものになっていた記事が41本ありました。正しいアイコンに差し替え済みです。</div>
+      </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.29</span><span class="update-badge fix">修正</span></div>
         <div class="update-title">🔍 試験回次の誤記など、記事内の事実誤りを修正しました</div>
@@ -2383,8 +2393,8 @@ details summary:active{background:var(--light);}
   ];
   const BANNER_ENGLISH = { href:'https://px.a8.net/svt/ejp?a8mat=4B1OTO+E6TXTE+3AQG+BZ0Z5', img:'https://www29.a8.net/svt/bgt?aid=260419308858&wid=001&eno=01&mid=s00000015388002011000&mc=1', w:320, h:50, px:'https://www15.a8.net/0.gif?a8mat=4B1OTO+E6TXTE+3AQG+BZ0Z5' };
   function pickRandom(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-  function bannerHTML(b){ return `<a href="${b.href}" rel="nofollow" target="_blank" style="display:block;border-radius:${b.h>=100?'12':'8'}px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.3);"><img border="0" width="${b.w}" height="${b.h}" alt="" src="${b.img}" style="display:block;max-width:100%;height:auto;"></a>`; }
-  function pixelHTML(b){ return `<img border="0" width="1" height="1" src="${b.px}" alt="">`; }
+  function bannerHTML(b){ return `<a href="${b.href}" rel="nofollow" target="_blank" style="display:block;border-radius:${b.h>=100?'12':'8'}px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.3);"><img border="0" width="${b.w}" height="${b.h}" alt="" src="${b.img}" style="display:block;max-width:100%;height:auto;" loading="lazy"></a>`; }
+  function pixelHTML(b){ return `<img border="0" width="1" height="1" src="${b.px}" alt="" loading="lazy">`; }
   const slot = document.getElementById('lpBannerSlot');
   const pxSlot = document.getElementById('lpTrackingPixels');
   if(!slot) return;

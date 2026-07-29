@@ -185,7 +185,7 @@ details summary:active{background:var(--light);}
 
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
       <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
     </div>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！実は、これから紹介する各種の論点は、どれも私が大学の講義内で初めて学んだとき、「うわっ、なんじゃこりゃ……！」と頭を抱えた難しいものばかりでした（笑）。だからこそ、当時の私と同じように悩んでいる皆さんに、どこよりも直感的にパズル感覚で理解してもらえるよう、私なりの分かりやすい図解を交えてお届けします！</p>
@@ -206,28 +206,28 @@ details summary:active{background:var(--light);}
 
   <div class="sq-chat">
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">受験生</div>
         <div class="sq-chat-bubble">中間納付がある場合の仕訳で、貸方が2つに分かれる理由がよくわかりません。どうして120,000と180,000に分けるんですか？あと、仮受消費税が決算で急に借方に来るのも意味不明です…</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon"></div>
+      <div class="sq-chat-avatar teacher"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">若葉（簿記1級勉強中）</div>
         <div class="sq-chat-bubble">その感覚、めちゃくちゃわかります。私も最初「なんで貸方だった科目が急に借方に引っ越すんだ…！」と決算整理の仕訳を見て頭がバグりました（笑）。でも正体は「決算の仕訳マジック」——期中に積み上げた残高を、決算で反対側に置いて丸ごと消し去るトリックなんです。仮払法人税等120,000は「もう払った分」として消し、300,000（正解の税額）との差額180,000だけを「まだ払っていない分」として残す。消費税も同じで、仮受・仮払をそれぞれ反対側に置いてぶつけて相殺すると、差額だけがきれいに残ります。</div>
       </div>
     </div>
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon"></div>
+      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">受験生</div>
         <div class="sq-chat-bubble">「反対側に置いて消す」がマジックの仕掛けなんですね…！言われてみると、法人税等も消費税も同じ考え方で解けそうです。</div>
       </div>
     </div>
     <div class="sq-chat-row teacher">
-      <div class="sq-chat-avatar teacher"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon"></div>
+      <div class="sq-chat-avatar teacher"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">若葉（簿記1級勉強中）</div>
         <div class="sq-chat-bubble">まさにそうです！このマジックの仕掛けさえ見抜けば、法人税等の3ステップも消費税の相殺パズルも、怖いものではなくなります。図解で数字の動きを一緒に追いかけていきましょう！</div>
@@ -239,7 +239,7 @@ details summary:active{background:var(--light);}
 
   <picture>
     <source media="(max-width: 600px)" srcset="images/boki2-tax-puzzle-map-mobile.svg">
-    <img src="images/boki2-tax-puzzle-map.svg" alt="法人税等・消費税の仕訳フロー" style="max-width:100%; height:auto; display:block; margin:20px auto;">
+    <img src="images/boki2-tax-puzzle-map.svg" alt="法人税等・消費税の仕訳フロー" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="560" loading="lazy">
   </picture>
   <p>法人税等は中間納付の「仮払」と期末確定の「未払」を使い分けるのがポイントです。消費税は仮払・仮受を相殺して差額を納付します。</p>
 
