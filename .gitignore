@@ -12,7 +12,16 @@ build/
 *.idsig
 
 # Misc
+# 作業用の一時テキストは無視するが、サイトが配信する .txt は必ず追跡する。
+# ここに例外を書き忘れると、公開したつもりのファイルが commit されず
+# 本番に反映されない事故が起きる（2026-07-29 に llms.txt で実際に発生）。
 *.txt
+!robots.txt
+!ads.txt
+!app-ads.txt
+!llms.txt
+!humans.txt
+!security.txt
 次.json
 
 # Google service account keys (GSC report script)

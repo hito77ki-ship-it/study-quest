@@ -1,0 +1,111 @@
+# Study Quest（スタディクエスト）
+
+> 資格試験の学習を、RPGのような冒険に変えるWebアプリと学習メディア。
+> 学習記録・レベルアップ・ボス討伐で「勉強が続かない」を解決する。
+> 記事はすべて、実際に受験した個人開発者（若葉・関西の大学3回生・日商簿記1級勉強中）が執筆している。
+
+Study Questは日商簿記・FP・宅建・司法書士・TOEIC・英検・公認会計士など、日本の主要な資格試験の
+独学者に向けた学習ガイドを公開している。記事は「試験の全体像」→「級別ガイド」→「論点別の詳細解説」
+→「つまずき・挫折からの立て直し」の4層構造で整理されている。
+
+特に日商簿記（3級・2級・1級）の論点別解説が中核で、仕訳の考え方から決算整理・工業簿記・連結会計まで、
+実際につまずいた箇所を起点に書かれた記事が揃っている。
+
+サイトURL: https://study-quest.net/
+運営者情報: https://study-quest.net/about.html
+
+## アプリ
+
+- [Study Quest 本体](https://study-quest.net/app.html): 学習時間の記録をRPGのレベルアップ・装備・ボス討伐として可視化する無料Webアプリ。登録不要・ブラウザ完結・データはlocalStorageに保存
+
+## 日商簿記（全体・入門）
+
+- [日商簿記3級・2級の独学勉強法と合格スケジュール](https://study-quest.net/boki.html): 3級と2級を通した学習順序・必要時間・スケジュールの全体像
+- [ゼロからの簿記① 取引・簿記とは？](https://study-quest.net/boki-zero-01.html): 簿記を一度も学んだことがない人向けの全5回連載の第1回
+- [ゼロからの簿記④ 仕訳のしくみ](https://study-quest.net/boki-zero-04.html): 借方・貸方という考え方を初学者向けに解説
+- [簿記3級を飛ばして2級から受けていい人・ダメな人](https://study-quest.net/boki3-tobashi-2kyu.html): 級を飛ばす判断の材料と、2級の試験中に3級知識がどこで必要になるかの整理
+
+## 日商簿記3級（論点別）
+
+- [現金・当座預金の違いと仕訳](https://study-quest.net/boki3-genkin.html): 小切手の扱いを含む現金まわりの基本
+- [現金過不足（雑損・雑益）](https://study-quest.net/boki3-kafusoku.html): 発生から決算時の振替までの流れ
+- [貸倒引当金の仕訳と計算](https://study-quest.net/boki3-kashidaore.html): 差額補充法・貸倒損失まで
+- [減価償却（定額法）の計算と仕訳](https://study-quest.net/boki3-genka.html): 直接法・間接法と売却時の処理
+- [経過勘定（前払・未払・前受・未収）](https://study-quest.net/boki3-keika.html): 決算整理の定番論点
+- [精算表の書き方（8桁精算表）](https://study-quest.net/boki3-seisanhyo.html): 決算整理から財務諸表への一連の流れ
+- [商品売買の仕訳（三分法）](https://study-quest.net/boki3-sanpou.html): 仕入・売上・繰越商品の関係
+- [掛取引（売掛金・買掛金）の仕訳](https://study-quest.net/boki3-kake.html): 信用取引の基本
+- [試算表3種類の違い](https://study-quest.net/boki3-shisanhyo.html): 合計・残高・合計残高試算表の使い分け
+
+## 日商簿記2級（論点別・試験対策）
+
+- [簿記2級の勉強時間・独学合格ロードマップ](https://study-quest.net/boki2.html): 2級全体の学習計画
+- [決算整理・財務諸表作成の第3問対策](https://study-quest.net/boki2-kessan.html): 配点の大きい第3問の攻略
+- [簿記2級の連結会計とは？連結修正仕訳とのれん](https://study-quest.net/boki2-renketsu.html): 資本連結・のれん・非支配株主持分の仕組み
+- [連結会計、捨てるべき？心が折れそうな人のための「部分点」戦略](https://study-quest.net/boki2-renketsu-suteru.html): 配点構造から逆算して部分点を取りにいく現実的な戦略
+- [工業簿記の演習ロードマップ](https://study-quest.net/boki2-kogyo-enshu.html): 材料費からCVP分析までの演習順序
+- [製造間接費・予定配賦・配賦差異](https://study-quest.net/boki2-seizo-kansetsuhi.html): 工業簿記の頻出論点
+- [ネット試験（CBT）vs 統一試験（紙）徹底比較](https://study-quest.net/boki2-cbt-vs-paper.html): どちらの方式で受験すべきかの判断材料
+- [試験日程と最速3ヶ月合格ロードマップ](https://study-quest.net/boki2-next-exam.html): 直近の試験日程と逆算スケジュール
+
+## 日商簿記1級
+
+- [日商簿記1級の独学合格ガイド](https://study-quest.net/boki1.html): 難易度・必要時間・学習順序
+- [簿記1級・次の試験日程と最速ロードマップ](https://study-quest.net/boki1-next-exam.html): 年2回の試験に向けた計画
+- [成果連結｜未実現利益の消去](https://study-quest.net/boki1-renketsu-seika.html): 2級の連結会計からの発展論点
+- [社債｜定額法と利息法の違い](https://study-quest.net/boki1-shasai-teigaku-vs-risokuho.html): 償却原価法の2つの方法の使い分け
+- [退職給付会計｜簡便法と原則法の違い](https://study-quest.net/boki1-taishoku-kanbenho-vs-gensokuho.html)
+- [簿記1級に落ちた後、何をすればいい？](https://study-quest.net/boki1-akirameta-tatenaoshi.html): 答案分析による立て直しの手順
+
+## つまずき・挫折からの立て直し
+
+- [勉強が続かない挫折する人の4タイプ診断](https://study-quest.net/boki-zasetsu-type.html): タイプ別の乗り越え方
+- [電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方](https://study-quest.net/boki-careless-miss.html): ケアレスミスを根性論ではなく記録で減らす方法
+- [仕訳はわかるのに過去問になると解けない](https://study-quest.net/boki2-oyoryoku-kabe.html): 理解と得点力のギャップを埋める演習法
+- [模試はできるのに本番で解けない人の弱点診断チェックリスト](https://study-quest.net/boki2-moshi-honban.html)
+- [簿記2級に落ちた…次どうする？](https://study-quest.net/boki2-ochita.html): 不合格後の原因分析と再挑戦の設計
+- [簿記3級の次に取る資格は？FP3級 vs 簿記2級](https://study-quest.net/boki3-next.html)
+
+## FP（ファイナンシャルプランナー）
+
+- [FP3級の勉強時間・独学合格スケジュール](https://study-quest.net/fp3.html): FP3級の全体像
+- [ライフプランニングと資金計画](https://study-quest.net/fp3-lifeplanning.html)
+- [タックスプランニング](https://study-quest.net/fp3-tax.html)
+- [相続・事業承継](https://study-quest.net/fp3-inheritance.html)
+- [FP3級は意味ない？取る価値を整理](https://study-quest.net/fp3-iminai.html)
+
+## 司法書士・法律系
+
+- [司法書士の独学合格ガイド](https://study-quest.net/shihoshoshi.html): 難易度・科目構成・学習計画
+- [司法書士を目指す人が最初の7日間でやること](https://study-quest.net/shihoshoshi-start.html)
+- [民法総則・意思表示・代理・時効](https://study-quest.net/shihoshoshi-minpo-sosoku.html)
+- [不動産登記法・所有権移転・抵当権設定](https://study-quest.net/shihoshoshi-futoki.html)
+- [会社法・商業登記法](https://study-quest.net/shihoshoshi-kaishaho.html)
+
+## 会計士・税理士
+
+- [公認会計士試験の勉強法・独学ロードマップ](https://study-quest.net/cpa.html)
+- [税理士試験の勉強時間・独学合格スケジュール](https://study-quest.net/zeirishi.html)
+- [公認会計士・税理士は予備校と独学どっちがいい？](https://study-quest.net/cpa-yobikou.html)
+
+## 資格の選び方・ランキング
+
+- [社会人におすすめの資格ランキング2026](https://study-quest.net/osusume-shikaku.html)
+- [独学で取れる資格ランキング2026](https://study-quest.net/dokugaku-shikaku.html)
+- [コスパがいい資格ランキング10選](https://study-quest.net/cospa-shikaku.html)
+- [転職に有利な資格ランキング10選](https://study-quest.net/tenshoku-shikaku.html)
+- [就活で強い資格ランキング10選](https://study-quest.net/shukatsu-shikaku.html)
+- [資格一覧](https://study-quest.net/shikaku-list.html): サイトで扱っている全資格の一覧
+
+## 大学生向け
+
+- [大学の簿記・会計の講義は「神ボーナスステージ」](https://study-quest.net/univ-boki-units.html): 大学の授業と資格勉強を重ねる方法
+- [大学生が資格勉強を続ける方法](https://study-quest.net/daigakusei-keizoku.html): 授業・バイト・就活との両立
+- [大学生は資格勉強を2つ以上併用すべき？1つに絞るべき？](https://study-quest.net/daigakusei-shikaku-heiyou.html)
+- [将来から逆算する最強の資格戦略](https://study-quest.net/univ-qualification-strategy.html)
+
+## Optional
+
+- [プライバシーポリシー](https://study-quest.net/privacy.html)
+- [利用規約](https://study-quest.net/terms.html)
+- [お問い合わせ](https://study-quest.net/contact.html)

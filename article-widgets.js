@@ -1650,6 +1650,10 @@ html[data-theme="dark"] .sq-article-theme-group{
 /* 広告プレースホルダー（本文内） */
 .sq-ad-slot{background:var(--sq-surface-soft);border:1px dashed var(--sq-border);border-radius:8px;min-height:90px;display:flex;align-items:center;justify-content:center;color:var(--sq-muted);font-size:11px;margin:24px 0;}
 /* 会話UI */
+.sq-table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:8px;}
+.sq-table-scroll>table{margin:0;min-width:100%;width:max-content;}
+.sq-table-scroll::-webkit-scrollbar{height:6px;}
+.sq-table-scroll::-webkit-scrollbar-thumb{background:rgba(140,198,63,.45);border-radius:3px;}
 .sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
 .sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
 .sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
@@ -2783,6 +2787,27 @@ function insertMidCTA(){
   target.insertAdjacentElement('beforebegin', cta);
 }
 
+/* ── 横に長いテーブルをスクロール可能にする ──
+   列数の多い表（商品有高帳・補助簿・部門費配賦表など）がモバイルで
+   画面幅を突き破るのを防ぐ。テーブルが親要素より広い場合だけラップするので、
+   収まっている表の見た目は一切変わらない。 */
+function wrapWideTables(){
+  const container = document.querySelector('.container');
+  if(!container) return;
+  container.querySelectorAll('table').forEach(table => {
+    if(table.closest('.sq-table-scroll')) return;           // 二重ラップ防止
+    if(table.closest('.journal')) return;                   // 仕訳ブロックは既にoverflow指定あり
+    const parent = table.parentElement;
+    if(!parent) return;
+    const overflows = table.scrollWidth > parent.clientWidth + 1;
+    if(!overflows) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'sq-table-scroll';
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+  });
+}
+
 /* ── BreadcrumbList JSON-LD ── */
 function injectBreadcrumbLD(){
   const base = 'https://study-quest.net/';
@@ -3390,6 +3415,8 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildReadButton();
   buildShareButtons();
   buildWidgets();
+  wrapWideTables();
+  window.addEventListener('resize', wrapWideTables, {passive:true});
   trackScrollDepth();
   trackRelatedArticleClicks();
   await _initSB();
