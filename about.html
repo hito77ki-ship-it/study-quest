@@ -15,6 +15,9 @@
 <meta name="twitter:image" content="https://study-quest.net/screenshots/ogp_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:20px;}
+.breadcrumb a{color:var(--muted);text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;}
 body{font-family:'M PLUS 1',sans-serif;color:var(--text);background:var(--bg);line-height:1.8;}
@@ -46,7 +49,7 @@ p{font-size:14px;color:#374151;margin-bottom:12px;line-height:1.8;}
   display:flex;align-items:center;justify-content:center;
   font-size:36px;flex-shrink:0;
 }
-.profile-info h3{font-size:20px;font-weight:700;margin-bottom:4px;}
+.profile-info .profile-name{font-size:20px;font-weight:700;margin:0 0 4px;padding-left:0;border-left:0;letter-spacing:normal;}
 .profile-info .role{font-size:13px;color:var(--muted);margin-bottom:12px;}
 .profile-info p{font-size:14px;color:#374151;margin:0;}
 
@@ -72,6 +75,9 @@ details summary:active{background:var(--light);}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://study-quest.net/"}, {"@type": "ListItem", "position": 2, "name": "運営者情報", "item": "https://study-quest.net/about.html"}]}
+</script>
 </head>
 <body>
 
@@ -83,13 +89,14 @@ details summary:active{background:var(--light);}
 </nav>
 
 <div class="container">
+  <div class="breadcrumb"><a href="index.html">ホーム</a> &rsaquo; 運営者情報</div>
   <h1>運営者情報</h1>
   <p class="subtitle">About</p>
 
   <div class="profile-card">
     <div class="avatar">📚</div>
     <div class="profile-info">
-      <h3>若葉（わかば）</h3>
+      <h2 class="profile-name">若葉（わかば）</h2>
       <div class="role">関西の大学 3回生 ／ 日商簿記1級 勉強中 ／ スタディクエスト 開発者</div>
       <p>大学在学中に公認会計士試験の勉強をスタート。約1年半の受験勉強を通じて会計・財務の知識を深め、現在は日商簿記1級の取得を目標に学習中。「勉強が続かない」という自身の経験から、学習記録をRPGのように楽しめるWebアプリ「スタディクエスト」を個人開発しました。実際に受験勉強をしてきた経験をもとに、各資格の勉強法・スケジュール・教材情報を発信しています。</p>
     </div>
