@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /admin.html
 
 Sitemap: https://study-quest.net/sitemap.xml
+
+# LLM向けサイト案内（llms.txt 提案仕様）
+# https://study-quest.net/llms.txt
