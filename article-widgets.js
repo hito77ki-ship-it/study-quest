@@ -23,6 +23,7 @@ const ARTICLES = {
   'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
   'boki-careless-miss.html': {label:'簿記3級・2級',  title:'電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方'},
   'boki-zasetsu-type.html':  {label:'簿記3級・2級',  title:'勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方'},
+  'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
   'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
@@ -2528,7 +2529,7 @@ const BOKI3_FILES = [
   'boki3-denpyo.html','boki3-nikkei.html','boki3-keika.html',
   'boki3-keika2.html','boki3-shohi.html','boki3-hojinzei.html',
   'boki3-kabushiki.html','boki3-ginko.html','boki3-seisanhyo.html',
-  'boki-careless-miss.html','boki-zasetsu-type.html',
+  'boki-careless-miss.html','boki-zasetsu-type.html','boki3-tobashi-2kyu.html',
 ];
 
 const BOKI2_COMMERCIAL_FILES = [
