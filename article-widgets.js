@@ -2863,8 +2863,20 @@ function injectBreadcrumbLD(){
 function buildAuthorBox(){
   const container = document.querySelector('.container');
   if(!container) return;
-  const meta = container.querySelector('.meta');
-  if(!meta) return;
+  // 記事上部には「カテゴリ|更新日」と「著者：…」の2つの .meta があり、
+  // 前者は h1 より上、後者は h1 より下にある。単純に querySelector('.meta') を取ると
+  // h1 より上の更新日行を掴んでしまい、著者ボックスが記事タイトルより上に出る（97本で発生）。
+  // h1 より後ろにある .meta を優先し、無ければ h1 の直後に挿す。
+  const h1 = container.querySelector('h1');
+  const metas = Array.from(container.querySelectorAll('.meta'));
+  let anchor = null;
+  if(h1){
+    anchor = metas.find(m => h1.compareDocumentPosition(m) & Node.DOCUMENT_POSITION_FOLLOWING) || h1;
+  } else {
+    anchor = metas[0];
+  }
+  if(!anchor) return;
+  const meta = anchor;
 
   const box = document.createElement('div');
   box.className = 'sq-author';
