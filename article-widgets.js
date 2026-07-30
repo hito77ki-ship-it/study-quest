@@ -1666,6 +1666,8 @@ html[data-theme="dark"] .sq-article-theme-group{
 /* 広告プレースホルダー（本文内） */
 .sq-ad-slot{background:var(--sq-surface-soft);border:1px dashed var(--sq-border);border-radius:8px;min-height:90px;display:flex;align-items:center;justify-content:center;color:var(--sq-muted);font-size:11px;margin:24px 0;}
 /* 会話UI */
+.sq-ad-disclosure{font-size:11px;line-height:1.6;color:var(--sq-muted,#718096);margin:0 0 14px;padding:6px 10px;border:1px solid var(--sq-border,#E2E8F0);border-radius:6px;background:var(--sq-surface-soft,#F7FAFC);}
+.sq-ad-disclosure a{color:var(--sq-muted,#718096);text-decoration:underline;margin-left:6px;}
 .sq-table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:8px;}
 .sq-table-scroll>table{margin:0;min-width:100%;width:max-content;}
 .sq-table-scroll::-webkit-scrollbar{height:6px;}
@@ -2859,6 +2861,27 @@ function injectBreadcrumbLD(){
   document.head.appendChild(script);
 }
 
+/* ── 広告・アフィリエイトの明示（もしもアフィリエイト規約／ステマ告示対応） ──
+   もしもアフィリエイト「メディア運営ガイドライン」は、収益手段としてアフィリエイトを
+   利用していることをメディア上に表示するよう求めている（消費者庁のステマ告示自体の
+   規制対象は広告主だが、ASPの規約上はメディア側の表示が必須）。
+   全記事に1箇所で入れるため、ここで注入する。 */
+function injectAdDisclosure(){
+  const container = document.querySelector('.container');
+  if(!container) return;
+  if(container.querySelector('.sq-ad-disclosure')) return;   // 二重挿入を防ぐ
+
+  const el = document.createElement('p');
+  el.className = 'sq-ad-disclosure';
+  el.innerHTML = 'このページには広告（アフィリエイトリンク）が含まれます。'
+    + '<a href="about.html#ad">広告・収益化について</a>';
+
+  // パンくずの直後に置く。無ければコンテナ先頭。
+  const bc = container.querySelector('.breadcrumb');
+  if(bc) bc.insertAdjacentElement('afterend', el);
+  else container.prepend(el);
+}
+
 /* ── 著者プロフィール ── */
 function buildAuthorBox(){
   const container = document.querySelector('.container');
@@ -3437,6 +3460,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildSidebarCTA(layout.right);
   await Promise.all([loadLatestFromSitemap(), loadPopularArticles()]);
   buildLeftSidebar(layout.left);
+  injectAdDisclosure();
   buildAuthorBox();
   insertMidCTA();
   buildPrevNextNav();
