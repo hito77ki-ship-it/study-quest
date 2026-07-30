@@ -148,6 +148,22 @@ const ARTICLES = {
   'boki3-credit.html':       {label:'簿記3級', title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
   'univ-ai-report-hack.html':        {label:'AIライフハック', title:'ボイスメモ×AIでレポート無双！単位修得ハックを完全公開'},
   'univ-qualification-strategy.html':{label:'大学生向け',    title:'将来から逆算する最強の資格戦略'},
+  'boki2-renketsu.html':           {label:'簿記2級',          title:'連結会計・連結修正仕訳・のれん'},
+  'boki2-zeikouka.html':           {label:'簿記2級',          title:'税効果会計・一時差異・法人税等調整額'},
+  'boki2-lease.html':              {label:'簿記2級',          title:'リース取引・ファイナンスリースの仕訳'},
+  'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約'},
+  'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え'},
+  'boki2-shasai.html':             {label:'簿記2級',          title:'社債の発行・利息・償却原価法'},
+  'boki2-kogyo.html':              {label:'簿記2級',          title:'工業簿記とは・商業簿記との違い'},
+  'boki2-zairyouhi.html':          {label:'簿記2級',          title:'材料費・直接材料費・材料副費'},
+  'boki2-roumuhi.html':            {label:'簿記2級',          title:'労務費・直接労務費・賃率差異'},
+  'boki2-keihi.html':              {label:'簿記2級',          title:'経費・外注加工賃・製造間接費'},
+  'boki2-kobetsu-genka.html':      {label:'簿記2級',          title:'個別原価計算・製造指図書の流れ'},
+  'boki2-sogo-genka.html':         {label:'簿記2級',          title:'総合原価計算・平均法・先入先出法'},
+  'boki2-hyojun-genka.html':       {label:'簿記2級',          title:'標準原価計算・原価差異の分析'},
+  'boki2-chokusetsu-genka.html':   {label:'簿記2級',          title:'直接原価計算・貢献利益と固定費'},
+  'boki2-cvp.html':                {label:'簿記2級',          title:'CVP分析・損益分岐点売上高'},
+  'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し'},
 };
 
 const CATS = {
