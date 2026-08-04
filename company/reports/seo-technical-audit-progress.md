@@ -85,31 +85,49 @@
 **新規記事4本の公開チェックリスト遵守を確認（すべて正常）：**
 - boki2-oyoryoku-kabe.html / boki-careless-miss.html / boki-zasetsu-type.html / ai-shiwake-kikikata.html
 
-### 次回（2026-08-05予定）着手候補
-- boki2-*.html 群を中心にメタタグ目視チェック（未着手が最も多い）
+### 2026-08-04（第3回）
+全213 HTMLに対しサイト全体の機械チェックを実施。**7/29に起票した稟議3件がすべて実行済みであることを確認**（sitemap未掲載3件・twitter:card 169件欠落・固定ページのメタタグ欠落・llms.txt不在・ARTICLES未登録37本・更新日不整合73件 → すべて0件）。
+
+**ローテーションでメタタグ目視した42本（boki2-* 群を全数）：**
+boki2-arai-kirihanashi / boki2-bumonbetsu / boki2-cbt-vs-paper / boki2-chokusetsu-genka / boki2-cvp / boki2-gaika / boki2-ginko-chosei / boki2-hikiatekin / boki2-hojinzei-shohizei / boki2-hyojun-genka / boki2-hyojun-vs-jissai / boki2-junshisan / boki2-keihi / boki2-kessan / boki2-kobetsu-genka / boki2-kogyo-enshu / boki2-kogyo / boki2-kotei-betsu-genka / boki2-kotei-shisan-why / boki2-kotei-shisan / boki2-kurinobe-shisan-vs-fusai / boki2-lease / boki2-moshi-honban / boki2-net-test / boki2-next-exam / boki2-noren-vs-fu-no-noren / boki2-ochita / boki2-oyoryoku-kabe / boki2-progress / boki2-renketsu-suteru / boki2-renketsu / boki2-roumuhi / boki2-seizo-genka-hokokusho / boki2-seizo-kansetsuhi / boki2-shasai / boki2-shohin-baibai / boki2-software / boki2-sogo-genka / boki2-yukashoken / boki2-zairyouhi / boki2-zeikouka / boki2
+
+**今回から恒久化した全体チェック（第2回に追加）：**
+- canonical の自己参照チェック（リダイレクトスタブは例外扱い）
+- article-widgets.js の ARTICLES ⇄ *_FILES 配列の双方向突合＋ゴースト登録検出
+- meta description の文字数（120字超／60字未満）
+
+### 次回（2026-08-11予定）着手候補
+- **title の「約束表現」自動スクリーニング**（「〜との違い」「〜の比較」「〜受験方法」「〜合格率」等を title から抽出し、対応する h2 の有無を機械判定する一次スクリーニング）。boki2-* 42本の目視だけで2件出たため、残り約170本にも同種があると考えるのが妥当
+- boki3-* / shihoshoshi-* 群のメタタグ目視（未着手が最も多い）
 - eiken-* / toeic-* / fp3-* 群
-- 静的被リンクが1件のみの28記事について、内部リンク施策と連携して扱う
 - 項目7・8（llms.txt・robots.txt）は毎回確認
 
 ---
 
 ## 既知の継続課題
 
-### 稟議書作成済み・取締役の承認待ち（2026-07-29時点）
-- **about.html / contact.html のsitemap未掲載、boki3-ginko.html（noindex）のsitemap掲載、boki2-ochita.html の lastmod未追随** → `20260729-sitemap整合性修正_about-contact追加とリダイレクトスタブ除去.md`
-- **llms.txt が不在（GEO対策）** → `20260729-llms.txt新規設置提案_GEO対策.md`
-- **固定ページ5本のメタタグ欠落、twitter:card が169ページで欠落** → `20260729-固定ページのメタタグ整備とtwitter-card一括追加.md`
+### 稟議書作成済み・取締役の承認待ち（2026-08-04時点）
+- **boki2-ochita.html の title が約束した「再受験までの期間」に対応する h2 が本文に無い**（該当記述はFAQ内1問のみ／h1もtitleと別の約束）→ `20260804-boki2-ochita_titleと本文の不整合是正.md`
+- **llms.txt の代表記事選定が収益導線を反映していない**（`boki1-yobikou.html` `ai-shiwake-kikikata.html` `boki-vs-fp.html` 等8本が未掲載）→ `20260804-llms.txt鮮度更新_未掲載記事の追加.md`
 
-### 対応完了（2026-07-27の稟議・実行済みを2026-07-29に確認）
-- ~~flyer.html: noindexメタタグ欠落~~ → ✅ 設置済み
-- ~~ai-shiwake-kikikata.html, boki1-akirameta-tatenaoshi.html: sitemap.xml未掲載~~ → ✅ 掲載済み
-- ~~JSON-LD Articleスキーマの image プロパティが195記事で欠落~~ → ✅ Articleスキーマ199件すべてに設定済み
+### 対応完了
+- ~~flyer.html: noindexメタタグ欠落~~ → ✅（2026-07-29確認）
+- ~~ai-shiwake-kikikata.html, boki1-akirameta-tatenaoshi.html: sitemap.xml未掲載~~ → ✅（2026-07-29確認）
+- ~~JSON-LD Articleスキーマの image プロパティが195記事で欠落~~ → ✅ Article 201件すべて必須5プロパティ充足（2026-08-04確認）
+- ~~about.html / contact.html のsitemap未掲載、boki3-ginko.html（noindex）のsitemap掲載~~ → ✅ sitemap双方向突合で不整合0件（2026-08-04確認）
+- ~~llms.txt が不在~~ → ✅ 7/29設置・コミット済み。参照62URLに404 0件（2026-08-04確認）
+- ~~固定ページ5本のメタタグ欠落、twitter:card が169ページで欠落~~ → ✅ 全記事に設置済み（2026-08-04確認）
+- ~~article-widgets.js の ARTICLES未登録37本~~ → ✅ 配列93件すべて登録済み・ゴースト0（2026-08-04確認）
+- ~~JSON-LD dateModified と本文更新日表示の不一致73件~~ → ✅ 不一致0件（2026-08-04確認）
 
 ### 稟議を起こさず記録のみ（判断済み）
-- **title長：205ページ中199ページが32字超、うち59ページが50字超。** キーワードは前方配置されており切れるのは主に末尾のブランド名のため実害は限定的。全記事の一括機械修正が不可能で投資対効果が読めないため、GSCで「表示回数が多くCTRが低い」ページを特定してから対象を絞って着手する方針（2026-07-29決定）。
-- **article-widgets.js のARTICLES未登録記事：56本 → 37本に減少。** 既存の内部リンク施策の中で継続対応。
-- **静的被リンクが1件のみの記事が28本**（被リンク0件の孤立記事は無し）。関連記事はJSで描画されるためGoogleは第2波レンダリングで拾うが、静的リンクの方が確実。次回の内部リンク施策で優先対象とする。
-- **特定商取引法に基づく表記ページが未設置。** 無料サービスのため法的義務は無いと解釈。AdSense審査上の要否は別途検討。
+- **title長：212ページ中200ページが32字超、うち58ページが50字超、4ページが60字超。** キーワードは前方配置されており切れるのは主に末尾のブランド名のため実害は限定的。GSCで「表示回数が多くCTRが低い」ページを特定してから対象を絞る方針（2026-07-29決定・2026-08-04も維持）。60字超の4本（boki3-next-exam 66字 / itp-vs-fe 63字 / boki2-moshi-honban 62字 / fe-vs-ap 61字）は優先候補として控えておく。
+- **本文に「更新日」表示が無い記事が25本**（JSON-LDにdateModifiedはある）。7/29に73本へ一括追加した際の取りこぼし。軽微な一括作業のため稟議不要。
+- **meta description が120字超なのは boki2-software.html の1件のみ**（123字）。実害小。
+- **boki2-junshisan.html：** title/descが約束する「自己株式」に対応する h2 が無い（本文言及18回）。boki2-ochita ほど深刻でないため今回は記録のみ。次回の約束表現スクリーニングでまとめて扱う。
+- **静的被リンクが1件のみの記事が19本**（28本→改善。0件の孤立記事は無し）。直近の新規記事3本（ai-shiwake-kikikata / boki-careless-miss / boki-zasetsu-type）がいずれも1件のみ。「公開時に既存記事から最低3本の被リンクを張る」をチェックリストに加えるかは内部リンク施策と合わせて検討。
+- **robots.txt 末尾のコメント `# LLM向けサイト案内（llms.txt 提案仕様）` が事実と不一致**（llms.txtは設置済み）。クローラー挙動には無関係。llms.txt更新のコミットで同時に修正する。
+- **特定商取引法に基づく表記ページ：** tokusho.html は存在する（2026-07-29時点の「未設置」記述を訂正）。
 
 ---
 

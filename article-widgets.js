@@ -3,168 +3,178 @@
 
 const ARTICLES = {
   'ai-shiwake-kikikata.html': {label:'AI活用・時短術', title:'Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ'},
-  'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール'},
-  'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ'},
+  'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール', thumb:'images/boki-home-position-map.svg'},
+  'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ', thumb:'images/boki2-overall-roadmap.svg'},
   'boki2-progress.html': {label:'簿記2級',          title:'簿記2級 学習進捗チェック'},
-  'boki2-kessan.html':   {label:'簿記2級',          title:'決算整理・財務諸表作成の第3問対策'},
-  'boki2-shohin-baibai.html': {label:'簿記2級',     title:'商品売買・売上原価・棚卸資産'},
-  'boki2-junshisan.html': {label:'簿記2級',         title:'株式発行・純資産・剰余金配当'},
-  'boki2-hojinzei-shohizei.html': {label:'簿記2級', title:'法人税等・消費税の仕訳'},
-  'boki2-software.html': {label:'簿記2級',          title:'ソフトウェア・研究開発費・無形固定資産'},
-  'boki2-ginko-chosei.html': {label:'簿記2級',      title:'銀行勘定調整表'},
-  'boki2-seizo-kansetsuhi.html': {label:'簿記2級',  title:'製造間接費・予定配賦・配賦差異'},
-  'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦'},
-  'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書'},
-  'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の問題構成・時間配分'},
-  'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ'},
-  'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較'},
-  'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ'},
+  'boki2-kessan.html':   {label:'簿記2級',          title:'決算整理・財務諸表作成の第3問対策', thumb:'images/boki2-kessan-map.svg'},
+  'boki2-shohin-baibai.html': {label:'簿記2級',     title:'商品売買・売上原価・棚卸資産', thumb:'images/boki2-shohin-baibai-map.svg'},
+  'boki2-junshisan.html': {label:'簿記2級',         title:'株式発行・純資産・剰余金配当', thumb:'images/boki2-junshisan-map.svg'},
+  'boki2-hojinzei-shohizei.html': {label:'簿記2級', title:'法人税等・消費税の仕訳', thumb:'images/boki2-tax-puzzle-map.svg'},
+  'boki2-software.html': {label:'簿記2級',          title:'ソフトウェア・研究開発費・無形固定資産', thumb:'images/boki2-software-map.svg'},
+  'boki2-ginko-chosei.html': {label:'簿記2級',      title:'銀行勘定調整表', thumb:'images/boki2-ginko-chosei-map.svg'},
+  'boki2-seizo-kansetsuhi.html': {label:'簿記2級',  title:'製造間接費・予定配賦・配賦差異', thumb:'images/boki2-seizo-kansetsuhi-map.svg'},
+  'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦', thumb:'images/boki2-bumonbetsu-map.svg'},
+  'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書', thumb:'images/boki2-seizo-genka-map.svg'},
+  'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の問題構成・時間配分', thumb:'images/boki2-net-test-map.svg'},
+  'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ', thumb:'images/boki2-start-roadmap.svg'},
+  'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較', thumb:'images/boki2-cbt-vs-paper.svg'},
+  'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ', thumb:'images/boki2-kogyo-enshu-map.svg'},
   'boki2-oyoryoku-kabe.html': {label:'簿記2級',     title:'仕訳はわかるのに過去問になると解けない「理解」と「得点力」のギャップを埋める演習法'},
   'boki2-renketsu-suteru.html': {label:'簿記2級',   title:'簿記2級の連結会計、捨てるべき？心が折れそうな人のための「部分点」戦略'},
   'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
   'boki-careless-miss.html': {label:'簿記3級・2級',  title:'電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方'},
   'boki-zasetsu-type.html':  {label:'簿記3級・2級',  title:'勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方'},
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
-  'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド'},
-  'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ'},
-  'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略'},
-  'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？'},
+  'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド', thumb:'images/boki1-balance-map.svg'},
+  'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ', thumb:'images/boki1-start-roadmap.svg'},
+  'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略', thumb:'images/boki1-11month-strategy.svg'},
+  'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？', thumb:'images/boki1-route-map.svg'},
   'boki1-akirameta-tatenaoshi.html': {label:'簿記1級', title:'簿記1級に落ちた後、何をすればいい？向いてないかもと思ったときの立て直し方'},
-  'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:'企業結合会計と連結会計の違い'},
-  'boki1-renketsu-seika.html': {label:'簿記1級',     title:'成果連結｜未実現利益の消去'},
-  'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:'社債｜定額法と利息法の違い'},
-  'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:'簿記1級', title:'圧縮記帳｜直接減額方式と積立金方式の違い'},
-  'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い'},
-  'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い'},
-  'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い'},
+  'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:'企業結合会計と連結会計の違い', thumb:'images/boki1-kigyoketsugo-vs-renketsu-map.svg'},
+  'boki1-renketsu-seika.html': {label:'簿記1級',     title:'成果連結｜未実現利益の消去', thumb:'images/boki1-seikarenketsu-strategy-map.svg'},
+  'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:'社債｜定額法と利息法の違い', thumb:'images/boki1-shasai-teigaku-vs-risokuho-map.svg'},
+  'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:'簿記1級', title:'圧縮記帳｜直接減額方式と積立金方式の違い', thumb:'images/boki1-asshuku-kicho-map.svg'},
+  'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い', thumb:'images/boki1-sogo-vs-kobetsu-shokyaku-map.svg'},
+  'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
+  'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い', thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
-  'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド'},
-  'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール'},
-  'gyosei.html':         {label:'行政書士',          title:'行政書士試験の独学合格ガイド'},
-  'sharoshi.html':       {label:'社労士',           title:'社会保険労務士の独学合格ガイド'},
-  'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略'},
-  'shihoshoshi.html':    {label:'司法書士',          title:'司法書士の独学合格ガイド'},
-  'shihoshoshi-start.html': {label:'司法書士',       title:'司法書士を目指す人が最初の7日間でやること'},
-  'shihoshoshi-roniten.html': {label:'司法書士',      title:'司法書士の科目別論点一覧'},
-  'shihoshoshi-minpo-sosoku.html': {label:'司法書士', title:'民法総則・意思表示・代理・時効'},
-  'shihoshoshi-minpo-bukken.html': {label:'司法書士', title:'物権・抵当権・対抗要件'},
-  'shihoshoshi-futoki.html': {label:'司法書士',       title:'不動産登記法・所有権移転・抵当権設定'},
-  'shihoshoshi-kaishaho.html': {label:'司法書士',     title:'会社法・商業登記法'},
-  'mansion.html':        {label:'マンション管理士',  title:'マンション管理士の独学合格ガイド'},
-  'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略'},
-  'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド'},
-  'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学合格ガイド'},
-  'fe.html':             {label:'基本情報',          title:'基本情報技術者試験の独学合格ガイド'},
-  'ap.html':             {label:'応用情報',          title:'応用情報技術者試験の完全ガイド'},
-  'mos.html':            {label:'MOS',              title:'MOS（Microsoft Office Specialist）の独学合格ガイド'},
-  'shindanshi.html':     {label:'中小企業診断士',    title:'中小企業診断士の独学合格ガイド'},
-  'kiken.html':          {label:'危険物乙4',         title:'危険物取扱者（乙4）の独学合格ガイド'},
-  'denki.html':          {label:'電気工事士',        title:'電気工事士2種の独学合格ガイド'},
-  'chori.html':          {label:'調理師免許',        title:'調理師免許の独学合格ガイド'},
-  'kaigo.html':          {label:'ケアマネ',          title:'ケアマネジャー試験の独学合格ガイド'},
-  'nurse.html':          {label:'看護師',            title:'看護師国家試験の勉強法と合格戦略'},
-  'hoikushi.html':       {label:'保育士',            title:'保育士試験の独学合格ガイド'},
-  'shakai-fukushi.html': {label:'社会福祉士',        title:'社会福祉士の独学合格ガイド'},
-  'iryo-jimu.html':      {label:'医療事務',          title:'医療事務の独学合格ガイド'},
-  'kaigo-fukushi.html':  {label:'介護福祉士',        title:'介護福祉士の独学合格ガイド'},
-  'keizoku.html':        {label:'勉強継続',          title:'資格勉強が続かない原因と解決策7つ'},
-  'shakaijin-benkyou-jikan.html': {label:'勉強時間', title:'社会人が勉強時間を確保する方法7選'},
-  'shikaku-app.html':    {label:'アプリ比較',        title:'資格勉強アプリ比較ランキング2026'},
-  'boki-vs-fp.html':           {label:'資格比較',    title:'簿記2級 vs FP2級 どっちを先に取るべき？'},
-  'takken-vs-gyosei.html':     {label:'資格比較',    title:'宅建 vs 行政書士 どっちを先に取るべき？'},
-  'itp-vs-fe.html':            {label:'資格比較',    title:'ITパスポート vs 基本情報 どっちを先に取るべき？'},
-  'sharoshi-vs-gyosei.html':   {label:'資格比較',    title:'社労士 vs 行政書士 どっちを先に取るべき？'},
-  'fe-vs-ap.html':             {label:'資格比較',    title:'基本情報 vs 応用情報 どっちを先に取るべき？'},
-  'zeirishi-vs-cpa.html':      {label:'資格比較',    title:'税理士 vs 公認会計士 どっちを目指すべき？'},
-  'sharoshi-vs-shindanshi.html':{label:'資格比較',   title:'社労士 vs 中小企業診断士 どっちを先に取るべき？'},
-  'toeic-vs-eiken.html':       {label:'資格比較',    title:'TOEIC vs 英検 どっちを取るべき？'},
-  'takken-vs-mansion.html':    {label:'資格比較',    title:'宅建 vs マンション管理士 どっちを先に取るべき？'},
-  'osusume-shikaku.html':      {label:'まとめ',      title:'社会人におすすめの資格ランキング2026'},
-  'cospa-shikaku.html':        {label:'まとめ',      title:'コスパがいい資格ランキング10選'},
-  'tenshoku-shikaku.html':     {label:'まとめ',      title:'転職に有利な資格ランキング10選'},
-  'shikaku-jinsei-kawaru.html':{label:'考え方',      title:'資格を取っても人生が変わりやすい人・変わりにくい人'},
-  'daigakusei-shikaku-heiyou.html':{label:'大学生',  title:'大学生は資格勉強を2つ以上併用すべき？1つに絞るべき？'},
-  'cpa-akirameta-boki1.html': {label:'会計士→簿記1級', title:'公認会計士を諦めたら簿記1級は狙える？勉強時間はどれくらい活きるのか'},
-  'cpa-akirameta-shinro.html': {label:'会計士の進路', title:'公認会計士を諦めた後の進路は？後悔しにくい選び方を正直に整理'},
-  'shikaku-zasetsu-riyu.html': {label:'挫折・再開', title:'資格勉強を途中でやめる人のよくある理由｜挫折しやすいタイミングと立て直し方'},
-  'hatarakinagara-shikaku.html': {label:'社会人向け', title:'働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選'},
-  'shukatsu-shikaku.html': {label:'大学生向け', title:'就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選'},
-  'daigakusei-keizoku.html': {label:'大学生向け', title:'大学生が資格勉強を続ける方法｜授業・バイト・就活と両立するコツ'},
-  'univ-boki-units.html':  {label:'大学生向け', title:'大学の簿記・会計の講義は「神ボーナスステージ」！自習×大学で一石五鳥ハック'},
-  'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026'},
-  'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026'},
-  'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026'},
-  'shikaku-20dai.html':        {label:'まとめ',      title:'20代におすすめ資格ランキング2026'},
-  'shikaku-eigyo.html':        {label:'まとめ',      title:'営業職におすすめ資格ランキング2026'},
-  'shikaku-3months.html':      {label:'まとめ',      title:'3ヶ月で取れる資格ランキング2026'},
-  'toroku-hanbai.html':        {label:'登録販売者',  title:'登録販売者の独学合格ガイド'},
-  'eisei-kanri.html':          {label:'衛生管理者',  title:'衛生管理者（第一種・第二種）の独学合格ガイド'},
-  'hisho.html':                {label:'秘書検定',    title:'秘書検定2級・準1級の独学合格ガイド'},
-  'kanken.html':               {label:'漢字検定',    title:'漢字検定（漢検）2級の独学合格ガイド'},
-  'gaibuin.html':              {label:'証券外務員',  title:'証券外務員一種・二種の独学合格ガイド'},
-  'kenchiku.html':             {label:'二級建築士',  title:'二級建築士の独学合格ガイド'},
-  'toefl.html':                {label:'TOEFL',       title:'TOEFL iBTの独学スコアアップ戦略'},
-  'eiken1.html':               {label:'英検準1級',   title:'英検準1級の独学合格ガイド'},
-  'fp3.html':                  {label:'FP3級',       title:'FP3級の勉強時間・独学合格スケジュール'},
-  'fp3-lifeplanning.html':     {label:'FP3級',       title:'ライフプランニングと資金計画'},
-  'fp3-risk.html':             {label:'FP3級',       title:'リスク管理・保険'},
-  'fp3-finance.html':          {label:'FP3級',       title:'金融資産運用'},
-  'fp3-tax.html':              {label:'FP3級',       title:'タックスプランニング'},
-  'fp3-realestate.html':       {label:'FP3級',       title:'不動産'},
-  'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継'},
-  'fp3-iminai.html':           {label:'FP3級',       title:'FP3級は意味ない？取る価値を整理'},
-  'fp3-nannichi.html':         {label:'FP3級',       title:'FP3級は何日で受かる？短期合格計画'},
+  'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド', thumb:'images/fp-2kyu-map.svg'},
+  'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール', thumb:'images/takken-strategy-map.svg'},
+  'gyosei.html':         {label:'行政書士',          title:'行政書士試験の独学合格ガイド', thumb:'images/gyosei-strategy-map.svg'},
+  'sharoshi.html':       {label:'社労士',           title:'社会保険労務士の独学合格ガイド', thumb:'images/sharoshi-map.svg'},
+  'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略', thumb:'images/zeirishi-map.svg'},
+  'shihoshoshi.html':    {label:'司法書士',          title:'司法書士の独学合格ガイド', thumb:'images/shihoshoshi-map.svg'},
+  'shihoshoshi-start.html': {label:'司法書士',       title:'司法書士を目指す人が最初の7日間でやること', thumb:'images/shihoshoshi-start-map.svg'},
+  'shihoshoshi-roniten.html': {label:'司法書士',      title:'司法書士の科目別論点一覧', thumb:'images/shihoshoshi-roniten-map.svg'},
+  'shihoshoshi-minpo-sosoku.html': {label:'司法書士', title:'民法総則・意思表示・代理・時効', thumb:'images/shihoshoshi-minpo-sosoku-map.svg'},
+  'shihoshoshi-minpo-bukken.html': {label:'司法書士', title:'物権・抵当権・対抗要件', thumb:'images/shihoshoshi-minpo-bukken-map.svg'},
+  'shihoshoshi-futoki.html': {label:'司法書士',       title:'不動産登記法・所有権移転・抵当権設定', thumb:'images/shihoshoshi-futoki-map.svg'},
+  'shihoshoshi-kaishaho.html': {label:'司法書士',     title:'会社法・商業登記法', thumb:'images/shihoshoshi-kaishaho-map.svg'},
+  'mansion.html':        {label:'マンション管理士',  title:'マンション管理士の独学合格ガイド', thumb:'images/mansion-strategy-map.svg'},
+  'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略', thumb:'images/toeic-overall-strategy-map.svg'},
+  'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド', thumb:'images/eiken-map.svg'},
+  'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学合格ガイド', thumb:'images/itp-map.svg'},
+  'fe.html':             {label:'基本情報',          title:'基本情報技術者試験の独学合格ガイド', thumb:'images/fe-map.svg'},
+  'ap.html':             {label:'応用情報',          title:'応用情報技術者試験の完全ガイド', thumb:'images/ap-map.svg'},
+  'mos.html':            {label:'MOS',              title:'MOS（Microsoft Office Specialist）の独学合格ガイド', thumb:'images/mos-strategy-map.svg'},
+  'shindanshi.html':     {label:'中小企業診断士',    title:'中小企業診断士の独学合格ガイド', thumb:'images/shindanshi-strategy-map.svg'},
+  'kiken.html':          {label:'危険物乙4',         title:'危険物取扱者（乙4）の独学合格ガイド', thumb:'images/kiken-strategy-map.svg'},
+  'denki.html':          {label:'電気工事士',        title:'電気工事士2種の独学合格ガイド', thumb:'images/denki-strategy-map.svg'},
+  'chori.html':          {label:'調理師免許',        title:'調理師免許の独学合格ガイド', thumb:'images/chori-hygiene-map.svg'},
+  'kaigo.html':          {label:'ケアマネ',          title:'ケアマネジャー試験の独学合格ガイド', thumb:'images/kaigo-strategy-map.svg'},
+  'nurse.html':          {label:'看護師',            title:'看護師国家試験の勉強法と合格戦略', thumb:'images/nurse-strategy-map.svg'},
+  'hoikushi.html':       {label:'保育士',            title:'保育士試験の独学合格ガイド', thumb:'images/hoikushi-strategy-map.svg'},
+  'shakai-fukushi.html': {label:'社会福祉士',        title:'社会福祉士の独学合格ガイド', thumb:'images/shakai-fukushi-strategy-map.svg'},
+  'iryo-jimu.html':      {label:'医療事務',          title:'医療事務の独学合格ガイド', thumb:'images/iryo-jimu-recept-map.svg'},
+  'kaigo-fukushi.html':  {label:'介護福祉士',        title:'介護福祉士の独学合格ガイド', thumb:'images/kaigo-fukushi-strategy-map.svg'},
+  'keizoku.html':        {label:'勉強継続',          title:'資格勉強が続かない原因と解決策7つ', thumb:'images/keizoku-motivation-curve-map.svg'},
+  'shakaijin-benkyou-jikan.html': {label:'勉強時間', title:'社会人が勉強時間を確保する方法7選', thumb:'images/shakaijin-routine-time-map.svg'},
+  'shikaku-app.html':    {label:'アプリ比較',        title:'資格勉強アプリ比較ランキング2026', thumb:'images/shikaku-app-map.svg'},
+  'boki-vs-fp.html':           {label:'資格比較',    title:'簿記2級 vs FP2級 どっちを先に取るべき？', thumb:'images/boki-fp-synergy-map.svg'},
+  'takken-vs-gyosei.html':     {label:'資格比較',    title:'宅建 vs 行政書士 どっちを先に取るべき？', thumb:'images/takken-gyosei-synergy-map.svg'},
+  'itp-vs-fe.html':            {label:'資格比較',    title:'ITパスポート vs 基本情報 どっちを先に取るべき？', thumb:'images/itp-vs-fe-map.svg'},
+  'sharoshi-vs-gyosei.html':   {label:'資格比較',    title:'社労士 vs 行政書士 どっちを先に取るべき？', thumb:'images/sharoshi-gyosei-synergy-map.svg'},
+  'fe-vs-ap.html':             {label:'資格比較',    title:'基本情報 vs 応用情報 どっちを先に取るべき？', thumb:'images/fe-ap-synergy-map.svg'},
+  'zeirishi-vs-cpa.html':      {label:'資格比較',    title:'税理士 vs 公認会計士 どっちを目指すべき？', thumb:'images/zeirishi-cpa-comparison-map.svg'},
+  'sharoshi-vs-shindanshi.html':{label:'資格比較',   title:'社労士 vs 中小企業診断士 どっちを先に取るべき？', thumb:'images/sharoshi-shindanshi-synergy-map.svg'},
+  'toeic-vs-eiken.html':       {label:'資格比較',    title:'TOEIC vs 英検 どっちを取るべき？', thumb:'images/toeic-eiken-synergy-map.svg'},
+  'takken-vs-mansion.html':    {label:'資格比較',    title:'宅建 vs マンション管理士 どっちを先に取るべき？', thumb:'images/takken-mansion-synergy-map.svg'},
+  'osusume-shikaku.html':      {label:'まとめ',      title:'社会人におすすめの資格ランキング2026', thumb:'images/shakaijin-shikaku-matrix-map.svg'},
+  'cospa-shikaku.html':        {label:'まとめ',      title:'コスパがいい資格ランキング10選', thumb:'images/cospa-shikaku-matrix-map.svg'},
+  'tenshoku-shikaku.html':     {label:'まとめ',      title:'転職に有利な資格ランキング10選', thumb:'images/tenshoku-shikaku-matrix-map.svg'},
+  'shikaku-jinsei-kawaru.html':{label:'考え方',      title:'資格を取っても人生が変わりやすい人・変わりにくい人', thumb:'images/shikaku-jinsei-action-map.svg'},
+  'daigakusei-shikaku-heiyou.html':{label:'大学生',  title:'大学生は資格勉強を2つ以上併用すべき？1つに絞るべき？', thumb:'images/shikaku-heiyou-balance-map.svg'},
+  'cpa-akirameta-boki1.html': {label:'会計士→簿記1級', title:'公認会計士を諦めたら簿記1級は狙える？勉強時間はどれくらい活きるのか', thumb:'images/cpa-boki1-convert-map.svg'},
+  'cpa-akirameta-shinro.html': {label:'会計士の進路', title:'公認会計士を諦めた後の進路は？後悔しにくい選び方を正直に整理', thumb:'images/cpa-shinro-flow-map.svg'},
+  'shikaku-zasetsu-riyu.html': {label:'挫折・再開', title:'資格勉強を途中でやめる人のよくある理由｜挫折しやすいタイミングと立て直し方', thumb:'images/zasetsu-recovery-timeline-map.svg'},
+  'hatarakinagara-shikaku.html': {label:'社会人向け', title:'働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選', thumb:'images/hatarakinagara-routine-map.svg'},
+  'shukatsu-shikaku.html': {label:'大学生向け', title:'就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選', thumb:'images/shukatsu-shikaku-docking-map.svg'},
+  'daigakusei-keizoku.html': {label:'大学生向け', title:'大学生が資格勉強を続ける方法｜授業・バイト・就活と両立するコツ', thumb:'images/daigakusei-routine-map.svg'},
+  'univ-boki-units.html':  {label:'大学生向け', title:'大学の簿記・会計の講義は「神ボーナスステージ」！自習×大学で一石五鳥ハック', thumb:'images/univ-boki-units-map.svg'},
+  'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026', thumb:'images/women-shikaku-matrix-map.svg'},
+  'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026', thumb:'images/30dai-shikaku-matrix-map.svg'},
+  'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026', thumb:'images/dokugaku-stepup-route-map.svg'},
+  'shikaku-20dai.html':        {label:'まとめ',      title:'20代におすすめ資格ランキング2026', thumb:'images/20dai-shikaku-matrix-map.svg'},
+  'shikaku-eigyo.html':        {label:'まとめ',      title:'営業職におすすめ資格ランキング2026', thumb:'images/eigyo-shikaku-matrix-map.svg'},
+  'shikaku-3months.html':      {label:'まとめ',      title:'3ヶ月で取れる資格ランキング2026', thumb:'images/3months-shikaku-matrix-map.svg'},
+  'toroku-hanbai.html':        {label:'登録販売者',  title:'登録販売者の独学合格ガイド', thumb:'images/toroku-hanbai-strategy-map.svg'},
+  'eisei-kanri.html':          {label:'衛生管理者',  title:'衛生管理者（第一種・第二種）の独学合格ガイド', thumb:'images/eisei-kanri-strategy-map.svg'},
+  'hisho.html':                {label:'秘書検定',    title:'秘書検定2級・準1級の独学合格ガイド', thumb:'images/hisho-strategy-map.svg'},
+  'kanken.html':               {label:'漢字検定',    title:'漢字検定（漢検）2級の独学合格ガイド', thumb:'images/kanken-strategy-map.svg'},
+  'gaibuin.html':              {label:'証券外務員',  title:'証券外務員一種・二種の独学合格ガイド', thumb:'images/gaibuin-strategy-map.svg'},
+  'kenchiku.html':             {label:'二級建築士',  title:'二級建築士の独学合格ガイド', thumb:'images/kenchiku-strategy-map.svg'},
+  'toefl.html':                {label:'TOEFL',       title:'TOEFL iBTの独学スコアアップ戦略', thumb:'images/toefl-strategy-map.svg'},
+  'eiken1.html':               {label:'英検準1級',   title:'英検準1級の独学合格ガイド', thumb:'images/eiken-1kyu-strategy-map.svg'},
+  'fp3.html':                  {label:'FP3級',       title:'FP3級の勉強時間・独学合格スケジュール', thumb:'images/fp3-strategy-map.svg'},
+  'fp3-lifeplanning.html':     {label:'FP3級',       title:'ライフプランニングと資金計画', thumb:'images/fp3-lifeplanning-map.svg'},
+  'fp3-risk.html':             {label:'FP3級',       title:'リスク管理・保険', thumb:'images/fp3-risk-map.svg'},
+  'fp3-finance.html':          {label:'FP3級',       title:'金融資産運用', thumb:'images/fp3-finance-map.svg'},
+  'fp3-tax.html':              {label:'FP3級',       title:'タックスプランニング', thumb:'images/fp3-tax-map.svg'},
+  'fp3-realestate.html':       {label:'FP3級',       title:'不動産', thumb:'images/fp3-realestate-map.svg'},
+  'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継', thumb:'images/fp3-inheritance-map.svg'},
+  'fp3-iminai.html':           {label:'FP3級',       title:'FP3級は意味ない？取る価値を整理', thumb:'images/fp3-iminai-map.svg'},
+  'fp3-nannichi.html':         {label:'FP3級',       title:'FP3級は何日で受かる？短期合格計画', thumb:'images/fp3-nannichi-map.svg'},
   'cpa-yobikou.html':          {label:'勉強法',      title:'公認会計士・税理士は予備校と独学どっちがいい？'},
-  'boki-zero-01.html':  {label:'簿記3級', title:'ゼロからの簿記①取引・簿記とは？'},
-  'boki-zero-02.html':  {label:'簿記3級', title:'ゼロからの簿記②なぜ簿記が大事？'},
-  'boki-zero-03.html':  {label:'簿記3級', title:'ゼロからの簿記③簿記の流れ・決算書とは？'},
-  'boki-zero-04.html':  {label:'簿記3級', title:'ゼロからの簿記④仕訳のしくみ'},
-  'boki-zero-05.html':  {label:'簿記3級', title:'ゼロからの簿記⑤仕訳から財務諸表へ'},
-  'boki2-kotei-shisan.html': {label:'簿記2級', title:'固定資産（減価償却・除却・売却）の仕訳'},
-  'boki2-hikiatekin.html': {label:'簿記2級', title:'引当金（貸倒引当金・退職給付引当金）の仕訳'},
-  'boki3-genkin.html':  {label:'簿記3級', title:'現金・当座預金の違いと仕訳'},
-  'boki3-kafusoku.html':{label:'簿記3級', title:'現金過不足（雑損・雑益）'},
-  'boki3-kashidaore.html':{label:'簿記3級',title:'貸倒引当金の仕訳と計算'},
-  'boki3-genka.html':   {label:'簿記3級', title:'減価償却（定額法）の計算と仕訳'},
-  'boki3-keika.html':   {label:'簿記3級', title:'経過勘定（前払・未払・前受・未収）'},
-  'boki3-keika2.html':  {label:'簿記3級', title:'毎年同額の前払い（18か月の理由）'},
-  'boki3-shisanhyo.html':{label:'簿記3級',title:'試算表3種類の違い'},
-  'boki3-denpyo.html':  {label:'簿記3級', title:'伝票会計（３伝票制）の仕訳と解き方'},
-  'boki3-nikkei.html':  {label:'簿記3級', title:'仕訳日計表の書き方と集計ステップ'},
-  'boki3-sanpou.html':  {label:'簿記3級', title:'商品売買の仕訳（三分法）仕入・売上・繰越商品'},
-  'boki3-kake.html':    {label:'簿記3級', title:'掛取引（売掛金・買掛金）の仕訳'},
-  'boki3-tegata.html':  {label:'簿記3級', title:'受取手形・支払手形・電子記録債権の仕訳'},
-  'boki3-kyuryo.html':  {label:'簿記3級', title:'給料の仕訳と源泉所得税・社会保険料の預り金'},
-  'boki3-kotei.html':  {label:'簿記3級', title:'固定資産の取得・売却の仕訳（付随費用・売却損益）'},
-  'boki3-sonota.html': {label:'簿記3級', title:'その他の債権・債務（前払金・前受金・仮払金・仮受金・立替金・預り金）'},
-  'boki3-kabushiki.html':{label:'簿記3級',title:'株式会社の取引の仕訳（株式発行・剰余金の配当・利益準備金）'},
-  'boki3-shohi.html':  {label:'簿記3級', title:'消費税の仕訳（税抜方式）仮払消費税・仮受消費税'},
-  'boki3-seisanhyo.html':{label:'簿記3級',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで'},
-  'boki3-koguchi.html': {label:'簿記3級',title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方'},
+  'boki-zero-01.html':  {label:'簿記3級', title:'ゼロからの簿記①取引・簿記とは？', thumb:'images/boki-zero-01-map.svg'},
+  'boki-zero-02.html':  {label:'簿記3級', title:'ゼロからの簿記②なぜ簿記が大事？', thumb:'images/boki-zero-02-map.svg'},
+  'boki-zero-03.html':  {label:'簿記3級', title:'ゼロからの簿記③簿記の流れ・決算書とは？', thumb:'images/boki-zero-03-map.svg'},
+  'boki-zero-04.html':  {label:'簿記3級', title:'ゼロからの簿記④仕訳のしくみ', thumb:'images/boki-zero-04-map.svg'},
+  'boki-zero-05.html':  {label:'簿記3級', title:'ゼロからの簿記⑤仕訳から財務諸表へ', thumb:'images/boki-zero-05-map.svg'},
+  'boki2-kotei-shisan.html': {label:'簿記2級', title:'固定資産（減価償却・除却・売却）の仕訳', thumb:'images/boki2-kotei-shisan-map.svg'},
+  'boki2-hikiatekin.html': {label:'簿記2級', title:'引当金（貸倒引当金・退職給付引当金）の仕訳', thumb:'images/boki2-hikiatekin-map.svg'},
+  'boki3-genkin.html':  {label:'簿記3級', title:'現金・当座預金の違いと仕訳', thumb:'images/boki3-genkin-map.svg'},
+  'boki3-kafusoku.html':{label:'簿記3級', title:'現金過不足（雑損・雑益）', thumb:'images/boki3-kafusoku-map.svg'},
+  'boki3-kashidaore.html':{label:'簿記3級',title:'貸倒引当金の仕訳と計算', thumb:'images/boki3-kashidaore-map.svg'},
+  'boki3-genka.html':   {label:'簿記3級', title:'減価償却（定額法）の計算と仕訳', thumb:'images/boki3-genka-map.svg'},
+  'boki3-keika.html':   {label:'簿記3級', title:'経過勘定（前払・未払・前受・未収）', thumb:'images/boki3-keika-map.svg'},
+  'boki3-keika2.html':  {label:'簿記3級', title:'毎年同額の前払い（18か月の理由）', thumb:'images/boki3-keika2-map.svg'},
+  'boki3-shisanhyo.html':{label:'簿記3級',title:'試算表3種類の違い', thumb:'images/boki3-shisanhyo-map.svg'},
+  'boki3-denpyo.html':  {label:'簿記3級', title:'伝票会計（３伝票制）の仕訳と解き方', thumb:'images/boki3-denpyo-map.svg'},
+  'boki3-nikkei.html':  {label:'簿記3級', title:'仕訳日計表の書き方と集計ステップ', thumb:'images/boki3-nikkei-map.svg'},
+  'boki3-sanpou.html':  {label:'簿記3級', title:'商品売買の仕訳（三分法）仕入・売上・繰越商品', thumb:'images/boki3-sanpou-map.svg'},
+  'boki3-kake.html':    {label:'簿記3級', title:'掛取引（売掛金・買掛金）の仕訳', thumb:'images/boki3-kake-map.svg'},
+  'boki3-tegata.html':  {label:'簿記3級', title:'受取手形・支払手形・電子記録債権の仕訳', thumb:'images/boki3-tegata-map.svg'},
+  'boki3-kyuryo.html':  {label:'簿記3級', title:'給料の仕訳と源泉所得税・社会保険料の預り金', thumb:'images/boki3-kyuryo-map.svg'},
+  'boki3-kotei.html':  {label:'簿記3級', title:'固定資産の取得・売却の仕訳（付随費用・売却損益）', thumb:'images/boki3-kotei-map.svg'},
+  'boki3-sonota.html': {label:'簿記3級', title:'その他の債権・債務（前払金・前受金・仮払金・仮受金・立替金・預り金）', thumb:'images/boki3-sonota-map.svg'},
+  'boki3-kabushiki.html':{label:'簿記3級',title:'株式会社の取引の仕訳（株式発行・剰余金の配当・利益準備金）', thumb:'images/boki3-kabushiki-map.svg'},
+  'boki3-shohi.html':  {label:'簿記3級', title:'消費税の仕訳（税抜方式）仮払消費税・仮受消費税', thumb:'images/boki3-shohi-map.svg'},
+  'boki3-seisanhyo.html':{label:'簿記3級',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで', thumb:'images/boki3-seisanhyo-map.svg'},
+  'boki3-koguchi.html': {label:'簿記3級',title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方', thumb:'images/boki3-koguchi-map.svg'},
   'boki3-ginko.html':   {label:'簿記3級',title:'銀行勘定調整表の書き方と修正仕訳（不一致の4原因）'},
-  'boki3-shohinuriage.html': {label:'簿記3級', title:'商品有高帳の書き方（先入先出法・移動平均法）'},
-  'boki3-hojosho.html':      {label:'簿記3級', title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）'},
-  'boki3-hojinzei.html':     {label:'簿記3級', title:'法人税等の仕訳（仮払法人税等・未払法人税等）'},
-  'boki3-credit.html':       {label:'簿記3級', title:'クレジット売掛金の仕訳（信販会社・手数料処理）'},
-  'univ-ai-report-hack.html':        {label:'AIライフハック', title:'ボイスメモ×AIでレポート無双！単位修得ハックを完全公開'},
-  'univ-qualification-strategy.html':{label:'大学生向け',    title:'将来から逆算する最強の資格戦略'},
-  'boki2-renketsu.html':           {label:'簿記2級',          title:'連結会計・連結修正仕訳・のれん'},
-  'boki2-zeikouka.html':           {label:'簿記2級',          title:'税効果会計・一時差異・法人税等調整額'},
-  'boki2-lease.html':              {label:'簿記2級',          title:'リース取引・ファイナンスリースの仕訳'},
-  'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約'},
-  'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え'},
-  'boki2-shasai.html':             {label:'簿記2級',          title:'社債の発行・利息・償却原価法'},
-  'boki2-kogyo.html':              {label:'簿記2級',          title:'工業簿記とは・商業簿記との違い'},
-  'boki2-zairyouhi.html':          {label:'簿記2級',          title:'材料費・直接材料費・材料副費'},
-  'boki2-roumuhi.html':            {label:'簿記2級',          title:'労務費・直接労務費・賃率差異'},
-  'boki2-keihi.html':              {label:'簿記2級',          title:'経費・外注加工賃・製造間接費'},
-  'boki2-kobetsu-genka.html':      {label:'簿記2級',          title:'個別原価計算・製造指図書の流れ'},
-  'boki2-sogo-genka.html':         {label:'簿記2級',          title:'総合原価計算・平均法・先入先出法'},
-  'boki2-hyojun-genka.html':       {label:'簿記2級',          title:'標準原価計算・原価差異の分析'},
-  'boki2-chokusetsu-genka.html':   {label:'簿記2級',          title:'直接原価計算・貢献利益と固定費'},
-  'boki2-cvp.html':                {label:'簿記2級',          title:'CVP分析・損益分岐点売上高'},
-  'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し'},
+  'boki3-shohinuriage.html': {label:'簿記3級', title:'商品有高帳の書き方（先入先出法・移動平均法）', thumb:'images/boki3-shohinuriage-map.svg'},
+  'boki3-hojosho.html':      {label:'簿記3級', title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）', thumb:'images/boki3-hojosho-map.svg'},
+  'boki3-hojinzei.html':     {label:'簿記3級', title:'法人税等の仕訳（仮払法人税等・未払法人税等）', thumb:'images/boki3-hojinzei-map.svg'},
+  'boki3-credit.html':       {label:'簿記3級', title:'クレジット売掛金の仕訳（信販会社・手数料処理）', thumb:'images/boki3-credit-map.svg'},
+  'univ-ai-report-hack.html':        {label:'AIライフハック', title:'ボイスメモ×AIでレポート無双！単位修得ハックを完全公開', thumb:'images/univ-ai-report-hack.svg'},
+  'univ-qualification-strategy.html':{label:'大学生向け',    title:'将来から逆算する最強の資格戦略', thumb:'images/univ-qualification-strategy.svg'},
+  'boki2-renketsu.html':           {label:'簿記2級',          title:'連結会計・連結修正仕訳・のれん', thumb:'images/boki2-renketsu-map.svg'},
+  'boki2-zeikouka.html':           {label:'簿記2級',          title:'税効果会計・一時差異・法人税等調整額', thumb:'images/boki2-zeikouka-map.svg'},
+  'boki2-lease.html':              {label:'簿記2級',          title:'リース取引・ファイナンスリースの仕訳', thumb:'images/boki2-lease-map.svg'},
+  'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約', thumb:'images/boki2-gaika-map.svg'},
+  'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え', thumb:'images/boki2-yukashoken-map.svg'},
+  'boki2-shasai.html':             {label:'簿記2級',          title:'社債の発行・利息・償却原価法', thumb:'images/boki2-shasai-map.svg'},
+  'boki2-kogyo.html':              {label:'簿記2級',          title:'工業簿記とは・商業簿記との違い', thumb:'images/boki2-kogyo-map.svg'},
+  'boki2-zairyouhi.html':          {label:'簿記2級',          title:'材料費・直接材料費・材料副費', thumb:'images/boki2-zairyouhi-map.svg'},
+  'boki2-roumuhi.html':            {label:'簿記2級',          title:'労務費・直接労務費・賃率差異', thumb:'images/boki2-roumuhi-map.svg'},
+  'boki2-keihi.html':              {label:'簿記2級',          title:'経費・外注加工賃・製造間接費', thumb:'images/boki2-keihi-map.svg'},
+  'boki2-kobetsu-genka.html':      {label:'簿記2級',          title:'個別原価計算・製造指図書の流れ', thumb:'images/boki2-kobetsu-genka-map.svg'},
+  'boki2-sogo-genka.html':         {label:'簿記2級',          title:'総合原価計算・平均法・先入先出法', thumb:'images/boki2-sogo-genka-map.svg'},
+  'boki2-hyojun-genka.html':       {label:'簿記2級',          title:'標準原価計算・原価差異の分析', thumb:'images/boki2-hyojun-genka-map.svg'},
+  'boki2-chokusetsu-genka.html':   {label:'簿記2級',          title:'直接原価計算・貢献利益と固定費', thumb:'images/boki2-chokusetsu-genka-map.svg'},
+  'boki2-cvp.html':                {label:'簿記2級',          title:'CVP分析・損益分岐点売上高', thumb:'images/boki2-cvp-map.svg'},
+  'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し', thumb:'images/boki2-ochita-strategy-map.svg'},
 };
+
+/* ── サムネイル HTML（thumb が無い記事はカテゴリ名のプレースホルダにフォールバック） ── */
+function thumbHTML(a, cls){
+  const c = cls || 'sq-thumb';
+  if(a && a.thumb){
+    return `<img class="${c}" src="${a.thumb}" alt="" loading="lazy" decoding="async" width="320" height="180">`;
+  }
+  const label = (a && a.label) ? a.label : 'Study Quest';
+  return `<div class="${c} ${c}--ph">${label}</div>`;
+}
 
 const CATS = {
   'IT・技術系':      {color:'#10B981', files:['itp.html','fe.html','ap.html','mos.html']},
@@ -1704,7 +1714,10 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-widget-inner{max-width:800px;margin:0 auto;}
 .sq-widget-title{font-size:15px;font-weight:700;color:var(--sq-text);margin:0 0 16px;padding-left:12px;border-left:3px solid #8CC63F;letter-spacing:.04em;}
 .sq-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:36px;}
-.sq-card{display:block;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:14px 16px;color:inherit;text-decoration:none;transition:box-shadow .2s,border-color .2s,transform .2s;}
+.sq-card{display:block;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:14px 16px;color:inherit;text-decoration:none;transition:box-shadow .2s,border-color .2s,transform .2s;overflow:hidden;}
+.sq-thumb{display:block;width:calc(100% + 32px);margin:-14px -16px 12px;aspect-ratio:16/9;object-fit:cover;object-position:center top;background:#fff;border-bottom:1px solid var(--sq-border-strong);}
+.sq-thumb--ph{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.1em;color:#fff;background:linear-gradient(135deg,#1E293B,#334155);border-bottom:1px solid var(--sq-border-strong);}
+.sq-card:hover .sq-thumb{filter:brightness(1.02);}
 .sq-card:hover{box-shadow:0 16px 34px rgba(0,0,0,.16);border-color:rgba(140,198,63,.3);transform:translateY(-2px);text-decoration:none;}
 .sq-card-label{font-size:10px;font-weight:700;color:var(--sq-accent-bright);margin-bottom:5px;letter-spacing:.08em;}
 .sq-card-title{font-size:13px;font-weight:700;color:var(--sq-text);line-height:1.6;}
@@ -1824,8 +1837,12 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-box{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:min(560px,90vw);background:var(--sq-surface);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--sq-border-strong);}
 .sq-search-input{width:100%;padding:16px 20px;font-size:15px;border:none;outline:none;border-bottom:1px solid var(--sq-border);background:transparent;color:var(--sq-text);font-family:inherit;}
 .sq-search-input::placeholder{color:var(--sq-muted);}
-.sq-search-filters{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--sq-border);background:var(--sq-surface-soft);scrollbar-width:none;}
-.sq-search-filters::-webkit-scrollbar{display:none;}
+.sq-search-filters-wrap{position:relative;}
+.sq-search-filters-wrap::after{content:'';position:absolute;top:0;right:0;bottom:1px;width:36px;pointer-events:none;background:linear-gradient(to right,transparent,var(--sq-surface-soft) 70%);}
+.sq-search-filters{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--sq-border);background:var(--sq-surface-soft);scrollbar-width:thin;}
+.sq-search-filters::-webkit-scrollbar{height:4px;}
+.sq-search-filters::-webkit-scrollbar-thumb{background:var(--sq-border-strong);border-radius:4px;}
+.sq-search-filters::-webkit-scrollbar-track{background:transparent;}
 .sq-search-chip{border:1px solid var(--sq-border);background:var(--sq-surface);color:var(--sq-muted);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:inherit;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
 .sq-search-chip:hover{color:var(--sq-text);border-color:var(--sq-border-strong);}
 .sq-search-chip.active{background:rgba(140,198,63,.18);border-color:rgba(140,198,63,.45);color:#276749;}
@@ -1833,6 +1850,8 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-item{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--sq-border);text-decoration:none;color:var(--sq-text);transition:background .12s;}
 .sq-search-item:hover{background:var(--sq-surface-soft);text-decoration:none;}
 .sq-search-item:last-child{border-bottom:none;}
+.sq-sthumb{flex:0 0 auto;width:64px;height:40px;border-radius:6px;object-fit:cover;object-position:center top;background:#fff;border:1px solid var(--sq-border);}
+.sq-sthumb--ph{display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;line-height:1.2;text-align:center;padding:2px;color:#fff;background:linear-gradient(135deg,#1E293B,#334155);border-color:transparent;overflow:hidden;}
 .sq-search-item--current{border-left:3px solid #8CC63F;background:rgba(140,198,63,.06);}
 .sq-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
 .sq-search-title{font-size:13px;font-weight:700;line-height:1.5;display:block;}
@@ -2299,7 +2318,7 @@ function buildSearchModal(){
   const modal = document.createElement('div');
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
-  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters"></div><div class="sq-search-results"></div><div class="sq-search-hint">カテゴリ絞り込み・本文検索対応　　Esc で閉じる　　/ キーで開く</div></div>';
+  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters-wrap"><div class="sq-search-filters"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">カテゴリ絞り込み・本文検索対応　　Esc で閉じる　　/ キーで開く</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
@@ -2415,6 +2434,7 @@ function buildSearchModal(){
     results.innerHTML = loading + sorted.slice(0,10).map(item => {
       const snip = query ? excerpt(item.text, q) : '';
       return `<a href="${item.f}" class="sq-search-item${item.f===PAGE?' sq-search-item--current':''}">
+        ${thumbHTML(ARTICLES[item.f], 'sq-sthumb')}
         <span class="sq-search-label">${_escHtml(item.label)}</span>
         <span><span class="sq-search-title">${_escHtml(item.title)}</span>${snip ? `<span class="sq-search-snippet">${_escHtml(snip)}</span>` : ''}</span>
       </a>`
@@ -2870,6 +2890,14 @@ function injectAdDisclosure(){
   const container = document.querySelector('.container');
   if(!container) return;
   if(container.querySelector('.sq-ad-disclosure')) return;   // 二重挿入を防ぐ
+
+  /* 実際にアフィリエイトリンクが存在するページにだけ出す。
+     リンクが無いのに「含まれます」と書くのは虚偽表示であり、
+     AdSenseポリシー「誤解を招く表現」に該当する（2026-08-05修正）。 */
+  const AFF = /af\.moshimo\.com|h\.accesstrade\.net|a8\.net|px\.a8|amzn\.to|valuecommerce|rentracks|felmat/i;
+  const hasAff = Array.from(container.querySelectorAll('a[href]'))
+    .some(a => AFF.test(a.getAttribute('href') || ''));
+  if(!hasAff) return;
 
   const el = document.createElement('p');
   el.className = 'sq-ad-disclosure';
@@ -3367,7 +3395,7 @@ function buildWidgets(){
     latestFiles.forEach(f=>{
       const a = ARTICLES[f]; if(!a) return;
       const isNew = LATEST.indexOf(f) < 3;
-      grid.innerHTML += `<a href="${f}" class="sq-card"><div class="sq-card-label">${a.label}${isNew?'<span class="sq-new-badge">NEW</span>':''}</div><div class="sq-card-title">${a.title}</div></a>`;
+      grid.innerHTML += `<a href="${f}" class="sq-card">${thumbHTML(a)}<div class="sq-card-label">${a.label}${isNew?'<span class="sq-new-badge">NEW</span>':''}</div><div class="sq-card-title">${a.title}</div></a>`;
     });
     inner.appendChild(grid);
   }
@@ -3381,7 +3409,7 @@ function buildWidgets(){
     grid.className = 'sq-card-grid';
     catFiles.forEach(f=>{
       const a = ARTICLES[f]; if(!a) return;
-      grid.innerHTML += `<a href="${f}" class="sq-card"><div class="sq-card-label">${a.label}</div><div class="sq-card-title">${a.title}</div></a>`;
+      grid.innerHTML += `<a href="${f}" class="sq-card">${thumbHTML(a)}<div class="sq-card-label">${a.label}</div><div class="sq-card-title">${a.title}</div></a>`;
     });
     inner.appendChild(grid);
   }
