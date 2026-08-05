@@ -1400,11 +1400,11 @@ html[data-theme="dark"] .eq-note{color:#9BA7BB !important;}
 html[data-theme="dark"] .haito-calc{border-color:rgba(255,255,255,.12) !important;}
 html[data-theme="dark"] .hc-row{border-bottom-color:rgba(255,255,255,.08) !important;background:#1A2232 !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .hc-row.hc-total{background:rgba(139,92,246,.12) !important;}
-html[data-theme="dark"] .hc-row.hc-total .hc-label,.hc-row.hc-total .hc-amt{color:#C4B5FD !important;}
+html[data-theme="dark"] .hc-row.hc-total .hc-label,html[data-theme="dark"] .hc-row.hc-total .hc-amt{color:#C4B5FD !important;}
 html[data-theme="dark"] .hc-row.hc-haito{background:rgba(59,130,246,.10) !important;}
-html[data-theme="dark"] .hc-row.hc-haito .hc-label,.hc-row.hc-haito .hc-amt{color:#90CDF4 !important;}
+html[data-theme="dark"] .hc-row.hc-haito .hc-label,html[data-theme="dark"] .hc-row.hc-haito .hc-amt{color:#90CDF4 !important;}
 html[data-theme="dark"] .hc-row.hc-junbi{background:rgba(140,198,63,.10) !important;}
-html[data-theme="dark"] .hc-row.hc-junbi .hc-label,.hc-row.hc-junbi .hc-amt{color:#B6E27C !important;}
+html[data-theme="dark"] .hc-row.hc-junbi .hc-label,html[data-theme="dark"] .hc-row.hc-junbi .hc-amt{color:#B6E27C !important;}
 /* ── 消費税記事 ── */
 html[data-theme="dark"] .tf-card.kari-tax{background:rgba(59,130,246,.10) !important;border-color:rgba(59,130,246,.35) !important;}
 html[data-theme="dark"] .tf-card.kashi-tax{background:rgba(252,129,129,.08) !important;border-color:rgba(252,129,129,.35) !important;}
@@ -1414,11 +1414,11 @@ html[data-theme="dark"] .tf-body{color:#9BA7BB !important;}
 html[data-theme="dark"] .zei-calc{border-color:rgba(255,255,255,.12) !important;}
 html[data-theme="dark"] .zc-row{border-bottom-color:rgba(255,255,255,.08) !important;background:#1A2232 !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .zc-row.zc-uriage{background:rgba(252,129,129,.08) !important;}
-html[data-theme="dark"] .zc-row.zc-uriage .zc-label,.zc-row.zc-uriage .zc-amt{color:#FC8181 !important;}
+html[data-theme="dark"] .zc-row.zc-uriage .zc-label,html[data-theme="dark"] .zc-row.zc-uriage .zc-amt{color:#FC8181 !important;}
 html[data-theme="dark"] .zc-row.zc-shii{background:rgba(59,130,246,.10) !important;}
-html[data-theme="dark"] .zc-row.zc-shii .zc-label,.zc-row.zc-shii .zc-amt{color:#90CDF4 !important;}
+html[data-theme="dark"] .zc-row.zc-shii .zc-label,html[data-theme="dark"] .zc-row.zc-shii .zc-amt{color:#90CDF4 !important;}
 html[data-theme="dark"] .zc-row.zc-nofu{background:rgba(140,198,63,.10) !important;}
-html[data-theme="dark"] .zc-row.zc-nofu .zc-label,.zc-row.zc-nofu .zc-amt{color:#B6E27C !important;}
+html[data-theme="dark"] .zc-row.zc-nofu .zc-label,html[data-theme="dark"] .zc-row.zc-nofu .zc-amt{color:#B6E27C !important;}
 /* ── 精算表記事 ── */
 html[data-theme="dark"] .seisan-table th{background:#1A2232 !important;border-color:rgba(255,255,255,.08) !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .seisan-table th.h-shisan{background:rgba(59,130,246,.12) !important;color:#90CDF4 !important;}
