@@ -155,6 +155,22 @@ details summary:active{background:var(--light);}
 
   <p class="lead">簿記3級では消費税の処理として<strong>税抜方式</strong>を学びます。仕入のたびに「仮払消費税（資産）」、売上のたびに「仮受消費税（負債）」を計上し、決算時に差し引いた金額を納付します。</p>
 
+  <section class="sq-originality-note" aria-label="Study Quest編集部の消費税判断フロー">
+    <div class="sq-originality-note__eyebrow">Study Quest decision flow</div>
+    <h2>消費税の仕訳は「いつ・誰から・最後に残るもの」で確認する</h2>
+    <p class="sq-originality-note__lead">勘定科目を丸暗記する前に、取引の時点とお金の向きを確認します。税抜方式の練習として、税抜仕入120,000円、税抜売上220,000円、税率10%のケースを使います。</p>
+    <table>
+      <tr><th>場面</th><th>記録するもの</th><th>確認する問い</th></tr>
+      <tr><td>仕入時</td><td>仮払消費税 12,000円</td><td>先に支払った税として、後で差し引ける金額か</td></tr>
+      <tr><td>売上時</td><td>仮受消費税 22,000円</td><td>取引先から預かった税として、後で納める金額か</td></tr>
+      <tr><td>決算時</td><td>22,000円 − 12,000円 = 未払消費税 10,000円</td><td>仮受と仮払の差額がどちら側に残るか</td></tr>
+    </table>
+    <ul>
+      <li>本体価格と税額を分ける前に、税込・税抜の指定と税率を問題文で確認する。</li>
+      <li>計算後は「仮受 − 仮払」の差額と、仕訳の残った勘定科目が一致するかを検算する。</li>
+    </ul>
+  </section>
+
   <div class="sq-chat">
     <div class="sq-chat-row">
       <img src="images/icon-student.png" alt="受験生" class="chat-icon" style="width:50px; height:50px; border-radius:50%; vertical-align:middle; margin-right:10px;" width="300" height="300">
