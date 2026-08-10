@@ -17,14 +17,16 @@
 <meta property="og:url" content="https://study-quest.net/">
 <meta property="og:title" content="スタディクエスト｜勉強が続かない、その悩みを仕組みで解決。">
 <meta property="og:description" content="やる気はあるのに続かない——それは意志の問題じゃない。勉強時間を経験値に変え、ライバルと競い、毎日続けられる仕組みを。資格・受験・検定対応。完全無料。">
-<meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
+<meta property="og:image" content="https://study-quest.net/images/study-quest-category-overview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="スタディクエスト">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="スタディクエスト｜勉強が続かない、その悩みを仕組みで解決。">
 <meta name="twitter:description" content="やる気はあるのに続かない——それは意志の問題じゃない。勉強時間を経験値に変え、ライバルと競い、毎日続けられる仕組みを。資格・受験・検定対応。完全無料。">
-<meta name="twitter:image" content="https://study-quest.net/screenshots/ogp_logo.png">
+<meta name="twitter:image" content="https://study-quest.net/images/study-quest-category-overview.jpg">
 <!-- JSON-LD 構造化データ -->
 <script type="application/ld+json">
 {
@@ -53,8 +55,8 @@
     "学習レポート"
   ],
   "keywords": "勉強管理アプリ, 学習トラッカー, RPG, 資格勉強, CPA, 簿記, 行政書士, 宅建, ポモドーロ, 無料",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "thumbnailUrl": "https://study-quest.net/screenshots/ogp_logo.png"
+  "image": "https://study-quest.net/images/study-quest-category-overview.jpg",
+  "thumbnailUrl": "https://study-quest.net/images/study-quest-category-overview.jpg"
 }
 </script>
 <!-- Google Analytics -->
@@ -742,6 +744,90 @@ footer{background:#091505;padding:48px 24px 40px;}
 }
 .sidebar-art-link:last-child{border-bottom:none;}
 .sidebar-art-link:hover{color:var(--green);}
+.lp-thumb-card{
+  overflow:hidden !important;
+  padding:0 !important;
+  border-radius:10px !important;
+  text-align:left !important;
+}
+.lp-thumb-card .lp-card-thumb{
+  width:100%;
+  height:auto !important;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-bottom:1px solid var(--border);
+}
+.lp-thumb-card .lp-card-body{
+  padding:12px 14px 14px;
+  text-align:center;
+}
+.lp-thumb-card .lp-card-emoji{
+  display:none;
+}
+.lp-thumb-card .lp-card-title{
+  font-size:12px;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.45;
+  margin-bottom:4px;
+}
+.lp-thumb-card .lp-card-note{
+  font-size:10px;
+  color:var(--ink3);
+  line-height:1.5;
+}
+
+/* Article cards use one restrained icon language instead of mixed emoji glyphs. */
+#articles #cat-ai{--card-icon:#14B8A6;}
+#articles #cat-boki{--card-icon:#3B82F6;}
+#articles #cat-fp{--card-icon:#C9A84C;}
+#articles #cat-cpa-tax{--card-icon:#A855F7;}
+#articles #cat-legal{--card-icon:#DC2626;}
+#articles #cat-boki2{--card-icon:#8B5CF6;}
+#articles #cat-it{--card-icon:#0EA5E9;}
+#articles #cat-lang{--card-icon:#F97316;}
+#articles #cat-student-social{--card-icon:#10B981;}
+#articles #cat-more{--card-icon:#64748B;}
+#articles #cat-study,#articles #cat-compare{--card-icon:#8CC63F;}
+#articles .sq-section-marker{
+  display:inline-block;
+  width:7px;
+  height:7px;
+  margin:0 7px 1px 0;
+  border-radius:2px;
+  background:var(--card-icon,#8CC63F);
+  vertical-align:middle;
+}
+#articles .sq-card-solid-icon{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  flex-shrink:0;
+  margin-bottom:6px !important;
+  font-size:0 !important;
+}
+#articles .sq-card-solid-icon::before{
+  content:"";
+  width:26px;
+  height:26px;
+  border-radius:8px;
+  background:var(--card-icon,#8CC63F);
+  box-shadow:0 4px 10px rgba(0,0,0,.16);
+}
+#articles .sq-card-solid-icon::after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:4px;
+  border-radius:99px;
+  background:rgba(255,255,255,.86);
+  transform:rotate(-45deg);
+}
+#articles a > span.sq-card-solid-icon{margin-bottom:0 !important;}
 @media(max-width:900px){
   .articles-layout{max-width:100%;}
   .articles-sidebar{display:block;}
@@ -898,11 +984,11 @@ details summary:active{background:var(--light);}
       </div>
     </div>
 
-    <!-- 日商簿記3級 -->
-    <div id="cat-boki3" style="scroll-margin-top:72px;margin-bottom:32px;">
+    <!-- 簿記 -->
+    <div id="cat-boki" style="scroll-margin-top:72px;margin-bottom:32px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #3B82F6;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3B82F6;flex-shrink:0;"></span>
-        <span style="font-size:12px;font-weight:700;color:#3B82F6;letter-spacing:.08em;">日商簿記3級</span>
+        <span style="font-size:12px;font-weight:700;color:#3B82F6;letter-spacing:.08em;">簿記</span>
         <a href="boki3-progress.html" style="margin-left:auto;font-size:11px;color:#3B82F6;padding:4px 12px;border:1px solid rgba(59,130,246,.4);border-radius:100px;text-decoration:none;white-space:nowrap;" onmouseover="this.style.background='rgba(59,130,246,.08)'" onmouseout="this.style.background='transparent'">📊 学習進捗</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
@@ -1061,52 +1147,117 @@ details summary:active{background:var(--light);}
       </details>
     </div>
 
-    <!-- 法律・会計系 -->
-    <div id="cat-law" style="scroll-margin-top:72px;margin-bottom:32px;">
+    <!-- FP -->
+    <div id="cat-fp" style="scroll-margin-top:72px;margin-bottom:32px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #c9a84c;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c9a84c;flex-shrink:0;"></span>
-        <span style="font-size:12px;font-weight:700;color:#c9a84c;letter-spacing:.08em;">法律・会計系</span>
+        <span style="font-size:12px;font-weight:700;color:#c9a84c;letter-spacing:.08em;">FP</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
-        <a href="boki.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
-          <div style="font-size:22px;margin-bottom:6px;">📒</div>
-          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">簿記3級・2級</div>
-          <div style="font-size:10px;color:var(--ink3);">独学スケジュール</div>
-        </a>
-        <a href="cpa.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
-          <div style="font-size:22px;margin-bottom:6px;">🏆</div>
-          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">公認会計士</div>
-          <div style="font-size:10px;color:var(--ink3);">短答式・論文式</div>
-        </a>
-        <a href="zeirishi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
-          <div style="font-size:22px;margin-bottom:6px;">🧾</div>
-          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">税理士</div>
-          <div style="font-size:10px;color:var(--ink3);">科目合格制の戦略</div>
-        </a>
         <a href="fp.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
           <div style="font-size:22px;margin-bottom:6px;">💰</div>
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">FP2級</div>
           <div style="font-size:10px;color:var(--ink3);">勉強時間の目安</div>
         </a>
-        <a href="takken.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+        <a href="fp3.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">📘</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">FP3級</div>
+          <div style="font-size:10px;color:var(--ink3);">初学者向け</div>
+        </a>
+        <a href="fp3-daigakusei.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🎓</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">大学生のFP3級</div>
+          <div style="font-size:10px;color:var(--ink3);">取る意味とタイミング</div>
+        </a>
+        <a href="fp3-lifeplanning.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🏠</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">ライフプランニング</div>
+          <div style="font-size:10px;color:var(--ink3);">FP3級6分野</div>
+        </a>
+        <a href="fp3-tax.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🧾</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">タックスプランニング</div>
+          <div style="font-size:10px;color:var(--ink3);">FP3級6分野</div>
+        </a>
+        <a href="boki-vs-fp.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">⚖️</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">簿記2級 vs FP2級</div>
+          <div style="font-size:10px;color:var(--ink3);">どっちを先に？</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 会計士・税理士 -->
+    <div id="cat-cpa-tax" style="scroll-margin-top:72px;margin-bottom:32px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #A855F7;">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#A855F7;flex-shrink:0;"></span>
+        <span style="font-size:12px;font-weight:700;color:#A855F7;letter-spacing:.08em;">会計士・税理士</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
+        <a href="cpa.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #A855F7;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🏆</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">公認会計士</div>
+          <div style="font-size:10px;color:var(--ink3);">短答式・論文式</div>
+        </a>
+        <a href="cpa-yobikou.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #A855F7;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🎓</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">会計士は予備校？独学？</div>
+          <div style="font-size:10px;color:var(--ink3);">費用と現実ライン</div>
+        </a>
+        <a href="cpa-dokugaku.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #A855F7;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">📚</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">会計士の独学は可能？</div>
+          <div style="font-size:10px;color:var(--ink3);">撤退ラインも整理</div>
+        </a>
+        <a href="zeirishi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #A855F7;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🧾</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">税理士</div>
+          <div style="font-size:10px;color:var(--ink3);">科目合格制の戦略</div>
+        </a>
+        <a href="zeirishi-vs-cpa.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #A855F7;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">⚖️</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">税理士 vs 公認会計士</div>
+          <div style="font-size:10px;color:var(--ink3);">どっちを目指す？</div>
+        </a>
+        <a href="cpa-akirameta-shinro.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #A855F7;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🗺️</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">会計士撤退後の進路</div>
+          <div style="font-size:10px;color:var(--ink3);">後悔しない選び方</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 法律資格 -->
+    <div id="cat-legal" style="scroll-margin-top:72px;margin-bottom:32px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #0EA5E9;">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0EA5E9;flex-shrink:0;"></span>
+        <span style="font-size:12px;font-weight:700;color:#0EA5E9;letter-spacing:.08em;">法律資格</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
+        <a href="takken.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #0EA5E9;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
           <div style="font-size:22px;margin-bottom:6px;">🏠</div>
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">宅建</div>
           <div style="font-size:10px;color:var(--ink3);">独学スケジュール</div>
         </a>
-        <a href="gyosei.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+        <a href="gyosei.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #0EA5E9;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
           <div style="font-size:22px;margin-bottom:6px;">⚖️</div>
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">行政書士</div>
           <div style="font-size:10px;color:var(--ink3);">独学スケジュール</div>
         </a>
-        <a href="sharoshi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+        <a href="sharoshi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #0EA5E9;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
           <div style="font-size:22px;margin-bottom:6px;">📋</div>
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">社会保険労務士</div>
           <div style="font-size:10px;color:var(--ink3);">足切り突破法</div>
         </a>
-        <a href="shindanshi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
-          <div style="font-size:22px;margin-bottom:6px;">📊</div>
-          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">中小企業診断士</div>
-          <div style="font-size:10px;color:var(--ink3);">1次・2次試験対策</div>
+        <a href="shihoshoshi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #0EA5E9;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">📜</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">司法書士</div>
+          <div style="font-size:10px;color:var(--ink3);">法律系難関資格</div>
+        </a>
+        <a href="mansion.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #0EA5E9;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🏢</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">マンション管理士</div>
+          <div style="font-size:10px;color:var(--ink3);">不動産系資格</div>
         </a>
       </div>
     </div>
@@ -1332,11 +1483,11 @@ details summary:active{background:var(--light);}
       </div>
     </div>
 
-    <!-- IT・技術系 -->
+    <!-- IT資格 -->
     <div id="cat-it" style="scroll-margin-top:72px;margin-bottom:32px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #10B981;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#10B981;flex-shrink:0;"></span>
-        <span style="font-size:12px;font-weight:700;color:#10B981;letter-spacing:.08em;">IT・技術系</span>
+        <span style="font-size:12px;font-weight:700;color:#10B981;letter-spacing:.08em;">IT資格</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
         <a href="itp.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #10B981;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
@@ -1372,11 +1523,11 @@ details summary:active{background:var(--light);}
       </div>
     </div>
 
-    <!-- 語学・教養系 -->
+    <!-- 英語資格 -->
     <div id="cat-lang" style="scroll-margin-top:72px;margin-bottom:32px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #F59E0B;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#F59E0B;flex-shrink:0;"></span>
-        <span style="font-size:12px;font-weight:700;color:#F59E0B;letter-spacing:.08em;">語学・教養系</span>
+        <span style="font-size:12px;font-weight:700;color:#F59E0B;letter-spacing:.08em;">英語資格</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
         <a href="toeic.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #F59E0B;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
@@ -1394,16 +1545,51 @@ details summary:active{background:var(--light);}
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">IELTS</div>
           <div style="font-size:10px;color:var(--ink3);">スコア別攻略ガイド</div>
         </a>
+        <a href="toeic-600.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #F59E0B;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">600</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">TOEIC 600点</div>
+          <div style="font-size:10px;color:var(--ink3);">基礎突破</div>
+        </a>
+        <a href="toeic-730.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #F59E0B;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">730</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">TOEIC 730点</div>
+          <div style="font-size:10px;color:var(--ink3);">就職・昇進ライン</div>
+        </a>
+        <a href="toeic-860.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #F59E0B;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">860</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">TOEIC 860点</div>
+          <div style="font-size:10px;color:var(--ink3);">上級者向け</div>
+        </a>
+        <a href="eiken-jun1.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #F59E0B;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">準1</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">英検準1級</div>
+          <div style="font-size:10px;color:var(--ink3);">難関級対策</div>
+        </a>
       </div>
     </div>
 
-    <!-- 医療・福祉系 -->
-    <div id="cat-medical" style="scroll-margin-top:72px;margin-bottom:32px;">
+    <!-- 大学生・社会人 -->
+    <div id="cat-student-social" style="scroll-margin-top:72px;margin-bottom:32px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #EC4899;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#EC4899;flex-shrink:0;"></span>
-        <span style="font-size:12px;font-weight:700;color:#EC4899;letter-spacing:.08em;">医療・福祉系</span>
+        <span style="font-size:12px;font-weight:700;color:#EC4899;letter-spacing:.08em;">大学生・社会人</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
+        <a href="shukatsu-shikaku.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #EC4899;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🎒</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">就活で強い資格</div>
+          <div style="font-size:10px;color:var(--ink3);">大学生向け</div>
+        </a>
+        <a href="hatarakinagara-shikaku.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #EC4899;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">🌙</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">働きながら取れる資格</div>
+          <div style="font-size:10px;color:var(--ink3);">社会人向け</div>
+        </a>
+        <a href="daigakusei-keizai-shikaku.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #EC4899;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
+          <div style="font-size:22px;margin-bottom:6px;">📊</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">経済学部におすすめ資格</div>
+          <div style="font-size:10px;color:var(--ink3);">会計・金融・IT</div>
+        </a>
         <a href="nurse.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #EC4899;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
           <div style="font-size:22px;margin-bottom:6px;">🩺</div>
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">看護師国家試験</div>
@@ -1422,14 +1608,14 @@ details summary:active{background:var(--light);}
       </div>
     </div>
 
-    <!-- 追加記事 -->
+    <!-- 大学生・社会人 追加ガイド -->
     <div id="cat-more" style="scroll-margin-top:72px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border);">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #8CC63F;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#8CC63F;flex-shrink:0;"></span>
-        <span style="font-size:12px;font-weight:700;color:#8CC63F;letter-spacing:.08em;">追加記事</span>
+        <span style="font-size:12px;font-weight:700;color:#8CC63F;letter-spacing:.08em;">大学生・社会人 追加ガイド</span>
       </div>
 
-      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;">📚 簿記・会計の追加記事</div>
+      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;"><span class="sq-section-marker" aria-hidden="true"></span>簿記・会計の追加記事</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:24px;">
         <a href="boki-zero-02.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">✏️</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">ゼロからの簿記 第2回</div><div style="font-size:10px;color:var(--ink3);">仕訳の基本</div></div></a>
         <a href="boki-zero-03.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">📒</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">ゼロからの簿記 第3回</div><div style="font-size:10px;color:var(--ink3);">勘定科目を整理</div></div></a>
@@ -1454,7 +1640,7 @@ details summary:active{background:var(--light);}
         <a href="cpa-akirameta-shinro.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🗺️</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">会計士を諦めた後の進路</div><div style="font-size:10px;color:var(--ink3);">キャリアの作り直し</div></div></a>
       </div>
 
-      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;">🎓 大学生・就活・継続</div>
+      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;"><span class="sq-section-marker" aria-hidden="true"></span>大学生・就活・継続</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:24px;">
         <a href="shukatsu-shikaku.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🎒</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">就活で有利な資格</div><div style="font-size:10px;color:var(--ink3);">大学生向け</div></div></a>
         <a href="daigakusei-keizai-shikaku.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">📊</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">経済学部におすすめ資格</div><div style="font-size:10px;color:var(--ink3);">会計・金融・IT</div></div></a>
@@ -1471,7 +1657,7 @@ details summary:active{background:var(--light);}
         <a href="univ-qualification-strategy.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🧭</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">将来から逆算する資格戦略</div><div style="font-size:10px;color:var(--ink3);">闇雲な取得はNG</div></div></a>
       </div>
 
-      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;">🧾 資格ガイド追加</div>
+      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;"><span class="sq-section-marker" aria-hidden="true"></span>資格ガイド追加</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:24px;">
         <a href="fp3.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">💰</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">FP3級</div><div style="font-size:10px;color:var(--ink3);">初学者向け</div></div></a>
         <a href="fp3-daigakusei.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🎓</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">大学生のFP3級</div><div style="font-size:10px;color:var(--ink3);">取る意味と活かし方</div></div></a>
@@ -1500,6 +1686,22 @@ details summary:active{background:var(--light);}
       </div>
     </div>
 
+    <!-- 学習継続 -->
+    <div id="cat-study" style="scroll-margin-top:72px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #8CC63F;">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#8CC63F;flex-shrink:0;"></span>
+        <span style="font-size:12px;font-weight:700;color:#8CC63F;letter-spacing:.08em;">学習継続</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:24px;">
+        <a href="keizoku.html" style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(140,198,63,.1),rgba(140,198,63,.03));border:1px solid rgba(140,198,63,.4);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🔥</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">資格勉強が続かない原因</div><div style="font-size:10px;color:var(--ink3);">継続できる仕組みを作る</div></div></a>
+        <a href="shakaijin-benkyou-jikan.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">⏰</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">社会人の勉強時間確保</div><div style="font-size:10px;color:var(--ink3);">仕事と両立するコツ</div></div></a>
+        <a href="shikaku-app.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">📱</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">資格勉強アプリ比較</div><div style="font-size:10px;color:var(--ink3);">記録ツールを選ぶ</div></div></a>
+        <a href="boki-zasetsu-type.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🔍</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">挫折タイプ診断</div><div style="font-size:10px;color:var(--ink3);">4タイプ別の乗り越え方</div></div></a>
+        <a href="boki-careless-miss.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">✏️</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">ミス記録ノート</div><div style="font-size:10px;color:var(--ink3);">ケアレスミスを減らす</div></div></a>
+        <a href="app.html" style="display:flex;align-items:center;gap:10px;background:var(--green);border:1px solid rgba(140,198,63,.45);border-radius:10px;padding:12px 14px;color:#fff;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">⚔</span><div><div style="font-size:12px;font-weight:700;">Study Questを使う</div><div style="font-size:10px;opacity:.85;">学習記録を経験値に変える</div></div></a>
+      </div>
+    </div>
+
     <!-- 比較・まとめ記事 -->
     <div id="cat-compare" style="scroll-margin-top:72px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border);">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #8CC63F;">
@@ -1508,7 +1710,7 @@ details summary:active{background:var(--light);}
       </div>
 
       <!-- ランキング・まとめ -->
-      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;">🏆 ランキング・まとめ</div>
+      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;"><span class="sq-section-marker" aria-hidden="true"></span>ランキング・まとめ</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:24px;">
         <a href="osusume-shikaku.html" style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(140,198,63,.1),rgba(140,198,63,.03));border:1px solid rgba(140,198,63,.4);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;">
           <span style="font-size:18px;flex-shrink:0;">🏆</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">社会人おすすめ資格TOP10</div><div style="font-size:10px;color:var(--ink3);">転職・独立・副業別</div></div>
@@ -1534,7 +1736,7 @@ details summary:active{background:var(--light);}
       </div>
 
       <!-- vs 比較 -->
-      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;">⚖ どっちを先に取る？ vs 比較</div>
+      <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:10px;"><span class="sq-section-marker" aria-hidden="true"></span>どっちを先に取る？ vs 比較</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
         <a href="boki-vs-fp.html" style="display:flex;align-items:stretch;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none;min-height:52px;">
           <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:10px 8px;font-size:11px;font-weight:700;color:var(--ink);text-align:center;line-height:1.4;">簿記2級</div>
@@ -1575,44 +1777,44 @@ details summary:active{background:var(--light);}
       <div class="articles-sidebar-box">
         <div class="articles-sidebar-title">📂 カテゴリから探す</div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <a href="#cat-boki3" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(59,130,246,.35);background:rgba(59,130,246,.07);text-decoration:none;color:inherit;transition:background .15s;">
+          <a href="#cat-boki" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(59,130,246,.35);background:rgba(59,130,246,.07);text-decoration:none;color:inherit;transition:background .15s;">
             <span style="width:4px;height:32px;border-radius:2px;background:#3B82F6;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#3B82F6;">日商簿記3級</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">現金・過不足・貸倒引当金…</div></div>
+            <div><div style="font-size:12px;font-weight:700;color:#3B82F6;">簿記</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">3級・2級・1級の論点</div></div>
             <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
           </a>
-          <a href="#cat-boki2" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(139,92,246,.35);background:rgba(139,92,246,.07);text-decoration:none;color:inherit;transition:background .15s;">
-            <span style="width:4px;height:32px;border-radius:2px;background:#8B5CF6;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#8B5CF6;">日商簿記2級</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">論点解説・独学スケジュール</div></div>
-            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
-          </a>
-          <a href="#cat-law" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.07);text-decoration:none;color:inherit;transition:background .15s;">
+          <a href="#cat-fp" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.07);text-decoration:none;color:inherit;transition:background .15s;">
             <span style="width:4px;height:32px;border-radius:2px;background:#c9a84c;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#c9a84c;">法律・会計系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">CPA・行政書士・宅建・社労士</div></div>
+            <div><div style="font-size:12px;font-weight:700;color:#c9a84c;">FP</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">FP2級・3級・簿記との比較</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+          <a href="#cat-cpa-tax" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(168,85,247,.32);background:rgba(168,85,247,.07);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#A855F7;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#A855F7;">会計士・税理士</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">CPA・税理士・予備校判断</div></div>
+            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
+          </a>
+          <a href="#cat-legal" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(14,165,233,.32);background:rgba(14,165,233,.07);text-decoration:none;color:inherit;transition:background .15s;">
+            <span style="width:4px;height:32px;border-radius:2px;background:#0EA5E9;flex-shrink:0;"></span>
+            <div><div style="font-size:12px;font-weight:700;color:#0EA5E9;">法律資格</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">宅建・行政書士・司法書士</div></div>
             <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
           </a>
           <a href="#cat-it" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.06);text-decoration:none;color:inherit;transition:background .15s;">
             <span style="width:4px;height:32px;border-radius:2px;background:#10B981;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#10B981;">IT・技術系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">ITパスポート・基本情報・応用</div></div>
+            <div><div style="font-size:12px;font-weight:700;color:#10B981;">IT資格</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">ITパスポート・基本情報・応用</div></div>
             <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
           </a>
           <a href="#cat-lang" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.06);text-decoration:none;color:inherit;transition:background .15s;">
             <span style="width:4px;height:32px;border-radius:2px;background:#F59E0B;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#F59E0B;">語学・教養系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">TOEIC・英検・FP</div></div>
+            <div><div style="font-size:12px;font-weight:700;color:#F59E0B;">英語資格</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">TOEIC・英検・TOEFL</div></div>
             <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
           </a>
-          <a href="#cat-medical" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(236,72,153,.3);background:rgba(236,72,153,.06);text-decoration:none;color:inherit;transition:background .15s;">
+          <a href="#cat-student-social" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(236,72,153,.3);background:rgba(236,72,153,.06);text-decoration:none;color:inherit;transition:background .15s;">
             <span style="width:4px;height:32px;border-radius:2px;background:#EC4899;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#EC4899;">医療・福祉系</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">医療事務・登録販売者</div></div>
+            <div><div style="font-size:12px;font-weight:700;color:#EC4899;">大学生・社会人</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">就活・働きながら・実務資格</div></div>
             <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
           </a>
-          <a href="#cat-more" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(140,198,63,.35);background:rgba(140,198,63,.07);text-decoration:none;color:inherit;transition:background .15s;">
+          <a href="#cat-study" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(140,198,63,.35);background:rgba(140,198,63,.07);text-decoration:none;color:inherit;transition:background .15s;">
             <span style="width:4px;height:32px;border-radius:2px;background:#8CC63F;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#8CC63F;">追加記事</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">簿記1級・大学生・資格ガイド</div></div>
-            <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
-          </a>
-          <a href="#cat-compare" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(140,198,63,.35);background:rgba(140,198,63,.07);text-decoration:none;color:inherit;transition:background .15s;">
-            <span style="width:4px;height:32px;border-radius:2px;background:#8CC63F;flex-shrink:0;"></span>
-            <div><div style="font-size:12px;font-weight:700;color:#8CC63F;">比較・まとめ</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">ランキング・vs比較</div></div>
+            <div><div style="font-size:12px;font-weight:700;color:#8CC63F;">学習継続</div><div style="font-size:10px;color:var(--ink3);margin-top:1px;">続け方・アプリ活用</div></div>
             <span style="margin-left:auto;font-size:10px;color:var(--ink3);">→</span>
           </a>
         </div>
@@ -2346,6 +2548,22 @@ details summary:active{background:var(--light);}
 </section>
 <div id="lpTrackingPixels"></div>
 
+<script>
+/* Replace legacy card emoji with the shared solid icon treatment. */
+(function(){
+  const selectors = [
+    '#articles a > div[style*="font-size:22px"]',
+    '#articles a > div[style*="font-size:24px"]',
+    '#articles a > span[style*="font-size:18px"]'
+  ];
+  document.querySelectorAll(selectors.join(',')).forEach((icon) => {
+    icon.textContent = '';
+    icon.classList.add('sq-card-solid-icon');
+    icon.setAttribute('aria-hidden', 'true');
+  });
+})();
+</script>
+
 <!-- CTA -->
 <section class="cta">
   <div class="cta-eyebrow">まだ間に合う</div>
@@ -2686,20 +2904,87 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 </div>
 <script>
 (function(){
+  const THUMB_CARDS = {
+    'boki.html': {
+      src: 'images/study-quest-boki-category.webp',
+      alt: '簿記3級・2級の勉強法を表すStudy Questの記事サムネイル'
+    },
+    'boki2.html': {
+      src: 'images/study-quest-boki-category.webp',
+      alt: '簿記2級の独学ロードマップを表すStudy Questの記事サムネイル'
+    },
+    'fp.html': {
+      src: 'images/study-quest-fp-category.webp',
+      alt: 'FP資格の独学ガイドを表すStudy Questの記事サムネイル'
+    },
+    'cpa.html': {
+      src: 'images/study-quest-cpa-tax-category.webp',
+      alt: '公認会計士試験の学習ロードマップを表すStudy Questの記事サムネイル'
+    },
+    'zeirishi.html': {
+      src: 'images/study-quest-cpa-tax-category.webp',
+      alt: '税理士試験の科目選択を表すStudy Questの記事サムネイル'
+    },
+    'takken.html': {
+      src: 'images/study-quest-legal-category.webp',
+      alt: '宅建と法律資格の学習戦略を表すStudy Questの記事サムネイル'
+    },
+    'itp.html': {
+      src: 'images/study-quest-it-category.webp',
+      alt: 'ITパスポートとIT資格の学習戦略を表すStudy Questの記事サムネイル'
+    },
+    'toeic.html': {
+      src: 'images/study-quest-english-category.webp',
+      alt: 'TOEICと英語資格の学習戦略を表すStudy Questの記事サムネイル'
+    },
+    'shukatsu-shikaku.html': {
+      src: 'images/study-quest-career-category.webp',
+      alt: '大学生と社会人の資格選びを表すStudy Questの記事サムネイル'
+    },
+    'keizoku.html': {
+      src: 'images/study-quest-continuity-category.webp',
+      alt: '資格勉強の継続と習慣化を表すStudy Questの記事サムネイル'
+    }
+  };
+
+  function enhanceArticleThumbCards(){
+    document.querySelectorAll('[id^="cat-"] a[href$=".html"]').forEach(a => {
+      const href = a.getAttribute('href');
+      const thumb = THUMB_CARDS[href];
+      if(!thumb || a.classList.contains('lp-thumb-card')) return;
+      const divs = [...a.children].filter(el => el.tagName === 'DIV');
+      if(divs.length < 3) return;
+      const emoji = divs[0].textContent.trim();
+      const title = divs[1].textContent.trim();
+      const note = divs[2].textContent.trim();
+      a.classList.add('lp-thumb-card');
+      a.innerHTML = `
+        <img class="lp-card-thumb" src="${thumb.src}" alt="${thumb.alt}" width="1200" height="675" loading="lazy" decoding="async">
+        <div class="lp-card-body">
+          <div class="lp-card-emoji">${emoji}</div>
+          <div class="lp-card-title">${title}</div>
+          <div class="lp-card-note">${note}</div>
+        </div>
+      `;
+    });
+  }
+  enhanceArticleThumbCards();
+
   /* カテゴリラベルのマッピング */
   const CAT_LABELS = {
-    'cat-ai':     'AI活用・時短術',
-    'cat-boki3':  '簿記3級',
-    'cat-boki2':  '簿記2級',
-    'cat-law':    '法律・会計系',
-    'cat-it':     'IT・技術系',
-    'cat-biz':    'ビジネス系',
-    'cat-med':    '医療・福祉系',
-    'cat-medical':'医療・福祉系',
-    'cat-more':   '追加記事',
-    'cat-tech':   '技術・工業系',
-    'cat-lang':   '語学・教養系',
-    'cat-tool':   '継続・ツール',
+    'cat-ai':     '学習継続',
+    'cat-boki':   '簿記',
+    'cat-boki2':  '簿記',
+    'cat-fp':     'FP',
+    'cat-cpa-tax':'会計士・税理士',
+    'cat-legal':  '法律資格',
+    'cat-it':     'IT資格',
+    'cat-student-social':'大学生・社会人',
+    'cat-more':   '大学生・社会人',
+    'cat-compare':'大学生・社会人',
+    'cat-lang':   '英語資格',
+    'cat-study':  '学習継続',
+    'cat-tool':   '学習継続',
   };
 
   /* DOMからカードを収集してインデックス化 */
@@ -2737,7 +3022,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   function categoryLabels(){
     if(!index) index = buildIndex();
     const labels = [...new Set(index.map(x=>x.label).filter(Boolean))];
-    const priority = ['簿記3級','簿記2級','法律・会計系','IT・技術系','ビジネス系','医療・福祉系','継続・ツール','追加記事'];
+    const priority = ['簿記','FP','会計士・税理士','法律資格','IT資格','英語資格','大学生・社会人','学習継続'];
     return labels.sort((a,b)=>{
       const ai = priority.indexOf(a), bi = priority.indexOf(b);
       if(ai >= 0 || bi >= 0) return (ai >= 0 ? ai : 999) - (bi >= 0 ? bi : 999);
