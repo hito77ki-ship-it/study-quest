@@ -2714,6 +2714,13 @@ window.addEventListener('scroll', () => {
   });
 })();
 
+// アプリCTAのGA4追跡
+document.querySelectorAll('a[href^="app.html"]').forEach(a=>{
+  a.addEventListener('click',()=>{
+    try{ gtag('event','app_cta_click',{from:location.pathname,placement:a.className||'index-link',to:a.getAttribute('href')}); }catch{}
+  });
+});
+
 // FAQ accordion
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');

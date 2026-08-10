@@ -3459,6 +3459,16 @@ function trackRelatedArticleClicks(){
   });
 }
 
+function trackAppCtaClicks(){
+  document.querySelectorAll('a[href^="app.html"]').forEach(a=>{
+    a.addEventListener('click', ()=> _gaEvent('app_cta_click', {
+      from: PAGE,
+      placement: a.className || 'article-link',
+      to: a.getAttribute('href')
+    }));
+  });
+}
+
 function trackPageView(){
   if(!PAGE) return;
   fetch(`${_SB_URL}/rest/v1/rpc/increment_view`,{
@@ -3499,6 +3509,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   window.addEventListener('resize', wrapWideTables, {passive:true});
   trackScrollDepth();
   trackRelatedArticleClicks();
+  trackAppCtaClicks();
   await _initSB();
   await buildReactionWidget();
   await buildCommentWidget();
