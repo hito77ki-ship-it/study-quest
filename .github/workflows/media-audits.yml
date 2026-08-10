@@ -1,0 +1,69 @@
+name: Study Quest media audits
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Audit to run
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - internal-links
+          - production
+          - adsense
+  schedule:
+    # 03:15 JST every day
+    - cron: '15 18 * * *'
+    # 03:30 JST every Monday
+    - cron: '30 18 * * 0'
+    # 03:45 JST on the first day of every month
+    - cron: '45 18 1 * *'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Select audit mode
+        id: select
+        env:
+          DISPATCH_MODE: ${{ github.event.inputs.mode }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "mode=${DISPATCH_MODE:-all}" >> "$GITHUB_OUTPUT"
+          elif [[ "$SCHEDULE" == "15 18 * * *" ]]; then
+            echo "mode=production" >> "$GITHUB_OUTPUT"
+          elif [[ "$SCHEDULE" == "30 18 * * 0" ]]; then
+            echo "mode=internal-links" >> "$GITHUB_OUTPUT"
+          elif [[ "$SCHEDULE" == "45 18 1 * *" ]]; then
+            echo "mode=adsense" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=all" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run read-only audit
+        env:
+          AUDIT_OUTPUT_DIR: ${{ runner.temp }}/study-quest-audits
+        run: node scripts/audits/run-media-audits.mjs --mode "${{ steps.select.outputs.mode }}"
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: study-quest-media-audits-${{ github.run_id }}
+          path: ${{ runner.temp }}/study-quest-audits
+          if-no-files-found: error
+          retention-days: 90
