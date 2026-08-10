@@ -191,7 +191,7 @@ details summary:active{background:var(--light);}
       <source media="(max-width: 600px)" srcset="images/boki3-genka-map-mobile.svg">
       <img src="images/boki3-genka-map.svg" alt="減価償却のタイムライン：毎年の費用計上と帳簿価額の変化、B/S上の間接控除法表示" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="400" loading="lazy">
     </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：定額法で5年間毎年¥180ずつ費用計上し、B/Sでは取得原価から減価償却累計額を控除して帳簿価額を表示</figcaption>
+    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：取得原価1,000,000円、残存価額100,000円の資産を定額法で5年間、毎年180,000円ずつ費用計上する流れ</figcaption>
   </figure>
   <p>たとえば100万円のトラックを買ったとします。このトラックは5年後にはボロボロになって10万円の価値しか残りません。</p>
   <p>「じゃあ、価値が減った分（90万円）をどう記録するの？」という疑問に答えるのが<strong>減価償却</strong>です。毎年少しずつ費用として計上することで、固定資産の価値の目減りを帳簿に反映させます。</p>
@@ -219,18 +219,18 @@ details summary:active{background:var(--light);}
 
   <h2>なぜ減価償却が必要なのか（費用配分の原則）</h2>
 
-  <p>「500円のトラックを買った年に全額費用計上すれば簡単では？」と思うかもしれません。でも、それでは財務諸表が正確になりません。</p>
+  <p>「500,000円のトラックを買った年に全額費用計上すれば簡単では？」と思うかもしれません。でも、それでは財務諸表が正確になりません。</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;">
     <div style="background:#FFF5F5;border:2px solid #FC8181;border-radius:12px;padding:18px;">
       <div style="font-size:11px;font-weight:700;color:#C53030;letter-spacing:.1em;margin-bottom:8px;">❌ 一括計上（NG）</div>
-      <p style="font-size:13px;margin-bottom:6px;color:#374151;">購入年度に500円全額を費用計上</p>
+      <p style="font-size:13px;margin-bottom:6px;color:#374151;">購入年度に500,000円全額を費用計上</p>
       <p style="font-size:13px;color:#C53030;font-weight:700;">購入年：利益が激減<br>翌年以降：利益が不当に膨らむ</p>
       <p style="font-size:12px;color:#718096;margin:0;">→ 毎期の業績比較ができない</p>
     </div>
     <div style="background:#F0FFF4;border:2px solid #68D391;border-radius:12px;padding:18px;">
       <div style="font-size:11px;font-weight:700;color:#276749;letter-spacing:.1em;margin-bottom:8px;">✅ 毎年分割計上（正解）</div>
-      <p style="font-size:13px;margin-bottom:6px;color:#374151;">使用期間（5年）にわたり毎年100円を費用計上（残存価額0の場合）</p>
+      <p style="font-size:13px;margin-bottom:6px;color:#374151;">使用期間（5年）にわたり毎年100,000円を費用計上（残存価額0の場合）</p>
       <p style="font-size:13px;color:#276749;font-weight:700;">毎期の費用と収益が対応<br>正確な利益計算ができる</p>
       <p style="font-size:12px;color:#718096;margin:0;">→ 費用配分の原則</p>
     </div>
@@ -270,7 +270,7 @@ details summary:active{background:var(--light);}
 
   <div class="mondai">
     <div class="mondai-label">例題</div>
-    <p>¥1,000で購入した備品について定額法により減価償却を行う。残存価額は取得原価の10%、耐用年数は5年とする。間接法で記帳している。</p>
+    <p>¥1,000,000で購入した備品について定額法により減価償却を行う。残存価額は取得原価の10%、耐用年数は5年とする。間接法で記帳している。</p>
   </div>
 
   <div class="kaitou-label">▶ まず計算</div>
@@ -278,14 +278,14 @@ details summary:active{background:var(--light);}
     <div class="calc-title">📐 計算手順</div>
     <div class="calc-formula">
       <span class="paren">（</span>
-      <span class="num">1,000</span>
+      <span class="num">1,000,000</span>
       <span class="op">−</span>
-      <span class="num">1,000×10%</span>
+      <span class="num">1,000,000×10%</span>
       <span class="paren">）</span>
       <span class="op">÷</span>
       <span class="num">5年</span>
       <span class="op">=</span>
-      <span class="result">180</span>
+      <span class="result">180,000</span>
     </div>
   </div>
 
@@ -295,14 +295,14 @@ details summary:active{background:var(--light);}
       <div class="shiwake-label">借　方</div>
       <div class="shiwake-item">
         <span class="kamoku">減価償却費</span>
-        <span class="amount">180</span>
+        <span class="amount">180,000</span>
       </div>
     </div>
     <div class="shiwake-col kashi">
       <div class="shiwake-label">貸　方</div>
       <div class="shiwake-item">
         <span class="kamoku">減価償却累計額</span>
-        <span class="amount">180</span>
+        <span class="amount">180,000</span>
       </div>
     </div>
   </div>
@@ -480,7 +480,7 @@ details summary:active{background:var(--light);}
   </div>
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">簿記の実力は、問題を1つ解くたびに確実に積み上がっていきます。<br>
-    この記事が少しでも参考になったら、この下にある<strong>【いいねボタン】</strong>をポチッと押してもらえると、めちゃくちゃ嬉しいです！ そして、Study Questで今日の学習時間を記録して、合格までの成長を「見える化」していきましょう。</p>
+    例題を解いたら、取得原価・残存価額・耐用年数の3つを自分で書き出し、式と仕訳の金額が一致するか確認してください。学習時間の記録にはStudy Questも使えます。</p>
   </div>
 
 
