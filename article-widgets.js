@@ -3,8 +3,8 @@
 
 const ARTICLES = {
   'ai-shiwake-kikikata.html': {label:'AI活用・時短術', title:'Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ'},
-  'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール', thumb:'images/boki-home-position-map.svg'},
-  'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ', thumb:'images/boki2-overall-roadmap.svg'},
+  'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール', thumb:'images/study-quest-boki-category.webp'},
+  'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ', thumb:'images/study-quest-boki-category.webp'},
   'boki2-progress.html': {label:'簿記2級',          title:'簿記2級 学習進捗チェック'},
   'boki2-kessan.html':   {label:'簿記2級',          title:'決算整理・財務諸表作成の第3問対策', thumb:'images/boki2-kessan-map.svg'},
   'boki2-shohin-baibai.html': {label:'簿記2級',     title:'商品売買・売上原価・棚卸資産', thumb:'images/boki2-shohin-baibai-map.svg'},
@@ -37,12 +37,12 @@ const ARTICLES = {
   'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い', thumb:'images/boki1-sogo-vs-kobetsu-shokyaku-map.svg'},
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い', thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg'},
-  'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ'},
-  'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド', thumb:'images/fp-2kyu-map.svg'},
-  'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール', thumb:'images/takken-strategy-map.svg'},
+  'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ', thumb:'images/study-quest-cpa-tax-category.webp'},
+  'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド', thumb:'images/study-quest-fp-category.webp'},
+  'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール', thumb:'images/study-quest-legal-category.webp'},
   'gyosei.html':         {label:'行政書士',          title:'行政書士試験の独学合格ガイド', thumb:'images/gyosei-strategy-map.svg'},
   'sharoshi.html':       {label:'社労士',           title:'社会保険労務士の独学合格ガイド', thumb:'images/sharoshi-map.svg'},
-  'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略', thumb:'images/zeirishi-map.svg'},
+  'zeirishi.html':       {label:'税理士',           title:'税理士試験の科目選択と独学戦略', thumb:'images/study-quest-cpa-tax-category.webp'},
   'shihoshoshi.html':    {label:'司法書士',          title:'司法書士の独学合格ガイド', thumb:'images/shihoshoshi-map.svg'},
   'shihoshoshi-start.html': {label:'司法書士',       title:'司法書士を目指す人が最初の7日間でやること', thumb:'images/shihoshoshi-start-map.svg'},
   'shihoshoshi-roniten.html': {label:'司法書士',      title:'司法書士の科目別論点一覧', thumb:'images/shihoshoshi-roniten-map.svg'},
@@ -51,9 +51,9 @@ const ARTICLES = {
   'shihoshoshi-futoki.html': {label:'司法書士',       title:'不動産登記法・所有権移転・抵当権設定', thumb:'images/shihoshoshi-futoki-map.svg'},
   'shihoshoshi-kaishaho.html': {label:'司法書士',     title:'会社法・商業登記法', thumb:'images/shihoshoshi-kaishaho-map.svg'},
   'mansion.html':        {label:'マンション管理士',  title:'マンション管理士の独学合格ガイド', thumb:'images/mansion-strategy-map.svg'},
-  'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略', thumb:'images/toeic-overall-strategy-map.svg'},
+  'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略', thumb:'images/study-quest-english-category.webp'},
   'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド', thumb:'images/eiken-map.svg'},
-  'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学合格ガイド', thumb:'images/itp-map.svg'},
+  'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学合格ガイド', thumb:'images/study-quest-it-category.webp'},
   'fe.html':             {label:'基本情報',          title:'基本情報技術者試験の独学合格ガイド', thumb:'images/fe-map.svg'},
   'ap.html':             {label:'応用情報',          title:'応用情報技術者試験の完全ガイド', thumb:'images/ap-map.svg'},
   'mos.html':            {label:'MOS',              title:'MOS（Microsoft Office Specialist）の独学合格ガイド', thumb:'images/mos-strategy-map.svg'},
@@ -67,7 +67,7 @@ const ARTICLES = {
   'shakai-fukushi.html': {label:'社会福祉士',        title:'社会福祉士の独学合格ガイド', thumb:'images/shakai-fukushi-strategy-map.svg'},
   'iryo-jimu.html':      {label:'医療事務',          title:'医療事務の独学合格ガイド', thumb:'images/iryo-jimu-recept-map.svg'},
   'kaigo-fukushi.html':  {label:'介護福祉士',        title:'介護福祉士の独学合格ガイド', thumb:'images/kaigo-fukushi-strategy-map.svg'},
-  'keizoku.html':        {label:'勉強継続',          title:'資格勉強が続かない原因と解決策7つ', thumb:'images/keizoku-motivation-curve-map.svg'},
+  'keizoku.html':        {label:'勉強継続',          title:'資格勉強が続かない原因と解決策7つ', thumb:'images/study-quest-continuity-category.webp'},
   'shakaijin-benkyou-jikan.html': {label:'勉強時間', title:'社会人が勉強時間を確保する方法7選', thumb:'images/shakaijin-routine-time-map.svg'},
   'shikaku-app.html':    {label:'アプリ比較',        title:'資格勉強アプリ比較ランキング2026', thumb:'images/shikaku-app-map.svg'},
   'boki-vs-fp.html':           {label:'資格比較',    title:'簿記2級 vs FP2級 どっちを先に取るべき？', thumb:'images/boki-fp-synergy-map.svg'},
@@ -88,12 +88,12 @@ const ARTICLES = {
   'cpa-akirameta-shinro.html': {label:'会計士の進路', title:'公認会計士を諦めた後の進路は？後悔しにくい選び方を正直に整理', thumb:'images/cpa-shinro-flow-map.svg'},
   'shikaku-zasetsu-riyu.html': {label:'挫折・再開', title:'資格勉強を途中でやめる人のよくある理由｜挫折しやすいタイミングと立て直し方', thumb:'images/zasetsu-recovery-timeline-map.svg'},
   'hatarakinagara-shikaku.html': {label:'社会人向け', title:'働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選', thumb:'images/hatarakinagara-routine-map.svg'},
-  'shukatsu-shikaku.html': {label:'大学生向け', title:'就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選', thumb:'images/shukatsu-shikaku-docking-map.svg'},
+  'shukatsu-shikaku.html': {label:'大学生向け', title:'就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選', thumb:'images/study-quest-career-category.webp'},
   'daigakusei-keizoku.html': {label:'大学生向け', title:'大学生が資格勉強を続ける方法｜授業・バイト・就活と両立するコツ', thumb:'images/daigakusei-routine-map.svg'},
   'univ-boki-units.html':  {label:'大学生向け', title:'大学の簿記・会計の講義は「神ボーナスステージ」！自習×大学で一石五鳥ハック', thumb:'images/univ-boki-units-map.svg'},
   'shikaku-women.html':        {label:'まとめ',      title:'女性におすすめ資格ランキング2026', thumb:'images/women-shikaku-matrix-map.svg'},
   'shikaku-30dai.html':        {label:'まとめ',      title:'30代が取るべき資格ランキング2026', thumb:'images/30dai-shikaku-matrix-map.svg'},
-  'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026', thumb:'images/dokugaku-stepup-route-map.svg'},
+  'dokugaku-shikaku.html':     {label:'まとめ',      title:'独学で取れる資格ランキング2026', thumb:'images/study-quest-general-study-category.webp'},
   'shikaku-20dai.html':        {label:'まとめ',      title:'20代におすすめ資格ランキング2026', thumb:'images/20dai-shikaku-matrix-map.svg'},
   'shikaku-eigyo.html':        {label:'まとめ',      title:'営業職におすすめ資格ランキング2026', thumb:'images/eigyo-shikaku-matrix-map.svg'},
   'shikaku-3months.html':      {label:'まとめ',      title:'3ヶ月で取れる資格ランキング2026', thumb:'images/3months-shikaku-matrix-map.svg'},
@@ -141,7 +141,6 @@ const ARTICLES = {
   'boki3-shohi.html':  {label:'簿記3級', title:'消費税の仕訳（税抜方式）仮払消費税・仮受消費税', thumb:'images/boki3-shohi-map.svg'},
   'boki3-seisanhyo.html':{label:'簿記3級',title:'精算表の書き方（8桁精算表）決算整理から財務諸表まで', thumb:'images/boki3-seisanhyo-map.svg'},
   'boki3-koguchi.html': {label:'簿記3級',title:'小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方', thumb:'images/boki3-koguchi-map.svg'},
-  'boki3-ginko.html':   {label:'簿記3級',title:'銀行勘定調整表の書き方と修正仕訳（不一致の4原因）'},
   'boki3-shohinuriage.html': {label:'簿記3級', title:'商品有高帳の書き方（先入先出法・移動平均法）', thumb:'images/boki3-shohinuriage-map.svg'},
   'boki3-hojosho.html':      {label:'簿記3級', title:'補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）', thumb:'images/boki3-hojosho-map.svg'},
   'boki3-hojinzei.html':     {label:'簿記3級', title:'法人税等の仕訳（仮払法人税等・未払法人税等）', thumb:'images/boki3-hojinzei-map.svg'},
@@ -150,10 +149,14 @@ const ARTICLES = {
   'univ-qualification-strategy.html':{label:'大学生向け',    title:'将来から逆算する最強の資格戦略', thumb:'images/univ-qualification-strategy.svg'},
   'boki2-renketsu.html':           {label:'簿記2級',          title:'連結会計・連結修正仕訳・のれん', thumb:'images/boki2-renketsu-map.svg'},
   'boki2-zeikouka.html':           {label:'簿記2級',          title:'税効果会計・一時差異・法人税等調整額', thumb:'images/boki2-zeikouka-map.svg'},
+  'boki2-kurinobe-shisan-vs-fusai.html': {label:'簿記2級', title:'繰延税金資産と繰延税金負債の違い', thumb:'images/boki2-kurinobe-shisan-vs-fusai-map.svg'},
   'boki2-lease.html':              {label:'簿記2級',          title:'リース取引・ファイナンスリースの仕訳', thumb:'images/boki2-lease-map.svg'},
   'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約', thumb:'images/boki2-gaika-map.svg'},
   'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え', thumb:'images/boki2-yukashoken-map.svg'},
+  'boki2-arai-kirihanashi.html':   {label:'簿記2級',          title:'有価証券の洗替方式と切放方式の違い', thumb:'images/boki2-arai-kirihanashi-map.svg'},
   'boki2-shasai.html':             {label:'簿記2級',          title:'社債の発行・利息・償却原価法', thumb:'images/boki2-shasai-map.svg'},
+  'boki2-noren-vs-fu-no-noren.html': {label:'簿記2級',        title:'のれんと負ののれんの違い', thumb:'images/boki2-noren-vs-fu-no-noren-map.svg'},
+  'boki2-kotei-shisan-why.html':   {label:'簿記2級',          title:'定額法と定率法はなぜ存在するのか？', thumb:'images/depreciation-why-map.svg'},
   'boki2-kogyo.html':              {label:'簿記2級',          title:'工業簿記とは・商業簿記との違い', thumb:'images/boki2-kogyo-map.svg'},
   'boki2-zairyouhi.html':          {label:'簿記2級',          title:'材料費・直接材料費・材料副費', thumb:'images/boki2-zairyouhi-map.svg'},
   'boki2-roumuhi.html':            {label:'簿記2級',          title:'労務費・直接労務費・賃率差異', thumb:'images/boki2-roumuhi-map.svg'},
@@ -161,16 +164,63 @@ const ARTICLES = {
   'boki2-kobetsu-genka.html':      {label:'簿記2級',          title:'個別原価計算・製造指図書の流れ', thumb:'images/boki2-kobetsu-genka-map.svg'},
   'boki2-sogo-genka.html':         {label:'簿記2級',          title:'総合原価計算・平均法・先入先出法', thumb:'images/boki2-sogo-genka-map.svg'},
   'boki2-hyojun-genka.html':       {label:'簿記2級',          title:'標準原価計算・原価差異の分析', thumb:'images/boki2-hyojun-genka-map.svg'},
+  'boki2-hyojun-vs-jissai.html':   {label:'簿記2級',          title:'標準原価計算と実際原価計算の違い', thumb:'images/boki2-hyojun-vs-jissai-map.svg'},
+  'boki2-kotei-betsu-genka.html':  {label:'簿記2級',          title:'工程別総合原価計算・累加法と前工程費'},
   'boki2-chokusetsu-genka.html':   {label:'簿記2級',          title:'直接原価計算・貢献利益と固定費', thumb:'images/boki2-chokusetsu-genka-map.svg'},
   'boki2-cvp.html':                {label:'簿記2級',          title:'CVP分析・損益分岐点売上高', thumb:'images/boki2-cvp-map.svg'},
   'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し', thumb:'images/boki2-ochita-strategy-map.svg'},
+  'boki3-cbt-vs-paper.html':       {label:'簿記3級',          title:'簿記3級ネット試験 vs 紙の試験、どっちを選ぶべき？', thumb:'images/boki3-cbt-vs-paper.svg'},
+  'boki3-kashitsuke-uriage.html':  {label:'簿記3級',          title:'貸付金と売掛金の違い', thumb:'images/boki3-kashitsuke-uriage-map.svg'},
+  'boki3-next-exam.html':          {label:'簿記3級',          title:'日商簿記3級の次の試験日と最速合格ロードマップ'},
+  'boki3-next.html':               {label:'簿記3級',          title:'簿記3級の次に取る資格は？FP3級 vs 簿記2級の選び方', thumb:'images/boki3-next-route-map.svg'},
+  'boki3-ochita.html':             {label:'簿記3級',          title:'簿記3級に落ちた後の立て直し', thumb:'images/boki3-ochita-revenge-map.svg'},
+  'boki3-progress.html':           {label:'簿記3級',          title:'簿記3級 学習進捗チェック'},
+  'cpa-akirameta-shukatsu.html':   {label:'会計士の進路',     title:'公認会計士を諦めた後の就活はどうする？'},
+  'cpa-akirameta-zeirishi-boki1.html': {label:'会計士の進路', title:'公認会計士を諦めた後：税理士 vs 日商簿記1級', thumb:'images/cpa-akirameta-zeirishi-boki1-map.svg'},
+  'cpa-daigakusei-kakugo.html':    {label:'公認会計士',       title:'大学生が公認会計士試験に挑む前に知るべきリアル', thumb:'images/cpa-kakugo-time-map.svg'},
+  'cpa-dokugaku.html':             {label:'公認会計士',       title:'公認会計士の独学は可能か？', thumb:'images/cpa-dokugaku-map.svg'},
+  'cpa-kigyoho-kikansekkei.html':  {label:'公認会計士',       title:'株式会社の機関設計（327条・328条）の覚え方', thumb:'images/cpa-kigyoho-map.svg'},
+  'cpa-subjects.html':             {label:'公認会計士',       title:'財務会計論（計算・理論）とは？', thumb:'images/cpa-subjects-map.svg'},
+  'daigakusei-kojin-jigyo-fuyo.html': {label:'大学生向け',    title:'大学生の個人事業主、扶養の壁はアルバイトと違う？', thumb:'images/daigakusei-kojin-jigyo-fuyo-diagram.svg'},
+  'daigakusei-keizai-shikaku.html': {label:'大学生向け',      title:'経済・経営学部の大学生が在学中に取るべき資格ランキング', thumb:'images/keizai-shikaku-docking-map.svg'},
+  'daigakusei-nenkin.html':        {label:'大学生向け',       title:'大学生の国民年金「学生納付特例制度」とは？', thumb:'images/student-nenkin-strategy-map.svg'},
+  'daigakusei-zeikin-yougo.html':  {label:'大学生向け',       title:'学生のための税金用語まるわかりガイド'},
+  'denshi-chobo-hozon-ho.html':    {label:'会計・実務',       title:'電子帳簿保存法をわかりやすく解説'},
+  'invoice-2wari-3wari-tokurei.html': {label:'会計・実務',    title:'インボイス「2割特例」はいつまで？「3割特例」新設と経過措置', thumb:'images/invoice-special-step-map.svg'},
+  'kakutei-shinkoku-okure-bassoku.html': {label:'会計・実務', title:'確定申告が遅れたら・嘘をついたらどうなる？', thumb:'images/tax-penalty-boundary-map.svg'},
+  'kessansho-yomikata-sony.html':  {label:'会計・実務',       title:'簿記の「のれん」「非支配株主持分」を決算書で読む', thumb:'images/sony-kessansho-strategy-map.svg'},
+  'shikaku-list.html':             {label:'まとめ',           title:'資格勉強ガイド一覧', thumb:'images/study-quest-category-overview.webp'},
+  'eiken-jun1.html':               {label:'英検準1級',        title:'英検準1級の勉強法・合格スケジュール', thumb:'images/eiken-jun1-strategy-map.svg'},
+  'eiken-jun2.html':               {label:'英検準2級',        title:'英検準2級の勉強法・合格スケジュール', thumb:'images/eiken-jun2-strategy-map.svg'},
+  'eiken2.html':                   {label:'英検2級',          title:'英検2級 徹底攻略ガイド', thumb:'images/eiken-2kyu-strategy-map.svg'},
+  'eiken3.html':                   {label:'英検3級',          title:'英検3級の勉強法・合格スケジュール', thumb:'images/eiken-3kyu-strategy-map.svg'},
+  'eiken3-grammar.html':           {label:'英検3級',          title:'英検3級 頻出名詞・関係代名詞・間接疑問文まとめ', thumb:'images/eiken3-grammar-map.svg'},
+  'eiken4.html':                   {label:'英検4級',          title:'英検4級の勉強法・合格スケジュール', thumb:'images/eiken4-map.svg'},
+  'eiken5.html':                   {label:'英検5級',          title:'英検5級の勉強法・合格スケジュール', thumb:'images/eiken-5kyu-strategy-map.svg'},
+  'fp3-daigakusei.html':           {label:'FP3級',            title:'大学生がFP3級を取るべき理由とベストなタイミング', thumb:'images/fp3-daigakusei-map.svg'},
+  'ielts.html':                    {label:'IELTS',            title:'IELTSの勉強法・スコア別攻略ガイド', thumb:'images/ielts-strategy-map.svg'},
+  'toeic-730.html':                {label:'TOEIC',            title:'TOEIC 730点の勉強法・突破スケジュール', thumb:'images/toeic-730-strategy-map.svg'},
+  'toeic-860.html':                {label:'TOEIC',            title:'TOEIC 860点の勉強法・突破スケジュール', thumb:'images/toeic-860-strategy-map.svg'},
+  'toeic-900.html':                {label:'TOEIC',            title:'TOEIC 900点の勉強法・突破スケジュール', thumb:'images/toeic-900-map.svg'},
+  'toeic-600.html':                {label:'TOEIC',            title:'TOEIC 600点の勉強法・突破スケジュール', thumb:'images/toeic-600-strategy-map.svg'},
 };
 
 /* ── サムネイル HTML（thumb が無い記事はカテゴリ名のプレースホルダにフォールバック） ── */
+function escapeAttr(value){
+  return String(value || '').replace(/[&<>"']/g, ch => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[ch]));
+}
+
 function thumbHTML(a, cls){
   const c = cls || 'sq-thumb';
   if(a && a.thumb){
-    return `<img class="${c}" src="${a.thumb}" alt="" loading="lazy" decoding="async" width="320" height="180">`;
+    const alt = `${a.title || a.label || 'Study Quest'} の記事サムネイル`;
+    return `<img class="${c}" src="${a.thumb}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async" width="320" height="180">`;
   }
   const label = (a && a.label) ? a.label : 'Study Quest';
   return `<div class="${c} ${c}--ph">${label}</div>`;
@@ -219,6 +269,133 @@ async function loadPopularArticles() {
 }
 
 const PAGE = location.pathname.split('/').pop() || '';
+
+/*
+ * AdSenseの「独自性が著しく低い」という指摘への第一段階。
+ * 記事ごとに編集部の判断基準・運営者の実体験との接点・読者が試す手順を変える。
+ * 汎用的な励まし文を全ページへ複製するのではなく、代表記事だけに固有のメモを表示する。
+ */
+const ORIGINALITY_NOTES = {
+  'boki.html': {
+    title: 'Study Quest編集部の入口判断',
+    lead: '簿記を始める人が最初に迷うのは、教材選びより「どこまでを今日やるか」です。この入口では、3級の全体像をつかんだあと、論点記事へ迷わず移れる順番を優先しています。',
+    points: [
+      '最初の1周は、仕訳・決算・財務諸表を完璧にせず、取引が帳簿から決算書へ流れる道筋を確認する。',
+      '2周目からは、間違いを「勘定科目」「金額」「タイミング」「問題文の読み落とし」に分類する。',
+      '同じ分類のミスが3回続いたら、先へ進む前に該当する論点記事へ戻る。これをStudy Questの進捗チェックで記録する。'
+    ]
+  },
+  'boki1.html': {
+    title: 'Study Quest編集部の判断メモ',
+    lead: 'このページは簿記1級の合格体験談ではありません。1級を勉強中の若葉が、2級合格後に感じた段差を「理解」「演習」「時間配分」の3つに分け、学習計画へ落とし込むための編集部メモです。',
+    points: [
+      '4科目を毎日均等に触るのではなく、週の前半に理解、後半に時間を測った混合問題を置く。',
+      '解けなかった問題は、知識不足と計算手順の崩れを分けて記録する。対策が違うため、同じ「不正解」でまとめない。',
+      '1科目を伸ばす週でも、他の科目を完全に止めない。足切りを意識した最低限の接触時間を残す。'
+    ]
+  },
+  'boki2-ochita.html': {
+    title: '不合格後の診断を先にする',
+    lead: '不合格直後に教材を買い直すと、原因が曖昧なまま勉強を再開しがちです。Study Questでは、まず失点を4つの原因に分けてから、次に読む記事を決める流れにしています。',
+    points: [
+      '知識不足なら該当論点の説明へ戻る。演習不足なら同じ形式を時間を測って解く。',
+      '計算ミスや転記ミスが中心なら、解法よりも下書きと検算の手順を見直す。',
+      '時間切れなら全範囲をやり直さず、試験と同じ順番・制限時間で部分演習を繰り返す。'
+    ]
+  },
+  'boki3-progress.html': {
+    title: 'このページを学習記録として使う方法',
+    lead: 'ここは読み物ではなく、簿記3級の学習順を見失わないためのチェックページです。記事を開いた数ではなく、「説明できる」「例題を解ける」の2段階で進捗を判断します。',
+    points: [
+      '最初はゼロからの簿記シリーズを上から進め、用語だけでなく仕訳が決まる理由を1行で説明する。',
+      '論点記事を読んだら、過去問で1問だけ確認してからチェックする。読了と理解を同じ扱いにしない。',
+      'チェックが止まった場所は弱点ではなく、次に戻る場所。未完了を失敗扱いせず、再開地点として使う。'
+    ]
+  },
+  'cpa-dokugaku.html': {
+    title: '合格者目線ではなく、挑戦者目線で読む',
+    lead: '運営者は公認会計士試験に合格したわけではなく、約1年半学習して途中で簿記1級へ切り替えました。そのため、このページでは合格を保証する口調を避け、独学を選ぶ条件と撤退ラインを整理しています。',
+    points: [
+      '独学を選ぶ前に、学習時間・答案の採点・質問先を自分で用意できるか確認する。',
+      '教材費だけでなく、勉強の遅れを発見する模試や答練の費用も計画に入れる。',
+      '一定期間たっても弱点が特定できない場合は、独学へのこだわりを見直す。手段の変更は失敗ではない。'
+    ]
+  },
+  'cpa-akirameta-shukatsu.html': {
+    title: '会計士を諦めた経験を、進路判断に変える',
+    lead: 'この記事の独自性は、会計士を合格した人の成功談ではなく、約1年半勉強した後に進路を切り替えた経験を出発点にしていることです。続けるか、資格を変えるかを感情だけで決めないための整理を置いています。',
+    points: [
+      'まず「試験が嫌になった」のか、「会計の学習自体が合わない」のかを分ける。',
+      '学習で残った知識、使った時間、今後ほしい働き方を表にして、次の資格との重なりを確認する。',
+      '撤退を失敗と決めつけず、次の選択で過去の学習をどこまで活かせるかを見直す。'
+    ]
+  },
+  'cpa-daigakusei-kakugo.html': {
+    title: '大学生が長期資格に入る前の確認表',
+    lead: '大学生の資格挑戦は、勉強時間だけでなく授業・試験・生活費との衝突まで含めて考える必要があります。運営者自身の大学生活と会計士試験の学習経験をもとに、始める前の確認項目をまとめています。',
+    points: [
+      '週の固定予定を先に書き、毎日できる前提ではなく、崩れても戻れる最低学習量を決める。',
+      '予備校や教材を買う前に、半年分の費用と、アルバイト・授業との両立方法を確認する。',
+      '受験を続ける理由を「周りが取るから」以外の言葉で書けないなら、まず短い資格で学習習慣を試す。'
+    ]
+  },
+  'daigakusei-nenkin.html': {
+    title: '学生向けに、制度説明を行動へつなげる',
+    lead: '学生納付特例は、制度を知るだけでは手続きにつながりません。このページでは「自分が対象か」「どこへ申請するか」「将来追納するか」を順番に確認できるようにしています。',
+    points: [
+      'まず学生であることと対象期間を確認し、前年所得の条件を家族の収入と混同しない。',
+      '申請先と必要書類を公式案内で確認し、未納のまま放置する選択をしない。',
+      '猶予された保険料を将来どう扱うか、卒業後の収入見込みと一緒に考える。'
+    ],
+    source: '<a href="https://www.nenkin.go.jp/service/kokunen/menjo/20150514.html?id=3896" target="_blank" rel="noopener">日本年金機構の学生納付特例案内</a>を基準に更新しています。'
+  },
+  'kessansho-yomikata-sony.html': {
+    title: '決算書を「読む順番」に落とす',
+    lead: '決算書解説で数字を並べるだけでは、読者は自分で判断できません。このページでは、ソニーの公開資料を題材に、会社名を変えても使える読み方の順番へ分解しています。',
+    points: [
+      '最初に売上高と営業利益を見て、本業の規模と利益の方向をつかむ。',
+      '次に営業キャッシュフローと投資キャッシュフローを見て、利益が現金の動きと一致しているか確かめる。',
+      '最後に注記とセグメント情報へ進み、数字の増減を事業の出来事に結びつける。'
+    ],
+    source: '数値は対象年度の企業開示資料を確認し、年度が変わった場合は本文の更新日と資料リンクを更新する方針です。'
+  },
+  'keizoku.html': {
+    title: '「やる気」ではなく、再開まで設計する',
+    lead: 'Study Questは、勉強が続かなかった運営者自身の課題から作っています。独自の視点として、毎日完璧に続ける方法ではなく、途切れた翌日に戻れる仕組みを中心に整理しました。',
+    points: [
+      '目標を勉強時間だけにせず、今日やる論点と終了条件まで小さくする。',
+      '記録が空いた日を削除せず、再開した日から次の小さなクエストを置く。',
+      'アプリは記録のために使い、勉強そのものを長くする通知や装飾は増やしすぎない。'
+    ]
+  },
+  'shikaku-app.html': {
+    title: '学習アプリを機能数で比較しない',
+    lead: '学習アプリ比較でありがちな「機能が多い順ランキング」を避け、資格勉強を続けられるかという観点で比較軸を作っています。Study Quest自身も比較対象に含め、向かない人を隠しません。',
+    points: [
+      '記録の入力が勉強を止めるほど重くないかを確認する。',
+      '試験日・教材・論点の進捗を、自分の勉強単位で残せるかを見る。',
+      'ランキング機能が必要な人と、一人で静かに記録したい人を同じ結論にしない。'
+    ]
+  },
+  'itp.html': {
+    title: 'ITパスポートを、学習の入口として使う',
+    lead: 'このページでは、IT用語を大量に暗記する順番ではなく、ストラテジ・マネジメント・テクノロジの3分野を生活や大学の課題に接続して覚える順番を提案しています。',
+    points: [
+      '知らない用語を単語帳へ送る前に、誰が・何を・何のために使う言葉かを1文で書く。',
+      '過去問で間違えた理由を、用語の意味・計算・選択肢の読み違いに分ける。',
+      '合格後にFEや業務へ進むかどうかを、試験勉強の途中で考えられるよう関連記事へ接続する。'
+    ]
+  },
+  'toeic.html': {
+    title: 'スコアではなく、次の行動を決める',
+    lead: 'TOEIC対策は、点数のランキングを見るだけでは学習が続きません。Study Questでは、模試の失点をPartと原因に分け、次の1週間の練習へ変換する方法を重視しています。',
+    points: [
+      '正解数だけでなく、語彙・文法・聞き取り・時間切れのどれで落としたかを記録する。',
+      '毎週すべてのPartを触るのではなく、最も多い失点原因を1つだけ優先する。',
+      '目標スコアを上げる前に、次回受験で変える行動を1行で書く。'
+    ]
+  }
+};
 
 const ARTICLE_DIALOGUES = {
   'toeic-600.html': [
@@ -1169,7 +1346,7 @@ html[data-theme="dark"] .mc-title{color:#F8FAFC !important;}
 html[data-theme="dark"] .mc-cond{color:#9BA7BB !important;}
 html[data-theme="dark"] .mc-card.m-bunkai .mc-key{color:#90CDF4 !important;}
 html[data-theme="dark"] .mc-card.m-gisei .mc-key{color:#B6E27C !important;}
-html[data-theme="dark"] .step-body{color:#CCD6E5 !important;}
+html[data-theme="dark"] .step-body{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .step-body strong{color:#F8FAFC !important;}
 /* ── ここまで ── */
 
@@ -1221,7 +1398,7 @@ html[data-theme="dark"] .ba-col.before{background:rgba(252,129,129,.10) !importa
 html[data-theme="dark"] .ba-col.after{background:rgba(140,198,63,.10) !important;border-color:rgba(140,198,63,.28) !important;}
 html[data-theme="dark"] .ba-col.before .ba-title{color:#FC8181 !important;}
 html[data-theme="dark"] .ba-col.after .ba-title{color:#B6E27C !important;}
-html[data-theme="dark"] .ba-item{color:#CCD6E5 !important;}
+html[data-theme="dark"] .ba-item{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.16) !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .ba-item strong{color:#F8FAFC !important;}
 html[data-theme="dark"] .ba-arrow{color:#9BA7BB !important;}
 /* ── ここまで ── */
@@ -1266,6 +1443,7 @@ html[data-theme="dark"] .point-card{background:linear-gradient(180deg,#151A2A,#1
 html[data-theme="dark"] .point-card p{color:#F8FAFC !important;}
 /* フローステップ（第3回 簿記の流れ） */
 html[data-theme="dark"] .flow-step{background:linear-gradient(180deg,#151A2A,#111728) !important;border-color:rgba(140,198,63,.14) !important;}
+html[data-theme="dark"] .flow-step-body{background:linear-gradient(180deg,#151A2A,#111728) !important;color:#CCD6E5 !important;}
 html[data-theme="dark"] .flow-step-body strong{color:#F8FAFC !important;}
 html[data-theme="dark"] .flow-step-body p{color:#9BA7BB !important;}
 /* 財務諸表カード（第3・5回） */
@@ -1668,6 +1846,13 @@ html[data-theme="dark"] .sq-article-theme-group{
 /* カテゴリーバッジ */
 .sq-cat-badge{margin-bottom:8px;}
 .sq-cat-badge span{display:inline-block;font-size:10px;font-weight:700;padding:4px 12px;border-radius:100px;color:#fff;letter-spacing:.12em;box-shadow:0 8px 20px rgba(0,0,0,.12);}
+/* 代表記事への戻り導線 */
+.sq-hub-return{margin:18px 0 24px;padding:14px 16px;border:1px solid var(--sq-border-strong);border-radius:10px;background:linear-gradient(135deg,var(--sq-surface-soft),var(--sq-surface));box-shadow:var(--sq-shadow);display:flex;align-items:center;gap:14px;}
+.sq-hub-return-label{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--sq-highlight-text);background:var(--sq-highlight-bg);padding:4px 9px;border-radius:100px;white-space:nowrap;}
+.sq-hub-return-link{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--sq-text);min-width:0;}
+.sq-hub-return-main{font-size:13px;font-weight:800;line-height:1.45;color:var(--sq-text);}
+.sq-hub-return-title{font-size:11px;color:var(--sq-muted);line-height:1.55;}
+.sq-hub-return-link:hover .sq-hub-return-main{text-decoration:underline;}
 /* 途中CTA */
 .sq-mid-cta{background:radial-gradient(circle at top right, rgba(140,198,63,.16), transparent 34%),linear-gradient(135deg,var(--sq-surface-soft),var(--sq-surface-strong) 68%, color-mix(in srgb, var(--sq-surface-strong) 78%, #1d2e18 22%) 100%);border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:18px 20px;margin:32px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 .sq-mid-cta p{font-size:13px;color:var(--sq-text);margin:0;flex:1;line-height:1.8;}
@@ -1800,6 +1985,11 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 @media(max-width:959px){
   .sq-art-auth-bar{justify-content:flex-start;}
   .sq-comment-section{padding:24px 16px;}
+}
+@media(max-width:480px){
+  .sq-art-auth-bar{flex-wrap:wrap;}
+  .sq-anon-login{flex:1 1 100%;justify-content:flex-end;min-width:0;}
+  .sq-anon-nickname{width:auto;min-width:0;flex:1 1 0;}
 }
 /* ── 読了プログレスバー ── */
 .sq-read-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#8CC63F,#A3E635);z-index:10001;width:0%;transition:width .08s linear;pointer-events:none;}
@@ -2206,6 +2396,58 @@ html[data-theme="dark"] section [style*="#C6F6D5"] [style*="color:#22543D"]{colo
 html[data-theme="dark"] section [style*="#C6F6D5"] [style*="color:#276749"]{color:#9BA7BB !important;}
 html[data-theme="dark"] section [style*="#C6F6D5"] a[style*="background:#fff"]{background:rgba(255,255,255,.08) !important;color:#6EE7B7 !important;}
 /* ── ここまで ── */
+/* ── 記事固有の編集部メモ（AdSense独自性対策） ── */
+.sq-originality-note{
+  margin:22px 0 30px;
+  padding:20px 22px;
+  border:1px solid rgba(59,130,246,.22);
+  border-left:4px solid #3B82F6;
+  border-radius:12px;
+  background:linear-gradient(180deg,#F7FAFF,#EFF6FF);
+  color:#1F2937;
+}
+.sq-originality-note__eyebrow{margin:0 0 7px;font-size:11px;font-weight:700;letter-spacing:.08em;color:#2563EB;text-transform:uppercase;}
+.sq-originality-note h2{margin:0 0 8px;padding:0;border:0;font-size:18px;color:#1E3A8A;}
+.sq-originality-note__lead{margin:0 0 12px;font-size:13px;line-height:1.9;color:#374151;}
+.sq-originality-note ul{margin:0 0 10px;padding-left:20px;}
+.sq-originality-note li{margin:6px 0;font-size:13px;line-height:1.8;color:#374151;}
+.sq-originality-note__source{margin:10px 0 0;font-size:11px;line-height:1.7;color:#64748B;}
+.sq-originality-note__source a{color:#2563EB;text-decoration:underline;}
+html[data-theme="dark"] .sq-originality-note{background:linear-gradient(180deg,#0D1A3A,#0A1530) !important;border-color:rgba(96,165,250,.34) !important;color:#E8EEF8;}
+html[data-theme="dark"] .sq-originality-note h2{color:#BFDBFE !important;}
+html[data-theme="dark"] .sq-originality-note__eyebrow{color:#93C5FD !important;}
+html[data-theme="dark"] .sq-originality-note__lead,
+html[data-theme="dark"] .sq-originality-note li{color:#CCD6E5 !important;}
+html[data-theme="dark"] .sq-originality-note__source{color:#9BA7BB !important;}
+html[data-theme="dark"] .sq-originality-note__source a{color:#93C5FD !important;}
+/* ── ここまで ── */
+/* ── 学習診断 ── */
+.sq-learning-diagnosis{margin:24px 0 32px;padding:22px 24px;border:1px solid rgba(140,198,63,.34);border-left:4px solid #8CC63F;border-radius:12px;background:linear-gradient(180deg,#FBFFF4,#F1F8E8);color:#1A202C;}
+.sq-learning-diagnosis__eyebrow{margin:0 0 7px;font-size:10px;font-weight:700;letter-spacing:.16em;color:#6AAF2B;}
+.sq-learning-diagnosis h2{margin:0 0 8px;padding:0;border:0;font-size:19px;color:#2F4F18;}
+.sq-learning-diagnosis__lead{margin:0 0 16px;font-size:13px;line-height:1.8;color:#4A5568;}
+.sq-learning-diagnosis__prompt{padding:14px 16px;border-radius:8px;background:#fff;border:1px solid rgba(140,198,63,.28);font-size:14px;font-weight:700;line-height:1.7;}
+.sq-learning-diagnosis__choices{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.sq-learning-diagnosis__choices button{flex:1 1 130px;min-height:42px;padding:9px 12px;border:1px solid rgba(74,85,104,.24);border-radius:8px;background:#fff;color:#374151;font:700 12px/1.4 inherit;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;}
+.sq-learning-diagnosis__choices button:hover{border-color:#8CC63F;transform:translateY(-1px);}
+.sq-learning-diagnosis__choices button:focus-visible{outline:3px solid rgba(59,130,246,.35);outline-offset:2px;}
+.sq-learning-diagnosis__choices button.is-selected{border-color:#6AAF2B;background:#E8F7B8;color:#2F4F18;}
+.sq-learning-diagnosis__result{min-height:22px;margin-top:14px;font-size:13px;line-height:1.8;color:#276749;font-weight:700;}
+.sq-learning-diagnosis__next{display:inline-block;margin-left:8px;color:#4D7C0F;text-decoration:underline;text-underline-offset:3px;font-weight:700;}
+html[data-theme="dark"] .sq-learning-diagnosis{background:linear-gradient(180deg,#15210F,#101A0D) !important;border-color:rgba(140,198,63,.34) !important;color:#E8EEF8;}
+html[data-theme="dark"] .sq-learning-diagnosis h2{color:#C7F08A !important;}
+html[data-theme="dark"] .sq-learning-diagnosis__lead{color:#B7C3D4 !important;}
+html[data-theme="dark"] .sq-learning-diagnosis__prompt,
+html[data-theme="dark"] .sq-learning-diagnosis__choices button{background:rgba(255,255,255,.06) !important;color:#E8EEF8 !important;border-color:rgba(255,255,255,.16) !important;}
+html[data-theme="dark"] .sq-learning-diagnosis__choices button.is-selected{background:rgba(140,198,63,.18) !important;border-color:#8CC63F !important;color:#D9F99D !important;}
+html[data-theme="dark"] .sq-learning-diagnosis__result{color:#B6E27C !important;}
+html[data-theme="dark"] .sq-learning-diagnosis__next{color:#D9F99D !important;}
+@media(max-width:600px){
+  .sq-learning-diagnosis{padding:18px 16px;}
+  .sq-learning-diagnosis h2{font-size:17px;}
+  .sq-learning-diagnosis__choices button{flex-basis:100%;}
+}
+/* ── ここまで ── */
 `;
   document.head.appendChild(s);
 }
@@ -2564,14 +2806,17 @@ function buildSidebarCTA(sidebar){
 const BOKI3_FILES = [
   'boki-zero-01.html','boki-zero-02.html','boki-zero-03.html',
   'boki-zero-04.html','boki-zero-05.html',
+  'boki3-cbt-vs-paper.html','boki3-next-exam.html','boki3-progress.html',
   'boki3-genkin.html','boki3-kake.html','boki3-sanpou.html',
+  'boki3-kashitsuke-uriage.html',
   'boki3-shohinuriage.html','boki3-tegata.html','boki3-credit.html',
   'boki3-sonota.html','boki3-kafusoku.html','boki3-koguchi.html',
   'boki3-kyuryo.html','boki3-kotei.html','boki3-genka.html',
   'boki3-kashidaore.html','boki3-hojosho.html','boki3-shisanhyo.html',
   'boki3-denpyo.html','boki3-nikkei.html','boki3-keika.html',
   'boki3-keika2.html','boki3-shohi.html','boki3-hojinzei.html',
-  'boki3-kabushiki.html','boki3-ginko.html','boki3-seisanhyo.html',
+  'boki3-kabushiki.html','boki3-seisanhyo.html',
+  'boki3-next.html','boki3-ochita.html',
   'boki-careless-miss.html','boki-zasetsu-type.html','boki3-tobashi-2kyu.html',
 ];
 
@@ -2580,13 +2825,16 @@ const BOKI2_COMMERCIAL_FILES = [
   'boki2-hojinzei-shohizei.html','boki2-software.html','boki2-ginko-chosei.html',
   'boki2-renketsu.html','boki2-zeikouka.html','boki2-lease.html',
   'boki2-gaika.html','boki2-yukashoken.html','boki2-kotei-shisan.html',
-  'boki2-hikiatekin.html','boki2-shasai.html',
+  'boki2-arai-kirihanashi.html','boki2-hikiatekin.html','boki2-shasai.html',
+  'boki2-kurinobe-shisan-vs-fusai.html','boki2-noren-vs-fu-no-noren.html',
+  'boki2-kotei-shisan-why.html',
 ];
 
 const BOKI2_INDUSTRIAL_FILES = [
   'boki2-kogyo.html','boki2-zairyouhi.html','boki2-roumuhi.html','boki2-keihi.html',
   'boki2-seizo-kansetsuhi.html','boki2-bumonbetsu.html','boki2-kobetsu-genka.html',
-  'boki2-sogo-genka.html','boki2-hyojun-genka.html','boki2-chokusetsu-genka.html',
+  'boki2-sogo-genka.html','boki2-hyojun-genka.html','boki2-hyojun-vs-jissai.html',
+  'boki2-kotei-betsu-genka.html','boki2-chokusetsu-genka.html',
   'boki2-cvp.html','boki2-seizo-genka-hokokusho.html','boki2-net-test.html',
   'boki2-kogyo-enshu.html',
 ];
@@ -2639,6 +2887,261 @@ const MISC_GUIDE_FILES = [
   'chori.html','kenchiku.html','mansion.html',
   'gaibuin.html','hisho.html','kanken.html',
 ];
+
+const HUB_RULES = [
+  {name:'簿記2級', file:'boki2.html', files: BOKI2_FILES},
+  {name:'簿記1級', file:'boki1.html', files: BOKI1_FILES},
+  {name:'簿記', file:'boki.html', files: BOKI3_FILES},
+  {name:'FP3級', file:'fp3.html', match:f=>f.startsWith('fp3-')},
+  {name:'FP', file:'fp.html', files:['fp.html','boki-vs-fp.html'], match:f=>f.startsWith('fp')},
+  {name:'公認会計士', file:'cpa.html', match:f=>f.startsWith('cpa')},
+  {name:'税理士', file:'zeirishi.html', match:f=>f.startsWith('zeirishi')},
+  {name:'司法書士', file:'shihoshoshi.html', files: SHIHOSHO_FILES},
+  {name:'法律資格', file:'takken.html', files:['takken.html','gyosei.html','sharoshi.html','mansion.html','takken-vs-gyosei.html','takken-vs-mansion.html','sharoshi-vs-gyosei.html','sharoshi-vs-shindanshi.html']},
+  {name:'IT資格', file:'itp.html', files:['itp.html','fe.html','ap.html','mos.html','itp-vs-fe.html','fe-vs-ap.html']},
+  {name:'英語資格', file:'toeic.html', files:['toeic.html','toeic-600.html','toeic-730.html','toeic-860.html','toeic-900.html','toeic-vs-eiken.html','toefl.html','ielts.html'], match:f=>f.startsWith('eiken')},
+  {name:'大学生・社会人', file:'shukatsu-shikaku.html', files:['shukatsu-shikaku.html','hatarakinagara-shikaku.html','shakaijin-benkyou-jikan.html','daigakusei-keizai-shikaku.html','daigakusei-shikaku-heiyou.html','daigakusei-keizoku.html','daigakusei-kojin-jigyo-fuyo.html','daigakusei-nenkin.html','daigakusei-zeikin-yougo.html','univ-boki-units.html','univ-ai-report-hack.html','univ-qualification-strategy.html','shikaku-20dai.html','shikaku-30dai.html','shikaku-women.html','shikaku-eigyo.html','shikaku-3months.html','tenshoku-shikaku.html','osusume-shikaku.html','cospa-shikaku.html','dokugaku-shikaku.html','shikaku-jinsei-kawaru.html','shikaku-zasetsu-riyu.html']},
+  {name:'学習継続', file:'keizoku.html', files:['keizoku.html','shikaku-app.html','boki-careless-miss.html','boki-zasetsu-type.html','ai-shiwake-kikikata.html']},
+  {name:'資格ガイド一覧', file:'shikaku-list.html', files: MISC_GUIDE_FILES},
+];
+
+function getHubForPage(file){
+  return HUB_RULES.find(rule => {
+    if(rule.files && rule.files.includes(file)) return true;
+    if(rule.match && rule.match(file)) return true;
+    return false;
+  });
+}
+
+function buildHubReturn(){
+  const container = document.querySelector('.container');
+  if(!container || !ARTICLES[PAGE]) return;
+  if(container.querySelector('.sq-hub-return')) return;
+  const hub = getHubForPage(PAGE);
+  if(!hub || hub.file === PAGE || !ARTICLES[hub.file]) return;
+
+  const box = document.createElement('div');
+  box.className = 'sq-hub-return';
+  box.innerHTML = `
+    <div class="sq-hub-return-label">カテゴリ入口</div>
+    <a href="${hub.file}" class="sq-hub-return-link">
+      <span class="sq-hub-return-main">${hub.name}の代表記事へ戻る</span>
+      <span class="sq-hub-return-title">${ARTICLES[hub.file].title}</span>
+    </a>
+  `;
+  box.querySelector('a').addEventListener('click', ()=> _gaEvent('hub_return_click', {from: PAGE, to: hub.file, hub: hub.name}));
+
+  const chat = container.querySelector('.sq-chat');
+  const lead = container.querySelector('.lead');
+  const anchor = chat || lead || container.querySelector('h1');
+  if(anchor) anchor.insertAdjacentElement('afterend', box);
+  else container.prepend(box);
+}
+
+/* ── 学習診断：読了確認ではなく、昨日からの小さな前進を自己判定する ── */
+const LEARNING_DIAGNOSTICS = {
+  'kanken.html': {
+    prompt: '今日、書けなかった漢字を見本なしで1つ書けますか？',
+    next: '誤答を10字だけ手書きし、明日もう一度見ずに再現する。'
+  },
+  'chori.html': {
+    prompt: '受験地の公式案内と、実務経験の確認先を説明できますか？',
+    next: '受験地の最新案内を保存し、証明書について確認する。'
+  },
+  'boki2-zairyouhi.html': {
+    prompt: '材料を直接・間接に分ける基準を、一言で説明できますか？',
+    next: '問題を1問選び、「特定製品へ追跡できるか」を先に書く。'
+  },
+  'eiken2.html': {
+    prompt: '自分の弱点を「語彙・時間・答案の型」のどれかで言えますか？',
+    next: '弱点を1つに絞り、要約1題か音読10分を記録する。'
+  },
+  'cpa-akirameta-shukatsu.html': {
+    prompt: '会計士受験経験を「事実・仕事の言葉・証拠」に分けられますか？',
+    next: '応募先を1社選び、伝えられる事実を100字で書く。'
+  },
+  'boki3-kake.html': {
+    prompt: '掛取引を「商品か・先か後か・権利か義務か」で判定できますか？',
+    next: '仕訳を1問解き、科目ではなく取引の流れを日本語で説明する。'
+  },
+  'shindanshi.html': {
+    prompt: '7科目を均等に始めるのではなく、今週は「財務・会計」か「企業経営理論」のどちらを優先するか決められますか？',
+    next: '2次試験にもつながる科目を1つ選び、過去問を3問解いて失点理由を記録する。'
+  },
+  'shikaku-eigyo.html': {
+    prompt: '次の商談で使いたい知識を、顧客の業界・扱う商材・転職先のどれから選ぶか説明できますか？',
+    next: '直近の商談を1件選び、顧客の課題と結びつく資格知識を1つメモする。'
+  },
+  'takken-vs-mansion.html': {
+    prompt: '自分が先に必要なのは、不動産営業の入口としての宅建か、管理組合支援の専門性か説明できますか？',
+    next: '求人票または目指す業務を3件並べ、宅建・マンション管理士のどちらに近いか印を付ける。'
+  },
+  'sharoshi-vs-gyosei.html': {
+    prompt: '1年後にやりたい仕事を、人事・労務、会社設立・許認可、独立準備のどれに寄せるか決められますか？',
+    next: '希望する仕事を1つ書き、受験資格・学習時間・取得後の業務を社労士と行政書士で比較する。'
+  },
+  'daigakusei-keizai-shikaku.html': {
+    prompt: '卒業までに狙う資格を1つに絞り、就活で示す成果物と毎週の学習時間を決められますか？',
+    next: '志望業界を1つ選び、資格で説明できる成果物を1つ作る計画を今週の時間割に入れる。'
+  },
+  'zeirishi.html': {
+    prompt: '税理士試験の科目選択を、得意不得意だけでなく実務で使いたい分野から説明できますか？',
+    next: '候補科目を2つに絞り、合格までの年数と取得後の業務を1枚に比較する。'
+  },
+  'boki2-roumuhi.html': {
+    prompt: '労務費を直接・間接に分けるとき、作業時間と製品への追跡可能性を使って説明できますか？',
+    next: '作業時間の数字を1つ置き、直接労務費と間接労務費を自分で計算する。'
+  },
+  'kenchiku.html': {
+    prompt: '二級建築士の学科と製図を、今の自分の経験からどちらを先に補強するか決められますか？',
+    next: '過去問を1年分だけ確認し、法規・構造・施工のうち最初に直す分野を決める。'
+  },
+  'boki3-seisanhyo.html': {
+    prompt: '精算表の問題で、決算整理仕訳から損益計算書・貸借対照表までの流れを説明できますか？',
+    next: '問題を1問選び、修正記入・P/L・B/Sの4行を自分で検算する。'
+  },
+  'boki-vs-fp.html': {
+    prompt: '資格取得後に使いたい場面を、会計処理と家計・金融のどちらに寄せるか説明できますか？',
+    next: '求人または生活上の課題を3つ書き、簿記2級とFP2級のどちらに近いか印を付ける。'
+  },
+  'boki-zero-02.html': {
+    prompt: '簿記を学ぶ理由を、就職・仕事の数字・家計のどれかに結びつけて説明できますか？',
+    next: '身近な取引を1つ選び、「何が増え、何が減ったか」を言葉で書く。'
+  },
+  'boki2-kessan.html': {
+    prompt: '決算整理を、期末に数字を合わせる作業ではなく、期間の利益を確定する作業として説明できますか？',
+    next: '決算整理仕訳を1問解き、P/LとB/Sのどちらに影響するかを横に書く。'
+  },
+  'boki2-keihi.html': {
+    prompt: '費用を発生した時点と支払った時点に分け、決算でどの調整が必要か説明できますか？',
+    next: '前払・未払のどちらかを1問解き、期末に残る金額を図で確認する。'
+  },
+  'boki3-genkin.html': {
+    prompt: '現金過不足を見つけたとき、原因判明前と決算時で処理が変わる理由を説明できますか？',
+    next: '現金過不足の仕訳を1問解き、原因判明前・判明後の2段階で書く。'
+  },
+  'fp3.html': {
+    prompt: 'FP3級の6分野から、今週の自分に一番必要な分野を1つ選び、その理由を説明できますか？',
+    next: '6分野を並べ、最初に解く過去問の分野と今週の学習時間を決める。'
+  },
+  'boki2-moshi-honban.html': {
+    prompt: '模試で失点した原因を、知識不足・解法の迷い・時間切れのどれかに分類できますか？',
+    next: '直近の模試の失点を3問だけ分類し、次回までに直す原因を1つに絞る。'
+  },
+  'boki-careless-miss.html': {
+    prompt: '自分のケアレスミスを、電卓・桁・転記・読み落としのどれかに分類できますか？',
+    next: '今日のミスを1件だけ記録し、次の1問で確認するチェック動作を決める。'
+  },
+  'boki-zasetsu-type.html': {
+    prompt: '勉強が止まる原因を、時間不足・難しさ・成果不明・比較疲れのどれかに分類できますか？',
+    next: '自分のタイプを1つ選び、明日15分で終わる再開行動をカレンダーに入れる。'
+  }
+};
+
+const LEARNING_DIAGNOSIS_LINKS = {
+  'kanken.html': ['eiken2.html', '英検2級の学習法を見る'],
+  'chori.html': ['shikaku-list.html', '資格一覧から次の候補を見る'],
+  'boki2-zairyouhi.html': ['boki2-kobetsu-genka.html', '個別原価計算へ進む'],
+  'eiken2.html': ['eiken3-grammar.html', '英検の文法対策へ進む'],
+  'cpa-akirameta-shukatsu.html': ['cpa-akirameta-shinro.html', '進路の選び方を見る'],
+  'boki3-kake.html': ['boki3-shohinuriage.html', '商品売買の仕訳へ進む'],
+  'shindanshi.html': ['keizoku.html', '長期学習の続け方を見る'],
+  'shikaku-eigyo.html': ['shukatsu-shikaku.html', '就活に活かす資格を見る'],
+  'takken-vs-mansion.html': ['takken.html', '宅建の学習法を見る'],
+  'sharoshi-vs-gyosei.html': ['gyosei.html', '行政書士の学習法を見る'],
+  'daigakusei-keizai-shikaku.html': ['shukatsu-shikaku.html', '就活向け資格を見る'],
+  'zeirishi.html': ['zeirishi-vs-cpa.html', '税理士と会計士を比較する'],
+  'boki2-roumuhi.html': ['boki2-keihi.html', '費用の論点へ進む'],
+  'kenchiku.html': ['takken.html', '不動産資格の学習法を見る'],
+  'boki3-seisanhyo.html': ['boki3-genkin.html', '仕訳の基礎へ戻る'],
+  'boki-vs-fp.html': ['boki2.html', '簿記2級のロードマップを見る'],
+  'boki-zero-02.html': ['boki-zero-03.html', '簿記の流れへ進む'],
+  'boki2-kessan.html': ['boki2-seizo-genka-hokokusho.html', '財務諸表の作成へ進む'],
+  'boki2-keihi.html': ['boki2-roumuhi.html', '労務費の論点へ進む'],
+  'boki3-genkin.html': ['boki3-kake.html', '掛取引の仕訳へ進む'],
+  'fp3.html': ['fp3-tax.html', 'FP3級の税金分野へ進む'],
+  'boki2-moshi-honban.html': ['boki2-next-exam.html', '次の試験日程を確認する'],
+  'boki-careless-miss.html': ['boki2-moshi-honban.html', '模試の失点診断へ進む'],
+  'boki-zasetsu-type.html': ['keizoku.html', '勉強を続ける仕組みを見る']
+};
+
+function buildLearningDiagnostic(){
+  const diagnostic = LEARNING_DIAGNOSTICS[PAGE];
+  const container = document.querySelector('.container');
+  if(!diagnostic || !container || container.querySelector('.sq-learning-diagnosis')) return;
+
+  const box = document.createElement('section');
+  box.className = 'sq-learning-diagnosis';
+  box.setAttribute('aria-labelledby', 'sq-learning-diagnosis-title');
+  box.innerHTML = `
+    <div class="sq-learning-diagnosis__eyebrow">DAILY LEVEL CHECK</div>
+    <h2 id="sq-learning-diagnosis-title">昨日の自分より、今日の自分にレベルアップしましたか？</h2>
+    <p class="sq-learning-diagnosis__lead">この記事を読んだかではなく、読んだあとに説明・判断・再現が1つ増えたかを確認します。</p>
+    <div class="sq-learning-diagnosis__prompt">${_escHtml(diagnostic.prompt)}</div>
+    <div class="sq-learning-diagnosis__choices" role="group" aria-label="今日の学習状態">
+      <button type="button" data-level="up">できる</button>
+      <button type="button" data-level="step">途中までできる</button>
+      <button type="button" data-level="next">まだ曖昧</button>
+    </div>
+    <div class="sq-learning-diagnosis__result" aria-live="polite"></div>
+  `;
+
+  const result = box.querySelector('.sq-learning-diagnosis__result');
+  const messages = {
+    up: '今日のレベルアップを確認できました。明日は別の例題で、同じ説明を再現してみましょう。',
+    step: '理解は途中まで進んでいます。表や例題に戻り、あと1つだけ自分の言葉で説明しましょう。',
+    next: `未達でも問題ありません。今日の最小行動は「${diagnostic.next}」です。`
+  };
+  box.querySelectorAll('[data-level]').forEach(button => {
+    button.addEventListener('click', () => {
+      const level = button.dataset.level;
+      box.querySelectorAll('[data-level]').forEach(item => item.classList.toggle('is-selected', item === button));
+      result.textContent = messages[level];
+      const oldNext = result.querySelector('.sq-learning-diagnosis__next');
+      if(oldNext) oldNext.remove();
+      const link = LEARNING_DIAGNOSIS_LINKS[PAGE];
+      if(link){
+        const nextLink = document.createElement('a');
+        nextLink.href = link[0];
+        nextLink.textContent = `次に読む：${link[1]}`;
+        nextLink.className = 'sq-learning-diagnosis__next';
+        nextLink.addEventListener('click', () => _gaEvent('learning_diagnosis_next_click', { article_id: PAGE, to: link[0], level }));
+        result.append(' ', nextLink);
+      }
+      try { localStorage.setItem(`sq_learning_diagnosis_${PAGE}`, JSON.stringify({ date: new Date().toISOString().slice(0,10), level })); } catch {}
+      if(typeof _gaEvent === 'function') _gaEvent('learning_diagnosis', { article_id: PAGE, level });
+    });
+  });
+
+  const anchor = container.querySelector('.sq-originality-note') || container.querySelector('.app-cta') || container.querySelector('h1');
+  if(anchor) anchor.insertAdjacentElement('afterend', box);
+  else container.prepend(box);
+}
+
+/* ── 記事固有の編集部メモ ── */
+function buildOriginalityNote(){
+  const note = ORIGINALITY_NOTES[PAGE];
+  const container = document.querySelector('.container');
+  if(!note || !container || container.querySelector('.sq-originality-note')) return;
+
+  const box = document.createElement('section');
+  box.className = 'sq-originality-note';
+  box.setAttribute('aria-label', 'Study Quest編集部の判断メモ');
+  box.innerHTML = `
+    <div class="sq-originality-note__eyebrow">Study Quest editorial note</div>
+    <h2>${note.title}</h2>
+    <p class="sq-originality-note__lead">${note.lead}</p>
+    <ul>${note.points.map(point => `<li>${point}</li>`).join('')}</ul>
+    ${note.source ? `<p class="sq-originality-note__source">${note.source}</p>` : ''}
+  `;
+
+  const hub = container.querySelector('.sq-hub-return');
+  const chat = container.querySelector('.sq-chat');
+  const lead = container.querySelector('.lead');
+  const anchor = hub || chat || lead || container.querySelector('h1');
+  if(anchor) anchor.insertAdjacentElement('afterend', box);
+  else container.prepend(box);
+}
 
 function buildShihoshoSidebar(sidebar){
   if(!sidebar) return;
@@ -3495,6 +3998,9 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildMiscGuideSidebar(layout.right);
   buildCatBadge();
   buildArticleDialogue();
+  buildHubReturn();
+  buildOriginalityNote();
+  buildLearningDiagnostic();
   buildSidebarCTA(layout.right);
   await Promise.all([loadLatestFromSitemap(), loadPopularArticles()]);
   buildLeftSidebar(layout.left);

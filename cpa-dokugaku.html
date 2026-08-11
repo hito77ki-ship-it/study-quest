@@ -108,12 +108,16 @@ strong{color:var(--text);}
 .warn-box strong{color:#975A16;}
 .danger-box{background:#FEF2F2;border:1px solid #FCA5A5;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;}
 .danger-box strong{color:#991B1B;}
+html[data-theme="dark"] .danger-box{background:#3A1F24;border-color:#F87171;color:#FDE8E8;}
+html[data-theme="dark"] .danger-box strong{color:#FCA5A5;}
 
 /* 体験談カード */
 .experience-card{background:#fff;border:2px solid #E2E8F0;border-radius:14px;padding:24px;margin:24px 0;position:relative;}
 .experience-card::before{content:'若葉の体験談';position:absolute;top:-12px;left:18px;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:.05em;}
 .experience-card p{font-size:14px;color:#374151;line-height:1.9;margin-bottom:0;}
 .experience-card p+p{margin-top:12px;}
+html[data-theme="dark"] .experience-card{background:#17202B;border-color:#475569;}
+html[data-theme="dark"] .experience-card p{color:#DCE6F2;}
 
 /* 数字カード */
 .number-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0;}
@@ -124,6 +128,10 @@ strong{color:var(--text);}
 .number-card.red{background:#FEF2F2;border-color:#FCA5A5;}.number-card.red .num{color:#DC2626;}
 .number-card.orange{background:#FFF7ED;border-color:#FDB97D;}.number-card.orange .num{color:#EA580C;}
 .number-card.green{background:#F0FDF4;border-color:#86EFAC;}.number-card.green .num{color:#16A34A;}
+html[data-theme="dark"] .number-card.red{background:#3A1F24;border-color:#F87171;}
+html[data-theme="dark"] .number-card.orange{background:#3A2A19;border-color:#FDBA74;}
+html[data-theme="dark"] .number-card.green{background:#173326;border-color:#86EFAC;}
+html[data-theme="dark"] .number-card .label{color:#CBD5E1;}
 
 /* 試験科目リスト */
 .exam-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
@@ -147,6 +155,9 @@ strong{color:var(--text);}
 .rpg-body .rpg-desc{font-size:13px;color:#374151;line-height:1.8;margin:0;}
 .rpg-body .rpg-badge{display:inline-block;background:var(--light);border:1px solid var(--border);border-radius:6px;font-size:11px;padding:3px 8px;margin-top:8px;color:var(--muted);}
 .rpg-body .rpg-badge.free{background:#F0FFF4;border-color:#9AE6B4;color:#276749;font-weight:700;}
+html[data-theme="dark"] .rpg-body{background:#17202B;}
+html[data-theme="dark"] .rpg-body .rpg-desc{color:#DCE6F2;}
+html[data-theme="dark"] .rpg-body .rpg-badge.free{background:#173326;border-color:#86EFAC;color:#BBF7D0;}
 
 /* 予備校比較テーブル */
 .yobiko-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
