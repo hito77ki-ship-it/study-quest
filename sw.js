@@ -5,7 +5,7 @@
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v16-personal-recommendations';
+const VERSION = 'sq-v17-related-cards';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 
