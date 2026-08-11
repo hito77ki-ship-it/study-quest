@@ -5,7 +5,7 @@
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v11-card-thumbnails';
+const VERSION = 'sq-v12-search-details';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 

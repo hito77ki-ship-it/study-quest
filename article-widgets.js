@@ -2051,16 +2051,22 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-chip{border:1px solid var(--sq-border);background:var(--sq-surface);color:var(--sq-muted);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:inherit;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
 .sq-search-chip:hover{color:var(--sq-text);border-color:var(--sq-border-strong);}
 .sq-search-chip.active{background:rgba(140,198,63,.18);border-color:rgba(140,198,63,.45);color:#276749;}
-.sq-search-results{max-height:360px;overflow-y:auto;}
-.sq-search-item{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--sq-border);text-decoration:none;color:var(--sq-text);transition:background .12s;}
+.sq-search-results{max-height:min(460px,calc(100vh - 168px));overflow-y:auto;}
+.sq-search-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-bottom:1px solid var(--sq-border);text-decoration:none;color:var(--sq-text);transition:background .12s;}
 .sq-search-item:hover{background:var(--sq-surface-soft);text-decoration:none;}
+.sq-search-item:focus-visible{outline:2px solid var(--sq-accent-bright);outline-offset:-2px;}
 .sq-search-item:last-child{border-bottom:none;}
-.sq-sthumb{flex:0 0 auto;width:64px;height:40px;border-radius:6px;object-fit:cover;object-position:center top;background:#fff;border:1px solid var(--sq-border);}
+.sq-sthumb{flex:0 0 auto;width:112px;height:70px;border-radius:8px;object-fit:cover;object-position:center;background:#fff;border:1px solid var(--sq-border);}
 .sq-sthumb--ph{display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;line-height:1.2;text-align:center;padding:2px;color:#fff;background:linear-gradient(135deg,#1E293B,#334155);border-color:transparent;overflow:hidden;}
 .sq-search-item--current{border-left:3px solid #8CC63F;background:rgba(140,198,63,.06);}
+.sq-search-content{min-width:0;flex:1;}
+.sq-search-meta{display:flex;align-items:center;gap:7px;min-width:0;margin-bottom:3px;}
 .sq-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
-.sq-search-title{font-size:13px;font-weight:700;line-height:1.5;display:block;}
-.sq-search-snippet{font-size:11px;color:var(--sq-muted);line-height:1.6;margin-top:2px;display:block;}
+.sq-search-date{font-size:10px;color:var(--sq-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sq-search-title{font-size:13px;font-weight:700;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
+.sq-search-snippet{font-size:11px;color:var(--sq-muted);line-height:1.55;margin-top:3px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
+.sq-search-summary{color:var(--sq-muted);}
+@media(max-width:480px){.sq-search-results{max-height:calc(100vh - 155px);}.sq-search-item{gap:10px;padding:10px 12px;}.sq-sthumb{width:88px;height:56px;}.sq-search-title{font-size:12px;}.sq-search-snippet{font-size:10px;-webkit-line-clamp:1;}.sq-search-date{font-size:9px;}.sq-search-label{font-size:9px;padding:2px 6px;}}
 .sq-search-state{padding:10px 20px;font-size:11px;color:var(--sq-muted);border-bottom:1px solid var(--sq-border);}
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
@@ -2602,15 +2608,48 @@ function buildSearchModal(){
     label: a.label,
     title: a.title,
     text: `${a.label} ${a.title}`,
+    description: '',
+    modified: '',
     normalized: normalize(`${a.label} ${a.title}`),
     loaded: false
   }));
-  const extractArticleText = html => {
+  const findModifiedDate = value => {
+    if(Array.isArray(value)){
+      for(const item of value){
+        const date = findModifiedDate(item);
+        if(date) return date;
+      }
+      return '';
+    }
+    if(!value || typeof value !== 'object') return '';
+    const direct = String(value.dateModified || '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
+    if(direct) return direct;
+    for(const item of Object.values(value)){
+      const date = findModifiedDate(item);
+      if(date) return date;
+    }
+    return '';
+  };
+  const extractArticleData = html => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
+    const description = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || '').replace(/\s+/g,' ').trim();
+    let modified = '';
+    doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+      if(modified) return;
+      try { modified = findModifiedDate(JSON.parse(script.textContent || '')); } catch {}
+    });
     doc.querySelectorAll('script,style,nav,footer,svg').forEach(el => el.remove());
-    const meta = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
     const main = doc.querySelector('main,.container,article') || doc.body;
-    return `${meta} ${main.textContent || ''}`.replace(/\s+/g,' ').trim().slice(0,12000);
+    return {
+      description,
+      modified,
+      text: `${description} ${main.textContent || ''}`.replace(/\s+/g,' ').trim().slice(0,12000)
+    };
+  };
+  const formatModifiedDate = value => {
+    const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if(!match) return '';
+    return `最終更新 ${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
   };
   const ensureSearchIndex = () => {
     if(indexReady && searchIndex) return Promise.resolve(searchIndex);
@@ -2618,12 +2657,23 @@ function buildSearchModal(){
     if(searchIndex) return Promise.resolve(searchIndex);
     searchIndex = baseEntries();
     indexPromise = Promise.all(searchIndex.map(async item => {
-      const cacheKey = `sq_article_search_${item.f}`;
+      const cacheKey = `sq_article_search_v2_${item.f}`;
       try{
+        let data = null;
         const cached = sessionStorage.getItem(cacheKey);
-        const bodyText = cached || extractArticleText(await (await fetch(item.f, {cache:'force-cache'})).text());
-        if(!cached) sessionStorage.setItem(cacheKey, bodyText);
-        item.text = `${item.label} ${item.title} ${bodyText}`;
+        if(cached){
+          try {
+            const parsed = JSON.parse(cached);
+            if(parsed && typeof parsed.text === 'string') data = parsed;
+          } catch {}
+        }
+        if(!data){
+          data = extractArticleData(await (await fetch(item.f, {cache:'force-cache'})).text());
+          try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch {}
+        }
+        item.description = data.description || '';
+        item.modified = data.modified || '';
+        item.text = `${item.label} ${item.title} ${data.text}`;
         item.normalized = normalize(item.text);
         item.loaded = true;
       }catch(e){
@@ -2690,10 +2740,15 @@ function buildSearchModal(){
       : '';
     results.innerHTML = loading + sorted.slice(0,10).map(item => {
       const snip = query ? excerpt(item.text, q) : '';
+      const detail = snip || item.description;
+      const modified = formatModifiedDate(item.modified);
       return `<a href="${item.f}" class="sq-search-item${item.f===PAGE?' sq-search-item--current':''}">
         ${thumbHTML(ARTICLES[item.f], 'sq-sthumb')}
-        <span class="sq-search-label">${_escHtml(item.label)}</span>
-        <span><span class="sq-search-title">${_escHtml(item.title)}</span>${snip ? `<span class="sq-search-snippet">${_escHtml(snip)}</span>` : ''}</span>
+        <span class="sq-search-content">
+          <span class="sq-search-meta"><span class="sq-search-label">${_escHtml(item.label)}</span>${modified ? `<time class="sq-search-date" datetime="${_escHtml(item.modified)}">${_escHtml(modified)}</time>` : ''}</span>
+          <span class="sq-search-title">${_escHtml(item.title)}</span>
+          ${detail ? `<span class="sq-search-snippet${snip ? '' : ' sq-search-summary'}">${_escHtml(detail)}</span>` : ''}
+        </span>
       </a>`
     }).join('');
   }
