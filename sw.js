@@ -1,11 +1,11 @@
 /* ================================================
    スタディクエスト Service Worker
    - 静的アセット: Cache First（高速表示）
-   - index.html: Network First（常に最新版）
+   - HTML / 記事カードJS: Network First（常に最新版）
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v10';
+const VERSION = 'sq-v11-card-thumbnails';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 
@@ -62,8 +62,9 @@ self.addEventListener('fetch', event => {
   // POST等はスルー
   if (event.request.method !== 'GET') return;
 
-  // index.html / ルート → Network First（常に最新を優先、失敗時はキャッシュ）
-  if (url.pathname === '/' || url.pathname.endsWith('app.html')) {
+  // HTML / 記事カードJS → Network First（常に最新を優先、失敗時はキャッシュ）
+  // 記事一覧は共通JSで描画するため、古いキャッシュを先に返さない。
+  if (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('/article-widgets.js')) {
     event.respondWith(networkFirst(event.request));
     return;
   }
