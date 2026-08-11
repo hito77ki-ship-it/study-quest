@@ -205,7 +205,9 @@ const ARTICLES = {
   'toeic-600.html':                {label:'TOEIC',            title:'TOEIC 600点の勉強法・突破スケジュール', thumb:'images/toeic-600-strategy-map.svg'},
 };
 
-/* ── サムネイル HTML（thumb が無い記事はカテゴリ名のプレースホルダにフォールバック） ── */
+/* ── サムネイル HTML（カードは記事固有の生成画像を最優先にする） ── */
+Object.keys(ARTICLES).forEach(file => { ARTICLES[file].file = file; });
+
 function escapeAttr(value){
   return String(value || '').replace(/[&<>"']/g, ch => ({
     '&':'&amp;',
@@ -218,13 +220,26 @@ function escapeAttr(value){
 
 function thumbHTML(a, cls){
   const c = cls || 'sq-thumb';
-  if(a && a.thumb){
+  const slug = a?.file?.replace(/\.html$/, '');
+  const generatedThumb = slug ? `images/article-thumbnails/${slug}.jpg` : '';
+  const src = generatedThumb || a?.thumb;
+  if(src){
     const alt = `${a.title || a.label || 'Study Quest'} の記事サムネイル`;
-    return `<img class="${c}" src="${a.thumb}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async" width="320" height="180">`;
+    const fallback = generatedThumb && a?.thumb ? ` data-sq-thumb-fallback="${escapeAttr(a.thumb)}"` : '';
+    return `<img class="${c}" src="${escapeAttr(src)}"${fallback} alt="${escapeAttr(alt)}" loading="lazy" decoding="async" width="640" height="360">`;
   }
   const label = (a && a.label) ? a.label : 'Study Quest';
   return `<div class="${c} ${c}--ph">${label}</div>`;
 }
+
+document.addEventListener('error', event => {
+  const img = event.target;
+  if(!(img instanceof HTMLImageElement)) return;
+  const fallback = img.dataset.sqThumbFallback;
+  if(!fallback || img.dataset.sqThumbFallbackApplied) return;
+  img.dataset.sqThumbFallbackApplied = 'true';
+  img.src = fallback;
+}, true);
 
 const CATS = {
   'IT・技術系':      {color:'#10B981', files:['itp.html','fe.html','ap.html','mos.html']},
