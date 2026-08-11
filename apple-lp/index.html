@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>トレカ＆ゲーム あっぷる｜今福鶴見・初心者にやさしいカードショップ</title>
+<meta name="description" content="大阪市城東区今福東（今福鶴見駅エリア）のトレカ＆ゲームショップ「あっぷる」。ポケカ・遊戯王・デュエマなど大会をほぼ毎日開催。在庫検索タブレットと対戦スペース完備。今月の大会予定は公式ブログで公開中。11:00〜21:00、月曜定休。">
+<meta property="og:title" content="トレカ＆ゲーム あっぷる｜今福鶴見のカードショップ">
+<meta property="og:description" content="初心者・お子さま歓迎。在庫検索タブレットと対戦スペースがあります。今月の大会予定は公式ブログで公開中。">
+<meta property="og:type" content="website">
+<link rel="icon" href="images/logo-apple.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          apple: {
+            red:   '#C8102E',
+            dred:  '#A00D25',
+            green: '#15803D',
+            dgreen:'#116331',
+            mint:  '#F0FDF4',
+          }
+        },
+        fontFamily: {
+          sans: ['"Hiragino Kaku Gothic ProN"','"Hiragino Sans"','"Noto Sans JP"','Meiryo','sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { -webkit-tap-highlight-color: transparent; }
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform .2s ease; }
+</style>
+</head>
+
+<body class="font-sans bg-white text-slate-800 antialiased">
+
+<!-- ============================================
+     1. 固定ヘッダー（PCはナビ表示）
+     ============================================ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-6">
+
+    <a href="#top" class="flex items-center gap-2.5 shrink-0">
+      <img src="images/logo-apple.png" alt="トレカ＆ゲーム あっぷる ロゴ" class="w-10 h-10 rounded-full object-cover">
+      <span class="leading-tight">
+        <span class="block font-black text-[15px] tracking-tight">トレカ＆ゲーム あっぷる</span>
+        <span class="hidden sm:block text-[11px] text-slate-500">大阪市城東区・今福鶴見</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-7 text-[14px] font-bold text-slate-600">
+      <a href="#reasons" class="hover:text-apple-red transition">選ばれる理由</a>
+      <a href="#titles" class="hover:text-apple-red transition">取扱タイトル</a>
+      <a href="#kaitori" class="hover:text-apple-red transition">買取</a>
+      <a href="#events" class="hover:text-apple-red transition">大会・ルール</a>
+      <a href="#faq" class="hover:text-apple-red transition">よくある質問</a>
+      <a href="#access" class="hover:text-apple-red transition">アクセス</a>
+    </nav>
+
+    <div class="flex items-center gap-2 shrink-0">
+      <a href="tel:0669343769"
+         class="inline-flex items-center bg-apple-red hover:bg-apple-dred text-white text-[13px] md:text-[14px] font-bold rounded-full px-4 py-2 transition">
+        <span class="hidden md:inline">06-6934-3769</span>
+        <span class="md:hidden">電話する</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<main id="top" class="pt-16 pb-24 md:pb-20">
+
+<!-- ============================================
+     2. ファーストビュー
+     ============================================ -->
+<section class="bg-apple-mint border-b border-emerald-100">
+  <div class="max-w-7xl mx-auto px-4 pt-10 pb-14 md:py-24">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+
+      <!-- 左：コピー -->
+      <div class="order-2 md:order-1">
+        <ul class="flex flex-wrap gap-2 mb-6">
+          <li class="text-[12px] font-bold bg-white border border-emerald-200 text-apple-green rounded-full px-3.5 py-2 shadow-sm">
+            ● 初心者・お子様歓迎
+          </li>
+          <li class="text-[12px] font-bold bg-white border border-emerald-200 text-apple-green rounded-full px-3.5 py-2 shadow-sm">
+            ● 在庫検索タブレット完備
+          </li>
+          <li class="text-[12px] font-bold bg-white border border-emerald-200 text-apple-green rounded-full px-3.5 py-2 shadow-sm">
+            ● 今福鶴見駅すぐ
+          </li>
+        </ul>
+
+        <h1 class="text-[28px] md:text-[42px] leading-[1.4] font-black tracking-tight text-slate-900">
+          今福鶴見で愛される、<br>
+          <span class="text-apple-red">初心者に一番やさしい</span><br>
+          カードショップ
+        </h1>
+
+        <p class="mt-6 text-[15px] md:text-[16px] leading-relaxed text-slate-600">
+          「小学生の息子にも優しく教えてくれた」と口コミでご好評をいただいています。<br class="hidden md:block">
+          ルールが分からなくても、カードの名前が出てこなくても大丈夫。<br class="hidden md:block">
+          分からないことを聞ける、アットホームなお店です。
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-3">
+          <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener"
+             class="flex items-center justify-center bg-apple-red hover:bg-apple-dred text-white font-bold text-[16px] rounded-2xl py-4 shadow-lg hover:shadow-xl active:scale-[.98] transition">
+            今月の大会予定を見る
+          </a>
+          <a href="#access"
+             class="flex items-center justify-center bg-white hover:bg-emerald-50 text-apple-green border-2 border-apple-green font-bold text-[16px] rounded-2xl py-4 shadow-sm hover:shadow-md active:scale-[.98] transition">
+            アクセス・営業時間
+          </a>
+        </div>
+
+        <dl class="mt-8 grid grid-cols-3 gap-3 text-center">
+          <div class="bg-white border border-emerald-100 rounded-xl py-3 shadow-sm">
+            <dt class="text-[11px] text-slate-500">営業時間</dt>
+            <dd class="text-[15px] font-black text-slate-900 mt-1">11:00-21:00</dd>
+          </div>
+          <div class="bg-white border border-emerald-100 rounded-xl py-3 shadow-sm">
+            <dt class="text-[11px] text-slate-500">定休日</dt>
+            <dd class="text-[15px] font-black text-apple-red mt-1">月曜日</dd>
+          </div>
+          <div class="bg-white border border-emerald-100 rounded-xl py-3 shadow-sm">
+            <dt class="text-[11px] text-slate-500">対戦スペース</dt>
+            <dd class="text-[15px] font-black text-slate-900 mt-1">20:30まで</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- 右：アイキャッチ -->
+      <div class="order-1 md:order-2 relative">
+        <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/3] md:aspect-[5/4] bg-white">
+          <img src="images/shop-interior.jpg"
+               alt="カードが並ぶ棚と対戦テーブルのある店内"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-4 left-4 md:-left-6 bg-white rounded-2xl shadow-lg border border-slate-100 px-4 py-3">
+          <p class="text-yellow-500 text-[15px] leading-none">★★★★☆</p>
+          <p class="mt-1.5 text-[13px] font-bold text-slate-700">Googleマップ 3.7<span class="text-[11px] font-normal opacity-70">（75件）</span></p>
+        </div>
+        <p class="mt-7 text-[11px] text-slate-400 text-right leading-relaxed">
+          ※画像は生成AIによるイメージです。実際の店舗とは異なる場合があります。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     3. 選ばれる3つの理由
+     ============================================ -->
+<section id="reasons" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-[24px] md:text-[34px] font-black leading-snug text-slate-900">
+        あっぷるが選ばれる、3つの理由
+      </h2>
+      <div class="w-14 h-1 bg-apple-red rounded-full mx-auto mt-5"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 理由01 -->
+      <article class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+        <div class="relative h-48">
+          <img src="images/shop-family.jpg" alt="スタッフが親子にカードの説明をしている様子" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 bg-apple-red text-white text-[11px] font-black rounded-lg px-2.5 py-1.5">01</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-[19px] font-bold leading-snug mb-3">お子さんも初心者の方も、遠慮なくどうぞ</h3>
+          <p class="text-[15px] leading-relaxed text-slate-600 flex-1">
+            「小学生の息子にも優しく教えてくれた」「初心者の質問にも丁寧に答えてくれる」。
+            口コミでいちばん多くいただくのが、こうしたお声です。
+            ルールが分からない、カードの名前が思い出せない。そのままで構いません。
+            <strong class="text-apple-red">分からないことを聞ける場所</strong>でありたいと思っています。
+          </p>
+          <p class="mt-4 text-[11px] text-slate-400 leading-relaxed">
+            ※画像は生成AIによるイメージです。実際の店舗とは異なる場合があります。
+          </p>
+        </div>
+      </article>
+
+      <!-- 理由02 -->
+      <article class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+        <div class="relative h-48">
+          <img src="images/shop-tablet.jpg" alt="カウンターのタブレットで在庫を検索している様子" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 bg-apple-green text-white text-[11px] font-black rounded-lg px-2.5 py-1.5">02</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-[19px] font-bold leading-snug mb-3">在庫は、タブレットで探せます</h3>
+          <p class="text-[15px] leading-relaxed text-slate-600">
+            店内に<strong class="text-apple-green">在庫検索用のタブレット</strong>を置いています。
+            カード名を入れれば、在庫の有無がその場で分かります。
+            店内を何周も歩き回ったり、忙しそうな店員を呼び止めたりしなくて済みます。
+          </p>
+          <p class="mt-4 text-[13px] bg-apple-mint text-apple-dgreen rounded-xl px-3.5 py-2.5 leading-relaxed flex-1">
+            デッキレシピを見ながら、足りないカードをまとめて探すのにも向いています。
+          </p>
+          <p class="mt-4 text-[11px] text-slate-400 leading-relaxed">
+            ※画像は生成AIによるイメージです。実際の店舗とは異なる場合があります。
+          </p>
+        </div>
+      </article>
+
+      <!-- 理由03 -->
+      <article class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col md:col-span-2 lg:col-span-1">
+        <div class="relative h-48">
+          <img src="images/shop-interior.jpg" alt="対戦テーブルが並ぶ店内の様子" class="w-full h-full object-cover object-left">
+          <span class="absolute top-3 left-3 bg-apple-red text-white text-[11px] font-black rounded-lg px-2.5 py-1.5">03</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-[19px] font-bold leading-snug mb-3">対戦スペース完備。大会予定はブログで</h3>
+          <p class="text-[15px] leading-relaxed text-slate-600 flex-1">
+            ゆったり座れる対戦スペースを用意しています（ご利用は20:30まで）。買ったその場でデッキを試せます。
+            大会の予定は、月の前半・後半に分けて公式ブログで公開しています。来店前に見ていただくと確実です。
+          </p>
+          <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener"
+             class="mt-4 inline-flex text-sm font-bold text-apple-green border-b-2 border-apple-green/40 pb-0.5 self-start">
+            公式ブログで大会予定を見る
+          </a>
+          <p class="mt-4 text-[11px] text-slate-400 leading-relaxed">
+            ※画像は生成AIによるイメージです。実際の店舗とは異なる場合があります。
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     4. 取扱タイトル
+     ============================================ -->
+<section id="titles" class="bg-apple-mint py-16 md:py-24 border-y border-emerald-100">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-[24px] md:text-[34px] font-black leading-snug text-slate-900">取り扱いタイトル</h2>
+      <div class="w-14 h-1 bg-apple-green rounded-full mx-auto mt-5"></div>
+      <p class="mt-6 text-[15px] md:text-[16px] leading-relaxed text-slate-600 max-w-2xl mx-auto">
+        シングルカード、パック、BOXを置いています。下記のタイトルは大会も開催しています。
+      </p>
+    </div>
+
+    <!-- ロゴ枠 -->
+    <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/pokemon.png" alt="ポケモンカードゲーム" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">ポケモンカードゲーム</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/yugioh.png" alt="遊戯王OCG" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">遊戯王OCG</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/duelmasters.png" alt="デュエル・マスターズ" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">デュエル・マスターズ</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/onepiece.png" alt="ONE PIECEカードゲーム" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">ONE PIECEカードゲーム</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/dragonball.png" alt="ドラゴンボールスーパーカードゲーム フュージョンワールド" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">ドラゴンボール フュージョンワールド</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/mtg.png" alt="マジック：ザ・ギャザリング" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">Magic: The Gathering</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/gundam.png" alt="ガンダムカードゲーム" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">ガンダムカードゲーム</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/lorcana.png" alt="ディズニー ロルカナ" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">ディズニー ロルカナ</p>
+      </li>
+      <li class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-3 flex flex-col items-center justify-center gap-2 min-h-[150px]">
+        <img src="images/logos/fab.png" alt="Flesh and Blood" class="w-full max-h-20 object-contain">
+        <p class="text-[11px] font-bold text-slate-500 text-center leading-tight">Flesh and Blood</p>
+      </li>
+      <li class="bg-apple-mint border border-emerald-200 rounded-2xl p-5 flex flex-col items-center justify-center gap-2 min-h-[140px] text-center">
+        <p class="font-black text-[15px] text-apple-green">ゲームソフト・本体</p>
+        <p class="text-[12px] text-slate-600 leading-relaxed">販売・買取も<br>承っています</p>
+      </li>
+    </ul>
+
+    <!-- サービス -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+      <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-5">
+        <p class="font-bold text-[16px] mb-2">■ シングルカード</p>
+        <p class="text-[14px] leading-relaxed text-slate-600">販売と買取。査定は無料、1枚からお持ちいただけます。</p>
+      </div>
+      <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-5">
+        <p class="font-bold text-[16px] mb-2">■ パック・BOX</p>
+        <p class="text-[14px] leading-relaxed text-slate-600">最新弾のパック、BOX、スタートデッキを置いています。</p>
+      </div>
+      <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-5">
+        <p class="font-bold text-[16px] mb-2">■ サプライ品</p>
+        <p class="text-[14px] leading-relaxed text-slate-600">スリーブ、デッキケース、ストレージ、プレイマットなど。</p>
+      </div>
+      <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-5">
+        <p class="font-bold text-[16px] mb-2">■ ゲームソフト・本体</p>
+        <p class="text-[14px] leading-relaxed text-slate-600">販売と買取。カードと一緒にお持ちいただけます。</p>
+      </div>
+    </div>
+
+    <p class="mt-6 text-[13px] text-slate-500 leading-relaxed">
+      ※ 在庫状況や取り扱いは時期によって変わります。お探しのものは店頭のタブレット、またはお電話でご確認ください。<br>
+      ※ 各タイトルのロゴ・名称は、それぞれの権利者に帰属します。
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================
+     5. 買取について
+     ============================================ -->
+<section id="kaitori" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-[24px] md:text-[34px] font-black leading-snug text-slate-900">カードを売りたいとき</h2>
+      <div class="w-14 h-1 bg-apple-green rounded-full mx-auto mt-5"></div>
+      <p class="mt-6 text-[15px] md:text-[16px] leading-relaxed text-slate-600 max-w-2xl mx-auto">
+        買取金額は、カードの状態と相場によって1枚ずつ変わります。
+        そのため<strong class="text-slate-800">店頭で実物を見てから、その場でお伝えしています。</strong>
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-6">
+        <p class="text-[11px] font-bold text-apple-green mb-2">■ STEP 1</p>
+        <h3 class="font-bold text-[18px] leading-snug mb-3">そのままお持ちください</h3>
+        <p class="text-[15px] leading-relaxed text-slate-600">
+          1枚からお持ちいただけます。ファイルやストレージのままで構いません。
+          まとまった枚数のときは、事前にお電話いただけると助かります。
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-6">
+        <p class="text-[11px] font-bold text-apple-green mb-2">■ STEP 2</p>
+        <h3 class="font-bold text-[18px] leading-snug mb-3">その場で無料査定</h3>
+        <p class="text-[15px] leading-relaxed text-slate-600">
+          スタッフが1枚ずつ状態と相場を確認して、金額をお伝えします。
+          <strong class="text-apple-green">査定は無料</strong>です。金額を聞いてから、売る・売らないをお決めいただけます。
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-100 shadow-sm hover:shadow-md transition rounded-2xl p-6">
+        <p class="text-[11px] font-bold text-apple-green mb-2">■ STEP 3</p>
+        <h3 class="font-bold text-[18px] leading-snug mb-3">現金でお支払い</h3>
+        <p class="text-[15px] leading-relaxed text-slate-600">
+          金額にご納得いただけたら、その場で現金をお渡しします。
+          ゲームソフトや本体も、カードと一緒にお持ちいただけます。
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-6 bg-apple-mint border border-emerald-100 rounded-2xl p-6 grid md:grid-cols-3 gap-5 items-center">
+      <p class="md:col-span-2 text-[15px] leading-relaxed text-slate-700">
+        <strong>特定のカードについて、事前に金額の目安を知りたい場合はお電話ください。</strong><br>
+        <span class="text-[14px] text-slate-600">お電話でお伝えする金額は目安です。実物のキズ・反り・日焼けや相場の動きによって、店頭での最終金額が変わることがあります。</span>
+      </p>
+      <a href="tel:0669343769"
+         class="flex items-center justify-center bg-apple-red hover:bg-apple-dred text-white font-bold text-[16px] rounded-2xl py-4 shadow-sm hover:shadow-md active:scale-[.98] transition">
+        買取のご相談は 06-6934-3769
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     6. 大会案内・ルール＆ブログ連携
+     ※ 日程は毎月変わります。更新の必要がある箇所です
+     ============================================ -->
+<section id="events" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-[24px] md:text-[34px] font-black leading-snug text-slate-900">大会案内と、参加のルール</h2>
+      <div class="w-14 h-1 bg-apple-red rounded-full mx-auto mt-5"></div>
+      <p class="mt-6 text-[15px] md:text-[16px] leading-relaxed text-slate-600 max-w-2xl mx-auto">
+        平日の夕方も、休日の昼も、店内では何かしらの大会が動いています。
+        1回だけの参加も、見学だけでも構いません。
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- あっぷるCS -->
+      <div class="lg:col-span-2 self-start bg-white border-2 border-apple-red rounded-2xl overflow-hidden shadow-sm">
+        <div class="bg-apple-red text-white px-6 py-4">
+          <p class="text-[11px] font-bold text-white/80 mb-1">■ 今月いちばん大きな大会</p>
+          <p class="font-black text-[19px] md:text-[22px] leading-snug">デュエルマスターズ あっぷるCS</p>
+        </div>
+        <div class="p-6 grid md:grid-cols-2 gap-6">
+          <dl class="text-[15px] border border-slate-100 rounded-2xl overflow-hidden self-start">
+            <div class="flex bg-slate-50 px-4 py-3">
+              <dt class="w-16 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">日時</dt>
+              <dd class="font-bold">8月11日（火・祝）<br><span class="font-normal text-[14px]">受付 12:00〜13:00</span></dd>
+            </div>
+            <div class="flex border-t border-slate-100 px-4 py-3">
+              <dt class="w-16 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">定員</dt>
+              <dd>64名<br><span class="text-[13px] text-slate-500">予選5回戦、決勝トーナメント4回戦</span></dd>
+            </div>
+            <div class="flex border-t border-slate-100 px-4 py-3">
+              <dt class="w-16 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">形式</dt>
+              <dd>オリジナル</dd>
+            </div>
+            <div class="flex border-t border-slate-100 px-4 py-3">
+              <dt class="w-16 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">参加費</dt>
+              <dd class="font-black text-apple-red text-[19px]">1,000円</dd>
+            </div>
+            <div class="flex border-t border-slate-100 px-4 py-3">
+              <dt class="w-16 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">優勝</dt>
+              <dd><strong>10,000円分のシングルチケット</strong><br><span class="text-[14px]">＋ 公認優勝プロモ</span></dd>
+            </div>
+          </dl>
+
+          <div>
+            <div class="bg-rose-50 rounded-2xl px-5 py-4 text-[14px] leading-relaxed text-apple-dred">
+              <p class="font-bold mb-2.5">■ ご参加前にご確認ください</p>
+              <ul class="space-y-2">
+                <li>● お申し込みは公式HPの参加表明機能からお願いします</li>
+                <li>● <strong>事前のお申し込みが優先です。</strong>当日は空き枠がない場合、ご参加いただけないことがあります</li>
+                <li>● <strong>進行にスマホを使います。</strong>必ずお持ちください</li>
+                <li>● 参加人数によって、プロモの配布数と上位賞の金額は変わります</li>
+              </ul>
+            </div>
+            <p class="mt-3 text-[12px] text-slate-500 leading-relaxed">
+              ※ 上位賞の詳細は、公式デュエマHPのCS大会日程に記載されています。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ブログ導線 -->
+      <div class="grid gap-6 content-start">
+        <div class="bg-apple-mint border border-emerald-100 rounded-2xl p-6">
+          <p class="text-[11px] font-bold text-apple-green mb-2">■ 月2回更新</p>
+          <h3 class="font-black text-[19px] leading-snug mb-3">今月の大会予定は、公式ブログで公開中</h3>
+          <p class="text-[15px] leading-relaxed text-slate-700">
+            月の前半・後半に分けて、その期間の大会予定をまとめて掲載しています。
+            発売記念大会やCSなどの特別な大会も、こちらで告知しています。
+          </p>
+          <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener"
+             class="mt-5 flex items-center justify-center bg-apple-red hover:bg-apple-dred text-white font-black text-[16px] rounded-2xl py-4 shadow-lg hover:shadow-xl active:scale-[.98] transition">
+            公式ブログで大会予定を見る
+          </a>
+        </div>
+
+        <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-6">
+          <h3 class="font-bold text-[17px] mb-3">■ 大会に出るのが初めての方へ</h3>
+          <p class="text-[15px] leading-relaxed text-slate-600">
+            参加費無料の大会や、新弾の発売記念大会は、はじめての方でも出やすい回です。
+            分からないことがあれば、その場でスタッフにお声がけください。ルールの確認からお手伝いします。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 鉛筆 -->
+    <div class="mt-6 bg-white border-2 border-apple-red rounded-2xl overflow-hidden shadow-sm">
+      <div class="bg-apple-red text-white px-6 py-3 font-black text-[16px]">
+        ■ 大会に出る日は、鉛筆をお持ちください
+      </div>
+      <div class="p-6 grid md:grid-cols-2 gap-5 items-center">
+        <p class="text-[15px] leading-relaxed text-slate-700">
+          大会にご参加いただく際、エントリーシートの記入に
+          <strong class="text-apple-red">鉛筆（またはシャープペンシル）が必要</strong>です。
+          店舗での貸し出しはしておりませんので、ご自身でお持ちいただくようお願いします。
+        </p>
+        <p class="text-[14px] bg-rose-50 text-apple-dred rounded-xl px-4 py-3.5 leading-relaxed">
+          当日「筆記用具がなくて受付できない」というケースが実際にあります。デッキケースに1本入れておくと安心です。
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+      <!-- 受付 -->
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition p-6">
+        <h3 class="font-bold text-[18px] mb-5">■ 当日の受付について</h3>
+        <ol class="space-y-5">
+          <li class="flex gap-3">
+            <span class="shrink-0 w-14 h-8 rounded-lg bg-apple-green text-white grid place-items-center font-black text-[12px]">30分前</span>
+            <p class="text-[15px] leading-relaxed">受付を始めます。<strong>これより早くお越しいただいても、受付はできません。</strong></p>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-14 h-8 rounded-lg bg-apple-green text-white grid place-items-center font-black text-[12px]">15分前</span>
+            <p class="text-[15px] leading-relaxed"><strong>ご予約の方は、この時刻までにご来店ください。</strong>間に合わない場合、お席をお譲りすることがあります。</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-14 h-8 rounded-lg bg-apple-red text-white grid place-items-center font-black text-[12px]">開始</span>
+            <p class="text-[15px] leading-relaxed">対戦開始です。</p>
+          </li>
+        </ol>
+        <p class="mt-5 text-[13px] bg-rose-50 text-apple-dred rounded-xl px-4 py-3 leading-relaxed">
+          ご予約の方が優先です。当日の飛び入り参加は、定員に空きがある場合のみとなります。
+        </p>
+      </div>
+
+      <!-- 持ち物 -->
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition p-6">
+        <h3 class="font-bold text-[18px] mb-5">■ 大会当日の持ち物</h3>
+        <ul class="space-y-3 text-[15px]">
+          <li class="flex gap-2"><span class="text-apple-red font-black">●</span><span><strong>鉛筆、シャープペンシル</strong>（必須。貸し出しはありません）</span></li>
+          <li class="flex gap-2"><span class="text-apple-red font-black">●</span><span><strong>スマホ</strong>（あっぷるCSなど、進行にスマホを使う大会があります）</span></li>
+          <li class="flex gap-2"><span class="text-apple-red font-black">●</span><span>使用するデッキ（レギュレーションをご確認ください）</span></li>
+          <li class="flex gap-2"><span class="text-apple-red font-black">●</span><span>参加費（現金またはPayPay）</span></li>
+          <li class="flex gap-2"><span class="text-slate-300 font-black">●</span><span class="text-slate-600">ダメカン、コインなどのプレイ用アイテム</span></li>
+          <li class="flex gap-2"><span class="text-slate-300 font-black">●</span><span class="text-slate-600">飲み物（こぼれない蓋つきのものが安心です）</span></li>
+        </ul>
+      </div>
+
+      <!-- 申し込み -->
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition p-6 md:col-span-2 lg:col-span-1">
+        <h3 class="font-bold text-[18px] mb-5">■ お申し込み方法</h3>
+        <dl class="text-[15px]">
+          <div class="flex border-t border-slate-100 py-3">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">あっぷるCS</dt>
+            <dd>公式HPの参加表明機能から</dd>
+          </div>
+          <div class="flex border-t border-slate-100 py-3">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">その他の大会</dt>
+            <dd>店頭またはお電話で<br>
+              <a href="tel:0669343769" class="font-bold text-apple-green underline">06-6934-3769</a></dd>
+          </div>
+          <div class="flex border-t border-slate-100 py-3">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">大会日程</dt>
+            <dd>公式ブログでご案内</dd>
+          </div>
+          <div class="flex border-t border-slate-100 py-3">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">対戦スペース</dt>
+            <dd><span class="font-bold text-apple-red">20:30まで</span>のご利用</dd>
+          </div>
+        </dl>
+        <p class="mt-4 text-[13px] leading-relaxed text-slate-500">
+          ※ 大会の内容・参加費・定員は回によって変わります。最新の情報はブログか、お電話でご確認ください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     7-1. FAQ
+     ============================================ -->
+<section id="faq" class="bg-apple-mint py-16 md:py-24 border-y border-emerald-100">
+  <div class="max-w-3xl mx-auto px-4">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-[24px] md:text-[34px] font-black leading-snug text-slate-900">よくいただくご質問</h2>
+      <div class="w-14 h-1 bg-apple-green rounded-full mx-auto mt-5"></div>
+    </div>
+
+    <div class="grid gap-3">
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">店内にトイレはありますか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          申し訳ありません。<strong class="text-apple-red">お客様用のトイレはございません。</strong>
+          長時間の対戦や大会にご参加の際は、お手数ですが来店前にお済ませください。
+          お子さん連れの方は、特にご注意いただけると助かります。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">子どもだけで行っても大丈夫ですか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          はい、小学生のお客さんもよく来てくれています。カード探しやルールの説明はスタッフがお手伝いしますので、はじめてでも大丈夫です。
+          ただ閉店が21:00ですので、帰り道が暗くなる時間帯は、おうちの方とご相談のうえでお越しください。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">大会に出たことがないのですが</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          はじめての方も参加されています。参加費無料の大会や、発売記念の大会は特に気楽に出やすいので、そのあたりから試してみてください。
+          分からないことがあれば、その場でスタッフにお声がけいただければお答えします。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">大会の申し込みはどうすればいいですか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          あっぷるCS（デュエマ）は、公式HPの参加表明機能からお申し込みください。
+          そのほかの大会は、店頭またはお電話でご予約いただけます。
+          いずれも<strong class="text-apple-red">事前のお申し込みが優先</strong>で、当日の飛び入りは空き枠がある場合のみとなります。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">受付は何時から始まりますか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          大会開始の<strong>30分前</strong>からです。それより早くお越しいただいても受付はできませんので、ご注意ください。
+          ご予約の方は、<strong class="text-apple-red">開始15分前まで</strong>にご来店をお願いします。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">買取の金額は先に分かりますか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          買取金額は、カードの状態と相場によって1枚ずつ変わるため、<strong>店頭で実物を確認してからお伝えしています。</strong>
+          査定は無料です。金額を聞いてから、売る・売らないをお決めいただけます。
+          特定のカードについて事前に知りたい場合は、お電話（<a href="tel:0669343769" class="text-apple-green font-bold underline">06-6934-3769</a>）でお問い合わせください。
+          詳しくは<a href="#kaitori" class="text-apple-green font-bold underline">カードを売りたいとき</a>をご覧ください。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">欲しいカードの在庫を知りたいのですが</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          店内の在庫検索用タブレットで、その場で確認できます。
+          お急ぎのときは、お電話（<a href="tel:0669343769" class="text-apple-green font-bold underline">06-6934-3769</a>）でもお問い合わせいただけます。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">キャッシュレス決済は使えますか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          現金のほか、<strong class="text-apple-green">PayPay</strong>がご利用いただけます。
+          そのほかの決済方法については、お手数ですが店頭かお電話でご確認ください。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer px-5 py-4">
+          <span class="font-bold text-[15px] leading-snug">大会の予定はどこで見られますか</span>
+          <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-apple-green text-white grid place-items-center text-lg leading-none font-light">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-[15px] leading-relaxed text-slate-600 border-t border-slate-100 pt-4">
+          <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener" class="text-apple-green font-bold underline">公式ブログ</a>
+          に、月の前半・後半それぞれの大会予定をまとめて掲載しています。
+          新商品の入荷状況については、お手数ですが店頭かお電話でご確認ください。
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     7-2. 店舗概要・アクセス
+     ============================================ -->
+<section id="access" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-[24px] md:text-[34px] font-black leading-snug text-slate-900">店舗情報・アクセス</h2>
+      <div class="w-14 h-1 bg-apple-red rounded-full mx-auto mt-5"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div class="aspect-[4/3] lg:h-full lg:min-h-[440px] bg-slate-100">
+          <iframe
+            title="トレカ＆ゲーム あっぷる 地図"
+            src="https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%9F%8E%E6%9D%B1%E5%8C%BA%E4%BB%8A%E7%A6%8F%E6%9D%B11-11-27&output=embed"
+            class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <dl class="text-[15px]">
+          <div class="flex px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">店名</dt>
+            <dd class="font-bold">トレカ＆ゲーム あっぷる</dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">住所</dt>
+            <dd>〒536-0002<br>大阪府大阪市城東区今福東1丁目11-27</dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">最寄駅</dt>
+            <dd>Osaka Metro 長堀鶴見緑地線「今福鶴見駅」<br>
+              <span class="text-[13px] text-slate-400">※ 出口番号と徒歩の所要時間は要差し替え</span></dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">電話</dt>
+            <dd><a href="tel:0669343769" class="font-bold text-apple-green underline">06-6934-3769</a></dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">営業時間</dt>
+            <dd>11:00〜21:00<br>
+              <span class="text-[13px] text-slate-500">※ 対戦スペースのご利用は20:30まで</span></dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">定休日</dt>
+            <dd><span class="font-bold text-apple-red">月曜日</span><br>
+              <span class="text-[13px] text-slate-500">※ 祝日などで変わることがあります</span></dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">お支払い</dt>
+            <dd>現金、PayPay</dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">設備</dt>
+            <dd>在庫検索タブレット、対戦スペース<br>
+              <span class="text-[13px] text-apple-red">※ お客様用のトイレはありません</span></dd>
+          </div>
+          <div class="flex border-t border-slate-100 px-6 py-4">
+            <dt class="w-24 shrink-0 text-slate-500 text-[13px] font-bold pt-0.5">駐車場</dt>
+            <dd class="text-slate-400">※ 要差し替え（有無・近隣コインパーキングの案内）</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6 mt-6">
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <h3 class="font-bold text-[16px] mb-4">■ 曜日別の営業時間</h3>
+        <ul class="text-[14px] divide-y divide-slate-100">
+          <li class="flex justify-between py-2.5"><span>月曜日</span><span class="font-bold text-apple-red">定休日</span></li>
+          <li class="flex justify-between py-2.5"><span>火曜日</span><span>11:00〜21:00</span></li>
+          <li class="flex justify-between py-2.5"><span>水曜日</span><span>11:00〜21:00</span></li>
+          <li class="flex justify-between py-2.5"><span>木曜日</span><span>11:00〜21:00</span></li>
+          <li class="flex justify-between py-2.5"><span>金曜日</span><span>11:00〜21:00</span></li>
+          <li class="flex justify-between py-2.5"><span>土曜日</span><span>11:00〜21:00</span></li>
+          <li class="flex justify-between py-2.5"><span>日曜日</span><span>11:00〜21:00</span></li>
+        </ul>
+        <p class="mt-4 text-[12px] text-slate-500 leading-relaxed">
+          ※ 祝日やイベントの開催日は、時間が変わることがあります。最新の営業状況はGoogleマップかお電話でご確認ください。
+        </p>
+      </div>
+
+      <div class="grid gap-3 content-start">
+        <a href="https://maps.app.goo.gl/fMB2ymh4qyrFcwV8A" target="_blank" rel="noopener"
+           class="flex items-center justify-center bg-apple-green hover:bg-apple-dgreen text-white font-bold text-[16px] rounded-2xl py-4 shadow-sm hover:shadow-md active:scale-[.98] transition">
+          Googleマップでルートを見る
+        </a>
+        <a href="tel:0669343769"
+           class="flex items-center justify-center bg-apple-red hover:bg-apple-dred text-white font-bold text-[16px] rounded-2xl py-4 shadow-sm hover:shadow-md active:scale-[.98] transition">
+          06-6934-3769 に電話する
+        </a>
+        <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener"
+           class="flex items-center justify-center bg-white border-2 border-slate-200 text-slate-700 font-bold text-[16px] rounded-2xl py-4 shadow-sm hover:shadow-md active:scale-[.98] transition">
+          公式ブログを見る
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     クロージング
+     ============================================ -->
+<section class="bg-apple-green text-white py-16 md:py-20">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <p class="text-[15px] md:text-[16px] leading-relaxed text-white/90">
+      カード1枚から、大会デビューまで。<br>
+      今福鶴見のトレカ屋で、お待ちしています。
+    </p>
+    <h2 class="mt-4 text-[22px] md:text-[30px] font-black">まずは、のぞきに来てください</h2>
+    <div class="mt-8 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto">
+      <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener"
+         class="flex items-center justify-center bg-white text-apple-dgreen font-black text-[16px] rounded-2xl py-4 shadow-lg transition">
+        公式ブログを見る
+      </a>
+      <a href="#access"
+         class="flex items-center justify-center bg-apple-red hover:bg-apple-dred text-white font-black text-[16px] rounded-2xl py-4 shadow-lg transition">
+        アクセス・営業時間
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============================================
+     フッター
+     ============================================ -->
+<footer class="bg-slate-900 text-slate-400 text-[13px] py-10 pb-32 md:pb-24">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 items-start">
+    <div>
+      <div class="flex items-center gap-2.5 mb-2">
+        <img src="images/logo-apple.png" alt="" class="w-9 h-9 rounded-full object-cover">
+        <p class="font-bold text-white text-[15px]">トレカ＆ゲーム あっぷる</p>
+      </div>
+      <p class="leading-relaxed">〒536-0002<br>大阪府大阪市城東区今福東1丁目11-27<br>今福鶴見駅エリア</p>
+    </div>
+    <div class="leading-relaxed">
+      <p>TEL 06-6934-3769</p>
+      <p>11:00〜21:00（月曜定休）</p>
+      <p>対戦スペースは20:30まで</p>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-2 font-bold">
+      <a href="#reasons" class="hover:text-white transition">選ばれる理由</a>
+      <a href="#titles" class="hover:text-white transition">取扱タイトル</a>
+      <a href="#kaitori" class="hover:text-white transition">買取</a>
+      <a href="#events" class="hover:text-white transition">大会・ルール</a>
+      <a href="#access" class="hover:text-white transition">アクセス</a>
+      <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener" class="hover:text-white transition">公式ブログ</a>
+    </nav>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 mt-8 space-y-1.5">
+    <p class="text-[12px] text-slate-500">※ 掲載している写真は生成AIによるイメージです。実際の店舗とは異なる場合があります。</p>
+    <p class="text-[12px] text-slate-500">※ 各カードタイトルのロゴ・名称は、それぞれの権利者に帰属します。</p>
+    <p class="text-[12px] text-slate-500">&copy; トレカ＆ゲーム あっぷる</p>
+  </div>
+</footer>
+
+
+<!-- ============================================
+     固定コンタクトバー（PC・スマホ共通）
+     ============================================ -->
+<div class="fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 shadow-[0_-4px_16px_rgba(0,0,0,.08)]">
+  <div class="max-w-7xl mx-auto px-3 md:px-4 py-2.5 md:py-3 flex items-center justify-between gap-3">
+    <p class="hidden md:block text-[14px] font-bold text-slate-700">
+      トレカ＆ゲーム あっぷる｜11:00〜21:00（月曜定休）／大阪市城東区今福東1-11-27
+    </p>
+    <div class="grid grid-cols-2 gap-2 w-full md:w-auto md:flex md:items-center">
+      <a href="https://ameblo.jp/appleimafuku/" target="_blank" rel="noopener"
+         class="flex items-center justify-center bg-white border-2 border-apple-green text-apple-dgreen font-bold text-[14px] md:text-[15px] rounded-xl py-3 md:px-6 active:scale-[.98] transition">
+        今月の大会予定
+      </a>
+      <a href="tel:0669343769"
+         class="flex items-center justify-center bg-apple-red hover:bg-apple-dred text-white font-bold text-[14px] md:text-[15px] rounded-xl py-3 md:px-6 active:scale-[.98] transition">
+        <span class="md:hidden">電話する</span>
+        <span class="hidden md:inline">06-6934-3769 に電話する</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // FAQ：ひとつ開いたら他を閉じる
+  document.querySelectorAll('#faq details').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      document.querySelectorAll('#faq details').forEach(function (o) {
+        if (o !== d) o.open = false;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
