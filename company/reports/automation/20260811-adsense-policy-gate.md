@@ -19,7 +19,7 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - 非収益化指定への広告再混入: **0件**
 - 信頼ページ（運営者・問い合わせ・プライバシー・利用規約）の必須表示・導線: **0件**
 - 3,000字未満かつ広告コードあり: **0本**（内部レビュー候補。Googleの文字数基準ではない）
-- 定型「いいね」CTAを含むArticle: **183本**（独自性の改善残数。違反の自動断定ではない）
+- 定型「いいね」CTAを含むArticle: **173本**（独自性の改善残数。違反の自動断定ではない）
 
 ## 公開停止候補
 
@@ -77,7 +77,6 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - boki2-net-test.html
 - boki2-next-exam.html
 - boki2-noren-vs-fu-no-noren.html
-- boki2-ochita.html
 - boki2-oyoryoku-kabe.html
 - boki2-renketsu-suteru.html
 - boki2-renketsu.html
@@ -107,9 +106,7 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - boki3-nikkei.html
 - boki3-ochita.html
 - boki3-sanpou.html
-- boki3-seisanhyo.html
 - boki3-shisanhyo.html
-- boki3-shohi.html
 - boki3-shohinuriage.html
 - boki3-sonota.html
 - boki3-tegata.html
@@ -123,7 +120,6 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - cpa-kigyoho-kikansekkei.html
 - cpa-subjects.html
 - cpa.html
-- daigakusei-keizai-shikaku.html
 - daigakusei-keizoku.html
 - daigakusei-kojin-jigyo-fuyo.html
 - daigakusei-nenkin.html
@@ -162,7 +158,6 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - ielts.html
 - invoice-2wari-3wari-tokurei.html
 - iryo-jimu.html
-- itp-vs-fe.html
 - itp.html
 - kaigo-fukushi.html
 - kaigo.html
@@ -177,8 +172,6 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - osusume-shikaku.html
 - shakai-fukushi.html
 - shakaijin-benkyou-jikan.html
-- sharoshi-vs-gyosei.html
-- sharoshi-vs-shindanshi.html
 - sharoshi.html
 - shihoshoshi-futoki.html
 - shihoshoshi-kaishaho.html
@@ -195,10 +188,8 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - shikaku-list.html
 - shikaku-women.html
 - shikaku-zasetsu-riyu.html
-- shindanshi.html
 - shukatsu-shikaku.html
 - takken-vs-gyosei.html
-- takken-vs-mansion.html
 - takken.html
 - tenshoku-shikaku.html
 - toefl.html
@@ -213,7 +204,6 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - univ-boki-units.html
 - univ-qualification-strategy.html
 - zeirishi-vs-cpa.html
-- zeirishi.html
 
 ## 運用
 

@@ -9,8 +9,8 @@
 - 対象HTML: 213本（Article: 201本）
 - 構造エラー（h1 / JSON-LD）: **0件**
 - ローカルリンク切れ: **0件**
-- 更新日3面不一致・欠落: **122件**
-- ダークモード配色の静的リスク: **3件**
+- 更新日3面不一致・欠落: **117件**
+- ダークモード配色の静的リスク: **0件**
 - 記事間の制度数値・学習時間の矛盾候補: **1項目**
 
 ## 公開停止候補（機械的に確定できるもの）
@@ -75,7 +75,6 @@
 - boki3-ochita.html: dateModified=2026-07-08 / 表示更新日=なし / sitemap=2026-07-08
 - boki3-sanpou.html: dateModified=2026-07-08 / 表示更新日=2026-07-08 / sitemap=2026-06-27
 - boki3-shisanhyo.html: dateModified=2026-07-01 / 表示更新日=2026-07-01 / sitemap=2026-06-27
-- boki3-shohi.html: dateModified=2026-07-08 / 表示更新日=2026-07-08 / sitemap=2026-06-27
 - boki3-shohinuriage.html: dateModified=2026-07-08 / 表示更新日=2026-07-08 / sitemap=2026-06-27
 - boki3-sonota.html: dateModified=2026-07-08 / 表示更新日=2026-07-08 / sitemap=2026-06-27
 - boki3-tobashi-2kyu.html: dateModified=2026-07-29 / 表示更新日=なし / sitemap=2026-07-29
@@ -88,7 +87,6 @@
 - cpa-dokugaku.html: dateModified=2026-07-31 / 表示更新日=2026-07-31 / sitemap=2026-06-27
 - cpa-subjects.html: dateModified=2026-07-27 / 表示更新日=2026-07-27 / sitemap=2026-07-01
 - cpa.html: dateModified=2026-07-31 / 表示更新日=2026-07-31 / sitemap=2026-06-27
-- daigakusei-keizai-shikaku.html: dateModified=2026-07-04 / 表示更新日=2026-07-04 / sitemap=2026-06-27
 - daigakusei-keizoku.html: dateModified=2026-07-03 / 表示更新日=2026-07-03 / sitemap=2026-06-27
 - daigakusei-shikaku-heiyou.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - dokugaku-shikaku.html: dateModified=2026-07-03 / 表示更新日=2026-07-03 / sitemap=2026-06-27
@@ -115,8 +113,6 @@
 - osusume-shikaku.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - shakai-fukushi.html: dateModified=2026-07-03 / 表示更新日=2026-07-03 / sitemap=2026-06-27
 - shakaijin-benkyou-jikan.html: dateModified=2026-07-03 / 表示更新日=2026-07-03 / sitemap=2026-06-27
-- sharoshi-vs-gyosei.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
-- sharoshi-vs-shindanshi.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - sharoshi.html: dateModified=2026-07-31 / 表示更新日=2026-07-31 / sitemap=2026-06-27
 - shihoshoshi.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - shikaku-20dai.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
@@ -127,7 +123,6 @@
 - shikaku-jinsei-kawaru.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - shikaku-list.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - shikaku-women.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
-- shindanshi.html: dateModified=2026-08-11 / 表示更新日=2026-08-11 / sitemap=2026-06-27
 - shukatsu-shikaku.html: dateModified=2026-07-03 / 表示更新日=2026-07-03 / sitemap=2026-06-27
 - takken-vs-gyosei.html: dateModified=2026-07-29 / 表示更新日=2026-07-29 / sitemap=2026-06-27
 - takken.html: dateModified=2026-07-31 / 表示更新日=2026-07-31 / sitemap=2026-06-27
@@ -146,9 +141,7 @@
 
 静的検出は「白背景とテーマ変数の文字色が同じカード系統にあり、dark上書きを見つけられない」場合だけを出す。実際の適用順・コントラストは実画面で確認する。
 
-- fp3-daigakusei.html:72 .route-step（白背景） × .route-step:72（テーマ追従文字色、dark上書き未検出）
-- fp3.html:77 .topic-card（白背景） × .topic-card__tag:79（テーマ追従文字色、dark上書き未検出）
-- shihoshoshi-roniten.html:25 .card（白背景） × .card span:25（テーマ追従文字色、dark上書き未検出）
+なし
 
 ## 制度数値・学習時間の矛盾候補
 
