@@ -5,7 +5,7 @@
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v14-story-visual-pilot';
+const VERSION = 'sq-v16-personal-recommendations';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 
@@ -64,7 +64,7 @@ self.addEventListener('fetch', event => {
 
   // HTML / 記事カードJS → Network First（常に最新を優先、失敗時はキャッシュ）
   // 記事一覧は共通JSで描画するため、古いキャッシュを先に返さない。
-  if (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('/article-widgets.js')) {
+  if (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('/article-widgets.js') || url.pathname.endsWith('/article-recommendations.js')) {
     event.respondWith(networkFirst(event.request));
     return;
   }
