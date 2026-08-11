@@ -2555,7 +2555,10 @@ function injectArticleInteractionSystem(){
     .sq-mid-cta a,
     .sq-sidebar-cta a,
     .app-cta a,
-    .related-links a{
+    .related-links a,
+    .sq-article-theme-option,
+    .sq-search-btn,
+    details.sq-faq-disclosure > summary{
       -webkit-tap-highlight-color:transparent;
       touch-action:manipulation;
     }
@@ -2620,6 +2623,73 @@ function injectArticleInteractionSystem(){
       will-change:transform;
     }
 
+    .sq-article-theme-group{
+      transition:border-color 150ms ease, box-shadow 150ms ease;
+    }
+    .sq-article-theme-option{
+      position:relative;
+      border:1px solid transparent !important;
+      transform-origin:center;
+      transition:transform 150ms cubic-bezier(.2,.8,.2,1), box-shadow 150ms ease, color 150ms ease, background-color 150ms ease, border-color 150ms ease !important;
+      will-change:transform;
+    }
+    .sq-search-btn{
+      position:relative;
+      border:1px solid transparent !important;
+      transform-origin:left center;
+      transition:transform 150ms cubic-bezier(.2,.8,.2,1), box-shadow 150ms ease, color 150ms ease, background-color 150ms ease, border-color 150ms ease !important;
+      will-change:transform;
+    }
+
+    details.sq-faq-disclosure{
+      position:relative;
+      background:linear-gradient(105deg, var(--sq-surface-soft), var(--sq-surface-strong)) !important;
+      border-color:var(--sq-border-strong) !important;
+      transform-origin:left top;
+      transition:transform 160ms cubic-bezier(.2,.8,.2,1), border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+    details.sq-faq-disclosure > summary{
+      position:relative;
+      color:var(--sq-text) !important;
+      transition:padding-left 160ms ease, color 160ms ease, background-color 160ms ease;
+    }
+    details.sq-faq-disclosure > summary::-webkit-details-marker{display:none;}
+    details.sq-faq-disclosure > summary::before{
+      content:'';
+      position:absolute;
+      left:0;
+      top:11px;
+      bottom:11px;
+      width:0;
+      background:var(--sq-accent-bright);
+      transition:width 160ms ease;
+    }
+    details.sq-faq-disclosure > summary > span:last-child{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:transform 180ms cubic-bezier(.2,.8,.2,1), color 150ms ease;
+    }
+    details.sq-faq-disclosure[open]{
+      border-color:var(--sq-accent-bright) !important;
+      box-shadow:6px 7px 0 rgba(140,198,63,.16), 0 14px 28px rgba(0,0,0,.10);
+      background:linear-gradient(105deg, var(--sq-surface), var(--sq-surface-strong)) !important;
+    }
+    details.sq-faq-disclosure[open] > summary{
+      color:var(--sq-accent-bright) !important;
+      padding-left:22px !important;
+      background:rgba(140,198,63,.07);
+    }
+    details.sq-faq-disclosure[open] > summary::before{width:3px;}
+    details.sq-faq-disclosure[open] > summary > span:last-child{transform:rotate(45deg);color:var(--sq-accent-bright) !important;}
+    details.sq-faq-disclosure[open] > :not(summary){
+      animation:sq-faq-reveal 180ms cubic-bezier(.2,.8,.2,1) both;
+    }
+    @keyframes sq-faq-reveal{
+      from{opacity:0;transform:translateY(-6px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
     .point-card{
       border-left-width:4px !important;
       transition:border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
@@ -2672,6 +2742,36 @@ function injectArticleInteractionSystem(){
         box-shadow:5px 6px 0 rgba(55,85,20,.42), 0 14px 24px rgba(140,198,63,.20);
         text-decoration:none;
       }
+      .sq-article-theme-group:hover{
+        border-color:var(--sq-accent-bright);
+        box-shadow:4px 4px 0 rgba(140,198,63,.14), 0 12px 26px rgba(0,0,0,.12);
+      }
+      .sq-article-theme-option:hover{
+        transform:translate(-2px,-2px) rotate(-1deg);
+        border-color:var(--sq-accent-bright) !important;
+        color:var(--sq-text);
+        background:var(--sq-highlight-bg);
+        box-shadow:3px 3px 0 rgba(140,198,63,.22);
+      }
+      .sq-article-theme-option.is-active:hover{background:#DDFEAA;color:#0A0A0F;}
+      .sq-search-btn:hover{
+        transform:translate(-2px,-2px) rotate(-1deg);
+        border-color:var(--sq-accent-bright) !important;
+        color:var(--sq-accent-bright);
+        background:var(--sq-highlight-bg);
+        box-shadow:3px 3px 0 rgba(140,198,63,.20);
+      }
+      details.sq-faq-disclosure:hover:not([open]){
+        transform:translate(-3px,-2px) rotate(-.12deg);
+        border-color:var(--sq-accent-bright) !important;
+        box-shadow:4px 5px 0 rgba(140,198,63,.14);
+      }
+      details.sq-faq-disclosure:hover:not([open]) > summary{
+        padding-left:22px !important;
+        color:var(--sq-accent-bright) !important;
+        background:rgba(140,198,63,.06);
+      }
+      details.sq-faq-disclosure:hover:not([open]) > summary::before{width:3px;}
       .point-card:hover{
         transform:translateX(4px);
         border-color:var(--sq-accent-bright) !important;
@@ -2693,6 +2793,14 @@ function injectArticleInteractionSystem(){
       background-position:0 0 !important;
       box-shadow:2px 3px 0 rgba(55,85,20,.35) !important;
     }
+    .sq-article-theme-option.sq-touch-pressed,
+    .sq-search-btn.sq-touch-pressed,
+    details.sq-faq-disclosure > summary.sq-touch-pressed{
+      background:var(--sq-highlight-bg) !important;
+      color:var(--sq-accent-bright) !important;
+      box-shadow:2px 3px 0 rgba(140,198,63,.16) !important;
+    }
+    details.sq-faq-disclosure > summary.sq-touch-pressed{padding-left:22px !important;}
 
     @media (prefers-reduced-motion:reduce){
       .sq-toc a,
@@ -2705,13 +2813,24 @@ function injectArticleInteractionSystem(){
       .sq-mid-cta a,
       .sq-sidebar-cta a,
       .app-cta a,
+      .sq-article-theme-group,
+      .sq-article-theme-option,
+      .sq-search-btn,
+      details.sq-faq-disclosure,
+      details.sq-faq-disclosure > summary,
+      details.sq-faq-disclosure > summary::before,
+      details.sq-faq-disclosure > summary > span:last-child,
       .related-links a,
       .point-card{transition:none !important;}
+      details.sq-faq-disclosure[open] > :not(summary){animation:none !important;}
       .sq-card:hover,
       .sq-side-link:hover,
       .sq-mid-cta a:hover,
       .sq-sidebar-cta a:hover,
       .app-cta a:hover,
+      .sq-article-theme-option:hover,
+      .sq-search-btn:hover,
+      details.sq-faq-disclosure:hover,
       .point-card:hover,
       .sq-touch-pressed{transform:none !important;}
     }
@@ -2724,7 +2843,8 @@ function bindArticleTouchFeedback(){
   const targetSelector = [
     '.sq-toc a', '.sq-toc-inline summary', '.sq-toc-inline a',
     '.sq-card', '.sq-side-link', '.sq-mid-cta a', '.sq-sidebar-cta a',
-    '.app-cta a', '.related-links a'
+    '.app-cta a', '.related-links a', '.sq-article-theme-option',
+    '.sq-search-btn', 'details.sq-faq-disclosure > summary'
   ].join(',');
   const release = () => document.querySelectorAll('.sq-touch-pressed').forEach(target => target.classList.remove('sq-touch-pressed'));
   document.addEventListener('pointerdown', event => {
@@ -2734,6 +2854,15 @@ function bindArticleTouchFeedback(){
   }, {passive:true});
   document.addEventListener('pointerup', release, {passive:true});
   document.addEventListener('pointercancel', release, {passive:true});
+}
+
+function enhanceArticleDisclosures(){
+  document.querySelectorAll('details').forEach(details => {
+    if(details.closest('.sq-toc-inline') || details.classList.contains('sq-faq-disclosure')) return;
+    const summary = details.querySelector(':scope > summary');
+    if(!summary) return;
+    details.classList.add('sq-faq-disclosure');
+  });
 }
 
 function buildThemeToggle(){
@@ -4501,6 +4630,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   injectBreadcrumbLD();
   const layout = buildLayout();
   buildTOC(layout.right);
+  enhanceArticleDisclosures();
   buildBoki2Sidebar(layout.right);
   buildBoki3Sidebar(layout.right);
   buildShihoshoSidebar(layout.right);
