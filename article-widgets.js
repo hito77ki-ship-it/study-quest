@@ -2552,6 +2552,7 @@ function injectArticleInteractionSystem(){
     .sq-toc-inline a,
     .sq-card,
     .sq-side-link,
+    .sq-related-card,
     .sq-mid-cta a,
     .sq-sidebar-cta a,
     .app-cta a,
@@ -2587,12 +2588,14 @@ function injectArticleInteractionSystem(){
     }
 
     .sq-card,
-    .sq-side-link{
+    .sq-side-link,
+    .sq-related-card{
       position:relative;
       transform-origin:left bottom;
       will-change:transform;
     }
-    .sq-card::after{
+    .sq-card::after,
+    .sq-related-card::after{
       content:'読む ↗';
       position:absolute;
       right:10px;
@@ -2609,6 +2612,10 @@ function injectArticleInteractionSystem(){
       transform:translateX(-5px);
       transition:opacity 140ms ease, transform 140ms ease;
       pointer-events:none;
+    }
+    .sq-related-card::after{
+      top:9px;
+      bottom:auto;
     }
 
     .sq-mid-cta a,
@@ -2727,7 +2734,14 @@ function injectArticleInteractionSystem(){
         border-color:var(--sq-accent-bright);
         box-shadow:8px 9px 0 rgba(140,198,63,.20), 0 18px 32px rgba(0,0,0,.12);
       }
-      .sq-card:hover::after{opacity:1;transform:translateX(0);}
+      .sq-card:hover::after,
+      .sq-related-card:hover::after{opacity:1;transform:translateX(0);}
+      .sq-related-card:hover{
+        transform:translate(-3px,-5px) rotate(-.35deg);
+        border-color:var(--sq-accent-bright) !important;
+        box-shadow:8px 9px 0 rgba(140,198,63,.20), 0 18px 32px rgba(0,0,0,.12) !important;
+        text-decoration:none !important;
+      }
       .sq-side-link:hover{
         transform:translate(-2px,-3px) rotate(.15deg);
         border-color:var(--sq-accent-bright);
@@ -2810,6 +2824,8 @@ function injectArticleInteractionSystem(){
       .sq-card,
       .sq-card::after,
       .sq-side-link,
+      .sq-related-card,
+      .sq-related-card::after,
       .sq-mid-cta a,
       .sq-sidebar-cta a,
       .app-cta a,
@@ -2824,6 +2840,7 @@ function injectArticleInteractionSystem(){
       .point-card{transition:none !important;}
       details.sq-faq-disclosure[open] > :not(summary){animation:none !important;}
       .sq-card:hover,
+      .sq-related-card:hover,
       .sq-side-link:hover,
       .sq-mid-cta a:hover,
       .sq-sidebar-cta a:hover,
@@ -2843,7 +2860,7 @@ function bindArticleTouchFeedback(){
   const targetSelector = [
     '.sq-toc a', '.sq-toc-inline summary', '.sq-toc-inline a',
     '.sq-card', '.sq-side-link', '.sq-mid-cta a', '.sq-sidebar-cta a',
-    '.app-cta a', '.related-links a', '.sq-article-theme-option',
+    '.app-cta a', '.related-links a', '.sq-related-card', '.sq-article-theme-option',
     '.sq-search-btn', 'details.sq-faq-disclosure > summary'
   ].join(',');
   const release = () => document.querySelectorAll('.sq-touch-pressed').forEach(target => target.classList.remove('sq-touch-pressed'));
@@ -2862,6 +2879,19 @@ function enhanceArticleDisclosures(){
     const summary = details.querySelector(':scope > summary');
     if(!summary) return;
     details.classList.add('sq-faq-disclosure');
+  });
+}
+
+function enhanceRelatedCards(){
+  const headings = Array.from(document.querySelectorAll('h2'))
+    .filter(heading => heading.textContent.trim().replace(/\s+/g, '').includes('関連記事'));
+  headings.forEach(heading => {
+    const section = heading.closest('section') || heading.parentElement;
+    if(!section) return;
+    section.querySelectorAll('a[href]').forEach(link => {
+      const grid = link.parentElement;
+      if(grid && getComputedStyle(grid).display === 'grid') link.classList.add('sq-related-card');
+    });
   });
 }
 
@@ -4631,6 +4661,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   const layout = buildLayout();
   buildTOC(layout.right);
   enhanceArticleDisclosures();
+  enhanceRelatedCards();
   buildBoki2Sidebar(layout.right);
   buildBoki3Sidebar(layout.right);
   buildShihoshoSidebar(layout.right);
