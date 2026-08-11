@@ -286,6 +286,21 @@ async function loadPopularArticles() {
 const PAGE = location.pathname.split('/').pop() || '';
 const IS_SEARCH_PAGE = PAGE === 'search.html';
 
+/* 本文の判断を補助する、記事固有の情景ビジュアル。
+   文章の代わりではなく、読者が自分の状況を重ねる導入にだけ使う。 */
+const ARTICLE_STORY_VISUALS = {
+  'takken-vs-gyosei.html': {
+    src: 'images/article-story/takken-vs-gyosei-choice.jpg',
+    alt: '家の模型と法律書類を前に、宅建と行政書士の学習ルートを考える学習者',
+    caption: '先に決めるのは「どちらが上か」ではなく、自分が目指す働き方と今かけられる学習時間です。'
+  },
+  'boki2-ochita.html': {
+    src: 'images/article-story/boki2-retry-plan.jpg',
+    alt: '練習問題の答案と学習ノートを前に、簿記2級の再受験計画を立て直す学習者',
+    caption: '不合格直後は、全部をやり直すより先に失点を分けて、次の一手を小さく決めます。'
+  }
+};
+
 /*
  * AdSenseの「独自性が著しく低い」という指摘への第一段階。
  * 記事ごとに編集部の判断基準・運営者の実体験との接点・読者が試す手順を変える。
@@ -1894,6 +1909,12 @@ html[data-theme="dark"] .sq-article-theme-group{
 .sq-chat-row.teacher .sq-chat-bubble{background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.03));border-color:rgba(140,198,63,.3);border-radius:0 12px 12px 12px;}
 html[data-theme="dark"] .sq-chat-bubble{background:rgba(255,255,255,.04);}
 html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140,198,63,.06);}
+/* 記事固有の情景ビジュアル */
+.sq-story-visual{max-width:920px;margin:28px auto 34px;overflow:hidden;background:var(--sq-surface);border:1px solid var(--sq-border-strong);border-radius:16px;box-shadow:var(--sq-shadow);}
+.sq-story-visual img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
+.sq-story-visual figcaption{padding:11px 15px 12px;font-size:12px;line-height:1.75;color:var(--sq-soft);background:linear-gradient(180deg,var(--sq-surface),var(--sq-surface-soft));}
+html[data-theme="dark"] .sq-story-visual{box-shadow:0 16px 34px rgba(0,0,0,.22);}
+@media(max-width:600px){.sq-story-visual{margin:22px 0 28px;border-radius:12px;}.sq-story-visual figcaption{padding:10px 12px;font-size:11px;}}
 /* 著者プロフィール */
 .sq-author{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:14px 18px;margin:24px 0 32px;}
 .sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;box-shadow:0 0 24px rgba(140,198,63,.22);}
@@ -3404,6 +3425,30 @@ function buildOriginalityNote(){
   else container.prepend(box);
 }
 
+/* ── 記事固有の情景ビジュアル ── */
+function buildArticleStoryVisual(){
+  const visual = ARTICLE_STORY_VISUALS[PAGE];
+  const container = document.querySelector('.container');
+  if(!visual || !container || container.querySelector('.sq-story-visual')) return;
+
+  const figure = document.createElement('figure');
+  figure.className = 'sq-story-visual';
+  const image = document.createElement('img');
+  image.src = visual.src;
+  image.alt = visual.alt;
+  image.width = 1200;
+  image.height = 675;
+  image.decoding = 'async';
+  const caption = document.createElement('figcaption');
+  caption.textContent = visual.caption;
+  figure.append(image, caption);
+
+  const firstArticleHeading = Array.from(container.children)
+    .find(element => element.tagName === 'H2');
+  if(firstArticleHeading) firstArticleHeading.insertAdjacentElement('beforebegin', figure);
+  else container.appendChild(figure);
+}
+
 function buildShihoshoSidebar(sidebar){
   if(!sidebar) return;
   if(!SHIHOSHO_FILES.includes(PAGE)) return;
@@ -4265,6 +4310,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildArticleDialogue();
   buildHubReturn();
   buildOriginalityNote();
+  buildArticleStoryVisual();
   buildLearningDiagnostic();
   buildSidebarCTA(layout.right);
   await Promise.all([loadLatestFromSitemap(), loadPopularArticles()]);
