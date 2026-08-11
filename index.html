@@ -937,8 +937,29 @@ section{position:relative;}
   z-index:2;outline:2px solid var(--green);outline-offset:4px;
   box-shadow:8px 8px 0 rgba(200,255,69,.25);
 }
+#articles .articles-sidebar-box:first-child a[href^="#cat-"]{
+  position:relative;isolation:isolate;transform-origin:left center;
+  transition:transform .15s steps(2,end),box-shadow .15s steps(2,end),border-color .15s,filter .15s !important;
+}
+#articles .articles-sidebar-box:first-child a[href^="#cat-"] > span:last-child{
+  transition:transform .15s steps(2,end),color .15s;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+#articles .articles-sidebar-box:nth-child(2) a{
+  display:flex;transform-origin:left center;
+  transition:transform .15s steps(2,end),color .15s,background .15s !important;
+}
+@media(hover:hover) and (pointer:fine){
+  #articles .articles-sidebar-box:first-child a[href^="#cat-"]:hover{
+    z-index:2;border-color:var(--green) !important;filter:brightness(1.2);
+    transform:translate(6px,-2px) rotate(-.35deg);
+    box-shadow:5px 5px 0 rgba(200,255,69,.22);
+  }
+  #articles .articles-sidebar-box:first-child a[href^="#cat-"]:hover > span:last-child{color:var(--green) !important;transform:translateX(5px);}
+  #articles .articles-sidebar-box:nth-child(2) a:hover{color:var(--green);background:rgba(200,255,69,.05);transform:translateX(7px);}
+}
+#articles .articles-sidebar-box a:focus-visible{outline:2px solid var(--green);outline-offset:3px;}
 @media(prefers-reduced-motion:reduce){
-  #articles .lp-thumb-card,#articles .lp-thumb-card::after,#articles .lp-thumb-card .lp-card-thumb,#articles .lp-thumb-card .lp-card-body{transition:none;}
+  #articles .lp-thumb-card,#articles .lp-thumb-card::after,#articles .lp-thumb-card .lp-card-thumb,#articles .lp-thumb-card .lp-card-body,#articles .articles-sidebar-box a,#articles .articles-sidebar-box a > span:last-child{transition:none !important;}
 }
 
 .jobs{background:transparent;}.jobs-cats{gap:44px;}.jobs-cat:nth-child(even){margin-left:11%;}.jobs-cat-label{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:var(--green);}
