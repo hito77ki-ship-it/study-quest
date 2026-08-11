@@ -247,7 +247,7 @@ const CATS = {
   '法律・会計系':    {color:'#8B5CF6', files:['cpa.html','takken.html','gyosei.html','sharoshi.html','zeirishi.html','shihoshoshi.html','mansion.html']},
   '医療・福祉系':    {color:'#EC4899', files:['kaigo.html','nurse.html','hoikushi.html','shakai-fukushi.html','iryo-jimu.html','kaigo-fukushi.html']},
   '技術・工業系':    {color:'#F97316', files:['kiken.html','denki.html','chori.html','kenchiku.html']},
-  '語学・教養系':    {color:'#F59E0B', files:['toeic.html','eiken.html','toefl.html','eiken1.html','kanken.html']},
+  '語学・教養系':    {color:'#F59E0B', files:['toeic.html','eiken.html','eiken4.html','toefl.html','eiken1.html','kanken.html']},
   '継続・ツール':    {color:'#8CC63F', files:['keizoku.html','shakaijin-benkyou-jikan.html','shikaku-app.html']},
 };
 
@@ -1944,6 +1944,17 @@ html[data-theme="dark"] .sq-story-visual{box-shadow:0 16px 34px rgba(0,0,0,.22);
 .sq-card-label{font-size:10px;font-weight:700;color:var(--sq-accent-bright);margin-bottom:5px;letter-spacing:.08em;}
 .sq-card-title{font-size:13px;font-weight:700;color:var(--sq-text);line-height:1.6;}
 .sq-new-badge{display:inline-block;background:#EF4444;color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;margin-left:5px;vertical-align:middle;}
+/* 既存本文の関連記事も、共通カードとして見せる。画像は切り抜かず16:9で全体を表示する。 */
+.sq-related-card-grid{display:grid !important;grid-template-columns:repeat(auto-fill,minmax(210px,1fr)) !important;gap:10px !important;margin:0 0 28px !important;padding:0 !important;list-style:none !important;}
+.sq-related-card-grid > li{list-style:none !important;margin:0 !important;padding:0 !important;}
+.sq-related-card{display:block !important;min-width:0;overflow:hidden;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong)) !important;border:1px solid var(--sq-border-strong) !important;border-radius:12px !important;box-shadow:var(--sq-shadow) !important;color:inherit !important;text-decoration:none !important;transition:box-shadow .2s,border-color .2s,transform .2s !important;}
+.sq-related-card__image{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#fff;border:0;border-bottom:1px solid var(--sq-border-strong);}
+.sq-related-card__body{display:block;padding:12px 14px 14px;}
+.sq-related-card__label{display:block;margin-bottom:5px;color:var(--sq-accent-bright);font-size:10px;font-weight:700;letter-spacing:.08em;line-height:1.35;}
+.sq-related-card__title{display:block;color:var(--sq-text);font-size:13px;font-weight:700;line-height:1.6;}
+.sq-related-card__summary{display:block;margin-top:6px;color:var(--sq-soft);font-size:11px;line-height:1.6;}
+.sq-related-card:hover{box-shadow:0 16px 34px rgba(0,0,0,.16) !important;border-color:rgba(140,198,63,.42) !important;transform:translateY(-2px);text-decoration:none !important;}
+@media(max-width:600px){.sq-related-card-grid{grid-template-columns:1fr !important;gap:8px !important;}.sq-related-card{display:grid !important;grid-template-columns:112px minmax(0,1fr);align-items:stretch;}.sq-related-card__image{width:112px;height:100%;min-height:74px;aspect-ratio:auto;object-fit:contain;border-right:1px solid var(--sq-border-strong);border-bottom:0;}.sq-related-card__body{padding:10px 12px;}.sq-related-card__summary{display:none;}}
 /* リアクション */
 .sq-reaction{padding:32px 24px;background:var(--sq-surface-soft);border-top:1px solid var(--sq-border);border-bottom:1px solid var(--sq-border);}
 .sq-reaction-inner{max-width:800px;margin:0 auto;text-align:center;}
@@ -2552,6 +2563,7 @@ function injectArticleInteractionSystem(){
     .sq-toc-inline a,
     .sq-card,
     .sq-side-link,
+    .sq-related-card,
     .sq-mid-cta a,
     .sq-sidebar-cta a,
     .app-cta a,
@@ -2587,12 +2599,14 @@ function injectArticleInteractionSystem(){
     }
 
     .sq-card,
-    .sq-side-link{
+    .sq-side-link,
+    .sq-related-card{
       position:relative;
       transform-origin:left bottom;
       will-change:transform;
     }
-    .sq-card::after{
+    .sq-card::after,
+    .sq-related-card::after{
       content:'読む ↗';
       position:absolute;
       right:10px;
@@ -2610,6 +2624,7 @@ function injectArticleInteractionSystem(){
       transition:opacity 140ms ease, transform 140ms ease;
       pointer-events:none;
     }
+    .sq-related-card::after{top:9px;bottom:auto;}
 
     .sq-mid-cta a,
     .sq-sidebar-cta a,
@@ -2700,6 +2715,7 @@ function injectArticleInteractionSystem(){
     .sq-toc-inline a:focus-visible,
     .sq-card:focus-visible,
     .sq-side-link:focus-visible,
+    .sq-related-card:focus-visible,
     .sq-mid-cta a:focus-visible,
     .sq-sidebar-cta a:focus-visible,
     .app-cta a:focus-visible,
@@ -2727,7 +2743,8 @@ function injectArticleInteractionSystem(){
         border-color:var(--sq-accent-bright);
         box-shadow:8px 9px 0 rgba(140,198,63,.20), 0 18px 32px rgba(0,0,0,.12);
       }
-      .sq-card:hover::after{opacity:1;transform:translateX(0);}
+      .sq-card:hover::after,
+      .sq-related-card:hover::after{opacity:1;transform:translateX(0);}
       .sq-side-link:hover{
         transform:translate(-2px,-3px) rotate(.15deg);
         border-color:var(--sq-accent-bright);
@@ -2810,6 +2827,8 @@ function injectArticleInteractionSystem(){
       .sq-card,
       .sq-card::after,
       .sq-side-link,
+      .sq-related-card,
+      .sq-related-card::after,
       .sq-mid-cta a,
       .sq-sidebar-cta a,
       .app-cta a,
@@ -2824,6 +2843,7 @@ function injectArticleInteractionSystem(){
       .point-card{transition:none !important;}
       details.sq-faq-disclosure[open] > :not(summary){animation:none !important;}
       .sq-card:hover,
+      .sq-related-card:hover,
       .sq-side-link:hover,
       .sq-mid-cta a:hover,
       .sq-sidebar-cta a:hover,
@@ -2842,7 +2862,7 @@ function bindArticleTouchFeedback(){
   const coarsePointer = window.matchMedia('(hover: none), (pointer: coarse)');
   const targetSelector = [
     '.sq-toc a', '.sq-toc-inline summary', '.sq-toc-inline a',
-    '.sq-card', '.sq-side-link', '.sq-mid-cta a', '.sq-sidebar-cta a',
+    '.sq-card', '.sq-side-link', '.sq-related-card', '.sq-mid-cta a', '.sq-sidebar-cta a',
     '.app-cta a', '.related-links a', '.sq-article-theme-option',
     '.sq-search-btn', 'details.sq-faq-disclosure > summary'
   ].join(',');
@@ -2862,6 +2882,79 @@ function enhanceArticleDisclosures(){
     const summary = details.querySelector(':scope > summary');
     if(!summary) return;
     details.classList.add('sq-faq-disclosure');
+  });
+}
+
+/* ── 本文に元からある関連記事を共通の画像カードにする ── */
+function relatedArticleFile(href){
+  if(!href || href.startsWith('#')) return '';
+  try {
+    const url = new URL(href, location.href);
+    const isLocal = url.origin === location.origin || ['study-quest.net', 'www.study-quest.net'].includes(url.hostname);
+    if(!isLocal) return '';
+    const file = url.pathname.split('/').pop() || '';
+    return file.endsWith('.html') ? file : '';
+  } catch { return ''; }
+}
+
+function relatedSiblingsAfter(heading){
+  const nodes = [];
+  let node = heading.nextElementSibling;
+  while(node && !/^H[1-3]$/.test(node.tagName)){
+    nodes.push(node);
+    node = node.nextElementSibling;
+  }
+  return nodes;
+}
+
+function relatedCardMarkup(article, title, summary){
+  return `${thumbHTML(article, 'sq-related-card__image')}<span class="sq-related-card__body"><span class="sq-related-card__label">${_escHtml(article.label || '関連ガイド')}</span><span class="sq-related-card__title">${_escHtml(title || article.title)}</span>${summary ? `<span class="sq-related-card__summary">${_escHtml(summary)}</span>` : ''}</span>`;
+}
+
+function upgradeRelatedLink(link){
+  const file = relatedArticleFile(link.getAttribute('href'));
+  const article = ARTICLES[file];
+  if(!article || link.dataset.sqRelatedCardReady) return null;
+
+  const sourceCard = link.closest('.related-card');
+  const title = link.textContent.trim() || article.title;
+  const summary = sourceCard && sourceCard !== link
+    ? Array.from(sourceCard.querySelectorAll('p')).map(p => p.textContent.trim()).filter(Boolean).join(' ')
+    : '';
+  let card = link;
+
+  if(sourceCard && sourceCard !== link){
+    card = document.createElement('a');
+    card.href = link.href;
+    sourceCard.replaceWith(card);
+  }
+
+  card.className = 'sq-related-card';
+  card.dataset.sqRelatedCardReady = 'true';
+  card.innerHTML = relatedCardMarkup(article, title, summary);
+  return card;
+}
+
+function enhanceRelatedCards(){
+  const headings = Array.from(document.querySelectorAll('h2, h3, p, div'))
+    .filter(heading => heading.textContent.trim().replace(/\s+/g, '') === '関連記事');
+  const containers = new Set(document.querySelectorAll('.related-links, .related-grid, .related, .related-section'));
+
+  headings.forEach(heading => {
+    relatedSiblingsAfter(heading).forEach(node => containers.add(node));
+  });
+
+  containers.forEach(container => {
+    if(!container || container.dataset.sqRelatedCardsReady) return;
+    const upgraded = Array.from(container.querySelectorAll('a[href]'))
+      .map(upgradeRelatedLink)
+      .filter(Boolean);
+    if(!upgraded.length) return;
+
+    container.dataset.sqRelatedCardsReady = 'true';
+    const list = upgraded[0].closest('ul, ol');
+    if(list && upgraded.every(card => card.closest('ul, ol') === list)) list.classList.add('sq-related-card-grid');
+    if(container.matches('.related-grid, [style*="grid"]')) container.classList.add('sq-related-card-grid');
   });
 }
 
@@ -2888,7 +2981,7 @@ function buildThemeToggle(){
     group.appendChild(btn);
   });
   const cta = navInner.querySelector('.nav-cta');
-  if(cta) navInner.insertBefore(group, cta);
+  if(cta && cta.parentElement) cta.parentElement.insertBefore(group, cta);
   else navInner.appendChild(group);
   syncThemeControls();
 }
@@ -3114,7 +3207,7 @@ function buildSearchModal(){
   btn.title = '記事を検索（/ キー）';
   btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span style="font-size:12px">検索</span>';
   const cta = navInner.querySelector('.nav-cta');
-  if(cta) navInner.insertBefore(btn, cta);
+  if(cta && cta.parentElement) cta.parentElement.insertBefore(btn, cta);
   else navInner.appendChild(btn);
 
   const modal = document.createElement('div');
@@ -4590,7 +4683,7 @@ function trackScrollDepth(){
 }
 
 function trackRelatedArticleClicks(){
-  document.querySelectorAll('.sq-card, .sq-side-link').forEach(a=>{
+  document.querySelectorAll('.sq-card, .sq-side-link, .sq-related-card').forEach(a=>{
     a.addEventListener('click', ()=> _gaEvent('related_article_click', {from: PAGE, to: a.getAttribute('href')}));
   });
 }
@@ -4631,6 +4724,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   const layout = buildLayout();
   buildTOC(layout.right);
   enhanceArticleDisclosures();
+  enhanceRelatedCards();
   buildBoki2Sidebar(layout.right);
   buildBoki3Sidebar(layout.right);
   buildShihoshoSidebar(layout.right);
