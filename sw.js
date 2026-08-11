@@ -5,7 +5,7 @@
    - 外部API(Supabase/Google等): キャッシュしない
    ================================================ */
 
-const VERSION = 'sq-v12-search-details';
+const VERSION = 'sq-v13-search-results-page';
 const STATIC_CACHE = VERSION + '-static';
 const RUNTIME_CACHE = VERSION + '-runtime';
 

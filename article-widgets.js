@@ -284,6 +284,7 @@ async function loadPopularArticles() {
 }
 
 const PAGE = location.pathname.split('/').pop() || '';
+const IS_SEARCH_PAGE = PAGE === 'search.html';
 
 /*
  * AdSenseの「独自性が著しく低い」という指摘への第一段階。
@@ -2070,6 +2071,49 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-search-state{padding:10px 20px;font-size:11px;color:var(--sq-muted);border-bottom:1px solid var(--sq-border);}
 .sq-search-empty{padding:24px;text-align:center;color:var(--sq-muted);font-size:13px;}
 .sq-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--sq-muted);text-align:right;border-top:1px solid var(--sq-border);}
+/* ── 検索結果ページ ── */
+.sq-search-page{min-height:100vh;padding:100px 24px 88px;background:radial-gradient(ellipse 90% 45% at 50% 0%,rgba(140,198,63,.11),transparent 62%),var(--sq-page);}
+.sq-search-page-inner{width:min(900px,100%);margin:0 auto;}
+.sq-search-breadcrumb{display:flex;align-items:center;gap:8px;margin:0 0 28px;color:var(--sq-muted);font-size:12px;}
+.sq-search-breadcrumb a{color:var(--sq-muted);text-decoration:none;}
+.sq-search-breadcrumb a:hover{color:var(--sq-accent-bright);}
+.sq-search-page-hero{padding:30px;border:1px solid var(--sq-border-strong);border-radius:18px;background:linear-gradient(135deg,var(--sq-surface),var(--sq-surface-strong));box-shadow:var(--sq-shadow);}
+.sq-search-page-eyebrow{margin:0 0 8px;color:var(--sq-accent-bright);font-size:11px;font-weight:700;letter-spacing:.16em;}
+.sq-search-page-title{margin:0;color:var(--sq-text);font-size:clamp(25px,4vw,38px);line-height:1.32;letter-spacing:-.03em;}
+.sq-search-page-lead{margin:12px 0 22px;color:var(--sq-soft);font-size:14px;line-height:1.8;}
+.sq-search-page-form{display:flex;gap:10px;}
+.sq-search-page-input{min-width:0;flex:1;padding:14px 16px;border:1px solid var(--sq-border-strong);border-radius:10px;background:var(--sq-surface);color:var(--sq-text);font:500 15px/1.4 inherit;outline:none;}
+.sq-search-page-input:focus{border-color:var(--sq-accent);box-shadow:0 0 0 3px rgba(140,198,63,.16);}
+.sq-search-page-submit{flex:0 0 auto;border:0;border-radius:10px;padding:0 20px;background:var(--sq-accent);color:var(--sq-cta-text);font:700 14px/1 inherit;cursor:pointer;transition:transform .15s,filter .15s;}
+.sq-search-page-submit:hover{filter:brightness(1.04);transform:translateY(-1px);}
+.sq-search-page-note{margin:11px 0 0;color:var(--sq-muted);font-size:11px;}
+.sq-search-page-filters-wrap{position:relative;margin:20px 0 12px;}
+.sq-search-page-filters{display:flex;gap:8px;overflow-x:auto;padding:4px 1px 10px;scrollbar-width:thin;}
+.sq-search-page-results{border:1px solid var(--sq-border);border-radius:14px;overflow:hidden;background:var(--sq-surface);box-shadow:var(--sq-shadow);}
+.sq-search-page-status{margin:0;padding:14px 18px;color:var(--sq-muted);font-size:12px;font-weight:700;background:var(--sq-surface-soft);border-bottom:1px solid var(--sq-border);}
+.sq-search-page-item{gap:18px;padding:16px 18px;}
+.sq-search-page-item .sq-sthumb{width:200px;height:112px;border-radius:10px;}
+.sq-search-page-item .sq-search-title{font-size:16px;line-height:1.55;}
+.sq-search-page-item .sq-search-snippet{font-size:12px;line-height:1.7;margin-top:5px;-webkit-line-clamp:3;}
+.sq-search-page-empty{padding:46px 24px;text-align:center;color:var(--sq-muted);font-size:14px;line-height:1.8;}
+.sq-search-page-empty p{margin:0 0 8px;}
+.sq-search-page-suggestions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px;}
+.sq-search-page-suggestions button{border:1px solid var(--sq-border-strong);border-radius:100px;padding:8px 12px;background:var(--sq-surface-soft);color:var(--sq-text);font:700 12px/1 inherit;cursor:pointer;}
+.sq-search-page-suggestions button:hover{border-color:var(--sq-accent);color:var(--sq-accent-bright);}
+.sq-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+@media(max-width:600px){
+  .sq-search-page{padding:82px 16px 56px;}
+  .sq-search-breadcrumb{margin-bottom:18px;}
+  .sq-search-page-hero{padding:22px 18px;}
+  .sq-search-page-form{flex-direction:column;}
+  .sq-search-page-input{min-height:48px;font-size:16px;}
+  .sq-search-page-submit{min-height:46px;}
+  .sq-search-page-item{gap:12px;padding:12px;}
+  .sq-search-page-item .sq-sthumb{width:112px;height:63px;border-radius:8px;}
+  .sq-search-page-item .sq-search-title{font-size:13px;}
+  .sq-search-page-item .sq-search-snippet{font-size:11px;-webkit-line-clamp:2;}
+  .sq-search-page-item .sq-search-date{font-size:9px;}
+}
 
 /* ── 法人税等・消費税記事 (boki2-hojinzei-shohizei) 固有コンポーネント ダークモード ── */
 /* step-flow (3ステップ) */
@@ -2565,6 +2609,153 @@ function buildReadButton(){
   if(footer) footer.insertAdjacentElement('beforebegin', wrap);
 }
 
+/* ── 記事検索インデックス（モーダルと結果ページで共用） ── */
+const SEARCH_INDEX_STATE = {entries:null, promise:null, ready:false};
+
+function normalizeSearchText(text){
+  return String(text || '').toLowerCase().replace(/\s+/g,' ').trim();
+}
+
+function createSearchExcerpt(text, query){
+  const source = String(text || '').replace(/\s+/g,' ').trim();
+  if(!query) return '';
+  const index = source.toLowerCase().indexOf(query.toLowerCase());
+  if(index < 0) return source.slice(0,70);
+  const start = Math.max(0, index - 28);
+  const end = Math.min(source.length, index + query.length + 46);
+  return `${start ? '...' : ''}${source.slice(start,end)}${end < source.length ? '...' : ''}`;
+}
+
+function createSearchBaseEntries(){
+  return Object.entries(ARTICLES).map(([file, article]) => ({
+    f:file,
+    label:article.label,
+    title:article.title,
+    text:`${article.label} ${article.title}`,
+    description:'',
+    modified:'',
+    normalized:normalizeSearchText(`${article.label} ${article.title}`),
+    loaded:false
+  }));
+}
+
+function findSearchModifiedDate(value){
+  if(Array.isArray(value)){
+    for(const item of value){
+      const date = findSearchModifiedDate(item);
+      if(date) return date;
+    }
+    return '';
+  }
+  if(!value || typeof value !== 'object') return '';
+  const direct = String(value.dateModified || '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
+  if(direct) return direct;
+  for(const item of Object.values(value)){
+    const date = findSearchModifiedDate(item);
+    if(date) return date;
+  }
+  return '';
+}
+
+function extractSearchArticleData(html){
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const description = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || '').replace(/\s+/g,' ').trim();
+  let modified = '';
+  doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+    if(modified) return;
+    try { modified = findSearchModifiedDate(JSON.parse(script.textContent || '')); } catch {}
+  });
+  doc.querySelectorAll('script,style,nav,footer,svg').forEach(element => element.remove());
+  const main = doc.querySelector('main,.container,article') || doc.body;
+  return {
+    description,
+    modified,
+    text:`${description} ${main.textContent || ''}`.replace(/\s+/g,' ').trim().slice(0,12000)
+  };
+}
+
+function formatSearchModifiedDate(value){
+  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!match) return '';
+  return `最終更新 ${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
+}
+
+function ensureArticleSearchIndex(){
+  if(SEARCH_INDEX_STATE.ready && SEARCH_INDEX_STATE.entries) return Promise.resolve(SEARCH_INDEX_STATE.entries);
+  if(SEARCH_INDEX_STATE.promise) return SEARCH_INDEX_STATE.promise;
+  if(SEARCH_INDEX_STATE.entries) return Promise.resolve(SEARCH_INDEX_STATE.entries);
+
+  SEARCH_INDEX_STATE.entries = createSearchBaseEntries();
+  SEARCH_INDEX_STATE.promise = Promise.all(SEARCH_INDEX_STATE.entries.map(async item => {
+    const cacheKey = `sq_article_search_v2_${item.f}`;
+    try{
+      let data = null;
+      const cached = sessionStorage.getItem(cacheKey);
+      if(cached){
+        try {
+          const parsed = JSON.parse(cached);
+          if(parsed && typeof parsed.text === 'string') data = parsed;
+        } catch {}
+      }
+      if(!data){
+        data = extractSearchArticleData(await (await fetch(item.f, {cache:'force-cache'})).text());
+        try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch {}
+      }
+      item.description = data.description || '';
+      item.modified = data.modified || '';
+      item.text = `${item.label} ${item.title} ${data.text}`;
+      item.normalized = normalizeSearchText(item.text);
+      item.loaded = true;
+    }catch{
+      item.loaded = false;
+    }
+    return item;
+  })).then(() => {
+    SEARCH_INDEX_STATE.ready = true;
+    return SEARCH_INDEX_STATE.entries;
+  });
+  return SEARCH_INDEX_STATE.promise;
+}
+
+function getSearchCategoryLabels(){
+  const labels = [...new Set(Object.values(ARTICLES).map(article => article.label).filter(Boolean))];
+  const priority = ['簿記3級','簿記2級','簿記1級','司法書士','FP2級','公認会計士','資格比較','まとめ','勉強継続'];
+  return labels.sort((a,b) => {
+    const ai = priority.indexOf(a);
+    const bi = priority.indexOf(b);
+    if(ai >= 0 || bi >= 0) return (ai >= 0 ? ai : 999) - (bi >= 0 ? bi : 999);
+    return a.localeCompare(b, 'ja');
+  });
+}
+
+function getSearchEntries(rawQuery, label='all'){
+  const query = normalizeSearchText(rawQuery);
+  const entries = SEARCH_INDEX_STATE.entries || createSearchBaseEntries();
+  const scoped = label === 'all' ? entries : entries.filter(item => item.label === label);
+  const filtered = query === '' ? scoped : scoped.filter(item => item.normalized.includes(query));
+  const sorted = filtered.slice().sort((a,b) => {
+    if(query === '') return 0;
+    const aTitle = normalizeSearchText(`${a.label} ${a.title}`).includes(query) ? 1 : 0;
+    const bTitle = normalizeSearchText(`${b.label} ${b.title}`).includes(query) ? 1 : 0;
+    return bTitle - aTitle;
+  });
+  return {query, entries:sorted, loading:!!(SEARCH_INDEX_STATE.entries && !SEARCH_INDEX_STATE.ready)};
+}
+
+function searchCardHTML(item, rawQuery, extraClass=''){
+  const snippet = rawQuery ? createSearchExcerpt(item.text, rawQuery) : '';
+  const detail = snippet || item.description;
+  const modified = formatSearchModifiedDate(item.modified);
+  return `<a href="${item.f}" class="sq-search-item${item.f===PAGE?' sq-search-item--current':''}${extraClass ? ` ${extraClass}` : ''}">
+    ${thumbHTML(ARTICLES[item.f], 'sq-sthumb')}
+    <span class="sq-search-content">
+      <span class="sq-search-meta"><span class="sq-search-label">${_escHtml(item.label)}</span>${modified ? `<time class="sq-search-date" datetime="${_escHtml(item.modified)}">${_escHtml(modified)}</time>` : ''}</span>
+      <span class="sq-search-title">${_escHtml(item.title)}</span>
+      ${detail ? `<span class="sq-search-snippet${snippet ? '' : ' sq-search-summary'}">${_escHtml(detail)}</span>` : ''}
+    </span>
+  </a>`;
+}
+
 /* ── 検索モーダル ── */
 function buildSearchModal(){
   const navInner = document.querySelector('.nav-inner');
@@ -2581,122 +2772,15 @@ function buildSearchModal(){
   const modal = document.createElement('div');
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
-  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters-wrap"><div class="sq-search-filters"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">カテゴリ絞り込み・本文検索対応　　Esc で閉じる　　/ キーで開く</div></div>';
+  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters-wrap"><div class="sq-search-filters"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
   const filters= modal.querySelector('.sq-search-filters');
   const results= modal.querySelector('.sq-search-results');
-  let searchIndex = null;
-  let indexPromise = null;
-  let indexReady = false;
   let selectedLabel = 'all';
-
-  const normalize = text => String(text || '').toLowerCase().replace(/\s+/g,' ').trim();
-  const excerpt = (text, q) => {
-    const source = String(text || '').replace(/\s+/g,' ').trim();
-    if(!q) return '';
-    const lower = source.toLowerCase();
-    const idx = lower.indexOf(q.toLowerCase());
-    if(idx < 0) return source.slice(0,70);
-    const start = Math.max(0, idx - 28);
-    const end = Math.min(source.length, idx + q.length + 46);
-    return `${start ? '...' : ''}${source.slice(start,end)}${end < source.length ? '...' : ''}`;
-  };
-  const baseEntries = () => Object.entries(ARTICLES).map(([f,a]) => ({
-    f,
-    label: a.label,
-    title: a.title,
-    text: `${a.label} ${a.title}`,
-    description: '',
-    modified: '',
-    normalized: normalize(`${a.label} ${a.title}`),
-    loaded: false
-  }));
-  const findModifiedDate = value => {
-    if(Array.isArray(value)){
-      for(const item of value){
-        const date = findModifiedDate(item);
-        if(date) return date;
-      }
-      return '';
-    }
-    if(!value || typeof value !== 'object') return '';
-    const direct = String(value.dateModified || '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
-    if(direct) return direct;
-    for(const item of Object.values(value)){
-      const date = findModifiedDate(item);
-      if(date) return date;
-    }
-    return '';
-  };
-  const extractArticleData = html => {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    const description = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || '').replace(/\s+/g,' ').trim();
-    let modified = '';
-    doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
-      if(modified) return;
-      try { modified = findModifiedDate(JSON.parse(script.textContent || '')); } catch {}
-    });
-    doc.querySelectorAll('script,style,nav,footer,svg').forEach(el => el.remove());
-    const main = doc.querySelector('main,.container,article') || doc.body;
-    return {
-      description,
-      modified,
-      text: `${description} ${main.textContent || ''}`.replace(/\s+/g,' ').trim().slice(0,12000)
-    };
-  };
-  const formatModifiedDate = value => {
-    const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    if(!match) return '';
-    return `最終更新 ${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
-  };
-  const ensureSearchIndex = () => {
-    if(indexReady && searchIndex) return Promise.resolve(searchIndex);
-    if(indexPromise) return indexPromise;
-    if(searchIndex) return Promise.resolve(searchIndex);
-    searchIndex = baseEntries();
-    indexPromise = Promise.all(searchIndex.map(async item => {
-      const cacheKey = `sq_article_search_v2_${item.f}`;
-      try{
-        let data = null;
-        const cached = sessionStorage.getItem(cacheKey);
-        if(cached){
-          try {
-            const parsed = JSON.parse(cached);
-            if(parsed && typeof parsed.text === 'string') data = parsed;
-          } catch {}
-        }
-        if(!data){
-          data = extractArticleData(await (await fetch(item.f, {cache:'force-cache'})).text());
-          try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch {}
-        }
-        item.description = data.description || '';
-        item.modified = data.modified || '';
-        item.text = `${item.label} ${item.title} ${data.text}`;
-        item.normalized = normalize(item.text);
-        item.loaded = true;
-      }catch(e){
-        item.loaded = false;
-      }
-      return item;
-    })).then(() => {
-      indexReady = true;
-      return searchIndex;
-    });
-    return indexPromise;
-  };
-  const categoryLabels = () => {
-    const labels = [...new Set(Object.values(ARTICLES).map(a => a.label).filter(Boolean))];
-    const priority = ['簿記3級','簿記2級','簿記1級','司法書士','FP2級','公認会計士','資格比較','まとめ','勉強継続'];
-    return labels.sort((a,b)=>{
-      const ai = priority.indexOf(a), bi = priority.indexOf(b);
-      if(ai >= 0 || bi >= 0) return (ai >= 0 ? ai : 999) - (bi >= 0 ? bi : 999);
-      return a.localeCompare(b, 'ja');
-    });
-  };
   function renderFilters(){
-    const labels = categoryLabels();
+    const labels = getSearchCategoryLabels();
     filters.innerHTML = [
       `<button type="button" class="sq-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
       ...labels.map(label => `<button type="button" class="sq-search-chip${selectedLabel===label?' active':''}" data-label="${_escHtml(label)}">${_escHtml(label)}</button>`)
@@ -2710,52 +2794,39 @@ function buildSearchModal(){
     selectedLabel='all';
     renderFilters();
     render('');
-    ensureSearchIndex().then(()=>render(input.value));
+    ensureArticleSearchIndex().then(()=>render(input.value));
   }
   function closeModal(){ modal.classList.remove('open'); }
 
   function render(q){
-    const query = normalize(q);
-    const entries = searchIndex || baseEntries();
-    const scoped = selectedLabel === 'all' ? entries : entries.filter(item => item.label === selectedLabel);
-    const filtered = query === ''
-      ? scoped
-      : scoped.filter(item => item.normalized.includes(query));
-    if(!filtered.length && selectedLabel !== 'all'){
+    const {entries, loading} = getSearchEntries(q, selectedLabel);
+    if(!entries.length && selectedLabel !== 'all'){
       results.innerHTML=`<div class="sq-search-empty">「${_escHtml(selectedLabel)}」内に一致する記事はありませんでした</div>`;
       return;
     }
-    if(!filtered.length){
+    if(!entries.length){
       results.innerHTML=`<div class="sq-search-empty">「${_escHtml(q)}」に一致する記事はありませんでした</div>`;
       return;
     }
-    const sorted = filtered.slice().sort((a,b) => {
-      if(query === '') return 0;
-      const aTitle = normalize(`${a.label} ${a.title}`).includes(query) ? 1 : 0;
-      const bTitle = normalize(`${b.label} ${b.title}`).includes(query) ? 1 : 0;
-      return bTitle - aTitle;
-    });
-    const loading = searchIndex && !indexReady
+    const loadingMarkup = loading
       ? '<div class="sq-search-state">本文を読み込みながら検索しています...</div>'
       : '';
-    results.innerHTML = loading + sorted.slice(0,10).map(item => {
-      const snip = query ? excerpt(item.text, q) : '';
-      const detail = snip || item.description;
-      const modified = formatModifiedDate(item.modified);
-      return `<a href="${item.f}" class="sq-search-item${item.f===PAGE?' sq-search-item--current':''}">
-        ${thumbHTML(ARTICLES[item.f], 'sq-sthumb')}
-        <span class="sq-search-content">
-          <span class="sq-search-meta"><span class="sq-search-label">${_escHtml(item.label)}</span>${modified ? `<time class="sq-search-date" datetime="${_escHtml(item.modified)}">${_escHtml(modified)}</time>` : ''}</span>
-          <span class="sq-search-title">${_escHtml(item.title)}</span>
-          ${detail ? `<span class="sq-search-snippet${snip ? '' : ' sq-search-summary'}">${_escHtml(detail)}</span>` : ''}
-        </span>
-      </a>`
-    }).join('');
+    results.innerHTML = loadingMarkup + entries.slice(0,10).map(item => searchCardHTML(item, q)).join('');
   }
 
   btn.addEventListener('click', openModal);
   modal.querySelector('.sq-search-overlay').addEventListener('click', closeModal);
   input.addEventListener('input', ()=>render(input.value));
+  input.addEventListener('keydown', event => {
+    if(event.key !== 'Enter' || event.isComposing) return;
+    event.preventDefault();
+    const params = new URLSearchParams();
+    const query = input.value.trim();
+    if(query) params.set('q', query);
+    if(selectedLabel !== 'all') params.set('category', selectedLabel);
+    _gaEvent('search_results_open', {from:PAGE, query, category:selectedLabel});
+    location.href = `search.html${params.toString() ? `?${params}` : ''}`;
+  });
   filters.addEventListener('click', e=>{
     const chip = e.target.closest('.sq-search-chip');
     if(!chip) return;
@@ -2768,6 +2839,126 @@ function buildSearchModal(){
     if(e.key==='/' && !modal.classList.contains('open') && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){
       e.preventDefault(); openModal();
     }
+  });
+}
+
+/* ── Enterで開く検索結果ページ ── */
+function buildSearchResultsPage(){
+  const page = document.getElementById('sq-search-page');
+  if(!page) return;
+
+  const params = new URLSearchParams(location.search);
+  let selectedLabel = params.get('category') || 'all';
+  if(selectedLabel !== 'all' && !getSearchCategoryLabels().includes(selectedLabel)) selectedLabel = 'all';
+  const initialQuery = params.get('q') || '';
+
+  page.innerHTML = `
+    <div class="sq-search-page-inner">
+      <div class="sq-search-breadcrumb" aria-label="パンくず"><a href="index.html">ホーム</a><span>›</span><span>記事検索</span></div>
+      <header class="sq-search-page-hero">
+        <p class="sq-search-page-eyebrow">ARTICLE SEARCH</p>
+        <h1 class="sq-search-page-title"></h1>
+        <p class="sq-search-page-lead"></p>
+        <form class="sq-search-page-form" role="search">
+          <label class="sq-visually-hidden" for="sq-search-page-input">記事を検索</label>
+          <input id="sq-search-page-input" class="sq-search-page-input" type="search" autocomplete="off" placeholder="資格名・試験名・論点を入力 例：簿記2級、抵当権、相続">
+          <button class="sq-search-page-submit" type="submit">検索する</button>
+        </form>
+        <p class="sq-search-page-note">タイトルだけでなく、記事本文・要約からも探せます。</p>
+      </header>
+      <div class="sq-search-page-filters-wrap"><div class="sq-search-page-filters" aria-label="カテゴリで絞り込む"></div></div>
+      <section class="sq-search-page-results" aria-live="polite">
+        <p class="sq-search-page-status"></p>
+        <div class="sq-search-page-list"></div>
+      </section>
+    </div>
+  `;
+
+  const input = page.querySelector('.sq-search-page-input');
+  const form = page.querySelector('.sq-search-page-form');
+  const filters = page.querySelector('.sq-search-page-filters');
+  const title = page.querySelector('.sq-search-page-title');
+  const lead = page.querySelector('.sq-search-page-lead');
+  const status = page.querySelector('.sq-search-page-status');
+  const list = page.querySelector('.sq-search-page-list');
+  input.value = initialQuery;
+
+  function updateURL(){
+    const next = new URLSearchParams();
+    const query = input.value.trim();
+    if(query) next.set('q', query);
+    if(selectedLabel !== 'all') next.set('category', selectedLabel);
+    const suffix = next.toString();
+    history.replaceState(null, '', `search.html${suffix ? `?${suffix}` : ''}`);
+  }
+
+  function renderFilters(){
+    const labels = getSearchCategoryLabels();
+    filters.innerHTML = [
+      `<button type="button" class="sq-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
+      ...labels.map(label => `<button type="button" class="sq-search-chip${selectedLabel===label?' active':''}" data-label="${_escHtml(label)}">${_escHtml(label)}</button>`)
+    ].join('');
+  }
+
+  function render(){
+    const rawQuery = input.value.trim();
+    const {entries, loading} = getSearchEntries(rawQuery, selectedLabel);
+    const scopeName = selectedLabel === 'all' ? '' : `「${selectedLabel}」の`;
+
+    title.textContent = rawQuery ? `「${rawQuery}」の検索結果` : (scopeName ? `${scopeName}記事` : '記事を検索');
+    lead.textContent = rawQuery
+      ? '資格の全体像・学習計画・論点解説から、今の疑問に合う記事を選べます。'
+      : '資格名や知りたい論点を入力すると、該当する記事を詳しく紹介します。';
+
+    if(!rawQuery && selectedLabel === 'all'){
+      status.textContent = 'たとえば「簿記2級」「宅建」「英検」「仕訳」などで探せます。';
+      list.innerHTML = `<div class="sq-search-page-empty"><p>探したい言葉を入力してください。</p><div class="sq-search-page-suggestions">${['簿記2級','宅建','英検','勉強時間','仕訳'].map(query => `<button type="button" data-sq-search-query="${_escHtml(query)}">${_escHtml(query)}</button>`).join('')}</div></div>`;
+      return;
+    }
+
+    if(!entries.length){
+      status.textContent = '検索結果 0件';
+      list.innerHTML = `<div class="sq-search-page-empty"><p>${rawQuery ? `「${_escHtml(rawQuery)}」に一致する記事は見つかりませんでした。` : `「${_escHtml(selectedLabel)}」に記事はありませんでした。`}</p><p>資格名を短くするか、関連する論点で試してみてください。</p></div>`;
+      return;
+    }
+
+    status.textContent = `検索結果 ${entries.length}件${loading ? '（本文の一致を追加中）' : ''}`;
+    list.innerHTML = entries.map(item => searchCardHTML(item, rawQuery, 'sq-search-page-item')).join('');
+    list.querySelectorAll('.sq-search-item').forEach(link => {
+      link.addEventListener('click', () => _gaEvent('search_result_click', {query:rawQuery, category:selectedLabel, to:link.getAttribute('href'), from:'search.html'}));
+    });
+  }
+
+  renderFilters();
+  render();
+  if(initialQuery || selectedLabel !== 'all'){
+    ensureArticleSearchIndex().then(render);
+  }
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    updateURL();
+    render();
+    if(input.value.trim() || selectedLabel !== 'all') ensureArticleSearchIndex().then(render);
+    _gaEvent('search_results_submit', {query:input.value.trim(), category:selectedLabel, from:'search.html'});
+  });
+  filters.addEventListener('click', event => {
+    const chip = event.target.closest('.sq-search-chip');
+    if(!chip) return;
+    selectedLabel = chip.dataset.label || 'all';
+    renderFilters();
+    updateURL();
+    render();
+    if(input.value.trim() || selectedLabel !== 'all') ensureArticleSearchIndex().then(render);
+  });
+  list.addEventListener('click', event => {
+    const suggestion = event.target.closest('[data-sq-search-query]');
+    if(!suggestion) return;
+    input.value = suggestion.dataset.sqSearchQuery || '';
+    updateURL();
+    render();
+    ensureArticleSearchIndex().then(render);
+    input.focus();
   });
 }
 
@@ -4053,10 +4244,14 @@ function trackPageView(){
 
 document.addEventListener('DOMContentLoaded', async function(){
   injectGA();
-  trackPageView();
   injectStyles();
-  buildReadProgress();
   buildThemeToggle();
+  if(IS_SEARCH_PAGE){
+    buildSearchResultsPage();
+    return;
+  }
+  trackPageView();
+  buildReadProgress();
   buildSearchModal();
   injectBreadcrumbLD();
   const layout = buildLayout();
