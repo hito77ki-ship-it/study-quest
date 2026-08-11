@@ -1034,6 +1034,63 @@ section{position:relative;}
 
 footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24px,calc((100vw - 1120px)/2));}.footer-inner{max-width:none;align-items:flex-start;gap:16px;}.footer-logo,.footer-links a,.footer-copy{color:var(--ink3);}.footer-links{justify-content:flex-start;}
 
+/* Touch feedback mirrors desktop intent without delaying navigation. */
+@media(hover:none), (pointer:coarse){
+  #articles .lp-thumb-card,
+  #articles .articles-sidebar-box a,
+  #articles .progress-link,
+  .lp-search-btn,
+  .nav-updates{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+
+  #articles .lp-thumb-card.touch-pressed,
+  #articles .lp-thumb-card:active{
+    z-index:2;border-color:var(--green) !important;
+    transform:translate(-2px,-3px) scale(.975) rotate(-.35deg);
+    box-shadow:5px 6px 0 rgba(200,255,69,.22);
+  }
+  #articles .lp-thumb-card.touch-pressed::after,
+  #articles .lp-thumb-card:active::after{opacity:1;transform:translateY(0) rotate(2deg);}
+  #articles .lp-thumb-card.touch-pressed .lp-card-thumb,
+  #articles .lp-thumb-card:active .lp-card-thumb{transform:scale(1.035);}
+
+  #articles .articles-sidebar-box:first-child a[href^="#cat-"].touch-pressed,
+  #articles .articles-sidebar-box:first-child a[href^="#cat-"]:active{
+    border-color:var(--green) !important;
+    transform:translate(4px,-1px) scale(.985);box-shadow:4px 4px 0 rgba(200,255,69,.2);
+  }
+  #articles .articles-sidebar-box:first-child a[href^="#cat-"].touch-pressed > span:last-child,
+  #articles .articles-sidebar-box:first-child a[href^="#cat-"]:active > span:last-child{color:var(--green) !important;transform:translateX(4px);}
+  #articles .articles-sidebar-box:nth-child(2) a.touch-pressed,
+  #articles .articles-sidebar-box:nth-child(2) a:active{color:var(--green);background:rgba(200,255,69,.05);transform:translateX(5px);}
+
+  #articles .progress-link.touch-pressed,
+  #articles .progress-link:active,
+  .lp-search-btn.touch-pressed,
+  .lp-search-btn:active{
+    color:#0A0D09 !important;border-color:var(--green) !important;
+    transform:translate(2px,1px) scale(.96);box-shadow:2px 2px 0 rgba(200,255,69,.22);
+  }
+  #articles .progress-link.touch-pressed::before,
+  #articles .progress-link:active::before,
+  .lp-search-btn.touch-pressed::before,
+  .lp-search-btn:active::before{transform:translateX(0) skewX(0);}
+  .nav-updates.touch-pressed,
+  .nav-updates:active{color:var(--green);transform:translate(2px,1px);}
+  .nav-updates.touch-pressed::after,
+  .nav-updates:active::after{transform:scaleX(1);transform-origin:left;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #articles .lp-thumb-card.touch-pressed,
+  #articles .lp-thumb-card:active,
+  #articles .articles-sidebar-box a.touch-pressed,
+  #articles .articles-sidebar-box a:active,
+  #articles .progress-link.touch-pressed,
+  #articles .progress-link:active,
+  .lp-search-btn.touch-pressed,.lp-search-btn:active,
+  .nav-updates.touch-pressed,.nav-updates:active{transform:none;}
+}
+
 @media(max-width:800px){
   .hero{display:block;min-height:0;padding-top:122px;}.hero::before{display:none;}.hero-copy{padding-bottom:36px;}.hero h1{font-size:clamp(44px,12vw,64px);}.hero-field-note{position:relative;right:auto;bottom:auto;margin-top:36px;}.phones{margin:0 -24px -30px 8vw;padding-top:18px;}.ph.main .pf{width:220px;}.features-grid{grid-template-columns:1fr;gap:46px;}.feat:nth-child(2),.feat:nth-child(3),.jobs-cat:nth-child(even){margin-top:0;margin-left:0;}.showcase-inner{grid-template-columns:1fr;gap:58px;}.showcase-phone-wrap{transform:translateX(0) rotate(-3deg);}.benefit-list,.rm-grid,.faq-inner,.updates-inner,.founder-inner{margin-left:0;}.cta{padding-top:100px;padding-bottom:100px;}.hero-annotation{display:none;}
 }
@@ -3160,6 +3217,32 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       e.preventDefault(); open();
     }
   });
+})();
+</script>
+<script>
+/* Give touch users the same immediate, physical feedback as pointer hover. */
+(function(){
+  const touchQuery = window.matchMedia('(hover: none), (pointer: coarse)');
+  const selector = [
+    '#articles .lp-thumb-card',
+    '#articles .articles-sidebar-box a',
+    '#articles .progress-link',
+    '.lp-search-btn',
+    '.nav-updates'
+  ].join(',');
+
+  function release(el){ el.classList.remove('touch-pressed'); }
+
+  document.addEventListener('pointerdown', event => {
+    if(event.pointerType === 'mouse' || !touchQuery.matches) return;
+    const target = event.target.closest(selector);
+    if(!target) return;
+
+    target.classList.add('touch-pressed');
+    target.addEventListener('pointerup', () => release(target), {once:true});
+    target.addEventListener('pointercancel', () => release(target), {once:true});
+    target.addEventListener('lostpointercapture', () => release(target), {once:true});
+  }, {passive:true});
 })();
 </script>
 </body>
