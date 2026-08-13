@@ -171,11 +171,11 @@ const ARTICLES = {
   'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し', thumb:'images/boki2-ochita-strategy-map.svg'},
   'boki3-cbt-vs-paper.html':       {label:'簿記3級',          title:'簿記3級ネット試験 vs 紙の試験、どっちを選ぶべき？', thumb:'images/boki3-cbt-vs-paper.svg'},
   'boki3-kashitsuke-uriage.html':  {label:'簿記3級',          title:'貸付金と売掛金の違い', thumb:'images/boki3-kashitsuke-uriage-map.svg'},
-  'boki3-next-exam.html':          {label:'簿記3級',          title:'日商簿記3級の次の試験日と最速合格ロードマップ'},
+  'boki3-next-exam.html':          {label:'簿記3級',          title:'日商簿記3級の次の試験日と最速合格ロードマップ', thumb:'images/boki3-start-roadmap.svg'},
   'boki3-next.html':               {label:'簿記3級',          title:'簿記3級の次に取る資格は？FP3級 vs 簿記2級の選び方', thumb:'images/boki3-next-route-map.svg'},
   'boki3-ochita.html':             {label:'簿記3級',          title:'簿記3級に落ちた後の立て直し', thumb:'images/boki3-ochita-revenge-map.svg'},
   'boki3-progress.html':           {label:'簿記3級',          title:'簿記3級 学習進捗チェック'},
-  'cpa-akirameta-shukatsu.html':   {label:'会計士の進路',     title:'公認会計士を諦めた後の就活はどうする？'},
+  'cpa-akirameta-shukatsu.html':   {label:'会計士の進路',     title:'公認会計士を諦めた後の就活はどうする？', thumb:'images/cpa-shukatsu-convert-map.svg'},
   'cpa-akirameta-zeirishi-boki1.html': {label:'会計士の進路', title:'公認会計士を諦めた後：税理士 vs 日商簿記1級', thumb:'images/cpa-akirameta-zeirishi-boki1-map.svg'},
   'cpa-daigakusei-kakugo.html':    {label:'公認会計士',       title:'大学生が公認会計士試験に挑む前に知るべきリアル', thumb:'images/cpa-kakugo-time-map.svg'},
   'cpa-dokugaku.html':             {label:'公認会計士',       title:'公認会計士の独学は可能か？', thumb:'images/cpa-dokugaku-map.svg'},
@@ -184,7 +184,7 @@ const ARTICLES = {
   'daigakusei-kojin-jigyo-fuyo.html': {label:'大学生向け',    title:'大学生の個人事業主、扶養の壁はアルバイトと違う？', thumb:'images/daigakusei-kojin-jigyo-fuyo-diagram.svg'},
   'daigakusei-keizai-shikaku.html': {label:'大学生向け',      title:'経済・経営学部の大学生が在学中に取るべき資格ランキング', thumb:'images/keizai-shikaku-docking-map.svg'},
   'daigakusei-nenkin.html':        {label:'大学生向け',       title:'大学生の国民年金「学生納付特例制度」とは？', thumb:'images/student-nenkin-strategy-map.svg'},
-  'daigakusei-zeikin-yougo.html':  {label:'大学生向け',       title:'学生のための税金用語まるわかりガイド'},
+  'daigakusei-zeikin-yougo.html':  {label:'大学生向け',       title:'学生のための税金用語まるわかりガイド', thumb:'images/tax-calculation-flow-map.svg'},
   'denshi-chobo-hozon-ho.html':    {label:'会計・実務',       title:'電子帳簿保存法をわかりやすく解説'},
   'invoice-2wari-3wari-tokurei.html': {label:'会計・実務',    title:'インボイス「2割特例」はいつまで？「3割特例」新設と経過措置', thumb:'images/invoice-special-step-map.svg'},
   'kakutei-shinkoku-okure-bassoku.html': {label:'会計・実務', title:'確定申告が遅れたら・嘘をついたらどうなる？', thumb:'images/tax-penalty-boundary-map.svg'},
@@ -1915,6 +1915,13 @@ html[data-theme="dark"] .sq-chat-row.teacher .sq-chat-bubble{background:rgba(140
 .sq-story-visual figcaption{padding:11px 15px 12px;font-size:12px;line-height:1.75;color:var(--sq-soft);background:linear-gradient(180deg,var(--sq-surface),var(--sq-surface-soft));}
 html[data-theme="dark"] .sq-story-visual{box-shadow:0 16px 34px rgba(0,0,0,.22);}
 @media(max-width:600px){.sq-story-visual{margin:22px 0 28px;border-radius:12px;}.sq-story-visual figcaption{padding:10px 12px;font-size:11px;}}
+/* 記事タイトル直下の要点ビジュアル。カード用画像を、本文を読み始めるための導入としても使う。 */
+.sq-article-hero{max-width:640px;margin:18px 0 24px;overflow:hidden;background:var(--sq-surface);border:1px solid var(--sq-border-strong);border-radius:14px;box-shadow:var(--sq-shadow);}
+.sq-article-hero__eyebrow{display:block;padding:9px 13px 0;color:var(--sq-accent-bright);font-size:10px;font-weight:800;letter-spacing:.12em;line-height:1.4;text-transform:uppercase;}
+.sq-article-hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:var(--sq-surface-strong);margin-top:8px;}
+.sq-article-hero figcaption{padding:10px 13px 12px;color:var(--sq-soft);font-size:12px;line-height:1.65;background:linear-gradient(180deg,var(--sq-surface),var(--sq-surface-soft));}
+html[data-theme="dark"] .sq-article-hero{box-shadow:0 16px 34px rgba(0,0,0,.22);}
+@media(max-width:600px){.sq-article-hero{margin:16px 0 22px;border-radius:12px;}.sq-article-hero__eyebrow{padding:8px 11px 0;font-size:9px;}.sq-article-hero figcaption{padding:9px 11px 10px;font-size:11px;}}
 /* 著者プロフィール */
 .sq-author{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--sq-surface-soft),var(--sq-surface-strong));border:1px solid var(--sq-border-strong);box-shadow:var(--sq-shadow);border-radius:12px;padding:14px 18px;margin:24px 0 32px;}
 .sq-author-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E8F7B8,#8CC63F 55%,#416F14);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;box-shadow:0 0 24px rgba(140,198,63,.22);}
@@ -4170,6 +4177,42 @@ function buildAuthorBox(){
   meta.insertAdjacentElement('afterend', box);
 }
 
+/* ── 記事タイトル直下の要点ビジュアル ── */
+function buildArticleHeroVisual(){
+  const article = ARTICLES[PAGE];
+  const container = document.querySelector('.container');
+  const h1 = container?.querySelector('h1');
+  if(!article || !container || !h1 || container.querySelector('.sq-article-hero')) return;
+
+  const slug = PAGE.replace(/\.html$/, '');
+  if(!slug) return;
+
+  const figure = document.createElement('figure');
+  figure.className = 'sq-article-hero';
+  figure.setAttribute('aria-label', `${article.title}の要点図解`);
+
+  const eyebrow = document.createElement('span');
+  eyebrow.className = 'sq-article-hero__eyebrow';
+  eyebrow.textContent = 'Visual guide';
+
+  const image = document.createElement('img');
+  image.src = `images/article-thumbnails/${slug}.jpg`;
+  image.alt = `${article.title}の要点を図解したサムネイル`;
+  image.width = 640;
+  image.height = 360;
+  image.decoding = 'async';
+  image.fetchPriority = 'high';
+
+  const caption = document.createElement('figcaption');
+  caption.textContent = 'この記事で確認するポイントを、最初に図解でつかめます。';
+  figure.append(eyebrow, image, caption);
+
+  // 著者カードは本文の信頼情報として残し、図解はタイトル直後の入口に置く。
+  const author = container.querySelector('.sq-author');
+  if(author) author.insertAdjacentElement('beforebegin', figure);
+  else h1.insertAdjacentElement('afterend', figure);
+}
+
 /* ── SNSシェアボタン ── */
 function buildShareButtons(){
   const artTitle = ARTICLES[PAGE]?.title || document.title;
@@ -4741,6 +4784,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildLeftSidebar(layout.left);
   injectAdDisclosure();
   buildAuthorBox();
+  buildArticleHeroVisual();
   insertMidCTA();
   buildPrevNextNav();
   buildReadButton();
