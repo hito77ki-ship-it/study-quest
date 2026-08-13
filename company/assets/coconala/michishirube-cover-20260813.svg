@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="490" viewBox="0 0 1500 490" role="img" aria-labelledby="title desc">
+  <title id="title">みちしるべ制作所 ココナラ用カバー画像</title>
+  <desc id="desc">情報を伝わる図解とWebデザインに整える制作者のための、深いネイビーとライムグリーンを基調としたバナー</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080d1b"/>
+      <stop offset="1" stop-color="#111b30"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17243d"/>
+      <stop offset="1" stop-color="#0e1729"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M 38 0H0V38" fill="none" stroke="#9aec43" stroke-opacity=".085" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1500" height="490" fill="url(#bg)"/>
+  <rect width="1500" height="490" fill="url(#grid)"/>
+  <rect x="0" y="0" width="12" height="490" fill="#b8ff3d"/>
+  <path d="M0 415H1500" stroke="#b8ff3d" stroke-opacity=".22"/>
+  <circle cx="1280" cy="40" r="160" fill="#b8ff3d" opacity=".045"/>
+  <circle cx="1280" cy="40" r="112" fill="none" stroke="#b8ff3d" stroke-opacity=".22"/>
+
+  <g font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    <text x="80" y="72" fill="#b8ff3d" font-size="18" font-weight="700" letter-spacing="2.5">MICHISHIRUBE STUDIO / 2026</text>
+    <text x="80" y="155" fill="#f5f7f1" font-size="52" font-weight="800" letter-spacing="-2">図解から、Web体験まで。</text>
+    <rect x="80" y="177" width="515" height="4" fill="#b8ff3d"/>
+    <text x="80" y="222" fill="#c2cad5" font-size="21" font-weight="500">情報を「伝わる形」へ。構成・デザイン・実装を一貫して。</text>
+
+    <g transform="translate(80 278)">
+      <rect width="202" height="92" rx="10" fill="#0b1323" stroke="#354563"/>
+      <text x="18" y="31" fill="#9cacbf" font-size="14" font-weight="700" letter-spacing="1.2">INFORMATION DESIGN</text>
+      <text x="18" y="66" fill="#b8ff3d" font-size="34" font-weight="800">419</text>
+      <text x="19" y="84" fill="#f5f7f1" font-size="13" font-weight="700">図解制作</text>
+    </g>
+    <g transform="translate(298 278)">
+      <rect width="202" height="92" rx="10" fill="#0b1323" stroke="#354563"/>
+      <text x="18" y="31" fill="#9cacbf" font-size="14" font-weight="700" letter-spacing="1.2">WEB PRODUCTION</text>
+      <text x="18" y="66" fill="#b8ff3d" font-size="34" font-weight="800">213</text>
+      <text x="19" y="84" fill="#f5f7f1" font-size="13" font-weight="700">ページ制作</text>
+    </g>
+    <text x="80" y="442" fill="#8998ab" font-size="15" font-weight="600">STRUCTURE  /  VISUAL  /  INTERACTION  /  MOBILE</text>
+  </g>
+
+  <!-- asymmetrical right-side workboard -->
+  <g transform="translate(960 50) rotate(-3 220 190)">
+    <rect x="0" y="0" width="370" height="330" rx="15" fill="#0a1020" stroke="#b8ff3d" stroke-width="2"/>
+    <rect x="0" y="0" width="370" height="39" rx="15" fill="#15223a"/>
+    <circle cx="24" cy="20" r="5" fill="#ff6868"/>
+    <circle cx="42" cy="20" r="5" fill="#ffcb57"/>
+    <circle cx="60" cy="20" r="5" fill="#b8ff3d"/>
+    <text x="89" y="25" fill="#e8edf4" font-family="'Hiragino Sans', sans-serif" font-size="13" font-weight="700">STUDY QUEST / FIELD SYSTEM</text>
+    <g transform="translate(27 67)">
+      <rect width="134" height="97" rx="8" fill="url(#panel)" stroke="#35506c"/>
+      <path d="M18 75V48L42 27L72 45L112 18" fill="none" stroke="#b8ff3d" stroke-width="4"/>
+      <circle cx="112" cy="18" r="5" fill="#b8ff3d" filter="url(#glow)"/>
+      <text x="18" y="23" fill="#cbd5e1" font-family="'Hiragino Sans', sans-serif" font-size="13" font-weight="700">学習の進捗</text>
+    </g>
+    <g transform="translate(181 67)">
+      <rect width="162" height="97" rx="8" fill="#f5f7f1"/>
+      <rect x="13" y="16" width="88" height="9" rx="4.5" fill="#25334b"/>
+      <rect x="13" y="38" width="132" height="7" rx="3.5" fill="#d8e0e9"/>
+      <rect x="13" y="54" width="106" height="7" rx="3.5" fill="#d8e0e9"/>
+      <rect x="13" y="72" width="65" height="10" rx="5" fill="#b8ff3d"/>
+    </g>
+    <g transform="translate(27 187)">
+      <rect width="316" height="112" rx="8" fill="url(#panel)" stroke="#35506c"/>
+      <text x="17" y="28" fill="#b8ff3d" font-family="'Hiragino Sans', sans-serif" font-size="13" font-weight="700">DESIGN NOTE</text>
+      <text x="17" y="57" fill="#f3f6fa" font-family="'Hiragino Sans', sans-serif" font-size="17" font-weight="800">情報を整理し、迷わせない。</text>
+      <text x="17" y="83" fill="#9cacbf" font-family="'Hiragino Sans', sans-serif" font-size="14" font-weight="500">色・余白・動きまで、目的に合わせて設計。</text>
+      <path d="M282 85l17-16m0 0v14m0-14h-14" fill="none" stroke="#b8ff3d" stroke-width="2"/>
+    </g>
+  </g>
+  <g transform="translate(1314 312) rotate(6)">
+    <rect width="118" height="57" rx="5" fill="#b8ff3d"/>
+    <text x="15" y="24" fill="#0b1323" font-family="'Hiragino Sans', sans-serif" font-size="11" font-weight="800">DESIGN × CODE</text>
+    <text x="15" y="42" fill="#0b1323" font-family="'Hiragino Sans', sans-serif" font-size="11" font-weight="800">MOBILE FIRST</text>
+  </g>
+</svg>

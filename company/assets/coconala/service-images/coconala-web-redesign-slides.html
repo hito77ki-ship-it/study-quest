@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ココナラ出品用画像</title>
+<style>
+  :root { --ink:#071017; --panel:#101c28; --line:rgba(193,255,77,.34); --lime:#bcff3f; --paper:#f4f6ef; --muted:#a5b0ba; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#293241; font-family:"Hiragino Sans","Noto Sans JP",sans-serif; }
+  .slide { position:relative; width:1200px; height:900px; overflow:hidden; color:var(--paper); background:var(--ink); isolation:isolate; }
+  .slide::before { content:""; position:absolute; inset:0; z-index:-1; background-image:linear-gradient(rgba(188,255,63,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(188,255,63,.075) 1px,transparent 1px); background-size:44px 44px; }
+  .slide::after { content:""; position:absolute; width:520px; height:520px; right:-205px; top:-170px; border:1px solid rgba(188,255,63,.25); border-radius:50%; box-shadow:0 0 0 58px rgba(188,255,63,.025),0 0 0 116px rgba(188,255,63,.018); z-index:-1; }
+  .topline { position:absolute; top:50px; left:70px; right:70px; display:flex; justify-content:space-between; align-items:center; color:var(--lime); font-size:18px; font-weight:800; letter-spacing:2px; }
+  .logo { display:flex; gap:12px; align-items:center; color:#c9d3dd; letter-spacing:1.4px; font-size:14px; }
+  .mark { width:16px; height:16px; border:3px solid var(--lime); border-radius:50%; position:relative; }
+  .mark::after { content:""; position:absolute; width:16px; height:3px; background:var(--lime); left:10px; top:11px; transform:rotate(-45deg); transform-origin:left center; }
+  h1,h2,p { margin:0; }
+  h1 { position:absolute; left:70px; top:178px; width:710px; font-size:72px; line-height:1.17; letter-spacing:-3px; font-weight:900; }
+  h1 em { color:var(--lime); font-style:normal; }
+  .lead { position:absolute; left:74px; top:390px; width:570px; color:#c0cad2; font-size:25px; line-height:1.65; font-weight:600; }
+  .line { position:absolute; left:70px; top:337px; width:280px; height:6px; background:var(--lime); }
+  .badge { display:inline-flex; align-items:center; gap:10px; border:1px solid var(--line); background:#0b1620; border-radius:999px; padding:12px 17px; font-size:15px; font-weight:800; }
+  .badge b { color:var(--lime); }
+  .metric { position:absolute; display:flex; align-items:center; gap:20px; border:1px solid #314356; background:rgba(13,25,36,.94); border-radius:12px; padding:18px 22px; }
+  .metric strong { color:var(--lime); font-size:41px; line-height:1; }
+  .metric span { color:#dbe3e8; font-size:16px; line-height:1.4; font-weight:700; }
+  .board { position:absolute; right:70px; top:171px; width:415px; height:505px; border:2px solid var(--lime); border-radius:18px; background:#0d1724; transform:rotate(4deg); box-shadow:16px 17px 0 rgba(0,0,0,.38); overflow:hidden; }
+  .browser { height:47px; padding:15px 18px; display:flex; align-items:center; gap:9px; background:#16243a; font-size:14px; font-weight:800; }
+  .dot { width:10px; height:10px; border-radius:50%; background:#ff7770; }.dot:nth-child(2){background:#f4c45b}.dot:nth-child(3){background:var(--lime)} .browser b{margin-left:10px}
+  .mini { position:absolute; left:28px; right:28px; top:82px; height:125px; padding:18px; border:1px solid #354962; border-radius:10px; background:#111f31; }
+  .mini label{display:block;color:var(--lime);font-size:14px;font-weight:800;margin-bottom:14px}.mini .curve{height:54px;border-left:5px solid var(--lime);border-bottom:5px solid var(--lime);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);position:relative}.mini .curve::after{content:"";position:absolute;left:10px;top:19px;width:240px;border-top:5px solid var(--lime);transform:rotate(-20deg);transform-origin:left}.mini .curve::before{content:"";position:absolute;right:-2px;top:2px;width:13px;height:13px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime)}
+  .note { position:absolute; left:28px; right:28px; top:228px; padding:20px; border:1px solid #354962; border-radius:10px; background:#111f31; }.note label{color:var(--lime);font-size:14px;font-weight:800}.note b{display:block;font-size:23px;margin:11px 0}.note p{color:#aebccc;font-size:15px;line-height:1.6}
+  .sticker { position:absolute; right:45px; bottom:63px; padding:13px 19px; color:#081018; background:var(--lime); font-size:14px; font-weight:900; transform:rotate(-8deg); }
+  .footer { position:absolute; left:70px; bottom:54px; color:#8b9aac; font-size:15px; letter-spacing:1.5px; font-weight:700; }
+  .arrow { display:inline-block; color:var(--lime); font-size:26px; transform:translateY(2px); }
+
+  /* Slide 2 & 3 */
+  .slide-title { position:absolute; left:70px; top:137px; font-size:54px; line-height:1.2; letter-spacing:-2px; font-weight:900; }.slide-title em{color:var(--lime);font-style:normal}.slide-sub{position:absolute;left:74px;top:275px;color:#bbc6ce;font-size:22px;line-height:1.6;font-weight:600}.screen-frame{position:absolute;right:78px;top:118px;width:455px;height:676px;border:2px solid var(--lime);border-radius:17px;background:#000;box-shadow:16px 18px 0 rgba(0,0,0,.35);overflow:hidden;transform:rotate(2.2deg)}.screen-frame img{width:100%;height:100%;object-fit:cover;object-position:top}.screen-label{position:absolute;right:452px;top:716px;padding:13px 18px;background:var(--lime);color:#091016;font-size:14px;font-weight:900;transform:rotate(-5deg)}.feature-list{position:absolute;left:70px;top:420px;width:520px}.feature{padding:20px 0;border-top:1px solid var(--line);font-size:21px;font-weight:800;display:flex;gap:17px;align-items:center}.feature i{display:inline-grid;place-items:center;width:28px;height:28px;border:1px solid var(--lime);border-radius:50%;color:var(--lime);font-style:normal;font-size:16px}.feature small{display:block;color:#96a6b2;font-size:15px;font-weight:600;margin-top:6px;line-height:1.5}.desktop{position:absolute;right:56px;top:188px;width:550px;height:448px;border:2px solid var(--lime);border-radius:15px;background:#000;box-shadow:16px 18px 0 rgba(0,0,0,.35);overflow:hidden;transform:rotate(1.8deg)}.desktop::before{content:"";display:block;height:30px;background:#17253b}.desktop img{width:100%;height:418px;object-fit:cover;object-position:top}.desktop-note{position:absolute;right:58px;top:667px;width:535px;border-left:4px solid var(--lime);padding:13px 20px;color:#c1ccd3;font-size:17px;line-height:1.5;background:#0d1923}
+
+  /* slide 4 */
+  .title-wide { position:absolute; left:70px; top:148px; font-size:53px; letter-spacing:-2px; font-weight:900; }.title-wide em{color:var(--lime);font-style:normal}.scope{position:absolute;left:70px;right:70px;top:286px;display:grid;grid-template-columns:1.18fr .82fr;gap:34px}.scope-main{border:1px solid var(--line);background:#0d1720;padding:35px 38px}.scope-main h2{font-size:27px;margin-bottom:28px}.scope-main h2 span{color:var(--lime)}.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.scope-cell{border:1px solid #304257;border-radius:8px;padding:17px;background:#111d2a}.scope-cell b{display:block;color:var(--paper);font-size:18px}.scope-cell small{display:block;color:#9eafbc;line-height:1.5;font-size:14px;margin-top:7px}.scope-side{position:relative;overflow:hidden;border:1px solid var(--line);background:#0e1d19;padding:34px}.scope-side h2{font-size:25px;line-height:1.45}.scope-side p{margin-top:24px;color:#b8c7c5;line-height:1.7;font-size:17px}.scope-side .sticker{bottom:35px;left:34px;right:auto}.mini-card{position:absolute;bottom:0;right:-8px;width:220px;height:155px;border:1px solid var(--lime);background:#111d28;transform:rotate(-7deg);padding:17px}.mini-card b{font-size:16px}.mini-card div{height:7px;background:#718198;margin-top:15px;width:151px}.mini-card div:nth-child(3){width:110px;background:var(--lime)}
+  /* slide 5 */
+  .flow{position:absolute;left:70px;right:70px;top:286px;display:grid;grid-template-columns:repeat(5,1fr);gap:0}.step{position:relative;min-height:305px;border-top:3px solid var(--lime);border-bottom:1px solid var(--line);padding:25px 20px 0;background:linear-gradient(135deg,rgba(22,35,50,.8),rgba(9,17,25,.82));}.step:not(:last-child)::after{content:"→";position:absolute;right:-15px;top:128px;z-index:2;color:#0b1420;background:var(--lime);width:30px;height:30px;display:grid;place-items:center;border-radius:50%;font-size:18px;font-weight:900}.step label{color:var(--lime);font-size:14px;font-weight:900;letter-spacing:1.3px}.step b{display:block;margin-top:20px;font-size:25px;line-height:1.35}.step p{margin-top:17px;color:#b3c0ca;font-size:15px;line-height:1.7;font-weight:600}.promise{position:absolute;left:70px;right:70px;bottom:101px;display:flex;align-items:center;gap:22px;padding:24px 30px;border:1px solid var(--line);background:#0b1620}.promise strong{font-size:22px}.promise span{color:#c2cdd4;font-size:17px}
+</style>
+</head>
+<body>
+  <section class="slide" id="slide-01">
+    <div class="topline"><span>WEB REDESIGN SERVICE</span><span>01 / 05</span></div>
+    <div class="logo"><i class="mark"></i><span>MICHISHIRUBE STUDIO</span></div>
+    <h1>無難なWebを、<br><em>選ばれる体験</em>へ。</h1><div class="line"></div>
+    <p class="lead">色・文字・余白・導線・操作感まで。<br>AI感のある既存サイトを、事業らしい世界観へ再設計します。</p>
+    <div class="metric" style="left:70px;top:560px"><strong>419</strong><span>図解制作<br>情報を整理する力</span></div>
+    <div class="metric" style="left:337px;top:560px"><strong>213</strong><span>ページ制作<br>設計から実装まで</span></div>
+    <div class="board"><div class="browser"><i class="dot"></i><i class="dot"></i><i class="dot"></i><b>STUDY QUEST / FIELD SYSTEM</b></div><div class="mini"><label>UI PROGRESS</label><div class="curve"></div></div><div class="note"><label>DESIGN NOTE</label><b>情報を整理し、迷わせない。</b><p>見た目だけでなく、次の行動へ進みやすい設計へ。</p></div></div>
+    <div class="sticker">DESIGN × CODE<br>MOBILE FIRST</div><div class="footer">UI / UX DESIGN &nbsp;•&nbsp; HTML / CSS / JAVASCRIPT</div>
+  </section>
+  <section class="slide" id="slide-02">
+    <div class="topline"><span>ACTUAL PRODUCT SCREEN</span><span>02 / 05</span></div><div class="logo"><i class="mark"></i><span>MICHISHIRUBE STUDIO</span></div>
+    <h1 class="slide-title">実画面で証明する、<br><em>記事を読み進める体験。</em></h1><p class="slide-sub">長い記事でも、見出し・目次・関連導線を整理し、<br>読み終えた後の次の行動まで設計します。</p>
+    <div class="feature-list"><div class="feature"><i>01</i><span>情報の階層を明確に<small>見出し・要約・余白で、読む順番を自然に導きます</small></span></div><div class="feature"><i>02</i><span>関連導線まで一体設計<small>記事を読んだ後も、次に必要な情報へ進みやすく</small></span></div><div class="feature"><i>03</i><span>FAQの開閉にも反応を<small>押せること・開いたことが分かる操作感を設計</small></span></div></div>
+    <div class="screen-frame"><img src="article-faq-screen-20260812.png" alt="Study Quest Web記事のFAQ画面"></div><div class="screen-label">ACTUAL ARTICLE UI <span class="arrow">↗</span></div><div class="footer">CASE STUDY / STUDY QUEST — PERSONAL PRODUCT</div>
+  </section>
+  <section class="slide" id="slide-03">
+    <div class="topline"><span>ACTUAL PRODUCT SCREEN</span><span>03 / 05</span></div><div class="logo"><i class="mark"></i><span>MICHISHIRUBE STUDIO</span></div>
+    <h1 class="slide-title">PCでは、<em>触れた瞬間</em>に<br>次の記事へ導く。</h1><p class="slide-sub">関連記事・カテゴリ・CTAを、<br>読者の流れを止めない導線として設計します。</p>
+    <div class="feature-list" style="top:462px"><div class="feature"><i>↗</i><span>関連記事が次の入口になる<small>記事カードを、単なる一覧ではなく次の行動へ変える</small></span></div><div class="feature"><i>↗</i><span>本文は落ち着かせる<small>すべてを動かさず、操作する場所だけに反応を絞る</small></span></div></div>
+    <div class="desktop"><img src="article-related-screen-20260812.png" alt="Study Quest Web記事の関連記事画面"></div><div class="desktop-note">実績画面：Web記事の導線・関連記事・FAQを再設計 <span class="arrow">↗</span></div><div class="footer">CASE STUDY / STUDY QUEST — PERSONAL PRODUCT</div>
+  </section>
+  <section class="slide" id="slide-04">
+    <div class="topline"><span>SCOPE OF WORK</span><span>04 / 05</span></div><div class="logo"><i class="mark"></i><span>MICHISHIRUBE STUDIO</span></div>
+    <h1 class="title-wide">デザインだけで終わらせない。<br><em>画面の反応まで</em>整えます。</h1>
+    <div class="scope"><div class="scope-main"><h2><span>基本料金</span>に含まれること</h2><div class="scope-grid"><div class="scope-cell"><b>トップページ再設計</b><small>既存サイト・LP 1ページを対象に、情報の優先順位から見直します。</small></div><div class="scope-cell"><b>PC／スマホ対応</b><small>画面ごとの読みやすさ、操作しやすさを設計します。</small></div><div class="scope-cell"><b>静的フロント実装</b><small>HTML／CSS／JavaScriptで、ソース一式を納品します。</small></div><div class="scope-cell"><b>修正 2回まで</b><small>デザイン方針を確認した上で、必要な調整に対応します。</small></div></div></div><div class="scope-side"><h2>こんなサイトを<br>変えたい方へ。</h2><p>AIやテンプレートで作ったが印象に残らない。サービスの強みが画面で伝わらない。そんな既存サイトを、目的に合わせて再設計します。</p><div class="sticker">事前に<br>見積り相談</div><div class="mini-card"><b>STATIC FRONTEND</b><div></div><div></div></div></div></div><div class="footer">LOGO / PHOTO EDITING / SERVER / CMS: PLEASE CONSULT IN ADVANCE</div>
+  </section>
+  <section class="slide" id="slide-05">
+    <div class="topline"><span>HOW WE WORK</span><span>05 / 05</span></div><div class="logo"><i class="mark"></i><span>MICHISHIRUBE STUDIO</span></div>
+    <h1 class="title-wide">いきなり作り込まない。<br><em>方向を揃えてから</em>進めます。</h1>
+    <div class="flow"><div class="step"><label>STEP 01</label><b>見積り相談</b><p>対象ページ、目的、納期、実装環境、素材を確認します。</p></div><div class="step"><label>STEP 02</label><b>課題整理</b><p>現状の課題と、目指す世界観・優先順位を言語化します。</p></div><div class="step"><label>STEP 03</label><b>デザイン提案</b><p>構成とデザインの方向性を共有し、認識を揃えます。</p></div><div class="step"><label>STEP 04</label><b>実装</b><p>PC・スマホの操作感まで含め、静的フロントを実装します。</p></div><div class="step"><label>STEP 05</label><b>修正・納品</b><p>確認後に調整し、HTML／CSS／JavaScript一式を納品します。</p></div></div>
+    <div class="promise"><strong>公開前の情報は、許可なく実績として公開しません。</strong><span>機密情報・管理画面・素材は、取り扱い範囲を確認して進めます。</span></div><div class="footer">PLEASE START WITH A QUOTE CONSULTATION</div>
+  </section>
+</body>
+</html>

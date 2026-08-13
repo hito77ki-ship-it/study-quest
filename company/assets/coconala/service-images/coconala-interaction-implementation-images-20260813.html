@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coconala interaction implementation images</title>
+  <style>
+    :root { --ink:#102d3e; --paper:#f7f3e9; --lime:#b8ef3d; --line:#b9c5ba; --muted:#526572; --coral:#e26d5b; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#dad8d1; font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif; }
+    .slide { position:relative; width:1220px; height:1016px; overflow:hidden; background:var(--paper); color:var(--ink); }
+    .slide + .slide { margin-top:24px; }
+    .photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .wash { position:absolute; inset:0; background:linear-gradient(90deg,rgba(247,243,233,.99) 0%,rgba(247,243,233,.96) 45%,rgba(247,243,233,.54) 67%,rgba(247,243,233,.06) 100%); }
+    .eyebrow { color:#617a2a; font-size:19px; font-weight:900; letter-spacing:.115em; display:flex; gap:13px; align-items:center; }
+    .eyebrow::before { content:""; width:13px; height:13px; background:var(--coral); border:2px solid var(--ink); box-shadow:4px 4px 0 var(--ink); }
+    .hero-copy { position:absolute; top:82px; left:78px; width:600px; }
+    h1 { margin:28px 0 20px; font-size:74px; line-height:1.13; letter-spacing:-.06em; font-weight:900; }
+    h1 mark { color:var(--ink); background:var(--lime); padding:0 .1em .04em; }
+    .lead { width:510px; color:#435864; font-size:24px; line-height:1.65; font-weight:650; }
+    .price { position:absolute; left:78px; bottom:202px; min-width:232px; padding:16px 21px; background:var(--ink); color:#fff; border-left:10px solid var(--lime); }
+    .price small { display:block; color:#d7e1d1; font-size:15px; font-weight:750; }
+    .price strong { display:block; margin-top:3px; font-size:40px; letter-spacing:-.045em; }
+    .tags { position:absolute; left:78px; bottom:76px; display:flex; gap:10px; }
+    .tags span { padding:12px 15px; border:2px solid var(--ink); background:#fff; box-shadow:4px 4px 0 var(--ink); font-size:18px; font-weight:850; }
+    .plain { padding:72px 78px; }
+    .kicker { color:#627b29; font-size:19px; font-weight:900; letter-spacing:.115em; }
+    h2 { margin:21px 0 42px; font-size:62px; line-height:1.14; letter-spacing:-.055em; }
+    .scene { position:absolute; top:83px; right:76px; width:373px; height:474px; padding:22px; background:#112e3e; color:white; border:2px solid var(--ink); transform:rotate(3deg); box-shadow:11px 11px 0 #c9d39e; }
+    .scene > em { display:block; color:var(--lime); font-size:14px; letter-spacing:.1em; font-weight:900; font-style:normal; }
+    .scene b { display:block; margin:18px 0 23px; font-size:23px; line-height:1.35; }
+    .mini-cards { position:relative; height:280px; }
+    .mini-cards > div { position:absolute; width:156px; height:198px; padding:18px 14px; color:var(--ink); background:#fdfcf8; border:2px solid #d5d9ca; }
+    .mini-cards > div:nth-child(1) { left:0; top:26px; transform:rotate(-5deg); }
+    .mini-cards > div:nth-child(2) { left:94px; top:0; border-color:var(--lime); box-shadow:9px 10px 0 var(--lime); transform:rotate(2deg); }
+    .mini-cards > div:nth-child(3) { right:0; top:42px; transform:rotate(5deg); }
+    .fake-thumb { height:53px; background:#dfe6d5; border:1px solid #c4cfb9; }
+    .mini-cards p { margin:13px 0 7px; font-size:13px; font-weight:850; }
+    .mini-cards i { display:block; width:80%; height:7px; margin-top:6px; background:#d7d8d0; }
+    .mini-cards i:last-child { width:56%; }
+    .mini-cards .raised::after { content:"HOVER"; position:absolute; right:-16px; bottom:13px; padding:5px 7px; background:var(--lime); border:1px solid var(--ink); font-size:11px; font-weight:900; transform:rotate(-4deg); }
+    .features { width:728px; display:grid; grid-template-columns:1fr 1fr; gap:17px; }
+    .features article { min-height:157px; padding:21px 24px; position:relative; background:#fff; border:2px solid var(--ink); box-shadow:7px 7px 0 #dce6c8; }
+    .features article:nth-child(2) { top:24px; background:#eef4df; }
+    .features article:nth-child(3) { margin-top:2px; background:#f8f0dc; }
+    .features article:nth-child(4) { top:25px; background:var(--ink); color:white; box-shadow:7px 7px 0 var(--coral); }
+    .features span { color:#6b8827; font-size:15px; letter-spacing:.09em; font-weight:900; }
+    .features article:last-child span { color:var(--lime); }
+    .features b { display:block; margin:12px 0 8px; font-size:25px; }
+    .features p { margin:0; color:var(--muted); font-size:17px; line-height:1.55; font-weight:600; }
+    .features article:last-child p { color:#d9e1d6; }
+    .scope-note { position:absolute; left:78px; right:78px; bottom:73px; height:158px; padding:25px 29px; display:grid; grid-template-columns:275px 1fr; gap:26px; background:var(--ink); color:white; border-left:10px solid var(--lime); }
+    .scope-note h3 { margin:0; font-size:28px; line-height:1.3; }
+    .scope-note p { margin:8px 0 0; color:#d8e1d2; font-size:17px; line-height:1.55; font-weight:600; }
+    .scope-pills { display:flex; align-items:center; gap:11px; }
+    .scope-pills span { flex:1; min-height:79px; padding:15px; border:1px solid #768373; color:#fff; font-size:17px; font-weight:800; line-height:1.42; }
+    .scope-pills em { display:block; margin-bottom:7px; color:var(--lime); font-size:12px; font-style:normal; letter-spacing:.1em; }
+    .process { margin-top:52px; display:grid; grid-template-columns:224px 56px 224px 56px 224px 56px 224px; align-items:center; }
+    .step { min-height:317px; padding:24px; position:relative; background:#fff; border:2px solid var(--ink); box-shadow:7px 7px 0 #d4e0bc; }
+    .step:nth-child(3) { top:24px; background:#eef4df; }
+    .step:nth-child(5) { top:-5px; background:#f8eedc; }
+    .step:nth-child(7) { top:28px; background:var(--ink); color:white; box-shadow:7px 7px 0 var(--coral); }
+    .step em { display:block; color:#688a24; font-size:16px; font-style:normal; font-weight:900; letter-spacing:.1em; }
+    .step:last-child em { color:var(--lime); }
+    .step b { display:block; margin:24px 0 13px; font-size:29px; line-height:1.25; }
+    .step p { margin:0; color:#526572; font-size:17px; font-weight:600; line-height:1.6; }
+    .step:last-child p { color:#d7e1d2; }
+    .line-arrow { height:2px; position:relative; background:var(--ink); }
+    .line-arrow::after { content:""; position:absolute; top:-7px; right:1px; width:14px; height:14px; border-top:2px solid var(--ink); border-right:2px solid var(--ink); transform:rotate(45deg); }
+    .brief { position:absolute; left:78px; right:78px; bottom:73px; min-height:176px; padding:25px 29px; display:grid; grid-template-columns:275px 1fr; gap:26px; border:2px solid var(--ink); background:#fff; }
+    .brief h3 { margin:0; font-size:28px; line-height:1.35; }
+    .brief p { margin:9px 0 0; color:#566872; font-size:17px; line-height:1.5; font-weight:600; }
+    .brief-items { display:flex; gap:11px; align-items:center; }
+    .brief-items div { flex:1; min-height:93px; padding:15px; border:1px solid var(--line); }
+    .brief-items em { display:block; margin-bottom:8px; color:#67872b; font-size:12px; font-style:normal; font-weight:900; letter-spacing:.1em; }
+    .brief-items b { font-size:17px; line-height:1.4; }
+  </style>
+</head>
+<body>
+  <section class="slide" id="slide-1">
+    <img class="photo" src="interaction-implementation-background-20260813.png" alt="" />
+    <div class="wash"></div>
+    <div class="price"><small>既存サイトの演出実装</small><strong>¥15,000</strong></div>
+    <div class="hero-copy">
+      <div class="eyebrow">INTERACTION IMPLEMENTATION</div>
+      <h1>動きに、<br><mark>意味を。</mark></h1>
+      <div class="lead">PCではホバー、スマホではタップ。気持ちよく反応するサイトへ、既存ページの操作感を整えます。</div>
+    </div>
+    <div class="scene">
+      <em>BEFORE / AFTER</em><b>触れた瞬間、次の行動が分かる。</b>
+      <div class="mini-cards"><div><div class="fake-thumb"></div><p>標準のカード</p><i></i><i></i></div><div class="raised"><div class="fake-thumb"></div><p>反応するカード</p><i></i><i></i></div><div><div class="fake-thumb"></div><p>リンク先へ</p><i></i><i></i></div></div>
+    </div>
+    <div class="tags"><span>PC HOVER</span><span>MOBILE TAP</span><span>1ページ・3要素まで</span></div>
+  </section>
+
+  <section class="slide plain" id="slide-2">
+    <div class="kicker">WHAT I IMPLEMENT / EXISTING WEBSITE</div>
+    <h2>押せる・進める・選べるを、<br>画面で伝える。</h2>
+    <div class="features">
+      <article><span>01 / CARD</span><b>記事・サービスカード</b><p>少し浮く、傾く、硬い影が出る。クリックできることを自然に伝えます。</p></article>
+      <article><span>02 / BUTTON</span><b>CTA・申込みボタン</b><p>境界線や矢印まで反応させ、押した先への期待をつくります。</p></article>
+      <article><span>03 / NAVIGATION</span><b>ナビゲーション</b><p>現在地や遷移先を見失いにくい、小さく明快な変化を設計します。</p></article>
+      <article><span>04 / FAQ</span><b>開閉する質問と回答</b><p>開く・閉じるが分かる動きと、タップ時の即時フィードバックを整えます。</p></article>
+    </div>
+    <div class="scope-note">
+      <div><h3>ただ動かすだけの<br>装飾にはしません。</h3><p>画面の役割に合わせて、動きの強さ・速さ・反応を決めます。</p></div>
+      <div class="scope-pills"><span><em>PC</em>ホバー時の<br>視覚フィードバック</span><span><em>MOBILE</em>タップ開始時の<br>即時レスポンス</span><span><em>CHECK</em>主要画面での<br>表示・操作確認</span></div>
+    </div>
+  </section>
+
+  <section class="slide plain" id="slide-3">
+    <div class="kicker">PROCESS / ALL IN COCONALA CHAT</div>
+    <h2>今のページを活かして、<br>気持ちよく仕上げる。</h2>
+    <div class="process">
+      <article class="step"><em>01</em><b>URL・対象を確認</b><p>対象ページと、反応を付けたい箇所を最大3要素まで伺います。</p></article><div class="line-arrow"></div>
+      <article class="step"><em>02</em><b>動きの方向を整理</b><p>参考サイトや目的をもとに、必要な反応だけを決めます。</p></article><div class="line-arrow"></div>
+      <article class="step"><em>03</em><b>コードへ実装</b><p>既存HTML・CSS・JavaScriptを確認し、無理のない形で追加します。</p></article><div class="line-arrow"></div>
+      <article class="step"><em>04</em><b>確認・納品</b><p>PCとスマホの主要画面を確認後、修正版データをお渡しします。</p></article>
+    </div>
+    <div class="brief">
+      <div><h3>ご相談前に<br>ご用意ください。</h3><p>確認できる情報があるほど、対応範囲を正確にご案内できます。</p></div>
+      <div class="brief-items"><div><em>PAGE</em><b>対象ページの<br>URLまたは画像</b></div><div><em>ELEMENTS</em><b>動かしたい箇所<br>（最大3要素）</b></div><div><em>REFERENCE</em><b>参考にしたい動き<br>または目的</b></div></div>
+    </div>
+  </section>
+</body>
+</html>

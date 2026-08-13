@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{--lime:#b9ff3b;--ink:#0a1320;--navy:#122138;--cream:#f7f8f2;--muted:#657386;--orange:#ff8c42}
+  *{box-sizing:border-box}body{margin:0;background:#e8ece6;font-family:"Hiragino Sans","Noto Sans JP",sans-serif}
+  .slide{width:1220px;height:1016px;position:relative;overflow:hidden;background:var(--cream);color:var(--ink)}
+  .eyebrow{position:absolute;left:66px;top:49px;display:flex;align-items:center;gap:10px;color:#4f6a3f;font-size:17px;font-weight:900;letter-spacing:1.6px}.eyebrow i{width:12px;height:12px;background:var(--lime);border-radius:50%;box-shadow:0 0 0 5px #dce9ce}.brand{position:absolute;right:66px;top:48px;color:#506073;font-size:16px;font-weight:800;letter-spacing:1.2px}.brand b{color:#253b2a}
+  h1,h2,p{margin:0}.headline{position:absolute;left:65px;top:143px;z-index:3}.headline h1{font-size:69px;line-height:1.12;letter-spacing:-4px;font-weight:900}.headline h1 .lime{color:#5f9f1f}.headline h1 mark{color:var(--ink);background:var(--lime);padding:0 11px}.headline p{margin-top:22px;color:#536172;font-size:23px;line-height:1.6;font-weight:700}.headline p b{color:#263a2c}
+  .pill{position:absolute;left:67px;top:466px;display:flex;gap:10px;flex-wrap:wrap;width:510px}.pill span{border:2px solid #c7d5bf;border-radius:99px;padding:12px 17px;background:white;color:#35483a;font-size:16px;font-weight:900}.pill span:nth-child(1){border-color:#89bd51;background:#eff9e8}.pill span:nth-child(4){background:#18293d;border-color:#18293d;color:white}
+  .price{position:absolute;left:66px;top:670px;padding:25px 28px 26px;background:var(--ink);color:white;box-shadow:12px 13px 0 var(--lime)}.price small{display:block;color:#c1cbd4;font-size:15px;font-weight:800;letter-spacing:1.3px}.price strong{display:block;margin-top:5px;color:var(--lime);font-size:49px;line-height:1;font-weight:900;letter-spacing:-2px}.price em{font-size:22px;font-style:normal;color:white;margin-left:7px}.price span{display:block;margin-top:11px;font-size:15px;font-weight:700;color:#d8e0e5}
+  .screen{position:absolute;right:-84px;top:137px;width:687px;height:738px;overflow:hidden;border:10px solid var(--ink);border-radius:26px;background:#0d1624;transform:rotate(3.2deg);box-shadow:0 0 0 7px var(--lime),18px 24px 0 rgba(10,19,32,.18)}.screen img{width:100%;height:100%;object-fit:cover;object-position:50% 49%}.screen:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.15);border-radius:17px}.ui-label{position:absolute;right:381px;top:763px;z-index:3;background:var(--orange);padding:12px 16px;font-size:16px;font-weight:900;transform:rotate(-6deg);box-shadow:5px 5px 0 rgba(10,19,32,.18)}.ui-label::after{content:"";position:absolute;right:-47px;top:23px;width:51px;border-top:3px solid var(--orange);transform:rotate(-18deg);transform-origin:left}
+  .trust{position:absolute;left:66px;right:66px;bottom:48px;border-top:2px solid #d5dfd1;padding-top:21px;display:flex;justify-content:space-between;align-items:center;color:#667568;font-size:15px;font-weight:800}.trust b{color:#27452a}.trust .dots{color:#72a83a;letter-spacing:8px}
+  /* 02 */
+  .dark{background:var(--ink);color:white}.dark:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(185,255,59,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(185,255,59,.09) 1px,transparent 1px);background-size:42px 42px}.dark .brand{color:#aab8c5}.dark .brand b{color:var(--lime)}.dark .eyebrow{color:var(--lime)}.dark .eyebrow i{box-shadow:0 0 0 5px rgba(185,255,59,.16)}
+  .pain-title{position:absolute;left:66px;top:132px;font-size:55px;line-height:1.15;letter-spacing:-3px;font-weight:900}.pain-title span{color:var(--lime)}.pain-lead{position:absolute;left:70px;top:343px;color:#bec8d0;font-size:18px;line-height:1.6;font-weight:700}.pain-cards{position:absolute;left:66px;top:450px;width:536px;display:grid;gap:13px}.pain{padding:17px 21px;background:#111f2e;border:1px solid #33465a;border-left:6px solid var(--lime);font-size:19px;font-weight:900}.pain small{display:block;margin-top:5px;color:#abb8c3;font-size:13px;line-height:1.45;font-weight:700}.article-slice{position:absolute;right:-88px;top:147px;width:675px;height:649px;border:2px solid var(--lime);overflow:hidden;transform:rotate(2.3deg);box-shadow:17px 18px 0 rgba(0,0,0,.35)}.article-slice img{width:100%;height:100%;object-fit:cover;object-position:53% 48%}.callout{position:absolute;right:505px;top:752px;padding:17px 20px;background:var(--lime);color:var(--ink);font-size:16px;font-weight:900;transform:rotate(-5deg)}.callout b{display:block;font-size:24px;line-height:1.25}.dark .trust{color:#a9b7c0;border-color:#33475b}.dark .trust b{color:var(--lime)}
+  /* 03 */
+  .flow-title{position:absolute;left:66px;top:130px;font-size:60px;line-height:1.17;letter-spacing:-3px;font-weight:900}.flow-title span{color:#5f9f1f}.flow-lead{position:absolute;left:70px;top:290px;font-size:20px;color:#526074;font-weight:700;line-height:1.65}.process{position:absolute;left:66px;right:66px;top:420px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}.process article{position:relative;min-height:260px;padding:27px 23px;background:white;border-top:6px solid var(--ink);border-right:1px solid #d7e0d5}.process article:first-child{border-left:1px solid #d7e0d5}.process article:nth-child(2){border-top-color:var(--lime)}.process article:nth-child(3){border-top-color:var(--orange)}.process article:nth-child(4){border-top-color:#5f9f1f}.process label{font-size:13px;color:#708278;font-weight:900;letter-spacing:1.3px}.process b{display:block;font-size:26px;margin-top:17px}.process p{margin-top:15px;color:#667588;font-size:15px;line-height:1.65;font-weight:700}.process article:not(:last-child):after{content:"→";position:absolute;right:-15px;top:111px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--lime);z-index:2;font-size:17px;font-weight:900}.check{position:absolute;left:66px;right:66px;bottom:137px;padding:24px 27px;border:2px solid #b5d88c;background:#eff9e8;display:flex;gap:23px;align-items:center}.check i{flex:0 0 auto;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#5f9f1f;color:white;font-style:normal;font-size:22px;font-weight:900}.check b{font-size:20px}.check span{color:#52705b;font-size:16px;font-weight:700}
+</style>
+</head>
+<body>
+  <section class="slide" id="market-01">
+    <div class="eyebrow"><i></i> UI/UX DESIGN &amp; FRONTEND</div><div class="brand"><b>みちしるべ制作所</b> / Web redesign</div>
+    <div class="headline"><h1>AIっぽく、<br>無難なサイトを<br><mark>“らしい”Web</mark>へ。</h1><p>既存サイトを、<b>UI/UX設計＋実装</b>で<br>印象に残る体験へ整えます。</p></div>
+    <div class="pill"><span>PC・スマホ対応</span><span>HTML / CSS / JS</span><span>修正 2回まで</span><span>既存サイト改善</span></div>
+    <div class="price"><small>トップページ / LP 1ページ</small><strong>50,000<em>円〜</em></strong><span>まずは見積り相談から</span></div>
+    <div class="screen"><img src="article-related-crop-20260812.png" alt="Web記事デザイン実績"></div><div class="ui-label">実績：Web記事の<br>導線・UIを再設計</div>
+    <div class="trust"><span><b>図解419枚 × Web213ページ</b>を設計・実装</span><span class="dots">● ● ●</span></div>
+  </section>
+  <section class="slide dark" id="market-02">
+    <div class="eyebrow"><i></i> BEFORE YOU ASK</div><div class="brand"><b>みちしるべ制作所</b> / UI UX redesign</div>
+    <h1 class="pain-title">そのサイト、<br><span>「なんか無難」</span>に<br>なっていませんか？</h1><p class="pain-lead">見た目を少し変えるだけでは、印象も行動も変わりません。<br>情報の優先順位と、触れた時の反応から見直します。</p>
+    <div class="pain-cards"><div class="pain">AIで作ったが、どこかで見た印象<small>色・文字・余白が平均化され、事業らしさが見えない</small></div><div class="pain">情報はあるのに、強みが伝わらない<small>読者が「何をすればいいか」を決められない</small></div><div class="pain">スマホ・導線の体験が単調<small>クリックやタップに反応がなく、使い心地が残らない</small></div></div>
+    <div class="article-slice"><img src="article-faq-crop-20260812.png" alt="FAQ UIの実績"></div><div class="callout"><b>見た目だけでなく</b>「次の行動」を設計</div>
+    <div class="trust"><span><b>記事・LP・サービスサイト</b>の情報設計に対応</span><span>UI / UX / INTERACTION</span></div>
+  </section>
+  <section class="slide" id="market-03">
+    <div class="eyebrow"><i></i> HOW WE WORK</div><div class="brand"><b>みちしるべ制作所</b> / Web redesign</div>
+    <h1 class="flow-title">いきなり作り込まない。<br><span>方向を揃えてから</span>進めます。</h1><p class="flow-lead">内容と実装環境を確認して、無理のない範囲・納期でご提案します。</p>
+    <div class="process"><article><label>STEP 01</label><b>見積り相談</b><p>URL・画面画像・目的・希望納期を確認します。</p></article><article><label>STEP 02</label><b>課題を整理</b><p>「変えるべき場所」と、目指す方向を言語化します。</p></article><article><label>STEP 03</label><b>再デザイン</b><p>色・文字・余白・導線をひとつの体験として整えます。</p></article><article><label>STEP 04</label><b>実装・納品</b><p>PC・スマホ対応のHTML/CSS/JS一式を納品します。</p></article></div>
+    <div class="check"><i>✓</i><div><b>公開前の情報・素材・ソースコードは、許可なく実績公開しません。</b><br><span>未公開情報を含む場合も、取り扱い範囲を確認して進めます。</span></div></div>
+    <div class="trust"><span><b>対応範囲：</b>既存サイトの再デザイン／静的フロント実装</span><span>事前見積り必須</span></div>
+  </section>
+</body>
+</html>
