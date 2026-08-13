@@ -205,7 +205,7 @@ const ARTICLES = {
   'toeic-600.html':                {label:'TOEIC',            title:'TOEIC 600点の勉強法・突破スケジュール', thumb:'images/toeic-600-strategy-map.svg'},
 };
 
-/* ── サムネイル HTML（カードは記事固有の生成画像を最優先にする） ── */
+/* ── サムネイル HTML（カードは記事固有の図解を最優先にする） ── */
 Object.keys(ARTICLES).forEach(file => { ARTICLES[file].file = file; });
 
 function escapeAttr(value){
@@ -218,14 +218,27 @@ function escapeAttr(value){
   }[ch]));
 }
 
+function diagramThumbPath(slug){
+  return slug ? `images/article-diagrams/${slug}.svg` : '';
+}
+
+function photoThumbPath(slug){
+  return slug ? `images/article-thumbnails/${slug}.jpg` : '';
+}
+
+function thumbFallbacks(slug, original){
+  return [photoThumbPath(slug), original].filter(Boolean).join('||');
+}
+
 function thumbHTML(a, cls){
   const c = cls || 'sq-thumb';
   const slug = a?.file?.replace(/\.html$/, '');
-  const generatedThumb = slug ? `images/article-thumbnails/${slug}.jpg` : '';
-  const src = generatedThumb || a?.thumb;
+  const diagramThumb = diagramThumbPath(slug);
+  const src = diagramThumb || a?.thumb;
   if(src){
     const alt = `${a.title || a.label || 'Study Quest'} の記事サムネイル`;
-    const fallback = generatedThumb && a?.thumb ? ` data-sq-thumb-fallback="${escapeAttr(a.thumb)}"` : '';
+    const fallbacks = thumbFallbacks(slug, a?.thumb);
+    const fallback = fallbacks ? ` data-sq-thumb-fallbacks="${escapeAttr(fallbacks)}"` : '';
     return `<img class="${c}" src="${escapeAttr(src)}"${fallback} alt="${escapeAttr(alt)}" loading="lazy" decoding="async" width="640" height="360">`;
   }
   const label = (a && a.label) ? a.label : 'Study Quest';
@@ -235,9 +248,11 @@ function thumbHTML(a, cls){
 document.addEventListener('error', event => {
   const img = event.target;
   if(!(img instanceof HTMLImageElement)) return;
-  const fallback = img.dataset.sqThumbFallback;
-  if(!fallback || img.dataset.sqThumbFallbackApplied) return;
-  img.dataset.sqThumbFallbackApplied = 'true';
+  const fallbacks = (img.dataset.sqThumbFallbacks || '').split('||').filter(Boolean);
+  const index = Number(img.dataset.sqThumbFallbackIndex || '0');
+  const fallback = fallbacks[index];
+  if(!fallback) return;
+  img.dataset.sqThumbFallbackIndex = String(index + 1);
   img.src = fallback;
 }, true);
 
@@ -4196,7 +4211,8 @@ function buildArticleHeroVisual(){
   eyebrow.textContent = 'Visual guide';
 
   const image = document.createElement('img');
-  image.src = `images/article-thumbnails/${slug}.jpg`;
+  image.src = diagramThumbPath(slug);
+  image.dataset.sqThumbFallbacks = thumbFallbacks(slug, article.thumb);
   image.alt = `${article.title}の要点を図解したサムネイル`;
   image.width = 640;
   image.height = 360;
