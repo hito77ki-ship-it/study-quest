@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coconala LP service images</title>
+  <style>
+    :root { --ink: #112d3d; --lime: #bcf53d; --paper: #f7f4ec; --line: #cbd3cd; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #ddd; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .slide { position: relative; width: 1220px; height: 1016px; overflow: hidden; background: var(--paper); color: var(--ink); }
+    .slide + .slide { margin-top: 24px; }
+    .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247,244,236,.98) 0%, rgba(247,244,236,.93) 44%, rgba(247,244,236,.26) 72%, rgba(247,244,236,.04) 100%); }
+    .copy { position: absolute; left: 78px; top: 74px; width: 630px; }
+    .eyebrow { display: inline-flex; gap: 12px; align-items: center; font-size: 21px; font-weight: 750; letter-spacing: .09em; color: #597411; }
+    .eyebrow::before { content: ""; width: 12px; height: 12px; background: var(--lime); border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+    h1 { margin: 28px 0 22px; font-size: 75px; line-height: 1.13; letter-spacing: -.05em; font-weight: 850; }
+    h1 .mark { background: var(--lime); padding: 0 .12em; }
+    .lead { width: 510px; font-size: 25px; font-weight: 600; line-height: 1.75; color: #3f515a; }
+    .pill-row { display: flex; gap: 10px; margin-top: 35px; flex-wrap: wrap; }
+    .pill { border: 2px solid var(--ink); background: rgba(255,255,255,.78); padding: 10px 15px; font-size: 18px; font-weight: 760; box-shadow: 4px 4px 0 var(--ink); }
+    .price { position: absolute; left: 78px; bottom: 74px; width: 525px; padding: 21px 24px; background: var(--ink); color: white; display: flex; align-items: baseline; justify-content: space-between; border-left: 10px solid var(--lime); }
+    .price small { font-size: 18px; font-weight: 700; }
+    .price strong { font-size: 48px; line-height: 1; letter-spacing: -.04em; }
+    .tag { position: absolute; right: 62px; top: 52px; transform: rotate(3deg); background: var(--lime); padding: 12px 18px; border: 2px solid var(--ink); font-weight: 850; font-size: 20px; box-shadow: 5px 5px 0 var(--ink); }
+
+    .plain { padding: 72px 78px; background: #f7f4ec; }
+    .plain .topline { font-size: 19px; letter-spacing: .12em; font-weight: 800; color: #6a7d31; }
+    .plain h2 { font-size: 64px; line-height: 1.15; letter-spacing: -.05em; margin: 22px 0 50px; }
+    .scope { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 820px; }
+    .scope-item { min-height: 127px; padding: 23px 26px; border: 2px solid var(--ink); background: white; box-shadow: 7px 7px 0 #c7d6a5; }
+    .scope-item b { display: block; font-size: 26px; margin-bottom: 9px; }
+    .scope-item span { font-size: 18px; font-weight: 600; line-height: 1.55; color: #52616a; }
+    .side-note { position: absolute; right: 74px; bottom: 79px; width: 325px; padding: 24px; color: white; background: var(--ink); transform: rotate(-2deg); box-shadow: 8px 8px 0 var(--lime); }
+    .side-note b { display:block; font-size: 21px; margin-bottom: 12px; }
+    .side-note p { margin: 0; color: #dae2d2; line-height: 1.65; font-size: 17px; font-weight: 600; }
+    .flow { display: flex; align-items: stretch; gap: 18px; width: 1022px; margin-top: 54px; }
+    .flow-step { width: 190px; min-height: 267px; padding: 22px; background: white; border: 2px solid var(--ink); position: relative; }
+    .flow-step:nth-child(2) { margin-top: 35px; background: #eff6dd; }
+    .flow-step:nth-child(3) { margin-top: 8px; background: #e8f2e5; }
+    .flow-step:nth-child(4) { margin-top: 43px; background: #f4f0df; }
+    .flow-step:nth-child(5) { margin-top: 15px; background: var(--ink); color: white; }
+    /* カードは段差をつけ、矢印だけは同じガイドライン上に固定する。 */
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -18px; z-index: 2; font-size: 18px; line-height: 1; font-weight: 900; color: #7e902c; }
+    .flow-step:nth-child(1)::after { top: 125px; }
+    .flow-step:nth-child(2)::after { top: 90px; }
+    .flow-step:nth-child(3)::after { top: 117px; }
+    .flow-step:nth-child(4)::after { top: 82px; }
+    .num { display: block; color: #71901d; font-size: 18px; font-weight: 900; letter-spacing: .1em; }
+    .flow-step b { display: block; font-size: 25px; line-height: 1.25; margin-top: 22px; }
+    .flow-step p { margin: 15px 0 0; font-size: 16px; font-weight: 600; line-height: 1.55; color: #59666e; }
+    .flow-step:last-child .num, .flow-step:last-child p { color: #d9e3c4; }
+    .launch { position:absolute; left: 79px; bottom: 84px; display: inline-flex; align-items:center; gap:16px; font-size: 29px; font-weight: 850; }
+    .launch::before { content:""; display:inline-block; width: 18px; height: 18px; background:var(--lime); border:2px solid var(--ink); }
+    .prepare { position: absolute; left: 78px; right: 78px; bottom: 76px; min-height: 154px; padding: 24px 28px; background: var(--ink); color: white; border-left: 10px solid var(--lime); display: grid; grid-template-columns: 285px 1fr; gap: 30px; align-items: center; }
+    .prepare h3 { margin: 0; font-size: 27px; line-height: 1.3; }
+    .prepare p { margin: 10px 0 0; color: #cfd9c6; font-size: 16px; font-weight: 600; }
+    .prepare-list { display: flex; gap: 10px; }
+    .prepare-list span { flex: 1; min-height: 74px; padding: 15px; border: 1px solid #708070; color: #f7f4ec; font-size: 19px; font-weight: 800; line-height: 1.35; }
+    .prepare-list span::before { content: "CHECK"; display: block; margin-bottom: 7px; color: var(--lime); font-size: 12px; letter-spacing: .1em; }
+  </style>
+</head>
+<body>
+  <section class="slide" id="slide-1">
+    <img class="photo" src="lp-launch-studio-background-20260813.png" alt="" />
+    <div class="wash"></div>
+    <div class="tag">DESIGN → LAUNCH</div>
+    <div class="copy">
+      <div class="eyebrow">LANDING PAGE / NEW BUILD</div>
+      <h1>つくるだけで終わらない。<br><span class="mark">公開まで</span>整えるLP制作。</h1>
+      <div class="lead">強みと導線を整理し、デザイン・静的実装・公開まで。一緒に、問い合わせを受けられる状態へ。</div>
+      <div class="pill-row"><span class="pill">PC / スマホ対応</span><span class="pill">フォーム設置</span><span class="pill">公開1回込み</span></div>
+    </div>
+    <div class="price"><small>静的LP 1ページ制作</small><strong>¥50,000</strong></div>
+  </section>
+
+  <section class="slide plain" id="slide-2">
+    <div class="topline">WHAT'S INCLUDED / BASE PLAN</div>
+    <h2>5万円で、<br>「公開できるところ」まで。</h2>
+    <div class="scope">
+      <div class="scope-item"><b>情報設計・デザイン</b><span>目的とターゲットから、LPの流れを組み立てます。</span></div>
+      <div class="scope-item"><b>PC・スマホ対応</b><span>画面ごとに読みやすく、触りやすい実装に。</span></div>
+      <div class="scope-item"><b>お問い合わせフォーム 1つ</b><span>外部フォームの埋め込み、または既存フォームへの導線。</span></div>
+      <div class="scope-item"><b>運営者情報・プライバシー</b><span>各1ページを、確認済み原稿から整形します。</span></div>
+      <div class="scope-item"><b>サーバー公開 1回</b><span>契約済みの一般的な静的サイト用サーバーが対象です。</span></div>
+      <div class="scope-item"><b>修正 2回・ソース納品</b><span>HTML / CSS / JavaScript一式をZIPでお渡しします。</span></div>
+    </div>
+    <aside class="side-note"><b>範囲を最初に明確に。</b><p>追加機能やページ量に合わせて、購入前の見積り相談で対応範囲をご案内します。</p></aside>
+  </section>
+
+  <section class="slide plain" id="slide-3">
+    <div class="topline">PROCESS / ALL IN COCONALA CHAT</div>
+    <h2>迷わせず、<br>公開まで進めます。</h2>
+    <div class="flow">
+      <div class="flow-step"><span class="num">01</span><b>目的を確認</b><p>用途・ターゲット・掲載素材を整理します。</p></div>
+      <div class="flow-step"><span class="num">02</span><b>構成を提案</b><p>伝える順番と、ページの軸を固めます。</p></div>
+      <div class="flow-step"><span class="num">03</span><b>デザイン・実装</b><p>PCとスマホ、どちらも丁寧に設計します。</p></div>
+      <div class="flow-step"><span class="num">04</span><b>確認・修正</b><p>完成画面と動作を確認して調整します。</p></div>
+      <div class="flow-step"><span class="num">05</span><b>公開・納品</b><p>公開後に確認し、ソース一式を納品します。</p></div>
+    </div>
+    <div class="prepare">
+      <div><h3>ご相談前に<br>ご用意ください。</h3><p>やりとり・確認はすべてココナラ内で進行します。</p></div>
+      <div class="prepare-list"><span>LPの目的・用途</span><span>掲載原稿・素材の有無</span><span>希望納期・参考サイト</span></div>
+    </div>
+  </section>
+</body>
+</html>

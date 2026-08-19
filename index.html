@@ -3080,7 +3080,12 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 
       const image = document.createElement('img');
       image.className = 'lp-card-thumb';
-      image.src = `images/article-thumbnails/${slug}.jpg`;
+      image.src = `images/article-diagrams/${slug}.svg`;
+      image.addEventListener('error', () => {
+        if(image.dataset.sqThumbFallbackApplied) return;
+        image.dataset.sqThumbFallbackApplied = 'true';
+        image.src = `images/article-thumbnails/${slug}.jpg`;
+      }, { once:true });
       image.alt = `${title}を表すStudy Questの記事サムネイル`;
       image.width = 640;
       image.height = 360;

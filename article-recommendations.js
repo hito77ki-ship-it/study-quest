@@ -186,7 +186,7 @@ function render(state){
       <div class="sq-for-you__grid">
         ${selected.map(article => `
           <a class="sq-for-you__card" href="${esc(article.id)}" data-recommendation-id="${esc(article.id)}">
-            <img src="images/article-thumbnails/${esc(article.id.replace(/\.html$/, ''))}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <img src="images/article-diagrams/${esc(article.id.replace(/\.html$/, ''))}.svg" data-sq-thumb-fallback="images/article-thumbnails/${esc(article.id.replace(/\.html$/, ''))}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
             <span class="sq-for-you__body">
               <span class="sq-for-you__label">${esc(article.label)}</span>
               <span class="sq-for-you__title">${esc(article.title)}</span>
@@ -203,6 +203,15 @@ function render(state){
   const footer = document.querySelector('footer');
   if(widget) widget.insertAdjacentElement('beforebegin', section);
   else footer.insertAdjacentElement('beforebegin', section);
+
+  section.querySelectorAll('[data-sq-thumb-fallback]').forEach(image => {
+    image.addEventListener('error', () => {
+      const fallback = image.dataset.sqThumbFallback;
+      if(!fallback || image.dataset.sqThumbFallbackApplied) return;
+      image.dataset.sqThumbFallbackApplied = 'true';
+      image.src = fallback;
+    });
+  });
 
   section.querySelector('.sq-for-you__reset').addEventListener('click', () => {
     try { localStorage.removeItem(STORE_KEY); } catch {}
