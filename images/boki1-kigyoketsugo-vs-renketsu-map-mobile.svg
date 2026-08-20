@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="1480" viewBox="0 0 360 1480" role="img" aria-labelledby="title desc">
   <title id="title">企業結合会計と連結会計、視点の違いからわかる3つのポイント（モバイル版）</title>
-  <desc id="desc">企業結合会計は取得した瞬間の個別財務諸表上の一取引として処理されるのに対し、連結会計は支配関係が続く限り毎期継続してグループ全体の財務諸表を作成する手続きであるという違いを対比する図解</desc>
+  <desc id="desc">企業結合会計は取得時の処理を扱い、株式取得では個別に子会社株式、連結にのれんが認識される。連結会計は支配関係が続く限り毎期継続する手続きを対比する図解</desc>
   <defs>
     <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#fffbeb"/>
@@ -32,7 +32,7 @@
   <circle cx="44" cy="150" r="15" fill="#B45309"/>
   <text x="44" y="155" text-anchor="middle" class="ptnum">1</text>
   <text x="66" y="146" class="ptname">対象となる財務諸表</text>
-  <text x="66" y="164" class="ptbody">個別財務諸表（取得した1社の帳簿）</text>
+  <text x="66" y="164" class="ptbody">株式取得：個別は子会社株式、のれんは連結</text>
 
   <line x1="30" y1="180" x2="330" y2="180" stroke="#FEF3C7" stroke-width="2"/>
 

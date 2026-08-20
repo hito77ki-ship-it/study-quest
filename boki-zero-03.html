@@ -124,6 +124,9 @@ tr:nth-child(even) td{background:var(--light);}
 .faq-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;}
 .faq-item h3{font-size:14px;color:var(--text);margin:0 0 8px;}
 .faq-item p{font-size:13px;margin:0;color:#374151;}
+html[data-theme="dark"] .faq-item{background:#121826;border-color:rgba(140,198,63,.35)}
+html[data-theme="dark"] .faq-item h3{color:#F8FAFC}
+html[data-theme="dark"] .faq-item p{color:#CCD6E5}
 
 /* 流れ図 */
 .flow{display:flex;flex-direction:column;gap:0;margin:28px 0;}
@@ -133,6 +136,8 @@ tr:nth-child(even) td{background:var(--light);}
 .flow-step-num{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
 .flow-step-body strong{display:block;font-size:14px;margin-bottom:4px;}
 .flow-step-body p{font-size:13px;color:var(--muted);margin:0;}
+html[data-theme="dark"] .flow-step{background:#121826;border-color:rgba(140,198,63,.35)}
+html[data-theme="dark"] .flow-step-body p{color:#CCD6E5}
 .flow-arrow{text-align:center;font-size:20px;color:var(--green);line-height:1;padding:4px 0;}
 
 /* 財務諸表カード */
