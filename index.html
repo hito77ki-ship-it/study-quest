@@ -711,6 +711,13 @@ footer{background:#091505;padding:48px 24px 40px;}
   color:var(--ink3);
   line-height:1.5;
 }
+#articles .lp-thumb-grid{
+  grid-template-columns:repeat(auto-fill,minmax(190px,1fr)) !important;
+  gap:14px !important;
+}
+#articles .lp-thumb-grid-single{
+  grid-template-columns:minmax(190px,260px) !important;
+}
 
 /* Article cards use one restrained icon language instead of mixed emoji glyphs. */
 #articles [id^="cat-"]{--card-icon:#5C9A1A;}
@@ -1093,6 +1100,12 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
 
 @media(max-width:800px){
   .hero{display:block;min-height:0;padding-top:122px;}.hero::before{display:none;}.hero-copy{padding-bottom:36px;}.hero h1{font-size:clamp(44px,12vw,64px);}.hero-field-note{position:relative;right:auto;bottom:auto;margin-top:36px;}.phones{margin:0 -24px -30px 8vw;padding-top:18px;}.ph.main .pf{width:220px;}.features-grid{grid-template-columns:1fr;gap:46px;}.feat:nth-child(2),.feat:nth-child(3),.jobs-cat:nth-child(even){margin-top:0;margin-left:0;}.showcase-inner{grid-template-columns:1fr;gap:58px;}.showcase-phone-wrap{transform:translateX(0) rotate(-3deg);}.benefit-list,.rm-grid,.faq-inner,.updates-inner,.founder-inner{margin-left:0;}.cta{padding-top:100px;padding-bottom:100px;}.hero-annotation{display:none;}
+}
+@media(max-width:640px){
+  #articles .lp-thumb-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+  #articles .lp-thumb-grid-single{grid-template-columns:minmax(0,100%) !important;max-width:260px;}
+  .lp-thumb-card .lp-card-body{padding:10px 9px 11px;}
+  .lp-thumb-card .lp-card-title{font-size:11px;}
 }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
@@ -2527,8 +2540,13 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
   <div class="updates-inner">
     <div class="sec-label">UPDATES</div>
     <h2 class="sec-title" style="margin-bottom:0;">更新情報</h2>
-    <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年8月11日）</p>
+    <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年8月20日）</p>
     <div class="updates-list">
+      <div class="update-item">
+        <div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.08.20</span></div>
+        <div class="update-title">簿記の出題範囲と会計処理の説明を見直しました</div>
+        <div class="update-desc">簿記2級の社債記事を満期保有目的債券の範囲に合わせ、簿記1級の社債発行論点と区別しました。あわせて、企業結合会計の株式取得時における子会社株式とのれんの表示先、試験記事の時期依存表現を確認しました。</div>
+      </div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.08.11</span></div>
         <div class="update-title">🔎 記事検索で、内容と更新日を見比べられるようにしました</div>
@@ -3103,6 +3121,11 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       body.append(titleEl, noteEl);
       a.classList.add('lp-thumb-card');
       a.replaceChildren(image, body);
+      const grid = a.parentElement;
+      if(grid){
+        grid.classList.add('lp-thumb-grid');
+        if(grid.querySelectorAll(':scope > a[href$=".html"]').length === 1) grid.classList.add('lp-thumb-grid-single');
+      }
     });
   }
   enhanceArticleThumbCards();
