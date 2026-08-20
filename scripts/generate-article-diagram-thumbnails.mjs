@@ -14,6 +14,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sourcePath = path.join(root, 'article-widgets.js');
 const outputDir = path.join(root, 'images', 'article-diagrams');
 const artDir = path.join(root, 'images', 'thumbnail-art-16x9');
+const recoveredArtDir = path.join(artDir, 'recovered');
 
 const source = fs.readFileSync(sourcePath, 'utf8');
 const match = source.match(/const ARTICLES = (\{[\s\S]*?\n\});\n\n\/\*/);
@@ -53,6 +54,67 @@ const THEMES = {
     art: 'problem', accent: '#FF846F', accent2: '#F14B4B', tag: '学習のつまずき',
     kicker: 'BREAK THROUGH', action: '止まった理由をほどく'
   }
+};
+
+// この会話で既に生成した「文字＋図解」一体型の完成サムネイル。
+// 記事の資格名・比較軸・テーマが一致するものだけを明示して採用する。
+// それ以外は、正確なSVG文字組を重ねる既定テンプレートを使う。
+const RECOVERED_THUMBNAILS = {
+  'boki.html': 'boki.jpg',
+  'boki1.html': 'boki1.jpg',
+  'boki2.html': 'boki2.jpg',
+  'boki2-chokusetsu-genka.html': 'boki2-chokusetsu-genka.jpg',
+  'boki2-hyojun-genka.html': 'boki2-hyojun-genka.jpg',
+  'boki2-hyojun-vs-jissai.html': 'boki2-hyojun-vs-jissai.jpg',
+  'boki2-keihi.html': 'boki2-keihi.jpg',
+  'boki2-kobetsu-genka.html': 'boki2-kobetsu-genka.jpg',
+  'boki2-kotei-betsu-genka.html': 'boki2-kotei-betsu-genka.jpg',
+  'boki2-ochita.html': 'boki2-ochita.jpg',
+  'boki2-roumuhi.html': 'boki2-roumuhi.jpg',
+  'boki2-sogo-genka.html': 'boki2-sogo-genka.jpg',
+  'boki2-zairyouhi.html': 'boki2-zairyouhi.jpg',
+  'boki3-kabushiki.html': 'boki3-kabushiki.jpg',
+  'boki3-kotei.html': 'boki3-kotei.jpg',
+  'boki3-next.html': 'boki3-next.jpg',
+  'boki3-ochita.html': 'boki3-ochita.jpg',
+  'boki3-progress.html': 'boki3-progress.jpg',
+  'boki3-seisanhyo.html': 'boki3-seisanhyo.jpg',
+  'boki3-shohi.html': 'boki3-shohi.jpg',
+  'boki3-sonota.html': 'boki3-sonota.jpg',
+  'cpa.html': 'cpa.jpg',
+  'cpa-akirameta-boki1.html': 'cpa-akirameta-boki1.jpg',
+  'cpa-akirameta-shinro.html': 'cpa-akirameta-shinro.jpg',
+  'cpa-akirameta-shukatsu.html': 'cpa-akirameta-shukatsu.jpg',
+  'daigakusei-keizai-shikaku.html': 'daigakusei-keizai-shikaku.jpg',
+  'daigakusei-keizoku.html': 'daigakusei-keizoku.jpg',
+  'eiken.html': 'eiken.jpg',
+  'fp.html': 'fp.jpg',
+  'gaibuin.html': 'gaibuin.jpg',
+  'gyosei.html': 'gyosei.jpg',
+  'hatarakinagara-shikaku.html': 'hatarakinagara-shikaku.jpg',
+  'hisho.html': 'hisho.jpg',
+  'itp.html': 'itp.jpg',
+  'kanken.html': 'kanken.jpg',
+  'kenchiku.html': 'kenchiku.jpg',
+  'keizoku.html': 'keizoku.jpg',
+  'mansion.html': 'mansion.jpg',
+  'sharoshi.html': 'sharoshi.jpg',
+  'sharoshi-vs-gyosei.html': 'sharoshi-vs-gyosei.jpg',
+  'sharoshi-vs-shindanshi.html': 'sharoshi-vs-shindanshi.jpg',
+  'shikaku-app.html': 'shikaku-app.jpg',
+  'shikaku-eigyo.html': 'shikaku-eigyo.jpg',
+  'shikaku-jinsei-kawaru.html': 'shikaku-jinsei-kawaru.jpg',
+  'shikaku-zasetsu-riyu.html': 'shikaku-zasetsu-riyu.jpg',
+  'shihoshoshi.html': 'shihoshoshi.jpg',
+  'shindanshi.html': 'shindanshi.jpg',
+  'shukatsu-shikaku.html': 'shukatsu-shikaku.jpg',
+  'takken.html': 'takken.jpg',
+  'takken-vs-mansion.html': 'takken-vs-mansion.jpg',
+  'toefl.html': 'toefl.jpg',
+  'toeic-vs-eiken.html': 'toeic-vs-eiken.jpg',
+  'univ-ai-report-hack.html': 'univ-ai-report-hack.jpg',
+  'univ-boki-units.html': 'univ-boki-units.jpg',
+  'zeirishi.html': 'zeirishi.jpg',
 };
 
 function esc(value) {
@@ -171,7 +233,19 @@ function textBlock(lines) {
   return lines.map((line, index) => `<text x="28" y="${start + index * lineHeight}" class="headline" style="font-size:${size}px">${esc(line)}</text>`).join('');
 }
 
-function buildSvg(article, artData) {
+function recoveredSvg(article, filename, base64) {
+  const slug = article.file.replace(/\.html$/, '');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title-${slug} desc-${slug}" data-art="recovered" data-recovered-asset="${esc(filename)}">
+  <title id="title-${slug}">${esc(article.title)}の完成サムネイル</title>
+  <desc id="desc-${slug}">${esc(article.label)}。${esc(article.title)}を図解で伝える完成サムネイル。</desc>
+  <image href="data:image/jpeg;base64,${base64}" x="0" y="0" width="640" height="360" preserveAspectRatio="xMidYMid meet"/>
+</svg>`;
+}
+
+function buildSvg(article, artData, recoveredArtData) {
+  const recoveredFilename = RECOVERED_THUMBNAILS[article.file];
+  if (recoveredFilename) return recoveredSvg(article, recoveredFilename, recoveredArtData.get(recoveredFilename));
+
   const family = familyOf(article);
   const theme = THEMES[family];
   const titleLines = headlineLinesFor(article, family);
@@ -206,13 +280,30 @@ for (const theme of Object.values(THEMES)) {
   artData.set(theme.art, fs.readFileSync(jpegPath).toString('base64'));
 }
 
+const recoveredArtData = new Map();
+for (const filename of new Set(Object.values(RECOVERED_THUMBNAILS))) {
+  const jpegPath = path.join(recoveredArtDir, filename);
+  if (!fs.existsSync(jpegPath)) throw new Error(`回収済み完成サムネイルがありません: ${path.relative(root, jpegPath)}`);
+  recoveredArtData.set(filename, fs.readFileSync(jpegPath).toString('base64'));
+}
+
 fs.rmSync(outputDir, { recursive: true, force: true });
 fs.mkdirSync(outputDir, { recursive: true });
 const manifest = [];
 for (const [file, article] of Object.entries(ARTICLES)) {
   const slug = file.replace(/\.html$/, '');
-  fs.writeFileSync(path.join(outputDir, `${slug}.svg`), buildSvg({ ...article, file }, artData));
-  manifest.push({ file, slug, label: article.label, title: article.title, family: familyOf(article), art: THEMES[familyOf(article)].art });
+  const recovered = RECOVERED_THUMBNAILS[file];
+  fs.writeFileSync(path.join(outputDir, `${slug}.svg`), buildSvg({ ...article, file }, artData, recoveredArtData));
+  manifest.push({
+    file,
+    slug,
+    label: article.label,
+    title: article.title,
+    family: familyOf(article),
+    art: recovered ? 'recovered' : THEMES[familyOf(article)].art,
+    asset: recovered ? `recovered/${recovered}` : `${THEMES[familyOf(article)].art}.jpg`,
+    render: recovered ? 'exact-generated' : 'template',
+  });
 }
 fs.writeFileSync(path.join(outputDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Generated ${manifest.length} article thumbnails with ${new Set(manifest.map(item => item.art)).size} illustration backgrounds.`);
+console.log(`Generated ${manifest.length} article thumbnails (${recoveredArtData.size} recovered completion assets + ${new Set(manifest.filter(item => item.render === 'template').map(item => item.art)).size} template backgrounds).`);

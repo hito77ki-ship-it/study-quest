@@ -32,13 +32,19 @@ const invalid = articleFiles.filter(file => {
     || !svg.includes('preserveAspectRatio="xMidYMid meet"');
 });
 const referencedArt = [...new Set(manifest.map(item => item.art))].sort();
-const missingArt = referencedArt.filter(art => !fs.existsSync(path.join(artDir, `${art}.jpg`)));
+const templateArt = referencedArt.filter(art => art !== 'recovered');
+const missingArt = templateArt.filter(art => !fs.existsSync(path.join(artDir, `${art}.jpg`)));
+const missingAssets = manifest
+  .filter(item => item.asset)
+  .filter(item => !fs.existsSync(path.join(artDir, item.asset)))
+  .map(item => ({ file: item.file, asset: item.asset }));
 const manifestMismatch = articleFiles.length !== manifestFiles.length
   || articleFiles.some((file, index) => file !== manifestFiles[index]);
 const implementationIssues = [
   ['共通記事カード', /function diagramThumbPath\(slug\)/.test(widgets) && /const src = diagramThumb \|\| a\?\.thumb/.test(widgets)],
   ['記事ヒーロー', /image\.src = diagramThumbPath\(slug\)/.test(widgets)],
   ['トップ一覧', fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('images/article-diagrams/${slug}.svg')],
+  ['トップ検索', fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('images/article-diagrams/${esc(x.slug)}.svg')],
   ['あなたにおすすめ', fs.readFileSync(path.join(root, 'article-recommendations.js'), 'utf8').includes('images/article-diagrams/${esc(article.id.replace(/\\.html$/, \'\'))}.svg')],
   ['資格一覧ヒーロー', fs.readFileSync(path.join(root, 'shikaku-list.html'), 'utf8').includes('images/article-diagrams/shikaku-list.svg')],
 ].filter(([, ok]) => !ok).map(([name]) => name);
@@ -50,8 +56,9 @@ const result = {
   invalid,
   referencedArt,
   missingArt,
+  missingAssets,
   manifestMismatch,
   implementationIssues,
 };
 console.log(JSON.stringify(result, null, 2));
-if (missing.length || invalid.length || missingArt.length || manifestMismatch || implementationIssues.length) process.exitCode = 1;
+if (missing.length || invalid.length || missingArt.length || missingAssets.length || manifestMismatch || implementationIssues.length) process.exitCode = 1;

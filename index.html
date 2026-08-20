@@ -793,13 +793,16 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-chip:hover{border-color:rgba(140,198,63,.45);color:var(--green);}
 .lp-search-chip.active{background:rgba(140,198,63,.16);border-color:rgba(140,198,63,.45);color:var(--green);}
 .lp-search-results{max-height:380px;overflow-y:auto;}
-.lp-search-item{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);transition:background .12s;}
+.lp-search-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);transition:background .12s;}
 .lp-search-item:hover{background:var(--card-bg);filter:brightness(0.97);}
 .lp-search-item:last-child{border-bottom:none;}
+.lp-search-thumb{width:96px;height:54px;flex:0 0 auto;object-fit:contain;object-position:center;border:1px solid var(--border);border-radius:6px;background:var(--surface);}
+.lp-search-content{min-width:0;display:flex;align-items:center;gap:10px;}
 .lp-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
 .lp-search-title{font-size:13px;font-weight:500;line-height:1.5;color:var(--ink);}
 .lp-search-empty{padding:24px;text-align:center;color:var(--ink3);font-size:13px;}
 .lp-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--ink3);text-align:right;border-top:1px solid var(--border);}
+@media(max-width:480px){.lp-search-item{padding:9px 12px;gap:8px;}.lp-search-thumb{width:80px;height:45px;}.lp-search-content{gap:7px;}.lp-search-title{font-size:12px;}}
 details summary{transition:background 100ms ease-out;}
 details summary:active{background:var(--light);}
 @media(prefers-reduced-motion:reduce){
@@ -3165,7 +3168,8 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
         if(el.id && CAT_LABELS[el.id]){ label = CAT_LABELS[el.id]; break; }
         el = el.parentElement;
       }
-      idx.push({href, title, label});
+      const slug = href.replace(/\.html$/, '');
+      idx.push({href, title, label, slug});
     });
     return idx;
   }
@@ -3223,8 +3227,8 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     }
     results.innerHTML = filtered.slice(0,12).map(x=>
       `<a href="${x.href}" class="lp-search-item">
-        <span class="lp-search-label">${esc(x.label)}</span>
-        <span class="lp-search-title">${esc(x.title)}</span>
+        <img class="lp-search-thumb" src="images/article-diagrams/${esc(x.slug)}.svg" alt="${esc(x.title)}の記事サムネイル" width="640" height="360" loading="lazy" decoding="async">
+        <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-title">${esc(x.title)}</span></span>
       </a>`
     ).join('');
   }

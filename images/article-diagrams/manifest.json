@@ -5,7 +5,9 @@
     "label": "AI活用・時短術",
     "title": "Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki.html",
@@ -13,7 +15,9 @@
     "label": "簿記3級・2級",
     "title": "日商簿記3級・2級の独学勉強法と合格スケジュール",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/boki.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2.html",
@@ -21,7 +25,9 @@
     "label": "簿記2級",
     "title": "簿記2級の勉強時間・独学合格ロードマップ",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/boki2.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-progress.html",
@@ -29,7 +35,9 @@
     "label": "簿記2級",
     "title": "簿記2級 学習進捗チェック",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-kessan.html",
@@ -37,7 +45,9 @@
     "label": "簿記2級",
     "title": "決算整理・財務諸表作成の第3問対策",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-shohin-baibai.html",
@@ -45,7 +55,9 @@
     "label": "簿記2級",
     "title": "商品売買・売上原価・棚卸資産",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-junshisan.html",
@@ -53,7 +65,9 @@
     "label": "簿記2級",
     "title": "株式発行・純資産・剰余金配当",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-hojinzei-shohizei.html",
@@ -61,7 +75,9 @@
     "label": "簿記2級",
     "title": "法人税等・消費税の仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-software.html",
@@ -69,7 +85,9 @@
     "label": "簿記2級",
     "title": "ソフトウェア・研究開発費・無形固定資産",
     "family": "it",
-    "art": "it"
+    "art": "it",
+    "asset": "it.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-ginko-chosei.html",
@@ -77,7 +95,9 @@
     "label": "簿記2級",
     "title": "銀行勘定調整表",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-seizo-kansetsuhi.html",
@@ -85,7 +105,9 @@
     "label": "簿記2級",
     "title": "製造間接費・予定配賦・配賦差異",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-bumonbetsu.html",
@@ -93,7 +115,9 @@
     "label": "簿記2級",
     "title": "部門別計算・補助部門費の配賦",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-seizo-genka-hokokusho.html",
@@ -101,7 +125,9 @@
     "label": "簿記2級",
     "title": "製造原価報告書",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-net-test.html",
@@ -109,7 +135,9 @@
     "label": "簿記2級",
     "title": "ネット試験の問題構成・時間配分",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-next-exam.html",
@@ -117,7 +145,9 @@
     "label": "簿記2級",
     "title": "試験日程と最速3ヶ月合格ロードマップ",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-cbt-vs-paper.html",
@@ -125,7 +155,9 @@
     "label": "簿記2級",
     "title": "ネット試験（CBT）vs 統一試験（紙）徹底比較",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-kogyo-enshu.html",
@@ -133,7 +165,9 @@
     "label": "簿記2級",
     "title": "工業簿記の演習ロードマップ",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-oyoryoku-kabe.html",
@@ -141,7 +175,9 @@
     "label": "簿記2級",
     "title": "仕訳はわかるのに過去問になると解けない「理解」と「得点力」のギャップを埋める演習法",
     "family": "problem",
-    "art": "problem"
+    "art": "problem",
+    "asset": "problem.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-renketsu-suteru.html",
@@ -149,7 +185,9 @@
     "label": "簿記2級",
     "title": "簿記2級の連結会計、捨てるべき？心が折れそうな人のための「部分点」戦略",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-moshi-honban.html",
@@ -157,7 +195,9 @@
     "label": "簿記2級",
     "title": "模試はできるのに本番で解けない人の弱点診断チェックリスト",
     "family": "problem",
-    "art": "problem"
+    "art": "problem",
+    "asset": "problem.jpg",
+    "render": "template"
   },
   {
     "file": "boki-careless-miss.html",
@@ -165,7 +205,9 @@
     "label": "簿記3級・2級",
     "title": "電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki-zasetsu-type.html",
@@ -173,7 +215,9 @@
     "label": "簿記3級・2級",
     "title": "勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方",
     "family": "problem",
-    "art": "problem"
+    "art": "problem",
+    "asset": "problem.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-tobashi-2kyu.html",
@@ -181,7 +225,9 @@
     "label": "簿記3級",
     "title": "簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki1.html",
@@ -189,7 +235,9 @@
     "label": "簿記1級",
     "title": "日商簿記1級の独学合格ガイド",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki1.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki1-next-exam.html",
@@ -197,7 +245,9 @@
     "label": "簿記1級",
     "title": "日商簿記1級・次の試験日程と最速ロードマップ",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-11month-strategy.html",
@@ -205,7 +255,9 @@
     "label": "簿記1級",
     "title": "今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-yobikou.html",
@@ -213,7 +265,9 @@
     "label": "勉強法",
     "title": "日商簿記1級は予備校と独学どっちがいい？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-akirameta-tatenaoshi.html",
@@ -221,7 +275,9 @@
     "label": "簿記1級",
     "title": "簿記1級に落ちた後、何をすればいい？向いてないかもと思ったときの立て直し方",
     "family": "problem",
-    "art": "problem"
+    "art": "problem",
+    "asset": "problem.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-kigyoketsugo-vs-renketsu.html",
@@ -229,7 +285,9 @@
     "label": "簿記1級",
     "title": "企業結合会計と連結会計の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-renketsu-seika.html",
@@ -237,7 +295,9 @@
     "label": "簿記1級",
     "title": "成果連結｜未実現利益の消去",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-shasai-teigaku-vs-risokuho.html",
@@ -245,7 +305,9 @@
     "label": "簿記1級",
     "title": "社債｜定額法と利息法の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html",
@@ -253,7 +315,9 @@
     "label": "簿記1級",
     "title": "圧縮記帳｜直接減額方式と積立金方式の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-sogo-vs-kobetsu-shokyaku.html",
@@ -261,7 +325,9 @@
     "label": "簿記1級",
     "title": "総合償却と個別償却の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-taishoku-kanbenho-vs-gensokuho.html",
@@ -269,7 +335,9 @@
     "label": "簿記1級",
     "title": "退職給付会計｜簡便法と原則法の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki1-kawase-yoyaku-furiate-vs-dokuritsu.html",
@@ -277,7 +345,9 @@
     "label": "簿記1級",
     "title": "為替予約｜振当処理と独立処理の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "cpa.html",
@@ -285,7 +355,9 @@
     "label": "公認会計士",
     "title": "公認会計士試験の勉強法・独学ロードマップ",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/cpa.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "fp.html",
@@ -293,7 +365,9 @@
     "label": "FP2級",
     "title": "FP2級・3級の独学合格ガイド",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/fp.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "takken.html",
@@ -301,7 +375,9 @@
     "label": "宅建",
     "title": "宅建士の独学合格ガイド・スケジュール",
     "family": "legal",
-    "art": "legal"
+    "art": "recovered",
+    "asset": "recovered/takken.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "gyosei.html",
@@ -309,7 +385,9 @@
     "label": "行政書士",
     "title": "行政書士試験の独学合格ガイド",
     "family": "legal",
-    "art": "legal"
+    "art": "recovered",
+    "asset": "recovered/gyosei.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "sharoshi.html",
@@ -317,7 +395,9 @@
     "label": "社労士",
     "title": "社会保険労務士の独学合格ガイド",
     "family": "legal",
-    "art": "legal"
+    "art": "recovered",
+    "asset": "recovered/sharoshi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "zeirishi.html",
@@ -325,7 +405,9 @@
     "label": "税理士",
     "title": "税理士試験の科目選択と独学戦略",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/zeirishi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shihoshoshi.html",
@@ -333,7 +415,9 @@
     "label": "司法書士",
     "title": "司法書士の独学合格ガイド",
     "family": "legal",
-    "art": "legal"
+    "art": "recovered",
+    "asset": "recovered/shihoshoshi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shihoshoshi-start.html",
@@ -341,7 +425,9 @@
     "label": "司法書士",
     "title": "司法書士を目指す人が最初の7日間でやること",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "shihoshoshi-roniten.html",
@@ -349,7 +435,9 @@
     "label": "司法書士",
     "title": "司法書士の科目別論点一覧",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "shihoshoshi-minpo-sosoku.html",
@@ -357,7 +445,9 @@
     "label": "司法書士",
     "title": "民法総則・意思表示・代理・時効",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "shihoshoshi-minpo-bukken.html",
@@ -365,7 +455,9 @@
     "label": "司法書士",
     "title": "物権・抵当権・対抗要件",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "shihoshoshi-futoki.html",
@@ -373,7 +465,9 @@
     "label": "司法書士",
     "title": "不動産登記法・所有権移転・抵当権設定",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "shihoshoshi-kaishaho.html",
@@ -381,7 +475,9 @@
     "label": "司法書士",
     "title": "会社法・商業登記法",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "mansion.html",
@@ -389,7 +485,9 @@
     "label": "マンション管理士",
     "title": "マンション管理士の独学合格ガイド",
     "family": "legal",
-    "art": "legal"
+    "art": "recovered",
+    "asset": "recovered/mansion.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "toeic.html",
@@ -397,7 +495,9 @@
     "label": "TOEIC",
     "title": "TOEIC L&Rの独学スコアアップ戦略",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken.html",
@@ -405,7 +505,9 @@
     "label": "英検2級",
     "title": "英検2級の独学合格ガイド",
     "family": "english",
-    "art": "english"
+    "art": "recovered",
+    "asset": "recovered/eiken.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "itp.html",
@@ -413,7 +515,9 @@
     "label": "ITパスポート",
     "title": "ITパスポートの独学合格ガイド",
     "family": "it",
-    "art": "it"
+    "art": "recovered",
+    "asset": "recovered/itp.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "fe.html",
@@ -421,7 +525,9 @@
     "label": "基本情報",
     "title": "基本情報技術者試験の独学合格ガイド",
     "family": "it",
-    "art": "it"
+    "art": "it",
+    "asset": "it.jpg",
+    "render": "template"
   },
   {
     "file": "ap.html",
@@ -429,7 +535,9 @@
     "label": "応用情報",
     "title": "応用情報技術者試験の完全ガイド",
     "family": "it",
-    "art": "it"
+    "art": "it",
+    "asset": "it.jpg",
+    "render": "template"
   },
   {
     "file": "mos.html",
@@ -437,7 +545,9 @@
     "label": "MOS",
     "title": "MOS（Microsoft Office Specialist）の独学合格ガイド",
     "family": "it",
-    "art": "it"
+    "art": "it",
+    "asset": "it.jpg",
+    "render": "template"
   },
   {
     "file": "shindanshi.html",
@@ -445,7 +555,9 @@
     "label": "中小企業診断士",
     "title": "中小企業診断士の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/shindanshi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "kiken.html",
@@ -453,7 +565,9 @@
     "label": "危険物乙4",
     "title": "危険物取扱者（乙4）の独学合格ガイド",
     "family": "it",
-    "art": "it"
+    "art": "it",
+    "asset": "it.jpg",
+    "render": "template"
   },
   {
     "file": "denki.html",
@@ -461,7 +575,9 @@
     "label": "電気工事士",
     "title": "電気工事士2種の独学合格ガイド",
     "family": "it",
-    "art": "it"
+    "art": "it",
+    "asset": "it.jpg",
+    "render": "template"
   },
   {
     "file": "chori.html",
@@ -469,7 +585,9 @@
     "label": "調理師免許",
     "title": "調理師免許の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "kaigo.html",
@@ -477,7 +595,9 @@
     "label": "ケアマネ",
     "title": "ケアマネジャー試験の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "nurse.html",
@@ -485,7 +605,9 @@
     "label": "看護師",
     "title": "看護師国家試験の勉強法と合格戦略",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "hoikushi.html",
@@ -493,7 +615,9 @@
     "label": "保育士",
     "title": "保育士試験の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "shakai-fukushi.html",
@@ -501,7 +625,9 @@
     "label": "社会福祉士",
     "title": "社会福祉士の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "iryo-jimu.html",
@@ -509,7 +635,9 @@
     "label": "医療事務",
     "title": "医療事務の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "kaigo-fukushi.html",
@@ -517,7 +645,9 @@
     "label": "介護福祉士",
     "title": "介護福祉士の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "keizoku.html",
@@ -525,7 +655,9 @@
     "label": "勉強継続",
     "title": "資格勉強が続かない原因と解決策7つ",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/keizoku.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shakaijin-benkyou-jikan.html",
@@ -533,7 +665,9 @@
     "label": "勉強時間",
     "title": "社会人が勉強時間を確保する方法7選",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "shikaku-app.html",
@@ -541,7 +675,9 @@
     "label": "アプリ比較",
     "title": "資格勉強アプリ比較ランキング2026",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/shikaku-app.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki-vs-fp.html",
@@ -549,7 +685,9 @@
     "label": "資格比較",
     "title": "簿記2級 vs FP2級 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "takken-vs-gyosei.html",
@@ -557,7 +695,9 @@
     "label": "資格比較",
     "title": "宅建 vs 行政書士 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "itp-vs-fe.html",
@@ -565,7 +705,9 @@
     "label": "資格比較",
     "title": "ITパスポート vs 基本情報 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "sharoshi-vs-gyosei.html",
@@ -573,7 +715,9 @@
     "label": "資格比較",
     "title": "社労士 vs 行政書士 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/sharoshi-vs-gyosei.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "fe-vs-ap.html",
@@ -581,7 +725,9 @@
     "label": "資格比較",
     "title": "基本情報 vs 応用情報 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "zeirishi-vs-cpa.html",
@@ -589,7 +735,9 @@
     "label": "資格比較",
     "title": "税理士 vs 公認会計士 どっちを目指すべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "sharoshi-vs-shindanshi.html",
@@ -597,7 +745,9 @@
     "label": "資格比較",
     "title": "社労士 vs 中小企業診断士 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/sharoshi-vs-shindanshi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "toeic-vs-eiken.html",
@@ -605,7 +755,9 @@
     "label": "資格比較",
     "title": "TOEIC vs 英検 どっちを取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/toeic-vs-eiken.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "takken-vs-mansion.html",
@@ -613,7 +765,9 @@
     "label": "資格比較",
     "title": "宅建 vs マンション管理士 どっちを先に取るべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/takken-vs-mansion.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "osusume-shikaku.html",
@@ -621,7 +775,9 @@
     "label": "まとめ",
     "title": "社会人におすすめの資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "cospa-shikaku.html",
@@ -629,7 +785,9 @@
     "label": "まとめ",
     "title": "コスパがいい資格ランキング10選",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "tenshoku-shikaku.html",
@@ -637,7 +795,9 @@
     "label": "まとめ",
     "title": "転職に有利な資格ランキング10選",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "shikaku-jinsei-kawaru.html",
@@ -645,7 +805,9 @@
     "label": "考え方",
     "title": "資格を取っても人生が変わりやすい人・変わりにくい人",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/shikaku-jinsei-kawaru.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "daigakusei-shikaku-heiyou.html",
@@ -653,7 +815,9 @@
     "label": "大学生",
     "title": "大学生は資格勉強を2つ以上併用すべき？1つに絞るべき？",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "cpa-akirameta-boki1.html",
@@ -661,7 +825,9 @@
     "label": "会計士→簿記1級",
     "title": "公認会計士を諦めたら簿記1級は狙える？勉強時間はどれくらい活きるのか",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/cpa-akirameta-boki1.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "cpa-akirameta-shinro.html",
@@ -669,7 +835,9 @@
     "label": "会計士の進路",
     "title": "公認会計士を諦めた後の進路は？後悔しにくい選び方を正直に整理",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/cpa-akirameta-shinro.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shikaku-zasetsu-riyu.html",
@@ -677,7 +845,9 @@
     "label": "挫折・再開",
     "title": "資格勉強を途中でやめる人のよくある理由｜挫折しやすいタイミングと立て直し方",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/shikaku-zasetsu-riyu.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "hatarakinagara-shikaku.html",
@@ -685,7 +855,9 @@
     "label": "社会人向け",
     "title": "働きながら取れる資格ランキング10選｜社会人でも続けやすい資格を厳選",
     "family": "career",
-    "art": "career"
+    "art": "recovered",
+    "asset": "recovered/hatarakinagara-shikaku.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shukatsu-shikaku.html",
@@ -693,7 +865,9 @@
     "label": "大学生向け",
     "title": "就活で強い資格ランキング10選｜大学生のうちに取る価値がある資格を厳選",
     "family": "career",
-    "art": "career"
+    "art": "recovered",
+    "asset": "recovered/shukatsu-shikaku.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "daigakusei-keizoku.html",
@@ -701,7 +875,9 @@
     "label": "大学生向け",
     "title": "大学生が資格勉強を続ける方法｜授業・バイト・就活と両立するコツ",
     "family": "career",
-    "art": "career"
+    "art": "recovered",
+    "asset": "recovered/daigakusei-keizoku.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "univ-boki-units.html",
@@ -709,7 +885,9 @@
     "label": "大学生向け",
     "title": "大学の簿記・会計の講義は「神ボーナスステージ」！自習×大学で一石五鳥ハック",
     "family": "career",
-    "art": "career"
+    "art": "recovered",
+    "asset": "recovered/univ-boki-units.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shikaku-women.html",
@@ -717,7 +895,9 @@
     "label": "まとめ",
     "title": "女性におすすめ資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "shikaku-30dai.html",
@@ -725,7 +905,9 @@
     "label": "まとめ",
     "title": "30代が取るべき資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "dokugaku-shikaku.html",
@@ -733,7 +915,9 @@
     "label": "まとめ",
     "title": "独学で取れる資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "shikaku-20dai.html",
@@ -741,7 +925,9 @@
     "label": "まとめ",
     "title": "20代におすすめ資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "shikaku-eigyo.html",
@@ -749,7 +935,9 @@
     "label": "まとめ",
     "title": "営業職におすすめ資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "recovered",
+    "asset": "recovered/shikaku-eigyo.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "shikaku-3months.html",
@@ -757,7 +945,9 @@
     "label": "まとめ",
     "title": "3ヶ月で取れる資格ランキング2026",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "toroku-hanbai.html",
@@ -765,7 +955,9 @@
     "label": "登録販売者",
     "title": "登録販売者の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "eisei-kanri.html",
@@ -773,7 +965,9 @@
     "label": "衛生管理者",
     "title": "衛生管理者（第一種・第二種）の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "hisho.html",
@@ -781,7 +975,9 @@
     "label": "秘書検定",
     "title": "秘書検定2級・準1級の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/hisho.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "kanken.html",
@@ -789,7 +985,9 @@
     "label": "漢字検定",
     "title": "漢字検定（漢検）2級の独学合格ガイド",
     "family": "english",
-    "art": "english"
+    "art": "recovered",
+    "asset": "recovered/kanken.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "gaibuin.html",
@@ -797,7 +995,9 @@
     "label": "証券外務員",
     "title": "証券外務員一種・二種の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/gaibuin.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "kenchiku.html",
@@ -805,7 +1005,9 @@
     "label": "二級建築士",
     "title": "二級建築士の独学合格ガイド",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/kenchiku.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "toefl.html",
@@ -813,7 +1015,9 @@
     "label": "TOEFL",
     "title": "TOEFL iBTの独学スコアアップ戦略",
     "family": "english",
-    "art": "english"
+    "art": "recovered",
+    "asset": "recovered/toefl.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "eiken1.html",
@@ -821,7 +1025,9 @@
     "label": "英検準1級",
     "title": "英検準1級の独学合格ガイド",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "fp3.html",
@@ -829,7 +1035,9 @@
     "label": "FP3級",
     "title": "FP3級の勉強時間・独学合格スケジュール",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-lifeplanning.html",
@@ -837,7 +1045,9 @@
     "label": "FP3級",
     "title": "ライフプランニングと資金計画",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-risk.html",
@@ -845,7 +1055,9 @@
     "label": "FP3級",
     "title": "リスク管理・保険",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-finance.html",
@@ -853,7 +1065,9 @@
     "label": "FP3級",
     "title": "金融資産運用",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-tax.html",
@@ -861,7 +1075,9 @@
     "label": "FP3級",
     "title": "タックスプランニング",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-realestate.html",
@@ -869,7 +1085,9 @@
     "label": "FP3級",
     "title": "不動産",
     "family": "legal",
-    "art": "legal"
+    "art": "legal",
+    "asset": "legal.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-inheritance.html",
@@ -877,7 +1095,9 @@
     "label": "FP3級",
     "title": "相続・事業承継",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-iminai.html",
@@ -885,7 +1105,9 @@
     "label": "FP3級",
     "title": "FP3級は意味ない？取る価値を整理",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-nannichi.html",
@@ -893,7 +1115,9 @@
     "label": "FP3級",
     "title": "FP3級は何日で受かる？短期合格計画",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "cpa-yobikou.html",
@@ -901,7 +1125,9 @@
     "label": "勉強法",
     "title": "公認会計士・税理士は予備校と独学どっちがいい？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki-zero-01.html",
@@ -909,7 +1135,9 @@
     "label": "簿記3級",
     "title": "ゼロからの簿記①取引・簿記とは？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki-zero-02.html",
@@ -917,7 +1145,9 @@
     "label": "簿記3級",
     "title": "ゼロからの簿記②なぜ簿記が大事？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki-zero-03.html",
@@ -925,7 +1155,9 @@
     "label": "簿記3級",
     "title": "ゼロからの簿記③簿記の流れ・決算書とは？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki-zero-04.html",
@@ -933,7 +1165,9 @@
     "label": "簿記3級",
     "title": "ゼロからの簿記④仕訳のしくみ",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki-zero-05.html",
@@ -941,7 +1175,9 @@
     "label": "簿記3級",
     "title": "ゼロからの簿記⑤仕訳から財務諸表へ",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-kotei-shisan.html",
@@ -949,7 +1185,9 @@
     "label": "簿記2級",
     "title": "固定資産（減価償却・除却・売却）の仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-hikiatekin.html",
@@ -957,7 +1195,9 @@
     "label": "簿記2級",
     "title": "引当金（貸倒引当金・退職給付引当金）の仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-genkin.html",
@@ -965,7 +1205,9 @@
     "label": "簿記3級",
     "title": "現金・当座預金の違いと仕訳",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-kafusoku.html",
@@ -973,7 +1215,9 @@
     "label": "簿記3級",
     "title": "現金過不足（雑損・雑益）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-kashidaore.html",
@@ -981,7 +1225,9 @@
     "label": "簿記3級",
     "title": "貸倒引当金の仕訳と計算",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-genka.html",
@@ -989,7 +1235,9 @@
     "label": "簿記3級",
     "title": "減価償却（定額法）の計算と仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-keika.html",
@@ -997,7 +1245,9 @@
     "label": "簿記3級",
     "title": "経過勘定（前払・未払・前受・未収）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-keika2.html",
@@ -1005,7 +1255,9 @@
     "label": "簿記3級",
     "title": "毎年同額の前払い（18か月の理由）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-shisanhyo.html",
@@ -1013,7 +1265,9 @@
     "label": "簿記3級",
     "title": "試算表3種類の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-denpyo.html",
@@ -1021,7 +1275,9 @@
     "label": "簿記3級",
     "title": "伝票会計（３伝票制）の仕訳と解き方",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-nikkei.html",
@@ -1029,7 +1285,9 @@
     "label": "簿記3級",
     "title": "仕訳日計表の書き方と集計ステップ",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-sanpou.html",
@@ -1037,7 +1295,9 @@
     "label": "簿記3級",
     "title": "商品売買の仕訳（三分法）仕入・売上・繰越商品",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-kake.html",
@@ -1045,7 +1305,9 @@
     "label": "簿記3級",
     "title": "掛取引（売掛金・買掛金）の仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-tegata.html",
@@ -1053,7 +1315,9 @@
     "label": "簿記3級",
     "title": "受取手形・支払手形・電子記録債権の仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-kyuryo.html",
@@ -1061,7 +1325,9 @@
     "label": "簿記3級",
     "title": "給料の仕訳と源泉所得税・社会保険料の預り金",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-kotei.html",
@@ -1069,7 +1335,9 @@
     "label": "簿記3級",
     "title": "固定資産の取得・売却の仕訳（付随費用・売却損益）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki3-kotei.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-sonota.html",
@@ -1077,7 +1345,9 @@
     "label": "簿記3級",
     "title": "その他の債権・債務（前払金・前受金・仮払金・仮受金・立替金・預り金）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki3-sonota.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-kabushiki.html",
@@ -1085,7 +1355,9 @@
     "label": "簿記3級",
     "title": "株式会社の取引の仕訳（株式発行・剰余金の配当・利益準備金）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki3-kabushiki.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-shohi.html",
@@ -1093,7 +1365,9 @@
     "label": "簿記3級",
     "title": "消費税の仕訳（税抜方式）仮払消費税・仮受消費税",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki3-shohi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-seisanhyo.html",
@@ -1101,7 +1375,9 @@
     "label": "簿記3級",
     "title": "精算表の書き方（8桁精算表）決算整理から財務諸表まで",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki3-seisanhyo.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-koguchi.html",
@@ -1109,7 +1385,9 @@
     "label": "簿記3級",
     "title": "小口現金の仕訳（定額資金前渡制度）補給・出納帳の書き方",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-shohinuriage.html",
@@ -1117,7 +1395,9 @@
     "label": "簿記3級",
     "title": "商品有高帳の書き方（先入先出法・移動平均法）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-hojosho.html",
@@ -1125,7 +1405,9 @@
     "label": "簿記3級",
     "title": "補助簿の種類と使い方（現金出納帳・売掛金元帳ほか）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-hojinzei.html",
@@ -1133,7 +1415,9 @@
     "label": "簿記3級",
     "title": "法人税等の仕訳（仮払法人税等・未払法人税等）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-credit.html",
@@ -1141,7 +1425,9 @@
     "label": "簿記3級",
     "title": "クレジット売掛金の仕訳（信販会社・手数料処理）",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "univ-ai-report-hack.html",
@@ -1149,7 +1435,9 @@
     "label": "AIライフハック",
     "title": "ボイスメモ×AIでレポート無双！単位修得ハックを完全公開",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/univ-ai-report-hack.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "univ-qualification-strategy.html",
@@ -1157,7 +1445,9 @@
     "label": "大学生向け",
     "title": "将来から逆算する最強の資格戦略",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-renketsu.html",
@@ -1165,7 +1455,9 @@
     "label": "簿記2級",
     "title": "連結会計・連結修正仕訳・のれん",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-zeikouka.html",
@@ -1173,7 +1465,9 @@
     "label": "簿記2級",
     "title": "税効果会計・一時差異・法人税等調整額",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-kurinobe-shisan-vs-fusai.html",
@@ -1181,7 +1475,9 @@
     "label": "簿記2級",
     "title": "繰延税金資産と繰延税金負債の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-lease.html",
@@ -1189,7 +1485,9 @@
     "label": "簿記2級",
     "title": "リース取引・ファイナンスリースの仕訳",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-gaika.html",
@@ -1197,7 +1495,9 @@
     "label": "簿記2級",
     "title": "外貨換算会計・為替差損益・為替予約",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-yukashoken.html",
@@ -1205,7 +1505,9 @@
     "label": "簿記2級",
     "title": "有価証券の分類と評価替え",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-arai-kirihanashi.html",
@@ -1213,7 +1515,9 @@
     "label": "簿記2級",
     "title": "有価証券の洗替方式と切放方式の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-shasai.html",
@@ -1221,7 +1525,9 @@
     "label": "簿記2級",
     "title": "満期保有目的債券・社債の償却原価法",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-noren-vs-fu-no-noren.html",
@@ -1229,7 +1535,9 @@
     "label": "簿記2級",
     "title": "のれんと負ののれんの違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-kotei-shisan-why.html",
@@ -1237,7 +1545,9 @@
     "label": "簿記2級",
     "title": "定額法と定率法はなぜ存在するのか？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-kogyo.html",
@@ -1245,7 +1555,9 @@
     "label": "簿記2級",
     "title": "工業簿記とは・商業簿記との違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-zairyouhi.html",
@@ -1253,7 +1565,9 @@
     "label": "簿記2級",
     "title": "材料費・直接材料費・材料副費",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-zairyouhi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-roumuhi.html",
@@ -1261,7 +1575,9 @@
     "label": "簿記2級",
     "title": "労務費・直接労務費・賃率差異",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-roumuhi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-keihi.html",
@@ -1269,7 +1585,9 @@
     "label": "簿記2級",
     "title": "経費・外注加工賃・製造間接費",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-keihi.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-kobetsu-genka.html",
@@ -1277,7 +1595,9 @@
     "label": "簿記2級",
     "title": "個別原価計算・製造指図書の流れ",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-kobetsu-genka.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-sogo-genka.html",
@@ -1285,7 +1605,9 @@
     "label": "簿記2級",
     "title": "総合原価計算・平均法・先入先出法",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-sogo-genka.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-hyojun-genka.html",
@@ -1293,7 +1615,9 @@
     "label": "簿記2級",
     "title": "標準原価計算・原価差異の分析",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-hyojun-genka.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-hyojun-vs-jissai.html",
@@ -1301,7 +1625,9 @@
     "label": "簿記2級",
     "title": "標準原価計算と実際原価計算の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/boki2-hyojun-vs-jissai.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-kotei-betsu-genka.html",
@@ -1309,7 +1635,9 @@
     "label": "簿記2級",
     "title": "工程別総合原価計算・累加法と前工程費",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-kotei-betsu-genka.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-chokusetsu-genka.html",
@@ -1317,7 +1645,9 @@
     "label": "簿記2級",
     "title": "直接原価計算・貢献利益と固定費",
     "family": "accounting",
-    "art": "accounting"
+    "art": "recovered",
+    "asset": "recovered/boki2-chokusetsu-genka.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki2-cvp.html",
@@ -1325,7 +1655,9 @@
     "label": "簿記2級",
     "title": "CVP分析・損益分岐点売上高",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "boki2-ochita.html",
@@ -1333,7 +1665,9 @@
     "label": "簿記2級",
     "title": "簿記2級に落ちた後の立て直し",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/boki2-ochita.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-cbt-vs-paper.html",
@@ -1341,7 +1675,9 @@
     "label": "簿記3級",
     "title": "簿記3級ネット試験 vs 紙の試験、どっちを選ぶべき？",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-kashitsuke-uriage.html",
@@ -1349,7 +1685,9 @@
     "label": "簿記3級",
     "title": "貸付金と売掛金の違い",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-next-exam.html",
@@ -1357,7 +1695,9 @@
     "label": "簿記3級",
     "title": "日商簿記3級の次の試験日と最速合格ロードマップ",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "boki3-next.html",
@@ -1365,7 +1705,9 @@
     "label": "簿記3級",
     "title": "簿記3級の次に取る資格は？FP3級 vs 簿記2級の選び方",
     "family": "compare",
-    "art": "compare"
+    "art": "recovered",
+    "asset": "recovered/boki3-next.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-ochita.html",
@@ -1373,7 +1715,9 @@
     "label": "簿記3級",
     "title": "簿記3級に落ちた後の立て直し",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/boki3-ochita.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "boki3-progress.html",
@@ -1381,7 +1725,9 @@
     "label": "簿記3級",
     "title": "簿記3級 学習進捗チェック",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "recovered",
+    "asset": "recovered/boki3-progress.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "cpa-akirameta-shukatsu.html",
@@ -1389,7 +1735,9 @@
     "label": "会計士の進路",
     "title": "公認会計士を諦めた後の就活はどうする？",
     "family": "problem",
-    "art": "problem"
+    "art": "recovered",
+    "asset": "recovered/cpa-akirameta-shukatsu.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "cpa-akirameta-zeirishi-boki1.html",
@@ -1397,7 +1745,9 @@
     "label": "会計士の進路",
     "title": "公認会計士を諦めた後：税理士 vs 日商簿記1級",
     "family": "compare",
-    "art": "compare"
+    "art": "compare",
+    "asset": "compare.jpg",
+    "render": "template"
   },
   {
     "file": "cpa-daigakusei-kakugo.html",
@@ -1405,7 +1755,9 @@
     "label": "公認会計士",
     "title": "大学生が公認会計士試験に挑む前に知るべきリアル",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "cpa-dokugaku.html",
@@ -1413,7 +1765,9 @@
     "label": "公認会計士",
     "title": "公認会計士の独学は可能か？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "cpa-kigyoho-kikansekkei.html",
@@ -1421,7 +1775,9 @@
     "label": "公認会計士",
     "title": "株式会社の機関設計（327条・328条）の覚え方",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "cpa-subjects.html",
@@ -1429,7 +1785,9 @@
     "label": "公認会計士",
     "title": "財務会計論（計算・理論）とは？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "daigakusei-kojin-jigyo-fuyo.html",
@@ -1437,7 +1795,9 @@
     "label": "大学生向け",
     "title": "大学生の個人事業主、扶養の壁はアルバイトと違う？",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "daigakusei-keizai-shikaku.html",
@@ -1445,7 +1805,9 @@
     "label": "大学生向け",
     "title": "経済・経営学部の大学生が在学中に取るべき資格ランキング",
     "family": "career",
-    "art": "career"
+    "art": "recovered",
+    "asset": "recovered/daigakusei-keizai-shikaku.jpg",
+    "render": "exact-generated"
   },
   {
     "file": "daigakusei-nenkin.html",
@@ -1453,7 +1815,9 @@
     "label": "大学生向け",
     "title": "大学生の国民年金「学生納付特例制度」とは？",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "daigakusei-zeikin-yougo.html",
@@ -1461,7 +1825,9 @@
     "label": "大学生向け",
     "title": "学生のための税金用語まるわかりガイド",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "denshi-chobo-hozon-ho.html",
@@ -1469,7 +1835,9 @@
     "label": "会計・実務",
     "title": "電子帳簿保存法をわかりやすく解説",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "invoice-2wari-3wari-tokurei.html",
@@ -1477,7 +1845,9 @@
     "label": "会計・実務",
     "title": "インボイス「2割特例」はいつまで？「3割特例」新設と経過措置",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "kakutei-shinkoku-okure-bassoku.html",
@@ -1485,7 +1855,9 @@
     "label": "会計・実務",
     "title": "確定申告が遅れたら・嘘をついたらどうなる？",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "kessansho-yomikata-sony.html",
@@ -1493,7 +1865,9 @@
     "label": "会計・実務",
     "title": "簿記の「のれん」「非支配株主持分」を決算書で読む",
     "family": "accounting",
-    "art": "accounting"
+    "art": "accounting",
+    "asset": "accounting.jpg",
+    "render": "template"
   },
   {
     "file": "shikaku-list.html",
@@ -1501,7 +1875,9 @@
     "label": "まとめ",
     "title": "資格勉強ガイド一覧",
     "family": "roadmap",
-    "art": "roadmap"
+    "art": "roadmap",
+    "asset": "roadmap.jpg",
+    "render": "template"
   },
   {
     "file": "eiken-jun1.html",
@@ -1509,7 +1885,9 @@
     "label": "英検準1級",
     "title": "英検準1級の勉強法・合格スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken-jun2.html",
@@ -1517,7 +1895,9 @@
     "label": "英検準2級",
     "title": "英検準2級の勉強法・合格スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken2.html",
@@ -1525,7 +1905,9 @@
     "label": "英検2級",
     "title": "英検2級 徹底攻略ガイド",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken3.html",
@@ -1533,7 +1915,9 @@
     "label": "英検3級",
     "title": "英検3級の勉強法・合格スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken3-grammar.html",
@@ -1541,7 +1925,9 @@
     "label": "英検3級",
     "title": "英検3級 頻出名詞・関係代名詞・間接疑問文まとめ",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken4.html",
@@ -1549,7 +1935,9 @@
     "label": "英検4級",
     "title": "英検4級の勉強法・合格スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "eiken5.html",
@@ -1557,7 +1945,9 @@
     "label": "英検5級",
     "title": "英検5級の勉強法・合格スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "fp3-daigakusei.html",
@@ -1565,7 +1955,9 @@
     "label": "FP3級",
     "title": "大学生がFP3級を取るべき理由とベストなタイミング",
     "family": "career",
-    "art": "career"
+    "art": "career",
+    "asset": "career.jpg",
+    "render": "template"
   },
   {
     "file": "ielts.html",
@@ -1573,7 +1965,9 @@
     "label": "IELTS",
     "title": "IELTSの勉強法・スコア別攻略ガイド",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "toeic-730.html",
@@ -1581,7 +1975,9 @@
     "label": "TOEIC",
     "title": "TOEIC 730点の勉強法・突破スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "toeic-860.html",
@@ -1589,7 +1985,9 @@
     "label": "TOEIC",
     "title": "TOEIC 860点の勉強法・突破スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "toeic-900.html",
@@ -1597,7 +1995,9 @@
     "label": "TOEIC",
     "title": "TOEIC 900点の勉強法・突破スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   },
   {
     "file": "toeic-600.html",
@@ -1605,6 +2005,8 @@
     "label": "TOEIC",
     "title": "TOEIC 600点の勉強法・突破スケジュール",
     "family": "english",
-    "art": "english"
+    "art": "english",
+    "asset": "english.jpg",
+    "render": "template"
   }
 ]
