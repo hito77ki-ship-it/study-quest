@@ -360,9 +360,10 @@ async function runAdsense() {
 
   for (const file of articles) {
     const source = html.get(file);
-    const hasUnique = /この記事の判断|独自の判断|判断基準|学習手順|勉強手順/.test(source);
+    const hasStructuredEditorialNote = /\bclass\s*=\s*["'][^"']*\bsq-originality-note\b/i.test(source);
+    const hasUnique = hasStructuredEditorialNote || /この記事の判断|独自の判断|判断基準|学習手順|勉強手順/.test(source);
     const modified = extractDate(source, /"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"/);
-    const visibleMatch = source.match(/更新日[：:]\s*(\d{4})年(\d{1,2})月(\d{1,2})日/);
+    const visibleMatch = source.match(/(?:更新日|更新|最終更新)[：:]\s*(\d{4})年(\d{1,2})月(\d{1,2})日/);
     const visible = visibleMatch
       ? `${visibleMatch[1]}-${visibleMatch[2].padStart(2, '0')}-${visibleMatch[3].padStart(2, '0')}`
       : null;
