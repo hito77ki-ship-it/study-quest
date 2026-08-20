@@ -127,11 +127,26 @@ function headlineLinesFor(article, family) {
       .filter(Boolean);
     if (sides.length === 2) return [sides[0].slice(0, 10), `VS ${sides[1].slice(0, 9)}`];
   }
-  return linesFor(topicFor(article, family));
+  const lines = linesFor(topicFor(article, family));
+  if (!lines.some(line => line.includes('…'))) return lines;
+
+  // カードでタイトルの途中を読ませるより、短い問いを正確に伝える。
+  const text = sourceText(article);
+  const label = normalize(article.label) || THEMES[family].tag;
+  if (family === 'career') {
+    const audience = ['大学生', '社会人', '20代', '30代', '女性', '働きながら', '就活', '転職']
+      .find(keyword => text.includes(keyword));
+    return [audience ? `${audience}の${label}` : label, '取る意味を整理'];
+  }
+  if (family === 'problem') return [label, '立て直し方を整理'];
+  return [label, THEMES[family].action];
 }
 
 function linesFor(value, max = 9) {
-  const characters = Array.from(normalize(value));
+  const normalized = normalize(value);
+  const words = normalized.split(/\s+/).filter(Boolean);
+  if (words.length === 2 && words.every(word => Array.from(word).length <= 12)) return words;
+  const characters = Array.from(normalized);
   if (characters.length <= max) return [characters.join('')];
   const lines = [];
   while (characters.length && lines.length < 2) lines.push(characters.splice(0, max).join(''));
@@ -149,10 +164,11 @@ function shortLabel(article, theme) {
 }
 
 function textBlock(lines) {
-  const size = lines.some(line => Array.from(line).length > 9) ? 31 : 37;
+  const maxChars = Math.max(...lines.map(line => Array.from(line).length));
+  const size = maxChars > 11 ? 38 : maxChars > 8 ? 43 : 49;
   const lineHeight = size + 7;
-  const start = lines.length === 1 ? 172 : 152;
-  return lines.map((line, index) => `<text x="34" y="${start + index * lineHeight}" class="headline" style="font-size:${size}px">${esc(line)}</text>`).join('');
+  const start = lines.length === 1 ? 93 : 67;
+  return lines.map((line, index) => `<text x="28" y="${start + index * lineHeight}" class="headline" style="font-size:${size}px">${esc(line)}</text>`).join('');
 }
 
 function buildSvg(article, artData) {
@@ -166,23 +182,20 @@ function buildSvg(article, artData) {
   <title id="title-${slug}">${esc(article.title)}のメッセージ型サムネイル</title>
   <desc id="desc-${slug}">${esc(badge)}。${esc(titleLines.join(' '))}。${esc(theme.action)}</desc>
   <defs>
-    <linearGradient id="veil" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#071126" stop-opacity=".96"/><stop offset=".44" stop-color="#071126" stop-opacity=".82"/><stop offset=".77" stop-color="#071126" stop-opacity=".18"/><stop offset="1" stop-color="#071126" stop-opacity="0"/></linearGradient>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#D8F8FF" stroke-opacity=".08"/></pattern>
+    <linearGradient id="headlineVeil" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#061127" stop-opacity=".96"/><stop offset=".76" stop-color="#061127" stop-opacity=".82"/><stop offset="1" stop-color="#061127" stop-opacity="0"/></linearGradient>
     <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000" flood-opacity=".5"/></filter>
     <style>
-      .tag{font:800 13px 'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;letter-spacing:.08em;fill:#081222}.eyebrow{font:800 12px 'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;letter-spacing:.12em;fill:${theme.accent}}.headline{font-family:'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;font-weight:900;letter-spacing:-.045em;fill:#FFF;paint-order:stroke;stroke:#071126;stroke-width:3px;stroke-linejoin:round}.note{font:700 13px 'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;fill:#D6E2F0}.kicker{font:900 12px 'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;letter-spacing:.06em;fill:#081222}
+      .tag{font:900 13px 'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;letter-spacing:.06em;fill:#071126}.headline{font-family:'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;font-weight:900;letter-spacing:-.06em;fill:#FFF;paint-order:stroke;stroke:#061127;stroke-width:7px;stroke-linejoin:round}.kicker{font:900 13px 'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;letter-spacing:.02em;fill:#FFF}
     </style>
   </defs>
   <rect width="640" height="360" rx="18" fill="#09152A"/>
   <image href="data:image/jpeg;base64,${artData.get(theme.art)}" x="0" y="0" width="640" height="360" preserveAspectRatio="xMidYMid meet"/>
-  <rect width="640" height="360" rx="18" fill="url(#veil)"/>
-  <rect width="640" height="360" rx="18" fill="url(#grid)"/>
-  <rect x="27" y="27" width="${badgeWidth}" height="30" rx="15" fill="${theme.accent}" filter="url(#shadow)"/>
-  <text x="42" y="47" class="tag">${esc(badge)}</text>
-  <circle cx="39" cy="93" r="5" fill="${theme.accent}"/><text x="54" y="98" class="eyebrow">STUDY QUEST / ARTICLE GUIDE</text>
+  <rect width="640" height="158" rx="18" fill="url(#headlineVeil)"/>
   ${textBlock(titleLines)}
-  <rect x="27" y="282" width="214" height="42" rx="10" fill="#081222" fill-opacity=".76" stroke="${theme.accent}" stroke-opacity=".52"/>
-  <text x="43" y="308" class="kicker">${esc(theme.kicker)}</text>
+  <rect x="27" y="137" width="${badgeWidth}" height="28" rx="7" fill="${theme.accent}" filter="url(#shadow)"/>
+  <text x="41" y="156" class="tag">${esc(badge)}</text>
+  <rect x="${Math.min(545, badgeWidth + 43)}" y="137" width="${Math.min(190, Array.from(theme.action).length * 14 + 28)}" height="28" rx="7" fill="#061127" fill-opacity=".9" stroke="${theme.accent}" stroke-opacity=".75"/>
+  <text x="${Math.min(559, badgeWidth + 57)}" y="156" class="kicker">${esc(theme.action)}</text>
 </svg>`;
 }
 
