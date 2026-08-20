@@ -26,6 +26,7 @@
 | CoconalaのUI/UX診断 | [UI/UX診断](coconala-service-uiux-diagnosis-20260813.md) | 診断サービス、レビュー、納品 |
 | CoconalaのUI/UX改善 | [Web UI/UXリデザイン](coconala-service-web-uiux-redesign-20260813.md) | 改善案、リデザイン、実装範囲 |
 | AI・検索向け公開情報の選定 | [llms.txt選定基準](llms.txt選定基準.md) | llms.txt、AI向け情報公開、掲載基準 |
+| Obsidianを使うメモ・Webクリップ | [Obsidian受信箱とGit正本の連携規約](20260820-Obsidian受信箱とGit正本の連携規約.md) | Vault、Web抽出、Gitとの役割分担 |
 
 ## 全件一覧
 
@@ -44,6 +45,7 @@
 - [UI/UX診断](coconala-service-uiux-diagnosis-20260813.md)
 - [Web UI/UXリデザイン](coconala-service-web-uiux-redesign-20260813.md)
 - [llms.txt選定基準](llms.txt選定基準.md)
+- [Obsidian受信箱とGit正本の連携規約](20260820-Obsidian受信箱とGit正本の連携規約.md)
 - [再利用知識の取得・昇格プロトコル](20260820-再利用知識の昇格と取得プロトコル.md)
 
 知識庫は常時プロンプトではありません。検索して必要な一件だけを取り出し、本文が必要とする一次資料・稟議・レポートへ戻ることを原則にします。
