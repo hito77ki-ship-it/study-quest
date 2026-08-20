@@ -154,7 +154,7 @@ const ARTICLES = {
   'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約', thumb:'images/boki2-gaika-map.svg'},
   'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え', thumb:'images/boki2-yukashoken-map.svg'},
   'boki2-arai-kirihanashi.html':   {label:'簿記2級',          title:'有価証券の洗替方式と切放方式の違い', thumb:'images/boki2-arai-kirihanashi-map.svg'},
-  'boki2-shasai.html':             {label:'簿記2級',          title:'社債の発行・利息・償却原価法', thumb:'images/boki2-shasai-map.svg'},
+  'boki2-shasai.html':             {label:'簿記2級',          title:'満期保有目的債券・社債の償却原価法', thumb:'images/boki2-shasai-map.svg'},
   'boki2-noren-vs-fu-no-noren.html': {label:'簿記2級',        title:'のれんと負ののれんの違い', thumb:'images/boki2-noren-vs-fu-no-noren-map.svg'},
   'boki2-kotei-shisan-why.html':   {label:'簿記2級',          title:'定額法と定率法はなぜ存在するのか？', thumb:'images/depreciation-why-map.svg'},
   'boki2-kogyo.html':              {label:'簿記2級',          title:'工業簿記とは・商業簿記との違い', thumb:'images/boki2-kogyo-map.svg'},
@@ -908,6 +908,7 @@ html[data-theme="light"] .app-cta{
 }
 html[data-theme="light"] .app-cta p,
 html[data-theme="light"] .app-cta h2{color:#1A202C !important;}
+html[data-theme="light"] .app-cta h3{color:#275A12 !important;}
 html[data-theme="light"] details{
   background:#FFFFFF;
   border-color:rgba(26,32,44,.10) !important;
@@ -3688,6 +3689,14 @@ const LEARNING_DIAGNOSTICS = {
     prompt: '掛取引を「商品か・先か後か・権利か義務か」で判定できますか？',
     next: '仕訳を1問解き、科目ではなく取引の流れを日本語で説明する。'
   },
+  'boki2-ochita.html': {
+    prompt: '不合格の原因を、知識不足・解法の迷い・時間切れのどれかに分類できますか？',
+    next: '直近の答案から失点を3問だけ分類し、次回までに直す原因を1つに絞る。'
+  },
+  'boki3-shohinuriage.html': {
+    prompt: '商品有高帳で、どのロットが残り、どのロットが売れたかを説明できますか？',
+    next: '先入先出法か移動平均法の問題を1問選び、残った数量と単価を自分で検算する。'
+  },
   'shindanshi.html': {
     prompt: '7科目を均等に始めるのではなく、今週は「財務・会計」か「企業経営理論」のどちらを優先するか決められますか？',
     next: '2次試験にもつながる科目を1つ選び、過去問を3問解いて失点理由を記録する。'
@@ -3769,6 +3778,8 @@ const LEARNING_DIAGNOSIS_LINKS = {
   'eiken2.html': ['eiken3-grammar.html', '英検の文法対策へ進む'],
   'cpa-akirameta-shukatsu.html': ['cpa-akirameta-shinro.html', '進路の選び方を見る'],
   'boki3-kake.html': ['boki3-shohinuriage.html', '商品売買の仕訳へ進む'],
+  'boki2-ochita.html': ['boki2-moshi-honban.html', '模試の失点診断へ進む'],
+  'boki3-shohinuriage.html': ['boki3-genka.html', '売上原価の計算へ進む'],
   'shindanshi.html': ['keizoku.html', '長期学習の続け方を見る'],
   'shikaku-eigyo.html': ['shukatsu-shikaku.html', '就活に活かす資格を見る'],
   'takken-vs-mansion.html': ['takken.html', '宅建の学習法を見る'],

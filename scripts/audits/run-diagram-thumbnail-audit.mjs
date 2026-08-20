@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const widgetsPath = path.join(root, 'article-widgets.js');
 const diagramsDir = path.join(root, 'images/article-diagrams');
+const artDir = path.join(root, 'images', 'thumbnail-art-16x9');
 const widgets = fs.readFileSync(widgetsPath, 'utf8');
 const articleMatch = widgets.match(/const ARTICLES = (\{[\s\S]*?\n\});\n\n\/\*/);
 if (!articleMatch) throw new Error('ARTICLES台帳を読み取れません。');
@@ -24,15 +25,28 @@ const invalid = articleFiles.filter(file => {
   const svgPath = path.join(diagramsDir, `${file.replace(/\.html$/, '')}.svg`);
   if (!fs.existsSync(svgPath)) return false;
   const svg = fs.readFileSync(svgPath, 'utf8');
-  return !svg.includes('<svg') || !svg.includes('<title') || !svg.includes('viewBox="0 0 640 360"');
+  return !svg.includes('<svg')
+    || !svg.includes('<title')
+    || !svg.includes('viewBox="0 0 640 360"')
+    || !svg.includes('<image href="data:image/jpeg;base64,')
+    || !svg.includes('preserveAspectRatio="xMidYMid meet"');
 });
+const referencedArt = [...new Set(manifest.map(item => item.art))].sort();
+const templateArt = referencedArt.filter(art => art !== 'recovered');
+const missingArt = templateArt.filter(art => !fs.existsSync(path.join(artDir, `${art}.jpg`)));
+const missingAssets = manifest
+  .filter(item => item.asset)
+  .filter(item => !fs.existsSync(path.join(artDir, item.asset)))
+  .map(item => ({ file: item.file, asset: item.asset }));
 const manifestMismatch = articleFiles.length !== manifestFiles.length
   || articleFiles.some((file, index) => file !== manifestFiles[index]);
 const implementationIssues = [
   ['共通記事カード', /function diagramThumbPath\(slug\)/.test(widgets) && /const src = diagramThumb \|\| a\?\.thumb/.test(widgets)],
   ['記事ヒーロー', /image\.src = diagramThumbPath\(slug\)/.test(widgets)],
   ['トップ一覧', fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('images/article-diagrams/${slug}.svg')],
+  ['トップ検索', fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('images/article-diagrams/${esc(x.slug)}.svg')],
   ['あなたにおすすめ', fs.readFileSync(path.join(root, 'article-recommendations.js'), 'utf8').includes('images/article-diagrams/${esc(article.id.replace(/\\.html$/, \'\'))}.svg')],
+  ['資格一覧ヒーロー', fs.readFileSync(path.join(root, 'shikaku-list.html'), 'utf8').includes('images/article-diagrams/shikaku-list.svg')],
 ].filter(([, ok]) => !ok).map(([name]) => name);
 
 const result = {
@@ -40,8 +54,11 @@ const result = {
   manifest: manifest.length,
   missing,
   invalid,
+  referencedArt,
+  missingArt,
+  missingAssets,
   manifestMismatch,
   implementationIssues,
 };
 console.log(JSON.stringify(result, null, 2));
-if (missing.length || invalid.length || manifestMismatch || implementationIssues.length) process.exitCode = 1;
+if (missing.length || invalid.length || missingArt.length || missingAssets.length || manifestMismatch || implementationIssues.length) process.exitCode = 1;
