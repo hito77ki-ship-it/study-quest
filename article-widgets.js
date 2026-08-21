@@ -2566,6 +2566,84 @@ html[data-theme="dark"] .sq-learning-diagnosis__next{color:#D9F99D !important;}
   .sq-learning-diagnosis h2{font-size:17px;}
   .sq-learning-diagnosis__choices button{flex-basis:100%;}
 }
+/* ── 記事FAQ：書式の違う既存HTMLを共通の開閉UIへ寄せる ── */
+.faq-item.sq-faq-item{
+  margin:12px 0 !important;
+  padding:0 !important;
+  border:1px solid var(--sq-border-strong,rgba(140,198,63,.28)) !important;
+  border-radius:10px !important;
+  overflow:hidden;
+  background:var(--sq-surface,var(--sq-page,#fff));
+  box-shadow:0 1px 0 rgba(255,255,255,.04);
+}
+.faq-item.sq-faq-item:first-of-type{border-top:1px solid var(--sq-border-strong,rgba(140,198,63,.28)) !important;}
+.sq-faq-question{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  min-height:54px;
+  padding:14px 16px;
+  border:0;
+  background:var(--sq-surface-soft,#F7FAFC);
+  color:var(--sq-text,#1A202C);
+  font:700 15px/1.55 inherit;
+  text-align:left;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  transition:background-color 150ms ease,color 150ms ease;
+}
+.sq-faq-question::before{
+  content:'Q';
+  display:grid;
+  place-items:center;
+  flex:0 0 22px;
+  width:22px;
+  height:22px;
+  border:1px solid var(--sq-accent,#8CC63F);
+  border-radius:50%;
+  color:var(--sq-highlight-text,#547C17);
+  font-size:11px;
+  line-height:1;
+}
+.sq-faq-question::after{
+  content:'+';
+  margin-left:auto;
+  color:var(--sq-accent,#8CC63F);
+  font-size:22px;
+  font-weight:400;
+  line-height:1;
+  transition:transform 150ms ease;
+}
+.sq-faq-item.is-open .sq-faq-question,
+details.sq-faq-item[open] > .sq-faq-question{background:var(--sq-highlight-bg,rgba(140,198,63,.16));}
+.sq-faq-item.is-open .sq-faq-question::after,
+details.sq-faq-item[open] > .sq-faq-question::after{transform:rotate(45deg);}
+.sq-faq-question:hover{background:var(--sq-highlight-bg,rgba(140,198,63,.16));}
+.sq-faq-question:active{background:var(--sq-marker-bg,rgba(140,198,63,.20));}
+.sq-faq-question:focus-visible{outline:3px solid rgba(59,130,246,.55);outline-offset:-3px;}
+details.sq-faq-item > .sq-faq-question{list-style:none;}
+details.sq-faq-item > .sq-faq-question::-webkit-details-marker{display:none;}
+details.sq-faq-item .faq-plus{display:none;}
+.sq-faq-answer{
+  padding:16px 18px 18px;
+  border-top:1px solid var(--sq-border,rgba(26,32,44,.10));
+  background:var(--sq-surface,var(--sq-page,#fff));
+  color:var(--sq-text,#1A202C);
+}
+.sq-faq-answer p,
+.sq-faq-answer > :last-child{margin-bottom:0 !important;}
+html[data-theme="dark"] .sq-faq-question{background:#151A2A !important;color:#E8EEF8 !important;}
+html[data-theme="dark"] .sq-faq-item.is-open .sq-faq-question,
+html[data-theme="dark"] details.sq-faq-item[open] > .sq-faq-question,
+html[data-theme="dark"] .sq-faq-question:hover{background:rgba(140,198,63,.16) !important;}
+html[data-theme="dark"] .sq-faq-answer{background:#121826 !important;color:#E8EEF8 !important;}
+html[data-theme="dark"] .sq-faq-answer p,
+html[data-theme="dark"] .sq-faq-answer li{color:#CCD6E5 !important;}
+@media(prefers-reduced-motion:reduce){
+  .sq-faq-question,.sq-faq-question::after{transition:none;}
+}
 /* ── ここまで ── */
 `;
   document.head.appendChild(s);
@@ -4766,6 +4844,92 @@ function trackPageView(){
   }).catch(()=>{});
 }
 
+/* FAQの既存マークアップには、.faq-q/.faq-a と h3/.faq-answer の2系統がある。
+   本文とFAQPageの構造化データを維持したまま、画面上の操作だけを共通化する。 */
+function enhanceFAQAccordions(){
+  const groups = new Map();
+  Array.from(document.querySelectorAll('.faq-item')).forEach(item => {
+    const root = item.closest('section#faq, section.faq, section.faq-section, .faq-section')
+      || item.closest('[itemtype="https://schema.org/FAQPage"]')
+      || item.parentElement;
+    if(!root) return;
+    if(!groups.has(root)) groups.set(root, []);
+    groups.get(root).push(item);
+  });
+
+  Array.from(groups.entries()).forEach(([root, items], rootIndex) => {
+
+    const closeOthers = active => {
+      items.forEach(item => {
+        if(item === active) return;
+        if(item.matches('details')) item.open = false;
+        else {
+          item.classList.remove('is-open');
+          const answer = item.querySelector('.sq-faq-answer');
+          const button = item.querySelector('.sq-faq-question');
+          if(answer) answer.hidden = true;
+          if(button) button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    };
+
+    items.forEach((item, itemIndex) => {
+      if(item.dataset.sqFaqReady) return;
+      item.dataset.sqFaqReady = 'true';
+      item.classList.add('sq-faq-item');
+
+      if(item.matches('details')){
+        const summary = item.querySelector(':scope > summary');
+        const answer = item.querySelector(':scope > .faq-answer, :scope > .faq-a, :scope > [itemprop="acceptedAnswer"]');
+        if(!summary || !answer) return;
+        summary.classList.add('sq-faq-question');
+        answer.classList.add('sq-faq-answer');
+        item.open = itemIndex === 0;
+        summary.setAttribute('aria-expanded', item.open ? 'true' : 'false');
+        item.addEventListener('toggle', () => {
+          summary.setAttribute('aria-expanded', item.open ? 'true' : 'false');
+          if(item.open){
+            closeOthers(item);
+            _gaEvent('faq_open', {article_id: PAGE, question: summary.textContent.trim()});
+          }
+        });
+        return;
+      }
+
+      const question = item.querySelector(':scope > .faq-q, :scope > h3, :scope > [itemprop="name"]');
+      const answer = item.querySelector(':scope > .faq-answer, :scope > .faq-a, :scope > [itemprop="acceptedAnswer"]')
+        || Array.from(item.children).find(child => child.tagName === 'P');
+      if(!question || !answer) return;
+
+      const button = document.createElement('button');
+      const answerId = `sq-faq-answer-${rootIndex}-${itemIndex}`;
+      button.type = 'button';
+      button.className = 'sq-faq-question';
+      button.innerHTML = question.innerHTML;
+      if(question.hasAttribute('itemprop')) button.setAttribute('itemprop', question.getAttribute('itemprop'));
+      button.setAttribute('aria-controls', answerId);
+      button.setAttribute('aria-expanded', itemIndex === 0 ? 'true' : 'false');
+      question.replaceWith(button);
+
+      answer.classList.add('sq-faq-answer');
+      answer.id = answerId;
+      answer.setAttribute('role', 'region');
+      answer.setAttribute('aria-label', '回答');
+      answer.hidden = itemIndex !== 0;
+      item.classList.toggle('is-open', itemIndex === 0);
+
+      button.addEventListener('click', () => {
+        const willOpen = answer.hidden;
+        closeOthers(item);
+        answer.hidden = !willOpen;
+        item.classList.toggle('is-open', willOpen);
+        button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        if(willOpen) _gaEvent('faq_open', {article_id: PAGE, question: button.textContent.trim()});
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', async function(){
   injectGA();
   injectStyles();
@@ -4780,6 +4944,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildReadProgress();
   buildSearchModal();
   injectBreadcrumbLD();
+  enhanceFAQAccordions();
   const layout = buildLayout();
   buildTOC(layout.right);
   enhanceArticleDisclosures();
