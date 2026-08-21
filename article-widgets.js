@@ -3605,7 +3605,7 @@ function buildSidebarCTA(sidebar){
   if(!sidebar) return;
   const box = document.createElement('div');
   box.className = 'sq-sidebar-cta';
-  box.innerHTML = `<p>⚔ 勉強記録を経験値に変えて、<br>毎日の資格学習を冒険として積み上げる。</p><a href="index.html">Study Quest を起動する →</a>`;
+  box.innerHTML = `<p>⚔ 記事で決めた勉強を、毎日の記録へ。<br>Study Questの使い方を確認できます。</p><a href="app-guide.html">学習記録アプリについて →</a>`;
   box.querySelector('a').addEventListener('click', ()=> _gaEvent('cta_click', {article_id: PAGE, cta_position: 'sidebar'}));
   sidebar.appendChild(box);
 }
@@ -4155,7 +4155,7 @@ function insertMidCTA(){
   if(!target) return;
   const cta = document.createElement('div');
   cta.className = 'sq-mid-cta';
-  cta.innerHTML = '<p>📱 <strong>Study Quest</strong> は、停滞しがちな資格勉強を「積み上がりが見える冒険」に変える学習アプリです。今日の勉強を、次のレベルアップに変えましょう。</p><a href="index.html">無料で試してみる →</a>';
+  cta.innerHTML = '<p>📱 <strong>Study Quest</strong> は、記事で決めた勉強を毎日の記録につなげる学習アプリです。自分に合うか、使い方から確認できます。</p><a href="app-guide.html">アプリの使い方を見る →</a>';
   cta.querySelector('a').addEventListener('click', ()=> _gaEvent('cta_click', {article_id: PAGE, cta_position: 'mid'}));
   target.insertAdjacentElement('beforebegin', cta);
 }
@@ -4834,6 +4834,13 @@ function trackRelatedArticleClicks(){
 function trackAppCtaClicks(){
   document.querySelectorAll('a[href^="app.html"]').forEach(a=>{
     a.addEventListener('click', ()=> _gaEvent('app_cta_click', {
+      from: PAGE,
+      placement: a.className || 'article-link',
+      to: a.getAttribute('href')
+    }));
+  });
+  document.querySelectorAll('a[href^="app-guide.html"]').forEach(a=>{
+    a.addEventListener('click', ()=> _gaEvent('app_guide_click', {
       from: PAGE,
       placement: a.className || 'article-link',
       to: a.getAttribute('href')
