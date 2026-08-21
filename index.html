@@ -9,14 +9,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-<title>スタディクエスト｜RPG風 勉強管理アプリ【無料】資格・簿記・CPA・行政書士対応</title>
-<meta name="description" content="勉強時間を経験値に変えてレベル・装備・ステータスを育てるRPG風学習トラッカー。CPA・簿記・行政書士・宅建など資格勉強に対応。ポモドーロタイマー・日付別Todo・学習記録・資格別解説記事・学習進捗チェック搭載。完全無料で使えます。">
+<title>資格・勉強法の学習ガイド｜簿記・FP・宅建・英語資格｜スタディクエスト</title>
+<meta name="description" content="資格選び、勉強時間、独学の進め方を整理する学習ガイド。簿記・FP・宅建・IT・英語資格など、今の自分に合う次の一歩を記事から探せます。">
 <link rel="canonical" href="https://study-quest.net/">
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://study-quest.net/">
-<meta property="og:title" content="スタディクエスト｜勉強が続かない、その悩みを仕組みで解決。">
-<meta property="og:description" content="やる気はあるのに続かない——それは意志の問題じゃない。勉強時間を経験値に変え、ライバルと競い、毎日続けられる仕組みを。資格・受験・検定対応。完全無料。">
+<meta property="og:title" content="資格・勉強法の学習ガイド｜スタディクエスト">
+<meta property="og:description" content="資格選び、勉強時間、独学の進め方を整理する学習ガイド。今の自分に合う次の一歩を記事から探せます。">
 <meta property="og:image" content="https://study-quest.net/images/study-quest-category-overview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
@@ -24,39 +24,20 @@
 <meta property="og:site_name" content="スタディクエスト">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="スタディクエスト｜勉強が続かない、その悩みを仕組みで解決。">
-<meta name="twitter:description" content="やる気はあるのに続かない——それは意志の問題じゃない。勉強時間を経験値に変え、ライバルと競い、毎日続けられる仕組みを。資格・受験・検定対応。完全無料。">
+<meta name="twitter:title" content="資格・勉強法の学習ガイド｜スタディクエスト">
+<meta name="twitter:description" content="資格選び、勉強時間、独学の進め方を整理する学習ガイド。今の自分に合う次の一歩を記事から探せます。">
 <meta name="twitter:image" content="https://study-quest.net/images/study-quest-category-overview.jpg">
 <!-- JSON-LD 構造化データ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebSite",
   "name": "スタディクエスト",
   "alternateName": "Study Quest",
   "url": "https://study-quest.net/",
-  "description": "勉強時間を経験値に変えるRPG風学習トラッカー。CPA・簿記・行政書士・宅建など資格勉強に対応。ポモドーロタイマー・日付別Todo・学習記録・資格別解説記事・学習進捗チェック搭載。",
-  "applicationCategory": "EducationApplication",
-  "operatingSystem": "Web, iOS, Android",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "JPY"
-  },
-  "featureList": [
-    "勉強時間記録",
-    "ポモドーロタイマー",
-    "デイリー宣言",
-    "日付別Todoカレンダー",
-    "資格別解説記事",
-    "記事本文検索",
-    "学習進捗チェック",
-    "装備進化システム",
-    "学習レポート"
-  ],
-  "keywords": "勉強管理アプリ, 学習トラッカー, RPG, 資格勉強, CPA, 簿記, 行政書士, 宅建, ポモドーロ, 無料",
-  "image": "https://study-quest.net/images/study-quest-category-overview.jpg",
-  "thumbnailUrl": "https://study-quest.net/images/study-quest-category-overview.jpg"
+  "description": "資格選び、勉強時間、独学の進め方を整理する資格学習ガイド。",
+  "inLanguage": "ja",
+  "publisher": {"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}
 }
 </script>
 <!-- Google Analytics -->
@@ -147,6 +128,13 @@ nav.scrolled{
 @media(max-width:400px){
   nav{padding:0 12px;}
   .nav-updates{display:none;}
+  .nav-inner{gap:6px;}
+  .nav-logo{white-space:nowrap;font-size:11px;letter-spacing:.08em;gap:5px;}
+  .nav-logo .s{font-size:14px;}
+  .nav-right{gap:6px;}
+  .theme-btn{display:none;}
+  .lp-search-btn{width:36px;height:36px;padding:0;justify-content:center;font-size:0;}
+  .nav-cta{white-space:nowrap;padding:9px 11px;font-size:12px;}
 }
 
 /* ─── HERO ─── */
@@ -204,6 +192,14 @@ nav.scrolled{
   list-style:none;
 }
 .hero-meta li::before{content:'✓';margin-right:5px;color:var(--green-dark);}
+.hero-secondary{display:inline-flex;align-items:center;gap:6px;color:var(--ink2);font-size:13px;font-weight:700;border-bottom:1px solid var(--green);padding:0 2px 4px;margin-bottom:28px;}
+.hero-secondary:hover{color:var(--green-dark);}
+.blog-hero-paths{display:grid;grid-template-columns:repeat(2,minmax(0,260px));gap:12px;width:min(100%,540px);margin:8px auto 0;text-align:left;}
+.blog-hero-path{display:block;padding:16px 18px;border:1px solid var(--border);background:var(--card-bg);border-radius:var(--r);color:var(--ink);transition:transform .18s,box-shadow .18s,border-color .18s;}
+.blog-hero-path:hover{border-color:var(--green);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.1);}
+.blog-hero-path-kicker{display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;color:var(--green-dark);margin-bottom:5px;}
+.blog-hero-path-title{display:block;font-size:15px;font-weight:700;line-height:1.45;}
+.blog-hero-path-copy{display:block;font-size:12px;line-height:1.65;color:var(--ink3);margin-top:3px;}
 
 /* ─── PHONE MOCKUPS ─── */
 .phones{
@@ -258,6 +254,7 @@ nav.scrolled{
 @media(max-width:660px){
   .ph.side{display:none;}
   .ph.main .pf{width:200px;}
+  .blog-hero-paths{grid-template-columns:1fr;max-width:340px;}
 }
 
 /* ─── STATS ─── */
@@ -721,7 +718,7 @@ footer{background:#091505;padding:48px 24px 40px;}
 
 /* Article cards use one restrained icon language instead of mixed emoji glyphs. */
 #articles [id^="cat-"]{--card-icon:#5C9A1A;}
-#articles [id^="cat-"] a:not([href="app.html"]){background:var(--card-bg) !important;border-color:var(--border) !important;}
+#articles [id^="cat-"] a:not([href="app.html"]):not([href="app-guide.html"]){background:var(--card-bg) !important;border-color:var(--border) !important;}
 #articles [id^="cat-"] a[style*="border-left"]{border-left-color:var(--green-dark) !important;}
 #articles .sq-section-marker{
   display:inline-block;
@@ -1110,6 +1107,9 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
   .lp-thumb-card .lp-card-body{padding:10px 9px 11px;}
   .lp-thumb-card .lp-card-title{font-size:11px;}
 }
+@media(max-width:400px){
+  .lp-search-btn{width:36px;height:36px;padding:0;justify-content:center;font-size:0 !important;}
+}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
@@ -1130,7 +1130,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
         記事検索
       </button>
       <a href="#updates" class="nav-updates">更新情報</a>
-      <a href="app.html" class="nav-cta">無料で始める</a>
+      <a href="app-guide.html" class="nav-cta">アプリについて</a>
     </div>
   </div>
 </nav>
@@ -1138,47 +1138,29 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
 <!-- HERO -->
 <section class="hero">
   <div class="hero-copy">
-    <p class="hero-eyebrow">STUDY QUEST / FIELD LOG 2026.08</p>
-    <h1>合格までの道を、<br><span>毎日、残す。</span></h1>
-    <p class="hero-sub">25分の集中を記録して、試験日までの残り時間を見失わない。<br>Study Questは、資格学習のための個人用作戦盤です。</p>
-    <a href="app.html" class="btn-hero">今日の25分を記録する <span aria-hidden="true">↗</span></a>
-    <ul class="hero-meta" aria-label="利用条件">
-      <li>登録無料</li>
-      <li>インストール不要</li>
-      <li>スマホ対応</li>
+    <p class="hero-eyebrow">STUDY QUEST / QUALIFICATION GUIDE</p>
+    <h1>資格の「次の一歩」を、<br><span>自分で決められる。</span></h1>
+    <p class="hero-sub">資格選び、勉強時間、独学の進め方を、迷ったところから整理します。<br>まずは今の自分に合う記事を探してください。</p>
+    <a href="#articles" class="btn-hero">資格・勉強法の記事を探す <span aria-hidden="true">↓</span></a>
+    <a href="app-guide.html" class="hero-secondary">学習記録アプリについて <span aria-hidden="true">→</span></a>
+    <ul class="hero-meta" aria-label="このサイトで探せること">
+      <li>資格別ガイド</li>
+      <li>独学の進め方</li>
+      <li>継続の工夫</li>
     </ul>
-    <div class="hero-field-note" aria-label="アプリの現在地">
-      <span class="hero-stamp">55+ JOBS READY</span>
-      <span class="hero-annotation">まずはここから<i aria-hidden="true"></i></span>
-    </div>
   </div>
 
-  <!-- Phone Mockups -->
-  <div class="phones">
-    <div class="ph side side-l">
-      <div class="pf">
-        <div class="ps">
-          <picture><source srcset="screenshots/screen2-lp.webp" type="image/webp"><img src="screenshots/screen2-lp.png" alt="QUESTタブ" width="520" height="1125" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'"></picture>
-          <div class="ps-ph" style="display:none">⏱</div>
-        </div>
-      </div>
-    </div>
-    <div class="ph main">
-      <div class="pf">
-        <div class="ps">
-          <picture><source srcset="screenshots/screen1-lp.webp" type="image/webp"><img src="screenshots/screen1-lp.png" fetchpriority="high" alt="STATUSタブ" width="520" height="1125" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'"></picture>
-          <div class="ps-ph" style="display:none">⚔</div>
-        </div>
-      </div>
-    </div>
-    <div class="ph side side-r">
-      <div class="pf">
-        <div class="ps">
-          <picture><source srcset="screenshots/screen3-lp.webp" type="image/webp"><img src="screenshots/screen3-lp.png" alt="タイムライン" width="520" height="1125" decoding="async" onerror="const p=this.closest('picture')||this;p.style.display='none';p.nextElementSibling.style.display='block'" loading="lazy"></picture>
-          <div class="ps-ph" style="display:none">🌐</div>
-        </div>
-      </div>
-    </div>
+  <div class="blog-hero-paths" aria-label="入口を選ぶ">
+    <a class="blog-hero-path" href="shikaku-list.html">
+      <span class="blog-hero-path-kicker">READ / GUIDE</span>
+      <span class="blog-hero-path-title">資格から探す</span>
+      <span class="blog-hero-path-copy">難易度・ジャンルから次に読むガイドを選ぶ</span>
+    </a>
+    <a class="blog-hero-path" href="keizoku.html">
+      <span class="blog-hero-path-kicker">READ / METHOD</span>
+      <span class="blog-hero-path-title">勉強の進め方から探す</span>
+      <span class="blog-hero-path-copy">続け方や時間の作り方の悩みを整理する</span>
+    </a>
   </div>
 </section>
 
@@ -1981,7 +1963,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
         <a href="shikaku-app.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">📱</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">資格勉強アプリ比較</div><div style="font-size:10px;color:var(--ink3);">記録ツールを選ぶ</div></div></a>
         <a href="boki-zasetsu-type.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">🔍</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">挫折タイプ診断</div><div style="font-size:10px;color:var(--ink3);">4タイプ別の乗り越え方</div></div></a>
         <a href="boki-careless-miss.html" style="display:flex;align-items:center;gap:10px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">✏️</span><div><div style="font-size:12px;font-weight:700;color:var(--ink);">ミス記録ノート</div><div style="font-size:10px;color:var(--ink3);">ケアレスミスを減らす</div></div></a>
-        <a href="app.html" style="display:flex;align-items:center;gap:10px;background:var(--green);border:1px solid rgba(140,198,63,.45);border-radius:10px;padding:12px 14px;color:#fff;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">⚔</span><div><div style="font-size:12px;font-weight:700;">Study Questを使う</div><div style="font-size:10px;opacity:.85;">学習記録を経験値に変える</div></div></a>
+        <a href="app-guide.html" style="display:flex;align-items:center;gap:10px;background:var(--green);border:1px solid rgba(140,198,63,.45);border-radius:10px;padding:12px 14px;color:#fff;text-decoration:none;"><span style="font-size:18px;flex-shrink:0;">⚔</span><div><div style="font-size:12px;font-weight:700;">学習記録アプリについて</div><div style="font-size:10px;opacity:.85;">使い方を確認してから始める</div></div></a>
       </div>
     </div>
 
@@ -2131,8 +2113,8 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
 
       <div class="articles-sidebar-box" style="background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.02));border-color:rgba(140,198,63,.3);">
         <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;">⚔ 学習記録と一緒に使う</div>
-        <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;line-height:1.6;">記事を読んだら、Study Questで実際に勉強を記録してみよう。</div>
-        <a href="app.html" style="display:block;background:var(--green);color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">無料で始める →</a>
+        <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;line-height:1.6;">記事で決めた学習を、毎日の記録につなげたいときに使えます。</div>
+        <a href="app-guide.html" style="display:block;background:var(--green);color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">アプリについて →</a>
       </div>
     </aside>
 
@@ -2141,6 +2123,8 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
 </section>
 
 
+<!-- アプリの詳細説明は app-guide.html に分離。旧トップの説明群は公開面から外す。 -->
+<div class="home-product-archive" hidden aria-hidden="true">
 <!-- STATS -->
 <section class="stats">
   <div class="stats-inner">
@@ -2538,6 +2522,8 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
   </div>
 </section>
 
+</div>
+
 <!-- UPDATES -->
 <section class="updates" id="updates">
   <div class="updates-inner">
@@ -2874,7 +2860,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
   <div class="cta-eyebrow">資格学習を、今日から</div>
   <h2>今日の記録を、<br>合格につなげよう。</h2>
   <p class="cta-sub">タイマーを始めれば、最初の一歩はもう記録になります。<br>登録無料・インストール不要です。</p>
-  <a href="app.html" class="btn-cta">最初の学習を記録する</a>
+  <a href="app-guide.html" class="btn-cta">アプリの使い方を見る</a>
   <div class="cta-checks">
     <span>アカウント登録不要</span>
     <span>完全無料</span>
@@ -2911,7 +2897,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
   <div class="footer-inner">
     <div class="footer-logo">⚔ スタディクエスト</div>
     <div class="footer-links">
-      <a href="app.html">アプリを使う</a>
+      <a href="app-guide.html">アプリについて</a>
       <a href="about.html">運営者情報</a>
       <a href="terms.html">利用規約</a>
       <a href="privacy.html">プライバシーポリシー</a>
@@ -3016,6 +3002,11 @@ window.addEventListener('scroll', () => {
 document.querySelectorAll('a[href^="app.html"]').forEach(a=>{
   a.addEventListener('click',()=>{
     try{ gtag('event','app_cta_click',{from:location.pathname,placement:a.className||'index-link',to:a.getAttribute('href')}); }catch{}
+  });
+});
+document.querySelectorAll('a[href^="app-guide.html"]').forEach(a=>{
+  a.addEventListener('click',()=>{
+    try{ gtag('event','app_guide_click',{from:location.pathname,placement:a.className||'index-link',to:a.getAttribute('href')}); }catch{}
   });
 });
 
