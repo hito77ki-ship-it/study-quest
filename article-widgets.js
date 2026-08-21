@@ -1853,6 +1853,12 @@ html[data-theme="dark"] .sq-article-theme-group{
   .sq-side-link:hover{box-shadow:0 10px 24px rgba(0,0,0,.16);border-color:rgba(140,198,63,.32);transform:translateY(-1px);text-decoration:none;}
   .sq-side-link-label{font-size:11px;font-weight:700;color:var(--sq-accent-bright);letter-spacing:.06em;margin-bottom:4px;}
   .sq-side-link-title{font-size:13.5px;font-weight:700;color:var(--sq-text);line-height:1.65;}
+  /* 左の「おすすめ記事」だけは、内容判断を速くする小さなサムネイルを添える。 */
+  .sq-side-link--recommended{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;align-items:center;padding:8px;}
+  .sq-side-link-thumb{display:block;width:72px;height:40px;aspect-ratio:16/9;object-fit:contain;object-position:center;background:var(--sq-surface,#F7FAFC);border:1px solid var(--sq-border,#E2E8F0);border-radius:5px;}
+  .sq-side-link-copy{display:block;min-width:0;}
+  .sq-side-link--recommended .sq-side-link-label{font-size:10px;line-height:1.35;margin-bottom:2px;}
+  .sq-side-link--recommended .sq-side-link-title{font-size:12px;line-height:1.5;}
 }
 /* TOC（サイドバー内） */
 .sq-toc-title{font-weight:700;color:var(--sq-text);margin-bottom:10px;font-size:13px;letter-spacing:.06em;}
@@ -4040,7 +4046,7 @@ function buildLeftSidebar(leftbar){
   const recFiles = (POPULAR.length >= 3 ? POPULAR : LATEST).filter(f=>f!==PAGE).slice(0,4);
   recFiles.forEach(f=>{
     const a = ARTICLES[f]; if(!a) return;
-    list.innerHTML += `<a href="${f}" class="sq-side-link"><div class="sq-side-link-label">${a.label}</div><div class="sq-side-link-title">${a.title}</div></a>`;
+    list.innerHTML += `<a href="${f}" class="sq-side-link sq-side-link--recommended">${thumbHTML(a, 'sq-side-link-thumb')}<span class="sq-side-link-copy"><span class="sq-side-link-label">${a.label}</span><span class="sq-side-link-title">${a.title}</span></span></a>`;
   });
   leftbar.appendChild(rec);
 
