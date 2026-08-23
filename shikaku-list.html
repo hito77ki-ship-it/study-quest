@@ -57,11 +57,12 @@ h1{font-size:clamp(20px,4vw,30px);font-weight:700;line-height:1.35;letter-spacin
 /* 会話UI */
 .sq-chat{display:flex;flex-direction:column;gap:16px;margin:28px 0;}
 .sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
-.sq-chat-row>div:not(.sq-chat-avatar){min-width:0;max-width:calc(100% - 56px);}
+.sq-chat-row>div:not(.sq-chat-avatar){min-width:0;max-width:calc(100% - 68px);}
 .sq-chat-row.note{align-self:flex-end;flex-direction:row-reverse;}
 .sq-chat-row.note .sq-chat-name{text-align:right;}
-.sq-chat-avatar{width:44px;height:44px;flex:0 0 44px;border-radius:50%;overflow:hidden;border:2px solid var(--border);background:var(--light);}
-.sq-chat-avatar img{display:block;width:100%;height:100%;object-fit:cover;}
+.sq-chat-avatar{width:56px;height:56px;flex:0 0 56px;border-radius:50%;overflow:hidden;border:2px solid var(--border);background:var(--light);}
+.sq-chat-avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%;}
+@media(max-width:600px){.sq-chat-row>div:not(.sq-chat-avatar){max-width:calc(100% - 60px);}.sq-chat-avatar{width:48px;height:48px;flex-basis:48px;}}
 .sq-chat-name{font-size:11px;font-weight:700;color:var(--green2);margin:0 0 4px;}
 .sq-chat-bubble{background:var(--light);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:12px 14px;font-size:14px;line-height:1.8;}
 .sq-chat-row.note .sq-chat-bubble{background:#F0FFF4;border-color:#9AE6B4;border-radius:12px 0 12px 12px;}
@@ -206,19 +207,19 @@ details summary:active{background:var(--light);}
   <!-- 若葉の学習メモ -->
   <div class="sq-chat">
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="学習中の受験生" width="44" height="44" loading="lazy"></div>
+      <div class="sq-chat-avatar student"><img src="images/chat-avatar-student-worry-v1.png" alt="困っている学習中の受験生" width="56" height="56" loading="lazy"></div>
       <div><div class="sq-chat-name">受験生のつまずき</div><div class="sq-chat-bubble">資格の種類が多すぎて、調べるほど何から始めるか迷っています。難関資格を見て、最初の一歩が急に遠く感じました。</div></div>
     </div>
     <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba-research.png" alt="調べている若葉" width="44" height="44" loading="lazy"></div>
+      <div class="sq-chat-avatar research"><img src="images/chat-avatar-wakaba-research-v1.png" alt="考えを整理している若葉" width="56" height="56" loading="lazy"></div>
       <div><div class="sq-chat-name">若葉（勉強中）の学習メモ</div><div class="sq-chat-bubble">私も最初は、難しさだけで順番を決めようとしていました。公式の試験情報と、今の生活で続けられる勉強時間を並べると、比較する軸が少し見えやすくなりました。</div></div>
     </div>
     <div class="sq-chat-row student">
-      <div class="sq-chat-avatar student"><img src="images/icon-student.png" alt="学習中の受験生" width="44" height="44" loading="lazy"></div>
+      <div class="sq-chat-avatar student"><img src="images/chat-avatar-student-question-v1.png" alt="考えている学習中の受験生" width="56" height="56" loading="lazy"></div>
       <div><div class="sq-chat-name">学習中の受験生</div><div class="sq-chat-bubble">候補を絞るとき、最初に何を確認すればいいですか？</div></div>
     </div>
     <div class="sq-chat-row note">
-      <div class="sq-chat-avatar plan"><img src="images/icon-wakaba-plan.png" alt="次の行動を決める若葉" width="44" height="44" loading="lazy"></div>
+      <div class="sq-chat-avatar plan"><img src="images/chat-avatar-wakaba-plan-v1.png" alt="前向きに考える若葉" width="56" height="56" loading="lazy"></div>
       <div><div class="sq-chat-name">若葉（勉強中）の次の一歩</div><div class="sq-chat-bubble">気になる資格を1つ選び、受験条件・試験形式・必要な勉強時間を公式情報で確認してみます。この記事の一覧は、その候補を比べる入口として使います。</div></div>
     </div>
   </div>
