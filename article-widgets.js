@@ -582,9 +582,9 @@ function getArticleDialogue(){
 
 /*
  * 旧記事の会話は「受験生が若葉先生へ質問する」構図で書かれていた。
- * 記事本文の制度説明を複製せず、若葉自身の疑問と調べたメモとして
- * 読める短い導入へ統一する。ARTICLE_DIALOGUES は新規・個別設計用の
- * データなので、旧形式の置換では使わない。
+ * 左を匿名の学習中の受験生、右を同じ受験生である若葉の学習メモにして、
+ * 教える／教わる関係ではなく、つまずきと調べたことを共有する短い導入へ統一する。
+ * ARTICLE_DIALOGUES は新規・個別設計用のデータなので、旧形式の置換では使わない。
  */
 function getPeerLearningDialogue(){
   const article = ARTICLES[PAGE] || {};
@@ -592,74 +592,75 @@ function getPeerLearningDialogue(){
 
   if(label.includes('簿記')){
     return [
-      ['question', '若葉', 'この論点、仕訳だけを追うと途中で迷ってしまいます。まず何が増えて、何が減ったのかを整理したいです。'],
+      ['student', '学習中の受験生', 'この論点、仕訳だけを追うと途中で迷ってしまいます。まず何が増えて、何が減ったのかを整理したいです。'],
       ['note', '若葉', '私も最初は用語を暗記しようとして止まりました。例題を1つ使って、お金やモノの流れを先に確認すると、仕訳の理由がつながりました。', 'research'],
-      ['question', '若葉', '次に問題を解くとき、どこを見直せばよさそうですか？'],
+      ['student', '学習中の受験生', '次に問題を解くとき、どこを見直せばよさそうですか？'],
       ['note', '若葉', '間違えた理由を「用語・計算・読み取り」に分けてメモします。1つだけ直す場所を決めてから次の問題へ進むと、復習が続けやすくなります。', 'plan']
     ];
   }
   if(label.includes('FP')){
     return [
-      ['question', '若葉', '数字や制度が多くて、最初から全部を覚えようとすると手が止まりそうです。'],
+      ['student', '学習中の受験生', '数字や制度が多くて、最初から全部を覚えようとすると手が止まりそうです。'],
       ['note', '若葉', '私も同じところで迷いました。先に全体の流れを見て、問題で出会った数字だけを根拠と一緒に確認する方法にすると整理しやすくなりました。', 'research'],
-      ['question', '若葉', '今日の学習では、何を1つ持ち帰ればいいですか？'],
+      ['student', '学習中の受験生', '今日の学習では、何を1つ持ち帰ればいいですか？'],
       ['note', '若葉', 'この記事の図や例題から、判断の軸を1行で書き残します。次に似た問題を見たとき、同じ軸で確認できる状態を目指します。', 'plan']
     ];
   }
   if(/TOEIC|英検|TOEFL|IELTS|英語/.test(label)){
     return [
-      ['question', '若葉', 'やることが多すぎて、どの勉強から始めるべきか迷っています。'],
+      ['student', '学習中の受験生', 'やることが多すぎて、どの勉強から始めるべきか迷っています。'],
       ['note', '若葉', '私も一度に全部を進めようとして続きませんでした。模試や演習で止まった理由を1つ選び、次の1週間はそこだけに絞ると動き出しやすくなります。', 'insight'],
-      ['question', '若葉', '次の学習で試せる小さな行動はありますか？'],
+      ['student', '学習中の受験生', '次の学習で試せる小さな行動はありますか？'],
       ['note', '若葉', '今日の失点や知らなかった語句を、短く記録しておきます。次回はその記録を開いてから始めるだけでも、同じ迷いを減らせます。', 'plan']
     ];
   }
   if(label.includes('資格比較')){
     return [
-      ['question', '若葉', '比べる項目が多くて、調べるほどどちらを選ぶか迷っています。'],
+      ['student', '学習中の受験生', '比べる項目が多くて、調べるほどどちらを選ぶか迷っています。'],
       ['note', '若葉', '私が迷ったときは、難しさだけで決めず、合格後に何へつながるかと今の生活で続けられる量を並べました。比較する軸が決まると選びやすくなります。', 'insight'],
-      ['question', '若葉', '最後に確認しておきたいことは何ですか？'],
+      ['student', '学習中の受験生', '最後に確認しておきたいことは何ですか？'],
       ['note', '若葉', '選んだ後の最初の1週間で何をするかまで書いておきます。資格を選ぶことより、始められる計画にすることを優先します。', 'plan']
     ];
   }
   return [
-    ['question', '若葉', 'この記事の内容、自分の状況にどう当てはめればいいか迷っています。'],
+    ['student', '学習中の受験生', 'この記事の内容、自分の状況にどう当てはめればいいか迷っています。'],
     ['note', '若葉', '私も同じように迷ったので、まず試験範囲・必要な準備・今日できることに分けて調べました。順番を小さくすると、次に読む場所が見えやすくなります。', 'research'],
-    ['question', '若葉', '今の自分が最初に確認するなら、どこですか？'],
+    ['student', '学習中の受験生', '今の自分が最初に確認するなら、どこですか？'],
     ['note', '若葉', 'この記事から持ち帰ることを1つだけ選び、次の学習で試します。記録に残しておけば、次に同じところで止まったときもやり直しやすくなります。', 'plan']
   ];
 }
 
 function getDialoguePresentation(role, text, explicitTone){
-  if(explicitTone){
-    return {
-      question: {tone:'question', name:'学習中の疑問', image:'images/icon-dialogue-question.png', alt:'考えている若葉'},
-      worry: {tone:'worry', name:'つまずきメモ', image:'images/icon-dialogue-worry.png', alt:'悩んでいる若葉'},
-      research: {tone:'research', name:'若葉の学習メモ', image:'images/icon-wakaba-research.png', alt:'調べている若葉'},
-      insight: {tone:'insight', name:'気づきメモ', image:'images/icon-wakaba-insight.png', alt:'気づいた若葉'},
-      plan: {tone:'plan', name:'次の一歩', image:'images/icon-wakaba-plan.png', alt:'次の行動を決める若葉'}
-    }[explicitTone];
-  }
-  if(role === 'question'){
+  if(role === 'student' || role === 'question'){
     const isWorry = /不安|怖|苦手|落ち|真っ白|あやふや|迷|きつ|止ま|心が折|飽き|焦/.test(text);
     return isWorry
-      ? {tone:'worry', name:'つまずきメモ', image:'images/icon-dialogue-worry.png', alt:'悩んでいる若葉'}
-      : {tone:'question', name:'学習中の疑問', image:'images/icon-dialogue-question.png', alt:'考えている若葉'};
+      ? {tone:'worry', name:'受験生のつまずき', image:'images/icon-student.png', alt:'学習中の受験生'}
+      : {tone:'question', name:'学習中の受験生', image:'images/icon-student.png', alt:'学習中の受験生'};
+  }
+  if(explicitTone){
+    return {
+      question: {tone:'question', name:'学習中の受験生', image:'images/icon-student.png', alt:'学習中の受験生'},
+      worry: {tone:'worry', name:'受験生のつまずき', image:'images/icon-student.png', alt:'学習中の受験生'},
+      research: {tone:'research', name:'若葉（勉強中）の学習メモ', image:'images/icon-wakaba-research.png', alt:'調べている若葉'},
+      insight: {tone:'insight', name:'若葉（勉強中）の気づき', image:'images/icon-wakaba-insight.png', alt:'気づいた若葉'},
+      plan: {tone:'plan', name:'若葉（勉強中）の次の一歩', image:'images/icon-wakaba-plan.png', alt:'次の行動を決める若葉'}
+    }[explicitTone];
   }
   if(/次|始め|まず|計画|進め|確認|練習|取り組|記録|申し込|選ぶ|行動/.test(text)){
-    return {tone:'plan', name:'次の一歩', image:'images/icon-wakaba-plan.png', alt:'次の行動を決める若葉'};
+    return {tone:'plan', name:'若葉（勉強中）の次の一歩', image:'images/icon-wakaba-plan.png', alt:'次の行動を決める若葉'};
   }
   if(/理由|流れ|見分け|整理|分類|なぜ|考え|イメージ|覚え/.test(text)){
-    return {tone:'insight', name:'気づきメモ', image:'images/icon-wakaba-insight.png', alt:'気づいた若葉'};
+    return {tone:'insight', name:'若葉（勉強中）の気づき', image:'images/icon-wakaba-insight.png', alt:'気づいた若葉'};
   }
-  return {tone:'research', name:'若葉の学習メモ', image:'images/icon-wakaba-research.png', alt:'調べている若葉'};
+  return {tone:'research', name:'若葉（勉強中）の学習メモ', image:'images/icon-wakaba-research.png', alt:'調べている若葉'};
 }
 
 function renderDialogue(rows){
   return rows.map(([role, _name, text, explicitTone]) => {
-    const presentation = getDialoguePresentation(role, text, explicitTone);
+    const participant = role === 'note' ? 'note' : 'student';
+    const presentation = getDialoguePresentation(participant, text, explicitTone);
     return `
-    <div class="sq-chat-row ${role} ${presentation.tone}">
+    <div class="sq-chat-row ${participant} ${presentation.tone}">
       <div class="sq-chat-avatar ${presentation.tone}"><img src="${presentation.image}" alt="${presentation.alt}" width="44" height="44" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">${presentation.name}</div>
@@ -1999,6 +2000,10 @@ html[data-theme="dark"] .sq-article-theme-group{
 .sq-table-scroll::-webkit-scrollbar-thumb{background:rgba(140,198,63,.45);border-radius:3px;}
 .sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
 .sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
+.sq-chat-row>div:not(.sq-chat-avatar){min-width:0;max-width:calc(100% - 56px);}
+.sq-chat-row.student .sq-chat-bubble{border-radius:0 12px 12px 12px;}
+.sq-chat-row.note{align-self:flex-end;flex-direction:row-reverse;}
+.sq-chat-row.note .sq-chat-name{text-align:right;}
 .sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
 .sq-chat-avatar.question{background:linear-gradient(135deg,var(--sq-info-soft,#E0F0FF),var(--sq-info,#BAD9F5));}
 .sq-chat-avatar.worry{background:linear-gradient(135deg,var(--sq-warn-soft,#FFF0D5),var(--sq-warn,#F4C66A));}
@@ -2006,7 +2011,7 @@ html[data-theme="dark"] .sq-article-theme-group{
 .sq-chat-avatar img{width:100%;height:100%;object-fit:cover;}
 .sq-chat-name{font-size:10px;font-weight:700;color:var(--sq-muted);margin-bottom:4px;letter-spacing:.05em;}
 .sq-chat-bubble{position:relative;background:var(--sq-surface-soft);border:1px solid var(--sq-border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:var(--sq-text);line-height:1.8;max-width:calc(100% - 60px);}
-.sq-chat-row.note .sq-chat-bubble{background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.03));border-color:rgba(140,198,63,.3);border-radius:0 12px 12px 12px;}
+.sq-chat-row.note .sq-chat-bubble{background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.03));border-color:rgba(140,198,63,.3);border-radius:12px 0 12px 12px;}
 html[data-theme="dark"] .sq-chat-bubble{background:rgba(255,255,255,.04);}
 html[data-theme="dark"] .sq-chat-row.note .sq-chat-bubble{background:rgba(140,198,63,.06);}
 /* 記事固有の情景ビジュアル */
@@ -3675,14 +3680,14 @@ function normalizeExistingDialogue(container){
   if(!rows.length) return false;
 
   rows.forEach(row => {
-    const role = row.classList.contains('note') ? 'note' : 'question';
+    const role = row.classList.contains('note') ? 'note' : 'student';
     const text = row.querySelector('.sq-chat-bubble')?.textContent || '';
     const presentation = getDialoguePresentation(role, text);
     const avatar = row.querySelector('.sq-chat-avatar');
     const image = avatar?.querySelector('img');
     const name = row.querySelector('.sq-chat-name');
 
-    row.classList.remove('question', 'note', 'worry', 'research', 'insight', 'plan');
+    row.classList.remove('student', 'question', 'note', 'worry', 'research', 'insight', 'plan');
     row.classList.add('sq-chat-row', role, presentation.tone);
     if(avatar){
       avatar.className = `sq-chat-avatar ${presentation.tone}`;
