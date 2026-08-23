@@ -580,6 +580,56 @@ function getArticleDialogue(){
   ];
 }
 
+/*
+ * 旧記事の会話は「受験生が若葉先生へ質問する」構図で書かれていた。
+ * 記事本文の制度説明を複製せず、若葉自身の疑問と調べたメモとして
+ * 読める短い導入へ統一する。ARTICLE_DIALOGUES は新規・個別設計用の
+ * データなので、旧形式の置換では使わない。
+ */
+function getPeerLearningDialogue(){
+  const article = ARTICLES[PAGE] || {};
+  const label = article.label || '';
+
+  if(label.includes('簿記')){
+    return [
+      ['question', '若葉', 'この論点、仕訳だけを追うと途中で迷ってしまいます。まず何が増えて、何が減ったのかを整理したいです。'],
+      ['note', '若葉', '私も最初は用語を暗記しようとして止まりました。例題を1つ使って、お金やモノの流れを先に確認すると、仕訳の理由がつながりました。', 'research'],
+      ['question', '若葉', '次に問題を解くとき、どこを見直せばよさそうですか？'],
+      ['note', '若葉', '間違えた理由を「用語・計算・読み取り」に分けてメモします。1つだけ直す場所を決めてから次の問題へ進むと、復習が続けやすくなります。', 'plan']
+    ];
+  }
+  if(label.includes('FP')){
+    return [
+      ['question', '若葉', '数字や制度が多くて、最初から全部を覚えようとすると手が止まりそうです。'],
+      ['note', '若葉', '私も同じところで迷いました。先に全体の流れを見て、問題で出会った数字だけを根拠と一緒に確認する方法にすると整理しやすくなりました。', 'research'],
+      ['question', '若葉', '今日の学習では、何を1つ持ち帰ればいいですか？'],
+      ['note', '若葉', 'この記事の図や例題から、判断の軸を1行で書き残します。次に似た問題を見たとき、同じ軸で確認できる状態を目指します。', 'plan']
+    ];
+  }
+  if(/TOEIC|英検|TOEFL|IELTS|英語/.test(label)){
+    return [
+      ['question', '若葉', 'やることが多すぎて、どの勉強から始めるべきか迷っています。'],
+      ['note', '若葉', '私も一度に全部を進めようとして続きませんでした。模試や演習で止まった理由を1つ選び、次の1週間はそこだけに絞ると動き出しやすくなります。', 'insight'],
+      ['question', '若葉', '次の学習で試せる小さな行動はありますか？'],
+      ['note', '若葉', '今日の失点や知らなかった語句を、短く記録しておきます。次回はその記録を開いてから始めるだけでも、同じ迷いを減らせます。', 'plan']
+    ];
+  }
+  if(label.includes('資格比較')){
+    return [
+      ['question', '若葉', '比べる項目が多くて、調べるほどどちらを選ぶか迷っています。'],
+      ['note', '若葉', '私が迷ったときは、難しさだけで決めず、合格後に何へつながるかと今の生活で続けられる量を並べました。比較する軸が決まると選びやすくなります。', 'insight'],
+      ['question', '若葉', '最後に確認しておきたいことは何ですか？'],
+      ['note', '若葉', '選んだ後の最初の1週間で何をするかまで書いておきます。資格を選ぶことより、始められる計画にすることを優先します。', 'plan']
+    ];
+  }
+  return [
+    ['question', '若葉', 'この記事の内容、自分の状況にどう当てはめればいいか迷っています。'],
+    ['note', '若葉', '私も同じように迷ったので、まず試験範囲・必要な準備・今日できることに分けて調べました。順番を小さくすると、次に読む場所が見えやすくなります。', 'research'],
+    ['question', '若葉', '今の自分が最初に確認するなら、どこですか？'],
+    ['note', '若葉', 'この記事から持ち帰ることを1つだけ選び、次の学習で試します。記録に残しておけば、次に同じところで止まったときもやり直しやすくなります。', 'plan']
+  ];
+}
+
 function getDialoguePresentation(role, text, explicitTone){
   if(explicitTone){
     return {
@@ -3607,6 +3657,20 @@ function buildCatBadge(){
 
 /* ── 記事ごとの導入会話 ── */
 function normalizeExistingDialogue(container){
+  const legacyChats = Array.from(container.querySelectorAll('.sq-chat')).filter(chat => {
+    const hasRows = chat.querySelector('.sq-chat-row');
+    const hasNewAvatar = chat.querySelector('.sq-chat-avatar');
+    return hasRows && !hasNewAvatar;
+  });
+
+  if(legacyChats.length){
+    const rows = getPeerLearningDialogue();
+    legacyChats.forEach(chat => {
+      chat.innerHTML = renderDialogue(rows);
+      chat.classList.add('sq-chat-auto', 'sq-chat-peer-learning');
+    });
+  }
+
   const rows = Array.from(container.querySelectorAll('.sq-chat-row'));
   if(!rows.length) return false;
 
