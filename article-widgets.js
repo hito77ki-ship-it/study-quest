@@ -634,25 +634,25 @@ function getDialoguePresentation(role, text, explicitTone){
   if(role === 'student' || role === 'question'){
     const isWorry = /不安|怖|苦手|落ち|真っ白|あやふや|迷|きつ|止ま|心が折|飽き|焦/.test(text);
     return isWorry
-      ? {tone:'worry', name:'受験生のつまずき', image:'images/icon-student.png', alt:'学習中の受験生'}
-      : {tone:'question', name:'学習中の受験生', image:'images/icon-student.png', alt:'学習中の受験生'};
+      ? {tone:'worry', name:'受験生のつまずき', image:'images/chat-avatar-student-worry-v1.png', alt:'困っている学習中の受験生'}
+      : {tone:'question', name:'学習中の受験生', image:'images/chat-avatar-student-question-v1.png', alt:'考えている学習中の受験生'};
   }
   if(explicitTone){
     return {
-      question: {tone:'question', name:'学習中の受験生', image:'images/icon-student.png', alt:'学習中の受験生'},
-      worry: {tone:'worry', name:'受験生のつまずき', image:'images/icon-student.png', alt:'学習中の受験生'},
-      research: {tone:'research', name:'若葉（勉強中）の学習メモ', image:'images/icon-wakaba-research.png', alt:'調べている若葉'},
-      insight: {tone:'insight', name:'若葉（勉強中）の気づき', image:'images/icon-wakaba-insight.png', alt:'気づいた若葉'},
-      plan: {tone:'plan', name:'若葉（勉強中）の次の一歩', image:'images/icon-wakaba-plan.png', alt:'次の行動を決める若葉'}
+      question: {tone:'question', name:'学習中の受験生', image:'images/chat-avatar-student-question-v1.png', alt:'考えている学習中の受験生'},
+      worry: {tone:'worry', name:'受験生のつまずき', image:'images/chat-avatar-student-worry-v1.png', alt:'困っている学習中の受験生'},
+      research: {tone:'research', name:'若葉（勉強中）の学習メモ', image:'images/chat-avatar-wakaba-research-v1.png', alt:'考えを整理している若葉'},
+      insight: {tone:'insight', name:'若葉（勉強中）の気づき', image:'images/chat-avatar-wakaba-insight-v1.png', alt:'気づいた若葉'},
+      plan: {tone:'plan', name:'若葉（勉強中）の次の一歩', image:'images/chat-avatar-wakaba-plan-v1.png', alt:'前向きに考える若葉'}
     }[explicitTone];
   }
   if(/次|始め|まず|計画|進め|確認|練習|取り組|記録|申し込|選ぶ|行動/.test(text)){
-    return {tone:'plan', name:'若葉（勉強中）の次の一歩', image:'images/icon-wakaba-plan.png', alt:'次の行動を決める若葉'};
+    return {tone:'plan', name:'若葉（勉強中）の次の一歩', image:'images/chat-avatar-wakaba-plan-v1.png', alt:'前向きに考える若葉'};
   }
   if(/理由|流れ|見分け|整理|分類|なぜ|考え|イメージ|覚え/.test(text)){
-    return {tone:'insight', name:'若葉（勉強中）の気づき', image:'images/icon-wakaba-insight.png', alt:'気づいた若葉'};
+    return {tone:'insight', name:'若葉（勉強中）の気づき', image:'images/chat-avatar-wakaba-insight-v1.png', alt:'気づいた若葉'};
   }
-  return {tone:'research', name:'若葉（勉強中）の学習メモ', image:'images/icon-wakaba-research.png', alt:'調べている若葉'};
+  return {tone:'research', name:'若葉（勉強中）の学習メモ', image:'images/chat-avatar-wakaba-research-v1.png', alt:'考えを整理している若葉'};
 }
 
 function renderDialogue(rows){
@@ -661,7 +661,7 @@ function renderDialogue(rows){
     const presentation = getDialoguePresentation(participant, text, explicitTone);
     return `
     <div class="sq-chat-row ${participant} ${presentation.tone}">
-      <div class="sq-chat-avatar ${presentation.tone}"><img src="${presentation.image}" alt="${presentation.alt}" width="44" height="44" loading="lazy"></div>
+      <div class="sq-chat-avatar ${presentation.tone}"><img src="${presentation.image}" alt="${presentation.alt}" width="56" height="56" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">${presentation.name}</div>
         <div class="sq-chat-bubble">${_escHtml(text)}</div>
@@ -2000,20 +2000,22 @@ html[data-theme="dark"] .sq-article-theme-group{
 .sq-table-scroll::-webkit-scrollbar-thumb{background:rgba(140,198,63,.45);border-radius:3px;}
 .sq-chat{margin:28px 0;display:flex;flex-direction:column;gap:16px;}
 .sq-chat-row{display:flex;align-items:flex-start;gap:12px;}
-.sq-chat-row>div:not(.sq-chat-avatar){min-width:0;max-width:calc(100% - 56px);}
+.sq-chat-row>div:not(.sq-chat-avatar){min-width:0;max-width:calc(100% - 68px);}
 .sq-chat-row.student .sq-chat-bubble{border-radius:0 12px 12px 12px;}
 .sq-chat-row.note{align-self:flex-end;flex-direction:row-reverse;}
 .sq-chat-row.note .sq-chat-name{text-align:right;}
-.sq-chat-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+.sq-chat-avatar{width:56px;height:56px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
 .sq-chat-avatar.question{background:linear-gradient(135deg,var(--sq-info-soft,#E0F0FF),var(--sq-info,#BAD9F5));}
 .sq-chat-avatar.worry{background:linear-gradient(135deg,var(--sq-warn-soft,#FFF0D5),var(--sq-warn,#F4C66A));}
 .sq-chat-avatar.research,.sq-chat-avatar.insight,.sq-chat-avatar.plan{background:linear-gradient(135deg,var(--sq-accent-soft,#E8F7B8),var(--sq-accent,#8CC63F));}
 .sq-chat-avatar img{width:100%;height:100%;object-fit:cover;}
+.sq-chat-avatar img{object-position:center 42%;}
 .sq-chat-name{font-size:10px;font-weight:700;color:var(--sq-muted);margin-bottom:4px;letter-spacing:.05em;}
 .sq-chat-bubble{position:relative;background:var(--sq-surface-soft);border:1px solid var(--sq-border);border-radius:0 12px 12px 12px;padding:12px 16px;font-size:13px;color:var(--sq-text);line-height:1.8;max-width:calc(100% - 60px);}
 .sq-chat-row.note .sq-chat-bubble{background:linear-gradient(135deg,rgba(140,198,63,.08),rgba(140,198,63,.03));border-color:rgba(140,198,63,.3);border-radius:12px 0 12px 12px;}
 html[data-theme="dark"] .sq-chat-bubble{background:rgba(255,255,255,.04);}
 html[data-theme="dark"] .sq-chat-row.note .sq-chat-bubble{background:rgba(140,198,63,.06);}
+@media(max-width:600px){.sq-chat-row>div:not(.sq-chat-avatar){max-width:calc(100% - 60px);}.sq-chat-avatar{width:48px;height:48px;}.sq-chat-bubble{max-width:100%;}}
 /* 記事固有の情景ビジュアル */
 .sq-story-visual{max-width:920px;margin:28px auto 34px;overflow:hidden;background:var(--sq-surface);border:1px solid var(--sq-border-strong);border-radius:16px;box-shadow:var(--sq-shadow);}
 .sq-story-visual img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
