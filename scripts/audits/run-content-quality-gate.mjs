@@ -122,7 +122,7 @@ function articleDateFromJsonLd(values) {
 }
 
 function visibleUpdatedDate(source) {
-  const match = source.match(/更新日\s*[：:]?\s*(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日/);
+  const match = source.match(/更新(?:日)?\s*[：:]?\s*(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日/);
   if (!match) return null;
   return `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}`;
 }
