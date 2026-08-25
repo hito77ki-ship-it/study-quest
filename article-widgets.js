@@ -24,6 +24,7 @@ const ARTICLES = {
   'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
   'boki-careless-miss.html': {label:'簿記3級・2級',  title:'電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方'},
   'boki-zasetsu-type.html':  {label:'簿記3級・2級',  title:'勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方'},
+  'boki-benkyo-basho.html':  {label:'簿記3級・2級',  title:'簿記の勉強場所はどこがいい？場所別・できる勉強メニュー表'},
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド', thumb:'images/boki1-balance-map.svg'},
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ', thumb:'images/boki1-start-roadmap.svg'},
@@ -3756,7 +3757,7 @@ const BOKI3_FILES = [
   'boki3-keika2.html','boki3-shohi.html','boki3-hojinzei.html',
   'boki3-kabushiki.html','boki3-seisanhyo.html',
   'boki3-next.html','boki3-ochita.html',
-  'boki-careless-miss.html','boki-zasetsu-type.html','boki3-tobashi-2kyu.html',
+  'boki-careless-miss.html','boki-zasetsu-type.html','boki-benkyo-basho.html','boki3-tobashi-2kyu.html',
 ];
 
 const BOKI2_COMMERCIAL_FILES = [
@@ -3778,7 +3779,7 @@ const BOKI2_INDUSTRIAL_FILES = [
   'boki2-kogyo-enshu.html',
 ];
 
-const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-zasetsu-type.html'];
+const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-zasetsu-type.html', 'boki-benkyo-basho.html'];
 const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html' && f !== 'boki-careless-miss.html' && f !== 'boki-zasetsu-type.html' && f !== 'boki2-oyoryoku-kabe.html' && f !== 'boki2-renketsu-suteru.html');
 
 const SHIHOSHO_FILES = [
