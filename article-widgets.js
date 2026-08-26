@@ -2018,6 +2018,11 @@ html[data-theme="dark"] .sq-article-theme-group{
 html[data-theme="dark"] .sq-chat-bubble{background:rgba(255,255,255,.04);}
 html[data-theme="dark"] .sq-chat-row.note .sq-chat-bubble{background:rgba(140,198,63,.06);}
 @media(max-width:600px){.sq-chat-row>div:not(.sq-chat-avatar){max-width:calc(100% - 60px);}.sq-chat-avatar{width:48px;height:48px;}.sq-chat-bubble{max-width:100%;}}
+/* 記事の本文を読み切る前に、要点を自分の言葉に戻すための小さな節目。 */
+.sq-article-reflection{display:flex;align-items:center;justify-content:flex-end;gap:12px;max-width:680px;margin:30px 0 12px;padding:10px 0;border-top:1px solid var(--sq-border,#E2E8F0);border-bottom:1px solid var(--sq-border,#E2E8F0);}
+.sq-article-reflection img{display:block;width:92px;height:92px;object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 5px 9px rgba(0,0,0,.14));}
+.sq-article-reflection figcaption{max-width:310px;margin:0;color:var(--sq-soft,#718096);font-size:12px;font-weight:700;line-height:1.7;text-align:left;}
+@media(max-width:600px){.sq-article-reflection{justify-content:flex-start;gap:9px;margin:24px 0 10px;padding:8px 0;}.sq-article-reflection img{width:76px;height:76px;}.sq-article-reflection figcaption{font-size:11px;line-height:1.65;}}
 /* 記事固有の情景ビジュアル */
 .sq-story-visual{max-width:920px;margin:28px auto 34px;overflow:hidden;background:var(--sq-surface);border:1px solid var(--sq-border-strong);border-radius:16px;box-shadow:var(--sq-shadow);}
 .sq-story-visual img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
@@ -3700,8 +3705,8 @@ function normalizeExistingDialogue(container){
       if(image){
         image.src = presentation.image;
         image.alt = presentation.alt;
-        image.width = 44;
-        image.height = 44;
+        image.width = 56;
+        image.height = 56;
       }
     }
     if(name) name.textContent = presentation.name;
@@ -3731,6 +3736,30 @@ function buildArticleDialogue(){
   chat.className = 'sq-chat sq-chat-auto';
   chat.innerHTML = renderDialogue(rows);
   lead.insertAdjacentElement('afterend', chat);
+}
+
+/* ── 記事の要点を振り返るリアクション ──
+   すべての本文へ画像を散らすのではなく、要点を整理して次へ進む節目に
+   1枚だけ置く。会話用の小さな表情アイコンとは役割を分ける。 */
+function buildArticleReflection(){
+  const container = document.querySelector('.container');
+  if(!container || container.querySelector('.sq-article-reflection')) return;
+
+  const headings = Array.from(container.querySelectorAll('h2')).filter(heading => {
+    return !heading.closest('.sq-sidebar, .sq-toc, .sq-toc-inline, .sq-left-sidebar, .sq-right-sidebar');
+  });
+  if(!headings.length) return;
+
+  const summaryHeading = headings.find(heading => /まとめ|結論|最後に/.test(heading.textContent.trim()));
+  const faqHeading = headings.find(heading => /よくある質問|FAQ/i.test(heading.textContent.trim()));
+  const target = summaryHeading || faqHeading || headings[headings.length - 1];
+  const reflection = document.createElement('figure');
+  reflection.className = 'sq-article-reflection';
+  reflection.innerHTML = `
+    <img src="images/reactions/wakaba-reflection-v1.png" alt="ノートを抱えて要点を振り返る若葉" width="1254" height="1254" loading="lazy" decoding="async">
+    <figcaption>要点を自分の言葉で1行にしてから、次の問題へ。</figcaption>
+  `;
+  target.insertAdjacentElement('beforebegin', reflection);
 }
 
 /* ── サイドバーCTA ── */
@@ -5102,6 +5131,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   buildMiscGuideSidebar(layout.right);
   buildCatBadge();
   buildArticleDialogue();
+  buildArticleReflection();
   buildHubReturn();
   buildOriginalityNote();
   buildArticleStoryVisual();
