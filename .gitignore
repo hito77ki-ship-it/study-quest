@@ -29,3 +29,6 @@ build/
 gsc-key*.json
 secrets/
 .claude/settings.local.json
+
+# Local Search Console comparison snapshots (contain operational analytics).
+tmp/gsc-keyword-watch*.json
