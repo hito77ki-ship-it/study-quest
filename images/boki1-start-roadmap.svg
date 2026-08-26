@@ -36,8 +36,8 @@
   <circle cx="736" cy="416" r="3" fill="#CBD5E1" opacity="0.5"/>
 
   <!-- Title -->
-  <text x="380" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">⚔ 1級合格への最速クエストマップ</text>
-  <text x="380" y="56" text-anchor="middle" font-size="12" fill="#64748B">今から約5ヶ月で11月試験を狙う攻略タイムライン（合計 約300〜400時間）</text>
+  <text x="380" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="#1E293B">⚔ 1級合格への3段階クエストマップ</text>
+  <text x="380" y="56" text-anchor="middle" font-size="12" fill="#64748B">第174回（2026年11月15日）に向けた3段階の学習計画</text>
 
   <!-- Dashed connecting line (behind all nodes) -->
   <line x1="98" y1="185" x2="620" y2="185" stroke="#CBD5E1" stroke-width="2.5" stroke-dasharray="8,5"/>
@@ -61,14 +61,14 @@
   <rect x="140" y="105" width="130" height="25" rx="12" fill="#3B82F6"/>
   <rect x="140" y="118" width="130" height="12" fill="#3B82F6"/>
   <text x="205" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.1em">PHASE 1</text>
-  <text x="205" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">商業・会計学</text>
-  <text x="205" y="165" text-anchor="middle" font-size="10" fill="#374151">理論をマスター</text>
+  <text x="205" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">基礎と全体像</text>
+  <text x="205" y="165" text-anchor="middle" font-size="10" fill="#374151">商業・会計学を確認</text>
   <line x1="152" y1="175" x2="258" y2="175" stroke="#BFDBFE" stroke-width="1"/>
-  <text x="205" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">⏱ 約2ヶ月</text>
+  <text x="205" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#1D4ED8">🗓 〜9月30日</text>
   <text x="205" y="208" text-anchor="middle" font-size="9.5" fill="#374151">連結・企業結合</text>
   <text x="205" y="223" text-anchor="middle" font-size="9.5" fill="#374151">会計基準の理論</text>
-  <text x="205" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#2563EB">約120〜160h</text>
-  <text x="205" y="258" text-anchor="middle" font-size="9" fill="#93C5FD">7月〜8月</text>
+  <text x="205" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#2563EB">図と問題を往復</text>
+  <text x="205" y="258" text-anchor="middle" font-size="9" fill="#93C5FD">土台を作る段階</text>
 
   <!-- Arrow 2 -->
   <line x1="272" y1="185" x2="293" y2="185" stroke="#94A3B8" stroke-width="2"/>
@@ -79,14 +79,14 @@
   <rect x="300" y="105" width="130" height="25" rx="12" fill="#7C3AED"/>
   <rect x="300" y="118" width="130" height="12" fill="#7C3AED"/>
   <text x="365" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.1em">PHASE 2</text>
-  <text x="365" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#3B1D8A">工業・原価計算</text>
-  <text x="365" y="165" text-anchor="middle" font-size="10" fill="#374151">差異分析を制覇！</text>
+  <text x="365" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#3B1D8A">問題演習</text>
+  <text x="365" y="165" text-anchor="middle" font-size="10" fill="#374151">理解を解答で確認</text>
   <line x1="312" y1="175" x2="418" y2="175" stroke="#DDD6FE" stroke-width="1"/>
-  <text x="365" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#6D28D9">⏱ 約1.5ヶ月</text>
+  <text x="365" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#6D28D9">🗓 10月1日〜31日</text>
   <text x="365" y="208" text-anchor="middle" font-size="9.5" fill="#374151">標準原価・差異分析</text>
   <text x="365" y="223" text-anchor="middle" font-size="9.5" fill="#374151">意思決定・CVP</text>
-  <text x="365" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#5B21B6">約90〜120h</text>
-  <text x="365" y="258" text-anchor="middle" font-size="9" fill="#C4B5FD">9月〜10月上旬</text>
+  <text x="365" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#5B21B6">解法の型を整理</text>
+  <text x="365" y="258" text-anchor="middle" font-size="9" fill="#C4B5FD">弱点を見つける段階</text>
 
   <!-- Arrow 3 -->
   <line x1="432" y1="185" x2="453" y2="185" stroke="#94A3B8" stroke-width="2"/>
@@ -97,14 +97,14 @@
   <rect x="460" y="105" width="130" height="25" rx="12" fill="#F59E0B"/>
   <rect x="460" y="118" width="130" height="12" fill="#F59E0B"/>
   <text x="525" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.1em">PHASE 3</text>
-  <text x="525" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#78350F">過去問・全範囲模試</text>
-  <text x="525" y="165" text-anchor="middle" font-size="10" fill="#374151">本番感覚を掴む！</text>
+  <text x="525" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#78350F">本番形式で仕上げ</text>
+  <text x="525" y="165" text-anchor="middle" font-size="10" fill="#374151">4科目を通して解く</text>
   <line x1="472" y1="175" x2="578" y2="175" stroke="#FDE68A" stroke-width="1"/>
-  <text x="525" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309">⏱ 約1.5ヶ月</text>
+  <text x="525" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309">🗓 11月1日〜14日</text>
   <text x="525" y="208" text-anchor="middle" font-size="9.5" fill="#374151">4科目横断演習</text>
   <text x="525" y="223" text-anchor="middle" font-size="9.5" fill="#374151">時間配分の徹底訓練</text>
-  <text x="525" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#D97706">約90〜120h</text>
-  <text x="525" y="258" text-anchor="middle" font-size="9" fill="#FCD34D">10月上旬〜11月</text>
+  <text x="525" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#D97706">時間配分を確認</text>
+  <text x="525" y="258" text-anchor="middle" font-size="9" fill="#FCD34D">本番に備える段階</text>
 
   <!-- Arrow 4 -->
   <line x1="592" y1="185" x2="613" y2="185" stroke="#94A3B8" stroke-width="2"/>
@@ -116,13 +116,13 @@
   <rect x="620" y="138" width="122" height="12" fill="#EC4899"/>
   <text x="681" y="142" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="0.08em">GOAL</text>
   <text x="681" y="166" text-anchor="middle" font-size="22">🏆</text>
-  <text x="681" y="191" text-anchor="middle" font-size="12" font-weight="700" fill="#831843">11月試験</text>
-  <text x="681" y="208" text-anchor="middle" font-size="11" font-weight="700" fill="#831843">本番突撃！</text>
-  <text x="681" y="235" text-anchor="middle" font-size="9" fill="#F9A8D4">合格を掴め！</text>
+  <text x="681" y="191" text-anchor="middle" font-size="12" font-weight="700" fill="#831843">11月15日</text>
+  <text x="681" y="208" text-anchor="middle" font-size="11" font-weight="700" fill="#831843">第174回 本番</text>
+  <text x="681" y="235" text-anchor="middle" font-size="9" fill="#F9A8D4">準備を確認して臨む</text>
 
   <!-- ===== BOTTOM SUMMARY BAR ===== -->
   <rect x="18" y="284" width="724" height="48" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
-  <text x="380" y="306" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">合計：約300〜400時間 ／ 最短5ヶ月の集中クエスト</text>
+  <text x="380" y="306" text-anchor="middle" font-size="12" font-weight="700" fill="#1E293B">受験日から逆算して、3段階で学習を組み立てる</text>
   <text x="380" y="323" text-anchor="middle" font-size="11" fill="#64748B">合格基準：4科目合計70点以上 ／ 各科目10点（40%）以上が必須条件</text>
 
   <!-- ===== THREE INFO CARDS ===== -->
