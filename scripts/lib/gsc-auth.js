@@ -46,6 +46,7 @@ function fmtDate(d) {
 
 async function queryRange(token, siteUrl, startDate, endDate, dimensions, opts = {}) {
   const body = { startDate, endDate, dimensions, rowLimit: opts.rowLimit || 10 };
+  if (opts.startRow) body.startRow = opts.startRow;
   if (opts.dimensionFilterGroups) body.dimensionFilterGroups = opts.dimensionFilterGroups;
   const res = await fetch(
     `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`,
@@ -59,4 +60,23 @@ async function queryRange(token, siteUrl, startDate, endDate, dimensions, opts =
   return res.json();
 }
 
-module.exports = { getAccessToken, queryRange, fmtDate };
+async function queryAllRows(token, siteUrl, startDate, endDate, dimensions, opts = {}) {
+  const pageSize = opts.pageSize || 1000;
+  const maxRows = opts.maxRows || 25000;
+  const rows = [];
+
+  for (let startRow = 0; startRow < maxRows; startRow += pageSize) {
+    const data = await queryRange(token, siteUrl, startDate, endDate, dimensions, {
+      ...opts,
+      rowLimit: Math.min(pageSize, maxRows - startRow),
+      startRow,
+    });
+    const page = data.rows || [];
+    rows.push(...page);
+    if (page.length < pageSize) break;
+  }
+
+  return rows;
+}
+
+module.exports = { getAccessToken, queryRange, queryAllRows, fmtDate };
