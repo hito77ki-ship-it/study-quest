@@ -3132,7 +3132,12 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       image.addEventListener('error', () => {
         if(image.dataset.sqThumbFallbackApplied) return;
         image.dataset.sqThumbFallbackApplied = 'true';
-        image.src = `images/article-thumbnails/${slug}.jpg`;
+        const revision = ({
+          'boki2-3kyu-fukushu': '20260830',
+          'boki-net-test-mac-ipad': '20260830',
+          'boki-note-sekkei': '20260830'
+        })[slug];
+        image.src = `images/article-thumbnails/${slug}.jpg${revision ? `?v=${revision}` : ''}`;
       }, { once:true });
       image.alt = `${title}を表すStudy Questの記事サムネイル`;
       image.width = 640;
