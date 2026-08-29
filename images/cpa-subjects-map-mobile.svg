@@ -68,16 +68,16 @@
   <rect x="40" y="730" width="90" height="30" rx="15" fill="#60a5fa"/>
   <text x="85" y="751" text-anchor="middle" class="mpill">短答</text>
   <text x="190" y="751" class="mruby">（たんとう）</text>
-  <text x="40" y="792" class="mbody">配点：約80点 / 500点満点中</text>
+  <text x="40" y="792" class="mbody">財務会計論：200点 / 150分 / 40問以内</text>
   <text x="40" y="818" class="msmall">マークシート形式。広い範囲から細かく出題。</text>
-  <text x="40" y="842" class="msmall">理論は1問3分以内、全体30分のタイムアタック。</text>
+  <text x="40" y="842" class="msmall">設問ごとの時間を固定せず、150分で演習する。</text>
 
   <!-- 論文 -->
   <rect x="20" y="912" width="320" height="180" rx="20" fill="#ffffff" stroke="#fecaca" stroke-width="3"/>
   <rect x="40" y="930" width="90" height="30" rx="15" fill="#fb7185"/>
   <text x="85" y="951" text-anchor="middle" class="mpill">論文</text>
   <text x="190" y="951" class="mruby">（ろんぶん）</text>
-  <text x="40" y="992" class="mbody">配点：約110点 / 700点満点中</text>
-  <text x="40" y="1018" class="msmall">大問3問、180分。文章を記述する形式。</text>
+  <text x="40" y="992" class="mbody">会計学：300点 / 300分 / 大問5問</text>
+  <text x="40" y="1018" class="msmall">財務会計論単独ではなく、会計学として出題。</text>
   <text x="40" y="1042" class="msmall">思考力・判断力・応用能力・論述力が問われる。</text>
 </svg>
