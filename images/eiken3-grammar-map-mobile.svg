@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 980" width="360" height="980" role="img" aria-labelledby="svgtitle svgdesc">
-  <title id="svgtitle">英検3級 語彙・文法 頻出パターン攻略マップ（モバイル版）</title>
-  <desc id="svgdesc">大問1の語彙頻出カテゴリと、大問2〜4の頻出文法パターンを縦に並べた図解</desc>
+  <title id="svgtitle">英検3級 語彙・文法 学習整理マップ（モバイル版）</title>
+  <desc id="svgdesc">語彙の学習カテゴリと文法パターンを縦に並べた図解</desc>
   <defs>
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
   <rect width="360" height="980" rx="16" fill="#F8FAFC"/>
   <text x="180" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">英検3級 語彙・文法</text>
-  <text x="180" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">頻出パターン攻略マップ</text>
+  <text x="180" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">学習整理マップ</text>
 
   <!-- 語彙セクション -->
   <rect x="16" y="68" width="328" height="426" rx="10" fill="#F0FDF4"/>
   <rect x="16" y="68" width="328" height="34" rx="10" fill="#16A34A"/>
-  <text x="180" y="91" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">大問1 語彙問題の頻出カテゴリ</text>
+  <text x="180" y="91" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">語彙の学習カテゴリ</text>
 
   <rect x="30" y="112" width="300" height="56" rx="6" fill="#DCFCE7"/>
   <text x="42" y="132" font-size="11.5" font-weight="700" fill="#15803D">名詞</text>
@@ -36,15 +36,15 @@
   <rect x="30" y="360" width="300" height="56" rx="6" fill="#BBF7D0"/>
   <text x="42" y="380" font-size="11.5" font-weight="700" fill="#15803D">熟語・コロケーション</text>
   <text x="42" y="396" font-size="10" fill="#374151">take care of / be good at</text>
-  <text x="42" y="410" font-size="9.5" fill="#64748B">動詞＋前置詞の熟語が最多</text>
+  <text x="42" y="410" font-size="9.5" fill="#64748B">動詞＋前置詞の熟語も確認する</text>
 
   <rect x="30" y="426" width="300" height="30" rx="6" fill="#166534"/>
-  <text x="180" y="446" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">大問1は15問中11問以上が合格の目安</text>
+  <text x="180" y="446" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">例文と例題で語彙を確認する</text>
 
   <!-- 文法セクション -->
   <rect x="16" y="510" width="328" height="640" rx="10" fill="#EFF6FF"/>
   <rect x="16" y="510" width="328" height="34" rx="10" fill="#2563EB"/>
-  <text x="180" y="533" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">頻出文法パターン（大問2〜4）</text>
+  <text x="180" y="533" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">文法の学習パターン</text>
 
   <rect x="30" y="554" width="300" height="64" rx="6" fill="#DBEAFE"/>
   <text x="180" y="576" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">① 動詞の形（時制・助動詞）</text>

@@ -3,11 +3,11 @@
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
   <rect width="760" height="420" rx="12" fill="#F8FAFC"/>
-  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検3級 語彙・文法 頻出パターン攻略マップ</text>
+  <text x="380" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">英検3級 語彙・文法 学習整理マップ</text>
   <!-- 大問1 語彙攻略 -->
   <rect x="20" y="52" width="348" height="348" rx="8" fill="#F0FDF4"/>
   <rect x="20" y="52" width="348" height="34" rx="8" fill="#16A34A"/>
-  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">大問1 語彙問題の頻出カテゴリ</text>
+  <text x="194" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">語彙の学習カテゴリ</text>
   <!-- Categories -->
   <rect x="36" y="96" width="316" height="38" rx="5" fill="#DCFCE7"/>
   <text x="104" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">名詞</text>
@@ -28,13 +28,13 @@
   <rect x="36" y="272" width="316" height="38" rx="5" fill="#BBF7D0"/>
   <text x="104" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">熟語・コロケーション</text>
   <text x="104" y="304" text-anchor="middle" font-size="9" fill="#374151">take care of / be good at</text>
-  <text x="280" y="297" text-anchor="middle" font-size="9" fill="#64748B">動詞＋前置詞の熟語が最多</text>
+  <text x="280" y="297" text-anchor="middle" font-size="9" fill="#64748B">動詞＋前置詞の熟語も確認する</text>
   <rect x="36" y="360" width="316" height="30" rx="5" fill="#166534"/>
-  <text x="194" y="380" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">大問1は15問中11問以上が合格の目安</text>
-  <!-- 文法頻出パターン -->
+  <text x="194" y="380" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">例文と例題で語彙を確認する</text>
+  <!-- 文法パターン -->
   <rect x="384" y="52" width="356" height="348" rx="8" fill="#EFF6FF"/>
   <rect x="384" y="52" width="356" height="34" rx="8" fill="#2563EB"/>
-  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">頻出文法パターン（大問2〜4）</text>
+  <text x="562" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">文法の学習パターン</text>
   <rect x="400" y="96" width="324" height="48" rx="5" fill="#DBEAFE"/>
   <text x="562" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">① 動詞の形（時制・助動詞）</text>
   <text x="562" y="132" text-anchor="middle" font-size="10" fill="#374151">現在完了・過去進行・will/can/must の使い分け</text>
