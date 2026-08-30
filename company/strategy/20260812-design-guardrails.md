@@ -41,4 +41,4 @@ Study Questは「資格学習の記録を、戦略的な冒険に変える」プ
 
 ## 現在の自動スケジュール
 
-`.github/workflows/media-audits.yml` の定期実行は監査専用である。権限は `contents: read` のみで、公開HTML/CSSを編集・commit・pushする権限を持たない。この原則を変更する場合は、取締役の明示承認を要する。
+`.github/workflows/media-audits.yml` の定期実行は監査専用である。権限は `contents: read` のみで、公開HTML/CSSを編集・commit・pushする権限を持たない。2026年8月30日の包括実行委任後も、デザイン／UIを扱う無人実行タスクは作らない。別の実行専用タスクを作る場合も、UIを含まず、稟議・根拠・実行範囲が記録済みで低リスクかつ機械検証可能な案件に限定する。
