@@ -3259,10 +3259,17 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     }
     results.innerHTML = filtered.slice(0,12).map(x=>
       `<a href="${x.href}" class="lp-search-item">
-        <img class="lp-search-thumb" src="images/article-diagrams/${esc(x.slug)}.svg" alt="${esc(x.title)}の記事サムネイル" width="640" height="360" loading="lazy" decoding="async">
+        <img class="lp-search-thumb" src="images/article-diagrams/${esc(x.slug)}.svg" data-sq-thumb-slug="${esc(x.slug)}" alt="${esc(x.title)}の記事サムネイル" width="640" height="360" loading="lazy" decoding="async">
         <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-title">${esc(x.title)}</span></span>
       </a>`
     ).join('');
+    results.querySelectorAll('.lp-search-thumb').forEach(image => {
+      image.addEventListener('error', () => {
+        if(image.dataset.sqThumbFallbackApplied) return;
+        image.dataset.sqThumbFallbackApplied = 'true';
+        image.src = `images/article-thumbnails/${image.dataset.sqThumbSlug}.jpg`;
+      }, { once:true });
+    });
   }
 
   openBtn.addEventListener('click', open);
