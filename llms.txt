@@ -1,6 +1,6 @@
 # Study Quest（スタディクエスト）
 
-最終更新: 2026-08-11
+最終更新: 2026-08-30
 
 <!-- 掲載基準：独自の判断・一次情報、収益導線、カテゴリ入口、検索表示回数の順で代表記事を選定する。 -->
 
@@ -30,6 +30,8 @@ Study Questは日商簿記・FP・宅建・司法書士・TOEIC・英検・公�
 - [ゼロからの簿記② 仕訳を行動に変える3分演習](https://study-quest.net/boki-zero-02.html): Study Quest式の短時間アウトプット
 - [ゼロからの簿記④ 仕訳のしくみ](https://study-quest.net/boki-zero-04.html): 借方・貸方という考え方を初学者向けに解説
 - [簿記3級を飛ばして2級から受けていい人・ダメな人](https://study-quest.net/boki3-tobashi-2kyu.html): 級を飛ばす判断の材料と、2級の試験中に3級知識がどこで必要になるかの整理
+- [簿記の勉強場所はどこがいい？](https://study-quest.net/boki-benkyo-basho.html): 自宅・カフェ・図書館などで進めやすい学習メニューを、場所ごとに整理
+- [簿記のノートは何を書く？](https://study-quest.net/boki-note-sekkei.html): 本番の筆記条件から逆算して、問題演習で使う3つの記録枠を設計する方法
 
 ## 日商簿記3級（論点別）
 
@@ -58,6 +60,8 @@ Study Questは日商簿記・FP・宅建・司法書士・TOEIC・英検・公�
 - [製造間接費・予定配賦・配賦差異](https://study-quest.net/boki2-seizo-kansetsuhi.html): 工業簿記の頻出論点
 - [ネット試験（CBT）vs 統一試験（紙）徹底比較](https://study-quest.net/boki2-cbt-vs-paper.html): どちらの方式で受験すべきかの判断材料
 - [簿記2級ネット試験の時間配分と解く順番](https://study-quest.net/boki2-net-test.html): CBT本番で画面問題と手書き計算を切り替えるための実戦的な進め方
+- [Mac・iPadで簿記を勉強している人へ](https://study-quest.net/boki-net-test-mac-ipad.html): 自宅学習の端末環境とネット試験本番の操作環境との差を埋める準備
+- [簿記2級を始めたら3級を忘れていた人へ](https://study-quest.net/boki2-3kyu-fukushu.html): 全範囲をやり直さず、2級で戻るべき3級論点を依存関係から選ぶ
 - [試験日程と最速3ヶ月合格ロードマップ](https://study-quest.net/boki2-next-exam.html): 直近の試験日程と逆算スケジュール
 
 ## 日商簿記1級
