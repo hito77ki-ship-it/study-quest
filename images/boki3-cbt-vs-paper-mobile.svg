@@ -17,20 +17,20 @@
   <text x="180" y="106" text-anchor="middle" font-size="10.5" fill="#BFDBFE">シーフ型：素早く攻略するプレイヤー</text>
 
   <rect x="28" y="134" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
-  <text x="42" y="156" font-size="11.5" fill="#1E3A5F">＋ほぼ毎日、全国テストセンターで受験OK</text>
+  <text x="42" y="156" font-size="11.5" fill="#1E3A5F">＋会場ごとの日程・空席から受験日を選ぶ</text>
 
   <rect x="28" y="172" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
   <text x="42" y="194" font-size="11.5" fill="#1E3A5F">＋試験終了後すぐ画面で合否・点数確認</text>
 
   <rect x="28" y="210" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
-  <text x="42" y="232" font-size="11.5" fill="#1E3A5F">＋不合格でも翌日からすぐ再チャレンジ可</text>
+  <text x="42" y="232" font-size="11.5" fill="#1E3A5F">＋別日の再受験は会場日程を確認</text>
 
   <rect x="28" y="248" width="304" height="34" rx="8" fill="rgba(59,130,246,0.13)"/>
-  <text x="42" y="270" font-size="11.5" fill="#1E3A5F">＋学習進捗に合わせ受験日を自由に調整</text>
+  <text x="42" y="270" font-size="11.5" fill="#1E3A5F">＋学習進捗に合わせ会場日程を選ぶ</text>
 
   <rect x="28" y="290" width="304" height="46" rx="8" fill="rgba(234,88,12,0.1)" stroke="rgba(234,88,12,0.35)" stroke-width="1"/>
-  <text x="42" y="308" font-size="11" fill="#7C2D12">！画面と白紙を往復する視線移動で</text>
-  <text x="42" y="324" font-size="11" fill="#7C2D12">パニックになる罠あり！事前練習が必須</text>
+  <text x="42" y="308" font-size="11" fill="#7C2D12">！画面入力と白紙メモの操作に</text>
+  <text x="42" y="324" font-size="11" fill="#7C2D12">慣れるための事前練習が必要</text>
 
   <rect x="28" y="348" width="304" height="76" rx="10" fill="#1D4ED8"/>
   <text x="180" y="372" text-anchor="middle" font-size="11.5" fill="#BFDBFE">大谷的おすすめ度</text>
@@ -56,8 +56,8 @@
   <text x="42" y="662" font-size="11" fill="#7C2D12">！年3回（11月・2月・6月）のみの一発勝負</text>
 
   <rect x="28" y="678" width="304" height="46" rx="8" fill="rgba(220,38,38,0.1)" stroke="rgba(220,38,38,0.3)" stroke-width="1"/>
-  <text x="42" y="696" font-size="11" fill="#7C2D12">！合否まで2〜3週間待ち＋難易度ガチャで</text>
-  <text x="42" y="712" font-size="11" fill="#7C2D12">ハズレ回に当たるリスクあり</text>
+  <text x="42" y="696" font-size="11" fill="#7C2D12">！申込先・申込期間は希望地の</text>
+  <text x="42" y="712" font-size="11" fill="#7C2D12">商工会議所で確認が必要</text>
 
   <rect x="28" y="736" width="304" height="90" rx="10" fill="#B45309"/>
   <text x="180" y="760" text-anchor="middle" font-size="10.5" fill="#FEF9C3">大谷的おすすめ度（PC苦手な人限定）</text>
