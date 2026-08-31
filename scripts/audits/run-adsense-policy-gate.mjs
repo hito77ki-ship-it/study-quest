@@ -20,6 +20,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DEFAULT_OUTPUT = path.join(ROOT, 'company', 'reports', 'automation');
 const SITE_ORIGIN = 'https://study-quest.net/';
+const SHORT_MONETIZED_CHAR_LIMIT = 3000;
 
 /* These pages are deliberately non-monetized. The 26 article pages come from
  * the approved low-scope inventory; 6 infrastructure pages should never carry
@@ -36,6 +37,11 @@ const NON_MONETIZED_PAGES = [
   'boki-zero-01.html', 'boki-zero-03.html', 'boki2-zeikouka.html',
   'boki2-arai-kirihanashi.html', 'boki2-yukashoken.html', 'boki3-koguchi.html',
 ];
+
+/* 3,000字未満の広告面は、既存のAdSense是正で採用した社内基準により
+ * strictで停止する。例外を認める場合は、記事名だけでなく理由もここに
+ * 記録する。空のままにするのが通常で、例外は公開判断の置き場である。 */
+const ALLOWED_SHORT_MONETIZED = {};
 
 const TRUST_PAGES = {
   'about.html': '運営者情報',
@@ -143,15 +149,28 @@ async function main() {
   const shortMonetized = adPages
     .filter((file) => isArticle(pages.get(file)))
     .map((file) => ({ file, chars: bodyText(pages.get(file)).length }))
-    .filter((page) => page.chars < 3000)
+    .filter((page) => page.chars < SHORT_MONETIZED_CHAR_LIMIT)
     .sort((a, b) => a.chars - b.chars);
+  const unapprovedShortMonetized = shortMonetized
+    .filter((page) => !Object.hasOwn(ALLOWED_SHORT_MONETIZED, page.file));
+  const invalidShortMonetizedAllowances = Object.entries(ALLOWED_SHORT_MONETIZED)
+    .filter(([file, reason]) => {
+      const page = shortMonetized.find((item) => item.file === file);
+      return !page || typeof reason !== 'string' || !reason.trim();
+    })
+    .map(([file]) => `${file}: 例外指定が現在の「3,000字未満かつ広告あり」のArticleに対応しない、または理由がない`);
   const genericClosings = articles
     .filter((file) => /(?:いいねボタン|ポチッと押して)/.test(bodyText(pages.get(file))))
     .sort();
   const lowScopeProtected = NON_MONETIZED_PAGES.filter((file) => file !== 'about.html'
     && file !== 'contact.html' && file !== 'privacy.html' && file !== 'terms.html'
     && file !== 'app.html' && file !== 'game.html');
-  const blockers = [...protectedAds, ...trustIssues];
+  const blockers = [
+    ...protectedAds,
+    ...trustIssues,
+    ...unapprovedShortMonetized.map((page) => `${page.file}: ${SHORT_MONETIZED_CHAR_LIMIT.toLocaleString('ja-JP')}字未満でGoogle広告コードあり（${page.chars.toLocaleString('ja-JP')}字）`),
+    ...invalidShortMonetizedAllowances,
+  ];
 
   const report = `# AdSenseポリシー品質ゲート（${today()}）
 
@@ -173,16 +192,17 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 - 非収益化指定ページ: ${NON_MONETIZED_PAGES.length}本（薄い論点記事: ${lowScopeProtected.length}本）
 - 非収益化指定への広告再混入: **${protectedAds.length}件**
 - 信頼ページ（運営者・問い合わせ・プライバシー・利用規約）の必須表示・導線: **${trustIssues.length}件**
-- 3,000字未満かつ広告コードあり: **${shortMonetized.length}本**（内部レビュー候補。Googleの文字数基準ではない）
+- 3,000字未満かつ広告コードあり: **${shortMonetized.length}本**（うち例外未登録: **${unapprovedShortMonetized.length}本**。Googleの文字数基準ではない）
+- 明示的に許可した短い広告面: **${Object.keys(ALLOWED_SHORT_MONETIZED).length}本**
 - 定型「いいね」CTAを含むArticle: **${genericClosings.length}本**（独自性の改善残数。違反の自動断定ではない）
 
 ## 公開停止候補
 
 ${formatList(blockers)}
 
-## 短い広告面の再確認候補
+## 短い広告面
 
-${formatList(shortMonetized.map((page) => `${page.file}: ${page.chars.toLocaleString('ja-JP')}字`))}
+${formatList(shortMonetized.map((page) => `${page.file}: ${page.chars.toLocaleString('ja-JP')}字${Object.hasOwn(ALLOWED_SHORT_MONETIZED, page.file) ? `（例外理由: ${ALLOWED_SHORT_MONETIZED[page.file]}）` : '（例外未登録）'}`))}
 
 ## 定型CTAの改善残数
 
@@ -190,7 +210,7 @@ ${formatList(genericClosings)}
 
 ## 運用
 
-\`--strict\` は「非収益化指定への広告再混入」と「信頼ページの必須表示・導線」のみを失敗として終了コード2を返す。文字数と定型CTAは、Googleが明示した閾値ではないため、一次情報・読者価値・既存稟議を確認する編集候補に留める。
+\`--strict\` は「非収益化指定への広告再混入」「信頼ページの必須表示・導線」「例外未登録の3,000字未満の広告面」「無効な例外指定」を失敗として終了コード2を返す。3,000字はGoogleが明示した閾値ではなく、既存の是正判断を再発させないための社内基準である。例外を認める場合は、\`ALLOWED_SHORT_MONETIZED\` に記事名と理由を記録する。
 `;
 
   const outputPath = path.join(options.outputDir, `${today()}-adsense-policy-gate.md`);

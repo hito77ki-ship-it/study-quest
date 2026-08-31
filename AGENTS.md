@@ -220,6 +220,7 @@ Study QuestのLP・記事導線は、単なる装飾ではなくプロダクト�
 3. 記事の更新情報は `index.html` にのみ記載する（`app.html` の更新情報には載せない）
 4. 資格ガイド本体を新設した場合は `shikaku-list.html` の「難易度から探す」にも追加（難易度は推測せず、**その記事が本文で示している勉強時間**に従う）
 5. シリーズ記事は `article-widgets.js` の `BOKI*_FILES` 等の配列**と** `ARTICLES` の**両方**に登録する
+6. **本文が3,000字に満たない記事にはGoogle広告コード（`adsbygoogle`）を入れない。** 3,000字はGoogleの基準ではなく自社基準である。例外は `scripts/audits/run-adsense-policy-gate.mjs` の `ALLOWED_SHORT_MONETIZED` に理由付きで記録し、公開前に `node scripts/audits/run-adsense-policy-gate.mjs --strict --no-write` を通す。
 
 **`ARTICLES` を引けなかったファイルは、エラーも出さず黙って捨てられる**（`const a = ARTICLES[f]; if(!a) return;`）。配列にだけ追記して `ARTICLES` を忘れると、その記事はサイドバー・前後ナビ・新着・人気から消える。記事自体は表示されるので気づかない。
 

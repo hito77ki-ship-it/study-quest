@@ -212,6 +212,10 @@ Codexが自動マージできるのは、次をすべて満たすPRだけとす�
    - **配列にだけ追記して `ARTICLES` を忘れると、その記事はサイドバーと前後ナビから消える。** 記事自体は存在し表示もされるので、気づかない
    - 追加後は必ず「全配列の要素が `ARTICLES` に存在するか」をスクリプトで検算する
    - この項目が無かったため、2026-07-30時点で**簿記2級の論点記事28本のうち16本（57%）が未登録**で、サイドバーの工業簿記一覧が14本中5本しか出ていなかった
+6. **本文が3,000字に満たない記事には、Google広告コード（`adsbygoogle`）を入れない（2026-09-01追加）**
+   - 3,000字はGoogleの基準ではなく、`company/decisions/20260811-薄い26本の広告除去と定型締め文の一括是正.md`で採用した社内基準
+   - 意図的に例外とする場合は、`scripts/audits/run-adsense-policy-gate.mjs` の `ALLOWED_SHORT_MONETIZED` に理由付きで記録し、`--strict` を通す
+   - 公開前に `node scripts/audits/run-adsense-policy-gate.mjs --strict --no-write` を実行する
 
 ---
 
