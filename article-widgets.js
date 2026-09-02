@@ -19,6 +19,7 @@ const ARTICLES = {
   'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ', thumb:'images/boki2-start-roadmap.svg'},
   'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較', thumb:'images/boki2-cbt-vs-paper.svg'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ', thumb:'images/boki2-kogyo-enshu-map.svg'},
+  'boki2-shogyo-enshu.html': {label:'簿記2級',      title:'商業簿記で落とす点を特定する演習手順'},
   'boki2-oyoryoku-kabe.html': {label:'簿記2級',     title:'仕訳はわかるのに過去問になると解けない「理解」と「得点力」のギャップを埋める演習法'},
   'boki2-renketsu-suteru.html': {label:'簿記2級',   title:'簿記2級の連結会計、捨てるべき？心が折れそうな人のための「部分点」戦略'},
   'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
@@ -3800,6 +3801,7 @@ const BOKI2_COMMERCIAL_FILES = [
   'boki2-arai-kirihanashi.html','boki2-hikiatekin.html','boki2-shasai.html',
   'boki2-kurinobe-shisan-vs-fusai.html','boki2-noren-vs-fu-no-noren.html',
   'boki2-kotei-shisan-why.html',
+  'boki2-shogyo-enshu.html',
 ];
 
 const BOKI2_INDUSTRIAL_FILES = [
