@@ -220,7 +220,9 @@ Study QuestのLP・記事導線は、単なる装飾ではなくプロダクト�
 3. 記事の更新情報は `index.html` にのみ記載する（`app.html` の更新情報には載せない）
 4. 資格ガイド本体を新設した場合は `shikaku-list.html` の「難易度から探す」にも追加（難易度は推測せず、**その記事が本文で示している勉強時間**に従う）
 5. シリーズ記事は `article-widgets.js` の `BOKI*_FILES` 等の配列**と** `ARTICLES` の**両方**に登録する
-6. **本文が3,000字に満たない記事にはGoogle広告コード（`adsbygoogle`）を入れない。** 3,000字はGoogleの基準ではなく自社基準である。例外は `scripts/audits/run-adsense-policy-gate.mjs` の `ALLOWED_SHORT_MONETIZED` に理由付きで記録し、公開前に `node scripts/audits/run-adsense-policy-gate.mjs --strict --no-write` を通す。
+6. **本文が3,000字に満たない記事にはGoogle広告枠（`<ins class="adsbygoogle">`）を入れない。** ライブラリ読込だけは広告枠ではない。3,000字はGoogleの基準ではなく自社基準である。例外は `scripts/audits/run-adsense-policy-gate.mjs` の `ALLOWED_SHORT_MONETIZED` に理由付きで記録し、公開前に `node scripts/audits/run-adsense-policy-gate.mjs --strict --no-write` を通す。
+7. **Google広告枠を新設・維持する記事は、本文ごとに独自性レビューを残す。** その記事でしか得られない判断・例題・検証・体験のどれか、変動事実の一次情報、近接するシリーズ記事との重複確認を稟議またはPRに記録する。コピー、類義語置換、未レビューの自動生成を広告枠に載せない。根拠が不足する記事は広告枠を増やさず、先に本文を見直す。
+8. **AdSenseの所有権確認・再申請・広告設定は取締役がAdSense画面で行う。** エージェントは事前監査とPR作成までを担当し、外部サービス側の操作完了を推測しない。
 
 **`ARTICLES` を引けなかったファイルは、エラーも出さず黙って捨てられる**（`const a = ARTICLES[f]; if(!a) return;`）。配列にだけ追記して `ARTICLES` を忘れると、その記事はサイドバー・前後ナビ・新着・人気から消える。記事自体は表示されるので気づかない。
 

@@ -85,8 +85,12 @@ function bodyText(source) {
     .trim();
 }
 
-function hasGoogleAdCode(source) {
-  return /pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js|\badsbygoogle\b/i.test(source);
+function hasGoogleAdLoader(source) {
+  return /pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/i.test(source);
+}
+
+function hasGoogleAdUnit(source) {
+  return /<ins\b(?=[^>]*\bclass=["'][^"']*\badsbygoogle\b[^"']*["'])[^>]*>/i.test(source);
 }
 
 function canonical(source) {
@@ -123,10 +127,11 @@ async function main() {
   const sitemap = sitemapEntries(await fs.readFile(path.join(ROOT, 'sitemap.xml'), 'utf8'));
   const index = pages.get('index.html') || '';
   const articles = files.filter((file) => isArticle(pages.get(file)));
-  const adPages = files.filter((file) => hasGoogleAdCode(pages.get(file)));
+  const adLoaderPages = files.filter((file) => hasGoogleAdLoader(pages.get(file)));
+  const adUnitPages = files.filter((file) => hasGoogleAdUnit(pages.get(file)));
   const protectedAds = NON_MONETIZED_PAGES
-    .filter((file) => !pages.has(file) || hasGoogleAdCode(pages.get(file)))
-    .map((file) => pages.has(file) ? `${file}: Google広告コードあり` : `${file}: ファイルがない`);
+    .filter((file) => !pages.has(file) || hasGoogleAdUnit(pages.get(file)))
+    .map((file) => pages.has(file) ? `${file}: Google広告枠あり` : `${file}: ファイルがない`);
   const trustIssues = [];
   for (const [file, label] of Object.entries(TRUST_PAGES)) {
     const source = pages.get(file);
@@ -146,7 +151,7 @@ async function main() {
 
   /* 3,000字はGoogleの最低基準ではなく、このサイトの既存判断である。
      ここでは自動で広告を消さず、再確認すべき候補としてだけ出す。 */
-  const shortMonetized = adPages
+  const shortMonetized = adUnitPages
     .filter((file) => isArticle(pages.get(file)))
     .map((file) => ({ file, chars: bodyText(pages.get(file)).length }))
     .filter((page) => page.chars < SHORT_MONETIZED_CHAR_LIMIT)
@@ -168,7 +173,7 @@ async function main() {
   const blockers = [
     ...protectedAds,
     ...trustIssues,
-    ...unapprovedShortMonetized.map((page) => `${page.file}: ${SHORT_MONETIZED_CHAR_LIMIT.toLocaleString('ja-JP')}字未満でGoogle広告コードあり（${page.chars.toLocaleString('ja-JP')}字）`),
+    ...unapprovedShortMonetized.map((page) => `${page.file}: ${SHORT_MONETIZED_CHAR_LIMIT.toLocaleString('ja-JP')}字未満でGoogle広告枠あり（${page.chars.toLocaleString('ja-JP')}字）`),
     ...invalidShortMonetizedAllowances,
   ];
 
@@ -176,11 +181,11 @@ async function main() {
 
 ## 目的
 
-Googleの審査は広告コードを置いたURLだけでなくサイト全体を対象とする。ここでは公開ページを自動変更せず、広告を出さないと決めた面、運営者・連絡先等の信頼ページ、独自性改善の残数を同じ基準で確認する。
+Googleの審査は広告枠を置いたURLだけでなくサイト全体を対象とする。ここでは公開ページを自動変更せず、広告を出さないと決めた面、運営者・連絡先等の信頼ページ、独自性改善の残数を同じ基準で確認する。広告ライブラリの読込と、実際のGoogle広告枠（\`<ins class="adsbygoogle">\`）は分けて数える。
 
 根拠:
 
-- Google AdSense「アカウントが承認されませんでした」: 自動生成または独自性がほとんどないページに広告コードを置かないこと、十分な独自コンテンツと操作性を求める。
+- Google AdSense「アカウントが承認されませんでした」: 自動生成または独自性がほとんどないページに広告枠を置かないこと、十分な独自コンテンツと操作性を求める。
   https://support.google.com/adsense/answer/81904?hl=ja
 - Google Publisher Policies「複製された画面」: 価値の追加なしに外部コンテンツをコピー・自動生成した画面へGoogle広告を配置できない。
   https://support.google.com/publisherpolicies/answer/11190248?hl=ja
@@ -188,11 +193,12 @@ Googleの審査は広告コードを置いたURLだけでなくサイト全体�
 ## 判定
 
 - ルートHTML: ${files.length}本（Article: ${articles.length}本）
-- Google広告コードを含むページ: ${adPages.length}本
+- Google広告ライブラリを読むページ: ${adLoaderPages.length}本
+- Google広告枠を置くページ: ${adUnitPages.length}本
 - 非収益化指定ページ: ${NON_MONETIZED_PAGES.length}本（薄い論点記事: ${lowScopeProtected.length}本）
 - 非収益化指定への広告再混入: **${protectedAds.length}件**
 - 信頼ページ（運営者・問い合わせ・プライバシー・利用規約）の必須表示・導線: **${trustIssues.length}件**
-- 3,000字未満かつ広告コードあり: **${shortMonetized.length}本**（うち例外未登録: **${unapprovedShortMonetized.length}本**。Googleの文字数基準ではない）
+- 3,000字未満かつ広告枠あり: **${shortMonetized.length}本**（うち例外未登録: **${unapprovedShortMonetized.length}本**。Googleの文字数基準ではない）
 - 明示的に許可した短い広告面: **${Object.keys(ALLOWED_SHORT_MONETIZED).length}本**
 - 定型「いいね」CTAを含むArticle: **${genericClosings.length}本**（独自性の改善残数。違反の自動断定ではない）
 
@@ -210,7 +216,7 @@ ${formatList(genericClosings)}
 
 ## 運用
 
-\`--strict\` は「非収益化指定への広告再混入」「信頼ページの必須表示・導線」「例外未登録の3,000字未満の広告面」「無効な例外指定」を失敗として終了コード2を返す。3,000字はGoogleが明示した閾値ではなく、既存の是正判断を再発させないための社内基準である。例外を認める場合は、\`ALLOWED_SHORT_MONETIZED\` に記事名と理由を記録する。
+\`--strict\` は「非収益化指定への広告枠の再混入」「信頼ページの必須表示・導線」「例外未登録の3,000字未満の広告面」「無効な例外指定」を失敗として終了コード2を返す。3,000字はGoogleが明示した閾値ではなく、既存の是正判断を再発させないための社内基準である。例外を認める場合は、\`ALLOWED_SHORT_MONETIZED\` に記事名と理由を記録する。独自性は自動判定しないため、広告枠を置く記事ごとの独自性レビューは稟議またはPRで確認する。
 `;
 
   const outputPath = path.join(options.outputDir, `${today()}-adsense-policy-gate.md`);
@@ -219,7 +225,7 @@ ${formatList(genericClosings)}
     await fs.writeFile(outputPath, report, 'utf8');
   }
   console.log(`${options.write ? 'Wrote' : 'Generated'}: ${outputPath}`);
-  console.log(`Blockers=${blockers.length}, adPages=${adPages.length}, shortMonetized=${shortMonetized.length}, genericClosings=${genericClosings.length}`);
+  console.log(`Blockers=${blockers.length}, adLoaderPages=${adLoaderPages.length}, adUnitPages=${adUnitPages.length}, shortMonetized=${shortMonetized.length}, genericClosings=${genericClosings.length}`);
   if (options.strict && blockers.length) process.exitCode = 2;
 }
 
