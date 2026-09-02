@@ -410,6 +410,79 @@ body{background:var(--bg);color:var(--text);font-family:'Klee One',sans-serif;mi
 .plan-del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:2px 4px;}
 .plan-del-btn:hover{color:#EF4444;}
 /* Today plan on status */
+.command-deck{
+  grid-column:1 / -1;
+  position:relative;
+  overflow:hidden;
+  padding:18px;
+  border-color:var(--accent-border);
+  background:linear-gradient(135deg,var(--accent-subtle),var(--panel) 58%);
+}
+.command-deck::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.22;
+  background-image:linear-gradient(var(--accent-border) 1px,transparent 1px),linear-gradient(90deg,var(--accent-border) 1px,transparent 1px);
+  background-size:20px 20px;
+  mask-image:linear-gradient(90deg,#000,transparent 84%);
+}
+.command-deck-head,.command-deck-grid{position:relative;z-index:1;}
+.command-deck-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:14px;}
+.command-deck-kicker{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--accent2);margin-bottom:5px;}
+.command-deck-title{font-family:'Cinzel',serif;font-size:16px;letter-spacing:.06em;color:var(--text);margin:0;}
+.command-deck-desc{max-width:360px;margin:0;font-size:11px;line-height:1.65;color:var(--muted);text-align:right;}
+.command-deck-grid{display:grid;grid-template-columns:minmax(210px,1.05fr) minmax(0,1.95fr);gap:10px;}
+.command-deck-primary,.command-route{
+  appearance:none;
+  width:100%;font:inherit;text-align:left;cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+}
+.command-deck-primary{
+  min-height:150px;padding:16px;
+  border:1px solid var(--accent);border-radius:10px;
+  background:var(--panel);color:var(--text);
+  box-shadow:4px 4px 0 var(--accent-border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.command-deck-primary:hover,.command-deck-primary:focus-visible{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--accent-border);}
+.command-deck-primary:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--accent-border);}
+.command-deck-primary-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.command-deck-icon{width:31px;height:31px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:var(--text-on-accent);font-size:14px;}
+.command-deck-primary-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--accent2);}
+.command-deck-primary-title{font-size:17px;font-weight:700;line-height:1.35;}
+.command-deck-primary-note{font-size:11px;color:var(--muted);line-height:1.55;}
+.command-deck-arrow{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--accent2);}
+.command-route-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.command-route{
+  min-height:70px;padding:12px;
+  border:1px solid var(--border);border-radius:8px;
+  background:var(--panel);background:color-mix(in srgb,var(--panel) 92%,transparent);color:var(--text);
+  display:flex;align-items:center;gap:10px;
+}
+.command-route:hover,.command-route:focus-visible{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-1px);}
+.command-route:active{transform:scale(.98);}
+.command-route-icon{width:27px;flex:0 0 27px;height:27px;border-radius:6px;background:var(--panel2);color:var(--accent2);display:inline-flex;align-items:center;justify-content:center;font-size:12px;}
+.command-route-copy{min-width:0;}
+.command-route-label{display:block;font-size:12px;font-weight:700;line-height:1.35;}
+.command-route-desc{display:block;margin-top:2px;font-size:9px;line-height:1.45;color:var(--muted);}
+.command-deck button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+@media (max-width:600px){
+  .command-deck{padding:15px;}
+  .command-deck-head{display:block;margin-bottom:12px;}
+  .command-deck-title{font-size:14px;}
+  .command-deck-desc{max-width:none;margin-top:4px;text-align:left;font-size:10px;}
+  .command-deck-grid{grid-template-columns:1fr;}
+  .command-deck-primary{min-height:112px;}
+  .command-route-grid{gap:8px;}
+  .command-route{min-height:66px;padding:10px;align-items:flex-start;}
+  .command-route-desc{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  .command-deck-primary,.command-route{transition:none;}
+  .command-deck-primary:hover,.command-deck-primary:focus-visible,.command-route:hover,.command-route:focus-visible,.command-deck-primary:active,.command-route:active{transform:none;}
+}
 .aff-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);}
 .aff-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
 .aff-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:var(--muted);}
@@ -4435,6 +4508,7 @@ details summary:active{background:var(--light);}
     <div class="pc-sidebar-section-label">メニュー</div>
     <div class="pc-nav-item active" id="pcnav-status" onclick="pcNavSwitch('status')"><span class="pc-nav-icon"><i class="fa-solid fa-shield-halved"></i></span>STATUS</div>
     <div class="pc-nav-item" id="pcnav-quest" onclick="pcNavSwitch('quest')"><span class="pc-nav-icon"><i class="fa-solid fa-stopwatch"></i></span>タイマー / 記録</div>
+    <div class="pc-nav-item" id="pcnav-materials" onclick="pcNavSwitch('materials')"><span class="pc-nav-icon"><i class="fa-solid fa-book-open"></i></span>教材・参考書</div>
     <div class="pc-nav-item" id="pcnav-timeline" onclick="pcNavSwitch('timeline')"><span class="pc-nav-icon"><i class="fa-solid fa-timeline"></i></span>タイムライン</div>
     <div class="pc-nav-item" id="pcnav-score" onclick="pcNavSwitch('score')"><span class="pc-nav-icon"><i class="fa-solid fa-chart-bar"></i></span>SCORE</div>
     <div class="pc-nav-item" id="pcnav-ranking" onclick="pcNavSwitch('ranking')"><span class="pc-nav-icon"><i class="fa-solid fa-ranking-star"></i></span>RANKING</div>
@@ -4863,6 +4937,45 @@ details summary:active{background:var(--light);}
 
   <!-- STATUS -->
   <div id="panel-status">
+    <!-- 合格ループの司令塔：既存機能への目的別入口 -->
+    <section class="section command-deck" aria-labelledby="commandDeckTitle">
+      <div class="command-deck-head">
+        <div>
+          <div class="command-deck-kicker">MISSION CONTROL / 合格ループ</div>
+          <h2 class="command-deck-title" id="commandDeckTitle">迷ったら、今日の次の一手から。</h2>
+        </div>
+        <p class="command-deck-desc">記録・教材・分析・仲間との継続を、目的から選べます。</p>
+      </div>
+      <div class="command-deck-grid">
+        <button type="button" class="command-deck-primary" onclick="openCommandRoute('quest')">
+          <span class="command-deck-primary-top">
+            <span class="command-deck-icon" aria-hidden="true"><i class="fa-solid fa-crosshairs"></i></span>
+            <span class="command-deck-primary-label">TODAY</span>
+          </span>
+          <span class="command-deck-primary-title">今日の作戦を決めて<br>学習を始める</span>
+          <span class="command-deck-primary-note">宣言・タイマー・学習記録をひと続きで。</span>
+          <span class="command-deck-arrow">OPEN TODAY'S QUEST →</span>
+        </button>
+        <div class="command-route-grid" aria-label="目的別の機能入口">
+          <button type="button" class="command-route" onclick="openCommandRoute('materials')">
+            <span class="command-route-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+            <span class="command-route-copy"><span class="command-route-label">学習ルート</span><span class="command-route-desc">教材・参考書を整える</span></span>
+          </button>
+          <button type="button" class="command-route" onclick="openCommandRoute('report')">
+            <span class="command-route-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="command-route-copy"><span class="command-route-label">分析</span><span class="command-route-desc">時間・ペースを振り返る</span></span>
+          </button>
+          <button type="button" class="command-route" onclick="openCommandRoute('profile')">
+            <span class="command-route-icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></span>
+            <span class="command-route-copy"><span class="command-route-label">冒険者</span><span class="command-route-desc">称号・目標を育てる</span></span>
+          </button>
+          <button type="button" class="command-route" onclick="openCommandRoute('timeline')">
+            <span class="command-route-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
+            <span class="command-route-copy"><span class="command-route-label">つながり</span><span class="command-route-desc">仲間の記録を見る</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
     <!-- 修行再開ボタン（全幅） -->
     <div id="resumeButtonWrap" style="grid-column:1/-1;display:none;"></div>
     <!-- パーティーレイドカード（全幅） -->
@@ -9757,6 +9870,17 @@ function switchTab(tab){
   const activeBtn=document.getElementById('tab-'+tab);
   if(activeBtn) activeBtn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
 }
+
+// 合格ループ司令塔からの遷移。PCではサイドバーの選択状態も同期する。
+function openCommandRoute(tab){
+  if(window.matchMedia('(min-width: 1024px)').matches){
+    pcNavSwitch(tab);
+    return;
+  }
+  switchTab(tab);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.openCommandRoute = openCommandRoute;
 
 let launchParamsHandled = false;
 function handleLaunchParams(){
