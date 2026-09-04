@@ -118,7 +118,7 @@ const ARTICLES = {
   'fp3-realestate.html':       {label:'FP3級',       title:'不動産', thumb:'images/fp3-realestate-map.svg'},
   'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継', thumb:'images/fp3-inheritance-map.svg'},
   'fp3-iminai.html':           {label:'FP3級',       title:'FP3級は意味ない？取る価値を整理', thumb:'images/fp3-iminai-map.svg'},
-  'fp3-nannichi.html':         {label:'FP3級',       title:'FP3級は何日で受かる？短期合格計画', thumb:'images/fp3-nannichi-map.svg'},
+  'fp3-nannichi.html':         {label:'FP3級',       title:'FP3級のCBT試験日程と学習計画', thumb:'images/fp3-nannichi-map.svg'},
   'cpa-yobikou.html':          {label:'勉強法',      title:'公認会計士・税理士は予備校と独学どっちがいい？'},
   'boki-zero-01.html':  {label:'簿記3級', title:'ゼロからの簿記①取引・簿記とは？', thumb:'images/boki-zero-01-map.svg'},
   'boki-zero-02.html':  {label:'簿記3級', title:'ゼロからの簿記②なぜ簿記が大事？', thumb:'images/boki-zero-02-map.svg'},
