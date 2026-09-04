@@ -218,6 +218,36 @@ function extractLocalHrefs(source) {
     .filter(Boolean);
 }
 
+function extractLocalImageSources(source) {
+  return [...source.matchAll(/<(?:img|source)\b[^>]+\b(?:src|srcset)=["']([^"']+)["']/gi)]
+    .flatMap((match) => match[1].split(',').map((value) => value.trim().split(/\s+/)[0]))
+    .filter((value) => value && !/^(?:https?:|data:|#)/i.test(value))
+    .filter((value) => !value.includes('${') && !value.includes('{{'))
+    .map((value) => {
+      try {
+        const url = new URL(value, 'https://study-quest.net/');
+        return decodeURIComponent(url.pathname).replace(/^\/+/, '');
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+}
+
+function metaContent(source, attribute, value) {
+  const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const attributePattern = new RegExp(`\\b${attribute}=["']${escaped}["']`, 'i');
+  return [...source.matchAll(/<meta\b[^>]*>/gi)].some((tag) => (
+    attributePattern.test(tag[0]) && /\bcontent=["'][^"']+/.test(tag[0])
+  ));
+}
+
+function hasCanonical(source) {
+  return [...source.matchAll(/<link\b[^>]*>/gi)].some((tag) => (
+    /\brel=["']canonical["']/i.test(tag[0]) && /\bhref=["'][^"']+/.test(tag[0])
+  ));
+}
+
 async function rootHtmlFiles() {
   return (await fs.readdir(ROOT)).filter((name) => name.endsWith('.html')).sort();
 }
@@ -239,12 +269,17 @@ async function main() {
   const dateIssues = [];
   const themeRisks = [];
   const brokenLinks = [];
+  const missingImages = [];
   const metricRows = [];
 
   for (const file of articleFiles) {
     const source = html.get(file);
     const h1s = h1Count(source);
     if (h1s !== 1) structural.push(`${file}: h1 が ${h1s}件`);
+    if (!/<title[^>]*>\s*[^<]+<\/title>/i.test(source)) structural.push(`${file}: title がない`);
+    if (!metaContent(source, 'property', 'og:title')) structural.push(`${file}: og:title がない`);
+    if (!metaContent(source, 'name', 'description')) structural.push(`${file}: description がない`);
+    if (!hasCanonical(source)) structural.push(`${file}: canonical がない`);
     const jsonLd = parseJsonLd(source, file);
     if (!jsonLd.count) structural.push(`${file}: JSON-LD がない`);
     structural.push(...jsonLd.errors);
@@ -260,6 +295,13 @@ async function main() {
 
     for (const href of extractLocalHrefs(source)) {
       if (!allFiles.has(href)) brokenLinks.push(`${file} -> ${href}`);
+    }
+    for (const image of extractLocalImageSources(source)) {
+      try {
+        await fs.access(path.join(ROOT, image));
+      } catch {
+        missingImages.push(`${file} -> ${image}`);
+      }
     }
     /* The shared theme toggle is injected only into pages loading the widgets.
        A standalone light-only page is not a dark-mode contrast failure. */
@@ -280,7 +322,7 @@ async function main() {
     if (values.length > 1) metricRows.push({ metric, values, entries });
   }
 
-  const blockers = [...structural, ...brokenLinks];
+  const blockers = [...structural, ...brokenLinks, ...missingImages];
   const report = `# コンテンツ品質ゲート（${TODAY}）
 
 ## この監査の役割
@@ -290,8 +332,9 @@ async function main() {
 ## 対象・判定
 
 - 対象HTML: ${requested.length}本（Article: ${articleFiles.length}本）
-- 構造エラー（h1 / JSON-LD）: **${structural.length}件**
+- 構造エラー（title / h1 / description / canonical / JSON-LD）: **${structural.length}件**
 - ローカルリンク切れ: **${brokenLinks.length}件**
+- ローカル画像参照切れ: **${missingImages.length}件**
 - 更新日3面不一致・欠落: **${dateIssues.length}件**
 - ダークモード配色の静的リスク: **${themeRisks.length}件**
 - 記事間の制度数値・学習時間の矛盾候補: **${metricRows.length}項目**

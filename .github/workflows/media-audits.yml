@@ -1,6 +1,8 @@
 name: Study Quest media audits
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
     inputs:
       mode:
@@ -25,6 +27,32 @@ permissions:
   contents: read
 
 jobs:
+  pull-request-quality:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check whitespace in the pull request diff
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"
+
+      - name: Run deterministic content-quality checks
+        run: node scripts/audits/run-content-quality-gate.mjs --strict --no-write
+
+      - name: Run AdSense policy safeguard
+        run: node scripts/audits/run-adsense-policy-gate.mjs --strict --no-write
+
+      - name: Check internal link graph
+        run: node scripts/audits/run-media-audits.mjs --mode internal-links --no-write
+
   audit:
     runs-on: ubuntu-latest
     steps:
