@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-genkin.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>現金と当座預金の違いを図解解説【日商簿記3級】小切手は現金？当座預金？通貨代用証券まで完全解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の現金と当座預金の違いを図解で解説。「小切手を受け取ったら現金か当座預金か」を3パターンで整理。通貨代用証券・自己振出小切手の仕訳まで例題つきで完全網羅。">
+<title>現金と当座預金の違いを図解で整理【日商簿記3級】小切手は現金？当座預金？通貨代用証券の仕訳｜スタディクエスト</title>
+<meta name="description" content="簿記3級の現金と当座預金の違いを図解で整理。「小切手を受け取ったら現金か当座預金か」を3パターンで確認し、通貨代用証券・自己振出小切手の仕訳を例題で学びます。">
 <meta name="keywords" content="現金 当座預金 違い,小切手 現金 当座預金,通貨代用証券,自己振出小切手,他店振出小切手,日商簿記3級 現金,当座預金 仕訳">
-<meta property="og:title" content="現金と当座預金の違いを図解解説【日商簿記3級】小切手は現金？当座預金？">
-<meta property="og:description" content="小切手を受け取ったら現金か当座預金か。3パターンで整理。通貨代用証券・自己振出小切手まで完全解説。">
+<meta property="og:title" content="現金と当座預金の違いを図解で整理【日商簿記3級】小切手は現金？当座預金？">
+<meta property="og:description" content="小切手を受け取ったら現金か当座預金か。3パターンで整理し、通貨代用証券・自己振出小切手の仕訳を例題で確認します。">
 <meta property="og:url" content="https://study-quest.net/boki3-genkin.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -28,12 +28,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "現金と当座預金の違いを図解解説【日商簿記3級】小切手は現金？当座預金？通貨代用証券まで完全解説",
+  "headline": "現金と当座預金の違いを図解で整理【日商簿記3級】小切手は現金？当座預金？通貨代用証券の仕訳",
   "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "簿記3級の現金と当座預金の違いを図解で解説。小切手を受け取ったら現金か当座預金か、3パターンで整理。通貨代用証券・自己振出小切手まで例題つきで完全網羅。",
+  "description": "簿記3級の現金と当座預金の違いを図解で整理。小切手を受け取ったら現金か当座預金か、3パターンで確認し、通貨代用証券・自己振出小切手の仕訳を例題で学びます。",
   "url": "https://study-quest.net/boki3-genkin.html",
   "datePublished": "2026-05-07",
-  "dateModified": "2026-08-25",
+  "dateModified": "2026-09-04",
   "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
 }
@@ -67,6 +67,23 @@ li{margin-bottom:6px;}
 .point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
 .point-card .label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:8px;}
 .point-card p{font-size:15px;font-weight:700;color:var(--text);margin:0;}
+
+/* 1分演習：本文の判断順を短く再現する */
+.one-minute-check{margin:28px 0;padding:22px;border:1px solid var(--sq-border,#D8E2CC);border-left:4px solid var(--sq-accent,#8CC63F);border-radius:12px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C);}
+.one-minute-check h3{margin:0 0 8px;color:var(--sq-text,#1A202C);font-size:17px;}
+.one-minute-check__lead{margin:0 0 16px;color:var(--sq-muted,#4A5568);}
+.one-minute-check__map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 16px;padding:0;list-style:none;counter-reset:steps;}
+.one-minute-check__map li{position:relative;margin:0;padding:12px 12px 12px 38px;border:1px solid var(--sq-border,#D8E2CC);border-radius:8px;background:var(--sq-surface,#FFFFFF);color:var(--sq-text,#1A202C);font-size:13px;line-height:1.65;}
+.one-minute-check__map li::before{counter-increment:steps;content:counter(steps);position:absolute;left:12px;top:12px;width:18px;height:18px;border-radius:50%;background:var(--sq-accent,#8CC63F);color:var(--sq-on-accent,#14210A);font-size:11px;font-weight:700;line-height:18px;text-align:center;}
+.one-minute-check details{margin:8px 0;border:1px solid var(--sq-border,#D8E2CC);border-radius:8px;background:var(--sq-surface,#FFFFFF);overflow:hidden;}
+.one-minute-check summary{padding:12px 14px;cursor:pointer;color:var(--sq-text,#1A202C);font-size:14px;font-weight:700;}
+.one-minute-check details p{margin:0;padding:0 14px 14px;color:var(--sq-muted,#4A5568);}
+.one-minute-check__source{margin:14px 0 0;font-size:12px;color:var(--sq-muted,#718096);}
+html[data-theme="dark"] .one-minute-check{background:var(--sq-surface-soft,#182317);border-color:var(--sq-border,#40503A);color:var(--sq-text,#E8EEF8);}
+html[data-theme="dark"] .one-minute-check h3,html[data-theme="dark"] .one-minute-check summary,html[data-theme="dark"] .one-minute-check__map li{color:var(--sq-text,#E8EEF8);}
+html[data-theme="dark"] .one-minute-check__map li,html[data-theme="dark"] .one-minute-check details{background:var(--sq-surface,#121A12);border-color:var(--sq-border,#40503A);}
+html[data-theme="dark"] .one-minute-check__lead,html[data-theme="dark"] .one-minute-check details p,html[data-theme="dark"] .one-minute-check__source{color:var(--sq-muted,#B7C3D4);}
+@media(max-width:540px){.one-minute-check{padding:18px 16px;}.one-minute-check__map{grid-template-columns:1fr;}}
 
 /* ○× 判定グリッド */
 .maru-batu-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}
@@ -143,17 +160,17 @@ details summary:active{background:var(--light);}
     <a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 現金・当座預金の違いと仕訳
   </div>
 
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月25日</p>
-  <h1>現金と当座預金の違いと仕訳<br>小切手は「現金」か「当座預金」か？図解で完全解説</h1>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年9月4日</p>
+  <h1>現金と当座預金の違いと仕訳<br>小切手は「現金」か「当座預金」か？図解で整理</h1>
   <p class="meta">著者：若葉（関西の大学3回生・日商簿記1級勉強中）</p>
 
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
       <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉のつまずきメモ</span>
     </div>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！初めて簿記の「現金」を習ったとき、私は本気で「なんじゃこりゃ……！」と脳内パニックを起こしました。だってお札と硬貨だけかと思っていたら、他人が振り出した小切手まで「現金」扱いだと言うじゃないですか。しかも自分が振り出した小切手が戻ってきたときだけは急に「当座預金」に変身する……もう意味がわからなくて、教科書を3回読み直しました（笑）。<br>
-    でもこれ、「サイフ（現金）」と「口座（当座預金）」、2つの登場人物が繰り広げる小さなドラマだと思うと一瞬で整理できるんです。今日は私がつまずいたポイントをそのままゲーム感覚の攻略法に変換して、二度と間違えない判断軸をお届けします！</p>
+    そこで私は、「サイフ（現金）」と「口座（当座預金）」のどちらに戻る話かを先に考えるようにしました。今日はこのつまずきから作った、問題文で<strong>振出人→すぐに預け入れたか</strong>の順に見る判断軸を整理します。</p>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
   </div>
 
@@ -161,7 +178,7 @@ details summary:active{background:var(--light);}
     「現金ってお札と硬貨だけじゃないの？」——簿記を勉強し始めると、<strong>現金の定義が日常感覚とズレている</strong>ことに気づきます。
     小切手・郵便為替証書・送金小切手など<strong>銀行でその場で換金できる証券（通貨代用証券）</strong>も簿記では現金として扱います。
     ただし「自分が振り出した小切手が戻ってきた場合」は現金ではなく当座預金になります。
-    <strong>小切手を受け取ったとき「現金」と「当座預金」のどちらになるか</strong>——この判断が試験の頻出ポイントです。3パターンで整理します。
+    <strong>小切手を受け取ったとき「現金」と「当座預金」のどちらになるか</strong>——問題文で迷いやすい判断です。3パターンで整理します。
   </p>
 
   <!-- ── 広告 ── -->
@@ -198,7 +215,7 @@ details summary:active{background:var(--light);}
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
       <div>
         <div class="sq-chat-name">若葉（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">基本はそうです。ただし「自分が出した小切手が戻ってきた場合」だけは「当座預金」になります。これが一番よく出るひっかけポイント。次の章でこのドラマの正体を一緒に暴きましょう！</div>
+        <div class="sq-chat-bubble">基本はそうです。ただし「自分が出した小切手が戻ってきた場合」だけは「当座預金」になります。ここは迷いやすいので、次の章で判断の順番を確認しましょう。</div>
       </div>
     </div>
   </div>
@@ -209,7 +226,30 @@ details summary:active{background:var(--light);}
     <source media="(max-width: 600px)" srcset="images/boki3-genkin-map-mobile.svg">
     <img src="images/boki3-genkin-map.svg" alt="小切手を受け取ったときの現金・当座預金YES-NO判断フローチャート図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="380" loading="lazy">
   </picture>
-  <p>図解のフローチャートで判断の流れを確認してください。<strong>「自分が出した小切手」が手元に戻ってきたときは当座預金</strong>として処理します。これは「当座預金から引き出す指示書が自分の元に戻った」＝「口座残高が復活した」というイメージです。一方、<strong>他人（他のお店や取引先）が出した小切手を受け取ったときは現金</strong>として処理します——このひっかけパターンは試験に必ず出ます。</p>
+  <p>図解のフローチャートで判断の流れを確認してください。<strong>「自分が出した小切手」が手元に戻ってきたときは当座預金</strong>として処理します。これは「当座預金から引き出す指示書が自分の元に戻った」＝「口座残高が復活した」というイメージです。一方、<strong>他人（他のお店や取引先）が出した小切手を受け取ったときは現金</strong>として処理します。</p>
+
+  <section class="one-minute-check" aria-labelledby="one-minute-check-title">
+    <h3 id="one-minute-check-title">1分ミニ演習：小切手を見たら、どの順番で決める？</h3>
+    <p class="one-minute-check__lead">暗記したかを確かめるより、問題文のどこを見るかを3問で再現します。答えを見る前に、借方の勘定科目だけ決めてください。</p>
+    <ol class="one-minute-check__map" aria-label="小切手の判断マップ">
+      <li><strong>まず振出人</strong><br>当社か、取引先かを探す。</li>
+      <li><strong>次に受け取り方</strong><br>手元に受け取っただけかを確認する。</li>
+      <li><strong>最後に即時入金</strong><br>直ちに当座預金へ入れたかを見る。</li>
+    </ol>
+    <details>
+      <summary>問題1：商品を販売し、取引先が振り出した小切手を受け取った。借方は？</summary>
+      <p><strong>答え：現金。</strong>取引先振出の小切手は通貨代用証券として扱います。</p>
+    </details>
+    <details>
+      <summary>問題2：以前に当社が振り出した小切手を、代金として受け取った。借方は？</summary>
+      <p><strong>答え：当座預金。</strong>自己振出小切手が戻ったため、振出時の当座預金の減少を取り消します。</p>
+    </details>
+    <details>
+      <summary>問題3：取引先振出の小切手を受け取り、直ちに当座預金へ預け入れた。借方は？</summary>
+      <p><strong>答え：当座預金。</strong>現金を経由せず、預け入れ先の勘定科目で処理します。</p>
+    </details>
+    <p class="one-minute-check__source">問題は参考書の「通貨代用証券」「小切手の応用的な取引」を確認し、本文用に独自に作成しています。</p>
+  </section>
 
   <p>日常語の「現金」はお札・硬貨ですが、簿記では<strong>すぐに換金できる通貨代用証券</strong>も現金として扱います。</p>
 
@@ -257,7 +297,7 @@ details summary:active{background:var(--light);}
 
   <h2>自己振出小切手（当社振出しの小切手）</h2>
 
-  <p>ここが最も出題されやすいポイントです。<strong>自分が振り出した小切手が手元に戻ってきた場合は「当座預金」</strong>として処理します。</p>
+  <p>ここは勘定科目を迷いやすいポイントです。<strong>自分が振り出した小切手が手元に戻ってきた場合は「当座預金」</strong>として処理します。</p>
 
   <div class="sq-chat">
     <div class="sq-chat-row question">
@@ -285,7 +325,7 @@ details summary:active{background:var(--light);}
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
       <div>
         <div class="sq-chat-name">若葉（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">その感覚、完璧です！「振り出した小切手が戻ってきた＝口座の復活（当座預金のリセットボタン）」と覚えてください。この1行を頭に入れておくだけで、本番でこのひっかけ問題は絶対に落とさなくなりますよ。</div>
+        <div class="sq-chat-bubble">その感覚で大丈夫です。「振り出した小切手が戻ってきた＝口座の復活（当座預金のリセットボタン）」と自分の言葉で説明できるようにしておくと、問題文を読み分けやすくなります。</div>
       </div>
     </div>
   </div>
@@ -315,7 +355,7 @@ details summary:active{background:var(--light);}
   </div>
 
   <div class="tip-box">
-    <strong>💡 解き方：</strong>「以前に当社が振り出していた小切手」というキーワードが出たら、借方は必ず「当座預金」。「現金」と書かないように注意。
+    <strong>💡 解き方：</strong>「以前に当社が振り出していた小切手」というキーワードが出たら、借方は「当座預金」。「現金」と書かないように注意。
   </div>
 
   <!-- ── 広告 ── -->
@@ -455,7 +495,7 @@ details summary:active{background:var(--light);}
   <div class="warn-box"><strong>⚠ 当座借越の注意：</strong>当座預金が貸方残高（マイナス）になった分が「当座借越」です。決算時には「当座借越」勘定（負債）に振り替えることがあります。</div>
 
   <h2>当座預金 vs 普通預金</h2>
-  <p>試験では「当座預金で支払った」という問題が多く出ます。当座預金と普通預金の違いを整理しておきましょう。</p>
+  <p>「当座預金で支払った」と書かれた問題を、文章どおりに読めるようにします。当座預金と普通預金の違いを整理しておきましょう。</p>
   <table style="width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;">
     <thead>
       <tr>
@@ -492,13 +532,13 @@ details summary:active{background:var(--light);}
       </tr>
     </tbody>
   </table>
-  <div class="tip-box"><strong>💡 最近の動向（試験 vs 実務）：</strong>簿記3級の試験では「当座預金で支払った」問題が多く出ます。ただし現実のビジネスでは、全銀協が2026年をめどに紙の手形・小切手廃止を推進しており、でんさい（電子記録債権）や振込決済への移行が加速しています。普通預金のみで決済を完結させる法人も増えています。</div>
+  <div class="tip-box"><strong>💡 試験での見方：</strong>問題文に「小切手を振り出した」とあれば、まず当座預金の増減を確認します。日常の決済方法の印象ではなく、問題文に書かれた受け取り方・支払い方で勘定科目を選びます。</div>
 
   <!-- アプリCTA -->
   <div class="app-cta">
-    <h3>⚔ 学習時間を記録して合格を加速</h3>
-    <p>簿記の勉強時間をスタディクエストで記録すると、経験値・レベルが上がりモチベーションが続きます。</p>
-    <a href="app.html">無料で始める →</a>
+    <h3>⚔ 3問の判断を、次の15分につなげる</h3>
+    <p>上の3問で迷った場面を1つ選び、「簿記3級・現金」として15分だけ記録しましょう。読んだ内容を、次に解き直す場所として残せます。</p>
+    <a href="app.html">15分の学習記録を始める →</a>
   </div>
 
   <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
@@ -512,7 +552,7 @@ details summary:active{background:var(--light);}
   </div>
 
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;"><strong>次の一手：</strong>現金過不足の仕訳を1問解き、原因判明前・判明後の2段階で書く。 <a href="boki3-kake.html">掛取引の仕訳へ進む</a></p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;"><strong>次の一手：</strong>上の3問を答えを隠してもう一度解き、迷った問題には「振出人」か「即時入金」かを1行で書く。 <a href="boki3-kake.html">掛取引の仕訳へ進む</a></p>
   </div>
 
 </div>
@@ -557,7 +597,7 @@ details summary:active{background:var(--light);}
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">当座預金と普通預金の違いは何ですか？</h3>
     <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">当座預金は小切手・手形の振出ができ利息はありません。普通預金は利息があり小切手・手形の振出はできません。簿記3級の試験では当座預金を使った問題が頻出ですが、現実のビジネスでは普通預金への移行が進んでいます。</p>
+      <p itemprop="text">当座預金は小切手・手形の振出に使う預金で、簿記の問題では勘定科目として区別します。普通預金と当座預金のどちらが指定されているかを問題文で確認し、指定された勘定科目で仕訳します。</p>
     </div>
   </div>
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -577,7 +617,7 @@ details summary:active{background:var(--light);}
   <p>© 2026 スタディクエスト</p>
 </footer>
 
-<script src="article-widgets.js?v=20260813-diagram-thumb-v2"></script>
+<script src="article-widgets.js?v=20260904-boki3-genkin-learning"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
