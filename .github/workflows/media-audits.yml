@@ -54,6 +54,7 @@ jobs:
         run: node scripts/audits/run-media-audits.mjs --mode internal-links --no-write
 
   audit:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
