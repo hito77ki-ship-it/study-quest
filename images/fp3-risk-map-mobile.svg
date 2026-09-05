@@ -37,12 +37,12 @@
   <text x="180" y="546" text-anchor="middle" font-size="10" fill="#374151">任意/対人・対物・車両</text>
   <rect x="30" y="560" width="300" height="42" rx="6" fill="#DCFCE7"/>
   <text x="180" y="578" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">地震保険</text>
-  <text x="180" y="594" text-anchor="middle" font-size="10" fill="#374151">火災保険に付帯/単独不可</text>
+  <text x="180" y="594" text-anchor="middle" font-size="10" fill="#374151">地震による損害に備える</text>
   <rect x="30" y="608" width="300" height="42" rx="6" fill="#DCFCE7"/>
   <text x="180" y="626" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">傷害保険</text>
   <text x="180" y="642" text-anchor="middle" font-size="10" fill="#374151">ケガによる入院・後遺障害</text>
   <text x="180" y="668" text-anchor="middle" font-size="9.5" fill="#64748B">地震保険料控除あり（所得控除）</text>
-  <text x="180" y="684" text-anchor="middle" font-size="9.5" fill="#64748B">損害保険金は原則非課税</text>
+  <text x="180" y="684" text-anchor="middle" font-size="9.5" fill="#64748B">控除額の扱いを確認</text>
 
   <rect x="16" y="756" width="328" height="330" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
   <rect x="16" y="756" width="328" height="32" rx="10" fill="#F97316"/>
@@ -62,14 +62,14 @@
   <text x="180" y="974" text-anchor="middle" font-size="11" font-weight="700" fill="#C2410C">就業不能保険</text>
   <text x="180" y="990" text-anchor="middle" font-size="10" fill="#374151">病気・ケガで働けない期間の収入補填</text>
   <text x="180" y="1016" text-anchor="middle" font-size="9.5" fill="#64748B">生命保険料控除の対象（介護医療枠）</text>
-  <text x="180" y="1032" text-anchor="middle" font-size="9.5" fill="#64748B">保険金・給付金は原則非課税</text>
+  <text x="180" y="1032" text-anchor="middle" font-size="9.5" fill="#64748B">契約内容を確認</text>
 
   <rect x="16" y="1064" width="328" height="60" rx="8" fill="#F1F5F9"/>
-  <text x="30" y="1086" font-size="10" fill="#475569">💡 死亡保険金：契約者＝被保険者→相続税課税、</text>
-  <text x="30" y="1102" font-size="10" fill="#475569">契約者≠被保険者→所得税か贈与税に注意。</text>
+  <text x="30" y="1086" font-size="10" fill="#475569">💡 死亡保険金：契約関係により相続税・</text>
+  <text x="30" y="1102" font-size="10" fill="#475569">所得税・贈与税を判定。</text>
 
   <rect x="16" y="1136" width="328" height="76" rx="8" fill="#F1F5F9"/>
-  <text x="30" y="1158" font-size="10" fill="#475569">💡 生命保険料控除：旧契約は一般・個人年金の2枠、</text>
-  <text x="30" y="1174" font-size="10" fill="#475569">新契約は一般・介護医療・個人年金の3枠。</text>
-  <text x="30" y="1190" font-size="10" fill="#475569">各最大4万円（所得税）。</text>
+  <text x="30" y="1158" font-size="10" fill="#475569">💡 生命保険料控除：新・旧で区分が異なる。</text>
+  <text x="30" y="1174" font-size="10" fill="#475569">令和8・9年は23歳未満の扶養親族に関する</text>
+  <text x="30" y="1190" font-size="10" fill="#475569">特例を確認。</text>
 </svg>
