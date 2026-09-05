@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-sanpou.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】三分法とは？仕入・売上・繰越商品の仕訳を完全解説｜分記法との違いも例題つき｜スタディクエスト</title>
-<meta name="description" content="簿記3級の三分法を例題つきで完全解説。仕入・売上・繰越商品の3勘定の使い方、売上原価の算定（しくりくりし）の仕訳、分記法との違いまで試験に出るポイントを網羅。">
-<meta name="keywords" content="三分法 仕訳,仕入 売上 繰越商品,商品売買 簿記,返品 仕訳,日商簿記3級 商品売買,売上原価対立法">
+<title>【日商簿記3級】三分法とは？仕入・売上・繰越商品の仕訳を例題で整理｜分記法との違い｜スタディクエスト</title>
+<meta name="description" content="簿記3級の商品売買で使う三分法を、仕入・売上・繰越商品の3勘定、返品・諸掛り、決算整理の流れから例題と1分ミニ演習で整理します。">
+<meta name="keywords" content="三分法 仕訳,仕入 売上 繰越商品,商品売買 簿記,返品 仕訳,日商簿記3級 商品売買,売上原価">
 <meta property="og:title" content="商品売買の仕訳（三分法）【日商簿記3級】">
-<meta property="og:description" content="仕入・売上・繰越商品の三分法を図解で解説。例題つきで完全攻略。">
+<meta property="og:description" content="仕入・売上・繰越商品の三分法を図解と例題、1分ミニ演習で整理。">
 <meta property="og:url" content="https://study-quest.net/boki3-sanpou.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"商品売買の仕訳（三分法）【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"仕入・売上・繰越商品の三分法を図解で解説。例題つきで完全攻略。","url":"https://study-quest.net/boki3-sanpou.html","datePublished":"2026-05-07","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"仕入・売上・繰越商品の三分法を図解と例題、1分ミニ演習で整理。","url":"https://study-quest.net/boki3-sanpou.html","datePublished":"2026-05-07","dateModified": "2026-09-05","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -104,6 +104,28 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
 .point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
 .point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
+/* 1分演習：取引時か決算時かを先に分けて、三勘定の役割を確認する */
+.sanpou-one-minute{margin:28px 0;padding:22px;border:1px solid var(--sq-border,#D8E2CC);border-left:4px solid var(--sq-accent,#8CC63F);border-radius:12px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C);}
+.sanpou-one-minute h3{margin:0 0 8px;color:var(--sq-text,#1A202C);font-size:17px;}
+.sanpou-one-minute__lead{margin:0 0 16px;color:var(--sq-muted,#4A5568);}
+.sanpou-one-minute__map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 16px;padding:0;list-style:none;counter-reset:sanpou-step;}
+.sanpou-one-minute__map li{position:relative;min-height:92px;padding:12px 12px 12px 40px;border:1px solid var(--sq-border,#D8E2CC);border-radius:8px;background:var(--sq-surface,#FFFFFF);color:var(--sq-text,#1A202C);font-size:13px;line-height:1.65;}
+.sanpou-one-minute__map li::before{counter-increment:sanpou-step;content:counter(sanpou-step);position:absolute;top:12px;left:12px;width:20px;height:20px;border-radius:50%;background:var(--sq-accent,#8CC63F);color:#0A0A0F;text-align:center;font-size:12px;font-weight:700;line-height:20px;}
+.sanpou-one-minute details{margin:8px 0;border:1px solid var(--sq-border,#D8E2CC);border-radius:8px;background:var(--sq-surface,#FFFFFF);overflow:hidden;}
+.sanpou-one-minute summary{padding:12px 14px;cursor:pointer;color:var(--sq-text,#1A202C);font-size:14px;font-weight:700;}
+.sanpou-one-minute details p{margin:0;padding:0 14px 14px;color:var(--sq-muted,#4A5568);}
+.sanpou-one-minute__source{margin:14px 0 0;font-size:12px;color:var(--sq-muted,#718096);}
+.sanpou-decision-note{background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#D8E2CC);border-left:4px solid var(--sq-accent,#8CC63F);border-radius:12px;padding:22px 24px;margin:32px 0;color:var(--sq-text,#1A202C);}
+.sanpou-decision-note h2{font-size:20px;margin:0 0 12px;padding:0;border:0;color:var(--sq-text,#1A202C);}
+.sanpou-decision-note p,.sanpou-decision-note ol{color:var(--sq-text,#1A202C);}
+.sanpou-source{margin:14px 0 0;font-size:12px;color:var(--sq-muted,#718096);}
+.sanpou-source a{color:var(--sq-link,#3B6F25);text-decoration:underline;}
+html[data-theme="dark"] .sanpou-one-minute,html[data-theme="dark"] .sanpou-decision-note{background:var(--sq-surface-soft,#182317);border-color:var(--sq-border,#40503A);color:var(--sq-text,#E8EEF8);}
+html[data-theme="dark"] .sanpou-one-minute h3,html[data-theme="dark"] .sanpou-one-minute summary,html[data-theme="dark"] .sanpou-one-minute__map li,html[data-theme="dark"] .sanpou-decision-note h2,html[data-theme="dark"] .sanpou-decision-note p,html[data-theme="dark"] .sanpou-decision-note ol{color:var(--sq-text,#E8EEF8) !important;}
+html[data-theme="dark"] .sanpou-one-minute__map li,html[data-theme="dark"] .sanpou-one-minute details{background:var(--sq-surface,#121A12);border-color:var(--sq-border,#40503A);}
+html[data-theme="dark"] .sanpou-one-minute__lead,html[data-theme="dark"] .sanpou-one-minute details p,html[data-theme="dark"] .sanpou-one-minute__source,html[data-theme="dark"] .sanpou-source{color:var(--sq-muted,#B7C3D4);}
+html[data-theme="dark"] .sanpou-source a{color:var(--sq-link,#B9E59A);}
+@media(max-width:540px){.sanpou-one-minute,.sanpou-decision-note{padding:18px 16px;}.sanpou-one-minute__map{grid-template-columns:1fr;}.sanpou-one-minute__map li{min-height:auto;}}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -121,17 +143,17 @@ details summary:active{background:var(--light);}
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">日商簿記3級</a> &gt; 商品売買の仕訳（三分法）</div>
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月25日</p>
-  <h1>商品売買の仕訳（三分法）<br>仕入・売上・繰越商品を図解で完全解説</h1>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年9月5日</p>
+  <h1>商品売買の仕訳（三分法）<br>仕入・売上・繰越商品を図解と例題で整理</h1>
   <p class="meta">著者：若葉（関西の大学3回生・日商簿記1級勉強中）</p>
 
   <div class="point-card">
     <div class="pc-label">この記事でわかること（5秒まとめ）</div>
     <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
       <li><strong>三分法は「仕入・売上・繰越商品」の3勘定</strong>で商品売買を記録する——売ったときに利益を直接計算しないのがポイント</li>
-      <li><strong>仕入は借方・売上は貸方</strong>——常にこの方向で記録する（反対にはならない）</li>
-      <li><strong>売上原価は決算整理でまとめて計算</strong>——「しくりくりし」の仕訳が出来ればOK</li>
-      <li>返品・仕入諸掛り・分記法との違いまで押さえれば試験対策は完璧</li>
+      <li><strong>通常の仕入は借方・通常の販売は貸方</strong>——返品では元の記録を取り消す</li>
+      <li><strong>売上原価は決算整理で算定</strong>——取引時と決算時を分けて考える</li>
+      <li>返品・諸掛り・分記法との違いを、例題と短い演習で確認する</li>
     </ul>
   </div>
 
@@ -144,7 +166,7 @@ details summary:active{background:var(--light);}
     でもこれ、正体がわかれば「儲けの計算を、期末に一気にまとめてやる」というシンプルな仕組みだったんです。その"儲けを後回しにする理由"に気づいた瞬間、一気に霧が晴れました。今日は私がつまずいたポイントをそのまま攻略法に変換して、仕入・売上・繰越商品の3勘定を一気に整理します！</p>
   </div>
 
-  <p class="lead">簿記3級の取引の大半は「商品を仕入れて売る」です。この仕訳を正確に書けるかどうかが、合否に直結します。<strong>三分法</strong>は仕入・売上・繰越商品の3つの勘定を使う、最も基本的な商品売買の記録方法です。</p>
+  <p class="lead"><strong>三分法</strong>は、仕入・売上・繰越商品の3つの勘定を使う商品売買の記録方法です。このページでは、取引時に使う「仕入・売上」と、決算時に確認する「繰越商品」を分けて整理します。</p>
 
   <div class="sq-chat">
     <div class="sq-chat-row question">
@@ -172,7 +194,7 @@ details summary:active{background:var(--light);}
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
       <div>
         <div class="sq-chat-name">若葉（簿記1級勉強中）</div>
-        <div class="sq-chat-bubble">期末に売れ残った商品を、次の期にバトンタッチするための勘定です。「しくりくりし」という決算整理仕訳で満を持して登場します。私も初見では「呪文か！」と思いましたが、パターンさえ一度体に叩き込めば、あとは機械的に解けるようになりますよ！</div>
+        <div class="sq-chat-bubble">期末に売れ残った商品を、次の期に引き継ぐための勘定です。「しくりくりし」という決算整理仕訳で登場します。まずは「売った日」と「決算日」を別の場面として読んでみましょう。</div>
       </div>
     </div>
   </div>
@@ -213,7 +235,7 @@ details summary:active{background:var(--light);}
     <div class="sw-label">仕訳</div>
     <div class="sw-row"><span class="kari">仕入<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">50,000</span></span></div>
   </div>
-  <p>商品を買うと「仕入」（費用）が増えます。支払い方法（現金・当座預金・買掛金など）によって貸方が変わるだけで、借方は必ず「仕入」です。</p>
+  <p>通常の商品仕入では「仕入」（費用）が増えます。支払い方法（現金・当座預金・買掛金など）によって貸方が変わります。返品では、この仕入の記録を取り消す方向になります。</p>
 
   <h2>💰 ② 商品を売ったときの仕訳——「売上（収益）」を貸方に記録する</h2>
   <div class="mondai">
@@ -224,7 +246,7 @@ details summary:active{background:var(--light);}
     <div class="sw-label">仕訳</div>
     <div class="sw-row"><span class="kari">現金<span class="amt">80,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">80,000</span></span></div>
   </div>
-  <div class="warn-box"><strong>売上は販売額（売価）で記録する！</strong><br>原価 ¥50,000 ではなく、お客さんから受け取る金額 ¥80,000 で仕訳します。原価と売価の差 ¥30,000 が利益（売上総利益）になります。</div>
+  <div class="warn-box"><strong>売上は販売額（売価）で記録する</strong><br>この例では、原価 ¥50,000 ではなく、販売額 ¥80,000 で仕訳します。三分法では販売時に原価を別仕訳せず、売上原価は期末の在庫を踏まえて決算整理で算定します。</div>
 
   <h2>🔄 ③ 返品・値引きの仕訳——仕入返品と売上返品はどちらも「逆の仕訳」で処理する</h2>
   <div class="compare-2">
@@ -261,12 +283,31 @@ details summary:active{background:var(--light);}
     例）10,000 ＋ 200,000 − 15,000 ＝ 195,000
   </div>
 
-  <h2>❓ ⑤ 三分法 vs 分記法——簿記3級の試験で出るのはどっち？</h2>
-  <p>商品売買の記帳方法には「三分法」と「分記法」の2種類がありますが、日商簿記3級の試験で使うのは<strong>三分法のみ</strong>です。分記法は参考知識として押さえておきましょう。</p>
+  <section class="sanpou-one-minute" aria-labelledby="sanpou-one-minute-title">
+    <h3 id="sanpou-one-minute-title">1分ミニ演習：仕訳を書く前に、場面を分ける</h3>
+    <p class="sanpou-one-minute__lead">勘定科目を暗記から探す前に、「取引時か決算時か」を決めます。次に買ったのか売ったのか、最後に現金・掛けなど相手科目を確認します。</p>
+    <ol class="sanpou-one-minute__map" aria-label="三分法の判断マップ">
+      <li><strong>いつの処理か</strong><br>商品を売買した日か、期末の決算日かを分ける。</li>
+      <li><strong>何をしたか</strong><br>通常の仕入なら仕入、通常の販売なら売上を候補にする。</li>
+      <li><strong>何が動いたか</strong><br>現金・預金・売掛金・買掛金など、相手科目を問題文から拾う。</li>
+    </ol>
+    <details>
+      <summary>Q1：商品 2,400円を現金で仕入れた。仕訳は？</summary>
+      <p>通常の商品仕入なので、借方は仕入です。<strong>仕入 2,400 ／ 現金 2,400</strong> となります。</p>
+    </details>
+    <details>
+      <summary>Q2：商品 3,600円を現金で販売した。仕訳は？</summary>
+      <p>通常の販売なので、受け取った現金を借方、販売額の売上を貸方にします。<strong>現金 3,600 ／ 売上 3,600</strong> です。三分法では、この販売時に原価を別に振り替えません。</p>
+    </details>
+    <p class="sanpou-one-minute__source">この2問は、返品・諸掛りと区別しながら通常の仕入・販売を確認するために作成した独自演習です。</p>
+  </section>
+
+  <h2>❓ ⑤ 三分法と分記法の違い——利益を確かめるタイミングで比べる</h2>
+  <p>日本商工会議所の2026年度適用の出題区分表では、3級の商品取引の欄に「3分（割）法による売買取引の処理」が記載されています。ここでは三分法を中心に、分記法は利益を記録するタイミングの違いを比べるために紹介します。</p>
   <div class="compare-2">
     <div class="c2-card buy">
-      <div class="c2-title">三分法（3級はこちら）</div>
-      <p style="font-size:12px;color:#374151;margin-bottom:8px;">仕入・売上・繰越商品の3勘定を使う。売上総利益は期末に自動計算。</p>
+      <div class="c2-title">三分法（商品取引の欄に記載）</div>
+      <p style="font-size:12px;color:#374151;margin-bottom:8px;">仕入・売上・繰越商品の3勘定を使う。売上原価は期末の在庫を踏まえて算定する。</p>
       <div class="shiwake-box" style="margin:0 0 6px;">
         <div class="sw-label">仕入時</div>
         <div class="sw-row"><span class="kari">仕入<span class="amt">300</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">300</span></span></div>
@@ -277,7 +318,7 @@ details summary:active{background:var(--light);}
       </div>
     </div>
     <div class="c2-card sell">
-      <div class="c2-title">分記法（参考・3級ではほとんど出題されない）</div>
+      <div class="c2-title">分記法（比較のための参照）</div>
       <p style="font-size:12px;color:#374151;margin-bottom:8px;">商品・商品売買益の2勘定を使う。売却のたびに利益が確定する。</p>
       <div class="shiwake-box" style="margin:0 0 6px;">
         <div class="sw-label">仕入時</div>
@@ -290,11 +331,12 @@ details summary:active{background:var(--light);}
       </div>
     </div>
   </div>
-  <div class="tip-box"><strong>3級の試験は三分法で解答する！</strong><br>分記法は2019年度の出題区分改定以降、3級ではほとんど出題されなくなりました。ここでは「三分法が3級のスタンダード」とだけ覚えておけばOKです。</div>
+  <div class="tip-box"><strong>受験前は公式の出題区分表を確認する</strong><br>出題範囲や解答形式は改定される可能性があります。このページでは三分法の記録の流れを扱い、受験に必要な最新の範囲は公式資料で確認してください。</div>
+  <p class="sanpou-source">出典：<a href="https://www.kentei.ne.jp/bookkeeping/35697-2/2022-2026" target="_blank" rel="noopener">日本商工会議所「簿記 過去の改定（2022年4月1日施行）」</a>（2026年9月5日確認）。2026年度試験に適用される出題区分表と、商品取引における三分法の記載を確認しています。</p>
 
   <h2>🚚 ⑥ 仕入諸掛り（付随費用の処理）——運賃は「当社負担」か「先方負担」かで仕訳が変わる</h2>
   <p>商品の売買に伴う送料などの諸経費（諸掛り）は、誰が負担するかで処理が変わります。</p>
-  <h3>当社負担の場合——仕入原価に含める</h3>
+  <h3>当社負担の場合——販売時と仕入時で使う科目が異なる</h3>
   <div class="shiwake-box">
     <div class="sw-label">売上時（発送費は別建て）</div>
     <div class="sw-row"><span class="kari">発送費<span class="amt">50</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">50</span></span></div>
@@ -306,7 +348,7 @@ details summary:active{background:var(--light);}
   </div>
   <div class="tip-box"><strong>売上諸掛り vs 仕入諸掛りの違い</strong><br>・売上時の諸掛り→「発送費」で別建て（仕入には合算しない）<br>・仕入時の諸掛り→「仕入」勘定に合算（発送費は使わない）<br>同じ諸経費でも、売上側と仕入側で処理が真逆！</div>
 
-  <h3>先方負担の場合——立替金（資産）として記録する</h3>
+  <h3>先方負担の場合——立替金または買掛金の調整で記録する</h3>
   <div class="shiwake-box">
     <div class="sw-label">仕入先負担の送料100円を立替払い</div>
     <div class="sw-row"><span class="kari">仕入<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">1,500</span></span></div>
@@ -317,16 +359,9 @@ details summary:active{background:var(--light);}
     <div class="sw-row"><span class="kari">仕入<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">1,400</span></span></div>
     <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">現金<span class="amt">100</span></span></div>
   </div>
-  <div class="warn-box"><strong>先方負担の費用は絶対に「仕入」に合算しない！</strong><br>仕入先が負担すべき送料は、自分（当社）の費用にはなりません。立替金（資産）として記録し、後で仕入先から回収します。</div>
+  <div class="warn-box"><strong>先方負担の仕入諸掛りは、仕入と分けて考える</strong><br>問題文で仕入先負担分を立替払いした場合は、仕入に含めず、立替金処理または買掛金の調整を検討します。誰の負担かと、立替払いの有無を先に確認しましょう。</div>
 
-  <h2>📚 発展：なぜ売上原価対立法では「売上原価」勘定をわざわざ使うのか</h2>
-  <p>3級の範囲を超えますが、2級・1級で登場する<strong>売上原価対立法</strong>との違いを理解すると、三分法の設計思想がより深く見えてきます。「仕入勘定だけで十分では？」という素朴な疑問に答えます。</p>
-  <p>身近な例で考えてみましょう。三分法は、レシートを財布にとりあえず全部ため込んでおいて、月末に「今月何にいくら使ったか」をまとめて集計するようなやり方です（＝仕入は「期中に買った金額の合計」を記録するだけの勘定）。一方、売上原価対立法は、家計簿アプリにその場で入力して「今いくら使ったか」が常にリアルタイムで分かる状態を保つやり方です。</p>
-  <p>これをバイト先のコンビニで例えると、もっとイメージが掴みやすくなります。POSレジのシステムでは、商品が1つ売れるたびに「その商品の原価」が即座に在庫から差し引かれ、売上原価としてリアルタイムで計上されます。棚卸しをしなくても、今この瞬間の在庫金額と売上原価が分かる仕組みです。三分法は逆に、期末に実地棚卸しをして初めて「今期いくら売れたか（売上原価）」が確定する、アナログな精算方式です。</p>
-  <p>ここで本題の疑問に戻ります。売上原価対立法では、なぜ「仕入」勘定をそのまま使わず、わざわざ「売上原価」という勘定を新設するのでしょうか。理由は、<strong>「仕入」は"買った金額の合計"を表す勘定であり、"売れた分の原価"を表す勘定ではない</strong>からです。売上原価対立法では、商品を仕入れた時点で「商品」（資産）を増やし、売れた時点でその商品の原価だけを「商品」から「売上原価」（費用）へ振り替えます。もし仕入勘定をそのまま流用してしまうと、「今期買った総額」と「今期売れた分の原価」が同じ勘定の中でごちゃ混ぜになり、今この瞬間の在庫がいくら残っているかをリアルタイムに把握できなくなってしまいます。勘定を分けることで、「商品（在庫）」「売上原価（売れた分）」を常に分離して管理できるのです。</p>
-  <div class="tip-box"><strong>三分法と売上原価対立法の使い分け：</strong>三分法は期末にまとめて処理するため手間が少なく、中小企業や3級レベルの学習に向いています。売上原価対立法は取引のたびに在庫・原価が更新されるため手間がかかりますが、POSシステムなど常に在庫状況を把握したい業態（小売業など）で使われます。</div>
-
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
+  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>ミニ演習で迷った場面を「簿記3級・商品売買」として15分記録し、次に確認する仕訳を残しておきましょう。</p><a href="app.html">15分を記録する →</a></div>
 
   <div class="matome">
     <h3>📋 まとめ：三分法 早見表</h3>
@@ -338,9 +373,16 @@ details summary:active{background:var(--light);}
     <div class="matome-row"><span class="trigger">決算②期末商品の振替</span><span class="result">繰越商品 ／ 仕入</span></div>
   </div>
 
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
+  <section class="sanpou-decision-note" aria-labelledby="sanpou-decision-note-title">
+    <h2 id="sanpou-decision-note-title">三分法で止まったときの3行メモ</h2>
+    <p>仕訳が書けないときは、勘定科目を一度に探さず、問題文の横に次の3行を書きます。</p>
+    <ol>
+      <li>これは売買した日か、決算日か。</li>
+      <li>商品を買ったのか、売ったのか、返品したのか。</li>
+      <li>現金・売掛金・買掛金など、相手に何が動いたか。</li>
+    </ol>
+    <p>この順で見ると、通常の売買・返品・決算整理を同じ「仕入は借方」という暗記に押し込まずに整理できます。</p>
+  </section>
 </div>
 <section class="faq" id="faq">
   <h2>よくある質問</h2>
@@ -360,7 +402,7 @@ details summary:active{background:var(--light);}
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">三分法と分記法はどう違いますか？</h3>
     <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">三分法は仕入・売上・繰越商品の3勘定を使う方法で、日商簿記3級の試験は三分法のみです。分記法は商品・商品売買益の2勘定を使い、販売のたびに利益を計算します。</p>
+      <p itemprop="text">三分法は仕入・売上・繰越商品の3勘定を使い、売上原価を期末の在庫を踏まえて算定する方法です。分記法は商品・商品売買益の勘定を使い、販売の都度に利益を記録する方法です。受験範囲は日本商工会議所の最新の出題区分表で確認してください。</p>
     </div>
   </div>
   </div>
