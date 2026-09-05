@@ -116,7 +116,7 @@ const ARTICLES = {
   'fp3-finance.html':          {label:'FP3級',       title:'金融資産運用', thumb:'images/fp3-finance-map.svg'},
   'fp3-tax.html':              {label:'FP3級',       title:'タックスプランニング', thumb:'images/fp3-tax-map.svg'},
   'fp3-realestate.html':       {label:'FP3級',       title:'不動産', thumb:'images/fp3-realestate-map.svg'},
-  'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継', thumb:'images/fp3-inheritance-map.svg'},
+  'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継', thumb:'images/article-diagrams/fp3-inheritance.svg'},
   'fp3-iminai.html':           {label:'FP3級',       title:'FP3級は意味ない？取る価値を整理', thumb:'images/fp3-iminai-map.svg'},
   'fp3-nannichi.html':         {label:'FP3級',       title:'FP3級のCBT試験日程と学習計画', thumb:'images/fp3-nannichi-map.svg'},
   'cpa-yobikou.html':          {label:'勉強法',      title:'公認会計士・税理士は予備校と独学どっちがいい？'},
