@@ -15,7 +15,7 @@ const ARTICLES = {
   'boki2-seizo-kansetsuhi.html': {label:'簿記2級',  title:'製造間接費・予定配賦・配賦差異', thumb:'images/boki2-seizo-kansetsuhi-map.svg'},
   'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦', thumb:'images/boki2-bumonbetsu-map.svg'},
   'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書', thumb:'images/boki2-seizo-genka-map.svg'},
-  'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の問題構成・時間配分', thumb:'images/boki2-net-test-map.svg'},
+  'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の受験前チェック'},
   'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ', thumb:'images/boki2-start-roadmap.svg'},
   'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較', thumb:'images/boki2-cbt-vs-paper.svg'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ', thumb:'images/boki2-kogyo-enshu-map.svg'},
