@@ -113,7 +113,7 @@ const ARTICLES = {
   'fp3.html':                  {label:'FP3級',       title:'FP3級の勉強時間・独学合格スケジュール', thumb:'images/fp3-strategy-map.svg'},
   'fp3-lifeplanning.html':     {label:'FP3級',       title:'ライフプランニングと資金計画', thumb:'images/fp3-lifeplanning-map.svg'},
   'fp3-risk.html':             {label:'FP3級',       title:'リスク管理・保険', thumb:'images/fp3-risk-map.svg'},
-  'fp3-finance.html':          {label:'FP3級',       title:'金融資産運用', thumb:'images/fp3-finance-map.svg'},
+  'fp3-finance.html':          {label:'FP3級',       title:'金融資産運用', thumb:'images/article-diagrams/fp3-finance.svg'},
   'fp3-tax.html':              {label:'FP3級',       title:'タックスプランニング', thumb:'images/fp3-tax-map.svg'},
   'fp3-realestate.html':       {label:'FP3級',       title:'不動産', thumb:'images/fp3-realestate-map.svg'},
   'fp3-inheritance.html':      {label:'FP3級',       title:'相続・事業承継', thumb:'images/article-diagrams/fp3-inheritance.svg'},
