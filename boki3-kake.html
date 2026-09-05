@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-kake.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】売掛金・買掛金の仕訳を完全解説｜未収入金・未払金との違いも例題つきで解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の売掛金・買掛金を例題つきで完全解説。なぜ掛取引に専用科目を使うのか、未収入金・未払金・電子記録債権との違いも丁寧に解説。試験頻出の掛取引パターンを網羅。">
+<title>【日商簿記3級】売掛金・買掛金の仕訳を図解で整理｜未収入金・未払金との違いと例題｜スタディクエスト</title>
+<meta name="description" content="簿記3級の売掛金・買掛金を図解と例題で整理。掛取引で何が増減するか、未収入金・未払金との違い、返品・手付金の仕訳を確認します。">
 <meta name="keywords" content="掛取引 仕訳,売掛金 買掛金,売掛金 仕訳,買掛金 仕訳,日商簿記3級 掛取引">
 <meta property="og:title" content="掛取引（売掛金・買掛金）の仕訳【日商簿記3級】">
-<meta property="og:description" content="売掛金・買掛金の基本仕訳から返品まで例題つきで完全解説。">
+<meta property="og:description" content="売掛金・買掛金の基本仕訳から返品まで、図解と例題で整理します。">
 <meta property="og:url" content="https://study-quest.net/boki3-kake.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"掛取引（売掛金・買掛金）の仕訳【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"売掛金・買掛金の基本仕訳から返品まで例題つきで完全解説。","url":"https://study-quest.net/boki3-kake.html","datePublished":"2026-05-07","dateModified": "2026-08-11","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"売掛金・買掛金の基本仕訳から返品まで、図解と例題で整理します。","url":"https://study-quest.net/boki3-kake.html","datePublished":"2026-05-07","dateModified": "2026-09-05","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -100,6 +100,28 @@ ul,ol{font-size:14px;color:#374151;margin:0 0 16px 20px;}li{margin-bottom:6px;}
 .app-cta a:hover{opacity:.85;text-decoration:none;}
 .point-card{background:#fff;border:2px solid var(--green);border-radius:12px;padding:20px 24px;margin:24px 0;}
 .point-card .pc-label{font-size:11px;font-weight:700;color:var(--green2);letter-spacing:.1em;margin-bottom:10px;}
+/* 1分演習：科目名の暗記より前に、取引の順番を確認する */
+.kake-one-minute{margin:28px 0;padding:22px;border:1px solid var(--sq-border,#D8E2CC);border-left:4px solid var(--sq-accent,#8CC63F);border-radius:12px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C);}
+.kake-one-minute h3{margin:0 0 8px;color:var(--sq-text,#1A202C);font-size:17px;}
+.kake-one-minute__lead{margin:0 0 16px;color:var(--sq-muted,#4A5568);}
+.kake-one-minute__map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 16px;padding:0;list-style:none;counter-reset:kake-step;}
+.kake-one-minute__map li{position:relative;margin:0;padding:12px 12px 12px 38px;border:1px solid var(--sq-border,#D8E2CC);border-radius:8px;background:var(--sq-surface,#FFFFFF);color:var(--sq-text,#1A202C);font-size:13px;line-height:1.65;}
+.kake-one-minute__map li::before{counter-increment:kake-step;content:counter(kake-step);position:absolute;left:12px;top:12px;width:18px;height:18px;border-radius:50%;background:var(--sq-accent,#8CC63F);color:var(--sq-on-accent,#14210A);font-size:11px;font-weight:700;line-height:18px;text-align:center;}
+.kake-one-minute details{margin:8px 0;border:1px solid var(--sq-border,#D8E2CC);border-radius:8px;background:var(--sq-surface,#FFFFFF);overflow:hidden;}
+.kake-one-minute summary{padding:12px 14px;cursor:pointer;color:var(--sq-text,#1A202C);font-size:14px;font-weight:700;}
+.kake-one-minute details p{margin:0;padding:0 14px 14px;color:var(--sq-muted,#4A5568);}
+.kake-one-minute__source{margin:14px 0 0;font-size:12px;color:var(--sq-muted,#718096);}
+.kake-decision-note{background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#D8E2CC);border-left:4px solid var(--sq-accent,#8CC63F);border-radius:12px;padding:22px 24px;margin:32px 0;color:var(--sq-text,#1A202C);}
+.kake-decision-note h2{font-size:20px;margin:0 0 12px;padding:0;border:0;color:var(--sq-text,#1A202C);}
+.kake-decision-note p,.kake-decision-note ol{color:var(--sq-text,#1A202C);}
+.kake-decision-note table{width:100%;border-collapse:collapse;font-size:13px;background:var(--sq-surface,#FFFFFF);}
+.kake-decision-note th,.kake-decision-note td{padding:9px;border:1px solid var(--sq-border,#D8E2CC);text-align:left;}
+html[data-theme="dark"] .kake-one-minute,html[data-theme="dark"] .kake-decision-note{background:var(--sq-surface-soft,#182317);border-color:var(--sq-border,#40503A);color:var(--sq-text,#E8EEF8);}
+html[data-theme="dark"] .kake-one-minute h3,html[data-theme="dark"] .kake-one-minute summary,html[data-theme="dark"] .kake-one-minute__map li,html[data-theme="dark"] .kake-decision-note h2,html[data-theme="dark"] .kake-decision-note p,html[data-theme="dark"] .kake-decision-note ol{color:var(--sq-text,#E8EEF8) !important;}
+html[data-theme="dark"] .kake-one-minute__map li,html[data-theme="dark"] .kake-one-minute details,html[data-theme="dark"] .kake-decision-note table{background:var(--sq-surface,#121A12);border-color:var(--sq-border,#40503A);}
+html[data-theme="dark"] .kake-one-minute__lead,html[data-theme="dark"] .kake-one-minute details p,html[data-theme="dark"] .kake-one-minute__source{color:var(--sq-muted,#B7C3D4);}
+html[data-theme="dark"] .kake-decision-note th,html[data-theme="dark"] .kake-decision-note td{border-color:var(--sq-border,#40503A);}
+@media(max-width:540px){.kake-one-minute,.kake-decision-note{padding:18px 16px;}.kake-one-minute__map{grid-template-columns:1fr;}}
 footer{background:#111827;padding:28px 24px;text-align:center;margin-top:64px;}
 footer a{font-size:12px;color:#4A5568;margin:0 10px;}
 footer p{font-size:11px;color:#2D3748;margin-top:8px;}
@@ -118,8 +140,8 @@ details summary:active{background:var(--light);}
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">日商簿記3級</a> &gt; 掛取引（売掛金・買掛金）</div>
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月11日</p>
-  <h1>掛取引（売掛金・買掛金）の仕訳<br>後払いの取引を図解で完全解説</h1>
+  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年9月5日</p>
+  <h1>掛取引（売掛金・買掛金）の仕訳<br>後払いの取引を図解で整理</h1>
   <p class="meta">著者：若葉（関西の大学3回生・日商簿記1級勉強中）</p>
 
   <div class="point-card">
@@ -135,12 +157,12 @@ details summary:active{background:var(--light);}
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
       <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉のつまずきメモ</span>
     </div>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
     実は、今回紹介する「掛取引」ですが、私が簿記を習い始めたばかりの頃、商品を売ったのに手元の現金は1円も増えていないのに「売上」として記録するという事実を知ったとき、「え、お金もらってないのになんで売上が立つの……？うわっ、なんじゃこりゃ！」と本気で脳内パニックを起こした論点でした（笑）。<br>
-    でも実は、この違和感の正体はとてもシンプルです。簿記は「現金が動いたかどうか」ではなく「権利や義務が発生したかどうか」を記録するゲームなんです。商品を売った瞬間、たとえ現金は動いていなくても「後でお金をもらえる権利」が確実に発生している——だからこれを「売掛金」という資産として記録します。逆に買った側は「後でお金を払う義務」が発生するので「買掛金」という負債になる。つまり掛取引は【後でもらえる権利・後で払う義務のパズル】なんです。<br>
-    今回は、このパズルをゲーム感覚で攻略する裏技を、図解と一緒にお届けします！</p>
+    そこで私は、現金が動いたかを追う前に「後で回収する権利」か「後で支払う義務」かを見るようにしました。商品を掛けで売れば売掛金、掛けで仕入れれば買掛金として記録します。<br>
+    この記事では、問題文を読む順番と、その順番を例題で再現する方法を整理します。</p>
   <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">仕訳で迷ったら、まず「商品か」「先か後か」「権利・義務か」の3問だけをメモしてください。科目を暗記から呼び出すより、取引の流れに戻るほうが早く解けます。</p>
   </div>
 
@@ -164,6 +186,25 @@ details summary:active{background:var(--light);}
       <div class="kake-desc">商品を掛けで買ったときに発生。後日お金を払う義務なので負債。支払ったら消える。</div>
     </div>
   </div>
+
+  <section class="kake-one-minute" aria-labelledby="kake-one-minute-title">
+    <h3 id="kake-one-minute-title">1分ミニ演習：掛取引を、科目名の前に分ける</h3>
+    <p class="kake-one-minute__lead">答えを見ずに、まず「商品か」「売る側か買う側か」「代金は後か」を確認します。借方・貸方の科目を決めてから答えを開いてください。</p>
+    <ol class="kake-one-minute__map" aria-label="掛取引の判断マップ">
+      <li><strong>商品か</strong><br>商品・製品の売買かを探す。</li>
+      <li><strong>立場はどちらか</strong><br>売る側か、買う側かを決める。</li>
+      <li><strong>代金は後か</strong><br>掛けなら権利・義務を記録する。</li>
+    </ol>
+    <details>
+      <summary>問題1：得意先に商品を掛けで販売した。借方は？</summary>
+      <p><strong>答え：売掛金。</strong>商品を売った側に、後日代金を回収する権利が発生します。貸方は売上です。</p>
+    </details>
+    <details>
+      <summary>問題2：仕入先から商品を仕入れ、代金の一部は小切手、残額は掛けとした。残額の貸方は？</summary>
+      <p><strong>答え：買掛金。</strong>小切手で支払った部分は当座預金、後払いの残額は買掛金として分けます。</p>
+    </details>
+    <p class="kake-one-minute__source">問題は参考書の「掛け取引①・②」を確認し、本文用に独自に作成しています。</p>
+  </section>
 
   <h2>📝 ① 掛けで売ったときの仕訳——売掛金（資産）が発生する瞬間</h2>
   <div class="mondai">
@@ -234,7 +275,7 @@ details summary:active{background:var(--light);}
       <div class="sq-chat-bubble">後払いって結局いつかは現金になるんだから、最初から「現金」で記録しちゃえばラクじゃないですか？わざわざ売掛金っていう別の科目を使う意味がわかりません……</div>
     </div>
     <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">その発想、めちゃくちゃわかります！私も最初「どうせ後で現金になるんだから一緒でしょ」って思いました（笑）。でもここが簿記の絶対に破ってはいけないパズルルールなんです。もし後払いを「現金」で記録してしまったら、<strong>まだ手元にないお金が帳簿上だけ増えてしまい</strong>、実際の金庫の中身と帳簿の数字がズレてしまいます。これでは「今いくら現金があるか」を正しく把握できず、経営が成り立ちません。</div>
+      <div class="sq-chat-bubble">その発想、私も最初は同じでした。後払いを「現金」で記録すると、<strong>まだ手元にない金額まで現金として帳簿に入ってしまいます。</strong>そこで、現金と「後で回収・支払いする権利や義務」を別の勘定科目で記録します。</div>
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
     </div>
     <div class="sq-chat-row">
@@ -242,7 +283,7 @@ details summary:active{background:var(--light);}
       <div class="sq-chat-bubble">なるほど、実際のキャッシュとズレちゃうから危険なんですね！じゃあ売掛金を使えば何が守られるんですか？</div>
     </div>
     <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">いい質問です！売掛金という「まだ現金化していない権利」専用の箱に分けて記録することで、①実際の現金残高と帳簿がズレない、②誰からいくら回収すべきかが一目でわかる、という2つが同時に守られます。「現金が動いたか」と「権利・義務が発生したか」を絶対に混ぜない——これが掛取引パズルの一番大事なルールです！</div>
+      <div class="sq-chat-bubble">売掛金という「まだ現金化していない権利」の箱に分けると、①現金残高と区別でき、②誰からいくら回収する権利かを帳簿で追えます。掛取引では「現金が動いたか」と「権利・義務が発生したか」を分けて考えます。</div>
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
     </div>
   </div>
@@ -262,7 +303,7 @@ details summary:active{background:var(--light);}
       <li>現金と掛を明確に分けることで、会社の真の財務状況を正確に把握できる</li>
     </ul>
   </div>
-  <p>現金はまだ動いていなくても、<strong>権利と義務は取引時点で確実に発生</strong>しています。これが掛取引の本質です。</p>
+  <p>現金はまだ動いていなくても、商品を掛けで売買した時点で、代金を回収する権利または支払う義務を記録します。これが掛取引の考え方です。</p>
 
   <h2>📌 ⑦ 手付金の仕訳——前払金・前受金はいつ使う？注文時と受取時の違い</h2>
   <p>商品の注文時に代金の一部を先払い（または先受け）することがあります。この「手付金」は掛取引とは別の勘定科目を使います。</p>
@@ -293,7 +334,7 @@ details summary:active{background:var(--light);}
   </div>
   <div class="tip-box"><strong>前払金 vs 前受金の覚え方</strong><br>・前払金（資産）＝ まだ受け取っていない商品への「権利」→ お金は出て行ったが商品はまだ来ていない<br>・前受金（負債）＝ まだ渡していない商品への「義務」→ お金は入ったが商品をまだ渡していない</div>
 
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
+  <div class="app-cta"><h3>⚔ 2問の判断を、次の15分につなげる</h3><p>上の2問で迷った場面を1つ選び、「簿記3級・掛取引」として15分だけ記録しましょう。次に解き直す理由が残ります。</p><a href="app.html">15分の学習記録を始める →</a></div>
 
   <div class="matome">
     <h3>📋 まとめ：掛取引 早見表</h3>
@@ -304,28 +345,28 @@ details summary:active{background:var(--light);}
     <div class="matome-row"><span class="trigger">売上返品された</span><span class="result">売上 ／ 売掛金（資産↓）</span></div>
     <div class="matome-row"><span class="trigger">仕入を返品した</span><span class="result">買掛金（負債↓）／ 仕入</span></div>
   </div>
-  <section class="sq-originality-note" style="background:#F5F3FF;border:1px solid #C4B5FD;border-radius:12px;padding:22px 24px;margin:32px 0;">
-    <h2 style="font-size:20px;margin:0 0 12px;color:#5B21B6;">若葉式：掛取引の仕訳を決める3問</h2>
-    <p style="margin:0 0 14px;line-height:1.8;color:#1A202C;">迷ったときに勘定科目を思い出そうとすると、売掛金・未収入金・前払金が混ざります。私は問題文を次の3問に分解してから仕訳を書きます。</p>
-    <ol style="margin:0 0 14px 20px;line-height:1.9;color:#1A202C;">
+  <section class="kake-decision-note" aria-labelledby="kake-decision-note-title">
+    <h2 id="kake-decision-note-title">若葉式：掛取引の仕訳を決める3問</h2>
+    <p>迷ったときに勘定科目を思い出そうとすると、売掛金・未収入金・前払金が混ざります。私は問題文を次の3問に分解してから仕訳を書きます。</p>
+    <ol>
       <li>商品・製品の販売または仕入れか？</li>
       <li>代金は先に動いたか、後で動くか？</li>
       <li>いま発生したのは現金ではなく、権利・義務ではないか？</li>
     </ol>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff;">
-      <tr><th style="padding:9px;border:1px solid #DDD6FE;text-align:left;">状況</th><th style="padding:9px;border:1px solid #DDD6FE;text-align:left;">見る箱</th><th style="padding:9px;border:1px solid #DDD6FE;text-align:left;">確認する動き</th></tr>
-      <tr><td style="padding:9px;border:1px solid #DDD6FE;">商品を掛けで売った</td><td style="padding:9px;border:1px solid #DDD6FE;">売掛金</td><td style="padding:9px;border:1px solid #DDD6FE;">後日の回収で減る</td></tr>
-      <tr><td style="padding:9px;border:1px solid #DDD6FE;">商品を掛けで買った</td><td style="padding:9px;border:1px solid #DDD6FE;">買掛金</td><td style="padding:9px;border:1px solid #DDD6FE;">後日の支払いで減る</td></tr>
-      <tr><td style="padding:9px;border:1px solid #DDD6FE;">商品以外を後払いで売った</td><td style="padding:9px;border:1px solid #DDD6FE;">未収入金など</td><td style="padding:9px;border:1px solid #DDD6FE;">何を売ったかを確認する</td></tr>
+    <table>
+      <tr><th>状況</th><th>見る箱</th><th>確認する動き</th></tr>
+      <tr><td>商品を掛けで売った</td><td>売掛金</td><td>後日の回収で減る</td></tr>
+      <tr><td>商品を掛けで買った</td><td>買掛金</td><td>後日の支払いで減る</td></tr>
+      <tr><td>商品以外を後払いで売った</td><td>未収入金など</td><td>何を売ったかを確認する</td></tr>
     </table>
-    <p style="margin:14px 0 0;line-height:1.8;color:#1A202C;"><strong>練習の締め：</strong>仕訳を書いたあと、借方・貸方の科目を隠して「何が増え、何が減ったか」を日本語で言い直します。金額ではなく取引の流れを説明できれば、返品や手付金にも応用できます。</p>
+    <p><strong>練習の締め：</strong>仕訳を書いたあと、借方・貸方の科目を隠して「何が増え、何が減ったか」を日本語で言い直します。金額ではなく取引の流れを説明できれば、返品や手付金にも応用できます。</p>
   </section>
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
     <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">掛取引は「現金が動いたか」ではなく「権利・義務が発生したか」で記録するパズルだと気づけば、売掛金・買掛金の仕訳はもう怖くありません。<br>
-    次に1問解くときは、3問の判定を先にメモしてから仕訳を書いてみてください。間違えた場合も、科目ではなく「商品か／先か後か／権利・義務か」のどこで迷ったかを残すと復習が短くなります。</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">掛取引は「現金が動いたか」ではなく「権利・義務が発生したか」で記録します。<br>
+    次に1問解くときは、3問の判定を先にメモしてから仕訳を書いてみてください。間違えた場合も、科目ではなく「商品か／先か後か／権利・義務か」のどこで迷ったかを残すと、次の確認場所が決まります。</p>
   </div>
-  <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0 0 24px;"><strong>次の一手：</strong>掛取引の仕訳を1問解き、科目ではなく取引の流れを説明する。<a href="boki3-shohinuriage.html">商品売買の仕訳へ進む</a></p>
+  <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0 0 24px;"><strong>次の一手：</strong>上の2問を答えを隠して解き直し、迷った問題には「商品」「立場」「後払い」のどれで迷ったかを1行で書く。<a href="boki3-shohinuriage.html">商品売買の仕訳へ進む</a></p>
 </div>
 <h2>未収入金・未払金との違い</h2>
 <p>売掛金・買掛金は商品の販売・仕入れに伴う債権・債務です。一方、未収入金・未払金は固定資産や有価証券など、商品以外の取引で使い分けます。</p>
@@ -354,7 +395,7 @@ details summary:active{background:var(--light);}
 </section>
 
 <footer><a href="index.html">記事トップ</a><a href="app.html">アプリを使う</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20260813-diagram-thumb-v2"></script>
+<script src="article-widgets.js?v=20260905-boki3-kake-learning"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
