@@ -57,6 +57,7 @@ const implementationIssues = [
   ['記事ヒーロー', /image\.src = diagramThumbPath\(slug\)/.test(widgets)],
   ['トップ一覧', indexHtml.includes('function articleThumbSrc(slug)') && indexHtml.includes('image.src = primarySrc')],
   ['トップ検索', indexHtml.includes('src="${esc(articleThumbSrc(x.slug))}"')],
+  ['アプリ案内リンクの対象外', indexHtml.includes("slug === 'app-guide'")],
   ['あなたにおすすめ', fs.readFileSync(path.join(root, 'article-recommendations.js'), 'utf8').includes('images/article-diagrams/${esc(article.id.replace(/\\.html$/, \'\'))}.svg')],
   ['資格一覧ヒーロー', shikakuList.includes('images/article-diagrams/shikaku-list.svg') || /\.explorer-hero::before\{[^}]*background-image:/.test(shikakuList)],
 ].filter(([, ok]) => !ok).map(([name]) => name);
