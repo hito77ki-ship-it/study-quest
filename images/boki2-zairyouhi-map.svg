@@ -34,7 +34,7 @@
   <text x="638" y="110" text-anchor="middle" font-size="10" fill="#374151">売上原価（P/L）</text>
 
   <!-- 単価計算 -->
-  <text x="380" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">消費単価の計算方法——先入先出法 vs 移動平均法</text>
+  <text x="380" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">消費単価の計算方法——先入先出法 vs 総平均法</text>
 
   <!-- Left: 先入先出法 -->
   <rect x="30" y="164" width="340" height="176" rx="10" fill="#FFF7ED" stroke="#FDB97D" stroke-width="2"/>
@@ -50,17 +50,17 @@
   <text x="200" y="322" text-anchor="middle" font-size="10" fill="#C2410C">消費額 ＝ 100×200 ＋ 50×220 ＝ 31,000円</text>
   <text x="200" y="336" text-anchor="middle" font-size="10" fill="#64748B">物価上昇局面では消費単価が低くなりやすい</text>
 
-  <!-- Right: 移動平均法 -->
+  <!-- Right: 総平均法 -->
   <rect x="390" y="164" width="340" height="176" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
   <rect x="390" y="164" width="340" height="30" rx="10" fill="#3B82F6"/>
   <rect x="390" y="184" width="340" height="10" fill="#3B82F6"/>
-  <text x="560" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">移動平均法</text>
-  <text x="560" y="208" text-anchor="middle" font-size="10.5" fill="#374151">仕入のたびに平均単価を計算し直す</text>
+  <text x="560" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">総平均法</text>
+  <text x="560" y="208" text-anchor="middle" font-size="10.5" fill="#374151">期首在庫と当月仕入を合計して平均する</text>
   <rect x="410" y="216" width="300" height="72" rx="6" fill="#DBEAFE"/>
   <text x="560" y="234" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1E40AF">計算例</text>
   <text x="400" y="252" font-size="10" fill="#374151">月初：100個 @200円 ＝ 20,000円</text>
-  <text x="400" y="268" font-size="10" fill="#374151">仕入後：（20,000＋200×220）÷ 300個 ＝ @213.3円</text>
-  <text x="400" y="284" font-size="10" fill="#374151">消費：150個 × @213.3円</text>
-  <text x="560" y="322" text-anchor="middle" font-size="10" fill="#1E40AF">消費額 ＝ 150 × 213.3 ≈ 31,997円</text>
-  <text x="560" y="336" text-anchor="middle" font-size="10" fill="#64748B">仕入のたびに平均単価が更新される</text>
+  <text x="400" y="268" font-size="10" fill="#374151">平均：（20,000＋200×220）÷ 300個 ＝ @213.333…</text>
+  <text x="400" y="284" font-size="10" fill="#374151">消費：150個 × @213.333…</text>
+  <text x="560" y="322" text-anchor="middle" font-size="10" fill="#1E40AF">消費額 ＝ 64,000 × 150 ÷ 300 ＝ 32,000円</text>
+  <text x="560" y="336" text-anchor="middle" font-size="10" fill="#64748B">期間の購入原価と数量で平均する</text>
 </svg>
