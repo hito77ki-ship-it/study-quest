@@ -202,7 +202,7 @@ const ARTICLES = {
   'eiken3-grammar.html':           {label:'英検3級',          title:'英検3級 頻出名詞・関係代名詞・間接疑問文まとめ', thumb:'images/eiken3-grammar-map.svg'},
   'eiken4.html':                   {label:'英検4級',          title:'英検4級の勉強法・合格スケジュール', thumb:'images/eiken4-map.svg'},
   'eiken5.html':                   {label:'英検5級',          title:'英検5級の勉強法・合格スケジュール', thumb:'images/eiken-5kyu-strategy-map.svg'},
-  'fp3-daigakusei.html':           {label:'FP3級',            title:'大学生がFP3級を取るべき理由とベストなタイミング', thumb:'images/fp3-daigakusei-map.svg'},
+  'fp3-daigakusei.html':           {label:'FP3級',            title:'大学生のFP3級｜進路別の確認手順', thumb:'images/article-diagrams/fp3-daigakusei.svg'},
   'ielts.html':                    {label:'IELTS',            title:'IELTSの勉強法・スコア別攻略ガイド', thumb:'images/ielts-strategy-map.svg'},
   'toeic-730.html':                {label:'TOEIC',            title:'TOEIC 730点の勉強法・突破スケジュール', thumb:'images/toeic-730-strategy-map.svg'},
   'toeic-860.html':                {label:'TOEIC',            title:'TOEIC 860点の勉強法・突破スケジュール', thumb:'images/toeic-860-strategy-map.svg'},
