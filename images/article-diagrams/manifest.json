@@ -30,6 +30,56 @@
     "render": "exact-generated"
   },
   {
+    "file": "boki-benkyo-basho.html",
+    "slug": "boki-benkyo-basho",
+    "label": "簿記3級・2級",
+    "title": "簿記の勉強場所はどこがいい？場所別・できる勉強メニュー表",
+    "family": "roadmap",
+    "art": "recovered",
+    "asset": "boki-benkyo-basho.jpg",
+    "render": "photo"
+  },
+  {
+    "file": "boki-net-test-mac-ipad.html",
+    "slug": "boki-net-test-mac-ipad",
+    "label": "簿記3級・2級",
+    "title": "Mac・iPadで簿記を勉強している人へ。ネット試験前に埋めるべき「本番との差」3つ",
+    "family": "problem",
+    "art": "recovered",
+    "asset": "boki-net-test-mac-ipad.jpg",
+    "render": "photo"
+  },
+  {
+    "file": "boki-note-sekkei.html",
+    "slug": "boki-note-sekkei",
+    "label": "簿記3級・2級",
+    "title": "簿記のノートは何を書く？本番の筆記条件から逆算する3つの書く枠",
+    "family": "roadmap",
+    "art": "recovered",
+    "asset": "boki-note-sekkei.jpg",
+    "render": "photo"
+  },
+  {
+    "file": "boki2-3kyu-fukushu.html",
+    "slug": "boki2-3kyu-fukushu",
+    "label": "簿記2級",
+    "title": "簿記2級を始めたら3級を忘れていた人へ｜全部やり直さずに済む依存論点マップ7つ",
+    "family": "roadmap",
+    "art": "recovered",
+    "asset": "boki2-3kyu-fukushu.jpg",
+    "render": "photo"
+  },
+  {
+    "file": "boki2-shogyo-enshu.html",
+    "slug": "boki2-shogyo-enshu",
+    "label": "簿記2級",
+    "title": "商業簿記で落とす点を特定する演習手順",
+    "family": "problem",
+    "art": "recovered",
+    "asset": "boki2-shogyo-enshu.jpg",
+    "render": "photo"
+  },
+  {
     "file": "boki2-progress.html",
     "slug": "boki2-progress",
     "label": "簿記2級",

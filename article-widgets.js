@@ -19,16 +19,16 @@ const ARTICLES = {
   'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ', thumb:'images/boki2-start-roadmap.svg'},
   'boki2-cbt-vs-paper.html': {label:'簿記2級',      title:'ネット試験（CBT）vs 統一試験（紙）徹底比較', thumb:'images/boki2-cbt-vs-paper.svg'},
   'boki2-kogyo-enshu.html': {label:'簿記2級',       title:'工業簿記の演習ロードマップ', thumb:'images/boki2-kogyo-enshu-map.svg'},
-  'boki2-shogyo-enshu.html': {label:'簿記2級',      title:'商業簿記で落とす点を特定する演習手順'},
+  'boki2-shogyo-enshu.html': {label:'簿記2級',      title:'商業簿記で落とす点を特定する演習手順', thumbnail:'images/article-thumbnails/boki2-shogyo-enshu.jpg'},
   'boki2-oyoryoku-kabe.html': {label:'簿記2級',     title:'仕訳はわかるのに過去問になると解けない「理解」と「得点力」のギャップを埋める演習法'},
   'boki2-renketsu-suteru.html': {label:'簿記2級',   title:'簿記2級の連結会計、捨てるべき？心が折れそうな人のための「部分点」戦略'},
   'boki2-moshi-honban.html': {label:'簿記2級',      title:'模試はできるのに本番で解けない人の弱点診断チェックリスト'},
   'boki-careless-miss.html': {label:'簿記3級・2級',  title:'電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方'},
   'boki-zasetsu-type.html':  {label:'簿記3級・2級',  title:'勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方'},
-  'boki-benkyo-basho.html':  {label:'簿記3級・2級',  title:'簿記の勉強場所はどこがいい？場所別・できる勉強メニュー表'},
-  'boki-note-sekkei.html':   {label:'簿記3級・2級',  title:'簿記のノートは何を書く？本番の筆記条件から逆算する3つの書く枠', thumb:'images/study-quest-boki-category.webp'},
-  'boki-net-test-mac-ipad.html': {label:'簿記3級・2級', title:'Mac・iPadで簿記を勉強している人へ。ネット試験前に埋めるべき「本番との差」3つ', thumb:'images/study-quest-boki-category.webp'},
-  'boki2-3kyu-fukushu.html': {label:'簿記2級', title:'簿記2級を始めたら3級を忘れていた人へ｜全部やり直さずに済む依存論点マップ7つ', thumb:'images/study-quest-boki-category.webp'},
+  'boki-benkyo-basho.html':  {label:'簿記3級・2級',  title:'簿記の勉強場所はどこがいい？場所別・できる勉強メニュー表', thumbnail:'images/article-thumbnails/boki-benkyo-basho.jpg'},
+  'boki-note-sekkei.html':   {label:'簿記3級・2級',  title:'簿記のノートは何を書く？本番の筆記条件から逆算する3つの書く枠', thumbnail:'images/article-thumbnails/boki-note-sekkei.jpg', thumb:'images/study-quest-boki-category.webp'},
+  'boki-net-test-mac-ipad.html': {label:'簿記3級・2級', title:'Mac・iPadで簿記を勉強している人へ。ネット試験前に埋めるべき「本番との差」3つ', thumbnail:'images/article-thumbnails/boki-net-test-mac-ipad.jpg', thumb:'images/study-quest-boki-category.webp'},
+  'boki2-3kyu-fukushu.html': {label:'簿記2級', title:'簿記2級を始めたら3級を忘れていた人へ｜全部やり直さずに済む依存論点マップ7つ', thumbnail:'images/article-thumbnails/boki2-3kyu-fukushu.jpg', thumb:'images/study-quest-boki-category.webp'},
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド', thumb:'images/boki1-balance-map.svg'},
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ', thumb:'images/boki1-start-roadmap.svg'},
@@ -231,18 +231,18 @@ function photoThumbPath(slug){
   return slug ? `images/article-thumbnails/${slug}.jpg` : '';
 }
 
-function thumbFallbacks(slug, original){
-  return [photoThumbPath(slug), original].filter(Boolean).join('||');
+function thumbFallbacks(slug, original, current){
+  return [...new Set([photoThumbPath(slug), original].filter(src => src && src !== current))].join('||');
 }
 
 function thumbHTML(a, cls){
   const c = cls || 'sq-thumb';
   const slug = a?.file?.replace(/\.html$/, '');
   const diagramThumb = diagramThumbPath(slug);
-  const src = diagramThumb || a?.thumb;
+  const src = a?.thumbnail || diagramThumb || a?.thumb;
   if(src){
     const alt = `${a.title || a.label || 'Study Quest'} の記事サムネイル`;
-    const fallbacks = thumbFallbacks(slug, a?.thumb);
+    const fallbacks = thumbFallbacks(slug, a?.thumb, src);
     const fallback = fallbacks ? ` data-sq-thumb-fallbacks="${escapeAttr(fallbacks)}"` : '';
     return `<img class="${c}" src="${escapeAttr(src)}"${fallback} alt="${escapeAttr(alt)}" loading="lazy" decoding="async" width="640" height="360">`;
   }
