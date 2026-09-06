@@ -13,6 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const widgetsPath = path.join(root, 'article-widgets.js');
 const diagramsDir = path.join(root, 'images/article-diagrams');
 const artDir = path.join(root, 'images', 'thumbnail-art-16x9');
+const photoDir = path.join(root, 'images', 'article-thumbnails');
 const widgets = fs.readFileSync(widgetsPath, 'utf8');
 const articleMatch = widgets.match(/const ARTICLES = (\{[\s\S]*?\n\});\n\n\/\*/);
 if (!articleMatch) throw new Error('ARTICLES台帳を読み取れません。');
@@ -20,7 +21,12 @@ const articles = vm.runInNewContext(`(${articleMatch[1]})`);
 const manifest = JSON.parse(fs.readFileSync(path.join(diagramsDir, 'manifest.json'), 'utf8'));
 const articleFiles = Object.keys(articles).sort();
 const manifestFiles = manifest.map(item => item.file).sort();
-const missing = articleFiles.filter(file => !fs.existsSync(path.join(diagramsDir, `${file.replace(/\.html$/, '')}.svg`)));
+const cardThumbnailPath = file => articles[file]?.thumbnail || '';
+const hasCardThumbnail = file => {
+  const thumbnail = cardThumbnailPath(file);
+  return thumbnail && fs.existsSync(path.join(root, thumbnail));
+};
+const missing = articleFiles.filter(file => !fs.existsSync(path.join(diagramsDir, `${file.replace(/\.html$/, '')}.svg`)) && !hasCardThumbnail(file));
 const invalid = articleFiles.filter(file => {
   const svgPath = path.join(diagramsDir, `${file.replace(/\.html$/, '')}.svg`);
   if (!fs.existsSync(svgPath)) return false;
@@ -36,17 +42,23 @@ const templateArt = referencedArt.filter(art => art !== 'recovered');
 const missingArt = templateArt.filter(art => !fs.existsSync(path.join(artDir, `${art}.jpg`)));
 const missingAssets = manifest
   .filter(item => item.asset)
-  .filter(item => !fs.existsSync(path.join(artDir, item.asset)))
+  .filter(item => !fs.existsSync(path.join(item.render === 'photo' ? photoDir : artDir, item.asset)))
   .map(item => ({ file: item.file, asset: item.asset }));
+const photoManifestIssues = manifest
+  .filter(item => item.render === 'photo')
+  .filter(item => cardThumbnailPath(item.file) !== `images/article-thumbnails/${item.asset}`)
+  .map(item => ({ file: item.file, asset: item.asset, thumbnail: cardThumbnailPath(item.file) }));
 const manifestMismatch = articleFiles.length !== manifestFiles.length
   || articleFiles.some((file, index) => file !== manifestFiles[index]);
+const shikakuList = fs.readFileSync(path.join(root, 'shikaku-list.html'), 'utf8');
+const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const implementationIssues = [
-  ['共通記事カード', /function diagramThumbPath\(slug\)/.test(widgets) && /const src = diagramThumb \|\| a\?\.thumb/.test(widgets)],
+  ['共通記事カード', /function diagramThumbPath\(slug\)/.test(widgets) && /const src = a\?\.thumbnail \|\| diagramThumb \|\| a\?\.thumb/.test(widgets)],
   ['記事ヒーロー', /image\.src = diagramThumbPath\(slug\)/.test(widgets)],
-  ['トップ一覧', fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('images/article-diagrams/${slug}.svg')],
-  ['トップ検索', fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('images/article-diagrams/${esc(x.slug)}.svg')],
+  ['トップ一覧', indexHtml.includes('function articleThumbSrc(slug)') && indexHtml.includes('image.src = primarySrc')],
+  ['トップ検索', indexHtml.includes('src="${esc(articleThumbSrc(x.slug))}"')],
   ['あなたにおすすめ', fs.readFileSync(path.join(root, 'article-recommendations.js'), 'utf8').includes('images/article-diagrams/${esc(article.id.replace(/\\.html$/, \'\'))}.svg')],
-  ['資格一覧ヒーロー', fs.readFileSync(path.join(root, 'shikaku-list.html'), 'utf8').includes('images/article-diagrams/shikaku-list.svg')],
+  ['資格一覧ヒーロー', shikakuList.includes('images/article-diagrams/shikaku-list.svg') || /\.explorer-hero::before\{[^}]*background-image:/.test(shikakuList)],
 ].filter(([, ok]) => !ok).map(([name]) => name);
 
 const result = {
@@ -57,8 +69,9 @@ const result = {
   referencedArt,
   missingArt,
   missingAssets,
+  photoManifestIssues,
   manifestMismatch,
   implementationIssues,
 };
 console.log(JSON.stringify(result, null, 2));
-if (missing.length || invalid.length || missingArt.length || missingAssets.length || manifestMismatch || implementationIssues.length) process.exitCode = 1;
+if (missing.length || invalid.length || missingArt.length || missingAssets.length || photoManifestIssues.length || manifestMismatch || implementationIssues.length) process.exitCode = 1;
