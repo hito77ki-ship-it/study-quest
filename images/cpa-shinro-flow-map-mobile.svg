@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1080" width="360" height="1080">
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
-  <rect width="360" height="1080" rx="16" fill="#FEFCF9"/>
   <text x="180" y="26" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">公認会計士試験 撤退後の</text>
   <text x="180" y="44" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">進路ナビゲートフローチャート</text>
-  <text x="180" y="62" text-anchor="middle" font-size="10" fill="#94A3B8">どのルートを選んでも、積み上げた努力は消えません</text>
+  <text x="180" y="62" text-anchor="middle" font-size="10" fill="#718096">候補ごとの条件と、自分の記録を確認</text>
 
   <!-- スタート -->
   <rect x="80" y="78" width="200" height="66" rx="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2.5"/>
@@ -22,7 +21,7 @@
   <rect x="40" y="276" width="280" height="106" rx="14" fill="#FFEDD5" stroke="#FDBA74" stroke-width="2.5"/>
   <text x="180" y="302" text-anchor="middle" font-size="12" font-weight="700" fill="#9A3412">進路4：別分野へ進路変更</text>
   <text x="180" y="326" text-anchor="middle" font-size="10.5" fill="#78350F">本当は別の仕事に興味があるなら、</text>
-  <text x="180" y="344" text-anchor="middle" font-size="10.5" fill="#78350F">方向転換も立派な選択</text>
+  <text x="180" y="344" text-anchor="middle" font-size="10.5" fill="#78350F">仕事内容と条件を確認</text>
   <text x="180" y="368" text-anchor="middle" font-size="10" fill="#C2410C">（Q1でYESの場合は下記へ）</text>
 
   <text x="180" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">YES ↓</text>
@@ -36,8 +35,8 @@
   <text x="180" y="558" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">YES ↓</text>
   <rect x="40" y="570" width="280" height="106" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2.5"/>
   <text x="180" y="596" text-anchor="middle" font-size="12" font-weight="700" fill="#1D4ED8">進路3：就職・転職</text>
-  <text x="180" y="620" text-anchor="middle" font-size="10.5" fill="#1E40AF">会計知識と継続力を経理・事務系の</text>
-  <text x="180" y="638" text-anchor="middle" font-size="10.5" fill="#1E40AF">強みに変えて活動する</text>
+  <text x="180" y="620" text-anchor="middle" font-size="10.5" fill="#1E40AF">求人票の業務内容と、説明できる</text>
+  <text x="180" y="638" text-anchor="middle" font-size="10.5" fill="#1E40AF">経験を照合する</text>
   <text x="180" y="662" text-anchor="middle" font-size="10" fill="#1D4ED8">（Q2でNOの場合は下記へ）</text>
 
   <text x="180" y="708" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">NO ↓</text>
@@ -48,12 +47,12 @@
   <!-- 進路1：簿記1級 -->
   <rect x="30" y="778" width="300" height="126" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2.5"/>
   <text x="180" y="806" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">進路1：簿記1級へ切り替え</text>
-  <text x="180" y="830" text-anchor="middle" font-size="11" fill="#14532D">財務会計論・原価計算の積み上げを</text>
-  <text x="180" y="850" text-anchor="middle" font-size="11" fill="#14532D">そのまま活かせる</text>
+  <text x="180" y="830" text-anchor="middle" font-size="11" fill="#14532D">公式の科目・合格基準と</text>
+  <text x="180" y="850" text-anchor="middle" font-size="11" fill="#14532D">自分の演習記録を確認</text>
 
   <!-- 進路2：税理士 -->
   <rect x="30" y="920" width="300" height="126" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2.5"/>
   <text x="180" y="948" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5B21B6">進路2：税理士を目指す</text>
-  <text x="180" y="972" text-anchor="middle" font-size="11" fill="#4C1D95">科目合格制で自分のペースを</text>
-  <text x="180" y="992" text-anchor="middle" font-size="11" fill="#4C1D95">作れる</text>
+  <text x="180" y="972" text-anchor="middle" font-size="11" fill="#4C1D95">科目合格制と会計・税法の</text>
+  <text x="180" y="992" text-anchor="middle" font-size="11" fill="#4C1D95">受験資格を確認</text>
 </svg>
