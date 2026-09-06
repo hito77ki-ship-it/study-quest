@@ -3133,7 +3133,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     document.querySelectorAll('[id^="cat-"] a[href$=".html"]').forEach(a => {
       const href = a.getAttribute('href');
       const slug = href.replace(/\.html$/, '');
-      if(a.classList.contains('lp-thumb-card') || !slug || slug === 'app') return;
+      if(a.classList.contains('lp-thumb-card') || !slug || slug === 'app' || slug === 'app-guide') return;
 
       const leafDivs = [...a.querySelectorAll('div')]
         .filter(el => !el.querySelector('div'))
