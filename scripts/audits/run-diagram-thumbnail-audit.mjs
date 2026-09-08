@@ -20,6 +20,7 @@ if (!articleMatch) throw new Error('ARTICLES台帳を読み取れません。');
 const articles = vm.runInNewContext(`(${articleMatch[1]})`);
 const manifest = JSON.parse(fs.readFileSync(path.join(diagramsDir, 'manifest.json'), 'utf8'));
 const articleFiles = Object.keys(articles).sort();
+const heroFiles = articleFiles.filter(file => articles[file]?.hero !== false);
 const manifestFiles = manifest.map(item => item.file).sort();
 const cardThumbnailPath = file => articles[file]?.thumbnail || '';
 const hasCardThumbnail = file => {
@@ -48,13 +49,13 @@ const photoManifestIssues = manifest
   .filter(item => item.render === 'photo')
   .filter(item => cardThumbnailPath(item.file) !== `images/article-thumbnails/${item.asset}`)
   .map(item => ({ file: item.file, asset: item.asset, thumbnail: cardThumbnailPath(item.file) }));
-const manifestMismatch = articleFiles.length !== manifestFiles.length
-  || articleFiles.some((file, index) => file !== manifestFiles[index]);
+const manifestMismatch = heroFiles.length !== manifestFiles.length
+  || heroFiles.some((file, index) => file !== manifestFiles[index]);
 const shikakuList = fs.readFileSync(path.join(root, 'shikaku-list.html'), 'utf8');
 const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const implementationIssues = [
   ['共通記事カード', /function diagramThumbPath\(slug\)/.test(widgets) && /const src = a\?\.thumbnail \|\| diagramThumb \|\| a\?\.thumb/.test(widgets)],
-  ['記事ヒーロー', /image\.src = diagramThumbPath\(slug\)/.test(widgets)],
+  ['記事ヒーロー', /if\(article\?\.hero === false\) return;/.test(widgets) && /image\.src = diagramThumbPath\(slug\)/.test(widgets)],
   ['トップ一覧', indexHtml.includes('function articleThumbSrc(slug)') && indexHtml.includes('image.src = primarySrc')],
   ['トップ検索', indexHtml.includes('src="${esc(articleThumbSrc(x.slug))}"')],
   ['アプリ案内リンクの対象外', indexHtml.includes("slug === 'app-guide'")],
@@ -64,6 +65,7 @@ const implementationIssues = [
 
 const result = {
   articles: articleFiles.length,
+  heroFiles: heroFiles.length,
   manifest: manifest.length,
   missing,
   invalid,
