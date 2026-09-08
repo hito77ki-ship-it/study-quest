@@ -43,7 +43,7 @@ const ARTICLES = {
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い', thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ', thumb:'images/study-quest-cpa-tax-category.webp'},
-  'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート'},
+  'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート', thumbnail:'images/study-quest-cpa-tax-category.webp'},
   'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド', thumb:'images/study-quest-fp-category.webp'},
   'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール', thumb:'images/study-quest-legal-category.webp'},
   'gyosei.html':         {label:'行政書士',          title:'行政書士試験の独学合格ガイド', thumb:'images/gyosei-strategy-map.svg'},
@@ -4439,6 +4439,7 @@ function buildAuthorBox(){
 
 /* ── 記事タイトル直下の要点ビジュアル ── */
 function buildArticleHeroVisual(){
+  if(PAGE === 'cpa-juken-shukatsu-heiko.html') return;
   const article = ARTICLES[PAGE];
   const container = document.querySelector('.container');
   const h1 = container?.querySelector('h1');
