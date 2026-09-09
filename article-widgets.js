@@ -43,7 +43,8 @@ const ARTICLES = {
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い', thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg'},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ', thumb:'images/study-quest-cpa-tax-category.webp'},
-  'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false},
+  'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
+  'cpa-tanto-gokaku-ronbun-tetsuzuki.html': {label:'公認会計士', title:'公認会計士の短答式に合格した後、論文式に向けて確認すること｜通知書・当年案内・予定のチェックリスト', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
   'fp.html':             {label:'FP2級',            title:'FP2級・3級の独学合格ガイド', thumb:'images/study-quest-fp-category.webp'},
   'takken.html':         {label:'宅建',             title:'宅建士の独学合格ガイド・スケジュール', thumb:'images/study-quest-legal-category.webp'},
   'gyosei.html':         {label:'行政書士',          title:'行政書士試験の独学合格ガイド', thumb:'images/gyosei-strategy-map.svg'},
@@ -544,9 +545,8 @@ const ARTICLE_DIALOGUES = {
 
 function getArticleDialogue(){
   if(ARTICLE_DIALOGUES[PAGE]) return ARTICLE_DIALOGUES[PAGE];
-  if(['boki2-ochita.html', 'cpa-juken-shukatsu-heiko.html'].includes(PAGE)) return null;
   const article = ARTICLES[PAGE];
-  if(!article) return null;
+  if(!article || article.dialogue === false || PAGE === 'boki2-ochita.html') return null;
   if(article.label.includes('簿記')){
     return [
       ['question', '受験生', 'この論点、テキストを読んでもいまいちつながりません。'],
@@ -3739,7 +3739,7 @@ function buildArticleDialogue(){
    すべての本文へ画像を散らすのではなく、要点を整理して次へ進む節目に
    1枚だけ置く。会話用の小さな表情アイコンとは役割を分ける。 */
 function buildArticleReflection(){
-  if(PAGE === 'cpa-juken-shukatsu-heiko.html') return;
+  if(ARTICLES[PAGE]?.reflection === false) return;
   const container = document.querySelector('.container');
   if(!container || container.querySelector('.sq-article-reflection')) return;
 
