@@ -1,74 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="800" height="650">
-  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
-  <text x="400" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#64748B">公認会計士試験 撤退後に確認すること</text>
-  <text x="400" y="44" text-anchor="middle" font-size="11" fill="#718096">候補ごとの条件と、自分の記録を分けて確認する</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">公認会計士を諦めた後の4つの選択肢で確認すること</title>
+  <desc id="desc">簿記1級、税理士、就職・転職、別分野の各候補について、公式情報、求人票、自分の記録を照合する確認先マップ。</desc>
+  <defs>
+    <style>
+      text { font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif; }
+      .heading { fill: #475569; font-size: 18px; font-weight: 700; }
+      .sub { fill: #64748B; font-size: 12px; }
+      .card-title { fill: #475569; font-size: 15px; font-weight: 700; }
+      .card-copy { fill: #64748B; font-size: 12px; }
+      .label { fill: #64748B; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    </style>
+  </defs>
 
-  <!-- スタート -->
-  <rect x="300" y="60" width="200" height="66" rx="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="2.5"/>
-  <text x="400" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">🎓 公認会計士</text>
-  <text x="400" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">撤退を考えている</text>
+  <text x="400" y="34" text-anchor="middle" class="heading">会計士試験をやめた後、候補ごとに確認すること</text>
+  <text x="400" y="56" text-anchor="middle" class="sub">どれが正解かを決めず、公開情報と自分の記録を照合する</text>
 
-  <line x1="400" y1="126" x2="400" y2="156" stroke="#94A3B8" stroke-width="2"/>
-  <polygon points="400,163 394,153 406,153" fill="#94A3B8"/>
+  <rect x="245" y="88" width="310" height="76" rx="14" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <text x="400" y="119" text-anchor="middle" class="card-title">確認する材料を分ける</text>
+  <text x="400" y="143" text-anchor="middle" class="sub">公式の制度条件・求人票や仕事内容・自分の記録と固定予定</text>
 
-  <!-- Q1 ダイヤモンド -->
-  <polygon points="400,163 515,215 400,267 285,215" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-  <text x="400" y="211" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">Q1. 会計の勉強</text>
-  <text x="400" y="227" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">自体は好き？</text>
+  <path d="M400 164 V202 M400 202 H170 M400 202 H630" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M170 202 V226 M630 202 V226 M400 202 V356" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
 
-  <!-- Q1 NO → 進路4 -->
-  <line x1="285" y1="215" x2="242" y2="215" stroke="#FDBA74" stroke-width="2"/>
-  <polygon points="234,215 246,209 246,221" fill="#FDBA74"/>
-  <text x="262" y="204" text-anchor="middle" font-size="9.5" font-weight="700" fill="#C2410C">NO</text>
-  <rect x="30" y="165" width="210" height="100" rx="14" fill="#FFEDD5" stroke="#FDBA74" stroke-width="2.5"/>
-  <text x="135" y="192" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9A3412">進路4</text>
-  <text x="135" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">別分野へ進路変更</text>
-  <text x="135" y="232" text-anchor="middle" font-size="9" fill="#78350F">本当は別の仕事に興味がある</text>
-  <text x="135" y="248" text-anchor="middle" font-size="9" fill="#78350F">なら、仕事内容と条件を確認</text>
+  <rect x="45" y="226" width="250" height="112" rx="14" fill="none" stroke="#65A30D" stroke-width="2.5"/>
+  <text x="70" y="253" class="label">CHOICE 01</text>
+  <text x="70" y="282" class="card-title">簿記1級</text>
+  <text x="70" y="307" class="card-copy">公式の科目・合格基準</text>
+  <text x="70" y="327" class="card-copy">自分の演習記録</text>
 
-  <!-- Q1 YES → Q2 -->
-  <line x1="400" y1="267" x2="400" y2="315" stroke="#86EFAC" stroke-width="2"/>
-  <polygon points="400,322 394,312 406,312" fill="#86EFAC"/>
-  <text x="418" y="295" text-anchor="middle" font-size="9.5" font-weight="700" fill="#15803D">YES</text>
+  <rect x="505" y="226" width="250" height="112" rx="14" fill="none" stroke="#0F766E" stroke-width="2.5"/>
+  <text x="530" y="253" class="label">CHOICE 02</text>
+  <text x="530" y="282" class="card-title">税理士</text>
+  <text x="530" y="307" class="card-copy">会計・税法科目の受験資格</text>
+  <text x="530" y="327" class="card-copy">次に確認する科目の条件</text>
 
-  <!-- Q2 ダイヤモンド -->
-  <polygon points="400,322 515,374 400,426 285,374" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-  <text x="400" y="370" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">Q2. 今すぐ</text>
-  <text x="400" y="386" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">働きたい？</text>
+  <rect x="45" y="356" width="250" height="112" rx="14" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+  <text x="70" y="383" class="label">CHOICE 03</text>
+  <text x="70" y="412" class="card-title">就職・転職</text>
+  <text x="70" y="437" class="card-copy">求人票の必須・歓迎条件</text>
+  <text x="70" y="457" class="card-copy">事実として説明できる経験</text>
 
-  <!-- Q2 YES → 進路3 -->
-  <line x1="515" y1="374" x2="558" y2="374" stroke="#93C5FD" stroke-width="2"/>
-  <polygon points="566,374 554,368 554,380" fill="#93C5FD"/>
-  <text x="538" y="363" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">YES</text>
-  <rect x="568" y="324" width="210" height="100" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2.5"/>
-  <text x="673" y="351" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">進路3</text>
-  <text x="673" y="371" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">就職・転職</text>
-  <text x="673" y="391" text-anchor="middle" font-size="9" fill="#1E40AF">求人票の業務内容と</text>
-  <text x="673" y="407" text-anchor="middle" font-size="9" fill="#1E40AF">説明できる経験を照合</text>
+  <rect x="505" y="356" width="250" height="112" rx="14" fill="none" stroke="#C2410C" stroke-width="2.5"/>
+  <text x="530" y="383" class="label">CHOICE 04</text>
+  <text x="530" y="412" class="card-title">別分野</text>
+  <text x="530" y="437" class="card-copy">仕事内容・学び直しの条件</text>
+  <text x="530" y="457" class="card-copy">生活上の予定との両立</text>
 
-  <!-- Q2 NO → 分岐点 -->
-  <line x1="400" y1="426" x2="400" y2="466" stroke="#86EFAC" stroke-width="2"/>
-  <polygon points="400,473 394,463 406,463" fill="#86EFAC"/>
-  <text x="418" y="450" text-anchor="middle" font-size="9.5" font-weight="700" fill="#15803D">NO</text>
-  <circle cx="400" cy="480" r="4" fill="#94A3B8"/>
-
-  <!-- 分岐点 → 進路1・進路2 -->
-  <line x1="400" y1="480" x2="285" y2="518" stroke="#86EFAC" stroke-width="2"/>
-  <polygon points="278,522 288,514 292,526" fill="#86EFAC"/>
-  <line x1="400" y1="480" x2="515" y2="518" stroke="#C4B5FD" stroke-width="2"/>
-  <polygon points="522,522 512,514 508,526" fill="#C4B5FD"/>
-
-  <!-- 進路1：簿記1級 -->
-  <rect x="180" y="524" width="210" height="106" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2.5"/>
-  <text x="285" y="551" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">進路1</text>
-  <text x="285" y="571" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">簿記1級へ切り替え</text>
-  <text x="285" y="591" text-anchor="middle" font-size="9" fill="#14532D">公式の科目・合格基準と</text>
-  <text x="285" y="607" text-anchor="middle" font-size="9" fill="#14532D">自分の演習記録を確認</text>
-
-  <!-- 進路2：税理士 -->
-  <rect x="410" y="524" width="210" height="106" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2.5"/>
-  <text x="515" y="551" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5B21B6">進路2</text>
-  <text x="515" y="571" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">税理士を目指す</text>
-  <text x="515" y="591" text-anchor="middle" font-size="9" fill="#4C1D95">科目合格制と</text>
-  <text x="515" y="607" text-anchor="middle" font-size="9" fill="#4C1D95">会計・税法の受験資格を確認</text>
+  <path d="M170 338 V492 H630 V468 M630 338 V492" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="522" text-anchor="middle" class="sub">確認した内容を記録してから、次に調べることを一つ選ぶ</text>
 </svg>
