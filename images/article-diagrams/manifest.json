@@ -60,6 +60,16 @@
     "render": "photo"
   },
   {
+    "file": "boki-net-id-check.html",
+    "slug": "boki-net-id-check",
+    "label": "簿記3級・2級",
+    "title": "簿記ネット試験の本人確認書類｜保険証は使える？当日に確認する5点",
+    "family": "accounting",
+    "art": "accounting.jpg",
+    "asset": "accounting.jpg",
+    "render": "template"
+  },
+  {
     "file": "boki2-3kyu-fukushu.html",
     "slug": "boki2-3kyu-fukushu",
     "label": "簿記2級",

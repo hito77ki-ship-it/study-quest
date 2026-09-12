@@ -27,6 +27,7 @@ const ARTICLES = {
   'boki-zasetsu-type.html':  {label:'簿記3級・2級',  title:'勉強が続かない挫折する人の4タイプ診断とタイプ別の乗り越え方'},
   'boki-benkyo-basho.html':  {label:'簿記3級・2級',  title:'簿記の勉強場所はどこがいい？場所別・できる勉強メニュー表', thumbnail:'images/article-thumbnails/boki-benkyo-basho.jpg'},
   'boki-note-sekkei.html':   {label:'簿記3級・2級',  title:'簿記のノートは何を書く？本番の筆記条件から逆算する3つの書く枠', thumbnail:'images/article-thumbnails/boki-note-sekkei.jpg', thumb:'images/study-quest-boki-category.webp'},
+  'boki-net-id-check.html': {label:'簿記3級・2級', title:'簿記ネット試験の本人確認書類｜保険証は使える？当日に確認する5点'},
   'boki-net-test-mac-ipad.html': {label:'簿記3級・2級', title:'Mac・iPadで簿記を勉強している人へ。ネット試験前に埋めるべき「本番との差」3つ', thumbnail:'images/article-thumbnails/boki-net-test-mac-ipad.jpg', thumb:'images/study-quest-boki-category.webp'},
   'boki2-3kyu-fukushu.html': {label:'簿記2級', title:'簿記2級を始めたら3級を忘れていた人へ｜全部やり直さずに済む依存論点マップ7つ', thumbnail:'images/article-thumbnails/boki2-3kyu-fukushu.jpg', thumb:'images/study-quest-boki-category.webp'},
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
@@ -3785,7 +3786,7 @@ const BOKI3_FILES = [
   'boki3-keika2.html','boki3-shohi.html','boki3-hojinzei.html',
   'boki3-kabushiki.html','boki3-seisanhyo.html',
   'boki3-next.html','boki3-ochita.html',
-  'boki-careless-miss.html','boki-note-sekkei.html','boki-net-test-mac-ipad.html','boki-zasetsu-type.html','boki-benkyo-basho.html','boki3-tobashi-2kyu.html',
+  'boki-careless-miss.html','boki-note-sekkei.html','boki-net-id-check.html','boki-net-test-mac-ipad.html','boki-zasetsu-type.html','boki-benkyo-basho.html','boki3-tobashi-2kyu.html',
 ];
 
 const BOKI2_COMMERCIAL_FILES = [
@@ -3808,7 +3809,7 @@ const BOKI2_INDUSTRIAL_FILES = [
   'boki2-kogyo-enshu.html',
 ];
 
-const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-note-sekkei.html', 'boki-net-test-mac-ipad.html', 'boki2-3kyu-fukushu.html', 'boki-zasetsu-type.html', 'boki-benkyo-basho.html'];
+const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-note-sekkei.html', 'boki-net-id-check.html', 'boki-net-test-mac-ipad.html', 'boki2-3kyu-fukushu.html', 'boki-zasetsu-type.html', 'boki-benkyo-basho.html'];
 const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html' && f !== 'boki-careless-miss.html' && f !== 'boki-note-sekkei.html' && f !== 'boki-zasetsu-type.html' && f !== 'boki2-oyoryoku-kabe.html' && f !== 'boki2-renketsu-suteru.html');
 
 const SHIHOSHO_FILES = [
