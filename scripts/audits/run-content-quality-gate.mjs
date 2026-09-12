@@ -109,16 +109,34 @@ function parseJsonLd(source, file) {
   return { count: blocks.length, errors, values };
 }
 
-function articleDateFromJsonLd(values) {
+const ARTICLE_TYPES = new Set(['Article', 'BlogPosting', 'NewsArticle']);
+
+function isArticleType(value) {
+  const types = Array.isArray(value) ? value : [value];
+  return types.some((type) => ARTICLE_TYPES.has(type));
+}
+
+function articleJsonLdNodes(values) {
+  const nodes = [];
   const stack = [...values];
   while (stack.length) {
     const current = stack.pop();
     if (Array.isArray(current)) { stack.push(...current); continue; }
     if (!current || typeof current !== 'object') continue;
-    if (current['@type'] === 'Article' && typeof current.dateModified === 'string') return current.dateModified;
+    if (isArticleType(current['@type'])) nodes.push(current);
     stack.push(...Object.values(current));
   }
-  return null;
+  return nodes;
+}
+
+function hasStructuredValue(value) {
+  if (typeof value === 'string') return value.trim().length > 0;
+  if (Array.isArray(value)) return value.some(hasStructuredValue);
+  return Boolean(value && typeof value === 'object' && Object.keys(value).length);
+}
+
+function articleDateFromJsonLd(values) {
+  return articleJsonLdNodes(values).find((node) => typeof node.dateModified === 'string')?.dateModified || null;
 }
 
 function visibleUpdatedDate(source) {
@@ -283,6 +301,18 @@ async function main() {
     const jsonLd = parseJsonLd(source, file);
     if (!jsonLd.count) structural.push(`${file}: JSON-LD がない`);
     structural.push(...jsonLd.errors);
+    if (!metaContent(source, 'property', 'og:image')) structural.push(`${file}: og:image がない`);
+    if (!metaContent(source, 'name', 'twitter:card')) structural.push(`${file}: twitter:card がない`);
+    const articleNodes = articleJsonLdNodes(jsonLd.values);
+    if (!articleNodes.length) {
+      structural.push(`${file}: Article / BlogPosting / NewsArticle のJSON-LDがない`);
+    } else {
+      for (const property of ['headline', 'image', 'datePublished', 'author', 'publisher']) {
+        if (!articleNodes.some((node) => hasStructuredValue(node[property]))) {
+          structural.push(`${file}: JSON-LD Article の ${property} がない`);
+        }
+      }
+    }
 
     const structuredDate = articleDateFromJsonLd(jsonLd.values);
     const visibleDate = visibleUpdatedDate(source);
@@ -332,7 +362,7 @@ async function main() {
 ## 対象・判定
 
 - 対象HTML: ${requested.length}本（Article: ${articleFiles.length}本）
-- 構造エラー（title / h1 / description / canonical / JSON-LD）: **${structural.length}件**
+- 構造エラー（title / h1 / description / canonical / OG・Twitterメタ / JSON-LD）: **${structural.length}件**
 - ローカルリンク切れ: **${brokenLinks.length}件**
 - ローカル画像参照切れ: **${missingImages.length}件**
 - 更新日3面不一致・欠落: **${dateIssues.length}件**
