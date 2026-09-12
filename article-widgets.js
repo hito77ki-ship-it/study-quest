@@ -1,6 +1,12 @@
 (function(){
 'use strict';
 
+function insertBeforeFooterOrAppendToBody(element){
+  const footer = document.querySelector('footer');
+  if(footer) footer.insertAdjacentElement('beforebegin', element);
+  else document.body.appendChild(element);
+}
+
 const ARTICLES = {
   'ai-shiwake-kikikata.html': {label:'AI活用・時短術', title:'Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ'},
   'boki.html':           {label:'簿記3級・2級',    title:'日商簿記3級・2級の独学勉強法と合格スケジュール', thumb:'images/study-quest-boki-category.webp'},
@@ -3221,8 +3227,7 @@ function buildPrevNextNav(){
       ? `<a href="${next}" class="sq-pn-btn sq-pn-next"><span class="sq-pn-info"><span class="sq-pn-label">次の記事</span><span class="sq-pn-title">${ARTICLES[next].title}</span></span><span class="sq-pn-arrow">→</span></a>`
       : '<div></div>');
 
-  const footer = document.querySelector('footer');
-  if(footer) footer.insertAdjacentElement('beforebegin', nav);
+  insertBeforeFooterOrAppendToBody(nav);
 }
 
 /* ── 「読んだ！」ボタン（簿記3級シリーズ） ── */
@@ -3245,8 +3250,7 @@ function buildReadButton(){
   });
   wrap.appendChild(btn);
 
-  const footer = document.querySelector('footer');
-  if(footer) footer.insertAdjacentElement('beforebegin', wrap);
+  insertBeforeFooterOrAppendToBody(wrap);
 }
 
 /* ── 記事検索インデックス（モーダルと結果ページで共用） ── */
@@ -4504,10 +4508,7 @@ function buildShareButtons(){
 
   const related = document.querySelector('section[style*="F7FAFC"]');
   if(related) related.insertAdjacentElement('beforebegin', wrap);
-  else {
-    const footer = document.querySelector('footer');
-    if(footer) footer.insertAdjacentElement('beforebegin', wrap);
-  }
+  else insertBeforeFooterOrAppendToBody(wrap);
 }
 
 /* ── Auth bar ── */
@@ -4544,8 +4545,7 @@ async function buildReactionWidget() {
 
   const wrap = document.createElement('div');
   wrap.className = 'sq-reaction';
-  const footer = document.querySelector('footer');
-  if (footer) footer.insertAdjacentElement('beforebegin', wrap);
+  insertBeforeFooterOrAppendToBody(wrap);
 
   const inner = document.createElement('div');
   inner.className = 'sq-reaction-inner';
@@ -4642,8 +4642,7 @@ async function buildCommentWidget() {
 
   const wrap = document.createElement('div');
   wrap.className = 'sq-comment-section';
-  const footer = document.querySelector('footer');
-  if (footer) footer.insertAdjacentElement('beforebegin', wrap);
+  insertBeforeFooterOrAppendToBody(wrap);
 
   const inner = document.createElement('div');
   inner.className = 'sq-comment-inner';
@@ -4951,10 +4950,7 @@ function buildWidgets(){
 
   const related = document.querySelector('section[style*="F7FAFC"]');
   if(related) related.insertAdjacentElement('afterend', wrap);
-  else {
-    const footer = document.querySelector('footer');
-    if(footer) footer.insertAdjacentElement('beforebegin', wrap);
-  }
+  else insertBeforeFooterOrAppendToBody(wrap);
 }
 
 function _gaEvent(name, params){
