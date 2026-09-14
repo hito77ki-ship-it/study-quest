@@ -19,10 +19,11 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DEFAULT_OUTPUT = path.join(ROOT, 'company', 'reports', 'automation');
 const BASE_URL = 'https://study-quest.net/';
-const PRODUCTION_PAGES = [
+const PRODUCTION_CORE_PAGES = [
   '', 'boki.html', 'boki1.html', 'boki2.html', 'boki3-progress.html',
   'fp3.html', 'shihoshoshi.html', 'app.html',
 ];
+const RECENT_SITEMAP_PAGE_LIMIT = 4;
 
 const HUBS = new Set([
   'boki.html', 'boki1.html', 'boki2.html', 'fp3.html', 'fp.html', 'cpa.html',
@@ -276,10 +277,27 @@ async function checkUrl(url) {
   }
 }
 
+async function productionPageSelection() {
+  const core = [...PRODUCTION_CORE_PAGES];
+  try {
+    const sitemap = await fs.readFile(path.join(ROOT, 'sitemap.xml'), 'utf8');
+    const entries = [...sitemap.matchAll(/<url>\s*<loc>https:\/\/study-quest\.net\/([^<]*)<\/loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)]
+      .map((match) => ({ page: decodeURIComponent(match[1]), lastmod: match[2] }))
+      .filter(({ page }) => page === '' || page.endsWith('.html'))
+      .filter(({ page }) => !core.includes(page))
+      .sort((a, b) => b.lastmod.localeCompare(a.lastmod) || a.page.localeCompare(b.page));
+    const recent = entries.slice(0, RECENT_SITEMAP_PAGE_LIMIT);
+    return { core, recent, pages: [...core, ...recent.map(({ page }) => page)] };
+  } catch (error) {
+    return { core, recent: [], pages: core, selectionError: error.message };
+  }
+}
+
 async function runProduction() {
+  const selection = await productionPageSelection();
   const pages = [];
   const imageChecks = [];
-  for (const page of PRODUCTION_PAGES) {
+  for (const page of selection.pages) {
     const url = new URL(page, BASE_URL).href;
     const result = await checkUrl(url);
     const title = parseMeta(result.body, /<title[^>]*>([\s\S]*?)<\/title>/i);
@@ -302,7 +320,11 @@ async function runProduction() {
 
 ## 監視対象
 
-${PRODUCTION_PAGES.map((page) => `- ${page || '/'}`).join('\n')}
+- 基本ページ（${selection.core.length}件）
+${selection.core.map((page) => `  - ${page || '/'}`).join('\n')}
+- sitemapの更新日が新しい追加ページ（${selection.recent.length}件、最大${RECENT_SITEMAP_PAGE_LIMIT}件）
+${selection.recent.length ? selection.recent.map(({ page, lastmod }) => `  - ${page || '/'}（${lastmod}）`).join('\n') : '  - なし'}
+${selection.selectionError ? `- sitemap読込: 失敗（基本ページのみを監視）: ${selection.selectionError}\n` : ''}
 
 ## 判定
 
