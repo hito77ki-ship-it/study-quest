@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">簿記の知識を決算書を読む順番につなぐ図</title>
+  <desc id="desc">前提確認、貸借対照表、損益計算書、キャッシュ・フロー計算書、注記の順に確認する流れ</desc>
+  <g fill="none" stroke="#5F8373" stroke-width="2">
+    <path d="M176 180H218M354 180H396M532 180H574M710 180H752" stroke-linecap="round"/>
+    <path d="M210 172l10 8-10 8M388 172l10 8-10 8M566 172l10 8-10 8M744 172l10 8-10 8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="none" stroke="#7EAD56" stroke-width="2.5">
+    <rect x="28" y="104" width="148" height="152" rx="14"/>
+    <rect x="206" y="104" width="148" height="152" rx="14"/>
+    <rect x="384" y="104" width="148" height="152" rx="14"/>
+    <rect x="562" y="104" width="148" height="152" rx="14"/>
+    <rect x="740" y="104" width="192" height="152" rx="14"/>
+  </g>
+  <g fill="#6F987E" font-family="-apple-system,BlinkMacSystemFont,'Hiragino Sans','Noto Sans JP',sans-serif" text-anchor="middle">
+    <text x="102" y="74" font-size="18" font-weight="700">簿記で得た視点</text>
+    <text x="280" y="74" font-size="18" font-weight="700">決算書を読む順番</text>
+    <text x="836" y="74" font-size="18" font-weight="700">理由まで戻る</text>
+  </g>
+  <g fill="#6F987E" font-family="-apple-system,BlinkMacSystemFont,'Hiragino Sans','Noto Sans JP',sans-serif" text-anchor="middle">
+    <text x="102" y="143" font-size="15" font-weight="700">1. 前提</text>
+    <text x="102" y="171" font-size="13">期間・連結・基準</text>
+    <text x="102" y="211" font-size="12">同じものを比べる</text>
+    <text x="280" y="143" font-size="15" font-weight="700">2. B/S</text>
+    <text x="280" y="171" font-size="13">現金・売掛金・在庫</text>
+    <text x="280" y="211" font-size="12">残っているものを読む</text>
+    <text x="458" y="143" font-size="15" font-weight="700">3. P/L</text>
+    <text x="458" y="171" font-size="13">売上・原価・利益</text>
+    <text x="458" y="211" font-size="12">期間の結果を読む</text>
+    <text x="636" y="143" font-size="15" font-weight="700">4. C/F</text>
+    <text x="636" y="171" font-size="13">現金の増減</text>
+    <text x="636" y="211" font-size="12">利益との差を確かめる</text>
+    <text x="836" y="143" font-size="15" font-weight="700">5. 注記・説明</text>
+    <text x="836" y="171" font-size="13">会計方針・変動要因</text>
+    <text x="836" y="211" font-size="12">数字の意味を確認する</text>
+  </g>
+  <path d="M57 299H903" stroke="#8FB76B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="480" y="329" fill="#6F987E" font-family="-apple-system,BlinkMacSystemFont,'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" text-anchor="middle">金額の大小だけで結論を出さず、同じ資料の中で「何が・なぜ動いたか」を確かめる</text>
+</svg>
