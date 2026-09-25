@@ -13,6 +13,7 @@ const ARTICLES = {
   'boki2.html':          {label:'簿記2級',          title:'簿記2級の勉強時間・独学合格ロードマップ', thumb:'images/study-quest-boki-category.webp'},
   'boki2-progress.html': {label:'簿記2級',          title:'簿記2級 学習進捗チェック'},
   'boki2-kessan.html':   {label:'簿記2級',          title:'決算整理・財務諸表作成の第3問対策', thumb:'images/boki2-kessan-map.svg'},
+  'boki-kessansho-analysis.html': {label:'会計・実務', title:'簿記2級・1級を財務諸表分析に活かす｜決算書の見る順番', thumb:'images/boki-kessansho-analysis-map.svg'},
   'boki2-shohin-baibai.html': {label:'簿記2級',     title:'商品売買・売上原価・棚卸資産', thumb:'images/boki2-shohin-baibai-map.svg'},
   'boki2-junshisan.html': {label:'簿記2級',         title:'株式発行・純資産・剰余金配当', thumb:'images/boki2-junshisan-map.svg'},
   'boki2-hojinzei-shohizei.html': {label:'簿記2級', title:'法人税等・消費税の仕訳', thumb:'images/boki2-tax-puzzle-map.svg'},
