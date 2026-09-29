@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="canonical" href="https://study-quest.net/fe-variable-trace.html">
+<title>基本情報の科目B｜変数トレースを紙に書く理由と疑似言語の追い方｜スタディクエスト</title>
+<meta name="description" content="基本情報技術者試験の科目Bで、疑似言語の変数を1行ずつ追う方法を自作例で解説します。紙に書く理由、表の作り方、30秒チェックつき。">
+<meta property="og:title" content="基本情報の科目B｜変数トレースを紙に書く理由と疑似言語の追い方">
+<meta property="og:description" content="疑似言語を頭の中だけで追わず、紙に残す変数トレースを自作例で解説します。">
+<meta property="og:url" content="https://study-quest.net/fe-variable-trace.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://study-quest.net/screenshots/ogp_logo.png">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"基本情報の科目B｜変数トレースを紙に書く理由と疑似言語の追い方","image":"https://study-quest.net/screenshots/ogp_logo.png","description":"基本情報技術者試験の科目Bで、疑似言語の変数を1行ずつ追う方法を自作例で解説します。","url":"https://study-quest.net/fe-variable-trace.html","datePublished":"2026-09-29","dateModified":"2026-09-29","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://study-quest.net/fe-variable-trace.html"}}
+</script>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'M PLUS 1',sans-serif;background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);line-height:1.9}a{color:var(--sq-link,#287a48)}.trace-nav{position:sticky;top:0;z-index:20;background:var(--sq-surface,#fff);border-bottom:1px solid var(--sq-border,#E2E8F0)}.trace-nav__inner{max-width:850px;margin:auto;padding:13px 20px;display:flex;justify-content:space-between;align-items:center;font-size:13px}.trace-brand{font-weight:700;text-decoration:none;color:var(--sq-text,#1A202C)}.trace-start{background:var(--sq-accent,#8CC63F);color:var(--sq-bg-dark,#111827);font-weight:700;text-decoration:none;padding:6px 13px;border-radius:5px}.trace-main{max-width:800px;margin:auto;padding:42px 20px 78px}.trace-breadcrumb,.trace-meta,.trace-note{font-size:13px;color:var(--sq-soft,#718096)}h1{font-size:clamp(25px,6vw,40px);line-height:1.35;letter-spacing:-.035em;margin:22px 0 8px}.trace-meta{margin:0 0 30px}.trace-lead{font-size:16px;background:var(--sq-surface-soft,#F7FAFC);border-left:4px solid var(--sq-accent,#8CC63F);padding:19px 20px;margin:0 0 34px}h2{font-size:22px;line-height:1.5;margin:54px 0 16px;padding-left:12px;border-left:3px solid var(--sq-accent,#8CC63F)}h3{font-size:17px;margin:28px 0 8px}p,li{font-size:15px;color:var(--sq-text,#1A202C)}.trace-rule{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;background:var(--sq-surface-soft,#F7FAFC);padding:14px 16px;border:1px solid var(--sq-border,#E2E8F0);border-radius:8px;margin:10px 0}.trace-rule b{color:var(--sq-accent-strong,#557D22)}.trace-number{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--sq-accent,#8CC63F);color:var(--sq-bg-dark,#111827);font-weight:700}.trace-diagram{margin:25px 0;border:1px solid var(--sq-border,#E2E8F0);background:var(--sq-surface-soft,#F7FAFC);padding:20px;border-radius:10px}.trace-flow{display:flex;gap:9px;align-items:stretch;overflow:auto}.trace-flow__step{min-width:142px;flex:1;border:1px solid var(--sq-border,#E2E8F0);background:var(--sq-surface,#fff);padding:12px;border-left:3px solid var(--sq-accent,#8CC63F)}.trace-flow__arrow{align-self:center;color:var(--sq-soft,#718096);font-weight:700}.trace-label{display:block;font-size:11px;color:var(--sq-soft,#718096);letter-spacing:.08em}.trace-code{overflow:auto;background:var(--sq-bg-dark,#111827);color:var(--sq-code,#E8F4D5);padding:18px;border-radius:9px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:2}.trace-table{width:100%;border-collapse:collapse;margin:18px 0 10px;font-size:14px}.trace-table th{background:var(--sq-bg-dark,#111827);color:var(--sq-accent,#8CC63F);padding:10px;text-align:left}.trace-table td{border-bottom:1px solid var(--sq-border,#E2E8F0);padding:10px;vertical-align:top}.trace-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.trace-callout{padding:17px 18px;margin:25px 0;border-radius:8px;background:var(--sq-warn-bg,#FFFBEA);border:1px solid var(--sq-warn-border,#E8CF78)}.trace-quiz{margin:26px 0;padding:22px;border:1px solid var(--sq-border,#E2E8F0);border-top:4px solid var(--sq-accent,#8CC63F);border-radius:10px;background:var(--sq-surface,#fff)}.trace-quiz button{display:block;width:100%;margin:9px 0;padding:12px 14px;text-align:left;border:1px solid var(--sq-border,#E2E8F0);border-radius:6px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C);font:inherit;cursor:pointer}.trace-quiz button:focus-visible{outline:3px solid var(--sq-focus,#2563EB);outline-offset:2px}.trace-feedback{display:none;margin-top:14px;padding:13px;border-radius:6px}.trace-feedback.is-visible{display:block}.trace-feedback.is-correct{background:var(--sq-success-bg,#EAF8EE);border:1px solid var(--sq-success-border,#79C38B)}.trace-feedback.is-wrong{background:var(--sq-error-bg,#FFF0F0);border:1px solid var(--sq-error-border,#E69A9A)}.trace-next{margin-top:45px;padding:22px;background:var(--sq-bg-dark,#111827);color:var(--sq-on-dark,#F8FAFC);border-radius:10px}.trace-next p{color:var(--sq-on-dark,#F8FAFC)}.trace-next a{color:var(--sq-accent,#8CC63F);font-weight:700}html[data-theme="dark"] .trace-quiz{background:#121826;border-color:#3A465B}html[data-theme="dark"] .trace-quiz p{color:#E8EEF8}html[data-theme="dark"] .trace-quiz button{background:#151A2A;color:#E8EEF8;border-color:#3A465B}html[data-theme="dark"] .trace-feedback.is-correct{background:#173B27;border-color:#5EAD70;color:#E8EEF8}html[data-theme="dark"] .trace-feedback.is-wrong{background:#431F28;border-color:#D87B8E;color:#FFF3F5}html[data-theme="dark"] .trace-callout{background:#3B3108;border-color:#9C8428;color:#F8F4DD}@media(max-width:600px){.trace-main{padding-top:28px}.trace-flow{display:block}.trace-flow__step{margin:8px 0}.trace-flow__arrow{display:none}.trace-table{font-size:13px}.trace-table th,.trace-table td{padding:8px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* 本文の出典リンクもサイトのダークテーマに追従させる。 */
+html[data-theme="dark"] .trace-main a{color:var(--sq-accent-bright,#B6E27C)}
+</style>
+</head>
+<body>
+<nav class="trace-nav"><div class="trace-nav__inner"><a class="trace-brand" href="index.html">⚔ Study Quest</a><a class="trace-start" href="app.html">学習を記録する</a></div></nav>
+<main class="trace-main">
+  <div class="trace-breadcrumb"><a href="index.html">ホーム</a> › <a href="fe.html">基本情報技術者</a> › 科目Bの変数トレース</div>
+  <h1>基本情報の科目B：変数トレースを紙に書く理由と、疑似言語を1行ずつ追う方法</h1>
+  <p class="trace-meta">更新日：2026年9月29日｜著者：若葉</p>
+  <p class="trace-lead">疑似言語を「読めているつもり」なのに最後の値が合わないときは、暗算が足りないのではありません。命令の実行順と、その直後の値を分けて記録していないことが原因になりがちです。ここでは自作の短い例を使い、紙に残す意味から確認します。</p>
+  <h2>科目Bは、値が変わる順番を追う問題</h2>
+  <p>IPAの案内では、基本情報技術者試験は科目A 60問・90分、科目B 20問・100分です。科目Bにはアルゴリズムとプログラミングに関する問題が含まれます。試験の問題そのものを覚えるより、命令が実行された直後に何が変わったかを追う習慣を作る方が、初見の表記にも対応しやすくなります。</p>
+  <p class="trace-note">出典：<a href="https://www.ipa.go.jp/shiken/kubun/fe.html" target="_blank" rel="noopener">IPA「基本情報技術者試験」</a>（2026年9月29日確認）</p>
+  <div class="trace-diagram" role="img" aria-label="命令を読む、値を更新する、表に残す、次の命令へ進むという変数トレースの流れ"><div class="trace-flow"><div class="trace-flow__step"><span class="trace-label">STEP 1</span>命令を読む</div><div class="trace-flow__arrow">→</div><div class="trace-flow__step"><span class="trace-label">STEP 2</span>値を更新する</div><div class="trace-flow__arrow">→</div><div class="trace-flow__step"><span class="trace-label">STEP 3</span>表に残す</div><div class="trace-flow__arrow">→</div><div class="trace-flow__step"><span class="trace-label">STEP 4</span>次の命令へ</div></div></div>
+  <h2>なぜ紙に書くのか</h2>
+  <div class="trace-rule"><span class="trace-number">1</span><div><b>代入は「今の値を置き換える」操作です。</b><br>同じ変数名が出ても、前の値と新しい値を頭の中で混ぜないために、実行後の値を残します。</div></div>
+  <div class="trace-rule"><span class="trace-number">2</span><div><b>繰返しでは、同じ行でも毎回の入力が違います。</b><br>何回目かを示す変数と、計算結果を示す変数を別の列にすると、どの周回でずれたか戻れます。</div></div>
+  <div class="trace-rule"><span class="trace-number">3</span><div><b>比較は値を変えず、条件を判定します。</b><br>「等しいか」を調べる行と、「値を代入する」行を区別して記録すると、条件式を計算式と取り違えにくくなります。</div></div>
+  <h2>自作例を、1行ずつトレースする</h2>
+  <p>次の例は学習用に作ったものです。実際の公開問題・教材例題ではありません。<code>total</code> は合計、<code>i</code> は何回目かを表します。</p>
+  <pre class="trace-code" aria-label="自作の疑似言語例">total ← 2
+for i ← 1 to 3
+  total ← total + i
+endfor</pre>
+  <p>紙には、少なくとも「実行した行」「i」「total」の3列を作ります。<strong>代入の行は、右辺を今の値で計算してから、左辺に書き戻す</strong>順番です。</p>
+  <table class="trace-table"><thead><tr><th>実行した行</th><th>i</th><th>total（実行後）</th><th>見るポイント</th></tr></thead><tbody><tr><td>開始前</td><td>—</td><td>—</td><td>まだ値はない</td></tr><tr><td>total ← 2</td><td>—</td><td>2</td><td>初期値を置く</td></tr><tr><td>1回目：total ← total + i</td><td>1</td><td>3</td><td>2 + 1 を計算して書き戻す</td></tr><tr><td>2回目：total ← total + i</td><td>2</td><td>5</td><td>3 + 2 を計算して書き戻す</td></tr><tr><td>3回目：total ← total + i</td><td>3</td><td>8</td><td>5 + 3 を計算して書き戻す</td></tr></tbody></table>
+  <div class="trace-callout"><strong>「2 + 1 + 2 + 3」を最初に暗算しない。</strong> 1周ずつ値を更新すると、問題が長くなっても同じ手順を繰り返せます。間違えたら、答えを見る前に最初にずれた行を探せます。</div>
+  <h2>30秒チェック：最後の total は？</h2>
+  <div class="trace-quiz" data-quiz><p><strong>上の自作例を最後まで実行したとき、<code>total</code> の値はどれですか？</strong></p><button type="button" data-answer="wrong">6：繰返しの回数だけを足した</button><button type="button" data-answer="correct">8：初期値2に、1・2・3を順に足した</button><button type="button" data-answer="wrong">9：3回目の i をもう一度足した</button><div class="trace-feedback" aria-live="polite"></div></div>
+  <h2>紙に書くときの3つの注意</h2>
+  <h3>配列は「変数名」だけで追わない</h3><p>配列が出たら、どの添字の要素を読んだ・書き換えたのかも列にします。<code>data[2]</code> と <code>data[3]</code> は別の場所です。配列全体の値を一つの数字のように扱わないでください。</p>
+  <h3>繰返しの終わる条件を先に丸で囲む</h3><p>開始値、増分、終了条件を見落とすと、表の行数が最初からずれます。表を書き始める前に「何回繰り返すか」を確認し、途中で推測を足さないのが安全です。</p>
+  <h3>試験の表記ルールは公式資料で確認する</h3><p>疑似言語の表記や試験範囲は更新されることがあります。学習中は、IPAの公開問題とシラバスを一次情報として確認してください。教材は考え方の順序をつかむために使い、制度情報の確定には使いません。</p>
+  <p class="trace-note">出典：<a href="https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2026r08.html" target="_blank" rel="noopener">IPA「問題冊子・解答例（2026年度、令和8年度）」</a>、<a href="https://www.ipa.go.jp/shiken/syllabus/gaiyou.html" target="_blank" rel="noopener">IPA「試験要綱・シラバスについて」</a>（いずれも2026年9月29日確認）</p>
+  <section class="trace-next"><h2>次にやること</h2><p>公開問題または問題集を1問選び、答えを見る前に「行・繰返し変数・主な変数」の3列だけでトレースしてみましょう。間違えたときは、正解を写す代わりに、最初に値がずれた行へ印を付けます。</p><a href="fe.html">基本情報技術者の学習全体へ戻る →</a></section>
+</main>
+<footer style="padding:28px 20px;background:var(--sq-bg-dark,#111827);text-align:center"><a href="index.html" style="color:var(--sq-on-dark,#F8FAFC);font-size:13px">Study Quest</a></footer>
+<script>document.querySelectorAll('[data-quiz]').forEach((quiz)=>{const feedback=quiz.querySelector('.trace-feedback');quiz.querySelectorAll('button').forEach((button)=>{button.addEventListener('click',()=>{const correct=button.dataset.answer==='correct';feedback.className=`trace-feedback is-visible ${correct?'is-correct':'is-wrong'}`;feedback.textContent=correct?'正解です。初期値2に、iが1・2・3の順で加わるため、2→3→5→8と変化します。':'もう一度、各周回の「実行後の total」を表に書いてみましょう。代入は右辺を計算してから左辺の値を置き換えます。';quiz.querySelectorAll('button').forEach((item)=>item.setAttribute('aria-pressed',String(item===button)));});});});</script>
+<script src="article-widgets.js?v=20260929-fe-variable-trace"></script>
+<script src="article-recommendations.js?v=20260929-fe-variable-trace"></script>
+</body>
+</html>
