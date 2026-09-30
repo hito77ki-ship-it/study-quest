@@ -70,6 +70,7 @@ const ARTICLES = {
   'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド', thumb:'images/eiken-map.svg'},
   'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学合格ガイド', thumb:'images/study-quest-it-category.webp'},
   'fe.html':             {label:'基本情報',          title:'基本情報技術者試験の独学合格ガイド', thumb:'images/fe-map.svg'},
+  'fe-variable-trace.html': {label:'基本情報',       title:'基本情報の科目B｜変数トレースを紙に書く理由'},
   'ap.html':             {label:'応用情報',          title:'応用情報技術者試験の完全ガイド', thumb:'images/ap-map.svg'},
   'mos.html':            {label:'MOS',              title:'MOS（Microsoft Office Specialist）の独学合格ガイド', thumb:'images/mos-strategy-map.svg'},
   'shindanshi.html':     {label:'中小企業診断士',    title:'中小企業診断士の独学合格ガイド', thumb:'images/shindanshi-strategy-map.svg'},
@@ -3874,7 +3875,7 @@ const HUB_RULES = [
   {name:'税理士', file:'zeirishi.html', match:f=>f.startsWith('zeirishi')},
   {name:'司法書士', file:'shihoshoshi.html', files: SHIHOSHO_FILES},
   {name:'法律資格', file:'takken.html', files:['takken.html','gyosei.html','sharoshi.html','mansion.html','takken-vs-gyosei.html','takken-vs-mansion.html','sharoshi-vs-gyosei.html','sharoshi-vs-shindanshi.html']},
-  {name:'IT資格', file:'itp.html', files:['itp.html','fe.html','ap.html','mos.html','itp-vs-fe.html','fe-vs-ap.html']},
+  {name:'IT資格', file:'itp.html', files:['itp.html','fe.html','fe-variable-trace.html','ap.html','mos.html','itp-vs-fe.html','fe-vs-ap.html']},
   {name:'英語資格', file:'toeic.html', files:['toeic.html','toeic-600.html','toeic-730.html','toeic-860.html','toeic-900.html','toeic-vs-eiken.html','toefl.html','ielts.html'], match:f=>f.startsWith('eiken')},
   {name:'大学生・社会人', file:'shukatsu-shikaku.html', files:['shukatsu-shikaku.html','hatarakinagara-shikaku.html','shakaijin-benkyou-jikan.html','daigakusei-keizai-shikaku.html','daigakusei-shikaku-heiyou.html','daigakusei-keizoku.html','daigakusei-kojin-jigyo-fuyo.html','daigakusei-nenkin.html','daigakusei-zeikin-yougo.html','univ-boki-units.html','univ-ai-report-hack.html','univ-qualification-strategy.html','shikaku-20dai.html','shikaku-30dai.html','shikaku-women.html','shikaku-eigyo.html','shikaku-3months.html','tenshoku-shikaku.html','osusume-shikaku.html','cospa-shikaku.html','dokugaku-shikaku.html','shikaku-jinsei-kawaru.html','shikaku-zasetsu-riyu.html']},
   {name:'学習継続', file:'keizoku.html', files:['keizoku.html','shikaku-app.html','boki-careless-miss.html','boki-zasetsu-type.html','ai-shiwake-kikikata.html']},
@@ -4485,7 +4486,8 @@ function buildArticleHeroVisual(){
 /* ── SNSシェアボタン ── */
 function buildShareButtons(){
   const artTitle = ARTICLES[PAGE]?.title || document.title;
-  const tweetText = encodeURIComponent(`「${artTitle}」を読んだ！ #簿記3級 #スタディクエスト\n`);
+  const topicTag = ARTICLES[PAGE]?.label || '資格勉強';
+  const tweetText = encodeURIComponent(`「${artTitle}」を読んだ！ #${topicTag} #スタディクエスト\n`);
   const url   = encodeURIComponent(location.href);
   const xUrl    = `https://twitter.com/intent/tweet?text=${tweetText}&url=${url}&via=wakaba_sq`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${url}`;
