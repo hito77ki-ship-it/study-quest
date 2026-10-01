@@ -349,7 +349,7 @@ const ORIGINALITY_NOTES = {
   },
   'boki1.html': {
     title: 'Study Quest編集部の判断メモ',
-    lead: 'このページは簿記1級の合格体験談ではありません。1級を勉強中の若葉が、2級合格後に感じた段差を「理解」「演習」「時間配分」の3つに分け、学習計画へ落とし込むための編集部メモです。',
+    lead: 'このページは簿記1級の合格体験談ではありません。1級の学習経験がある若葉が、2級合格後に感じた段差を「理解」「演習」「時間配分」の3つに分け、学習計画へ落とし込むための編集部メモです。',
     points: [
       '4科目を毎日均等に触るのではなく、週の前半に理解、後半に時間を測った混合問題を置く。',
       '解けなかった問題は、知識不足と計算手順の崩れを分けて記録する。対策が違うため、同じ「不正解」でまとめない。',
@@ -4439,8 +4439,8 @@ function buildAuthorBox(){
     <div class="sq-author-avatar"><img src="images/icon-wakaba.png" alt="若葉" loading="lazy"></div>
     <div>
       <div class="sq-author-name">若葉（わかば）</div>
-      <div class="sq-author-title">関西の大学3回生 ／ 日商簿記1級勉強中 ／ Study Quest 開発者</div>
-      <div class="sq-author-bio">公認会計士試験を約1年半勉強し、現在は日商簿記1級を目標に学習中。「勉強が続かない」課題を解決するため、資格学習RPGアプリ Study Quest を個人開発。実際の受験経験をもとに、各資格の勉強法・スケジュールを発信中。X: @wakaba_sq</div>
+      <div class="sq-author-title">関西の大学3回生 ／ ITパスポート・基本情報技術者 学習中 ／ Study Quest 開発者</div>
+      <div class="sq-author-bio">公認会計士試験を約1年半勉強し、日商簿記1級の学習も経験。現在は簿記1級を中断し、ITパスポート・基本情報技術者を学習中。「勉強が続かない」課題を解決するため、資格学習RPGアプリ Study Quest を個人開発。実際の受験経験をもとに、各資格の勉強法・スケジュールを発信中。X: @wakaba_sq</div>
     </div>`;
   meta.insertAdjacentElement('afterend', box);
 }
