@@ -61,7 +61,7 @@ endfor</pre>
 </main>
 <footer style="padding:28px 20px;background:var(--sq-bg-dark,#111827);text-align:center"><a href="index.html" style="color:var(--sq-on-dark,#F8FAFC);font-size:13px">Study Quest</a></footer>
 <script>document.querySelectorAll('[data-quiz]').forEach((quiz)=>{const feedback=quiz.querySelector('.trace-feedback');quiz.querySelectorAll('button').forEach((button)=>{button.addEventListener('click',()=>{const correct=button.dataset.answer==='correct';feedback.className=`trace-feedback is-visible ${correct?'is-correct':'is-wrong'}`;feedback.textContent=correct?'正解です。初期値2に、iが1・2・3の順で加わるため、2→3→5→8と変化します。':'もう一度、各周回の「実行後の total」を表に書いてみましょう。代入は右辺を計算してから左辺の値を置き換えます。';quiz.querySelectorAll('button').forEach((item)=>item.setAttribute('aria-pressed',String(item===button)));});});});</script>
-<script src="article-widgets.js?v=20260929-fe-variable-trace"></script>
+<script src="article-widgets.js?v=20261001-author-study"></script>
 <script src="article-recommendations.js?v=20260929-fe-variable-trace"></script>
 </body>
 </html>
