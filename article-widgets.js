@@ -68,7 +68,7 @@ const ARTICLES = {
   'mansion.html':        {label:'マンション管理士',  title:'マンション管理士の独学合格ガイド', thumb:'images/mansion-strategy-map.svg'},
   'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略', thumb:'images/study-quest-english-category.webp'},
   'eiken.html':          {label:'英検2級',           title:'英検2級の独学合格ガイド', thumb:'images/eiken-map.svg'},
-  'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学合格ガイド', thumb:'images/study-quest-it-category.webp'},
+  'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学計画・合格基準と見直し方', thumb:'images/study-quest-it-category.webp'},
   'fe.html':             {label:'基本情報',          title:'基本情報技術者試験の独学合格ガイド', thumb:'images/fe-map.svg'},
   'fe-variable-trace.html': {label:'基本情報',       title:'基本情報の科目B｜変数トレースを紙に書く理由'},
   'ap.html':             {label:'応用情報',          title:'応用情報技術者試験の完全ガイド', thumb:'images/ap-map.svg'},
