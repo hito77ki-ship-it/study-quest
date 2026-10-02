@@ -33,6 +33,7 @@ const CATALOG = [
   {id:'takken-vs-mansion.html', label:'資格比較', title:'宅建 vs マンション管理士 どっちを先に取るべき？', topics:['legal','career'], note:'不動産資格の次の一手を比べる'},
   {id:'itp.html', label:'ITパスポート', title:'ITパスポートの独学計画・合格基準と見直し方', topics:['it'], note:'公式条件と自分の学習計画を分けて確認する'},
   {id:'fe.html', label:'基本情報', title:'基本情報技術者試験の独学合格ガイド', topics:['it'], note:'ITパスポートの次を見極める'},
+  {id:'fe-stack-queue.html', label:'基本情報', title:'スタックとキューの違い・操作順と確認2問', topics:['it'], note:'同じ5操作の状態を図と表で検算する'},
   {id:'ap.html', label:'応用情報', title:'応用情報技術者試験の完全ガイド', topics:['it'], note:'午後試験まで含めた攻略を組み立てる'},
   {id:'itp-vs-fe.html', label:'資格比較', title:'ITパスポート vs 基本情報 どっちを先に取るべき？', topics:['it','career'], note:'今の経験に合うレベルを選ぶ'},
   {id:'fe-vs-ap.html', label:'資格比較', title:'基本情報 vs 応用情報 どっちを先に取るべき？', topics:['it','career'], note:'次に進むIT資格を見極める'},
