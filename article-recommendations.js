@@ -31,7 +31,7 @@ const CATALOG = [
   {id:'shihoshoshi.html', label:'司法書士', title:'司法書士の独学合格ガイド', topics:['legal'], note:'長期学習の現実的な組み方'},
   {id:'sharoshi.html', label:'社労士', title:'社会保険労務士の独学合格ガイド', topics:['legal','career'], note:'労務・人事に活かす資格を考える'},
   {id:'takken-vs-mansion.html', label:'資格比較', title:'宅建 vs マンション管理士 どっちを先に取るべき？', topics:['legal','career'], note:'不動産資格の次の一手を比べる'},
-  {id:'itp.html', label:'ITパスポート', title:'ITパスポートの独学合格ガイド', topics:['it'], note:'IT資格の最初の一歩を決める'},
+  {id:'itp.html', label:'ITパスポート', title:'ITパスポートの独学計画・合格基準と見直し方', topics:['it'], note:'公式条件と自分の学習計画を分けて確認する'},
   {id:'fe.html', label:'基本情報', title:'基本情報技術者試験の独学合格ガイド', topics:['it'], note:'ITパスポートの次を見極める'},
   {id:'ap.html', label:'応用情報', title:'応用情報技術者試験の完全ガイド', topics:['it'], note:'午後試験まで含めた攻略を組み立てる'},
   {id:'itp-vs-fe.html', label:'資格比較', title:'ITパスポート vs 基本情報 どっちを先に取るべき？', topics:['it','career'], note:'今の経験に合うレベルを選ぶ'},
