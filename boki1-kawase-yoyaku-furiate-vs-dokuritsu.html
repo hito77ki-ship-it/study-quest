@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"為替予約の振当処理と独立処理の違いがわからない人へ｜図解で整理",
-  "image": "https://study-quest.net/screenshots/ogp/boki1-kawase-yoyaku-furiate-vs-dokuritsu.png","description":"ヘッジ対象・ヘッジ手段の考え方を例題つきで解説。2級の振当処理から1級の独立処理へ、図解でスッキリ整理します。","url":"https://study-quest.net/boki1-kawase-yoyaku-furiate-vs-dokuritsu.html","datePublished":"2026-07-10","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+  "image": "https://study-quest.net/screenshots/ogp/boki1-kawase-yoyaku-furiate-vs-dokuritsu.png","description":"ヘッジ対象・ヘッジ手段の考え方を例題つきで解説。2級の振当処理から1級の独立処理へ、図解でスッキリ整理します。","url":"https://study-quest.net/boki1-kawase-yoyaku-furiate-vs-dokuritsu.html","datePublished":"2026-07-10","dateModified":"2026-10-02","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
 </script>
 <script type="application/ld+json">
 {
@@ -66,13 +66,14 @@ details summary:active{background:var(--light);}
 .nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
+.fx-period{margin:24px 0;padding:18px;background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#E2E8F0);border-radius:10px}.fx-period p{color:var(--sq-text,#1A202C)}.fx-source{font-size:12px}.fx-period a{color:var(--sq-highlight-text,#547C17);text-decoration:underline}.fx-scroll{overflow-x:auto}.fx-scroll.sq-table-scroll>table{min-width:440px}.fx-period h3{scroll-margin-top:110px}.fx-scroll caption{text-align:left;font-weight:700;padding:8px 0}.fx-scroll th,.fx-scroll td{vertical-align:top}.fx-period h3{color:var(--sq-text,#1A202C)}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki1.html">簿記1級</a> &gt; 為替予約の振当処理と独立処理の違い</div>
-<p class="meta">日商簿記1級 | 公開：2026年7月10日 | 更新日：2026年8月25日</p>
+<p class="meta">日商簿記1級 | 公開：2026年7月10日 | 更新日：2026年10月2日</p>
   <h1>為替予約の振当処理と独立処理の違いがわからない人へ<br>「2本立てで動かす」発想から整理する図解ガイド</h1>
   <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
 
@@ -193,12 +194,28 @@ details summary:active{background:var(--light);}
   </div>
   <div class="tip-box"><strong>ここが振当処理との最大の違い：</strong>振当処理なら決算時は何もしませんが、独立処理では買掛金（ヘッジ対象）と為替予約（ヘッジ手段）を、決算のたびにそれぞれ評価し直します。買掛金は為替差損8,000円、為替予約は為替差益2,000円と、別々の金額が動く点に注目してください。</div>
 
+  <p><a href="#fx-reversal">期首の洗替を確認</a> ／ <a href="#fx-period-result">期間別の検算を確認</a></p>
+  <section class="fx-period" aria-labelledby="fx-reversal">
+  <h3 id="fx-reversal">翌期首（4/1）——この例は洗替方式で進める</h3>
+  <p>ここからは3月31日を前期末、4月1日を翌期首とし、教材で扱う洗替方式で計算します。前期末に計上した為替予約資産2,000円を、翌期首に戻します。買掛金224,000円はこの洗替の対象ではありません。</p>
+  <div class="fx-scroll sq-table-scroll" tabindex="0" role="region" aria-label="仕訳と検算の表（横にスクロールできます）"><table><caption>4月1日の洗替仕訳（金額：円）</caption><thead><tr><th scope="col">借方</th><th scope="col">金額</th><th scope="col">貸方</th><th scope="col">金額</th></tr></thead><tbody><tr><td>為替差損益</td><td>2,000</td><td>為替予約資産</td><td>2,000</td></tr></tbody></table></div>
+  <p><strong>なぜ戻す？</strong>この方式では、翌期の決済時に予約の損益を予約時から計算し直すため、前期末の評価益を期首に反対仕訳で調整します。期首の差損を落とすと、前期に計上した評価益まで翌期の利益に再び含めてしまいます。前期の決算結果を消す処理ではなく、各期の損益を区分する処理です。</p>
+  <p class="fx-source">教材照合：『簿記1級 商会 教科書 第II部』（登川）第17章・紙面16、期首と決済の処理（2026年10月2日確認）。紙面や図版は転載していません。公式の原則・特例は<a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=108" target="_blank" rel="noopener">ASBJ「移管指針第2号 外貨建取引等の会計処理に関する実務指針」第3項</a>を確認してください。今回の洗替仕訳は、この学習例の方式を明示したものです。</p>
+  </section>
+
   <h2>🔍 ③ 決済時の処理</h2>
   <div class="formula">
     <strong>①買掛金の決済：</strong>2,000ドル×115円（決済時HR）＝230,000円で支払い、差額6,000円は為替差損<br>
     <strong>②為替予約の決済：</strong>{115円（決済時HR）－112円（予約時FR）}×2,000ドル＝6,000円（先物レートは決済日に直物レートと一致するため）
   </div>
-  <p>結果として、買掛金側の為替差損6,000円と、為替予約側の為替差益6,000円が相殺され、実質的な支払額は予約レートで確定させた場合と同じになります。独立処理は手間がかかりますが、最終的な経済的効果は振当処理と変わりません。</p>
+  <section class="fx-period" aria-labelledby="fx-period-result">
+  <h3 id="fx-period-result">決済の2仕訳と、前期・当期を分けた検算</h3>
+  <div class="fx-scroll sq-table-scroll" tabindex="0" role="region" aria-label="仕訳と検算の表（横にスクロールできます）"><table><caption>5月31日の決済仕訳（金額：円）</caption><thead><tr><th scope="col">対象</th><th scope="col">借方</th><th scope="col">金額</th><th scope="col">貸方</th><th scope="col">金額</th></tr></thead><tbody><tr><th scope="row">買掛金</th><td>買掛金<br>為替差損益</td><td>224,000<br>6,000</td><td>現金預金</td><td>230,000</td></tr><tr><th scope="row">為替予約</th><td>現金預金</td><td>6,000</td><td>為替差損益</td><td>6,000</td></tr></tbody></table></div>
+  <p>決済日の差損6,000円と差益6,000円は相殺されますが、<strong>当期全体の損益がゼロになるわけではありません。</strong>4月1日の洗替による差損2,000円も当期に含めるからです。為替予約だけの当期損益は、差益6,000円－期首差損2,000円＝差益4,000円となります。</p>
+  <div class="fx-scroll sq-table-scroll" tabindex="0" role="region" aria-label="仕訳と検算の表（横にスクロールできます）"><table><caption>編集部の期間別検算（金額：円、差損・差益を文字で表示）</caption><thead><tr><th scope="col">期間</th><th scope="col">買掛金側</th><th scope="col">予約側</th><th scope="col">合計</th></tr></thead><tbody><tr><th scope="row">前期（3/31まで）</th><td>差損8,000</td><td>差益2,000</td><td>差損6,000</td></tr><tr><th scope="row">当期（4/1〜5/31）</th><td>差損6,000</td><td>差益4,000</td><td>差損2,000</td></tr><tr><th scope="row">累計</th><td>差損14,000</td><td>差益6,000</td><td>差損8,000</td></tr></tbody></table></div>
+  <p>実質支払額は230,000円－受取6,000円＝224,000円。最初の仕入216,000円との差8,000円は、前期純損6,000円＋当期純損2,000円と一致します。この例の現金収支は予約レート112円×2,000ドルと整合しますが、損益の計上時期は仕訳を分けて確かめます。</p>
+  <p><strong>検算の3手順：</strong>①決算日と期首を区切る、②予約側の期首差損を決済差益から引く、③累計損益を実質支払額と当初仕入額の差に照合する。洗替をしない方式なら、決済時に予約資産を取り崩す別の仕訳が必要です。両方式の金額や仕訳を途中で混ぜないでください。</p>
+  </section>
 
   <div class="warn-box"><strong>今回のスコープ：</strong>この記事では、すでに発生している取引（買掛金）を対象にした為替予約のみ扱います。まだ発生していない取引を対象にする「予定取引・繰延ヘッジ」は、さらに発展した論点のため別の機会に扱います。</div>
 
