@@ -20,6 +20,8 @@ Study Questは日商簿記・FP・宅建・司法書士・TOEIC・英検・公�
 
 ## ITの論点学習
 
+- [機密性・完全性・可用性の違い](https://study-quest.net/itp-security-cia.html): 架空の予約表を3要素で分類し、秘密にするだけでは足りない理由を自作図解・確認2問で理解する
+
 - [スタックとキューの違い](https://study-quest.net/fe-stack-queue.html): 自作の5操作を図と状態表で検算し、確認2問でLIFOとFIFOを理解する
 
 ## アプリ
