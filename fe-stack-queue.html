@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>基本情報｜スタックとキューの違いを操作順で理解する【自作例・確認2問】｜スタディクエスト</title>
+<meta name="description" content="スタックのLIFOとキューのFIFOを、皿・受付の例と自作の操作列で解説。なぜ取り出す順が違うのかを状態表・図解で確認し、理解チェック2問で見直せます。">
+<link rel="canonical" href="https://study-quest.net/fe-stack-queue.html">
+<meta property="og:title" content="基本情報｜スタックとキューの違いを操作順で理解する【自作例・確認2問】">
+<meta property="og:description" content="スタックのLIFOとキューのFIFOを、皿・受付の例と自作の操作列で解説。なぜ取り出す順が違うのかを状態表・図解で確認し、理解チェック2問で見直せます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://study-quest.net/fe-stack-queue.html">
+<meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+<link rel="icon" href="favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"基本情報｜スタックとキューの違いを操作順で理解する【自作例・確認2問】","image":"https://study-quest.net/images/study-quest-it-category.jpg","description":"スタックのLIFOとキューのFIFOを、皿・受付の例と自作の操作列で解説。なぜ取り出す順が違うのかを状態表・図解で確認し、理解チェック2問で見直せます。","url":"https://study-quest.net/fe-stack-queue.html","datePublished":"2026-10-03","dateModified":"2026-10-03","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://study-quest.net/fe-stack-queue.html"}}</script>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);line-height:1.9}a{color:var(--sq-highlight-text,#547C17);text-decoration:underline;text-underline-offset:3px}nav{position:sticky;top:0;z-index:100;background:var(--sq-surface,#fff);border-bottom:1px solid var(--sq-border,#E2E8F0)}.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px;padding:10px 20px}.nav-logo{font-weight:800;text-decoration:none;color:var(--sq-highlight-text,#547C17);white-space:nowrap}.nav-cta{padding:8px 14px;border-radius:6px;text-decoration:none;background:var(--sq-accent,#8CC63F);color:var(--sq-bg-dark,#111827);font-weight:700;white-space:nowrap}.concept-main{max-width:820px;padding:32px 24px 70px;margin:auto}.concept-meta,.concept-source{font-size:13px;color:var(--sq-soft,#718096)}h1{font-size:clamp(26px,5vw,38px);line-height:1.45;letter-spacing:-.025em}h2{font-size:24px;margin:46px 0 18px;padding-left:12px;border-left:4px solid var(--sq-accent,#8CC63F);line-height:1.5;scroll-margin-top:140px}h3{font-size:18px}p,li{color:var(--sq-text,#1A202C)}.concept-intro,.concept-note{padding:18px 20px;background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#E2E8F0);border-left:4px solid var(--sq-accent,#8CC63F);border-radius:8px}.concept-toc{display:flex;flex-wrap:wrap;gap:10px 24px;margin:22px 0}.concept-figure{padding:20px;margin:24px 0;background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#E2E8F0);border-radius:10px}.concept-figure figcaption{margin-top:18px;font-size:13px;color:var(--sq-text,#1A202C)}.concept-diagram{display:grid;grid-template-columns:1fr 1fr;gap:22px}.concept-panel{padding:14px;border:1px solid var(--sq-border,#E2E8F0);border-radius:7px;background:var(--sq-surface,#fff)}.concept-panel h3{margin-top:0}.concept-stack{display:flex;flex-direction:column;gap:6px;border:2px solid var(--sq-soft,#718096);border-top:0;max-width:160px;padding:6px;margin:12px 0}.concept-queue{display:flex;gap:8px;margin:12px 0}.concept-item{padding:7px 12px;text-align:center;border:1px solid var(--sq-border,#E2E8F0);background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C);font-weight:700}.concept-scroll{overflow-x:auto}.concept-scroll>table{border-collapse:collapse;min-width:610px;width:100%;font-size:14px}.concept-scroll caption{text-align:left;font-weight:700;padding:8px 0}.concept-scroll th,.concept-scroll td{padding:10px;border:1px solid var(--sq-border,#E2E8F0);text-align:left;vertical-align:top}.concept-scroll th{background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C)}.concept-quiz{padding:20px;border:1px solid var(--sq-border,#E2E8F0);border-top:4px solid var(--sq-accent,#8CC63F);border-radius:10px;background:var(--sq-surface,#fff);margin:24px 0}.concept-quiz h3{margin-top:0}.concept-quiz button{display:block;width:100%;text-align:left;margin:10px 0;padding:12px 16px;border:1px solid var(--sq-border,#E2E8F0);border-radius:6px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C);font:inherit;cursor:pointer;transition:transform .1s}.concept-quiz button:active{transform:translateY(1px)}.concept-quiz button[aria-pressed="true"]{border-width:2px;border-color:var(--sq-highlight-text,#547C17)}a:focus-visible,button:focus-visible,.concept-scroll:focus-visible{outline:3px solid var(--sq-focus,#2563EB);outline-offset:3px}.concept-feedback{padding:14px;background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#E2E8F0);color:var(--sq-text,#1A202C);border-left-width:4px;border-radius:6px}.concept-feedback.is-correct{border-left-color:var(--sq-highlight-text,#547C17)}.concept-feedback.is-wrong{border-left-style:double}.concept-feedback.is-visible{animation:concept-feedback-in .18s ease-out}.concept-next{margin-top:38px;padding:20px;background:var(--sq-surface-soft,#F7FAFC);border:1px solid var(--sq-border,#E2E8F0);border-radius:10px}footer{padding:24px;text-align:center;background:var(--sq-surface-soft,#F7FAFC)}@keyframes concept-feedback-in{from{opacity:.4}to{opacity:1}}@media(max-width:600px){.concept-main{padding:24px 20px 54px}.concept-diagram{grid-template-columns:1fr}h2{font-size:22px}.nav-inner{padding:8px 16px}.nav-logo{font-size:13px}.nav-cta{font-size:12px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}.concept-page .nav-logo{color:var(--sq-highlight-text,#547C17)!important}
+</style>
+</head>
+<body class="concept-page">
+<nav><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="concept-main">
+<div class="concept-meta"><a href="index.html">ホーム</a> › <a href="fe.html">基本情報技術者</a> › スタックとキュー</div>
+<h1>基本情報｜スタックとキューの違いを操作順で理解する【自作例・確認2問】</h1>
+<p class="concept-meta">更新日：2026年10月3日｜著者：若葉</p>
+<p class="concept-intro">「追加したものを取り出す」点は同じでも、スタックとキューは取り出す順が違います。略語の丸暗記だけで迷うなら、操作を1回ずつ進め、<strong>取り出したものと、残っているものを分けて書く</strong>ところから始めましょう。ここでは自作の操作列を図と表にします。</p>
+<div class="concept-toc"><a href="#concept-rule">順番が違う理由</a><a href="#concept-example">自作例と図解</a><a href="#concept-check">確認テスト2問</a></div>
+<h2 id="concept-rule">スタックは後入れ先出し、キューは先入れ先出し</h2>
+<p><strong>スタック（stack）はLIFO：Last In, First Out。</strong>最後に追加した要素を先に取り出します。追加する操作をpush（プッシュ）、取り出す操作をpop（ポップ）と呼び、どちらもtop（トップ）側で行います。</p>
+<p><strong>キュー（queue）はFIFO：First In, First Out。</strong>先に追加した要素を先に取り出します。後ろに追加する操作がenqueue（エンキュー）、先頭から取り出す操作がdequeue（デキュー）です。</p>
+<p class="concept-source">出典：NIST「Dictionary of Algorithms and Data Structures」の<a href="https://xlinux.nist.gov/dads/HTML/stack.html" target="_blank" rel="noopener">stack</a>・<a href="https://xlinux.nist.gov/dads/HTML/queue.html" target="_blank" rel="noopener">queue</a>（2026年10月2日確認）。用語の定義を確認し、以下の例は編集部が作成しました。</p>
+<h3>身近なイメージ：皿の山と、受付の一列</h3>
+<p>スタックは、上に積んだ皿を上から取る山にたとえられます。後から置いた皿が、先に取れる位置に来ます。キューは、割込みも追越しもない受付の一列です。後から来た人は後ろに並び、先に来た人から受付を受けます。</p>
+<p class="concept-note"><strong>たとえの前提：</strong>皿を途中から抜く操作や、受付の優先対応は、この例にはありません。現実の受付すべてがFIFOになるという意味ではなく、追加・取出しの規則をイメージするための例です。</p>
+<h3>なぜこの順にするのか</h3>
+<p>スタックは「直前に積んだものへ戻る」という順を保つために、追加と取出しを同じ側で行います。キューは「先に待ち始めたものから処理する」という順を保つために、追加側と取出し側を分けます。名前の違いではなく、<strong>次に処理したい要素をどれにするか</strong>が選択の理由です。</p>
+<p>キューで途中の要素を好きに選んで取り出せば、到着順は保てません。スタックで一番古い要素を先に取れば、後入れ先出しではありません。問題では、取出しの規則を途中で変えないことが大切です。</p>
+<h2 id="concept-example">自作例：同じ5操作でも、答えが変わる</h2>
+<p>空のスタックと空のキューを別々に用意し、両方に同じ操作を行います。①赤を追加、②青を追加、③1個取り出す、④緑を追加、⑤1個取り出す。この色名は要素を区別するラベルで、実際の公開問題・教材例題ではありません。</p>
+<figure class="concept-figure"><div class="concept-diagram">
+<div class="concept-panel"><h3>操作④直後：スタック</h3><p>取出し口（top）は上 ↓</p><div class="concept-stack"><div class="concept-item">緑 ← 次に取る</div><div class="concept-item">赤（底）</div></div><p>操作③で青を取った後、緑を上へ追加。</p></div>
+<div class="concept-panel"><h3>操作④直後：キュー</h3><p>先頭（取出し口） ← ／ → 末尾（追加口）</p><div class="concept-queue"><div class="concept-item">青<br>次に取る</div><div class="concept-item">緑<br>末尾</div></div><p>操作③で赤を取った後、緑を末尾へ追加。</p></div>
+</div><figcaption>編集部作成。図は操作④が終わった時点です。配置は取出し規則を示す概念図で、配列などの実装方法を指定していません。色名を文字で示しているため、配色だけで判断する必要はありません。</figcaption></figure>
+<div class="concept-scroll sq-table-scroll" tabindex="0" role="region" aria-label="5操作の状態表。狭い画面では横にスクロールできます"><table><caption>各操作が終わった直後の状態（編集部作成）</caption><thead><tr><th scope="col">操作</th><th scope="col">スタックに残る<br>底 → top</th><th scope="col">スタックから取った</th><th scope="col">キューに残る<br>先頭 → 末尾</th><th scope="col">キューから取った</th></tr></thead><tbody>
+<tr><th scope="row">開始前</th><td>空</td><td>—</td><td>空</td><td>—</td></tr>
+<tr><th scope="row">①赤を追加</th><td>赤</td><td>—</td><td>赤</td><td>—</td></tr>
+<tr><th scope="row">②青を追加</th><td>赤、青</td><td>—</td><td>赤、青</td><td>—</td></tr>
+<tr><th scope="row">③1個取る</th><td>赤</td><td>青</td><td>青</td><td>赤</td></tr>
+<tr><th scope="row">④緑を追加</th><td>赤、緑</td><td>—</td><td>青、緑</td><td>—</td></tr>
+<tr><th scope="row">⑤1個取る</th><td>赤</td><td>緑</td><td>緑</td><td>青</td></tr>
+</tbody></table></div>
+<p><strong>なぜ⑤の取出し結果が違う？</strong>④の直後、スタックのtopは緑ですが、キューの先頭は青です。同じ「1個取る」でも、参照する取出し口が違います。また、③で取った要素はもう中にありません。最初に追加した順だけを記憶すると、この削除を見落とします。</p>
+<h2>紙に書くときの3手順</h2>
+<ol><li><strong>向きを固定する。</strong>スタックは「底→top」、キューは「先頭→末尾」と欄の上に書く。</li><li><strong>1操作につき1行。</strong>追加は追加口へ書き、取出しは該当要素を中から消して、別の欄へ記録する。</li><li><strong>最後に問われたものを確認する。</strong>「残っている要素」と「取り出した要素」は別の答え。表の見出しを指で確認する。</li></ol>
+<p class="concept-note"><strong>混同に注意：</strong>優先度に応じて取り出す優先度付きキューは、単純なFIFOのキューと区別します。空のときの取出し動作や容量上限も、問題・実装の前提を確認してください。この例は空からの取出しを含みません。「この構造なら常に速い」といった速度の結論も、順序の定義だけからは出せません。</p>
+<p class="concept-source">教材照合：『徹底攻略 基本情報技術者教科書 令和8年度』第1章・紙面83（章別PDFの物理46ページ）。スタック、キュー、操作名称、優先度付きキューとの区別を確認（2026年10月2日）。教材の本文・図版・問題は転載していません。</p>
+<h2 id="concept-check">確認テスト：答えと理由を2問で確認</h2>
+<p>各問の答えは何度でも選び直せます。正解したら「取出し口がどこか」も言葉にしてみましょう。解答は外部へ送信・保存しません。</p>
+<section class="concept-quiz" data-concept-quiz data-explanation="操作④の直後、スタックは底から赤・緑。操作⑤ではtopの緑を取ります。操作③で取り出した青は戻っていません。"><h3>問1：操作⑤でスタックから取り出すのは？</h3><button type="button" aria-pressed="false" data-correct="false">赤：最初に入れた要素</button><button type="button" aria-pressed="false" data-correct="false">青：操作②で入れた要素</button><button type="button" aria-pressed="false" data-correct="true">緑：操作④で入れた要素</button><p class="concept-feedback" role="status" aria-live="polite" hidden></p><noscript><p>解答：緑。操作④直後のtopから取り出します。</p></noscript></section>
+<section class="concept-quiz" data-concept-quiz data-explanation="操作③では先頭の赤を取るので、残るのは青です。青が取り出されるのは操作⑤。取り出す順と残る状態を分けて確認しましょう。"><h3>問2：操作③の直後、キューに残るのは？</h3><button type="button" aria-pressed="false" data-correct="false">赤だけ</button><button type="button" aria-pressed="false" data-correct="true">青だけ</button><button type="button" aria-pressed="false" data-correct="false">空になる</button><p class="concept-feedback" role="status" aria-live="polite" hidden></p><noscript><p>解答：青だけ。先頭の赤を取り出した後の状態です。</p></noscript></section>
+<section class="concept-next"><h2>次は、自分で操作を1つ足してみる</h2><p>操作⑤の後に「黄を追加」「1個取る」を足し、スタックとキューの表を別々に書いてみてください。スタックからは黄、キューからは緑を取り出します。追加直後にどちら側を見るかが説明できれば、略語と動作がつながっています。</p><p><a href="fe-variable-trace.html">変数を1行ずつ追う練習へ</a> ／ <a href="fe.html">基本情報の学習ガイドへ</a> ／ <a href="app.html">今回の学習を記録する</a></p></section>
+</main>
+<footer><a href="index.html">Study Quest</a> ／ <a href="about.html">運営者情報</a></footer>
+<script>document.querySelectorAll('[data-concept-quiz]').forEach(quiz=>{const output=quiz.querySelector('.concept-feedback');const buttons=[...quiz.querySelectorAll('button')];buttons.forEach(button=>button.addEventListener('click',()=>{const correct=button.dataset.correct==='true';output.hidden=false;output.className='concept-feedback is-visible '+(correct?'is-correct':'is-wrong');output.textContent=(correct?'正解です。':'不正解です。見直すポイント：')+quiz.dataset.explanation;buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));}));});</script>
+<script src="article-widgets.js?v=20261002-fe-stack"></script>
+<script src="article-recommendations.js?v=20261002-fe-stack"></script>
+</body>
+</html>

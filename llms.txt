@@ -18,6 +18,10 @@ Study Questは日商簿記・FP・宅建・司法書士・TOEIC・英検・公�
 サイトURL: https://study-quest.net/
 運営者情報: https://study-quest.net/about.html
 
+## ITの論点学習
+
+- [スタックとキューの違い](https://study-quest.net/fe-stack-queue.html): 自作の5操作を図と状態表で検算し、確認2問でLIFOとFIFOを理解する
+
 ## アプリ
 
 - [Study Questアプリの使い方](https://study-quest.net/app-guide.html): 資格や勉強法を記事で決めた後に、学習時間と次にやることを記録する無料Webアプリの使い方・向く場面
