@@ -643,6 +643,26 @@ body{background:var(--bg);color:var(--text);font-family:'Klee One',sans-serif;mi
 .session-subj{font-size:12px;white-space:nowrap;}
 .session-desc{flex:1;font-size:11px;color:var(--muted);}
 .session-exp{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--exp2);white-space:nowrap;}
+/* モバイルの記録メモは、日時・科目とは分けてカード全幅で読む。 */
+@media(max-width:600px){
+  #mobileQuestLog .session-item{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    grid-template-areas:"date time" "subject exp" "description description";
+    align-items:start;
+    gap:6px 10px;
+  }
+  #mobileQuestLog .session-date{grid-area:date;}
+  #mobileQuestLog .session-time{grid-area:time;justify-self:end;}
+  #mobileQuestLog .session-subj{
+    grid-area:subject;min-width:0;white-space:normal;overflow-wrap:anywhere;
+  }
+  #mobileQuestLog .session-desc{
+    grid-area:description;min-width:0;font-size:12px;line-height:1.65;
+    white-space:pre-wrap;overflow-wrap:anywhere;
+  }
+  #mobileQuestLog .session-exp{grid-area:exp;justify-self:end;}
+}
 .no-data{text-align:center;color:var(--muted);font-size:12px;padding:22px;letter-spacing:.1em;}
 
 /* TITLES */
@@ -11469,7 +11489,12 @@ async function init(){
     document.body.innerHTML += `<div style="position:fixed;top:10px;left:10px;right:10px;background:#ff000044;color:#fff;padding:12px;z-index:9999;font-size:12px;border-radius:4px;">❌ 初期化エラー: ${e.message}<br>ページを再読み込みしてください</div>`;
   }
 }
-init();
+// 後続スクリプトの関数・状態と画面要素がそろってから保存済みデータを復帰する。
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init, {once:true});
+} else {
+  init();
+}
 
 /* ════════════════════════════════════════
    REPORT & PROFILE SYSTEM
