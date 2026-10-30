@@ -44,6 +44,11 @@ jobs:
       - name: Check whitespace in the pull request diff
         run: git diff --check "origin/${{ github.base_ref }}...HEAD"
 
+      - name: Check guest input and record regressions
+        env:
+          TZ: Asia/Tokyo
+        run: node scripts/tests/guest-input-and-material-regressions.mjs
+
       - name: Run deterministic content-quality checks
         run: node scripts/audits/run-content-quality-gate.mjs --strict --no-write
 
