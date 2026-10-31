@@ -20,11 +20,11 @@
   <text x="612" y="117" text-anchor="middle" font-size="11" fill="#0369A1">年1回・1次（8月）＋2次（10月）</text>
 
   <rect x="20" y="136" width="256" height="36" rx="4" fill="#FFEDD5"/>
-  <text x="148" y="159" text-anchor="middle" font-size="11" fill="#9A3412">6〜8%</text>
+  <text x="148" y="159" text-anchor="middle" font-size="11" fill="#9A3412">9.3%（2026年度）</text>
   <rect x="284" y="136" width="192" height="36" rx="4" fill="#F1F5F9"/>
-  <text x="380" y="159" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">合格率（最終）</text>
+  <text x="380" y="159" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">合格率の確認方法</text>
   <rect x="484" y="136" width="256" height="36" rx="4" fill="#E0F2FE"/>
-  <text x="612" y="159" text-anchor="middle" font-size="11" fill="#0369A1">約4〜5%（1次30% × 2次20%）</text>
+  <text x="612" y="159" text-anchor="middle" font-size="11" fill="#0369A1">1次・2次を単純に掛けない</text>
 
   <rect x="20" y="178" width="256" height="36" rx="4" fill="#FFEDD5"/>
   <text x="148" y="201" text-anchor="middle" font-size="11" fill="#9A3412">500〜800時間</text>
