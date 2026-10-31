@@ -33,7 +33,7 @@
   <circle cx="24" cy="456" r="3" fill="#CBD5E1" opacity="0.5"/>
 
   <text x="405" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#1E293B">⚔ 簿記2級 無敵の5ヶ月並行ロードマップ</text>
-  <text x="405" y="55" text-anchor="middle" font-size="12" fill="#64748B">2027年「大改定ライン」に巻き込まれる前に、2026年中のネット試験で合格の盾を確保する</text>
+  <text x="405" y="55" text-anchor="middle" font-size="12" fill="#64748B">受験日を先に確認：現行範囲は2027年3月31日まで、新範囲は4月1日から</text>
 
   <!-- Month header bar -->
   <rect x="40" y="72" width="310" height="24" rx="6" fill="#E2E8F0"/>
@@ -83,11 +83,11 @@
   <text x="740" y="180" text-anchor="middle" font-size="22">💻</text>
   <text x="740" y="203" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">ネット試験</text>
   <text x="740" y="220" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065F46">合格の盾GET！</text>
-  <text x="740" y="236" text-anchor="middle" font-size="9.5" fill="#0F766E">2026年度中に滑り込め</text>
+  <text x="740" y="236" text-anchor="middle" font-size="9.5" fill="#0F766E">受験日に合う範囲を確認</text>
 
   <!-- Safe zone label -->
   <rect x="40" y="300" width="760" height="34" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
-  <text x="420" y="322" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065F46">✅ ここまでが「2026年度・現行ルール」の安全地帯（手形・小切手／リースも旧ルールのまま対応でOK）</text>
+  <text x="420" y="322" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065F46">現行区分表：2027年3月31日まで。年末が切替日ではありません。</text>
 
   <!-- Danger zone -->
   <rect x="815" y="105" width="70" height="290" rx="10" fill="url(#hazard)" stroke="#F87171" stroke-width="2"/>
@@ -98,10 +98,10 @@
 
   <!-- connecting arrow from goal to danger with caution -->
   <path d="M800,220 C808,220 806,220 813,220" fill="none" stroke="#F87171" stroke-width="2" stroke-dasharray="4,3"/>
-  <text x="806" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#B91C1C" transform="rotate(90 806 255)">突入NG！</text>
+  <text x="806" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#B91C1C" transform="rotate(90 806 255)">新範囲へ</text>
 
   <!-- Bottom caption -->
   <rect x="40" y="405" width="845" height="55" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
   <text x="60" y="426" font-size="11" font-weight="700" fill="#334155">合計 約150〜350時間（3級取得済みは少なめ、初学者は多め）</text>
-  <text x="60" y="445" font-size="10.5" fill="#64748B">工業簿記を1ヶ月目から商業簿記と並走させるのが、5ヶ月プラン最速攻略の最大のコツです。</text>
+  <text x="60" y="445" font-size="10.5" fill="#64748B">5ヶ月は計画例です。工業簿記・原価計算の区分表は2027年度も変更ありません。</text>
 </svg>

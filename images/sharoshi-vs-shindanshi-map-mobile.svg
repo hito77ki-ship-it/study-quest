@@ -21,11 +21,11 @@
 
   <!-- 合格率 -->
   <rect x="16" y="190" width="328" height="90" rx="10" fill="#fff" stroke="#E2E8F0"/>
-  <text x="180" y="210" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">合格率（最終）</text>
+  <text x="180" y="210" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">合格率の確認方法</text>
   <rect x="28" y="220" width="304" height="26" rx="6" fill="#FFEDD5"/>
-  <text x="36" y="238" font-size="11" fill="#9A3412">社労士：6〜8%</text>
+  <text x="36" y="238" font-size="11" fill="#9A3412">社労士：9.3%（2026年度）</text>
   <rect x="28" y="250" width="304" height="26" rx="6" fill="#E0F2FE"/>
-  <text x="36" y="268" font-size="11" fill="#0369A1">診断士：約4〜5%（1次30%×2次20%）</text>
+  <text x="36" y="268" font-size="11" fill="#0369A1">診断士：1次・2次を分けて確認</text>
 
   <!-- 必要勉強時間 -->
   <rect x="16" y="294" width="328" height="90" rx="10" fill="#fff" stroke="#E2E8F0"/>

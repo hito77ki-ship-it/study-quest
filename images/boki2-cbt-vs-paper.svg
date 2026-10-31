@@ -13,7 +13,7 @@
 
   <!-- タイトル -->
   <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">ネット試験（CBT）vs 統一試験（紙）― 2級どっちで受けるべき？</text>
-  <text x="400" y="48" text-anchor="middle" font-size="11" fill="#64748B">2級特有の「工業簿記の下書き問題」「難易度ハズレ回リスク」を踏まえたリアル比較</text>
+  <text x="400" y="48" text-anchor="middle" font-size="11" fill="#64748B">工業簿記の下書き・画面入力・受験日程を比べて選ぼう</text>
 
   <!-- ===== 左列: ネット試験（CBT） ===== -->
   <rect x="10" y="62" width="374" height="290" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
@@ -30,13 +30,13 @@
   <line x1="22" y1="157" x2="376" y2="157" stroke="#BFDBFE" stroke-width="0.8"/>
 
   <rect x="22" y="164" width="8" height="8" rx="2" fill="#3B82F6"/>
-  <text x="36" y="173" font-size="9.5" fill="#374151">いつでも受験・不合格でも数日後に即リベンジ可能</text>
+  <text x="36" y="173" font-size="9.5" fill="#374151">空席・休止期間を確認し、3日前までに予約</text>
 
   <rect x="22" y="181" width="8" height="8" rx="2" fill="#3B82F6"/>
   <text x="36" y="190" font-size="9.5" fill="#374151">試験終了後すぐに合否が画面に表示される</text>
 
   <rect x="22" y="198" width="8" height="8" rx="2" fill="#3B82F6"/>
-  <text x="36" y="207" font-size="9.5" fill="#374151">難易度が比較的安定（超難問ハズレ回リスクが低い）</text>
+  <text x="36" y="207" font-size="9.5" fill="#374151">出題範囲・難易度・合格基準は統一試験と同じ</text>
 
   <rect x="22" y="215" width="8" height="8" rx="2" fill="#3B82F6"/>
   <text x="36" y="224" font-size="9.5" fill="#374151">「仕上がったベストな状態」で受験できる自由度</text>
@@ -94,7 +94,7 @@
   <text x="442" y="250" font-size="9.5" fill="#374151">年3回のみ（11月・2月・6月）不合格で3ヶ月待ち</text>
 
   <rect x="428" y="259" width="8" height="8" rx="2" fill="#EF4444"/>
-  <text x="442" y="268" font-size="9.5" fill="#374151">超難問「ハズレ回」に当たるリスクがある</text>
+  <text x="442" y="268" font-size="9.5" fill="#374151">決められた試験日に向けて学習計画が必要</text>
 
   <rect x="428" y="277" width="8" height="8" rx="2" fill="#EF4444"/>
   <text x="442" y="286" font-size="9.5" fill="#374151">合否結果が後日発表（数週間〜1ヶ月後）</text>
@@ -104,7 +104,7 @@
 
   <!-- タグ -->
   <rect x="432" y="318" width="342" height="24" rx="6" fill="#FEF3C7"/>
-  <text x="603" y="334" text-anchor="middle" font-size="9.5" fill="#92400E">書き込み派・難易度ガチャOKの本気の職人向け</text>
+  <text x="603" y="334" text-anchor="middle" font-size="9.5" fill="#92400E">問題用紙に直接書き込んで解きたい人向け</text>
 
   <!-- ===== 下部結論バンド ===== -->
   <rect x="10" y="364" width="780" height="98" rx="8" fill="#1E293B"/>
@@ -118,5 +118,5 @@
 
   <text x="600" y="406" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FDE68A">◆ 統一試験（紙）推奨タイプ</text>
   <text x="416" y="423" font-size="9.5" fill="#CBD5E1">・画面の数字でミスが減らない、紙に書き込みたい人</text>
-  <text x="416" y="441" font-size="9.5" fill="#CBD5E1">・ハズレ回リスクを覚悟できる人　→ 統一試験を狙え！</text>
+  <text x="416" y="441" font-size="9.5" fill="#CBD5E1">・決まった日程で受けたい人　→ 統一試験を検討！</text>
 </svg>

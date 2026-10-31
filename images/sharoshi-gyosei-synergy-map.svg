@@ -71,8 +71,8 @@
 
   <rect x="58" y="300" width="484" height="94" rx="10" fill="rgba(79,70,229,.10)" stroke="#A5B4FC" stroke-width="1.5"/>
   <text x="300" y="322" text-anchor="middle" class="st" font-size="12" font-weight="700" fill="#312E81">合格の壁：科目ごとの足切り方式</text>
-  <text x="300" y="342" text-anchor="middle" class="st" font-size="11" fill="#3730A3">総合点が足りても、1科目でも選択式3点／</text>
-  <text x="300" y="360" text-anchor="middle" class="st" font-size="11" fill="#3730A3">択一式4点を割ると、その瞬間に即不合格。</text>
+  <text x="300" y="342" text-anchor="middle" class="st" font-size="11" fill="#3730A3">年度別の総得点・各科目の</text>
+  <text x="300" y="360" text-anchor="middle" class="st" font-size="11" fill="#3730A3">最低基準を両方満たす必要があります。</text>
   <text x="300" y="380" text-anchor="middle" class="st" font-size="11" font-weight="700" fill="#4338CA">＝弱点ゼロを目指す「防衛ゲーム」</text>
 
   <text x="300" y="424" text-anchor="middle" class="st" font-size="12.5" font-weight="800" fill="#312E81">武器：労務顧問・社会保険手続き</text>

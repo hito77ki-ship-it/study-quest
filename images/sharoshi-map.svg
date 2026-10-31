@@ -4,33 +4,33 @@
   </defs>
   <rect width="760" height="520" rx="12" fill="#FAFDF6"/>
   <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">社労士試験 攻略マップ——選択式・択一式構成と足切り防衛戦略</text>
-  <text x="380" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">総合得点より「全科目3点（4点）以上」の防衛陣形が生死を分ける</text>
+  <text x="380" y="46" text-anchor="middle" font-size="10.5" fill="#64748B">総得点と科目別基準の両方を確認（2026年度の基準）</text>
 
   <!-- Left: 試験構成と即死トラップ -->
   <rect x="20" y="62" width="348" height="440" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
   <rect x="20" y="62" width="348" height="32" rx="10" fill="#FDBA74"/>
   <rect x="20" y="84" width="348" height="10" fill="#FDBA74"/>
-  <text x="194" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="#9A3412">試験構成（合格率6〜7%）</text>
+  <text x="194" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="#9A3412">試験構成（2026年度 合格率9.3%）</text>
 
   <text x="40" y="116" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">選択式（午前：1時間20分）</text>
   <rect x="40" y="124" width="308" height="26" rx="6" fill="#FFEDD5"/>
   <text x="50" y="141" text-anchor="start" font-size="10" fill="#7C2D12">8科目 × 5問 ＝ 40問（各科目5択穴埋め）</text>
   <rect x="40" y="156" width="308" height="30" rx="6" fill="#FECACA"/>
-  <text x="50" y="171" text-anchor="start" font-size="9.5" font-weight="700" fill="#991B1B">⚠ 即死トラップ：各科目3点未満で即アウト</text>
-  <text x="50" y="182" text-anchor="start" font-size="8.5" fill="#B91C1C">（満点5点・救済で2点の回もあり）</text>
+  <text x="50" y="171" text-anchor="start" font-size="9.5" font-weight="700" fill="#991B1B">選択式：各科目3点以上（特例あり）</text>
+  <text x="50" y="182" text-anchor="start" font-size="8.5" fill="#B91C1C">（2026年度：雇用保険法は2点以上）</text>
 
   <text x="40" y="216" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">択一式（午後：3時間30分）</text>
   <rect x="40" y="224" width="308" height="26" rx="6" fill="#FFEDD5"/>
   <text x="50" y="241" text-anchor="start" font-size="10" fill="#7C2D12">7科目 × 10問 ＝ 70問（5肢択一）</text>
   <rect x="40" y="256" width="308" height="30" rx="6" fill="#FECACA"/>
   <text x="50" y="271" text-anchor="start" font-size="9.5" font-weight="700" fill="#991B1B">⚠ 即死トラップ：各科目4点未満で即アウト</text>
-  <text x="50" y="282" text-anchor="start" font-size="8.5" fill="#B91C1C">（満点10点・難化時は3点の回もあり）</text>
+  <text x="50" y="282" text-anchor="start" font-size="8.5" fill="#B91C1C">（2026年度：各科目4点以上が必要）</text>
 
-  <text x="40" y="316" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">合格基準（年度により変動）</text>
+  <text x="40" y="316" text-anchor="start" font-size="11.5" font-weight="700" fill="#C2410C">合格基準（2026年度公表値）</text>
   <rect x="40" y="324" width="308" height="24" rx="6" fill="#FFEDD5"/>
-  <text x="50" y="340" text-anchor="start" font-size="10" fill="#7C2D12">選択式：総得点24〜26点前後（目安）</text>
+  <text x="50" y="340" text-anchor="start" font-size="10" fill="#7C2D12">選択式：総得点25点以上</text>
   <rect x="40" y="354" width="308" height="24" rx="6" fill="#FFEDD5"/>
-  <text x="50" y="370" text-anchor="start" font-size="10" fill="#7C2D12">択一式：総得点45〜49点前後（目安）</text>
+  <text x="50" y="370" text-anchor="start" font-size="10" fill="#7C2D12">択一式：総得点47点以上</text>
 
   <rect x="40" y="392" width="308" height="96" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
   <text x="194" y="412" text-anchor="middle" font-size="10.5" font-weight="700" fill="#991B1B">🛡 防衛陣形の鉄則</text>
@@ -45,7 +45,7 @@
   <text x="562" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">主要10科目と防衛優先度</text>
 
   <rect x="400" y="102" width="324" height="26" rx="6" fill="#DCFCE7"/>
-  <text x="410" y="119" text-anchor="start" font-size="9.5" fill="#166534">① 労働基準法・安全衛生法</text>
+  <text x="410" y="119" text-anchor="start" font-size="9.5" fill="#166534">① 労働基準法</text>
   <rect x="666" y="106" width="50" height="18" rx="5" fill="#4ADE80"/>
   <text x="691" y="119" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532D">最重要</text>
 
