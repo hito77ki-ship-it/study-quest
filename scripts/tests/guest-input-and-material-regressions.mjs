@@ -122,4 +122,36 @@ calendar.inputs.set('mrecDate',{value:''});calendar.box.initMrecUI(null);
 const localToday = new MidnightDate().getFullYear()+'-'+String(new MidnightDate().getMonth()+1).padStart(2,'0')+'-'+String(new MidnightDate().getDate()).padStart(2,'0');
 assert.equal(calendar.inputs.get('mrecDate').value,localToday);
 if(process.env.TZ==='Asia/Tokyo') assert.equal(localToday,'2026-10-31');
-console.log('PASS: duration rejection, score boundaries/zero/custom maximum/TOEIC details, no writes on rejected input, material association and seconds, weekly remaining time, mobile end button, local date after midnight');
+const recoveryMath = context(['getRecoveredTimerSeconds']);
+assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:25,running:false,savedAt:1000},61000),25);
+assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:25,running:true,savedAt:1000},11000),35);
+assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:25,savedAt:1000},11000),35,'Legacy snapshots remain readable');
+assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:25,running:true,savedAt:2000},1000),25);
+assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:-1},1000),null);
+assert.equal(recoveryMath.box.getRecoveredTimerSeconds(null,1000),null);
+let recoveryNow=200000;
+class RecoveryDate extends Date {static now(){return recoveryNow;}}
+let storedTimer=JSON.stringify({seconds:25,running:false,savedAt:100000,startedAt:'2026-10-31T00:01:00Z',materialId:'a',subject:'s',note:'復元するメモ'});
+const recovery = context(['toFiniteNumber','fmtSecs','getRecoveredTimerSeconds','saveBgTimerState','checkBgTimerRecovery','sessionExpLabel'],{
+  Date:RecoveryDate,BG_TIMER_KEY:'timer',timerSeconds:0,timerRunning:false,timerStartedAt:null,
+  timerGoalMins:0,bgTimerStartEpoch:null,bgTimerSecsAtHide:0,confirm:()=>true,
+  updateTimerMaterial:()=>{},updateTimerDisplay:()=>{},syncMrecButtons:()=>{},
+  localStorage:{getItem:()=>storedTimer,setItem:(_key,value)=>{storedTimer=value;},removeItem:()=>{storedTimer=null;}},
+});
+recovery.input('timerMaterial','');recovery.input('timerSubject','');recovery.input('timerNote','');
+recovery.inputs.set('timerStartBtn',{classList:{remove:()=>{}},style:{}});
+recovery.inputs.set('timerStopBtn',{style:{display:'none'}});
+recovery.box.checkBgTimerRecovery();
+assert.equal(recovery.box.timerSeconds,25,'Sub-minute progress must be recoverable');
+assert.equal(recovery.inputs.get('timerStopBtn').style.display,'');
+assert.equal(recovery.inputs.get('timerStartBtn').textContent,'▶ 再開');
+assert.equal(recovery.inputs.get('timerMaterial').value,'a');
+assert.equal(recovery.inputs.get('timerNote').value,'復元するメモ');
+assert.equal(recovery.box.timerStartedAt,'2026-10-31T00:01:00Z');
+assert.equal(JSON.parse(storedTimer).running,false);
+recoveryNow+=900000;recovery.box.timerSeconds=0;recovery.box.checkBgTimerRecovery();
+assert.equal(recovery.box.timerSeconds,25,'A second reload must not count paused time');
+assert.equal(recovery.box.sessionExpLabel({importPast:true}),'引き継ぎ');
+assert.equal(recovery.box.sessionExpLabel({exp:4}),'+4 EXP');
+assert.ok(!recovery.box.sessionExpLabel({}).includes('undefined'));
+console.log('PASS: duration and score validation, material seconds, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery and imported record labels');
