@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
   <title id="svgtitle">所得税の引き算ハコ分け構造（モバイル版）</title>
-  <desc id="svgdesc">売上から経費を引き、さらに青色申告を選んだ人だけが使える青色申告特別控除（最大65万円）を引き、基礎控除58万円を引いて、最後に残った課税所得にだけ税金がかかるという所得税の引き算構造を示す図解</desc>
+  <desc id="svgdesc">売上から経費を引き、さらに青色申告を選んだ人だけが使える青色申告特別控除（最大65万円）を引き、基礎控除所得等で変動を引いて、最後に残った課税所得にだけ税金がかかるという所得税の引き算構造を示す図解</desc>
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
   <rect width="360" height="900" rx="16" fill="#FAFBFC"/>
 
@@ -27,7 +27,7 @@
 
   <rect x="16" y="450" width="328" height="88" rx="12" fill="#E9D8FD" stroke="#C4B5FD" stroke-width="1.5"/>
   <text x="180" y="484" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">基礎控除</text>
-  <text x="180" y="506" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">58万円</text>
+  <text x="180" y="506" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">所得等で変動</text>
 
   <text x="180" y="566" text-anchor="middle" font-size="18" fill="#94A3B8">↓</text>
 
@@ -40,5 +40,5 @@
   <text x="180" y="758" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">基礎控除を順番に引いていって、最後に</text>
   <text x="180" y="778" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">残った金額（課税所得）にだけ税金がかかるよ。</text>
   <text x="180" y="808" text-anchor="middle" font-size="10" fill="#4A5568">青色申告特別控除は「青色申告」を選んだ人</text>
-  <text x="180" y="826" text-anchor="middle" font-size="10" fill="#4A5568">だけが使える追加のハコ。</text>
+  <text x="180" y="826" text-anchor="middle" font-size="10" fill="#4A5568">が要件を満たすと使えるハコ。</text>
 </svg>

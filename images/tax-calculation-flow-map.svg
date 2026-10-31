@@ -45,7 +45,7 @@
   <text x="564" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">
     <tspan x="564" dy="0">基礎控除</tspan>
   </text>
-  <text x="564" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">58万円</text>
+  <text x="564" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">所得等で変動</text>
 
   <path d="M 636 210 L 660 210" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow3)"/>
 
@@ -60,5 +60,5 @@
   <rect x="16" y="310" width="728" height="118" rx="14" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
   <text x="380" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">売上から経費・青色申告特別控除・基礎控除を順番に引いていって、</text>
   <text x="380" y="368" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">最後に残った金額（課税所得）にだけ税金がかかるよ。</text>
-  <text x="380" y="398" text-anchor="middle" font-size="12" fill="#4A5568">青色申告特別控除は「青色申告」を選んだ人だけが使える追加のハコ。</text>
+  <text x="380" y="398" text-anchor="middle" font-size="12" fill="#4A5568">青色申告特別控除は「青色申告」を選んだ人が要件を満たすと使えるハコ。</text>
 </svg>
