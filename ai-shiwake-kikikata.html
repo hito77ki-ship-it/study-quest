@@ -8,11 +8,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ｜スタディクエスト</title>
-<meta name="description" content="簿記の仕訳がテキストを読んでも理解できないとき、ClaudeやChatGPTへの「聞き方」を変えるだけで理解度が変わります。コピペで使える論点別プロンプト集と、AIに聞いてはいけないことまで具体的に解説します。">
+<title>Claude/ChatGPTに簿記の仕訳を質問するコツ｜説明の確かめ方と例文｜スタディクエスト</title>
+<meta name="description" content="簿記の仕訳についてAIに問題条件と疑問を伝える質問例を紹介。貸倒引当金と費用の区別、計算・出典・対象年度の確認方法を解説します。">
 <meta name="keywords" content="簿記 AI 活用,簿記 ChatGPT,簿記 Claude,仕訳 わからない AI,簿記 勉強法 AI">
-<meta property="og:title" content="Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ">
-<meta property="og:description" content="仕訳が理解できないとき、AIへの聞き方を変えるだけで理解度が変わります。コピペで使える論点別プロンプト集付き。">
+<meta property="og:title" content="Claude/ChatGPTに簿記の仕訳を質問するコツ｜説明の確かめ方と例文">
+<meta property="og:description" content="簿記の仕訳についてAIに問題条件と疑問を伝える質問例を紹介。貸倒引当金と費用の区別、計算・出典・対象年度の確認方法を解説します。">
 <meta property="og:url" content="https://study-quest.net/ai-shiwake-kikikata.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -27,12 +27,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ",
+  "headline": "Claude/ChatGPTに簿記の仕訳を質問するコツ｜説明の確かめ方と例文",
   "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "簿記の仕訳がテキストを読んでも理解できないとき、ClaudeやChatGPTへの「聞き方」を変えるだけで理解度が変わります。コピペで使える論点別プロンプト集と、AIに聞いてはいけないことまで具体的に解説します。",
+  "description": "簿記の仕訳についてAIに問題条件と疑問を伝える質問例を紹介。貸倒引当金と費用の区別、計算・出典・対象年度の確認方法を解説します。",
   "url": "https://study-quest.net/ai-shiwake-kikikata.html",
   "datePublished": "2026-07-24",
-  "dateModified": "2026-08-25",
+  "dateModified": "2026-10-31",
   "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
   "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://study-quest.net/ai-shiwake-kikikata.html"}
@@ -128,8 +128,8 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
     <a href="shikaku-list.html">資格一覧</a> &rsaquo; AI活用・時短術
   </div>
 
-  <h1>Claude/ChatGPTで簿記の仕訳が一瞬でわかる「聞き方」のコツ</h1>
-  <p class="meta">更新日：2026年8月25日｜著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
+  <h1>Claude/ChatGPTに簿記の仕訳を質問するコツ｜説明の確かめ方と例文</h1>
+  <p class="meta">更新日：2026年10月31日｜著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
 
   <div class="otani-lead">
     <div class="otani-lead-head">
@@ -154,7 +154,7 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
       <div>
         <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">それ、私もStudy Questを作っているときにAIによく同じことをしていました。テキストは「正解」は教えてくれるけど「なぜそうなるか」までは対話してくれませんからね。AIへの聞き方を少し変えるだけで、理解度がかなり変わりますよ。</div>
+        <div class="sq-chat-bubble">それ、私もStudy Questを作っているときにAIによく同じことをしていました。テキストは「正解」は教えてくれるけど「なぜそうなるか」までは対話してくれませんからね。分からない箇所や問題の条件を添えると、説明を絞ってもらえます。ただし、その説明が正しいかは別に確認しましょう。</div>
       </div>
     </div>
     <div class="sq-chat-row question">
@@ -168,7 +168,7 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
       <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
       <div>
         <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">はい、全然違います。実際に使っているコツと、コピペで使えるプロンプトをまとめたので、一緒に見ていきましょう。</div>
+        <div class="sq-chat-bubble">説明の内容は質問の条件で変わることがあります。質問例と、返ってきた説明の確かめ方を一緒に見ていきましょう。</div>
       </div>
     </div>
   </div>
@@ -178,21 +178,22 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
   <p>私がStudy Questを開発しているとき、AIに聞いていたのはコードの書き方そのものより「なぜこのコードだとエラーになるのか」「このロジックは何をしたいのか」でした。簿記の勉強でも同じで、AIに「答え」を聞くのではなく「理由」を聞くと、テキストにはない角度から理解が進みます。</p>
 
   <div class="tip-box">
-    <strong>まず持っておきたい前提：</strong>AIは「テキストの代わりに答えを教えてくれる道具」ではなく、「自分の疑問に付き合ってくれる対話相手」として使うと、理解の質がまったく変わります。
+    <strong>まず持っておきたい前提：</strong>AIは「テキストの代わりに答えを教えてくれる道具」ではなく、「自分の疑問を整理する対話相手」として使います。具体的な質問でも誤答はあり、答えを既知の正解や一次資料と照合する手順が必要です。
   </div>
 
-  <h2>AIへの「聞き方」で理解度がまったく変わる</h2>
-  <p>ここが今日の記事の一番大事なところです。同じAIに同じ論点を聞いても、聞き方次第で返ってくる説明の質が全然違います。</p>
+  <h2>AIに問題の条件と分からない箇所を伝える</h2>
+  <p>受験級・対象年度・問題の条件・自分の解答・分からない点・希望する説明形式を伝えます。OpenAIとAnthropicの公式ガイドも、明確な指示や背景・例の提示を案内しています。これは回答を整理する方法であり、簿記の正答や理解の速さを保証するものではありません。</p>
 
-  <h3>悪い聞き方と良い聞き方の違い</h3>
+  <p class="source">出典：<a href="https://developers.openai.com/api/docs/guides/prompt-engineering" target="_blank" rel="noopener">OpenAI「Prompt engineering」</a>、<a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">Anthropic「Prompting best practices」</a>（2026年10月31日確認）。出力は同じ質問でも変わり得るため、説明ごとに確認します。</p>
+  <h3>条件の少ない質問と、条件を添えた質問</h3>
   <div class="warn-box">
-    <strong>悪い聞き方の例：</strong>「貸倒引当金の仕訳を教えて」——これだと、AIはテキストと同じような一般論を返してくるだけで、正直あまり意味がありません。
+    <strong>条件の少ない例：</strong>「貸倒引当金の仕訳を教えて」——対象級や期末残高、設定方法が分からず、自分の問題と違う前提で説明されることがあります。
   </div>
   <div class="prompt-box">
-    <div class="prompt-label">良い聞き方の例</div>
-    <p>「貸倒引当金がなぜ『費用』として計上されるのか、まだ回収できていないお金なのに損失扱いになる理由を、簿記初心者にも分かるように具体的な数字を使って説明して」</p>
+    <div class="prompt-label">条件を添えた質問例</div>
+    <p>「日商簿記3級の決算整理です。売掛金100,000円に2％の貸倒引当金を差額補充法で設定し、整理前の貸倒引当金は貸方残高500円とします。貸倒引当金と、費用の貸倒引当金繰入を区別し、必要な引当額・追加の繰入額・仕訳を順に説明してください。条件が足りなければ指摘してください」</p>
   </div>
-  <p>このように「何が分からないのか」「どんな形で説明してほしいのか」まで具体的に書くと、AIはその疑問にピンポイントで答えてくれます。</p>
+  <p>この自作例では、必要な引当額は100,000円×2％＝2,000円、追加の繰入額は2,000円−500円＝1,500円です。仕訳は借方「貸倒引当金繰入」1,500円／貸方「貸倒引当金」1,500円。貸倒引当金自体は債権から控除する評価勘定で、費用となる繰入とは別です。AIの回答がこの条件・計算・勘定科目と合うか照合します。<br><span class="source">出典：日本商工会議所<a href="https://www.kentei.ne.jp/renketsukaikei/29606" target="_blank" rel="noopener">連結会計 第12話（貸倒引当金繰入の費用区分）</a>、<a href="https://www.kentei.ne.jp/interview/16538" target="_blank" rel="noopener">吉成英紀さんインタビュー（貸倒引当金と債権価値）</a>、<a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2025/03/3Q_3_sample2_question.pdf" target="_blank" rel="noopener">3級第3問サンプル2（差額補充法等の問題条件）</a>（2026年10月31日確認）。上の金額は当サイトの説明用仮定です。</span></p>
 
   <h3>分からない部分だけを深掘りする「対話の続け方」</h3>
   <p>一回の質問で完璧に理解しようとしなくて大丈夫です。分からない部分が残っていたら、それで終わりにせず「その説明のうち、〇〇の部分がまだ分からない、もっと簡単な例で説明して」と続けて聞くのも効果的です。対話を重ねていく感覚で使ってみてください。</p>
@@ -202,11 +203,11 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
 
   <div class="prompt-box">
     <div class="prompt-label">① 現金過不足</div>
-    <p>「現金過不足がなぜ一時的な勘定科目で、最終的に雑損・雑益に振り替わるのか、お小遣い帳に例えて説明して」</p>
+    <p>「現金過不足について、原因が判明した部分を該当する科目へ振り替える場合と、決算でも原因不明の残額を雑損・雑益で処理する場合を、別々の例で説明して。すべてが雑損・雑益になるという説明にしないでください」</p>
   </div>
   <div class="prompt-box">
     <div class="prompt-label">② 貸倒引当金</div>
-    <p>「貸倒引当金の『差額補充法』を、去年の残高と今年の見積額の差だけ仕訳する理由も含めて説明して」</p>
+    <p>「貸倒引当金の『差額補充法』を、整理前の貸倒引当金残高と期末の必要設定額との差を仕訳する理由も含めて説明して」</p>
   </div>
   <div class="prompt-box">
     <div class="prompt-label">③ 経過勘定（前払費用・未払費用）</div>
@@ -214,24 +215,24 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
   </div>
   <div class="prompt-box">
     <div class="prompt-label">④ 固定資産の減価償却</div>
-    <p>「定額法の減価償却費が毎年同じ金額になる理由を、実際に数字を当てはめた例で計算過程ごと説明して」</p>
+    <p>「定額法について、取得原価・残存価額・耐用年数が変わらず通年使用する例と、期中取得で月割する例を分けて説明して。会計期間や使用月数の条件も示してください」</p>
   </div>
   <div class="prompt-box">
     <div class="prompt-label">⑤ 株式会社の取引（利益準備金）</div>
-    <p>「配当のときになぜ利益準備金を積み立てる必要があるのか、会社法の趣旨も含めて簿記初心者向けに説明して」</p>
+    <p>「配当の財源や既存の準備金残高など、準備金の積立てを判断するために必要な条件を挙げてください。資本準備金と利益準備金を区別し、根拠となる現行法令の箇所も示してください。確認できない箇所は不明と書いてください」</p>
   </div>
-  <p>これらはあくまで出発点です。自分の言葉に置き換えて聞くのが一番効果的です。</p>
+  <p>これらは質問の出発点です。問題文の条件に合わせて書き換え、AIが示した資料は実際に開いて確認してください。現金過不足の原因判明分と不明残額の区別は、日本商工会議所の<a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/135-03-kouhyou.pdf" target="_blank" rel="noopener">第135回3級講評・第1問</a>でも説明されています（2026年10月31日確認）。古い問題は当時の出題範囲と現在の範囲を区別して参照します。</p>
 
   <h2>AIに聞いてはいけないこと・注意点</h2>
   <p>正直に言っておきたいことがあります。AIは万能ではありません。</p>
   <ul class="check-list">
     <li><strong>本試験の答えをそのまま聞いて丸暗記しようとしない。</strong>AIとの対話は「理解のプロセス」に使うものであって、「答えを手に入れる手段」ではありません。試験本番でAIは使えません。</li>
-    <li><strong>AIの説明を鵜呑みにしない。</strong>簿記の論点は会計基準に基づく厳密なルールがあるので、AIの説明とテキスト・公式の解説が食い違っていたら、必ずテキスト側を優先してください。</li>
+    <li><strong>AIの説明を鵜呑みにしない。</strong>AIとテキストの対象年度・問題条件・会計基準が同じかを確認します。食い違う場合は、現行の公式出題区分、一次資料、教材の正誤表を調べ、解決しなければ講師等に確認してください。古いテキストを無条件に優先しません。</li>
   </ul>
-  <p>AIは「理解の補助輪」であって、教科書の代わりにはなりません。</p>
+  <p>AIの説明は理解の補助として扱います。本番の持込・通信機器の規定は、<a href="https://www.kentei.ne.jp/bookkeeping/class3/exam" target="_blank" rel="noopener">日本商工会議所「3級・受験に際しての諸注意事項」</a>を確認してください（2026年10月31日確認）。</p>
 
   <h2>AI活用と、学習記録を組み合わせる</h2>
-  <p>AIで理解を深めても、それを「分かった」で終わらせず、実際に問題を解いて記録に残すことが大事です。Study Questでは、論点ごとの理解度を学習記録として残せるので、AIで理解した論点をそのまま経験値として積み上げていけます。AIは理解のスピードを上げてくれる道具で、継続の仕組みはまた別に用意しておく方がいいです。</p>
+  <p>AIで理解を深めても、それを「分かった」で終わらせず、実際に問題を解いて記録に残すことが大事です。Study Questでは学習時間とメモを記録できます。解いた問題と、確認できた点・まだ分からない点をメモに残し、次の演習につなげてみてください。</p>
 
   <div class="app-cta">
     <h3>⚔ AIで理解した論点を、経験値として積み上げる</h3>
@@ -258,13 +259,13 @@ html[data-theme="dark"] .prompt-box p{color:#CCD6E5 !important;}
 
 <section class="faq-section">
   <h2 class="faq-title">よくある質問</h2>
-  <details class="faq-item"><summary class="faq-summary">簿記の勉強にAIを使うのは、カンニングにならないですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">本試験中にAIを使うのは当然できませんし、それはこの記事の趣旨ではありません。ここで紹介しているのは、普段の学習中に「理解を深める対話相手」としてAIを使う方法です。答えを丸暗記するのではなく、なぜそうなるかを理解するプロセスに使うことが大切です。</div></details>
-  <details class="faq-item"><summary class="faq-summary">ChatGPTとClaude、どちらを使えばいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">どちらでも、この記事で紹介しているプロンプトの考え方（何が分からないかを具体的に伝える）は同じように使えます。使い慣れている方、無料で使える範囲のものを選べば問題ありません。</div></details>
-  <details class="faq-item"><summary class="faq-summary">AIの説明が教科書の内容と違っていたらどうすればいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">その場合は必ずテキストや公式の解説を優先してください。AIの説明は理解の補助として使うものであり、簿記の論点は会計基準に基づく厳密なルールがあるため、最終的な正確性はテキスト側で確認する必要があります。</div></details>
-  <details class="faq-item"><summary class="faq-summary">プロンプトを送っても、期待した説明が返ってこない場合はどうすればいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">一回で完璧な答えを求めず、「その説明のうち〇〇がまだ分からない、もっと簡単な例で説明して」と対話を続けてみてください。具体的にどこが分からないかを伝えるほど、AIの説明の精度は上がります。</div></details>
+  <details class="faq-item"><summary class="faq-summary">簿記の勉強にAIを使うのは、カンニングにならないですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">この記事は普段の自習中に説明を求める方法です。試験本番では通信機器等を使用できません。学校の課題等では、その提出先のルールにも従ってください。</div></details>
+  <details class="faq-item"><summary class="faq-summary">ChatGPTとClaude、どちらを使えばいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">両社の公式ガイドは明確な指示や背景の提示を勧めていますが、同じ正確さを保証するものではありません。手元の条件と正解で説明を確かめ、出典を確認できるかも見て選んでください。</div></details>
+  <details class="faq-item"><summary class="faq-summary">AIの説明が教科書の内容と違っていたらどうすればいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">対象年度・問題条件・会計基準をそろえ、現行の公式出題区分、一次資料、教材の正誤表を確認します。古いテキストもAIも無条件に正しいとはせず、解決しない場合は講師等に確認してください。</div></details>
+  <details class="faq-item"><summary class="faq-summary">プロンプトを送っても、期待した説明が返ってこない場合はどうすればいいですか？<span class="faq-plus">＋</span></summary><div class="faq-answer">分からない箇所と問題条件を補い、数値例や説明形式を指定してみてください。具体的な質問でも誤答はあるため、計算と勘定科目を自分でも照合します。</div></details>
 </section>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"簿記の勉強にAIを使うのは、カンニングにならないですか？","acceptedAnswer":{"@type":"Answer","text":"本試験中にAIを使うのは当然できませんし、それはこの記事の趣旨ではありません。ここで紹介しているのは、普段の学習中に「理解を深める対話相手」としてAIを使う方法です。答えを丸暗記するのではなく、なぜそうなるかを理解するプロセスに使うことが大切です。"}},{"@type":"Question","name":"ChatGPTとClaude、どちらを使えばいいですか？","acceptedAnswer":{"@type":"Answer","text":"どちらでも、この記事で紹介しているプロンプトの考え方（何が分からないかを具体的に伝える）は同じように使えます。使い慣れている方、無料で使える範囲のものを選べば問題ありません。"}},{"@type":"Question","name":"AIの説明が教科書の内容と違っていたらどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"その場合は必ずテキストや公式の解説を優先してください。AIの説明は理解の補助として使うものであり、簿記の論点は会計基準に基づく厳密なルールがあるため、最終的な正確性はテキスト側で確認する必要があります。"}},{"@type":"Question","name":"プロンプトを送っても、期待した説明が返ってこない場合はどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"一回で完璧な答えを求めず、「その説明のうち〇〇がまだ分からない、もっと簡単な例で説明して」と対話を続けてみてください。具体的にどこが分からないかを伝えるほど、AIの説明の精度は上がります。"}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "簿記の勉強にAIを使うのは、カンニングにならないですか？", "acceptedAnswer": {"@type": "Answer", "text": "この記事は普段の自習中に説明を求める方法です。試験本番では通信機器等を使用できません。学校の課題等では、その提出先のルールにも従ってください。"}}, {"@type": "Question", "name": "ChatGPTとClaude、どちらを使えばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "両社の公式ガイドは明確な指示や背景の提示を勧めていますが、同じ正確さを保証するものではありません。手元の条件と正解で説明を確かめ、出典を確認できるかも見て選んでください。"}}, {"@type": "Question", "name": "AIの説明が教科書の内容と違っていたらどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "対象年度・問題条件・会計基準をそろえ、現行の公式出題区分、一次資料、教材の正誤表を確認します。古いテキストもAIも無条件に正しいとはせず、解決しない場合は講師等に確認してください。"}}, {"@type": "Question", "name": "プロンプトを送っても、期待した説明が返ってこない場合はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "分からない箇所と問題条件を補い、数値例や説明形式を指定してみてください。具体的な質問でも誤答はあるため、計算と勘定科目を自分でも照合します。"}}]}
 </script>
 
 <section class="related-section">
