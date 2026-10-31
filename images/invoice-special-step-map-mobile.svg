@@ -9,7 +9,7 @@
 
   <rect x="16" y="66" width="328" height="90" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
   <text x="180" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">2割特例</text>
-  <text x="180" y="120" text-anchor="middle" font-size="11" fill="#2563EB">〜令和8年（2026年）9月</text>
+  <text x="180" y="120" text-anchor="middle" font-size="11" fill="#2563EB">2026年9月30日が属する課税期間まで</text>
 
   <text x="180" y="182" text-anchor="middle" font-size="18" fill="#94A3B8">↓</text>
 
@@ -55,6 +55,6 @@
   <text x="180" y="946" text-anchor="middle" font-size="10.5" fill="#9A2C2C">2031年10月〜</text>
 
   <rect x="16" y="998" width="328" height="90" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
-  <text x="180" y="1030" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">2026年10月以降は1事業者あたりの</text>
-  <text x="180" y="1050" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">年間控除上限額も1億円に引き下げ</text>
+  <text x="180" y="1030" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">2026年10月以後開始の課税期間から</text>
+  <text x="180" y="1050" text-anchor="middle" font-size="11" font-weight="700" fill="#1A202C">年間控除上限額も1相手先の税込課税仕入れ1億円超は対象外</text>
 </svg>

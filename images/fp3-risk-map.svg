@@ -86,7 +86,7 @@
 
   <!-- Bottom hint -->
   <rect x="20" y="304" width="720" height="24" rx="5" fill="#F1F5F9"/>
-  <text x="380" y="320" text-anchor="middle" font-size="10.5" fill="#475569">💡 死亡保険金：契約関係により相続税・所得税・贈与税を判定。</text>
+  <text x="380" y="320" text-anchor="middle" font-size="10.5" fill="#475569">💡 死亡保険金：保険料負担者等により相続税・所得税・贈与税を判定。</text>
 
   <rect x="20" y="336" width="720" height="24" rx="5" fill="#F1F5F9"/>
   <text x="380" y="352" text-anchor="middle" font-size="10.5" fill="#475569">💡 生命保険料控除：新・旧で区分が異なる。令和8・9年は23歳未満の扶養親族に関する特例を確認。</text>

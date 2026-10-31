@@ -65,7 +65,7 @@
   <text x="180" y="1032" text-anchor="middle" font-size="9.5" fill="#64748B">契約内容を確認</text>
 
   <rect x="16" y="1064" width="328" height="60" rx="8" fill="#F1F5F9"/>
-  <text x="30" y="1086" font-size="10" fill="#475569">💡 死亡保険金：契約関係により相続税・</text>
+  <text x="30" y="1086" font-size="10" fill="#475569">💡 死亡保険金：保険料負担者等により相続税・</text>
   <text x="30" y="1102" font-size="10" fill="#475569">所得税・贈与税を判定。</text>
 
   <rect x="16" y="1136" width="328" height="76" rx="8" fill="#F1F5F9"/>

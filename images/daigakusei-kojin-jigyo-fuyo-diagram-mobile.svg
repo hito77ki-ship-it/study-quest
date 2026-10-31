@@ -18,15 +18,15 @@
 
   <rect x="32" y="192" width="296" height="60" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
   <text x="180" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">給与所得控除</text>
-  <text x="180" y="236" text-anchor="middle" font-size="10.5" fill="#2563EB">（自動・最低65万円保証）</text>
+  <text x="180" y="236" text-anchor="middle" font-size="10.5" fill="#2563EB">（2026年分の最低額74万円）</text>
 
   <text x="180" y="278" text-anchor="middle" font-size="18" fill="#2C5282">=</text>
 
   <rect x="32" y="288" width="296" height="46" rx="8" fill="#1E40AF"/>
   <text x="180" y="316" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">合計所得金額</text>
 
-  <text x="180" y="376" text-anchor="middle" font-size="11" fill="#2C5282">誰でも自動的に控除される</text>
-  <text x="180" y="396" text-anchor="middle" font-size="11" fill="#2C5282">→ 収入188万円でも所得123万円</text>
+  <text x="180" y="376" text-anchor="middle" font-size="11" fill="#2C5282">給与のみ・他の所得なしの場合</text>
+  <text x="180" y="396" text-anchor="middle" font-size="11" fill="#2C5282">→ 給与収入197万円で所得123万円</text>
 
   <!-- 個人事業主側 -->
   <rect x="16" y="464" width="328" height="400" rx="12" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
@@ -47,5 +47,5 @@
   <text x="180" y="724" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">合計所得金額</text>
 
   <text x="180" y="798" text-anchor="middle" font-size="11" fill="#276749">白色申告だと控除の保証なし</text>
-  <text x="180" y="818" text-anchor="middle" font-size="11" fill="#276749">青色申告なら同水準を確保できる</text>
+  <text x="180" y="818" text-anchor="middle" font-size="11" fill="#276749">給与控除と同額ではない</text>
 </svg>
