@@ -5257,7 +5257,7 @@ details summary:active{background:var(--light);}
       <div id="mrecPane-stopwatch" class="mrec-pane" style="display:none;">
         <div class="mrec-sw-body">
           <div class="mrec-timer-display" id="mrecDisplaySW">00:00:00</div>
-          <textarea id="mrecNoteSW" class="mrec-sw-note" rows="2"
+          <textarea id="mrecNoteSW" class="mrec-sw-note" rows="2" oninput="document.getElementById('timerNote').value=this.value;saveBgTimerState()"
             placeholder="メモ（任意）" maxlength="100"></textarea>
         </div>
         <div class="mrec-btn-area">
@@ -5394,7 +5394,7 @@ details summary:active{background:var(--light);}
           <div class="form-group">
             <label class="form-label" id="amountLabel">時間</label>
             <div style="display:flex;gap:6px;align-items:center;">
-              <input class="form-input" id="questAmountHour" type="number" min="0" max="12" placeholder="0" style="width:60px;" aria-label="学習時間（時間）">
+              <input class="form-input" id="questAmountHour" type="number" min="0" max="23" placeholder="0" style="width:60px;" aria-label="学習時間（時間）">
               <span style="color:var(--muted);font-size:12px;">時間</span>
               <input class="form-input" id="questAmountMin" type="number" min="0" max="59" placeholder="0" style="width:60px;" aria-label="学習時間（分）">
               <span style="color:var(--muted);font-size:12px;">分</span>
@@ -7753,7 +7753,7 @@ function migrateSessionTimestamps(){
 
 function exportData(){
   const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),char,sessions,selectedJobIds,selectedSubjectKeys,bosses,examGoals},null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='study_quest_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='study_quest_'+getTodayStr()+'.json';a.click();
 }
 function exportCSV(){
   const subjs=allSelectedSubjects();
@@ -7770,7 +7770,7 @@ function exportCSV(){
   const bom='\uFEFF';
   const csv=bom+rows.map(r=>r.join(',')).join('\r\n');
   const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='study_quest_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='study_quest_'+getTodayStr()+'.csv';a.click();
 }
 function importData(){
   const input=document.createElement('input');input.type='file';input.accept='.json';
@@ -9682,15 +9682,30 @@ function selectType(type){
   const examOpt = document.getElementById('examPostOption');
   if(examOpt) examOpt.style.display = type==='exam' ? '' : 'none';
 }
+function readStudyDuration(hourId, minuteId){
+  const hourInput = document.getElementById(hourId);
+  const minuteInput = document.getElementById(minuteId);
+  const hours = Number(hourInput?.value || 0);
+  const minutes = Number(minuteInput?.value || 0);
+  if(!Number.isInteger(hours) || hours < 0 || hours > 23 || hourInput?.validity.badInput ||
+     !Number.isInteger(minutes) || minutes < 0 || minutes > 59 || minuteInput?.validity.badInput){
+    alert('時間は0〜23、分は0〜59の整数で入力してください');
+    return null;
+  }
+  if(hours === 0 && minutes === 0){
+    alert('時間または分を入力してください');
+    return null;
+  }
+  return {hours, minutes, total: hours * 60 + minutes};
+}
 async function addQuest(){
+  const duration = readStudyDuration('questAmountHour', 'questAmountMin');
+  if(!duration) return false;
   const subject=document.getElementById('questSubject').value;
   const note=document.getElementById('questNote').value.trim();
   const date=document.getElementById('questDate').value;
-  const qh=parseInt(document.getElementById('questAmountHour')?.value)||0;
-  const qm=parseInt(document.getElementById('questAmountMin')?.value)||0;
-  let amount=qh*60+qm;
-  let exp=0;
-  if(amount<=0){alert('時間または分を入力してください');return;}exp=Math.round(amount);
+  let amount=duration.total;
+  let exp=Math.round(amount);
   const smins0=levelStudyMins(sessions),lv0=computeLevel(smins0);
   const today=getTodayStr();
   if(char.lastLoginDate!==today){
@@ -9718,7 +9733,8 @@ async function addQuest(){
   }
   const condition = parseInt(document.getElementById('mrecCondition')?.value ?? 1);
   const subjectMeta = getReportSubjects().find(s=>s.key===subject) || allSelectedSubjects().find(s=>s.key===subject);
-  sessions.push({date,subject,subjectName:subjectMeta?.name||fallbackSubjectLabel(subject),type:currentType,amount,exp,note,startedAt,endedAt,condition});
+  const material_id=document.getElementById('timerMaterial')?.value || null;
+  sessions.push({date,subject,subjectName:subjectMeta?.name||fallbackSubjectLabel(subject),type:currentType,amount,exp,note,startedAt,endedAt,condition,material_id});
   timerStartedAt = null;
   const smins1=levelStudyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
@@ -9764,6 +9780,7 @@ async function addQuest(){
 
   // 記録直後Xシェアバナー
   showSessionShareBanner({subject, amount, exp});
+  return true;
 }
 
 function showSessionShareBanner({subject, amount, exp}){
@@ -10284,6 +10301,7 @@ function startTimer(){
   showBgBadge(false);
   syncMrecButtons();
   mrecRequestWakeLock();
+  saveBgTimerState();
 }
 
 function pauseTimer(){
@@ -10296,6 +10314,7 @@ function pauseTimer(){
   if(breakBtn)breakBtn.style.display='none';
   syncMrecButtons();
   mrecReleaseWakeLock();
+  saveBgTimerState();
 }
 
 function updateTimerDisplay(){
@@ -10640,7 +10659,8 @@ async function finishTimer(){
   const isFirstSession = sessions.length === 0;
   gtag('event','session_record',{subject, minutes, is_first: isFirstSession});
   const subjectMeta = getReportSubjects().find(s=>s.key===subject) || allSelectedSubjects().find(s=>s.key===subject);
-  sessions.push({date,subject,subjectName:subjectMeta?.name||fallbackSubjectLabel(subject),type:'study',amount:minutes,amountSecs:totalSecs,exp,note,startedAt,endedAt,condition});
+  const material_id=document.getElementById('timerMaterial')?.value || null;
+  sessions.push({date,subject,subjectName:subjectMeta?.name||fallbackSubjectLabel(subject),type:'study',amount:minutes,amountSecs:totalSecs,exp,note,startedAt,endedAt,condition,material_id});
   const smins1=levelStudyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
   // 忘却の霧ボーナス
@@ -11060,20 +11080,33 @@ async function addScoreRecord(){
     : allSelectedSubjects().map(s=>({key:s.key, name:s.name, max:s.maxH>500?200:100}));
 
   const scores={};let hasAny=false;
-  subjs.forEach(s=>{
-    const sv=parseFloat(document.getElementById('sscore_'+s.key)?.value);
-    const mv=parseFloat(document.getElementById('smax_'+s.key)?.value)||s.max;
-    if(!isNaN(sv)&&mv>0){scores[s.key]={score:sv,max:mv,name:s.name};hasAny=true;}
-  });
+  for(const s of subjs){
+    const scoreInput=document.getElementById('sscore_'+s.key);
+    const maxInput=document.getElementById('smax_'+s.key);
+    if(scoreInput?.validity.badInput){alert(`${s.name}の点数を正しく入力してください`);return;}
+    if(!scoreInput?.value.trim()) continue;
+    const sv=Number(scoreInput.value);
+    const mv=Number(maxInput?.value);
+    if(!Number.isFinite(sv)||!Number.isFinite(mv)||mv<=0||sv<0||sv>mv){
+      alert(`${s.name}の満点は0より大きい数、点数は0〜満点の範囲で入力してください`);return;
+    }
+    scores[s.key]={score:sv,max:mv,name:s.name};hasAny=true;
+  }
   if(!hasAny){alert('少なくとも1科目の点数を入力してください');return;}
 
   // TOEIC詳細モードのデータも収集
   const breakdown={};
   if(currentScoreTemplate==='toeic' && document.getElementById('toeicDetailMode')?.checked){
-    EXAM_PRESETS.toeic.detail.forEach(p=>{
-      const sv=parseFloat(document.getElementById('sscore_'+p.key)?.value);
-      if(!isNaN(sv)) breakdown[p.key]={score:sv,max:p.max,name:p.name,section:p.section};
-    });
+    for(const p of EXAM_PRESETS.toeic.detail){
+      const input=document.getElementById('sscore_'+p.key);
+      if(input?.validity.badInput){alert(`${p.name}の正答数を正しく入力してください`);return;}
+      if(!input?.value.trim()) continue;
+      const sv=Number(input.value);
+      if(!Number.isInteger(sv)||sv<0||sv>p.max){
+        alert(`${p.name}の正答数は0〜${p.max}の整数で入力してください`);return;
+      }
+      breakdown[p.key]={score:sv,max:p.max,name:p.name,section:p.section};
+    }
   }
 
   const newRecord={
@@ -12400,10 +12433,12 @@ function renderWeeklyGoal(){
     const lockedSub   = document.getElementById('wgLockedSub');
     if(lockedHours) lockedHours.textContent = goalHours;
     if(lockedSub){
-      const doneH = Math.floor(weekMins/60);
-      const doneM = Math.round(weekMins%60);
-      const remH  = Math.max(0, goalHours - Math.floor(weekMins/60));
-      const remM  = Math.round(Math.max(0, goalMins  - weekMins) % 60);
+      const doneTotal = Math.round(weekMins);
+      const remainingTotal = Math.max(0, Math.round(goalMins - weekMins));
+      const doneH = Math.floor(doneTotal/60);
+      const doneM = doneTotal%60;
+      const remH  = Math.floor(remainingTotal/60);
+      const remM  = remainingTotal%60;
       const todayToSunDays = (() => {
         const today = new Date(); today.setHours(0,0,0,0);
         const sunD  = new Date(sun);
@@ -15762,7 +15797,7 @@ function renderHeatmap(){
   }
 
   // 最大学習分（色スケール計算用）
-  const allMins = dates.map(d => dayMap[d.toISOString().slice(0,10)]||0);
+  const allMins = dates.map(d => dayMap[toLocalDateStr(d)]||0);
   const maxMins = Math.max(...allMins, 60);
 
   // 色レベル取得
@@ -16409,6 +16444,9 @@ function fmtHHmm(isoStr){
   return String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
 }
 
+function sessionExpLabel(session){
+  return session.importPast ? '引き継ぎ' : `+${toFiniteNumber(session.exp)} EXP`;
+}
 function renderSessions(subjs, showing){
   const smap={};subjs.forEach(s=>smap[s.key]=s);
   const list=document.getElementById('sessionList');
@@ -16440,7 +16478,7 @@ function renderSessions(subjs, showing){
       ${timeHtml}
       <span class="session-subj" style="color:${sub.color}">${sub.name}</span>
       <span class="session-desc">${tl}${s.note?' · '+escHtml(s.note):''}</span>
-      <span class="session-exp">+${s.exp} EXP</span>`;
+      <span class="session-exp">${sessionExpLabel(s)}</span>`;
     list.appendChild(item);
   });
   if(reversed.length > count){
@@ -16490,7 +16528,7 @@ function renderMobileQuestLog(){
       const timeHtml = (t0&&t1)?`<span class="session-time">${t0}〜${t1}</span>`:'';
       const item = document.createElement('div');
       item.className = 'session-item';
-      item.innerHTML = `<span class="session-date">${s.date||'—'}</span>${timeHtml}<span class="session-subj" style="color:${sub.color}">${sub.name}</span><span class="session-desc">${tl}${s.note?' · '+escHtml(s.note):''}</span><span class="session-exp">+${s.exp} EXP</span>`;
+      item.innerHTML = `<span class="session-date">${s.date||'—'}</span>${timeHtml}<span class="session-subj" style="color:${sub.color}">${sub.name}</span><span class="session-desc">${tl}${s.note?' · '+escHtml(s.note):''}</span><span class="session-exp">${sessionExpLabel(s)}</span>`;
       listEl.appendChild(item);
     });
     if(count < reversed.length){
@@ -16536,7 +16574,7 @@ async function confirmDeleteSession(idx){
   const s = sessions[idx];
   if(!s) return;
   const tl = s.type==='study' ? s.amount+'分' : s.amount+'問';
-  const msg = `この記録を破棄しますか？\n\n📅 ${s.date||'—'}\n📚 ${s.subject||'科目不明'} ${tl}\n+${s.exp} EXP`;
+  const msg = `この記録を破棄しますか？\n\n📅 ${s.date||'—'}\n📚 ${s.subject||'科目不明'} ${tl}\n${sessionExpLabel(s)}`;
   if(!confirm(msg)) return;
   await deleteSession(idx);
 }
@@ -16611,14 +16649,22 @@ const BG_TIMER_KEY = 'sq2_bgtimer';
 
 /* ── localStorage に起動中タイマーを保存 ── */
 function saveBgTimerState(){
-  if(!timerRunning) return;
+  if(!timerRunning && timerSeconds <= 0) return;
+  const now = Date.now();
+  const seconds = timerRunning && bgTimerStartEpoch !== null
+    ? bgTimerSecsAtHide + Math.max(0, Math.floor((now-bgTimerStartEpoch)/1000))
+    : timerSeconds;
   try{
     localStorage.setItem(BG_TIMER_KEY, JSON.stringify({
-      seconds: timerSeconds,
-      startEpoch: bgTimerStartEpoch || Date.now() - timerSeconds*1000,
+      seconds,
+      running: timerRunning,
+      startedAt: timerStartedAt,
+      startEpoch: bgTimerStartEpoch || now - seconds*1000,
       subject: document.getElementById('timerSubject')?.value||'',
+      materialId: document.getElementById('timerMaterial')?.value||'',
       note: document.getElementById('timerNote')?.value||'',
-      savedAt: Date.now()
+      goalMins: timerGoalMins,
+      savedAt: now
     }));
   }catch(e){}
 }
@@ -16628,36 +16674,52 @@ function clearBgTimerState(){
 }
 
 /* ── 起動時：タイマー回復チェック（リロード・クラッシュ共通） ── */
+function getRecoveredTimerSeconds(saved, now = Date.now()){
+  if(!saved || !Number.isFinite(saved.seconds) || saved.seconds < 0) return null;
+  // running省略の旧形式は、従来どおり計測中として読み込む。
+  const elapsed = saved.running !== false && Number.isFinite(saved.savedAt)
+    ? Math.max(0, Math.floor((now-saved.savedAt)/1000)) : 0;
+  return Math.floor(saved.seconds) + elapsed;
+}
 function checkBgTimerRecovery(){
+  if(timerRunning || timerSeconds > 0) return;
   try{
     const raw = localStorage.getItem(BG_TIMER_KEY);
     if(!raw) return;
     const d = JSON.parse(raw);
-    const elapsed = Math.floor((Date.now() - d.savedAt) / 1000);
-    // クラッシュ時は経過時間を加算、リロード時はelapsed≈0なのでそのまま
-    const recoveredSecs = d.seconds + Math.max(0, elapsed);
-    const recMins = Math.floor(recoveredSecs / 60);
-    // 1分未満は無視
-    if(recMins < 1){ localStorage.removeItem(BG_TIMER_KEY); return; }
-    const h = Math.floor(recoveredSecs / 3600);
-    const m = Math.floor(recoveredSecs % 3600 / 60);
-    const timeStr = h > 0 ? `${h}時間${m}分` : `${m}分`;
-    if(confirm(`⏱ タイマー回復\n\n計測中のタイマーを検出しました。\n計測時間: ${timeStr}\n\n続きから再開しますか？`)){
-      timerSeconds = recoveredSecs;
-      updateTimerDisplay();
-      // 科目・メモを復元
-      const sel = document.getElementById('timerSubject');
-      const note = document.getElementById('timerNote');
-      if(sel && d.subject) sel.value = d.subject;
-      if(note && d.note) note.value = d.note;
+    const recoveredSecs = getRecoveredTimerSeconds(d);
+    if(recoveredSecs === null || recoveredSecs < 1){ clearBgTimerState(); return; }
+    if(!confirm(`⏱ タイマー回復\n\n未記録のタイマーを検出しました。\n計測時間: ${fmtSecs(recoveredSecs)}\n\n復元しますか？（再開または記録して終了を選べます）`)){
+      clearBgTimerState(); return;
     }
-    localStorage.removeItem(BG_TIMER_KEY);
+    timerSeconds = recoveredSecs;
+    timerRunning = false;
+    timerStartedAt = d.startedAt && Number.isFinite(Date.parse(d.startedAt))
+      ? d.startedAt : new Date(Date.now()-recoveredSecs*1000).toISOString();
+    const material = document.getElementById('timerMaterial');
+    if(material && d.materialId){ material.value=d.materialId; updateTimerMaterial(); }
+    const sel = document.getElementById('timerSubject');
+    const note = document.getElementById('timerNote');
+    const mobileNote = document.getElementById('mrecNoteSW');
+    if(sel && d.subject) sel.value=d.subject;
+    if(sel) sel.disabled=true;
+    if(note) note.value=d.note||'';
+    if(mobileNote) mobileNote.value=d.note||'';
+    timerGoalMins = Math.max(0, toFiniteNumber(d.goalMins));
+    const btn=document.getElementById('timerStartBtn');
+    const stopBtn=document.getElementById('timerStopBtn');
+    if(btn){ btn.textContent='▶ 再開'; btn.classList.remove('running'); }
+    if(stopBtn) stopBtn.style.display='';
+    updateTimerDisplay();
+    syncMrecButtons();
+    // 復元後にもう一度再読み込みしても、一時停止した秒数を保持する。
+    saveBgTimerState();
   }catch(e){}
 }
 
 /* ── ページ離脱直前にも保存（リロード・タブ閉じ対応） ── */
 window.addEventListener('beforeunload', () => {
-  if(timerRunning) saveBgTimerState();
+  saveBgTimerState();
 });
 
 /* ── Page Visibility API ── */
@@ -16689,7 +16751,7 @@ document.addEventListener('visibilitychange', ()=>{
     }, 1000);
     updateTimerDisplay();
     showBgBadge(false);
-    clearBgTimerState();
+    saveBgTimerState();
   }
 });
 
@@ -16878,7 +16940,6 @@ function notifyGoalReached(){
 (function initBgTimer(){
   // DOMReady後に実行
   const run=()=>{
-    checkBgTimerRecovery();
     checkNotifBanner();
   };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', run);
@@ -21143,7 +21204,7 @@ function saveAchievements(){
 function openAchieveModal(){
   loadAchievements();
   // デフォルト値セット
-  document.getElementById('achieveDate').value = new Date().toISOString().slice(0,10);
+  document.getElementById('achieveDate').value = getTodayStr();
   document.getElementById('achieveTitle').value = '';
   document.getElementById('achieveScore').value = '';
   document.getElementById('achieveMaxScore').value = '';
@@ -21476,15 +21537,14 @@ function renderQuickMaterialSelect(){
   // 各教材の累計学習時間を計算
   const materialMins = {};
   materials.forEach(m => {
-    materialMins[m.id] = sessions.filter(s => s.material_id === m.id).reduce((a,s) => a + s.amount, 0);
+    materialMins[m.id] = sessions.filter(s => s.material_id === m.id).reduce((a,s) => a + sAmount(s), 0);
   });
 
   const currentMatId = document.getElementById('timerMaterial')?.value || '';
 
   list.innerHTML = materials.map(m => {
     const mins = materialMins[m.id] || 0;
-    const h = Math.floor(mins/60), min = mins%60;
-    const timeStr = h > 0 ? `${h}h${min>0?min+'m':''}` : mins > 0 ? `${mins}m` : '';
+    const timeStr = mins > 0 ? fmtSecs(Math.round(mins*60)) : '';
     const isSelected = m.id === currentMatId;
     const coverHtml = m.cover
       ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`
@@ -21593,8 +21653,8 @@ function renderMobileQuestMaterials(){
   const materialMins = {}, materialTodayMins = {};
   const todayStr = getTodayStr();
   materials.forEach(m => {
-    materialMins[m.id] = sessions.filter(s => s.material_id === m.id).reduce((a,s) => a + s.amount, 0);
-    materialTodayMins[m.id] = sessions.filter(s => s.material_id === m.id && s.date === todayStr).reduce((a,s) => a + s.amount, 0);
+    materialMins[m.id] = sessions.filter(s => s.material_id === m.id).reduce((a,s) => a + sAmount(s), 0);
+    materialTodayMins[m.id] = sessions.filter(s => s.material_id === m.id && s.date === todayStr).reduce((a,s) => a + sAmount(s), 0);
   });
 
   container.innerHTML = Object.entries(groups).map(([cat, mats], gi) => {
@@ -21609,11 +21669,8 @@ function renderMobileQuestMaterials(){
           ${mats.map(m => {
             const mins = materialMins[m.id] || 0;
             const tMins = materialTodayMins[m.id] || 0;
-            const h = Math.floor(mins/60), min = Math.round(mins%60);
-            const timeStr = h > 0 ? `${h}h${min>0?min+'m':''}` : mins > 0 ? `${mins}m` : '';
-            const todayTimeStr = tMins > 0
-              ? (tMins >= 60 ? `${Math.floor(tMins/60)}h${Math.round(tMins%60)>0?Math.round(tMins%60)+'m':''}` : `${Math.round(tMins)}m`)
-              : '';
+            const timeStr = mins > 0 ? fmtSecs(Math.round(mins*60)) : '';
+            const todayTimeStr = tMins > 0 ? fmtSecs(Math.round(tMins*60)) : '';
             const {rank, color: rankColor} = getMaterialRank(mins);
             const coverHtml = m.cover
               ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`
@@ -21691,7 +21748,7 @@ function initMrecUI(materialId){
 
   // 日付を今日に設定
   const dateEl = document.getElementById('mrecDate');
-  if(dateEl) dateEl.value = new Date().toISOString().slice(0,10);
+  if(dateEl) dateEl.value = getTodayStr();
 
   // タブをデフォルト（手動入力）に戻す（タイマー未実行時）
   if(!timerRunning && timerSeconds === 0){
@@ -21815,10 +21872,11 @@ async function quickLogFromMrec(){
 }
 
 async function mrecSubmitManual(){
-  const h = parseInt(document.getElementById('mrecHour')?.value) || 0;
-  const m = parseInt(document.getElementById('mrecMin')?.value) || 0;
-  if(h === 0 && m === 0){ alert('時間または分を入力してください'); return; }
-  const date    = document.getElementById('mrecDate')?.value || new Date().toISOString().slice(0,10);
+  const duration = readStudyDuration('mrecHour', 'mrecMin');
+  if(!duration) return false;
+  const h = duration.hours;
+  const m = duration.minutes;
+  const date    = document.getElementById('mrecDate')?.value || getTodayStr();
   const subject = document.getElementById('mrecSubject')?.value || '';
   const note    = document.getElementById('mrecNote')?.value.trim() || '';
   // 既存フォームに値をセット → addQuest() を呼ぶ
@@ -21830,9 +21888,8 @@ async function mrecSubmitManual(){
   setVal('questSubject',    subject);
   setVal('questNote',       note);
   setVal('questStartTime',  startTime);
-  // 教材IDも記録に含める
-  const matSel = document.getElementById('timerMaterial');
-  await addQuest();
+  // addQuest() が選択中の教材IDも記録する。
+  if(!await addQuest()) return false;
   // フォームをリセット
   if(document.getElementById('mrecHour'))      document.getElementById('mrecHour').value      = '';
   if(document.getElementById('mrecMin'))       document.getElementById('mrecMin').value       = '';
@@ -21867,7 +21924,7 @@ function syncMrecButtons(){
     startSW.textContent = isRunning ? '⏸ 一時停止' : hasSecs ? '▶ 再開' : '▶ スタート';
     startSW.className   = 'mrec-action-btn' + (isRunning ? ' pause' : '');
   }
-  if(stopSW) stopSW.style.display = hasSecs ? '' : 'none';
+  if(stopSW) stopSW.style.display = (isRunning || hasSecs) ? '' : 'none';
 }
 
 function _updateMobileTimerMatInfo(materialId){
@@ -22065,7 +22122,7 @@ function renderMaterials(){
   materials.forEach(m => {
     const mins = sessions
       .filter(s => s.material_id === m.id)
-      .reduce((a,s) => a + s.amount, 0);
+      .reduce((a,s) => a + sAmount(s), 0);
     materialMins[m.id] = mins;
   });
 
@@ -22089,8 +22146,7 @@ function renderMaterials(){
       <div class="material-grid">
         ${mats.map(m => {
           const mins = materialMins[m.id] || 0;
-          const h = Math.floor(mins/60), min = mins%60;
-          const timeStr = h > 0 ? `${h}h${min>0?min+'m':''}` : mins > 0 ? `${mins}m` : '未使用';
+          const timeStr = mins > 0 ? fmtSecs(Math.round(mins*60)) : '未使用';
           return `
           <div class="material-card" onclick="selectMaterialForTimer('${m.id}')">
             <div class="material-card-cover">
@@ -22228,6 +22284,7 @@ initDashboard = function(){
   _origInitDash2();
   loadMaterials();
   updateTimerMaterialSelect();
+  checkBgTimerRecovery();
 };
 
 /* panel-materials を switchTab 対応に登録 */
