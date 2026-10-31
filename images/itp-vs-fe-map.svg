@@ -27,18 +27,18 @@
   <text x="612" y="159" text-anchor="middle" font-size="11" fill="#7C3AED">CBT・全国随時受験</text>
 
   <rect x="20" y="178" width="256" height="36" rx="4" fill="#E0F2FE"/>
-  <text x="148" y="201" text-anchor="middle" font-size="11" fill="#0369A1">約50〜60%</text>
+  <text x="148" y="201" text-anchor="middle" font-size="11" fill="#0369A1">48.6%（令和7年度）</text>
   <rect x="284" y="178" width="192" height="36" rx="4" fill="#F1F5F9"/>
   <text x="380" y="201" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">合格率</text>
   <rect x="484" y="178" width="256" height="36" rx="4" fill="#EDE9FE"/>
-  <text x="612" y="201" text-anchor="middle" font-size="11" fill="#7C3AED">約35〜45%</text>
+  <text x="612" y="201" text-anchor="middle" font-size="11" fill="#7C3AED">38.3%（令和7年度）</text>
 
   <rect x="20" y="220" width="256" height="36" rx="4" fill="#E0F2FE"/>
-  <text x="148" y="243" text-anchor="middle" font-size="11" fill="#0369A1">30〜60時間</text>
+  <text x="148" y="243" text-anchor="middle" font-size="11" fill="#0369A1">演習結果で調整</text>
   <rect x="284" y="220" width="192" height="36" rx="4" fill="#F1F5F9"/>
-  <text x="380" y="243" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">必要勉強時間</text>
+  <text x="380" y="243" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">学習計画</text>
   <rect x="484" y="220" width="256" height="36" rx="4" fill="#EDE9FE"/>
-  <text x="612" y="243" text-anchor="middle" font-size="11" fill="#7C3AED">100〜200時間</text>
+  <text x="612" y="243" text-anchor="middle" font-size="11" fill="#7C3AED">演習結果で調整</text>
 
   <rect x="20" y="262" width="256" height="44" rx="4" fill="#BAE6FD"/>
   <text x="148" y="280" text-anchor="middle" font-size="11" fill="#0369A1">IT全般の基礎知識を証明</text>
@@ -46,7 +46,7 @@
   <rect x="284" y="262" width="192" height="44" rx="4" fill="#F1F5F9"/>
   <text x="380" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">強み・用途</text>
   <rect x="484" y="262" width="256" height="44" rx="4" fill="#DDD6FE"/>
-  <text x="612" y="280" text-anchor="middle" font-size="11" fill="#7C3AED">ITエンジニアの登竜門・必須資格</text>
+  <text x="612" y="280" text-anchor="middle" font-size="11" fill="#7C3AED">ITエンジニアの基礎知識を問う試験</text>
   <text x="612" y="297" text-anchor="middle" font-size="10" fill="#7C3AED">アルゴリズム・プログラミング力の証明</text>
 
   <rect x="20" y="316" width="256" height="36" rx="4" fill="#BAE6FD"/>

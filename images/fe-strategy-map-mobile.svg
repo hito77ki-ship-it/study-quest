@@ -17,7 +17,7 @@
   <rect x="30" y="122" width="300" height="26" rx="5" fill="#DBEAFE"/>
   <text x="40" y="139" font-size="9.5" fill="#1E3A8A">60問／テクノロジ・マネジメント・ストラテジ</text>
   <rect x="30" y="152" width="300" height="26" rx="5" fill="#BFDBFE"/>
-  <text x="40" y="169" font-size="9.5" font-weight="700" fill="#1D4ED8">目標：6割以上の正解率で守り切る</text>
+  <text x="40" y="169" font-size="9.5" font-weight="700" fill="#1D4ED8">評価点600点が基準（正答率と別）</text>
 
   <text x="30" y="200" font-size="11" font-weight="700" fill="#1D4ED8">盾を構成する知識パーツ</text>
   <text x="40" y="218" font-size="9" fill="#374151">▸ テクノロジ系：2進数・論理回路・NW（TCP/IP）</text>

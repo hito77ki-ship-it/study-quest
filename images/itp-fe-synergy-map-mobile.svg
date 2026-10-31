@@ -3,7 +3,7 @@
   <rect width="360" height="900" rx="16" fill="#F8FAFC"/>
   <text x="180" y="28" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E293B">ITパスポート×基本情報</text>
   <text x="180" y="44" text-anchor="middle" font-size="11" font-weight="700" fill="#1E293B">知識の引き継ぎ相乗効果マップ</text>
-  <text x="180" y="60" text-anchor="middle" font-size="9" fill="#64748B">iパスの3分野が科目Aの土台。新規は科目Bだけ</text>
+  <text x="180" y="60" text-anchor="middle" font-size="9" fill="#64748B">iパスの知識を土台に、A・Bの不足を確認</text>
 
   <text x="180" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">ITパスポート（レベル1）3分野・100問</text>
 
@@ -24,17 +24,17 @@
   <text x="180" y="352" text-anchor="middle" font-size="12" font-weight="700" fill="#15803D">科目A（知識）</text>
   <text x="180" y="372" text-anchor="middle" font-size="10" fill="#166534">ストラテジ・マネジメント</text>
   <text x="180" y="388" text-anchor="middle" font-size="10" fill="#166534">・テクノロジの深掘り</text>
-  <text x="180" y="408" text-anchor="middle" font-size="9.5" fill="#166534">96問中 約70%がiパスと共通の知識</text>
+  <text x="180" y="408" text-anchor="middle" font-size="9.5" fill="#166534">科目Aは60問。共通割合の保証はない</text>
 
   <rect x="16" y="440" width="328" height="140" rx="6" fill="#FFEDD5" stroke="#F97316" stroke-width="2.5"/>
   <rect x="30" y="452" width="150" height="20" rx="10" fill="#F97316"/>
   <text x="105" y="466" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">新規攻略・ここが本丸</text>
-  <text x="180" y="496" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">科目B（アルゴリズム）</text>
+  <text x="180" y="496" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">科目B（20問）</text>
   <text x="180" y="516" text-anchor="middle" font-size="10" fill="#9A3412">データ構造・擬似言語</text>
   <text x="180" y="532" text-anchor="middle" font-size="10" fill="#9A3412">・プログラミング思考</text>
-  <text x="180" y="556" text-anchor="middle" font-size="9.5" fill="#9A3412">2023年改定で配点比率が増加した最大の関門</text>
+  <text x="180" y="556" text-anchor="middle" font-size="9.5" fill="#9A3412">アルゴリズム等16問＋セキュリティ4問</text>
 
   <rect x="16" y="600" width="328" height="52" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
-  <text x="180" y="622" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">iパスの知識は科目Aにそのまま使える。</text>
-  <text x="180" y="640" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">新たに時間を割くべきは科目Bだけ</text>
+  <text x="180" y="622" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">科目Aは共通知識に加えて深掘りが必要。</text>
+  <text x="180" y="640" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">科目Bは2分野。iパスによる自動免除なし</text>
 </svg>
