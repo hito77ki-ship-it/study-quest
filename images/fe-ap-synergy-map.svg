@@ -3,30 +3,30 @@
     <style>text { font-family: 'Noto Sans JP','Hiragino Sans',sans-serif; }</style>
   </defs>
   <rect width="760" height="430" rx="12" fill="#FAFAFC"/>
-  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">基本情報 × 応用情報 比較と「午前共通」相乗効果マップ</text>
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">基本情報 × 応用情報 比較と共通知識を活かす学習マップ</text>
 
   <!-- FE card -->
   <rect x="40" y="56" width="310" height="230" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
   <rect x="40" y="56" width="310" height="42" rx="14" fill="#4ADE80"/>
   <rect x="40" y="84" width="310" height="14" fill="#4ADE80"/>
   <text x="195" y="83" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">基本情報技術者（FE）— レベル2</text>
-  <text x="65" y="122" font-size="11.5" fill="#166534">🗓 試験形式：CBT方式（通年いつでも受験）</text>
-  <text x="65" y="146" font-size="11.5" fill="#166534">📊 合格率：約40〜50%</text>
-  <text x="65" y="170" font-size="11.5" fill="#166534">⏱ 必要勉強時間：150〜200時間</text>
+  <text x="65" y="122" font-size="11.5" fill="#166534">🗓 試験形式：CBT方式（通年実施・空席から予約）</text>
+  <text x="65" y="146" font-size="11.5" fill="#166534">📊 合格率：38.3%（令和7年度）</text>
+  <text x="65" y="170" font-size="11.5" fill="#166534">⏱ 学習計画：演習結果で調整</text>
   <text x="65" y="194" font-size="11.5" fill="#166534">✍ 午後試験：アルゴリズム＋プログラミング必須</text>
   <text x="65" y="222" font-size="10.5" fill="#4D7C59">向いている人：</text>
   <text x="65" y="240" font-size="10.5" fill="#4D7C59">IT未経験・学生・まず基礎固めしたい人</text>
-  <text x="65" y="262" font-size="10.5" fill="#4D7C59">通年受験なので「準備できたら即受験」できる</text>
+  <text x="65" y="262" font-size="10.5" fill="#4D7C59">空席と申込み条件を確認して受験する</text>
 
   <!-- AP card -->
   <rect x="410" y="56" width="310" height="230" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
   <rect x="410" y="56" width="310" height="42" rx="14" fill="#60A5FA"/>
   <rect x="410" y="84" width="310" height="14" fill="#60A5FA"/>
   <text x="565" y="83" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">応用情報技術者（AP）— レベル3</text>
-  <text x="435" y="122" font-size="11.5" fill="#1E40AF">🗓 試験形式：年2回（4月・10月）記述式</text>
-  <text x="435" y="146" font-size="11.5" fill="#1E40AF">📊 合格率：約20〜25%</text>
-  <text x="435" y="170" font-size="11.5" fill="#1E40AF">⏱ 必要勉強時間：300〜500時間</text>
-  <text x="435" y="194" font-size="11.5" fill="#1E40AF">✍ 午後試験：論述式（11題中5題を選択）</text>
+  <text x="435" y="122" font-size="11.5" fill="#1E40AF">🗓 試験形式：2026年度はCBT・前期／後期</text>
+  <text x="435" y="146" font-size="11.5" fill="#1E40AF">📊 合格率：24.5%（令和7年度秋期）</text>
+  <text x="435" y="170" font-size="11.5" fill="#1E40AF">⏱ 学習計画：演習結果で調整</text>
+  <text x="435" y="194" font-size="11.5" fill="#1E40AF">✍ 午後試験：記述式（必須1問＋選択4問）</text>
   <text x="435" y="222" font-size="10.5" fill="#3B5B8C">向いている人：</text>
   <text x="435" y="240" font-size="10.5" fill="#3B5B8C">中堅エンジニア・転職/昇格を狙う人</text>
   <text x="435" y="262" font-size="10.5" fill="#3B5B8C">プログラミング不要の「経営戦略」等も選択可</text>
@@ -38,7 +38,7 @@
 
   <!-- Synergy banner -->
   <rect x="90" y="336" width="580" height="76" rx="14" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/>
-  <text x="380" y="362" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400E">🔗 午前試験は共通範囲！これが最大の相乗効果</text>
-  <text x="380" y="382" text-anchor="middle" font-size="10.5" fill="#78350F">FEの午前（科目A）対策はそのままAPの午前対策に直結する。先にFEを取れば、</text>
-  <text x="380" y="399" text-anchor="middle" font-size="10.5" fill="#78350F">AP受験時は「午後の論述対策」だけに集中でき、学習効率が大きく上がる。</text>
+  <text x="380" y="362" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400E">🔗 科目Aには共通知識があるこれが最大の相乗効果</text>
+  <text x="380" y="382" text-anchor="middle" font-size="10.5" fill="#78350F">FEの知識はAPの科目Aにもつながるが、APで不足する範囲の対策が必要。</text>
+  <text x="380" y="399" text-anchor="middle" font-size="10.5" fill="#78350F">科目Aと科目Bの両方を練習する。FE合格による科目Aの自動免除はない。</text>
 </svg>

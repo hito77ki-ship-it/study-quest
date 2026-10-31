@@ -7,7 +7,7 @@
 
   <!-- 午前 -->
   <rect x="16" y="80" width="328" height="290" rx="16" fill="#EBF8FF" stroke="#93C5FD" stroke-width="2"/>
-  <text x="180" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#1D4ED8">☀️ 午前試験</text>
+  <text x="180" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#1D4ED8">☀️ 科目A試験</text>
   <text x="180" y="134" text-anchor="middle" font-size="12" fill="#374151">四肢択一 80問／試験時間：150分</text>
 
   <text x="180" y="158" text-anchor="middle" font-size="10.5" fill="#64748B">得点イメージ</text>
@@ -24,8 +24,8 @@
 
   <!-- 午後 -->
   <rect x="16" y="388" width="328" height="290" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
-  <text x="180" y="420" text-anchor="middle" font-size="15" font-weight="700" fill="#5B21B6">🌙 午後試験</text>
-  <text x="180" y="442" text-anchor="middle" font-size="12" fill="#374151">11分野中5問選択（記述式）／150分</text>
+  <text x="180" y="420" text-anchor="middle" font-size="15" font-weight="700" fill="#5B21B6">🌙 科目B試験</text>
+  <text x="180" y="442" text-anchor="middle" font-size="12" fill="#374151">必須1問＋選択4問（記述式）／150分</text>
 
   <text x="180" y="466" text-anchor="middle" font-size="10.5" fill="#64748B">得点イメージ</text>
   <rect x="40" y="476" width="280" height="26" rx="13" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
