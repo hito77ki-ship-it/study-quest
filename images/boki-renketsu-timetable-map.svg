@@ -2,7 +2,7 @@
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
   <rect width="760" height="460" rx="16" fill="#FEFCF9"/>
   <text x="380" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1E293B">投資と資本の相殺消去ロジック（タイムテーブル法のイメージ）</text>
-  <text x="380" y="46" text-anchor="middle" font-size="11" fill="#94A3B8">例：親会社が子会社株式の80%を¥4,000で取得したケース</text>
+  <text x="380" y="46" text-anchor="middle" font-size="11" fill="#94A3B8">取得日の例：80%を4,000円で取得／評価差額等なしと仮定</text>
 
   <!-- 投資（親会社） -->
   <rect x="40" y="64" width="330" height="110" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
@@ -12,7 +12,7 @@
 
   <!-- 子会社の資本 -->
   <rect x="390" y="64" width="330" height="110" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
-  <text x="555" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">子会社の資本合計</text>
+  <text x="555" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">取得日の子会社資本</text>
   <text x="555" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">¥4,500（資本金＋利益剰余金）</text>
   <rect x="410" y="122" width="232" height="24" rx="6" fill="#22C55E"/>
   <text x="526" y="138" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fff">親会社持分80%（¥3,600）</text>
@@ -45,7 +45,7 @@
   <rect x="390" y="304" width="330" height="90" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
   <text x="555" y="330" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">非支配株主持分（純資産）</text>
   <text x="555" y="356" text-anchor="middle" font-size="20" font-weight="700" fill="#5B21B6">¥900</text>
-  <text x="555" y="380" text-anchor="middle" font-size="9" fill="#374151">子会社資本のうち親会社以外の持分</text>
+  <text x="555" y="380" text-anchor="middle" font-size="9" fill="#374151">この例では取得日の子会社資本の20%</text>
 
-  <text x="380" y="424" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">連結会計は「投資と資本の相殺消去 → 差額をのれん・非支配株主持分に振り分ける」この1パターンの理解がカギ</text>
+  <text x="380" y="424" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">取得日の例。取得後の利益や内部取引の消去などは別に確認する。</text>
 </svg>
