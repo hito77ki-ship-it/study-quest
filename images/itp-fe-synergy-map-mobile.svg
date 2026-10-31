@@ -8,11 +8,11 @@
   <text x="180" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E293B">ITパスポート（レベル1）3分野・100問</text>
 
   <rect x="30" y="96" width="300" height="42" rx="6" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-  <text x="180" y="121" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">テクノロジ系　45%</text>
+  <text x="180" y="121" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">テクノロジ系　45問程度</text>
   <rect x="30" y="142" width="300" height="42" rx="6" fill="#E0E7FF" stroke="#A5B4FC" stroke-width="1.5"/>
-  <text x="180" y="167" text-anchor="middle" font-size="11" font-weight="700" fill="#4338CA">ストラテジ系　35%</text>
+  <text x="180" y="167" text-anchor="middle" font-size="11" font-weight="700" fill="#4338CA">ストラテジ系　35問程度</text>
   <rect x="30" y="188" width="300" height="42" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-  <text x="180" y="213" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">マネジメント系　20%</text>
+  <text x="180" y="213" text-anchor="middle" font-size="11" font-weight="700" fill="#2563EB">マネジメント系　20問程度</text>
 
   <text x="180" y="252" text-anchor="middle" font-size="16" font-weight="700" fill="#15803D">↓ 知識継承 ↓</text>
 
