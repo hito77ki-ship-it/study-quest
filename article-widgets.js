@@ -118,7 +118,7 @@ const ARTICLES = {
   'toroku-hanbai.html':        {label:'登録販売者',  title:'登録販売者の独学合格ガイド', thumb:'images/toroku-hanbai-strategy-map.svg'},
   'eisei-kanri.html':          {label:'衛生管理者',  title:'衛生管理者（第一種・第二種）の独学合格ガイド', thumb:'images/eisei-kanri-strategy-map.svg'},
   'hisho.html':                {label:'秘書検定',    title:'秘書検定2級・準1級の独学合格ガイド', thumb:'images/hisho-strategy-map.svg'},
-  'kanken.html':               {label:'漢字検定',    title:'漢字検定（漢検）2級の独学合格ガイド', thumb:'images/kanken-strategy-map.svg'},
+  'kanken.html':               {label:'漢字検定',    title:'漢検2級の独学勉強法・配点・自作例題3問', dialogue:false, thumb:'images/kanken-strategy-map.svg?v=20261102'},
   'gaibuin.html':              {label:'証券外務員',  title:'証券外務員一種・二種の独学合格ガイド', thumb:'images/gaibuin-strategy-map.svg'},
   'kenchiku.html':             {label:'二級建築士',  title:'二級建築士の独学合格ガイド', thumb:'images/kenchiku-strategy-map.svg'},
   'toefl.html':                {label:'TOEFL',       title:'TOEFL iBTの独学スコアアップ戦略', thumb:'images/toefl-strategy-map.svg'},
