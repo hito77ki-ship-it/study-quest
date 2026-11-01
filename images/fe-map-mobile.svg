@@ -11,7 +11,7 @@
   <!-- 試験構成 -->
   <rect x="16" y="66" width="328" height="386" rx="10" fill="#F5F3FF"/>
   <rect x="16" y="66" width="328" height="32" rx="10" fill="#7C3AED"/>
-  <text x="180" y="88" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">試験構成（IPA レベル2・CBT随時）</text>
+  <text x="180" y="88" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">現行制度の構成（休止案内は本文へ）</text>
 
   <text x="30" y="118" font-size="11.5" font-weight="700" fill="#6D28D9">科目A（旧午前）── 90分 60問</text>
   <rect x="30" y="126" width="300" height="28" rx="5" fill="#EDE9FE"/>
@@ -34,19 +34,19 @@
   <text x="180" y="388" text-anchor="middle" font-size="10" fill="#E9D5FF">合格率38.3%（令和7年度・受験者比）</text>
 
   <!-- 学習ポイント -->
-  <rect x="16" y="470" width="328" height="700" rx="10" fill="#EFF6FF"/>
+  <rect x="16" y="470" width="328" height="444" rx="10" fill="#EFF6FF"/>
   <rect x="16" y="470" width="328" height="32" rx="10" fill="#2563EB"/>
   <text x="180" y="492" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">合格のための学習ポイント</text>
 
   <rect x="30" y="512" width="300" height="88" rx="6" fill="#DBEAFE"/>
-  <text x="180" y="534" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">① 科目A：過去問1000問を回す</text>
-  <text x="180" y="554" text-anchor="middle" font-size="10" fill="#374151">科目Aは過去問の焼き直しが多い。</text>
+  <text x="180" y="534" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">① 科目A：理解を確認する</text>
+  <text x="180" y="554" text-anchor="middle" font-size="10" fill="#374151">公開問題で止まった条件を記録する。</text>
   <text x="180" y="572" text-anchor="middle" font-size="10" fill="#374151">「科目A免除制度」も活用を検討する</text>
 
   <rect x="30" y="612" width="300" height="88" rx="6" fill="#DBEAFE"/>
   <text x="180" y="634" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">② 科目B：擬似言語を読む練習</text>
   <text x="180" y="654" text-anchor="middle" font-size="10" fill="#374151">FEの擬似言語（疑似コード）を読む練習が核心</text>
-  <text x="180" y="672" text-anchor="middle" font-size="10" fill="#374151">Pythonでの実装練習も合わせると理解が深まる</text>
+  <text x="180" y="672" text-anchor="middle" font-size="10" fill="#374151">編集部案：変数と条件を行ごとに記録する</text>
 
   <rect x="30" y="712" width="300" height="88" rx="6" fill="#DBEAFE"/>
   <text x="180" y="734" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">③ セキュリティ：4問も対策する</text>
@@ -54,7 +54,7 @@
   <text x="180" y="772" text-anchor="middle" font-size="10" fill="#374151">リスク・脅威・認証を具体的な状況に当てはめる</text>
 
   <rect x="30" y="812" width="300" height="88" rx="6" fill="#BFDBFE"/>
-  <text x="180" y="834" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">④ CBTのメリットを活かす</text>
+  <text x="180" y="834" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">④ 予約前に休止案内を確認</text>
   <text x="180" y="854" text-anchor="middle" font-size="10" fill="#374151">科目A・Bは同日に受験し、各600点以上が必要</text>
   <text x="180" y="872" text-anchor="middle" font-size="10" fill="#374151">科目Aだけの合格を持ち越す制度ではない</text>
 </svg>
