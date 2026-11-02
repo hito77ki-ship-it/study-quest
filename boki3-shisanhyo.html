@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-shisanhyo.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】試算表とは？合計・残高・合計残高試算表の3種類を例題つきで完全解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の試算表（合計試算表・残高試算表・合計残高試算表）を例題つきで完全解説。なぜ試算表を作るのか、3種類の違い、借方貸方が一致する理由まで初心者向けにわかりやすく解説。">
+<title>試算表3種類の違い｜合計・残高と一致しても残る誤りを検算｜スタディクエスト</title>
+<meta name="description" content="既存の824,000円・610,000円の表を独立検算。合計試算表・残高試算表・合計残高試算表の区別と、借貸一致の限界を自作例で確認します。">
 <meta name="keywords" content="合計試算表 残高試算表 違い,合計残高試算表 書き方,試算表 合計欄 残高欄,日商簿記3級 試算表">
-<meta property="og:title" content="合計試算表・合計残高試算表・残高試算表の違い【日商簿記3級】">
-<meta property="og:description" content="3つの試算表の違いを図解で解説。合計欄と残高欄の書き方を例題つきで完全解説。">
+<meta property="og:title" content="試算表3種類の違い｜合計・残高と一致しても残る誤りを検算">
+<meta property="og:description" content="既存の824,000円・610,000円の表を独立検算。合計試算表・残高試算表・合計残高試算表の区別と、借貸一致の限界を自作例で確認します。">
 <meta property="og:url" content="https://study-quest.net/boki3-shisanhyo.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,18 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "合計試算表・合計残高試算表・残高試算表の違い【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "3つの試算表の違いを図解で解説。合計欄と残高欄の書き方を例題つきで完全解説。",
-  "url": "https://study-quest.net/boki3-shisanhyo.html",
-  "datePublished": "2026-05-07",
-  "dateModified": "2026-08-25",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "試算表3種類の違い｜合計・残高と一致しても残る誤りを検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "既存の824,000円・610,000円の表を独立検算。合計試算表・残高試算表・合計残高試算表の区別と、借貸一致の限界を自作例で確認します。", "url": "https://study-quest.net/boki3-shisanhyo.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -156,386 +145,48 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "試算表が一致すれば取引はすべて正しいですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。取引全体の漏れ・重複や科目違いなど、一致したまま残る誤りもあります。元の資料との照合が必要です。"}}, {"@type": "Question", "name": "現金272,000円と144,000円は残高試算表にも書きますか？", "acceptedAnswer": {"@type": "Answer", "text": "例1の残高試算表には差引128,000円を借方へ書きます。272,000円と144,000円は合計欄の数字です。"}}, {"@type": "Question", "name": "試算表と精算表は同じですか？", "acceptedAnswer": {"@type": "Answer", "text": "試算表は勘定の合計・残高等の一覧、精算表は決算整理から財務諸表への対応を確認する作業表です。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
-
-<div class="container">
-  <div class="breadcrumb">
-    <a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 合計試算表・合計残高試算表・残高試算表の違い
-  </div>
-
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月25日</p>
-  <h1>合計試算表・合計残高試算表・残高試算表<br>3つの違いと書き方を完全解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    正直に告白すると、簿記の勉強を始めたばかりの頃、模範解答の試算表を初めて見たとき「なんじゃこりゃ！！」と本気で頭が真っ白になりました。数字がびっしり並んだ表に「合計」やら「残高」やら似た名前の欄が横並びで、どこに何を書けばいいのか全く分からず……。仕訳は全問正解だったのに、答案用紙の欄を間違えただけで試算表の問題を丸ごと落とした苦い記憶があります。<br>
-    だからこそ、当時の私と同じように答案用紙を前にフリーズしている皆さんへ、丸暗記ゼロで欄を絶対に間違えない<strong>【ミスゼロ攻略法】</strong>と、集計時にやりがちな電卓の罠の避け方を、この記事で全部お伝えします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat"></div>
-
-  <h2>簿記の2大帳簿：仕訳帳と総勘定元帳</h2>
-
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki3-shisanhyo-map-mobile.svg">
-      <img src="images/boki3-shisanhyo-map.svg" alt="仕訳帳→総勘定元帳→3種類の試算表（合計・合計残高・残高）の構造図解" style="max-width:100%;height:auto;border-radius:8px;" loading="lazy" width="760" height="400">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：仕訳帳から元帳を経て3種類の試算表に展開される流れと各試算表の違い</figcaption>
-  </figure>
-  <p>試算表を理解する前に、取引を記録する2つの主要簿を知っておきましょう。</p>
-  <div class="rule-box">
-    <div class="rule-item ri-gokei">
-      <div class="ri-title">仕訳帳（主要簿①）</div>
-      <div class="ri-body">取引を<strong>日付順</strong>に借方・貸方で記録する帳簿。「いつ・どんな取引があったか」を日記のように記録する。</div>
-    </div>
-    <div class="rule-item ri-zandaka">
-      <div class="ri-title">総勘定元帳（主要簿②）</div>
-      <div class="ri-body">勘定科目<strong>ごと</strong>に金額を集計するT字型の帳簿。「現金の残高はいくらか」などを科目別に確認できる。</div>
-    </div>
-  </div>
-  <div class="tip-box"><strong>流れ：仕訳帳 → 転記 → 総勘定元帳 → 試算表</strong><br>仕訳帳が「原本」、総勘定元帳が「科目別インデックス」。仕訳帳の各取引を科目別に元帳へ移す作業を「転記」と呼びます。</div>
-
-  <h2>転記とは？（4ステップ）</h2>
-
-  <p>仕訳帳の取引1行を、対応する2つの元帳ページへ転記します。</p>
-  <ol>
-    <li>借方の科目（例：現金）の元帳ページを開く</li>
-    <li>現金勘定の<strong>借方欄</strong>に金額を記入</li>
-    <li>貸方の科目（例：売上）の元帳ページを開く</li>
-    <li>売上勘定の<strong>貸方欄</strong>に金額を記入 → 完了！</li>
-  </ol>
-  <div class="tip-box"><strong>転記のルール：方向は変わらない</strong><br>仕訳帳の借方科目 → 元帳の借方へ、貸方科目 → 元帳の貸方へ。仕訳と同じ方向にそのまま転記するだけです。</div>
-
-  <h2>試算表を作る目的</h2>
-
-  <p>試算表は「転記が正確に行われているか」を検証するための一覧表です。仕訳帳に書かれた仕訳を総勘定元帳へ<strong>転記</strong>（科目別に写す作業）した後、全科目の残高を一覧化して借方合計と貸方合計が一致するか確認します。</p>
-
-  <div class="rule-box">
-    <div class="rule-item ri-gokei">
-      <div class="ri-title">転記の流れ</div>
-      <div class="ri-body">仕訳帳（日付順に記録）→ <strong>転記</strong> → 総勘定元帳（科目別に集計）→ <strong>試算表</strong>（全科目の一覧）</div>
-    </div>
-    <div class="rule-item ri-zandaka">
-      <div class="ri-title">試算表で発見できること</div>
-      <div class="ri-body">転記ミス・記入漏れ・計算ミスを早期発見できる。借方合計 ≠ 貸方合計 → 必ずどこかにミスあり。</div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>試算表と決算の関係</strong><br>
-    試算表は期中に何度でも作成できます。決算では「<strong>決算整理前残高試算表（前T/B）</strong>」を作成し、減価償却などの決算整理仕訳を行った後に「<strong>決算整理後残高試算表（後T/B）</strong>」を作成します。最終的にこの後T/Bを元に B/S・P/L が完成します。
-  </div>
-
-  <h2>決算の5ステップと試算表の位置づけ</h2>
-  <p>試算表は決算プロセスのインプットとして使われます。決算の全体像を先に把握しておきましょう。</p>
-  <ol>
-    <li><strong>残高試算表（前T/B）作成</strong>：期末時点の各科目残高を集計</li>
-    <li><strong>決算整理仕訳</strong>：減価償却・貸倒引当金など修正仕訳（→第12章）</li>
-    <li><strong>残高試算表（後T/B）作成</strong>：修正後の残高を集計</li>
-    <li><strong>帳簿の締め切り</strong>：収益・費用勘定をゼロリセット（→第11章）</li>
-    <li><strong>財務諸表（B/S・P/L）作成</strong>：決算のゴール！</li>
-  </ol>
-  <div class="tip-box"><strong>試算表は「前T/B」と「後T/B」の2回作成する</strong><br>期中に何度でも作成でき（月次・四半期も可）、ミスの早期発見に役立ちます。</div>
-
-  <h2>3種類の試算表：まず違いをつかむ</h2>
-
-  <div class="rule-box">
-    <div class="rule-item ri-gokei">
-      <div class="ri-title">【合計】が付く場合</div>
-      <div class="ri-body">借方・貸方それぞれの<strong>合計金額を両方</strong>記入する。取引の総額がわかる。</div>
-    </div>
-    <div class="rule-item ri-zandaka">
-      <div class="ri-title">【残高】が付く場合</div>
-      <div class="ri-body">借方と貸方の<strong>差引した残高のみ</strong>、どちらか一方に記入する。</div>
-    </div>
-  </div>
-
-  <div class="type-grid">
-    <div class="type-card t-gokei">
-      <span class="tc-badge">タイプA</span>
-      <div class="tc-name">合計試算表</div>
-      <div class="tc-desc">借方・貸方それぞれの合計のみを記入する。</div>
-      <div class="tc-rule">合計欄のみ</div>
-    </div>
-    <div class="type-card t-both">
-      <span class="tc-badge">タイプB</span>
-      <div class="tc-name">合計残高試算表</div>
-      <div class="tc-desc">合計と残高の両方を記入する。一番情報量が多い。</div>
-      <div class="tc-rule">合計欄＋残高欄</div>
-    </div>
-    <div class="type-card t-zandaka">
-      <span class="tc-badge">タイプC</span>
-      <div class="tc-name">残高試算表</div>
-      <div class="tc-desc">差引した残高のみ、どちらか一方に記入する。</div>
-      <div class="tc-rule">残高欄のみ</div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>試験での確認ポイント：答案用紙を最初に見る！</strong><br>
-    問題を解く前に必ず答案用紙の列ヘッダーを確認する。「合計」と書いてあれば両方記入、「残高」と書いてあれば一方のみ。これだけで形式ミスはゼロになります。
-  </div>
-
-  <h3>電卓ハック：T字メモから答案用紙へ、二重集計ゼロで転記する手順</h3>
-
-  <p>試算表の問題は、下書き用紙に勘定科目ごとの<strong>T字（略式T勘定）</strong>を作り、そこに借方・貸方の金額をどんどん書き込んでいくのが定石です。ここで一番怖いのが「電卓で合計を叩いたのに、答案用紙に書き写すときにもう一度同じ数字を頭の中で足してしまう」二重集計のミス。防ぐ手順はこれだけです。</p>
-
-  <ol>
-    <li>1科目の集計に入る前に、電卓は必ず<strong>「AC」で一度リセット</strong>する（前の科目の合計を引きずらない）</li>
-    <li>T字の<strong>借方側だけ</strong>を上から順に「＋」で電卓に打ち込み、「＝」で借方合計を出す</li>
-    <li>借方合計が出たら、暗算で二度計算し直さず<strong>その場ですぐ答案用紙に転記</strong>する。両方の合計を計算してからまとめて書こうとすると頭の中で数字が混線する</li>
-    <li>続けて電卓を「AC」でリセットし、T字の<strong>貸方側だけ</strong>を「＋」で打ち込み → 「＝」→ 即転記、を同じ手順で繰り返す</li>
-    <li>転記が終わったT字の数字には<strong>斜線（／）</strong>を引いていく。斜線のない数字が残っていたら、それはまだ電卓に入力していない＝集計漏れの合図</li>
-  </ol>
-
-  <div class="warn-box">
-    <strong>二重集計が起きる典型パターン</strong><br>
-    電卓の表示を一度見た後に「あれ、この数字さっき足したっけ？」と不安になって、頭の中でもう一度同じ数字を足してしまうケースが最多です。電卓の表示を信じて「計算→即転記」を徹底するだけで、このミスはほぼゼロにできます。
-  </div>
-
-  <h2>使用データ（共通）</h2>
-
-  <p>以下の3種類の表はすべて同じ仕訳データから作成しています。</p>
-
-  <div class="shisan-wrap">
-    <table class="shisan-table">
-      <caption>【各勘定の借方合計・貸方合計・残高】</caption>
-      <thead>
-        <tr>
-          <th class="kamoku-head">勘定科目</th>
-          <th class="gokei-kari">借方合計</th>
-          <th class="gokei-kashi">貸方合計</th>
-          <th class="zandaka-kari">残高（借方）</th>
-          <th class="zandaka-kashi">残高（貸方）</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="kamoku-cell">現金</td><td class="gokei-kari">272,000</td><td class="gokei-kashi">144,000</td><td class="zandaka-kari">128,000</td><td class="zandaka-kashi empty">—</td></tr>
-        <tr><td class="kamoku-cell">売掛金</td><td class="gokei-kari">100,000</td><td class="gokei-kashi">40,000</td><td class="zandaka-kari">60,000</td><td class="zandaka-kashi empty">—</td></tr>
-        <tr><td class="kamoku-cell">備品</td><td class="gokei-kari">200,000</td><td class="gokei-kashi">—</td><td class="zandaka-kari">200,000</td><td class="zandaka-kashi empty">—</td></tr>
-        <tr><td class="kamoku-cell">買掛金</td><td class="gokei-kari">30,000</td><td class="gokei-kashi">80,000</td><td class="zandaka-kari empty">—</td><td class="zandaka-kashi">50,000</td></tr>
-        <tr><td class="kamoku-cell">借入金</td><td class="gokei-kari">—</td><td class="gokei-kashi">200,000</td><td class="zandaka-kari empty">—</td><td class="zandaka-kashi">200,000</td></tr>
-        <tr><td class="kamoku-cell">資本金</td><td class="gokei-kari">—</td><td class="gokei-kashi">60,000</td><td class="zandaka-kari empty">—</td><td class="zandaka-kashi">60,000</td></tr>
-        <tr><td class="kamoku-cell">売上</td><td class="gokei-kari">—</td><td class="gokei-kashi">300,000</td><td class="zandaka-kari empty">—</td><td class="zandaka-kashi">300,000</td></tr>
-        <tr><td class="kamoku-cell">仕入</td><td class="gokei-kari">162,000</td><td class="gokei-kashi">—</td><td class="zandaka-kari">162,000</td><td class="zandaka-kashi empty">—</td></tr>
-        <tr><td class="kamoku-cell">給料</td><td class="gokei-kari">60,000</td><td class="gokei-kashi">—</td><td class="zandaka-kari">60,000</td><td class="zandaka-kashi empty">—</td></tr>
-      </tbody>
-      <tfoot>
-        <tr><td class="kamoku-cell">合　計</td><td class="gokei-kari">824,000</td><td class="gokei-kashi">824,000</td><td class="zandaka-kari">610,000</td><td class="zandaka-kashi">610,000</td></tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <h2>① 合計試算表</h2>
-
-  <p>各勘定の<strong>借方合計・貸方合計を両方の列に記入</strong>します。残高は記入しません。</p>
-
-  <div class="shisan-wrap">
-    <table class="shisan-table">
-      <caption>合計試算表</caption>
-      <thead>
-        <tr>
-          <th class="gokei-kari" style="width:35%;">借方合計</th>
-          <th class="kamoku-head" style="width:30%;">勘定科目</th>
-          <th class="gokei-kashi" style="width:35%;">貸方合計</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="gokei-kari">272,000</td><td class="kamoku-cell" style="text-align:center;">現金</td><td class="gokei-kashi">144,000</td></tr>
-        <tr><td class="gokei-kari">100,000</td><td class="kamoku-cell" style="text-align:center;">売掛金</td><td class="gokei-kashi">40,000</td></tr>
-        <tr><td class="gokei-kari">200,000</td><td class="kamoku-cell" style="text-align:center;">備品</td><td class="gokei-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="gokei-kari">30,000</td><td class="kamoku-cell" style="text-align:center;">買掛金</td><td class="gokei-kashi">80,000</td></tr>
-        <tr><td class="gokei-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">借入金</td><td class="gokei-kashi">200,000</td></tr>
-        <tr><td class="gokei-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">資本金</td><td class="gokei-kashi">60,000</td></tr>
-        <tr><td class="gokei-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">売上</td><td class="gokei-kashi">300,000</td></tr>
-        <tr><td class="gokei-kari">162,000</td><td class="kamoku-cell" style="text-align:center;">仕入</td><td class="gokei-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="gokei-kari">60,000</td><td class="kamoku-cell" style="text-align:center;">給料</td><td class="gokei-kashi empty" style="text-align:center;">—</td></tr>
-      </tbody>
-      <tfoot>
-        <tr><td class="gokei-kari">824,000</td><td class="kamoku-cell" style="text-align:center;">合　計</td><td class="gokei-kashi">824,000</td></tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <div class="legend-row">
-    <span class="legend-item"><span class="legend-dot" style="background:#EBF8FF;border:1px solid #90CDF4;"></span>借方合計（取引で借方に来た金額の総計）</span>
-    <span class="legend-item"><span class="legend-dot" style="background:#FFF9F0;border:1px solid #FBD38D;"></span>貸方合計（取引で貸方に来た金額の総計）</span>
-  </div>
-
-  <h2>② 合計残高試算表</h2>
-
-  <p>合計欄と残高欄の<strong>両方を記入</strong>します。まず合計欄を埋め、次に差額で残高欄を計算するのが解く順番のコツです。</p>
-
-  <div class="shisan-wrap">
-    <table class="shisan-table">
-      <caption>合計残高試算表</caption>
-      <thead>
-        <tr>
-          <th class="zandaka-kari">残高</th>
-          <th class="gokei-kari">合計</th>
-          <th class="kamoku-head">勘定科目</th>
-          <th class="gokei-kashi">合計</th>
-          <th class="zandaka-kashi">残高</th>
-        </tr>
-        <tr>
-          <th class="zandaka-kari" style="font-size:10px;font-weight:400;">（借方）</th>
-          <th class="gokei-kari" style="font-size:10px;font-weight:400;">（借方）</th>
-          <th class="kamoku-head"></th>
-          <th class="gokei-kashi" style="font-size:10px;font-weight:400;">（貸方）</th>
-          <th class="zandaka-kashi" style="font-size:10px;font-weight:400;">（貸方）</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="zandaka-kari">128,000</td><td class="gokei-kari">272,000</td><td class="kamoku-cell" style="text-align:center;">現金</td><td class="gokei-kashi">144,000</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari">60,000</td><td class="gokei-kari">100,000</td><td class="kamoku-cell" style="text-align:center;">売掛金</td><td class="gokei-kashi">40,000</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari">200,000</td><td class="gokei-kari">200,000</td><td class="kamoku-cell" style="text-align:center;">備品</td><td class="gokei-kashi empty" style="text-align:center;">—</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="gokei-kari">30,000</td><td class="kamoku-cell" style="text-align:center;">買掛金</td><td class="gokei-kashi">80,000</td><td class="zandaka-kashi">50,000</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="gokei-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">借入金</td><td class="gokei-kashi">200,000</td><td class="zandaka-kashi">200,000</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="gokei-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">資本金</td><td class="gokei-kashi">60,000</td><td class="zandaka-kashi">60,000</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="gokei-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">売上</td><td class="gokei-kashi">300,000</td><td class="zandaka-kashi">300,000</td></tr>
-        <tr><td class="zandaka-kari">162,000</td><td class="gokei-kari">162,000</td><td class="kamoku-cell" style="text-align:center;">仕入</td><td class="gokei-kashi empty" style="text-align:center;">—</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari">60,000</td><td class="gokei-kari">60,000</td><td class="kamoku-cell" style="text-align:center;">給料</td><td class="gokei-kashi empty" style="text-align:center;">—</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-      </tbody>
-      <tfoot>
-        <tr><td class="zandaka-kari">610,000</td><td class="gokei-kari">824,000</td><td class="kamoku-cell" style="text-align:center;">合　計</td><td class="gokei-kashi">824,000</td><td class="zandaka-kashi">610,000</td></tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <div class="tip-box">
-    <strong>合計残高試算表の解く順番</strong><br>
-    ① まず合計欄（借方・貸方）を埋める<br>
-    ② 合計欄の差額を計算して残高欄に記入<br>
-    　→ 借方合計 ＞ 貸方合計 → 差額を残高欄の借方へ<br>
-    　→ 貸方合計 ＞ 借方合計 → 差額を残高欄の貸方へ
-  </div>
-
-  <h2>③ 残高試算表</h2>
-
-  <p>各勘定の<strong>差引残高のみを、借方か貸方どちらか一方</strong>に記入します。同じ勘定科目で借方と貸方の両方に金額を書くことはありません。</p>
-
-  <div class="shisan-wrap">
-    <table class="shisan-table">
-      <caption>残高試算表</caption>
-      <thead>
-        <tr>
-          <th class="zandaka-kari" style="width:35%;">借方残高</th>
-          <th class="kamoku-head" style="width:30%;">勘定科目</th>
-          <th class="zandaka-kashi" style="width:35%;">貸方残高</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="zandaka-kari">128,000</td><td class="kamoku-cell" style="text-align:center;">現金</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari">60,000</td><td class="kamoku-cell" style="text-align:center;">売掛金</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari">200,000</td><td class="kamoku-cell" style="text-align:center;">備品</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">買掛金</td><td class="zandaka-kashi">50,000</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">借入金</td><td class="zandaka-kashi">200,000</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">資本金</td><td class="zandaka-kashi">60,000</td></tr>
-        <tr><td class="zandaka-kari empty" style="text-align:center;">—</td><td class="kamoku-cell" style="text-align:center;">売上</td><td class="zandaka-kashi">300,000</td></tr>
-        <tr><td class="zandaka-kari">162,000</td><td class="kamoku-cell" style="text-align:center;">仕入</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-        <tr><td class="zandaka-kari">60,000</td><td class="kamoku-cell" style="text-align:center;">給料</td><td class="zandaka-kashi empty" style="text-align:center;">—</td></tr>
-      </tbody>
-      <tfoot>
-        <tr><td class="zandaka-kari">610,000</td><td class="kamoku-cell" style="text-align:center;">合　計</td><td class="zandaka-kashi">610,000</td></tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <div class="warn-box">
-    <strong>残高試算表で「合計欄」の金額を書くと0点！</strong><br>
-    現金の例：借方272,000・貸方144,000が取引の合計でも、残高試算表には差引した残高128,000のみを借方欄に記入します。合計の272,000や144,000は書きません。
-  </div>
-
-  <div class="app-cta">
-    <h3>⚔ Study Quest で学習を記録しよう</h3>
-    <p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div class="matome">
-    <h3>📋 まとめ：3種類の試算表 早見表</h3>
-    <div class="matome-row">
-      <span class="trigger">合計試算表</span>
-      <span class="result">借方合計・貸方合計を両方記入（残高は書かない）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">合計残高試算表</span>
-      <span class="result">合計欄と残高欄の両方を記入（情報量が一番多い）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">残高試算表</span>
-      <span class="result">差引残高のみ、借方か貸方の一方に記入</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">試験での確認方法</span>
-      <span class="result">答案用紙の列ヘッダーを最初に見る！</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">合計残高試算表の解く順</span>
-      <span class="result">①合計欄を先に埋める → ②差額で残高欄を計算</span>
-    </div>
-  </div>
-
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">残高試算表と合計試算表の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">合計試算表は各勘定の借方合計・貸方合計を集計した表です。残高試算表は差額（残高）だけを集計した表です。合計残高試算表は両方を合わせたもので、3種類とも試験範囲です。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">試算表の借方と貸方はなぜ必ず一致するのですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">複式簿記では必ず借方と貸方が同額で記録されるため、全取引を集計した試算表では借方合計と貸方合計が必ず一致します。一致しない場合は転記ミスや計算間違いがあります。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">試算表と精算表の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">試算表は帳簿の記録を確認するための表です。精算表は決算整理を行いP/L・B/Sを作成するための作業表です。試算表を精算表のインプット（残高試算表欄）として使います。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">試算表は「借方＝貸方」を合わせるだけのパズルです</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-      <a href="boki.html" style="display:inline-block;background:#fff;border:2px solid #8CC63F;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#276749;text-decoration:none;">簿記3級ロードマップへ</a>
-    </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>試算表3種類の違い｜合計・残高と一致しても残る誤りを検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>試算表は総勘定元帳の金額を一覧にして、借方と貸方の合計等を確認する作業表です。合計欄と残高欄では書く数値が違います。合計が一致しても、すべての取引内容が正しいと保証されるわけではありません。</p>
+<div class="sq-facts-note">旧説明の「合計が合えば正解」「欄を間違えれば必ず0点」「特定手順でミスゼロ」といった断定を訂正しました。以下の既存データは編集部の架空例として再計算しました。採点方法の保証ではありません。</div>
+<h2>同じ科目でも合計と残高は違う</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">表</th><th scope="col">記入する数値</th></tr></thead><tbody><tr><td>合計試算表</td><td>科目ごとの借方合計・貸方合計</td></tr><tr><td>残高試算表</td><td>借貸差額を残る側に記入</td></tr><tr><td>合計残高試算表</td><td>合計欄と差引残高欄の両方</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>自作例1：元の9勘定のデータを検算</h3><p>下表の借方・貸方合計を集計し、残高の借方合計・貸方合計を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>借方合計824,000円、貸方合計824,000円。借方残高は128,000＋60,000＋200,000＋162,000＋60,000＝610,000円。貸方残高は50,000＋200,000＋60,000＋300,000＝610,000円です。合計824,000円と残高610,000円は別の数字です。</p></div></details></section>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">科目</th><th scope="col">借方合計</th><th scope="col">貸方合計</th><th scope="col">差引残高</th></tr></thead><tbody><tr><td>現金</td><td>272,000</td><td>144,000</td><td>借方128,000</td></tr><tr><td>売掛金</td><td>100,000</td><td>40,000</td><td>借方60,000</td></tr><tr><td>備品</td><td>200,000</td><td>0</td><td>借方200,000</td></tr><tr><td>買掛金</td><td>30,000</td><td>80,000</td><td>貸方50,000</td></tr><tr><td>借入金</td><td>0</td><td>200,000</td><td>貸方200,000</td></tr><tr><td>資本金</td><td>0</td><td>60,000</td><td>貸方60,000</td></tr><tr><td>売上</td><td>0</td><td>300,000</td><td>貸方300,000</td></tr><tr><td>仕入</td><td>162,000</td><td>0</td><td>借方162,000</td></tr><tr><td>給料</td><td>60,000</td><td>0</td><td>借方60,000</td></tr></tbody></table></div>
+<h2>一致していても、取引や科目が抜ける</h2>
+<section class="sq-facts-exercise"><h3>自作例2：給料4,000円を仕入へ誤記したら</h3><p>上表とは別の誤りの例です。本来は給料4,000／現金4,000の取引を、仕入4,000／現金4,000と記録しました。貸借一致で発見できますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>どちらも借方4,000円・貸方4,000円で一致します。仕入過大・給料過少の科目誤りは、合計比較だけでは分かりません。同様に取引を借貸両方とも漏らしたり、丸ごと二重記帳したりしても一致し得ます。</p></div></details></section>
+<h2>転記と決算整理の関係</h2><p>仕訳帳の借方は対応する元帳の借方へ、貸方は貸方へ移します。複数科目の仕訳なら必要な元帳も複数です。「仕訳は常に2科目だけ」とはしません。日付・相手科目・金額・参照番号も対応させます。</p><p>決算整理前残高試算表に、減価償却・在庫・期間配分等の整理を反映すると決算整理後の残高へつながります。精算表は整理から財務諸表への対応を見る作業表です。実務の帳簿締切や作成手順が全社で一つに固定されるとの説明は避け、設問の求める時点を確認します。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>試算表が一致すれば取引はすべて正しいですか？</summary><p>いいえ。取引全体の漏れ・重複や科目違いなど、一致したまま残る誤りもあります。元の資料との照合が必要です。</p></details><details class="sq-facts-answer"><summary>現金272,000円と144,000円は残高試算表にも書きますか？</summary><p>例1の残高試算表には差引128,000円を借方へ書きます。272,000円と144,000円は合計欄の数字です。</p></details><details class="sq-facts-answer"><summary>試算表と精算表は同じですか？</summary><p>試算表は勘定の合計・残高等の一覧、精算表は決算整理から財務諸表への対応を確認する作業表です。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">記事トップ</a>
   <a href="app.html">アプリを使う</a>
   <a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p>
 </footer>
-
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

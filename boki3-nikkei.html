@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-nikkei.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】仕訳日計表とは？3伝票制から総勘定元帳への転記まで例題つきで完全解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の仕訳日計表を例題つきで完全解説。なぜ仕訳日計表を使うのか、3伝票制から仕訳日計表を作成し総勘定元帳に転記するまでの流れを図解でわかりやすく解説。">
+<title>仕訳日計表の作り方｜5伝票の集計と一致しても残る誤りを確認｜スタディクエスト</title>
+<meta name="description" content="5枚の伝票を科目・借貸別に集計する既存例を検算。合計38,000円の一致だけでは見抜けない科目誤りと、補助元帳の個別転記を確認します。">
 <meta name="keywords" content="仕訳日計表 書き方,仕訳日計表 作り方,伝票会計 集計,日商簿記3級 仕訳日計表,仕訳日計表 例題">
-<meta property="og:title" content="仕訳日計表の書き方【日商簿記3級】伝票会計・集計ステップを図解で完全解説">
-<meta property="og:description" content="入金・出金・振替伝票を集計して仕訳日計表を作る手順を例題つきで解説。">
+<meta property="og:title" content="仕訳日計表の作り方｜5伝票の集計と一致しても残る誤りを確認">
+<meta property="og:description" content="5枚の伝票を科目・借貸別に集計する既存例を検算。合計38,000円の一致だけでは見抜けない科目誤りと、補助元帳の個別転記を確認します。">
 <meta property="og:url" content="https://study-quest.net/boki3-nikkei.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,18 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "仕訳日計表の書き方【日商簿記3級】伝票会計・集計ステップを図解で完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "入金・出金・振替伝票を集計して仕訳日計表を作る手順を例題つきで解説。",
-  "url": "https://study-quest.net/boki3-nikkei.html",
-  "datePublished": "2026-05-07",
-  "dateModified": "2026-08-25",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "仕訳日計表の作り方｜5伝票の集計と一致しても残る誤りを確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "5枚の伝票を科目・借貸別に集計する既存例を検算。合計38,000円の一致だけでは見抜けない科目誤りと、補助元帳の個別転記を確認します。", "url": "https://study-quest.net/boki3-nikkei.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -154,349 +143,47 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "借貸合計が一致すれば正解ですか？", "acceptedAnswer": {"@type": "Answer", "text": "一致しても、科目違い・取引全体の漏れ・重複等は残り得ます。伝票との対応も確認します。"}}, {"@type": "Question", "name": "現金の借貸は日計表で相殺しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本文の合計表では借方23,000円と貸方5,000円を分けます。差引額18,000円をそれぞれの合計欄へ書きません。"}}, {"@type": "Question", "name": "得意先元帳も日計表の総額だけで書けますか？", "acceptedAnswer": {"@type": "Answer", "text": "取引先別の内訳が必要です。総額だけでなく元の伝票・明細の相手先を確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
-
-<div class="container">
-  <div class="breadcrumb">
-    <a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">日商簿記3級</a> &gt; 仕訳日計表の書き方
-  </div>
-
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月25日</p>
-  <h1>仕訳日計表の書き方<br>伝票から集計するステップを図解で完全解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>仕訳日計表は「伝票を仕訳に直す→科目ごとに集計」の2ステップ</strong>で完成する</li>
-      <li>入金伝票は（借）現金、出金伝票は（貸）現金、振替伝票はそのまま仕訳——これだけ覚えればOK</li>
-      <li><strong>借方合計＝貸方合計</strong>になれば仕訳日計表は完成——不一致は必ず転記ミス</li>
-      <li>完成した仕訳日計表から総勘定元帳へ転記するのが最終ステップ</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    実は、今回紹介する「仕訳日計表」ですが、私が初めて見たとき、「え、結局ただ伝票を集計して表にするだけの単純作業でしょ？」と正直ナメてかかっていました（笑）。でも実際に解いてみると、入金伝票・出金伝票・振替伝票がごちゃ混ぜになった状態から、勘定科目ごとに正確に拾い集めて借方合計＝貸方合計まで一致させるのは、思っていた以上に骨が折れるパズルでした。<br>
-    でも本質を理解した瞬間、この作業が実務ではとんでもない効率化の武器だと気づいたんです。伝票が100枚あっても、1枚ずつ元帳へ転記していたら日が暮れます。でも仕訳日計表を経由すれば、勘定科目ごとに「たった1回」の合計転記で済んでしまう。この「個別転記→合計転記」への発想の転換こそが、仕訳日計表の面白さです。<br>
-    今回は、このパズルをゲーム感覚で攻略できるよう、図解と一緒に私なりの解き方をお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <h2>❓ 仕訳日計表とは？——その日の全伝票を勘定科目ごとに集計した一覧表</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-nikkei-map-mobile.svg">
-    <img src="images/boki3-nikkei-map.svg" alt="仕訳日計表の集計構造：伝票→仕訳日計表→各種元帳への転記フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="760" height="360">
-  </picture>
-  <p>企業では毎日たくさんの取引が発生し、伝票が大量に起票されます。その日に起票されたすべての伝票を集計して1枚の表にまとめたものが<strong>仕訳日計表</strong>です。</p>
-
-  <ul>
-    <li>一日の取引量・金額を一目で把握できる</li>
-    <li>伝票の記入ミスや集計漏れを発見できる（借方合計＝貸方合計で検証）</li>
-    <li>仕訳日計表から元帳（得意先元帳・仕入先元帳など）への転記に使う</li>
-  </ul>
-
-  <div class="tip-box">
-    <strong>借方合計と貸方合計は必ず一致する！</strong><br>
-    仕訳の借方・貸方が同額になるルールと同じです。合計が合わない場合は集計ミスや伝票の見落としがあります。
-  </div>
-
-  <h3>なぜ仕訳日計表を使うのか——伝票ごとではなく日計表で元帳転記をまとめる理由</h3>
-
-  <p>3伝票制では、伝票1枚ごとに総勘定元帳へ転記すると作業量が膨大になります。仕訳日計表を使えば、<strong>1日分の伝票をまとめて集計し、元帳へ合計転記</strong>できるため大幅に効率化できます。</p>
-
-  <div class="warn-box">
-    <strong>個別転記 vs 合計転記</strong><br>
-    <strong>個別転記（仕訳日計表なし）：</strong>伝票が100枚あれば100回転記が必要<br>
-    <strong>合計転記（仕訳日計表あり）：</strong>勘定科目ごとに集計して1回だけ転記すればよい<br>
-    → 大企業ほど1日の取引が多いため、仕訳日計表による合計転記が実務・試験の両方で重要になります。
-  </div>
-
-  <h2>📝 例題——5枚の伝票から仕訳日計表を完成させる</h2>
-
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>2026年6月1日に次の伝票が起票された。この伝票から仕訳日計表を作成しなさい。</p>
-  </div>
-
-  <h3>起票された伝票（6月1日分）——入金・出金・振替の3種類が混在している</h3>
-
-  <div class="denpyo-day">
-    <div class="dd-section">
-      <span class="dd-type-label nyukin">入金伝票</span>
-      <div class="dd-rows">
-        <div class="dd-row r-nyukin">
-          <span class="kari">現金　3,000</span>
-          <span class="sep">／</span>
-          <span class="kashi">売掛金　3,000</span>
-        </div>
-        <div class="dd-row r-nyukin">
-          <span class="kari">現金　20,000</span>
-          <span class="sep">／</span>
-          <span class="kashi">当座預金　20,000</span>
-        </div>
-      </div>
-    </div>
-    <div class="dd-section">
-      <span class="dd-type-label shukin">出金伝票</span>
-      <div class="dd-rows">
-        <div class="dd-row r-shukin">
-          <span class="kari">仕入　1,000</span>
-          <span class="sep">／</span>
-          <span class="kashi">現金　1,000</span>
-        </div>
-        <div class="dd-row r-shukin">
-          <span class="kari">水道光熱費　4,000</span>
-          <span class="sep">／</span>
-          <span class="kashi">現金　4,000</span>
-        </div>
-      </div>
-    </div>
-    <div class="dd-section">
-      <span class="dd-type-label furikae">振替伝票</span>
-      <div class="dd-rows">
-        <div class="dd-row r-furikae">
-          <span class="kari">売掛金　10,000</span>
-          <span class="sep">／</span>
-          <span class="kashi">売上　10,000</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h2>✏️ 解き方：2ステップで完成——伝票を仕訳に変換→勘定科目ごとに集計</h2>
-
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body"><strong>伝票から仕訳を確認する</strong><br>入金・出金・振替の各伝票をすべて仕訳の形に並べる（上の表がそれ）</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body"><strong>勘定科目ごとに合計して仕訳日計表に記入する</strong><br>同じ勘定科目が複数の伝票に登場する場合は合算する</div>
-    </div>
-  </div>
-
-  <h3>STEP 2：勘定科目ごとに借方・貸方を集計する</h3>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">伝票が5枚もあって、しかも「現金」があちこちの伝票に散らばって出てきます……これ、どうやって1つの数字にまとめればいいんですか？頭の中がバラバラになりそうです。</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">その感覚、すごくわかります！私も最初は「バラバラのピースをどう集めればいいんだ……」って混乱しました（笑）。でもコツはシンプルで、<strong>同じ勘定科目・同じ借方（または貸方）の数字だけを1つの箱に集めて足し算する</strong>、ただそれだけのパズルなんです。「現金」が3枚の伝票に散らばっていても、借方の現金だけを拾い集めれば1つの合計になります。</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">なるほど、科目ごとに「箱」を用意して仕分けていくイメージですね！全部集め終わったら、最後はどうやって答え合わせすればいいんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">いいところに気づきましたね！全部の箱を集計し終わったら、<strong>借方の合計と貸方の合計が必ずピッタリ一致する</strong>はずです。これは仕訳の「借方＝貸方」というルールがそのまま反映されているからです。ここが合わなければ、どこかの伝票を拾い忘れているか、金額を書き間違えている証拠。まさに答え合わせ機能つきのパズルなんです！</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-  </div>
-
-  <div class="collect-grid">
-    <div class="collect-item c-kari">
-      <div class="ci-kamoku">現金</div>
-      <div class="ci-calc">3,000 + 20,000</div>
-      <div class="ci-total">23,000</div>
-    </div>
-    <div class="collect-item c-kashi">
-      <div class="ci-kamoku">現金</div>
-      <div class="ci-calc">1,000 + 4,000</div>
-      <div class="ci-total">5,000</div>
-    </div>
-    <div class="collect-item c-kari">
-      <div class="ci-kamoku">売掛金</div>
-      <div class="ci-calc">10,000</div>
-      <div class="ci-total">10,000</div>
-    </div>
-    <div class="collect-item c-kashi">
-      <div class="ci-kamoku">売掛金</div>
-      <div class="ci-calc">3,000</div>
-      <div class="ci-total">3,000</div>
-    </div>
-    <div class="collect-item c-kashi">
-      <div class="ci-kamoku">当座預金</div>
-      <div class="ci-calc">20,000</div>
-      <div class="ci-total">20,000</div>
-    </div>
-    <div class="collect-item c-kari">
-      <div class="ci-kamoku">仕入</div>
-      <div class="ci-calc">1,000</div>
-      <div class="ci-total">1,000</div>
-    </div>
-    <div class="collect-item c-kari">
-      <div class="ci-kamoku">水道光熱費</div>
-      <div class="ci-calc">4,000</div>
-      <div class="ci-total">4,000</div>
-    </div>
-    <div class="collect-item c-kashi">
-      <div class="ci-kamoku">売上</div>
-      <div class="ci-calc">10,000</div>
-      <div class="ci-total">10,000</div>
-    </div>
-  </div>
-
-  <h3>完成した仕訳日計表——借方合計＝貸方合計で確認完了</h3>
-
-  <div class="nikkei-wrap">
-    <table class="nikkei-table">
-      <caption>仕訳日計表　2026年6月1日</caption>
-      <thead>
-        <tr>
-          <th class="n-kari" style="width:35%;">借方</th>
-          <th class="kamoku-head" style="width:30%;">勘定科目</th>
-          <th class="n-kashi" style="width:35%;">貸方</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="n-kari">23,000</td>
-          <td class="kamoku-cell">現金</td>
-          <td class="n-kashi">5,000</td>
-        </tr>
-        <tr>
-          <td class="n-kari">10,000</td>
-          <td class="kamoku-cell">売掛金</td>
-          <td class="n-kashi">3,000</td>
-        </tr>
-        <tr>
-          <td class="n-kari empty">—</td>
-          <td class="kamoku-cell">当座預金</td>
-          <td class="n-kashi">20,000</td>
-        </tr>
-        <tr>
-          <td class="n-kari">1,000</td>
-          <td class="kamoku-cell">仕入</td>
-          <td class="n-kashi empty">—</td>
-        </tr>
-        <tr>
-          <td class="n-kari">4,000</td>
-          <td class="kamoku-cell">水道光熱費</td>
-          <td class="n-kashi empty">—</td>
-        </tr>
-        <tr>
-          <td class="n-kari empty">—</td>
-          <td class="kamoku-cell">売上</td>
-          <td class="n-kashi">10,000</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td class="n-kari">38,000</td>
-          <td class="kamoku-cell">合　計</td>
-          <td class="n-kashi">38,000</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <div class="tip-box">
-    <strong>借方合計 38,000＝貸方合計 38,000 で一致！</strong><br>
-    借方：23,000＋10,000＋1,000＋4,000＝38,000<br>
-    貸方：5,000＋3,000＋20,000＋10,000＝38,000<br>
-    合計が合えば集計完了。合わない場合はどこかの伝票の記入漏れや計算ミスを確認する。
-  </div>
-
-  <h2>📖 試験でよく一緒に出る：元帳への転記——総勘定元帳は合計転記、補助元帳は個別転記</h2>
-
-  <p>試験では仕訳日計表の作成と同時に、<strong>得意先元帳（売掛金明細）や仕入先元帳（買掛金明細）</strong>への転記を求める問題が出ます。</p>
-  <div class="warn-box">
-    <strong>補助元帳への転記元は「仕訳日計表」ではなく「伝票」！</strong><br>
-    総勘定元帳（主要簿）へは仕訳日計表からの合計転記でよいですが、得意先元帳・仕入先元帳（補助元帳）は取引先ごとの内訳が必要なため、<strong>1枚ずつの伝票から直接、取引先の口座に個別転記</strong>します。仕訳日計表は勘定科目ごとの合計額しか持っておらず、どの取引先がいくらかという情報が失われているため、日計表からは補助元帳へ転記できません。
-  </div>
-
-  <div class="warn-box">
-    <strong>勘定科目の順番に決まりはない</strong><br>
-    仕訳日計表の勘定科目の記載順は問題ごとに異なります。答案用紙の勘定科目欄が空欄になっていれば自分で書き、あらかじめ印刷されていればその順番に従います。どちらの形式にも対応できるようにしておきましょう。
-  </div>
-
-  <section class="related-links" style="margin:40px 0"><h2 style="font-size:20px;letter-spacing:-0.01em;margin:42px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><ul style="margin:0 0 16px 20px;font-size:14px;"><li><a href="boki3-denpyo.html">伝票会計（３伝票制）の仕訳と解き方</a></li><li><a href="boki3-shisanhyo.html">試算表とは？合計・残高・合計残高試算表の3種類</a></li><li><a href="boki3-progress.html">簿記3級 学習進捗チェック</a></li></ul></section>
-  <div class="app-cta">
-    <h3>⚔ Study Quest で学習を記録しよう</h3>
-    <p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div class="matome">
-    <h3>📋 まとめ：仕訳日計表 早見表</h3>
-    <div class="matome-row">
-      <span class="trigger">仕訳日計表とは</span>
-      <span class="result">その日の全伝票を勘定科目ごとに集計した表</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">作成手順 ①</span>
-      <span class="result">全伝票を仕訳の形に並べる</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">作成手順 ②</span>
-      <span class="result">勘定科目ごとに借方・貸方を合計して記入</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">完成の確認方法</span>
-      <span class="result">借方合計＝貸方合計になれば正解</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">試験の頻出セット</span>
-      <span class="result">仕訳日計表＋得意先元帳（または仕入先元帳）の転記</span>
-    </div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">仕訳日計表はいつ作成しますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">1日の取引が終わった後、その日の伝票（入金・出金・振替伝票）をすべて集計して作成します。伝票から直接総勘定元帳に転記する代わりに、仕訳日計表を経由することで転記の手間を減らします。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">仕訳日計表と総勘定元帳の関係は？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">仕訳日計表は1日の取引を勘定科目ごとに集計した表です。この集計額を総勘定元帳に転記します。1枚ずつ転記するより日計表経由のほうが転記作業が大幅に効率化されます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">3伝票制と5伝票制の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">3伝票制は入金・出金・振替の3種類を使います。5伝票制はさらに売上伝票・仕入伝票を加えた5種類です。日商簿記3級では主に3伝票制と仕訳日計表の組み合わせが出題されます。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>仕訳日計表の作り方｜5伝票の集計と一致しても残る誤りを確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>仕訳日計表は、一日の伝票を勘定科目別・借方貸方別に集計する表です。総勘定元帳への合計転記に使います。取引先別の明細が必要な補助元帳は、元の伝票等から個別の取引も追います。</p>
+<div class="sq-facts-note">「借方合計＝貸方合計なら正解」「不一致なら必ず転記ミスだけが原因」という説明を訂正しました。一致は必要な点検ですが、取引全体の漏れ・二重記帳・科目違い等をすべて検出できるものではありません。以下は編集部の架空例です。</div>
+<h2>伝票を仕訳に戻してから、同じ側だけを足す</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">伝票</th><th scope="col">借方</th><th scope="col">貸方</th></tr></thead><tbody><tr><td>入金1</td><td>現金3,000</td><td>売掛金3,000</td></tr><tr><td>入金2</td><td>現金20,000</td><td>当座預金20,000</td></tr><tr><td>出金1</td><td>仕入1,000</td><td>現金1,000</td></tr><tr><td>出金2</td><td>水道光熱費4,000</td><td>現金4,000</td></tr><tr><td>振替1</td><td>売掛金10,000</td><td>売上10,000</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>自作例1：元の5伝票を日計表へ</h3><p>上の5伝票を科目別に集計してください。現金・売掛金の借貸を相殺せずに記入します。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><div class="sq-facts-table"><table><thead><tr><th>科目</th><th>借方合計</th><th>貸方合計</th></tr></thead><tbody><tr><td>現金</td><td>23,000</td><td>5,000</td></tr><tr><td>売掛金</td><td>10,000</td><td>3,000</td></tr><tr><td>当座預金</td><td>0</td><td>20,000</td></tr><tr><td>仕入</td><td>1,000</td><td>0</td></tr><tr><td>水道光熱費</td><td>4,000</td><td>0</td></tr><tr><td>売上</td><td>0</td><td>10,000</td></tr><tr><td>合計</td><td>38,000</td><td>38,000</td></tr></tbody></table></div><p>現金の借方23,000と貸方5,000を差し引いた18,000円は、この日計表の借貸合計欄へ書く数値ではありません。残高・差額と区別します。</p></div></details></section>
+<h2>合計が同じでも科目を間違えられる</h2>
+<section class="sq-facts-exercise"><h3>自作例2：水道光熱費を仕入へ入れたら</h3><p>例1の水道光熱費4,000円を誤って仕入へ集計した場合、貸借合計は変わりますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>借方の仕入が5,000円、水道光熱費がゼロになりますが、借方合計は38,000円のままです。貸方も38,000円で一致してしまいます。伝票番号と科目の対応を照合しなければ、この誤りは見逃せます。</p></div></details></section>
+<h2>総勘定元帳と取引先別の補助元帳</h2><p>総勘定元帳へは、日計表から科目別の借方・貸方合計を転記する方式を扱います。得意先元帳・仕入先元帳へは、どの相手先の増減かが必要です。売掛金合計10,000円だけでは、A社6,000円とB社4,000円などの内訳が分かりません。元の伝票・明細と対応させます。</p><p>合計転記で情報を集約できる一方、件数や金額・科目・取引先の照合を省いてよいという意味ではありません。集計前に伝票の重複と欠番、集計後に科目別の内訳と総額を点検します。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>借貸合計が一致すれば正解ですか？</summary><p>一致しても、科目違い・取引全体の漏れ・重複等は残り得ます。伝票との対応も確認します。</p></details><details class="sq-facts-answer"><summary>現金の借貸は日計表で相殺しますか？</summary><p>本文の合計表では借方23,000円と貸方5,000円を分けます。差引額18,000円をそれぞれの合計欄へ書きません。</p></details><details class="sq-facts-answer"><summary>得意先元帳も日計表の総額だけで書けますか？</summary><p>取引先別の内訳が必要です。総額だけでなく元の伝票・明細の相手先を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">記事トップ</a>
   <a href="app.html">アプリを使う</a>
   <a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p>
 </footer>
-
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

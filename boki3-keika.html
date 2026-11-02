@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-keika.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】経過勘定とは？前払費用・未払費用・前受収益・未収収益の仕訳を完全解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の経過勘定4種類（前払費用・未払費用・前受収益・未収収益）を例題つきで完全解説。どの科目をどのタイミングで使うか、決算整理仕訳の考え方をわかりやすく解説。">
+<title>経過勘定の仕訳｜前払・未払・前受・未収と再振替を5例で検算｜スタディクエスト</title>
+<meta name="description" content="4種類の期間配分と翌期の再振替を確認。未収利息の再振替後に同額を再び消していた誤りを直し、再振替しない方法とも比較します。">
 <meta name="keywords" content="経過勘定 仕訳,前払費用 未払費用,前受収益 未収収益,決算整理仕訳,再振替仕訳,日商簿記3級 経過勘定">
-<meta property="og:title" content="経過勘定（前払・未払・前受・未収）の仕訳【日商簿記3級】">
-<meta property="og:description" content="4つの経過勘定を「2パターン」で整理。前払利息・未払利息を例題つきで完全解説。">
+<meta property="og:title" content="経過勘定の仕訳｜前払・未払・前受・未収と再振替を5例で検算">
+<meta property="og:description" content="4種類の期間配分と翌期の再振替を確認。未収利息の再振替後に同額を再び消していた誤りを直し、再振替しない方法とも比較します。">
 <meta property="og:url" content="https://study-quest.net/boki3-keika.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,18 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "経過勘定（前払・未払・前受・未収）の仕訳【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "4つの経過勘定を「2パターン」で整理。前払利息・未払利息を例題つきで完全解説。",
-  "url": "https://study-quest.net/boki3-keika.html",
-  "datePublished": "2026-05-07",
-  "dateModified": "2026-08-26",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "経過勘定の仕訳｜前払・未払・前受・未収と再振替を5例で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "4種類の期間配分と翌期の再振替を確認。未収利息の再振替後に同額を再び消していた誤りを直し、再振替しない方法とも比較します。", "url": "https://study-quest.net/boki3-keika.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -171,520 +160,52 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "再振替後の利息受取で未収利息をもう一度消しますか？", "acceptedAnswer": {"@type": "Answer", "text": "期首に全額再振替して残高がゼロなら重ねて消しません。本文例4では現金400／受取利息400とし、再振替の借方200円と合わせ翌期収益200円になります。"}}, {"@type": "Question", "name": "再振替しない方法は誤りですか？", "acceptedAnswer": {"@type": "Answer", "text": "本文例5のように未収利息を残して受取時に消す方法もあります。問題の方式・既記帳に従い、再振替する方法と混ぜません。"}}, {"@type": "Question", "name": "前受収益は必ず返金する義務ですか？", "acceptedAnswer": {"@type": "Answer", "text": "将来の継続的役務をまだ提供していない対価です。返金の有無だけでなく役務提供義務を考えます。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
-
-<div class="container">
-  <div class="breadcrumb">
-    <a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 経過勘定（前払・未払・前受・未収）
-  </div>
-
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月26日</p>
-  <h1>経過勘定（前払・未払・前受・未収）<br>たった2パターンで完全攻略</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    実は、今回紹介する決算整理の最難関『経過勘定（前払・未払・前受・未収）』ですが、私が大学の講義で初めて習ったとき……「名前が似すぎててどれが資産でどれが負債か分からん！漢字だらけで意味不明……うわっ、なんじゃこりゃ！！」と頭が完全にフリーズした大嫌いな論点でした（笑）。<br>
-    だからこそ、当時の私と同じように文字の迷路でパニックになっている皆さんに、丸暗記を一切排除して【たった2つのパターン】で機械的に仕訳を解くステップをお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat"></div>
-
-  <h2>まず「発生主義」の大原則を理解する</h2>
-
-  <p>経過勘定を理解するには、簿記の重要な大原則を知る必要があります。</p>
-
-  <div class="point-card">
-    <div class="label">📌 発生主義の大原則</div>
-    <p>費用・収益は「当期に発生した分だけ」当期に計上する</p>
-  </div>
-
-  <p>たとえば12か月分の利息を一度に現金で払っても、当期は8か月分しか経過していなければ、費用として計上できるのは8か月分だけ。残り4か月分は「まだ発生していない」ので当期の費用から除く必要があります。これが決算整理仕訳の目的です。</p>
-
-  <h2>経過勘定は2パターンに整理する</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-keika-map-mobile.svg">
-    <img src="images/boki3-keika-map.svg" alt="経過勘定4パターンの決算日またぎタイムライン図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="760" height="590">
-  </picture>
-  <p>図解の赤い縦線が<strong>決算日</strong>です。費用・収益の「発生タイミング」と「お金の受け渡しタイミング」がこの縦線をまたいでズレるとき、4パターンのうちどれかを使います。前払・未払は費用側、前受・未収は収益側——まずこの位置関係を図で確認してください。</p>
-
-  <div class="pattern-compare">
-    <div class="pc-card type-a">
-      <span class="pc-badge">パターンA</span>
-      <div class="pc-title">お金を先に払った・受け取った</div>
-      <div class="pc-sub">翌期分（まだ発生していない分）を取り消す</div>
-      <div class="pc-examples">→ 前払費用・前受収益</div>
-    </div>
-    <div class="pc-card type-b">
-      <span class="pc-badge">パターンB</span>
-      <div class="pc-title">お金をまだ払っていない・受け取っていない</div>
-      <div class="pc-sub">当期分（すでに発生した分）を追加計上する</div>
-      <div class="pc-examples">→ 未払費用・未収収益</div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>教科書用語との対応：パターンA＝「繰延（くりのべ）」、パターンB＝「見越し（みこし）」</strong><br>
-    問題集やテキストでは、パターンAを「繰延処理」、パターンBを「見越処理」と呼ぶこともあります。繰延＝すでに動いたお金のうち、まだ発生していない分を翌期に繰り延べる。見越し＝まだお金は動いていないが、当期分をあらかじめ見越して計上する。呼び方が違うだけで、考え方はこの記事のパターンA・パターンBと完全に同じです。
-  </div>
-
-  <div class="tip-box"><strong>💡 身近な例で言うと：</strong><br>
-  一人暮らしをしたことがある人なら、家賃と光熱費の「払うタイミングのズレ」に心当たりがあるはずです。<br>
-  家賃は多くの場合、その月が始まる前に前払いしますよね。これはまさに<strong>前払費用（パターンA）</strong>——お金は先に払ったけど、まだその月の「住む」というサービスは発生していない状態です。<br>
-  逆に電気代・ガス代は、1月に使った分の請求書が2月に届いて、2月に支払うことが多いはずです。これはまさに<strong>未払費用（パターンB）</strong>——サービス（電気の使用）はすでに発生しているのに、お金の支払いはまだ、という状態です。<br>
-  （※電気代を「未払費用」ではなく「未払金」と混同しやすいので注意。未払金は物を買った代金など単発の支払いに使う科目で、家賃・光熱費のように継続的に発生するものには未払費用を使います。）
-  </div>
-
-  <h3>4つの勘定科目まとめ</h3>
-
-  <div class="four-grid">
-    <div class="fg-card maebara">
-      <div class="fg-name">前払費用</div>
-      <div class="fg-type">資産</div>
-      <div class="fg-body">先払いした費用のうち、翌期分。例：前払利息・前払保険料</div>
-    </div>
-    <div class="fg-card mibarai">
-      <div class="fg-name">未払費用</div>
-      <div class="fg-type">負債</div>
-      <div class="fg-body">当期に発生したがまだ払っていない費用。例：未払利息・未払家賃</div>
-    </div>
-    <div class="fg-card maeuke">
-      <div class="fg-name">前受収益</div>
-      <div class="fg-type">負債</div>
-      <div class="fg-body">先に受け取った収益のうち、翌期分。例：前受利息・前受家賃</div>
-    </div>
-    <div class="fg-card mishuu">
-      <div class="fg-name">未収収益</div>
-      <div class="fg-type">資産</div>
-      <div class="fg-body">当期に発生したがまだ受け取っていない収益。例：未収利息・未収手数料</div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>資産・負債は覚えなくていい！</strong><br>
-    勘定科目の分類を丸暗記するより、お金と期間のずれを見ます。<strong>支払ったのに翌期分が残るときは前払費用を借方、受け取ったのに翌期分が残るときは前受収益を貸方、まだ支払っていない費用は未払費用を貸方、まだ受け取っていない収益は未収収益を借方</strong>にします。勘定科目名より「どのずれのパターンか」を判断するほうが大切です。
-  </div>
-
-  <h2>パターンA：前払費用（前払利息）の解き方（3ステップ）</h2>
-
-  <div class="mondai">
-    <div class="mondai-label">例題</div>
-    <p>5月1日に借入金¥1,000、年利率12%で借り入れた。向こう1年分の利息を現金で支払った。当期は1月1日〜12月31日。</p>
-  </div>
-
-  <div class="timeline-box">
-    <div class="tl-label">当期（1月〜12月）のうち、利息の対象期間</div>
-    <div class="tl-bar">
-      <div class="tl-cur" style="flex:8;">当期分 8か月（5〜12月）¥80</div>
-      <div class="tl-next" style="flex:4;">翌期分 4か月（1〜4月）¥40</div>
-    </div>
-    <div class="tl-legend">
-      <span><span class="tl-dot" style="background:#8CC63F;"></span>当期の費用として計上する</span>
-      <span><span class="tl-dot" style="background:#EBF8FF;border:1px solid #90CDF4;"></span>翌期分 → 取り消す（前払利息）</span>
-    </div>
-  </div>
-
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <strong>支払い時：12か月分全額を「支払利息」に計上</strong>
-        <p>払ったときは全額費用でOK。あとで決算整理で調整する。</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <strong>決算整理：翌期分を「前払利息」に振り替える</strong>
-        <p>翌期4か月分を支払利息から取り消す。支払利息が減るので右（貸方）へ。</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <strong>翌期首（再振替仕訳）：決算整理の逆仕訳</strong>
-        <p>翌期分の利息を当期の費用に戻す。前期末と逆の仕訳をするだけ。</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ①支払い時（5月1日）</div>
-  <div class="calc-box">
-    <div class="calc-title">📐 利息の計算</div>
-    <div class="calc-row">
-      <span class="label">年利息</span>
-      <span class="val">1,000 × 12% =</span>
-      <span class="val result">¥120</span>
-    </div>
-    <div class="calc-row">
-      <span class="label">1か月分</span>
-      <span class="val">120 ÷ 12か月 =</span>
-      <span class="val result">¥10</span>
-    </div>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">支払利息</span><span class="amount">120</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">120</span></div>
-    </div>
-  </div>
-
-  <div class="warn-box">
-    <strong>⚠3級試験で頻出の落とし穴（月数のカウントミス）：</strong><br>
-    例題で「5月1日」に1年分を払ったとありますが、ここを「えーっと、12－5だから7ヶ月かな？」と引き算して数えるのは絶対にNGです！<br>
-    5月1日に払ったということは、5月という月を【丸々1ヶ月間】使っているため、5月も含めて「5, 6, 7, 8, 9, 10, 11, 12」と指を折って【8ヶ月】と数えなければいけません。<br>
-    問題文の日付が「1日」なのか「月末」なのかで月数が1ヶ月ズレて計算が全滅するので、日付は絶対に最初に見破りましょう！
-  </div>
-
-  <div class="kaitou-label">▶ ②決算整理仕訳（12月31日）</div>
-  <div class="calc-box">
-    <div class="calc-title">📐 翌期分の計算</div>
-    <div class="calc-row">
-      <span class="label">翌期分（1〜4月）</span>
-      <span class="val">4か月 × ¥10 =</span>
-      <span class="val result">¥40</span>
-    </div>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">前払利息</span><span class="amount">40</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">支払利息</span><span class="amount">40</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ③期首再振替仕訳（翌年1月1日）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">支払利息</span><span class="amount">40</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">前払利息</span><span class="amount">40</span></div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>再振替仕訳は「決算整理の逆」をするだけ！</strong><br>
-    難しく考えず、②の仕訳の借方・貸方を入れ替えるだけです。理由は「翌期首にリセットして、翌期分の費用を正しく計上できるようにするため」です。
-  </div>
-
-  <h2>パターンB：未払費用（未払利息）の解き方（2ステップ）</h2>
-
-  <div class="mondai">
-    <div class="mondai-label">例題</div>
-    <p>7月1日に借入金¥1,000、年利率6%で借り入れた。決算整理で利息の未払分を計上する。当期は1月1日〜12月31日。</p>
-  </div>
-
-  <div class="timeline-box">
-    <div class="tl-label">当期（1月〜12月）のうち、利息の対象期間</div>
-    <div class="tl-bar">
-      <div class="tl-cur" style="flex:6;">当期分 6か月（7〜12月）¥30 → まだ払っていない</div>
-    </div>
-    <div class="tl-legend">
-      <span><span class="tl-dot" style="background:#8CC63F;"></span>当期に発生 → 未払利息として追加計上</span>
-    </div>
-  </div>
-
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <strong>決算整理：当期分を「未払利息」で追加計上</strong>
-        <p>まだ払っていないが当期に発生した分を費用として計上。支払利息が増えるので左（借方）へ。</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <strong>翌期首（再振替仕訳）：決算整理の逆仕訳</strong>
-        <p>翌期に実際に支払うときと相殺するためにリセットする。</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ①決算整理仕訳（12月31日）</div>
-  <div class="calc-box">
-    <div class="calc-title">📐 未払利息の計算</div>
-    <div class="calc-row">
-      <span class="label">年利息</span>
-      <span class="val">1,000 × 6% =</span>
-      <span class="val result">¥60</span>
-    </div>
-    <div class="calc-row">
-      <span class="label">1か月分</span>
-      <span class="val">60 ÷ 12か月 =</span>
-      <span class="val result">¥5</span>
-    </div>
-    <div class="calc-row">
-      <span class="label">当期分（7〜12月）</span>
-      <span class="val">6か月 × ¥5 =</span>
-      <span class="val result">¥30</span>
-    </div>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">支払利息</span><span class="amount">30</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">未払利息</span><span class="amount">30</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ②期首再振替仕訳（翌年1月1日）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">未払利息</span><span class="amount">30</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">支払利息</span><span class="amount">30</span></div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>家賃・手数料も勘定名が違うだけで解き方は同じ！</strong><br>
-    未払家賃・未収手数料・前受家賃など、勘定科目名が変わっても「パターンAかB」を判断して同じ手順で仕訳するだけ。利息で手順を覚えれば全部対応できます。
-  </div>
-
-  <h2>パターンA（応用）：前受収益の例題</h2>
-
-  <p>家賃を先にまとめて受け取ったが、次期分が含まれる場合は<strong>前受収益（負債）</strong>として振り替えます。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">例題</div>
-    <p>11月1日に店舗の家賃6か月分 ¥6,000 を現金で受け取った。当期は4月1日〜3月31日（3月末決算）。</p>
-  </div>
-
-  <div class="timeline-box">
-    <div class="tl-label">家賃の対象期間（11月〜翌4月）と当期の区切り</div>
-    <div class="tl-bar">
-      <div class="tl-cur" style="flex:5;">当期分 5か月（11〜3月）¥5,000</div>
-      <div class="tl-next" style="flex:1;">翌期分 1か月（4月）¥1,000</div>
-    </div>
-    <div class="tl-legend">
-      <span><span class="tl-dot" style="background:#8CC63F;"></span>当期の収益として計上する</span>
-      <span><span class="tl-dot" style="background:#EBF8FF;border:1px solid #90CDF4;"></span>翌期分 → 取り消す（前受家賃）</span>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ①受取時（11月1日）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">6,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">受取家賃</span><span class="amount">6,000</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ②決算整理仕訳（3月31日）</div>
-  <div class="calc-box">
-    <div class="calc-title">📐 翌期分の計算</div>
-    <div class="calc-row">
-      <span class="label">1か月分</span>
-      <span class="val">6,000 ÷ 6か月 =</span>
-      <span class="val result">¥1,000</span>
-    </div>
-    <div class="calc-row">
-      <span class="label">翌期分（4月）</span>
-      <span class="val">1か月 × ¥1,000 =</span>
-      <span class="val result">¥1,000 → 取り消す</span>
-    </div>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">受取家賃</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">前受家賃</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ③期首再振替仕訳（翌年4月1日）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">前受家賃</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">受取家賃</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>前受収益は「返す義務がある→負債」！</strong><br>
-    次期のサービス（部屋を貸すこと）をまだ提供していないので、もし解約になれば返金しなければなりません。だから負債として計上します。前払費用（資産）と対称の関係を覚えましょう。
-  </div>
-
-  <h2>パターンB（応用）：未収収益の例題</h2>
-
-  <p>お金はまだ受け取っていないが、当期分の収益が発生している場合は<strong>未収収益（資産）</strong>で追加計上します。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">例題</div>
-    <p>10月1日に ¥10,000 を年利4%で貸し付けた。利息は翌年9月末に1年分をまとめて受け取る。当期は4月1日〜3月31日（3月末決算）。</p>
-  </div>
-
-  <div class="kaitou-label">▶ ①決算整理仕訳（3月31日）</div>
-  <div class="calc-box">
-    <div class="calc-title">📐 当期分（10月〜3月：6か月）の利息計算</div>
-    <div class="calc-row">
-      <span class="label">年利息</span>
-      <span class="val">10,000 × 4% =</span>
-      <span class="val result">¥400</span>
-    </div>
-    <div class="calc-row">
-      <span class="label">1か月分</span>
-      <span class="val">400 ÷ 12か月 =</span>
-      <span class="val result">約¥33</span>
-    </div>
-    <div class="calc-row">
-      <span class="label">当期分（10〜3月）</span>
-      <span class="val">6か月分 × ¥33 ≈</span>
-      <span class="val result">¥200（問題文の指定値を使う）</span>
-    </div>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">未収利息</span><span class="amount">200</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">受取利息</span><span class="amount">200</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ②期首再振替仕訳（翌年4月1日）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">受取利息</span><span class="amount">200</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">未収利息</span><span class="amount">200</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">▶ ③翌年9月30日（実際に1年分受取）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">400</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">未収利息</span><span class="amount">200</span></div>
-      <div class="shiwake-item"><span class="kamoku">受取利息</span><span class="amount">200</span></div>
-    </div>
-  </div>
-  <p>再振替仕訳後は未収利息が復活しているため、9月末の受取時は「未収利息（前期分）」と「受取利息（翌期分）」に分けて処理します。</p>
-
-  <div class="tip-box">
-    <strong>未収収益は「受け取る権利がある → 資産」！</strong><br>
-    貸し付けている期間中は日々利息が発生しています。まだ現金は動いていませんが、受け取る権利が確定しているので資産として計上します。未払費用（負債）と対称の関係です。
-  </div>
-
-  <div class="app-cta">
-    <h3>⚔ Study Quest で学習を記録しよう</h3>
-    <p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div class="matome">
-    <h3>📋 まとめ：経過勘定 2パターン対応表</h3>
-    <div class="matome-row">
-      <span class="trigger">先に払った → 翌期分を取り消す</span>
-      <span class="result">前払費用（借方）／ 費用勘定（貸方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">先に受け取った → 翌期分を取り消す</span>
-      <span class="result">収益勘定（借方）／ 前受収益（貸方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">まだ払っていない → 当期分を追加</span>
-      <span class="result">費用勘定（借方）／ 未払費用（貸方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">まだ受け取っていない → 当期分を追加</span>
-      <span class="result">未収収益（借方）／ 収益勘定（貸方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">再振替仕訳（翌期首）</span>
-      <span class="result">決算整理仕訳の借方・貸方を逆にするだけ</span>
-    </div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">前払費用と未払費用の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">前払費用は次期以降の費用を当期に先払いしたものです（例：家賃の前払い）。未払費用は当期に発生したが翌期に支払う費用です（例：未払利息）。どちらも決算整理仕訳が必要です。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">前受収益と未収収益はどう使い分けますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">前受収益は次期分の収益を当期に受け取った場合です。未収収益は当期分の収益がまだ受け取れていない場合です。費用の場合と対応する4種類の経過勘定をセットで覚えましょう。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">経過勘定の4種類の覚え方を教えてください</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">「費用の前払い→前払費用」「費用の後払い→未払費用」「収益の前受け→前受収益」「収益の後受け→未収収益」の4種類です。費用・収益と前払い・後払いの組み合わせで整理しましょう。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>経過勘定の仕訳｜前払・未払・前受・未収と再振替を5例で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>継続するサービスの対価について、当期に属する費用・収益と、現金の授受時点がずれる場合に経過勘定を使います。先払い・先受けは未提供分を繰り延べ、未払い・未収は当期の提供済み部分を計上します。</p>
+<div class="sq-facts-note"><strong>仕訳の誤りを訂正：</strong>旧説明では未収利息200円を期首に再振替した後、受取時に再び未収利息200円を貸方へ記録していました。再振替後の未収利息残高はゼロです。本文は、再振替する方法としない方法を混ぜずに確認します。</div>
+<h2>4つの勘定を、権利・義務と期間で分ける</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">状況</th><th scope="col">決算整理の基本</th><th scope="col">性質</th></tr></thead><tbody><tr><td>翌期分を先に支払済み</td><td>前払費用／費用</td><td>資産</td></tr><tr><td>当期分の支払いがまだ</td><td>費用／未払費用</td><td>負債</td></tr><tr><td>翌期分を先に受取済み</td><td>収益／前受収益</td><td>負債</td></tr><tr><td>当期分の受取りがまだ</td><td>未収収益／収益</td><td>資産</td></tr></tbody></table></div>
+<p>前払費用と商品の手付金である前払金、未払費用と設備代金等の未払金は、継続する役務の対価かどうか等で区別します。光熱費だからすべて自動的に未払費用と決めず、請求・役務提供・指定科目を確認します。前受収益の負債性も、常に返金だけを意味せず、将来の役務提供義務を考えます。</p>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki3-keika-verified-mobile.svg?v=20261103"><img src="images/boki3-keika-verified.svg?v=20261103" alt="経過勘定｜再振替を混ぜない" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<section class="sq-facts-exercise"><h3>自作例1：5月1日に1年分の利息120円を支払う</h3><p>1月〜12月決算。5月1日から翌4月末まで12か月分120円を支払利息に計上しました。月割り・均等発生の指定です。決算整理は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>当期は5〜12月の8か月80円、翌期は1〜4月の4か月40円。前払利息40／支払利息40。期首再振替をする方式なら翌1月1日に支払利息40／前払利息40です。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>自作例2：7月1日からの未払利息</h3><p>借入元本1,000円、年6%、7月1日から借入、利息は後払いで当期未計上。12月末決算、月割りです。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>1,000×6%×6/12＝30円。支払利息30／未払利息30。翌期首に再振替するなら未払利息30／支払利息30。その後の支払いでは、この戻しを含む当期損益を確認します。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>自作例3：11月から6か月分の家賃を先受け</h3><p>4月〜翌3月の決算。11月1日から翌4月末まで6か月分6,000円を受取家賃として計上しました。月割りです。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>当期5か月は5,000円、翌4月の1か月は1,000円。受取家賃1,000／前受家賃1,000。期首再振替をするなら翌4月1日に前受家賃1,000／受取家賃1,000です。</p></div></details></section>
+<h2>未収利息は、期首に戻したかを最後までそろえる</h2>
+<section class="sq-facts-exercise"><h3>自作例4：再振替する方法で400円を受け取る</h3><p>10月1日に10,000円を年4%で貸付け。利息は翌9月末に1年分400円を受取る。3月末決算、月割りです。期末・期首・受取時を示してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>3月末：10,000×4%×6/12＝200円。未収利息200／受取利息200。</p><p>4月1日再振替：受取利息200／未収利息200。この時点で未収利息はゼロ、翌期の受取利息は借方200円です。</p><p>9月末受取：現金400／受取利息400。翌期の受取利息純額は400−200＝200円、未収利息はゼロです。400÷12を約33円に丸めず、年額×6/12で計算します。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>自作例5：同じ取引で再振替しないなら</h3><p>例4と同条件ですが、4月1日に再振替しない方式です。9月末受取の仕訳と翌期の収益は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>現金400／未収利息200・受取利息200。前期末から残る未収利息200円を受取時に消すため、翌期収益は200円です。再振替する方法でもしない方法でも、同じ期間配分になり、両方式を混ぜません。</p></div></details></section>
+<h2>月数の数え方にも条件がある</h2><p>本文は月初開始・月末決算と月割りを仮定しています。日割りや端数・途中契約変更があれば、その指定に従います。「毎回、期首に逆仕訳するだけでどんな問題も解ける」とせず、再振替を行った帳簿残高とその後の支払い・受取りを一続きで点検します。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針30・31：経過勘定の定義と期間配分</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：収益・費用の繰延べ・見越し等</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級決算整理・勘定記入のサンプルの入口</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>再振替後の利息受取で未収利息をもう一度消しますか？</summary><p>期首に全額再振替して残高がゼロなら重ねて消しません。本文例4では現金400／受取利息400とし、再振替の借方200円と合わせ翌期収益200円になります。</p></details><details class="sq-facts-answer"><summary>再振替しない方法は誤りですか？</summary><p>本文例5のように未収利息を残して受取時に消す方法もあります。問題の方式・既記帳に従い、再振替する方法と混ぜません。</p></details><details class="sq-facts-answer"><summary>前受収益は必ず返金する義務ですか？</summary><p>将来の継続的役務をまだ提供していない対価です。返金の有無だけでなく役務提供義務を考えます。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">記事トップ</a>
   <a href="app.html">アプリを使う</a>
   <a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p>
 </footer>
-
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-kake.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】売掛金・買掛金の仕訳を図解で整理｜未収入金・未払金との違いと例題｜スタディクエスト</title>
-<meta name="description" content="簿記3級の売掛金・買掛金を図解と例題で整理。掛取引で何が増減するか、未収入金・未払金との違い、返品・手付金の仕訳を確認します。">
+<title>売掛金・買掛金の仕訳｜発生・返品・回収を残高で検算｜スタディクエスト</title>
+<meta name="description" content="掛取引の基本と手付金を既存の例で確認し、返品後の一部回収・支払手数料まで一続きで検算する独自例を加えます。">
 <meta name="keywords" content="掛取引 仕訳,売掛金 買掛金,売掛金 仕訳,買掛金 仕訳,日商簿記3級 掛取引">
-<meta property="og:title" content="掛取引（売掛金・買掛金）の仕訳【日商簿記3級】">
-<meta property="og:description" content="売掛金・買掛金の基本仕訳から返品まで、図解と例題で整理します。">
+<meta property="og:title" content="売掛金・買掛金の仕訳｜発生・返品・回収を残高で検算">
+<meta property="og:description" content="掛取引の基本と手付金を既存の例で確認し、返品後の一部回収・支払手数料まで一続きで検算する独自例を加えます。">
 <meta property="og:url" content="https://study-quest.net/boki3-kake.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"掛取引（売掛金・買掛金）の仕訳【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"売掛金・買掛金の基本仕訳から返品まで、図解と例題で整理します。","url":"https://study-quest.net/boki3-kake.html","datePublished":"2026-05-07","dateModified": "2026-09-05","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "売掛金・買掛金の仕訳｜発生・返品・回収を残高で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "掛取引の基本と手付金を既存の例で確認し、返品後の一部回収・支払手数料まで一続きで検算する独自例を加えます。", "url": "https://study-quest.net/boki3-kake.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -135,267 +134,38 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "回収時に売上も計上しますか？", "acceptedAnswer": {"@type": "Answer", "text": "すでに掛け販売時に売上を計上していれば、回収時は売掛金を減らします。同じ売上を二重に計上しません。"}}, {"@type": "Question", "name": "手数料を引かれたら売掛金は入金額だけ減らしますか？", "acceptedAnswer": {"@type": "Answer", "text": "当社負担の手数料も含めて決済された条件なら、決済額全体を消し、入金と手数料を分けます。契約・設問の負担者を確認します。"}}, {"@type": "Question", "name": "電子記録債権は売掛金の登録だけですか？", "acceptedAnswer": {"@type": "Answer", "text": "法的には別の類型の金銭債権です。本文では、設問に従い売掛金から振り替える会計処理を扱います。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">日商簿記3級</a> &gt; 掛取引（売掛金・買掛金）</div>
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年9月5日</p>
-  <h1>掛取引（売掛金・買掛金）の仕訳<br>後払いの取引を図解で整理</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>売掛金</strong>＝掛けで売ったときに発生する「後でもらえる権利」（資産）。回収したら消える。</li>
-      <li><strong>買掛金</strong>＝掛けで買ったときに発生する「後で払う義務」（負債）。支払ったら消える。</li>
-      <li>発生・回収・返品の仕訳は「資産・負債の増減」で考えれば迷わない</li>
-      <li>後払いに「現金」ではなく専用科目を使う理由は、誰からいくら回収すべきかを管理するため</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉のつまずきメモ</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    実は、今回紹介する「掛取引」ですが、私が簿記を習い始めたばかりの頃、商品を売ったのに手元の現金は1円も増えていないのに「売上」として記録するという事実を知ったとき、「え、お金もらってないのになんで売上が立つの……？うわっ、なんじゃこりゃ！」と本気で脳内パニックを起こした論点でした（笑）。<br>
-    そこで私は、現金が動いたかを追う前に「後で回収する権利」か「後で支払う義務」かを見るようにしました。商品を掛けで売れば売掛金、掛けで仕入れれば買掛金として記録します。<br>
-    この記事では、問題文を読む順番と、その順番を例題で再現する方法を整理します。</p>
-  <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">仕訳で迷ったら、まず「商品か」「先か後か」「権利・義務か」の3問だけをメモしてください。科目を暗記から呼び出すより、取引の流れに戻るほうが早く解けます。</p>
-  </div>
-
-  <h2>❓ 売掛金・買掛金とは？資産と負債の違いを図解</h2>
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-kake-map-mobile.svg">
-    <img src="images/boki3-kake-map.svg" alt="売掛金と買掛金の借方・貸方における増減フロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="800" height="420">
-  </picture>
-  <p>図解を見てください。<strong>売掛金は「後でもらえる権利」なので資産</strong>、<strong>買掛金は「後で払わないといけない義務」なので負債</strong>です。T字勘定の左側（借方）に書くと「資産は増える」、右側（貸方）に書くと「負債は増える」——これが仕訳の大原則です。</p>
-  <div class="kake-compare">
-    <div class="kake-card urikake">
-      <span class="kake-badge">資産</span>
-      <div class="kake-name">売掛金（うりかけきん）</div>
-      <div class="kake-type">売った側が持つ権利</div>
-      <div class="kake-desc">商品を掛けで売ったときに発生。後日お金を受け取る権利なので資産。回収したら消える。</div>
-    </div>
-    <div class="kake-card kaikake">
-      <span class="kake-badge">負債</span>
-      <div class="kake-name">買掛金（かいかけきん）</div>
-      <div class="kake-type">買った側が持つ義務</div>
-      <div class="kake-desc">商品を掛けで買ったときに発生。後日お金を払う義務なので負債。支払ったら消える。</div>
-    </div>
-  </div>
-
-  <section class="kake-one-minute" aria-labelledby="kake-one-minute-title">
-    <h3 id="kake-one-minute-title">1分ミニ演習：掛取引を、科目名の前に分ける</h3>
-    <p class="kake-one-minute__lead">答えを見ずに、まず「商品か」「売る側か買う側か」「代金は後か」を確認します。借方・貸方の科目を決めてから答えを開いてください。</p>
-    <ol class="kake-one-minute__map" aria-label="掛取引の判断マップ">
-      <li><strong>商品か</strong><br>商品・製品の売買かを探す。</li>
-      <li><strong>立場はどちらか</strong><br>売る側か、買う側かを決める。</li>
-      <li><strong>代金は後か</strong><br>掛けなら権利・義務を記録する。</li>
-    </ol>
-    <details>
-      <summary>問題1：得意先に商品を掛けで販売した。借方は？</summary>
-      <p><strong>答え：売掛金。</strong>商品を売った側に、後日代金を回収する権利が発生します。貸方は売上です。</p>
-    </details>
-    <details>
-      <summary>問題2：仕入先から商品を仕入れ、代金の一部は小切手、残額は掛けとした。残額の貸方は？</summary>
-      <p><strong>答え：買掛金。</strong>小切手で支払った部分は当座預金、後払いの残額は買掛金として分けます。</p>
-    </details>
-    <p class="kake-one-minute__source">問題は参考書の「掛け取引①・②」を確認し、本文用に独自に作成しています。</p>
-  </section>
-
-  <h2>📝 ① 掛けで売ったときの仕訳——売掛金（資産）が発生する瞬間</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>A社に商品 ¥100,000 を掛けで売り上げた。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳</div>
-    <div class="sw-row"><span class="kari">売掛金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">100,000</span></span></div>
-  </div>
-  <div class="flow-diagram">
-    <div class="flow-node">商品を売る</div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node highlight">売掛金（資産）増加</div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node">後日回収</div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node">売掛金（資産）減少</div>
-  </div>
-
-  <h2>💰 ② 売掛金を回収したとき——資産が現金に変わる仕訳</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>A社への売掛金 ¥100,000 を現金で回収した。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳</div>
-    <div class="sw-row"><span class="kari">現金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">100,000</span></span></div>
-  </div>
-
-  <h2>📦 ③ 掛けで買ったときの仕訳——買掛金（負債）が発生する瞬間</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>B社から商品 ¥80,000 を掛けで仕入れた。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳</div>
-    <div class="sw-row"><span class="kari">仕入<span class="amt">80,000</span></span><span class="sep">／</span><span class="kashi">買掛金<span class="amt">80,000</span></span></div>
-  </div>
-
-  <h2>💸 ④ 買掛金を支払ったとき——負債が消える仕訳</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>B社への買掛金 ¥80,000 を当座預金から支払った。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳</div>
-    <div class="sw-row"><span class="kari">買掛金<span class="amt">80,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">80,000</span></span></div>
-  </div>
-
-  <h2>🔄 ⑤ 返品が起きたときの仕訳——売上返品と仕入返品はどう違う？</h2>
-  <div class="shiwake-box">
-    <div class="sw-label">売上返品（¥10,000 を返品された）</div>
-    <div class="sw-row"><span class="kari">売上<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">売掛金<span class="amt">10,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕入返品（¥10,000 を返品した）</div>
-    <div class="sw-row"><span class="kari">買掛金<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">仕入<span class="amt">10,000</span></span></div>
-  </div>
-  <div class="tip-box"><strong>返品は「発生の逆」をやるだけ！</strong><br>売掛金が発生した仕訳を逆にすれば売上返品、買掛金が発生した仕訳を逆にすれば仕入返品になります。</div>
-
-  <h2>💡 ⑥ なぜ「現金」じゃなくて売掛金・買掛金を使うのか？</h2>
-  <p>「後払いなら現金勘定で記録すればいいのでは？」と思うかもしれません。しかし、それでは以下の問題が生じます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">後払いって結局いつかは現金になるんだから、最初から「現金」で記録しちゃえばラクじゃないですか？わざわざ売掛金っていう別の科目を使う意味がわかりません……</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">その発想、私も最初は同じでした。後払いを「現金」で記録すると、<strong>まだ手元にない金額まで現金として帳簿に入ってしまいます。</strong>そこで、現金と「後で回収・支払いする権利や義務」を別の勘定科目で記録します。</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">なるほど、実際のキャッシュとズレちゃうから危険なんですね！じゃあ売掛金を使えば何が守られるんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">売掛金という「まだ現金化していない権利」の箱に分けると、①現金残高と区別でき、②誰からいくら回収する権利かを帳簿で追えます。掛取引では「現金が動いたか」と「権利・義務が発生したか」を分けて考えます。</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-  </div>
-  <div class="warn-box">
-    <strong>❌ もし後払いを「現金」で記録したら？</strong>
-    <ul style="margin-top:8px;">
-      <li>まだ受け取っていないのに帳簿の現金が増える → 帳簿残高と実際の現金が一致しない</li>
-      <li>誰からいくら回収すべきか帳簿からわからない → 取引先ごとの管理ができず、回収漏れのリスクが生じる</li>
-      <li>現金取引と信用取引を区別できない → 会社の資金状況を正確に把握できない</li>
-    </ul>
-  </div>
-  <div class="tip-box">
-    <strong>✅ 売掛金・買掛金を使う理由</strong>
-    <ul style="margin-top:8px;">
-      <li><strong>売掛金（資産）</strong> ＝ 後でもらえる権利を明示 → 誰からいくら回収すべきか帳簿で管理できる</li>
-      <li><strong>買掛金（負債）</strong> ＝ 後で払う義務を明示 → いつ誰にいくら払うか計画が立てられる</li>
-      <li>現金と掛を明確に分けることで、会社の真の財務状況を正確に把握できる</li>
-    </ul>
-  </div>
-  <p>現金はまだ動いていなくても、商品を掛けで売買した時点で、代金を回収する権利または支払う義務を記録します。これが掛取引の考え方です。</p>
-
-  <h2>📌 ⑦ 手付金の仕訳——前払金・前受金はいつ使う？注文時と受取時の違い</h2>
-  <p>商品の注文時に代金の一部を先払い（または先受け）することがあります。この「手付金」は掛取引とは別の勘定科目を使います。</p>
-  <table>
-    <thead><tr><th>立場</th><th>手付金を払ったとき</th><th>商品を受け取ったとき</th></tr></thead>
-    <tbody>
-      <tr><td>買う側（仕入側）</td><td>前払金（資産）↑</td><td>前払金↓ ＋ 買掛金などで差額精算</td></tr>
-      <tr><td>売る側（売上側）</td><td>前受金（負債）↑</td><td>前受金↓ ＋ 売掛金などで差額精算</td></tr>
-    </tbody>
-  </table>
-  <div class="shiwake-box">
-    <div class="sw-label">注文時：商品代金10,000円の手付金2,000円を現金で払った（仕入側）</div>
-    <div class="sw-row"><span class="kari">前払金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">2,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">商品受取時：残額8,000円は掛けで精算</div>
-    <div class="sw-row"><span class="kari">仕入<span class="amt">10,000</span></span><span class="sep">／</span><span class="kashi">前払金<span class="amt">2,000</span></span></div>
-    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">買掛金<span class="amt">8,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">注文時：手付金2,000円を現金で受け取った（売上側）</div>
-    <div class="sw-row"><span class="kari">現金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">前受金<span class="amt">2,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">商品引渡し時：残額8,000円は掛けで精算</div>
-    <div class="sw-row"><span class="kari">前受金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">10,000</span></span></div>
-    <div class="sw-row"><span class="kari">売掛金<span class="amt">8,000</span></span><span class="sep">／</span><span class="kashi"></span></div>
-  </div>
-  <div class="tip-box"><strong>前払金 vs 前受金の覚え方</strong><br>・前払金（資産）＝ まだ受け取っていない商品への「権利」→ お金は出て行ったが商品はまだ来ていない<br>・前受金（負債）＝ まだ渡していない商品への「義務」→ お金は入ったが商品をまだ渡していない</div>
-
-  <div class="app-cta"><h3>⚔ 2問の判断を、次の15分につなげる</h3><p>上の2問で迷った場面を1つ選び、「簿記3級・掛取引」として15分だけ記録しましょう。次に解き直す理由が残ります。</p><a href="app.html">15分の学習記録を始める →</a></div>
-
-  <div class="matome">
-    <h3>📋 まとめ：掛取引 早見表</h3>
-    <div class="matome-row"><span class="trigger">掛けで売った</span><span class="result">売掛金（資産↑）／ 売上</span></div>
-    <div class="matome-row"><span class="trigger">売掛金を回収した</span><span class="result">現金など ／ 売掛金（資産↓）</span></div>
-    <div class="matome-row"><span class="trigger">掛けで買った</span><span class="result">仕入 ／ 買掛金（負債↑）</span></div>
-    <div class="matome-row"><span class="trigger">買掛金を支払った</span><span class="result">買掛金（負債↓）／ 現金など</span></div>
-    <div class="matome-row"><span class="trigger">売上返品された</span><span class="result">売上 ／ 売掛金（資産↓）</span></div>
-    <div class="matome-row"><span class="trigger">仕入を返品した</span><span class="result">買掛金（負債↓）／ 仕入</span></div>
-  </div>
-  <section class="kake-decision-note" aria-labelledby="kake-decision-note-title">
-    <h2 id="kake-decision-note-title">若葉式：掛取引の仕訳を決める3問</h2>
-    <p>迷ったときに勘定科目を思い出そうとすると、売掛金・未収入金・前払金が混ざります。私は問題文を次の3問に分解してから仕訳を書きます。</p>
-    <ol>
-      <li>商品・製品の販売または仕入れか？</li>
-      <li>代金は先に動いたか、後で動くか？</li>
-      <li>いま発生したのは現金ではなく、権利・義務ではないか？</li>
-    </ol>
-    <table>
-      <tr><th>状況</th><th>見る箱</th><th>確認する動き</th></tr>
-      <tr><td>商品を掛けで売った</td><td>売掛金</td><td>後日の回収で減る</td></tr>
-      <tr><td>商品を掛けで買った</td><td>買掛金</td><td>後日の支払いで減る</td></tr>
-      <tr><td>商品以外を後払いで売った</td><td>未収入金など</td><td>何を売ったかを確認する</td></tr>
-    </table>
-    <p><strong>練習の締め：</strong>仕訳を書いたあと、借方・貸方の科目を隠して「何が増え、何が減ったか」を日本語で言い直します。金額ではなく取引の流れを説明できれば、返品や手付金にも応用できます。</p>
-  </section>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">掛取引は「現金が動いたか」ではなく「権利・義務が発生したか」で記録します。<br>
-    次に1問解くときは、3問の判定を先にメモしてから仕訳を書いてみてください。間違えた場合も、科目ではなく「商品か／先か後か／権利・義務か」のどこで迷ったかを残すと、次の確認場所が決まります。</p>
-  </div>
-  <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0 0 24px;"><strong>次の一手：</strong>上の2問を答えを隠して解き直し、迷った問題には「商品」「立場」「後払い」のどれで迷ったかを1行で書く。<a href="boki3-shohinuriage.html">商品売買の仕訳へ進む</a></p>
-</div>
-<h2>未収入金・未払金との違い</h2>
-<p>売掛金・買掛金は商品の販売・仕入れに伴う債権・債務です。一方、未収入金・未払金は固定資産や有価証券など、商品以外の取引で使い分けます。</p>
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">売掛金と未収入金の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">売掛金は商品や製品の掛け売りで発生する債権です。未収入金は固定資産や有価証券など商品以外のものを後払いで売ったときに使います。「何を売ったか」で使い分けます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">買掛金と未払金の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">買掛金は商品の掛け仕入で発生する債務です。未払金は固定資産の後払い購入など商品以外の後払いに使います。こちらも「何を買ったか」で使い分けます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">電子記録債権と売掛金はどう違いますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">売掛金を電子債権記録機関に登録したものが電子記録債権です。金額は同じで勘定科目が変わるだけです（振り替え）。売上や仕入は新たに発生しません。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>売掛金・買掛金の仕訳｜発生・返品・回収を残高で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>商品を後払いで売ったときの回収する権利が売掛金、後払いで仕入れたときの支払う義務が買掛金です。現金がまだ動いていなくても、取引の発生と後日の決済を別々に記録します。</p>
+<div class="sq-facts-note">以下は編集部作成の架空例。三分法で記帳し消費税は考慮しません。売掛金の額だけで取引先別の内訳が分かるわけではないため、補助元帳等で相手と残高も管理します。</div>
+<h2>発生と決済は反対の増減</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">取引</th><th scope="col">仕訳</th></tr></thead><tbody><tr><td>商品100,000円を掛けで販売</td><td>売掛金100,000／売上100,000</td></tr><tr><td>上の代金を現金回収</td><td>現金100,000／売掛金100,000</td></tr><tr><td>商品80,000円を掛け仕入れ</td><td>仕入80,000／買掛金80,000</td></tr><tr><td>上の代金を当座預金で支払う</td><td>買掛金80,000／当座預金80,000</td></tr></tbody></table></div>
+<h2>返品後の残高から回収を確認する</h2>
+<section class="sq-facts-exercise"><h3>自作例1：返品と一部回収をつなぐ</h3><p>期首売掛金はゼロ。同じ得意先へ100,000円を掛け販売し、そのうち10,000円の返品を受け、残額から60,000円分の決済がありました。振込手数料300円は当社負担で、59,700円が入金されました。売掛金残高は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>販売：売掛金100,000／売上100,000。返品：売上10,000／売掛金10,000。回収：普通預金59,700・支払手数料300／売掛金60,000。</p><p>残高100,000−10,000−60,000＝<strong>30,000円</strong>。入金額59,700円だけを債権から引くと、手数料分300円が架空の未回収として残ってしまいます。</p></div></details></section>
+<h2>手付金は、商品の引渡しより先に代金が動く</h2><p>商品10,000円の注文時に2,000円を現金で前払いした場合は、前払金2,000／現金2,000。商品を受け取り残額を掛けとすれば、仕入10,000／前払金2,000・買掛金8,000です。売る側は注文時に現金2,000／前受金2,000、引渡時に前受金2,000・売掛金8,000／売上10,000となります。</p>
+<h2>商品以外の後払いと、電子記録への切替</h2><p>固定資産を後払いで買う・売る例では未払金・未収入金等を使い分けます。通常の事業で提供する役務の債権もあり、「物が動かないなら売掛金ではない」とは決めません。</p><p>売掛金30,000円を電子記録債権に振り替える指定なら、電子記録債権30,000／売掛金30,000。この振替で新しい売上を立てません。ただし電子記録債権は法的には原因債権と異なる類型で、売掛金の情報を登録するだけの仕組み、という説明は訂正しました。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：売掛金・買掛金等の範囲</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針10・73・74：金銭債権と収益認識</a></li><li><a href="https://www.fsa.go.jp/ordinary/densi02.pdf" target="_blank" rel="noopener">金融庁・法務省：電子記録債権の定義と原因債権との関係</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>回収時に売上も計上しますか？</summary><p>すでに掛け販売時に売上を計上していれば、回収時は売掛金を減らします。同じ売上を二重に計上しません。</p></details><details class="sq-facts-answer"><summary>手数料を引かれたら売掛金は入金額だけ減らしますか？</summary><p>当社負担の手数料も含めて決済された条件なら、決済額全体を消し、入金と手数料を分けます。契約・設問の負担者を確認します。</p></details><details class="sq-facts-answer"><summary>電子記録債権は売掛金の登録だけですか？</summary><p>法的には別の類型の金銭債権です。本文では、設問に従い売掛金から振り替える会計処理を扱います。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><a href="index.html">記事トップ</a><a href="app.html">アプリを使う</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
