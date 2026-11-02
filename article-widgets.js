@@ -36,19 +36,19 @@ const ARTICLES = {
   'boki-note-sekkei.html':   {label:'簿記3級・2級',  title:'簿記のノートは何を書く？本番の筆記条件から逆算する3つの書く枠', thumbnail:'images/article-thumbnails/boki-note-sekkei.jpg', thumb:'images/study-quest-boki-category.webp'},
   'boki-net-id-check.html': {label:'簿記3級・2級', title:'簿記ネット試験の本人確認書類｜保険証は使える？当日に確認する5点'},
   'boki-net-test-mac-ipad.html': {label:'簿記3級・2級', title:'Mac・iPadで簿記を勉強している人へ。ネット試験前に埋めるべき「本番との差」3つ', thumbnail:'images/article-thumbnails/boki-net-test-mac-ipad.jpg', thumb:'images/study-quest-boki-category.webp'},
-  'boki2-3kyu-fukushu.html': {label:'簿記2級', title:'簿記2級を始めたら3級を忘れていた人へ｜全部やり直さずに済む依存論点マップ7つ', thumbnail:'images/article-thumbnails/boki2-3kyu-fukushu.jpg', thumb:'images/study-quest-boki-category.webp'},
+  'boki2-3kyu-fukushu.html': {label:"簿記2級", title:"簿記2級で3級を忘れていたら｜7分野の復習マップと自作チェック", thumb:"images/study-quest-boki-category.webp", dialogue:false, thumbnail:'images/article-thumbnails/boki2-3kyu-fukushu.jpg'},
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド', thumb:'images/boki1-balance-map.svg'},
   'boki1-next-exam.html':{label:'簿記1級', title:"日商簿記1級の試験日程と学習ロードマップ｜申込・年度・演習の確認", thumb:'images/boki1-start-roadmap.svg?v=20261102', dialogue:false},
   'boki1-11month-strategy.html':{label:"簿記1級", title:"簿記1級の11月試験に間に合う？申込状況と演習から決める学習計画", thumb:'images/boki1-11month-strategy.svg?v=20261102', dialogue:false},
-  'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？', thumb:'images/boki1-route-map.svg'},
+  'boki1-yobikou.html':  {label:"簿記1級", title:"簿記1級は予備校か独学か｜2027年向け講座の条件と予算の比べ方", thumb:"images/boki1-route-map.svg?v=20261102", dialogue:false},
   'boki1-akirameta-tatenaoshi.html': {label:"簿記1級", title:"簿記1級に落ちた後の立て直し｜得点と演習記録から作る再開シート", dialogue:false},
   'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:"企業結合会計と連結会計の違い｜個別・連結を書き分ける自作例", thumb:'images/boki1-kigyoketsugo-vs-renketsu-map.svg?v=20261102', dialogue:false},
   'boki1-renketsu-seika.html': {label:'簿記1級', title:"成果連結の未実現利益｜売価・原価と翌期の実現を追う自作例", thumb:'images/boki1-seikarenketsu-strategy-map.svg?v=20261102', dialogue:false},
   'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:"社債の定額法と利息法｜満期まで一致する2年間の自作比較例", thumb:'images/boki1-shasai-teigaku-vs-risokuho-map.svg?v=20261102', dialogue:false},
   'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:"簿記1級", title:"圧縮記帳の直接減額方式と積立金方式｜仕訳と翌期の自作比較例", thumb:'images/boki1-asshuku-kicho-map.svg?v=20261102', dialogue:false},
-  'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い', thumb:'images/boki1-sogo-vs-kobetsu-shokyaku-map.svg'},
-  'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
+  'boki1-sogo-vs-kobetsu-shokyaku.html': {label:"簿記1級", title:"総合償却と個別償却｜平均年数・端数処理をそろえる自作例", thumb:"images/boki1-sogo-vs-kobetsu-shokyaku-map.svg?v=20261102", dialogue:false},
+  'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:"簿記1級", title:"退職給付の簡便法と原則法｜債務・年金資産・費用の自作検算", thumb:"images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg?v=20261102", dialogue:false},
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:"為替予約の振当処理と独立処理｜期間配分と期別損益の自作例", thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg?v=20261102', dialogue:false},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ', thumb:'images/study-quest-cpa-tax-category.webp'},
   'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
@@ -171,7 +171,7 @@ const ARTICLES = {
   'boki2-lease.html':              {label:'簿記2級',          title:'リース取引・ファイナンスリースの仕訳', thumb:'images/boki2-lease-map.svg'},
   'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約', thumb:'images/boki2-gaika-map.svg'},
   'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え', thumb:'images/boki2-yukashoken-map.svg'},
-  'boki2-arai-kirihanashi.html':   {label:'簿記2級',          title:'有価証券の洗替方式と切放方式の違い', thumb:'images/boki2-arai-kirihanashi-map.svg'},
+  'boki2-arai-kirihanashi.html':   {label:"簿記2級", title:"有価証券の洗替と切放｜期首・売却・期別損益をつなぐ自作例", thumb:"images/boki2-arai-kirihanashi-map.svg?v=20261102", dialogue:false},
   'boki2-shasai.html':             {label:"簿記2級", title:"簿記2級の社債は保有側で考える｜満期保有目的債券の自作例題", thumb:'images/boki2-shasai-map.svg?v=20261102', dialogue:false},
   'boki2-noren-vs-fu-no-noren.html': {label:'簿記2級',        title:'のれんと負ののれんの違い', thumb:'images/boki2-noren-vs-fu-no-noren-map.svg'},
   'boki2-kotei-shisan-why.html':   {label:'簿記2級',          title:'定額法と定率法はなぜ存在するのか？', thumb:'images/depreciation-why-map.svg'},
@@ -5199,14 +5199,14 @@ Object.assign(ORIGINALITY_NOTES, {
   ]
 },
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {
-    title: '退職給付会計は「結果」と「動き」を分けて見る',
-    lead: '簡便法と原則法の差を計算量だけで説明しないのが、この記事の方針です。期末に見える結果だけを見る方法と、期間中の債務・費用・積立の動きを追う方法として整理すると、仕訳の位置づけを確認しやすくなります。',
-    points: [
-      'まず簡便法か原則法かを問題文で確定し、途中で計算方法を混ぜない。',
-      '原則法では期首残高・当期増減・期末残高を表にして、3つの動きを追う。',
-      '仕訳を完成させた後、貸借の残高が問題文の制度と矛盾していないかを確認する。'
-    ]
-  },
+  "title": "退職給付は、支払元と3列の増減で確かめる",
+  "lead": "簡便法にも給付・掛金を含む費用計算があります。原則法は債務・年金資産・引当金を別欄で追い、個別・連結と差異の費用処理の有無も確認します。",
+  "points": [
+    "簡便法か原則法か、個別か連結かを先に確定する。",
+    "会社の直接払いと基金払いを区別し、掛金と費用を混ぜない。",
+    "債務・年金資産・引当金の期首と期末を3列で照合する。"
+  ]
+},
   'boki2-cvp.html': {
     title: 'CVP分析は公式暗記ではなく、利益の逆算表で解く',
     lead: 'CVP分析の記事では、損益分岐点の公式を並べるだけで終わらせません。売上高・変動費・固定費・目標利益を同じ表に置き、「何を増やすと利益が動くのか」を先に確認する学習順を採用します。',
