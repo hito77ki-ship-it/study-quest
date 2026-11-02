@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="660" viewBox="0 0 390 660" role="img" aria-labelledby="title desc">
+<title id="title">工程別原価｜二つの仕掛品を残す</title><desc id="desc">01 第1工程で分ける：投入1,350,000円のうち、次工程1,200,000／仕掛品150,000。02 第2工程でも分ける：加工費550,000円を追加、完成1,500,000／仕掛品250,000。03 全体で二重集計しない：150,000＋250,000＋1,500,000、＝総投入原価1,900,000円</desc>
+<rect x="10" y="10" width="370" height="75" rx="12" fill="#101B13"/><rect x="10" y="617" width="370" height="35" rx="8" fill="#101B13"/>
+<g font-family="M PLUS 1, Hiragino Kaku Gothic ProN, sans-serif"><text x="20" y="45" font-size="17" font-weight="700" fill="#B6E27C">工程別原価｜二つの仕掛品を残す</text>
+<text x="20" y="73" font-size="12" fill="#C7D3C7">Study Quest 編集部作成｜2026.11.02確認</text>
+<rect x="20" y="100" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="131" font-size="15" font-weight="700" fill="#B6E27C">01 第1工程で分ける</text>
+<text x="34" y="165" font-size="14" fill="#F0F6ED">投入1,350,000円のうち</text>
+<text x="34" y="193" font-size="14" fill="#F0F6ED">次工程1,200,000／仕掛品150,000</text>
+<rect x="20" y="274" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="305" font-size="15" font-weight="700" fill="#B6E27C">02 第2工程でも分ける</text>
+<text x="34" y="339" font-size="14" fill="#F0F6ED">加工費550,000円を追加</text>
+<text x="34" y="367" font-size="14" fill="#F0F6ED">完成1,500,000／仕掛品250,000</text>
+<rect x="20" y="448" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="479" font-size="15" font-weight="700" fill="#B6E27C">03 全体で二重集計しない</text>
+<text x="34" y="513" font-size="14" fill="#F0F6ED">150,000＋250,000＋1,500,000</text>
+<text x="34" y="541" font-size="14" fill="#F0F6ED">＝総投入原価1,900,000円</text>
+<text x="20" y="640" font-size="11" fill="#C7D3C7">条件・単位・一次資料と例題の解答は本文へ</text></g></svg>

@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-kotei-shisan.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>簿記2級の固定資産とは？減価償却・除却・売却の仕訳を解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 商業簿記の固定資産を初心者向けに解説。取得原価、減価償却、定額法、定率法、除却、廃棄、売却、固定資産売却損益の仕訳を整理します。">
+<title>固定資産の仕訳｜取得・期中売却・残材のある除却・買換えを検算｜スタディクエスト</title>
+<meta name="description" content="付随費用の例外と除却時の処分価値を補足。正しい既存の売却・買換え例を残し、取得520,000円、期中売却損70,000円、残材・未払金の行き先を自作4問で確認。">
 <meta name="keywords" content="簿記2級 固定資産,減価償却 仕訳,固定資産 売却 仕訳,固定資産 除却 仕訳,定率法 簿記2級">
-<meta property="og:title" content="簿記2級の固定資産とは？減価償却・除却・売却の仕訳を解説">
-<meta property="og:description" content="簿記2級 商業簿記の固定資産を、取得・減価償却・除却・売却の流れからやさしく解説。">
+<meta property="og:title" content="固定資産の仕訳｜取得・期中売却・残材のある除却・買換えを検算">
+<meta property="og:description" content="付随費用の例外と除却時の処分価値を補足。正しい既存の売却・買換え例を残し、取得520,000円、期中売却損70,000円、残材・未払金の行き先を自作4問で確認。">
 <meta property="og:url" content="https://study-quest.net/boki2-kotei-shisan.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の固定資産とは？減価償却・除却・売却の仕訳を解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 商業簿記の固定資産を初心者向けに解説。取得原価、減価償却、定額法、定率法、除却、廃棄、売却、固定資産売却損益の仕訳を整理します。","url":"https://study-quest.net/boki2-kotei-shisan.html","datePublished":"2026-05-09","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "固定資産の仕訳｜取得・期中売却・残材のある除却・買換えを検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "付随費用の例外と除却時の処分価値を補足。正しい既存の売却・買換え例を残し、取得520,000円、期中売却損70,000円、残材・未払金の行き先を自作4問で確認。", "url": "https://study-quest.net/boki2-kotei-shisan.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -45,295 +44,46 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "固定資産はすべて減価償却しますか？", "acceptedAnswer": {"@type": "Answer", "text": "この記事は事業用の有形固定資産の基本処理を扱います。土地など通常は減価償却しないものや、無形固定資産・投資等の別の分類を区別します。"}}, {"@type": "Question", "name": "除却なら帳簿価額がすべて損失になりますか？", "acceptedAnswer": {"@type": "Answer", "text": "残材等の処分価値や処分費用も確認します。本記事では帳簿価額80,000円から貯蔵品10,000円を差し引き、除却損70,000円とする例を示します。"}}, {"@type": "Question", "name": "買換えの新資産は差引支払額で登録しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の例では新備品の購入代価800,000円で登録し、旧備品の下取り120,000円は旧資産の処分対価として扱います。未払金680,000円と新資産の取得原価を混同しません。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 固定資産</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>簿記2級の固定資産とは？<br>減価償却・除却・売却の仕訳を解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    実は、今回紹介する固定資産の「定率法」や「期中売却」という論点は、私が大学の講義内で初めて学んだとき、「うわっ、なんじゃこりゃ……！」と頭を抱えて激しくつまずいた大嫌いな論点でした（笑）。<br>
-    だからこそ、当時の私と同じように悩んでいる皆さんに、どこよりも直感的にパズル感覚で理解してもらえるよう、私なりの分かりやすい攻略法をお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <p class="lead">固定資産は、簿記3級でも学ぶ論点ですが、簿記2級では定率法、除却、廃棄、売却、買換えに近い判断まで問われやすくなります。ポイントは「取得原価を決める」「使った分を減価償却する」「手放すときに帳簿価額を消す」の3段階です。</p>
-  <div class="sq-chat"></div>
-
-  <div class="tip-box"><strong>先に結論：</strong>固定資産は「買ったとき」「決算で減価償却するとき」「なくなった・売ったとき」に分けて考えると整理できます。売却・除却では、まず帳簿価額を出してから損益を判断します。</div>
-
-  <div class="warn-box">
-    <strong>【出題範囲の改定情報】2026年度は変更なし・2027年度から定率法・除却は3級の範囲に</strong><br>
-    2026年度の出題範囲は変更ありません。ただし<strong>2027年度から、この記事で扱う「定率法」と「固定資産の除却・廃棄」が2級から3級に移行する</strong>ことが日本商工会議所から公式に発表されています。2級では今後、より発展的な処理（買換えなど）が中心になっていく見込みです。2026年度内に受験予定の方は、この記事の内容のまま学習を進めて問題ありません。
-  </div>
-
-  <h2>固定資産とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-kotei-shisan-map-mobile.svg">
-      <img src="images/boki2-kotei-shisan-map.svg" alt="固定資産の取得・減価償却・除却売却のライフサイクル" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="400" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：取得（付随費用込みの取得原価）→毎期償却（定額法・定率法）→除却・売却（損益算出）の全フロー</figcaption>
-  </figure>
-  <p>固定資産は「取得原価をどう決めるか」「毎期の償却をどう計算するか」「売却時の損益をどう出すか」の3段階を押さえれば得点できます。</p>
-  <p>固定資産とは、建物、備品、車両運搬具、機械装置など、長期間使うために保有する資産です。販売目的の商品とは違い、事業で使い続けるために持っています。</p>
-  <p>固定資産は、購入した年だけでなく複数年にわたって役立つため、購入額をすぐ全額費用にせず、使用期間に分けて費用化します。この費用化が減価償却です。</p>
-
-  <h2>固定資産の処理の全体像</h2>
-  <div class="flow">
-    <div class="flow-item"><strong>取得：</strong>購入代価と付随費用を合わせて取得原価を決める。</div>
-    <div class="flow-item"><strong>決算：</strong>当期に使った分を減価償却費として費用にする。</div>
-    <div class="flow-item"><strong>売却・除却：</strong>固定資産と減価償却累計額を消し、差額を損益にする。</div>
-  </div>
-
-  <h2>取得原価に含めるもの</h2>
-  <p>固定資産の取得原価には、購入代価だけでなく、その資産を使える状態にするための付随費用も含めます。</p>
-  <table>
-    <tr><th>項目</th><th>取得原価に含めるか</th></tr>
-    <tr><td>購入代価</td><td>含める</td></tr>
-    <tr><td>購入手数料</td><td>含める</td></tr>
-    <tr><td>据付費・試運転費</td><td>含める</td></tr>
-    <tr><td>登録料・運送費</td><td>使用可能にするためなら含める</td></tr>
-    <tr><td>修繕費</td><td>通常の維持管理なら費用処理</td></tr>
-  </table>
-
-  <h2>取得時の仕訳</h2>
-  <p>備品500,000円を購入し、据付費20,000円とともに現金で支払った場合、取得原価は520,000円です。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>備品</td><td>520,000</td><td>現金預金</td><td>520,000</td></tr>
-    </table>
-  </div>
-
-  <h2>減価償却とは</h2>
-  <p>減価償却とは、固定資産の取得原価を、使用する期間にわたって費用配分する処理です。簿記2級では定額法と定率法を中心に押さえます。</p>
-  <table>
-    <tr><th>方法</th><th>特徴</th></tr>
-    <tr><td>定額法</td><td>毎年同じ金額を減価償却費にする</td></tr>
-    <tr><td>定率法</td><td>期首帳簿価額に一定率をかけるため、初期ほど費用が大きい</td></tr>
-  </table>
-
-  <h2>定額法の計算</h2>
-  <p>取得原価500,000円、残存価額0円、耐用年数5年の場合、定額法の減価償却費は毎年100,000円です。</p>
-  <div class="formula"><strong>減価償却費 = (取得原価 - 残存価額) ÷ 耐用年数</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>減価償却費</td><td>100,000</td><td>減価償却累計額</td><td>100,000</td></tr>
-    </table>
-  </div>
-
-  <h2>定率法の計算</h2>
-  <p>定率法では、期首帳簿価額に償却率をかけます。取得原価500,000円、期首減価償却累計額100,000円、償却率40%の場合を例に、なぜ「引き算が最初」なのかから順番に確認しましょう。</p>
-
-  <div class="tip-box">
-    <strong>定率法の根本ルール：「残りの価値」に率をかけるパズル</strong><br>
-    定率法は、<strong>まだ費用にしていない【残りの価値＝未償却残高】に償却率をかける</strong>ルールです。「取得したときの全額（取得原価）」ではなく、「これまで費用にした分（累計額）を引いた残り」が計算のスタート地点になります。だから必ず、最初に累計額を引き算するパズルになるんです。
-  </div>
-
-  <div class="formula">
-    <strong>STEP ①　未償却残高を出す（引き算が最初！）</strong><br>
-    取得原価 500,000 － 減価償却累計額 100,000 ＝ <strong>未償却残高 400,000円</strong><br><br>
-    <strong>STEP ②　未償却残高に償却率をかける</strong><br>
-    <strong>400,000円</strong> × 40% ＝ <strong>当期減価償却費 160,000円</strong>
-  </div>
-
-  <div class="trap-box">
-    <strong>⚠ 最頻出ミス：「取得原価 × 償却率」は絶対NG！</strong><br>
-    定率法で「500,000 × 40% = 200,000」としてしまうのが最もよくあるミスです。定率法は<strong>未償却残高（累計額を引いた後の金額）</strong>に率をかけます。定額法との混同に注意してください。
-  </div>
-
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>減価償却費</td><td>160,000</td><td>減価償却累計額</td><td>160,000</td></tr>
-    </table>
-  </div>
-
-  <h2>除却・廃棄とは</h2>
-  <p>除却とは、固定資産を事業で使わなくなり、帳簿から外す処理です。廃棄した場合や、使用をやめて処分を待つ場合に出てきます。</p>
-  <p>除却では、固定資産の取得原価と減価償却累計額を消し、帳簿価額が残っていれば固定資産除却損として処理します。</p>
-
-  <h2>除却の仕訳</h2>
-  <p>取得原価500,000円、減価償却累計額420,000円の備品を除却した場合、帳簿価額80,000円が損になります。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>減価償却累計額</td><td>420,000</td><td>備品</td><td>500,000</td></tr>
-      <tr><td>固定資産除却損</td><td>80,000</td><td></td><td></td></tr>
-    </table>
-  </div>
-
-  <h2>売却の考え方</h2>
-  <p>固定資産を売却したときは、売却額と帳簿価額を比べます。売却額が帳簿価額より高ければ固定資産売却益、低ければ固定資産売却損です。</p>
-  <div class="formula"><strong>帳簿価額 = 取得原価 - 減価償却累計額</strong><br><strong>売却損益 = 売却額 - 帳簿価額</strong></div>
-
-  <h2>売却の仕訳</h2>
-  <p>取得原価500,000円、減価償却累計額300,000円の備品を150,000円で売却し、代金は現金で受け取ったとします。帳簿価額は200,000円なので、50,000円の売却損です。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>現金預金</td><td>150,000</td><td>備品</td><td>500,000</td></tr>
-      <tr><td>減価償却累計額</td><td>300,000</td><td></td><td></td></tr>
-      <tr><td>固定資産売却損</td><td>50,000</td><td></td><td></td></tr>
-    </table>
-  </div>
-  <p>売却額が250,000円なら、帳簿価額200,000円との差額50,000円が固定資産売却益になります。</p>
-
-  <h2>期中売却に注意</h2>
-  <p>期中に固定資産を売却した場合、売却日までの減価償却費を月割りで計上してから売却仕訳を作ります。この「2段階の順番」を守るだけで、どんな問題でも確実に解けるようになります。</p>
-
-  <div class="warn-box">
-    <strong>✅ 期中売却の黄金ルール：「月割で減価償却→それから売却」の2ステップ！</strong><br>
-    売却日が期中の場合、いきなり売却仕訳を書いてはいけません。期首から売却日までの減価償却費を<strong>一番最初に</strong>計算して計上してから、売却仕訳を作るのが正しい順番です。
-  </div>
-
-  <h3>月割計算の手順（具体例）</h3>
-  <p>取得原価600,000円・定額法・耐用年数5年・残存価額0円。期首時点の減価償却累計額240,000円の備品を、当期の<strong>期首から4ヶ月後</strong>に250,000円（現金）で売却した場合。</p>
-
-  <div class="flow">
-    <div class="flow-item">
-      <strong>月割の減価償却費を計算する（一番最初にやること！）</strong><br>
-      年間償却費：600,000 ÷ 5年 ＝ 120,000円<br>
-      当期月割：120,000 × <strong>4ヶ月 ÷ 12ヶ月</strong> ＝ <strong>40,000円</strong>
-    </div>
-    <div class="flow-item">
-      <strong>減価償却費の仕訳を先に切る</strong><br>
-      借方：減価償却費 40,000 ／ 貸方：減価償却累計額 40,000
-    </div>
-    <div class="flow-item">
-      <strong>売却時の帳簿価額を確認する</strong><br>
-      600,000 − (240,000 ＋ 40,000) ＝ <strong>帳簿価額 320,000円</strong>
-    </div>
-    <div class="flow-item">
-      <strong>売却仕訳を切る（売却損：250,000 − 320,000 ＝ △70,000）</strong><br>
-      借方：現金250,000 ＋ 減価償却累計額280,000 ＋ 固定資産売却損70,000 ／ 貸方：備品600,000
-    </div>
-  </div>
-
-  <div class="journal">
-    <p style="color:#9CA3AF;font-size:12px;margin-bottom:8px;">売却時の仕訳（STEP ④）</p>
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>現金預金</td><td>250,000</td><td>備品</td><td>600,000</td></tr>
-      <tr><td>減価償却累計額</td><td>280,000</td><td></td><td></td></tr>
-      <tr><td>固定資産売却損</td><td>70,000</td><td></td><td></td></tr>
-    </table>
-  </div>
-
-  <div class="tip-box">
-    <strong>📌 累計額は「月割分も込みで280,000円」：</strong>売却仕訳の減価償却累計額は、期首累計240,000円 ＋ 月割分40,000円 ＝ 合計<strong>280,000円</strong>です。STEP①②で先に計上した月割分を忘れず足してください。
-  </div>
-
-  <h2>固定資産の「買換え」は合体パズル！</h2>
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki2-kaikae-map-mobile.svg">
-    <img src="images/boki2-kaikae-map.svg" alt="固定資産の買換え仕訳の合体パズル図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="560" loading="lazy">
-  </picture>
-  <p>簿記2級で受験生を最も悩ませるのが、古い固定資産を下取りに出して新しい固定資産を手に入れる「買換え（かいかえ）」の論点です。問題文に大量の数字が出てくるためパニックになりやすいですが、本質は<strong>【古い資産の売却】と【新しい資産の購入】がガチャンと合体しただけのパズル</strong>です。</p>
-
-  <div class="warn-box">
-    <strong>✅ 買換えの黄金ルール：「下取り価格 ＝ 売却額」と見立てる！</strong><br>
-    古い資産の下取り価格（引き取ってもらった値段）は、実質的に「その金額で古い資産を売った（売却額）」のと同じ意味になります。この考え方1つで買換えの仕訳が一気にシンプルになります。
-  </div>
-
-  <h3>買換えの4ステップ手順（具体例）</h3>
-  <p>「取得原価500,000円・期首累計額300,000円（帳簿価額200,000円）の古い備品」を【下取り価格120,000円】として引き取ってもらい、新たに「800,000円の新しい備品」を購入した。差額は後日支払う（未払金）とする（※期首の買換えとする）。</p>
-
-  <div class="flow">
-    <div class="flow-item">
-      <strong>【古い資産と累計額を消す】</strong><br>
-      いつも通り、古い備品500,000を貸方（右）へ、累計額300,000を借方（左）に書く。
-    </div>
-    <div class="flow-item">
-      <strong>【新しい資産を登場させる】</strong><br>
-      新しく手に入った備品800,000を借方（左）にどかんと書く。
-    </div>
-    <div class="flow-item">
-      <strong>【売却損益を計算する】</strong><br>
-      古い資産の帳簿価額は200,000円（500,000 − 300,000）。これを120,000円で下取り（売却）してもらったので、<strong>80,000円の損</strong>になる。借方に<strong>固定資産売却損 80,000</strong>と書く。
-    </div>
-    <div class="flow-item">
-      <strong>【最後の差額を未払金にする】</strong><br>
-      新しい備品代800,000円から、下取り代金120,000円を差し引いた残り<strong>680,000円</strong>を貸方に<strong>未払金</strong>として計上してパズルが完成！
-    </div>
-  </div>
-
-  <div class="journal">
-    <p style="color:#9CA3AF;font-size:12px;margin-bottom:8px;">買換え時の仕訳（STEP ①〜④）</p>
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>減価償却累計額</td><td>300,000</td><td>備品（古）</td><td>500,000</td></tr>
-      <tr><td>備品（新）</td><td>800,000</td><td>未払金</td><td>680,000</td></tr>
-      <tr><td>固定資産売却損</td><td>80,000</td><td></td><td></td></tr>
-    </table>
-  </div>
-
-  <div class="trap-box">
-    <strong>⚠ 試験に出る超重要罠：古い備品と新しい備品を相殺してはいけない！</strong><br><br>
-    「差額の300,000円だけ備品を増やせばいいや」と借方に<strong>備品 300,000</strong>などと書くのは絶対NGです！<br>
-    古い資産の歴史（取得原価と累計額）を完全に消し去り、新しい資産の取得原価をピカピカの状態で登場させるのが簿記2級の大原則です。「合体だけど、内訳はちゃんと全部書く」を徹底してください。
-  </div>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>付随費用を費用処理してしまい、取得原価に入れ忘れる</li>
-    <li>定率法で取得原価に償却率をかけてしまう</li>
-    <li>売却時に減価償却累計額を消し忘れる</li>
-    <li>売却額と取得原価を比べて売却損益を出してしまう</li>
-    <li>期中売却で売却日までの減価償却を忘れる</li>
-  </ul>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>固定資産は、長期間使うために保有する資産</li>
-    <li>取得原価には、使用可能にするための付随費用を含める</li>
-    <li>減価償却は、固定資産の取得原価を使用期間に配分する処理</li>
-    <li>除却では、帳簿価額を固定資産除却損にする</li>
-    <li>売却では、売却額と帳簿価額の差額を固定資産売却損益にする</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 固定資産は「帳簿価額」で攻略しよう</h3>
-    <p>スタディクエストで商業簿記の学習時間を記録し、減価償却・除却・売却の型を経験値に変えましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">固定資産とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">建物、備品、車両運搬具など、長期間使うために保有する資産です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">減価償却とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">固定資産の取得原価を、使用する期間にわたって費用配分する処理です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">固定資産の除却とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">使わなくなった固定資産を帳簿から外す処理です。帳簿価額が残っていれば固定資産除却損になります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">固定資産売却損益はどう計算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">売却額から帳簿価額を差し引いて計算します。売却額が帳簿価額より高ければ売却益、低ければ売却損です。</div></details>
-</section>
-<div style="max-width:800px;margin:0 auto;padding:0 24px 32px;">
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-</div>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"固定資産とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"建物、備品、車両運搬具など、長期間使うために保有する資産です。"}},{"@type":"Question","name":"減価償却とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"固定資産の取得原価を、使用する期間にわたって費用配分する処理です。"}},{"@type":"Question","name":"固定資産の除却とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"使わなくなった固定資産を帳簿から外す処理です。帳簿価額が残っていれば固定資産除却損になります。"}},{"@type":"Question","name":"固定資産売却損益はどう計算しますか？","acceptedAnswer":{"@type":"Answer","text":"売却額から帳簿価額を差し引いて計算します。売却額が帳簿価額より高ければ売却益、低ければ売却損です。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-yukashoken.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">次の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">有価証券とは？売買目的・満期保有</div></a>
-  <a href="boki2-zeikouka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">税効果会計とは？繰延税金資産</div></a>
-  <a href="boki2-lease.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">リース取引とは？ファイナンス・リース</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>固定資産の仕訳｜取得・期中売却・残材のある除却・買換えを検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p class="lead">この記事では、有形固定資産の取得、減価償却、売却・除却、買換えを扱います。中心は<strong>取得原価・累計額・当期費用・処分額を別々に追うこと</strong>です。固定資産には無形固定資産や投資等もあり、土地などは通常の減価償却の対象とは区別します。</p>
+<div class="sq-facts-note"><strong>試験年度と対象を確認</strong><p>2026年度の区分は2027年3月31日まで適用。2027年度は確定版が公表され、定率法の基本と除却・廃棄が3級へ移行します。下位級の知識が2級から消えるわけではなく、「2級は買換え中心になる」といった出題予測はしません。</p></div>
+<h2 id="acquisition">取得原価と、その後の修繕を分ける</h2>
+<p>企業会計原則第三・五Dは、原則として引取費用等の付随費用を取得原価に含めるとしています。ただし、税務では登録免許税等を取得価額へ含めない取扱いもあり、<strong>取得に関係する支出を例外なくすべて資産にするとは限りません</strong>。試験の指定と、実務で適用する会計・税務の規定を区別します。</p>
+<section class="sq-facts-exercise"><h3>例題1：据付費と、使用開始後の通常修理</h3><p>架空例です。備品の購入代価500,000円、使用可能にする据付費20,000円を現金払い。使用開始後、通常の原状回復の修理10,000円も現金で払いました。消費税は考えず、修理は資本的支出ではないと指定します。取得と修理の仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>取得原価は500,000＋20,000＝<strong>520,000円</strong>。借方 備品520,000／貸方 現金預金520,000です。元記事の取得例は正しく、維持します。</p><p>通常修理は借方 修繕費10,000／貸方 現金預金10,000。備品を530,000円にしません。性能向上・使用可能期間の延長を伴う改良などとは条件が異なります。</p></div></details></section>
+<h2 id="depreciation">当期の償却と帳簿価額</h2>
+<p>減価償却は、取得原価の期間配分です。定額法の基本年額は(取得原価−残存価額)÷耐用年数、定率法の基本額は期首未償却残高×償却率です。月割・保証額・方法変更などの指定は別途確認します。</p>
+<p>元記事の定額法の例は取得原価500,000円、残存0、5年・通年なら100,000円です。また、取得原価500,000円・期首累計額100,000円・指定率40%で切替等を考えない定率計算なら、(500,000−100,000)×40%＝<strong>160,000円</strong>。借方 減価償却費／貸方 減価償却累計額となります。</p>
+<section class="sq-facts-exercise"><h3>例題2：期中売却の累計額は期首残高のままでよいか</h3><p>元記事の自作例を条件付きで維持します。備品の取得原価600,000円、定額法5年・残存0、期首累計額240,000円。期首から売却まで4か月分を償却すると指定され、250,000円で現金売却しました。償却と売却の仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>年間120,000円×4/12＝<strong>40,000円</strong>。先に借方 減価償却費40,000／貸方 減価償却累計額40,000を計上します。</p><p>売却時の累計額は240,000＋40,000＝280,000円、帳簿価額は600,000−280,000＝<strong>320,000円</strong>。売却損は320,000−250,000＝<strong>70,000円</strong>です。</p><p>売却仕訳は、借方 現金預金250,000・減価償却累計額280,000・固定資産売却損70,000／貸方 備品600,000。借方合計も600,000円です。月数は曖昧な日付から推測せず、供用期間と問題指定を読みます。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-kotei-shisan-map-mobile.svg?v=20261102"><img src="images/boki2-kotei-shisan-map.svg?v=20261102" alt="取得原価600,000円から当期償却40,000円と売却時の帳簿価額320,000円・売却損70,000円を追う図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2 id="retirement">除却では処分価値も読む</h2>
+<section class="sq-facts-exercise"><h3>例題3：帳簿価額80,000円は全部除却損か</h3><p>取得原価500,000円、除却時までの累計額420,000円の備品を除却。売却・再利用できる残材を貯蔵品10,000円で認識すると問題が指定し、処分費用はありません。除却損は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>帳簿価額は500,000−420,000＝80,000円。うち10,000円は貯蔵品へ残すため、除却損は<strong>70,000円</strong>です。</p><p>借方 減価償却累計額420,000・貯蔵品10,000・固定資産除却損70,000／貸方 備品500,000。残材等の価値が0という条件なら、元記事の80,000円の除却損になります。「除却なら帳簿価額すべてが損」と一律にしません。</p></div></details></section>
+<h2 id="trade">買換えは旧資産と新資産の台帳を分ける</h2>
+<section class="sq-facts-exercise"><h3>例題4：下取り代金を新資産の値引きにしてよいか</h3><p>別の架空例。期首に、旧備品（取得原価500,000円・累計額300,000円）を120,000円で下取り。新備品の購入代価800,000円、差引額は後払いで未払金とします。新備品の取得原価と旧備品の売却損は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>旧備品の帳簿価額200,000円に対し処分対価120,000円なので、売却損は<strong>80,000円</strong>。新備品の取得原価は<strong>800,000円</strong>、未払金は800,000−120,000＝<strong>680,000円</strong>です。元記事の数値は維持します。</p><p>内訳は借方 減価償却累計額300,000・備品（新）800,000・固定資産売却損80,000／貸方 備品（旧）500,000・未払金680,000。合計1,180,000円です。</p><p>新資産を差引支払額680,000円で登録すると、その後の償却基礎も誤ります。答案上の同一勘定の集計は指定に従い、台帳では旧資産を除き、新資産800,000円を登録します。</p></div></details></section>
+<h2>仕訳を確かめる4つの問い</h2>
+<ol><li>対象は取得原価、当期費用、累計額のどれか。</li><li>償却は何か月分か。売却・除却時点まで調整したか。</li><li>処分対価・残材・処分費用は別々に読めているか。</li><li>旧資産の消去と、新資産の計上を区別できているか。</li></ol>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=81" target="_blank" rel="noopener">企業会計原則 第三・五：付随費用・期間配分・帳簿価額</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5400.htm" target="_blank" rel="noopener">国税庁No.5400：取得価額に含めないことができる付随費用</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2107.htm" target="_blank" rel="noopener">国税庁No.2107：所得税の通常修繕と資本的支出の区別（適用税目を区別）</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：受験年度の確定した出題区分</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027_kaitei_shushi_fixed.pdf" target="_blank" rel="noopener">日商2027年度改定説明書4ページ：除却・廃棄・定率法</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>固定資産はすべて減価償却しますか？</summary><p>この記事は事業用の有形固定資産の基本処理を扱います。土地など通常は減価償却しないものや、無形固定資産・投資等の別の分類を区別します。</p></details><details class="sq-facts-answer"><summary>除却なら帳簿価額がすべて損失になりますか？</summary><p>残材等の処分価値や処分費用も確認します。本記事では帳簿価額80,000円から貯蔵品10,000円を差し引き、除却損70,000円とする例を示します。</p></details><details class="sq-facts-answer"><summary>買換えの新資産は差引支払額で登録しますか？</summary><p>本記事の例では新備品の購入代価800,000円で登録し、旧備品の下取り120,000円は旧資産の処分対価として扱います。未払金680,000円と新資産の取得原価を混同しません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kotei-shisan-why.html">定額法と定率法の比較</a></li><li><a href="boki2-kessan.html">決算整理と財務諸表の検算</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="boki2-yukashoken.html">有価証券</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-seventh-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

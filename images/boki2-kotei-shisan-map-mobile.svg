@@ -1,53 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1180" width="360" height="1180" role="img" aria-labelledby="t d">
-  <title id="t">固定資産——取得→償却→除却・売却の全ライフサイクル（モバイル版）</title>
-  <desc id="d">固定資産の取得時・毎期の減価償却・除却/売却時の仕訳と、期中取得/売却の月割計算を縦に並べた図解</desc>
-  <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
-  <rect width="360" height="1180" rx="16" fill="#F8FAFC"/>
-  <text x="180" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1E293B">固定資産</text>
-  <text x="180" y="44" text-anchor="middle" font-size="10.5" fill="#64748B">取得→償却→除却・売却の全ライフサイクル</text>
-
-  <rect x="16" y="60" width="328" height="220" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-  <rect x="16" y="60" width="328" height="30" rx="10" fill="#3B82F6"/>
-  <text x="180" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">① 取得時</text>
-  <text x="180" y="106" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">取得原価＝購入代価＋付随費用</text>
-  <text x="180" y="126" text-anchor="middle" font-size="10" fill="#374151">付随費用：引取運賃・据付費・手数料</text>
-  <text x="180" y="150" text-anchor="middle" font-size="10.5" fill="#1D4ED8">建物 ×× ／ 現金 ××</text>
-  <text x="180" y="172" text-anchor="middle" font-size="10" fill="#64748B">土地・建設仮勘定も同様に取得原価</text>
-  <text x="180" y="196" text-anchor="middle" font-size="9.5" fill="#94A3B8">修繕費は資本的支出か収益的支出かで判断</text>
-
-  <text x="180" y="310" text-anchor="middle" font-size="14" fill="#94A3B8">↓</text>
-
-  <rect x="16" y="318" width="328" height="260" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
-  <rect x="16" y="318" width="328" height="30" rx="10" fill="#7C3AED"/>
-  <text x="180" y="338" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">② 毎期の減価償却</text>
-  <text x="30" y="364" font-size="10.5" font-weight="700" fill="#5B21B6">定額法</text>
-  <rect x="30" y="370" width="298" height="26" rx="5" fill="#EDE9FE"/>
-  <text x="44" y="388" font-size="10" fill="#5B21B6">（取得原価－残存価額）÷耐用年数</text>
-  <text x="30" y="416" font-size="10.5" font-weight="700" fill="#5B21B6">定率法</text>
-  <rect x="30" y="422" width="298" height="26" rx="5" fill="#EDE9FE"/>
-  <text x="44" y="440" font-size="10" fill="#5B21B6">期首帳簿価額×定率法償却率</text>
-  <text x="180" y="468" text-anchor="middle" font-size="10.5" fill="#5B21B6">減価償却費 ／ 減価償却累計額</text>
-  <text x="180" y="486" text-anchor="middle" font-size="10" fill="#64748B">B/S：取得原価－累計額＝帳簿価額</text>
-
-  <text x="180" y="612" text-anchor="middle" font-size="14" fill="#94A3B8">↓</text>
-
-  <rect x="16" y="620" width="328" height="260" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
-  <rect x="16" y="620" width="328" height="30" rx="10" fill="#EF4444"/>
-  <text x="180" y="640" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">③ 除却・売却時</text>
-  <text x="30" y="666" font-size="10.5" font-weight="700" fill="#DC2626">売却損益の計算</text>
-  <rect x="30" y="672" width="298" height="26" rx="5" fill="#FEE2E2"/>
-  <text x="44" y="690" font-size="10" fill="#DC2626">売却価額－帳簿価額＝売却損益</text>
-  <text x="30" y="714" font-size="10" fill="#374151">現金 ××（売却価額）</text>
-  <text x="30" y="732" font-size="10" fill="#374151">減価償却累計額 ××</text>
-  <text x="30" y="750" font-size="10" fill="#374151">／備品 ××（取得原価）</text>
-  <text x="30" y="770" font-size="10" font-weight="700" fill="#DC2626">固定資産売却益or損（差額）</text>
-  <text x="30" y="790" font-size="9.5" fill="#64748B">除却：除却損／固定資産（帳簿価額）</text>
-
-  <rect x="16" y="900" width="328" height="140" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
-  <text x="180" y="924" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">期中取得・売却のポイント——月割計算</text>
-  <text x="30" y="948" font-size="10" fill="#374151">期中取得：当期償却＝年間償却費</text>
-  <text x="30" y="964" font-size="10" fill="#374151">×使用月数÷12</text>
-  <text x="30" y="986" font-size="10" fill="#374151">期中売却：売却月までの償却→帳簿</text>
-  <text x="30" y="1002" font-size="10" fill="#374151">価額を確定→売却損益を算出</text>
-  <text x="30" y="1024" font-size="10" fill="#374151">建設仮勘定：完成前の支出を一時計上</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="660" viewBox="0 0 390 660" role="img" aria-labelledby="title desc">
+<title id="title">固定資産｜売却時点の残高で比べる</title><desc id="desc">01 取得原価と期首累計：取得600,000／期首累計240,000、年間120,000円を4か月分償却。02 当期の償却を加える：当期費用40,000／累計280,000、売却時の帳簿価額320,000円。03 処分対価と比較する：売却対価250,000円、320,000−250,000＝損70,000円</desc>
+<rect x="10" y="10" width="370" height="75" rx="12" fill="#101B13"/><rect x="10" y="617" width="370" height="35" rx="8" fill="#101B13"/>
+<g font-family="M PLUS 1, Hiragino Kaku Gothic ProN, sans-serif"><text x="20" y="45" font-size="17" font-weight="700" fill="#B6E27C">固定資産｜売却時点の残高で比べる</text>
+<text x="20" y="73" font-size="12" fill="#C7D3C7">Study Quest 編集部作成｜2026.11.02確認</text>
+<rect x="20" y="100" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="131" font-size="15" font-weight="700" fill="#B6E27C">01 取得原価と期首累計</text>
+<text x="34" y="165" font-size="14" fill="#F0F6ED">取得600,000／期首累計240,000</text>
+<text x="34" y="193" font-size="14" fill="#F0F6ED">年間120,000円を4か月分償却</text>
+<rect x="20" y="274" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="305" font-size="15" font-weight="700" fill="#B6E27C">02 当期の償却を加える</text>
+<text x="34" y="339" font-size="14" fill="#F0F6ED">当期費用40,000／累計280,000</text>
+<text x="34" y="367" font-size="14" fill="#F0F6ED">売却時の帳簿価額320,000円</text>
+<rect x="20" y="448" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="479" font-size="15" font-weight="700" fill="#B6E27C">03 処分対価と比較する</text>
+<text x="34" y="513" font-size="14" fill="#F0F6ED">売却対価250,000円</text>
+<text x="34" y="541" font-size="14" fill="#F0F6ED">320,000−250,000＝損70,000円</text>
+<text x="20" y="640" font-size="11" fill="#C7D3C7">条件・単位・一次資料と例題の解答は本文へ</text></g></svg>
