@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="660" viewBox="0 0 390 660" role="img" aria-labelledby="title desc">
+<title id="title">中断後に戻れる週間記録</title><desc id="desc">時間と理解を分ける：連続日数だけで判定しない、再解答と説明の結果を残す。次の枠と位置を残す：第何問・どの条件で迷ったか、再開の20分は仮の配分例。研究の対象を区別：記憶実験と習慣研究は別、毎日なら合格とは言えない</desc>
+<rect x="10" y="10" width="370" height="75" rx="12" fill="#101B13"/><rect x="10" y="617" width="370" height="35" rx="8" fill="#101B13"/>
+<g font-family="M PLUS 1, Hiragino Kaku Gothic ProN, sans-serif"><text x="20" y="45" font-size="17" font-weight="700" fill="#B6E27C">中断後に戻れる週間記録</text>
+<text x="20" y="73" font-size="12" fill="#C7D3C7">Study Quest 編集部作成｜2026.11.03確認</text>
+<rect x="20" y="100" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="131" font-size="15" font-weight="700" fill="#B6E27C">時間と理解を分ける</text>
+<text x="34" y="165" font-size="14" fill="#F0F6ED">連続日数だけで判定しない</text>
+<text x="34" y="193" font-size="14" fill="#F0F6ED">再解答と説明の結果を残す</text>
+<rect x="20" y="274" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="305" font-size="15" font-weight="700" fill="#B6E27C">次の枠と位置を残す</text>
+<text x="34" y="339" font-size="14" fill="#F0F6ED">第何問・どの条件で迷ったか</text>
+<text x="34" y="367" font-size="14" fill="#F0F6ED">再開の20分は仮の配分例</text>
+<rect x="20" y="448" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="479" font-size="15" font-weight="700" fill="#B6E27C">研究の対象を区別</text>
+<text x="34" y="513" font-size="14" fill="#F0F6ED">記憶実験と習慣研究は別</text>
+<text x="34" y="541" font-size="14" fill="#F0F6ED">毎日なら合格とは言えない</text>
+<text x="20" y="640" font-size="11" fill="#C7D3C7">条件・単位・一次資料と例題の解答は本文へ</text></g></svg>
