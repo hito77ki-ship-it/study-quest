@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="660" viewBox="0 0 390 660" role="img" aria-labelledby="title desc">
+<title id="title">続いた日数と理解を分ける</title><desc id="desc">習慣研究の範囲：同じ状況で行う行動の研究、資格合格までの日数ではない。二つの記録：いつ実施したか、何を自力で説明できたか。戻り先を残す：止めた箇所と次の一問、実施後に不明点を更新</desc>
+<rect x="10" y="10" width="370" height="75" rx="12" fill="#101B13"/><rect x="10" y="617" width="370" height="35" rx="8" fill="#101B13"/>
+<g font-family="M PLUS 1, Hiragino Kaku Gothic ProN, sans-serif"><text x="20" y="45" font-size="17" font-weight="700" fill="#B6E27C">続いた日数と理解を分ける</text>
+<text x="20" y="73" font-size="12" fill="#C7D3C7">Study Quest 編集部作成｜2026.11.03確認</text>
+<rect x="20" y="100" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="131" font-size="15" font-weight="700" fill="#B6E27C">習慣研究の範囲</text>
+<text x="34" y="165" font-size="14" fill="#F0F6ED">同じ状況で行う行動の研究</text>
+<text x="34" y="193" font-size="14" fill="#F0F6ED">資格合格までの日数ではない</text>
+<rect x="20" y="274" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="305" font-size="15" font-weight="700" fill="#B6E27C">二つの記録</text>
+<text x="34" y="339" font-size="14" fill="#F0F6ED">いつ実施したか</text>
+<text x="34" y="367" font-size="14" fill="#F0F6ED">何を自力で説明できたか</text>
+<rect x="20" y="448" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="479" font-size="15" font-weight="700" fill="#B6E27C">戻り先を残す</text>
+<text x="34" y="513" font-size="14" fill="#F0F6ED">止めた箇所と次の一問</text>
+<text x="34" y="541" font-size="14" fill="#F0F6ED">実施後に不明点を更新</text>
+<text x="20" y="640" font-size="11" fill="#C7D3C7">条件・単位・一次資料と例題の解答は本文へ</text></g></svg>
