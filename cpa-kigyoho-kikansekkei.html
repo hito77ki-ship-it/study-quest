@@ -75,9 +75,9 @@ tr:nth-child(even) td{background:var(--light);}
 .principle{background:#FFF7ED;border:1px solid #FDBA74;border-left:4px solid #F59E0B;border-radius:12px;padding:18px 20px;margin:24px 0;color:#7C2D12;}
 .principle strong{color:#9A3412;display:block;margin-bottom:8px;}
 /* 警告・TIPボックス */
-.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:#78350F;}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:var(--sq-text,#1A202C);}
 .warn-box strong{color:#92400E;display:block;margin-bottom:6px;}
-.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:#276749;}
+.tip-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:10px;padding:16px 18px;margin:22px 0;font-size:14px;color:var(--sq-text,#1A202C);}
 .tip-box strong{color:#166534;display:block;margin-bottom:6px;}
 /* カード */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0;}
@@ -94,7 +94,7 @@ tr:nth-child(even) td{background:var(--light);}
 .tag.amber{background:#F59E0B;}
 /* チェックリスト */
 .checklist{counter-reset:item;margin:20px 0;}
-.check{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:#374151;}
+.check{position:relative;background:var(--light);border:1px solid var(--border);border-radius:10px;padding:14px 16px 14px 52px;margin-bottom:10px;font-size:14px;color:var(--sq-text,#1A202C);}
 .check::before{counter-increment:item;content:counter(item);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;}
 /* いいね誘導カード */
 .like-cta{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border:2px solid var(--green);border-radius:14px;padding:28px 24px;margin:44px 0 36px;text-align:center;}
