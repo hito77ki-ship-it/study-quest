@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/boki2-seizo-genka-hokokusho.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【簿記2級】製造原価報告書（CR）の書き方を完全解説｜ひな形・配賦差異・他勘定振替まで例題つき｜スタディクエスト</title>
-<meta name="description" content="簿記2級 第4問の製造原価報告書（CR）を完全解説。直接費・間接費別ひな形、材料費・労務費の消費額計算、予定配賦と配賦差異の処理（CRパターン・P/Lパターン）、他勘定振替・異常仕損まで例題つきで対策。">
+<title>簿記2級の製造原価報告書｜仕掛品・差異・売上原価を一続きで検算｜スタディクエスト</title>
+<meta name="description" content="予定配賦と実際発生、直接経費、他勘定振替、差異の処理先を区別。正しい既存数値を条件付きで残し、材料・給与から製造原価と売上原価99,000円まで自作例で照合。">
 <meta name="keywords" content="製造原価報告書 書き方 簿記2級,CR 配賦差異 処理,仕掛品 他勘定振替,工業簿記 第4問 対策">
-<meta property="og:title" content="【簿記2級】製造原価報告書（CR）の書き方を完全解説">
-<meta property="og:description" content="第4問で狙われる製造原価報告書を、ひな形・配賦差異・他勘定振替まで例題つきで完全攻略。">
+<meta property="og:title" content="簿記2級の製造原価報告書｜仕掛品・差異・売上原価を一続きで検算">
+<meta property="og:description" content="予定配賦と実際発生、直接経費、他勘定振替、差異の処理先を区別。正しい既存数値を条件付きで残し、材料・給与から製造原価と売上原価99,000円まで自作例で照合。">
 <meta property="og:url" content="https://study-quest.net/boki2-seizo-genka-hokokusho.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】製造原価報告書（CR）の書き方を完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"第4問で狙われる製造原価報告書を、ひな形・配賦差異・他勘定振替まで例題つきで完全攻略。","url":"https://study-quest.net/boki2-seizo-genka-hokokusho.html","datePublished":"2026-05-09","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の製造原価報告書｜仕掛品・差異・売上原価を一続きで検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "予定配賦と実際発生、直接経費、他勘定振替、差異の処理先を区別。正しい既存数値を条件付きで残し、材料・給与から製造原価と売上原価99,000円まで自作例で照合。", "url": "https://study-quest.net/boki2-seizo-genka-hokokusho.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -196,468 +195,49 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "製造原価報告書には必ず予定配賦額を書きますか？", "acceptedAnswer": {"@type": "Answer", "text": "予定配賦を採用した問題なら、その指示に応じた額を使います。全ての報告書が予定配賦とは限らず、実際原価計算でも予定価格等を用いれば差異が生じます。"}}, {"@type": "Question", "name": "不利差異は必ず当期製品製造原価に足しますか？", "acceptedAnswer": {"@type": "Answer", "text": "一律にはできません。売上原価へ処理するか、製品・仕掛品等へ配賦するか等を確認します。原価計算基準47には原則と、差異の種類・大きさ等による扱いがあります。"}}, {"@type": "Question", "name": "異常仕損費の控除は簿記2級の頻出処理ですか？", "acceptedAnswer": {"@type": "Answer", "text": "そのように一括表示しません。確認した工業簿記の区分表では異常仕損・異常減損の処理は1級の欄です。本記事の非原価項目の小例は参考として区別し、2級の定番と断定しません。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 製造原価報告書（CR）</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>【簿記2級】製造原価報告書（CR）の書き方を完全解説<br>ひな形・配賦差異・他勘定振替まで例題つき</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    実は、今回紹介する工業簿記のラスボス「製造原価報告書（CR）」ですが、私が初めて解いたとき、材料費・労務費・経費が仕掛品のT字勘定にどんどん流れ込んでいく複雑なつながりを見て、「うわっ、なんじゃこりゃ、どの数字がどこへ消えたのか全然わからん……！」と頭が完全にフリーズしました（笑）。<br>
-    でも実はこの論点の正体は【原価の旅（バトンリレー）】です。工場で発生したコストが仕掛品ボックスの中で合体し、完成品として「当期製品製造原価」という名のバトンに変わり、そのまま製品ボックスへスライドして、最後はP/Lの売上原価としてゴールする——たったこれだけのシンプルな旅なんです。<br>
-    今回は、このバトンリレーをゲーム感覚で攻略できるよう、ボックス図と一緒に私なりの解き方をお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>CRのひな形は2種類</strong>——要素別と直接費・間接費別。試験頻出は直接費・間接費別</li>
-      <li><strong>材料費・労務費は「消費額」を計算してから記入</strong>——期首＋仕入－期末のパズルを解く</li>
-      <li><strong>製造間接費は「予定配賦額」をCRに記入</strong>——配賦差異はCRの末尾かP/Lで調整</li>
-      <li><strong>仕掛品ボックスの右側</strong>に「他勘定振替」「異常仕損」がある問題が頻出——引き算で消す</li>
-    </ul>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">製造原価報告書って計算式は覚えたんですが、実際の試験問題に当てはめようとすると全然解けないんです……数字がどこから出てきたのか、頭の中がぐちゃぐちゃになります。</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">わかります、私もそこで一度心が折れかけました（笑）。でも実は、公式を丸暗記するより<strong>【仕掛品のボックス図】</strong>を描いて、左側（借方）に月初仕掛品と当期総製造費用を足し算、右側（貸方）に月末仕掛品を引き算するだけの1枚のパズルだと気づいた瞬間、一気に解けるようになったんです。左の合計から右下を引けば、残った右上が自動的に「当期製品製造原価」になる——このボックスさえ描ければ、公式を覚えていなくても手が動きますよ！</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">ボックス図なら図で見えるから安心です！でも、そのゴールの数字をどう使えばいいんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">いい質問です！そのボックスの右上に出てきた「当期製品製造原価」は、そのまま次の製品ボックスの左側（たし算エリア）にスライドして、バトンのように受け継がれます。あとは同じ要領で製品ボックスを解けば、売上原価まで一気に辿り着けますよ。</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-  </div>
-
-  <h2>🗺️ まず全体像を把握する——勘定連絡図で原価の「旅」を一発理解</h2>
-
-  <p>製造原価報告書は「仕掛品勘定の明細書」。3費目の当月消費額と月初・月末仕掛品から当期製品製造原価を導く構造です。</p>
-
-  <p>製造原価報告書（CR）の役割を理解するには、まず「工場で発生したコストが最終的にP/L（損益計算書）の売上原価へ辿り着くまでの流れ」を頭に入れることが大切です。次の図解がその全体像を一枚で示しています。</p>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki2-seizo-genka-map-mobile.svg">
-    <img src="images/boki2-seizo-genka-map.svg" alt="製造原価報告書からP/L売上原価へ流れる勘定連絡図の全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="400" loading="lazy">
-  </picture>
-
-  <h3>① 図解の「たし算エリア」と「結果エリア」の読み方</h3>
-
-  <p>この図の仕掛品ボックスと製品ボックスには、共通の読み方があります。どちらも左右で役割が決まっています。</p>
-
-  <div class="img-explain">
-    <div class="ie-row">
-      <div class="ie-label ie-left">左側<br>たし算エリア</div>
-      <div class="ie-desc">月のはじめに残っていたもの（月初仕掛品〔げつしょ しかかりひん〕 や月初製品）と、当月に新たに加わったもの（当期総製造費用 や 当期製品製造原価）を<strong>全部足した合計</strong>が入ります。</div>
-    </div>
-    <div class="ie-row">
-      <div class="ie-label ie-right">右側<br>結果エリア</div>
-      <div class="ie-desc">右下に「月末にまだ残っているもの」（月末仕掛品〔げつまつ しかかりひん〕・月末製品）、右上に「完成・販売されてどこかへ旅立ったもの（★ゴール）」が入ります。<br><strong>左側の合計から右下の月末を引くと、右上のゴールが求まる</strong>というシンプルな構造です。</div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>「月初＋当期投入－月末＝ゴール」という数式は、ボックス図そのものです。</strong><br><br>
-    左側（たし算エリア）に月初と当期投入を足す ＝ 数式の「月初＋当期投入」<br>
-    右下（月末）を引く ＝ 数式の「－月末」<br>
-    残った右上がゴール ＝ 数式の「＝当期製品製造原価 or 売上原価」<br><br>
-    公式を丸暗記しなくても、<strong>図の「左から右下を引く→右上が求まる」という形</strong>を覚えるだけで、どんな問題でも手が動くようになります。
-  </div>
-
-  <h3>② ここが最大のつながりポイント！——仕掛品ボックスから製品ボックスへのバトンリレー</h3>
-
-  <p>この図で最も大切な部分は、<strong>仕掛品（しかかりひん）ボックスの「右上のゴール（当期製品製造原価〔とうき せいひん せいぞう げんか〕）」で求めた数字が、そのまま製品（せいひん）ボックスの「たし算エリア（左下）」へスライドして引き継がれる</strong>点です。</p>
-
-  <div class="baton-box">
-    <div class="baton-left">
-      <div class="baton-title">② 仕掛品ボックス（製造原価報告書 CR）</div>
-      <div class="baton-body">
-        たし算エリア（左）<br>
-        　月初仕掛品 ＋ 当期総製造費用<br>
-        右下：月末仕掛品<br>
-        <strong>右上 ★：当期製品製造原価</strong><br>
-        <span style="font-size:11px;color:#718096;">← この数字を次へ渡す</span>
-      </div>
-    </div>
-    <div class="baton-arrow">→<br><span>そのまま<br>スライド</span></div>
-    <div class="baton-right">
-      <div class="baton-title">③ 製品ボックス（P/L・売上原価計算）</div>
-      <div class="baton-body">
-        たし算エリア（左）<br>
-        　月初製品<br>
-        　<strong>＋ 当期製品製造原価 ★（↑ここへ届く）</strong><br>
-        右下：月末製品<br>
-        右上：売上原価 → P/Lへ
-      </div>
-    </div>
-  </div>
-
-  <p>製造原価報告書（CR）で求めた「当期製品製造原価」という数字が、そのままP/Lの売上原価計算の出発点になります。<strong>工場（CR）で計算した原価が、販売（P/L）の世界へバトンとして渡される</strong>——この連動を意識しておくと、第4問・第5問の財務諸表問題で「どの数字をどこへ書けばいいか」が迷わなくなります。</p>
-
-  <h2>📋 製造原価報告書（CR）のひな形2パターン——試験に出るのはどちら？</h2>
-
-  <p>CRには2種類の形式があります。試験問題の指定に従って使い分けます。</p>
-
-  <div class="compare-2">
-    <div class="c2-card a">
-      <div class="c2-title">要素別形式（基礎的な形）</div>
-      <p style="font-size:12px;color:#374151;margin-bottom:8px;">材料費・労務費・経費の要素ごとに集計する形式。</p>
-      <ul style="font-size:12px;color:#374151;margin:0 0 0 14px;">
-        <li>材料費（直接＋間接）</li>
-        <li>労務費（直接＋間接）</li>
-        <li>経費（直接＋間接）</li>
-        <li>→ 当期総製造費用</li>
-      </ul>
-    </div>
-    <div class="c2-card b">
-      <div class="c2-title">直接費・間接費別形式（試験頻出）</div>
-      <p style="font-size:12px;color:#374151;margin-bottom:8px;">直接原価と製造間接費を分けて集計する形式。配賦差異の問題で必須。</p>
-      <ul style="font-size:12px;color:#374151;margin:0 0 0 14px;">
-        <li>直接材料費</li>
-        <li>直接労務費</li>
-        <li>直接経費</li>
-        <li>製造間接費（予定配賦額）</li>
-        <li>→ 当期総製造費用</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3>本格的なCRのひな形（直接費・間接費別）</h3>
-
-  <table>
-    <tr><th>製造原価報告書の項目</th><th style="text-align:right;width:120px;">金額</th><th style="width:200px;">ポイント</th></tr>
-    <tr><td>Ⅰ 直接材料費</td><td class="td-r">50,000</td><td style="font-size:12px;color:#718096;">消費額を計算してから記入</td></tr>
-    <tr><td>Ⅱ 直接労務費</td><td class="td-r">40,000</td><td style="font-size:12px;color:#718096;">消費額を計算してから記入</td></tr>
-    <tr><td>Ⅲ 直接経費</td><td class="td-r">5,000</td><td style="font-size:12px;color:#718096;"></td></tr>
-    <tr><td>Ⅲ 直接経費</td><td class="td-r">—</td><td style="font-size:12px;color:#718096;">本問では発生なし（外注加工賃など。無ければ「—」）</td></tr>
-    <tr><td>Ⅳ 製造間接費</td><td class="td-r">30,000</td><td style="font-size:12px;color:#C05621;">⚠️ 実際ではなく予定配賦額を入れる</td></tr>
-    <tr class="td-total"><td>当期総製造費用</td><td class="td-r">125,000</td><td style="font-size:12px;">Ⅰ〜Ⅳの合計</td></tr>
-    <tr><td>加：期首仕掛品棚卸高</td><td class="td-r">15,000</td><td style="font-size:12px;color:#718096;">プラスする</td></tr>
-    <tr><td>　　合　計</td><td class="td-r">140,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>減：期末仕掛品棚卸高</td><td class="td-r td-minus">（25,000）</td><td style="font-size:12px;color:#718096;">マイナスする</td></tr>
-    <tr><td>製造間接費配賦差異（不利）</td><td class="td-r td-plus">2,000</td><td style="font-size:12px;color:#C05621;">⚠️ CRで調整する場合のみ</td></tr>
-    <tr class="td-goal"><td><strong>当期製品製造原価</strong></td><td class="td-r"><strong>117,000</strong></td><td style="font-size:12px;">これをP/Lの売上原価計算へ</td></tr>
-  </table>
-
-  <div class="tip-box"><strong>「当期製品製造原価」がCRのゴール。</strong>これをP/Lの「期首製品＋当期製品製造原価－期末製品＝売上原価」の計算へスライドさせます。</div>
-
-  <h2>🔢 ① 材料費の「消費額」計算パズル——期首＋仕入－期末</h2>
-
-  <p>試験の問題文には「材料費 XX円」とそのまま与えられません。<strong>材料を「いくら使ったか（消費額）」を自分で計算</strong>してからCRに記入します。</p>
-
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>期首材料棚卸高：20,000円、当期材料仕入高：80,000円、期末材料棚卸高：10,000円。直接材料費の消費額を求めなさい。</p>
-  </div>
-
-  <div class="shiwake-box">
-    <div class="sw-label">材料費の消費額計算</div>
-    <p style="font-size:13px;color:#374151;margin:0;">期首材料（20,000）＋ 当期仕入（80,000）－ 期末材料（10,000）＝ <strong>消費額 90,000円</strong></p>
-  </div>
-
-  <div class="warn-box"><strong>「仕入額」をそのまま書かないこと！</strong><br>期末に余った材料の分は「まだ使っていない」ので原価になりません。期末材料を引いた「消費額」がCRに入ります。問題で「当期材料仕入高」が与えられていたら、必ずこの計算を挟みましょう。</div>
-
-  <h2>💴 ② 労務費の「当月消費額」計算——未払の調整がある</h2>
-
-  <p>労務費も「支払った額」ではなく「当月に消費した額」を使います。前月の未払分と当月の未払分で調整が必要です。</p>
-
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>当期支払賃金：60,000円、前月末未払賃金：5,000円、当月末未払賃金：8,000円。当月消費額を求めなさい。</p>
-  </div>
-
-  <div class="shiwake-box">
-    <div class="sw-label">労務費の消費額計算</div>
-    <p style="font-size:13px;color:#374151;margin:0;">当期支払（60,000）－ 前月未払（5,000）＋ 当月未払（8,000）＝ <strong>消費額 63,000円</strong></p>
-  </div>
-
-  <div class="tip-box"><strong>考え方：</strong>前月末に払えなかった分（5,000）はすでに前期の費用なので今期から引く。当月末の未払（8,000）は今月働いてもらったのにまだ払っていないだけなので今月の費用に入れる。</div>
-
-  <h2>⚙️ ③ 製造間接費——実際配賦 vs 予定配賦でCRの書き方が変わる</h2>
-
-  <p>簿記2級の工場では製造間接費を<strong>「予定配賦」するケースが大半</strong>です。実際にかかった額とは違う数字をCRに書くことになります。</p>
-
-  <table>
-    <tr><th>配賦方法</th><th>CRに書く数字</th><th>差異の発生</th></tr>
-    <tr><td>実際配賦</td><td>実際発生額</td><td>差異なし</td></tr>
-    <tr><td>予定配賦（試験頻出）</td><td><span style="color:#C05621;font-weight:700;">予定配賦額</span>（＝予定配賦率×実際操業度）</td><td>配賦差異が発生する</td></tr>
-  </table>
-
-  <div class="warn-box"><strong>⚠️ 最重要：製造間接費の欄に入れるのは「予定配賦額」</strong><br>実際発生額が110,000円でも、予定配賦額が100,000円なら「100,000円」をCRに記入します。差額の10,000円（不利差異）は、CRの末尾かP/Lで別途調整します（次のセクションで解説）。</div>
-
-  <h3>配賦差異の計算</h3>
-
-  <div class="shiwake-box">
-    <div class="sw-label">例：予定配賦率 1,000円/h、実際操業度 100h、実際発生額 110,000円</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 6px;">予定配賦額 ＝ 1,000円 × 100h ＝ <strong>100,000円</strong>　←CRに記入するのはこちら</p>
-    <p style="font-size:13px;color:#374151;margin:0;">配賦差異 ＝ 予定（100,000）－ 実際（110,000）＝ <strong>▲10,000円（不利差異）</strong></p>
-  </div>
-
-  <h2>📊 ④ 配賦差異の調整場所——CRで直すか・P/Lで直すか</h2>
-
-  <p>配賦差異を「どこで調整するか」は<strong>問題文の指示で100%決まります</strong>。2つのパターンを整理します。</p>
-
-  <div class="compare-2">
-    <div class="c2-card a">
-      <div class="c2-title">パターンA：CRの末尾で調整する</div>
-      <p style="font-size:12px;color:#374151;margin-bottom:8px;">「当期製品製造原価は実際原価で示せ」という指示があるとき。</p>
-      <ul style="font-size:12px;color:#374151;margin:0 0 0 14px;">
-        <li>CRの製造間接費には予定配賦額を記入</li>
-        <li>仕掛品の計算が終わった後（当期製品製造原価の直前）で差異を加算</li>
-        <li>不利差異（実際 &gt; 予定）→ 加算（＋）</li>
-        <li>有利差異（予定 &gt; 実際）→ 減算（－）</li>
-      </ul>
-    </div>
-    <div class="c2-card b">
-      <div class="c2-title">パターンB：P/Lの売上原価で調整する（試験で多い）</div>
-      <p style="font-size:12px;color:#374151;margin-bottom:8px;">「差異は売上原価に賦課する」という指示があるとき。</p>
-      <ul style="font-size:12px;color:#374151;margin:0 0 0 14px;">
-        <li>CRの中は予定のまま通す→ 当期製品製造原価も予定金額</li>
-        <li>P/Lの売上原価の欄で差異を加算・減算する</li>
-        <li>不利差異 → P/Lの売上原価に加算（売上原価が増える）</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>なぜ不利差異を「足す」のか？</strong><br>不利差異＝「予定より実際の方が多くかかった」ということ。実際のコストに合わせるため、不足していた分を足し上げます。</div>
-
-  <h3>パターンBのP/L売上原価欄——差異はここに登場する</h3>
-
-  <p>パターンBでは製造原価報告書（CR）の中は予定金額のまま通します。P/Lの売上原価の欄に配賦差異の行を追記します。</p>
-
-  <table>
-    <tr><th>損益計算書（売上原価の部）</th><th style="text-align:right;width:120px;">金額</th><th style="width:220px;">ポイント</th></tr>
-    <tr><td>期首製品棚卸高</td><td class="td-r">5,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>当期製品製造原価（CRから）</td><td class="td-r">112,000</td><td style="font-size:12px;color:#1D4ED8;">予定金額のままCRから持ってくる</td></tr>
-    <tr class="td-total"><td>　　合　計</td><td class="td-r">117,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>減：期末製品棚卸高</td><td class="td-r td-minus">（20,000）</td><td style="font-size:12px;"></td></tr>
-    <tr><td>　　差引（予定売上原価）</td><td class="td-r">97,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>製造間接費配賦差異（不利）</td><td class="td-r td-plus">＋2,000</td><td style="font-size:12px;color:#C05621;">⚠️ CRにはなし。ここで調整</td></tr>
-    <tr class="td-goal"><td><strong>売上原価（実際原価ベース）</strong></td><td class="td-r"><strong>99,000</strong></td><td style="font-size:12px;"></td></tr>
-  </table>
-
-  <div class="warn-box"><strong>⚠️ パターンBの試験での注意点</strong><br>
-  CRを先に完成させて「当期製品製造原価 ○○○円」を出したら、<strong>その数字をP/Lの当期製品製造原価の欄にそのまま書きます</strong>。差異をCRの中に書いてはいけません。P/Lの「差引売上原価の下の行」に配賦差異が入るレイアウトを試験会場でも書けるようにしましょう。</div>
-
-  <h2>📦 ⑤ 仕掛品ボックスの「右側」——他勘定振替と異常仕損</h2>
-
-  <p>仕掛品ボックス（T字勘定）の右側（貸方）に入るのは<strong>期末仕掛品だけではありません</strong>。</p>
-
-  <ul>
-    <li><strong>他勘定振替</strong>——仕掛品を機械の修繕など製品製造以外に使った分（修繕費などへ振替）</li>
-    <li><strong>異常仕損費</strong>——不注意などで発生した大失敗による廃棄損（特別損失へ）</li>
-  </ul>
-
-  <p>これらの分を右側に出すと、その分だけ「当期製品製造原価」が小さくなります。</p>
-
-  <div class="mondai">
-    <div class="m-label">例題（仕掛品ボックスのパズル）</div>
-    <p>当期総製造費用：150,000円、期首仕掛品：20,000円、期末仕掛品：30,000円、他勘定振替（修繕費）：5,000円、異常仕損費：10,000円。当期製品製造原価を求めなさい。</p>
-  </div>
-
-  <h3>仕掛品ボックス（T字勘定）</h3>
-
-  <div class="box-grid">
-    <div class="box-left">
-      <div class="box-header">借方（左側）</div>
-      <div class="box-row"><span class="label">期首仕掛品</span><span class="num">20,000</span></div>
-      <div class="box-row"><span class="label">当期総製造費用</span><span class="num">150,000</span></div>
-      <div class="box-row total"><span class="label">合　計</span><span class="num">170,000</span></div>
-    </div>
-    <div class="box-right">
-      <div class="box-header">貸方（右側）</div>
-      <div class="box-row"><span class="label">期末仕掛品</span><span class="num">（30,000）</span></div>
-      <div class="box-row highlight"><span class="label">他勘定振替高</span><span class="num">（5,000）</span></div>
-      <div class="box-row highlight"><span class="label">異常仕損費</span><span class="num">（10,000）</span></div>
-      <div class="box-row answer"><span class="label">当期製品製造原価</span><span class="num">125,000</span></div>
-    </div>
-  </div>
-
-  <div class="shiwake-box">
-    <div class="sw-label">計算</div>
-    <p style="font-size:13px;color:#374151;margin:0;">170,000 － 30,000（期末） － 5,000（他勘定振替） － 10,000（異常仕損） ＝ <strong>当期製品製造原価 125,000円</strong></p>
-  </div>
-
-  <div class="warn-box"><strong>なぜ他勘定振替と異常仕損を引くのか？</strong><br>製造原価報告書は「無事に完成した製品のコスト」を報告する書類です。「途中で修繕に流用した分」や「失敗してゴミになった分」をそのまま残すと、完成品の原価が不当に膨らんでしまいます。だから右側に出して（引いて）原価から追い出します。</div>
-
-  <h3>CRへの最終アウトプット（他勘定振替・仕損あり）</h3>
-
-  <table>
-    <tr><th>製造原価報告書の項目</th><th style="text-align:right;width:120px;">金額</th><th style="width:200px;">補足</th></tr>
-    <tr><td>当期総製造費用</td><td class="td-r">150,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>加：期首仕掛品棚卸高</td><td class="td-r">20,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>　　合　計</td><td class="td-r">170,000</td><td style="font-size:12px;"></td></tr>
-    <tr><td>減：期末仕掛品棚卸高</td><td class="td-r td-minus">（30,000）</td><td style="font-size:12px;"></td></tr>
-    <tr><td>　　他勘定振替高</td><td class="td-r td-minus">（5,000）</td><td style="font-size:12px;color:#C05621;">製品以外への流用分を引く</td></tr>
-    <tr><td>　　異常仕損費</td><td class="td-r td-minus">（10,000）</td><td style="font-size:12px;color:#C05621;">失敗分を特別損失へ追い出す</td></tr>
-    <tr class="td-goal"><td><strong>当期製品製造原価</strong></td><td class="td-r"><strong>125,000</strong></td><td style="font-size:12px;">完成品の正しいコスト</td></tr>
-  </table>
-
-  <h2>🔗 ⑥ 仕掛品→製品→P/Lのバトンリレー——全体の流れを一枚で見る</h2>
-
-  <p>CRで計算した「当期製品製造原価」は、そのまま製品ボックスの入り口になります。工業簿記で最も重要なこのバトンリレーを一枚の図で整理します。</p>
-
-  <div class="combo-relay">
-    <div class="relay-card wip">
-      <div class="relay-head">【工場】仕掛品ボックス（CRが担当）</div>
-      <div class="relay-body">
-        <div class="relay-col l">
-          <div class="relay-col-title">借方（左）</div>
-          <div class="relay-item"><span>期首仕掛品</span><span>20,000</span></div>
-          <div class="relay-item"><span>当期総製造費用</span><span>150,000</span></div>
-          <div class="relay-item"><span style="font-size:11px;color:#718096;">（材料＋労務＋間接費）</span><span></span></div>
-        </div>
-        <div class="relay-col r">
-          <div class="relay-col-title">貸方（右）</div>
-          <div class="relay-item out"><span>期末仕掛品</span><span>(30,000)</span></div>
-          <div class="relay-item out"><span>他勘定振替</span><span>(5,000)</span></div>
-          <div class="relay-item out"><span>異常仕損費</span><span>(10,000)</span></div>
-          <div class="relay-item answer"><span>当期製品製造原価</span><span>125,000</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="relay-arrow-col">
-      <div class="arr">→</div>
-      <div class="arr-label">バトン<br>リレー</div>
-    </div>
-    <div class="relay-card prod">
-      <div class="relay-head">【倉庫→販売】製品ボックス（P/Lが担当）</div>
-      <div class="relay-body">
-        <div class="relay-col l">
-          <div class="relay-col-title">借方（左）</div>
-          <div class="relay-item"><span>期首製品</span><span>10,000</span></div>
-          <div class="relay-item move"><span>当期製品製造原価</span><span>125,000</span></div>
-          <div class="relay-item"><span style="font-size:11px;color:#718096;">（↑CRから届いた数字）</span><span></span></div>
-        </div>
-        <div class="relay-col r">
-          <div class="relay-col-title">貸方（右）</div>
-          <div class="relay-item out"><span>期末製品</span><span>(15,000)</span></div>
-          <div class="relay-item answer"><span>売上原価</span><span>120,000</span></div>
-          <div class="relay-item"><span style="font-size:11px;color:#718096;">（＋差異調整 → P/L）</span><span></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>3つの見るべきポイント</strong><br>
-    ① <strong>「当期製品製造原価」は工場の出口であり倉庫の入り口</strong>——仕掛品ボックス右側の数字が、製品ボックス左側へそのままスライドします。<br>
-    ② <strong>左の合計 ＝ 右の合計のパズル</strong>——仕掛品ボックスは「期末仕掛品＋他勘定振替＋当期製品製造原価」で貸方を埋めます。<br>
-    ③ <strong>担当する書類が違う</strong>——仕掛品ボックス ＝ 製造原価報告書（CR）、製品ボックスの売上原価 ＝ 損益計算書（P/L）。
-  </div>
-
-  <h2>📝 総合例題——配賦差異＋他勘定振替が同時に出た場合</h2>
-
-  <div class="mondai">
-    <div class="m-label">総合例題（第4問レベル）</div>
-    <p>以下のデータから製造原価報告書を作成し、当期製品製造原価を求めなさい。</p>
-    <ul style="margin:8px 0 0 14px;font-size:13px;color:#374151;">
-      <li>直接材料費消費額：50,000円、直接労務費消費額：40,000円</li>
-      <li>製造間接費：予定配賦率 300円/h、実際操業度 100h、実際発生額 32,000円</li>
-      <li>期首仕掛品：15,000円、期末仕掛品：20,000円</li>
-      <li>他勘定振替（修繕費）：3,000円</li>
-      <li>配賦差異はCR末尾で調整する（パターンA）</li>
-    </ul>
-  </div>
-
-  <h3>解答手順</h3>
-
-  <div class="step-list">
-    <div class="step-item"><div class="step-num">1</div><div class="step-body">製造間接費の予定配賦額 ＝ 300円 × 100h ＝ <strong>30,000円</strong>（CRに記入する数字）</div></div>
-    <div class="step-item"><div class="step-num">2</div><div class="step-body">配賦差異 ＝ 予定（30,000）－ 実際（32,000）＝ <strong>▲2,000円（不利差異）</strong></div></div>
-    <div class="step-item"><div class="step-num">3</div><div class="step-body">当期総製造費用 ＝ 50,000 ＋ 40,000 ＋ 30,000 ＝ <strong>120,000円</strong></div></div>
-    <div class="step-item"><div class="step-num">4</div><div class="step-body">仕掛品計算：120,000 ＋ 15,000 ― 20,000 ― 3,000 ＝ <strong>112,000円</strong></div></div>
-    <div class="step-item"><div class="step-num">5</div><div class="step-body">パターンAなので配賦差異（不利2,000）をCR末尾で加算 → <strong>当期製品製造原価 114,000円</strong></div></div>
-  </div>
-
-  <table>
-    <tr><th>製造原価報告書</th><th style="text-align:right;width:120px;">金額</th></tr>
-    <tr><td>Ⅰ 直接材料費</td><td class="td-r">50,000</td></tr>
-    <tr><td>Ⅱ 直接労務費</td><td class="td-r">40,000</td></tr>
-    <tr><td>Ⅲ 直接経費</td><td class="td-r">—</td></tr>
-    <tr><td>Ⅳ 製造間接費（予定配賦額）</td><td class="td-r">30,000</td></tr>
-    <tr class="td-total"><td>当期総製造費用</td><td class="td-r">120,000</td></tr>
-    <tr><td>加：期首仕掛品</td><td class="td-r">15,000</td></tr>
-    <tr><td>　　合　計</td><td class="td-r">135,000</td></tr>
-    <tr><td>減：期末仕掛品</td><td class="td-r td-minus">（20,000）</td></tr>
-    <tr><td>　　他勘定振替高</td><td class="td-r td-minus">（3,000）</td></tr>
-    <tr><td>製造間接費配賦差異（不利）</td><td class="td-r td-plus">＋2,000</td></tr>
-    <tr class="td-goal"><td><strong>当期製品製造原価</strong></td><td class="td-r"><strong>114,000</strong></td></tr>
-  </table>
-
-  <div class="app-cta">
-    <h3>⚔ Study Quest で工業簿記を攻略しよう</h3>
-    <p>製造原価報告書・原価計算・財務諸表の学習記録をRPG感覚で管理。試験日まで継続できます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div class="matome">
-    <h3>📋 まとめ：製造原価報告書 解き方チェックリスト</h3>
-    <div class="matome-row"><span class="trigger">材料費・労務費</span><span class="result">「消費額」を計算してからCRに記入（期首＋仕入－期末）</span></div>
-    <div class="matome-row"><span class="trigger">製造間接費</span><span class="result">CRには「予定配賦額」を記入（実際発生額ではない）</span></div>
-    <div class="matome-row"><span class="trigger">配賦差異の調整</span><span class="result">CRの末尾（パターンA）かP/Lの売上原価（パターンB）——問題文の指示に従う</span></div>
-    <div class="matome-row"><span class="trigger">他勘定振替・異常仕損</span><span class="result">仕掛品ボックスの右側（貸方）に出してCRの末尾でマイナスする</span></div>
-    <div class="matome-row"><span class="trigger">当期製品製造原価</span><span class="result">P/L売上原価計算の「当期製品製造原価」へスライドさせる</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <h2>よくある質問</h2>
-
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 製造間接費はなぜ予定配賦額をCRに書くのですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">実際発生額は月末になるまで確定しません。製品の完成と同時に原価を計算するために、あらかじめ決めた予定配賦率を使います。月末に実際額が確定したら差異を計算して財務諸表上で調整します。</span></div>
-  </div>
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 配賦差異の調整をCRとP/Lどちらにするか迷います。</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">問題文に必ず指示があります。「当期製品製造原価を実際原価で計算する」→ CRの末尾で調整（パターンA）。「差異は売上原価に賦課する」→ P/Lの売上原価で調整（パターンB）。指示を見落とさないことが最重要です。</span></div>
-  </div>
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 他勘定振替と異常仕損の違いは何ですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">他勘定振替は「仕掛品を製品製造以外（機械修繕など）に使った分」で修繕費などへ振り替えます。異常仕損は「予期せぬ失敗で廃棄になった分」で特別損失へ振り替えます。どちらも「完成品のコストから除外する」という目的は同じです。</span></div>
-  </div>
-
-  <div class="cross-link">
-    <div class="cl-label">関連記事</div>
-    <p>T字勘定で有利差異・不利差異を判断する方法、シュラッター図による予算差異・操業度差異の分解、差異の仕訳まで、製造間接費の詳細は下記で解説しています。</p>
-    <a href="boki2-seizo-kansetsuhi.html">製造間接費の予定配賦・配賦差異を見る →</a>
-  </div>
-
-  <div style="margin:40px 0;">
-    <p style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:12px;">関連記事</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <a href="boki2-seizo-kansetsuhi.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">製造間接費の予定配賦と配賦差異の計算</a>
-      <a href="boki2-bumonbetsu.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">部門別原価計算（直接・相互配賦法）</a>
-      <a href="boki2-sogo-genka.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">総合原価計算の解き方</a>
-      <a href="boki2-kogyo.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">工業簿記の全体像まとめ</a>
-    </div>
-  </div>
-</div>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>簿記2級の製造原価報告書｜仕掛品・差異・売上原価を一続きで検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>製造原価報告書は、当期の製造費用と仕掛品等の増減から、完成して製品になった原価を示します。製品の在庫増減を経て売上原価へつなぐ段階とは別です。予定配賦を必須とした説明、直接経費がある表とゼロの表の混在、差異の処理先を省いた式を訂正しました。</p>
+<div class="sq-facts-note"><strong>金額の評価基準と、振替先を先に確認</strong><p>実際原価計算でも予定価格等を使えば差異が発生します。「実際原価計算だから差異ゼロ」「不利差異なら必ず完成品へ加算」とはしません。原価計算基準47は、材料受入価格差異等の区別、原則の売上原価処理、一定の場合の在庫等への配賦を定めています。</p></div>
+<h2>材料の購入、給与の支払、その月の消費を分ける</h2>
+<section class="sq-facts-exercise"><h3>自作例1：材料90,000円・労務費63,000円の前提</h3><p>元の記事の数値を使います。材料の月初20,000円、当月購入80,000円、月末10,000円で、全て直接材料、減耗等なし。工場労務費の当月支払総額60,000円、前月末未払5,000円、当月末未払8,000円。消費額は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>直接材料費は20,000＋80,000−10,000＝<strong>90,000円</strong>。当月労務費は60,000−5,000＋8,000＝<strong>63,000円</strong>です。</p><p>購入額80,000円や給与支払額60,000円をそのまま当月消費額にはしません。材料に間接材料が混じる、給与に工場外の人件費がある、手取額で示される等の条件なら追加の区分・調整が必要です。この例の労務費全額を直接労務費とするかも、作業内訳なしには決めません。</p></div></details></section>
+<h2>直接経費を含む125,000円の表を、一つの条件で読む</h2>
+<section class="sq-facts-exercise"><h3>自作例2：旧例の117,000円になる条件を明記する</h3><p>別の架空例。直接材料費50,000円、直接労務費40,000円、直接経費5,000円、製造間接費の予定配賦30,000円。月初仕掛品15,000円、月末仕掛品25,000円、他勘定振替なし。問題に「不利配賦差異2,000円を全額、当期製品製造原価へ加算する」と指定がある場合は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>当月製造費用は50,000＋40,000＋5,000＋30,000＝125,000円。差異調整前は125,000＋15,000−25,000＝115,000円。指定された2,000円を加えて<strong>117,000円</strong>です。</p><p>直接経費5,000円を「なし」に変えるなら当月製造費用は120,000円になり、同じ条件では112,000円です。5,000円がある表の合計125,000円を、直接経費ゼロの表へ流用しません。また「実際原価で示す」とだけ書かれた場合に、差異の全額を完成品へ加算してよいとは限りません。</p></div></details></section>
+<h2>製造原価112,000円から、売上原価99,000円へ</h2>
+<p>以下は例2とは別の資料です。各段階で使う期首・期末残高と差異の処理先を一続きに確認します。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">例3の当月製造費用</th><th scope="col">金額</th></tr></thead><tbody><tr><td>直接材料費</td><td>50,000円</td></tr><tr><td>直接労務費</td><td>40,000円</td></tr><tr><td>直接経費</td><td>0円</td></tr><tr><td>製造間接費の予定配賦（300円×100時間）</td><td>30,000円</td></tr><tr><td>合計</td><td>120,000円</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>自作例3：仕掛品・他勘定・製品を順に検算</h3><p>上表の費用120,000円。月初仕掛品15,000円、月末仕掛品20,000円、仕掛品から修繕費への他勘定振替3,000円。製造間接費実際発生32,000円、配賦30,000円との差異は全額売上原価へ加算する指定。月初製品5,000円、月末製品20,000円で、これらは与えられた評価額。完成品製造原価と売上原価は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>仕掛品に集まった額は15,000＋120,000＝135,000円。月末に残る20,000円と、修繕費へ移した3,000円を除き、当期製品製造原価は<strong>112,000円</strong>。112,000＋20,000＋3,000＝135,000円で残高が合います。</p><p>製品勘定では5,000＋112,000−20,000＝97,000円が差異調整前の売上原価です。実際32,000−配賦30,000＝不利差異2,000円を、指定どおり売上原価へ加算して<strong>99,000円</strong>。この2,000円を製造原価にも二重加算しません。</p><p>差異振替は借方：売上原価2,000／貸方：製造間接費配賦差異2,000。修繕費への3,000円は、工場の当月製造原価へ戻す取引ではない前提です。他勘定の名称だけで減算を決めず、どの勘定から何へ移した資料かを確認します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-seizo-genka-hokokusho-map-mobile.svg?v=20261102"><img src="images/boki2-seizo-genka-hokokusho-map.svg?v=20261102" alt="当月製造費用120,000円に月初仕掛品15,000円を加え、月末20,000円と他勘定3,000円を除き112,000円にする図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>参考：非原価項目を除く小例は、級と条件を分ける</h2>
+<p>元の記事にあった150,000＋20,000−30,000−5,000−10,000＝125,000円は、150,000円に含まれた10,000円を、非原価項目として別途控除する指示があり、他勘定5,000円と重複しない場合の計算です。この条件の完成原価125,000円に月初製品10,000円、月末製品15,000円なら売上原価は120,000円です。</p>
+<p>ただし、異常仕損・異常減損の処理は確認した区分表では1級の欄です。これを2級の「頻出処理」と一括表示しません。既に当月製造費用から除かれた非原価項目を、もう一度控除することも避けます。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">完成前後の確認</th><th scope="col">照合するもの</th></tr></thead><tbody><tr><td>当月製造費用</td><td>直接経費の有無、間接費が実際か配賦か</td></tr><tr><td>仕掛品の整理</td><td>月初・月末・他勘定振替と完成額</td></tr><tr><td>差異の整理</td><td>有利不利、処理先、重複計上の有無</td></tr><tr><td>売上原価</td><td>製品の期首・完成受入・期末と差異</td></tr></tbody></table></div>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/class2/exam" target="_blank" rel="noopener">日商2級：試験科目・90分・5題以内・70%以上</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：受験年度の出題区分。下位級の内容も含む</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準3〜5・11・12・45・47：費用・非原価項目・消費額・差異</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2021/12/2022_kogen.pdf" target="_blank" rel="noopener">日商：工業簿記・原価計算の級別区分（2026・2027年度共通）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>製造原価報告書には必ず予定配賦額を書きますか？</summary><p>予定配賦を採用した問題なら、その指示に応じた額を使います。全ての報告書が予定配賦とは限らず、実際原価計算でも予定価格等を用いれば差異が生じます。</p></details><details class="sq-facts-answer"><summary>不利差異は必ず当期製品製造原価に足しますか？</summary><p>一律にはできません。売上原価へ処理するか、製品・仕掛品等へ配賦するか等を確認します。原価計算基準47には原則と、差異の種類・大きさ等による扱いがあります。</p></details><details class="sq-facts-answer"><summary>異常仕損費の控除は簿記2級の頻出処理ですか？</summary><p>そのように一括表示しません。確認した工業簿記の区分表では異常仕損・異常減損の処理は1級の欄です。本記事の非原価項目の小例は参考として区別し、2級の定番と断定しません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-roumuhi.html">労務費の当月要支払額</a></li><li><a href="boki2-keihi.html">直接経費と間接費を分ける</a></li><li><a href="boki2-kobetsu-genka.html">完成した指図書と残る仕掛品</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kogyo.html">工業簿記</a><a href="boki2-seizo-kansetsuhi.html">製造間接費</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+
+<script src="article-widgets.js?v=20261102-boki-ninth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
