@@ -39,17 +39,17 @@ const ARTICLES = {
   'boki2-3kyu-fukushu.html': {label:'簿記2級', title:'簿記2級を始めたら3級を忘れていた人へ｜全部やり直さずに済む依存論点マップ7つ', thumbnail:'images/article-thumbnails/boki2-3kyu-fukushu.jpg', thumb:'images/study-quest-boki-category.webp'},
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド', thumb:'images/boki1-balance-map.svg'},
-  'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ', thumb:'images/boki1-start-roadmap.svg'},
+  'boki1-next-exam.html':{label:'簿記1級', title:"日商簿記1級の試験日程と学習ロードマップ｜申込・年度・演習の確認", thumb:'images/boki1-start-roadmap.svg?v=20261102', dialogue:false},
   'boki1-11month-strategy.html':{label:"簿記1級", title:"簿記1級の11月試験に間に合う？申込状況と演習から決める学習計画", thumb:'images/boki1-11month-strategy.svg?v=20261102', dialogue:false},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？', thumb:'images/boki1-route-map.svg'},
   'boki1-akirameta-tatenaoshi.html': {label:"簿記1級", title:"簿記1級に落ちた後の立て直し｜得点と演習記録から作る再開シート", dialogue:false},
-  'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:'企業結合会計と連結会計の違い', thumb:'images/boki1-kigyoketsugo-vs-renketsu-map.svg'},
-  'boki1-renketsu-seika.html': {label:'簿記1級',     title:'成果連結｜未実現利益の消去', thumb:'images/boki1-seikarenketsu-strategy-map.svg'},
-  'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:'社債｜定額法と利息法の違い', thumb:'images/boki1-shasai-teigaku-vs-risokuho-map.svg'},
+  'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:"企業結合会計と連結会計の違い｜個別・連結を書き分ける自作例", thumb:'images/boki1-kigyoketsugo-vs-renketsu-map.svg?v=20261102', dialogue:false},
+  'boki1-renketsu-seika.html': {label:'簿記1級', title:"成果連結の未実現利益｜売価・原価と翌期の実現を追う自作例", thumb:'images/boki1-seikarenketsu-strategy-map.svg?v=20261102', dialogue:false},
+  'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:"社債の定額法と利息法｜満期まで一致する2年間の自作比較例", thumb:'images/boki1-shasai-teigaku-vs-risokuho-map.svg?v=20261102', dialogue:false},
   'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:"簿記1級", title:"圧縮記帳の直接減額方式と積立金方式｜仕訳と翌期の自作比較例", thumb:'images/boki1-asshuku-kicho-map.svg?v=20261102', dialogue:false},
   'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い', thumb:'images/boki1-sogo-vs-kobetsu-shokyaku-map.svg'},
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
-  'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い', thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg'},
+  'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:"為替予約の振当処理と独立処理｜期間配分と期別損益の自作例", thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg?v=20261102', dialogue:false},
   'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ', thumb:'images/study-quest-cpa-tax-category.webp'},
   'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
   'cpa-tanto-gokaku-ronbun-tetsuzuki.html': {label:'公認会計士', title:'公認会計士の短答式に合格した後、論文式に向けて確認すること｜通知書・当年案内・予定のチェックリスト', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
@@ -5181,23 +5181,23 @@ Object.assign(ORIGINALITY_NOTES, {
     ]
   },
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {
-    title: '為替予約は、最初に「本体」と「道具」を2本に分ける',
-    lead: 'この論点で混乱しやすいのは、計算式よりも、ヘッジ対象とヘッジ手段を同じものとして追ってしまうことです。Study Questでは、日付・レート・本体・道具を4列に分けてから仕訳へ進む順番を採用します。',
-    points: [
-      '例題を読む最初の30秒で、買掛金などのヘッジ対象と為替予約を別欄に書く。',
-      '決算時は対象の換算と予約の評価を別々に計算し、差損益の符号を最後に検算する。',
-      '振当処理と独立処理を暗記で比較せず、「固定して終わるか、2本立てで動くか」で説明できるか確認する。'
-    ]
-  },
+  "title": "為替予約は、時期・対象・方法をそろえて比較する",
+  "lead": "予約の前後関係と決算・期首・決済を分け、対象債務と予約の増減を別欄で追うのが編集部の確認手順です。振当処理でも期間配分が残る条件と、2級で省略する範囲を区別します。",
+  "points": [
+    "取引日・予約日・決算日・決済日を並べ、対象と会計処理の指定を書く。",
+    "直々差額・直先差額と、期首の洗替または残高の引継ぎを確認する。",
+    "各期の損益を合計し、最終の円収支と当初計上額の差へ照合する。"
+  ]
+},
   'boki1-kigyoketsugo-vs-renketsu.html': {
-    title: '企業結合と連結は、時間軸を置くと切り分けられる',
-    lead: '似た言葉を定義だけで覚えると、どの場面の会計処理かを見失います。このページでは「取得した瞬間」と「支配が続く期間」という時間軸を置き、論点を別の箱へ入れることを優先します。',
-    points: [
-      '問題文を読んだら、取得日・決算日・支配関係の3点に印を付ける。',
-      '企業結合の処理か連結上の調整かを決めてから、のれんや内部取引の論点へ進む。',
-      '最後に「いつ発生した差額か」を1行で説明し、用語の丸暗記になっていないか確認する。'
-    ]
-  },
+  "title": "企業結合は、取引形態と個別・連結を組み合わせて読む",
+  "lead": "取得日か翌期かだけで二分せず、株式取得か事業譲受か、個別決算か連結決算かを先に記録します。取得日にも連結修正があり、のれん等の処理はその後も続きます。",
+  "points": [
+    "取引形態・支配関係・個別または連結の指定を先に確認する。",
+    "株式取得例では、個別の子会社株式と連結ののれんを別に書く。",
+    "翌期は償却・子会社利益・過年度修正など、引き継ぐ項目を確認する。"
+  ]
+},
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {
     title: '退職給付会計は「結果」と「動き」を分けて見る',
     lead: '簡便法と原則法の差を計算量だけで説明しないのが、この記事の方針です。期末に見える結果だけを見る方法と、期間中の債務・費用・積立の動きを追う方法として整理すると、仕訳の位置づけを確認しやすくなります。',

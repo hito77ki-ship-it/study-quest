@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki1-shasai-teigaku-vs-risokuho.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>社債の定額法と利息法の違いがわからない人へ｜図解で整理【簿記1級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記1級の社債、償却原価法の定額法と利息法の違いがわからない人向けに、計算式・毎期の償却額の変化・出題範囲を例題つきで解説。2級の満期保有目的債券と混同しやすい発行側の社債を図解で整理します。">
+<title>社債の定額法と利息法｜満期まで一致する2年間の自作比較例｜スタディクエスト</title>
+<meta name="description" content="社債の発行額と実効利子率の不整合を訂正。額面10万円・2年・クーポン2％・実効4％を同条件で比較し、端数処理、仕訳、費用合計と満期残高まで検算。">
 <meta name="keywords" content="社債 定額法 利息法 違い,社債 利息法 わからない,利息法とは,実効利子率,日商簿記1級 社債">
-<meta property="og:title" content="社債の定額法と利息法の違いがわからない人へ【簿記1級】図解で完全整理">
-<meta property="og:description" content="配分の方法・毎期の償却額・出題範囲の3つの視点で、定額法と利息法の違いを例題つきで解説します。">
+<meta property="og:title" content="社債の定額法と利息法｜満期まで一致する2年間の自作比較例">
+<meta property="og:description" content="社債の発行額と実効利子率の不整合を訂正。額面10万円・2年・クーポン2％・実効4％を同条件で比較し、端数処理、仕訳、費用合計と満期残高まで検算。">
 <meta property="og:url" content="https://study-quest.net/boki1-shasai-teigaku-vs-risokuho.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/boki1-shasai-teigaku-vs-risokuho.png">
@@ -24,20 +24,9 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"社債の定額法と利息法の違いがわからない人へ｜図解で整理",
-  "image": "https://study-quest.net/screenshots/ogp/boki1-shasai-teigaku-vs-risokuho.png","description":"発行側の社債における定額法と利息法の配分方法・毎期の償却額の変化・出題範囲を例題つきで解説します。","url":"https://study-quest.net/boki1-shasai-teigaku-vs-risokuho.html","datePublished":"2026-07-09","dateModified":"2026-09-03","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "社債の定額法と利息法｜満期まで一致する2年間の自作比較例", "image": "https://study-quest.net/screenshots/ogp/boki1-shasai-teigaku-vs-risokuho.png", "description": "社債の発行額と実効利子率の不整合を訂正。額面10万円・2年・クーポン2％・実効4％を同条件で比較し、端数処理、仕訳、費用合計と満期残高まで検算。", "url": "https://study-quest.net/boki1-shasai-teigaku-vs-risokuho.html", "datePublished": "2026-07-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"社債の定額法と利息法の一番の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"金利調整差額の配分方法が違います。定額法は発行期間で均等に配分するため毎期の償却額が同じです。利息法は帳簿価額に実効利子率を掛けて社債利息を算定するため、毎期の償却額が年々増加していきます。"}},
-    {"@type":"Question","name":"社債の定額法と利息法はどの級の範囲ですか？","acceptedAnswer":{"@type":"Answer","text":"社債を発行する会社側の定額法と利息法は簿記1級の範囲です。2級で扱う満期保有目的債券など、投資する側の償却原価法と混同しないように、誰の立場の処理かを確認しましょう。"}},
-    {"@type":"Question","name":"利息法の社債利息はどう計算しますか？","acceptedAnswer":{"@type":"Answer","text":"期首の帳簿価額に実効利子率を掛けて算定します。帳簿価額は毎期少しずつ増えていくため、社債利息の金額も年を追うごとに増加します。"}}
-  ]
-}
-</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
 body{font-family:'M PLUS 1',sans-serif;color:var(--text);line-height:1.9}a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
@@ -67,161 +56,50 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "利息法の社債利息と、社債残高の調整額は同じですか？", "acceptedAnswer": {"@type": "Answer", "text": "同じではありません。本例の社債利息は期首残高×実効利子率、残高の増加額はその費用から現金利払2,000円を引いた額です。"}}, {"@type": "Question", "name": "利息法なら費用や償却額は必ず年々増えますか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の割引発行例では増えますが、額面より高く発行する場合等まで一律に一般化しません。発行額・クーポン・実効利子率の関係を確認します。"}}, {"@type": "Question", "name": "定額法と利息法は、どちらも社債の発行側ですか？", "acceptedAnswer": {"@type": "Answer", "text": "この記事は1級の発行会社側を同条件で比較しています。2級の満期保有目的債券を持つ側とは、勘定と利息の方向を分けてください。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki1.html">簿記1級</a> &gt; 社債の定額法と利息法の違い</div>
-  <p class="meta">日商簿記1級 | 公開：2026年7月9日 | 更新日：2026年9月3日</p>
-  <h1>社債の定額法と利息法の違いがわからない人へ<br>2級の先にある「原則法」を図解で整理</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>どちらも社債の償却原価法</strong>——金利調整差額を配分する方法</li>
-      <li>本質の違いは<strong>配分の仕方</strong>——定額法は「毎年同じ額」、利息法は「帳簿価額に対して一定率」</li>
-      <li><strong>社債の発行側は簿記1級の論点</strong>——定額法と利息法を比較して学ぶ</li>
-      <li>会計理論上は<strong>利息法が原則</strong>、定額法は継続適用を条件に認められる簡便法</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    2級で満期保有目的債券の償却原価法を勉強したあとに、1級の社債の発行側の処理を見ると、同じ「償却原価法」でも立場が違うので混乱しやすいです。そこで出てくるのが定額法と利息法です。<br>
-    仕組みは「<strong>毎年同じ額か、帳簿価額に対する一定率か</strong>」の違いです。誰の立場の処理かを先に確認してから、配分方法を整理していきましょう。</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">2級で満期保有目的債券の償却原価法を覚えたのですが、1級の社債には「利息法」という見慣れない言葉が出てきて混乱しています……。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">まず、誰の立場の処理かを分けましょう。2級では満期保有目的債券など保有側を扱い、社債を発行する側の処理は1級の範囲です。発行側で使う「利息法」は、帳簿価額に実効利子率を掛けて社債利息を計算する方法。定額法のように毎年同じ額にはならず、帳簿価額が増えるにつれて償却額も少しずつ増えていきます。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">同じ償却原価法でも、保有側と発行側で出題範囲が違うんですね。では、発行側の定額法は間違った方法なのですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">間違いではないので安心してください。会計理論上は利息法が「本来あるべき原則」ですが、計算がシンプルな定額法も「継続して使うなら」という条件つきで正式に認められています。ここでは1級の社債の発行側について、定額法と利息法を比べます。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>❓ 配分の仕方の違い——「毎年同じ額」か「帳簿価額に対する一定率」か</h2>
-
-  <p>定額法と利息法は、どちらも<a href="boki2-shasai.html">社債の償却原価法</a>——金利調整差額を発行期間にわたって配分する方法です。違いは、その配分の計算方法にあります。</p>
-  <p style="font-size:12px;color:var(--sq-soft,#718096);">出典：<a href="https://www.asb-j.jp/jp/wp-content/uploads/sites/4/spc20260602_04.pdf" target="_blank" rel="noopener">企業会計基準委員会「金融商品会計に関する実務指針」</a>、<a href="https://links.kentei.ne.jp/competition/assets/pdf/kubun1.pdf" target="_blank" rel="noopener">日本商工会議所「商工会議所簿記検定試験出題区分表」</a>（2026年9月3日確認）</p>
-
-  <div class="origin-compare">
-    <div class="origin-card teigaku">
-      <span class="origin-badge">毎年同じ額を配分</span>
-      <div class="origin-name">定額法（ていがくほう）</div>
-      <div class="origin-kamoku">→ 金利調整差額 ÷ 発行期間</div>
-      <div class="origin-desc">計算がシンプルな方法。社債の発行側では簿記1級の出題範囲に含まれる。</div>
-    </div>
-    <div class="origin-card risoku">
-      <span class="origin-badge">帳簿価額に対する一定率</span>
-      <div class="origin-name">利息法（りそくほう）</div>
-      <div class="origin-kamoku">→ 帳簿価額 × 実効利子率</div>
-      <div class="origin-desc">会計理論上の原則法。簿記1級で登場し、償却額が年々変化する。</div>
-    </div>
-  </div>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki1-shasai-teigaku-vs-risokuho-map-mobile.svg">
-    <img src="images/boki1-shasai-teigaku-vs-risokuho-map.svg" alt="社債の定額法と利息法の配分方法・毎期の償却額・位置づけを対比した図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="1200" height="800" loading="lazy">
-  </picture>
-
-  <h2>📝 ① 定額法の計算——発行側で使う「毎年同じ額」</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>額面100,000円、発行価額94,000円、償還期間5年の社債を発行した。定額法で償却原価法を適用する。</p>
-  </div>
-  <div class="formula"><strong>毎期の償却額 ＝（100,000－94,000）÷ 5年 ＝ 1,200円</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>タイミング</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>毎期の決算整理（5年間、毎回同じ）</td><td>社債利息</td><td>1,200</td><td>社債</td><td>1,200</td></tr>
-    </table>
-  </div>
-  <div class="tip-box"><strong>ポイント：</strong>差額6,000円を5年で割るだけなので、5年間ずっと同じ1,200円を計上します。計算の手間が少ないのが最大のメリットです。</div>
-
-  <h2>💰 ② 利息法の計算——1級で登場する「帳簿価額に対する一定率」</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>同じ社債（額面100,000円、発行価額94,000円、クーポン利率年2%＝現金利払い2,000円/年）を、実効利子率年4%で利息法により処理する。</p>
-  </div>
-  <div class="formula"><strong>社債利息 ＝ 期首帳簿価額 × 実効利子率</strong><br>1年目：94,000円 × 4% ＝ 3,760円</div>
-  <div class="journal">
-    <table>
-      <tr><th>タイミング</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>1年目の利払い・償却</td><td>社債利息</td><td>3,760</td><td>現金</td><td>2,000</td></tr>
-      <tr><td></td><td></td><td></td><td>社債</td><td>1,760</td></tr>
-    </table>
-  </div>
-  <div class="tip-box"><strong>ポイント：</strong>現金で支払うクーポン利息2,000円と、帳簿上の社債利息3,760円との差額1,760円が、社債の帳簿価額に上乗せされます。2年目は帳簿価額が94,000円→95,760円に増えているため、社債利息も95,760円×4%＝3,830円と、<strong>1年目より増加</strong>します。定額法のように毎年同じ額にはなりません。</div>
-
-  <h2>🔍 ③ 出題範囲の違い——見分け方はシンプル</h2>
-  <table>
-    <tr><th>方法</th><th>出題範囲</th><th>位置づけ</th></tr>
-    <tr><td>定額法</td><td>簿記1級（社債の発行側）</td><td>計算が均等になる方法</td></tr>
-    <tr><td>利息法</td><td>簿記1級のみ</td><td>原則法（会計理論上、本来あるべき方法）</td></tr>
-  </table>
-  <div class="warn-box"><strong>2級受験生へ：</strong>商工会議所の出題区分表では、社債の<strong>発行側</strong>の償却原価法は1級の範囲です。2級で扱う満期保有目的債券の償却原価法（保有側）と混同しないよう、誰の立場の処理かを確認してください。</div>
-  <p style="font-size:12px;color:#718096;">出典：<a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2021/03/2021_shokai1-3.pdf" target="_blank" rel="noopener">日本商工会議所「簿記検定試験出題区分表（1〜3級）」</a>（2026年8月30日確認）</p>
-
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記1級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
-
-  <div class="matome">
-    <h3>📋 まとめ：定額法 vs 利息法 早見表</h3>
-    <div class="matome-row"><span class="trigger">配分の方法</span><span class="result">定額法＝均等配分／利息法＝帳簿価額×実効利子率</span></div>
-    <div class="matome-row"><span class="trigger">毎期の償却額</span><span class="result">定額法＝毎年同じ／利息法＝年々増加</span></div>
-    <div class="matome-row"><span class="trigger">出題範囲</span><span class="result">社債の発行側の定額法・利息法＝1級／2級は満期保有目的債券など保有側の処理</span></div>
-    <div class="matome-row"><span class="trigger">会計理論上の位置づけ</span><span class="result">利息法が原則、定額法は簡便法</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🧭</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">「毎年同じ額か、帳簿価額に対する一定率か」——この1点で定額法と利息法はもう混同しません</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-  </div>
-</div>
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">社債の定額法と利息法の一番の違いは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">金利調整差額の配分方法が違います。定額法は発行期間で均等に配分するため毎期の償却額が同じです。利息法は帳簿価額に実効利子率を掛けて社債利息を算定するため、毎期の償却額が年々増加していきます。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">社債の定額法と利息法はどの級の範囲ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">社債を発行する会社側の定額法と利息法は簿記1級の範囲です。2級で扱う満期保有目的債券など、投資する側の償却原価法と混同しないように、誰の立場の処理かを確認しましょう。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">利息法の社債利息はどう計算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">期首の帳簿価額に実効利子率を掛けて算定します。帳簿価額は毎期少しずつ増えていくため、社債利息の金額も年を追うごとに増加します。</div></details>
-</section>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-shasai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">社債とは？発行・利息・償却原価法の仕訳</div></a>
-  <a href="boki1-kigyoketsugo-vs-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">企業結合会計と連結会計の違い</div></a>
-  <a href="boki1-renketsu-seika.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記1級の成果連結とは？未実現利益の消去</div></a>
-  <a href="boki1.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記1級の独学ロードマップ</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki1.html">簿記1級</a></div><p class="meta">簿記1級 | 公開：2026年7月9日 | 更新日：2026年11月2日</p><h1>社債の定額法と利息法｜満期まで一致する2年間の自作比較例</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p class="lead">定額法と利息法を比べるときは、支払う現金の利息、費用として計上する社債利息、社債残高の増減を分けます。発行会社側の処理を、同じ条件の2年間の自作例で満期まで検算します。</p>
+<div class="sq-facts-note"><strong>比較例の条件を訂正しました</strong><p>従来の「額面100,000円・発行94,000円・5年・クーポン2％・実効利子率4％」は、満期まで計算しても額面と一致しません。今回は発行額と実効利子率の関係、端数処理、利払時点をそろえた例へ置き換えます。</p></div>
+<h2 id="compare">利息費用と、差額の償却を混ぜない</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">確認点</th><th scope="col">定額法</th><th scope="col">利息法</th></tr></thead><tbody><tr><td>社債残高の調整額</td><td>発行差額を期間へ均等配分する</td><td>実効利子率による利息費用と現金利払との差</td></tr><tr><td>本例の社債利息</td><td>現金利払＋当期の差額調整</td><td>期首帳簿価額×実効利子率</td></tr><tr><td>満期の検算</td><td>帳簿価額が額面になるか</td><td>帳簿価額が額面になるか</td></tr></tbody></table></div>
+<p>金融商品会計実務指針第126項は、発行した社債等にも償却原価法を適用することを示しています。同第70項は、利息法を原則、継続適用する定額法を簡便法としています。本記事は2026年度の出題範囲に対応する基礎例で、発行手数料・買入償還・利払途中の決算等は含めません。</p>
+<p>2026年度の公式区分表では、発行側社債の発行・利払・期末評価・償還は1級です。2級の満期保有目的債券を保有する側とは、勘定と利息の方向が異なります。</p>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki1-shasai-teigaku-vs-risokuho-map-mobile.svg?v=20261102"><img src="images/boki1-shasai-teigaku-vs-risokuho-map.svg?v=20261102" alt="社債96,228円から額面100,000円まで定額法と利息法を2年で検算する図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2 id="conditions">自作例：額面100,000円、2年、年1回払い</h2>
+<p>以下は編集部の架空例です。社債は額面100,000円、2年後に満期一括償還、クーポン利率年2％、年末に1回2,000円を利払います。期首に発行し、各期はちょうど1年間です。実効利子率を年4％とすると、発行価額の基礎は2,000÷1.04＋102,000÷1.04²＝96,227.81065…円。これを1円単位へ四捨五入した96,228円で発行する仮定です。差額は金利調整に由来し、手数料・税金等はありません。</p>
+<p>両方法とも発行時は「借方：現金預金96,228／貸方：社債96,228」。以下の利息法では、各期の利息費用を1円単位へ四捨五入します。この例では2年目に額面へ一致しますが、他の条件で端数が出る場合は問題の指示に従います。</p>
+<h2 id="straight">自作例1：定額法で2年をつなぐ</h2>
+<section class="sq-facts-exercise"><h3>1年の調整額と社債利息を計算する</h3><p>発行差額100,000−96,228＝3,772円を2年へ配分します。毎年の現金利払と利息費用、1・2年目の期末残高を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>差額調整は3,772÷2＝1,886円。社債利息は2,000＋1,886＝3,886円です。年末の利払と調整をまとめるなら「借方：社債利息3,886／貸方：現金預金2,000・社債1,886」。残高は1年目98,114円、2年目100,000円になります。</p></div></details></section>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">年</th><th scope="col">期首残高</th><th scope="col">利息費用／現金利払／残高増加</th></tr></thead><tbody><tr><td>1年目</td><td>96,228円</td><td>3,886円／2,000円／1,886円</td></tr><tr><td>2年目</td><td>98,114円</td><td>3,886円／2,000円／1,886円</td></tr></tbody></table></div>
+<h2 id="effective">自作例2：利息法で2年をつなぐ</h2>
+<section class="sq-facts-exercise"><h3>利息費用を毎年3,849円にしてよい？</h3><p>1年目は96,228×4％＝3,849.12円です。四捨五入した費用と残高増加を出し、その残高から2年目も計算してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>1年目の社債利息は3,849円、残高増加は3,849−2,000＝1,849円、期末残高98,077円です。仕訳は「借方：社債利息3,849／貸方：現金預金2,000・社債1,849」。</p><p>2年目は98,077×4％＝3,923.08円を四捨五入し、費用3,923円、残高増加1,923円。仕訳は「借方：社債利息3,923／貸方：現金預金2,000・社債1,923」。残高は100,000円となります。費用を毎年同額に固定しません。</p></div></details></section>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">年</th><th scope="col">期首残高</th><th scope="col">利息費用／現金利払／残高増加</th></tr></thead><tbody><tr><td>1年目</td><td>96,228円</td><td>3,849円／2,000円／1,849円</td></tr><tr><td>2年目</td><td>98,077円</td><td>3,923円／2,000円／1,923円</td></tr></tbody></table></div>
+<h2>両方法で、合計はどこへ一致するか</h2>
+<section class="sq-facts-exercise"><h3>満期と利息費用の合計を検算する</h3><p>定額法・利息法の利息費用の合計と残高増加の合計を比べ、満期の元本償還仕訳を作ってください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>費用合計は定額法3,886×2＝7,772円、利息法3,849＋3,923＝7,772円。現金利払合計4,000円＋発行差額3,772円とも一致します。残高増加は両方法とも3,772円です。最後の調整後の償還は「借方：社債100,000／貸方：現金預金100,000」。ここで発行差額をもう一度費用にしません。</p></div></details></section>
+<p>本例では額面より低い価額で発行しているため、利息法の帳簿価額と利息費用が増えます。額面より高い価額で発行する場合等まで「利息法の償却額は常に年々増える」と一般化できません。また、同じキャッシュ・フローと期間なら方法ごとの実効利子率を自由に設定できるわけではなく、発行額との整合が必要です。</p>
+<h2>解き始める前の5項目</h2><ol><li>発行側か、保有側か。</li><li>額面・発行額・発行日・満期日は何か。</li><li>クーポンと実効利子率を区別したか。</li><li>期中発行・利払回数・端数処理の指示はあるか。</li><li>最終残高と、全期間の費用・現金収支が一致するか。</li></ol>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=109" target="_blank" rel="noopener">ASBJ：金融商品に関する会計基準（2026年6月版）第26項</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=120" target="_blank" rel="noopener">ASBJ：金融商品会計実務指針 第70・126項</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：2026年度適用の出題区分表4ページ・発行側社債</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>利息法の社債利息と、社債残高の調整額は同じですか？</summary><p>同じではありません。本例の社債利息は期首残高×実効利子率、残高の増加額はその費用から現金利払2,000円を引いた額です。</p></details><details class="sq-facts-answer"><summary>利息法なら費用や償却額は必ず年々増えますか？</summary><p>本記事の割引発行例では増えますが、額面より高く発行する場合等まで一律に一般化しません。発行額・クーポン・実効利子率の関係を確認します。</p></details><details class="sq-facts-answer"><summary>定額法と利息法は、どちらも社債の発行側ですか？</summary><p>この記事は1級の発行会社側を同条件で比較しています。2級の満期保有目的債券を持つ側とは、勘定と利息の方向を分けてください。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-shasai.html">2級の満期保有目的債券（保有側）</a></li><li><a href="boki1-kawase-yoyaku-furiate-vs-dokuritsu.html">為替予約の期間配分</a></li><li><a href="boki1.html">簿記1級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki1.html">簿記1級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-next-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

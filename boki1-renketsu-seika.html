@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki1-renketsu-seika.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>簿記1級の成果連結とは？未実現利益の消去をアップ・ダウンストリームで解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記1級の連結会計・成果連結を初心者向けに解説。グループ内取引の未実現利益の消去を、ダウンストリーム・アップストリームの違いと非支配株主持分への影響から、なぜそうなるかまで丁寧に整理します。">
+<title>成果連結の未実現利益｜売価・原価と翌期の実現を追う自作例｜スタディクエスト</title>
+<meta name="description" content="2級でも未実現利益を扱う点と開始仕訳の説明を訂正。ダウン・アップの200円例、売価600円の在庫と利益120円、翌期の実現と非支配株主配分を自作例で検算。">
 <meta name="keywords" content="簿記1級 連結会計,成果連結,未実現利益の消去,アップストリーム ダウンストリーム,非支配株主持分">
-<meta property="og:title" content="簿記1級の成果連結とは？未実現利益の消去をアップ・ダウンストリームで解説">
-<meta property="og:description" content="2級の資本連結の先にある、成果連結（未実現利益の消去）を「なぜそうなるか」から解説。">
+<meta property="og:title" content="成果連結の未実現利益｜売価・原価と翌期の実現を追う自作例">
+<meta property="og:description" content="2級でも未実現利益を扱う点と開始仕訳の説明を訂正。ダウン・アップの200円例、売価600円の在庫と利益120円、翌期の実現と非支配株主配分を自作例で検算。">
 <meta property="og:url" content="https://study-quest.net/boki1-renketsu-seika.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記1級の成果連結とは？未実現利益の消去をアップ・ダウンストリームで解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記1級の連結会計・成果連結を初心者向けに解説。グループ内取引の未実現利益の消去を、ダウンストリーム・アップストリームの違いと非支配株主持分への影響から整理します。","url":"https://study-quest.net/boki1-renketsu-seika.html","datePublished":"2026-07-08","dateModified":"2026-09-03","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "成果連結の未実現利益｜売価・原価と翌期の実現を追う自作例", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "2級でも未実現利益を扱う点と開始仕訳の説明を訂正。ダウン・アップの200円例、売価600円の在庫と利益120円、翌期の実現と非支配株主配分を自作例で検算。", "url": "https://study-quest.net/boki1-renketsu-seika.html", "datePublished": "2026-07-08", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -44,214 +43,51 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "未実現利益の消去は簿記1級だけですか？", "acceptedAnswer": {"@type": "Answer", "text": "2026年度の公式区分表では、2級でも棚卸資産・土地の未実現損益を扱い、ダウンストリームとアップストリームの双方を含みます。1級では税効果等の追加論点も確認します。"}}, {"@type": "Question", "name": "アップストリームは親会社持分だけ利益を消しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本例では利益の全額を消し、親会社株主と非支配株主へ持分比率で負担を配分します。利益120円、持分80％なら親会社96円・非支配株主24円です。"}}, {"@type": "Question", "name": "翌期に内部取引がなければ、成果連結の調整は不要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "前期に消去した利益が期首在庫に残る場合は、引継ぎと当期の実現を確認します。本例では翌期の外部売却により、前期に消した120円を実現します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki1.html">簿記1級</a> &gt; 成果連結（未実現利益の消去）</div>
-  <p class="meta">日商簿記1級 | 公開：2026年7月8日 | 更新日：2026年9月3日</p>
-  <h1>簿記1級の成果連結とは？<br>未実現利益の消去をアップ・ダウンストリームで解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">簿記2級の連結会計は「資本連結」（親会社の投資と子会社の資本を相殺する）が中心でした。1級ではここに<strong>「成果連結」</strong>——グループ内の取引そのものを、まるでなかったことのように消していく処理——が加わります。中でも「未実現利益の消去」は、多くの1級受験生が最初につまずくポイントです。この記事では、丸暗記ではなく「なぜその仕訳になるのか」から整理します。なお、そもそも連結会計と<a href="boki1-kigyoketsugo-vs-renketsu.html">企業結合会計の違い</a>がまだ曖昧な方は、先にそちらを読むと理解がスムーズです。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">2級の連結会計はなんとか理解できたんですけど、1級のテキストを開いたら「成果連結」「アップストリーム」「未実現利益」……知らない言葉だらけで、また「うわっ、なんじゃこりゃ」ってなってます（笑）。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、すごくよく分かります。でも実は、2級で学んだ「資本連結」（投資と資本の相殺）と、1級で新しく出てくる「成果連結」は、目的が全然違うんです。資本連結は「親会社が子会社を持っている」という状態を、取得時の金額のまま毎期同じ形で繰り返し整理するもの。成果連結は「今年1年、グループ内でやり取りした取引」を、その期ごとに新しく消していくもの。どちらも毎期の連結決算で必要になりますが、「金額が基本的に変わらないか、毎回変わるか」が違います。この違いさえ最初に押さえれば、あとは怖くありません。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">グループ内の取引を消す、というのは2級でも「内部取引の消去」で少し出てきた気がします。それとは違うんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">いいところに気づきましたね。2級の内部取引消去は「売上と仕入を相殺するだけ」でほぼ完結していました。1級ではそこからもう一歩踏み込んで、「その取引で生まれた利益が、期末時点でまだグループの外に出ていない（＝在庫として残っている）場合、その利益もまだ実現していないので消す」という所まで扱います。これが未実現利益の消去です。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>成果連結とは、グループ内取引とそこから生じた「まだ実現していない利益」を消す処理です。売り手が親会社か子会社かで（ダウンストリームかアップストリームか）、非支配株主持分への影響の有無が変わる、という1点さえ押さえれば怖くありません。</div>
-
-  <h2>資本連結との違い——「状態」を整理するか「取引」を消すか</h2>
-  <table>
-    <tr><th>区分</th><th>目的</th><th>タイミング</th></tr>
-    <tr><td>資本連結</td><td>親会社の投資と子会社の資本を相殺する</td><td>毎期の連結決算のたびに（取得時の金額を「開始仕訳」として繰り返す）</td></tr>
-    <tr><td>成果連結</td><td>グループ内取引・そこから生じた未実現利益を消す</td><td>毎期の連結決算のたびに（その期の取引をもとに毎回計算し直す）</td></tr>
-  </table>
-  <p>2級で学んだ資本連結も、実は毎期の連結決算のたびに繰り返す処理です。ただし取得時に決まった金額をそのまま「開始仕訳」として毎回持ち越すだけなので、実質的には1回整理した内容の繰り返しに近い形になります。一方の成果連結は、「今期グループ内でどんな取引があったか」を毎回新しくチェックして消していく作業です。</p>
-
-  <h2>ダウンストリームとアップストリーム——「誰が売ったか」で処理が変わる</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki1-seikarenketsu-strategy-map-mobile.svg">
-      <img src="images/boki1-seikarenketsu-strategy-map.svg" alt="簿記1級の成果連結におけるアップ・ダウンストリーム未実現利益消去の合格戦略マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="420" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：①②の仕訳は共通、違いは「③非支配株主持分の調整」があるかどうかの1点だけ</figcaption>
-  </figure>
-  <p>グループ内取引には、必ず「売り手」と「買い手」がいます。この売り手が親会社か子会社かによって、呼び方と処理の一部が変わります。</p>
-  <table>
-    <tr><th>用語</th><th>売り手</th><th>買い手</th><th>利益は誰のもの？</th></tr>
-    <tr><td><strong>ダウンストリーム</strong></td><td>親会社</td><td>子会社</td><td>親会社の利益</td></tr>
-    <tr><td><strong>アップストリーム</strong></td><td>子会社</td><td>親会社</td><td>子会社の利益（非支配株主にも一部帰属）</td></tr>
-  </table>
-  <div class="tip-box"><strong>覚え方：</strong>「ダウン（下る）」＝親会社（上流）から子会社（下流）へ、「アップ（上る）」＝子会社（下流）から親会社（上流）へ。矢印の向きで覚えると迷いません。</div>
-  <p>この「利益は誰のものか」という点が、後で説明する非支配株主持分への影響の有無を決める、最大のポイントです。</p>
-
-  <h2>未実現利益とは何か</h2>
-  <p>グループ内で商品を売買すると、売った側には「利益」が発生します。しかしその商品が期末時点でまだ買った側の在庫として残っている（＝グループの外部にまだ売れていない）場合、グループ全体で見ればまだ何も実現していません。この、グループ内だけで生まれた「まだ外部に売れていない利益」を未実現利益といい、連結財務諸表からは消去します。</p>
-  <p style="font-size:12px;color:var(--sq-soft,#718096);">出典：<a href="https://www.asb-j.jp/jp/wp-content/uploads/sites/4/spc20260602_06.pdf" target="_blank" rel="noopener">企業会計基準委員会「企業会計基準第22号 連結財務諸表に関する会計基準」</a>（2026年9月3日確認）</p>
-
-  <h2>ダウンストリームの例題——親会社が売り手のケース</h2>
-  <div class="formula"><strong>例題：</strong>親会社P社（子会社S社の株式80%を保有）が、原価800円の商品をS社に1,000円で販売した。期末時点で、S社はこの商品を外部にまだ販売しておらず、全額が在庫として残っている。</div>
-  <p>まず、グループ内の売上・仕入そのものを相殺します。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>売上高</td><td>1,000</td><td>売上原価</td><td>1,000</td></tr>
-    </table>
-  </div>
-  <p>次に、この商品に含まれている未実現利益（1,000円 − 800円 ＝ 200円）を消去します。連結上の商品（棚卸資産）は、グループにとっての原価800円で評価し直す必要があるからです。</p>
-  <div class="formula"><strong>未実現利益 ＝ 売価1,000円 − 原価800円 ＝ 200円</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>売上原価</td><td>200</td><td>商品</td><td>200</td></tr>
-    </table>
-  </div>
-  <div class="tip-box"><strong>ダウンストリームでは非支配株主持分は動かさない：</strong>この200円の利益は、そもそも親会社（P社）が生み出した利益です。非支配株主は子会社S社の外部株主であって、親会社の利益には関与しません。だから、ダウンストリームの未実現利益消去では非支配株主持分を調整する仕訳は不要です。</div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">ダウンストリームは2本で終わるんですね、意外とシンプルでした。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その通りです。ここで気を抜かず、「親会社が売り手＝非支配株主は無関係」という感覚を体に染み込ませておいてください。次のアップストリームで、この感覚があるかないかで解答スピードが全然変わってきますよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>アップストリームの例題——子会社が売り手のケース</h2>
-  <div class="formula"><strong>例題：</strong>子会社S社（親会社P社が株式80%を保有、非支配株主持分20%）が、原価800円の商品をP社に1,000円で販売した。期末時点で、P社はこの商品を外部にまだ販売しておらず、全額が在庫として残っている。</div>
-  <p>グループ内の売上・仕入の相殺、未実現利益の消去そのものは、ダウンストリームと全く同じ仕訳です。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>売上高</td><td>1,000</td><td>売上原価</td><td>1,000</td></tr>
-      <tr><td>売上原価</td><td>200</td><td>商品</td><td>200</td></tr>
-    </table>
-  </div>
-  <p>ここまでは同じですが、アップストリームではもう1つ仕訳が必要です。この200円の利益は<strong>子会社S社が生み出した利益</strong>なので、本来は非支配株主にもその20%（40円）が帰属するはずでした。利益を消去した以上、非支配株主に帰属する取り分も同じ割合だけ減らす必要があります。</p>
-  <div class="formula"><strong>非支配株主持分の調整額 ＝ 未実現利益200円 × 非支配株主持分割合20% ＝ 40円</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>非支配株主持分</td><td>40</td><td>非支配株主に帰属する当期純利益</td><td>40</td></tr>
-    </table>
-  </div>
-  <p>この仕訳で、貸借対照表上の非支配株主持分（純資産）を40円減らし、損益計算書上で非支配株主に配分される利益も40円減らします。結果として、未実現利益200円の消去のうち、160円は親会社株主に帰属する当期純利益から、40円は非支配株主持分・非支配株主に帰属する当期純利益から、それぞれ正しく減額されます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">正直、この「非支配株主持分／非支配株主に帰属する当期純利益」の仕訳、借方・貸方のどっちに何を書くのか毎回混乱します……。理屈は分かった気がするんですけど、本番で瞬時に書ける自信がないです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その混乱、私も1級の連結を初めて解いたとき何度も同じところで手が止まったので、安心してください。私はこれを「ハコ分けパズル」として解いています。まず未実現利益200円を1つの大きなハコだと考えて、それを持分割合（80：20）でそのまま2つの小さなハコに割るだけ、と考えるんです。160円のハコは親会社株主の取り分だから、①②の仕訳の中で自動的に減っている。残った40円のハコが非支配株主の取り分なので、これを「非支配株主持分（減らす）／非支配株主に帰属する当期純利益（減らす）」という1本で外に出してあげる——それだけです。「借方・貸方どっちだっけ」と丸暗記するのではなく、「大きいハコから40円のハコを取り出して、非支配株主側に渡すだけ」とイメージすると、迷わなくなりますよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="warn-box"><strong>判断の軸：</strong>「売り手が親会社か子会社か」を必ず最初に確認してください。親会社が売り手（ダウンストリーム）なら仕訳は2本、子会社が売り手（アップストリーム）なら非支配株主持分の調整を含めて仕訳は3本。本数を先に決めてから解き始めると、書き忘れを防げます。</div>
-
-  <h2>期末在庫が一部だけ残っている場合</h2>
-  <p>実際の試験では、グループ内で仕入れた商品の全部ではなく、一部だけが期末在庫として残っているケースも頻出です。この場合、未実現利益は「期末在庫に含まれる分」だけを消去します。</p>
-  <div class="formula"><strong>未実現利益 ＝ 期末在庫の金額 × 利益率（または原価率から逆算）</strong></div>
-  <p>「売上高1,000円・原価800円」の場合、利益率は20%（200円 ÷ 1,000円）です。もし期末在庫として残っているのが全額ではなく600円分（売価ベース）だけなら、未実現利益は600円 × 20％ ＝ 120円になります。</p>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>ダウンストリームなのに非支配株主持分の調整仕訳を書いてしまう（親会社の利益には非支配株主は関与しない）</li>
-    <li>アップストリームで非支配株主持分の調整を忘れる</li>
-    <li>期末在庫が一部だけ残っているのに、取引額全体に利益率を掛けてしまう</li>
-    <li>資本連結の「開始仕訳」（取得時からの累積仕訳）を毎期繰り返すのを忘れ、その期の成果連結だけで連結財務諸表を作ろうとしてしまう</li>
-  </ul>
-
-  <h2>勉強の順番</h2>
-  <ol>
-    <li>2級の資本連結（<a href="boki2-renketsu.html">連結会計とは？連結修正仕訳とのれん</a>）を復習し、「状態の整理」との違いを意識する</li>
-    <li>ダウンストリーム・アップストリームの見分け方（売り手が誰か）を固める</li>
-    <li>未実現利益の消去仕訳（売上高／売上原価、売上原価／商品）を反復する</li>
-    <li>アップストリームの場合の非支配株主持分の調整仕訳を追加する</li>
-    <li>期末在庫が一部のみ残るパターン、固定資産の未実現利益消去など応用へ進む</li>
-  </ol>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>成果連結は、グループ内取引と未実現利益を毎期消去する処理</li>
-    <li>資本連結（状態の整理）とは目的・タイミングが異なる</li>
-    <li>売り手が親会社ならダウンストリーム、子会社ならアップストリーム</li>
-    <li>ダウンストリームは非支配株主持分の調整が不要、アップストリームは必要</li>
-    <li>アップストリームの調整額は「未実現利益 × 非支配株主持分割合」で計算する</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 1級の連結会計も、型で攻略しよう</h3>
-    <p>スタディクエストで簿記1級の学習時間を記録し、成果連結を経験値に変えましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">成果連結と資本連結はどう違いますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">どちらも毎期の連結決算のたびに行う処理です。資本連結は親会社の投資と子会社の資本を相殺する「状態の整理」で、取得時に決まった金額を「開始仕訳」として毎期繰り返します。成果連結はグループ内取引と未実現利益を消す「取引の整理」で、その期の取引をもとに毎回新しく計算します。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">ダウンストリームとアップストリームの違いは？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">親会社が売り手・子会社が買い手ならダウンストリーム、子会社が売り手・親会社が買い手ならアップストリームです。利益が親会社のものか子会社のものかが変わるため、非支配株主持分への影響の有無が異なります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">なぜアップストリームだけ非支配株主持分を調整するのですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">アップストリームでは利益を生んだのは子会社です。子会社の利益には非支配株主も持分割合に応じて権利を持つため、利益を消去する際は非支配株主の取り分も同じ割合で減らす必要があります。ダウンストリームの利益は親会社のものなので、非支配株主には関係がありません。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">未実現利益はどうやって計算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">グループ内取引の売価と原価の差額（利益）のうち、期末時点でまだ外部に売却されず在庫として残っている部分にあたる利益です。在庫が一部だけ残っている場合は、利益率を残っている在庫の金額に掛けて計算します。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"成果連結と資本連結はどう違いますか？","acceptedAnswer":{"@type":"Answer","text":"どちらも毎期の連結決算のたびに行う処理です。資本連結は親会社の投資と子会社の資本を相殺する「状態の整理」で、取得時に決まった金額を「開始仕訳」として毎期繰り返します。成果連結はグループ内取引と未実現利益を消す「取引の整理」で、その期の取引をもとに毎回新しく計算します。"}},{"@type":"Question","name":"ダウンストリームとアップストリームの違いは？","acceptedAnswer":{"@type":"Answer","text":"親会社が売り手・子会社が買い手ならダウンストリーム、子会社が売り手・親会社が買い手ならアップストリームです。利益が親会社のものか子会社のものかが変わるため、非支配株主持分への影響の有無が異なります。"}},{"@type":"Question","name":"なぜアップストリームだけ非支配株主持分を調整するのですか？","acceptedAnswer":{"@type":"Answer","text":"アップストリームでは利益を生んだのは子会社です。子会社の利益には非支配株主も持分割合に応じて権利を持つため、利益を消去する際は非支配株主の取り分も同じ割合で減らす必要があります。"}},{"@type":"Question","name":"未実現利益はどうやって計算しますか？","acceptedAnswer":{"@type":"Answer","text":"グループ内取引の売価と原価の差額（利益）のうち、期末時点でまだ外部に売却されず在庫として残っている部分にあたる利益です。在庫が一部だけ残っている場合は、利益率を残っている在庫の金額に掛けて計算します。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki1-kigyoketsugo-vs-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">企業結合会計と連結会計の違い</div></a>
-  <a href="boki2-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">連結会計とは？連結修正仕訳とのれん</div></a>
-  <a href="kessansho-yomikata-sony.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">決算書の読み方</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">のれん・非支配株主持分は決算書のどこにある？</div></a>
-  <a href="boki1.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記1級の勉強法・全体像</div></a>
-  <a href="cpa.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">次の資格</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">公認会計士試験の勉強法</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki1.html">簿記1級</a></div><p class="meta">簿記1級 | 公開：2026年7月8日 | 更新日：2026年11月2日</p><h1>成果連結の未実現利益｜売価・原価と翌期の実現を追う自作例</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p class="lead">成果連結では、グループ内の売上・仕入等を相殺し、期末に残る内部利益を調整します。売り手が親会社か子会社かに加え、「期末にどれだけ残るか」「翌期に外部へ売れたか」を追うと、消去と実現のつながりを確認できます。</p>
+<div class="sq-facts-note"><strong>2級との関係と、開始仕訳の説明を訂正</strong><p>2026年度の公式区分表では、2級でも棚卸資産・土地の未実現損益を扱い、ダウンストリームとアップストリームの双方が含まれます。資本連結も、取得時の金額を毎期まったく同じまま繰り返すだけではありません。支配獲得後の利益や過年度修正を引き継ぐ必要があります。</p></div>
+<h2 id="flow">取引高の相殺と、内部利益の消去は別の処理</h2>
+<p>ASBJの連結会計基準第35項は内部取引高の相殺、第36〜38項は未実現損益の消去と非支配株主への配分を定めています。「成果連結」は学習上の整理の呼び名で、グループを一つとして損益を見るための処理です。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">確認点</th><th scope="col">ダウンストリーム</th><th scope="col">アップストリーム</th></tr></thead><tbody><tr><td>売り手→買い手</td><td>親会社→子会社</td><td>子会社→親会社</td></tr><tr><td>内部利益を生んだ会社</td><td>親会社</td><td>子会社</td></tr><tr><td>本例の消去利益の負担</td><td>親会社株主側</td><td>親会社株主側と非支配株主側へ持分で配分</td></tr></tbody></table></div>
+<p>以下は編集部の架空例です。P社はS社の80％を保有し、非支配株主持分は20％。グループ内売価1,000円・売り手の原価800円とします。商品に関する他の内部取引・評価損・税効果はなく、期中の持分比率は変わりません。実際の問題では税効果等の追加調整もあるため、仕訳を常に2本・3本だけと固定しません。</p>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki1-seikarenketsu-strategy-map-mobile.svg?v=20261102"><img src="images/boki1-seikarenketsu-strategy-map.svg?v=20261102" alt="内部利益120円を親会社96円と非支配株主24円へ配分し、翌期に実現する図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2 id="all-stock">自作例1：全額が期末在庫なら利益200円を消す</h2>
+<p>まずP社がS社へ売ったダウンストリームです。S社は全量を期末まで保有しています。内部売上と対応する売上原価を相殺し、商品に含まれる利益200円を消去します。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">処理</th><th scope="col">借方</th><th scope="col">貸方</th></tr></thead><tbody><tr><td>内部取引高の相殺</td><td>売上高1,000</td><td>売上原価1,000</td></tr><tr><td>未実現利益の消去</td><td>売上原価200</td><td>商品200</td></tr></tbody></table></div>
+<p>連結上の商品は1,000−200＝800円で、グループにとっての原価に戻ります。この内部利益について、S社の非支配株主へ負担を配分する調整はありません。「ダウンストリームなら、他の理由でも非支配株主持分は一切動かない」という意味ではありません。</p>
+<section class="sq-facts-exercise"><h3>同じ取引を、S社→P社へ変えたら？</h3><p>アップストリームで全額が在庫なら、消す利益と非支配株主の負担はいくらですか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>消去する利益の全額は同じ200円です。親会社の持分80％だけの160円に減らすのではありません。非支配株主の負担は200×20％＝40円。上の2仕訳に「借方：非支配株主持分40／貸方：非支配株主に帰属する当期純利益40」を加えます。親会社株主側の負担160円と非支配株主側40円で、合計200円になります。</p></div></details></section>
+<h2 id="part-stock">自作例2：売価ベース600円だけが残った場合</h2>
+<p>今度はS社がP社へ1,000円で売った商品のうち、P社の期末在庫がグループ内の買値で600円だったとします。内部売価に対する利益率は（1,000−800）÷1,000＝20％。原価に対する上乗せ率25％とは分母が違います。</p>
+<section class="sq-facts-exercise"><h3>120円と150円、どちらを消す？</h3><p>期末在庫600円に20％・25％のどちらを掛けるかを選び、非支配株主負担と連結上の在庫額も求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>600円はグループ内売価ベースなので、600×20％＝120円を消去します。25％を掛けた150円ではありません。非支配株主負担は120×20％＝24円、親会社株主負担は96円。連結上の在庫は600−120＝480円です。480×25％＝120円でも同じ利益を検算できます。取引高の相殺は、在庫部分600円だけでなく内部売上1,000円を対象にします。</p></div></details></section>
+<h2 id="next-year">自作例3：翌期に外部へ売れたら、過年度の利益を実現する</h2>
+<p>上の600円の在庫が翌期にすべて外部へ売れたと仮定します。翌期の新たな内部取引や期末在庫はなく、持分比率も同じです。前期に消した120円は、外部売却により翌期には実現します。</p>
+<section class="sq-facts-exercise"><h3>「今期の内部取引がないから調整なし」でよい？</h3><p>前期からの修正の引継ぎと、翌期の利益への影響を分けて説明してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>調整なしではありません。前期末に消去した利益120円と商品残高への修正を期首に引き継ぎ、当期の売上原価を120円減らすことで実現を反映します。税効果なしの本例では、当期連結利益が120円増え、その内訳は親会社株主側96円・非支配株主側24円です。前期の減額を当期の費用へ残したままにしません。</p><p>期首の概略は「借方：利益剰余金当期首残高96・非支配株主持分24／貸方：商品120」。当期実現の概略は「借方：商品120／貸方：売上原価120」、配分調整は「借方：非支配株主に帰属する当期純利益24／貸方：非支配株主持分24」です。開始と当期を合算すると、期末の商品への修正は0になります。</p></div></details></section>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">期間</th><th scope="col">連結利益全体への影響</th><th scope="col">親会社株主側／非支配株主側</th></tr></thead><tbody><tr><td>前期末：未実現</td><td>120円減少</td><td>96円減少／24円減少</td></tr><tr><td>翌期：全量外部売却</td><td>120円増加</td><td>96円増加／24円増加</td></tr><tr><td>2期間の合計</td><td>0円</td><td>0円／0円</td></tr></tbody></table></div>
+<h2>同じ式で済まない条件も確認する</h2>
+<p>この例は棚卸資産の未実現利益に限定しています。基準第36項には、未実現損失のうち売り手の簿価で回収不能と認める部分は消去しない扱いがあり、第37項には重要性の扱いもあります。固定資産の減価償却、税効果、持分比率の変動等があれば追加の検討が必要です。まず対象資産・売り手・在庫の評価基礎・期首と期末をメモし、問題の条件へ合わせてください。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=111" target="_blank" rel="noopener">ASBJ：連結財務諸表に関する会計基準 第23〜26・34〜38項、注6・7</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：2026年度適用の出題区分表4ページ・連結会計</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>未実現利益の消去は簿記1級だけですか？</summary><p>2026年度の公式区分表では、2級でも棚卸資産・土地の未実現損益を扱い、ダウンストリームとアップストリームの双方を含みます。1級では税効果等の追加論点も確認します。</p></details><details class="sq-facts-answer"><summary>アップストリームは親会社持分だけ利益を消しますか？</summary><p>本例では利益の全額を消し、親会社株主と非支配株主へ持分比率で負担を配分します。利益120円、持分80％なら親会社96円・非支配株主24円です。</p></details><details class="sq-facts-answer"><summary>翌期に内部取引がなければ、成果連結の調整は不要ですか？</summary><p>前期に消去した利益が期首在庫に残る場合は、引継ぎと当期の実現を確認します。本例では翌期の外部売却により、前期に消した120円を実現します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki1-kigyoketsugo-vs-renketsu.html">取得時の個別と連結を分ける</a></li><li><a href="boki2-renketsu.html">連結会計の基礎</a></li><li><a href="boki1.html">簿記1級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki1.html">簿記1級</a><a href="boki2-renketsu.html">連結会計（2級）</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-next-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
