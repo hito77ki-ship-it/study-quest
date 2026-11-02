@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-keihi.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>経費とは？製造原価の経費と製造間接費を解説【簿記2級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 工業簿記の経費を初心者向けに解説。外注加工賃・減価償却費・直接経費・間接経費・製造間接費との関係を整理します。">
+<title>工業簿記の経費｜費目の分類と発生・振替の仕訳を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="経費と製造間接費を別の軸で整理。減価償却40,000円や外注加工賃30,000円の発生・振替を区別し、間接経費55,000円と製造間接費80,000円の違いを自作例で検算。">
 <meta name="keywords" content="経費とは 簿記2級,工業簿記 経費,直接経費 間接経費,製造間接費 経費">
-<meta property="og:title" content="経費とは？製造原価の経費と製造間接費を解説【簿記2級】">
-<meta property="og:description" content="材料費・労務費以外の製造原価である経費を、直接経費・間接経費・製造間接費との関係から解説。">
+<meta property="og:title" content="工業簿記の経費｜費目の分類と発生・振替の仕訳を自作例で確認">
+<meta property="og:description" content="経費と製造間接費を別の軸で整理。減価償却40,000円や外注加工賃30,000円の発生・振替を区別し、間接経費55,000円と製造間接費80,000円の違いを自作例で検算。">
 <meta property="og:url" content="https://study-quest.net/boki2-keihi.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"経費とは？製造原価の経費と製造間接費を解説【簿記2級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 工業簿記の経費を初心者向けに解説。外注加工賃・減価償却費・直接経費・間接経費・製造間接費との関係を整理します。","url":"https://study-quest.net/boki2-keihi.html","datePublished":"2026-05-09","dateModified": "2026-09-05","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "工業簿記の経費｜費目の分類と発生・振替の仕訳を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "経費と製造間接費を別の軸で整理。減価償却40,000円や外注加工賃30,000円の発生・振替を区別し、間接経費55,000円と製造間接費80,000円の違いを自作例で検算。", "url": "https://study-quest.net/boki2-keihi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -44,144 +43,42 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "経費はすべて製造間接費ですか？", "acceptedAnswer": {"@type": "Answer", "text": "経費は材料費・労務費以外の製造原価という費目の分類です。直接経費は対象製品へ賦課し、間接経費は間接材料費・間接労務費と合わせて製造間接費へ集計します。"}}, {"@type": "Question", "name": "工場消耗品は経費ですか？", "acceptedAnswer": {"@type": "Answer", "text": "工業簿記の費目分類では、物品の消費による原価として材料費に分類します。本記事の共通する工場消耗品は間接材料費です。日常語の経費という呼び名だけで判断しません。"}}, {"@type": "Question", "name": "製造間接費／減価償却費という仕訳はいつ使いますか？", "acceptedAnswer": {"@type": "Answer", "text": "減価償却費を先に計上済みで、工場分を製造間接費へ振り替える例です。減価償却を直接計上する場合は、間接法なら貸方は減価償却累計額です。発生と振替を重複させません。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 経費</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年9月5日</p>
-  <h1>経費とは？<br>製造原価の経費と製造間接費を解説【簿記2級】</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">工業簿記の経費とは、材料費・労務費以外の製造原価です。外注加工賃、工場の減価償却費、電力料などが代表例です。経費を理解すると、製造間接費に集める意味が見えてきます。</p>
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">工業簿記の「経費」って、材料費でも労務費でもないって言われても、結局何が経費に入るのかピンときません……。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">わかります、私も最初「経費」という言葉のイメージが日常会話と混ざって混乱しました。ここでの経費は「材料費でも労務費でもない、製造に関わる原価の残り全部」という消去法で考えると楽です。外注加工賃、工場の減価償却費、電力料あたりが定番です。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">消去法だとイメージしやすいです！直接経費と間接経費はどう見分ければいいですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">「どの製品にいくらかかったか、はっきり紐づくか」だけを見てください。特定の製品のための外注加工賃なら直接経費、工場全体でかかる電力料や減価償却費のように複数の製品にまたがるものは間接経費として製造間接費に集めます。材料費・労務費と全く同じ発想です。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>経費は「材料費でも労務費でもない製造原価」です。特定の製品に直接ひもづくものは直接経費、ひもづかないものは間接経費として製造間接費に集めます。</div>
-
-  <h2>経費とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-keihi-map-mobile.svg">
-      <img src="images/boki2-keihi-map.svg" alt="経費の直接経費・間接経費分類と具体例" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="380" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：直接経費（外注加工賃等）と間接経費（電力料・減価償却費等）の分類一覧</figcaption>
-  </figure>
-  <p>経費は直接経費と間接経費に分かれ、直接経費は仕掛品に直接集計、間接経費は製造間接費を通じて配賦します。</p>
-  <p>経費とは、製品を作るために発生した原価のうち、材料費・労務費以外のものです。工場の電気代、機械の減価償却費、外注加工賃などが代表例です。</p>
-  <p>日常会話の「経費」と違い、工業簿記でいう経費は<strong>製造に関係する費用</strong>だけを指します。販売費や本社の管理費とは区別します。</p>
-
-  <h2>経費の具体例</h2>
-  <table>
-    <tr><th>項目</th><th>内容</th></tr>
-    <tr><td>外注加工賃</td><td>製品の一部加工を外部業者に依頼した費用</td></tr>
-    <tr><td>減価償却費</td><td>工場の機械や設備の使用による価値の減少</td></tr>
-    <tr><td>電力料</td><td>工場で機械を動かすための電気代</td></tr>
-    <tr><td>修繕費</td><td>工場設備や機械の修理費</td></tr>
-  </table>
-
-  <h2>直接経費と間接経費</h2>
-  <table>
-    <tr><th>分類</th><th>意味</th><th>例</th></tr>
-    <tr><td>直接経費</td><td>特定の製品に直接ひもづけられる経費</td><td>特定製品の外注加工賃</td></tr>
-    <tr><td>間接経費</td><td>特定の製品に直接ひもづけにくい経費</td><td>工場の減価償却費、電力料、修繕費</td></tr>
-  </table>
-  <p>簿記2級では、経費の多くは間接経費として製造間接費に集めるイメージで出てきます。ただし、外注加工賃のように特定製品に直接ひもづくものは直接経費として扱います。</p>
-
-  <h2>経費と製造間接費の関係</h2>
-  <p>経費で混乱しやすいのが、製造間接費との関係です。製造間接費は、間接材料費・間接労務費・間接経費をまとめて集める箱です。</p>
-  <table>
-    <tr><th>製造間接費に集めるもの</th><th>例</th></tr>
-    <tr><td>間接材料費</td><td>補助材料、工場消耗品</td></tr>
-    <tr><td>間接労務費</td><td>監督者の賃金、手待時間</td></tr>
-    <tr><td>間接経費</td><td>工場の減価償却費、電力料、修繕費</td></tr>
-  </table>
-
-  <div class="shiwake-box">
-    <div class="sw-label">間接経費が発生したとき</div>
-    <div class="sw-row"><span class="kari">製造間接費 40,000</span><span class="sep">／</span><span class="kashi">減価償却費 40,000</span></div>
-  </div>
-  <p>間接経費は、いったん製造間接費に集めます。その後、一定の基準で各製品に配賦します。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">直接経費が発生したとき</div>
-    <div class="sw-row"><span class="kari">仕掛品 30,000</span><span class="sep">／</span><span class="kashi">外注加工賃 30,000</span></div>
-  </div>
-  <p>直接経費は、特定製品に直接ひもづくため、仕掛品に直接入れます。</p>
-
-  <h2>経費でよくあるミス</h2>
-  <ul>
-    <li>販売費や一般管理費まで製造原価に入れてしまう</li>
-    <li>直接経費と間接経費を区別せず、すべて製造間接費にしてしまう</li>
-    <li>工場の費用と本社の費用を混同する</li>
-    <li>外注加工賃を常に間接経費だと思い込む</li>
-  </ul>
-
-  <div class="warn-box"><strong>判断の軸：</strong>その費用が「工場で製品を作るため」に発生しているか、さらに「特定の製品に直接ひもづくか」を順番に見ます。</div>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>経費は、材料費・労務費以外の製造原価</li>
-    <li>外注加工賃、減価償却費、電力料、修繕費などが代表例</li>
-    <li>特定製品に直接ひもづく経費は直接経費</li>
-    <li>直接ひもづかない経費は間接経費として製造間接費へ集める</li>
-    <li>販売費・一般管理費とは区別する</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 経費まで押さえて原価の土台を完成させよう</h3>
-    <p>材料費・労務費・経費を区別できると、製造間接費と個別原価計算に進みやすくなります。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;"><strong>次の一手：</strong>外注加工賃・電力料・減価償却費について、特定の製品に直接ひもづくかを1つずつ判断してみましょう。直接経費なら仕掛品、間接経費なら製造間接費へ集める流れを確認します。 <a href="boki2-kobetsu-genka.html">個別原価計算の流れへ進む</a></p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">工業簿記の経費とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">材料費・労務費以外の製造原価です。外注加工賃、工場の減価償却費、電力料、修繕費などが代表例です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">経費はすべて製造間接費ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">いいえ。特定の製品に直接ひもづくものは直接経費として仕掛品に入れます。直接ひもづかないものは間接経費として製造間接費に集めます。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工業簿記の経費とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"材料費・労務費以外の製造原価です。外注加工賃、工場の減価償却費、電力料、修繕費などが代表例です。"}},{"@type":"Question","name":"経費はすべて製造間接費ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。特定の製品に直接ひもづくものは直接経費として仕掛品に入れます。直接ひもづかないものは間接経費として製造間接費に集めます。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-zairyouhi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">材料費</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">材料費とは？直接材料費・間接材料費</div></a>
-  <a href="boki2-roumuhi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">労務費</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">労務費とは？直接労務費・間接労務費</div></a>
-  <a href="boki2-kobetsu-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">次の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">個別原価計算とは？製造指図書の流れ</div></a>
-  <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">工業簿記とは？商業簿記との違い</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>工業簿記の経費｜費目の分類と発生・振替の仕訳を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>工業簿記の経費は、製造原価を材料費・労務費・経費に分けたときの、材料費・労務費以外の部分です。<strong>経費という費目と、製品への直接・間接という区分は別の軸</strong>です。すべての経費を製造間接費へ入れるわけではありません。</p>
+<h2>何のために、何を消費した費用か</h2>
+<p>原価計算基準8・10・13は、費目の分類と経費の期間計算を示しています。ここで扱うのは製造に関する通常の費用です。販売費や本社管理費は製造原価と分けます。工場消耗品の消費は材料費であり、日常語で「経費」と呼ぶことだけでは判断しません。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">項目</th><th scope="col">費目・本例の扱い</th></tr></thead><tbody><tr><td>特定注文の外注加工賃</td><td>直接経費としてその注文へ賦課</td></tr><tr><td>工場機械の減価償却費</td><td>間接経費として製造間接費へ</td></tr><tr><td>工場全体の電力料</td><td>間接経費として製造間接費へ</td></tr><tr><td>工場消耗品の消費</td><td>間接材料費として製造間接費へ</td></tr><tr><td>工場監督者の給料</td><td>間接労務費として製造間接費へ</td></tr><tr><td>営業所の家賃</td><td>販売費等。製造間接費へ含めない</td></tr></tbody></table></div>
+<p>製造間接費は、間接材料費・間接労務費・間接経費をまとめたものです。「経費」と同じ意味ではありません。直接・間接は、対象製品に直接認識できるかを問題の条件と合わせて確認します。</p>
+<h2>減価償却の「発生」と「振替」を分ける</h2>
+<p>工場機械の減価償却40,000円を、間接法で製造間接費に直接計上するなら、<strong>借方 製造間接費40,000／貸方 減価償却累計額40,000</strong>です。別途すでに「減価償却費40,000／減価償却累計額40,000」と計上した場合、その製造分を振り替える仕訳が「製造間接費40,000／減価償却費40,000」です。元記事では後者を発生時の仕訳として示していたため、前提を明記しました。両方を重複して費用計上しません。</p>
+<p>外注加工賃30,000円も、まだ計上していなければ、借方 仕掛品30,000／貸方 買掛金または未払金等30,000（債務の勘定は指定による）。外注加工賃勘定へ計上済みなら、仕掛品30,000／外注加工賃30,000は勘定間の振替です。支払・費用集計・製品への集計を分けます。</p>
+<section class="sq-facts-exercise"><h3>自作例題：費目を分けても合計は一致するか</h3><p>通常の製造費用です。特定注文の外注加工賃30,000円、工場減価償却40,000円、工場電力15,000円、工場消耗品5,000円、工場監督者給料20,000円、営業所家賃10,000円。それぞれ発生済みで、同じ費用の重複はありません。直接経費、間接経費、製造間接費、製造費用合計を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>直接経費は30,000円。間接経費は40,000＋15,000＝<strong>55,000円</strong>です。製造間接費には、さらに間接材料費5,000円と間接労務費20,000円が入り、合計<strong>80,000円</strong>になります。</p><p>本例の製造費用合計は直接30,000＋間接80,000＝<strong>110,000円</strong>。営業所家賃10,000円は別の期間費用です。55,000円と80,000円をもう一度足すと、間接経費の二重集計になります。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-keihi-map-mobile.svg?v=20261102"><img src="images/boki2-keihi-map.svg?v=20261102" alt="直接経費30,000円と製造間接費80,000円、間接経費55,000円を二重集計しないための図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>支払額をそのまま今月の経費にしない</h2>
+<p>経費は原則として当該原価計算期間の発生額で計算します。年払いの工場保険料、電力の未払分などは、支払日だけでなく今月の負担額を確認します。使用量を測定する経費は、消費量に単価を掛ける方法もあります。元記事の金額例は計算方法の説明であり、実際の会社の料金や実績ではありません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">企業会計審議会 原価計算基準：費目・直接間接・製品別計算・財務会計との関係</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：試験年度ごとの出題区分表</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>経費はすべて製造間接費ですか？</summary><p>経費は材料費・労務費以外の製造原価という費目の分類です。直接経費は対象製品へ賦課し、間接経費は間接材料費・間接労務費と合わせて製造間接費へ集計します。</p></details><details class="sq-facts-answer"><summary>工場消耗品は経費ですか？</summary><p>工業簿記の費目分類では、物品の消費による原価として材料費に分類します。本記事の共通する工場消耗品は間接材料費です。日常語の経費という呼び名だけで判断しません。</p></details><details class="sq-facts-answer"><summary>製造間接費／減価償却費という仕訳はいつ使いますか？</summary><p>減価償却費を先に計上済みで、工場分を製造間接費へ振り替える例です。減価償却を直接計上する場合は、間接法なら貸方は減価償却累計額です。発生と振替を重複させません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-zairyouhi.html">材料費の分類</a></li><li><a href="boki2-roumuhi.html">労務費の分類</a></li><li><a href="boki2-kobetsu-genka.html">指図書へ原価を集める</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-sixth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
