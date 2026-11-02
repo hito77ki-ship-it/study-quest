@@ -116,7 +116,7 @@ const ARTICLES = {
   'shikaku-eigyo.html':        {label:'まとめ',      title:'営業職におすすめ資格ランキング2026', thumb:'images/eigyo-shikaku-matrix-map.svg'},
   'shikaku-3months.html':      {label:'まとめ',      title:'3ヶ月で取れる資格ランキング2026', thumb:'images/3months-shikaku-matrix-map.svg'},
   'toroku-hanbai.html':        {label:'登録販売者',  title:'登録販売者の独学合格ガイド', thumb:'images/toroku-hanbai-strategy-map.svg'},
-  'eisei-kanri.html':          {label:'衛生管理者',  title:'衛生管理者（第一種・第二種）の独学合格ガイド', thumb:'images/eisei-kanri-strategy-map.svg'},
+  'eisei-kanri.html':          {label:"衛生管理者", title:"衛生管理者の受験条件と配点｜第一種44問・範囲別の合格基準を確認", thumb:"images/article-diagrams/eisei-kanri.svg?v=20261103", dialogue:false, hero:false},
   'hisho.html':                {label:'秘書検定',    title:'秘書検定2級・準1級の独学合格ガイド', thumb:'images/hisho-strategy-map.svg'},
   'kanken.html':               {label:'漢字検定',    title:'漢検2級の独学勉強法・配点・自作例題3問', dialogue:false, thumb:'images/kanken-strategy-map.svg?v=20261102'},
   'gaibuin.html':              {label:'証券外務員',  title:'証券外務員一種・二種の独学合格ガイド', thumb:'images/gaibuin-strategy-map.svg'},
