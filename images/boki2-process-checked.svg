@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-labelledby="title desc">
+<title id="title">総合原価｜投入点で換算量が変わる</title><desc id="desc">01 完成400・月末200個：加工進捗50%なら100個換算、材料の条件は別に確認。02 材料を始点で全量投入：月末は材料200個換算、材料費の分母は600個。03 材料を終点で全量投入：未完成の月末へまだ投入しない、材料費の分母は完成400個</desc>
+<rect x="10" y="10" width="740" height="75" rx="12" fill="#101B13"/><rect x="10" y="517" width="740" height="35" rx="8" fill="#101B13"/>
+<g font-family="M PLUS 1, Hiragino Kaku Gothic ProN, sans-serif"><text x="32" y="45" font-size="25" font-weight="700" fill="#B6E27C">総合原価｜投入点で換算量が変わる</text>
+<text x="32" y="73" font-size="12" fill="#C7D3C7">Study Quest 編集部作成｜2026.11.03確認</text>
+<rect x="32" y="95" width="696" height="116" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="46" y="126" font-size="20" font-weight="700" fill="#B6E27C">01 完成400・月末200個</text>
+<text x="46" y="160" font-size="19" fill="#F0F6ED">加工進捗50%なら100個換算</text>
+<text x="46" y="187" font-size="19" fill="#F0F6ED">材料の条件は別に確認</text>
+<rect x="32" y="233" width="696" height="116" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="46" y="264" font-size="20" font-weight="700" fill="#B6E27C">02 材料を始点で全量投入</text>
+<text x="46" y="298" font-size="19" fill="#F0F6ED">月末は材料200個換算</text>
+<text x="46" y="325" font-size="19" fill="#F0F6ED">材料費の分母は600個</text>
+<rect x="32" y="371" width="696" height="116" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="46" y="402" font-size="20" font-weight="700" fill="#B6E27C">03 材料を終点で全量投入</text>
+<text x="46" y="436" font-size="19" fill="#F0F6ED">未完成の月末へまだ投入しない</text>
+<text x="46" y="463" font-size="19" fill="#F0F6ED">材料費の分母は完成400個</text>
+<text x="32" y="540" font-size="11" fill="#C7D3C7">条件・単位・一次資料と例題の解答は本文へ</text></g></svg>
