@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="660" viewBox="0 0 390 660" role="img" aria-labelledby="title desc">
+<title id="title">授業と検定を照合して学ぶ</title><desc id="desc">評価条件は二つ：授業の課題・成績・単位、検定の範囲・申込・合格。共通と不足を探す：商業簿記だけの架空授業、2級は工業簿記も別に確認。質問の前に整理：与件・自分の答案・疑問、時間と予約は担当者の案内へ</desc>
+<rect x="10" y="10" width="370" height="75" rx="12" fill="#101B13"/><rect x="10" y="617" width="370" height="35" rx="8" fill="#101B13"/>
+<g font-family="M PLUS 1, Hiragino Kaku Gothic ProN, sans-serif"><text x="20" y="45" font-size="17" font-weight="700" fill="#B6E27C">授業と検定を照合して学ぶ</text>
+<text x="20" y="73" font-size="12" fill="#C7D3C7">Study Quest 編集部作成｜2026.11.03確認</text>
+<rect x="20" y="100" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="131" font-size="15" font-weight="700" fill="#B6E27C">評価条件は二つ</text>
+<text x="34" y="165" font-size="14" fill="#F0F6ED">授業の課題・成績・単位</text>
+<text x="34" y="193" font-size="14" fill="#F0F6ED">検定の範囲・申込・合格</text>
+<rect x="20" y="274" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="305" font-size="15" font-weight="700" fill="#B6E27C">共通と不足を探す</text>
+<text x="34" y="339" font-size="14" fill="#F0F6ED">商業簿記だけの架空授業</text>
+<text x="34" y="367" font-size="14" fill="#F0F6ED">2級は工業簿記も別に確認</text>
+<rect x="20" y="448" width="350" height="150" rx="12" fill="#1E3023" stroke="#507448"/>
+<text x="34" y="479" font-size="15" font-weight="700" fill="#B6E27C">質問の前に整理</text>
+<text x="34" y="513" font-size="14" fill="#F0F6ED">与件・自分の答案・疑問</text>
+<text x="34" y="541" font-size="14" fill="#F0F6ED">時間と予約は担当者の案内へ</text>
+<text x="20" y="640" font-size="11" fill="#C7D3C7">条件・単位・一次資料と例題の解答は本文へ</text></g></svg>
