@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/boki2-hojinzei-shohizei.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【簿記2級】法人税等・消費税の仕訳を完全解説｜中間納付・仮払消費税の相殺を図解つきで攻略｜スタディクエスト</title>
-<meta name="description" content="簿記2級の法人税等・消費税を図解つきで完全解説。中間納付（仮払法人税等）の3ステップ・決算での消費税相殺パズル（仮受消費税と仮払消費税）・未払法人税等の計算まで例題つきでわかりやすく解説します。">
+<title>法人税等・消費税の仕訳｜中間納付・還付・税抜方式を例題で確認｜スタディクエスト</title>
+<meta name="description" content="中間納付の制度と、税抜方式の納付・還付の条件を一次資料で確認。300,000円の税額精算、消費税180,000円の納付例、過払いと取引区分を自作4問で整理。">
 <meta name="keywords" content="法人税等 仕訳 簿記2級,仮払消費税 仮受消費税 相殺,未払法人税等 中間納付,消費税 決算整理 仕訳,課税 非課税 不課税 違い">
-<meta property="og:title" content="【簿記2級】法人税等・消費税の仕訳を完全解説｜中間納付・消費税相殺を図解で攻略">
-<meta property="og:description" content="中間納付3ステップ・消費税相殺パズルを図解つきで解説。未払法人税等の計算根拠がわかる。">
+<meta property="og:title" content="法人税等・消費税の仕訳｜中間納付・還付・税抜方式を例題で確認">
+<meta property="og:description" content="中間納付の制度と、税抜方式の納付・還付の条件を一次資料で確認。300,000円の税額精算、消費税180,000円の納付例、過払いと取引区分を自作4問で整理。">
 <meta property="og:url" content="https://study-quest.net/boki2-hojinzei-shohizei.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】法人税等・消費税の仕訳を完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"中間納付3ステップ・消費税相殺パズルを図解つきで解説。未払法人税等の計算根拠がわかる。","url":"https://study-quest.net/boki2-hojinzei-shohizei.html","datePublished":"2026-05-09","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "法人税等・消費税の仕訳｜中間納付・還付・税抜方式を例題で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "中間納付の制度と、税抜方式の納付・還付の条件を一次資料で確認。300,000円の税額精算、消費税180,000円の納付例、過払いと取引区分を自作4問で整理。", "url": "https://study-quest.net/boki2-hojinzei-shohizei.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -172,356 +171,53 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "中間納付額は自由に見積もって決めますか？", "acceptedAnswer": {"@type": "Answer", "text": "法人税法には前年度実績による予定申告と、所定の条件による仮決算の中間申告があります。会社が自由に金額を決める説明ではありません。記事の例では納付済額を与件として仕訳を確認します。"}}, {"@type": "Question", "name": "仮受消費税から仮払消費税を引けば、いつも納付税額ですか？", "acceptedAnswer": {"@type": "Answer", "text": "記事の例は全取引税抜・本則課税・仕入税額全額控除・調整なしを前提にします。実際には控除対象外税額や簡易課税等で単純差額と納付・還付額が異なる場合があります。"}}, {"@type": "Question", "name": "損害賠償金はすべて消費税の不課税ですか？", "acceptedAnswer": {"@type": "Answer", "text": "名称だけでは決まりません。通常の損害補償とは別に、賃貸料や権利使用料等の対価に相当するものは課税対象となる場合があります。国税庁の区分と取引の実質を確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 法人税等・消費税</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>【簿記2級】法人税等・消費税の仕訳を完全解説<br>中間納付・消費税相殺パズルを図解つきで攻略</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！実は、これから紹介する各種の論点は、どれも私が大学の講義内で初めて学んだとき、「うわっ、なんじゃこりゃ……！」と頭を抱えた難しいものばかりでした（笑）。だからこそ、当時の私と同じように悩んでいる皆さんに、どこよりも直感的にパズル感覚で理解してもらえるよう、私なりの分かりやすい図解を交えてお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>法人税等は3ステップで整理</strong>——期中に前払い（仮払法人税等）→ 決算で本当の税額確定 → 差額を未払法人税等に計上</li>
-      <li><strong>中間納付の計算式</strong>——法人税等（300,000）−仮払法人税等（120,000）＝未払法人税等（180,000）</li>
-      <li><strong>消費税の相殺パズル</strong>——仮受消費税（借方に移動）と仮払消費税（貸方に移動）をぶつけて差額が未払消費税</li>
-      <li><strong>借方・貸方に迷ったら</strong>——図解の「左右移動」を思い出そう！</li>
-    </ul>
-  </div>
-
-  <p class="lead">法人税等と消費税は、毎回の決算整理で必ず登場する税金論点です。「なぜ300,000が借方なのに120,000と180,000に分かれるの？」「仮受消費税がなぜ借方に来るの？」——この2つの疑問を図解つきで一気に解決します。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">中間納付がある場合の仕訳で、貸方が2つに分かれる理由がよくわかりません。どうして120,000と180,000に分けるんですか？あと、仮受消費税が決算で急に借方に来るのも意味不明です…</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚、めちゃくちゃわかります。私も最初「なんで貸方だった科目が急に借方に引っ越すんだ…！」と決算整理の仕訳を見て頭がバグりました（笑）。でも正体は「決算の仕訳マジック」——期中に積み上げた残高を、決算で反対側に置いて丸ごと消し去るトリックなんです。仮払法人税等120,000は「もう払った分」として消し、300,000（正解の税額）との差額180,000だけを「まだ払っていない分」として残す。消費税も同じで、仮受・仮払をそれぞれ反対側に置いてぶつけて相殺すると、差額だけがきれいに残ります。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">「反対側に置いて消す」がマジックの仕掛けなんですね…！言われてみると、法人税等も消費税も同じ考え方で解けそうです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">まさにそうです！このマジックの仕掛けさえ見抜けば、法人税等の3ステップも消費税の相殺パズルも、怖いものではなくなります。図解で数字の動きを一緒に追いかけていきましょう！</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>🏦 法人税等とは——利益にかかる3種類の税金</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki2-tax-puzzle-map-mobile.svg">
-    <img src="images/boki2-tax-puzzle-map.svg" alt="法人税等・消費税の仕訳フロー" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="560" loading="lazy">
-  </picture>
-  <p>法人税等は中間納付の「仮払」と期末確定の「未払」を使い分けるのがポイントです。消費税は仮払・仮受を相殺して差額を納付します。</p>
-
-  <p>法人税等（ほうじんぜいとう）とは、会社の利益に対してかかる税金の総称です。具体的には次の3つをまとめて処理します。</p>
-
-  <table>
-    <tr><th>税金の種類</th><th>課税対象</th><th>ひとことメモ</th></tr>
-    <tr><td>法人税（ほうじんぜい）</td><td>会社の利益</td><td>国に納める。利益が多いほど高くなる</td></tr>
-    <tr><td>住民税（じゅうみんぜい）</td><td>法人税をもとに計算</td><td>都道府県・市区町村に納める</td></tr>
-    <tr><td>事業税（じぎょうぜい）</td><td>会社の事業活動</td><td>都道府県に納める</td></tr>
-  </table>
-
-  <p>これら3つをまとめて勘定科目名「<strong>法人税等（ほうじんぜいとう）</strong>」として仕訳で処理するのが、簿記2級の出題スタイルです。</p>
-
-  <h2>📋 中間納付がある場合——3ステップで仕訳を理解する</h2>
-
-  <p>「中間納付（ちゅうかんのうふ）」とは、期末（決算）の前に税金を先払いする制度のことです。「まだ税額が確定していないのにとりあえず払う」ので、仮払法人税等（かりばらいほうじんぜいとう）という勘定で処理します。</p>
-
-  <h3>図解のSTEP 1〜3と仕訳の数字を紐づけて理解する</h3>
-
-  <div class="step-flow">
-    <div class="step-card s1">
-      <div class="step-badge">STEP 1</div>
-      <div class="step-timing">期中（きちゅう）<br>中間納付（ちゅうかんのうふ）</div>
-      <div class="step-kamoku">仮払法人税等</div>
-      <div class="step-yomi">（かりばらいほうじんぜいとう）</div>
-      <div class="step-amt">120,000円</div>
-      <div class="step-note">ひとまず税金を前払い！<br>「仮の支払い」として記録</div>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card s2">
-      <div class="step-badge">STEP 2</div>
-      <div class="step-timing">決算（けっさん）<br>税額確定（ぜいがくかくてい）</div>
-      <div class="step-kamoku">法人税等</div>
-      <div class="step-yomi">（ほうじんぜいとう）</div>
-      <div class="step-amt">300,000円</div>
-      <div class="step-note">本当の税金額が決まった！<br>これが今年の「正解」</div>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card s3">
-      <div class="step-badge">STEP 3</div>
-      <div class="step-timing">決算整理（けっさんせいり）<br>仕訳の完成</div>
-      <div class="step-kamoku">未払法人税等</div>
-      <div class="step-yomi">（みはらいほうじんぜいとう）</div>
-      <div class="step-amt">180,000円</div>
-      <div class="step-note">あとで払う残り！<br>300,000 − 120,000</div>
-    </div>
-  </div>
-
-  <div class="calc-bar">
-    <strong>法人税等（300,000）</strong>　−　<strong>仮払法人税等（120,000）</strong>　＝　<strong>未払法人税等（180,000）</strong>
-  </div>
-
-  <p>流れをストーリーにすると、こうなります。</p>
-
-  <ol style="margin:0 0 20px 20px;font-size:14px;color:#374151;line-height:2;">
-    <li><strong>期中（STEP1）：</strong>「今年はだいたいこれくらいの税金になるかな」と見込んで、120,000円を仮払法人税等として先払いします。これが大元のサイフから出ていくお金の1回目です。</li>
-    <li><strong>決算（STEP2）：</strong>期末になって今年の利益が確定し、「本当の税金は300,000円だ」と判明します。これが今年の「正解の税額」です。</li>
-    <li><strong>決算整理（STEP3）：</strong>先払い分120,000円はすでに払っているので、残り（300,000 − 120,000 = 180,000円）をあとで納付するための未払法人税等として計上します。</li>
-  </ol>
-
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>決算において、法人税等の総額が300,000円と確定した。なお、期中に仮払法人税等120,000円を計上済みである。</p>
-  </div>
-
-  <div class="shiwake-box">
-    <div class="sw-label">決算整理仕訳</div>
-    <div class="sw-row">
-      <span class="kari">法人税等<span class="amt">300,000</span></span>
-      <span class="sep">/</span>
-      <span class="kashi">仮払法人税等<span class="amt">120,000</span></span>
-    </div>
-    <div class="sw-row">
-      <span class="kari"></span>
-      <span class="sep"></span>
-      <span class="kashi">未払法人税等<span class="amt">180,000</span></span>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>借方・貸方の確認ポイント</strong><br>
-    借方には「今年の税金の正解（法人税等 300,000）」を置きます。
-    貸方には「すでに払った分（仮払法人税等 120,000）」と「まだ払っていない分（未払法人税等 180,000）」の2つを置きます。
-    <strong>仕訳の借方・貸方に迷ったらこの図の左右を思い出してください！</strong>
-  </div>
-
-  <h3>中間納付なし（シンプルパターン）</h3>
-
-  <p>中間納付がない場合は、決算で確定した金額をそのまま未払法人税等に計上するだけです。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（中間納付なし）</div>
-    <div class="sw-row">
-      <span class="kari">法人税等<span class="amt">300,000</span></span>
-      <span class="sep">/</span>
-      <span class="kashi">未払法人税等<span class="amt">300,000</span></span>
-    </div>
-  </div>
-
-  <h2>🔄 消費税の処理——決算マジック「相殺パズル」を解く</h2>
-
-  <p>消費税（しょうひぜい）の税抜方式（ぜいぬきほうしき）では、日々の取引で次の2つの科目を使います。</p>
-
-  <table>
-    <tr><th>科目名</th><th>読み方</th><th>期中の位置</th><th>意味</th></tr>
-    <tr><td>仮受消費税</td><td>かりうけしょうひぜい</td><td><strong>貸方（右）</strong></td><td>お客様から売上と一緒に預かった消費税</td></tr>
-    <tr><td>仮払消費税</td><td>かりばらいしょうひぜい</td><td><strong>借方（左）</strong></td><td>仕入・経費を支払うときに先に払った消費税</td></tr>
-    <tr><td>未払消費税</td><td>みはらいしょうひぜい</td><td>決算後に発生</td><td>国に納付する差額（負債）</td></tr>
-  </table>
-
-  <h3>「決算マジック」——左右をひっくり返して相殺する</h3>
-
-  <p>消費税の決算整理のポイントは、<strong>期中に使っていた借方・貸方の位置をそれぞれひっくり返すこと</strong>です。これによってお互いの箱をガサッと相殺（打ち消し）することができます。</p>
-
-  <div class="sousai-box">
-    <div class="sousai-grid">
-      <div class="sousai-card kari-uke">
-        <div class="sousai-badge">仮受消費税</div>
-        <div class="sousai-name">仮受消費税（かりうけしょうひぜい）</div>
-        <div class="sousai-yomi">お客様から預かった消費税</div>
-        <div class="sousai-amt">500,000円</div>
-        <div class="sousai-desc">期中は<strong>貸方（右）</strong>に置いていた科目です。決算では消去するために——</div>
-        <div class="sousai-move">👉 借方（左）へ移動！</div>
-      </div>
-      <div class="sousai-center">
-        <div class="sc-icon">⇄</div>
-        <div class="sc-label">相殺<br>（−）</div>
-      </div>
-      <div class="sousai-card kari-barai">
-        <div class="sousai-badge">仮払消費税</div>
-        <div class="sousai-name">仮払消費税（かりばらいしょうひぜい）</div>
-        <div class="sousai-yomi">仕入・経費で先に払った消費税</div>
-        <div class="sousai-amt">320,000円</div>
-        <div class="sousai-desc">期中は<strong>借方（左）</strong>に置いていた科目です。決算では消去するために——</div>
-        <div class="sousai-move">👉 貸方（右）へ移動！</div>
-      </div>
-    </div>
-    <div class="sousai-result">
-      <div class="sr-calc">500,000 − 320,000 = 差額 <strong>180,000円</strong></div>
-      <div class="sr-name">未払消費税（みはらいしょうひぜい）</div>
-      <div class="sr-amt">180,000円</div>
-      <div class="sr-note">預かった分の方が多いので、この差額を国に納める</div>
-    </div>
-  </div>
-
-  <p>仕訳で表すと、次のようになります。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">決算整理仕訳（消費税の相殺）</div>
-    <div class="sw-row">
-      <span class="kari">仮受消費税<span class="amt">500,000</span></span>
-      <span class="sep">/</span>
-      <span class="kashi">仮払消費税<span class="amt">320,000</span></span>
-    </div>
-    <div class="sw-row">
-      <span class="kari"></span>
-      <span class="sep"></span>
-      <span class="kashi">未払消費税<span class="amt">180,000</span></span>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>「なぜ仮受消費税が借方に来るの？」と思ったら</strong><br>
-    期中は仮受消費税を<strong>貸方（右）</strong>に積み上げてきましたね。決算ではその積み上げた残高を「ゼロにして消す」ために、<strong>反対側の借方（左）に置きます</strong>。これが相殺の仕組みです。仮払消費税も同じで、期中の借方（左）の残高を消すために、決算では貸方（右）に移動させます。
-  </div>
-
-  <h2>⚠️ よくあるミス（実戦版）——ここで合否が分かれる</h2>
-
-  <ul>
-    <li><strong>仮払消費税と仮受消費税の借貸を逆にする</strong>——期中と決算で左右が逆になる点が最大の罠です。図解の「移動先」を覚えておきましょう。</li>
-    <li><strong>中間納付分を未払法人税等の金額に含めてしまう</strong>——未払法人税等はあくまでも「まだ払っていない残り」です。仮払法人税等を引き忘れに注意。</li>
-    <li><strong>法人税等と法人税等調整額を混同する</strong>——法人税等は「今年の実際の税金」、法人税等調整額は「税効果会計による調整」です。別の論点として扱いましょう。</li>
-    <li><strong>税込方式と税抜方式の処理を混ぜる</strong>——問題文に「税抜方式」と書いてあれば仮払・仮受を使います。税込方式では仮払・仮受は使いません。</li>
-    <li><strong>消費税の差額がマイナスになる（仮払＞仮受）</strong>——この場合は「未収消費税（資産）」になります。稀なケースですが選択肢に出ることがあります。</li>
-  </ul>
-
-  <h2>📋 まとめ——試験前に確認するチェックリスト</h2>
-
-  <div class="matome">
-    <h3>法人税等・消費税の重要ポイント</h3>
-    <div class="matome-row">
-      <span class="trigger">中間納付の計算式</span>
-      <span class="result">法人税等 − 仮払法人税等 = 未払法人税等</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">決算整理（中間納付あり）</span>
-      <span class="result">借方：法人税等 300,000 / 貸方：仮払法人税等 120,000＋未払法人税等 180,000</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">消費税の相殺ルール</span>
-      <span class="result">仮受消費税を借方へ・仮払消費税を貸方へ移動し、差額が未払消費税</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">仮受消費税の期中の位置</span>
-      <span class="result">期中は貸方（右）→ 決算で借方（左）へ移動して消す</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">仮払消費税の期中の位置</span>
-      <span class="result">期中は借方（左）→ 決算で貸方（右）へ移動して消す</span>
-    </div>
-  </div>
-
-  <div class="app-cta">
-    <h3>⚔ 税金仕訳をアプリで反復練習しよう</h3>
-    <p>中間納付パターン・消費税相殺の仕訳を繰り返すことで、決算整理の失点がゼロになります。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-</div>
-
-<section style="max-width:860px;margin:0 auto;padding:0 24px 40px;" id="faq">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid var(--green);">💬 よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <div class="faq-q" itemprop="name">消費税の課税・非課税・不課税の違いは何ですか？</div>
-      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <div itemprop="text">
-          <p>3つの区分を整理すると、次のようになります。</p>
-          <table class="kazei-table" style="margin:12px 0;">
-            <tr>
-              <th>区分</th>
-              <th>消費税</th>
-              <th>代表例</th>
-            </tr>
-            <tr>
-              <td><strong>課税取引（かぜいとりひき）</strong></td>
-              <td class="kazei-mark maru">◎</td>
-              <td>商品売買・サービス提供・固定資産の売却など</td>
-            </tr>
-            <tr>
-              <td><strong>非課税取引（ひかぜいとりひき）</strong></td>
-              <td class="kazei-mark sankaku">△</td>
-              <td>医療費・住宅家賃・学校の授業料・土地の売買など</td>
-            </tr>
-            <tr>
-              <td><strong>不課税取引（ふかぜいとりひき）</strong></td>
-              <td class="kazei-mark batu">×</td>
-              <td>給与・損害賠償金・寄付金・保険金の受取など</td>
-            </tr>
-          </table>
-          <ul style="margin:8px 0 0 18px;">
-            <li><strong>課税</strong>：消費税がかかる。仕訳では仮払・仮受消費税を使う</li>
-            <li><strong>非課税</strong>：本来は課税対象だが、政策的・社会的理由で免除されている</li>
-            <li><strong>不課税</strong>：そもそも消費税という概念が当てはまらない取引</li>
-          </ul>
-          <p style="margin:10px 0 0;">簿記2級の出題では「税抜方式の仕訳」が中心です。課税取引かどうかを問題文から判断し、仮払・仮受消費税を正しく使えるようにしましょう。</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <div class="faq-q" itemprop="name">法人税等と法人税等調整額はどう違いますか？</div>
-      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text"><strong>法人税等</strong>は当期の税務申告に基づく実際の税額で、決算時に見積計上します。<strong>法人税等調整額</strong>は税効果会計（ぜいこうかかいけい）による調整項目で、会計上の利益と税務上の課税所得のズレを調整するものです。たとえば、会計上は費用でも税務上は認められない場合（引当金の否認など）にズレが生じます。簿記2級では法人税等の基本仕訳がメインです。税効果会計（法人税等調整額）は別の論点として個別に学習しましょう。</p>
-      </div>
-    </div>
-
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <div class="faq-q" itemprop="name">仮払消費税と仮受消費税は決算でどう処理しますか？</div>
-      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">決算時に仮受消費税（期中は貸方）を借方へ移動し、仮払消費税（期中は借方）を貸方へ移動させることで相殺します。仮受消費税の方が大きい場合、差額が未払消費税（負債）になり後日納付します。逆に仮払消費税の方が大きい場合は未収消費税（資産）になります。仕訳の借方・貸方で迷ったら「期中と反対の位置に置いて消す」というルールを思い出してください。</p>
-      </div>
-    </div>
-
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <div class="faq-q" itemprop="name">中間納付がない場合と中間納付がある場合の仕訳の違いは？</div>
-      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">中間納付がない場合は、決算で確定した税額をそのまま「法人税等 XXX / 未払法人税等 XXX」と1行で仕訳します。中間納付がある場合は、貸方が「仮払法人税等（すでに払った分）」と「未払法人税等（まだ払っていない残り）」の2つに分かれます。計算式は「未払法人税等 = 法人税等の確定額 − 仮払法人税等」です。</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>法人税等・消費税の仕訳｜中間納付・還付・税抜方式を例題で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>税金の仕訳は、<strong>当期の費用・すでに払った額・未払額または還付見込額</strong>を区別して確認します。法人税等の精算と、税抜方式の消費税の精算は、どちらも残高の意味を追うと借方・貸方を検算できます。</p>
+<div class="sq-facts-note"><strong>学習例の条件</strong><p>2026年度の簿記学習を想定した編集部の架空例です。税額は問題で与えられるものとし、実際の申告税額を計算する記事ではありません。消費税は課税事業者・全取引税抜方式・本則課税で、仕入税額は全額控除可能、端数・簡易課税・控除対象外税額等の調整なしとします。元記事の「仮受−仮払が必ず納付額」と読める説明に、適用条件を付けました。</p></div>
+<h2>法人税等：会計上の利益をそのまま税額にしない</h2>
+<p>簿記の基本では、法人税・住民税・事業税などを扱います。ただし「すべて会社の利益だけに比例する3種類の税金」という説明は正確ではありません。会計上の利益と課税所得には調整があり、住民税の均等割など、赤字でも課税されるものがあります。本記事では税率を仮定して税額を作らず、与えられた税額の記帳に絞ります。</p>
+<p>中間納付も、会社が自由に「このくらい」と決めて払う制度ではありません。法人税法71・72条では、前年度実績による予定申告と、条件に従った仮決算による中間申告が定められています。会計では、すでに支払った中間納付額を仮払法人税等で管理する基本例を扱います。</p>
+<section class="sq-facts-exercise"><h3>例題1：300,000円の税額と120,000円の中間納付</h3><p>当期の法人税等300,000円、中間納付済み120,000円。他の税額・精算はありません。中間納付・決算・翌期納付の仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>中間納付時：借方 仮払法人税等120,000／貸方 現金預金120,000。</p><p>決算：借方 法人税等300,000／貸方 仮払法人税等120,000・未払法人税等180,000。残りは300,000−120,000＝<strong>180,000円</strong>です。</p><p>翌期の納付：借方 未払法人税等180,000／貸方 現金預金180,000。当期費用は300,000円、支払総額も120,000＋180,000＝300,000円。翌期の納付時に、同じ180,000円をもう一度費用へ計上しません。</p></div></details></section>
+<p>中間納付がない別のケースでは、借方 法人税等300,000／貸方 未払法人税等300,000です。決算時に現金を払っていない点は同じです。</p>
+<section class="sq-facts-exercise"><h3>例題2：中間納付が当期税額を上回った場合</h3><p>当期税額100,000円に対して、中間納付済み120,000円。20,000円が還付されると確認でき、他の相殺はないとします。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>借方 法人税等100,000・未収還付法人税等20,000／貸方 仮払法人税等120,000。未払法人税等をマイナスで残すのではなく、<strong>還付を受ける権利20,000円</strong>として整理します。</p></div></details></section>
+<h2>消費税：期中の取引から残高の向きを確認する</h2>
+<p>税抜方式では、課税売上げに対応する消費税等を仮受消費税等、課税仕入れに対応するものを仮払消費税等で処理します。勘定科目の「等」の有無は問題の指定に従います。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">独立した取引例（10％と指定）</th><th scope="col">借方</th><th scope="col">貸方</th></tr></thead><tbody><tr><td>商品100,000円と税10,000円を掛けで仕入れ</td><td>仕入100,000・仮払消費税10,000</td><td>買掛金110,000</td></tr><tr><td>商品200,000円と税20,000円を掛けで販売</td><td>売掛金220,000</td><td>売上200,000・仮受消費税20,000</td></tr></tbody></table></div>
+<p>仮受が貸方残高、仮払が借方残高になるのは、この期中の記録を積み上げるためです。決算では反対側へ記入して残高を消し、未払または未収の税額へ精算します。単に科目名を左右へ移すだけでなく、条件と残高を確認します。</p>
+<section class="sq-facts-exercise"><h3>例題3：納付180,000円と、還付30,000円の違い</h3><p>それぞれ独立した決算です。①仮受消費税500,000円・仮払消費税320,000円。②仮受80,000円・仮払110,000円。冒頭の控除・調整なしの条件に従います。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>①500,000−320,000＝180,000円。借方 仮受消費税500,000／貸方 仮払消費税320,000・未払消費税180,000。</p><p>②110,000−80,000＝30,000円が還付見込。借方 仮受消費税80,000・未収消費税30,000／貸方 仮払消費税110,000。</p><p>いずれも仮受・仮払の残高を0にし、借貸合計が一致します。実際の申告では控除対象外税額、簡易課税等により、帳簿上の単純差額と納付・還付額が異なることがあります。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-tax-puzzle-map-mobile.svg?v=20261102"><img src="images/boki2-tax-puzzle-map.svg?v=20261102" alt="法人税等300,000円を中間120,000円と未払180,000円に分け、消費税の納付と還付を条件付きで比べる図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>課税・非課税・不課税は、取引の条件で判定する</h2>
+<p>国税庁は、国内で事業者が事業として対価を得て行う資産の譲渡等を基本の課税対象とし、そのうち法令で非課税とする取引を定めています。不課税は、対価のある事業取引などの課税要件に該当しないものです。「医療費は全部非課税」「損害賠償金は名前だけで全部不課税」とは判断できません。</p>
+<section class="sq-facts-exercise"><h3>例題4：取引名だけでなく実質を見る</h3><p>国内法人の取引です。①土地の売却、②居住用と明示した住宅の2年間の貸付け、③雇用契約に基づく給与支払、④明渡し遅延の賃貸料に相当する損害賠償金の受取。どの区分になりますか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>①土地の譲渡、②所定の居住用住宅の貸付けは<strong>非課税</strong>。住宅でも1か月未満の貸付けなどは扱いが異なります。③給与は事業者が独立して行う事業取引ではなく<strong>不課税</strong>です。</p><p>④は「損害賠償金」という名称でも、実質が事務所等の賃貸料に相当する場合は<strong>課税</strong>対象です。条件を読まず、不課税と決めません。医療にも、社会保険医療と美容整形などの違いがあります。</p></div></details></section>
+<h2>税込方式と税効果会計を混ぜない</h2>
+<p>税込方式では、売上・仕入等へ税額を含め、納付税額は租税公課などで処理します。税抜方式の仮受・仮払をそのまま混在させません。また法人税等調整額は税効果会計の項目で、中間納付の差額そのものではありません。税効果会計の範囲は別記事で確認できます。</p>
+<p>日商の2027年度区分表の案内は、2026年7月改正の法人税等会計基準をまだ織り込んでいないと明示しています。改正基準の強制適用は2028年4月以後開始年度です。実務の適用年度と、受験する年度の区分表を分けて確認してください。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://laws.e-gov.go.jp/law/340AC0000000034" target="_blank" rel="noopener">法人税法：71・72・76条、中間申告と納付</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6901.htm" target="_blank" rel="noopener">国税庁 No.6901：納付税額・還付税額と税抜／税込方式</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6201.htm" target="_blank" rel="noopener">国税庁 No.6201：非課税取引の条件</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6157.htm" target="_blank" rel="noopener">国税庁 No.6157：不課税と損害賠償金の例外</a></li><li><a href="https://www.tax.metro.tokyo.lg.jp/shitsumon/work/a1" target="_blank" rel="noopener">東京都主税局：法人都民税の均等割等</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：試験年度と2026年改正法人税等基準の未反映について</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>中間納付額は自由に見積もって決めますか？</summary><p>法人税法には前年度実績による予定申告と、所定の条件による仮決算の中間申告があります。会社が自由に金額を決める説明ではありません。記事の例では納付済額を与件として仕訳を確認します。</p></details><details class="sq-facts-answer"><summary>仮受消費税から仮払消費税を引けば、いつも納付税額ですか？</summary><p>記事の例は全取引税抜・本則課税・仕入税額全額控除・調整なしを前提にします。実際には控除対象外税額や簡易課税等で単純差額と納付・還付額が異なる場合があります。</p></details><details class="sq-facts-answer"><summary>損害賠償金はすべて消費税の不課税ですか？</summary><p>名称だけでは決まりません。通常の損害補償とは別に、賃貸料や権利使用料等の対価に相当するものは課税対象となる場合があります。国税庁の区分と取引の実質を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-zeikouka.html">法人税等調整額を扱う税効果会計</a></li><li><a href="boki2-kessan.html">決算整理の流れ</a></li><li><a href="boki2-junshisan.html">純資産と配当の仕訳</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-zeikouka.html">税効果会計</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fifth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

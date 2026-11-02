@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-hyojun-genka.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>標準原価計算とは？原価差異・シングルプランを解説【簿記2級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 工業簿記の標準原価計算を初心者向けに解説。標準原価、実際原価、原価差異、直接材料費差異、直接労務費差異、製造間接費差異の考え方を整理します。">
+<title>標準原価計算｜材料・労務費の差異と記帳方法を自作4問で検算｜スタディクエスト</title>
+<meta name="description" content="標準数量と実際数量を分け、材料価格・数量差異と労務費の賃率・時間差異を検算。48個の既存例を残し、シングルとパーシャルの仕訳、製造間接費との違いを整理。">
 <meta name="keywords" content="標準原価計算とは 簿記2級,原価差異,直接材料費差異,直接労務費差異,シングルプラン">
-<meta property="og:title" content="標準原価計算とは？原価差異・シングルプランを解説【簿記2級】">
-<meta property="og:description" content="標準原価計算の全体像を、標準原価・実際原価・原価差異・シングルプランから初心者向けに解説。">
+<meta property="og:title" content="標準原価計算｜材料・労務費の差異と記帳方法を自作4問で検算">
+<meta property="og:description" content="標準数量と実際数量を分け、材料価格・数量差異と労務費の賃率・時間差異を検算。48個の既存例を残し、シングルとパーシャルの仕訳、製造間接費との違いを整理。">
 <meta property="og:url" content="https://study-quest.net/boki2-hyojun-genka.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"標準原価計算とは？原価差異・シングルプランを解説【簿記2級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 工業簿記の標準原価計算を初心者向けに解説。標準原価、実際原価、原価差異、直接材料費差異、直接労務費差異、製造間接費差異の考え方を整理します。","url":"https://study-quest.net/boki2-hyojun-genka.html","datePublished":"2026-05-09","dateModified": "2026-09-11","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "標準原価計算｜材料・労務費の差異と記帳方法を自作4問で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "標準数量と実際数量を分け、材料価格・数量差異と労務費の賃率・時間差異を検算。48個の既存例を残し、シングルとパーシャルの仕訳、製造間接費との違いを整理。", "url": "https://study-quest.net/boki2-hyojun-genka.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -45,183 +44,50 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "差異のプラスは必ず有利ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事は標準−実際の符号で計算するため、正が有利、負が不利です。別の表示方法もあるので、問題の式と有利・不利の表示を読み、実際額が標準を上回るかも確認します。"}}, {"@type": "Question", "name": "標準数量は1個当たりの数量ですか？", "acceptedAnswer": {"@type": "Answer", "text": "差異分析で使う標準数量は、実際の生産量に対応する総量です。1個3kg・100個生産で仕掛品や仕損がなければ300kgです。仕掛品等があるときは投入条件や進捗度も確認します。"}}, {"@type": "Question", "name": "標準原価計算はシングルプランだけですか？", "acceptedAnswer": {"@type": "Answer", "text": "日商2級の区分表にはシングル・プランとパーシャル・プランの両方が記載されています。仕掛品の借方を標準で記録するか、実際を入れるかなど、問題指定の方式を確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 標準原価計算</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年9月11日</p>
-  <h1>標準原価計算とは？<br>原価差異・シングルプランを解説【簿記2級】</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">標準原価計算は、「本来これくらいで作れるはず」という標準原価と、実際にかかった原価を比べて差異を分析する方法です。簿記2級では差異分析が難しく見えますが、最初は「予定と実際のズレを見つける仕組み」と考えると理解しやすくなります。個別・総合原価計算との関係は<a href="boki2-hyojun-vs-jissai.html">標準原価計算と実際原価計算の違い</a>で整理しています。</p>
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">標準原価計算、有利差異・不利差異のプラスマイナスがどっちがどっちか毎回逆に覚えてしまいます……差異分析の言葉自体も難しく感じます。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、めちゃくちゃわかります。でも実はシンプルで、「標準（理想）－実際」を計算するだけです。実際の方が多くかかっていたら結果はマイナス＝損している＝不利差異。実際の方が少なく済んでいたらプラス＝得している＝有利差異。理想と現実、どっちが得したかで考えると迷いません。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">得したか損したかで見るとわかりやすいです！材料費差異が価格差異と数量差異に分かれるのはなぜですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">材料費は「単価×数量」で決まるからです。ズレの原因が「単価が高かった（安かった）のか」「使いすぎた（節約できた）のか」を切り分けたいので、2つに分解します。労務費も同じ発想で「賃率×時間」に分けているだけなので、構造は全部同じですよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>標準原価計算は、標準原価と実際原価を比べて「なぜ原価がズレたか」を分析する方法です。材料・労務費・製造間接費の差異を分けて見るのがポイントです。</div>
-
-  <section class="why-standard" aria-labelledby="why-standard-heading">
-    <h2 id="why-standard-heading">なぜ標準を先に置くのか</h2>
-    <p>実際にかかった原価だけを見ても、それが基準より多いのか少ないのかは分かりません。先に標準原価を置いてから実際原価と比べると、差額を有利・不利として確認できます。</p>
-    <p class="article-source">出典：<a href="https://www.kentei.ne.jp/bookkeeping/35697-2" target="_blank" rel="noopener">日本商工会議所「簿記 出題区分表」</a>（2026年9月11日確認）。同表では、日商簿記2級の工業簿記・原価計算に「標準原価計算」が含まれます。</p>
-  </section>
-
-  <h2>標準原価計算とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-hyojun-genka-map-mobile.svg">
-      <img src="images/boki2-hyojun-genka-map.svg" alt="標準原価計算の差異分析（材料費・労務費・製造間接費）" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="420" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：標準原価と実際原価の差異を3区分（材料費・労務費・製造間接費）で分析する構造</figcaption>
-  </figure>
-  <p>差異は「標準 − 実際」で計算し、プラスなら有利差異・マイナスなら不利差異。3区分それぞれに価格差異・数量差異があります。</p>
-  <p>標準原価計算とは、あらかじめ設定した標準原価を使って製品原価を計算し、実際にかかった原価との差額を分析する方法です。</p>
-  <p>標準原価は、理想論ではなく「通常ならこのくらいで作れるはず」という目標原価です。実際原価と比べることで、材料を使いすぎたのか、作業時間が長すぎたのか、工場費用が多すぎたのかを確認できます。</p>
-
-  <h2>標準原価と実際原価</h2>
-  <table>
-    <tr><th>項目</th><th>意味</th></tr>
-    <tr><td>標準原価</td><td>あらかじめ決めた、製品1個あたりの目標原価</td></tr>
-    <tr><td>実際原価</td><td>実際に材料・労務費・経費として発生した原価</td></tr>
-    <tr><td>原価差異</td><td>標準原価と実際原価の差額</td></tr>
-  </table>
-
-  <div class="formula"><strong>原価差異 = 標準原価 - 実際原価</strong><br>標準より実際が大きければ不利差異、標準より実際が小さければ有利差異です。</div>
-
-  <h2>標準原価計算の流れ</h2>
-  <div class="flow">
-    <div class="flow-item"><strong>標準原価を決める：</strong>標準価格・標準数量・標準賃率・標準時間などを設定する。</div>
-    <div class="flow-item"><strong>完成品の標準原価を計算する：</strong>完成数量に標準原価をかけて製品原価を出す。</div>
-    <div class="flow-item"><strong>実際原価を集計する：</strong>実際に発生した材料費・労務費・製造間接費を集める。</div>
-    <div class="flow-item"><strong>原価差異を分析する：</strong>標準と実際のズレを、価格・数量・賃率・時間などに分けて確認する。</div>
-  </div>
-
-  <h2>直接材料費差異</h2>
-  <p>直接材料費差異は、材料について標準と実際のズレを見る差異です。大きく価格差異と数量差異に分けます。</p>
-  <table>
-    <tr><th>差異</th><th>意味</th></tr>
-    <tr><td>価格差異</td><td>予定より高く買ったか、安く買ったか</td></tr>
-    <tr><td>数量差異</td><td>予定より多く使ったか、少なく使ったか</td></tr>
-  </table>
-  <p>材料費は「単価 × 数量」なので、ズレも単価のズレと数量のズレに分けて考えます。</p>
-
-  <h2>直接労務費差異</h2>
-  <p>直接労務費差異は、作業者の賃金について標準と実際のズレを見る差異です。賃率差異と時間差異に分けます。</p>
-  <table>
-    <tr><th>差異</th><th>意味</th></tr>
-    <tr><td>賃率差異</td><td>予定より時給が高かったか、低かったか</td></tr>
-    <tr><td>時間差異</td><td>予定より作業時間が長かったか、短かったか</td></tr>
-  </table>
-  <p>労務費は「賃率 × 時間」なので、ズレも賃率のズレと時間のズレに分けます。</p>
-
-  <h2>製造間接費差異</h2>
-  <p>製造間接費差異は、工場共通費の予定と実際のズレです。簿記2級では、予算差異・操業度差異などが出てくるため少し重く感じます。</p>
-  <p>ただし入口では、「製造間接費も予定で配賦するため、あとで実際との差額を分析する」と理解できれば十分です。</p>
-
-  <h2>シングルプランとは</h2>
-  <p>シングルプランとは、仕掛品勘定を標準原価だけで記録し、実際原価との差額を原価差異として処理する方法です。</p>
-  <p>標準原価計算では、仕掛品・製品・売上原価を標準原価で流し、差異は別に管理します。これにより、予定どおり作れたかどうかを見やすくします。</p>
-
-  <section class="self-check" aria-labelledby="self-check-heading">
-    <h2 id="self-check-heading">セルフチェック：有利・不利を自分で判定する</h2>
-    <p>これはStudy Questが作成した確認用の小問です。公式問題や教材問題ではありません。答えを見る前に、次の3つを計算してみてください。</p>
-    <ul>
-      <li>製品1個あたりの標準原価：1,250円</li>
-      <li>当月完成品：48個</li>
-      <li>当月の実際原価：58,800円</li>
-    </ul>
-    <ol>
-      <li>完成品の標準原価はいくらでしょうか。</li>
-      <li>「標準原価 − 実際原価」で差異を出すと、プラス・マイナスのどちらでしょうか。</li>
-      <li>この差異は有利差異・不利差異のどちらでしょうか。</li>
-    </ol>
-    <details>
-      <summary>答えと計算手順を開く</summary>
-      <div>
-        <ol>
-          <li>標準原価は 1,250円 × 48個 = 60,000円です。</li>
-          <li>原価差異は 60,000円 − 58,800円 = ＋1,200円です。</li>
-          <li>実際原価の方が標準原価より少ないため、＋1,200円の有利差異です。</li>
-        </ol>
-        <p><strong>検算の順番：</strong>標準の合計を出す → 標準から実際を引く → 符号と実際原価の大小を見て有利・不利を読む、の順に確認します。</p>
-      </div>
-    </details>
-  </section>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>有利差異と不利差異を逆に判断してしまう</li>
-    <li>材料費差異と労務費差異の分解パターンを混同する</li>
-    <li>標準原価と予定原価のイメージを分けられない</li>
-    <li>シングルプランで仕掛品を実際原価で処理してしまう</li>
-  </ul>
-
-  <div class="warn-box"><strong>判断の軸：</strong>標準原価計算は「標準より実際がどうズレたか」を見る論点です。計算式を丸暗記する前に、ズレの原因を価格・数量・時間に分ける感覚を持ちましょう。</div>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>標準原価計算は、標準原価と実際原価のズレを分析する方法</li>
-    <li>実際原価が標準原価より大きいと不利差異</li>
-    <li>直接材料費差異は価格差異と数量差異に分ける</li>
-    <li>直接労務費差異は賃率差異と時間差異に分ける</li>
-    <li>シングルプランでは仕掛品を標準原価で記録する</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 標準原価計算は差異を分けて攻略しよう</h3>
-    <p>スタディクエストで工業簿記の学習時間を記録し、差異分析を少しずつ得点源にしましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">標準原価計算とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">あらかじめ決めた標準原価と実際原価を比べ、差異を分析する原価計算の方法です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">原価差異とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">標準原価と実際原価の差額です。実際原価が標準原価より大きい場合は不利差異、小さい場合は有利差異になります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">シングルプランとは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">仕掛品勘定を標準原価だけで記録し、実際原価との差額を原価差異として処理する方法です。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"標準原価計算とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"あらかじめ決めた標準原価と実際原価を比べ、差異を分析する原価計算の方法です。"}},{"@type":"Question","name":"原価差異とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"標準原価と実際原価の差額です。実際原価が標準原価より大きい場合は不利差異、小さい場合は有利差異になります。"}},{"@type":"Question","name":"シングルプランとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"仕掛品勘定を標準原価だけで記録し、実際原価との差額を原価差異として処理する方法です。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-sogo-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">前の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">総合原価計算とは？月末仕掛品の計算</div></a>
-  <a href="boki2-chokusetsu-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">次の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">直接原価計算とは？CVP分析と損益分岐点</div></a>
-  <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">工業簿記とは？商業簿記との違い</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>標準原価計算｜材料・労務費の差異と記帳方法を自作4問で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>標準原価計算では、実際の生産量に対応する標準の材料数量・作業時間を求め、実際と比べます。<strong>標準単価と標準数量、実際単価と実際数量</strong>を別々に並べると、差異をどの掛け算で分けるか確認できます。</p>
+<div class="sq-facts-note"><strong>例題の約束</strong><p>すべて編集部の架空例です。差異は「標準−実際」の符号で表し、正なら有利、負なら不利と読みます。金額を正の額で示して有利・不利を添える表示もあるため、符号だけで判断しません。数量・時間には当月の生産量に対応する総量を使い、1個当たりの標準と混ぜません。</p></div>
+<h2>標準は「達成不能な理想」ではない</h2>
+<p>原価計算基準4は、標準原価を、能率を測るために消費量などを設定して計算する原価としています。制度で用いる現実的標準原価には、通常生じる減損や仕損、時間の余裕なども含めます。原価管理だけでなく、棚卸資産・売上原価の計算、予算、記帳にも役立てます。</p>
+<p>日商の2級区分には、標準原価計算のパーシャル・プランとシングル・プランの両方が記載されています。「標準原価計算＝シングルプランだけ」ではありません。</p>
+<h2>まず標準の総額を確認する</h2>
+<section class="sq-facts-exercise"><h3>例題1：既存の48個の確認問題を検算する</h3><p>1個当たり標準原価1,250円、完成48個、実際原価58,800円。期首・期末仕掛品、仕損、ほかの在庫はないものとします。差異はいくらですか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>標準総額は1,250×48＝<strong>60,000円</strong>。60,000−58,800＝<strong>＋1,200円の有利差異</strong>です。元の計算は正しいため残しました。完成品と当月投入額を直接比べられるように、在庫等がない条件を補いました。</p><p>期末仕掛品がある場合は、材料の投入点や加工進捗度を確認して標準数量・時間を求めます。完成個数だけを掛ければ、常に当月全体の標準になるわけではありません。</p></div></details></section>
+<h2>直接材料費：価格差異と数量差異</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">記号</th><th scope="col">この例で使う総量・単価</th></tr></thead><tbody><tr><td>SP：標準消費価格</td><td>200円/kg</td></tr><tr><td>SQ：実際生産量に対する標準消費数量</td><td>100個×3kg＝300kg</td></tr><tr><td>AP：実際消費価格</td><td>210円/kg</td></tr><tr><td>AQ：実際消費数量</td><td>320kg</td></tr></tbody></table></div>
+<p>ここは材料<strong>消費</strong>時点の価格差異の例です。材料の受入時点で価格差異を求める問題では、受入数量を用いるため混同しません。</p>
+<section class="sq-facts-exercise"><h3>例題2：材料費の不利差異7,200円を二つに分ける</h3><p>上のSP・SQ・AP・AQから、材料費総差異、消費価格差異、数量差異を求めてください。すべての材料は当月完成100個に使われ、仕掛品・仕損はありません。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>標準は200×300＝60,000円、実際は210×320＝67,200円。総差異は<strong>−7,200円</strong>です。</p><p>価格差異＝（200−210）×320＝<strong>−3,200円</strong>。数量差異＝（300−320）×200＝<strong>−4,000円</strong>。どちらも不利です。</p><p>−3,200＋（−4,000）＝−7,200で総差異と一致。中間額200×320＝64,000円を置くと、60,000→64,000の数量差4,000円と、64,000→67,200の価格差3,200円に分かれます。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-hyojun-genka-map-mobile.svg?v=20261102"><img src="images/boki2-hyojun-genka-map.svg?v=20261102" alt="材料の標準60,000円から数量差4,000円と価格差3,200円を経て実際67,200円につながる検算図" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>直接労務費：賃率差異と作業時間差異</h2>
+<section class="sq-facts-exercise"><h3>例題3：賃率は有利でも総額は不利になるか</h3><p>標準賃率1,500円/h、1個の標準時間0.5h、完成100個。実際賃率1,480円/h、実際時間55h。期首・期末仕掛品、仕損はありません。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>標準時間は0.5×100＝50h。標準労務費は1,500×50＝75,000円、実際は1,480×55＝81,400円。総差異は<strong>−6,400円（不利）</strong>です。</p><p>賃率差異＝（1,500−1,480）×55＝<strong>＋1,100円（有利）</strong>。作業時間差異＝（50−55）×1,500＝<strong>−7,500円（不利）</strong>。1,100−7,500＝−6,400で一致します。</p><p>賃率が下がっただけで全体を「有利」と決めず、時間の増加も確認します。この差額だけで、誰の責任かや品質への影響までは断定できません。</p></div></details></section>
+<h2>製造間接費を、材料と同じ二分法にしない</h2>
+<p>材料は価格・数量、労務費は賃率・作業時間に分けます。一方、製造間接費は予算・能率・操業度等を、問題指定の方法で分析します。元の図の説明にあった「3区分それぞれに価格差異・数量差異がある」という一般化を訂正しました。</p>
+<p>製造間接費には固定費と変動費、基準操業度、実際操業度、標準操業度が関係します。分析方法を指定しないまま、一つの分解式だけを万能な公式にしません。</p>
+<h2>シングルとパーシャル：仕掛品の入口を比べる</h2>
+<section class="sq-facts-exercise"><h3>例題4：同じ材料差異を、異なる記帳方法で追う</h3><p>例題2の材料費だけを扱う独立した記帳例です。材料勘定は実際額、仕掛品の期首・期末は0で、ほかの原価要素はありません。シングルとパーシャルで入口と完成時の振替を比べてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>シングルでは、仕掛品へ標準60,000円を入れます。借方 仕掛品60,000・材料価格差異3,200・材料数量差異4,000／貸方 材料67,200。完成時は借方 製品60,000／貸方 仕掛品60,000です。</p><p>この例のパーシャルでは、入口を借方 仕掛品67,200／貸方 材料67,200とし、完成時は借方 製品60,000／貸方 仕掛品60,000。その後、借方 材料価格差異3,200・材料数量差異4,000／貸方 仕掛品7,200と整理します。</p><p>いずれも製品60,000円・不利差異7,200円、仕掛品残高0で一致します。標準原価計算でも、仕掛品へ実際原価が入る記帳方法があります。勘定名や処理時点は問題の指定に従います。</p></div></details></section>
+<p>差異を算定した後の会計処理にも条件があります。原価計算基準47では、原則的な売上原価への処理に加え、多額の差異、材料受入価格差異、異常な状態に基づく差異等を区別します。すべてを同じ費用へ無条件に振り替える説明にはしません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">企業会計審議会 原価計算基準：2・4・40〜47、標準の設定と差異分析</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：工業簿記・原価計算の適用区分表</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2021/12/2022_kogen.pdf" target="_blank" rel="noopener">日商工業簿記区分表：2ページ、シングル・パーシャルと原価差異</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>差異のプラスは必ず有利ですか？</summary><p>本記事は標準−実際の符号で計算するため、正が有利、負が不利です。別の表示方法もあるので、問題の式と有利・不利の表示を読み、実際額が標準を上回るかも確認します。</p></details><details class="sq-facts-answer"><summary>標準数量は1個当たりの数量ですか？</summary><p>差異分析で使う標準数量は、実際の生産量に対応する総量です。1個3kg・100個生産で仕掛品や仕損がなければ300kgです。仕掛品等があるときは投入条件や進捗度も確認します。</p></details><details class="sq-facts-answer"><summary>標準原価計算はシングルプランだけですか？</summary><p>日商2級の区分表にはシングル・プランとパーシャル・プランの両方が記載されています。仕掛品の借方を標準で記録するか、実際を入れるかなど、問題指定の方式を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-hyojun-vs-jissai.html">標準原価計算と実際原価計算の分類</a></li><li><a href="boki2-sogo-genka.html">総合原価計算と仕掛品</a></li><li><a href="boki2-bumonbetsu.html">部門別原価計算</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fifth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
