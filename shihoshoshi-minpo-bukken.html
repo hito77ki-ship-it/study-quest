@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/shihoshoshi-minpo-bukken.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>司法書士試験の民法・物権を完全攻略｜法定地上権を設例で徹底解説｜スタディクエスト</title>
-<meta name="description" content="司法書士試験の民法物権を完全解説。不動産物権変動の対抗要件（民法177条）、抵当権と質権の違い、法定地上権の4つの成立要件を具体的な設例つきで解説。">
+<title>司法書士の民法・物権｜根抵当権と法定地上権を自作例で整理｜スタディクエスト</title>
+<meta name="description" content="民法の一次条文で根抵当権の付従性・随伴性と元本確定前の条件を整理。残高0・債権譲渡・法定地上権の自作3問を掲載し、対抗要件と抵当権・質権の違いも確認します。">
 <meta name="keywords" content="司法書士 民法物権,法定地上権,対抗要件 177条,抵当権 質権 違い">
-<meta property="og:title" content="司法書士試験の民法・物権を完全攻略｜法定地上権を設例で徹底解説">
-<meta property="og:description" content="所有権・物権変動・抵当権を、法定地上権の設例つきで整理。">
+<meta property="og:title" content="司法書士の民法・物権｜根抵当権と法定地上権を自作例で整理">
+<meta property="og:description" content="民法の一次条文で根抵当権の付従性・随伴性と元本確定前の条件を整理。残高0・債権譲渡・法定地上権の自作3問を掲載し、対抗要件と抵当権・質権の違いも確認します。">
 <meta property="og:url" content="https://study-quest.net/shihoshoshi-minpo-bukken.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/shihoshoshi-minpo-bukken.png">
@@ -24,16 +24,9 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"司法書士試験の民法・物権を完全攻略｜法定地上権を設例で徹底解説",
-  "image": "https://study-quest.net/screenshots/ogp/shihoshoshi-minpo-bukken.png","description":"不動産物権変動の対抗要件、抵当権と質権の違い、法定地上権の成立要件を具体的な設例つきで解説します。","url":"https://study-quest.net/shihoshoshi-minpo-bukken.html","datePublished":"2026-05-10","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "司法書士の民法・物権｜根抵当権と法定地上権を自作例で整理", "image": "https://study-quest.net/screenshots/ogp/shihoshoshi-minpo-bukken.png", "description": "民法の一次条文で根抵当権の付従性・随伴性と元本確定前の条件を整理。残高0・債権譲渡・法定地上権の自作3問を掲載し、対抗要件と抵当権・質権の違いも確認します。", "url": "https://study-quest.net/shihoshoshi-minpo-bukken.html", "datePublished": "2026-05-10", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"不動産物権変動を第三者に主張するには何が必要ですか？","acceptedAnswer":{"@type":"Answer","text":"不動産の物権変動（所有権の移転など）を第三者に対抗するには登記が必要です（民法177条）。売買契約が成立しても登記をしなければ第三者に所有権を主張できません。"}},
-{"@type":"Question","name":"抵当権と質権の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"抵当権は不動産を担保に取りながら債務者が引き続き使用できます。質権は担保物の占有（引渡し）が設定要件で、債務者は担保物を使用できません。不動産担保では抵当権が一般的です。"}},
-{"@type":"Question","name":"法定地上権はどんな要件で成立しますか？","acceptedAnswer":{"@type":"Answer","text":"①抵当権設定時に建物が存在②抵当権設定時に土地建物が同一所有者③土地・建物の一方または両方に抵当権設定④競売により土地建物の所有者が別々になった、の4要件を満たすと成立します。"}}
-]}
-</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
 body{font-family:'M PLUS 1',sans-serif;color:var(--text);line-height:1.9}a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
@@ -56,138 +49,51 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "根抵当権の付従性と随伴性は同じですか？", "acceptedAnswer": {"@type": "Answer", "text": "同じではありません。付従性は担保する債権の発生・消滅との関係、随伴性は債権の移転との関係です。根抵当権では元本確定前かを先に確認し、398条の2の仕組みと398条の7の債権取得者の扱いを分けます。"}}, {"@type": "Question", "name": "元本確定前に一つの債権を譲り受けると根抵当権を使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "民法398条の7第1項では、元本確定前に根抵当権者から債権を取得した者は、その債権について根抵当権を行使できません。根抵当権自体の譲渡等とは区別します。"}}, {"@type": "Question", "name": "法定地上権の基本例はどのようなものですか？", "acceptedAnswer": {"@type": "Answer", "text": "Aが既存の土地・建物を単独所有し、土地のみに抵当権を設定。その実行で土地をCが取得し建物はAの所有のままなら、民法388条の基本場面です。建物をAが競売で買い直すという設定は不要です。"}}]}
+</script>
+<style>
+/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shihoshoshi.html">司法書士</a> &gt; 物権・抵当権</div>
-  <p class="meta">司法書士 | 公開：2026年5月10日 | 更新日：2026年8月25日（2026年7月10日更新）</p>
-  <h1>司法書士試験の民法・物権を完全攻略<br>法定地上権を設例で徹底解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shihoshoshi.html">司法書士</a></div><p class="meta">司法書士 | 公開：2026年5月10日 | 更新日：2026年11月2日</p><h1>司法書士の民法・物権｜根抵当権と法定地上権を自作例で整理</h1><p class="meta">著者：若葉／スタディクエスト編集部</p>
+<p class="lead">根抵当権の説明では、債権の「発生・消滅」と「譲渡」を分け、元本確定前かを確認します。この記事では付従性と随伴性の混同を避ける自作例と、法定地上権の基本例を扱います。対抗要件・担保物権の入口も一次条文で確認します。</p>
+<div class="sq-facts-note"><strong>先に分ける二つの問い</strong><ul><li>債権残高が一時的に0になったら担保もなくなるのか：付従性の問題。</li><li>債権を他人へ譲ったら、その人が担保を使えるのか：随伴性の問題。</li></ul><p>根抵当権では、とくに<strong>元本確定前</strong>という条件を落とさないでください。「不随伴性」を債権の発生・消滅の説明に使うのは用語の混同です。</p></div>
+<div class="sq-facts-contents"><a href="#root">根抵当権</a><a href="#practice">自作比較問題</a><a href="#land">法定地上権</a><a href="#sources">一次資料</a></div>
+<h2 id="root">根抵当権は一定範囲の不特定債権を担保する</h2>
+<p>民法398条の2は、一定の範囲に属する不特定の債権を、極度額の限度で担保する仕組みを定めています。たとえば継続取引の中で、どの種類の取引から生じる債権を担保するかを定めます。「何でも担保する」という意味ではありません。</p>
+<p>元本確定前は、個々の債権が生じたり弁済で消えたりする継続取引を想定しています。そこで、一つの債権の弁済や一時的な残高0だけを見て、根抵当権が当然に消滅したとはしません。この存在・消滅との関係を付従性の問題として整理します。</p>
+<p>一方、398条の7第1項は、元本確定前に根抵当権者から債権を取得した者が、その債権について根抵当権を行使できないと定めます。これは債権の移転に伴う担保の扱い、すなわち随伴性の問題です。根抵当権自体の譲渡・分割譲渡等とは別に考えます。</p>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/shihoshoshi-minpo-bukken-map-mobile.svg?v=20261102"><img src="images/shihoshoshi-minpo-bukken-map.svg?v=20261102" alt="元本確定前の根抵当権について、残高0の付従性と債権譲渡の随伴性を分ける判断図" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。詳しい条件と根拠は本文で確認してください。</figcaption></figure>
+<h2 id="practice">自作例題：残高0と債権譲渡を区別する</h2>
+<p>次の例は編集部の架空取引です。A社の土地に、Bを根抵当権者とし、A社との売買取引から生じる債権を範囲とする根抵当権を適法に設定・登記したものとします。極度額は600万円、いずれも<strong>元本確定前</strong>で、取引継続中、担保契約の終了や根抵当権の放棄等はない前提です。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">場面</th><th scope="col">考える関係</th><th scope="col">見落としやすい条件</th></tr></thead><tbody><tr><td>売買代金を全部払い、一時的に残高0</td><td>個々の債権の消滅と担保の関係（付従性）</td><td>元本確定前・継続取引中</td></tr><tr><td>Bが100万円の売買代金債権をCに譲渡</td><td>債権移転と担保の関係（随伴性）</td><td>譲渡が元本確定前か、根抵当権自体の譲渡とは別か</td></tr><tr><td>極度額600万円・実際の債権残高100万円</td><td>担保の上限と実際の債務額の区別</td><td>極度額は借金の残高そのものではない</td></tr></tbody></table></div><section class="sq-facts-exercise"><h3>例題1：一時的に残高が0になった</h3><p>A社がBへの売買代金をすべて支払い、債権残高が一時的に0になりました。Bの根抵当権は、それだけで当然に消滅するでしょうか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>この前提では、それだけで当然には消滅しません。</strong>元本確定前の根抵当権は、一定範囲の不特定債権を担保する仕組みです（398条の2）。残高0という一点から、取引終了や根抵当権の消滅を推定しません。この問題は債権の消滅との関係であり、「不随伴性」の説明ではありません。</p></div></details></section><section class="sq-facts-exercise"><h3>例題2：100万円の債権を譲り受けたC</h3><p>別の場面として、BがA社に対する100万円の売買代金債権をCへ譲渡しました。Cは、その取得した債権についてBの根抵当権を行使できるでしょうか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>できません。</strong>元本確定前の債権取得者なので398条の7第1項によります。債権を取得することと、その債権について根抵当権を使えることは別です。根抵当権自体を譲渡したという事実は置いていません。</p><p>極度額600万円という数字を見て「Cが600万円を請求できる」とも言えません。取得した債権は設例上100万円であり、担保の上限が債務額を増やすわけではありません。</p></div></details></section>
+<h2>元本確定後に同じ結論を広げない</h2>
+<p>元本確定は、担保すべき元本の範囲を固定する段階です。確定事由には、根抵当権者による競売申立てと開始等、398条の20が定めるものがあります。単に「今日は借入れがない」「一度支払った」ということと、法的な元本確定は同じではありません。</p>
+<p>398条の7は元本確定前を条件とする規定です。確定後の債権移転に、その結論をそのまま当てはめないでください。設例に確定の時期や事由が書かれていないときは、未確定と決めつけず、前提が不足していることを確認します。本記事は確定後の移転・登記手続の全論点までは扱いません。</p>
+<h2 id="land">法定地上権：土地だけが競売された基本例</h2>
+<p>民法388条は、同一所有者に属する土地とその上の建物について、土地または建物に抵当権が設定され、その実行で所有者が分かれた場合の地上権を定めています。次の例では、建物の建替えや共有、複数順位の抵当権などの複雑な事情はないものとします。</p>
+<section class="sq-facts-exercise"><h3>自作例題3：Aの建物は誰が取得する？</h3><p>Aは土地と、その上に既に存在する建物を単独所有しています。Aが土地のみにBの抵当権を設定し、その抵当権の実行によりCが土地を取得しました。建物はAの所有のままです。この基本場面では法定地上権は成立するでしょうか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>成立する基本場面です。</strong>①設定時に建物があり、②その時点で土地・建物はAの所有、③土地に抵当権が設定され、④その実行で土地C・建物Aに分かれています（388条）。Aが自己の建物を競売で買い直す必要はありません。</p><p>地上権が成立することと、土地を無償で使えることは別です。388条後段は、地代を当事者の請求により裁判所が定める扱いを規定しています。建物の建替え・共有など条件が変わる事例を、この単純例だけで判断しないでください。</p></div></details></section>
+<h2>入口の確認：対抗要件・抵当権・質権</h2>
+<p>177条は、不動産の物権の得喪・変更について、登記をしなければ第三者に対抗できないと定めます。契約当事者間の権利変動と、第三者へ主張するための対抗要件を分けます。ここでいう第三者の範囲や個別の例外は、条文の一文を「誰に対しても」と言い換えるだけでは判断できません。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">制度</th><th scope="col">条文から確認する基本</th><th scope="col">注意点</th></tr></thead><tbody><tr><td>抵当権（369条）</td><td>占有を移転しないで担保に供した不動産から優先弁済を受ける権利</td><td>債務者だけでなく第三者が担保を提供する場合もある</td></tr><tr><td>質権（344条）</td><td>目的物を債権者へ引き渡すことで設定の効力が生じる</td><td>使用収益は対象と規定を区別する。「質権なら誰も使えない」と一律にしない</td></tr><tr><td>不動産質権（356条）</td><td>不動産質権者の用法に従う使用・収益を認める</td><td>動産質権と同じ扱いにせず、設定条件や関連規定も確認</td></tr></tbody></table></div>
+<h2>復習メモは「時点・債権・担保」の3欄に分ける</h2>
+<p>根抵当権の問題では、①いつの行為か（元本確定前／後）、②どの債権が発生・消滅・移転したか、③根抵当権自体に何が起きたかを別に記録します。法定地上権では、抵当権設定時と実行後の土地・建物の所有者を二段に描きます。いずれも、結論を暗記する前に判断に使う事実を分けるための編集部の整理方法です。</p>
 
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li>不動産の物権変動は<strong>登記がなければ第三者に対抗できない</strong>（民法177条）</li>
-      <li>抵当権は<strong>占有を移転せず</strong>、質権は<strong>占有（引渡し）が成立要件</strong></li>
-      <li>法定地上権は<strong>4つの要件</strong>をすべて満たしたときだけ成立する</li>
-      <li>根抵当権は<strong>個々の債権の発生・消滅に付従しない</strong>のが最大の特徴</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    物権の中でも法定地上権は「なぜこんな制度が必要なのか」が分かると一気に楽になる論点です。土地と建物が別々の所有者になってしまう競売の場面を具体的にイメージしながら、4つの要件を1つずつ当てはめていきましょう！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">法定地上権、条文を読んでも「なぜこの制度が必要なのか」がピンときません……。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">具体例で考えましょう。Aが自分の土地の上に自分の建物を建てて、その土地だけに銀行Bのために抵当権を設定したとします。その後、競売で土地はCが、建物はAが取得したとしたら、どうなると思いますか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">えっと……Aの建物が、Cの土地の上に建ったままになってしまう、ということですか？それって建物を壊さないといけないんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">まさにそこが問題になるんです。建物を壊すのは社会経済的に大きな損失なので、法律は「法定地上権」という権利を自動的に発生させて、Aが土地を使い続けられるようにしています。これが法定地上権の存在理由です。ただし、①抵当権設定時に建物が存在②その時点で土地建物が同一所有者③一方または両方に抵当権設定④競売で所有者が別々になった、という4要件をすべて満たす場合だけ成立します。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>❓ 物権で押さえる論点</h2>
-  <p>物権は「誰がその物を支配できるか」を決めるルールです。不動産は登記で対抗要件を具備します。抵当権の設定・法定地上権・根抵当権の仕組みを理解することが、不動産登記法の記述式対策の土台になります。</p>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/shihoshoshi-minpo-bukken-map-mobile.svg">
-    <img src="images/shihoshoshi-minpo-bukken-map.svg" alt="物権・担保物権——対抗要件（登記）と抵当権・根抵当権の頻出論点マップ" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="760" height="380">
-  </picture>
-
-  <table>
-    <tr><th>論点</th><th>見るポイント</th></tr>
-    <tr><td>所有権</td><td>物を全面的に支配する権利</td></tr>
-    <tr><td>物権変動</td><td>売買・相続などで権利が移る場面</td></tr>
-    <tr><td>対抗要件</td><td>第三者に主張するために登記が必要か</td></tr>
-    <tr><td>抵当権</td><td>債権を担保するために不動産につける権利</td></tr>
-    <tr><td>根抵当権</td><td>一定範囲の継続取引を担保する権利</td></tr>
-  </table>
-
-  <h2>📝 設例で見る：法定地上権の4要件</h2>
-  <div class="mondai">
-    <div class="m-label">設例</div>
-    <p>Aが自己所有の土地上に建物を建て、その後銀行Bのために土地のみに抵当権を設定した。その後の競売でCが土地を、Aが建物をそれぞれ取得した。</p>
-  </div>
-  <div class="formula">
-    <strong>法定地上権の4要件</strong><br>
-    ①抵当権設定時に建物が存在：抵当権設定時、すでにAの建物は建っていた ✓<br>
-    ②抵当権設定時に土地建物が同一所有者：どちらもAの所有だった ✓<br>
-    ③土地・建物の一方または両方に抵当権設定：土地にBの抵当権が設定された ✓<br>
-    ④競売により土地建物の所有者が別々になった：競売でCが土地、Aが建物を取得した ✓<br>
-    →<strong>4要件すべて満たすため、法定地上権が成立し、Aは土地を使い続けられる</strong>
-  </div>
-
-  <h2>🔍 物権変動は登記とセットで覚える</h2>
-  <p>司法書士試験では、民法上の権利変動と不動産登記法上の登記手続きがつながります。売買で所有権が移ったら、なぜ所有権移転登記が必要なのか。抵当権を設定したら、なぜ抵当権設定登記をするのか。このつながりを意識しましょう。</p>
-  <div class="tip-box"><strong>対抗要件（民法177条）：</strong>不動産の物権変動を第三者に主張するには登記が必要です。売買契約が成立しても、登記をしなければ第三者に所有権を主張できません。</div>
-
-  <h2>💰 抵当権は「債権回収のための権利」</h2>
-  <p>抵当権は、債務者が弁済できない場合に、不動産から優先的に回収するための権利です。被担保債権、付従性、随伴性、物上代位などの言葉が出てきますが、まずは「お金を貸した側を守る仕組み」と考えると入りやすいです。</p>
-  <table>
-    <tr><th>権利</th><th>占有の移転</th><th>債務者の使用</th></tr>
-    <tr><td>抵当権</td><td>移転しない</td><td>引き続き使用できる</td></tr>
-    <tr><td>質権</td><td>占有（引渡し）が成立要件</td><td>使用できない</td></tr>
-  </table>
-  <p>根抵当権は、不特定の債権を極度額の限度で担保する権利です。個々の債権の発生・消滅に付従しない（不随伴性）点が、通常の抵当権との最大の違いです。</p>
-  <div class="warn-box"><strong>学習のコツ：</strong>物権は図にしないと混乱します。AからBへ売買、BからCへ売買、誰が登記を持っているかを矢印で描きましょう。</div>
-
-  <div class="app-cta"><h3>⚔ 物権を記録しながら固めよう</h3><p>Study Questで民法と登記法の学習時間を分けて積み上げましょう。</p><a href="app.html">無料で学習記録を始める →</a></div>
-
-  <div class="matome">
-    <h3>📋 まとめ：民法物権 早見表</h3>
-    <div class="matome-row"><span class="trigger">対抗要件</span><span class="result">不動産の物権変動は登記が必要（民法177条）</span></div>
-    <div class="matome-row"><span class="trigger">抵当権 vs 質権</span><span class="result">抵当権＝占有移転なし／質権＝占有が成立要件</span></div>
-    <div class="matome-row"><span class="trigger">法定地上権</span><span class="result">4要件すべて満たすと成立</span></div>
-    <div class="matome-row"><span class="trigger">根抵当権</span><span class="result">個々の債権に付従しない（不随伴性）</span></div>
-  </div>
-</div>
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:0 0 32px;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">不動産物権変動を第三者に主張するには何が必要ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">不動産の物権変動（所有権の移転など）を第三者に対抗するには登記が必要です（民法177条）。売買契約が成立しても登記をしなければ第三者に所有権を主張できません。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">抵当権と質権の違いは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">抵当権は不動産を担保に取りながら債務者が引き続き使用できます。質権は担保物の占有（引渡し）が設定要件で、債務者は担保物を使用できません。不動産担保では抵当権が一般的です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">法定地上権はどんな要件で成立しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">①抵当権設定時に建物が存在②抵当権設定時に土地建物が同一所有者③土地・建物の一方または両方に抵当権設定④競売により土地建物の所有者が別々になった、の4要件を満たすと成立します。</div></details>
-</section>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="shihoshoshi-minpo-sosoku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">民法・総則とは？意思表示・代理・時効</div></a>
-  <a href="shihoshoshi-futoki.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">不動産登記法とは？所有権移転・抵当権設定</div></a>
-  <a href="shihoshoshi-kaishaho.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">会社法・商業登記法とは？役員変更登記</div></a>
-  <a href="shihoshoshi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">司法書士ガイド</div></a>
-</div></div></section>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の説明・条文と、編集部の自作例・学習提案を分けて掲載しています。</p><ul><li><a href="https://laws.e-gov.go.jp/law/129AC0000000089#Mp-At_398_2" target="_blank" rel="noopener">e-Gov民法398条の2：根抵当権の仕組み</a></li><li><a href="https://laws.e-gov.go.jp/law/129AC0000000089#Mp-At_398_7" target="_blank" rel="noopener">e-Gov民法398条の7・398条の20：確定前の債権取得と元本確定事由</a></li><li><a href="https://laws.e-gov.go.jp/law/129AC0000000089#Mp-At_388" target="_blank" rel="noopener">e-Gov民法388条：法定地上権</a></li><li><a href="https://laws.e-gov.go.jp/law/129AC0000000089#Mp-At_177" target="_blank" rel="noopener">e-Gov民法177条・344条・356条・369条：対抗要件と担保物権</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>根抵当権の付従性と随伴性は同じですか？</summary><p>同じではありません。付従性は担保する債権の発生・消滅との関係、随伴性は債権の移転との関係です。根抵当権では元本確定前かを先に確認し、398条の2の仕組みと398条の7の債権取得者の扱いを分けます。</p></details><details class="sq-facts-answer"><summary>元本確定前に一つの債権を譲り受けると根抵当権を使えますか？</summary><p>民法398条の7第1項では、元本確定前に根抵当権者から債権を取得した者は、その債権について根抵当権を行使できません。根抵当権自体の譲渡等とは区別します。</p></details><details class="sq-facts-answer"><summary>法定地上権の基本例はどのようなものですか？</summary><p>Aが既存の土地・建物を単独所有し、土地のみに抵当権を設定。その実行で土地をCが取得し建物はAの所有のままなら、民法388条の基本場面です。建物をAが競売で買い直すという設定は不要です。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="shihoshoshi-minpo-sosoku.html">民法総則の学習記事</a></li><li><a href="shihoshoshi-futoki.html">不動産登記法の学習記事</a></li><li><a href="shihoshoshi-kaishaho.html">会社法の役員・代表・決議要件</a></li></ul></section><div class="sq-facts-note"><strong>復習した論点を記録する</strong><p>学んだ内容や次に確認する条件を、学習メモと一緒に残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shihoshoshi-minpo-sosoku.html">前：民法総則</a><a href="shihoshoshi-futoki.html">次：不動産登記法</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-four-article-facts"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
