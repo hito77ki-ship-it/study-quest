@@ -40,13 +40,13 @@ const ARTICLES = {
   'boki3-tobashi-2kyu.html': {label:'簿記3級',        title:'簿記3級を飛ばして2級から受けていい人・ダメな人｜5分でわかる判定チェックリスト'},
   'boki1.html':          {label:'簿記1級',          title:'日商簿記1級の独学合格ガイド', thumb:'images/boki1-balance-map.svg'},
   'boki1-next-exam.html':{label:'簿記1級',           title:'日商簿記1級・次の試験日程と最速ロードマップ', thumb:'images/boki1-start-roadmap.svg'},
-  'boki1-11month-strategy.html':{label:'簿記1級',   title:'今年の11月簿記1級は間に合う？慣らし受験→来年6月本命の2ステップ戦略', thumb:'images/boki1-11month-strategy.svg'},
+  'boki1-11month-strategy.html':{label:"簿記1級", title:"簿記1級の11月試験に間に合う？申込状況と演習から決める学習計画", thumb:'images/boki1-11month-strategy.svg?v=20261102', dialogue:false},
   'boki1-yobikou.html':  {label:'勉強法',           title:'日商簿記1級は予備校と独学どっちがいい？', thumb:'images/boki1-route-map.svg'},
-  'boki1-akirameta-tatenaoshi.html': {label:'簿記1級', title:'簿記1級に落ちた後、何をすればいい？向いてないかもと思ったときの立て直し方'},
+  'boki1-akirameta-tatenaoshi.html': {label:"簿記1級", title:"簿記1級に落ちた後の立て直し｜得点と演習記録から作る再開シート", dialogue:false},
   'boki1-kigyoketsugo-vs-renketsu.html': {label:'簿記1級', title:'企業結合会計と連結会計の違い', thumb:'images/boki1-kigyoketsugo-vs-renketsu-map.svg'},
   'boki1-renketsu-seika.html': {label:'簿記1級',     title:'成果連結｜未実現利益の消去', thumb:'images/boki1-seikarenketsu-strategy-map.svg'},
   'boki1-shasai-teigaku-vs-risokuho.html': {label:'簿記1級', title:'社債｜定額法と利息法の違い', thumb:'images/boki1-shasai-teigaku-vs-risokuho-map.svg'},
-  'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:'簿記1級', title:'圧縮記帳｜直接減額方式と積立金方式の違い', thumb:'images/boki1-asshuku-kicho-map.svg'},
+  'boki1-asshuku-kicho-chokusetsu-vs-tsumitatekin.html': {label:"簿記1級", title:"圧縮記帳の直接減額方式と積立金方式｜仕訳と翌期の自作比較例", thumb:'images/boki1-asshuku-kicho-map.svg?v=20261102', dialogue:false},
   'boki1-sogo-vs-kobetsu-shokyaku.html': {label:'簿記1級', title:'総合償却と個別償却の違い', thumb:'images/boki1-sogo-vs-kobetsu-shokyaku-map.svg'},
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:'簿記1級', title:'退職給付会計｜簡便法と原則法の違い', thumb:'images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg'},
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:'為替予約｜振当処理と独立処理の違い', thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg'},
@@ -172,11 +172,11 @@ const ARTICLES = {
   'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約', thumb:'images/boki2-gaika-map.svg'},
   'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え', thumb:'images/boki2-yukashoken-map.svg'},
   'boki2-arai-kirihanashi.html':   {label:'簿記2級',          title:'有価証券の洗替方式と切放方式の違い', thumb:'images/boki2-arai-kirihanashi-map.svg'},
-  'boki2-shasai.html':             {label:'簿記2級',          title:'社債の発行・利息・償却原価法', thumb:'images/boki2-shasai-map.svg'},
+  'boki2-shasai.html':             {label:"簿記2級", title:"簿記2級の社債は保有側で考える｜満期保有目的債券の自作例題", thumb:'images/boki2-shasai-map.svg?v=20261102', dialogue:false},
   'boki2-noren-vs-fu-no-noren.html': {label:'簿記2級',        title:'のれんと負ののれんの違い', thumb:'images/boki2-noren-vs-fu-no-noren-map.svg'},
   'boki2-kotei-shisan-why.html':   {label:'簿記2級',          title:'定額法と定率法はなぜ存在するのか？', thumb:'images/depreciation-why-map.svg'},
   'boki2-kogyo.html':              {label:'簿記2級',          title:'工業簿記とは・商業簿記との違い', thumb:'images/boki2-kogyo-map.svg'},
-  'boki2-zairyouhi.html':          {label:'簿記2級',          title:'材料費・直接材料費・材料副費', thumb:'images/boki2-zairyouhi-map.svg'},
+  'boki2-zairyouhi.html':          {label:"簿記2級", title:"簿記2級の材料費｜直接・間接・材料副費の違いと自作例題", thumb:'images/boki2-zairyouhi-map.svg?v=20261102', dialogue:false},
   'boki2-roumuhi.html':            {label:'簿記2級',          title:'労務費・直接労務費・賃率差異', thumb:'images/boki2-roumuhi-map.svg'},
   'boki2-keihi.html':              {label:'簿記2級',          title:'経費・外注加工賃・製造間接費', thumb:'images/boki2-keihi-map.svg'},
   'boki2-kobetsu-genka.html':      {label:'簿記2級',          title:'個別原価計算・製造指図書の流れ', thumb:'images/boki2-kobetsu-genka-map.svg'},
@@ -2901,7 +2901,7 @@ function injectArticleInteractionSystem(){
       background:linear-gradient(105deg, var(--sq-surface), var(--sq-surface-strong)) !important;
     }
     details.sq-faq-disclosure[open] > summary{
-      color:var(--sq-accent-bright) !important;
+      color:var(--sq-text,#1A202C) !important;
       padding-left:22px !important;
       background:rgba(140,198,63,.07);
     }
@@ -3929,7 +3929,7 @@ const LEARNING_DIAGNOSTICS = {
   },
   'boki2-zairyouhi.html': {
     prompt: '材料を直接・間接に分ける基準を、一言で説明できますか？',
-    next: '問題を1問選び、「特定製品へ追跡できるか」を先に書く。'
+    next: '問題を1問選び、材料の用途・費目の指定と、製品との関連を確認する。'
   },
   'eiken2.html': {
     prompt: '自分の弱点を「語彙・時間・答案の型」のどれかで言えますか？',
