@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-zeikouka.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>簿記2級の税効果会計とは？一時差異と法人税等調整額を図解で解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 商業簿記の税効果会計を初心者向けに解説。会計上の利益と税法上の所得がなぜズレるのか、一時差異の考え方、法人税等調整額の仕訳までを図解で整理します。">
+<title>簿記2級の税効果会計｜回収可能性・残高差額・永久差異を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="100,000円×30%の既存例を保持。繰延税金資産残高と当期調整額を分け、永久差異がある2例の勘定・税金費用を検算します。">
 <meta name="keywords" content="簿記2級 税効果会計,税効果会計とは,繰延税金資産 簿記2級,法人税等調整額,一時差異">
-<meta property="og:title" content="簿記2級の税効果会計とは？一時差異と法人税等調整額を図解で解説">
-<meta property="og:description" content="簿記2級 商業簿記の税効果会計を、一時差異と法人税等調整額の考え方からやさしく解説。">
+<meta property="og:title" content="簿記2級の税効果会計｜回収可能性・残高差額・永久差異を自作例で確認">
+<meta property="og:description" content="100,000円×30%の既存例を保持。繰延税金資産残高と当期調整額を分け、永久差異がある2例の勘定・税金費用を検算します。">
 <meta property="og:url" content="https://study-quest.net/boki2-zeikouka.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の税効果会計とは？繰延税金資産・法人税等調整額を解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 商業簿記の税効果会計を初心者向けに解説。会計上の利益と税法上の所得がなぜズレるのか、一時差異の考え方、法人税等調整額の仕訳までを図解で整理します。","url":"https://study-quest.net/boki2-zeikouka.html","datePublished":"2026-05-09","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の税効果会計｜回収可能性・残高差額・永久差異を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "100,000円×30%の既存例を保持。繰延税金資産残高と当期調整額を分け、永久差異がある2例の勘定・税金費用を検算します。", "url": "https://study-quest.net/boki2-zeikouka.html", "datePublished": "2026-05-09", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -45,166 +44,37 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "一時差異なら全額を資産にできますか？", "acceptedAnswer": {"@type": "Answer", "text": "繰延税金資産は回収可能性等も検討します。本記事の計算は全額回収可能という仮定です。試験で検討を除外することを実務上も不要とは読みません。"}}, {"@type": "Question", "name": "当期の調整額は期末資産残高と同じですか？", "acceptedAnswer": {"@type": "Answer", "text": "期首残高がある場合は通常その増減を使います。損益以外へ直接計上する項目などの取扱いも分けます。"}}, {"@type": "Question", "name": "税効果は一時差異だけですか？", "acceptedAnswer": {"@type": "Answer", "text": "一時差異に加え、税務上の繰越欠損金等も対象になり得ます。永久差異に単純に税率を掛けて繰延税金資産を作る説明とは区別します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 税効果会計</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>簿記2級の税効果会計とは？<br>一時差異と法人税等調整額を図解で解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">税効果会計は、会計上の利益と税法上の所得のズレを調整する論点です。簿記2級では、難しい理論を深追いするより、一時差異・繰延税金資産・法人税等調整額の関係を型で押さえることが大切です。</p>
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">税効果会計、「繰延税金資産」と「繰延税金負債」の違いがもう頭に入ってきません……。うわっ、なんじゃこりゃってなってます。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、めちゃくちゃ分かります。でも見るべきは1点だけ、「将来の税金が減るか、増えるか」です。今は会計と税法にズレがあって多く税金を払っているけど、将来そのズレが解消されて税金が減るなら繰延税金資産。逆に将来増えるなら繰延税金負債、それだけです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なるほど、未来目線で考えるんですね。じゃあどんなズレでも税効果会計の対象になるんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">そこも大事なポイントで、対象になるのは「いつか解消される一時差異」だけです。永久に解消しないズレは対象外。この線引きさえ持てれば、あとは貸倒引当金や減価償却超過額などの例題パターンを繰り返すだけで得点源になりますよ！</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>税効果会計は「会計と税法のズレを、将来の税金の増減として今の決算に反映する処理」です。将来税金が減るなら繰延税金資産、将来税金が増えるなら繰延税金負債です。</div>
-
-  <h2>税効果会計とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-zeikouka-map-mobile.svg">
-      <img src="images/boki2-zeikouka-map.svg" alt="税効果会計——会計利益vs税法所得のズレ→一時差異→繰延税金資産・負債の仕組み" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="420" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：将来減算一時差異→繰延税金資産（節税効果）、将来加算一時差異→繰延税金負債（追加税金）の仕組みと仕訳パターン</figcaption>
-  </figure>
-  <p>税効果会計で最重要なのは「ズレが将来解消されるか」の判断です。将来税金が減る方向なら繰延税金資産、増える方向なら繰延税金負債を計上します。</p>
-  <p>税効果会計とは、会計上の利益と税法上の所得にズレがあるとき、そのズレが将来の税金に与える影響を決算書に反映する会計処理です。</p>
-  <p>会社の利益は、会計ルールで計算する利益と、税金を計算するための所得が必ずしも同じではありません。会計では費用にできても、税法では今期の損金として認められないものがあります。このタイミングのズレを調整するのが税効果会計です。</p>
-
-  <h2>会計上の利益と税法上の所得</h2>
-  <table>
-    <tr><th>項目</th><th>意味</th><th>目的</th></tr>
-    <tr><td>会計上の利益</td><td>企業会計のルールで計算した利益</td><td>会社の経営成績を示す</td></tr>
-    <tr><td>税法上の所得</td><td>税法のルールで計算した課税対象</td><td>法人税を計算する</td></tr>
-  </table>
-  <p>税金は会計上の利益そのものにかかるのではなく、税法上の所得にかかります。そのため、会計と税法のズレがあると、法人税等の金額と会計上の利益が対応しにくくなります。</p>
-
-  <h2>一時差異とは</h2>
-  <p>一時差異とは、会計と税法のズレのうち、将来解消されるものです。税効果会計で扱う中心はこの一時差異です。</p>
-  <table>
-    <tr><th>例</th><th>内容</th></tr>
-    <tr><td>貸倒引当金の損金不算入</td><td>会計では費用にしたが、税法ではまだ損金として認められない</td></tr>
-    <tr><td>減価償却超過額</td><td>会計上の減価償却費が、税法で認められる限度を超えた</td></tr>
-    <tr><td>その他有価証券評価差額</td><td>評価差額が将来の税金に影響する</td></tr>
-  </table>
-  <p>ポイントは「今はズレているが、将来どこかで解消する」ということです。永久に解消しないズレは、原則として税効果会計の対象ではありません。</p>
-
-  <h2>繰延税金資産とは</h2>
-  <p>繰延税金資産とは、将来の税金を減らす効果があるものです。今期は税法上の所得が多くなり、税金を多く払うけれど、将来その分だけ税金が少なくなる場合に認識します。</p>
-  <div class="formula"><strong>繰延税金資産 = 将来減算一時差異 × 法定実効税率</strong></div>
-  <p>「将来、税金が減る権利のようなもの」と考えると理解しやすいです。</p>
-
-  <h2>繰延税金負債とは</h2>
-  <p>繰延税金負債とは、将来の税金を増やす効果があるものです。今期の税金は少なくなるけれど、将来その分だけ税金が増える場合に認識します。</p>
-  <div class="formula"><strong>繰延税金負債 = 将来加算一時差異 × 法定実効税率</strong></div>
-  <p>「将来、税金を追加で払う義務のようなもの」と考えると、繰延税金資産との違いが見えます。両者の見分け方は<a href="boki2-kurinobe-shisan-vs-fusai.html">繰延税金資産と繰延税金負債の違い</a>でさらに詳しく解説しています。</p>
-
-  <h2>法人税等調整額とは</h2>
-  <p>法人税等調整額とは、税効果会計によって法人税等を調整するための損益項目です。繰延税金資産や繰延税金負債を認識するときに使います。</p>
-  <table>
-    <tr><th>状況</th><th>借方</th><th>貸方</th></tr>
-    <tr><td>繰延税金資産を計上する</td><td>繰延税金資産</td><td>法人税等調整額</td></tr>
-    <tr><td>繰延税金負債を計上する</td><td>法人税等調整額</td><td>繰延税金負債</td></tr>
-  </table>
-
-  <h2>例題で確認</h2>
-  <p>貸倒引当金の損金不算入額が100,000円あり、法定実効税率が30%だったとします。この差異は将来減算一時差異なので、繰延税金資産を計上します。</p>
-  <div class="formula"><strong>繰延税金資産 = 100,000円 × 30% = 30,000円</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>繰延税金資産</td><td>30,000</td><td>法人税等調整額</td><td>30,000</td></tr>
-    </table>
-  </div>
-  <p>この仕訳により、将来税金が減る効果を資産として認識し、当期の税金費用を調整します。</p>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>会計上の利益と税法上の所得を同じものとして考えてしまう</li>
-    <li>一時差異と永久差異を混同する</li>
-    <li>将来税金が減るのに繰延税金負債を使ってしまう</li>
-    <li>法人税等調整額の借方・貸方を逆にする</li>
-    <li>一時差異に税率をかけず、そのまま仕訳してしまう</li>
-  </ul>
-
-  <div class="warn-box"><strong>判断の軸：</strong>税効果会計は「将来の税金が減るか、増えるか」で考えると崩れません。将来減るなら資産、将来増えるなら負債です。</div>
-
-  <h2>勉強の順番</h2>
-  <ol>
-    <li>会計上の利益と税法上の所得が違うことを理解する</li>
-    <li>一時差異の意味を押さえる</li>
-    <li>将来減算一時差異と繰延税金資産をセットで覚える</li>
-    <li>将来加算一時差異と繰延税金負債をセットで覚える</li>
-    <li>法人税等調整額の仕訳を反復する</li>
-  </ol>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>税効果会計は、会計と税法のズレを調整する会計処理</li>
-    <li>税効果会計で扱う中心は、将来解消される一時差異</li>
-    <li>将来税金が減る効果は繰延税金資産</li>
-    <li>将来税金が増える効果は繰延税金負債</li>
-    <li>法人税等調整額は、税効果会計による税金費用の調整に使う</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 税効果会計は「将来の税金」で攻略しよう</h3>
-    <p>スタディクエストで商業簿記の学習時間を記録し、苦手論点を毎日の経験値に変えましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">税効果会計とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">会計上の利益と税法上の所得のズレが将来の税金に与える影響を、決算書に反映する会計処理です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">繰延税金資産とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">将来の税金を減らす効果があるものです。将来減算一時差異に法定実効税率をかけて計算します。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">法人税等調整額とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">税効果会計によって法人税等の費用を調整するための損益項目です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">簿記2級の税効果会計は何から覚えるべきですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">まず一時差異、繰延税金資産、法人税等調整額の関係を押さえましょう。将来税金が減るか増えるかで判断すると理解しやすくなります。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"税効果会計とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"会計上の利益と税法上の所得のズレが将来の税金に与える影響を、決算書に反映する会計処理です。"}},{"@type":"Question","name":"繰延税金資産とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"将来の税金を減らす効果があるものです。将来減算一時差異に法定実効税率をかけて計算します。"}},{"@type":"Question","name":"法人税等調整額とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"税効果会計によって法人税等の費用を調整するための損益項目です。"}},{"@type":"Question","name":"簿記2級の税効果会計は何から覚えるべきですか？","acceptedAnswer":{"@type":"Answer","text":"まず一時差異、繰延税金資産、法人税等調整額の関係を押さえましょう。将来税金が減るか増えるかで判断すると理解しやすくなります。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-kurinobe-shisan-vs-fusai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">繰延税金資産と繰延税金負債の違い</div></a>
-  <a href="boki2-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">連結会計とは？連結修正仕訳とのれん</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-  <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">工業簿記とは？商業簿記との違い</div></a>
-  <a href="boki2-ochita.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">立て直し</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級に落ちた後の対策</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月3日</p><h1>簿記2級の税効果会計｜回収可能性・残高差額・永久差異を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>税効果会計は法人税等を適切に期間配分し、税引前利益と合理的に対応させる手続です。<strong>会計上と税務上の資産・負債の差額</strong>や、その解消時の税金への影響を確認します。現金の還付請求権や、単なる節税策という説明とは分けます。</p>
+<h2>一時差異・永久差異・回収可能性</h2><p>将来減算一時差異は将来の課税所得を減らす方向、将来加算一時差異は増やす方向の差異です。永久差異を同じように繰延処理しません。また税務上の繰越欠損金等も対象になり得るため「一時差異だけが全て」とはしません。繰延税金資産の回収可能性等の条件を満たす必要があります。</p>
+<section class="sq-facts-exercise"><h3>自作例1：元の100,000円×30%の条件を明記</h3><p>貸倒引当金の損金不算入により、将来減算一時差異100,000円が生じた架空例です。差異の解消時に使う税率は30%、全額回収可能、期首繰延税金資産ゼロ、損益を通じた項目のみ。仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>繰延税金資産は100,000×30%＝<strong>30,000円</strong>。借方：繰延税金資産30,000／貸方：法人税等調整額30,000です。この仕訳自体で現金は動きません。</p><p>全額回収可能という仮定を外した実務では回収可能性等を検討します。今回の税率は設例の指定であり、全企業の現行実効税率が一律30%という意味ではありません。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-tax-checked-mobile.svg?v=20261103"><img src="images/boki2-tax-checked.svg?v=20261103" alt="簿記2級の税効果会計｜回収可能性・残高差額・永久差異を自作例で確認の条件付き自作例の図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>期末残高と、当期に計上する増減を分ける</h2>
+<section class="sq-facts-exercise"><h3>自作例2：期末資産30,000円を、そのまま当期調整にする？</h3><p>別の架空例。期首の将来減算一時差異40,000円、当期に10,000円解消し新たに70,000円発生。税率30%一定で全額回収可能。税引前利益500,000円、永久に損金とならない費用20,000円が含まれ、他の差異・税額控除等なし。期末資産・当期調整・税金費用は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>期首資産12,000円。期末差異は40,000−10,000＋70,000＝100,000円、期末資産<strong>30,000円</strong>です。当期の増加は30,000−12,000＝<strong>18,000円</strong>。借方：繰延税金資産18,000／貸方：法人税等調整額18,000で、残高30,000円を追加計上するのではありません。</p><p>課税所得は500,000＋70,000−10,000＋20,000＝580,000円、当期税額174,000円。調整後の税金費用は174,000−18,000＝<strong>156,000円</strong>です。利益500,000×30%＝150,000円との差6,000円は永久差異20,000×30%に対応し、これを繰延税金資産にはしません。</p></div></details></section>
+<p>純資産へ直接計上する評価差額の税効果等は、損益の法人税等調整額を使うこの例と区別します。試験年度の範囲と、将来の改正基準の適用時期も混同しません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：2026年度と2027年度の確定出題区分</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=84" target="_blank" rel="noopener">税効果会計基準：目的・一時差異等</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=43" target="_blank" rel="noopener">税効果会計適用指針6〜9項：回収可能性と相手勘定</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>一時差異なら全額を資産にできますか？</summary><p>繰延税金資産は回収可能性等も検討します。本記事の計算は全額回収可能という仮定です。試験で検討を除外することを実務上も不要とは読みません。</p></details><details class="sq-facts-answer"><summary>当期の調整額は期末資産残高と同じですか？</summary><p>期首残高がある場合は通常その増減を使います。損益以外へ直接計上する項目などの取扱いも分けます。</p></details><details class="sq-facts-answer"><summary>税効果は一時差異だけですか？</summary><p>一時差異に加え、税務上の繰越欠損金等も対象になり得ます。永久差異に単純に税率を掛けて繰延税金資産を作る説明とは区別します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kurinobe-shisan-vs-fusai.html">繰延税金資産と負債</a></li><li><a href="boki2-yukashoken.html">有価証券の評価差額</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="boki2-renketsu.html">連結会計</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki2"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

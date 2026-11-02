@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/boki2-software.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記2級】ソフトウェアの会計処理を完全解説｜自社利用ソフトウェアの資産計上・月割償却を徹底解説｜スタディクエスト</title>
-<meta name="description" content="簿記2級のソフトウェア（無形固定資産）を例題つきで完全解説。研究開発費と自社利用ソフトウェアの判断基準、ソフトウェア償却の月割計算まで試験頻出ポイントをわかりやすく解説。※市場販売目的ソフトウェアは1級の出題範囲のため参考情報として扱っています。">
-<meta property="og:title" content="【簿記2級】ソフトウェア・研究開発費・無形固定資産を完全解説">
-<meta property="og:description" content="費用か資産か？研究開発費と自社利用ソフトウェアの判断基準・月割計算まで試験頻出を完全網羅。">
+<title>簿記2級のソフトウェア｜資産計上・導入費用・使用開始を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="研究開発費500,000円と購入800,000円の既存例を保持。使用開始と取得日、原則5年以内と合理的根拠、設定・研修・データ移行を区別します。">
+<meta property="og:title" content="簿記2級のソフトウェア｜資産計上・導入費用・使用開始を自作例で確認">
+<meta property="og:description" content="研究開発費500,000円と購入800,000円の既存例を保持。使用開始と取得日、原則5年以内と合理的根拠、設定・研修・データ移行を区別します。">
 <meta property="og:url" content="https://study-quest.net/boki2-software.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -23,18 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "【日商簿記2級】ソフトウェアの会計処理を完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "簿記2級のソフトウェア・研究開発費・無形固定資産を解説。研究開発費と自社利用ソフトウェアの判断基準、月割計算まで試験頻出を完全網羅。",
-  "url": "https://study-quest.net/boki2-software.html",
-  "datePublished": "2026-05-09",
-  "dateModified": "2026-08-25",
-  "author": {"@type": "Person", "name": "若葉"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級のソフトウェア｜資産計上・導入費用・使用開始を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "研究開発費500,000円と購入800,000円の既存例を保持。使用開始と取得日、原則5年以内と合理的根拠、設定・研修・データ移行を区別します。", "url": "https://study-quest.net/boki2-software.html", "datePublished": "2026-05-09", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -148,227 +137,42 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自社利用なら必ず資産ですか？", "acceptedAnswer": {"@type": "Answer", "text": "将来の収益獲得又は費用削減が確実と認められるか等の条件で判断します。開発の全支出を無条件に資産へ計上しません。"}}, {"@type": "Question", "name": "利用可能期間は例外なく5年以内ですか？", "acceptedAnswer": {"@type": "Answer", "text": "実務指針は原則5年以内とし、5年を超えるときは合理的根拠を必要としています。本記事の設例は5年の指定です。"}}, {"@type": "Question", "name": "取得した月から償却しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事は使用開始に合わせ月割する指定です。取得日と使用開始日が異なる場合を分け、問題の条件と使用期間を確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; ソフトウェア・無形固定資産</div>
-  <p class="meta">日商簿記2級 | 更新日：2026年8月25日</p>
-  <h1>【日商簿記2級】ソフトウェアの会計処理を完全解説<br><small style="font-size:60%;font-weight:400;color:#718096;">研究開発費と自社利用ソフトウェアの判断・月割計算まで試験頻出を網羅</small></h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <!-- クイックサマリー -->
-  <div class="quick-summary">
-    <div class="quick-card">
-      <div class="quick-card__label">頻出度</div>
-      <div class="quick-card__value">★★★★☆</div>
-      <div class="quick-card__sub">毎回1〜2問</div>
-    </div>
-    <div class="quick-card">
-      <div class="quick-card__label">難易度</div>
-      <div class="quick-card__value">★★★☆☆</div>
-      <div class="quick-card__sub">判断基準が鍵</div>
-    </div>
-    <div class="quick-card">
-      <div class="quick-card__label">最重要論点</div>
-      <div class="quick-card__value">費用 or 資産</div>
-      <div class="quick-card__sub">研究開発費との判断</div>
-    </div>
-  </div>
-
-  <p class="lead">ソフトウェアは「費用で処理するのか、資産として計上するのか」で迷いやすい論点です。<strong>2級で問われるのは、研究開発費（費用）と自社利用ソフトウェア（資産）の判断基準、そして資産計上した後の月割償却</strong>です。この記事でこの2つを完全整理します。</p>
-
-  <div class="tip"><strong>先に結論：</strong>研究開発費は原則として発生時に全額費用処理。自社利用ソフトウェアは<strong>将来の収益獲得・費用削減が確実かどうか</strong>で判断し、確実なら「ソフトウェア（資産）」として計上します。</div>
-  <div class="tip" style="background:#EBF5FB;border-color:#90CAF9;"><strong>📌 出題範囲の注意：</strong>「市場販売目的ソフトウェア」（製品マスター完成前後で処理が変わる論点）は<strong>日商簿記1級の出題範囲</strong>です。2級では出題されないため、この記事では自社利用ソフトウェアを中心に解説し、市場販売目的は末尾で参考情報として簡潔に触れるにとどめます。</div>
-
-  <!-- SVG図解 -->
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-software-map-mobile.svg">
-      <img src="images/boki2-software-map.svg" alt="無形固定資産——研究開発費（費用処理）vsソフトウェア（資産計上）の判定フロー" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="380">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：研究開発費（費用処理）vs 自社利用ソフトウェア（資産計上）の判定フロー</figcaption>
-  </figure>
-
-  <h2>無形固定資産とは</h2>
-  <p>無形固定資産とは、<strong>形はないが長期的に役立つ資産</strong>です。建物や機械のような有形固定資産と同様に、取得原価で計上し、耐用年数にわたって償却します。</p>
-  <table>
-    <tr><th>科目</th><th>内容</th><th>償却科目</th></tr>
-    <tr><td><strong>ソフトウェア</strong></td><td>業務で使うプログラムや販売目的の製品</td><td><strong>ソフトウェア償却</strong></td></tr>
-    <tr><td>特許権</td><td>発明を独占的に使う権利</td><td>特許権償却</td></tr>
-    <tr><td>商標権</td><td>ブランド名やマークを使う権利</td><td>商標権償却</td></tr>
-    <tr><td>のれん</td><td>企業買収時の超過取得原価</td><td>のれん償却</td></tr>
-  </table>
-  <p>有形固定資産の「減価償却費」とは<strong>科目名が違う</strong>点に注意。ソフトウェアの費用科目は必ず<strong>「ソフトウェア償却」</strong>を使います。</p>
-
-  <h2>ソフトウェアの判断（★最重要）</h2>
-  <p>2級試験で最も問われるのは、<strong>「研究開発費（費用）か、自社利用ソフトウェア（資産）か」の判断</strong>です。まずソフトウェアの「目的」を確認し、次に将来の収益獲得・費用削減が確実かどうかで処理を決めます。</p>
-
-  <table class="classify-table">
-    <tr>
-      <th class="th-dark" style="width:26%">種類</th>
-      <th class="th-dark" style="width:30%">会計処理の結論</th>
-      <th class="th-dark">判断の条件・タイミング</th>
-    </tr>
-    <tr class="type-r">
-      <td><strong>① 研究開発費</strong><br><span style="font-size:11px;color:#92400E">（目的を問わず）</span></td>
-      <td><strong>費用処理</strong><br>（研究開発費）</td>
-      <td>発生時に全額費用。資産計上は一切不可。</td>
-    </tr>
-    <tr class="type-g">
-      <td><strong>② 自社利用</strong><br>ソフトウェア</td>
-      <td><strong>資産計上</strong><br>（ソフトウェア）</td>
-      <td>将来の収益獲得 または 費用削減が確実と認められる場合に資産計上。不確実なら費用処理。</td>
-    </tr>
-  </table>
-
-  <div class="trap-box">
-    <div class="trap-title">📌 参考：市場販売目的ソフトウェア（日商簿記1級の出題範囲）</div>
-    <p>市場で販売するソフトウェア（パッケージソフト等）は、「最初の製品マスター（試作品）完成」を境に、完成前は研究開発費（費用）、完成後はソフトウェア（資産）として処理します。ただし<strong>これは日商簿記1級の出題範囲であり、2級では出題されません。</strong>2級の学習では、この論点よりも自社利用ソフトウェアの判断基準・月割償却を優先して固めてください。</p>
-  </div>
-
-  <h2>研究開発費の仕訳</h2>
-  <p>新しい製品・技術・知識を研究・開発する支出は、原則として<strong>発生時に全額「研究開発費」として費用処理</strong>します。将来の収益が不確実なため、資産計上は認められていません。</p>
-
-  <div class="journal-label">仕訳例：研究開発費 500,000円を現金で支払った</div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td style="color:#86EFAC">研究開発費</td><td>500,000</td><td style="color:#93C5FD">現金預金</td><td>500,000</td></tr>
-    </table>
-  </div>
-  <p class="journal-note">自社利用ソフトウェアであっても、研究・試作段階の支出は同様にこの処理になります。</p>
-
-  <h2>ソフトウェアの処理（資産計上）</h2>
-
-  <h3>自社利用ソフトウェアの取得</h3>
-  <p>社内業務システムや会計ソフトなど、<strong>自社で使う目的のソフトウェアを購入または制作した場合</strong>、将来の収益獲得・費用削減が確実と見込まれるなら「ソフトウェア（無形固定資産）」として資産計上します。</p>
-
-  <div class="journal-label">仕訳例：自社利用ソフトウェアを 800,000円で現金購入した</div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td style="color:#86EFAC">ソフトウェア</td><td>800,000</td><td style="color:#93C5FD">現金預金</td><td>800,000</td></tr>
-    </table>
-  </div>
-
-  <h2>ソフトウェア償却の計算方法</h2>
-  <p>資産計上したソフトウェアは、<strong>使用可能期間にわたって定額法・残存価額ゼロで償却</strong>します。費用科目は「<strong>ソフトウェア償却</strong>」であり、有形固定資産の「減価償却費」とは異なります。</p>
-
-  <div class="rule-grid" style="grid-template-columns:1fr;">
-    <div class="rule-card self-use">
-      <div class="rc-title">自社利用ソフトウェア（2級の範囲）</div>
-      <p>耐用年数：<strong>5年以内</strong><br>償却方法：定額法<br>残存価額：ゼロ<br>開始時点：使用開始日から</p>
-    </div>
-  </div>
-
-  <h3>計算例：800,000円・耐用年数5年（自社利用・期首取得）</h3>
-
-  <div class="calc-box">
-    <div class="calc-title">📐 計算根拠</div>
-    <div class="calc-formula">
-      ソフトウェア償却額 = 800,000円 ÷ 5年 = <em>160,000円（年間）</em>
-    </div>
-    <div class="calc-note">残存価額ゼロのため、取得原価をそのまま耐用年数で割ります。有形固定資産の定額法（残存価額ゼロ）と計算方法は同じです。</div>
-  </div>
-
-  <div class="journal-label">仕訳例：ソフトウェア償却 160,000円（期末）</div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td style="color:#86EFAC">ソフトウェア償却</td><td>160,000</td><td style="color:#93C5FD">ソフトウェア</td><td>160,000</td></tr>
-    </table>
-  </div>
-  <p class="journal-note">「減価償却費」ではなく「<strong>ソフトウェア償却</strong>」。科目名の違いが試験頻出のひっかけです。</p>
-
-  <h2>よくあるミスと試験の罠</h2>
-
-  <h3>❌ ミス①：研究開発費をソフトウェアにしてしまう</h3>
-  <p>「ソフトウェアを制作したのだから全部ソフトウェアで計上する」という思い込みが最多失点パターンです。問題文に「研究目的」「試作段階」「研究・開発中」などのキーワードがあれば、その支出は<strong>研究開発費（費用）</strong>です。</p>
-
-  <h3>❌ ミス②：「減価償却費」と「ソフトウェア償却」を混同する</h3>
-  <p>有形固定資産（建物・備品）の償却費は「減価償却費」ですが、ソフトウェアは<strong>「ソフトウェア償却」</strong>という独立した科目を使います。試験では科目名が1字でも違うと不正解になります。</p>
-
-  <h3>❌ ミス③：費用処理か資産計上かを問題文から読み取らない</h3>
-  <p>問題文に「将来の費用削減が見込まれる」「業務効率化に活用する」などのキーワードがあれば資産計上のサイン。「研究目的」「試作段階」は費用処理のサインです。問題文の読み取り精度が合否を分けます。</p>
-
-  <!-- 月割計算の罠：必須要件③ -->
-  <div class="warning-box">
-    <div class="wb-header">
-      <span class="wb-icon">⚠️</span>
-      <span class="wb-title">注意ポイント：期中取得の「月割計算の罠」を見逃すな！</span>
-    </div>
-    <p>試験で最も多いミスは、<strong>期中にソフトウェアを取得したケース</strong>です。期首（4月1日）以外の日付で取得した場合、その期の償却額は1年分ではなく<strong>「使用月数分の月割計算」</strong>が必要です。</p>
-    <p><strong>具体例：</strong>取得原価 800,000円・耐用年数5年・<u>10月1日取得</u>（決算3月31日）</p>
-    <div class="calc-box">
-      <div class="calc-title">📐 月割計算</div>
-      <div class="calc-formula">
-        年間償却額 = 800,000 ÷ 5年 = 160,000円<br>
-        当期使用月数 = 10月〜3月 = <em>6ヶ月</em><br>
-        当期償却額 = 160,000 × 6ヶ月 ÷ 12ヶ月 = <em>80,000円</em>
-      </div>
-      <div class="calc-note">「取得月から決算月まで何ヶ月あるか」を数えます。10月→11月→12月→1月→2月→3月 で6ヶ月。</div>
-    </div>
-    <p>問題文の「取得した日付」は必ずタイムラインでチェックしましょう。期首（4月1日）以外の取得は<strong>月割計算が必要</strong>と疑い、計算式に月数を盛り込んでください。月割を忘れると、計算プロセスごと誤りになる大減点リスクがあります。</p>
-  </div>
-
-  <h2>まとめ：試験直前チェックリスト</h2>
-  <ul class="checklist">
-    <li>研究開発費は発生時に<strong>全額費用処理</strong>。資産計上は一切不可。</li>
-    <li>自社利用ソフトウェアは「将来の収益獲得・費用削減が確実」なら資産計上。</li>
-    <li>償却科目は<strong>「ソフトウェア償却」</strong>（減価償却費ではない）。</li>
-    <li>自社利用：耐用年数<strong>5年以内</strong>・定額法・残存価額ゼロ。</li>
-    <li>期中取得は<strong>月割計算</strong>を忘れずに。問題文の取得日付を必ず確認。</li>
-    <li>「市場販売目的ソフトウェア」（製品マスター完成前後の切り替え）は<strong>1級の範囲</strong>。2級では出題されない。</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 無形資産は「費用か資産か」の判断で差がつく</h3>
-    <p>研究開発費か自社利用ソフトウェアか、月割かどうか——<br>問題文の読み取り精度が得点を左右します。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">ソフトウェアはどの資産区分に分類されますか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">ソフトウェアは無形固定資産に分類されます。有形固定資産（建物・備品）と同様に取得原価で計上し、耐用年数にわたって「ソフトウェア償却」で費用化します。費用科目が「減価償却費」ではなく「ソフトウェア償却」である点が試験頻出のひっかけです。</p>
-      </div>
-    </div>
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">ソフトウェアの償却方法・耐用年数は？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">定額法・残存価額ゼロで償却します。自社利用ソフトウェアの耐用年数は5年以内です。計算は「取得原価 ÷ 耐用年数」で求めます。期中取得の場合は「年間償却額 × 使用月数 ÷ 12」の月割計算が必要です。</p>
-      </div>
-    </div>
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">研究開発費とソフトウェアはどう違いますか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">研究開発費は発生時に全額費用処理します。自社利用ソフトウェアは「将来の収益獲得・費用削減が確実」と認められる場合に資産計上します。この判断が2級試験の最重要ポイントです。なお、市場販売目的ソフトウェア（製品マスター完成前後で処理が変わる論点）は1級の出題範囲のため、2級では問われません。</p>
-      </div>
-    </div>
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">期中にソフトウェアを取得した場合の償却はどう計算しますか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">期中取得の場合は月割計算が必要です。「取得原価 ÷ 耐用年数 × 使用月数 ÷ 12」で計算します。例えば10月1日取得（決算3月31日）なら使用月数は6ヶ月、年間償却額の半分が当期の償却額になります。問題文の取得日を必ず確認し、期首（4月1日）以外の取得は月割計算を行ってください。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月3日</p><h1>簿記2級のソフトウェア｜資産計上・導入費用・使用開始を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>ソフトウェアは利用目的と支出の性質を確認します。研究開発に該当する部分は発生時に費用処理し、自社利用では将来の収益獲得又は費用削減が確実と認められるか等を判断します。「効率化という語があれば必ず資産」「制作したら全額資産」とはしません。</p>
+<div class="sq-facts-note"><strong>原則と、設例の指定を区別します</strong><p>実務指針21項は、自社利用の償却は一般に定額法が合理的で、利用可能期間は原則5年以内、5年を超える場合は合理的根拠を必要としています。「例外なく5年以内」「減価償却という呼び方は誤り」という説明を訂正しました。解答科目は問題の指定を確認します。</p></div>
+<h2>研究開発と、自社利用の取得</h2>
+<section class="sq-facts-exercise"><h3>自作例1：元の500,000円と800,000円を区別</h3><p>新技術の研究開発費500,000円と、将来の費用削減が確実と認められる完成済み自社利用ソフトウェア購入800,000円を現金で支払いました。付随費用なし。処理は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>研究開発分は借方：研究開発費500,000／貸方：現金500,000。購入分は借方：ソフトウェア800,000／貸方：現金800,000です。ソフトウェア制作費でも研究開発に該当する部分を一律に資産にしません。</p><p>市場販売目的の制作では、製品マスターの研究開発とそれ以後の制作等を分ける別の論点があります。「完成後のあらゆる費用が資産」とはしません。級別の範囲は公式区分表で確認します。</p></div></details></section>
+<h2>必要な設定、データ移行、研修は同じではない</h2>
+<section class="sq-facts-exercise"><h3>自作例2：導入に払った150,000円を全て資産にする？</h3><p>購入ソフトウェア800,000円のほか、取得に必要な設定100,000円、旧データのコンバート30,000円、操作研修20,000円を支払いました。重要性による簡便処理は採らず、他の支出なし。資産計上額は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>実務指針14・16項の区分に従い、購入800,000＋必要設定100,000＝<strong>900,000円</strong>をソフトウェアへ。コンバート30,000円と研修20,000円、合計<strong>50,000円</strong>は発生年度の費用とします。</p><p>「導入に必要だった」という共通点だけで950,000円を全て資産にしません。設定費の重要性が乏しい場合等の取扱いは、この設例と別に確認します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-software-checked-mobile.svg?v=20261103"><img src="images/boki2-software-checked.svg?v=20261103" alt="簿記2級のソフトウェア｜資産計上・導入費用・使用開始を自作例で確認の条件付き自作例の図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>償却は使用開始の条件を読む</h2>
+<section class="sq-facts-exercise"><h3>自作例3：10月取得と、10月使用開始は同じ？</h3><p>元の購入800,000円・利用期間5年・残存ゼロ・定額法の例。3月末決算で使用開始月から月割すると指定されています。Aは10月1日取得・使用開始、Bは10月1日取得・翌1月1日使用開始です。当期償却は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>年間は800,000÷5＝160,000円。Aは6か月で<strong>80,000円</strong>、Bは3か月で<strong>40,000円</strong>です。取得日だけでBも6か月と数えません。</p><p>解答科目を「ソフトウェア償却」とする指定なら、借方：ソフトウェア償却／貸方：ソフトウェアで各額を記録します。実務指針自体はソフトウェアの減価償却という表現も用いており、あらゆる文脈で「減価償却」が誤りなのではありません。</p></div></details></section>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：2026年度と2027年度の確定出題区分</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=82" target="_blank" rel="noopener">研究開発費等会計基準：費用処理・自社利用</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=136" target="_blank" rel="noopener">実務指針11〜17・21項：計上時点・導入費用・償却</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>自社利用なら必ず資産ですか？</summary><p>将来の収益獲得又は費用削減が確実と認められるか等の条件で判断します。開発の全支出を無条件に資産へ計上しません。</p></details><details class="sq-facts-answer"><summary>利用可能期間は例外なく5年以内ですか？</summary><p>実務指針は原則5年以内とし、5年を超えるときは合理的根拠を必要としています。本記事の設例は5年の指定です。</p></details><details class="sq-facts-answer"><summary>取得した月から償却しますか？</summary><p>本記事は使用開始に合わせ月割する指定です。取得日と使用開始日が異なる場合を分け、問題の条件と使用期間を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kotei-shisan.html">有形固定資産の取得と処分</a></li><li><a href="boki2-noren-vs-fu-no-noren.html">のれんとの区別</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kotei-shisan.html">固定資産</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki2"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

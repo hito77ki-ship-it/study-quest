@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/boki2-sogo-genka.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【簿記2級】総合原価計算を完全解説｜ボックス図・平均法・先入先出法を例題つきで攻略｜スタディクエスト</title>
-<meta name="description" content="簿記2級 総合原価計算を完全解説。材料費と加工費を別々のボックス図で計算する方法、平均法・先入先出法の違い、月末仕掛品の完成品換算量まで、試験で確実に得点できる実戦解説。">
+<title>簿記2級の総合原価計算｜平均法・先入先出法と材料投入点を4例で確認｜スタディクエスト</title>
+<meta name="description" content="元の平均法・先入先出法3例を保持して検算。材料は常に始点投入という説明を訂正し、同じ数量で終点投入なら月末材料費がゼロとなる比較例を掲載。">
 <meta name="keywords" content="総合原価計算 ボックス図 簿記2級,平均法 先入先出法 違い,完成品換算量 計算,月末仕掛品 材料費 加工費">
-<meta property="og:title" content="【簿記2級】総合原価計算を完全解説｜ボックス図・平均法・先入先出法">
-<meta property="og:description" content="材料費と加工費を2つのボックス図で分けて計算する実戦解法。平均法・先入先出法を例題つきで攻略。">
+<meta property="og:title" content="簿記2級の総合原価計算｜平均法・先入先出法と材料投入点を4例で確認">
+<meta property="og:description" content="元の平均法・先入先出法3例を保持して検算。材料は常に始点投入という説明を訂正し、同じ数量で終点投入なら月末材料費がゼロとなる比較例を掲載。">
 <meta property="og:url" content="https://study-quest.net/boki2-sogo-genka.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】総合原価計算を完全解説｜ボックス図・平均法・先入先出法",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"材料費と加工費を2つのボックス図で分けて計算する実戦解法。平均法・先入先出法を例題つきで攻略。","url":"https://study-quest.net/boki2-sogo-genka.html","datePublished":"2026-05-09","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の総合原価計算｜平均法・先入先出法と材料投入点を4例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "元の平均法・先入先出法3例を保持して検算。材料は常に始点投入という説明を訂正し、同じ数量で終点投入なら月末材料費がゼロとなる比較例を掲載。", "url": "https://study-quest.net/boki2-sogo-genka.html", "datePublished": "2026-05-09", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -201,493 +200,43 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "材料費には進捗度を使わないのですか？", "acceptedAnswer": {"@type": "Answer", "text": "始点全量投入なら開始済みの仕掛品は材料100%ですが、終点投入や平均投入等では条件が変わります。材料の投入点・消費割合を確認します。"}}, {"@type": "Question", "name": "平均法は月初を無視しますか？", "acceptedAnswer": {"@type": "Answer", "text": "原価には月初原価を含めます。平均単価の分母を完成品と月末換算量から作る際に、月初数量を重ねて足さないという意味です。"}}, {"@type": "Question", "name": "合計額が合えば配分も正しいですか？", "acceptedAnswer": {"@type": "Answer", "text": "合計の一致だけでは完成品と仕掛品の配分を保証しません。投入点・換算量・単価・配分先も照合します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 総合原価計算</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>【簿記2級】総合原価計算を完全解説<br>ボックス図・平均法・先入先出法を例題つきで攻略</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <figure style="margin:24px 0;">
-    <img src="images/hero-sogo-genka.jpg" alt="総合原価計算の大量生産ラインをイメージしたRPG風イラスト" style="width:100%;border-radius:14px;display:block;" loading="lazy" width="1600" height="900">
-  </figure>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300" loading="lazy"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    正直に告白すると、総合原価計算を初めて勉強したとき、私は「材料費と加工費、なんで計算方法が違うの…？」と全く腑に落ちないまま、ボックス図を1枚にまとめて計算して盛大に爆死しました（笑）。おまけに「完成品換算量」という謎ワードが出てきた瞬間、「うわっ、なんじゃこりゃ……日本語のはずなのに1ミリも意味がわからん！」と本気で固まったのを今でも覚えています。<br>
-    でも実は、材料費と加工費の違いは「電気代（加工費）は使った分だけ発生するけど、材料は最初にドバッと全部投入する」というたった1つの前提を知っていれば一瞬で腑に落ちる話でした。この記事では、当時の私がつまずいたポイントを全部つぶしながら、ボックス図を2枚に分けて解く"型"を一緒に叩き込んでいきます！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">ノートに材料費用と加工費用のボックスを二つ描き、どちらが最初に投入されるかを書き込んでください。計算を始める前のこの30秒で、総合原価計算の見取り図が整います。</p>
-  </div>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>ボックス図を2つ書く</strong>——「材料費用」と「加工費用」は必ず別々のボックス図で計算する</li>
-      <li><strong>材料費は進捗度なし・加工費は進捗度あり</strong>——月末仕掛品の換算量の求め方が違う</li>
-      <li><strong>平均法＝月初も混ぜて割る、先入先出法＝当月分だけで割る</strong>——分母の作り方が鍵</li>
-      <li><strong>答えの検算</strong>——完成品原価＋月末仕掛品原価＝総投入原価（ズレたら必ずどこかが間違い）</li>
-    </ul>
-  </div>
-
-  <p class="lead">総合原価計算は「同じ製品を大量に作るとき、1か月分の費用を完成品と作りかけ（月末仕掛品）に分ける計算」です。試験で確実に点を取るには、ボックス図（T字勘定）を使った手順を体に覚え込ませることが最重要です。この記事では材料費と加工費を分けた正しい解法を例題つきで完全解説します。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">完成品換算量って何度見ても意味がわかりません。なぜ月末仕掛品をそのまま数えちゃダメで、わざわざ換算しないといけないんですか……？答案用紙を前にすると毎回手が止まります。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚、私も最初まったく同じでした。月末仕掛品は「作りかけ」なので、工場の電気代（加工費）を完成品と同じように100%使ったわけじゃありません。50%しか進んでいないなら「半分の電気代しか使っていない」ので、半分の数量として計算します。これが完成品換算量です——焦らなくて大丈夫、一緒に整理しましょう。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">でも材料費は換算量を使わないんですよね？同じ「月末仕掛品」なのに、材料費と加工費で扱いが違うのがまだしっくりきません……</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">材料は製造の最初（始点）に全部ドバッと入れるので、50%しか進んでいなくても材料はもう100%使い切っています。だから月末仕掛品の材料費は「完成品と同じ個数分」として計算します。材料費と加工費で扱いが違う——これが総合原価計算の最大のポイントです。この1点さえ腹落ちすれば、あとはボックス図を埋めるだけの単純作業になりますよ！</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>🏭 個別原価計算との違い——総合原価計算はどんな製品に使う？</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki2-sogo-genka-map-mobile.svg">
-    <img src="images/boki2-sogo-genka-map.svg" alt="総合原価計算の材料費・加工費ボックス図と平均法・先入先出法の解法マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="400" loading="lazy">
-  </picture>
-
-  <p>総合原価計算の核心は「材料費と加工費で月末仕掛品の換算量の計算が違う」点です。材料費は始点で全量投入なので進捗度を掛けず、加工費は進捗度を掛けた換算量で計算します。</p>
-
-  <table>
-    <tr><th>項目</th><th>個別原価計算</th><th>総合原価計算</th></tr>
-    <tr><td>生産形態</td><td>受注生産（注文を受けてから作る）</td><td>大量生産（同じ製品を継続して作る）</td></tr>
-    <tr><td>原価の集め方</td><td>製造指図書（注文）ごと</td><td>1か月などの期間でまとめる</td></tr>
-    <tr><td>主な問い</td><td>注文Aにいくらかかったか？</td><td>完成品と月末仕掛品に原価をどう分けるか？</td></tr>
-    <tr><td>代表的な業種</td><td>建設業・造船・特注機械</td><td>食品・化学品・日用品製造</td></tr>
-  </table>
-
-  <div class="tip-box"><strong>💡 身近な例で言うと：</strong><br>
-  回転寿司でアルバイトをしたことがある人なら、レーンに同じ規格のお寿司が次々と流れてくる、あの光景を思い浮かべてみてください。あれはまさに「同じ製品を継続して大量生産する」総合原価計算の典型例です。<br>
-  厨房の仕事に置き換えると——シャリやネタなどの材料費、握る職人さんの労務費（人件費）、厨房設備・光熱費などの経費、この3つが積み重なって1皿のお寿司の原価になります。そして「シャリは握ったけど、まだネタを乗せていない」状態はまさに<strong>仕掛品</strong>（作りかけ・加工進捗度が半分くらいの状態）そのものです。魚をさばいたときに出る端材のロスも、まさに正常減損の考え方に近いものです。<br>
-  （※レジでの接客・会計業務は「製造」ではなく販売活動にあたるため、工業簿記の労務費には含まれません。あくまで<strong>厨房での調理工程だけ</strong>が総合原価計算の対象になる点に注意してください。）
-  </div>
-
-  <h2>⚠️ 最重要：材料費と加工費を「必ず分けて」計算する</h2>
-
-  <p>総合原価計算で最も犯しがちなミスは、材料費と加工費を一緒にして計算してしまうことです。この2つは<strong>月末仕掛品への配分ロジックが根本的に違います</strong>。</p>
-
-  <div class="compare-2">
-    <div class="c2-card a">
-      <div class="c2-title">直接材料費——進捗度は使わない</div>
-      <p style="font-size:13px;color:#374151;margin:0 0 8px;">材料は製造の最初（始点）に全量投入するため、作りかけでも材料は100%消費済み。</p>
-      <p style="font-size:13px;font-weight:700;color:#1D4ED8;margin:0;">月末仕掛品の数量＝そのままの個数</p>
-    </div>
-    <div class="c2-card b">
-      <div class="c2-title">加工費——進捗度を掛ける（換算）</div>
-      <p style="font-size:13px;color:#374151;margin:0 0 8px;">電気代や人件費（加工費）は製造が進むにつれて徐々に発生するため、50%しか進んでいない製品は50%分しか消費していない。</p>
-      <p style="font-size:13px;font-weight:700;color:#276749;margin:0;">月末仕掛品の換算量＝個数×加工進捗度</p>
-    </div>
-  </div>
-
-  <div class="warn-box"><strong>⚠️ 試験での最頻出ミス：</strong>「月末仕掛品200個 進捗度50%」のとき——<br>
-  材料費の分母：200個（そのまま）<br>
-  加工費の分母：200×50%＝100個換算<br><br>
-  この2つの数字を<strong>必ず別々のボックス図で管理</strong>することで、ミスがなくなります。</div>
-
-  <h2>📦 ボックス図の書き方——試験会場で最初に書く「下書き」</h2>
-
-  <figure style="margin:20px 0 0;">
-    <img src="images/sogo-genka-map.png" alt="総合原価計算 ボックス図の読み方と先入先出法の分母分解マップ" style="width:100%;border-radius:12px;" width="1600" height="2347" loading="lazy">
-    <figcaption style="text-align:center;font-size:12px;color:var(--muted);margin-top:8px;">▲ 図解①：2枚のボックス図の構造（平均法・例題2）　図解②：先入先出法の分母3ブロック分解（例題3）</figcaption>
-  </figure>
-
-  <div class="box-guide">
-    <p class="bg-lead">2枚のボックス図は<strong>「材料費用」</strong>と<strong>「加工費用」</strong>のパズルです。どちらも<strong>左の合計（借方）＝ 右の合計（貸方）</strong>が必ず一致します——この法則がすべての計算の土台です。</p>
-    <div class="bg-pair">
-      <div class="bg-card mat">
-        <div class="bg-head">① 材料費ボックス</div>
-        <span class="bg-rule-label">進捗度は不問</span>
-        <p class="bg-note">材料は製造の最初に全部投入。作りかけでも材料はすでに100%消費済みなので、月末仕掛品も<strong>そのままの個数</strong>を使います。</p>
-        <div class="bg-eq">完成個数 ＋ 月末<span class="bg-em">個数</span> ＝ 左の合計</div>
-      </div>
-      <div class="bg-card kak">
-        <div class="bg-head">② 加工費ボックス</div>
-        <span class="bg-rule-label">進捗度を掛けて換算</span>
-        <p class="bg-note">電気代・人件費は工程が進むほど発生。50%しか進んでいなければ50%分しか使っていないので、月末仕掛品は<strong>個数×進捗度</strong>の換算量に変換します。</p>
-        <div class="bg-eq">完成個数 ＋ 月末<span class="bg-em">換算量</span> ＝ 左の合計</div>
-      </div>
-    </div>
-  </div>
-
-  <p>ボックス図は仕掛品勘定のT字形式です。<strong>材料費用・加工費用の2枚を横に並べて書く</strong>のが正しい使い方です。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">ボックス図の構造（2枚組みで書く）</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">【左側（借方）】 月初仕掛品 ＋ 当月投入 = 合計</p>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">【右側（貸方）】 完成品 ＋ 月末仕掛品 = 合計（左と一致）</p>
-    <p style="font-size:13px;color:#C05621;margin:0;font-weight:700;">→ 右側の「完成品」か「月末仕掛品」のどちらかが問われ、逆算で求める</p>
-  </div>
-
-  <h2>📐 ① 基本パターン——月初仕掛品なし（ここを先に完璧にする）</h2>
-
-  <div class="mondai">
-    <div class="m-label">例題1（月初仕掛品なし・平均法）</div>
-    <ul style="margin:8px 0 0 14px;font-size:13px;color:#374151;">
-      <li>完成品数量：400個</li>
-      <li>月末仕掛品：200個（加工進捗度 50%）</li>
-      <li>当月投入 直接材料費：120,000円（始点投入）</li>
-      <li>当月投入 加工費：150,000円</li>
-    </ul>
-  </div>
-
-  <div class="step-list">
-    <div class="step-item"><div class="step-num">1</div><div class="step-body"><strong>月末仕掛品の「数量」と「換算量」を確認する</strong><br>材料費用の月末：200個（進捗度を掛けない）<br>加工費用の月末換算：200個 × 50% ＝ 100個換算</div></div>
-    <div class="step-item"><div class="step-num">2</div><div class="step-body"><strong>材料費のボックス図と加工費のボックス図を2枚書く</strong>（下図）</div></div>
-    <div class="step-item"><div class="step-num">3</div><div class="step-body"><strong>それぞれの「1個あたり単価」を計算する</strong><br>材料費単価：120,000 ÷ 600個 ＝ 200円/個<br>加工費単価：150,000 ÷ 500個換算 ＝ 300円/換算個</div></div>
-    <div class="step-item"><div class="step-num">4</div><div class="step-body"><strong>完成品・月末仕掛品の金額を計算して、材料と加工を合算する</strong></div></div>
-  </div>
-
-  <div class="box-pair">
-    <div class="tbox tbox-mat">
-      <div class="tbox-head">① 材料費ボックス（始点投入）</div>
-      <div class="tbox-body">
-        <div class="tbox-col l">
-          <div class="tbox-col-title">借方（投入）</div>
-          <div class="tbox-item"><span>月初仕掛品</span><span>0個　　0</span></div>
-          <div class="tbox-item"><span>当月投入</span><span>600個　120,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>600個　120,000</span></div>
-          <div class="tbox-item sub"><span>単価：120,000÷600＝</span><span>200円/個</span></div>
-        </div>
-        <div class="tbox-col r">
-          <div class="tbox-col-title">貸方（完成・月末）</div>
-          <div class="tbox-item answer"><span>完成品 400個</span><span>80,000</span></div>
-          <div class="tbox-item"><span>月末仕掛品 200個</span><span>40,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>120,000</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="tbox tbox-kak">
-      <div class="tbox-head">② 加工費ボックス（進捗度で換算）</div>
-      <div class="tbox-body">
-        <div class="tbox-col l">
-          <div class="tbox-col-title">借方（投入）</div>
-          <div class="tbox-item"><span>月初仕掛品</span><span>0換算　　0</span></div>
-          <div class="tbox-item"><span>当月投入</span><span>500換算　150,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>500換算　150,000</span></div>
-          <div class="tbox-item sub"><span>単価：150,000÷500＝</span><span>300円/換算</span></div>
-        </div>
-        <div class="tbox-col r">
-          <div class="tbox-col-title">貸方（完成・月末）</div>
-          <div class="tbox-item answer"><span>完成品 400個</span><span>120,000</span></div>
-          <div class="tbox-item"><span>月末換算 100個分</span><span>30,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>150,000</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="result-box">
-    <div class="r-label">STEP3 合算——最終答え</div>
-    <p>完成品総合原価 ＝ 80,000（材料）＋ 120,000（加工）＝ <strong>200,000円</strong><br>
-    月末仕掛品原価 ＝ 40,000（材料）＋ 30,000（加工）＝ <strong>70,000円</strong><br>
-    検算：200,000 ＋ 70,000 ＝ 270,000 ＝ 120,000 ＋ 150,000 ✓</p>
-  </div>
-
-  <h2>🔁 ② 平均法（月初仕掛品あり）——月初と当月を「混ぜて割る」</h2>
-
-  <p>平均法は、月初仕掛品の原価と当月投入原価を<strong>合計してから</strong>完成品換算量合計で割る方法です。「全期間の平均コストで完成品と月末を評価する」考え方です。</p>
-
-  <div class="mondai">
-    <div class="m-label">例題2（月初仕掛品あり・平均法）</div>
-    <ul style="margin:8px 0 0 14px;font-size:13px;color:#374151;">
-      <li>月初仕掛品：100個（加工進捗度 20%） / 材料費 20,000円・加工費 9,000円</li>
-      <li>完成品数量：400個</li>
-      <li>月末仕掛品：100個（加工進捗度 50%）</li>
-      <li>当月投入 直接材料費：80,000円　加工費：126,000円</li>
-    </ul>
-  </div>
-
-  <div class="step-list">
-    <div class="step-item"><div class="step-num">1</div><div class="step-body"><strong>材料費用の換算量</strong><br>月末仕掛品材料：100個（進捗度不問）<br>分母 ＝ 400（完成）＋ 100（月末）＝ 500個</div></div>
-    <div class="step-item"><div class="step-num">2</div><div class="step-body"><strong>加工費用の換算量</strong><br>月末換算：100 × 50% ＝ 50個換算<br>分母 ＝ 400（完成）＋ 50（月末換算）＝ 450個換算</div></div>
-    <div class="step-item"><div class="step-num">3</div><div class="step-body"><strong>平均法の単価計算（月初＋当月を合算して割る）</strong><br>材料費単価：(20,000 ＋ 80,000) ÷ 500個 ＝ <strong>200円/個</strong><br>加工費単価：(9,000 ＋ 126,000) ÷ 450換算 ＝ <strong>300円/換算個</strong></div></div>
-  </div>
-
-  <div class="keiro-box">
-    <div class="kb-label">🔍 図解①と例題2を紐付ける——加工費ボックスの「430個換算」の正体</div>
-    <p class="kb-text">図解①の加工費ボックス左欄に「当月換算 <strong>430個</strong>」があります。問題文には直接書かれていませんが、左右一致の法則から逆算できます。</p>
-    <div class="kb-steps">
-      <div class="kb-row"><div class="kb-num">①</div><span>貸方（右）の合計 ＝ 完成400個 ＋ 月末換算50個 ＝ <strong>450個換算</strong></span></div>
-      <div class="kb-row"><div class="kb-num">②</div><span>左右は必ず一致するので、借方（左）の合計も <strong>450換算</strong></span></div>
-      <div class="kb-row"><div class="kb-num">③</div><span>借方 ＝ 月初換算20個 ＋ 当月換算 ＝ 450<br>∴ 当月換算 ＝ 450 − 20 ＝ <strong class="kb-highlight">430個換算</strong></span></div>
-    </div>
-    <p class="kb-note">「問題文に載っていない数字」でも、左右一致の法則から逆算できます。また平均法の分母は <strong>450換算</strong>（右合計）ですが、当月投入量は <strong>430換算</strong>——この違いを図解で確認してください。</p>
-  </div>
-
-  <div class="box-pair">
-    <div class="tbox tbox-mat">
-      <div class="tbox-head">① 材料費ボックス（平均法）</div>
-      <div class="tbox-body">
-        <div class="tbox-col l">
-          <div class="tbox-col-title">借方（投入）</div>
-          <div class="tbox-item pass"><span>月初仕掛品 100個</span><span>20,000</span></div>
-          <div class="tbox-item"><span>当月投入</span><span>400個　80,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>500個　100,000</span></div>
-          <div class="tbox-item sub"><span>単価：100,000÷500＝</span><span>200円/個</span></div>
-        </div>
-        <div class="tbox-col r">
-          <div class="tbox-col-title">貸方（完成・月末）</div>
-          <div class="tbox-item answer"><span>完成品 400個</span><span>80,000</span></div>
-          <div class="tbox-item"><span>月末仕掛品 100個</span><span>20,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>100,000</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="tbox tbox-kak">
-      <div class="tbox-head">② 加工費ボックス（平均法）</div>
-      <div class="tbox-body">
-        <div class="tbox-col l">
-          <div class="tbox-col-title">借方（投入）</div>
-          <div class="tbox-item pass"><span>月初仕掛品換算 20個</span><span>9,000</span></div>
-          <div class="tbox-item"><span>当月投入</span><span>430換算　126,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>450換算　135,000</span></div>
-          <div class="tbox-item sub"><span>単価：135,000÷450＝</span><span>300円/換算</span></div>
-        </div>
-        <div class="tbox-col r">
-          <div class="tbox-col-title">貸方（完成・月末）</div>
-          <div class="tbox-item answer"><span>完成品 400個</span><span>120,000</span></div>
-          <div class="tbox-item"><span>月末換算 50個分</span><span>15,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>135,000</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="result-box">
-    <div class="r-label">平均法の最終答え</div>
-    <p>完成品 ＝ 80,000 ＋ 120,000 ＝ <strong>200,000円</strong><br>
-    月末仕掛品 ＝ 20,000 ＋ 15,000 ＝ <strong>35,000円</strong><br>
-    検算：200,000 ＋ 35,000 ＝ 235,000 ＝ (20,000＋9,000) ＋ (80,000＋126,000) ✓</p>
-  </div>
-
-  <div class="tip-box"><strong>平均法の分母を作るとき「月初」の数量を分母に<u>入れない</u>ことに注意。</strong><br>平均法は「合計金額を合計数量で割る」計算です。<br>分母 ＝ 完成品数量 ＋ 月末仕掛品（換算量）——月初仕掛品数量は含めません。</div>
-
-  <h2>🔀 ③ 先入先出法（月初仕掛品あり）——当月分だけで割る</h2>
-
-  <p>先入先出法は「月初仕掛品の原価はそのまま完成品に渡し、当月の投入分だけで新たに単価を計算する」方法です。</p>
-
-  <div class="mondai">
-    <div class="m-label">例題3（月初仕掛品あり・先入先出法）</div>
-    <ul style="margin:8px 0 0 14px;font-size:13px;color:#374151;">
-      <li>月初仕掛品：100個（加工進捗度 40%） / 材料費 20,000円・加工費 15,000円</li>
-      <li>完成品数量：400個</li>
-      <li>月末仕掛品：100個（加工進捗度 60%）</li>
-      <li>当月投入 直接材料費：80,000円　加工費：105,000円</li>
-    </ul>
-  </div>
-
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <strong>先入先出法の分母（当月分だけ！）を計算する</strong><br>
-        <em>材料費の分母：</em>（完成品 − 月初）＋ 月末 ＝ (400 − 100) ＋ 100 ＝ <strong>400個</strong><br>
-        <em>加工費の分母：</em>（月初の残り作業）＋（当月新規完成）＋ 月末換算<br>
-        　月初残り ＝ 100 × (1 − 40%) ＝ 60個換算<br>
-        　当月新規完成 ＝ 400 − 100 ＝ 300個<br>
-        　月末換算 ＝ 100 × 60% ＝ 60個換算<br>
-        　分母合計 ＝ 60 ＋ 300 ＋ 60 ＝ <strong>420個換算</strong>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <strong>当月の単価を計算する（当月投入原価 ÷ 当月の分母）</strong><br>
-        材料費単価：80,000 ÷ 400個 ＝ <strong>200円/個</strong><br>
-        加工費単価：105,000 ÷ 420換算 ＝ <strong>250円/換算個</strong>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <strong>完成品は「月初の原価そのまま」＋「当月分の計算額」を合算する</strong>
-      </div>
-    </div>
-  </div>
-
-  <div class="block-map">
-    <div class="bm-label">📊 図解②と例題3を紐付ける——加工費分母「420個換算」の3ブロック分解</div>
-    <p class="bm-intro">先入先出法の加工費分母 <strong>420個換算</strong> は、「当月に実際に投入した加工費の対象」を3つのブロックに分解して合計したものです。図解②の3色の構造と照合してください。</p>
-    <div class="bm-blocks">
-      <div class="bm-block i1">
-        <div class="bm-num">① 月初残作業分</div>
-        <div class="bm-calc">100 × (1−40%) ＝ <strong>60個換算</strong></div>
-        <div class="bm-desc">月初に40%進んでいた→残り60%を当月に加工した分</div>
-      </div>
-      <div class="bm-plus">＋</div>
-      <div class="bm-block i2">
-        <div class="bm-num">② 当月新規完成分</div>
-        <div class="bm-calc">400 − 100 ＝ <strong>300個</strong></div>
-        <div class="bm-desc">今月ゼロから投入して完成させた個数——加工費を100%使った</div>
-      </div>
-      <div class="bm-plus">＋</div>
-      <div class="bm-block i3">
-        <div class="bm-num">③ 月末仕掛品分</div>
-        <div class="bm-calc">100 × 60% ＝ <strong>60個換算</strong></div>
-        <div class="bm-desc">今月新たに投入して60%まで進めた作りかけの分</div>
-      </div>
-    </div>
-    <div class="bm-total">分母合計 ＝ 60 ＋ 300 ＋ 60 ＝ <strong>420個換算</strong>（先入先出法の加工費分母）</div>
-  </div>
-
-  <div class="box-pair">
-    <div class="tbox tbox-mat">
-      <div class="tbox-head">① 材料費ボックス（先入先出法）</div>
-      <div class="tbox-body">
-        <div class="tbox-col l">
-          <div class="tbox-col-title">借方（投入）</div>
-          <div class="tbox-item pass"><span>月初仕掛品 100個</span><span>20,000</span></div>
-          <div class="tbox-item newitem"><span>当月投入（分母400個）</span><span>80,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>100,000</span></div>
-          <div class="tbox-item sub"><span>当月単価：80,000÷400＝</span><span>200円/個</span></div>
-        </div>
-        <div class="tbox-col r">
-          <div class="tbox-col-title">貸方（完成・月末）</div>
-          <div class="tbox-item answer"><span>完成品（月初分）</span><span>20,000</span></div>
-          <div class="tbox-item answer"><span>完成品（当月300個）</span><span>60,000</span></div>
-          <div class="tbox-item"><span>月末仕掛品 100個</span><span>20,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>100,000</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="tbox tbox-kak">
-      <div class="tbox-head">② 加工費ボックス（先入先出法）</div>
-      <div class="tbox-body">
-        <div class="tbox-col l">
-          <div class="tbox-col-title">借方（投入）</div>
-          <div class="tbox-item pass"><span>月初仕掛品換算 40個</span><span>15,000</span></div>
-          <div class="tbox-item newitem"><span>当月投入（分母420換算）</span><span>105,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>120,000</span></div>
-          <div class="tbox-item sub"><span>当月単価：105,000÷420＝</span><span>250円/換算</span></div>
-        </div>
-        <div class="tbox-col r">
-          <div class="tbox-col-title">貸方（完成・月末）</div>
-          <div class="tbox-item answer"><span>完成品（月初残60換算）</span><span>15,000</span></div>
-          <div class="tbox-item answer"><span>完成品（月初原価）</span><span>15,000</span></div>
-          <div class="tbox-item answer"><span>完成品（当月新規300個）</span><span>75,000</span></div>
-          <div class="tbox-item"><span>月末換算 60個分</span><span>15,000</span></div>
-          <div class="tbox-item total"><span>合　計</span><span>120,000</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="result-box">
-    <div class="r-label">先入先出法の最終答え</div>
-    <p>完成品材料費 ＝ 20,000（月初）＋ 60,000（当月）＝ 80,000円<br>
-    完成品加工費 ＝ 15,000（月初原価）＋ 15,000（月初残り）＋ 75,000（当月新規）＝ 105,000円<br>
-    <strong>完成品総合原価 ＝ 80,000 ＋ 105,000 ＝ 185,000円</strong><br>
-    月末仕掛品 ＝ 20,000 ＋ 15,000 ＝ 35,000円<br>
-    検算：185,000 ＋ 35,000 ＝ 220,000 ＝ (20,000＋15,000) ＋ (80,000＋105,000) ✓</p>
-  </div>
-
-  <h2>⚖️ 平均法 vs 先入先出法——どちらが試験に多い？</h2>
-
-  <table>
-    <tr><th>比較ポイント</th><th>平均法</th><th>先入先出法</th></tr>
-    <tr><td>分母の作り方</td><td>月初も含めた合計数量で割る</td><td>当月投入分だけの数量で割る</td></tr>
-    <tr><td>月初仕掛品の扱い</td><td>当月分と混合して平均化</td><td>月初の原価はそのまま完成品へ</td></tr>
-    <tr><td>計算の難しさ</td><td>比較的シンプル</td><td>分母の作り方が複雑</td></tr>
-    <tr><td>試験での出題</td><td>◎ 頻出</td><td>◎ 頻出（平均法と同レベル）</td></tr>
-  </table>
-
-  <div class="tip-box"><strong>問題文に必ず指定があります。</strong>「平均法で計算しなさい」「先入先出法で計算しなさい」と明記されるので、方法の判断で迷うことはありません。どちらの計算パターンも手順を体に覚え込ませておきましょう。</div>
-
-  <h2>❌ よくあるミス（実戦版）——ここで合否が分かれる</h2>
-
-  <ul>
-    <li><strong>材料費で進捗度を掛けてしまう</strong>——材料は始点投入なので換算量は不要。そのままの個数を使う</li>
-    <li><strong>加工費の進捗度を掛け忘れる</strong>——加工費は必ず「×進捗度」で換算量を出す</li>
-    <li><strong>材料費と加工費を1つのボックス図で計算してしまう</strong>——換算量が違う以上、必ず2枚別々に書く</li>
-    <li><strong>先入先出法の分母に月初仕掛品を含めてしまう</strong>——先入先出法の分母は「当月投入分だけ」で作る</li>
-    <li><strong>検算をしない</strong>——完成品＋月末仕掛品の合計が総投入原価と一致しなければ必ずミスがある</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ Study Quest で総合原価計算を反復練習しよう</h3>
-    <p>ボックス図を書く手順を体に覚え込ませるまで繰り返す——それが合格への最短距離です。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div class="matome">
-    <h3>📋 まとめ：総合原価計算 解き方チェックリスト</h3>
-    <div class="matome-row"><span class="trigger">材料費の月末仕掛品</span><span class="result">進捗度を掛けない——始点投入なのでそのままの個数</span></div>
-    <div class="matome-row"><span class="trigger">加工費の月末仕掛品</span><span class="result">個数 × 加工進捗度 ＝ 換算量を使う</span></div>
-    <div class="matome-row"><span class="trigger">ボックス図</span><span class="result">材料費・加工費を2枚別々に書く（混合厳禁）</span></div>
-    <div class="matome-row"><span class="trigger">平均法の分母</span><span class="result">完成品 ＋ 月末（換算）——月初は分母に含めない</span></div>
-    <div class="matome-row"><span class="trigger">先入先出法の分母</span><span class="result">月初残り換算 ＋ 当月新規完成 ＋ 月末換算（月初の投入量は除く）</span></div>
-    <div class="matome-row"><span class="trigger">検算</span><span class="result">完成品原価 ＋ 月末仕掛品原価 ＝ 総投入原価（月初＋当月）</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">総合原価計算は「ボックス図を2枚埋めるだけ」のパズルです</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">「完成品換算量」に固まっていた頃の私が今の記事を読んだら、きっと肩の力が抜けたと思います。材料費と加工費の前提さえ腹落ちすれば、あとは同じ手順の繰り返しです。次の問題では、完成品換算量だけを先に計算してから、材料費と加工費を別々にボックスへ入れてください。二つの表を一問で完成させられれば、この論点は得点源になります。</p>
-    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-  </div>
-
-  <h2>よくある質問</h2>
-
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 材料費に進捗度を掛けないのはなぜですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">直接材料は製造開始時点（始点）に全量を投入するのが一般的です。作りかけでも材料はすでに100%使われているので、完成品と同じ個数分の材料費が発生しています。そのため月末仕掛品の材料費は「換算なしのそのままの個数」で計算します。</span></div>
-  </div>
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 平均法と先入先出法で答えが違うのはなぜですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">平均法は月初仕掛品の原価と当月投入原価を「混ぜて」平均単価を計算するのに対し、先入先出法は当月投入分だけで単価を計算し、月初仕掛品の原価はそのまま完成品に流します。月初の原価単価と当月の原価単価が異なるとき、2つの方法で完成品原価が変わってきます。</span></div>
-  </div>
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 先入先出法の分母はなぜ複雑になるのですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">「当月に使った加工費はどれだけの数量に使ったか」を正確に数えるためです。月初仕掛品の残り作業分（月初数量×残り進捗度）、当月に新たに投入して完成させた数量、月末仕掛品の換算量の3つを合計します。月初数量そのものは「前月に投入した分」なので含めません。</span></div>
-  </div>
-
-  <div style="margin:40px 0;">
-    <p style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:12px;">関連記事</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <a href="boki2-kobetsu-genka.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">個別原価計算とは？製造指図書の流れ</a>
-      <a href="boki2-seizo-kansetsuhi.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">製造間接費の予定配賦と配賦差異</a>
-      <a href="boki2-seizo-genka-hokokusho.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">製造原価報告書（CR）の書き方</a>
-      <a href="boki2-kogyo.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">工業簿記の全体像まとめ</a>
-      <a href="boki2-hyojun-vs-jissai.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">標準原価計算と実際原価計算の違い</a>
-      <a href="boki2-kotei-betsu-genka.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">工程別総合原価計算とは？累加法の解説</a>
-    </div>
-  </div>
-</div>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月3日</p><h1>簿記2級の総合原価計算｜平均法・先入先出法と材料投入点を4例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>総合原価計算は、期間の製造費用と月初仕掛品原価を、完成品と月末仕掛品へ分ける計算です。原価計算基準24は材料と加工それぞれの完成品換算量を定めています。<strong>材料は必ず始点投入、材料に進捗度は不要</strong>という説明を、投入条件による説明へ訂正しました。</p>
+<div class="sq-facts-note"><strong>次の最初の3例は、材料を始点で全量投入する仮定</strong><p>加工費は進捗に比例し、仕損・減損・追加材料・他勘定振替等はありません。数量と原価の両方を照合します。箱を2枚描くことは整理方法の提案で、必ずその書式でないと解けないという規則ではありません。</p></div>
+<h2>月初なし、平均法、先入先出法の既存3例</h2>
+<section class="sq-facts-exercise"><h3>自作例1：月初仕掛品なしの270,000円を配る</h3><p>完成400個、月末200個・加工50%。当月材料120,000円、加工150,000円。材料は始点全量投入。完成品原価と月末仕掛品は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>材料は400＋200＝600個換算、単価120,000÷600＝200円。加工は400＋200×50%＝500個換算、単価150,000÷500＝300円です。</p><p>完成品は400×200＋400×300＝<strong>200,000円</strong>。月末は200×200＋100×300＝<strong>70,000円</strong>。合計270,000円で総投入と一致します。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>自作例2：月初を含める平均法</h3><p>月初100個・加工20%、材料20,000円・加工9,000円。完成400個、月末100個・加工50%。当月材料80,000円・加工126,000円。材料は始点全量投入。平均法の配分は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>材料総額100,000÷（400＋100）＝200円。加工総額135,000÷（400＋50）＝300円。完成品は80,000＋120,000＝<strong>200,000円</strong>、月末は20,000＋15,000＝<strong>35,000円</strong>です。</p><p>合計235,000＝月初29,000＋当月206,000。加工の当月作業量430個換算と、平均法の分母450個換算は別です。月初原価は含みますが、右側の完成・月末から分母を作った後、月初数量をもう一度加えません。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>自作例3：先入先出法の当月作業420個換算</h3><p>月初100個・加工40%、材料20,000円・加工15,000円。完成400個、月末100個・加工60%。当月材料80,000円・加工105,000円。材料は始点全量投入、月初分は先に全て完成。先入先出法の配分は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>材料の当月分母は400−100＋100＝400個、単価200円。加工は月初残作業100×60%＋当月新規完成300＋月末60＝420個換算、単価250円です。</p><p>完成品材料は月初20,000＋300×200＝80,000円。加工は月初15,000＋月初残作業60×250＋新規完成300×250＝105,000円。完成品合計<strong>185,000円</strong>、月末20,000＋15,000＝<strong>35,000円</strong>。総額220,000円と一致します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-process-checked-mobile.svg?v=20261103"><img src="images/boki2-process-checked.svg?v=20261103" alt="簿記2級の総合原価計算｜平均法・先入先出法と材料投入点を4例で確認の条件付き自作例の図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>同じ数量でも、材料の投入点で配分は変わる</h2>
+<section class="sq-facts-exercise"><h3>自作例4：例1の材料だけを終点投入に変えたら？</h3><p>例1の完成400個、月末200個・加工50%、材料120,000円・加工150,000円を使います。材料だけを工程の終点で全量投入とし、月末仕掛品には未投入とします。他の条件は同じ。配分は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>材料の分母は完成400個のみ、単価300円。完成材料は120,000円、月末材料はゼロです。加工は例1と同じで完成120,000円・月末30,000円。</p><p>完成品合計<strong>240,000円</strong>、月末<strong>30,000円</strong>で総額270,000円は一致します。始点投入の完成200,000円・月末70,000円と、同じ総額でも配分が異なります。総額の一致だけで正しい配分と判定しません。</p></div></details></section>
+<p>途中投入・平均投入、仕損・減損、工程別計算等は各条件を別に読みます。出題頻度や「この型だけで必ず得点」を本記事の4例から推定しません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：2026年度と2027年度の確定出題区分</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準24：材料と加工の換算量・平均法・先入先出法</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>材料費には進捗度を使わないのですか？</summary><p>始点全量投入なら開始済みの仕掛品は材料100%ですが、終点投入や平均投入等では条件が変わります。材料の投入点・消費割合を確認します。</p></details><details class="sq-facts-answer"><summary>平均法は月初を無視しますか？</summary><p>原価には月初原価を含めます。平均単価の分母を完成品と月末換算量から作る際に、月初数量を重ねて足さないという意味です。</p></details><details class="sq-facts-answer"><summary>合計額が合えば配分も正しいですか？</summary><p>合計の一致だけでは完成品と仕掛品の配分を保証しません。投入点・換算量・単価・配分先も照合します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kotei-betsu-genka.html">工程別の受入と月末仕掛品</a></li><li><a href="boki2-kogyo-enshu.html">換算量の論点カード</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kogyo.html">工業簿記</a><a href="boki2-kobetsu-genka.html">個別原価計算</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki2"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
