@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-chokusetsu-genka.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>直接原価計算とは？CVP分析・損益分岐点を解説【簿記2級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 工業簿記の直接原価計算を初心者向けに解説。全部原価計算との違い、変動費・固定費、貢献利益、CVP分析、損益分岐点売上高の考え方を整理します。">
+<title>直接原価計算と全部原価計算｜在庫の固定費と2期間の利益を検算｜スタディクエスト</title>
+<meta name="description" content="変動製造費と販売費、固定費調整を区別。100個生産・80個販売の自作例で利益差12,000円を期末在庫へ照合し、翌期売却後の利益合計まで確認。">
 <meta name="keywords" content="直接原価計算とは 簿記2級,CVP分析,損益分岐点,貢献利益,固定費 変動費">
-<meta property="og:title" content="直接原価計算とは？CVP分析・損益分岐点を解説【簿記2級】">
-<meta property="og:description" content="直接原価計算の全体像を、変動費・固定費・貢献利益・CVP分析から初心者向けに解説。">
+<meta property="og:title" content="直接原価計算と全部原価計算｜在庫の固定費と2期間の利益を検算">
+<meta property="og:description" content="変動製造費と販売費、固定費調整を区別。100個生産・80個販売の自作例で利益差12,000円を期末在庫へ照合し、翌期売却後の利益合計まで確認。">
 <meta property="og:url" content="https://study-quest.net/boki2-chokusetsu-genka.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"直接原価計算とは？CVP分析・損益分岐点を解説【簿記2級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 工業簿記の直接原価計算を初心者向けに解説。全部原価計算との違い、変動費・固定費、貢献利益、CVP分析、損益分岐点売上高の考え方を整理します。","url":"https://study-quest.net/boki2-chokusetsu-genka.html","datePublished":"2026-05-09","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "直接原価計算と全部原価計算｜在庫の固定費と2期間の利益を検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "変動製造費と販売費、固定費調整を区別。100個生産・80個販売の自作例で利益差12,000円を期末在庫へ照合し、翌期売却後の利益合計まで確認。", "url": "https://study-quest.net/boki2-chokusetsu-genka.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -44,151 +43,51 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "直接原価計算は直接費だけを集める方法ですか？", "acceptedAnswer": {"@type": "Answer", "text": "変動費と固定費による区分です。変動する間接製造費も製品原価に含め、変動販売費は製品の在庫原価と分けます。"}}, {"@type": "Question", "name": "全部原価と直接原価の利益差は何で検算しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本例は配賦差異等がなく、全部原価利益＝直接原価利益＋期末在庫の固定製造費−期首在庫の固定製造費で照合します。第1期の差は20個×600円＝12,000円です。"}}, {"@type": "Question", "name": "直接原価の損益を固定費調整なしで財務報告に使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "原価計算基準30は、会計年度末に固定費を期末仕掛品・製品と当年度の売上品へ配賦する取扱いを示しています。内部の利益計画用の表示と区別します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 直接原価計算</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>直接原価計算とは？<br>CVP分析・損益分岐点を解説【簿記2級】</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">直接原価計算は、製品原価を変動費中心に見て、固定費を期間費用として扱う原価計算です。簿記2級では、全部原価計算との違いだけでなく、貢献利益・CVP分析・損益分岐点の計算までつながります。</p>
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">全部原価計算と直接原価計算、名前が似ていて何が違うのか正直よくわかっていません……固定費をどっちに入れるかで利益まで変わるって聞いて、余計に混乱しています。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">わかります、私も最初はそこで固まりました（笑）。ポイントは1つだけ、「固定製造間接費を製品の原価に乗せるかどうか」です。全部原価計算は乗せる、直接原価計算は乗せずにその期の費用として一気に処理する。これだけです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なるほど…でも、なんでわざわざ直接原価計算という別の計算方法が必要なんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">「あといくつ売れば黒字か」を知りたいときに強いからです。売上から変動費だけを引いた貢献利益さえ出せば、そのままCVP分析につながります。財務諸表を作るのが全部原価計算、経営判断に使うのが直接原価計算、と役割で覚えると整理しやすいですよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>直接原価計算は「売上から変動費を引いて、固定費を回収できるか」を見る方法です。利益計画に強く、CVP分析の土台になります。</div>
-
-  <h2>直接原価計算とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-chokusetsu-genka-map-mobile.svg">
-      <img src="images/boki2-chokusetsu-genka-map.svg" alt="直接原価計算と全部原価計算の損益計算書構造比較" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="400" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：全部原価計算 vs 直接原価計算——貢献利益の見え方の違い</figcaption>
-  </figure>
-  <p>固定製造費を製品原価に含めるか・期間費用にするかが、2つの計算方法の分かれ目です。</p>
-  <p>直接原価計算とは、製造原価を変動費と固定費に分け、製品原価には変動製造原価だけを含める方法です。固定製造間接費は、製品に含めず、その期間の費用として処理します。</p>
-  <p>全部原価計算が「製品1個あたりの原価をきっちり計算する」考え方だとすると、直接原価計算は「売上が増えたとき利益がどう動くか」を見るための考え方です。</p>
-
-  <h2>全部原価計算との違い</h2>
-  <table>
-    <tr><th>項目</th><th>全部原価計算</th><th>直接原価計算</th></tr>
-    <tr><td>製品原価に含めるもの</td><td>変動製造原価と固定製造原価</td><td>変動製造原価だけ</td></tr>
-    <tr><td>固定製造間接費</td><td>製品に配賦する</td><td>期間費用として処理する</td></tr>
-    <tr><td>重視する目的</td><td>財務諸表作成・製品原価計算</td><td>利益計画・意思決定</td></tr>
-  </table>
-  <p>簿記2級では、両者の利益差が問われることがあります。固定製造間接費が製品在庫に残るか、当期費用になるかが違いの中心です。</p>
-
-  <h2>変動費と固定費</h2>
-  <p>直接原価計算では、費用を変動費と固定費に分けます。ここが見えないと、貢献利益や損益分岐点が一気にわからなくなります。</p>
-  <table>
-    <tr><th>分類</th><th>意味</th><th>例</th></tr>
-    <tr><td>変動費</td><td>生産量や販売量に応じて増減する費用</td><td>直接材料費、変動加工費、販売手数料</td></tr>
-    <tr><td>固定費</td><td>生産量や販売量が変わっても一定額発生する費用</td><td>工場家賃、減価償却費、管理部門の人件費</td></tr>
-  </table>
-  <div class="warn-box"><strong>注意：</strong>「直接原価計算」という名前ですが、直接費だけを集めるという意味ではありません。変動費と固定費に分ける論点です。</div>
-
-  <h2>貢献利益とは</h2>
-  <p>貢献利益とは、売上高から変動費を引いた利益です。固定費を回収し、最終的な営業利益を出すためにどれだけ貢献しているかを表します。</p>
-  <div class="formula"><strong>貢献利益 = 売上高 - 変動費</strong><br><strong>営業利益 = 貢献利益 - 固定費</strong></div>
-  <p>たとえば売上高が1,000,000円、変動費が600,000円、固定費が250,000円なら、貢献利益は400,000円、営業利益は150,000円です。</p>
-
-  <h2>CVP分析とは</h2>
-  <p>CVP分析とは、Cost（原価）・Volume（販売量）・Profit（利益）の関係を見る分析です。売上がどれくらい必要か、何個売れば赤字を抜けるかを考えるときに使います。</p>
-  <p>簿記2級では、損益分岐点売上高・安全余裕率・目標利益を達成する売上高などがよく出ます。</p>
-
-  <h2>損益分岐点売上高</h2>
-  <p>損益分岐点とは、利益がちょうど0になる売上高です。つまり、貢献利益で固定費をちょうど回収できる地点です。</p>
-  <div class="formula"><strong>損益分岐点売上高 = 固定費 ÷ 貢献利益率</strong><br><strong>貢献利益率 = 貢献利益 ÷ 売上高</strong></div>
-  <p>固定費が300,000円、貢献利益率が40%なら、損益分岐点売上高は750,000円です。</p>
-  <p>損益分岐点や安全余裕率の計算を詳しく押さえるなら、次に<a href="boki2-cvp.html">CVP分析とは</a>を確認しましょう。</p>
-
-  <h2>例題で確認</h2>
-  <p>売上高1,200,000円、変動費720,000円、固定費360,000円の場合を考えます。</p>
-  <div class="flow">
-    <div class="flow-item"><strong>貢献利益：</strong>1,200,000円 - 720,000円 = 480,000円</div>
-    <div class="flow-item"><strong>貢献利益率：</strong>480,000円 ÷ 1,200,000円 = 40%</div>
-    <div class="flow-item"><strong>営業利益：</strong>480,000円 - 360,000円 = 120,000円</div>
-    <div class="flow-item"><strong>損益分岐点売上高：</strong>360,000円 ÷ 40% = 900,000円</div>
-  </div>
-  <p>この会社は900,000円売れば赤字を抜け、1,200,000円売ると120,000円の利益が出ます。</p>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>直接原価計算を「直接費だけの計算」と誤解する</li>
-    <li>固定製造間接費を製品原価に含めてしまう</li>
-    <li>貢献利益と営業利益を混同する</li>
-    <li>貢献利益率を「貢献利益 ÷ 売上高」ではなく、変動費率と混ぜてしまう</li>
-    <li>損益分岐点売上高で、固定費を貢献利益率ではなく利益額で割ってしまう</li>
-  </ul>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>直接原価計算は、製品原価に変動製造原価だけを含める方法</li>
-    <li>固定製造間接費は期間費用として処理する</li>
-    <li>貢献利益は売上高から変動費を引いた利益</li>
-    <li>CVP分析では、原価・販売量・利益の関係を見る</li>
-    <li>損益分岐点売上高は、固定費を貢献利益率で割って求める</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 直接原価計算は利益計画の武器にしよう</h3>
-    <p>スタディクエストで工業簿記の学習時間を記録し、CVP分析まで一気に得点源へ育てましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">直接原価計算とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">製品原価に変動製造原価だけを含め、固定製造間接費を期間費用として扱う原価計算の方法です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">全部原価計算との違いは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">全部原価計算は固定製造原価も製品原価に含めますが、直接原価計算では固定製造間接費を期間費用として処理します。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">貢献利益とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">売上高から変動費を差し引いた利益です。固定費を回収し、営業利益を生むための力を表します。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">CVP分析とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">原価、販売量、利益の関係を分析する方法です。損益分岐点売上高や目標利益を達成する売上高を求めるときに使います。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"直接原価計算とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"製品原価に変動製造原価だけを含め、固定製造間接費を期間費用として扱う原価計算の方法です。"}},{"@type":"Question","name":"全部原価計算との違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"全部原価計算は固定製造原価も製品原価に含めますが、直接原価計算では固定製造間接費を期間費用として処理します。"}},{"@type":"Question","name":"貢献利益とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"売上高から変動費を差し引いた利益です。固定費を回収し、営業利益を生むための力を表します。"}},{"@type":"Question","name":"CVP分析とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"原価、販売量、利益の関係を分析する方法です。損益分岐点売上高や目標利益を達成する売上高を求めるときに使います。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-hyojun-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">前の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">標準原価計算とは？原価差異の分析</div></a>
-  <a href="boki2-cvp.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">次の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">CVP分析とは？損益分岐点売上高の計算</div></a>
-  <a href="boki2-sogo-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">原価計算</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">総合原価計算とは？月末仕掛品の計算</div></a>
-  <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">工業簿記とは？商業簿記との違い</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>直接原価計算と全部原価計算｜在庫の固定費と2期間の利益を検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>直接原価計算は、製品原価に変動製造原価を集計し、固定製造費を期間費用として扱う方法です。<strong>直接費だけを集める計算ではなく、変動・固定という分類</strong>を使います。全部原価計算との利益差を理解するには、在庫に含まれる固定製造費を期首から期末まで追います。</p>
+<div class="sq-facts-note"><strong>この例の条件</strong><p>以下は編集部の架空例です。製品は1種類、仕掛品・仕損・配賦差異・税金はなく、固定製造費を生産数量へ均等に配賦します。実務のすべての固定費の配賦や操業度差異を説明する例ではありません。</p></div>
+<h2>変動製造費と変動販売費を分ける</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">費用</th><th scope="col">全部原価計算</th><th scope="col">直接原価計算</th></tr></thead><tbody><tr><td>変動製造費</td><td>製品原価に含める</td><td>製品原価に含める</td></tr><tr><td>固定製造費</td><td>製品原価へ配賦する</td><td>期間費用とする</td></tr><tr><td>変動販売費</td><td>販売費として扱う</td><td>貢献利益を求める際に売上から控除</td></tr><tr><td>固定販売費・一般管理費</td><td>期間費用</td><td>期間費用</td></tr></tbody></table></div>
+<p>原価計算基準30は、変動直接費だけでなく変動間接費も部門へ集計する方法を認めています。一方、変動する販売手数料まで製品の在庫原価に入れる、という意味ではありません。直接・間接、製造・販売、変動・固定の3つの区分を混ぜないようにします。</p>
+<h2>自作例：100個作って80個売る</h2>
+<p>期首在庫なし。販売単価2,000円、1個の変動製造費1,000円、販売1個あたりの変動販売費200円。当期固定製造費60,000円、固定販売費10,000円です。100個を完成し80個を販売、期末製品20個とします。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">第1期（円）</th><th scope="col">全部原価計算</th><th scope="col">直接原価計算</th></tr></thead><tbody><tr><td>売上高：2,000×80</td><td>160,000</td><td>160,000</td></tr><tr><td>売上原価</td><td>128,000</td><td>80,000（変動製造費）</td></tr><tr><td>変動販売費：200×80</td><td>16,000</td><td>16,000</td></tr><tr><td>固定製造費の別掲費用</td><td>売上原価に48,000を含む</td><td>60,000</td></tr><tr><td>固定販売費</td><td>10,000</td><td>10,000</td></tr><tr><td>営業利益</td><td>6,000</td><td>−6,000</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>例題1：売上原価128,000円はどう求める？</h3><p>全部原価計算の1個の製造原価、期末製品、営業利益を検算してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>固定製造費の単位額は60,000÷100＝600円。1個の製造原価は1,000＋600＝<strong>1,600円</strong>。売上原価は1,600×80＝128,000円、期末製品は1,600×20＝<strong>32,000円</strong>です。</p><p>160,000−128,000−16,000−10,000＝<strong>6,000円</strong>。直接原価計算では期末製品20,000円、貢献利益160,000−80,000−16,000＝64,000円から、固定費70,000円を引いて<strong>−6,000円</strong>です。</p></div></details></section>
+<h2>利益差は、在庫に残る固定製造費でつなぐ</h2>
+<p>本例の条件では、<strong>全部原価の利益＝直接原価の利益＋期末製品等の固定製造費−期首製品等の固定製造費</strong>で照合できます。期末に残る固定費を増やすと全部原価の当期費用が減る一方、期首に残っていた固定費が売れると当期費用になります。配賦差異等のある問題へ無条件に適用する式ではありません。</p>
+<section class="sq-facts-exercise"><h3>例題2：12,000円の差を説明する</h3><p>第1期の両方法の利益差と、期末製品に含まれる固定製造費を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>利益差6,000−(−6,000)＝<strong>12,000円</strong>。期末20個×固定製造費600円＝12,000円と一致します。</p><p>直接原価の利益−6,000＋期末固定費12,000−期首固定費0＝全部原価の利益6,000円。販売量が同じでも、固定製造費を在庫に繰り延べる部分が異なります。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-chokusetsu-genka-map-mobile.svg?v=20261102"><img src="images/boki2-chokusetsu-genka-map.svg?v=20261102" alt="全部原価利益6,000円と直接原価損失6,000円の差12,000円を在庫中の固定製造費で検算する図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>翌期に在庫を全部売ると、その差はどうなる？</h2>
+<p>第2期は追加生産なしで、期首製品20個を同じ単価2,000円で全量販売します。変動販売費は1個200円、説明を絞るため<strong>第2期の新たな固定製造費・固定販売費は0</strong>と仮定します。実際の操業停止時の費用が常に0という意味ではありません。</p>
+<section class="sq-facts-exercise"><h3>例題3：2期間の利益合計を検算</h3><p>第2期の全部原価・直接原価の営業利益と、2期合計を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>売上40,000円、変動販売費4,000円。全部原価は期首製品32,000円が売上原価なので、40,000−32,000−4,000＝<strong>4,000円</strong>。直接原価は期首製品20,000円が売上原価なので、<strong>16,000円</strong>です。</p><p>全部原価の第2期利益＝16,000＋期末固定費0−期首固定費12,000＝4,000円。</p><p>2期合計は全部原価6,000＋4,000＝<strong>10,000円</strong>、直接原価−6,000＋16,000＝<strong>10,000円</strong>で一致します。当期の利益差を、そのまま全期間の利益差と考えません。</p></div></details></section>
+<h2>財務諸表作成と固定費調整</h2>
+<p>原価計算基準30は、直接原価計算を行う場合も、会計年度末に当該会計期間の固定費を期末仕掛品・製品・当年度の売上品へ配賦する取扱いを示しています。内部の利益計画用の直接原価の損益を、<strong>固定費調整なしでそのまま財務報告へ使える</strong>と説明しないようにします。</p>
+<h2>貢献利益からCVPへ進む</h2>
+<p>既存の別例で、売上1,200,000円、変動費720,000円、固定費360,000円なら、貢献利益480,000円、貢献利益率40％、営業利益120,000円です。費用構造が一定の範囲では、損益分岐点売上高は360,000÷0.4＝900,000円で、そこで利益は0になります。目標利益・端数・安全余裕率は<a href="boki2-cvp.html">CVP分析の自作例</a>で確かめられます。</p>
+<p>解き直しでは「販売数量／生産数量／期首・期末在庫／在庫中の固定製造費／配賦差異の有無」を記録してください。生産と販売が同じかどうかだけで、複数期の在庫や利益差を判断しないことも大切です。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">ASBJ掲載：企業会計審議会・原価計算基準8・30・37</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記区分表2ページ・直接原価計算と固定費調整</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>直接原価計算は直接費だけを集める方法ですか？</summary><p>変動費と固定費による区分です。変動する間接製造費も製品原価に含め、変動販売費は製品の在庫原価と分けます。</p></details><details class="sq-facts-answer"><summary>全部原価と直接原価の利益差は何で検算しますか？</summary><p>本例は配賦差異等がなく、全部原価利益＝直接原価利益＋期末在庫の固定製造費−期首在庫の固定製造費で照合します。第1期の差は20個×600円＝12,000円です。</p></details><details class="sq-facts-answer"><summary>直接原価の損益を固定費調整なしで財務報告に使えますか？</summary><p>原価計算基準30は、会計年度末に固定費を期末仕掛品・製品と当年度の売上品へ配賦する取扱いを示しています。内部の利益計画用の表示と区別します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-cvp.html">CVP分析の条件と自作例</a></li><li><a href="boki2-seizo-kansetsuhi.html">製造間接費の配賦条件</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fourth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
