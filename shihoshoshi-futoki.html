@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/shihoshoshi-futoki.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>司法書士試験の不動産登記法とは？所有権移転・抵当権設定を設例で解説｜スタディクエスト</title>
-<meta name="description" content="司法書士試験の不動産登記法を解説。所有権移転登記・抵当権設定登記の申請人と添付情報を、AがBに土地を売却するケースの具体的な設例つきで整理します。">
+<title>司法書士の不動産登記法｜申請人・原因証明・連件の自作例｜スタディクエスト</title>
+<meta name="description" content="契約書なら常に足りるという説明と、連件でも買主の識別情報が必須に見える旧表を訂正。不動産登記法60・61・63条、規則67条等を確認し、条件付き売買・申請人・申請順の自作3例を掲載します。">
 <meta name="keywords" content="司法書士 不動産登記法,所有権移転登記,抵当権設定登記,登記識別情報">
-<meta property="og:title" content="司法書士試験の不動産登記法とは？所有権移転・抵当権設定を設例で解説">
-<meta property="og:description" content="所有権移転・抵当権設定・添付情報を、具体的な設例つきで整理。">
+<meta property="og:title" content="司法書士の不動産登記法｜申請人・原因証明・連件の自作例">
+<meta property="og:description" content="契約書なら常に足りるという説明と、連件でも買主の識別情報が必須に見える旧表を訂正。不動産登記法60・61・63条、規則67条等を確認し、条件付き売買・申請人・申請順の自作3例を掲載します。">
 <meta property="og:url" content="https://study-quest.net/shihoshoshi-futoki.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/shihoshoshi-futoki.png">
@@ -24,16 +24,9 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"司法書士試験の不動産登記法とは？所有権移転・抵当権設定を設例で解説",
-  "image": "https://study-quest.net/screenshots/ogp/shihoshoshi-futoki.png","description":"所有権移転登記・抵当権設定登記の申請人と添付情報を、具体的な設例つきで整理します。","url":"https://study-quest.net/shihoshoshi-futoki.html","datePublished":"2026-05-10","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "司法書士の不動産登記法｜申請人・原因証明・連件の自作例", "image": "https://study-quest.net/screenshots/ogp/shihoshoshi-futoki.png", "description": "契約書なら常に足りるという説明と、連件でも買主の識別情報が必須に見える旧表を訂正。不動産登記法60・61・63条、規則67条等を確認し、条件付き売買・申請人・申請順の自作3例を掲載します。", "url": "https://study-quest.net/shihoshoshi-futoki.html", "datePublished": "2026-05-10", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"所有権移転登記は誰が申請しますか？","acceptedAnswer":{"@type":"Answer","text":"権利者（買主）と義務者（売主）による共同申請が原則です。登記原因証明情報（売買契約書）、登記識別情報（売主）、印鑑証明書（売主）、住所証明情報（買主の住民票）などが添付情報として必要です。"}},
-{"@type":"Question","name":"登記識別情報とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"12桁の英数字からなる、いわばパスワードのような情報です。新たな登記名義人になった際に法務局から通知され、次にその不動産について登記を申請するときの本人確認資料として使います。"}},
-{"@type":"Question","name":"司法書士試験に独学で合格できますか？","acceptedAnswer":{"@type":"Answer","text":"合格者の中に独学者もいますが、合格率5%前後の難関試験のため独学は非常に非効率です。範囲が広く（民法・不動産登記法・商業登記法など11科目）、予備校や通信講座の活用が推奨されます。"}}
-]}
-</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
 body{font-family:'M PLUS 1',sans-serif;color:var(--text);line-height:1.9}a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
@@ -56,131 +49,52 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "売買契約書があれば常に原因証明は十分ですか？", "acceptedAnswer": {"@type": "Answer", "text": "書類名だけでは決まりません。所有権移転時期の特約がある場合の条件成就等、現に権利変動が生じたことも確認します。"}}, {"@type": "Question", "name": "すべての所有権移転は共同申請ですか？", "acceptedAnswer": {"@type": "Answer", "text": "60条の原則に対し、相続等の63条2項など単独申請の定めがあります。登記の原因を分けます。"}}, {"@type": "Question", "name": "連件の後件でも買主の新しい識別情報が必ず必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "規則67条の条件を満たす同時申請では、後件の識別情報を提供したものとみなす扱いがあります。別場面へ無条件に拡張しません。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shihoshoshi.html">司法書士</a> &gt; 不動産登記法</div>
-  <p class="meta">司法書士 | 公開：2026年5月10日 | 更新日：2026年8月25日（2026年7月10日更新）</p>
-  <h1>司法書士試験の不動産登記法とは？<br>所有権移転・抵当権設定を設例で解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li>不動産登記法は<strong>「権利変動」「申請人」「添付情報」</strong>の3点セットで覚える</li>
-      <li>所有権移転登記は<strong>権利者（買主）と義務者（売主）の共同申請</strong>が原則</li>
-      <li><strong>登記識別情報</strong>は12桁の英数字、いわばパスワードのような情報</li>
-      <li>司法書士試験の合格率は<strong>例年5%前後</strong>の難関試験</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    不動産登記法は条文だけ見ると無味乾燥ですが、「AがBに土地を売って、Bが銀行から借金して抵当権を設定する」というような具体的な場面をイメージすると、一気に理解しやすくなります。今日は設例を使って整理していきます！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">不動産登記法、添付情報の種類が多すぎて、何のためにあるのか覚えられません……。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">具体例で考えると整理できます。AがBに土地を2,000万円で売った場面を想像してください。登記原因証明情報は「本当に売買があった証拠（契約書）」、登記識別情報は「Aが今の所有者だと証明するパスワード」、印鑑証明書は「Aの実印が本物だと証明する書類」です。それぞれ「何を疑われないための書類か」を考えると覚えやすいですよ。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なるほど！じゃあ抵当権を設定する場合はどう変わるんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">同じ土地の例で、Bが購入資金の一部を銀行から借りて、その土地に抵当権を設定するとします。この場合の申請人は抵当権者（銀行）と設定者（B）。登記原因証明情報は金銭消費貸借契約書・抵当権設定契約書に変わりますが、「誰が申請するか」「何を疑われないための書類か」という考え方の骨組みは所有権移転登記と同じです。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>❓ 不動産登記法の基本——3点セットで見る</h2>
-  <p>不動産登記法は「どんな権利変動が起きたか（登記原因）」「誰が申請するか（申請人）」「何を添付するか（添付情報）」の3点セットで覚えることが最短合格への近道です。</p>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/shihoshoshi-futoki-map-mobile.svg">
-    <img src="images/shihoshoshi-futoki-map.svg" alt="不動産登記法——登記申請の流れと主要な登記の種類・申請人・添付情報マップ" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="760" height="380">
-  </picture>
-
-  <table>
-    <tr><th>登記</th><th>場面</th></tr>
-    <tr><td>所有権保存登記</td><td>新築建物など、最初に所有権を登記する</td></tr>
-    <tr><td>所有権移転登記</td><td>売買、贈与、相続などで所有者が変わる</td></tr>
-    <tr><td>抵当権設定登記</td><td>借入れの担保として抵当権をつける</td></tr>
-    <tr><td>抵当権抹消登記</td><td>弁済などで抵当権を消す</td></tr>
-    <tr><td>変更・更正登記</td><td>住所変更や登記内容の誤りを直す</td></tr>
-  </table>
-
-  <h2>📝 設例で見る：所有権移転登記と抵当権設定登記</h2>
-  <div class="mondai">
-    <div class="m-label">設例</div>
-    <p>Aが所有する甲土地（2,000万円）をBに売却した。Bは購入資金の一部として銀行Cから1,500万円を借り入れ、甲土地に抵当権を設定した。</p>
-  </div>
-  <div class="formula">
-    <strong>①所有権移転登記</strong><br>
-    申請人：権利者B（買主）・義務者A（売主）の共同申請<br>
-    添付情報：登記原因証明情報（売買契約書）、登記識別情報（A）、印鑑証明書（A）、住所証明情報（Bの住民票）、代理権限証明情報（委任状）
-  </div>
-  <div class="formula">
-    <strong>②抵当権設定登記</strong><br>
-    申請人：抵当権者C（銀行）・設定者B（担保提供者）の共同申請<br>
-    添付情報：登記原因証明情報（金銭消費貸借契約書・抵当権設定契約書）、登記識別情報（B）、印鑑証明書（B）
-  </div>
-  <div class="tip-box"><strong>登記識別情報とは：</strong>12桁の英数字からなる、いわばパスワードのような情報です。新たな登記名義人になった際に法務局から通知され、次にその不動産について登記を申請するとき（今回のBなら、将来抵当権を設定するとき）の本人確認資料として使います。</div>
-
-  <h2>🔍 記述式は早めに見る</h2>
-  <p>記述式は、登記申請書を書かせる問題です。最初から解けなくても、どんな形式で出るかを早めに見ておくと、択一の知識が記述につながりやすくなります。</p>
-  <div class="warn-box"><strong>学習のコツ：</strong>不動産登記法は民法と切り離さないでください。売買、相続、抵当権設定など、民法上の権利変動を先に確認してから登記手続きを見ると理解しやすいです。</div>
-
-  <div class="app-cta"><h3>⚔ 登記法を毎週積み上げよう</h3><p>Study Questで不動産登記法と記述式の学習時間を記録できます。</p><a href="app.html">無料で学習記録を始める →</a></div>
-
-  <div class="matome">
-    <h3>📋 まとめ：不動産登記法 早見表</h3>
-    <div class="matome-row"><span class="trigger">見るべき3点</span><span class="result">権利変動・申請人・添付情報</span></div>
-    <div class="matome-row"><span class="trigger">所有権移転登記</span><span class="result">権利者（買主）・義務者（売主）の共同申請</span></div>
-    <div class="matome-row"><span class="trigger">抵当権設定登記</span><span class="result">抵当権者（債権者）・設定者の共同申請</span></div>
-    <div class="matome-row"><span class="trigger">登記識別情報</span><span class="result">12桁のパスワード的な情報</span></div>
-  </div>
-</div>
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:0 0 32px;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">所有権移転登記は誰が申請しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">権利者（買主）と義務者（売主）による共同申請が原則です。登記原因証明情報（売買契約書）、登記識別情報（売主）、印鑑証明書（売主）、住所証明情報（買主の住民票）などが添付情報として必要です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">登記識別情報とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">12桁の英数字からなる、いわばパスワードのような情報です。新たな登記名義人になった際に法務局から通知され、次にその不動産について登記を申請するときの本人確認資料として使います。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">司法書士試験に独学で合格できますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">合格者の中に独学者もいますが、合格率5%前後の難関試験のため独学は非常に非効率です。範囲が広く（民法・不動産登記法・商業登記法など11科目）、予備校や通信講座の活用が推奨されます。</div></details>
-</section>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="shihoshoshi-minpo-bukken.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">民法・物権とは？抵当権と対抗要件</div></a>
-  <a href="shihoshoshi-kaishaho.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">会社法・商業登記法とは？役員変更登記</div></a>
-  <a href="shihoshoshi-minpo-sosoku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">民法・総則とは？意思表示・代理・時効</div></a>
-  <a href="shihoshoshi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">司法書士</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">司法書士ガイド</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shikaku-list.html">司法書士</a></div><p class="meta">司法書士 | 公開：2026年5月10日 | 更新日：2026年11月3日</p><h1>司法書士の不動産登記法｜申請人・原因証明・連件の自作例</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>不動産登記法を学ぶときは、権利の変動、申請人、登記原因と証明する情報、申請の順序を分けて確認します。旧記事の「契約書を付ければ必ず原因証明になる」「買主の識別情報を持たないと購入と同時の抵当権設定を進められない」と読める一律の表を訂正しました。</p>
+<h2>売買の共同申請と、例外の単独申請</h2>
+<p>不動産登記法60条は、法令に別段の定めがある場合を除き、権利に関する登記を権利者と義務者が共同して申請する原則を定めています。一方、63条2項の相続等による権利移転の単独申請など、別の定めもあります。「所有権移転なら原因に関係なく売主・買主の共同申請」ではありません。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">架空例での場面</th><th scope="col">申請人の原則</th><th scope="col">先に確認すること</th></tr></thead><tbody><tr><td>AからBへの売買による所有権移転</td><td>権利者B・義務者Aの共同申請</td><td>売買と所有権移転の事実・条件</td></tr><tr><td>B所有物件へCの抵当権を設定</td><td>権利者C・義務者Bの共同申請</td><td>担保する債権と設定の事実</td></tr><tr><td>相続による移転</td><td>63条2項の登記権利者の単独申請</td><td>相続人と原因を証する情報等</td></tr><tr><td>登記手続を命ずる確定判決</td><td>63条1項等の条件を別に確認</td><td>判決の内容と当事者。通常の共同申請と混ぜない</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>自作例1：義務者がいつも売主とは限らない</h3><p>架空の甲土地で、XはAからBへの売買、YはBが銀行Cのために抵当権を設定、Zは単独相続人DがAを相続する場面です。原則的な申請人の組合せを整理してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>Xは権利者B・義務者A、Yは権利者C・義務者B。Zは63条2項による登記権利者Dの単独申請という整理です。「買主が常に権利者」「移転なら亡くなったAと共同申請」という一つの型にはしません。相続人が一人という仮定を外す場合の申請方法・証明等は別に確認します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/article-diagrams/shihoshoshi-futoki-mobile.svg?v=20261103"><img src="images/article-diagrams/shihoshoshi-futoki.svg?v=20261103" alt="不動産登記を条件で組み立てる" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>登記原因証明情報は、契約書という名前だけで決まらない</h2>
+<p>61条は、法令の別段の定めを除き、登記原因を証する情報の提供を求めています。法務省Q&Aは、原因となる事実・行為と、現に権利変動が生じたことを証する情報を説明しています。売買契約書のほか、売主が確認した報告形式の書面等も含まれるので、書類の名前だけを丸暗記しないようにします。</p>
+<p>所有権移転時期の特約がある契約では、その条件成就の事実を証する情報も合わせて必要とされています。金銭消費貸借契約があることと、特定の不動産に抵当権を設定したことも別です。貸付額の数字だけでは設定の事実を確認したことにはなりません。</p>
+<section class="sq-facts-exercise"><h3>自作例2：売買契約書だけで支払完了も証明できる？</h3><p>編集部の架空契約は「代金全額の支払時に所有権が移転する」としています。契約書はあるが、全額支払を証する情報の有無は示されていません。直ちに所有権移転の事実まで確認済みにできますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>この情報だけではできません。売買契約の存在と、所有権移転の条件が成就した事実を分けます。法務省Q&Aが示す特約のある場合の確認へ戻り、支払等の条件成就を証する情報を確かめます。これは学習用の仮定で、実際の契約や申請の可否をこの短文だけで判定するものではありません。</p></div></details></section>
+<h2>登記識別情報は、本人確認の手段の一つ</h2>
+<p>法務省Q&Aでは、登記識別情報は12桁の符号で、不動産と登記名義人となる申請人ごとに定められるものと説明しています。本人による申請かを登記官が確認するための手段の一つで、「その符号を持つ人が必ず現在の所有者」という所有権の証明書そのものではありません。</p>
+<p>21条は登記完了時の通知と例外、22条は提供の原則と正当な理由がある場合等の例外を定めています。通知を希望しない場合や通知されない場合もあるので、すべての場面で必ず新しい符号を受け取って提出する、とはしません。実際の符号を学習メモや質問文へ書く必要もありません。</p>
+<h2>購入と抵当権設定を連件で申請する場合</h2>
+<p>同じ不動産の複数の権利登記を前後を明らかにして同時に申請し、前の登記で名義人となる者が後の登記の義務者となるとき、規則67条は後件の識別情報を提供したものとみなす扱いを定めています。前件完了後に新たな識別情報が発行されるまで、すべての後件ができないという説明ではありません。</p>
+<section class="sq-facts-exercise"><h3>自作例3：買主Bの識別情報を先に受け取る必要がある？</h3><p>架空の甲土地につき、前件をA→Bの売買移転、後件をBによるCへの抵当権設定とし、前後を明らかに同時申請するという67条の仮定です。Bへ新たに通知される符号を先に受け取らない限り、後件へ進めないといえますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>その一律の結論にはなりません。前件で名義人となるBが後件の義務者となる等、規則67条の条件に対応する場面として、後件の識別情報を提供したものとみなす扱いを確認します。単に同じ日に別々に出した、別不動産である等の場面へ、この例を無条件に広げません。ほかの添付情報まで全部省略できる意味でもありません。</p></div></details></section>
+<h2>添付情報の表には、誰の何のためかを書く</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">情報の役割</th><th scope="col">確認する内容</th></tr></thead><tbody><tr><td>原因の証明</td><td>権利変動の原因と、それに基づく実際の変動を示すか</td></tr><tr><td>識別情報</td><td>どの不動産・登記名義人のものか。提供原則と例外</td></tr><tr><td>住所等の証明</td><td>どの当事者の何を証明するか。法人等の条件も別に確認</td></tr><tr><td>印鑑に関する情報</td><td>申請方法・当事者・情報の種類による要否と条件</td></tr><tr><td>代理の権限</td><td>代理申請なら権限を証する情報。本人申請と混ぜない</td></tr><tr><td>前後の申請</td><td>前提となる登記が必要か。連件と省略の条件</td></tr></tbody></table></div>
+<p>旧記事の添付一覧は、実務の完全な提出チェックリストではなく、前提条件を省いた学習例でした。今回もすべての土地・建物・法人・オンライン申請を網羅する表にはせず、なぜその情報が必要なのかと、例外の確認先を示しています。現実の個人情報を集めたり、登記申請を代行したりする作業はしていません。</p>
+<h2>記述式では、答案を条件から組み立てる</h2>
+<p>2026年の記述式の出題の趣旨も、問題文と別紙から申請すべき登記や前提登記、申請・添付情報、税の計算等を読み取り正確に記載する能力を説明しています。ひな形だけで機械的に埋めず、「権利変動→申請人→原因と証明→前後関係」を設例の事実と照合できます。</p>
+<p>学習記録には、自分が足した思い込み、足りない証明、読み落とした時点や当事者を一つ残します。時間をかけた量と、初見の別条件でも判断できたことを区別し、同じ申請書を覚えて正解した結果だけで理解済みとしないようにします。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://laws.e-gov.go.jp/law/416AC0000000123" target="_blank" rel="noopener">e-Gov：不動産登記法21・22・60・61・63条</a></li><li><a href="https://laws.e-gov.go.jp/law/417M60000010018" target="_blank" rel="noopener">同：不動産登記規則67条</a></li><li><a href="https://www.moj.go.jp/MINJI/minji76" target="_blank" rel="noopener">法務省：新不動産登記法Q&A・Q13とQ25</a></li><li><a href="https://www.moj.go.jp/content/001471022.pdf" target="_blank" rel="noopener">同：2026年記述式の出題の趣旨</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>売買契約書があれば常に原因証明は十分ですか？</summary><p>書類名だけでは決まりません。所有権移転時期の特約がある場合の条件成就等、現に権利変動が生じたことも確認します。</p></details><details class="sq-facts-answer"><summary>すべての所有権移転は共同申請ですか？</summary><p>60条の原則に対し、相続等の63条2項など単独申請の定めがあります。登記の原因を分けます。</p></details><details class="sq-facts-answer"><summary>連件の後件でも買主の新しい識別情報が必ず必要ですか？</summary><p>規則67条の条件を満たす同時申請では、後件の識別情報を提供したものとみなす扱いがあります。別場面へ無条件に拡張しません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="shihoshoshi-minpo-bukken.html">権利の変動と対抗要件</a></li><li><a href="shihoshoshi-kaishaho.html">会社法と商業登記の入口</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shihoshoshi-minpo-bukken.html">前：物権</a><a href="shihoshoshi-kaishaho.html">次：会社法・商業登記法</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-judicial"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
