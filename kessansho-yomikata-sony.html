@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/kessansho-yomikata-sony.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>簿記の「のれん」「非支配株主持分」は決算書のどこにある？ソニーグループの実例で読む｜スタディクエスト</title>
-<meta name="description" content="簿記2級で学ぶ連結会計の「のれん」「非支配株主持分」が、実際の決算書のどこにいくら載っているかをソニーグループの公表数値で解説。決算書の読み方と簿記の知識をつなげます。">
+<title>ソニーの決算書を読む｜のれん・非支配持分と注記の照合例｜スタディクエスト</title>
+<meta name="description" content="ソニー2025年度有価証券報告書の2期比較を確認。百万円と円、年度と決算日、IFRSの取得時測定と簿記の単純例を分け、のれんの増減内訳を検算する独自ワークを掲載します。">
 <meta name="keywords" content="決算書 読み方,のれん 決算書,非支配株主持分,連結貸借対照表,ソニーグループ 決算書">
-<meta property="og:title" content="簿記の「のれん」「非支配株主持分」は決算書のどこにある？ソニーグループの実例で読む">
-<meta property="og:description" content="簿記2級で学ぶ連結会計の知識で、実際の決算書のどこにどんな数字が載っているかを読み解きます。">
+<meta property="og:title" content="ソニーの決算書を読む｜のれん・非支配持分と注記の照合例">
+<meta property="og:description" content="ソニー2025年度有価証券報告書の2期比較を確認。百万円と円、年度と決算日、IFRSの取得時測定と簿記の単純例を分け、のれんの増減内訳を検算する独自ワークを掲載します。">
 <meta property="og:url" content="https://study-quest.net/kessansho-yomikata-sony.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/kessansho-yomikata-sony.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記の「のれん」「非支配株主持分」は決算書のどこにある？ソニーグループの実例で読む",
-  "image": "https://study-quest.net/screenshots/ogp/kessansho-yomikata-sony.png","description":"簿記2級で学ぶ連結会計の「のれん」「非支配株主持分」が、実際の決算書のどこにいくら載っているかをソニーグループの公表数値で解説します。","url":"https://study-quest.net/kessansho-yomikata-sony.html","datePublished":"2026-07-07","dateModified": "2026-09-24","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "ソニーの決算書を読む｜のれん・非支配持分と注記の照合例", "image": "https://study-quest.net/screenshots/ogp/kessansho-yomikata-sony.png", "description": "ソニー2025年度有価証券報告書の2期比較を確認。百万円と円、年度と決算日、IFRSの取得時測定と簿記の単純例を分け、のれんの増減内訳を検算する独自ワークを掲載します。", "url": "https://study-quest.net/kessansho-yomikata-sony.html", "datePublished": "2026-07-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -45,212 +44,53 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "2025年度末は2025年3月31日ですか？", "acceptedAnswer": {"@type": "Answer", "text": "この資料の2025年度末は2026年3月31日です。比較列の2024年度末は2025年3月31日で、年度と暦年を分けます。"}}, {"@type": "Question", "name": "のれんの増加額は全部その年の買収額ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。注記11では取得・処分等・減損・外貨換算等を示しています。増減内訳を合計して本表と照合します。"}}, {"@type": "Question", "name": "非支配持分は負債ですか？", "acceptedAnswer": {"@type": "Answer", "text": "この連結財政状態計算書では資本の部に表示され、当社株主に帰属する資本とは別の行です。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 決算書の読み方</div>
-  <p class="meta">決算書の読み方 | 公開：2026年7月7日 | 更新日：2026年9月24日</p>
-  <h1>簿記の「のれん」「非支配株主持分」は<br>決算書のどこにある？ソニーグループの実例で読む</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">簿記2級で連結会計の仕訳を練習しても、「これが実際の決算書のどこに出てくるのか」までイメージできている人は少ないはずです。この記事では、ソニーグループが実際に公表している数値を例に、「のれん」「非支配株主持分」が連結貸借対照表のどこに、いくら載っているかを一緒に確認します。<strong>この記事はソニーグループの経営状況を評価するものではありません。</strong>公表数値を教材として、勘定科目の読み方を解説することが目的です。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">連結会計の仕訳、パターンとしては解けるようになったんです。でも正直「のれん」も「非支配株主持分」も、頭の中では記号みたいになってて……。「これ、本当に実在するものなのかな？」って、ふと不安になることがあります。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その不安、実は私も最初の頃、連結修正仕訳を解きながら「うわっ、なんじゃこりゃ！非支配株主持分って名前長すぎだし架空の呪文じゃん！」ってフリーズしてました（笑）。会計士試験の勉強をしていた頃もずっと同じ不安を抱えてたんです。テキストの中だけの架空の記号じゃないかって。でも、ある日ふとソニーグループの決算書（有価証券報告書）を開いてみたら、拍子抜けするくらいそのまま載ってたんですよ。しかも金額は<strong>兆円単位</strong>。今日はその実物を一緒に見に行きましょう。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">ソニーってゲームや音楽のイメージが強くて、正直「会計」とは結びついてなかったです……。決算書のどこを見れば、その「のれん」ってやつに出会えるんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">いい質問です。連結貸借対照表（B/S）は、いつも左に「資産の部」・右に「負債・純資産の部」を並べる箱の構造でしたよね。「のれん」は左側の資産の中、それも「無形固定資産」という棚に。「非支配株主持分」は右側の純資産の中、株主資本のすぐ下の棚に、それぞれ静かに座っています。教科書で習った「箱のどこに置くか」というルールが、そのまま実物にも適用されているのを、この後の図で確認していきましょう。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>「のれん」「非支配株主持分」は、教科書だけの概念ではなく、実際に上場企業の連結貸借対照表に金額付きで載っています。ただし、ソニーグループはIFRS（国際会計基準）で決算書を作っているため、簿記2級で習う日本基準と科目名が少し異なる点に注意が必要です。</div>
-
-  <h2>まず、簿記2級で習う定義をおさらい</h2>
-  <p>連結会計のくわしい仕組みは<a href="boki2-renketsu.html">簿記2級の連結会計とは？連結修正仕訳・のれんを初心者向けに解説</a>で扱っていますが、ここでは要点だけ振り返ります。</p>
-  <div class="formula"><strong>のれん = 子会社株式の取得原価 - 子会社純資産の親会社持分</strong><br><strong>非支配株主持分 = 子会社の純資産のうち、親会社以外の株主に帰属する部分</strong></div>
-  <p>教科書の例題では、1つの子会社を買収した1回分の計算として登場します。しかし実際の大企業は、何十社もの子会社・関連会社を持っており、決算書に載っている「のれん」「非支配株主持分」は、それらすべてを合算した金額です。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">定義はテキスト通りですね……。でも「何十社分を合算した金額」って言われると、逆にイメージが遠のく気もします。教科書の例題みたいに、1つの数字にはならないんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚、正しいです。実際の決算書の「のれん」は、いわば「買収の歴史書」。ソニーグループなら、ゲーム会社、金融事業、音楽・映像事業……これまでのM&amp;Aの積み重ねが、たった1行の数字に圧縮されています。1個の数字の裏に何十個ものストーリーがあると思うと、逆に面白くなってきませんか？</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>ソニーグループの連結貸借対照表を見てみよう</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/sony-bs-concept-map-mobile.svg">
-      <img src="images/sony-bs-concept-map.svg" alt="ソニーグループの連結貸借対照表におけるのれんと非支配持分の位置関係図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="490" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：連結貸借対照表の左（資産の部）に「のれん」、右（純資産の部）に「非支配持分」が実際に載っている位置関係</figcaption>
-  </figure>
-  <p>ソニーグループの2025年度有価証券報告書では、連結財政状態計算書で2025年・2026年3月期の数値を比較できます。</p>
-  <table>
-    <tr><th>決算期（3月31日時点）</th><th>のれん</th></tr>
-    <tr><td>2025年3月期</td><td>1兆5,087億2,100万円</td></tr>
-    <tr><td>2026年3月期</td><td>1兆6,739億600万円</td></tr>
-  </table>
-  <p style="font-size:12px;color:var(--muted);">出典：<a href="https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf" target="_blank" rel="noopener">ソニーグループ「2025年度 有価証券報告書」</a>（2026年9月24日確認、単位：百万円）</p>
-  <p>2期の数字を比べるときも、差額だけで理由を決めつけず、企業結合や減損などの注記を同じ資料で確認します。</p>
-
-  <p>同じく「非支配持分」（簿記2級でいう非支配株主持分）の推移です。</p>
-  <table>
-    <tr><th>決算期（3月31日時点）</th><th>非支配持分</th></tr>
-    <tr><td>2025年3月期</td><td>3,304億600万円</td></tr>
-    <tr><td>2026年3月期</td><td>3,945億7,800万円</td></tr>
-  </table>
-  <p>これは、連結する子会社の純資産のうち親会社に帰属しない部分です。数値の変動理由は、注記と連結範囲を確認してから読みます。</p>
-
-  <div class="tip-box"><strong>数値の出典について：</strong>この表はソニーグループの<a href="https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf" target="_blank" rel="noopener">2025年度 有価証券報告書</a>の連結財政状態計算書をもとにしています。数値だけで企業の良し悪しを判断せず、対象期間・会計基準・注記を一緒に確認してください。</div>
-
-  <h2>「のれん」はどこから来たのか</h2>
-  <p>企業結合で事業を取得したとき、取得対価が識別可能な純資産の価額を上回る部分が「のれん」です。実在企業の数値を読むときは、金額の大小だけでなく、個別の企業結合注記で何が含まれているかを確認します。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">大企業の金額は、仕訳の例題よりずっと大きくて、まず桁に圧倒されます……。どこから読めばいいですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">桁が違うだけで、やっていることは教科書の例題と全く同じなんですよ。「取得原価 − 子会社純資産の親会社持分」という引き算の結果が、たまたま兆円単位になっているだけ。実務では金額の桁に圧倒されがちですが、簿記の目線で見れば「差額を出しているだけ」というシンプルな話だと分かると、怖さが半分になります。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>用語の違いに注意：日本基準とIFRS</h2>
-  <p>簿記2級で習うのは日本の会計基準（日本基準）ですが、ソニーグループのようなグローバル企業の多くは、国際的に通用するIFRS（国際会計基準）で連結財務諸表を作成しています。呼び方は違っても、意味している内容はほぼ同じです。</p>
-  <table>
-    <tr><th>簿記2級（日本基準）</th><th>IFRS（ソニーグループの開示）</th></tr>
-    <tr><td>非支配株主持分</td><td>非支配持分（Non-controlling interests）</td></tr>
-    <tr><td>のれん</td><td>のれん（Goodwill）※呼び方は共通</td></tr>
-  </table>
-  <p>決算書を読むときは、その会社がどの会計基準を採用しているかを確認する習慣をつけると、用語の違いに戸惑わずに済みます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">「非支配株主持分」が「非支配持分」になってるのを見て、一瞬「え、覚えた用語と違う……試験で通用しないの？」って焦りました。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その焦り方、実務に出た新人が最初にぶつかる壁そのものです（笑）。でも安心してください、試験で習う「非支配株主持分」で何も問題ありません。IFRSは世界共通で使うための会計基準なので、日本基準とは呼び方の流儀が違うだけ。就活や実務でIFRS採用企業の決算書を読むときに「あ、これ簿記で言うあれだ」と気づければ十分です。用語の違いにビビらず、中身が同じだと分かっていることの方が、よっぽど価値があります。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>「のれん」は計上後も注記を確認する</h2>
-  <p>のれんは、計上された金額をそのまま眺めるだけではありません。各社の注記を見て、企業結合や減損に関する説明、対象となる事業、会計基準を確認します。仕組みを理解することと、企業を評価することは別です。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">「減損」って言葉、正直ちょっと怖いです……。せっかく積み上げた「のれん」が減るなんて、その会社にとって悪いニュースなんじゃないですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">「怖い」という感覚、悪くないですよ。ただ、この記事の立場としては、この数字が良いか悪いかを評価するつもりはありません。大事なのは「のれんは一度計上したら永遠に固定される数字ではない」という会計の仕組みそのものです。将来の見積もりが変われば、資産の価値を見直す——これは会計が持つ、健全な自己修正の機能です。仕組みを理解することと、経営を評価することは別物だと切り分けて見る癖をつけると、決算書がぐっと読みやすくなりますよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>決算書を読むときの注意点</h2>
-  <ul>
-    <li>採用している会計基準（日本基準／IFRS／米国基準）によって科目名が異なることがある</li>
-    <li>「のれん」「非支配株主持分」は、有価証券報告書・決算短信の連結貸借対照表（IFRSでは連結財政状態計算書）に載っている</li>
-    <li>数値は決算のたびに更新されるため、最新の公式IR資料を確認する</li>
-    <li>金額の大小だけで「良い・悪い」を判断せず、対象期間・連結範囲・企業結合や減損の注記まで確認する</li>
-  </ul>
-
-  <div class="warn-box"><strong>この記事の位置づけ：</strong>ここで紹介した内容は、簿記の知識と実際の決算書をつなげるための「読み方」の解説です。ソニーグループの経営や株価に関する評価・判断を示すものではありません。投資判断は、必ずご自身で一次情報を確認の上、自己責任で行ってください。</div>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>「のれん」「非支配株主持分」は、実際の上場企業の連結貸借対照表に金額付きで載っている</li>
-    <li>ソニーグループの2026年3月期ののれんは1兆6,739億600万円、非支配持分は3,945億7,800万円である</li>
-    <li>「のれん」を読むときは、企業結合や減損に関する注記も確認する</li>
-    <li>IFRS採用企業は日本基準と科目の呼び方が異なる場合があるので注意する</li>
-    <li>簿記2級で学んだ知識は、暗記ではなく実際の決算書を読む力につながっている</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 簿記の知識を、決算書を読む力に変えよう</h3>
-    <p>スタディクエストで商業簿記の学習時間を記録し、連結会計を経験値に変えましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">ソニーグループの「のれん」はいくらですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">2026年3月期の連結財政状態計算書では1兆6,739億600万円です。<a href="https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf" target="_blank" rel="noopener">ソニーグループ「2025年度 有価証券報告書」</a>で確認できます。金額は決算ごとに変わるため、対象年度と注記も確認してください。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">「非支配株主持分」と「非支配持分」は同じ意味ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">はい、意味は同じです。「非支配株主持分」は日本基準の呼び方、「非支配持分」はIFRS（国際会計基準）での呼び方の違いです。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">「のれん」はどこを見れば確認できますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">上場企業が公表している有価証券報告書・決算短信の連結貸借対照表（IFRS採用企業では連結財政状態計算書）に記載されています。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">なぜ実在の企業を例にしているのですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">簿記の教科書的な説明だけでは、実際の決算書との結びつきがイメージしにくいためです。この記事は企業の評価を目的とせず、公表数値を教材として勘定科目の読み方を解説しています。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ソニーグループの「のれん」はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"2026年3月期の連結財政状態計算書では1兆6,739億600万円です。金額は決算ごとに変わるため、対象年度と注記も確認してください。"}},{"@type":"Question","name":"「非支配株主持分」と「非支配持分」は同じ意味ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、意味は同じです。「非支配株主持分」は日本基準の呼び方、「非支配持分」はIFRS（国際会計基準）での呼び方の違いです。"}},{"@type":"Question","name":"「のれん」はどこを見れば確認できますか？","acceptedAnswer":{"@type":"Answer","text":"上場企業が公表している有価証券報告書・決算短信の連結貸借対照表（IFRS採用企業では連結財政状態計算書）に記載されています。"}},{"@type":"Question","name":"なぜ実在の企業を例にしているのですか？","acceptedAnswer":{"@type":"Answer","text":"簿記の教科書的な説明だけでは、実際の決算書との結びつきがイメージしにくいためです。この記事は企業の評価を目的とせず、公表数値を教材として勘定科目の読み方を解説しています。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">連結会計とは？連結修正仕訳とのれん</div></a>
-  <a href="boki2-zeikouka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">税効果会計とは？繰延税金資産</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-  <a href="cpa.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">次の資格</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">公認会計士試験の勉強法</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shikaku-list.html">決算書・ソニー</a></div><p class="meta">決算書・ソニー | 公開：2026年7月7日 | 更新日：2026年11月3日</p><h1>ソニーの決算書を読む｜のれん・非支配持分と注記の照合例</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>簿記で学んだ「のれん」「非支配株主持分」に近い項目を、ソニーグループの実際の開示で探す記事です。ここでは2025年度有価証券報告書の、2025年3月31日と2026年3月31日の比較を使います。最新の株価や投資判断ではなく、同じ資料の表と注記を照合する練習です。</p>
+<h2>最初に年度・決算日・単位・会計基準をそろえる</h2>
+<p>2025年度は2025年4月1日から2026年3月31日までです。「2025年度末」を2025年3月31日と読むと一年ずれます。ソニーの連結財務諸表はIFRSに準拠し、表示は百万円単位です。連結の計算書と提出会社だけの財務諸表を混ぜないよう、まず表題を確認します。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">確認欄</th><th scope="col">この練習で使う資料・条件</th></tr></thead><tbody><tr><td>資料</td><td>ソニーグループ2025年度有価証券報告書。2026年6月18日提出</td></tr><tr><td>連結の表</td><td>連結財政状態計算書。紙面129〜131頁、PDF132〜134頁</td></tr><tr><td>比較日</td><td>2024年度末＝2025年3月31日／2025年度末＝2026年3月31日</td></tr><tr><td>単位</td><td>百万円。金額の大小を読む前に単位欄を確認</td></tr><tr><td>基準</td><td>IFRS。簿記の単純例と実際の測定を同一視しない</td></tr></tbody></table></div>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/article-diagrams/kessansho-yomikata-sony-mobile.svg?v=20261103"><img src="images/article-diagrams/kessansho-yomikata-sony.svg?v=20261103" alt="決算書は列と注記を照合" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>既存の2期比較は、公式の数値と一致</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">項目・単位は百万円</th><th scope="col">2025年3月31日</th><th scope="col">2026年3月31日</th><th scope="col">表示場所</th></tr></thead><tbody><tr><td>のれん</td><td>1,508,721</td><td>1,673,906</td><td>非流動資産。注記11への参照</td></tr><tr><td>非支配持分</td><td>330,406</td><td>394,578</td><td>資本の部。当社株主に帰属する資本とは別</td></tr></tbody></table></div>
+<p>この4つの既存数値は一次資料と一致したため維持しました。実際の表は縦型で、資産・負債・資本が複数ページに続きます。「左の棚」「右の棚」という簿記の模式図だけで場所を断定せず、表の区分名と行を追います。非支配持分は負債の行ではありません。</p>
+<p>出典：<a href="https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf#page=132" target="_blank" rel="noopener">ソニー2025年度有価証券報告書・連結財政状態計算書</a>（2026年11月3日確認）。ここに示すのはこの報告書の2期比較で、以後の四半期末の残高ではありません。</p>
+<section class="sq-facts-exercise"><h3>自作例1：百万円を円に直して差額を求める</h3><p>上表ののれんについて、2026年3月31日の円表示と、前期末からの増加額を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>1,673,906百万円＝1,673,906,000,000円＝1兆6,739億600万円です。差額は1,673,906−1,508,721＝165,185百万円＝1,651億8,500万円。非支配持分の差額も394,578−330,406＝64,172百万円＝641億7,200万円です。単位を変えた後も元の百万円へ戻せるか検算します。これは公表数値を使った編集部の計算問題です。</p></div></details></section>
+<h2>差額を「買収額」や「利益」と決めつけない</h2>
+<p>のれんは取得だけでなく、処分・減損・為替等でも残高が変わります。同じ報告書の注記11、紙面194頁・PDF197頁には変動表があります。2025年度の帳簿価額の変動は、取得88,058、処分又は売却目的保有資産への分類△1,245、所有者分配目的保有資産への分類△10,834、減損△17,430、外貨換算調整106,636（すべて百万円）です。</p>
+<section class="sq-facts-exercise"><h3>自作例2：注記の変動表で残高をつなぐ</h3><p>期首1,508,721百万円に、取得88,058・処分等△1,245・所有者分配目的への分類△10,834・減損△17,430・外貨換算106,636を加減すると、期末いくらですか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>88,058−1,245−10,834−17,430＋106,636＝165,185百万円。期首1,508,721＋165,185＝1,673,906百万円で本表につながります。増加165,185を全部「当年の買収による増加」とすると、外貨換算等を落とします。また減損17,430を円単位の17,430円と読まないようにします。</p></div></details></section>
+<p>出典：<a href="https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf#page=197" target="_blank" rel="noopener">同報告書・注記11「のれん及び無形資産」</a>。注記は金融事業のスピンオフ等の条件も説明しています。一つの増減だけから業績や買収の成否を断定せず、どの範囲の残高かも合わせて読みます。</p>
+<h2>IFRSは、簿記の名前を置き換えるだけではない</h2>
+<p>旧記事の「名前は違うが中身はほぼ同じ」は改めました。ソニーの注記3は、企業結合時の対価、非支配持分、従来保有持分の公正価値と、識別可能資産・負債の正味価額からのれんを認識する方針を説明しています。非支配持分も取引ごとに公正価値又は比例的持分で測定する方針です。単純に「支払額−子会社の帳簿上の純資産×持分比率」を実際の全取引へ適用することはできません。</p>
+<p>関連会社についても、ソニーは持分法による投資として説明しています。「子会社・関連会社の取得差額をすべてのれん行に合算」とする旧説明は外しました。支配して連結する子会社と、持分法で会計処理する投資は、同じ形で本表へ足すものではありません。</p>
+<p>会計方針には、のれんを配分した資金生成単位等の年1回の減損テストや、兆候がある場合の検討も記されています。「資産にあるから永久に同額」「残高増加はすべて良い投資」という読み方にはしません。ここでは報告書の関連箇所を確認したもので、個々の取引の見積りを再計算したものではありません。</p>
+<h2>架空の取得例は、仮定を明示して使う</h2>
+<section class="sq-facts-exercise"><h3>自作例3：比例的持分で測定する簡略例</h3><p>架空の取得日に、公正価値で評価した識別可能純資産が100、80％取得の対価が100、非支配持分は比例的持分20、従来保有持分は0とします。のれんはいくら？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>対価100＋非支配持分20＋従来保有持分0−識別可能純資産100＝20です。80％以外の持分20が負債になるわけではありません。この数値はソニーの特定の買収ではなく編集部の仮定です。非支配持分を公正価値25とする別の仮定なら、同じ式でものれん25となります。測定方法の前提を落とすと答えが変わります。</p></div></details></section>
+<h2>自分の確認ログを残す</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">記録欄</th><th scope="col">この例の記入例</th></tr></thead><tbody><tr><td>出典と版</td><td>2025年度有報・提出日2026年6月18日</td></tr><tr><td>表と行</td><td>連結財政状態計算書の非流動資産・のれん</td></tr><tr><td>列と単位</td><td>2026年3月31日・百万円</td></tr><tr><td>注記への移動</td><td>注記11の変動表、注記3の会計方針</td></tr><tr><td>確かめた計算</td><td>期首＋変動＝期末、百万円から円への換算</td></tr><tr><td>まだ言えないこと</td><td>一社の資料だけで全社の基準や投資の良否を決めない</td></tr></tbody></table></div>
+<p>本文の数字を検索して見つけたら終わりにせず、列見出しと脚注を一緒に記録します。別会社の決算書で同じ語を見た場合も、基準・会計方針・連結範囲を確認してから比べます。残高と期間の利益、親会社の所有割合と非支配持分の実額も、ひとまとめに換算しないことが練習の要点です。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf" target="_blank" rel="noopener">ソニーグループ：2025年度有価証券報告書（本表129〜131頁、会計方針139・141・146〜147頁、注記194頁）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>2025年度末は2025年3月31日ですか？</summary><p>この資料の2025年度末は2026年3月31日です。比較列の2024年度末は2025年3月31日で、年度と暦年を分けます。</p></details><details class="sq-facts-answer"><summary>のれんの増加額は全部その年の買収額ですか？</summary><p>いいえ。注記11では取得・処分等・減損・外貨換算等を示しています。増減内訳を合計して本表と照合します。</p></details><details class="sq-facts-answer"><summary>非支配持分は負債ですか？</summary><p>この連結財政状態計算書では資本の部に表示され、当社株主に帰属する資本とは別の行です。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki-kessansho-analysis.html">決算書を読む最初の手順</a></li><li><a href="boki2-noren-vs-fu-no-noren.html">のれんを仮定付きの簿記例で確認</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="boki2-renketsu.html">連結会計</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-regulated-professions"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
