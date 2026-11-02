@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-arai-kirihanashi.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>有価証券の洗替方式と切放方式の違いがわからない人へ｜図解で整理【簿記2級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級の有価証券、洗替方式と切放方式の違いがわからない人向けに、翌期首の処理・売却損益の算定基準・適用できる有価証券を例題つきで解説。2年間の損益合計が一致する理由も図解で整理します。">
+<title>有価証券の洗替と切放｜期首・売却・期別損益をつなぐ自作例｜スタディクエスト</title>
+<meta name="description" content="洗替と切放で損益認識時期が異なるとの説明を訂正。100→120→150円と90円売却の2例で期別合計を検算し、その他有価証券の通常評価と減損を区別。">
 <meta name="keywords" content="洗替方式 切放方式 違い,有価証券 洗替方式 わからない,切放方式とは,洗替方式とは,日商簿記2級 有価証券">
-<meta property="og:title" content="有価証券の洗替方式と切放方式の違いがわからない人へ【簿記2級】図解で完全整理">
-<meta property="og:description" content="翌期首の処理・売却損益の算定基準・適用できる有価証券の3つの視点で、洗替方式と切放方式の違いを例題つきで解説します。">
+<meta property="og:title" content="有価証券の洗替と切放｜期首・売却・期別損益をつなぐ自作例">
+<meta property="og:description" content="洗替と切放で損益認識時期が異なるとの説明を訂正。100→120→150円と90円売却の2例で期別合計を検算し、その他有価証券の通常評価と減損を区別。">
 <meta property="og:url" content="https://study-quest.net/boki2-arai-kirihanashi.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/boki2-arai-kirihanashi.png">
@@ -24,20 +24,9 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"有価証券の洗替方式と切放方式の違いがわからない人へ｜図解で整理",
-  "image": "https://study-quest.net/screenshots/ogp/boki2-arai-kirihanashi.png","description":"翌期首の処理・売却損益の算定基準・適用できる有価証券を例題つきで解説。2年間の損益合計が一致する理由も図解で整理します。","url":"https://study-quest.net/boki2-arai-kirihanashi.html","datePublished":"2026-07-09","dateModified":"2026-09-03","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "有価証券の洗替と切放｜期首・売却・期別損益をつなぐ自作例", "image": "https://study-quest.net/screenshots/ogp/boki2-arai-kirihanashi.png", "description": "洗替と切放で損益認識時期が異なるとの説明を訂正。100→120→150円と90円売却の2例で期別合計を検算し、その他有価証券の通常評価と減損を区別。", "url": "https://study-quest.net/boki2-arai-kirihanashi.html", "datePublished": "2026-07-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"洗替方式と切放方式の一番の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"翌期首の処理が違います。洗替方式は再振替仕訳を行い帳簿価額を取得原価に戻すのに対し、切放方式は何もせず期末時価をそのまま帳簿価額とします。そのため売却時の損益の算定基準も、洗替方式は取得原価との差額、切放方式は前期末時価との差額になります。"}},
-    {"@type":"Question","name":"その他有価証券には切放方式を使えますか？","acceptedAnswer":{"@type":"Answer","text":"使えません。その他有価証券は洗替方式のみが認められています。切放方式が選べるのは売買目的有価証券だけです。"}},
-    {"@type":"Question","name":"洗替方式と切放方式で最終的な損益は変わりますか？","acceptedAnswer":{"@type":"Answer","text":"2年間の損益合計はどちらの方式でも一致します。違うのは、その損益をどのタイミング（評価時か売却時か）で認識するかだけです。"}}
-  ]
-}
-</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
 body{font-family:'M PLUS 1',sans-serif;color:var(--text);line-height:1.9}a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
@@ -65,161 +54,48 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "洗替と切放では当期の損益合計が必ず違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の単一の売買目的有価証券の例では一致します。洗替は期首評価損と売却益を合算する必要があり、売却益だけを比べると誤ります。"}}, {"@type": "Question", "name": "売買目的有価証券で切放方式は使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "金融商品会計実務指針第67項は、前期末の評価差額を切放処理によって売却原価に含めることも認めています。試験では問題の指定に合わせます。"}}, {"@type": "Question", "name": "その他有価証券なら減損も翌期首に戻しますか？", "acceptedAnswer": {"@type": "Answer", "text": "通常の評価差額の洗替と減損は別です。実務指針第91項では、減損により取得原価を修正し、その修正後の取得原価を基礎に以後の評価を行います。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 洗替方式と切放方式の違い</div>
-<p class="meta">日商簿記2級 | 公開：2026年7月9日 | 更新日：2026年9月3日</p>
-  <h1>有価証券の洗替方式と切放方式の違いがわからない人へ<br>タイミングからスッキリ整理する図解ガイド</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>どちらも売買目的有価証券の翌期の会計処理方法</strong>——名前が似ていて混同しやすい</li>
-      <li>本質の違いは<strong>翌期首の処理</strong>——洗替方式は「取得原価に戻す」、切放方式は「そのまま」</li>
-      <li><strong>その他有価証券は洗替方式のみ</strong>選択可能——切放方式は売買目的有価証券だけの選択肢</li>
-      <li><strong>2年間の損益合計はどちらも一致する</strong>——違うのは認識するタイミングだけ</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    有価証券の期末評価をなんとか乗り越えたと思ったら、次に「洗替方式」「切放方式」という、見るからに似た名前の2つが出てきて「え、名前も紛らわしいし、結局何が違うの……」と固まった記憶があります。しかも「どっちを使っても最終的な損益は同じ」と教科書に書いてあって、余計に「じゃあ何のために2つもあるの？」と混乱しました。<br>
-    でも実は、違いはたった1つ。「<strong>翌期の最初に、帳簿価額を元に戻すか、そのままにするか</strong>」——これだけです。今日はこのシンプルな軸を、一緒に整理していきましょう！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">洗替方式と切放方式、名前も似てるし、どっちがどっちの処理か毎回ごちゃごちゃになります……。しかも「どちらでも損益は同じ」って言われると、余計に違いがわからなくなります。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚、よくわかります！見るポイントは「翌期の最初に何をするか」だけです。洗替方式は、名前の通り翌期首に「洗い替える」——つまり評価替えをいったんリセットして、帳簿価額を取得原価に戻します。切放方式は「切り放す」——前期末の時価をそのまま翌期に持ち越して、何もしません。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なるほど、「戻すか、そのままか」なんですね！でも最終的な損益が同じなら、どっちを使っても同じじゃないんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">結果は同じでも、「いつ損益として計上するか」のタイミングが違うんです。評価替えの時点でしっかり損益を認識したいなら切放方式、いったんリセットして売却時にまとめて損益を出したいなら洗替方式、というイメージです。試験ではどちらの方式を使うか問題文に指示があるので、判断に迷う必要はありません。仕組みを理解しておくことが大切です。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>❓ 翌期首の処理の違い——「元に戻すか」「そのままか」</h2>
-
-  <p>洗替方式と切放方式は、どちらも<a href="boki2-yukashoken.html">売買目的有価証券</a>を期末に時価評価した後、翌期の会計処理として選べる2つの方法です。違いは、翌期の最初に何をするかにあります。</p>
-
-  <div class="origin-compare">
-    <div class="origin-card arai">
-      <span class="origin-badge">翌期首に元へ戻す</span>
-      <div class="origin-name">洗替方式（あらいがえほうしき）</div>
-      <div class="origin-kamoku">→ 再振替仕訳で取得原価に戻す</div>
-      <div class="origin-desc">期末の評価替え仕訳を、翌期首に逆仕訳して取り消す。帳簿価額は取得原価に戻る。</div>
-    </div>
-    <div class="origin-card kiri">
-      <span class="origin-badge">翌期首はそのまま</span>
-      <div class="origin-name">切放方式（きりはなしほうしき）</div>
-      <div class="origin-kamoku">→ 何もせず期末時価を引き継ぐ</div>
-      <div class="origin-desc">翌期首に仕訳は不要。期末の時価評価額が、そのまま翌期の帳簿価額になる。</div>
-    </div>
-  </div>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki2-arai-kirihanashi-map-mobile.svg">
-    <img src="images/boki2-arai-kirihanashi-map.svg" alt="洗替方式と切放方式の翌期首の処理・売却損益の算定基準・適用範囲を対比した図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="1200" height="800" loading="lazy">
-  </picture>
-
-  <h2>📝 ① 洗替方式の仕訳の流れ</h2>
-  <div class="mondai">
-    <div class="m-label">前提</div>
-    <p>売買目的有価証券（取得原価100円）をX1年度末に時価120円で評価し、X2年度に150円で売却した。</p>
-  </div>
-  <div class="journal">
-    <table>
-      <tr><th>タイミング</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>X1年度末（評価替え）</td><td>売買目的有価証券</td><td>20</td><td>有価証券評価益</td><td>20</td></tr>
-      <tr><td>X2年度首（再振替）</td><td>有価証券評価損</td><td>20</td><td>売買目的有価証券</td><td>20</td></tr>
-      <tr><td>X2年度（売却）</td><td>現金など</td><td>150</td><td>売買目的有価証券</td><td>100</td></tr>
-      <tr><td></td><td></td><td></td><td>有価証券売却益</td><td>50</td></tr>
-    </table>
-  </div>
-  <div class="tip-box"><strong>ポイント：</strong>再振替仕訳で帳簿価額が取得原価100円に戻っているため、売却時の売却益は「150－100＝50」で計算します。X2年度の損益合計は「△20（再振替）＋50（売却益）＝30」です。</div>
-
-  <h2>💰 ② 切放方式の仕訳の流れ</h2>
-  <div class="journal">
-    <table>
-      <tr><th>タイミング</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>X1年度末（評価替え）</td><td>売買目的有価証券</td><td>20</td><td>有価証券評価益</td><td>20</td></tr>
-      <tr><td>X2年度首</td><td colspan="3">仕訳なし（帳簿価額120円のまま）</td></tr>
-      <tr><td>X2年度（売却）</td><td>現金など</td><td>150</td><td>売買目的有価証券</td><td>120</td></tr>
-      <tr><td></td><td></td><td></td><td>有価証券売却益</td><td>30</td></tr>
-    </table>
-  </div>
-  <div class="tip-box"><strong>ポイント：</strong>翌期首に仕訳がないため、帳簿価額は前期末時価の120円のまま。売却益は「150－120＝30」で計算します。X2年度の損益は「0（期首）＋30（売却益）＝30」——洗替方式のX2年度の損益（30）と一致します。</div>
-
-  <div class="warn-box"><strong>検算のコツ：</strong>X1年度の評価益20円はどちらの方式でも同じです。2年間の損益合計は、洗替方式・切放方式ともに「20＋30＝50円」で一致します。認識するタイミングが違うだけで、最終的な儲けの金額は変わりません。</div>
-
-  <h2>🔍 ③ 適用できる有価証券の違い——その他有価証券は洗替方式のみ</h2>
-  <table>
-    <tr><th>有価証券の種類</th><th>洗替方式</th><th>切放方式</th></tr>
-    <tr><td>売買目的有価証券</td><td>選択できる</td><td>選択できる</td></tr>
-    <tr><td>その他有価証券</td><td>選択できる（というより必須）</td><td>選択できない</td></tr>
-  </table>
-  <div class="warn-box"><strong>その他有価証券に切放方式は使えない：</strong>その他有価証券は原則として翌期首に洗い替える処理が必要で、切放方式は認められていません。問題文で「その他有価証券」と出てきたら、自動的に洗替方式だと判断できます。</div>
-  <p style="font-size:12px;color:var(--sq-soft,#718096);">出典：<a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=109" target="_blank" rel="noopener">企業会計基準委員会「企業会計基準第10号 金融商品に関する会計基準」</a>、<a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=120" target="_blank" rel="noopener">企業会計基準委員会「金融商品会計に関する実務指針」</a>（2026年9月3日確認）</p>
-
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記2級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
-
-  <div class="matome">
-    <h3>📋 まとめ：洗替方式 vs 切放方式 早見表</h3>
-    <div class="matome-row"><span class="trigger">翌期首の処理</span><span class="result">洗替＝再振替で取得原価に戻す／切放＝何もしない</span></div>
-    <div class="matome-row"><span class="trigger">売却損益の算定基準</span><span class="result">洗替＝取得原価との差額／切放＝前期末時価との差額</span></div>
-    <div class="matome-row"><span class="trigger">適用できる有価証券</span><span class="result">洗替＝売買目的・その他両方／切放＝売買目的のみ</span></div>
-    <div class="matome-row"><span class="trigger">2年間の損益合計</span><span class="result">どちらの方式でも一致する</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🔄</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">「翌期首に戻すか、そのままか」——この1点で洗替方式と切放方式はもう混同しません</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-  </div>
-</div>
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">洗替方式と切放方式の一番の違いは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">翌期首の処理が違います。洗替方式は再振替仕訳を行い帳簿価額を取得原価に戻すのに対し、切放方式は何もせず期末時価をそのまま帳簿価額とします。そのため売却時の損益の算定基準も、洗替方式は取得原価との差額、切放方式は前期末時価との差額になります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">その他有価証券には切放方式を使えますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">使えません。その他有価証券は洗替方式のみが認められています。切放方式が選べるのは売買目的有価証券だけです。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">洗替方式と切放方式で最終的な損益は変わりますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">2年間の損益合計はどちらの方式でも一致します。違うのは、その損益をどのタイミング（評価時か売却時か）で認識するかだけです。</div></details>
-</section>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-yukashoken.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の有価証券とは？売買目的・満期保有・子会社株式</div></a>
-  <a href="boki2-hyojun-vs-jissai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">標準原価計算と実際原価計算の違い</div></a>
-  <a href="boki2-zeikouka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">税効果会計とは？繰延税金資産</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年7月9日 | 更新日：2026年11月2日</p><h1>有価証券の洗替と切放｜期首・売却・期別損益をつなぐ自作例</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>洗替方式は前期末の評価仕訳を翌期首に戻し、切放方式は評価後の帳簿価額を引き継ぐ方法です。売買目的有価証券で同じ取引を比較すると、<strong>期首の再振替と売却損益の内訳が変わっても、各期の損益合計は一致する</strong>場合があります。「損益を認識する時期がずれる」という説明だけでは、この点を取り違えます。</p>
+<div class="sq-facts-note"><strong>対象と仮定</strong><p>編集部の架空例です。同一の売買目的有価証券を1単位だけ保有し、手数料・配当・税効果・追加取得はありません。評価益20円も売却益等も税引前の損益です。その他有価証券の通常の評価差額や減損は、別の処理として後半で区別します。</p></div>
+<h2>まず、保有目的と期首の指定を確認</h2>
+<p>ASBJの金融商品会計基準第15項は売買目的有価証券を時価評価し、差額を損益にします。実務指針第67項は、前期末の評価差額を切放処理によって売却原価へ含めることも認めています。試験では<strong>洗替・切放の指定に合わせて</strong>、どの帳簿価額から売却原価を計算するかを確定します。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">確認点</th><th scope="col">洗替方式</th><th scope="col">切放方式</th></tr></thead><tbody><tr><td>X1年末の時価評価</td><td>行う</td><td>行う</td></tr><tr><td>X2年首</td><td>X1年末の評価仕訳を戻す</td><td>評価後の帳簿価額を引き継ぐ</td></tr><tr><td>X2年売却原価（本例）</td><td>取得原価100円</td><td>前期末時価120円</td></tr><tr><td>照合するもの</td><td>期首評価損と売却益の合計</td><td>引継ぎ後の売却損益</td></tr></tbody></table></div>
+<h2>自作例：100円で買い、120円に評価し、150円で売る</h2>
+<p>X1年に100円で取得、X1年末時価120円、X2年に150円で全量売却します。取得時は借方 売買目的有価証券100／貸方 現金預金100です。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">時点</th><th scope="col">洗替方式の仕訳</th><th scope="col">切放方式の仕訳</th></tr></thead><tbody><tr><td>X1年末</td><td>借：売買目的有価証券20／貸：有価証券評価益20</td><td>左と同じ</td></tr><tr><td>X2年首</td><td>借：有価証券評価損20／貸：売買目的有価証券20</td><td>仕訳なし</td></tr><tr><td>X2年売却</td><td>借：現金預金150／貸：売買目的有価証券100・有価証券売却益50</td><td>借：現金預金150／貸：売買目的有価証券120・有価証券売却益30</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>例題1：洗替の売却益50円は当期の利益そのもの？</h3><p>X2年の売却益50円と、切放の売却益30円の差20円は、X2年の損益合計の差ですか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>差ではありません。</strong>洗替は期首評価損20円があるので、X2年の合計は−20＋50＝<strong>30円</strong>。切放も30円です。X1年はともに20円、2年合計は50円で、最終収入150−取得支出100＝50円とも一致します。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>例題2：売値が90円になったら？</h3><p>X1年末120円の条件は同じで、X2年の売却額だけ90円に変更します。両方式のX2年損益と2年合計を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>洗替は期首評価損−20円に、売却損90−100＝−10円を加えて<strong>−30円</strong>。切放は90−120＝<strong>−30円</strong>です。X1年の＋20円と合わせ、2年合計は<strong>−10円</strong>。最終収入90−取得支出100にも一致します。</p><p>売却仕訳は、洗替：借方 現金預金90・有価証券売却損10／貸方 売買目的有価証券100。切放：借方 現金預金90・有価証券売却損30／貸方 売買目的有価証券120です。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-arai-kirihanashi-map-mobile.svg?v=20261102"><img src="images/boki2-arai-kirihanashi-map.svg?v=20261102" alt="洗替は期首損20と売却益50で当期益30、切放も当期益30となる自作図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>その他有価証券と減損を同じ表へ混ぜない</h2>
+<p>金融商品会計基準第18項・実務指針第76項では、その他有価証券の通常の評価差額は洗替方式で扱います。評価差額は原則として純資産へ計上し、全部純資産直入法か部分純資産直入法か、税効果も確認します。上の売買目的の「評価益20円」を、そのままその他有価証券の損益にするものではありません。</p>
+<p>また、実務指針第91項の<strong>減損処理では取得原価を修正</strong>するため、「その他有価証券なら値下がりを翌期首に全部元に戻す」とも言えません。通常の時価評価と、回復可能性などを判定する減損を分けてください。</p>
+<section class="sq-facts-exercise"><h3>例題3：通常の評価差額と減損を区別できる？</h3><p>「その他有価証券は洗替だから、減損した場合も翌期首に取得原価を必ず元へ戻す」という説明を判定してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>誤りです。</strong>通常の評価差額の洗替と、減損による取得原価の修正は別です。実務指針第91項では、減損後の修正取得原価を基礎に、その後の期末評価を行います。本記事の売買目的の100→120→売却の例を、減損の処理へ一般化しません。</p></div></details></section>
+<h2>答案の確認は「仕訳」と「期別合計」の2段階</h2>
+<ol><li>保有目的・前期の評価後残高・洗替または切放の指定を読む。</li><li>洗替なら期首再振替後の帳簿価額、切放なら引継ぎ額を先に書く。</li><li>売却損益だけでなく、当期の期首評価損益も合算する。</li><li>複数期合計を最終の受取額と当初取得額の差へ照合する。</li></ol>
+<p>これは単一資産の全量売却を追う確認手順です。複数回の取得・一部売却では、移動平均法等による売却原価の算定も別途必要になります。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=109" target="_blank" rel="noopener">ASBJ：金融商品に関する会計基準（2026年6月版）第15・18・20項</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=120" target="_blank" rel="noopener">ASBJ：金融商品会計実務指針 第67・76・91項</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>洗替と切放では当期の損益合計が必ず違いますか？</summary><p>本記事の単一の売買目的有価証券の例では一致します。洗替は期首評価損と売却益を合算する必要があり、売却益だけを比べると誤ります。</p></details><details class="sq-facts-answer"><summary>売買目的有価証券で切放方式は使えますか？</summary><p>金融商品会計実務指針第67項は、前期末の評価差額を切放処理によって売却原価に含めることも認めています。試験では問題の指定に合わせます。</p></details><details class="sq-facts-answer"><summary>その他有価証券なら減損も翌期首に戻しますか？</summary><p>通常の評価差額の洗替と減損は別です。実務指針第91項では、減損により取得原価を修正し、その修正後の取得原価を基礎に以後の評価を行います。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-yukashoken.html">有価証券の保有目的を確認</a></li><li><a href="boki2-shasai.html">満期保有目的債券の償却原価</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-third-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
