@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-kyuryo.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】給料の仕訳を完全解説｜社会保険料・源泉所得税の控除仕訳を例題つきで解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の給料・給与の仕訳を例題つきで完全解説。社会保険料・源泉所得税の控除仕訳、総支給額で費用計上する理由、従業員立替金の使い方まで試験頻出パターンを網羅。">
+<title>給料の仕訳｜総支給・預り金・会社負担を残高で検算｜スタディクエスト</title>
+<meta name="description" content="総支給額と手取りの既存例を検算し、預り金と立替金を区別。社会保険料はすべて同額負担という一般化を訂正します。">
 <meta name="keywords" content="給料 仕訳,源泉所得税 預り金,社会保険料 仕訳,給料 手取り 計算,日商簿記3級 給料">
-<meta property="og:title" content="給料の仕訳【日商簿記3級】源泉所得税・社会保険料の預り金を図解で完全解説">
-<meta property="og:description" content="給料の仕訳、源泉所得税・社会保険料の預り金まで例題つきで解説。">
+<meta property="og:title" content="給料の仕訳｜総支給・預り金・会社負担を残高で検算">
+<meta property="og:description" content="総支給額と手取りの既存例を検算し、預り金と立替金を区別。社会保険料はすべて同額負担という一般化を訂正します。">
 <meta property="og:url" content="https://study-quest.net/boki3-kyuryo.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"給料の仕訳【日商簿記3級】源泉所得税・社会保険料の預り金を図解で完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"給料の仕訳、源泉所得税・社会保険料の預り金まで例題つきで解説。","url":"https://study-quest.net/boki3-kyuryo.html","datePublished":"2026-05-07","dateModified": "2026-08-26","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "給料の仕訳｜総支給・預り金・会社負担を残高で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "総支給額と手取りの既存例を検算し、預り金と立替金を区別。社会保険料はすべて同額負担という一般化を訂正します。", "url": "https://study-quest.net/boki3-kyuryo.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -106,248 +105,39 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "給料は手取りだけを費用にしますか？", "acceptedAnswer": {"@type": "Answer", "text": "本文では総支給額を給料費用とし、控除分の負債と手取りを分けます。控除額だけ給料を小さくしません。"}}, {"@type": "Question", "name": "会社の社会保険負担はいつも従業員と同額ですか？", "acceptedAnswer": {"@type": "Answer", "text": "制度ごとに異なります。厚生年金の折半等を確認し、すべての社会保険・拠出金等へ一般化しません。"}}, {"@type": "Question", "name": "天引きしたらいつも立替金ですか？", "acceptedAnswer": {"@type": "Answer", "text": "会社が先に個人分を払い回収する資産と、従業員から預かり納付する負債を区別します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">日商簿記3級</a> &gt; 給料の仕訳</div>
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月26日</p>
-  <h1>給料の仕訳<br>源泉所得税・社会保険料の預り金を図解で完全解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <figure style="margin:24px 0;">
-    <img src="images/hero-kyuryo.jpg" alt="立替金の仕組みをイメージしたRPG風イラスト" style="width:100%;border-radius:14px;display:block;" loading="lazy" width="1600" height="900">
-  </figure>
-
-  <p class="lead">給料の仕訳でポイントになるのは、<strong>「総支給額（額面）で仕訳する」</strong>という点です。会社は従業員の代わりに源泉所得税・社会保険料を一時的に預かり、後日まとめて国や健康保険組合に納付します。</p>
-  <div class="sq-chat"></div>
-
-  <h2>給料支払いの全体像</h2>
-  <figure style="margin:20px 0;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki3-kyuryo-map-mobile.svg">
-      <img src="images/boki3-kyuryo-map.svg" alt="給料支払いの全体像 仕訳図解" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;" loading="lazy" width="760" height="400">
-    </picture>
-    <figcaption style="text-align:center;font-size:12px;color:#718096;margin-top:8px;">▲ 上：総支給額の内訳（手取り＋控除）　中：借方・貸方の仕訳　下：後日の預り金納付仕訳</figcaption>
-  </figure>
-  <p>図解の上段を見てください。従業員の手元に届く「手取り額（255,000円）」は総支給額（300,000円）から源泉所得税と社会保険料を差し引いた金額です。簿記では<strong>費用（給料）は控除前の総支給額300,000円で計上</strong>し、控除した15,000円と30,000円は「預り金」として貸方に記録します。後日、会社がまとめて税務署・社会保険事務所へ納付するときに預り金を消します。</p>
-  <div class="kyuryo-breakdown">
-    <div class="kb-row total">
-      <span class="kb-label">総支給額（額面）</span>
-      <span class="kb-amt">¥300,000</span>
-    </div>
-    <div class="kb-row deduct">
-      <span class="kb-label">（控除）源泉所得税</span>
-      <span class="kb-amt">− ¥15,000</span>
-    </div>
-    <div class="kb-row deduct">
-      <span class="kb-label">（控除）社会保険料（従業員負担）</span>
-      <span class="kb-amt">− ¥30,000</span>
-    </div>
-    <div class="kb-row net">
-      <span class="kb-label">手取り額（実際に振り込む金額）</span>
-      <span class="kb-amt">¥255,000</span>
-    </div>
-  </div>
-  <p>控除分は「預り金」として会社が一旦立て替え、後日まとめて納付します。</p>
-
-  <h2>① 給料を支払ったときの仕訳</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>給料の総支給額 ¥300,000 のうち、源泉所得税 ¥15,000・社会保険料（従業員負担）¥30,000 を控除し、差引手取り ¥255,000 を当座預金から振り込んだ。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳</div>
-    <div class="sw-row"><span class="kari">給料<span class="amt">300,000</span></span><span class="sep">／</span><span class="kashi">預り金（源泉所得税）<span class="amt">15,000</span></span></div>
-    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">預り金（社会保険料）<span class="amt">30,000</span></span></div>
-    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">当座預金<span class="amt">255,000</span></span></div>
-  </div>
-
-  <div class="point-card">
-    <div class="pc-label">最重要ポイント</div>
-    <p>借方は必ず「給料 ¥300,000」（総支給額）。手取り額の ¥255,000 ではない！</p>
-  </div>
-
-  <div class="tip-box"><strong>正式な勘定科目名について：</strong><br>試験では「預り金（源泉所得税）」を<strong>「所得税預り金」</strong>、「預り金（社会保険料）」を<strong>「社会保険料預り金」</strong>と表記する場合があります。どちらも同じ意味ですが、問題文の指示に合わせて使い分けてください。</div>
-
-  <h2>② 預り金を納付したときの仕訳</h2>
-  <p>預かった税金・社会保険料は、後日まとめて国や健康保険組合に納付します。</p>
-  <div class="shiwake-box">
-    <div class="sw-label">源泉所得税を税務署に納付したとき</div>
-    <div class="sw-row"><span class="kari">預り金（源泉所得税）<span class="amt">15,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">15,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">社会保険料を健康保険組合等に納付したとき</div>
-    <div class="sw-row"><span class="kari">預り金（社会保険料）<span class="amt">30,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">30,000</span></span></div>
-  </div>
-  <div class="tip-box"><strong>「預り金」は負債！</strong><br>会社が従業員の代わりに一時的に持っているお金なので、いつか返す（納付する）義務がある負債です。給料支払い時に発生し、納付時に消えます。</div>
-
-  <h2>③ 社会保険料の会社負担分</h2>
-  <p>社会保険料は従業員だけでなく、会社も同額を負担します（労使折半）。会社負担分は「法定福利費」（費用）で処理します。</p>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>社会保険料（従業員負担）¥30,000 と、会社負担分 ¥30,000 を合わせて当座預金から納付した。なお、従業員負担分はすでに預り金として処理済み。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">納付時の仕訳</div>
-    <div class="sw-row"><span class="kari">預り金（社会保険料）<span class="amt">30,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">60,000</span></span></div>
-    <div class="sw-row"><span class="kari">法定福利費<span class="amt">30,000</span></span><span class="sep"></span><span class="kashi"></span></div>
-  </div>
-  <div class="warn-box"><strong>従業員負担分と会社負担分を混同しない！</strong><br>従業員負担分：給料から天引き→「預り金」で処理<br>会社負担分：会社が別途払う→「法定福利費」（費用）で処理</div>
-
-  <h2>④ 従業員立替金（代わりに支払ったとき）</h2>
-  <p>従業員が本来負担すべき生命保険料などを、会社が一時的に立て替えることがあります。この場合は「<strong>従業員立替金</strong>（資産）」で記録し、後日の給料支給時に差し引いて精算します。</p>
-  <div class="tip-box"><strong>💡 身近な例で言うと：</strong><br>
-  出前館やUber Eatsなどの配達バイトをしたことがある人なら、配達中にかかった駐車料金や道路の通行料を一旦自分のお金で払って、後日まとめてプラットフォームから精算してもらった……という経験、ありませんか？<br>
-  これはまさに「立替金」の考え方そのものです。本来相手（会社やプラットフォーム）が払うべきお金を一時的に自分が肩代わりし、後で同額を返してもらう権利＝資産として扱われます。<br>
-  （※配達の経費精算が実際に簿記の「立替金」勘定として仕訳されるとは限りませんが、「一時的に立て替えて、後日同額が精算される」という構造はまさに立替金の本質です。）
-  </div>
-  <div class="mondai">
-    <div class="m-label">例題（立替時）</div>
-    <p>従業員の生命保険料 ¥25,000 を会社が現金で立て替えた。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（立替時）</div>
-    <div class="sw-row"><span class="kari">従業員立替金<span class="amt">25,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">25,000</span></span></div>
-  </div>
-  <div class="mondai">
-    <div class="m-label">例題（給料支給時に控除）</div>
-    <p>給料 ¥340,000 を支給する際、立替額 ¥25,000 を控除し、残額 ¥315,000 を普通預金から振り込んだ。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（給料支給・立替精算）</div>
-    <div class="sw-row"><span class="kari">給料<span class="amt">340,000</span></span><span class="sep">／</span><span class="kashi">従業員立替金<span class="amt">25,000</span></span></div>
-    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">普通預金<span class="amt">315,000</span></span></div>
-  </div>
-  <div class="tip-box"><strong>「従業員立替金」vs「立替金」</strong><br>相手が従業員の場合は「従業員立替金」、取引先など一般的な相手の場合は「立替金」を使います。どちらも資産（後で回収できる権利）です。</div>
-
-  <h2>⑤ なぜ給料費用は総支給額で計上するのか</h2>
-  <p>手取り額（差引支給額）ではなく、<strong>総支給額</strong>で給料を費用計上するのは「<strong>費用の総額主義</strong>」という会計原則によります。</p>
-  <div class="warn-box">
-    <strong>もし手取り額で計上したら？（NG例）</strong><br>
-    総支給 ¥350,000・所得税 ¥25,000・社会保険料 ¥17,500・手取り ¥307,500 の場合<br>
-    ❌ （借）給料 307,500 ／（貸）普通預金 307,500<br>
-    <ul style="margin-top:8px;margin-left:16px;">
-      <li>天引きした所得税 ¥25,000 が帳簿に現れない → 税務署への納付仕訳が書けない</li>
-      <li>会社の人件費コスト ¥350,000 が ¥307,500 と過少表示される</li>
-      <li>所得税・社会保険料の「預り金（負債）」が記録されない</li>
-    </ul>
-  </div>
-  <div class="tip-box">
-    <strong>正しい処理（費用の総額主義）</strong><br>
-    ✅ （借）給料 350,000 ／（貸）所得税預り金 25,000<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（貸）社会保険料預り金 17,500<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（貸）普通預金 307,500<br>
-    →「給料費用は総額」「天引き分は預り金（負債）」として全金額が帳簿に残る。
-  </div>
-
-  <h2>⑥ 総合例題：所得税＋社会保険料をまとめて処理</h2>
-  <p>実務では所得税と社会保険料を同時に天引きします。1つの仕訳で処理できるよう練習しましょう。</p>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>給料総額 ¥350,000 のうち、所得税 ¥25,000・社会保険料（従業員負担）¥17,500 を天引きし、手取り ¥307,500 を普通預金から振り込んだ。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">給料支払時（3つを同時処理）</div>
-    <div class="sw-row"><span class="kari">給料<span class="amt">350,000</span></span><span class="sep">／</span><span class="kashi">所得税預り金<span class="amt">25,000</span></span></div>
-    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">社会保険料預り金<span class="amt">17,500</span></span></div>
-    <div class="sw-row"><span class="kari"></span><span class="sep"></span><span class="kashi">普通預金<span class="amt">307,500</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">翌月①：所得税を税務署に納付</div>
-    <div class="sw-row"><span class="kari">所得税預り金<span class="amt">25,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">25,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">翌月②：社会保険料を年金事務所に納付（従業員分＋会社負担分の合計）</div>
-    <div class="sw-row"><span class="kari">社会保険料預り金<span class="amt">17,500</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">35,000</span></span></div>
-    <div class="sw-row"><span class="kari">法定福利費<span class="amt">17,500</span></span><span class="sep"></span><span class="kashi"></span></div>
-  </div>
-  <div class="tip-box"><strong>納付先が2か所あることに注意！</strong><br>所得税→税務署、社会保険料→年金事務所。社保は「従業員分＋会社負担分」の合計（35,000円）をまとめて納付します。</div>
-
-  <h2>⑦ 取引先への立替金・預り金</h2>
-  <p>給料以外の場面でも「立替金」「預り金」は出てきます。相手が従業員でなく取引先でも考え方は同じです。</p>
-  <div class="mondai">
-    <div class="m-label">例題①：取引先の運賃を立替え</div>
-    <p>取引先B社の運賃 ¥2,000 を現金で立替払いした。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">立替時</div>
-    <div class="sw-row"><span class="kari">立替金<span class="amt">2,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">2,000</span></span></div>
-  </div>
-  <div class="mondai">
-    <div class="m-label">例題②：取引先の売掛金を代わりに受け取り</div>
-    <p>取引先D社の売掛金 ¥50,000 を代わりに現金で受け取った。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">受取時（預り金として記録）</div>
-    <div class="sw-row"><span class="kari">現金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">預り金<span class="amt">50,000</span></span></div>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">D社に返金したとき</div>
-    <div class="sw-row"><span class="kari">預り金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">当座預金<span class="amt">50,000</span></span></div>
-  </div>
-  <div class="tip-box"><strong>立替金 vs 従業員立替金の使い分け：</strong><br>相手が<strong>従業員</strong>→「従業員立替金」、相手が<strong>取引先など</strong>→「立替金」。どちらも資産（後で回収できる権利）である点は同じです。</div>
-
-  <h2>⑧ よくある間違い3パターン</h2>
-  <div class="warn-box">
-    <strong>❌ 間違い①：給料を手取り額で計上してしまう</strong><br>
-    ❌ （借）給料 307,500 ／（貸）普通預金 307,500<br>
-    ✅ （借）給料 350,000 ／（貸）所得税預り金 25,000 ／ 社保料預り金 17,500 ／ 普通預金 307,500<br>
-    <br>
-    <strong>❌ 間違い②：従業員の生命保険料を会社の「保険料」費用として計上してしまう</strong><br>
-    ❌ （借）保険料 ／（貸）現金<br>
-    ✅ 従業員のための立替は「従業員立替金（資産）」→後で給料から控除して回収する<br>
-    <br>
-    <strong>❌ 間違い③：取引先の売掛金を代わりに受け取ったとき「売掛金」で処理してしまう</strong><br>
-    ❌ （借）現金 50,000 ／（貸）売掛金 50,000<br>
-    ✅ （借）現金 50,000 ／（貸）預り金 50,000<br>
-    他社のお金を預かっているので「預り金（負債）」で記録し、後でその会社に返します。
-  </div>
-
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-
-  <div class="matome">
-    <h3>📋 まとめ：給料の仕訳 早見表</h3>
-    <div class="matome-row"><span class="trigger">給料支払い（借方）</span><span class="result">給料（総支給額）を借方に記録</span></div>
-    <div class="matome-row"><span class="trigger">給料支払い（貸方）</span><span class="result">預り金（税金・社保）＋当座預金（手取り）</span></div>
-    <div class="matome-row"><span class="trigger">源泉所得税の納付</span><span class="result">預り金 ／ 当座預金</span></div>
-    <div class="matome-row"><span class="trigger">社会保険料の納付（全額）</span><span class="result">預り金＋法定福利費 ／ 当座預金</span></div>
-    <div class="matome-row"><span class="trigger">預り金の性質</span><span class="result">負債（後で納付する義務）</span></div>
-    <div class="matome-row"><span class="trigger">法定福利費の性質</span><span class="result">費用（会社負担の社会保険料）</span></div>
-    <div class="matome-row"><span class="trigger">従業員立替金</span><span class="result">資産｜従業員の保険料等を立替え。給料支給時に控除して精算</span></div>
-    <div class="matome-row"><span class="trigger">費用の総額主義</span><span class="result">給料費用は手取りでなく総支給額。天引き分は所得税預り金・社会保険料預り金（負債）</span></div>
-  </div>
-</div>
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">給料の仕訳で何が控除されますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">総支給額から社会保険料（健康保険・厚生年金）・源泉所得税・住民税などを控除した手取り額を現金で支払います。控除分は「社会保険料預り金」「所得税預り金」などの負債として計上します。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">なぜ手取り額でなく総支給額で費用計上するのですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">給料は会社にとっての労働の対価なので、実際の手取りではなく総支給額全額を費用計上します。控除は会社が社員に代わって一時的に預かっているだけで、後日税務署・健康保険組合等に納付します。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">従業員立替金はどんな場合に使いますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">従業員が本来自分で支払うべきものを会社が給料から天引きして立て替える場合に「立替金」（資産）として処理します。後日従業員本人に請求・回収することが前提の勘定です。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>給料の仕訳｜総支給・預り金・会社負担を残高で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>給料支払時は、総支給額と、源泉所得税・従業員負担の社会保険料等・手取り額を分けます。会社が従業員分を預かる処理と、会社自身が負担する法定福利費を混同しません。</p>
+<div class="sq-facts-note">以下の控除額・保険料額は編集部の架空の指定値で、実際の税額表や保険料率から計算した額ではありません。社会保険料等の会社負担がすべて従業員と同額という説明を訂正しました。厚生年金の折半等は制度ごとに確認します。</div>
+<h2>総支給額を手取りへ分解する</h2>
+<section class="sq-facts-exercise"><h3>自作例1：元の300,000円の給料</h3><p>給料総額300,000円から所得税15,000円、従業員負担の社会保険料30,000円を控除。手取りを当座預金払い。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>手取り300,000−15,000−30,000＝255,000円。給料300,000／所得税預り金15,000・社会保険料預り金30,000・当座預金255,000。</p><p>預り金は会社の収益ではなく、後で納付する義務です。「預かる」ことを「立て替える」と呼ぶ説明を訂正しました。</p></div></details></section>
+<h2>会社負担分は、既に費用計上したかも確認する</h2>
+<section class="sq-facts-exercise"><h3>自作例2：従業員分30,000円と会社分32,000円</h3><p>従業員分30,000円は預り金に計上済み。会社負担32,000円は未計上で、合計62,000円を普通預金で納付する指定です。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>社会保険料預り金30,000・法定福利費32,000／普通預金62,000。会社分がすでに未払計上されている条件なら、その負債を消すのであり法定福利費を再計上しません。</p><p>この32,000円は仮定です。厚生年金は事業主と被保険者の折半ですが、社会保険等の負担を一括して必ず同額と一般化しません。</p></div></details></section>
+<h2>従業員の立替額は回収する資産</h2>
+<section class="sq-facts-exercise"><h3>自作例3：立替25,000円を給料から精算</h3><p>従業員個人の保険料25,000円を会社が先に現金で立替え、後で総支給340,000円からその額を控除。ほかの控除は考慮しない条件です。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>立替時：従業員立替金25,000／現金25,000。支給時：給料340,000／従業員立替金25,000・普通預金315,000。立替時に発生した回収権を消します。給料から先に預かっただけの場合と、会社が先払いした場合を区別します。</p></div></details></section>
+<h2>源泉税の納付も給与費用と分ける</h2><p>例1の所得税15,000円を後日納付すれば、所得税預り金15,000／普通預金15,000。給料費用は再計上しません。納付先や制度上の計算・期限は税・保険ごとに異なるため、これらの単純例から実際の給与計算全体を決めるものではありません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：給料・法定福利費・預り金の範囲</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：給料控除・社会保険料納付のサンプルの入口</a></li><li><a href="https://www.nenkin.go.jp/service/mokutekibetsu/jigyosho/sikumi/index.html" target="_blank" rel="noopener">日本年金機構：厚生年金保険の保険料と納め方</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>給料は手取りだけを費用にしますか？</summary><p>本文では総支給額を給料費用とし、控除分の負債と手取りを分けます。控除額だけ給料を小さくしません。</p></details><details class="sq-facts-answer"><summary>会社の社会保険負担はいつも従業員と同額ですか？</summary><p>制度ごとに異なります。厚生年金の折半等を確認し、すべての社会保険・拠出金等へ一般化しません。</p></details><details class="sq-facts-answer"><summary>天引きしたらいつも立替金ですか？</summary><p>会社が先に個人分を払い回収する資産と、従業員から預かり納付する負債を区別します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><a href="index.html">記事トップ</a><a href="app.html">アプリを使う</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

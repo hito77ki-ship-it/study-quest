@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-genkin.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>現金と当座預金の違いを図解で整理【日商簿記3級】小切手は現金？当座預金？通貨代用証券の仕訳｜スタディクエスト</title>
-<meta name="description" content="簿記3級の現金と当座預金の違いを図解で整理。「小切手を受け取ったら現金か当座預金か」を3パターンで確認し、通貨代用証券・自己振出小切手の仕訳を例題で学びます。">
+<title>現金・当座預金の仕訳｜小切手3パターンと残高を自作例で照合｜スタディクエスト</title>
+<meta name="description" content="他人振出・自己振出・即時預入を区別。現金実査、前払金、当座借越の既存例を検算し、帳簿と銀行残高の違いと2027年度の変更を明記します。">
 <meta name="keywords" content="現金 当座預金 違い,小切手 現金 当座預金,通貨代用証券,自己振出小切手,他店振出小切手,日商簿記3級 現金,当座預金 仕訳">
-<meta property="og:title" content="現金と当座預金の違いを図解で整理【日商簿記3級】小切手は現金？当座預金？">
-<meta property="og:description" content="小切手を受け取ったら現金か当座預金か。3パターンで整理し、通貨代用証券・自己振出小切手の仕訳を例題で確認します。">
+<meta property="og:title" content="現金・当座預金の仕訳｜小切手3パターンと残高を自作例で照合">
+<meta property="og:description" content="他人振出・自己振出・即時預入を区別。現金実査、前払金、当座借越の既存例を検算し、帳簿と銀行残高の違いと2027年度の変更を明記します。">
 <meta property="og:url" content="https://study-quest.net/boki3-genkin.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,18 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "現金と当座預金の違いを図解で整理【日商簿記3級】小切手は現金？当座預金？通貨代用証券の仕訳",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "簿記3級の現金と当座預金の違いを図解で整理。小切手を受け取ったら現金か当座預金か、3パターンで確認し、通貨代用証券・自己振出小切手の仕訳を例題で学びます。",
-  "url": "https://study-quest.net/boki3-genkin.html",
-  "datePublished": "2026-05-07",
-  "dateModified": "2026-09-04",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "現金・当座預金の仕訳｜小切手3パターンと残高を自作例で照合", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "他人振出・自己振出・即時預入を区別。現金実査、前払金、当座借越の既存例を検算し、帳簿と銀行残高の違いと2027年度の変更を明記します。", "url": "https://study-quest.net/boki3-genkin.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -145,470 +134,56 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "他人振出の小切手なら必ず現金ですか？", "acceptedAnswer": {"@type": "Answer", "text": "保有している場合と、直ちに当座預金へ預け入れる場合を分けます。即時預入の指定なら当座預金でまとめて記録します。"}}, {"@type": "Question", "name": "小切手振出と銀行からの引落しは同時ですか？", "acceptedAnswer": {"@type": "Answer", "text": "帳簿では振出時に当座預金を減らしますが、銀行での決済まで時間差があり得ます。帳簿と銀行側の残高を区別します。"}}, {"@type": "Question", "name": "2027年度から当座預金も消えますか？", "acceptedAnswer": {"@type": "Answer", "text": "消えません。紙の手形・小切手の変更と、当座預金や電子記録債権の存在を分けて確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>現金・当座預金の仕訳｜小切手3パターンと残高を自作例で照合</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>簿記上の現金は紙幣・硬貨だけではありません。設問で換金できる通貨代用証券とされる他人振出の小切手なども含みます。一方、当社が振り出した小切手が戻ってきた場合や、受け取って直ちに預金した場合は、別の処理になります。</p>
+<div class="sq-facts-note">このページの小切手は2026年度の学習用です。2027年4月1日からの確定改定では、紙の手形・小切手に関する扱いが変わります。当座預金や電子記録債権までなくなるという意味ではありません。以下の数値は編集部作成の架空例で、消費税は考慮しません。</div>
+<ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h2>受け取った小切手を3つに分ける</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">確認する条件</th><th scope="col">借方の基本科目</th><th scope="col">理由</th></tr></thead><tbody><tr><td>他人振出の小切手を受け取って保有</td><td>現金</td><td>通貨代用証券として記録</td></tr><tr><td>当社が以前振り出した小切手を受け取る</td><td>当座預金</td><td>振出時の帳簿上の減少を取り消す</td></tr><tr><td>他人振出の小切手を直ちに当座預金へ入れる</td><td>当座預金</td><td>受入と預入をまとめて記録</td></tr></tbody></table></div>
+<p>当座預金は小切手等の決済に使う無利息の預金です。帳簿では小切手を振り出した時点で減らしますが、銀行側の口座が同時に減るとは限りません。振出から取立てまでの時間差があるため、帳簿残高と銀行の記録を区別します。</p>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki3-genkin-verified-mobile.svg?v=20261103"><img src="images/boki3-genkin-verified.svg?v=20261103" alt="現金と当座｜条件を順に読む" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<section class="sq-facts-exercise"><h3>自作例1：売上20,000円の3通り</h3><p>商品20,000円を販売しました。Aは得意先振出小切手を保有、Bは以前当社が振り出した小切手を受領、Cは得意先振出小切手を直ちに当座預金へ預入。借方・貸方は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>A：現金20,000／売上20,000。B・C：当座預金20,000／売上20,000。同じ販売額でも、振出人と預入の条件で借方が変わります。Bは銀行で一度決済された小切手を再入金する例ではありません。</p></div></details></section>
+<ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h2>金庫のすべてが「現金」ではない</h2><p>郵便切手は使用時の通信費、収入印紙は使用時の租税公課などとし、未使用分は問題の指定に応じて貯蔵品へ振り替えます。約束手形は受取手形などで処理し、金庫に入っているという理由だけで現金へ含めません。配当金領収証や期限到来済みの公社債利札等も、換金可能性と設問の対象範囲を確認します。</p>
+<section class="sq-facts-exercise"><h3>自作例2：既存の金庫実査700円を検算</h3><p>紙幣・硬貨500円、未決済で戻った当社振出小切手100円、他店振出小切手200円、未使用切手50円を金庫で保管。現金の実際有高はいくら？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>500＋200＝<strong>700円</strong>。自己振出小切手100円と切手50円を現金へ加えません。金庫保管物の額面合計850円とは異なります。帳簿の現金との比較は、この700円を使います。</p></div></details></section>
+<h2>支払目的も合わせて確認する</h2><p>商品300円を注文して小切手200円を手付金として渡した時点なら、前払金200／当座預金200です。まだ商品を受け取っていないため、この例では仕入300円を先に計上しません。売掛金300円を他人振出小切手で回収すれば現金300／売掛金300となり、売上を重ねて計上しません。</p>
+<h2>当座借越は契約と限度額が前提</h2>
+<section class="sq-facts-exercise"><h3>自作例3：当座預金600円で1,000円を支払う</h3><p>当座借越契約があり限度額内です。買掛金1,000円を小切手で支払い、一勘定制で記帳します。支払後と決算振替の仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>買掛金1,000／当座預金1,000。支払後の当座預金は貸方残高400円です。決算で短期借入金へ振り替える指定なら、当座預金400／短期借入金400となります。「当座借越」等、使用科目は問題の指示に従います。</p><p>契約がない・限度額を超える場合まで、同じように決済できると考えません。普通預金にも商品によって貸越機能があるため、「普通預金は一切借越できない」という一般化は外しました。</p></div></details></section>
+<h2>計算後の残高を言葉にする</h2><ol><li>現在の現金実査へ含めた物と除いた物を分ける。</li><li>当座預金の帳簿が、振出時・受取時・預入時のどこで動いたかを追う。</li><li>未決済小切手による銀行との時間差と、現金過不足を混同しない。</li></ol>
 
-<div class="container">
-  <div class="breadcrumb">
-    <a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 現金・当座預金の違いと仕訳
-  </div>
-
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年9月4日</p>
-  <h1>現金と当座預金の違いと仕訳<br>小切手は「現金」か「当座預金」か？図解で整理</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉のつまずきメモ</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！初めて簿記の「現金」を習ったとき、私は本気で「なんじゃこりゃ……！」と脳内パニックを起こしました。だってお札と硬貨だけかと思っていたら、他人が振り出した小切手まで「現金」扱いだと言うじゃないですか。しかも自分が振り出した小切手が戻ってきたときだけは急に「当座預金」に変身する……もう意味がわからなくて、教科書を3回読み直しました（笑）。<br>
-    そこで私は、「サイフ（現金）」と「口座（当座預金）」のどちらに戻る話かを先に考えるようにしました。今日はこのつまずきから作った、問題文で<strong>振出人→すぐに預け入れたか</strong>の順に見る判断軸を整理します。</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <p class="lead">
-    「現金ってお札と硬貨だけじゃないの？」——簿記を勉強し始めると、<strong>現金の定義が日常感覚とズレている</strong>ことに気づきます。
-    小切手・郵便為替証書・送金小切手など<strong>銀行でその場で換金できる証券（通貨代用証券）</strong>も簿記では現金として扱います。
-    ただし「自分が振り出した小切手が戻ってきた場合」は現金ではなく当座預金になります。
-    <strong>小切手を受け取ったとき「現金」と「当座預金」のどちらになるか</strong>——問題文で迷いやすい判断です。3パターンで整理します。
-  </p>
-
-  <!-- ── 広告 ── -->
-  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <h2>当座預金・小切手の仕組み</h2>
-
-  <p>当座預金は、<strong>小切手を振り出す（発行する）ための専用口座</strong>です。普通預金と違って利息がつきませんが、代わりに決済手段として小切手を使えます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">小切手って、お金の代わりに渡す紙ですよね？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">そうです。「この銀行口座からお金を出してください」という指示書だと思ってください。渡した側は当座預金という口座が減り、受け取った側はサイフに入る「現金」として扱えます。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">じゃあ小切手をもらったら「現金」で記録するんですね？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">基本はそうです。ただし「自分が出した小切手が戻ってきた場合」だけは「当座預金」になります。ここは迷いやすいので、次の章で判断の順番を確認しましょう。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>「現金」とは？簿記での定義</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-genkin-map-mobile.svg">
-    <img src="images/boki3-genkin-map.svg" alt="小切手を受け取ったときの現金・当座預金YES-NO判断フローチャート図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="380" loading="lazy">
-  </picture>
-  <p>図解のフローチャートで判断の流れを確認してください。<strong>「自分が出した小切手」が手元に戻ってきたときは当座預金</strong>として処理します。これは「当座預金から引き出す指示書が自分の元に戻った」＝「口座残高が復活した」というイメージです。一方、<strong>他人（他のお店や取引先）が出した小切手を受け取ったときは現金</strong>として処理します。</p>
-
-  <section class="one-minute-check" aria-labelledby="one-minute-check-title">
-    <h3 id="one-minute-check-title">1分ミニ演習：小切手を見たら、どの順番で決める？</h3>
-    <p class="one-minute-check__lead">暗記したかを確かめるより、問題文のどこを見るかを3問で再現します。答えを見る前に、借方の勘定科目だけ決めてください。</p>
-    <ol class="one-minute-check__map" aria-label="小切手の判断マップ">
-      <li><strong>まず振出人</strong><br>当社か、取引先かを探す。</li>
-      <li><strong>次に受け取り方</strong><br>手元に受け取っただけかを確認する。</li>
-      <li><strong>最後に即時入金</strong><br>直ちに当座預金へ入れたかを見る。</li>
-    </ol>
-    <details>
-      <summary>問題1：商品を販売し、取引先が振り出した小切手を受け取った。借方は？</summary>
-      <p><strong>答え：現金。</strong>取引先振出の小切手は通貨代用証券として扱います。</p>
-    </details>
-    <details>
-      <summary>問題2：以前に当社が振り出した小切手を、代金として受け取った。借方は？</summary>
-      <p><strong>答え：当座預金。</strong>自己振出小切手が戻ったため、振出時の当座預金の減少を取り消します。</p>
-    </details>
-    <details>
-      <summary>問題3：取引先振出の小切手を受け取り、直ちに当座預金へ預け入れた。借方は？</summary>
-      <p><strong>答え：当座預金。</strong>現金を経由せず、預け入れ先の勘定科目で処理します。</p>
-    </details>
-    <p class="one-minute-check__source">問題は参考書の「通貨代用証券」「小切手の応用的な取引」を確認し、本文用に独自に作成しています。</p>
-  </section>
-
-  <p>日常語の「現金」はお札・硬貨ですが、簿記では<strong>すぐに換金できる通貨代用証券</strong>も現金として扱います。</p>
-
-  <div class="maru-batu-grid">
-    <div class="mb-card maru">
-      <div class="mb-badge">○ 現金</div>
-      <div class="mb-title">現金として仕訳するもの</div>
-      <div class="mb-item">💴 紙幣・硬貨</div>
-      <div class="mb-item">
-        📄 他店（他社）振出しの小切手
-        <div class="note">取引先からもらった小切手</div>
-      </div>
-      <div class="mb-item">📮 送金小切手・郵便為替証書</div>
-      <div class="mb-item">💹 株式配当金領収証</div>
-      <div class="mb-item">
-        🏦 期限到来後の公社債利札
-        <div class="note">支払期日が来た利札は現金扱い</div>
-      </div>
-    </div>
-    <div class="mb-card batu">
-      <div class="mb-badge">× 現金ではない</div>
-      <div class="mb-title">現金と間違えやすいもの</div>
-      <div class="mb-item">
-        📝 当社振出しの小切手（自己振出小切手）
-        <div class="note">→ 当座預金で処理</div>
-      </div>
-      <div class="mb-item">
-        📋 他社振出しの約束手形
-        <div class="note">→ 受取手形で処理</div>
-      </div>
-      <div class="mb-item">
-        📮 郵便切手
-        <div class="note">→ 通信費 or 貯蔵品</div>
-      </div>
-      <div class="mb-item">
-        🏛 収入印紙
-        <div class="note">→ 租税公課 or 貯蔵品</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="warn-box">
-    <strong>⚠ 暗記ポイント：</strong>郵便切手と収入印紙は「現金ではない」。期中に使ったら費用（通信費・租税公課）、期末に未使用のものが残ったら「貯蔵品」（資産）に振り替えます。
-  </div>
-
-  <h2>自己振出小切手（当社振出しの小切手）</h2>
-
-  <p>ここは勘定科目を迷いやすいポイントです。<strong>自分が振り出した小切手が手元に戻ってきた場合は「当座預金」</strong>として処理します。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なんで「当座預金」なんですか？小切手をもらったんだから「現金」じゃないですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">そこ、私も最初は同じところで詰まりました！実はこれ、簿記のちょっとしたパズルなんです。小切手を振り出した瞬間に、当座預金という口座はすでにマイナスされています。でもその小切手が銀行で換金されずに、ぐるっと自分の手元に戻ってきたということは……「まだ実際にはお金が引き落とされていない」ってことなんですよ。つまり、さっきのマイナスは「なかったこと」にしないと辻褄が合わない。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">あ、なるほど！「なかったことに戻す」から、当座預金が増える（借方）んですね。パズルのピースが逆再生でハマる感じ、ちょっと気持ちいいです！</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚で大丈夫です。「振り出した小切手が戻ってきた＝口座の復活（当座預金のリセットボタン）」と自分の言葉で説明できるようにしておくと、問題文を読み分けやすくなります。</div>
-      </div>
-    </div>
-  </div>
-
-  <h3>例題：自己振出小切手が戻ってきた場合</h3>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>商品￥20,000を販売し、代金として以前に当社が振り出していた小切手で受け取った。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方（DEBIT）</div>
-      <div class="shiwake-item">
-        <span class="kamoku">当座預金</span>
-        <span class="amount">20,000</span>
-      </div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方（CREDIT）</div>
-      <div class="shiwake-item">
-        <span class="kamoku">売上</span>
-        <span class="amount">20,000</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>💡 解き方：</strong>「以前に当社が振り出していた小切手」というキーワードが出たら、借方は「当座預金」。「現金」と書かないように注意。
-  </div>
-
-  <!-- ── 広告 ── -->
-  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <h2>例題で確認しよう</h2>
-
-  <h3>パターン①：小切手を振り出した（基本）</h3>
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>仕入先に商品￥300を注文し、手付金として￥200の小切手を振り出して渡した。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">前払金</span><span class="amount">200</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">当座預金</span><span class="amount">200</span></div>
-    </div>
-  </div>
-
-  <h3>パターン②：他社から小切手をもらった（基本）</h3>
-  <div class="mondai">
-    <div class="mondai-label">問題①</div>
-    <p>小切手受入による売上￥100。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">100</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">売上</span><span class="amount">100</span></div>
-    </div>
-  </div>
-
-  <div class="mondai">
-    <div class="mondai-label">問題②</div>
-    <p>売掛金￥300が取引先振出しの小切手により回収された。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">300</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">300</span></div>
-    </div>
-  </div>
-
-  <h3>パターン③：もらった小切手をすぐ当座預金に入金</h3>
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>得意先より手付金として得意先振出しの小切手￥30を受け取り、直ちに当座預金に預け入れた。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">当座預金</span><span class="amount">30</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">前受金</span><span class="amount">30</span></div>
-    </div>
-  </div>
-  <div class="tip-box">
-    <strong>💡 ポイント：</strong>「直ちに（すぐに）当座預金に預け入れた」という文言があると、現金を経由せず直接「当座預金」になります。
-  </div>
-
-  <h3>パターン④：「現金残高はいくらか」問題での注意</h3>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>金庫に以下のものが保管されていた。現金の実際残高はいくらか。<br>
-    ・紙幣・硬貨　　　　　　　　￥500<br>
-    ・当社振出しの小切手　　　　￥100<br>
-    ・他店振出しの小切手　　　　￥200<br>
-    ・郵便切手　　　　　　　　　￥50</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <p style="background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:14px 18px;font-size:15px;font-weight:700;color:#276749;">
-    現金 = ￥500 ＋ ￥200 = <strong>￥700</strong>
-  </p>
-  <div class="tip-box">
-    <strong>💡 解説：</strong>当社振出しの小切手（自己振出）と郵便切手は現金ではありません。含めないように注意。他店振出しの小切手は現金として数えます。
-  </div>
-
-  <h2>各種預金の仕訳</h2>
-  <p>当座預金以外にも、普通預金・定期預金がそれぞれ専用の勘定科目で処理されます。</p>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">普通預金</span><span class="amount">500</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方（現金を普通預金へ預け入れた）</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">500</span></div>
-    </div>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">定期預金</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方（当座預金から定期預金へ振り替え）</div>
-      <div class="shiwake-item"><span class="kamoku">当座預金</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-  <div class="tip-box"><strong>勘定科目名は口座名そのまま！</strong><br>普通預金→「普通預金」、定期預金→「定期預金」と、口座の種類ごとに勘定科目を使い分けます。</div>
-
-  <h2>当座借越</h2>
-  <p>当座借越とは、当座預金残高を超えて小切手を振り出せる契約です。残高不足でも決済でき、超過分は銀行からの一時的な借り入れとなります。</p>
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>残高 ¥600 の当座預金口座から ¥1,000 の小切手を振り出して買掛金を支払った（当座借越契約あり）。</p>
-  </div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">買掛金</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">当座預金</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-  <div class="warn-box"><strong>⚠ 当座借越の注意：</strong>当座預金が貸方残高（マイナス）になった分が「当座借越」です。決算時には「当座借越」勘定（負債）に振り替えることがあります。</div>
-
-  <h2>当座預金 vs 普通預金</h2>
-  <p>「当座預金で支払った」と書かれた問題を、文章どおりに読めるようにします。当座預金と普通預金の違いを整理しておきましょう。</p>
-  <table style="width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;">
-    <thead>
-      <tr>
-        <th style="padding:10px;border:1px solid var(--border);background:var(--light);text-align:left;">項目</th>
-        <th style="padding:10px;border:1px solid var(--border);background:#EBF8FF;text-align:center;">当座預金</th>
-        <th style="padding:10px;border:1px solid var(--border);background:#F0FFF4;text-align:center;">普通預金</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding:9px 10px;border:1px solid var(--border);">利息</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#9B2C2C;font-weight:700;">なし</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#276749;font-weight:700;">あり（微少）</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 10px;border:1px solid var(--border);">小切手の振出</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#276749;font-weight:700;">✓ 可能</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#9B2C2C;font-weight:700;">✗ 不可</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 10px;border:1px solid var(--border);">手形の振出</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#276749;font-weight:700;">✓ 可能</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#9B2C2C;font-weight:700;">✗ 不可</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 10px;border:1px solid var(--border);">当座借越</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#276749;font-weight:700;">✓ 可能</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;color:#9B2C2C;font-weight:700;">✗ 不可</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 10px;border:1px solid var(--border);">主な利用者</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;">法人中心</td>
-        <td style="padding:9px 10px;border:1px solid var(--border);text-align:center;">個人・法人</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="tip-box"><strong>💡 試験での見方：</strong>問題文に「小切手を振り出した」とあれば、まず当座預金の増減を確認します。日常の決済方法の印象ではなく、問題文に書かれた受け取り方・支払い方で勘定科目を選びます。</div>
-
-  <!-- アプリCTA -->
-  <div class="app-cta">
-    <h3>⚔ 3問の判断を、次の15分につなげる</h3>
-    <p>上の3問で迷った場面を1つ選び、「簿記3級・現金」として15分だけ記録しましょう。読んだ内容を、次に解き直す場所として残せます。</p>
-    <a href="app.html">15分の学習記録を始める →</a>
-  </div>
-
-  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
-    <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-bottom:12px;">関連記事</div>
-    <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;">
-      📒 簿記3級・2級 独学攻略ガイド →
-    </a>
-    <a href="boki-zero-01.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
-      ✏️ ゼロからの簿記 第1回：取引とは？ →
-    </a>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;"><strong>次の一手：</strong>上の3問を答えを隠してもう一度解き、迷った問題には「振出人」か「即時入金」かを1行で書く。 <a href="boki3-kake.html">掛取引の仕訳へ進む</a></p>
-  </div>
-
-</div>
-
-<h2>まとめ：小切手の仕訳パターン一覧</h2>
-
-  <div class="matome">
-    <h3>📋 小切手の仕訳ルール</h3>
-    <div class="matome-row">
-      <span class="trigger">小切手を<strong>振り出した</strong>（渡した）</span>
-      <span class="result">→ 当座預金　減る（貸方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">他社から小切手を<strong>もらった</strong></span>
-      <span class="result">→ 現金　増える（借方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">前に渡した<strong>当社の小切手が戻ってきた</strong></span>
-      <span class="result">→ 当座預金　増える（借方）</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">小切手をもらって<strong>すぐ当座預金に入金</strong>した</span>
-      <span class="result">→ 当座預金　増える（借方）</span>
-    </div>
-  </div>
-
-  <section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">通貨代用証券とは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">銀行に持参するとその場で現金に換金できる証券です。他人振出小切手・送金小切手・郵便為替証書・株式配当金領収証・期限到来後の公社債利札などが含まれます。簿記3級では「現金」勘定として処理します。自社（自己）振出小切手は現金ではなく「当座預金」で処理します。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">小切手を受け取ったとき仕訳はどうなりますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">3パターンあります。①他人振出小切手を受け取った場合→借方「現金」②他人振出小切手をただちに当座預金へ入金した場合→借方「当座預金」③自己振出小切手が戻ってきた場合→借方「当座預金」（振出時の取り消し）。誰が振り出したかがポイントです。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">当座預金と普通預金の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">当座預金は小切手・手形の振出に使う預金で、簿記の問題では勘定科目として区別します。普通預金と当座預金のどちらが指定されているかを問題文で確認し、指定された勘定科目で仕訳します。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">当座借越とは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">当座預金の残高を超えて小切手を振り出した場合に発生する、銀行からの一時的な借り入れ状態です。当座預金の帳簿残高がマイナスになります。決算時には「当座借越」（負債）勘定に振り替えることがあります。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<h2>預金同士の振替と、手付金を分ける追加練習</h2>
+<section class="sq-facts-exercise"><h3>自作例4：普通預金・定期預金の振替</h3><p>Aは現金500円を普通預金へ預け入れ。Bは当座預金から定期預金へ1,000円を振り替え。Cは得意先振出小切手30円を商品の手付金として受け取り直ちに当座預金へ預入。各仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>A：普通預金500／現金500。B：定期預金1,000／当座預金1,000。C：当座預金30／前受金30。A・Bの預金間等の移動で費用・売上を新たに計上せず、Cも商品引渡し前なので売上ではありません。</p></div></details></section>
+<p>預金科目は実際の口座種類に合わせます。複数銀行を分ける指定なら、銀行名を付けた科目を使います。「預金」という一語へまとめてよいかは問題の指定を見ます。小切手を受け取った後の預け先が普通預金である例と、当座預金である例も同じ科目にしません。</p>
+<h2>一つの取引を、現金と当座の両方へ重ねない</h2>
+<section class="sq-facts-exercise"><h3>自作例5：直ちに預入した3,000円を二重記帳したら</h3><p>売掛金3,000円を他人振出小切手で回収し、直ちに当座預金へ入れました。Aは当座預金3,000／売掛金3,000の1本。Bはそれに加え現金3,000／売掛金3,000も記録。どちらが条件と一致しますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>まとめて記帳する条件ならAです。Bでは資産を現金と預金の両方に増やし、売掛金を6,000円減らしてしまいます。現金を経由して2本で示す方式なら、現金3,000／売掛金3,000に続き、当座預金3,000／現金3,000となり、合算してAへ戻ります。</p></div></details></section>
+<p>この例の「二重」は同じ現金勘定に同じ額を2回書くことだけではありません。小切手という同じ一枚の証券に対応する資産を、手元保有と預入済みの両方で残す誤りもあります。取引の直後に手元に何が残るか、売掛金はいくら減ったかを、借貸一致とは別に確認します。</p>
+<p>現金を数える問題と当座預金の記帳問題では、比較相手も違います。金庫の実査は現物、当座預金の照合は銀行側の記録や未決済取引を確認します。両者を同じ「残高が合わないから現金過不足」とまとめず、どの勘定のどの時点の差かを先に特定します。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：現金預金・当座預金の現行範囲</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027_kaitei_shushi_fixed.pdf" target="_blank" rel="noopener">日本商工会議所：2027年度確定改定・現金預金</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：小切手・当座借越等のサンプルの入口</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>他人振出の小切手なら必ず現金ですか？</summary><p>保有している場合と、直ちに当座預金へ預け入れる場合を分けます。即時預入の指定なら当座預金でまとめて記録します。</p></details><details class="sq-facts-answer"><summary>小切手振出と銀行からの引落しは同時ですか？</summary><p>帳簿では振出時に当座預金を減らしますが、銀行での決済まで時間差があり得ます。帳簿と銀行側の残高を区別します。</p></details><details class="sq-facts-answer"><summary>2027年度から当座預金も消えますか？</summary><p>消えません。紙の手形・小切手の変更と、当座預金や電子記録債権の存在を分けて確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">TOP</a>
   <a href="about.html">運営者情報</a>
@@ -616,8 +191,7 @@ details summary:active{background:var(--light);}
   <a href="terms.html">利用規約</a>
   <p>© 2026 スタディクエスト</p>
 </footer>
-
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-shohinuriage.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】商品有高帳と売上原価を完全解説｜先入先出法・移動平均法の違いと例題3問｜スタディクエスト</title>
-<meta name="description" content="簿記3級の商品有高帳・売上原価算定を図解で完全解説。先入先出法と移動平均法の計算方法の違いを例題3問で丁寧に解説。「しくりくりし」の決算仕訳もわかりやすく説明。">
+<title>商品有高帳の書き方｜先入先出・移動平均と端数を3例で検算｜スタディクエスト</title>
+<meta name="description" content="先入先出法と移動平均法の払出・残高を同じデータで比較。207円表示と31,000円が矛盾した表を直し、端数処理条件を明記します。">
 <meta name="keywords" content="商品有高帳 書き方 簿記3級,先入先出法 移動平均法 違い,商品有高帳 例題">
-<meta property="og:title" content="商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】">
-<meta property="og:description" content="商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。">
+<meta property="og:title" content="商品有高帳の書き方｜先入先出・移動平均と端数を3例で検算">
+<meta property="og:description" content="先入先出法と移動平均法の払出・残高を同じデータで比較。207円表示と31,000円が矛盾した表を直し、端数処理条件を明記します。">
 <meta property="og:url" content="https://study-quest.net/boki3-shohinuriage.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"商品有高帳の書き方（先入先出法・移動平均法）【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"商品有高帳の先入先出法と移動平均法の記入方法・払出単価の計算を例題つきで図解解説。","url":"https://study-quest.net/boki3-shohinuriage.html","datePublished":"2026-05-08","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "商品有高帳の書き方｜先入先出・移動平均と端数を3例で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "先入先出法と移動平均法の払出・残高を同じデータで比較。207円表示と31,000円が矛盾した表を直し、端数処理条件を明記します。", "url": "https://study-quest.net/boki3-shohinuriage.html", "datePublished": "2026-05-08", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -99,357 +98,40 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "平均単価を207円と書いて150個31,000円でもよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "例1の31,000円は単価を丸めない206と2/3円で計算した額です。207円という別の単価条件と混ぜません。"}}, {"@type": "Question", "name": "先入先出法の残高は新しい仕入分だけですか？", "acceptedAnswer": {"@type": "Answer", "text": "複数ロットが残る場合は古い在庫も含めます。例1の仕入直後は100個と200個の合計300個です。"}}, {"@type": "Question", "name": "商品有高帳は販売価格で記録しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本文の受入・払出・残高は原価です。売価や利益と混同せず、指定方法・端数処理を確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">簿記</a> &gt; 商品有高帳の書き方</div>
-  <p class="meta">日商簿記3級 | 公開：2026年5月8日 | 更新日：2026年8月25日</p>
-  <h1>商品有高帳の書き方<br>先入先出法・移動平均法を例題で完全解説【日商簿記3級】</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>商品有高帳は「受入・払出・残高」の3列</strong>で構成される補助簿——仕入れた単価ごとに管理する</li>
-      <li><strong>先入先出法</strong>——古い仕入れ分から先に払い出す。単価が上がると売上原価が低く出る</li>
-      <li><strong>移動平均法</strong>——仕入れるたびに平均単価を再計算する。単価の変動が平均化される</li>
-      <li>売上原価＝期首在庫＋仕入高－期末在庫——この算式は両方の方法に共通</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8CC63F,#276749);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">若</div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    初めて商品有高帳の表を見たとき、受入・払出・残高それぞれに数量・単価・金額の3列がズラッと並んでいて、「うわっ、なんじゃこりゃ、マス目多すぎ……どこから手をつければいいんだ！」と本気で頭が固まった記憶があります（笑）。<br>
-    でも実は、この表は難しい理論なんかじゃなく、仕入れたロット（箱）を順番に消しゴムで消していくだけの単純作業なんです。「どのロットが残っていて、どのロットが消えたか」を目で追えるようになれば、あとは足し算・引き算だけ。<br>
-    今回は、そんな【ハコ消しゴムハック】を使って先入先出法・移動平均法を一瞬で解けるようになる裏技を、図解と一緒にお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300">
-      <div class="sq-chat-bubble">商品有高帳の表がたくさんの列と数字で埋まっていて、どこを見ればいいのかわかりません…。</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">焦らなくて大丈夫。基本は「受入・払出・残高」の3ブロックだけです。仕入れたら受入欄、売れたら払出欄、その後の手持ちを残高欄に書く。これだけのルールです。</div>
-      <img src="images/icon-wakaba.png" alt="若葉さん" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">先入先出法と移動平均法、どちらを使うかって問題文に書いてありますか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">はい、問題文に必ず「先入先出法で記帳する」か「移動平均法で記帳する」と指定されています。指定された方法だけ確実に計算できれば十分です。両方の考え方がわかれば、どちらが出ても対応できますよ！</div>
-      <img src="images/icon-wakaba.png" alt="若葉さん" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-  </div>
-
-  <h2>📦 ① 商品有高帳とは——補助簿の役割と「受入・払出・残高」の3列の意味</h2>
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-shohinuriage-map-mobile.svg">
-    <img src="images/boki3-shohinuriage-map.svg" alt="先入先出法と移動平均法の払出単価決定ルートを比較する図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="760" height="400" loading="lazy">
-  </picture>
-  <p>商品有高帳で最も大切なのが<strong>払出単価の計算方法</strong>です。図解の通り、先入先出法は「古い単価から順番に使う」ので単価は変わりません。移動平均法は「仕入れるたびに平均を計算し直す」ので仕入れのたびに単価が更新されます。この違いを図で頭に入れてから、下の例題に進みましょう。</p>
-  <p>商品有高帳は、商品の<strong>受入・払出・残高</strong>を管理する補助簿です。三分法では「仕入」「売上」「繰越商品」の3勘定を使いますが、実際に何個をいくらで仕入れてどれだけ残っているかは総勘定元帳だけでは把握できません。商品有高帳を記けることで、<strong>売上原価（払出金額の合計）</strong>を正確に計算できます。</p>
-  <ul>
-    <li>記入タイミング：商品の仕入時（受入）と販売時（払出）のたび</li>
-    <li>帳簿の構成：日付・摘要・受入（数量・単価・金額）・払出（数量・単価・金額）・残高（数量・単価・金額）</li>
-    <li>払出単価の計算方法：先入先出法 or 移動平均法</li>
-  </ul>
-
-  <h2>📋 ② 先入先出法（FIFO）——古い仕入れから順番に払い出す方法</h2>
-  <p>先入先出法は「<strong>古いものから先に払い出す</strong>」というルールです。先に仕入れたロットから順番に払い出すため、払出単価は仕入順に決まります。物価が上昇しているときは、古い（安い）単価が先に払い出されるため、売上原価が低く・利益が高くなる傾向があります。</p>
-
-  <div class="tip-box">
-    <strong>攻略のコツ：「ハコ消しゴムハック」</strong><br>
-    先入先出法は、仕入れた単価ごとの<strong>ロット（箱）を積み木のように並べて、古い箱から消しゴムで消していく</strong>とイメージすると一気に解きやすくなります。<br>
-    ①まず問題文から「＠200円が100個」「＠210円が200個」のように、単価ごとの箱を仕入れた順に紙に並べて書き出す。<br>
-    ②払出が発生したら、一番古い（一番下・一番左）の箱から必要な数量分だけ消しゴムで消す。<br>
-    ③1つの箱を消し切ってもまだ払出数量が残っていたら、次に古い箱を消し進める（ロットをまたぐ払出）。<br>
-    ④最後まで消されずに残った箱が、そのまま残高欄の中身になる。<br>
-    この「古い箱から順番に消し込む」というシンプルな作業だと捉えれば、複数ロットにまたがる払出も怖くありません。
-  </div>
-
-  <h3>先入先出法の例題——古い単価から順に払い出す計算手順</h3>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>以下の取引について先入先出法で商品有高帳を記入しなさい。</p>
-    <ul>
-      <li>期首残高：100個 ＠200円</li>
-      <li>5月10日 仕入：200個 ＠210円</li>
-      <li>5月15日 売上：150個（払出）</li>
-    </ul>
-  </div>
-
-  <p>先入先出法では、売上150個の払出は「期首の100個（＠200円）→ 仕入分の50個（＠210円）」の順に払い出します。</p>
-
-  <table class="uriage-table">
-    <thead>
-      <tr>
-        <th rowspan="2">日付</th>
-        <th rowspan="2">摘要</th>
-        <th colspan="3">受　入</th>
-        <th colspan="3">払　出</th>
-        <th colspan="3">残　高</th>
-      </tr>
-      <tr>
-        <th>数量</th><th>単価</th><th>金額</th>
-        <th>数量</th><th>単価</th><th>金額</th>
-        <th>数量</th><th>単価</th><th>金額</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="row-hd">
-        <td class="left">前期繰越</td><td class="left">期首</td>
-        <td>100</td><td>200</td><td>20,000</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>100</td><td>200</td><td>20,000</td>
-      </tr>
-      <tr>
-        <td class="left">5/10</td><td class="left">仕入</td>
-        <td>200</td><td>210</td><td>42,000</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>200</td><td>210</td><td>42,000</td>
-      </tr>
-      <tr>
-        <td class="left">5/15</td><td class="left">売上①</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>100</td><td>200</td><td>20,000</td>
-        <td>—</td><td>—</td><td>—</td>
-      </tr>
-      <tr>
-        <td class="left">5/15</td><td class="left">売上②</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>50</td><td>210</td><td>10,500</td>
-        <td>150</td><td>210</td><td>31,500</td>
-      </tr>
-      <tr class="row-result">
-        <td colspan="2" class="left">払出合計</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>150</td><td>—</td><td>30,500</td>
-        <td>150</td><td>210</td><td>31,500</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p style="font-size:13px;color:var(--muted);">先入先出法では、単価の異なるロットが残高欄に複数行並ぶことがあります（上記では期首100個と仕入200個が混在）。払出時は古い方から先に処理します。</p>
-
-  <h2>📊 ③ 移動平均法——仕入れるたびに平均単価を再計算する方法</h2>
-  <p>移動平均法は「<strong>仕入のたびに平均単価を計算しなおす</strong>」方法です。受入のたびに（受入前残高金額＋今回受入金額）÷（受入前残高数量＋今回受入数量）で新しい平均単価を求め、以後の払出にはこの単価を使います。</p>
-
-  <h3>移動平均法の例題——仕入のたびに「合計÷合計数量」で単価を更新する</h3>
-  <p>同じ例題で移動平均法を使います。5月10日の仕入後の平均単価を計算します。</p>
-  <p style="background:var(--light);padding:12px 16px;border-radius:8px;font-size:13px;">
-    平均単価 ＝（20,000 ＋ 42,000）÷（100 ＋ 200）＝ 62,000 ÷ 300 ＝ <strong>206.67円（≒207円）</strong>
-  </p>
-
-  <table class="uriage-table">
-    <thead>
-      <tr>
-        <th rowspan="2">日付</th>
-        <th rowspan="2">摘要</th>
-        <th colspan="3">受　入</th>
-        <th colspan="3">払　出</th>
-        <th colspan="3">残　高</th>
-      </tr>
-      <tr>
-        <th>数量</th><th>単価</th><th>金額</th>
-        <th>数量</th><th>単価</th><th>金額</th>
-        <th>数量</th><th>単価</th><th>金額</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="row-hd">
-        <td class="left">前期繰越</td><td class="left">期首</td>
-        <td>100</td><td>200</td><td>20,000</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>100</td><td>200</td><td>20,000</td>
-      </tr>
-      <tr>
-        <td class="left">5/10</td><td class="left">仕入</td>
-        <td>200</td><td>210</td><td>42,000</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>300</td><td>207</td><td>62,000</td>
-      </tr>
-      <tr>
-        <td class="left">5/15</td><td class="left">売上</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>150</td><td>207</td><td>31,000</td>
-        <td>150</td><td>207</td><td>31,000</td>
-      </tr>
-      <tr class="row-result">
-        <td colspan="2" class="left">払出合計</td>
-        <td>—</td><td>—</td><td>—</td>
-        <td>150</td><td>207</td><td>31,000</td>
-        <td>150</td><td>207</td><td>31,000</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p style="font-size:13px;color:var(--muted);">移動平均法では、残高欄の単価は常に1行（平均単価）になります。端数が出る場合、金額欄は「単価×数量」ではなく、受入合計金額を数量の割合で按分して計算します（本例では150個は300個のちょうど半分なので、62,000円の半分＝31,000円ずつになります）。</p>
-
-  <h2>🔍 ④ 2つの方法の違いと選び方——先入先出法と移動平均法どちらが試験で有利？</h2>
-  <table class="uriage-table">
-    <thead>
-      <tr>
-        <th>比較項目</th>
-        <th>先入先出法（FIFO）</th>
-        <th>移動平均法</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left">払出単価の決め方</td>
-        <td>古いロットから順番</td>
-        <td>仕入のたびに平均計算</td>
-      </tr>
-      <tr>
-        <td class="left">残高欄の行数</td>
-        <td>複数行になることあり</td>
-        <td>常に1行</td>
-      </tr>
-      <tr>
-        <td class="left">物価上昇時の売上原価</td>
-        <td>低くなる（古い安い単価）</td>
-        <td>中間的な値</td>
-      </tr>
-      <tr>
-        <td class="left">物価上昇時の利益</td>
-        <td>高くなる</td>
-        <td>中間的な値</td>
-      </tr>
-      <tr>
-        <td class="left">計算の手間</td>
-        <td>払出時に複数ロットの管理が必要</td>
-        <td>仕入時に平均計算が必要</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="tip-box"><strong>試験での注意点：払出欄の単価・金額・残高欄の記入ミスに注意</strong><br>商品有高帳の記入問題では、払出欄の単価と金額を正確に記入することが重要です。先入先出法では複数ロットにまたがる場合、払出欄を2行に分けて記入します。残高欄の金額は「数量×単価」で必ず一致させましょう。</div>
-
-  <h2>⚖️ ⑤ 先入先出法 vs 移動平均法——同じデータで計算すると売上原価はどう変わる？</h2>
-  <p>同じデータを両方の方法で計算すると、<strong>売上原価と期末在庫の金額が変わります</strong>。問題で指定された方法を必ず確認してから計算を始めましょう。</p>
-  <div class="mondai">
-    <div class="m-label">比較データ</div>
-    <p>前月繰越：100個 ＠100円　／　仕入：100個 ＠120円　／　売上：150個（払出）</p>
-  </div>
-
-  <h3>先入先出法の計算結果——古い単価から払い出したときの払出・残高金額</h3>
-  <p>払出は古い単価（＠100円）から100個→次に仕入分（＠120円）から50個の順。</p>
-  <ul>
-    <li>払出金額 ＝ 100個×＠100円 ＋ 50個×＠120円 ＝ 10,000 ＋ 6,000 ＝ <strong>16,000円</strong>（売上原価）</li>
-    <li>期末残高 ＝ 50個×＠120円 ＝ <strong>6,000円</strong></li>
-  </ul>
-
-  <h3>移動平均法の計算結果——平均単価を使ったときの払出・残高金額</h3>
-  <p>仕入後の平均単価：(100個×100円 ＋ 100個×120円) ÷ 200個 ＝ 22,000 ÷ 200 ＝ <strong>＠110円</strong></p>
-  <ul>
-    <li>払出金額 ＝ 150個×＠110円 ＝ <strong>16,500円</strong>（売上原価）</li>
-    <li>期末残高 ＝ 50個×＠110円 ＝ <strong>5,500円</strong></li>
-  </ul>
-
-  <table class="uriage-table">
-    <thead>
-      <tr>
-        <th>方法</th>
-        <th>売上原価（払出）</th>
-        <th>期末在庫残高</th>
-        <th>合計（一致確認）</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left">先入先出法</td>
-        <td>16,000円</td>
-        <td>6,000円</td>
-        <td>22,000円</td>
-      </tr>
-      <tr>
-        <td class="left">移動平均法</td>
-        <td>16,500円</td>
-        <td>5,500円</td>
-        <td>22,000円</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="tip-box"><strong>売上原価 ＋ 期末在庫 ＝ 期首在庫 ＋ 仕入高（合計は一致する）</strong><br>方法によって内訳（売上原価と期末在庫の金額）は変わりますが、合計（22,000円）は必ず一致します。計算後に合計でチェックする習慣をつけましょう。</div>
-
-  <h2>💡 ⑥ なぜ「期首在庫＋仕入高－期末在庫＝売上原価」なのか——売れた分だけコストを計上する考え方</h2>
-  <div class="tip-box"><strong>💡 身近な例で言うと：</strong><br>
-  高校生の頃、親から小遣いをもらっていなかった私は、デュエマやポケカを安く仕入れて、メルカリで転売する「せどり」をやっていました。売れたら儲けですが、メルカリの手数料10%（当時）が引かれ、発送は当時63円だったミニレターを使っていました。<br>
-  正直に告白すると、「これは売れるだろう」と勘で仕入れたカードがそのまま売れ残り、赤字になったこともあります（笑）。<br>
-  実はこの「売れ残ったカード」こそが、簿記でいう<strong>期末商品棚卸高</strong>そのものです。仕入れた瞬間にコスト（費用）になるわけじゃなく、売れるまでは在庫という「資産」のまま。だから「期首在庫＋仕入高－期末在庫＝売上原価」という式は、「実際に売れた分だけをコストとして計上する」という当たり前のルールを表しているだけなんです。
-  </div>
-  <p>三分法では期中に売上原価を自動計算できません。そこで決算整理で次の公式を使います。</p>
-  <p style="background:var(--light);padding:14px 18px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;">売上原価 ＝ 期首在庫 ＋ 当期仕入高 － 期末在庫</p>
-  <p>この公式の背景には<strong>費用収益対応の原則</strong>があります。</p>
-  <ul>
-    <li><strong>もし仕入れた全額を売上原価にしたら？</strong>　→　10個仕入れて7個しか売れていないのに10個分のコストを費用にしてしまい、今期の利益が過少・来期の費用がゼロになる。</li>
-    <li><strong>正しい考え方：</strong>　売上収益と対応するコストだけを当期費用に計上する（費用収益対応の原則）。</li>
-    <li><strong>期末在庫は資産：</strong>　売れ残りは翌期に売れる商品（繰越商品）としてB/Sに計上し、来期の売上原価になる。</li>
-  </ul>
-  <div class="warn-box"><strong>三分法の弱点を補うのが商品有高帳と決算整理</strong><br>三分法では期中の仕訳で売上原価が自動計算されません。期末に「期首振替→期末振替」の2本セットの決算整理仕訳を行うことで、初めて正確な売上原価が算定されます。</div>
-
-  <div class="app-cta"><h3>まずは、下の1問を商品有高帳に書いてみる</h3><p>先入先出法か移動平均法のどちらかを選び、「受入・払出・残高」を最後まで埋めます。書き終えたら、払出金額と期末在庫の意味を見直しましょう。</p><a href="#practice">練習問題へ進む ↓</a></div>
-
-  <div class="mondai" id="practice">
-    <div class="m-label">練習問題</div>
-    <p>以下の取引について、先入先出法・移動平均法それぞれで商品有高帳を記入しなさい。</p>
-    <ul>
-      <li>4月1日 前期繰越：50個 ＠300円</li>
-      <li>4月5日 仕入：100個 ＠320円</li>
-      <li>4月10日 売上：80個（払出）</li>
-      <li>4月18日 仕入：60個 ＠330円</li>
-      <li>4月25日 売上：90個（払出）</li>
-    </ul>
-    <p style="margin-top:12px;font-size:13px;color:#3B4DA8;"><strong>ポイント：</strong>先入先出法では4月10日の払出が2ロットにまたがります。移動平均法は仕入のたびに平均単価を再計算します。</p>
-  </div>
-
-  <div class="matome">
-    <h3>まとめ：商品有高帳 早見表</h3>
-    <div class="matome-row"><span class="trigger">先入先出法（FIFO）</span><span class="result">古いロットから順に払出。残高欄が複数行になることあり</span></div>
-    <div class="matome-row"><span class="trigger">移動平均法</span><span class="result">仕入のたびに平均単価を再計算。残高欄は常に1行</span></div>
-    <div class="matome-row"><span class="trigger">払出金額の合計</span><span class="result">売上原価になる（費用）</span></div>
-    <div class="matome-row"><span class="trigger">残高金額</span><span class="result">期末商品棚卸高になる（資産）</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-</div>
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">先入先出法と移動平均法の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">先入先出法は古い仕入分から先に売れたと仮定して原価計算する方法、移動平均法は仕入のたびに平均単価を計算し直す方法です。どちらも日商簿記3級の試験範囲です。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">売上原価の算定式はどうやって覚えますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">売上原価＝期首商品棚卸高＋当期仕入高－期末商品棚卸高で計算します。「しくりくりし」（仕繰り繰り仕）と覚えると決算整理仕訳が書きやすくなります。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">商品有高帳は試験で記入できるようにする必要がありますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">はい、日商簿記3級では商品有高帳の記入問題が出題されます。先入先出法と移動平均法の両方の形式で記入できるように練習しておきましょう。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月8日 | 更新日：2026年11月3日</p><h1>商品有高帳の書き方｜先入先出・移動平均と端数を3例で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>商品有高帳は商品の受入・払出・残高を、数量・原価単価・金額で管理する補助簿です。払出額は販売価格とは異なります。先入先出法か移動平均法か、問題が指定する方法と端数処理を先に確認します。</p>
+<div class="sq-facts-note">旧表の平均単価「207円」と払出「150個で31,000円」は一致していませんでした。例1は単価を207円へ丸めず、正確な平均単価を使います。以下は編集部の架空例で、返品・減耗・評価損はありません。</div>
+<h2>同じ在庫でも原価の配分が違う</h2>
+<section class="sq-facts-exercise"><h3>自作例1：元の100個@200円と200個@210円</h3><p>期首100個@200円、仕入200個@210円の後に150個販売。先入先出法と、単価を丸めない移動平均法の払出額・残高は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>合計原価20,000＋42,000＝62,000円、数量300個。先入先出法は100×200＋50×210＝30,500円払出、残る150×210＝31,500円。</p><p>移動平均単価は62,000÷300＝206と2/3円。150個の払出は31,000円、残る150個も31,000円です。「207円」と表示した上で31,000円を掛算結果とするのは誤りです。円単位に丸める指定があれば、指定に従って計算し直します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki3-shohinuriage-verified-mobile.svg?v=20261103"><img src="images/boki3-shohinuriage-verified.svg?v=20261103" alt="商品有高帳｜端数条件を固定" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>残高欄は複数ロットを省かない</h2><p>例1の仕入直後、先入先出法の残高には100個@200円と200個@210円が共存します。新しく入れた200個だけを全残高として示すのではありません。払出時に古い100個を使い切り、次のロットから50個を使うので、最終残高は150個@210円です。</p>
+<section class="sq-facts-exercise"><h3>自作例2：元の単価100円と120円で比較</h3><p>期首100個@100円、仕入100個@120円、その後150個を販売しました。両方法を検算してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>先入先出：払出100×100＋50×120＝16,000円、残高50×120＝6,000円。移動平均：単価（10,000＋12,000）÷200＝110円、払出16,500円、残高5,500円。どちらも払出＋残高＝22,000円です。</p><p>数量・単価等が同じという条件で、単価上昇時の内訳を比較できます。すべての期間・取引で常に一方の利益が大きいと断定しません。</p></div></details></section>
+<h2>仕入れが2回ある完結した練習</h2>
+<section class="sq-facts-exercise"><h3>自作例3：端数が出ない条件で一連の有高帳を作る</h3><p>期首50個@300円、仕入100個@330円、80個販売、追加仕入60個@346円、90個販売。2方法の払出合計と最終40個の原価は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>先入先出：最初は50×300＋30×330＝24,900円。次は70×330＋20×346＝30,020円。合計54,920円、残高40×346＝13,840円。</p><p>移動平均：最初の平均（15,000＋33,000）÷150＝320円。80個払出25,600円、70個残22,400円。追加後（22,400＋20,760）÷130＝332円。90個払出29,880円、40個残13,280円。払出合計55,480円。</p><p>総原価15,000＋33,000＋20,760＝68,760円。両方法とも払出と残高の合計は68,760円です。旧練習の未解答・端数条件不足を避け、条件を再設計しました。</p></div></details></section>
+<h2>平均の更新と期末の仕訳を区別する</h2><p>移動平均は受入のたびに平均を更新し、その後の払出にはその時点の平均を用います。三分法の決算では、正しい期末商品棚卸高を繰越商品へ反映します。合計原価の一致は点検の一つで、方法違いや販売単価の混入まで自動的に検出するものではありません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>平均単価を207円と書いて150個31,000円でもよいですか？</summary><p>例1の31,000円は単価を丸めない206と2/3円で計算した額です。207円という別の単価条件と混ぜません。</p></details><details class="sq-facts-answer"><summary>先入先出法の残高は新しい仕入分だけですか？</summary><p>複数ロットが残る場合は古い在庫も含めます。例1の仕入直後は100個と200個の合計300個です。</p></details><details class="sq-facts-answer"><summary>商品有高帳は販売価格で記録しますか？</summary><p>本文の受入・払出・残高は原価です。売価や利益と混同せず、指定方法・端数処理を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><a href="index.html">記事トップ</a><a href="app.html">アプリを使う</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

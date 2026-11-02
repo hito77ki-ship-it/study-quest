@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-hojinzei.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】法人税等の仕訳を完全解説｜中間・決算・確定申告の3ステップ仕訳例つき｜スタディクエスト</title>
-<meta name="description" content="日商簿記3級の法人税等の仕訳を3ステップで完全解説。中間申告（仮払法人税等）・決算整理（未払法人税等）・確定申告・納付まで例題つきで図解。試験頻出のよくある間違い2パターンも収録。">
+<title>法人税等の仕訳｜中間納付・決算・還付を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="中間納付と費用・未払残高を区別。必ず追加納付になるという説明を訂正し、既存例と還付例を検算します。">
 <meta name="keywords" content="法人税等 仕訳 簿記3級,仮払法人税等 中間申告,未払法人税等 決算,法人税等 例題">
-<meta property="og:title" content="法人税等の仕訳【日商簿記3級】仮払法人税等・未払法人税等の処理">
-<meta property="og:description" content="法人税等の中間申告・決算整理・確定申告・納付時の仕訳を例題つきで図解解説。">
+<meta property="og:title" content="法人税等の仕訳｜中間納付・決算・還付を自作例で確認">
+<meta property="og:description" content="中間納付と費用・未払残高を区別。必ず追加納付になるという説明を訂正し、既存例と還付例を検算します。">
 <meta property="og:url" content="https://study-quest.net/boki3-hojinzei.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"法人税等の仕訳【日商簿記3級】仮払法人税等・未払法人税等",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"法人税等の中間申告・決算整理・確定申告・納付時の仕訳を例題つきで図解解説。","url":"https://study-quest.net/boki3-hojinzei.html","datePublished":"2026-05-08","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "法人税等の仕訳｜中間納付・決算・還付を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "中間納付と費用・未払残高を区別。必ず追加納付になるという説明を訂正し、既存例と還付例を検算します。", "url": "https://study-quest.net/boki3-hojinzei.html", "datePublished": "2026-05-08", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -105,216 +104,39 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "未払法人税等はいつも年税額から中間納付を引けばよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "本文の追加納付例ではその差額です。中間納付が多く還付となる場合は、未収還付法人税等などの資産へ整理する条件を確認します。"}}, {"@type": "Question", "name": "納付時にもう一度法人税等を費用計上しますか？", "acceptedAnswer": {"@type": "Answer", "text": "決算で未払計上済みなら、納付時は負債と現金・預金を減らします。費用の二重計上を避けます。"}}, {"@type": "Question", "name": "中間申告は全社で前年税額の半分ですか？", "acceptedAnswer": {"@type": "Answer", "text": "一律ではありません。法人区分・事業年度の月数・申告不要条件・予定申告か仮決算か等を国税庁等で確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">簿記</a> &gt; 法人税等の仕訳</div>
-  <p class="meta">日商簿記3級 | 公開：2026年5月8日 | 更新日：2026年8月25日</p>
-  <h1>法人税等の仕訳を完全解説<br>中間申告・決算整理・確定申告の3ステップを例題で解説【日商簿記3級】</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>処理は3段階</strong>——中間申告（仮払）→決算整理（未払計上）→確定申告（差額を追加納付）</li>
-      <li><strong>仮払法人税等は資産</strong>——中間に先払いした税金、確定申告時に精算する一時的な権利</li>
-      <li><strong>未払法人税等＝年税額－中間納付額</strong>——決算で確定した残りの納付義務</li>
-      <li>「法人税等」＝法人税＋住民税＋事業税の3つをまとめた勘定科目名——1科目で3税をまとめて処理</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    実は、今回紹介する「法人税等」の3ステップ仕訳ですが、私が初めて見たとき、「え、同じ税金のはずなのに、仮払法人税等→法人税等→未払法人税等ってタイミングごとに名前がコロコロ変わってる……！しかも『仮払』が資産扱いってどういうこと！？うわっ、なんじゃこりゃ！」と本気で脳内パニックを起こした論点でした（笑）。<br>
-    落ち着いて整理すると、これは1つの税金が中間申告→決算→確定申告という3つの場面を通過するたびに衣装（勘定科目）を着替えていく【税金のタイムラインドラマ】なんです。中間で払いすぎた分は「まだ確定していない、返ってくるかもしれない権利」だから資産。決算で年税額が確定したら費用。残りはまだ払っていない義務だから負債——このストーリーの流れさえ掴めば、一瞬で仕訳が組み立てられます。<br>
-    今回は、このタイムラインドラマをゲーム感覚で攻略する裏技を、図解と一緒にお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <h2>🔄 ① 法人税等の処理の流れ——中間申告・決算整理・確定申告の3段階</h2>
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-hojinzei-map-mobile.svg">
-    <img src="images/boki3-hojinzei-map.svg" alt="法人税等の中間申告・決算整理・確定申告3段階処理フローの全体マップ図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="760" height="400">
-  </picture>
-  <p>図解のタイムラインで全体像を確認してください。<strong>「仮払法人税等（資産）」→「法人税等（費用）」→「未払法人税等（負債）」</strong>の3つの勘定が登場します。中間で先払いした税金（仮払）が決算で確定した年税額（法人税等）の一部として吸収され、残りが未払として翌期に繰り越されます。</p>
-  <p>法人税等の処理は3つのステップで行います。</p>
-
-  <div class="flow-steps">
-    <div class="flow-step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-title">中間申告（年度の途中）</div>
-        <div class="step-desc">前年度の税額の約半分を「仮払い」として納付。勘定科目は「仮払法人税等」（資産）。</div>
-      </div>
-    </div>
-    <div class="flow-step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-title">決算整理（期末）</div>
-        <div class="step-desc">年間の税額が確定。仮払法人税等を取り崩し、残額を「未払法人税等」（負債）として計上。</div>
-      </div>
-    </div>
-    <div class="flow-step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-title">確定申告・納付（翌期）</div>
-        <div class="step-desc">未払法人税等を現金等で支払い、負債を消去。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>📝 ② 中間申告——仮払法人税等（資産）として先に納付する</h2>
-  <p>中間申告では、税金を「仮払い」という形で先払いします。まだ年間税額が確定していないため、資産勘定「仮払法人税等」を使います。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（中間申告・現金300,000円を納付）</div>
-    <div class="sw-row">
-      <span class="kari">仮払法人税等<span class="amt">300,000</span></span>
-      <span class="sep">／</span>
-      <span class="kashi">現金<span class="amt">300,000</span></span>
-    </div>
-  </div>
-
-  <p>仮払法人税等は「前払いした税金」なので<strong>資産</strong>です。決算時に取り崩します。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">税金を払っただけなのに「資産」って呼ぶの、正直めちゃくちゃ違和感あります……税金って払ったら終わりのお金じゃないんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">その感覚、すごくよくわかります！私も最初は「払ったお金がなんで資産（プラスの財産）なんだ！？」って混乱しました（笑）。でも考えてみてください。中間申告の時点では、まだ<strong>年間でいくら税金がかかるか確定していません</strong>。もし多めに払いすぎていたら、決算で「払いすぎた分を精算してもらえる権利」が残りますよね？その「精算してもらえるかもしれない権利」こそが、仮払法人税等という資産の正体なんです。</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-    <div class="sq-chat-row">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div class="sq-chat-bubble">なるほど、「払いすぎた分を返してもらえる権利」だから資産なんですね！じゃあ決算になったら、その権利はどうなるんですか？</div>
-    </div>
-    <div class="sq-chat-row reverse">
-      <div class="sq-chat-bubble">いいところに気づきましたね！決算で年税額が確定した瞬間、その「権利」の役目は終わります。年税額の中から仮払法人税等の分を差し引いて相殺し、残った金額だけを「未払法人税等（負債）」として次のステージに引き継ぐ——これが法人税等のタイムラインドラマの後半パートです。</div>
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-    </div>
-  </div>
-
-  <h2>📊 ③ 決算時の仕訳——年税額を確定させて未払法人税等（負債）を計上する</h2>
-  <p>決算で年間の法人税等が600,000円と確定した場合、中間申告で納付済みの300,000円を差し引いた残り300,000円が「未払法人税等」になります。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（決算整理：年間税額600,000円、中間納付300,000円）</div>
-    <div class="sw-row">
-      <span class="kari">法人税等<span class="amt">600,000</span></span>
-      <span class="sep">／</span>
-      <span class="kashi">仮払法人税等<span class="amt">300,000</span></span>
-    </div>
-    <div class="sw-row">
-      <span class="kari"></span>
-      <span class="sep">　</span>
-      <span class="kashi">未払法人税等<span class="amt">300,000</span></span>
-    </div>
-  </div>
-
-  <p>「法人税等」は費用勘定です。借方に計上することで当期の費用として認識されます。「未払法人税等」は<strong>負債</strong>（まだ払っていない税金）です。</p>
-
-  <div class="tip-box"><strong>決算整理で法人税等を計上したら、P/Lの税引前当期純利益から差し引いた「当期純利益」が最終利益</strong><br>損益計算書では「税引前当期純利益 − 法人税等 ＝ 当期純利益」の形で表示されます。法人税等は特別な費用として最後に差し引くイメージです。</div>
-
-  <h2>💰 ④ 確定申告・納付時の仕訳——仮払と未払の両方を消して差額を追加納付</h2>
-  <p>翌期に確定申告を行い、未払法人税等を実際に納付します。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（確定申告・残額300,000円を現金で納付）</div>
-    <div class="sw-row">
-      <span class="kari">未払法人税等<span class="amt">300,000</span></span>
-      <span class="sep">／</span>
-      <span class="kashi">現金<span class="amt">300,000</span></span>
-    </div>
-  </div>
-
-  <p>未払法人税等（負債）を減らし、現金（資産）を減らします。これで法人税等に関する一連の処理が完了します。</p>
-
-  <h2>⚠️ ⑤ よくある間違い——法人税等でミスしやすいパターンと対処法</h2>
-  <div class="warn-box">
-    <strong>❌ 中間納付を「法人税等（費用）」で計上してしまう</strong><br>
-    誤：（借）法人税等60,000 ／（貸）現金60,000<br>
-    正：（借）仮払法人税等60,000 ／（貸）現金60,000<br>
-    中間申告の時点では年間税額がまだ確定していません。「仮払法人税等（資産）」で記録し、決算で確定した際に初めて「法人税等（費用）」を計上します。
-  </div>
-  <div class="warn-box">
-    <strong>❌ 決算整理で法人税等の全額を未払法人税等にしてしまう</strong><br>
-    年間税額が150,000円、中間納付60,000円の場合：<br>
-    誤：（借）法人税等150,000 ／（貸）未払法人税等150,000（仮払を取り崩し忘れ）<br>
-    正：（借）法人税等150,000 ／（貸）仮払法人税等60,000・未払法人税等90,000<br>
-    中間で払った分（仮払法人税等）を必ず相殺することを忘れずに。
-  </div>
-
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
-
-  <div class="mondai">
-    <div class="m-label">練習問題</div>
-    <p>以下の一連の取引について仕訳しなさい。</p>
-    <ul>
-      <li>① 中間申告：法人税等200,000円を現金で納付した</li>
-      <li>② 決算整理：当期の法人税等の年間税額は480,000円と確定した</li>
-      <li>③ 翌期：確定申告を行い、未払法人税等を現金で納付した</li>
-    </ul>
-    <p style="margin-top:12px;font-size:13px;color:#3B4DA8;"><strong>ポイント：</strong>②では仮払法人税等200,000円を取り崩し、残り280,000円を未払法人税等として計上します。</p>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;margin:32px 0;text-align:center;">
-    <p style="font-size:15px;font-weight:700;color:#276749;margin-bottom:8px;">この記事が少しでも参考になったら……</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <section class="faq" id="faq">
-    <h2>よくある質問</h2>
-    <div itemscope itemtype="https://schema.org/FAQPage">
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name">法人税等の処理は何段階あるの？</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">大きく3段階あります。①中間申告時（仮払法人税等を資産として計上）、②決算整理時（法人税等を費用計上し未払法人税等を負債計上）、③確定申告・納付時（未払法人税等を現金等で支払い消去）の順で処理します。この3ステップをセットで覚えましょう。</p>
-        </div>
-      </div>
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name">仮払法人税等はなぜ資産なの？</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">中間申告時点では年間の税額がまだ確定していないため、「前払い」という形で処理します。前払いした税金は後で費用として確定するまでの仮勘定なので資産（前払税金）に分類されます。決算で年間税額が確定して初めて「法人税等（費用）」として計上します。</p>
-        </div>
-      </div>
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name">未払法人税等はどう計算するの？</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">未払法人税等 ＝ 年間税額 − 中間申告で納付した仮払法人税等 で計算します。例えば年間税額が600,000円で中間納付が300,000円なら、未払法人税等は300,000円です。決算整理の仕訳は「（借）法人税等600,000 ／（貸）仮払法人税等300,000・未払法人税等300,000」となります。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="related">
-    <h2>関連記事</h2>
-    <ul>
-      <li><a href="/boki3-kabushiki.html">株式会社の仕訳【日商簿記3級】株式発行・配当・利益準備金</a></li>
-      <li><a href="/boki3-seisanhyo.html">精算表の作り方【日商簿記3級】8桁精算表を完全解説</a></li>
-      <li><a href="/boki3-keika.html">費用・収益の繰延べ・見越しの仕訳【日商簿記3級】</a></li>
-      <li><a href="/boki3-shohi.html">消費税の仕訳【日商簿記3級】税抜方式の処理</a></li>
-      <li><a href="/boki.html">日商簿記3級の勉強法・出題範囲まとめ</a></li>
-    </ul>
-  </div>
-
-  <div class="matome">
-    <h3>まとめ：法人税等 仕訳早見表</h3>
-    <div class="matome-row"><span class="trigger">中間申告時</span><span class="result">仮払法人税等（資産）／ 現金</span></div>
-    <div class="matome-row"><span class="trigger">決算整理時</span><span class="result">法人税等（費用）／ 仮払法人税等・未払法人税等</span></div>
-    <div class="matome-row"><span class="trigger">確定申告・納付時</span><span class="result">未払法人税等（負債）／ 現金</span></div>
-    <div class="matome-row"><span class="trigger">未払法人税等の計算</span><span class="result">年間税額 − 中間納付額</span></div>
-    <div class="matome-row"><span class="trigger">P/Lでの位置</span><span class="result">税引前当期純利益 − 法人税等 ＝ 当期純利益</span></div>
-  </div>
-</div>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月8日 | 更新日：2026年11月3日</p><h1>法人税等の仕訳｜中間納付・決算・還付を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>法人税等の学習では、先に納めた額、当期の税金費用、まだ納めていない額を別の勘定で記録します。決算整理は税額の計上であり、申告と現金の納付そのものを同時に済ませたことにはなりません。</p>
+<div class="sq-facts-note">以下は編集部作成の架空例です。税額は問題の指定値とし、税効果会計・付加価値割等は扱いません。「前年税額の約半分をすべての会社が納める」「決算では必ず追加納付になる」という一律の説明を訂正しました。</div>
+<h2>3時点で、どの残高を動かすか</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">時点</th><th scope="col">この例での基本処理</th></tr></thead><tbody><tr><td>中間納付</td><td>仮払法人税等／現金・預金</td></tr><tr><td>決算整理</td><td>法人税等／仮払法人税等・未払法人税等</td></tr><tr><td>翌期の納付</td><td>未払法人税等／現金・預金</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>自作例1：既存の600,000円の年税額</h3><p>当期に300,000円を中間納付。決算で当期負担額を600,000円と算定し、翌期に残額を現金納付しました。各仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>中間：仮払法人税等300,000／現金300,000。決算：法人税等600,000／仮払法人税等300,000・未払法人税等300,000。翌期納付：未払法人税等300,000／現金300,000。</p><p>費用は当期600,000円、2回の支払い合計も600,000円。翌期納付で費用600,000円を再計上しません。</p></div></details></section>
+<h2>中間納付の方が多ければ負債をマイナスにしない</h2>
+<section class="sq-facts-exercise"><h3>自作例2：300,000円を納め、年税額240,000円</h3><p>中間納付を仮払法人税等に計上済み。当期負担額は240,000円で、差額60,000円は還付を受ける条件です。決算仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>法人税等240,000・未収還付法人税等60,000／仮払法人税等300,000。未払法人税等を「−60,000円」として負債に残すのではなく、還付を受ける資産として整理します。実際の受取時は現金・預金60,000／未収還付法人税等60,000です。</p></div></details></section>
+<h2>中間申告は条件を満たす会社の制度</h2><p>国税庁の案内では、事業年度が6か月を超える普通法人の中間申告に、前年度実績を基準とする予定申告と仮決算方式があります。前年度実績方式は前事業年度の税額・月数等から計算し、算式の額が10万円以下など申告不要の条件もあります。これは法人税の説明で、すべての地方税や会社を単純な半額計算にまとめるものではありません。</p>
+<h2>勘定科目と損益計算書の位置を確認する</h2><p>本文は「法人税等」と略していますが、「法人税、住民税及び事業税」など問題の指定科目を使います。所得に関連する法人事業税と、付加価値割・資本割等を一括して同じ扱いにしません。この例の損益計算書では税引前当期純利益から当期の税金費用を引きます。「特別損失」と呼ぶ意味ではありません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.nta.go.jp/publication/pamph/hojin/aramashi2024/pdf/01-03.pdf" target="_blank" rel="noopener">国税庁：法人税のあらまし・確定申告と中間申告</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針59：当期負担税金・未払額と還付額</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級決算整理のサンプルの入口</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>未払法人税等はいつも年税額から中間納付を引けばよいですか？</summary><p>本文の追加納付例ではその差額です。中間納付が多く還付となる場合は、未収還付法人税等などの資産へ整理する条件を確認します。</p></details><details class="sq-facts-answer"><summary>納付時にもう一度法人税等を費用計上しますか？</summary><p>決算で未払計上済みなら、納付時は負債と現金・預金を減らします。費用の二重計上を避けます。</p></details><details class="sq-facts-answer"><summary>中間申告は全社で前年税額の半分ですか？</summary><p>一律ではありません。法人区分・事業年度の月数・申告不要条件・予定申告か仮決算か等を国税庁等で確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><a href="index.html">記事トップ</a><a href="app.html">アプリを使う</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

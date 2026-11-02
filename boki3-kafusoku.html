@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-kafusoku.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】現金過不足とは？仮勘定の仕訳から雑損・雑益まで例題つきで完全解説｜スタディクエスト</title>
-<meta name="description" content="簿記3級の現金過不足を例題つきで完全解説。なぜ仮勘定を使うのか、原因判明・不明の2パターンの仕訳を丁寧に解説。決算時の雑損・雑益への振替まで試験頻出パターンを網羅。">
+<title>現金過不足の仕訳｜原因判明で残高が逆転する自作例まで確認｜スタディクエスト</title>
+<meta name="description" content="現金実査、原因判明、決算整理を既存例と残高逆転の新例で検算。最初の不足・超過だけで最終の雑損益を決めない手順を示します。">
 <meta name="keywords" content="現金過不足 仕訳,現金過不足 雑損 雑益,現金過不足 決算整理,日商簿記3級 現金過不足,雑損 雑益 違い">
-<meta property="og:title" content="流れで覚える現金過不足の仕訳【日商簿記3級】">
-<meta property="og:description" content="現金過不足を「実査→原因判明→決算整理」の3ステップで解説。雑損・雑益の判断も例題つきで完全網羅。">
+<meta property="og:title" content="現金過不足の仕訳｜原因判明で残高が逆転する自作例まで確認">
+<meta property="og:description" content="現金実査、原因判明、決算整理を既存例と残高逆転の新例で検算。最初の不足・超過だけで最終の雑損益を決めない手順を示します。">
 <meta property="og:url" content="https://study-quest.net/boki3-kafusoku.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,18 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "流れで覚える現金過不足の仕訳【日商簿記3級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "現金過不足を「実査→原因判明→決算整理」の3ステップで解説。",
-  "url": "https://study-quest.net/boki3-kafusoku.html",
-  "datePublished": "2026-05-07",
-  "dateModified": "2026-08-25",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "現金過不足の仕訳｜原因判明で残高が逆転する自作例まで確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "現金実査、原因判明、決算整理を既存例と残高逆転の新例で検算。最初の不足・超過だけで最終の雑損益を決めない手順を示します。", "url": "https://study-quest.net/boki3-kafusoku.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -145,400 +134,56 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "最初が不足なら最後は必ず雑損ですか？", "acceptedAnswer": {"@type": "Answer", "text": "違います。判明した原因を反映した後の現金過不足残高で判断します。本文の例2では貸方へ逆転し、最終残額は雑益です。"}}, {"@type": "Question", "name": "原因が分かったら現金をもう一度動かしますか？", "acceptedAnswer": {"@type": "Answer", "text": "すでに実査額へ合わせている場合は、現金過不足を正しい科目へ振り替えます。現金を二重に増減しないよう既記帳を確認します。"}}, {"@type": "Question", "name": "決算で現金過不足を使わない例もありますか？", "acceptedAnswer": {"@type": "Answer", "text": "未処理の差額を直接雑損・雑益へ整理する指定もあります。すでに仮勘定を使ったかどうかを区別します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>現金過不足の仕訳｜原因判明で残高が逆転する自作例まで確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>現金の帳簿残高と実際有高が合わず、原因がまだ分からないときに、一時的に現金過不足へ記録します。原因が分かった分を正しい勘定へ振り替え、決算時になお残る原因不明額を、問題の指示に従って雑損・雑益等へ整理します。</p>
+<div class="sq-facts-note">重要なのは、<strong>原因を整理した後の現金過不足残高</strong>です。最初に現金が不足したから最終的にも必ず雑損、とは限りません。以下は編集部の架空例で、実際の現金を動かす操作の案内ではありません。</div>
+<ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h2>実査した時点で帳簿を合わせる</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">実際と帳簿</th><th scope="col">この時点の仕訳</th></tr></thead><tbody><tr><td>実際100,100円・帳簿100,000円</td><td>現金100／現金過不足100</td></tr><tr><td>実際99,000円・帳簿100,000円</td><td>現金過不足1,000／現金1,000</td></tr></tbody></table></div>
+<p>借方は左、貸方は右です。現金という資産を増やすなら借方、減らすなら貸方へ記録します。「現金過不足」自体を初めから最終費用・収益に固定せず、調査中の差額として扱います。帳簿を実査額へ合わせた後、原因判明時に現金を再度減らす二重処理にも注意します。</p>
+<section class="sq-facts-exercise"><h3>自作例1：貸方10,000円のうち2,000円の原因判明</h3><p>現金過不足は貸方残高10,000円。受取手数料2,000円の記帳漏れが判明しました。原因判明時と、残額不明の決算時の仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>判明時：現金過不足2,000／受取手数料2,000。残高は貸方8,000円。決算：現金過不足8,000／雑益8,000。すでに実査時に現金を増やしているため、判明時には現金をもう一度増やしません。</p></div></details></section>
+<ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h2>借方残と貸方残を消す向き</h2><p>原因を反映した後に借方残高500円なら、雑損500／現金過不足500。貸方残高2,000円なら、現金過不足2,000／雑益2,000です。借方残高を消すには貸方へ、貸方残高を消すには借方へ同額を記録し、残る相手科目を確認します。</p>
+<section class="sq-facts-exercise"><h3>自作例2：最初は不足でも、最終的には雑益</h3><p>帳簿の現金100,000円に対し実際99,000円。原因不明として処理後、現金で支払った通信費1,500円の記帳漏れが判明しました。他の原因は不明のまま決算となりました。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>実査：現金過不足1,000／現金1,000。原因判明：通信費1,500／現金過不足1,500。現金過不足は借方1,000−貸方1,500＝<strong>貸方500円</strong>へ逆転します。決算：現金過不足500／雑益500。</p><p>現金勘定は99,000円のまま。最初の不足1,000円だけで雑損と決めると、判明した通信費1,500円との整合が取れません。原因には記帳漏れだけでなく二重記帳などもあり、訂正内容を符号付きで追います。</p></div></details></section>
+<h2>決算日に初めて判明した差額を直接整理する場合</h2>
+<section class="sq-facts-exercise"><h3>自作例3：現金過不足をまだ使っていない</h3><p>決算日の帳簿現金320円、実際300円。原因不明の差額を直接雑損益へ整理すると指定されています。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>不足20円なので、雑損20／現金20。すでに現金過不足へ20円を振り替えていた場合の仕訳とは違います。既記帳か未処理かを先に確認します。</p></div></details></section>
+<h2>残額を確認する記録欄</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">時点</th><th scope="col">現金の帳簿残高</th><th scope="col">現金過不足の残高</th><th scope="col">点検</th></tr></thead><tbody><tr><td>例2の実査後</td><td>99,000</td><td>借方1,000</td><td>実際有高と一致</td></tr><tr><td>通信費判明後</td><td>99,000</td><td>貸方500</td><td>現金を重ねて動かしていない</td></tr><tr><td>決算整理後</td><td>99,000</td><td>0</td><td>通信費1,500・雑益500を記録</td></tr></tbody></table></div>
+<p>上の表は確認方法の一例です。実務では取引証ひょう・現金管理の記録を確認し、差額だけを安易に雑損益へ流して原因調査を省略する意味ではありません。本文では試験上の指定に従う仕訳と、調査の役割を分けています。</p>
 
-<div class="container">
-  <div class="breadcrumb">
-    <a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 流れで覚える現金過不足の仕訳
-  </div>
-
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月25日</p>
-  <h1>流れで覚える現金過不足の仕訳<br>雑損・雑益まで完全解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card" style="margin-bottom:24px;">
-    <div class="label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>現金過不足とは</strong>——帳簿残高と実際の現金が合わないときに使う<strong>一時的な仮勘定</strong></li>
-      <li><strong>処理の流れは3ステップ</strong>——「①実査時」「②原因判明時」「③決算整理時」で完結</li>
-      <li><strong>雑損 vs 雑益の判断</strong>——原因不明で決算を迎えたとき、現金が<em>不足</em>なら雑損（費用）、<em>超過</em>なら雑益（収益）</li>
-      <li><strong>なぜ仮勘定を使うのか</strong>——原因確定前に費用/収益を計上しないことで帳簿の正確性を守るため</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    レジ締めなどで、帳簿の金額と実際に数えた現金が少しでも合わないと、原因探しで手が止まりがちです。<br>
-    でも簿記では、その場で原因を決めなくても大丈夫です。いったん<strong>「現金過不足」という一時的な仮のハコ</strong>に記録し、後で原因が分かったら正しい科目へ振り替えます。決算日までに原因が分からなければ「雑損・雑益」として整理する、というルールがあります。<br>
-    この記事では、この【一時的な仮のハコと決算時の整理】を、順番に確認していきます。</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <!-- 導入sq-chat -->
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">現金を何回数えても帳簿と合わないんですが、どうすればいいですか…？原因がわからないのに仕訳なんて切れる気がしません。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">原因が分からなくて大丈夫です。まず「現金過不足」という勘定科目に、差額をそのまま一時的に放り込んでおきましょう。犯人が誰かは後で考えればいい——これが最初の一手です。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">決算まで原因がわからなかったらどうなりますか？ずっと「仮」のままだと気持ち悪いです……</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、正解です！仮のハコは決算日まで放置してはいけません。原因不明のまま期末を迎えたら、強制的に「雑損」か「雑益」に振り替えて必ずゼロにします。これが3つ目のフェーズです。順番に見ていきましょう。</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3ステップ概要 -->
-  <h2>現金過不足の3ステップ</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-kafusoku-map-mobile.svg">
-    <img src="images/boki3-kafusoku-map.svg" alt="現金過不足の実査・原因判明・決算整理3ステップフロー図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="1200" height="660">
-  </picture>
-
-  <p>「現金過不足」は<strong>仮の勘定科目</strong>です。上の3ステップで必ず最後はゼロになります。</p>
-
-  <div class="flow-wrap">
-    <div class="flow-step s1">
-      <div class="flow-num">STEP 1</div>
-      <div class="flow-icon">🔍</div>
-      <div class="flow-title">現金実査</div>
-      <div class="flow-sub">帳簿と実際を合わせる<br>相手は「現金過不足」</div>
-    </div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-step s2">
-      <div class="flow-num">STEP 2</div>
-      <div class="flow-icon">💡</div>
-      <div class="flow-title">原因判明</div>
-      <div class="flow-sub">「現金過不足」を<br>正しい科目に振替</div>
-    </div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-step s3">
-      <div class="flow-num">STEP 3</div>
-      <div class="flow-icon">📅</div>
-      <div class="flow-title">決算整理</div>
-      <div class="flow-sub">残った過不足は<br>雑損 or 雑益へ</div>
-    </div>
-  </div>
-
-  <!-- ── 広告 ── -->
-  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <div class="tip-box"><strong>💡 身近な例で言うと：</strong><br>
-  コンビニなどでレジ打ちのバイトをしたことがある人なら、閉店後のレジ締めで「レジの記録上は52,000円のはずなのに、実際に数えたら51,800円しかない」という経験、ありませんか？<br>
-  このとき、原因（渡し間違いなのか、レジ袋代の入力漏れなのか）がその場ではっきりしないことがよくあります。この「帳簿上の金額」と「実際に数えた金額」のズレこそが、まさに<strong>現金過不足</strong>です。原因が分かるまで一旦「現金過不足」という仮の箱に入れておき、後で判明した原因に応じて正しい科目に振り替える——これがレジ締めの現場でも、簿記の仕訳でも同じ考え方です。
-  </div>
-
-  <h2>STEP 1：現金実査で帳簿と金額が合わないときの仕訳</h2>
-
-  <p>毎日（または定期的に）現金を数え（これを<strong>実査</strong>といいます）、帳簿残高と比較します。差額が出た場合は<strong>現金過不足</strong>という勘定科目で処理します。</p>
-
-  <div class="compare-wrap">
-    <div class="compare-card over">
-      <div class="compare-badge">実際有高 ＞ 帳簿残高</div>
-      <div class="compare-title">現金が帳簿より多い</div>
-      <p style="font-size:13px;color:#374151;margin-bottom:0;">帳簿の現金をプラスする。<br>相手科目は現金過不足（貸方）。</p>
-      <div class="compare-eg">帳簿 ¥100,000 → 実際 ¥100,100<br>差額 ¥100</div>
-    </div>
-    <div class="compare-card under">
-      <div class="compare-badge">実際有高 ＜ 帳簿残高</div>
-      <div class="compare-title">現金が帳簿より少ない</div>
-      <p style="font-size:13px;color:#374151;margin-bottom:0;">帳簿の現金をマイナスする。<br>相手科目は現金過不足（借方）。</p>
-      <div class="compare-eg">帳簿 ¥100,000 → 実際 ¥99,000<br>差額 ¥1,000</div>
-    </div>
-  </div>
-
-  <h3>手元の現金が帳簿より「多い」とき（実際有高 ＞ 帳簿残高）の仕訳</h3>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">100</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">現金過不足</span><span class="amount">100</span></div>
-    </div>
-  </div>
-
-  <h3>手元の現金が帳簿より「少ない」とき（実際有高 ＜ 帳簿残高）の仕訳</h3>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金過不足</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>💡 考え方：</strong>「現金過不足」自体に特に意味はありません。帳簿残高を実際有高に合わせるために現金を動かし、その相手勘定として使う一時的な科目です。
-  </div>
-
-  <h2>STEP 2：ズレの原因が判明したとき——仮勘定を正しい科目に振り替える</h2>
-
-  <p>原因が判明したら、「現金過不足」を<strong>正しい科目に振り替え</strong>ます。現金過不足を消して（反対側に書いて）、正しい科目を計上します。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>現金過不足額￥10,000（貸方）のうち、￥2,000は受取手数料の記入漏れであることが判明した。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金過不足</span><span class="amount">2,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">受取手数料</span><span class="amount">2,000</span></div>
-    </div>
-  </div>
-  <div class="tip-box">
-    <strong>💡 解説：</strong>現金過不足が貸方にある（¥10,000）→ 消すために借方に書く。受取手数料は収益なので貸方。残り¥8,000の現金過不足はまだ残ったまま（STEP 3へ）。
-  </div>
-
-  <!-- ── 広告 ── -->
-  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <h2>STEP 3：原因不明のまま期末を迎えたとき——雑損・雑益への振替</h2>
-
-  <p>決算時点でまだ現金過不足が残っていたら、原因不明として<strong>雑損</strong>または<strong>雑益</strong>に振り替えます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">雑損と雑益、どっちを使えばいいか毎回迷います…現金過不足の残高が借方だったか貸方だったか、覚えるだけでもう精一杯で。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">覚える必要すらないんです。決算整理は「残高を消すために、反対側に同じ数字を書くだけ」のパズルだと思ってください。現金過不足が借方に残っているなら、消すために貸方へ書く——すると自動的に借方側に空きができるので、そこに「雑損」が入ります。逆に貸方に残っているなら、消すために借方へ書いて、貸方に空いたスペースへ「雑益」が入る。暗記じゃなくて、その場で反対側に書くだけで答えが出てくる仕組みなんです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">……あ、「消す＝反対側に書く」だけでいいなら、雑損・雑益のどっちが正しいかを丸暗記する必要が最初からなかったんですね！</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚です！費用は左（借方）・収益は右（貸方）という基本と合わせれば、雑損か雑益かは機械的に決まります。この型さえ体に染み込めば、決算整理のこのパートはもう考える必要すらなくなりますよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="warn-box">
-    <strong>⚠ 雑損 vs 雑益の見分け方：</strong><br>
-    現金過不足を消した後、残った側が<strong>左（借方）→ 雑損（費用）</strong>、<strong>右（貸方）→ 雑益（収益）</strong>。<br>
-    借方残高の現金過不足は「実際が少なかった（損した）」から雑損。貸方残高は「実際が多かった（得した）」から雑益。
-  </div>
-
-  <h3>「雑損」と「雑益」のどっち？——現金過不足が借方残のとき（現金不足）</h3>
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>現金過不足の残高は￥500（借方）である。原因不明のため適当な科目に振り替える。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">雑損</span><span class="amount">500</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">現金過不足</span><span class="amount">500</span></div>
-    </div>
-  </div>
-  <div class="tip-box">
-    <strong>💡 解き方：</strong>現金過不足（借方）を消す → 貸方に「現金過不足」500。反対側（借方）が残るので「雑損」。
-  </div>
-
-  <h3>現金過不足を使わずに決算で直接処理するパターン</h3>
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>期末の現金実際有高は￥300、帳簿残高は￥320である。差額は雑損又は雑益として処理する。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">雑損</span><span class="amount">20</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">20</span></div>
-    </div>
-  </div>
-  <div class="tip-box">
-    <strong>💡 解説：</strong>現金過不足を使わず決算で直接処理するパターン。実際 ¥300 &lt; 帳簿 ¥320 なので現金を ¥20 マイナス（貸方に現金）。反対側（借方）は雑損。
-  </div>
-
-  <h3>「雑益」になるとき——現金超過で一部原因判明・残額を雑益処理するパターン</h3>
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>現金の実際残高が帳簿残高より多かったため、現金過不足額（貸方）¥8,000で処理されていた。このうち¥6,000は受取手数料の記入漏れ、残額は原因不明のため適当な科目に振り替える。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金過不足</span><span class="amount">8,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">受取手数料</span><span class="amount">6,000</span></div>
-    </div>
-  </div>
-  <div style="display:flex;border:2px solid var(--border);border-radius:12px;overflow:hidden;margin:-10px 0 16px;font-size:14px;">
-    <div style="flex:1;padding:10px 18px 14px;background:#EBF8FF;border-right:2px solid var(--border);">
-      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#2B6CB0;margin-bottom:4px;">借方</div>
-      <div style="font-size:12px;color:var(--muted);">（続き）</div>
-    </div>
-    <div style="flex:1;padding:10px 18px 14px;background:#FFF9F0;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#C05621;margin-bottom:4px;">貸方</div>
-      <div style="display:flex;justify-content:space-between;"><span style="font-weight:700;">雑益</span><span style="color:var(--muted);">2,000</span></div>
-    </div>
-  </div>
-  <div class="tip-box">
-    <strong>💡 解き方：</strong>現金過不足（貸方 ¥8,000）を消す → 借方に「現金過不足」¥8,000。受取手数料 ¥6,000 を貸方へ。差額 ¥2,000 は貸方なので「雑益」（収益）。
-  </div>
-
-  <h2>なぜ「現金過不足」という仮勘定を使うのか？</h2>
-  <p>現金のズレが見つかったとき、いきなり費用や収益に計上せず「現金過不足」という仮勘定を使う理由があります。</p>
-
-  <div class="warn-box">
-    <strong>⚠ もし直接費用・収益に計上したら？</strong><br>
-    ① 原因不明のまま費用や収益に計上 → 根拠のない費用・収益が帳簿に残り、帳簿の正確性・信頼性が損なわれる<br>
-    ② 後から原因が判明しても修正が複雑 → 「なぜこの費用があるのか」説明できない<br>
-    ③ ミスや不正の発見機会を失う → 現金管理の問題が見えなくなる
-  </div>
-
-  <div class="tip-box">
-    <strong>💡 仮勘定（現金過不足）を使う3つの理由：</strong><br>
-    ① 発生時は「現金過不足」に一時記録 → 「原因調査中」という状態を帳簿で表現できる<br>
-    ② 原因判明後に正しい科目へ振替 → 実態に合った正確な帳簿を維持できる<br>
-    ③ 決算日まで不明なら雑損（費用）or 雑益（収益）へ振替 → 決算書を必ず締め切れる（未処理で残さない）<br>
-    「仮」はあくまで一時的！必ず最終的に別の科目へ振り替えます。
-  </div>
-
-  <h2>まとめ</h2>
-
-  <div class="matome">
-    <h3>📋 現金過不足 処理ルール一覧</h3>
-    <div class="matome-row">
-      <span class="trigger">実際有高 ＞ 帳簿：差額分</span>
-      <span class="result">→ 借方「現金」／貸方「現金過不足」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">実際有高 ＜ 帳簿：差額分</span>
-      <span class="result">→ 借方「現金過不足」／貸方「現金」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">原因判明（例：受取手数料の漏れ）</span>
-      <span class="result">→ 現金過不足を消し、正しい科目へ</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">借方残の現金過不足が決算まで残った</span>
-      <span class="result">→ 借方「雑損」／貸方「現金過不足」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">貸方残の現金過不足が決算まで残った</span>
-      <span class="result">→ 借方「現金過不足」／貸方「雑益」</span>
-    </div>
-  </div>
-
-  <!-- アプリCTA -->
-  <div class="app-cta">
-    <h3>⚔ 学習時間を記録して合格を加速</h3>
-    <p>簿記の勉強時間をスタディクエストで記録すると、経験値・レベルが上がりモチベーションが続きます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
-    <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-bottom:12px;">関連記事</div>
-    <a href="boki3-genkin.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;">
-      💴 現金・当座預金の違いと仕訳 →
-    </a>
-    <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
-      📒 簿記3級・2級 独学攻略ガイド →
-    </a>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">現金過不足は「反対側に書いて消すだけ」のパズルです</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-  </div>
-
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">現金過不足はどんなときに使いますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">帳簿の現金残高と実際の手持ち現金（実際有高）が一致しないときに使います。差額を仮勘定「現金過不足」に記録し、原因判明後に正しい勘定科目へ振り替えます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">原因が決算日まで不明の場合はどうなりますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">不足分は「雑損」（費用）へ、超過分は「雑益」（収益）へ振り替えます。これにより決算を必ず締め切ることができます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">なぜ直接費用や収益に計上しないのですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">原因不明のまま費用・収益に計上すると根拠のない数値が残り帳簿の信頼性が損なわれます。仮勘定に一時記録することで「調査中」の状態を表し、原因判明後に正確に処理できます。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<h2>複数の原因を一つの残高にまとめる追加練習</h2>
+<section class="sq-facts-exercise"><h3>自作例4：超過8,000円のうち6,000円が判明</h3><p>現金過不足は貸方8,000円。うち6,000円が受取手数料の記帳漏れと判明し、残りは決算まで原因不明です。判明・決算をまとめると？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>現金過不足8,000／受取手数料6,000・雑益2,000。借方8,000円と貸方合計8,000円で一致し、現金過不足残高はゼロ。判明時に6,000円だけ振り替え、その後2,000円を振り替える2本の仕訳でも、合計は同じです。</p></div></details></section>
+<h2>二重記帳なら、収益の記帳漏れと逆向きになる</h2>
+<section class="sq-facts-exercise"><h3>自作例5：受取手数料400円を二重記帳していた</h3><p>現金過不足は借方400円で、帳簿現金を実際へ合わせ済み。原因は現金で受け取った手数料400円を、現金400／受取手数料400として二重に記帳していたことでした。判明時の訂正は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>受取手数料400／現金過不足400。受取手数料が400円多かったため減らし、借方の仮勘定も消します。すでに実査額へ合わせた現金400円をもう一度減らすと、現金残高まで誤ってしまいます。</p></div></details></section>
+<p>記帳漏れなら足す、二重記帳なら取り消すという原因の内容を先に確かめます。「原因が手数料だから受取手数料を貸方へ」と科目名だけで機械的に方向を決めないことが、この追加例の役割です。証ひょうの日付・取引額・既存の同一記録を対応させます。</p>
+<h2>実査から整理までの説明を残す</h2><p>確認メモは、帳簿残高、実際有高、差額、最初の仮勘定の借貸、判明した原因と金額、判明後の残高、決算時の相手科目の順に分けます。どの段階の数値かを残せば、最初の差額を決算の残額として再利用する誤りや、判明済みの金額を未調査へ戻す誤りを点検できます。現金過不足ゼロだけを目標にせず、実際の現金と、認識した収益・費用の両方が整合するかを確かめます。</p>
+<p>原因を調べた結果、盗難・誤払い・取引相手への請求等が判明した場合も、ここで用いた「原因不明の雑損・雑益」と同じ前提ではありません。本文の雑損益はあくまで設問で指定する未判明残額の整理です。原因が分かった取引は、その内容に適した勘定と金額へ訂正し、証拠資料との対応を残します。原因の解明と仮勘定のゼロ化は、同じ意味ではありません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>最初が不足なら最後は必ず雑損ですか？</summary><p>違います。判明した原因を反映した後の現金過不足残高で判断します。本文の例2では貸方へ逆転し、最終残額は雑益です。</p></details><details class="sq-facts-answer"><summary>原因が分かったら現金をもう一度動かしますか？</summary><p>すでに実査額へ合わせている場合は、現金過不足を正しい科目へ振り替えます。現金を二重に増減しないよう既記帳を確認します。</p></details><details class="sq-facts-answer"><summary>決算で現金過不足を使わない例もありますか？</summary><p>未処理の差額を直接雑損・雑益へ整理する指定もあります。すでに仮勘定を使ったかどうかを区別します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">TOP</a>
   <a href="about.html">運営者情報</a>
@@ -546,8 +191,7 @@ details summary:active{background:var(--light);}
   <a href="terms.html">利用規約</a>
   <p>© 2026 スタディクエスト</p>
 </footer>
-
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

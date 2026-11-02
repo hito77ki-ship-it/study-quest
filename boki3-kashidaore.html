@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-kashidaore.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記3級】貸倒れ・貸倒損失の仕訳を完全解説｜貸倒引当金・償却債権取立益まで例題つき｜スタディクエスト</title>
-<meta name="description" content="簿記3級の貸倒れ処理を例題つきで完全解説。貸倒損失・貸倒引当金繰入の違い、保守主義の原則、償却債権取立益の仕訳まで丁寧に解説。費用収益対応の原則の理由も説明。">
+<title>貸倒引当金の計算と仕訳｜差額補充・貸倒れ・回収を3例で確認｜スタディクエスト</title>
+<meta name="description" content="貸倒引当金を現金の積立と区別し、差額補充と実際の貸倒れを期別に検算。余剰残高の戻入と回収時の区別も自作例で確認します。">
 <meta name="keywords" content="貸倒引当金 仕訳,差額補充法 計算,貸倒損失 違い,日商簿記3級 貸倒引当金,貸倒引当金繰入 仕訳">
-<meta property="og:title" content="貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説">
-<meta property="og:description" content="貸倒引当金を「計上→貸倒れ発生」の流れで解説。差額補充法の計算、貸倒損失との使い分けを例題つきで。">
+<meta property="og:title" content="貸倒引当金の計算と仕訳｜差額補充・貸倒れ・回収を3例で確認">
+<meta property="og:description" content="貸倒引当金を現金の積立と区別し、差額補充と実際の貸倒れを期別に検算。余剰残高の戻入と回収時の区別も自作例で確認します。">
 <meta property="og:url" content="https://study-quest.net/boki3-kashidaore.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,18 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "貸倒引当金の仕訳と計算【日商簿記3級】差額補充法・貸倒損失を完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "貸倒引当金を「計上→貸倒れ発生」の流れで解説。差額補充法の計算、貸倒損失との使い分けを例題つきで。",
-  "url": "https://study-quest.net/boki3-kashidaore.html",
-  "datePublished": "2026-05-07",
-  "dateModified": "2026-08-26",
-  "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "貸倒引当金の計算と仕訳｜差額補充・貸倒れ・回収を3例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "貸倒引当金を現金の積立と区別し、差額補充と実際の貸倒れを期別に検算。余剰残高の戻入と回収時の区別も自作例で確認します。", "url": "https://study-quest.net/boki3-kashidaore.html", "datePublished": "2026-05-07", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -136,392 +125,54 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "貸倒引当金は現金の積立ですか？", "acceptedAnswer": {"@type": "Answer", "text": "違います。債権の取立不能見込額を反映する控除項目です。繰入の仕訳自体で現金は動きません。"}}, {"@type": "Question", "name": "当期発生した売掛金は引当金の対象外ですか？", "acceptedAnswer": {"@type": "Answer", "text": "期末の見積対象には当期発生分も含まれ得ます。期中に実際に貸倒れた債権をどう処理するかという条件と区別します。"}}, {"@type": "Question", "name": "貸倒処理後の回収はいつも償却債権取立益ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本文では前期以前の処理分と、当期の貸倒損失を同じ期に戻す場合を分けています。処理した期と指定科目を確認します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚔ スタディクエスト</a>
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月3日</p><h1>貸倒引当金の計算と仕訳｜差額補充・貸倒れ・回収を3例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>貸倒引当金は、債権の取立不能見込額を反映するための控除項目です。費用となる「貸倒引当金繰入」と、債権から控除する「貸倒引当金」は別の勘定です。保険契約や現金の貯金箱にお金を積み立てる処理ではありません。</p>
+<div class="sq-facts-note">「当期発生の債権には一切引当金を設定しない」という意味ではありません。期末の見積対象に当期発生分が含まれることと、期中の貸倒処理で前期末の引当金を使う条件を区別します。以下は編集部の自作例です。</div>
+<ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h2>差額補充法は必要残高と既存残高の差を求める</h2>
+<section class="sq-facts-exercise"><h3>自作例1：元の必要額1,200円を検算</h3><p>決算整理後の対象債権は売掛金10,000円と受取手形30,000円、見積率3%。貸倒引当金は貸方残高500円で、差額補充法です。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>必要残高（10,000＋30,000）×3%＝1,200円。追加700円なので、貸倒引当金繰入700／貸倒引当金700。繰入後は500＋700＝1,200円です。</p><p>もし既存残高が1,500円なら、必要額を超える300円を戻す条件となり、貸倒引当金300／貸倒引当金戻入300。仕訳の指定科目と対象債権を確認します。繰入ゼロのまま余剰を常に残してよいとはしません。</p></div></details></section>
+<ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h2>実際の貸倒れは債権の発生した期も確認する</h2>
+<section class="sq-facts-exercise"><h3>自作例2：前期3,000円と当期5,000円の貸倒れ</h3><p>Aは前期販売分3,000円が貸倒れ、引当金残高1,200円。Bは当期販売分5,000円の貸倒れで、前期末引当金を使わない指定です。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>A：貸倒引当金1,200・貸倒損失1,800／売掛金3,000。B：貸倒損失5,000／売掛金5,000。</p><p>どちらも現金を払い出す仕訳ではなく、回収不能となった債権を消します。本文の期別処理は3級の学習上の条件です。実務の債権評価は、期末の回収可能性や対象区分も検討します。</p></div></details></section>
+<h2>すでに貸倒処理した債権が回収されたら</h2>
+<section class="sq-facts-exercise"><h3>自作例3：前期の処理と当期の処理を区別</h3><p>Aは前期以前に貸倒処理した債権1,000円を当期に現金回収。Bは当期中に貸倒損失5,000円で処理した債権のうち2,000円を同じ期に現金回収。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>A：現金1,000／償却債権取立益1,000。前期の貸倒処理が引当金取崩しだった場合も、過去の処理を貸倒損失だけに限定しません。</p><p>B：現金2,000／貸倒損失2,000。当期費用を同じ期で戻す条件です。貸倒損失の当期純額は5,000−2,000＝3,000円です。</p></div></details></section>
+<h2>見積対象は勘定名を確かめる</h2><p>売上債権には売掛金・受取手形・クレジット売掛金・電子記録債権等が関係しますが、問題で対象勘定が指定されていればその範囲に従います。貸付金は一般の金銭債権でも、商品販売に基づく売上債権とは区別します。「資産なら全部」「現金も対象」とは考えません。</p><p>貸倒れの原因は倒産だけとは限りません。中小会計指針では法的消滅や回収不能を扱い、取立不能見込額を合理的に見積もります。見積もれなかった貸倒れが後で起きたことだけで、過年度の財務諸表が必ず誤りだったと断定しません。</p>
+<h2>残高と費用を混ぜない検算シート</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">確認項目</th><th scope="col">例1の数値</th><th scope="col">記録の意味</th></tr></thead><tbody><tr><td>対象債権</td><td>40,000円</td><td>回収予定額の対象</td></tr><tr><td>必要な引当金</td><td>1,200円</td><td>期末に残す控除額</td></tr><tr><td>既存の引当金</td><td>500円</td><td>追加前の貸方残高</td></tr><tr><td>当期の繰入</td><td>700円</td><td>今回追加する費用</td></tr><tr><td>表示上の対象債権純額</td><td>38,800円</td><td>40,000−1,200。現金残高ではない</td></tr></tbody></table></div>
+<p>精算表へ記入するときも、1,200円という期末残高と700円という当期の追加を取り違えないようにします。貸倒れや債権の訂正を先に反映してから見積もるという問題なら、その指示の順序も確認してください。</p>
 
-<div class="container">
-  <div class="breadcrumb">
-    <a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 貸倒引当金の仕訳と計算
-  </div>
-
-  <p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年8月26日</p>
-  <h1>貸倒引当金の仕訳と計算<br>差額補充法・貸倒損失を完全解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>貸倒引当金は「回収リスクを事前に費用化」する仮勘定</strong>——費用収益対応の原則による処理</li>
-      <li><strong>差額補充法</strong>——期末残高に不足する分だけ「貸倒引当金繰入」で追加計上する</li>
-      <li>実際の貸倒れは「引当金が足りるか足りないか」で仕訳が変わる——差額が「貸倒損失」に</li>
-      <li>回収できた場合は「償却債権取立益」（収益）——前期に処理した貸倒れが戻ってきたとき</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！初めて簿記の「貸倒引当金」を習ったとき、私は本気で「なんじゃこりゃ……！」と脳内パニックを起こしました。だって、取引先はまだ倒産すらしていないのに、勝手に「将来これくらい回収できなくなるだろう」と見積もって、費用として計上しちゃうんですよ？意味不明すぎて、「え、倒産してから処理すればよくない？」と何度も教科書に突っ込みを入れていました（笑）。<br>
-    でもこれ、「倒産リスクを先回りして費用にしておく」という、会社を守るための保険みたいなストーリーだと気づいた瞬間、一気に腑に落ちたんです。今日は私がつまずいたその瞬間をそのままゲーム感覚の攻略法に変換して、「なぜ必要か」から計算・仕訳まで一気に整理します！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">貸倒引当金って何ですか？「引当金」って初めて聞きました。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">売掛金は「将来もらえるお金の約束」ですよね。でも取引先が倒産したら回収できない。その<strong>回収できないリスクを事前に費用として計上しておく</strong>のが貸倒引当金です。いわば「もしもの倒産」に備える保険のようなものだと思ってください。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なんで事前に計上するんですか？実際に倒産してから計上すればいいのでは？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">それだと「売上は前期・損失は当期」になってしまい、利益の計算がおかしくなります。売上と費用は同じ期に対応させる——これが<strong>費用収益対応の原則</strong>です。倒産リスクを先回りして費用にしておく、いわば「未来の損失を今のうちに織り込んでおく」ゲームだと考えると一気に腑に落ちますよ。</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── 広告 ── -->
-  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <h2>❓ 貸倒引当金を積まなかったらどうなるか——利益が2期にわたってズレる問題</h2>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-kashidaore-map-mobile.svg">
-    <img src="images/boki3-kashidaore-map.svg" alt="貸倒引当金がある場合とない場合の利益への影響比較タイムライン図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" loading="lazy" width="760" height="390">
-  </picture>
-  <p>まず「引当金なし」の世界から確認します。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>前期に発生した売掛金￥7,000が貸倒れた。前期末に貸倒引当金は計上していなかった。</p>
-  </div>
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">7,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">7,000</span></div>
-    </div>
-  </div>
-
-  <div class="warn-box">
-    <strong>⚠ 引当金なしの問題点：</strong>前期の売上に対応する損失が当期に出てしまい、利益が歪みます。これを防ぐために、決算時点で「貸倒引当金」を事前に積んでおくわけです。
-  </div>
-
-  <h2>📝 STEP 1：決算で貸倒引当金を積む——差額補充法「不足分だけ追加する」の計算手順</h2>
-
-  <div class="tip-box">
-    <strong>💡 「売上債権」とは：</strong>問題文で「売上債権に対して貸倒引当金を設定する」のように出てきたら、<strong>売上債権＝売掛金＋受取手形</strong>のことです（3級ではクレジット売掛金を含む場合もあります）。個別の勘定科目名ではなく、これらをまとめて呼ぶときに使う言葉だと覚えておくと、決算整理事項の問題文で迷わなくなります。なお、同じ「資産」でも<strong>貸付金は売上債権には含まれません</strong>（発生原因が違うため）。詳しくは<a href="boki3-kashitsuke-uriage.html">貸付金と売掛金の違い</a>で解説しています。
-  </div>
-
-  <p>決算整理で、売掛金・受取手形の残高に対して一定割合の引当金を設定します。試験では<strong>差額補充法</strong>が定番です。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>貸倒引当金の残高は￥500。売掛金期末残高￥10,000・受取手形期末残高￥30,000に対して3%の貸倒れを見積もり、差額補充法で貸倒引当金を設定する。</p>
-  </div>
-
-  <h3>計算の下書き——3行で確認する</h3>
-
-  <div class="calc-box">
-    <div class="calc-title">📝 差額補充法の計算手順</div>
-    <div class="calc-row">
-      <span class="label">① 必要な引当金（目標額）</span>
-      <span class="calc-operator">=</span>
-      <span class="val">(￥10,000 ＋ ￥30,000) × 3% ＝ <strong>￥1,200</strong></span>
-    </div>
-    <div class="calc-row">
-      <span class="label">② 既存の引当金残高</span>
-      <span class="calc-operator">−</span>
-      <span class="val"><strong>￥500</strong></span>
-    </div>
-    <div class="calc-row">
-      <span class="label">③ 今期に繰り入れる額（①−②）</span>
-      <span class="calc-operator">=</span>
-      <span class="val result">￥700　← これが仕訳の金額</span>
-    </div>
-  </div>
-
-  <div class="kaitou-label">解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒引当金繰入</span><span class="amount">700</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒引当金</span><span class="amount">700</span></div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>💡 ポイント：</strong>「差額補充法」とは、<em>目標額と残高の差額だけ</em>追加積みする方法です。残高が既に目標額以上なら繰入不要（逆に戻入が必要なこともあります）。
-  </div>
-
-  <!-- ── 広告 ── -->
-  <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-8524998392329204" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <h2>🚨 STEP 2：実際に貸倒れが起きたとき——引当金が「足りる」か「足りない」かで仕訳が変わる</h2>
-
-  <p>期中に取引先が倒産して売掛金が回収不能になったとき、積んでいた引当金から取り崩します。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>得意先が倒産し、前期に計上した売掛金￥3,000が貸倒れとなった。貸倒引当金の残高は￥1,200。</p>
-  </div>
-
-  <div class="pattern-grid">
-    <div class="pattern-card short">
-      <div class="pattern-badge">貸倒額 ＞ 引当金残高</div>
-      <div class="pattern-title">引当金が足りない場合（本問）</div>
-      <p style="font-size:13px;color:#374151;margin-bottom:0;">引当金を全額取り崩し、<br>不足分は<strong>貸倒損失</strong>で補う。</p>
-      <div class="pattern-note">貸倒 ¥3,000 ＞ 引当金 ¥1,200<br>→ 不足 ¥1,800 は貸倒損失</div>
-    </div>
-    <div class="pattern-card enough">
-      <div class="pattern-badge">貸倒額 ≤ 引当金残高</div>
-      <div class="pattern-title">引当金で全額まかなえる場合</div>
-      <p style="font-size:13px;color:#374151;margin-bottom:0;">引当金だけで処理。<br><strong>貸倒損失は使わない</strong>。</p>
-      <div class="pattern-note">貸倒 ¥1,000 ≤ 引当金 ¥1,200<br>→ 引当金だけで ¥1,000 取り崩し</div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">解答（本問：引当金が足りないケース）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒引当金</span><span class="amount">1,200</span></div>
-      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">1,800</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">3,000</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">参考（引当金で全額まかなえるケース）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒引当金</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">引当金が足りない場合と足りる場合で使う科目が変わるんですね。混乱しそうです…</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、すごくわかります！でもここ、実は「貯金箱の中身で払いきれるか」を確認するだけのシンプルなパズルなんです。積んでおいた貯金箱（貸倒引当金）から先に出せるだけ出す。それで払いきれなければ、足りない分だけ自腹（貸倒損失）を切る——ただそれだけ。手順化すると迷いません。①まず貸方に「売掛金」を書く。②貯金箱の中身＝引当金残高の分だけ借方に「貸倒引当金」を書く。③それでも差額が残れば、借方に「貸倒損失」を書いて帳尻を合わせる。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">「貯金箱で払えるだけ払って、足りない分は自腹」って考えると、一気にスッキリしました！科目選びで迷わなくなりそうです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy">
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">「引当金残高 ≧ 貸倒額」なら貸倒引当金だけで完結、「引当金残高 ＜ 貸倒額」なら足りない分だけ貸倒損失をプラスします。この2択を問題ごとに確認すると、判断の順番を整理しやすくなります。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>💰 「償却債権取立益」——一度貸倒れにしたお金が戻ってきたときの仕訳</h2>
-
-  <p>前期以前に「貸倒損失」で費用計上して切り捨てた売掛金が、当期に思いがけず回収されることがあります。このとき使うのが<strong>償却債権取立益（収益）</strong>です。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">例題</div>
-    <p>前期に貸倒処理済みの売掛金 ¥1,000 が当期に現金で回収された。</p>
-  </div>
-
-  <div class="kaitou-label">▶ 解答</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借　方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">1,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸　方</div>
-      <div class="shiwake-item"><span class="kamoku">償却債権取立益</span><span class="amount">1,000</span></div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <strong>なぜ「売掛金の復活」ではないのか？</strong><br>
-    前期に「貸倒損失（費用）」として処理したとき、売掛金はすでに帳簿から消えています。当期に回収した現金は「過去に諦めた債権が戻ってきた利益」なので、資産の復活ではなく<strong>収益（償却債権取立益）</strong>として計上します。
-  </div>
-
-  <div class="warn-box">
-    <strong>「貸倒損失」との違いに注意！</strong><br>
-    ・<strong>貸倒損失</strong>：今期発生した貸倒れの費用（借方）<br>
-    ・<strong>償却債権取立益</strong>：過去に切り捨てた債権が当期に回収されたときの収益（貸方）<br>
-    同じ「貸倒れ」に関する取引でも、発生した期によって全く違う勘定科目になります。
-  </div>
-
-  <h2>📌 補足：当期発生の売掛金が貸倒れたとき——引当金を使わず直接「貸倒損失」で処理するパターン</h2>
-
-  <p>引当金は「前期以前に発生した債権」に対して積むものです。<strong>当期に発生した売掛金</strong>が同じ期に貸倒れた場合は、引当金を使わず直接「貸倒損失」で処理します。</p>
-
-  <div class="mondai">
-    <div class="mondai-label">問題</div>
-    <p>当期に発生した売掛金￥5,000を貸倒処理したが、決算日に￥2,000を現金で回収できた。</p>
-  </div>
-
-  <p style="font-size:13px;color:var(--muted);margin-bottom:8px;">貸倒処理時の仕訳（参考）</p>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方（貸倒処理時）</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">5,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">売掛金</span><span class="amount">5,000</span></div>
-    </div>
-  </div>
-
-  <div class="kaitou-label">解答（回収時の仕訳）</div>
-  <div class="shiwake">
-    <div class="shiwake-col kari">
-      <div class="shiwake-label">借方</div>
-      <div class="shiwake-item"><span class="kamoku">現金</span><span class="amount">2,000</span></div>
-    </div>
-    <div class="shiwake-col kashi">
-      <div class="shiwake-label">貸方</div>
-      <div class="shiwake-item"><span class="kamoku">貸倒損失</span><span class="amount">2,000</span></div>
-    </div>
-  </div>
-  <div class="tip-box">
-    <strong>💡 解説：</strong>当期に「貸倒損失」で費用計上した後、同じ期中に回収できたので貸倒損失を取り消します。回収額だけ費用を戻す形です。
-  </div>
-
-  <h2>まとめ</h2>
-
-  <div class="matome">
-    <h3>📋 貸倒引当金 処理ルール一覧</h3>
-    <div class="matome-row">
-      <span class="trigger">決算：差額補充法で積む</span>
-      <span class="result">借方「貸倒引当金繰入」／貸方「貸倒引当金」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">前期の売掛金が貸倒れ（引当金で足りる）</span>
-      <span class="result">借方「貸倒引当金」／貸方「売掛金」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">前期の売掛金が貸倒れ（引当金が足りない）</span>
-      <span class="result">借方「貸倒引当金＋貸倒損失」／貸方「売掛金」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">引当金なし・前期売掛金が貸倒れ</span>
-      <span class="result">借方「貸倒損失」／貸方「売掛金」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">前期以前の貸倒処理分を当期回収</span>
-      <span class="result">借方「現金」／貸方「償却債権取立益（収益）」</span>
-    </div>
-    <div class="matome-row">
-      <span class="trigger">当期売掛金が貸倒れ後に回収（3級）</span>
-      <span class="result">借方「現金」／貸方「貸倒損失」</span>
-    </div>
-  </div>
-  <p style="font-size:12px;color:var(--sq-soft,#718096);margin-top:12px;">出典：<a href="https://www.kentei.ne.jp/bookkeeping/35697-2" target="_blank" rel="noopener">日本商工会議所「簿記 出題区分表」</a>（2026年8月25日確認）。2026年度に適用される区分表では、3級の範囲に「貸倒引当金（実績法）」が示されています。</p>
-
-  <!-- アプリCTA -->
-  <div class="app-cta">
-    <h3>⚔ 学習時間を記録して合格を加速</h3>
-    <p>簿記の勉強時間をスタディクエストで記録すると、経験値・レベルが上がりモチベーションが続きます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
-    <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-bottom:12px;">関連記事</div>
-    <a href="boki3-kafusoku.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;">
-      🔍 流れで覚える現金過不足の仕訳 →
-    </a>
-    <a href="boki3-genkin.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
-      💴 現金・当座預金の違いと仕訳 →
-    </a>
-    <a href="boki.html" style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--light);border-radius:10px;color:inherit;font-size:14px;font-weight:700;margin-top:8px;">
-      📒 簿記3級・2級 独学攻略ガイド →
-    </a>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">貸倒損失と貸倒引当金繰入の違いは？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">貸倒損失は当期に売上債権が回収不能になったときの費用です。貸倒引当金繰入は決算時に翌期以降の貸倒れに備えて見積もり計上する費用です。3級では両方出題されます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">償却債権取立益とは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">過去に貸倒れ処理した債権が思いがけず回収できたときに計上する収益です。過去の費用の打ち消しではなく、新たな収益として貸方に計上します。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">3級では貸倒引当金はどう出題されますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">決算整理仕訳として「貸倒引当金繰入（費用）／貸倒引当金」の仕訳と、翌期に実際に貸倒れが発生したときの処理が問われます。精算表の修正記入でも頻出です。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+<h2>貸倒れと期末繰入を一続きで追う追加例</h2>
+<section class="sq-facts-exercise"><h3>自作例4：前期の引当金から貸倒れを処理した後</h3><p>期首の貸倒引当金は貸方1,200円。前期末の売掛金1,000円が当期に貸倒れ、引当金で処理しました。当期末の指定対象債権は50,000円、見積率2%、差額補充法。期末の繰入額は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>貸倒処理：貸倒引当金1,000／売掛金1,000。引当金残高は200円です。当期末必要残高50,000×2%＝1,000円なので、追加は1,000−200＝800円。貸倒引当金繰入800／貸倒引当金800とします。</p><p>期首1,200−使用1,000＋繰入800＝期末1,000円で一致。期首残高1,200円をそのまま必要額から引くと、期中の使用を無視して戻入200円と誤ってしまいます。</p></div></details></section>
+<h2>費用・残高・表示額を別々に読む</h2><p>例4では、当期のこの設例の引当金繰入費用は800円、期末引当金は1,000円、対象債権の純額は49,000円です。貸倒れ1,000円は前期末の引当金でまかなっているので、同じ1,000円を当期貸倒損失へ重ねません。これらの数値を同じ欄へ入れると、仕訳と財務諸表のつながりが失われます。</p>
+<p>対象債権50,000円は、貸倒れ・回収・訂正等を反映した後の残高という仮定です。決算整理前の債権を与えて訂正後に率を掛ける問題なら、対象残高を先に直します。引当率2%は本文の仮定であり、すべての会社に共通する実務の率や、税法上の一律の限度率ではありません。</p>
+<h2>回収不能の見積りと実際の回収を区別する</h2><p>引当金を設定しても、相手への請求権がその場で全額なくなるわけではありません。また、貸倒処理をした後に現金が回収された場合も、前期以前に処理したか、当期費用を当期に戻すかで本文例3の記録が変わります。発生期・処理期・回収期を3つの日付欄に分けると、単に「引当金があるから使う」という誤りを点検できます。</p>
+<p>見積率の分母にも注意します。本文の3%や2%は指定された期末債権残高へ掛ける率です。当期売上高や現金回収額へ掛ける条件ではありません。もし対象が売掛金だけと指定されれば、受取手形や貸付金を自動的に足しません。対象勘定、訂正後残高、率の三つを先にそろえます。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>貸倒引当金は現金の積立ですか？</summary><p>違います。債権の取立不能見込額を反映する控除項目です。繰入の仕訳自体で現金は動きません。</p></details><details class="sq-facts-answer"><summary>当期発生した売掛金は引当金の対象外ですか？</summary><p>期末の見積対象には当期発生分も含まれ得ます。期中に実際に貸倒れた債権をどう処理するかという条件と区別します。</p></details><details class="sq-facts-answer"><summary>貸倒処理後の回収はいつも償却債権取立益ですか？</summary><p>本文では前期以前の処理分と、当期の貸倒損失を同じ期に戻す場合を分けています。処理した期と指定科目を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">TOP</a>
   <a href="about.html">運営者情報</a>
@@ -529,8 +180,7 @@ details summary:active{background:var(--light);}
   <a href="terms.html">利用規約</a>
   <p>© 2026 スタディクエスト</p>
 </footer>
-
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

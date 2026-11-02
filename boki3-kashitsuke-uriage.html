@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki3-kashitsuke-uriage.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>貸付金と売掛金の違いがわからない人へ｜発生原因・資産区分・利息を図解で解説【日商簿記3級】｜スタディクエスト</title>
-<meta name="description" content="貸付金と売掛金の違いがわからない人向けに、発生原因・流動固定の区分・利息の有無・貸倒引当金の扱いを例題つきで解説。「どちらも将来お金を受け取る権利」で混同しやすいポイントを図解でスッキリ整理します。">
+<title>貸付金と売掛金の違い｜発生原因・利息・資産区分を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="商品販売と金銭貸付の仕訳を比較し、利息の元金との分離と流動・固定の条件を確認。売掛金は常に短期という説明を訂正します。">
 <meta name="keywords" content="貸付金 売掛金 違い,貸付金 売掛金 わからない,貸付金とは,売掛金とは,日商簿記3級 貸付金,長期貸付金">
-<meta property="og:title" content="貸付金と売掛金の違いがわからない人へ【日商簿記3級】図解で完全整理">
-<meta property="og:description" content="発生原因・資産区分・利息・貸倒引当金の4つの視点で、貸付金と売掛金の違いを例題つきで解説します。">
+<meta property="og:title" content="貸付金と売掛金の違い｜発生原因・利息・資産区分を自作例で確認">
+<meta property="og:description" content="商品販売と金銭貸付の仕訳を比較し、利息の元金との分離と流動・固定の条件を確認。売掛金は常に短期という説明を訂正します。">
 <meta property="og:url" content="https://study-quest.net/boki3-kashitsuke-uriage.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/boki3-kashitsuke-uriage.png">
@@ -24,20 +24,9 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"貸付金と売掛金の違いがわからない人へ｜発生原因・資産区分・利息を図解で解説",
-  "image": "https://study-quest.net/screenshots/ogp/boki3-kashitsuke-uriage.png","description":"発生原因・流動固定の区分・利息の有無・貸倒引当金の扱いを例題つきで解説。混同しやすいポイントを図解でスッキリ整理します。","url":"https://study-quest.net/boki3-kashitsuke-uriage.html","datePublished":"2026-07-09","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "貸付金と売掛金の違い｜発生原因・利息・資産区分を自作例で確認", "image": "https://study-quest.net/screenshots/ogp/boki3-kashitsuke-uriage.png", "description": "商品販売と金銭貸付の仕訳を比較し、利息の元金との分離と流動・固定の条件を確認。売掛金は常に短期という説明を訂正します。", "url": "https://study-quest.net/boki3-kashitsuke-uriage.html", "datePublished": "2026-07-09", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"貸付金と売掛金の一番の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"発生した原因が違います。売掛金は「商品やサービスを掛けで売った代金」、貸付金は「金銭そのものを貸し付けたこと」から発生します。問題文に売上や販売の話があれば売掛金、資金の貸し借りの話があれば貸付金と判断できます。"}},
-    {"@type":"Question","name":"貸付金は流動資産と固定資産のどちらですか？","acceptedAnswer":{"@type":"Answer","text":"返済期日によって変わります。決算日の翌日から1年以内に返済される場合は流動資産の「貸付金」、1年を超える場合は固定資産の「長期貸付金」に区分されます（この区分は簿記2級で学ぶ内容です）。売掛金は常に流動資産です。"}},
-    {"@type":"Question","name":"貸付金には利息がつきますか？","acceptedAnswer":{"@type":"Answer","text":"貸付金には受取利息が発生することが多いです。一方、売掛金は商品代金の未収分そのものなので、原則として利息は発生しません。"}}
-  ]
-}
-</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
@@ -122,233 +111,39 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "売掛金は必ず一年以内の債権ですか？", "acceptedAnswer": {"@type": "Answer", "text": "通常の営業循環に基づく区分と回収期間を分けます。正常な営業上の債権は流動表示が基本ですが、破産債権等の例外もあります。"}}, {"@type": "Question", "name": "貸付金の回収額はすべて元本ですか？", "acceptedAnswer": {"@type": "Answer", "text": "利息を含む場合は元本と利息を分けます。すでに計上した未収利息などの残高も確認します。"}}, {"@type": "Question", "name": "売掛金の相手科目は必ず売上ですか？", "acceptedAnswer": {"@type": "Answer", "text": "通常の掛け販売では売上ですが、回収・返品・訂正等では異なります。仕訳全体の取引内容で判断します。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="index.html#cat-boki3">日商簿記3級</a> &gt; 貸付金と売掛金の違い</div>
-<p class="meta">日商簿記3級 | 公開：2026年7月9日 | 更新日：2026年8月25日</p>
-  <h1>貸付金と売掛金の違いがわからない人へ<br>発生原因からスッキリ整理する図解ガイド</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>両方とも「将来お金を受け取る権利（資産）」</strong>——だから見た目が似ていて混同しやすい</li>
-      <li>本質の違いは<strong>発生原因</strong>——売掛金は「商品・サービスの掛け売り」、貸付金は「お金そのものの貸し付け」</li>
-      <li>貸付金だけ<strong>1年を超えると固定資産（長期貸付金）</strong>になる——売掛金は常に流動資産（※この区分は2級で学ぶ発展知識）</li>
-      <li>貸付金には<strong>受取利息</strong>が発生することが多いが、売掛金には原則ない</li>
-    </ul>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
-    私自身、簿記の勉強を始めたばかりの頃、「売掛金も貸付金も、どっちも“将来お金がもらえる権利”でしょ？　だったら同じようなものじゃないの？」と本気で混同していました。テキストにはサラッと1行ずつしか書いてなくて、「結局この2つ、何がどう違うんだ……」とモヤモヤしたまま次のページに進んでしまった記憶があります。<br>
-    でも実は、この2つを見分ける方法はたった1つ。「<strong>商品・サービスが動いたか、お金そのものが動いただけか</strong>」——この発生原因の違いさえ押さえれば、資産区分も利息の有無も、芋づる式に理解できるようになります。今日はそのシンプルな軸を、一緒に整理していきましょう！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">売掛金と貸付金って、どっちも「後でお金がもらえる」資産ですよね？　問題を解いていても、正直どっちを使えばいいのか迷うことがあります。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚、すごくよくわかります！たしかにどちらも「将来お金を受け取る権利」という意味では資産としての性質は同じです。でも生まれた理由がまったく違うんです。売掛金は「商品やサービスを売った代金」、貸付金は「お金そのものを貸した」ことから生まれます。ここが唯一にして最大の分かれ目です。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">なるほど……「何が動いたか」で見ればいいんですね。でもそれだけで、資産区分とか利息の話まで全部説明できるんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">はい、できるんです。商品を売った代金（売掛金）は基本的にすぐ回収する前提だから常に流動資産。でもお金を貸す（貸付金）場合は返済期日を自由に決められるので、1年を超える長期の貸し付けも普通にありえる。だから貸付金だけ「1年基準」で流動・固定に分かれるんです（これは2級で詳しく学ぶ話なので、3級の今は「そういう発展知識がある」程度で大丈夫です）。利息も同じ理屈で、商品代金には利息はつきませんが、お金の貸し借りには利息がつくのが自然ですよね。発生原因という1つの根っこから、全部の違いが枝分かれしていくイメージです。</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>❓ 発生原因の違い——「商品を売ったか」「お金を貸したか」</h2>
-
-  <p>売掛金と貸付金はどちらも貸借対照表上は「資産」に分類されますが、<strong>発生した理由がまったく異なります</strong>。この1点を押さえるだけで、他のすべての違いが理解できます。</p>
-
-  <div class="origin-compare">
-    <div class="origin-card uri">
-      <span class="origin-badge">商品・サービスを売った</span>
-      <div class="origin-name">売掛金（うりかけきん）</div>
-      <div class="origin-kamoku">→ 掛け売りの未収代金（資産）</div>
-      <div class="origin-desc">商品やサービスを「掛け」で販売した際に発生する、まだ受け取っていない代金。</div>
-    </div>
-    <div class="origin-card kashi">
-      <span class="origin-badge">お金そのものを貸した</span>
-      <div class="origin-name">貸付金（かしつけきん）</div>
-      <div class="origin-kamoku">→ 金銭消費貸借の返還請求権（資産）</div>
-      <div class="origin-desc">取引先や役員・従業員に現金や預金を貸し付けた際に発生する、返済してもらう権利。</div>
-    </div>
-  </div>
-
-  <picture>
-    <source media="(max-width: 600px)" srcset="images/boki3-kashitsuke-uriage-map-mobile.svg">
-    <img src="images/boki3-kashitsuke-uriage-map.svg" alt="売掛金と貸付金の発生原因・資産区分・利息・貸倒引当金を対比した図解" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="1200" height="800" loading="lazy">
-  </picture>
-
-  <h2>📝 ① 売掛金が発生するときの仕訳——商品・サービスの掛け売り</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>A社に商品 ¥50,000 を売り上げ、代金は掛けとした。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">A社への売上時の仕訳</div>
-    <div class="sw-row"><span class="kari">売掛金<span class="amt">50,000</span></span><span class="sep">／</span><span class="kashi">売上<span class="amt">50,000</span></span></div>
-  </div>
-  <div class="tip-box"><strong>ポイント：貸方に必ず「売上」が来る</strong><br>売掛金が発生する仕訳の相手科目は、必ず収益科目の「売上」です。これは売掛金が商品売買から生まれる証拠でもあります。</div>
-
-  <h2>💰 ② 貸付金が発生するときの仕訳——金銭の貸し付け</h2>
-  <div class="mondai">
-    <div class="m-label">例題</div>
-    <p>取引先のB社に現金 ¥100,000 を貸し付けた。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">貸付時の仕訳</div>
-    <div class="sw-row"><span class="kari">貸付金<span class="amt">100,000</span></span><span class="sep">／</span><span class="kashi">現金<span class="amt">100,000</span></span></div>
-  </div>
-  <div class="warn-box"><strong>ポイント：貸方に収益科目は出てこない</strong><br>貸付金が発生する仕訳の相手科目は、現金や当座預金などの資産科目です。お金がお金のまま形を変えただけなので、売上のような収益は一切発生しません。</div>
-
-  <h2>📅 ③ 資産区分の違い——貸付金だけが「1年基準」で流動・固定に分かれる<span style="display:inline-block;font-size:10px;font-weight:700;background:#EDE9FE;color:#6D28D9;padding:2px 10px;border-radius:100px;margin-left:8px;vertical-align:middle;">2級の発展知識</span></h2>
-  <div class="warn-box"><strong>この章は簿記3級の出題範囲外です：</strong>3級では「貸付金」は常に1つの勘定科目として扱われ、長期・短期を区分する論点は出てきません。「長期貸付金」への区分は簿記2級以降で学ぶ発展知識ですが、貸付金の性質をより深く理解できる内容なので紹介します。3級の学習中は読み飛ばしてもらって問題ありません。</div>
-  <p>売掛金は営業活動の中で短期間に回収される前提のため、<strong>常に流動資産</strong>です。一方、貸付金は返済期日を自由に設定できるため、<strong>決算日の翌日から1年以内に返済されるかどうか</strong>で区分が変わります（2級で学習する内容）。</p>
-
-  <table>
-    <tr><th>勘定科目</th><th>返済・回収の目安</th><th>貸借対照表の区分</th></tr>
-    <tr><td>売掛金</td><td>常に短期（営業サイクル内）</td><td>流動資産</td></tr>
-    <tr><td>貸付金</td><td>決算日の翌日から1年以内</td><td>流動資産</td></tr>
-    <tr><td>長期貸付金</td><td>決算日の翌日から1年を超える</td><td>固定資産</td></tr>
-  </table>
-
-  <div class="mondai">
-    <div class="m-label">例題（2級レベル）</div>
-    <p>決算日（3月31日）現在、C社への貸付金 ¥200,000 は全額、返済期日が翌年6月末（決算日の翌日から1年超）である。</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">決算整理仕訳（貸付金→長期貸付金への振り替え）</div>
-    <div class="sw-row"><span class="kari">長期貸付金<span class="amt">200,000</span></span><span class="sep">／</span><span class="kashi">貸付金<span class="amt">200,000</span></span></div>
-  </div>
-  <div class="tip-box"><strong>「1年基準（ワン・イヤー・ルール）」とは</strong><br>決算日の翌日から数えて1年以内に回収・返済されるものを流動資産・流動負債、1年を超えるものを固定資産・固定負債とするルールです。売掛金は性質上ほぼ短期で回収されるため、この判定が問題になることはほとんどありません。貸付金は期間を自由に設定できるからこそ、この判定が必要になります。</div>
-
-  <h2>💴 ④ 利息の有無——貸付金には受取利息が発生することが多い</h2>
-  <p>売掛金は商品代金そのものなので、原則として利息は発生しません。一方、貸付金はお金を貸した対価として<strong>受取利息（収益）</strong>を受け取ることが多くあります。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">利息を現金で受け取ったときの仕訳</div>
-    <div class="sw-row"><span class="kari">現金<span class="amt">1,500</span></span><span class="sep">／</span><span class="kashi">受取利息<span class="amt">1,500</span></span></div>
-  </div>
-  <div class="tip-box"><strong>利息の計算式：元金 × 年利率 × 月数 ÷ 12</strong><br>例）元金100,000円・年利3%・貸付期間6ヶ月 → 100,000 × 3% × 6/12 ＝ 1,500円<br>年利率をそのまま掛けず「×月数/12」を忘れずに計算しましょう。</div>
-
-  <h2>🔍 ⑤ 貸倒引当金の対象になるか——どちらも対象だが区分が異なる</h2>
-  <p>売掛金・貸付金はどちらも回収できなくなるリスクがあるため、<strong>貸倒引当金の設定対象</strong>になります。ただし試験では扱いが分かれる点に注意が必要です。</p>
-
-  <table>
-    <tr><th>用語</th><th>含まれるもの</th></tr>
-    <tr><td>売上債権</td><td>売掛金＋受取手形（＋クレジット売掛金）</td></tr>
-    <tr><td>金銭債権</td><td>貸付金・長期貸付金・未収入金なども含む広い括り</td></tr>
-  </table>
-
-  <div class="warn-box"><strong>問題文で「売上債権に対して貸倒引当金を設定する」とあれば</strong><br>売掛金と受取手形のみが対象で、貸付金は含まれません。逆に「金銭債権全体に設定する」といった指示があれば貸付金も対象に含まれます。問題文の指示範囲を必ず確認しましょう。</div>
-
-  <h2>🧭 ⑥ 迷ったときの見分け方——問題文のこの言葉を探す</h2>
-  <p>実際の試験問題では、発生原因を示すキーワードが必ず問題文に書かれています。以下の言葉を手がかりにしましょう。</p>
-
-  <table>
-    <tr><th>問題文の表現</th><th>使う勘定科目</th></tr>
-    <tr><td>「商品を売り上げ」「サービスを提供し」「代金は掛け」</td><td>売掛金</td></tr>
-    <tr><td>「資金を貸し付けた」「金銭を貸与した」「借用証書と引き換えに」</td><td>貸付金</td></tr>
-  </table>
-
-  <div class="tip-box"><strong>役員・従業員への貸し付けは専用の勘定科目に</strong><br>相手が自社の役員や従業員の場合は「役員貸付金」「従業員貸付金」という専用の勘定科目を使います。財務諸表での開示上、通常の貸付金と区別するためのルールです。</div>
-
-  <div class="app-cta"><h3>⚔ Study Quest で学習を記録しよう</h3><p>簿記3級の学習時間をRPG感覚で記録。試験日までの学習ペースをリアルタイムで確認できます。</p><a href="app.html">無料で始める →</a></div>
-
-  <div class="matome">
-    <h3>📋 まとめ：貸付金 vs 売掛金 早見表</h3>
-    <div class="matome-row"><span class="trigger">発生原因</span><span class="result">売掛金＝商品・サービスの掛け売り／貸付金＝金銭の貸し付け</span></div>
-    <div class="matome-row"><span class="trigger">貸方の相手科目</span><span class="result">売掛金＝売上（収益）／貸付金＝現金・当座預金（資産）</span></div>
-    <div class="matome-row"><span class="trigger">資産区分</span><span class="result">売掛金＝常に流動資産／貸付金＝1年超で長期貸付金（固定資産・2級知識）</span></div>
-    <div class="matome-row"><span class="trigger">利息</span><span class="result">売掛金＝原則なし／貸付金＝受取利息が発生することが多い</span></div>
-    <div class="matome-row"><span class="trigger">貸倒引当金</span><span class="result">売掛金＝売上債権として対象／貸付金＝金銭債権として対象（別区分）</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🧭</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">「何が動いたか」さえ見抜けば、売掛金と貸付金はもう混同しません</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-  </div>
-</div>
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">貸付金と売掛金の一番の違いは何ですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">発生した原因が違います。売掛金は「商品やサービスを掛けで売った代金」、貸付金は「金銭そのものを貸し付けたこと」から発生します。問題文に売上や販売の話があれば売掛金、資金の貸し借りの話があれば貸付金と判断できます。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">貸付金は流動資産と固定資産のどちらですか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">返済期日によって変わります。決算日の翌日から1年以内に返済される場合は流動資産の「貸付金」、1年を超える場合は固定資産の「長期貸付金」に区分されます（この区分は簿記2級で学ぶ内容です）。売掛金は常に流動資産です。</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">貸付金には利息がつきますか？</h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">貸付金には受取利息が発生することが多いです。一方、売掛金は商品代金の未収分そのものなので、原則として利息は発生しません。</p>
-    </div>
-  </div>
-  </div>
-</section>
-
-<section style="background:#F7FAFC;padding:40px 24px;">
-  <div style="max-width:800px;margin:0 auto;">
-    <p style="font-size:14px;font-weight:700;margin-bottom:16px;border-left:3px solid #8CC63F;padding-left:12px;">関連記事</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-      <a href="boki3-tegata.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none;display:block;">
-        <div style="font-size:11px;color:#8CC63F;font-weight:700;margin-bottom:6px;">日商簿記3級</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.5;">受取手形・支払手形の仕訳（手形貸付金との違いも）</div>
-      </a>
-      <a href="boki3-kashidaore.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none;display:block;">
-        <div style="font-size:11px;color:#8CC63F;font-weight:700;margin-bottom:6px;">日商簿記3級</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.5;">貸倒引当金の仕訳（差額補充法・貸倒損失）</div>
-      </a>
-      <a href="boki3-kake.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none;display:block;">
-        <div style="font-size:11px;color:#8CC63F;font-weight:700;margin-bottom:6px;">日商簿記3級</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.5;">掛取引——売掛金・買掛金の仕訳</div>
-      </a>
-      <a href="boki3-sonota.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none;display:block;">
-        <div style="font-size:11px;color:#8CC63F;font-weight:700;margin-bottom:6px;">日商簿記3級</div>
-        <div style="font-size:13px;font-weight:700;line-height:1.5;">その他の債権・債務——前払金・仮払金・立替金など</div>
-      </a>
-    </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年7月9日 | 更新日：2026年11月3日</p><h1>貸付金と売掛金の違い｜発生原因・利息・資産区分を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>売掛金と貸付金はいずれも金銭を回収する権利ですが、発生原因が異なります。通常の事業における商品販売・役務提供の代金か、お金そのものを貸し付けた元本かを確認します。</p>
+<div class="sq-facts-note">「売掛金は必ず短期間で回収し、例外なく流動資産」「売掛金の相手科目は常に売上」という断定を訂正しました。資産区分は正常な営業循環と一年基準、破産債権等の例外を分けます。以下は編集部の架空例です。</div>
+<h2>発生原因から借方を決める</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">取引</th><th scope="col">仕訳（税は考慮しない）</th></tr></thead><tbody><tr><td>商品50,000円を掛けで販売</td><td>売掛金50,000／売上50,000</td></tr><tr><td>現金100,000円を貸し付け</td><td>貸付金100,000／現金100,000</td></tr><tr><td>固定資産を後払いで売却</td><td>未収入金等。売掛金と区別</td></tr></tbody></table></div>
+<p>通常の掛け販売例では相手科目が売上ですが、訂正・返品・手付金の充当等を含むすべての売掛金取引の相手が売上になるわけではありません。貸付金でも利息を天引きする条件なら、預金以外の利息科目が一緒に現れます。</p>
+<section class="sq-facts-exercise"><h3>自作例1：元本100,000円と利息1,500円をまとめて回収</h3><p>100,000円を年3%、6か月、月割り計算で貸し付けました。満期に元本と利息を普通預金で受け取ります。利息はまだ計上していません。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>利息100,000×3%×6/12＝1,500円。普通預金101,500／貸付金100,000・受取利息1,500。101,500円の全額を貸付金の回収にすると、元本が1,500円減りすぎます。</p><p>既に未収利息を計上している場合はその残高を反映します。貸付契約に利息の定めがない例まで必ず同じ利息が発生すると決めません。</p></div></details></section>
+<h2>一年を超えるかだけで全資産を分類しない</h2><p>中小会計指針15では、通常の営業上の売掛金等を流動資産へ表示します。これは短期回収の予測だけが根拠ではなく、正常な営業循環に基づく区分です。ただし破産債権等で一年以内の弁済が見込めないことが明らかなもの等は、別の区分になります。</p>
+<section class="sq-facts-exercise"><h3>自作例2：回収が遅い営業債権と長期貸付</h3><p>決算日3月31日。Aは正常な営業循環内で発生した商品代金200,000円、Bは事業上の通常販売とは別の貸付金200,000円。Bの返済期日は翌年6月末で、一年を超えます。区分の考え方は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>Aを単純に「一年超なら長期貸付金」とはしません。通常の営業上の売掛金としての条件を確認します。Bは一年を超える貸付なので固定資産の長期貸付金に区分する条件です。振替指定があれば長期貸付金200,000／貸付金200,000。</p><p>この表示の詳しい判定は発展知識です。3級の基本仕訳と区別し、問題で指定する科目を使います。</p></div></details></section>
+<h2>貸倒見積りと相手先の表示</h2><p>売掛金も貸付金も回収不能リスクがあります。貸倒引当金の設定では、対象債権の区分・指定率・既存残高を確認します。役員・従業員向けには専用科目を使う場合がありますが、すべての設問で科目名が自動的に同じと決めず、指定科目・開示区分を読みます。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>売掛金は必ず一年以内の債権ですか？</summary><p>通常の営業循環に基づく区分と回収期間を分けます。正常な営業上の債権は流動表示が基本ですが、破産債権等の例外もあります。</p></details><details class="sq-facts-answer"><summary>貸付金の回収額はすべて元本ですか？</summary><p>利息を含む場合は元本と利息を分けます。すでに計上した未収利息などの残高も確認します。</p></details><details class="sq-facts-answer"><summary>売掛金の相手科目は必ず売上ですか？</summary><p>通常の掛け販売では売上ですが、回収・返品・訂正等では異なります。仕訳全体の取引内容で判断します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-shisanhyo.html">試算表で残高と合計を区別する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><a href="index.html">記事トップ</a><a href="app.html">アプリを使う</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><p>© 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261103-remaining120-boki3"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
