@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/boki2-bumonbetsu.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【簿記2級】部門別原価計算を完全解説｜直接配賦法・相互配賦法・部門費配賦表まで例題つき｜スタディクエスト</title>
-<meta name="description" content="簿記2級 工業簿記の部門別原価計算を完全解説。製造部門・補助部門の違い、直接配賦法・相互配賦法の計算手順、部門費配賦表の書き方、予定配賦率の計算まで例題つきで対策。">
+<title>部門別原価計算｜直接配賦と相互配賦の分母・負担額を自作例で比較｜スタディクエスト</title>
+<meta name="description" content="相互配賦を必ず2段階とする説明、工場管理部門の分類を訂正。既存配賦例を検算し、直接55,000円と2段階53,000円になる比較例、予算と予定配賦率を確認。">
 <meta name="keywords" content="部門別原価計算 簿記2級,直接配賦法 相互配賦法 違い,部門費配賦表 書き方,補助部門費 製造部門">
-<meta property="og:title" content="【簿記2級】部門別原価計算を完全解説｜直接配賦法・相互配賦法・部門費配賦表まで">
-<meta property="og:description" content="補助部門費の配賦から部門別予定配賦率の計算まで、試験頻出パターンを例題つきで解説。">
+<meta property="og:title" content="部門別原価計算｜直接配賦と相互配賦の分母・負担額を自作例で比較">
+<meta property="og:description" content="相互配賦を必ず2段階とする説明、工場管理部門の分類を訂正。既存配賦例を検算し、直接55,000円と2段階53,000円になる比較例、予算と予定配賦率を確認。">
 <meta property="og:url" content="https://study-quest.net/boki2-bumonbetsu.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"【簿記2級】部門別原価計算を完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"直接配賦法・相互配賦法・部門費配賦表・予定配賦率計算まで例題つきで完全攻略。","url":"https://study-quest.net/boki2-bumonbetsu.html","datePublished":"2026-05-09","dateModified":"2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "部門別原価計算｜直接配賦と相互配賦の分母・負担額を自作例で比較", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "相互配賦を必ず2段階とする説明、工場管理部門の分類を訂正。既存配賦例を検算し、直接55,000円と2段階53,000円になる比較例、予算と予定配賦率を確認。", "url": "https://study-quest.net/boki2-bumonbetsu.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -140,353 +139,56 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "相互配賦法は必ず第1次・第2次の2段階ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の2段階は簡便な方法として指定した例です。相互サービスを連立方程式等で織り込む純粋の相互配賦もあり、一律に2段階とはしません。問題の方法と端数処理の指示を確認します。"}}, {"@type": "Question", "name": "直接配賦と相互配賦の結果は同じですか？", "acceptedAnswer": {"@type": "Answer", "text": "配賦比率によります。既存例は両補助部門の製造部門への比率が60対40で同額ですが、別の自作例は切削部が直接55,000円、2段階53,000円と異なります。"}}, {"@type": "Question", "name": "配賦表の実際部門費から予定配賦率を求めますか？", "acceptedAnswer": {"@type": "Answer", "text": "予定配賦率には、対応する部門費の予算額と基準操業度を使います。実際の発生費用と予算を混ぜないようにします。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; 部門別原価計算</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>【簿記2級】部門別原価計算を完全解説<br>直接配賦法・相互配賦法・部門費配賦表まで例題つき</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！実は、部門別原価計算は私が工業簿記でいちばん手が止まった論点です。修繕時間だのkWhだの、配賦基準の数字がずらっと並んだ瞬間、「これ全部を掛け算しなきゃいけないの…？」と答案用紙の前で完全にフリーズしました（笑）。<br>
-    でも実は、この論点の正体は「補助部門というサイフの中身を、製造部門というサイフへ丸ごと移し替える」だけのシンプルな配賦パズルです。配賦基準の数字は、単に"どの割合で移すか"を決める物差しにすぎません。今回は、私がつまずいた経験をもとに、直接配賦法・相互配賦法を「攻略パズル」として一気に解けるようになる手順をお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-  <div class="point-card">
-    <div class="pc-label">この記事でわかること（5秒まとめ）</div>
-    <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>製造部門＝製品を作る部門、補助部門＝製造部門を支える部門</strong>——補助部門費は最終的に全額製造部門へ移す</li>
-      <li><strong>直接配賦法</strong>は補助部門同士のやりとりを無視して製造部門だけに配賦——計算がシンプルで試験頻出</li>
-      <li><strong>相互配賦法</strong>は補助部門間のやりとりも考慮——第1次配賦→第2次配賦の2段階計算</li>
-      <li><strong>配賦後は部門別の予定配賦率を計算</strong>して製品に製造間接費を配賦する</li>
-    </ul>
-  </div>
-
-  <p class="lead">部門別原価計算は「製造間接費をどの製品にどれだけ負担させるか」をより正確に計算するための手法です。工場全体でひとまとめに配賦するよりも、部門ごとに費用を集計して部門固有の配賦率を使う方が、製品原価の精度が上がります。試験では部門費配賦表の作成と、配賦後の予定配賦率計算がセットで問われます。</p>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">正直に言うと、部門別原価計算を初めて見たとき「配賦基準がこんなに何個もあるの!?　修繕時間だのkWhだの、一体どれをどう掛け算すればいいの…」って答案用紙の前で手が止まりました。試験でこれが出たら絶対に落とすと思って、正直かなり焦ってます……</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、痛いほどわかります。私も工業簿記を始めたばかりの頃、配賦基準の数字が並んでいるだけで頭が真っ白になりました。でも実は、部門別原価計算がやっていることはたった1つだけなんです。「補助部門の財布を空っぽにして、その中身を製造部門の財布に移し替える」——それだけ。配賦基準の数字は、どの製造部門にどれだけの割合で移すかを決める"ものさし"に過ぎません。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">……あ、そうか！配賦基準って、複雑な公式じゃなくて「割合を決めるための物差し」なだけなんですね。修繕部の60,000円を、切削60h・組立40hの比率で"ただ分けているだけ"って考えると、急に怖くなくなってきました！</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その感覚です！直接配賦法も相互配賦法も、結局やっていることは「補助部門の残高をゼロにする」作業の繰り返し。表を埋めていくと最後は必ず補助部門の列がゼロになる——このゴールが最初から見えていれば、途中で計算がずれてもすぐに気づけます。一緒に、その「ゼロにする感覚」を体に染み込ませていきましょう！</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>🏭 製造部門と補助部門——原価の流れを全体で把握する</h2>
-
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-bumonbetsu-map-mobile.svg">
-      <img src="images/boki2-bumonbetsu-map.svg" alt="部門別原価計算の配賦フロー図" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="420" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：製造間接費→製造部門・補助部門→製品への3段階配賦フロー</figcaption>
-  </figure>
-  <p>補助部門費を製造部門に配賦してから製品原価に集計する2段階の流れが、部門別原価計算の核心です。</p>
-
-  <p>部門別原価計算には3種類の部門が登場します。まずここを整理しましょう。</p>
-
-  <table>
-    <tr><th class="left">部門の種類</th><th class="left">役割</th><th class="left">具体例</th><th class="left">費用の行き先</th></tr>
-    <tr><td class="left">製造部門</td><td class="left">製品を直接製造する</td><td class="left">切削部、組立部、塗装部</td><td class="left">製品へ直接配賦</td></tr>
-    <tr><td class="left">補助部門</td><td class="left">製造部門を支援する</td><td class="left">修繕部、動力部、材料倉庫部</td><td class="left">まず製造部門へ→製品へ</td></tr>
-    <tr><td class="left">管理部門</td><td class="left">工場全体を管理する</td><td class="left">工場事務部</td><td class="left">製造間接費として集計</td></tr>
-  </table>
-
-  <div class="tip-box"><strong>なぜわざわざ補助部門を経由するのか？</strong><br>補助部門（修繕部など）は製品に直接触れない代わりに、製造部門の生産活動を支えます。修繕部のコストを直接「製品A」に乗せることはできないので、まず製造部門へ移してから製品へ配賦します。これが部門別計算の本質です。</div>
-
-  <h2>📊 部門費配賦表の書き方——全体の設計図を理解する</h2>
-
-  <p>試験では「部門費配賦表を完成させなさい」という問題が頻出です。配賦表は「誰に何円ずつ移すか」を一覧にしたものです。</p>
-
-  <h3>部門費配賦表のひな形</h3>
-
-  <table>
-    <tr>
-      <th class="left" style="width:200px;">費目</th>
-      <th>合　計</th>
-      <th>切削部<br><small>（製造）</small></th>
-      <th>組立部<br><small>（製造）</small></th>
-      <th>修繕部<br><small>（補助）</small></th>
-      <th>動力部<br><small>（補助）</small></th>
-    </tr>
-    <tr><td class="left">部門個別費</td><td>200,000</td><td>80,000</td><td>60,000</td><td>35,000</td><td>25,000</td></tr>
-    <tr><td class="left">部門共通費（配賦後）</td><td>100,000</td><td>40,000</td><td>30,000</td><td>20,000</td><td>10,000</td></tr>
-    <tr class="td-sub"><td class="left">部門費合計（第1次集計）</td><td>300,000</td><td>120,000</td><td>90,000</td><td>55,000</td><td>35,000</td></tr>
-    <tr><td class="left">修繕部費の配賦</td><td>0</td><td>33,000</td><td>22,000</td><td class="td-red">▲55,000</td><td>0</td></tr>
-    <tr><td class="left">動力部費の配賦</td><td>0</td><td>21,000</td><td>14,000</td><td>0</td><td class="td-red">▲35,000</td></tr>
-    <tr class="td-goal"><td class="left"><strong>製造部門費合計（第2次集計）</strong></td><td>300,000</td><td><strong>174,000</strong></td><td><strong>126,000</strong></td><td>0</td><td>0</td></tr>
-  </table>
-
-  <div class="tip-box"><strong>表のポイント：</strong>補助部門の列は最終的に「0」になります。補助部門費が全額、製造部門へ「移った」ことを意味します。合計列の300,000円は変わらない——お金が増減するのではなく「移動する」だけです。</div>
-
-  <h2>📐 直接配賦法——シンプルに製造部門だけへ配る</h2>
-
-  <p>直接配賦法は<strong>補助部門同士がサービスを提供し合っていても、その分を無視</strong>して、製造部門だけに配賦する方法です。</p>
-
-  <div class="mondai">
-    <div class="m-label">例題（直接配賦法）</div>
-    <p>以下のデータを使い、直接配賦法で補助部門費を製造部門に配賦しなさい。</p>
-    <ul style="margin:8px 0 0 14px;font-size:13px;color:#374151;">
-      <li>修繕部費：60,000円　動力部費：40,000円</li>
-      <li>修繕部費の配賦基準（修繕時間）：切削部 60h、組立部 40h、動力部 20h</li>
-      <li>動力部費の配賦基準（kWh）：切削部 300、組立部 200、修繕部 100</li>
-    </ul>
-  </div>
-
-  <h3>直接配賦法の計算手順</h3>
-
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body"><strong>配賦基準の合計から「補助部門分を除外」する</strong><br>
-        修繕部費：切削60＋組立40＝<strong>100h</strong>（動力部の20hは除外）<br>
-        動力部費：切削300＋組立200＝<strong>500kWh</strong>（修繕部の100は除外）
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body"><strong>修繕部費の配賦額を計算</strong><br>
-        切削部：60,000 × 60/100 ＝ <strong>36,000円</strong><br>
-        組立部：60,000 × 40/100 ＝ <strong>24,000円</strong>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-body"><strong>動力部費の配賦額を計算</strong><br>
-        切削部：40,000 × 300/500 ＝ <strong>24,000円</strong><br>
-        組立部：40,000 × 200/500 ＝ <strong>16,000円</strong>
-      </div>
-    </div>
-  </div>
-
-  <table>
-    <tr>
-      <th class="left">配賦元</th>
-      <th>切削部（製造）</th>
-      <th>組立部（製造）</th>
-      <th>修繕部（補助）</th>
-      <th>動力部（補助）</th>
-    </tr>
-    <tr><td class="left">修繕部費（60,000）</td><td>36,000</td><td>24,000</td><td class="td-red">▲60,000</td><td>—</td></tr>
-    <tr><td class="left">動力部費（40,000）</td><td>24,000</td><td>16,000</td><td>—</td><td class="td-red">▲40,000</td></tr>
-    <tr class="td-goal"><td class="left"><strong>配賦合計</strong></td><td><strong>60,000</strong></td><td><strong>40,000</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
-  </table>
-
-  <div class="warn-box"><strong>⚠️ 直接配賦法の落とし穴：配賦基準の分母を間違えない</strong><br>修繕部費を配賦するとき、分母は「切削＋組立＋動力」の合計ではなく「切削＋組立」だけです。動力部（補助部門）への配賦分を無視するのが直接配賦法のルールです。これを忘れると全額がずれます。</div>
-
-  <h2>🔄 相互配賦法——補助部門間のやりとりも考慮する</h2>
-
-  <p>相互配賦法は<strong>補助部門同士のサービス提供も配賦に含める</strong>方法です。直接配賦法より正確ですが計算は2段階になります。</p>
-
-  <div class="compare-2">
-    <div class="c2-card a">
-      <div class="c2-title">第1次配賦（補助部門同士も含めて配賦）</div>
-      <ul style="font-size:12px;color:#374151;margin:0 0 0 14px;">
-        <li>補助部門費を全ての部門（製造部門＋他の補助部門）へ配賦</li>
-        <li>配賦基準の分母に補助部門も含める</li>
-        <li>この段階では補助部門の残高が0にならない</li>
-      </ul>
-    </div>
-    <div class="c2-card b">
-      <div class="c2-title">第2次配賦（他の補助部門から受け取った分を配賦）</div>
-      <ul style="font-size:12px;color:#374151;margin:0 0 0 14px;">
-        <li>第1次配賦で他の補助部門から受け取った分だけを製造部門へ配賦</li>
-        <li>この段階では製造部門だけに配賦（補助部門への配賦は繰り返さない）</li>
-        <li>補助部門の残高が0になる</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="mondai">
-    <div class="m-label">例題（相互配賦法）</div>
-    <p>修繕部費：60,000円　動力部費：40,000円<br>
-    修繕部費の配賦基準（修繕時間）：切削60h、組立40h、動力20h<br>
-    動力部費の配賦基準（kWh）：切削300、組立200、修繕100</p>
-  </div>
-
-  <h3>第1次配賦（全部門に配賦）</h3>
-
-  <div class="shiwake-box">
-    <div class="sw-label">修繕部費（60,000円）の第1次配賦——分母は全部門合計（60＋40＋20＝120h）</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">切削部：60,000 × 60/120 ＝ 30,000円</p>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">組立部：60,000 × 40/120 ＝ 20,000円</p>
-    <p style="font-size:13px;color:#374151;margin:0;">動力部：60,000 × 20/120 ＝ <strong>10,000円</strong>（←直接配賦法では無視する部分）</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">動力部費（40,000円）の第1次配賦——分母は全部門合計（300＋200＋100＝600kWh）</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">切削部：40,000 × 300/600 ＝ 20,000円</p>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">組立部：40,000 × 200/600 ＝ 13,333円</p>
-    <p style="font-size:13px;color:#374151;margin:0;">修繕部：40,000 × 100/600 ＝ <strong>6,667円</strong>（←直接配賦法では無視する部分）</p>
-  </div>
-
-  <h3>第2次配賦（製造部門のみへ配賦）</h3>
-
-  <div class="tip-box"><strong>鉄則：「第1次で集計、第2次でゼロにする」</strong><br>第1次配賦は補助部門同士のやりとりも含めて<strong>全部門に一旦配ってしまう「集計」の工程</strong>です。この時点では補助部門にまだ残高が残っています（他の補助部門から受け取った分）。第2次配賦は、この残高を<strong>製造部門だけに移してゼロにする「清算」の工程</strong>。第2次で補助部門同士に配ってしまうと、残高が永遠にゼロにならない無限ループに陥るので、第2次の配賦先は必ず製造部門のみです。</div>
-
-  <h4 style="font-size:14px;font-weight:700;color:var(--text);margin:20px 0 8px;">電卓の叩き方（第2次配賦）</h4>
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body">第1次配賦の表から、<strong>その補助部門が「他の補助部門から受け取った金額」だけ</strong>を電卓に打ち込む（自分が配った金額はもう清算済みなので入力しない）</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body">配賦基準は<strong>製造部門の比率だけ</strong>を使う。分母に他の補助部門の基準を絶対に入れない（直接配賦法と同じ注意点）</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-body">残高 × 製造部門の比率 で各製造部門への配賦額を計算し、<strong>電卓に残った補助部門の残高が0になるか検算</strong>する。0にならなければ按分計算のどこかにミスがある</div>
-    </div>
-  </div>
-
-  <p>第1次配賦後の補助部門残高：修繕部 6,667円（動力部から受取）、動力部 10,000円（修繕部から受取）</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">修繕部の残高（6,667円）を製造部門だけに配賦——分母は切削＋組立（60＋40＝100h）</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">切削部：6,667 × 60/100 ＝ 4,000円</p>
-    <p style="font-size:13px;color:#374151;margin:0;">組立部：6,667 × 40/100 ＝ 2,667円</p>
-  </div>
-  <div class="shiwake-box">
-    <div class="sw-label">動力部の残高（10,000円）を製造部門だけに配賦——分母は切削＋組立（300＋200＝500kWh）</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 4px;">切削部：10,000 × 300/500 ＝ 6,000円</p>
-    <p style="font-size:13px;color:#374151;margin:0;">組立部：10,000 × 200/500 ＝ 4,000円</p>
-  </div>
-
-  <table>
-    <tr><th class="left">配賦フロー</th><th>切削部（製造）</th><th>組立部（製造）</th><th>修繕部（補助）</th><th>動力部（補助）</th></tr>
-    <tr><td class="left">第1次：修繕部費</td><td>30,000</td><td>20,000</td><td class="td-red">▲60,000</td><td>10,000</td></tr>
-    <tr><td class="left">第1次：動力部費</td><td>20,000</td><td>13,333</td><td>6,667</td><td class="td-red">▲40,000</td></tr>
-    <tr class="td-sub"><td class="left">第1次配賦後残高</td><td>50,000</td><td>33,333</td><td>6,667</td><td>10,000</td></tr>
-    <tr><td class="left">第2次：修繕部残高</td><td>4,000</td><td>2,667</td><td class="td-red">▲6,667</td><td>—</td></tr>
-    <tr><td class="left">第2次：動力部残高</td><td>6,000</td><td>4,000</td><td>—</td><td class="td-red">▲10,000</td></tr>
-    <tr class="td-goal"><td class="left"><strong>最終配賦合計</strong></td><td><strong>60,000</strong></td><td><strong>40,000</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
-  </table>
-
-  <div class="tip-box"><strong>直接 vs 相互の違い（同じ例で比較）</strong><br>
-    切削部が負担する額：直接配賦法 60,000円、相互配賦法 60,000円（合計は同じ）<br>
-    ただし内訳の振り分けが変わります——補助部門間のやりとりを正確に反映する分、相互配賦法のほうが実態に近い配賦になります。</div>
-
-  <h2>💹 配賦後の予定配賦率計算——製品に製造間接費を乗せる最終ステップ</h2>
-
-  <p>部門費配賦表が完成したら、それぞれの製造部門について<strong>予定配賦率</strong>を計算し、実際に製品へ配賦します。</p>
-
-  <div class="shiwake-box">
-    <div class="sw-label">予定配賦率の計算式</div>
-    <p style="font-size:14px;color:#374151;font-weight:700;margin:0;">予定配賦率 ＝ 製造部門費予算額 ÷ 予定操業度（基準操業度）</p>
-  </div>
-
-  <div class="mondai">
-    <div class="m-label">例題（配賦後の予定配賦率）</div>
-    <p>配賦後の切削部費：180,000円、予定直接作業時間：600h<br>
-    実際の製品Aへの直接作業時間：40h。製品Aの切削部への製造間接費配賦額を求めなさい。</p>
-  </div>
-
-  <div class="shiwake-box">
-    <div class="sw-label">計算</div>
-    <p style="font-size:13px;color:#374151;margin:0 0 6px;">予定配賦率 ＝ 180,000 ÷ 600h ＝ <strong>300円/h</strong></p>
-    <p style="font-size:13px;color:#374151;margin:0;">製品Aへの配賦額 ＝ 300円 × 40h ＝ <strong>12,000円</strong></p>
-  </div>
-
-  <h2>✏️ 仕訳パターン——配賦の仕訳を整理する</h2>
-
-  <h3>補助部門費を製造部門へ配賦するとき</h3>
-
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（修繕部費36,000を切削部へ、24,000を組立部へ）</div>
-    <div class="sw-row"><span class="kari">切削部費　36,000</span><span class="sep">/</span><span class="kashi">修繕部費　36,000</span></div>
-    <div class="sw-row"><span class="kari">組立部費　24,000</span><span class="sep">/</span><span class="kashi">修繕部費　24,000</span></div>
-  </div>
-
-  <h3>製造部門費を仕掛品（製品）へ配賦するとき</h3>
-
-  <div class="shiwake-box">
-    <div class="sw-label">仕訳（切削部の予定配賦額12,000を仕掛品へ）</div>
-    <div class="sw-row"><span class="kari">仕掛品　12,000</span><span class="sep">/</span><span class="kashi">切削部費　12,000</span></div>
-  </div>
-
-  <div class="app-cta">
-    <h3>⚔ Study Quest で工業簿記を攻略しよう</h3>
-    <p>部門別計算・予定配賦・差異分析の学習記録をRPG感覚で管理。試験日まで継続できます。</p>
-    <a href="app.html">無料で始める →</a>
-  </div>
-
-  <div class="matome">
-    <h3>📋 まとめ：部門別原価計算の解き方チェックリスト</h3>
-    <div class="matome-row"><span class="trigger">補助部門費の行き先</span><span class="result">まず製造部門へ移す（最終的に補助部門費はゼロになる）</span></div>
-    <div class="matome-row"><span class="trigger">直接配賦法の分母</span><span class="result">補助部門を除いた製造部門だけの合計を使う</span></div>
-    <div class="matome-row"><span class="trigger">相互配賦法</span><span class="result">第1次（全部門へ）→ 第2次（製造部門だけへ）の2段階</span></div>
-    <div class="matome-row"><span class="trigger">配賦後の予定配賦率</span><span class="result">製造部門費予算 ÷ 予定操業度 → 製品へ乗せる</span></div>
-    <div class="matome-row"><span class="trigger">仕訳の方向</span><span class="result">補助部門費（貸方）→ 製造部門費（借方）→ 仕掛品（借方）</span></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#C6F6D5);border-radius:16px;padding:28px 24px;margin:32px 0;text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">🧩</div>
-    <p style="font-size:16px;font-weight:700;color:#22543D;margin:0 0 8px;">部門別原価計算は「補助部門をゼロにするだけ」のパズルです</p>
-    <p style="font-size:13px;color:#276749;margin:0 0 20px;line-height:1.7;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-    <a href="app.html" style="display:inline-block;background:#276749;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Study Questで学習記録を始める →</a>
-  </div>
-
-  <h2>よくある質問</h2>
-
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 直接配賦法と相互配賦法はどう使い分けるのですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">問題文の指示に従います。「直接配賦法で配賦しなさい」と書いてあれば直接配賦法、「相互配賦法で」なら相互配賦法です。試験では問題文に必ず指定があります。なお、日商簿記2級では直接配賦法が頻出です。</span></div>
-  </div>
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 直接配賦法で配賦基準の分母に補助部門を含めてもいいですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">含めてはいけません。直接配賦法では補助部門間のやりとりを「なかったこと」にするので、分母は製造部門の合計だけです。ここを間違えると全ての配賦額がずれます。</span></div>
-  </div>
-  <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-    <div class="faq-q" itemprop="name">❓ 相互配賦法の第2次配賦では補助部門への配賦はしないのですか？</div>
-    <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">しません。第1次で補助部門同士のやりとりは反映済みなので、第2次は「補助部門に残った残高を製造部門だけに移してゼロにする」清算の工程です。第2次でも補助部門同士に配ってしまうと残高が永遠にゼロにならないため、配賦先は必ず製造部門のみです。</span></div>
-  </div>
-
-  <div style="margin:40px 0;">
-    <p style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:12px;">関連記事</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <a href="boki2-seizo-kansetsuhi.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">製造間接費の予定配賦と配賦差異</a>
-      <a href="boki2-seizo-genka-hokokusho.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">製造原価報告書（CR）の書き方</a>
-      <a href="boki2-kobetsu-genka.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">個別原価計算の全体像</a>
-      <a href="boki2-kogyo.html" style="display:block;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green2);font-weight:700;">工業簿記の全体像まとめ</a>
-    </div>
-  </div>
-</div>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>部門別原価計算｜直接配賦と相互配賦の分母・負担額を自作例で比較</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>部門別原価計算では、費用を部門へ集め、補助部門のサービスを製造部門等へ配分します。ここでは<strong>最初の集計・補助部門費の配賦・製品への配賦</strong>を分けて追います。相互配賦を一律に「必ず2段階」としていた説明は、2段階で行う簡便な方法の例へ限定しました。</p>
+<div class="sq-facts-note"><strong>例題の範囲</strong><p>すべて編集部の架空例です。本例は補助部門費を製造部門へ全額配賦する条件です。原価計算基準18は、一部の補助部門費を直接製品へ配賦する場合も認めています。「どの会社でも必ず全額を製造部門へ」とは一般化しません。</p></div>
+<h2>製造部門と補助部門、個別費と共通費</h2>
+<p>原価計算基準15〜18では、原価部門を製造部門と補助部門に分けています。補助部門には修繕・動力等の補助経営部門に加え、工場事務等の工場管理部門も含まれます。管理部門を、常に両者とは別の第三分類にする説明を改めました。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">分類</th><th scope="col">意味</th><th scope="col">本例の読み方</th></tr></thead><tbody><tr><td>部門個別費</td><td>どの部門で発生したか直接認識できる費用</td><td>該当部門へ賦課</td></tr><tr><td>部門共通費</td><td>複数の部門に共通する費用</td><td>適切な基準で関係部門へ配賦</td></tr><tr><td>製品への直接費・間接費</td><td>どの製品に結び付くかという別の分類</td><td>部門個別費＝製品直接費、ではない</td></tr></tbody></table></div>
+<p>たとえば修繕部だけの人件費は、修繕部の個別費でも、特定製品への直接費とは限りません。「何に対して直接か」を確認します。</p>
+<h2>既存の部門費配賦表を、集計と配賦に分ける</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">部門（円）</th><th scope="col">部門個別費</th><th scope="col">共通費の配賦額</th><th scope="col">配賦前の部門費</th></tr></thead><tbody><tr><td>切削</td><td>80,000</td><td>40,000</td><td>120,000</td></tr><tr><td>組立</td><td>60,000</td><td>30,000</td><td>90,000</td></tr><tr><td>修繕</td><td>35,000</td><td>20,000</td><td>55,000</td></tr><tr><td>動力</td><td>25,000</td><td>10,000</td><td>35,000</td></tr><tr><td>合計</td><td>200,000</td><td>100,000</td><td>300,000</td></tr></tbody></table></div>
+<p>この表では、共通費はすでに配賦済みとします。修繕55,000円と動力35,000円をともに切削60％・組立40％で直接配賦すると、切削は120,000＋33,000＋21,000＝<strong>174,000円</strong>、組立は90,000＋22,000＋14,000＝<strong>126,000円</strong>です。合計300,000円が保持され、補助部門残高は0になります。</p>
+<h2>直接配賦と、2段階の相互配賦を同じ条件で比べる</h2>
+<p>ここからは別の自作例です。修繕部費60,000円、動力部費40,000円。修繕時間は切削60h・組立40h・動力20h、電力使用量は切削300kWh・組立200kWh・修繕100kWhとします。自己部門への提供はありません。</p>
+<section class="sq-facts-exercise"><h3>例題1：直接配賦法の分母を選ぶ</h3><p>上の条件で補助部門へのサービスを除外し、切削・組立へ配賦してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>修繕の分母は60＋40＝100h。切削36,000円、組立24,000円です。動力の分母は300＋200＝500kWh。切削24,000円、組立16,000円です。</p><p>最終配賦は<strong>切削60,000円・組立40,000円</strong>。合計100,000円で元の60,000＋40,000円と一致します。直接配賦法では、他の補助部門の基準値を分母へ足しません。</p></div></details></section>
+<p>同じデータで、次の簡便な相互配賦を指定したとします。①当初の補助部門費を製造部門と他の補助部門へ配る、②他の補助部門から受けた分だけを製造部門へ配る、という2段階です。中間計算は分数を保ち、最終額で確認します。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">配賦先</th><th scope="col">修繕60,000円の第1次配賦</th><th scope="col">動力40,000円の第1次配賦</th></tr></thead><tbody><tr><td>切削</td><td>60,000×60/120＝30,000</td><td>40,000×300/600＝20,000</td></tr><tr><td>組立</td><td>60,000×40/120＝20,000</td><td>40,000×200/600＝40,000/3</td></tr><tr><td>他の補助部門</td><td>動力へ10,000</td><td>修繕へ20,000/3</td></tr></tbody></table></div>
+<p>第2次では、修繕の受取20,000/3円を切削4,000円・組立8,000/3円へ、動力の受取10,000円を切削6,000円・組立4,000円へ配ります。結果は<strong>切削60,000円・組立40,000円</strong>。この例で直接配賦と同じになるのは、両補助部門の製造部門への配賦比率がともに60：40だからです。「方法が違っても常に同額」とは言えません。</p>
+<h2>相互配賦は、いつでも2段階で終わる方法ではない</h2>
+<p>日商の工業簿記区分表は、2級の相互配賦法に対して、1級の関連項目に純粋の相互配賦法を挙げています。連立方程式等で相互サービスを織り込む方法もあり、補助部門間の配賦を考えること自体を「誤り」「無限ループ」とする説明は適切ではありません。<strong>使う方法と端数処理の指定</strong>を確認してください。</p>
+<section class="sq-facts-exercise"><h3>例題2：配賦比率を変えて比較する</h3><p>費用は修繕60,000円・動力40,000円のまま、修繕時間を切削60・組立20・動力20、電力使用量を切削20・組立60・修繕20とします。直接配賦と、上記の2段階の方法の結果は同じですか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>直接配賦：修繕は45,000・15,000円、動力は10,000・30,000円。合計は<strong>切削55,000円・組立45,000円</strong>です。</p><p>2段階の第1次：修繕から切削36,000・組立12,000・動力12,000円。動力から切削8,000・組立24,000・修繕8,000円。</p><p>第2次：修繕の受取8,000円は6,000・2,000円へ、動力の受取12,000円は3,000・9,000円へ。最終は<strong>切削53,000円・組立47,000円</strong>。両方法とも合計100,000円ですが、各製造部門の負担額は異なります。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-bumonbetsu-map-mobile.svg?v=20261102"><img src="images/boki2-bumonbetsu-map.svg?v=20261102" alt="直接配賦と2段階の相互配賦で切削部55,000円と53,000円に分かれる自作例の図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>予定配賦率では、実際発生額と予算を混ぜない</h2>
+<p>予定配賦率は、配賦後の製造部門費<strong>予算額</strong>を、対応する基準操業度で割って求めます。実際発生額の集計表を、そのまま予算として使うわけではありません。</p>
+<section class="sq-facts-exercise"><h3>例題3：部門費から製品へ配賦する</h3><p>切削部費の予算180,000円、基準操業度600h、製品Aの実際直接作業時間40hとします。予定配賦率・製品Aへの配賦額・仕訳を示してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>180,000÷600＝<strong>300円/h</strong>、300×40＝<strong>12,000円</strong>。借方 仕掛品12,000／貸方 切削部費12,000です。ここは上の補助部門配賦とは独立した予算例です。</p><p>補助部門から移す例は、借方 切削部費36,000・組立部費24,000／貸方 修繕部費60,000。費用の発生、部門間の振替、製品への振替を区別します。</p></div></details></section>
+<p>検算は合計額だけでなく、配賦先・分母・予算か実際かまで行います。合計が合っても、部門への配分を取り違えている可能性は残ります。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">ASBJ掲載：企業会計審議会・原価計算基準15〜18、33・41</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記区分表1ページ・部門費計算と級別範囲</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>相互配賦法は必ず第1次・第2次の2段階ですか？</summary><p>本記事の2段階は簡便な方法として指定した例です。相互サービスを連立方程式等で織り込む純粋の相互配賦もあり、一律に2段階とはしません。問題の方法と端数処理の指示を確認します。</p></details><details class="sq-facts-answer"><summary>直接配賦と相互配賦の結果は同じですか？</summary><p>配賦比率によります。既存例は両補助部門の製造部門への比率が60対40で同額ですが、別の自作例は切削部が直接55,000円、2段階53,000円と異なります。</p></details><details class="sq-facts-answer"><summary>配賦表の実際部門費から予定配賦率を求めますか？</summary><p>予定配賦率には、対応する部門費の予算額と基準操業度を使います。実際の発生費用と予算を混ぜないようにします。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-seizo-kansetsuhi.html">製造間接費の予定配賦</a></li><li><a href="boki2-kobetsu-genka.html">個別原価計算</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kogyo.html">工業簿記</a><a href="boki2-seizo-kansetsuhi.html">製造間接費</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fourth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

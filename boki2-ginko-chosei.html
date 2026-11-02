@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://study-quest.net/boki2-ginko-chosei.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【日商簿記2級】銀行勘定調整表を完全解説｜仕訳の要否・未渡小切手の科目ひっかけ・4パターン一覧｜スタディクエスト</title>
-<meta name="description" content="簿記2級の銀行勘定調整表を図解で完全解説。未取付小切手・未渡小切手・時間外預入・未記帳の4パターンの原因別調整、仕訳の要・不要の判断基準、未渡小切手の借方科目ひっかけ罠まで試験頻出を完全網羅。">
-<meta property="og:title" content="【簿記2級】銀行勘定調整表を完全解説｜4パターン・仕訳の要否・科目ひっかけ罠">
-<meta property="og:description" content="未取付小切手・未渡小切手・時間外預入・未記帳の4パターンを整理。仕訳の要・不要の判断基準と借方科目ひっかけまで完全網羅。">
+<title>銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="未渡小切手を取引全体の取消しとする説明を訂正。会社と銀行の調整、500,000円の既存例、取得済み備品と未払金、手数料の誤記を検算。2027年度の範囲も区別。">
+<meta property="og:title" content="銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認">
+<meta property="og:description" content="未渡小切手を取引全体の取消しとする説明を訂正。会社と銀行の調整、500,000円の既存例、取得済み備品と未払金、手数料の誤記を検算。2027年度の範囲も区別。">
 <meta property="og:url" content="https://study-quest.net/boki2-ginko-chosei.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -23,18 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "【日商簿記2級】銀行勘定調整表を完全解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png",
-  "description": "簿記2級の銀行勘定調整表を解説。4パターンの調整法、仕訳の要・不要の判断基準、未渡小切手の借方科目ひっかけ罠まで試験頻出を完全網羅。",
-  "url": "https://study-quest.net/boki2-ginko-chosei.html",
-  "datePublished": "2026-05-09",
-  "dateModified":"2026-09-03",
-  "author": {"@type": "Person", "name": "若葉"},
-  "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}
-}
+{"@context": "https://schema.org", "@type": "Article", "headline": "銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "未渡小切手を取引全体の取消しとする説明を訂正。会社と銀行の調整、500,000円の既存例、取得済み備品と未払金、手数料の誤記を検算。2027年度の範囲も区別。", "url": "https://study-quest.net/boki2-ginko-chosei.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -148,262 +137,53 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "未渡小切手なら、商品の取得や備品の取得も取り消しますか？", "acceptedAnswer": {"@type": "Answer", "text": "受取済みの取得取引そのものは取り消しません。当座預金を戻し、まだ払っていない買掛金や未払金を確認します。元の仕訳を必ず丸ごと逆にする説明は訂正しました。"}}, {"@type": "Question", "name": "調整後残高が一致すれば、全部正しいといえますか？", "acceptedAnswer": {"@type": "Answer", "text": "一致は必要な検算ですが、分類や相手科目まで正しい保証にはなりません。各差の反映先、会社の修正仕訳と残る資産・債務、重複や漏れも確認します。"}}, {"@type": "Question", "name": "2027年度は銀行勘定調整表が範囲からなくなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "公表済みの2027年度確定区分表でも2級に残っています。紙の手形・小切手をめぐる改定とは分け、本文の小切手例は2026年度向けとして扱っています。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 銀行勘定調整表</div>
-  <p class="meta">日商簿記2級 | 更新日：2026年9月3日</p>
-  <h1>【日商簿記2級】銀行勘定調整表とは？<br><small style="font-size:60%;font-weight:400;color:#718096;">4パターンの調整法・仕訳の要否・未渡小切手の科目ひっかけ罠を完全網羅</small></h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:24px 0;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-      <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="images/icon-wakaba.png" alt="若葉" style="width:100%;height:100%;object-fit:cover;" width="300" height="300"></div>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#276749;">若葉 より</span>
-    </div>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！実は、これから紹介する各種の論点は、どれも私が大学の講義内で初めて学んだとき、「うわっ、なんじゃこりゃ……！」と頭を抱えた難しいものばかりでした（笑）。だからこそ、当時の私と同じように悩んでいる皆さんに、どこよりも直感的にパズル感覚で理解してもらえるよう、私なりの分かりやすい図解を交えてお届けします！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">次は問題用紙の余白を「帳簿残高・実際残高・未取付・未渡」の4列に分けてみてください。差額を見つけたら、どの列に置くかを先に決めるだけで、銀行勘定調整表の手順が安定します。</p>
-  </div>
-
-  <!-- クイックサマリー -->
-  <div class="quick-summary">
-    <div class="quick-card">
-      <div class="quick-card__label">頻出度</div>
-      <div class="quick-card__value">★★★★☆</div>
-      <div class="quick-card__sub">毎回1〜2問</div>
-    </div>
-    <div class="quick-card">
-      <div class="quick-card__label">難易度</div>
-      <div class="quick-card__value">★★★☆☆</div>
-      <div class="quick-card__sub">型を覚えれば安定</div>
-    </div>
-    <div class="quick-card">
-      <div class="quick-card__label">最重要論点</div>
-      <div class="quick-card__value">仕訳の要否</div>
-      <div class="quick-card__sub">銀行側 vs 会社側</div>
-    </div>
-  </div>
-
-  <p class="lead">銀行勘定調整表は、会社の当座預金帳簿残高と銀行の残高証明書のズレを整理する論点です。<strong>試験で差がつくのは「仕訳が必要か不要か」の判断</strong>と、<strong>未渡小切手の借方科目（買掛金 or 未払金）のひっかけ</strong>です。ズレの原因が「銀行側」にあるのか「会社側」にあるのかを整理すれば、すべての問いに答えられます。</p>
-
-  <div class="tip"><strong>先に結論：</strong>ズレの原因が「銀行側がまだ反映していない」なら会社の仕訳は不要。「会社側がまだ記帳していない」なら決算整理仕訳が必要です。この分類が銀行勘定調整表の全体構造です。</div>
-
-  <!-- SVG図解 -->
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-ginko-chosei-map-mobile.svg">
-      <img src="images/boki2-ginko-chosei-map.svg" alt="銀行勘定調整表4パターン分類マップ" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="400" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：未渡小切手・未記帳（会社側修正）と未取付小切手・時間外預入（銀行側未反映）の4パターン</figcaption>
-  </figure>
-
-  <h2>銀行勘定調整表とは</h2>
-  <p>会社が帳簿に記録した「当座預金残高」と、銀行から受け取る「残高証明書の金額」が一致しないとき、<strong>原因を分析して正しい残高に合わせる表</strong>が銀行勘定調整表です。簿記2級では主に「<strong>両者区分調整法</strong>」が出題されます。銀行残高・帳簿残高の両方を、それぞれ正しい残高（一致する金額）に向けて調整していく方法です。</p>
-  <p>ズレの原因は必ず次の2種類のどちらかです。</p>
-  <table>
-    <tr><th>種類</th><th>どういう状態か</th><th>調整する対象</th><th>仕訳</th></tr>
-    <tr><td><strong>銀行側がまだ反映していない</strong></td><td>会社の帳簿は正しい。銀行の処理が遅れているだけ</td><td>銀行残高を加減算</td><td><strong>不要</strong></td></tr>
-    <tr><td><strong>会社側がまだ記帳していない</strong></td><td>銀行では処理済みだが会社帳簿が追いついていない</td><td>会社帳簿を加減算</td><td><strong>必要</strong></td></tr>
-  </table>
-
-  <h2>4パターンの原因と調整方向</h2>
-  <p>試験に出る4つの原因を整理します。「誰が遅れているか」で仕訳の要否と調整方向がすべて決まります。</p>
-
-  <table class="pattern-table">
-    <tr>
-      <th style="background:#374151;color:#fff;width:22%">原因</th>
-      <th style="background:#374151;color:#fff;width:18%">責任側</th>
-      <th style="background:#374151;color:#fff">内容</th>
-      <th style="background:#374151;color:#fff;width:18%">調整</th>
-      <th style="background:#374151;color:#fff;width:14%">仕訳</th>
-    </tr>
-    <tr>
-      <td><strong>未取付小切手</strong></td>
-      <td><span class="badge-bank">銀行側</span></td>
-      <td>会社が振り出した小切手を、受取人がまだ銀行に持ち込んでいない</td>
-      <td>銀行残高 <span class="op-minus">− 減算</span></td>
-      <td><span class="badge-noneed">不要</span></td>
-    </tr>
-    <tr>
-      <td><strong>時間外預入</strong></td>
-      <td><span class="badge-bank">銀行側</span></td>
-      <td>会社は決算日に預入済みだが、銀行は翌営業日付けで処理</td>
-      <td>銀行残高 <span class="op-plus">＋ 加算</span></td>
-      <td><span class="badge-noneed">不要</span></td>
-    </tr>
-    <tr>
-      <td><strong>未渡小切手</strong></td>
-      <td><span class="badge-co">会社側</span></td>
-      <td>小切手を作成・記帳したが、相手方にまだ渡していない（取引未成立）</td>
-      <td>会社帳簿 <span class="op-plus">＋ 加算</span></td>
-      <td><span class="badge-need">必要</span></td>
-    </tr>
-    <tr>
-      <td><strong>未記帳</strong></td>
-      <td><span class="badge-co">会社側</span></td>
-      <td>銀行で手数料引落や利息入金があったが、会社がまだ帳簿に記載していない</td>
-      <td>会社帳簿 <span class="op-minus">± 加減算</span></td>
-      <td><span class="badge-need">必要</span></td>
-    </tr>
-  </table>
-
-  <h2>銀行側の未反映 ＝ 会社の仕訳は一切不要</h2>
-  <p>未取付小切手と時間外預入は、どちらも「銀行がまだ追いついていない」だけで、<strong>会社の帳簿はすでに完全に正しく記録されています</strong>。会社側で何かを修正する必要は一切ありません。銀行勘定調整表の上で銀行残高を加減算するだけです。</p>
-
-  <div class="noneed-box">
-    <div class="nn-title">📌 会社の仕訳が不要な理由（重要）</div>
-    <p>銀行側が未反映であるということは、<strong>会社の帳簿残高はすでに正しい数字</strong>を指しています。銀行がまだ追いついていないだけで、会社には何も記帳漏れはありません。そのため、<strong>決算整理仕訳を切る必要はゼロです</strong>。「未取付小切手があるから仕訳する」という誤解が最多失点パターンです。</p>
-  </div>
-
-  <h3>未取付小切手——なぜ銀行残高から「引く」のか？</h3>
-  <p>会社が買掛金の支払いなどで小切手を振り出すと、その時点で会社帳簿はすでに「（買掛金）×× / （当座預金）××」と記帳しています。一方、受取人がまだ銀行に小切手を持ち込んでいないため、銀行口座からはまだお金が引き落とされていません。</p>
-
-  <div class="logic-box">
-    <div class="lb-title">💡 「なぜ引くのか」の本質ロジック</div>
-    <p>受取人がまだ銀行に小切手を換金しに来ていないだけで、その小切手はいずれ必ず銀行口座から引き落とされる運命にあります。つまり、<strong>銀行残高は今は高く見えているだけで、本来あるべき正しい残高より多い状態</strong>です。正しい姿に合わせるために、銀行残高からその分をマイナスして調整します。「未来に必ず引かれるお金」を今の時点で差し引いて、正確な残高を出すというイメージです。</p>
-  </div>
-
-  <h3>時間外預入——銀行残高に「足す」だけ</h3>
-  <p>会社は決算日に現金を預け入れて帳簿に記録済みですが、銀行の窓口時間を過ぎていたため翌営業日付けで処理されました。会社帳簿には正しく記録されているので、<strong>銀行残高にその金額を加算するだけ</strong>で調整完了です。会社側の仕訳は不要です。</p>
-
-  <h2>会社側の修正 ＝ 決算整理仕訳が必要</h2>
-  <p>未渡小切手と未記帳は「会社の帳簿に問題がある」ので、正しい帳簿残高に修正するための仕訳が必要です。</p>
-
-  <h3>未渡小切手の仕訳</h3>
-  <p>会社が小切手を作成した時点で「（買掛金 or 未払金）×× / （当座預金）××」と記帳しています。しかし相手方にまだ渡していないので、取引は未成立です。当座預金を誤って減らしているため、<strong>その記録をそのまま逆仕訳で取り消します</strong>。</p>
-
-  <div class="journal-label">仕訳例①：買掛金の支払いのために作った未渡小切手 40,000円</div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td style="color:#86EFAC">当座預金</td><td>40,000</td><td style="color:#FCA5A5">買掛金</td><td>40,000</td></tr>
-    </table>
-  </div>
-  <p class="journal-note">小切手作成時の仕訳（買掛金 / 当座預金）を逆に戻す。</p>
-
-  <h3>未記帳の仕訳（銀行手数料の例）</h3>
-  <p>銀行が自動で引き落とした手数料や振込先への入金処理など、銀行では処理済みだが会社が帳簿に記載していないケースです。銀行通知書を見て、会社帳簿に追加記録します。</p>
-
-  <div class="journal-label">仕訳例②：銀行手数料 10,000円が未記帳（当座預金から引落済み）</div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td style="color:#86EFAC">支払手数料</td><td>10,000</td><td style="color:#FCA5A5">当座預金</td><td>10,000</td></tr>
-    </table>
-  </div>
-
-  <h2>計算例：調整表を完成させる</h2>
-  <p>次の条件で銀行勘定調整表を作成します。</p>
-  <ul>
-    <li>銀行残高証明書： <strong>540,000円</strong></li>
-    <li>会社帳簿残高： <strong>470,000円</strong></li>
-    <li>未取付小切手： 60,000円（受取人がまだ銀行に持ち込んでいない）</li>
-    <li>時間外預入：　 20,000円（会社は記帳済み・銀行は翌日処理）</li>
-    <li>未渡小切手：　 40,000円（買掛金支払用、相手方未着）</li>
-    <li>銀行手数料未記帳：10,000円（銀行引落済み・会社未記帳）</li>
-  </ul>
-
-  <div class="adj-table-wrap">
-    <div class="adj-col">
-      <div class="adj-col-title bank">銀行残高の調整（仕訳不要）</div>
-      <table>
-        <tr><td>銀行残高証明書</td><td>540,000</td></tr>
-        <tr><td>未取付小切手（減算）</td><td style="color:#C53030">△ 60,000</td></tr>
-        <tr><td>時間外預入（加算）</td><td style="color:#276749">＋ 20,000</td></tr>
-        <tr class="adj-total"><td>調整後残高</td><td>500,000</td></tr>
-      </table>
-    </div>
-    <div class="adj-col">
-      <div class="adj-col-title co">会社帳簿の調整（仕訳必要）</div>
-      <table>
-        <tr><td>会社帳簿残高</td><td>470,000</td></tr>
-        <tr><td>未渡小切手（加算）</td><td style="color:#276749">＋ 40,000</td></tr>
-        <tr><td>銀行手数料（減算）</td><td style="color:#C53030">△ 10,000</td></tr>
-        <tr class="adj-total"><td>調整後残高</td><td>500,000</td></tr>
-      </table>
-    </div>
-  </div>
-  <p style="font-size:13px;color:#718096;margin-top:-10px">銀行側・会社側の調整後残高が <strong style="color:#1A202C">500,000円</strong> で一致すれば正解です。</p>
-
-  <h2>よくあるミスと試験の罠</h2>
-
-  <h3>❌ ミス①：銀行側の問題なのに会社の仕訳を切ってしまう</h3>
-  <p>「未取付小切手があった → 仕訳する」という誤解が最多失点パターンです。未取付小切手・時間外預入は<strong>銀行側の未反映であり、会社帳簿はすでに正しい</strong>ため決算整理仕訳は不要です。</p>
-
-  <h3>❌ ミス②：未取付小切手と未渡小切手を逆にする</h3>
-  <p>未取付小切手は「相手が換金していない（銀行側の問題）」、未渡小切手は「自社がまだ渡していない（会社側の問題）」です。誰がまだ行動していないかを問題文から読み取りましょう。</p>
-
-  <h3>❌ ミス③：調整後残高を一致させないまま終える</h3>
-  <p>銀行勘定調整表は、銀行側と会社側の調整後残高が必ず一致します。一致しない場合は計算ミスか分類ミスです。<strong>最後に必ず両側の残高を確認してから次の設問へ進む</strong>習慣をつけましょう。</p>
-
-  <!-- 借方科目ひっかけ罠コラム：必須要件③ -->
-  <div class="warning-box">
-    <div class="wb-header">
-      <span class="wb-icon">⚠️</span>
-      <span class="wb-title">試験に出る超重要罠：未渡小切手は「借方：当座預金」をまず確認！</span>
-    </div>
-    <p>未渡小切手を元の帳簿に戻す（当座預金を増やす）とき、<strong>借方は「当座預金」</strong>で固定です。<strong>貸方の勘定科目は問題文の元取引によって変わります。</strong>元の仕訳を逆に戻すことを確認しましょう。</p>
-    <p>
-      ・<strong>買掛金の支払いのために作った小切手</strong>なら → 貸方は <strong style="color:#C53030">【買掛金】</strong><br>
-      ・<strong>備品や建物などの購入のために作った小切手</strong>なら → 貸方は <strong style="color:#C53030">【未払金】</strong>
-    </p>
-    <p>理由は仕訳の逆算です。小切手を作成した時点で「（買掛金）/ （当座預金）」または「（未払金）/ （当座預金）」と記帳しているはずなので、それをそのまま逆に戻すことになります。問題文に「何のために作った小切手か」が必ず書かれているので、読み飛ばさないように注意してください。</p>
-  </div>
-
-  <h2>まとめ：試験直前チェックリスト</h2>
-  <ul class="checklist">
-    <li>未取付小切手・時間外預入は<strong>銀行側の未反映</strong>。会社の仕訳は一切不要。</li>
-    <li>未取付小切手は「いずれ銀行から引かれる運命のお金」なので銀行残高から減算。</li>
-    <li>時間外預入は「会社は記帳済み」なので銀行残高に加算するだけ。</li>
-    <li>未渡小切手・未記帳は<strong>会社側の問題</strong>。決算整理仕訳が必要。</li>
-    <li>未渡小切手は<strong>借方が当座預金</strong>。貸方は買掛金・未払金など、元取引の相手科目を問題文で確認。</li>
-    <li>調整後の銀行残高と帳簿残高は<strong>必ず一致</strong>する。一致しなければ計算ミス。</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 調整表は「誰が遅れているか」で攻略</h3>
-    <p>型を覚えると安定得点になる論点です。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-</div>
-
-<section class="faq" id="faq">
-  <h2>よくある質問</h2>
-  <div itemscope itemtype="https://schema.org/FAQPage">
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">銀行勘定調整表で「仕訳が不要」な原因はどれですか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">「未取付小切手」と「時間外預入」は、どちらも銀行側がまだ処理を反映していないだけで会社の帳簿はすでに正しい状態です。そのため決算整理仕訳は一切不要です。調整表上で銀行残高を加減算するだけで完了します。一方、「未渡小切手」と「未記帳」は会社側に記帳漏れや誤りがあるため、仕訳が必要です。</p>
-      </div>
-    </div>
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">未渡小切手の仕訳はどのように判断しますか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">借方は「当座預金」です。貸方は問題文の元取引によって異なり、買掛金の支払いのために作った小切手なら「買掛金」、備品や建物などの購入のために作った小切手なら「未払金」です。小切手作成時の仕訳を逆に戻すことになるため、何のために作った小切手かを問題文で必ず確認してください。</p>
-      </div>
-    </div>
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">「両者区分調整法」とはどういう方法ですか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">銀行残高と会社帳簿残高の両方を、それぞれ正しい残高（一致する金額）へ調整する方法です。銀行側には未取付小切手や時間外預入を加減算し、会社側には未渡小切手や未記帳を加減算します。調整後の両者の残高が一致すれば完成です。簿記2級では主にこの方法が出題されます。</p>
-      </div>
-    </div>
-    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">未取付小切手はなぜ銀行残高から減算するのですか？</h3>
-      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">会社が振り出した小切手は、受取人が銀行に持ち込めばいずれ必ず口座から引き落とされます。現時点では銀行がまだ処理していないため銀行残高が高く見えているだけで、本来あるべき正しい残高よりも多い状態です。「近い将来に確実に減る金額」を今の時点で差し引いて、本来あるべき正しい銀行残高を計算します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>銀行勘定調整表は、会社の預金帳簿残高と銀行の残高の差を、未処理・時間差・誤記等に分けて説明する表です。<strong>残高を合わせる計算と、会社が行う修正仕訳は別</strong>に確認します。両側の金額が一致しただけで、すべての分類や仕訳が正しいとは限りません。</p>
+<div class="sq-facts-note"><strong>受験年度と、この例の範囲</strong><p>2027年度の確定区分表でも、銀行勘定調整表は2級の範囲に残っています。一方、紙の手形・小切手をめぐる改定があるため、以下の小切手の例は2026年度向けの学習例として区別します。2027年度以降の学習では、その年度の公式案内・問題と教材を照合してください。例題は編集部の架空例です。</p></div>
+<h2>「どちらの記録を直すか」と「会社の仕訳」を分ける</h2>
+<p>差の原因を銀行・会社の「責任」と決めつけず、何がどちらに記録済みかを読みます。銀行側の実際の記録を、学習用の調整表を書くだけで変更するわけではありません。以下は両者区分調整法で調整後残高を合わせる場合の基本例です。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">本例の差の原因</th><th scope="col">調整表での扱い</th><th scope="col">会社の修正仕訳</th></tr></thead><tbody><tr><td>未取付小切手：会社は支払を記帳し相手へ交付済み、銀行は未引落</td><td>銀行側から減算</td><td>この時間差だけなら不要</td></tr><tr><td>時間外預入：会社記帳済み、銀行未反映</td><td>銀行側へ加算</td><td>この時間差だけなら不要</td></tr><tr><td>未渡小切手：支払記帳したが、まだ相手へ未交付</td><td>会社側へ加算</td><td>当座預金を戻し、未払いの債務を確認</td></tr><tr><td>銀行手数料の会社未記帳</td><td>会社側から減算</td><td>支払手数料／当座預金</td></tr><tr><td>銀行入金の会社未記帳</td><td>会社側へ加算</td><td>入金の原因に合う相手科目を確認</td></tr><tr><td>会社の金額誤記</td><td>正しい金額との差を会社側へ加減</td><td>すでに記帳した額との差額を訂正</td></tr></tbody></table></div>
+<p>表の仕訳不要は、会社が正しく記帳済みという条件つきです。ほかに会社の誤記がある場合まで不要とするものではありません。また、差の原因が必ず4種類だけという説明も改めました。</p>
+<h2>未渡小切手は、取得取引そのものの取消しではない</h2>
+<p>金融庁の財務諸表等規則ガイドライン15−1は、未渡小切手を預金として処理するとしています。支払記帳した当座預金を戻す一方、<strong>商品や備品をすでに受け取っているなら、その取得自体は残ります。</strong>「小切手を渡していないから取引全体が未成立」「必ず元の仕訳を丸ごと逆にする」という説明を訂正しました。</p>
+<section class="sq-facts-exercise"><h3>例題1：買掛金支払用の未渡小切手</h3><p>商品の掛仕入れは完了しています。買掛金40,000円を支払う小切手を作り、借方 買掛金40,000／貸方 当座預金40,000と記帳しましたが、小切手は社内に残っています。修正仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>借方 <strong>当座預金40,000</strong>／貸方 <strong>買掛金40,000</strong>。まだ減らしてはいけない預金を戻し、未払いの買掛金を復活させます。この条件では支払の仕訳を逆にします。商品の取得を取り消す仕訳は行いません。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>例題2：備品を受け取った日に支払記帳していたら？</h3><p>備品40,000円は受け取り済みで、借方 備品40,000／貸方 当座預金40,000と記帳。しかし、その小切手は未渡です。備品を減らす逆仕訳でよいですか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>備品は減らしません。</strong>借方 <strong>当座預金40,000</strong>／貸方 <strong>未払金40,000</strong>です。受取済みの備品40,000円と、まだ払っていない代金40,000円を残します。</p><p>元の仕訳を単純に反対にして貸方を備品とすると、実在する取得済みの備品まで消してしまいます。貸方の相手科目は元の取引と記帳内容で判断してください。</p></div></details></section>
+<h2>自作例：既存の500,000円の調整を検算する</h2>
+<p>銀行残高540,000円、会社帳簿470,000円。未取付小切手60,000円、時間外預入20,000円、買掛金支払用の未渡小切手40,000円、銀行引落済みの手数料未記帳10,000円とします。他の差や誤記はありません。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">項目（円）</th><th scope="col">銀行側の計算</th><th scope="col">会社側の計算</th></tr></thead><tbody><tr><td>調整前</td><td>540,000</td><td>470,000</td></tr><tr><td>未取付小切手</td><td>−60,000</td><td>調整なし</td></tr><tr><td>時間外預入</td><td>＋20,000</td><td>調整なし</td></tr><tr><td>未渡小切手</td><td>調整なし</td><td>＋40,000</td></tr><tr><td>手数料未記帳</td><td>調整なし</td><td>−10,000</td></tr><tr><td>調整後</td><td>500,000</td><td>500,000</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>例題3：会社で記帳する2本を選ぶ</h3><p>上の表について、会社の修正仕訳を示してください。銀行側の時間差の2項目も仕訳しますか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>①借方 当座預金40,000／貸方 買掛金40,000。②借方 支払手数料10,000／貸方 当座預金10,000。</p><p>本例で会社の帳簿が正しい未取付・時間外預入には、追加の会社仕訳はしません。会社帳簿は470,000＋40,000−10,000＝<strong>500,000円</strong>、銀行側は540,000−60,000＋20,000＝<strong>500,000円</strong>で一致します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-ginko-chosei-map-mobile.svg?v=20261102"><img src="images/boki2-ginko-chosei-map.svg?v=20261102" alt="銀行540,000円と会社470,000円を500,000円へ調整し、取得済み備品の未渡小切手は未払金を残す自作図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>記帳漏れと、すでに記帳した金額の誤りを分ける</h2>
+<section class="sq-facts-exercise"><h3>例題4：手数料を9,500円と誤記した場合</h3><p>実際の銀行手数料は5,900円ですが、会社は借方 支払手数料9,500／貸方 当座預金9,500と記帳済みでした。この差だけを直す仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>会社は費用を3,600円多く、預金を3,600円少なく記帳しています。借方 <strong>当座預金3,600</strong>／貸方 <strong>支払手数料3,600</strong>です。</p><p>未記帳としてさらに5,900円の手数料を費用にすると二重計上になります。差の原因を読み、誤記額と正しい額の差だけを直します。</p></div></details></section>
+<h2>一致した後にも確認する3項目</h2>
+<ol><li>各差を会社・銀行のどちらの計算へ反映したか、重複や漏れはないか。</li><li>会社の修正仕訳が、元の記帳と実際に残る債権・債務・資産に合うか。</li><li>一致させるためだけの根拠のない金額を足していないか。</li></ol>
+<p>過去の出題頻度や「最多失点」といった裏付けのない順位づけは削除しました。この確認手順は編集部の学習案であり、実際の銀行記録の訂正や、すべての預金実務の例外を網羅するものではありません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.fsa.go.jp/common/law/kaiji/zaiki.pdf" target="_blank" rel="noopener">金融庁：財務諸表等規則ガイドライン（2026年3月）15−1・PDF20ページ</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：2026年度適用区分・2027年度確定区分と改定説明</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027kubunhyo_fixed.pdf" target="_blank" rel="noopener">日本商工会議所：2027年度商業簿記出題区分表1ページ・銀行勘定調整表</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>未渡小切手なら、商品の取得や備品の取得も取り消しますか？</summary><p>受取済みの取得取引そのものは取り消しません。当座預金を戻し、まだ払っていない買掛金や未払金を確認します。元の仕訳を必ず丸ごと逆にする説明は訂正しました。</p></details><details class="sq-facts-answer"><summary>調整後残高が一致すれば、全部正しいといえますか？</summary><p>一致は必要な検算ですが、分類や相手科目まで正しい保証にはなりません。各差の反映先、会社の修正仕訳と残る資産・債務、重複や漏れも確認します。</p></details><details class="sq-facts-answer"><summary>2027年度は銀行勘定調整表が範囲からなくなりますか？</summary><p>公表済みの2027年度確定区分表でも2級に残っています。紙の手形・小切手をめぐる改定とは分け、本文の小切手例は2026年度向けとして扱っています。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kotei-shisan.html">固定資産の取得と売却</a></li><li><a href="boki2-3kyu-fukushu.html">当座預金等の基礎を自作問題で確認</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kessan.html">決算整理</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
 </footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fourth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-cvp.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CVP分析とは？損益分岐点売上高・安全余裕率を解説【簿記2級】｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 工業簿記のCVP分析を初心者向けに解説。損益分岐点売上高、貢献利益率、変動費率、安全余裕率、目標利益を達成する売上高の計算を整理します。">
+<title>CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認｜スタディクエスト</title>
+<meta name="description" content="既存のCVP計算を検算し、図解の交点位置を修正。150個と250個、整数なら251個、赤字時の安全余裕率−50％、貢献利益0円の4つの自作例で前提も確認。">
 <meta name="keywords" content="CVP分析とは 簿記2級,損益分岐点売上高,安全余裕率,貢献利益率,目標利益 売上高">
-<meta property="og:title" content="CVP分析とは？損益分岐点売上高・安全余裕率を解説【簿記2級】">
-<meta property="og:description" content="CVP分析の全体像を、貢献利益率・損益分岐点売上高・安全余裕率・目標利益の計算から初心者向けに解説。">
+<meta property="og:title" content="CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認">
+<meta property="og:description" content="既存のCVP計算を検算し、図解の交点位置を修正。150個と250個、整数なら251個、赤字時の安全余裕率−50％、貢献利益0円の4つの自作例で前提も確認。">
 <meta property="og:url" content="https://study-quest.net/boki2-cvp.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"CVP分析とは？損益分岐点売上高・安全余裕率を解説【簿記2級】",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 工業簿記のCVP分析を初心者向けに解説。損益分岐点売上高、貢献利益率、変動費率、安全余裕率、目標利益を達成する売上高の計算を整理します。","url":"https://study-quest.net/boki2-cvp.html","datePublished":"2026-05-09","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "既存のCVP計算を検算し、図解の交点位置を修正。150個と250個、整数なら251個、赤字時の安全余裕率−50％、貢献利益0円の4つの自作例で前提も確認。", "url": "https://study-quest.net/boki2-cvp.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -44,166 +43,51 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "損益分岐点に達すれば黒字ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の条件では、損益分岐点は営業利益が0になる点です。単価2,000円・単位変動費1,200円・固定費120,000円なら150個で利益0、それを超える販売から黒字です。"}}, {"@type": "Question", "name": "目標利益の必要数量に小数が出たら四捨五入しますか？", "acceptedAnswer": {"@type": "Answer", "text": "1個未満を販売できず目標以上の利益が必要なら、条件を満たす最小整数へ切り上げます。本例の250.625個は251個で、250個では未達です。"}}, {"@type": "Question", "name": "安全余裕率がマイナス50％なら、50％売上が下がっても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "違います。すでに損益分岐点を下回る状態です。単価や費用の前提を固定して読む指標で、資金繰りや事業全体の安全を保証するものでもありません。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2-kogyo.html">工業簿記</a> &gt; CVP分析</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>CVP分析とは？<br>損益分岐点売上高・安全余裕率を解説【簿記2級】</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">CVP分析は、原価・販売量・利益の関係を見て「いくら売れば黒字になるか」「目標利益にはどれくらい売上が必要か」を考える論点です。簿記2級では、直接原価計算の考え方とセットで出題されます。</p>
-
-  <section class="sq-originality-note" aria-label="Study Quest編集部の計算演習">
-    <div class="sq-originality-note__eyebrow">Study Quest worked example</div>
-    <h2>数字を置き換えて確認する：損益分岐点と目標利益</h2>
-    <p class="sq-originality-note__lead">公式を覚えたかどうかは、数字を変えたときにも同じ順番で計算できるかで確認します。ここでは販売単価2,000円、単位変動費1,200円、固定費120,000円、目標利益80,000円として考えます。</p>
-    <table>
-      <tr><th>確認</th><th>計算</th><th>答え</th></tr>
-      <tr><td>1個あたりの貢献利益</td><td>2,000円 − 1,200円</td><td>800円</td></tr>
-      <tr><td>損益分岐点販売量</td><td>120,000円 ÷ 800円</td><td>150個</td></tr>
-      <tr><td>目標利益達成販売量</td><td>(120,000円 ＋ 80,000円) ÷ 800円</td><td>250個</td></tr>
-    </table>
-    <ul>
-      <li>150個は固定費を回収する境目で、利益80,000円を含めるなら250個が必要になる。</li>
-      <li>検算では、単位変動費と固定費を混ぜていないか、目標利益を分子に足したかを確認する。</li>
-    </ul>
-  </section>
-
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">損益分岐点売上高、安全余裕率、目標利益達成売上高……公式が3つも4つも出てきて、どれがどれだか毎回こんがらがります。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">その気持ち、めちゃくちゃわかります。でも全部の公式は「貢献利益で何を回収したいか」の一点だけで決まります。固定費だけ回収できればいい→損益分岐点。固定費＋欲しい利益まで回収したい→目標利益達成売上高。分子を変えているだけなんです。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">分子を変えるだけなら覚えやすそうです！安全余裕率は何を見ているんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">今の売上が、赤字ラインからどれだけ離れているかの「余裕度」です。数字自体は簡単なので、公式を丸暗記するより、貢献利益率をまず正確に出す練習を優先してください。そこさえ合えば残りは掛け算・割り算だけです。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>CVP分析は、売上から変動費を引いた貢献利益で固定費を回収できるかを見る分析です。まずは貢献利益率を正しく出すことが勝負です。</div>
-
-  <h2>CVP分析とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-cvp-map-mobile.svg">
-      <img src="images/boki2-cvp-map.svg" alt="CVP分析の損益分岐点グラフと計算公式" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="400" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：損益分岐点グラフと4つの計算公式</figcaption>
-  </figure>
-  <p>売上高線と総費用線が交差する点が損益分岐点。その右側が黒字ゾーン、左側が赤字ゾーンです。</p>
-  <p>CVP分析とは、Cost（原価）・Volume（販売量）・Profit（利益）の関係を分析する方法です。売上高が変わると変動費も変わり、貢献利益が変わり、最終的な利益も変わります。</p>
-  <p>簿記2級では、損益分岐点売上高、安全余裕率、目標利益を達成する売上高などを計算します。名前は難しそうですが、構造は「貢献利益で固定費と目標利益をまかなう」だけです。</p>
-
-  <h2>CVP分析の基本構造</h2>
-  <table>
-    <tr><th>項目</th><th>意味</th><th>計算式</th></tr>
-    <tr><td>変動費</td><td>売上や販売量に応じて増える費用</td><td>売上高 × 変動費率</td></tr>
-    <tr><td>貢献利益</td><td>売上高から変動費を引いた利益</td><td>売上高 - 変動費</td></tr>
-    <tr><td>固定費</td><td>売上に関係なく一定額発生する費用</td><td>問題文で与えられることが多い</td></tr>
-    <tr><td>営業利益</td><td>貢献利益から固定費を引いた利益</td><td>貢献利益 - 固定費</td></tr>
-  </table>
-  <div class="formula"><strong>営業利益 = 売上高 - 変動費 - 固定費</strong><br><strong>営業利益 = 貢献利益 - 固定費</strong></div>
-
-  <h2>貢献利益率と変動費率</h2>
-  <p>CVP分析では、貢献利益率と変動費率を使います。この2つはセットで覚えると楽です。</p>
-  <div class="formula"><strong>変動費率 = 変動費 ÷ 売上高</strong><br><strong>貢献利益率 = 貢献利益 ÷ 売上高</strong><br><strong>貢献利益率 = 1 - 変動費率</strong></div>
-  <p>売上高1,000,000円、変動費600,000円なら、変動費率は60%、貢献利益率は40%です。</p>
-
-  <h2>損益分岐点売上高</h2>
-  <p>損益分岐点売上高とは、営業利益が0になる売上高です。つまり、貢献利益で固定費をちょうど回収できる売上高です。</p>
-  <div class="formula"><strong>損益分岐点売上高 = 固定費 ÷ 貢献利益率</strong></div>
-  <p>固定費が300,000円、貢献利益率が40%なら、損益分岐点売上高は750,000円です。750,000円売ると貢献利益が300,000円になり、固定費をちょうど回収できます。</p>
-
-  <h2>安全余裕率</h2>
-  <p>安全余裕率とは、実際の売上高が損益分岐点売上高をどれくらい上回っているかを示す割合です。余裕が大きいほど、売上が少し落ちても赤字になりにくい状態です。</p>
-  <div class="formula"><strong>安全余裕率 = (実際売上高 - 損益分岐点売上高) ÷ 実際売上高</strong></div>
-  <p>実際売上高が1,000,000円、損益分岐点売上高が750,000円なら、安全余裕率は25%です。</p>
-
-  <h2>目標利益を達成する売上高</h2>
-  <p>目標利益を達成する売上高は、固定費だけでなく、目標利益も貢献利益で回収するように考えます。</p>
-  <div class="formula"><strong>目標利益達成売上高 = (固定費 + 目標利益) ÷ 貢献利益率</strong></div>
-  <p>固定費300,000円、目標利益100,000円、貢献利益率40%なら、必要な売上高は1,000,000円です。</p>
-
-  <h2>例題で確認</h2>
-  <p>売上高1,500,000円、変動費900,000円、固定費450,000円の場合を考えます。</p>
-  <div class="flow">
-    <div class="flow-item"><strong>貢献利益：</strong>1,500,000円 - 900,000円 = 600,000円</div>
-    <div class="flow-item"><strong>貢献利益率：</strong>600,000円 ÷ 1,500,000円 = 40%</div>
-    <div class="flow-item"><strong>営業利益：</strong>600,000円 - 450,000円 = 150,000円</div>
-    <div class="flow-item"><strong>損益分岐点売上高：</strong>450,000円 ÷ 40% = 1,125,000円</div>
-    <div class="flow-item"><strong>安全余裕率：</strong>(1,500,000円 - 1,125,000円) ÷ 1,500,000円 = 25%</div>
-  </div>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>貢献利益率と変動費率を逆に使ってしまう</li>
-    <li>損益分岐点売上高で、固定費を変動費率で割ってしまう</li>
-    <li>目標利益を足し忘れて、損益分岐点売上高を答えてしまう</li>
-    <li>安全余裕率の分母を損益分岐点売上高にしてしまう</li>
-    <li>営業利益と貢献利益を同じものとして扱ってしまう</li>
-  </ul>
-
-  <div class="warn-box"><strong>判断の軸：</strong>CVP分析は公式暗記より、貢献利益で何を回収するかを考えると崩れません。損益分岐点なら固定費、目標利益なら固定費と目標利益です。</div>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>CVP分析は、原価・販売量・利益の関係を見る分析</li>
-    <li>貢献利益は売上高から変動費を引いた利益</li>
-    <li>損益分岐点売上高は固定費を貢献利益率で割って求める</li>
-    <li>安全余裕率は、実際売上高が損益分岐点をどれだけ上回るかを見る</li>
-    <li>目標利益達成売上高は、固定費と目標利益を貢献利益率で割って求める</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ CVP分析は公式の意味から攻略しよう</h3>
-    <p>スタディクエストで工業簿記の学習時間を記録し、損益分岐点の計算を毎日の経験値に変えましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">CVP分析とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">原価、販売量、利益の関係を分析する方法です。損益分岐点売上高や目標利益達成売上高を求めるときに使います。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">損益分岐点売上高とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">営業利益が0になる売上高です。固定費を貢献利益率で割って求めます。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">安全余裕率とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">実際売上高が損益分岐点売上高をどれくらい上回っているかを示す割合です。高いほど赤字への余裕があります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">目標利益を達成する売上高はどう求めますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">固定費と目標利益を足し、その合計を貢献利益率で割って求めます。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CVP分析とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"原価、販売量、利益の関係を分析する方法です。損益分岐点売上高や目標利益達成売上高を求めるときに使います。"}},{"@type":"Question","name":"損益分岐点売上高とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"営業利益が0になる売上高です。固定費を貢献利益率で割って求めます。"}},{"@type":"Question","name":"安全余裕率とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"実際売上高が損益分岐点売上高をどれくらい上回っているかを示す割合です。高いほど赤字への余裕があります。"}},{"@type":"Question","name":"目標利益を達成する売上高はどう求めますか？","acceptedAnswer":{"@type":"Answer","text":"固定費と目標利益を足し、その合計を貢献利益率で割って求めます。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-chokusetsu-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">前の論点</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">直接原価計算とは？貢献利益の考え方</div></a>
-  <a href="boki2-hyojun-genka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">標準原価計算</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">標準原価計算とは？原価差異の分析</div></a>
-  <a href="boki2-kogyo.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">工業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">工業簿記とは？商業簿記との違い</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>CVP分析は、原価・営業量・利益の関係から、損益分岐点や目標利益に必要な売上を求めます。既存記事の基本計算は検算して残し、<strong>計算が成り立つ条件、整数個での端数処理、安全余裕率がマイナスのケース</strong>を補いました。旧図解でずれていた損益分岐点の印も、売上線と総費用線の交点へ直しました。</p>
+<div class="sq-facts-note"><strong>自作例で固定する条件</strong><p>製品は1種類、販売単価・単位変動費は一定、固定費は分析する範囲で一定とします。税金・在庫による固定費調整・能力制約等は扱いません。ここでの利益は営業利益です。費用構造が変われば、同じ式の数値を使い続けることはできません。</p></div>
+<h2>利益の式から、求めたい売上を逆算する</h2>
+<p>中小企業基盤整備機構のJ-Net21は、費用を変動費・固定費に分け、損益が0となる売上規模を損益分岐点として説明しています。以下の公式は、本記事の条件のもとで「売上−変動費−固定費＝利益」から導きます。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">求めるもの</th><th scope="col">本記事の基本式</th><th scope="col">分母・単位を確認</th></tr></thead><tbody><tr><td>貢献利益</td><td>売上高−変動費</td><td>金額。限界利益とも呼ぶ</td></tr><tr><td>貢献利益率</td><td>貢献利益÷売上高＝1−変動費率</td><td>売上高が分母。40％は計算時0.4</td></tr><tr><td>損益分岐点売上高</td><td>固定費÷貢献利益率</td><td>利益0の売上高</td></tr><tr><td>目標利益達成売上高</td><td>(固定費＋目標利益)÷貢献利益率</td><td>固定費だけで終わらない</td></tr><tr><td>安全余裕率</td><td>(実際売上高−損益分岐点売上高)÷実際売上高</td><td>実際売上高が分母</td></tr></tbody></table></div>
+<p>売上高を使う式と販売個数を使う式を分けます。個数なら、分母は<strong>1個の貢献利益＝販売単価−単位変動費</strong>です。貢献利益率や1個の貢献利益が正の場合を、まず基本例にします。</p>
+<h2>自作例1：150個の境目と、250個の目標</h2>
+<p>既存の自作例と同じ、販売単価2,000円、単位変動費1,200円、固定費120,000円、目標利益80,000円です。</p>
+<section class="sq-facts-exercise"><h3>例題1：数量と売上高の両方で検算</h3><p>損益分岐点と目標利益80,000円に必要な販売数量・売上高を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>1個の貢献利益は2,000−1,200＝<strong>800円</strong>、貢献利益率800÷2,000＝<strong>40％</strong>。</p><p>損益分岐点は120,000÷800＝<strong>150個</strong>、売上300,000円。300,000−180,000−120,000＝0です。</p><p>目標利益は(120,000＋80,000)÷800＝<strong>250個</strong>、売上500,000円。500,000−300,000−120,000＝80,000円で検算できます。150個は利益0であり、黒字はそれを超える販売からです。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-cvp-map-mobile.svg?v=20261102"><img src="images/boki2-cvp-map.svg?v=20261102" alt="単価2,000円、単位変動費1,200円、固定費120,000円で売上線と総費用線が150個・300,000円で交わる図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>端数は、目標を満たす方向に処理する</h2>
+<section class="sq-facts-exercise"><h3>例題2：目標利益80,500円なら250個でよい？</h3><p>単価・変動費・固定費は同じまま、目標利益を80,500円に変えます。1個未満は販売できない条件です。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>(120,000＋80,500)÷800＝250.625個なので、必要な最小整数は<strong>251個</strong>です。</p><p>250個では800×250−120,000＝80,000円で未達。251個なら<strong>80,800円</strong>となり目標を満たします。数量を四捨五入するのではなく、条件を満たす最小整数へ切り上げます。売上高は251×2,000＝502,000円です。</p></div></details></section>
+<h2>安全余裕率の分母と、マイナスの意味</h2>
+<p>既存の別例は、実際売上高1,500,000円・変動費900,000円・固定費450,000円です。貢献利益600,000円、貢献利益率40％、営業利益150,000円、損益分岐点売上高1,125,000円となります。</p>
+<p>安全余裕率は(1,500,000−1,125,000)÷1,500,000＝<strong>25％</strong>。この費用構造のまま売上が25％下がると利益0になる、という計算です。借入返済や資金繰りも含めた事業全体の安全を保証する割合ではありません。</p>
+<section class="sq-facts-exercise"><h3>例題3：すでに赤字の場合はどう読む？</h3><p>例題1の会社が100個だけ販売したとします。営業利益と安全余裕率を計算してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>売上200,000円、変動費120,000円。営業利益は200,000−120,000−120,000＝<strong>−40,000円</strong>。</p><p>安全余裕率は(200,000−300,000)÷200,000＝<strong>−50％</strong>です。「ここからさらに売上が50％下がっても大丈夫」ではありません。すでに損益分岐点を下回っており、この条件では売上を100,000円増やすと利益0へ到達します。</p></div></details></section>
+<h2>貢献利益が0以下なら、割り算の前に止まる</h2>
+<section class="sq-facts-exercise"><h3>例題4：売るほど固定費を回収できるとは限らない</h3><p>固定費120,000円のまま、販売単価も単位変動費も1,200円なら、何個売ると損益分岐点に届きますか。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>1個の貢献利益は<strong>0円</strong>です。販売を増やしても固定費の回収に充てる額が増えないため、この条件では有限の販売数量で利益0にできません。120,000÷0を計算したり、必要数量を0個としたりしません。</p><p>単位変動費が販売単価を上回る場合も、固定費が正なら販売増だけで赤字を解消する構造にはなりません。単価や費用の前提を見直す必要があります。</p></div></details></section>
+<h2>答案と一緒に残す確認欄</h2>
+<ol><li>求めるものは売上高・数量・割合のどれか。</li><li>変動費に製造費だけでなく変動販売費等も含めたか。</li><li>分母は売上高・貢献利益率・1個の貢献利益のどれか。</li><li>目標利益を足し、整数制約・0以下の分母を確認したか。</li><li>答えの売上・数量を元の利益式に戻し、目標を満たすか。</li></ol>
+<p>この確認欄は編集部の学習案です。多品種の販売構成や段階的に増える固定費、税引後目標利益などは、本例と別の条件を置いて考えます。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://j-net21.smrj.go.jp/solution/qa/accounting/Q0240.html" target="_blank" rel="noopener">中小企業基盤整備機構 J-Net21：損益分岐点・目標利益・安全余裕率</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記区分表2ページ・原価・営業量・利益関係の分析</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>損益分岐点に達すれば黒字ですか？</summary><p>本記事の条件では、損益分岐点は営業利益が0になる点です。単価2,000円・単位変動費1,200円・固定費120,000円なら150個で利益0、それを超える販売から黒字です。</p></details><details class="sq-facts-answer"><summary>目標利益の必要数量に小数が出たら四捨五入しますか？</summary><p>1個未満を販売できず目標以上の利益が必要なら、条件を満たす最小整数へ切り上げます。本例の250.625個は251個で、250個では未達です。</p></details><details class="sq-facts-answer"><summary>安全余裕率がマイナス50％なら、50％売上が下がっても大丈夫ですか？</summary><p>違います。すでに損益分岐点を下回る状態です。単価や費用の前提を固定して読む指標で、資金繰りや事業全体の安全を保証するものでもありません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-chokusetsu-genka.html">直接原価と在庫の固定費</a></li><li><a href="boki2-seizo-kansetsuhi.html">製造間接費と予算</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fourth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>

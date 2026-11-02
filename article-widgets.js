@@ -18,9 +18,9 @@ const ARTICLES = {
   'boki2-junshisan.html': {label:'簿記2級',         title:'株式発行・純資産・剰余金配当', thumb:'images/boki2-junshisan-map.svg'},
   'boki2-hojinzei-shohizei.html': {label:'簿記2級', title:'法人税等・消費税の仕訳', thumb:'images/boki2-tax-puzzle-map.svg'},
   'boki2-software.html': {label:'簿記2級',          title:'ソフトウェア・研究開発費・無形固定資産', thumb:'images/boki2-software-map.svg'},
-  'boki2-ginko-chosei.html': {label:'簿記2級',      title:'銀行勘定調整表', thumb:'images/boki2-ginko-chosei-map.svg'},
+  'boki2-ginko-chosei.html': {label:"簿記2級", title:"銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認", thumb:"images/boki2-ginko-chosei-map.svg?v=20261102", dialogue:false},
   'boki2-seizo-kansetsuhi.html': {label:'簿記2級',  title:'製造間接費・予定配賦・配賦差異', thumb:'images/boki2-seizo-kansetsuhi-map.svg'},
-  'boki2-bumonbetsu.html': {label:'簿記2級',        title:'部門別計算・補助部門費の配賦', thumb:'images/boki2-bumonbetsu-map.svg'},
+  'boki2-bumonbetsu.html': {label:"簿記2級", title:"部門別原価計算｜直接配賦と相互配賦の分母・負担額を自作例で比較", thumb:"images/boki2-bumonbetsu-map.svg?v=20261102", dialogue:false},
   'boki2-seizo-genka-hokokusho.html': {label:'簿記2級', title:'製造原価報告書', thumb:'images/boki2-seizo-genka-map.svg'},
   'boki2-net-test.html': {label:'簿記2級',          title:'ネット試験の受験前チェック'},
   'boki2-next-exam.html': {label:'簿記2級',         title:'試験日程と最速3ヶ月合格ロードマップ', thumb:'images/boki2-start-roadmap.svg'},
@@ -169,7 +169,7 @@ const ARTICLES = {
   'boki2-zeikouka.html':           {label:'簿記2級',          title:'税効果会計・一時差異・法人税等調整額', thumb:'images/boki2-zeikouka-map.svg'},
   'boki2-kurinobe-shisan-vs-fusai.html': {label:'簿記2級', title:'繰延税金資産と繰延税金負債の違い', thumb:'images/boki2-kurinobe-shisan-vs-fusai-map.svg'},
   'boki2-lease.html':              {label:'簿記2級',          title:'リース取引・ファイナンスリースの仕訳', thumb:'images/boki2-lease-map.svg'},
-  'boki2-gaika.html':              {label:'簿記2級',          title:'外貨換算会計・為替差損益・為替予約', thumb:'images/boki2-gaika-map.svg'},
+  'boki2-gaika.html':              {label:"簿記2級", title:"外貨換算会計｜決算から決済の為替差損益と振当処理を自作例で確認", thumb:"images/boki2-gaika-map.svg?v=20261102", dialogue:false},
   'boki2-yukashoken.html':         {label:'簿記2級',          title:'有価証券の分類と評価替え', thumb:'images/boki2-yukashoken-map.svg'},
   'boki2-arai-kirihanashi.html':   {label:"簿記2級", title:"有価証券の洗替と切放｜期首・売却・期別損益をつなぐ自作例", thumb:"images/boki2-arai-kirihanashi-map.svg?v=20261102", dialogue:false},
   'boki2-shasai.html':             {label:"簿記2級", title:"簿記2級の社債は保有側で考える｜満期保有目的債券の自作例題", thumb:'images/boki2-shasai-map.svg?v=20261102', dialogue:false},
@@ -184,8 +184,8 @@ const ARTICLES = {
   'boki2-hyojun-genka.html':       {label:'簿記2級',          title:'標準原価計算・原価差異の分析', thumb:'images/boki2-hyojun-genka-map.svg'},
   'boki2-hyojun-vs-jissai.html':   {label:'簿記2級',          title:'標準原価計算と実際原価計算の違い', thumb:'images/boki2-hyojun-vs-jissai-map.svg'},
   'boki2-kotei-betsu-genka.html':  {label:'簿記2級',          title:'工程別総合原価計算・累加法と前工程費'},
-  'boki2-chokusetsu-genka.html':   {label:'簿記2級',          title:'直接原価計算・貢献利益と固定費', thumb:'images/boki2-chokusetsu-genka-map.svg'},
-  'boki2-cvp.html':                {label:'簿記2級',          title:'CVP分析・損益分岐点売上高', thumb:'images/boki2-cvp-map.svg'},
+  'boki2-chokusetsu-genka.html':   {label:"簿記2級", title:"直接原価計算と全部原価計算｜在庫の固定費と2期間の利益を検算", thumb:"images/boki2-chokusetsu-genka-map.svg?v=20261102", dialogue:false},
+  'boki2-cvp.html':                {label:"簿記2級", title:"CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認", thumb:"images/boki2-cvp-map.svg?v=20261102", dialogue:false},
   'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し', thumb:'images/boki2-ochita-strategy-map.svg'},
   'boki3-cbt-vs-paper.html':       {label:'簿記3級',          title:'簿記3級ネット試験 vs 紙の試験、どっちを選ぶべき？', thumb:'images/boki3-cbt-vs-paper.svg'},
   'boki3-kashitsuke-uriage.html':  {label:'簿記3級',          title:'貸付金と売掛金の違い', thumb:'images/boki3-kashitsuke-uriage-map.svg'},
@@ -5208,14 +5208,14 @@ Object.assign(ORIGINALITY_NOTES, {
   ]
 },
   'boki2-cvp.html': {
-    title: 'CVP分析は公式暗記ではなく、利益の逆算表で解く',
-    lead: 'CVP分析の記事では、損益分岐点の公式を並べるだけで終わらせません。売上高・変動費・固定費・目標利益を同じ表に置き、「何を増やすと利益が動くのか」を先に確認する学習順を採用します。',
-    points: [
-      '問題文から固定費と変動費を分け、貢献利益率を作ってから売上高を逆算する。',
-      '損益分岐点、安全余裕率、目標利益の問題を同じ式として扱わず、求めるものを先に丸で囲む。',
-      '答えが出たら、販売量が増えたとき利益が増える向きになっているかを常識チェックする。'
-    ]
-  },
+  "title": "CVPは条件・単位・分母をそろえて検算する",
+  "lead": "貢献利益率と単位貢献利益を分け、目標を満たす数量へ戻して検算するのが編集部の手順です。費用構造一定の範囲、整数制約、貢献利益が0以下の場合も確認します。",
+  "points": [
+    "求めるのは売上高・数量・割合のどれかを先に確認する。",
+    "固定費・単価・単位変動費の前提と、分母が正かを確認する。",
+    "数量を利益式へ戻し、目標の達成と端数処理を確かめる。"
+  ]
+},
   'itp-vs-fe.html': {
     title: 'IT資格の比較は、難易度ではなく学習の転換点で決める',
     lead: 'ITパスポートと基本情報を単純な上下関係で並べず、どこで学習方法が変わるかを比較します。知識問題の復習からアルゴリズム・擬似言語へ移れる生活環境があるかを、資格名より先に確認する編集判断です。',

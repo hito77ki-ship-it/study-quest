@@ -9,11 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://study-quest.net/boki2-gaika.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>簿記2級の外貨換算会計とは？為替差損益・決算時換算・為替予約を解説｜スタディクエスト</title>
-<meta name="description" content="日商簿記2級 商業簿記の外貨換算会計を初心者向けに解説。外貨建取引、取引発生日レート、決算時換算、為替差損益、外貨建売掛金・買掛金、為替予約の振当処理の仕訳を整理します。">
+<title>外貨換算会計｜決算から決済の為替差損益と振当処理を自作例で確認｜スタディクエスト</title>
+<meta name="description" content="決算後の回収損益は直前の帳簿価額と比較。1,000ドルと800ドルの期別検算、備品と未払金の区別、2級の予約差額の期間配分省略と1級でも残る振当処理を整理。">
 <meta name="keywords" content="簿記2級 外貨換算会計,外貨建取引 仕訳,為替差損益 簿記2級,決算時換算,外貨建売掛金,為替予約 振当処理">
-<meta property="og:title" content="簿記2級の外貨換算会計とは？為替差損益・決算時換算・為替予約を解説">
-<meta property="og:description" content="簿記2級 商業簿記の外貨換算会計を、外貨建取引・決算時換算・為替差損益・為替予約（振当処理）からやさしく解説。">
+<meta property="og:title" content="外貨換算会計｜決算から決済の為替差損益と振当処理を自作例で確認">
+<meta property="og:description" content="決算後の回収損益は直前の帳簿価額と比較。1,000ドルと800ドルの期別検算、備品と未払金の区別、2級の予約差額の期間配分省略と1級でも残る振当処理を整理。">
 <meta property="og:url" content="https://study-quest.net/boki2-gaika.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,8 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"簿記2級の外貨換算会計とは？為替差損益・決算時換算・為替予約を解説",
-  "image": "https://study-quest.net/screenshots/ogp_logo.png","description":"日商簿記2級 商業簿記の外貨換算会計を初心者向けに解説。外貨建取引、取引発生日レート、決算時換算、為替差損益、外貨建売掛金・買掛金、為替予約の振当処理の仕訳を整理します。","url":"https://study-quest.net/boki2-gaika.html","datePublished":"2026-05-09","dateModified": "2026-08-25","author":{"@type":"Person","name":"若葉"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "外貨換算会計｜決算から決済の為替差損益と振当処理を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "決算後の回収損益は直前の帳簿価額と比較。1,000ドルと800ドルの期別検算、備品と未払金の区別、2級の予約差額の期間配分省略と1級でも残る振当処理を整理。", "url": "https://study-quest.net/boki2-gaika.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -44,201 +43,54 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "決算を挟んだ回収でも、最初の取引レートと比べますか？", "acceptedAnswer": {"@type": "Answer", "text": "回収時は直前の帳簿価額と比較します。本例は前期末143,000円から回収145,000円への差2,000円が翌期の差益で、当初との差5,000円は2期間累計です。"}}, {"@type": "Question", "name": "外貨で取得した備品も決算日レートへ直しますか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の取得原価で計上した備品の例は、外貨で買ったことだけを理由に取得原価を換算し直しません。未払いの金銭債務と分けて扱います。"}}, {"@type": "Question", "name": "1級では振当処理が使えなくなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "その説明は訂正しました。1級では振当処理の期間配分や予約を別に扱う方法も学びます。2026年度2級の期間配分省略と、実務のヘッジ会計の要件を混同しません。"}}]}
+</script>
+<style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
+.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
+.sq-facts-note{border-left:4px solid #8CC63F}.sq-facts-exercise h3{margin-top:0}.sq-facts-exercise p:last-child{margin-bottom:0}
+.sq-facts-answer{border-top:1px solid var(--sq-border,#CBD5E1);margin-top:16px;padding-top:12px}
+.sq-facts-answer summary{cursor:pointer;font-weight:700;color:var(--sq-text,#1A202C);padding:8px 0;min-height:44px}
+.sq-facts-answer summary:focus-visible{outline:3px solid #6AAF2B;outline-offset:3px}.sq-facts-answer[open] summary{margin-bottom:12px}
+.sq-facts-table{max-width:100%;overflow-x:auto;margin:20px 0 24px}.sq-facts-table table{margin:0;table-layout:fixed;min-width:0}.sq-facts-table th,.sq-facts-table td{overflow-wrap:anywhere;word-break:normal}
+.sq-facts-figure{margin:24px 0}.sq-facts-figure img{display:block;width:100%;height:auto;border-radius:12px}.sq-facts-figure figcaption{font-size:12px;color:var(--sq-muted,#64748B);margin-top:8px}
+.sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
+@media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
+
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+
+.container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<div class="container">
-  <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a> &gt; 外貨換算会計</div>
-  <p class="meta">日商簿記2級 | 公開：2026年5月9日 | 更新日：2026年8月25日</p>
-  <h1>簿記2級の外貨換算会計とは？<br>為替差損益・決算時換算を解説</h1>
-  <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
-  <p class="lead">外貨換算会計は、ドルなど外国通貨で行った取引を日本円に直して記録する論点です。簿記2級では、取引時・決済時・決算時で使うレートが変わり、差額を為替差損益として処理します。</p>
-  <div class="sq-chat">
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">円安・円高で為替差益になるか為替差損になるか、売掛金と買掛金で毎回逆になる気がして、本番だと絶対焦って間違えそうです……。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">わかります、私も最初はここで毎回止まってました。コツは「自分は外貨をもらう側か、払う側か」で考えることです。売掛金＝将来もらう外貨だから、円安（円の価値が下がる）で受け取る円が増えて得＝為替差益。買掛金はその逆で払う側なので、円安だと損＝為替差損です。</div>
-      </div>
-    </div>
-    <div class="sq-chat-row question">
-      <div class="sq-chat-avatar question"><img src="images/icon-student.png" alt="受験生" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">受験生</div>
-        <div class="sq-chat-bubble">「もらう側か払う側か」で考えるとイメージしやすいです！決算日にまだ残っている外貨建ての売掛金・買掛金はどうすればいいんですか？</div>
-      </div>
-    </div>
-    <div class="sq-chat-row note">
-      <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
-      <div>
-        <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">決算日のレートで換算し直すのがルールです。これを忘れると失点しやすいので要注意。取引時・決算時・決済時、この3つのタイミングでレートが変わるたびに差額を為替差損益にする、という流れさえ押さえれば怖くありません。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box"><strong>先に結論：</strong>外貨換算会計は「いつの為替レートで円に直すか」が勝負です。取引時は取引日レート、決算時の外貨建金銭債権債務は決算日レート、差額は為替差損益で処理します。</div>
-
-  <h2>外貨換算会計とは</h2>
-  <figure style="margin:1.5rem 0;text-align:center;">
-    <picture>
-      <source media="(max-width: 600px)" srcset="images/boki2-gaika-map-mobile.svg">
-      <img src="images/boki2-gaika-map.svg" alt="外貨換算の3タイミング（取引日・決算日・決済日）と為替差損益" style="max-width:100%;height:auto;border-radius:8px;" width="760" height="380" loading="lazy">
-    </picture>
-    <figcaption style="font-size:.85rem;color:#64748B;margin-top:.5rem;">図：取引発生→決算→決済の3タイミングとレートの使い分け</figcaption>
-  </figure>
-  <p>取引日レート・決算日レート・決済日レートの3つを使い分け、差額を為替差損益で処理するのが外貨換算の基本構造です。</p>
-  <p>外貨換算会計とは、外国通貨で行った取引や、外国通貨建ての債権・債務を日本円に換算して会計処理する方法です。</p>
-  <p>日本の会社がドルで商品を売ったり、ドルで仕入れたりする場合でも、帳簿は円で記録します。そのため、外貨を円に直すための為替レートが必要になります。</p>
-
-  <h2>外貨建取引とは</h2>
-  <p>外貨建取引とは、取引金額が外国通貨で表示されている取引です。輸出入、外貨建売掛金、外貨建買掛金、外貨預金などが代表例です。</p>
-  <table>
-    <tr><th>取引</th><th>例</th></tr>
-    <tr><td>外貨建売上</td><td>商品を1,000ドルで輸出した</td></tr>
-    <tr><td>外貨建仕入</td><td>商品を800ドルで輸入した</td></tr>
-    <tr><td>外貨建売掛金</td><td>ドル建ての売掛金が残っている</td></tr>
-    <tr><td>外貨建買掛金</td><td>ドル建ての買掛金が残っている</td></tr>
-  </table>
-
-  <h2>取引発生時の換算</h2>
-  <p>外貨建取引が発生したときは、原則として取引発生日の為替レートで円に換算します。</p>
-  <div class="formula"><strong>円換算額 = 外貨金額 × 取引発生日の為替レート</strong></div>
-  <p>たとえば商品を1,000ドルで販売し、取引日のレートが1ドル=140円なら、売上は140,000円です。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>売掛金</td><td>140,000</td><td>売上</td><td>140,000</td></tr>
-    </table>
-  </div>
-
-  <h2>決済時の為替差損益</h2>
-  <p>外貨建売掛金や買掛金を決済するとき、取引時と決済時の為替レートが違うと差額が出ます。この差額を為替差損益として処理します。</p>
-  <p>先ほどの1,000ドルの売掛金を回収するとき、決済日のレートが1ドル=145円だったとします。入金額は145,000円です。帳簿上の売掛金は140,000円なので、差額5,000円は為替差益になります。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>現金預金</td><td>145,000</td><td>売掛金</td><td>140,000</td></tr>
-      <tr><td></td><td></td><td>為替差益</td><td>5,000</td></tr>
-    </table>
-  </div>
-
-  <h2>決算時換算</h2>
-  <p>決算日に外貨建の売掛金・買掛金などが残っている場合、決算日の為替レートで換算し直します。これを決算時換算といいます。</p>
-  <table>
-    <tr><th>項目</th><th>決算時の扱い</th></tr>
-    <tr><td>外貨建売掛金</td><td>決算日レートで換算し、差額を為替差損益にする</td></tr>
-    <tr><td>外貨建買掛金</td><td>決算日レートで換算し、差額を為替差損益にする</td></tr>
-    <tr><td>外貨預金</td><td>決算日レートで換算し、差額を為替差損益にする</td></tr>
-  </table>
-  <p>売掛金・買掛金・外貨預金のような外貨建金銭債権債務は、決算時にレートを更新するのがポイントです。</p>
-
-  <h2>決算時換算の例題</h2>
-  <p>外貨建売掛金1,000ドルを、取引時に1ドル=140円で計上していた。決算日のレートが1ドル=143円だった場合、売掛金の決算時評価額は143,000円です。</p>
-  <div class="formula"><strong>決算時評価額 143,000円 - 帳簿価額 140,000円 = 3,000円の為替差益</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>売掛金</td><td>3,000</td><td>為替差益</td><td>3,000</td></tr>
-    </table>
-  </div>
-  <p>売掛金は将来受け取る外貨なので、円安になって円換算額が増えると為替差益になります。</p>
-
-  <h2>買掛金の場合の考え方</h2>
-  <p>買掛金は将来支払う外貨です。円安になると、支払う円換算額が増えるため不利になります。つまり、買掛金では円安が為替差損につながります。</p>
-  <table>
-    <tr><th>項目</th><th>円安になったとき</th><th>円高になったとき</th></tr>
-    <tr><td>外貨建売掛金</td><td>為替差益</td><td>為替差損</td></tr>
-    <tr><td>外貨建買掛金</td><td>為替差損</td><td>為替差益</td></tr>
-  </table>
-
-  <h2>為替予約（振当処理）</h2>
-  <p>為替予約とは、将来の決済日に適用する為替レートをあらかじめ金融機関と約束しておく取引です。円安・円高による為替差損益のブレをなくすために使われ、簿記2級では「振当処理」という方法で会計処理します。振当処理は、外貨建取引の金額を予約レート（先物レート）で確定させてしまう処理と考えると理解しやすいです。</p>
-
-  <h3>パターン1：取引発生と同時に為替予約を締結</h3>
-  <p>商品の売買と同時に為替予約を結んだ場合、最初から予約レートで円換算します。決算時・決済時にレートが変わっても再換算は不要です。</p>
-  <div class="formula"><strong>円換算額 = 外貨金額 × 予約レート（先物レート）</strong></div>
-  <p>たとえば3,000ドルの商品を輸入すると同時に為替予約を締結し、予約レートが1ドル=142円だった場合、買掛金は426,000円（3,000×142円）で確定します。</p>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>仕入</td><td>426,000</td><td>買掛金</td><td>426,000</td></tr>
-    </table>
-  </div>
-
-  <h3>パターン2：取引発生後に為替予約を締結</h3>
-  <p>取引時にはいったん直物レートで計上し、あとから為替予約を結ぶケースです。予約を締結した時点で、帳簿価額を予約レートに振り当て直し、その差額を為替差損益として処理します（簿記2級では、差額を直々差額・直先差額に分けず、まとめて当期の為替差損益とするのがポイントです）。</p>
-  <p>9月1日に1,000ドルの売掛金を直物レート1ドル=140円で140,000円計上し、9月15日に予約レート1ドル=142円で為替予約を締結したとします。振当処理では、売掛金を142,000円に振り当て、差額2,000円を為替差益として計上します。以後は決済まで142,000円のまま据え置きます。</p>
-  <div class="formula"><strong>振当後の円換算額 142,000円 - 帳簿価額 140,000円 = 2,000円の為替差益</strong></div>
-  <div class="journal">
-    <table>
-      <tr><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
-      <tr><td>売掛金</td><td>2,000</td><td>為替差益</td><td>2,000</td></tr>
-    </table>
-  </div>
-  <div class="tip-box"><strong>覚え方：</strong>為替予約が絡む問題を見たら、「予約レートで確定させて、それ以降は動かさない」と考えれば整理できます。予約締結が取引と同時か後かだけを見極めましょう。</div>
-  <div class="tip-box"><strong>1級では処理方法が変わる：</strong>簿記1級では、この振当処理に代わって「独立処理」（買掛金と為替予約を別々に評価する方法）が原則になります。詳しくは<a href="boki1-kawase-yoyaku-furiate-vs-dokuritsu.html">為替予約の振当処理と独立処理の違い</a>で解説しています。</div>
-
-  <h2>よくあるミス</h2>
-  <ul>
-    <li>取引時と決済時で同じレートを使ってしまう</li>
-    <li>決算日に外貨建売掛金・買掛金を換算し忘れる</li>
-    <li>売掛金と買掛金で、円安・円高の有利不利を逆に判断する</li>
-    <li>為替差益と為替差損を逆に仕訳する</li>
-    <li>外貨金額にレートをかけず、外貨金額のまま記録してしまう</li>
-    <li>為替予約締結後も、決算日レートで再換算してしまう（予約レートで確定しているため不要）</li>
-  </ul>
-
-  <div class="warn-box"><strong>判断の軸：</strong>外貨換算は「自分にとって得か損か」で考えると整理できます。売掛金は外貨を受け取る権利、買掛金は外貨を支払う義務です。</div>
-
-  <h2>まとめ</h2>
-  <ul>
-    <li>外貨換算会計は、外国通貨建ての取引を円に換算する会計処理</li>
-    <li>取引発生時は、取引日の為替レートで換算する</li>
-    <li>決済時にレートが変わると、差額を為替差損益で処理する</li>
-    <li>決算日に外貨建金銭債権債務が残っていれば、決算日レートで換算する</li>
-    <li>売掛金と買掛金では、円安・円高の有利不利が逆になる</li>
-    <li>為替予約を締結すると、振当処理により円換算額が予約レートで確定する</li>
-  </ul>
-
-  <div class="app-cta">
-    <h3>⚔ 外貨換算はレートの時点で攻略しよう</h3>
-    <p>スタディクエストで商業簿記の学習時間を記録し、取引時・決済時・決算時の仕訳を経験値に変えましょう。</p>
-    <a href="app.html">無料で学習記録を始める →</a>
-  </div>
-  <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:22px 24px;text-align:center;margin:32px 0;">
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
-  </div>
-
-</div>
-
-<section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
-  <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">外貨換算会計とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">外国通貨で行った取引や外貨建ての債権債務を、日本円に換算して記録する会計処理です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">外貨建取引はいつのレートで換算しますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">取引発生時は、原則として取引発生日の為替レートで円に換算します。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">為替差損益とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">取引時・決済時・決算時の為替レートの違いによって生じる損益です。有利な差額は為替差益、不利な差額は為替差損です。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">決算時換算では何をしますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">決算日に残っている外貨建売掛金・買掛金・外貨預金などを決算日レートで換算し、差額を為替差損益で処理します。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">為替予約の振当処理とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">外貨建取引の円換算額を、あらかじめ約束した予約レート（先物レート）で確定させる処理です。取引と同時に予約を結べば最初から予約レートで計上し、取引後に予約を結べば帳簿価額を予約レートに振り当て、差額を為替差損益として処理します。</div></details>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"外貨換算会計とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"外国通貨で行った取引や外貨建ての債権債務を、日本円に換算して記録する会計処理です。"}},{"@type":"Question","name":"外貨建取引はいつのレートで換算しますか？","acceptedAnswer":{"@type":"Answer","text":"取引発生時は、原則として取引発生日の為替レートで円に換算します。"}},{"@type":"Question","name":"為替差損益とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"取引時・決済時・決算時の為替レートの違いによって生じる損益です。有利な差額は為替差益、不利な差額は為替差損です。"}},{"@type":"Question","name":"決算時換算では何をしますか？","acceptedAnswer":{"@type":"Answer","text":"決算日に残っている外貨建売掛金・買掛金・外貨預金などを決算日レートで換算し、差額を為替差損益で処理します。"}},{"@type":"Question","name":"為替予約の振当処理とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"外貨建取引の円換算額を、あらかじめ約束した予約レート（先物レート）で確定させる処理です。取引と同時に予約を結べば最初から予約レートで計上し、取引後に予約を結べば帳簿価額を予約レートに振り当て、差額を為替差損益として処理します。"}}]}
-</script>
-<section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-  <a href="boki2-lease.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">リース取引とは？ファイナンス・リース</div></a>
-  <a href="boki2-zeikouka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">税効果会計とは？繰延税金資産</div></a>
-  <a href="boki2-renketsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">商業簿記</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">連結会計とは？連結修正仕訳とのれん</div></a>
-  <a href="boki2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記2級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">簿記2級の勉強時間・独学合格ロードマップ</div></a>
-  <a href="boki1-kawase-yoyaku-furiate-vs-dokuritsu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;color:inherit;text-decoration:none;"><div style="font-size:10px;color:#8CC63F;font-weight:700;margin-bottom:6px;letter-spacing:.08em;">簿記1級</div><div style="font-size:13px;font-weight:700;color:#1A202C;line-height:1.5;">為替予約の振当処理と独立処理の違い</div></a>
-</div></div></section>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>外貨換算会計｜決算から決済の為替差損益と振当処理を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>外貨換算では、<strong>取引・決算・決済の時点と、その直前の帳簿価額</strong>を並べて確認します。決算を挟んだ回収では、翌期の損益を最初の取引時点との差で計算すると、前期分を二重に計上してしまいます。</p>
+<div class="sq-facts-note"><strong>この記事の自作例</strong><p>すべて編集部の架空取引で、為替相場は計算用の仮定です。手数料・利息・税金はありません。予約のない外貨建金銭債権債務を基本とし、為替予約の振当処理は別の例に分けます。</p></div>
+<h2>まず、何を換算するかを確認する</h2>
+<p>外貨建取引等会計処理基準の一1・2・3は、原則として取引発生時の相場で記録し、外貨建金銭債権債務等は決算時に換算、決済差額は為替差損益として扱うことを示しています。有価証券やヘッジ会計には別の取扱いもあり、<strong>すべての外貨建項目を同じ仕訳で処理するわけではありません。</strong></p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">項目・本例の条件</th><th scope="col">確認すること</th></tr></thead><tbody><tr><td>外貨建売掛金・買掛金</td><td>決算時の円換算額へ更新。決済では直前の帳簿価額と比較</td></tr><tr><td>外貨預金</td><td>決算時の相場で換算。外国通貨のまま保有していても確認</td></tr><tr><td>取得原価で計上した備品等</td><td>外貨で買ったからといって、取得原価を毎期末の相場で換算し直さない</td></tr><tr><td>為替予約の対象</td><td>ヘッジ会計・振当処理の指定と要件を別に確認</td></tr></tbody></table></div>
+<h2>自作例1：売掛金1,000ドルを140→143→145円で追う</h2>
+<p>X1年の取引時に1ドル140円、X1年末143円、X2年の回収時145円とします。1,000ドルを掛けで販売し、決済時は円で預金口座へ入金される条件です。</p>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">時点</th><th scope="col">円換算と損益</th><th scope="col">仕訳（円）</th></tr></thead><tbody><tr><td>取引</td><td>1,000×140＝140,000</td><td>借：売掛金140,000／貸：売上140,000</td></tr><tr><td>X1年末</td><td>143,000−140,000＝益3,000</td><td>借：売掛金3,000／貸：為替差益3,000</td></tr><tr><td>X2年回収</td><td>145,000−143,000＝益2,000</td><td>借：現金預金145,000／貸：売掛金143,000・為替差益2,000</td></tr></tbody></table></div>
+<section class="sq-facts-exercise"><h3>例題1：回収時に差益5,000円を計上してよい？</h3><p>上の取引で、X2年の回収時に「145,000−140,000＝5,000円の差益」とした答案を直してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>X1年末に3,000円を計上済みなので、X2年の差益は<strong>2,000円</strong>です。直前の売掛金残高143,000円を消します。</p><p>2期間合計は3,000＋2,000＝<strong>5,000円</strong>。最終の円受取145,000−当初計上140,000とも一致します。5,000円はこの取引の累計で、X2年だけの利益ではありません。</p></div></details></section>
+<h2>自作例2：買掛金800ドルでは損益の向きが逆</h2>
+<p>X1年の仕入時140円、X1年末143円、X2年の支払時139円とします。800ドルの買掛金を円預金から支払う条件で、予約はありません。</p>
+<section class="sq-facts-exercise"><h3>例題2：決算と支払で損益を分ける</h3><p>当初112,000円の買掛金について、X1年末とX2年支払時の仕訳・損益を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>X1年末は800×143＝114,400円。支払義務が2,400円増えるため、借方 <strong>為替差損2,400</strong>／貸方 <strong>買掛金2,400</strong>です。</p><p>X2年支払額は800×139＝111,200円。借方 <strong>買掛金114,400</strong>／貸方 <strong>現金預金111,200・為替差益3,200</strong>。</p><p>累計は−2,400＋3,200＝<strong>差益800円</strong>。当初112,000円の債務を111,200円で決済した差額とも一致します。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-gaika-map-mobile.svg?v=20261102"><img src="images/boki2-gaika-map.svg?v=20261102" alt="売掛金1,000ドルの140円、143円、145円を時系列に並べ、差益3,000円と2,000円を分ける図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+<h2>「円安なら利益」は、資産か負債かで変わる</h2>
+<div class="sq-facts-table"><table><thead><tr><th scope="col">外貨金額が変わらない場合</th><th scope="col">円安で円換算額が増える</th><th scope="col">円高で円換算額が減る</th></tr></thead><tbody><tr><td>売掛金・外貨預金等</td><td>資産増加→差益の方向</td><td>資産減少→差損の方向</td></tr><tr><td>買掛金等</td><td>負債増加→差損の方向</td><td>負債減少→差益の方向</td></tr></tbody></table></div>
+<p>これは予約のない金銭項目の基本例です。円安・円高という言葉だけで借方・貸方を決めず、資産・負債の帳簿残高をいくら増減するかから仕訳を組みます。</p>
+<h2>外貨で買った備品と、未払いの債務を分ける</h2>
+<section class="sq-facts-exercise"><h3>例題3：備品も決算日の相場で増やす？</h3><p>備品1,000ドルを1ドル140円で取得し、同額の未払金を計上しました。決算時143円で未払いです。備品は取得原価で扱い、減価償却・減損はこの練習では考慮しません。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>備品の取得原価は<strong>140,000円のまま</strong>です。未払金は143,000円へ換算するので、借方 <strong>為替差損3,000</strong>／貸方 <strong>未払金3,000</strong>とします。備品を3,000円増やす仕訳ではありません。</p></div></details></section>
+<h2>為替予約：2級の省略と、会計上の要件を分ける</h2>
+<p>振当処理は、ヘッジ会計の要件等を満たす場合の処理です。外貨建取引等会計処理基準の注6・7は、予約による円貨額への換算と差額の期間配分等を示しています。一方、2026年度の2級の出題範囲では、為替予約差額の期間配分は行わないとされています。</p>
+<section class="sq-facts-exercise"><h3>例題4：同時予約と後からの予約を区別する</h3><p>①3,000ドルの商品仕入れと同時に、全額を1ドル142円で買う為替予約をし、振当処理を指定。②別の取引で、140円で計上した1,000ドルの売掛金に、後から全額142円の売り予約を付し、2級の期間配分省略で処理。それぞれ計上額・差額は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>①借方 <strong>仕入426,000</strong>／貸方 <strong>買掛金426,000</strong>。この全額の振当例では、予約の円貨額3,000×142を使います。</p><p>②売掛金140,000円を142,000円へ直すため、借方 <strong>売掛金2,000</strong>／貸方 <strong>為替差益2,000</strong>です。期間配分を省略した2級の例であり、実務の一般的な処理を省略してよい根拠ではありません。</p></div></details></section>
+<p>1級になったら振当処理が使えなくなる、という説明は訂正しました。1級では振当処理の期間配分や、予約を別に扱う処理も区別して学びます。対象全額か一部か、予約の締結時期や条件も確認し、詳しい期間配分は<a href="boki1-kawase-yoyaku-furiate-vs-dokuritsu.html">振当処理と独立処理の比較例</a>へ進んでください。</p>
+<h2>解き直しの記録欄</h2>
+<p>「外貨金額／金銭項目か／直前の帳簿残高／取引・決算・決済レート／当期の損益／累計の検算／予約の有無」を並べます。為替予約や有価証券・在外子会社等の特殊な処理まで、この基本例で確認済みとはしません。</p>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=80" target="_blank" rel="noopener">ASBJ掲載：外貨建取引等会計処理基準 一1〜3・注4・6・7</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：2026年度商業簿記区分表3ページ・為替予約差額の期間配分</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>決算を挟んだ回収でも、最初の取引レートと比べますか？</summary><p>回収時は直前の帳簿価額と比較します。本例は前期末143,000円から回収145,000円への差2,000円が翌期の差益で、当初との差5,000円は2期間累計です。</p></details><details class="sq-facts-answer"><summary>外貨で取得した備品も決算日レートへ直しますか？</summary><p>本記事の取得原価で計上した備品の例は、外貨で買ったことだけを理由に取得原価を換算し直しません。未払いの金銭債務と分けて扱います。</p></details><details class="sq-facts-answer"><summary>1級では振当処理が使えなくなりますか？</summary><p>その説明は訂正しました。1級では振当処理の期間配分や予約を別に扱う方法も学びます。2026年度2級の期間配分省略と、実務のヘッジ会計の要件を混同しません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki1-kawase-yoyaku-furiate-vs-dokuritsu.html">振当処理の期間配分と独立処理</a></li><li><a href="boki2-yukashoken.html">有価証券の保有目的</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="boki2-lease.html">リース取引</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
-<script src="article-widgets.js?v=20261001-author-study"></script>
+<script src="article-widgets.js?v=20261102-boki-fourth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
 </body>
 </html>
