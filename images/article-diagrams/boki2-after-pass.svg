@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-labelledby="title">
+  <title id="title">簿記2級合格後の三つの選択肢</title>
+  <rect x="12" y="12" width="616" height="336" rx="20" fill="#101b13" stroke="#58724b" stroke-width="2"/>
+  <g font-family="Hiragino Sans, sans-serif" font-weight="700">
+    <text x="40" y="74" fill="#c7ed99" font-size="36">簿記2級合格後</text>
+    <path d="M40 98H600" stroke="#58724b" stroke-width="2"/>
+    <text x="42" y="151" fill="#eaf2e3" font-size="27">01　簿記1級で会計を深める</text>
+    <text x="42" y="210" fill="#eaf2e3" font-size="27">02　FPで生活設計を学ぶ</text>
+    <text x="42" y="269" fill="#eaf2e3" font-size="27">03　実務を想定して練習する</text>
+    <text x="42" y="317" fill="#bad79d" font-size="21">目的・期限・次の成果物を選ぶ</text>
+  </g>
+</svg>

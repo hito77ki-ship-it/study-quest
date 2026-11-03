@@ -186,6 +186,7 @@ const ARTICLES = {
   'boki2-kotei-betsu-genka.html':  {label:"簿記2級", title:"工程別総合原価計算｜前工程費と二つの仕掛品残高を自作例で検算", thumb:"images/boki2-kotei-betsu-genka-map.svg?v=20261102", dialogue:false},
   'boki2-chokusetsu-genka.html':   {label:"簿記2級", title:"直接原価計算と全部原価計算｜在庫の固定費と2期間の利益を検算", thumb:"images/boki2-chokusetsu-genka-map.svg?v=20261102", dialogue:false},
   'boki2-cvp.html':                {label:"簿記2級", title:"CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認", thumb:"images/boki2-cvp-map.svg?v=20261102", dialogue:false},
+  'boki2-after-pass.html': {label:'簿記2級', title:'簿記2級合格後は何をする？1級・FP・実務の判断シート', thumb:'images/article-diagrams/boki2-after-pass.svg', dialogue:false, hero:false},
   'boki2-ochita.html':             {label:'簿記2級',          title:'簿記2級に落ちた後の立て直し', thumb:'images/boki2-ochita-strategy-map.svg'},
   'boki3-cbt-vs-paper.html':       {label:"簿記3級", title:"簿記3級のネット試験と統一試験｜予約・入力・下書きの選び方", thumb:"images/study-quest-boki-category.webp", dialogue:false},
   'boki3-kashitsuke-uriage.html':  {label:"簿記3級", title:"貸付金と売掛金の違い｜発生原因・利息・資産区分を自作例で確認", thumb:"images/study-quest-boki-category.webp", dialogue:false},
@@ -3818,8 +3819,8 @@ const BOKI2_INDUSTRIAL_FILES = [
   'boki2-kogyo-enshu.html',
 ];
 
-const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki-careless-miss.html', 'boki-note-sekkei.html', 'boki-net-id-check.html', 'boki-net-test-mac-ipad.html', 'boki2-3kyu-fukushu.html', 'boki-zasetsu-type.html', 'boki-benkyo-basho.html'];
-const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html' && f !== 'boki-careless-miss.html' && f !== 'boki-note-sekkei.html' && f !== 'boki-zasetsu-type.html' && f !== 'boki2-oyoryoku-kabe.html' && f !== 'boki2-renketsu-suteru.html');
+const BOKI2_FILES = ['boki2.html', ...BOKI2_COMMERCIAL_FILES, ...BOKI2_INDUSTRIAL_FILES, 'boki2-oyoryoku-kabe.html', 'boki2-renketsu-suteru.html', 'boki2-moshi-honban.html', 'boki2-ochita.html', 'boki2-after-pass.html', 'boki-careless-miss.html', 'boki-note-sekkei.html', 'boki-net-id-check.html', 'boki-net-test-mac-ipad.html', 'boki2-3kyu-fukushu.html', 'boki-zasetsu-type.html', 'boki-benkyo-basho.html'];
+const BOKI2_PROGRESS_FILES = BOKI2_FILES.filter(f => f !== 'boki2-after-pass.html' && f !== 'boki2-ochita.html' && f !== 'boki2-moshi-honban.html' && f !== 'boki-careless-miss.html' && f !== 'boki-note-sekkei.html' && f !== 'boki-zasetsu-type.html' && f !== 'boki2-oyoryoku-kabe.html' && f !== 'boki2-renketsu-suteru.html');
 
 const SHIHOSHO_FILES = [
   'shihoshoshi.html',
