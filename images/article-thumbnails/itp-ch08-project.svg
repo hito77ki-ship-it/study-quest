@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
+  <title id="title">第8章 プロジェクトマネジメント</title>
+  <desc id="description">予約機能の公開計画。作業を表す横棒が日程に沿って並び、右端に公開の節目を示すひし形がある。</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#102835"/><stop offset="1" stop-color="#155346"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#a5f5dd" stroke-opacity=".15"/></pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h640v360H0z"/>
+  <path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <g font-family="system-ui, sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#a5f5dd"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#112b35">第8章</text>
+    <text x="38" y="120" font-size="44" fill="#f3fff9">プロジェクトマネジメント</text>
+    <text x="38" y="157" font-size="23" fill="#b7f5e4">図書館の予約機能を、予定どおり公開するには？</text>
+  </g>
+  <rect x="38" y="186" width="564" height="142" rx="12" fill="#112b35" stroke="#a5f5dd" stroke-width="2"/>
+  <path d="M78 208v98m60-98v98m60-98v98m60-98v98m60-98v98m60-98v98m60-98v98m60-98v98m60-98v98" stroke="#a5f5dd" opacity=".23"/>
+  <path d="M83 223h107m16 36h224m16 36h101" stroke="#a5f5dd" stroke-width="16" stroke-linecap="round"/>
+  <path d="M190 223h16v36m224 0h16v36" stroke="#ffe28e" fill="none" stroke-width="3"/>
+  <path d="M563 281l14 14-14 14-14-14z" fill="#ffe28e"/>
+</svg>

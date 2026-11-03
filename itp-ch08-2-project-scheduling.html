@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch08-2-project-scheduling.html">
+  <title>ITパスポート 8-2 プロジェクトの日程と進捗管理｜スタディクエスト</title>
+  <meta name="description" content="大学図書館の予約機能を題材に、アローダイアグラム、クリティカルパス、ガントチャート、進捗報告を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 8-2 プロジェクトの日程と進捗管理">
+  <meta property="og:description" content="大学図書館の予約機能を題材に、アローダイアグラム、クリティカルパス、ガントチャート、進捗報告を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch08-2-project-scheduling.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 8-2 プロジェクトの日程と進捗管理",
+  "description": "大学図書館の予約機能を題材に、アローダイアグラム、クリティカルパス、ガントチャート、進捗報告を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch08-2-project-scheduling.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch08-2-project-scheduling.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第8章 プロジェクトマネジメント</p>
+    <h1>ITパスポート 8-2 プロジェクトの日程と進捗管理</h1>
+    <p>大学図書館の予約機能を題材に、アローダイアグラム、クリティカルパス、ガントチャート、進捗報告を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+    <p class="note">サイトの8-2は教科書の8-1-3に対応します。計画やリスク管理は<a href="itp-ch08-1-project-management.html">8-1 計画とリスク管理</a>で復習できます。</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#dependencies">アローダイアグラム</a></li><li><a href="#critical-path">クリティカルパスと余裕</a></li><li><a href="#tracking">ガントチャートと進捗</a></li><li><a href="#precedence">プレシデンスダイアグラム</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="dependencies">
+  <h2>アローダイアグラムで「何の完了を待つか」を読む</h2>
+  <p>学習室予約を公開するまでの作業を五つに分けます。各作業の期間は架空の数値です。実装担当と案内担当は別で、同時に作業できるとします。土日や担当者の休み、準備時間はこの計算に含めません。</p>
+  <table>
+    <caption>予約機能を公開する作業と前提</caption>
+    <thead><tr><th scope="col">作業</th><th scope="col">所要日数</th><th scope="col">先に終える作業</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">A 要件確認</th><td>2日</td><td>なし</td></tr>
+<tr><th scope="row">B 予約機能の実装</th><td>4日</td><td>A</td></tr>
+<tr><th scope="row">C 職員向け案内</th><td>2日</td><td>A</td></tr>
+<tr><th scope="row">D 受入れ確認</th><td>2日</td><td>BとC</td></tr>
+<tr><th scope="row">E 本番公開</th><td>1日</td><td>D</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-arrow" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>アローダイアグラムで待ち合わせを見る</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 198" role="img" aria-labelledby="visual-arrow-title visual-arrow-desc">
+        <title id="visual-arrow-title">アローダイアグラムで待ち合わせを見る</title>
+        <desc id="visual-arrow-desc">Aが2日。Bが4日、Cが2日でAの後に並行。Cの後のダミーは0日。BとCが終わるとDを2日、次にEを1日。A、B、D、Eの9日が最長。</desc>
+        <path d="M31 78H76m-5-4 5 4-5 4" class="line orange" />
+<path d="M101 78H191m-5-4 5 4-5 4" class="line orange" />
+<path d="M217 78H258m-5-4 5 4-5 4" class="line orange" />
+<path d="M283 78H307m-5-4 5 4-5 4" class="line orange" />
+<path d="M89 91v48h45m-5-4 5 4-5 4" class="line blue" />
+<path d="M159 139h45V92m-4 5 4-5 4 5" class="wire" stroke-dasharray="4 3"/>
+<circle cx="19" cy="78" r="11" class="panel"/>
+<text x="19" y="82" class="small strong" text-anchor="middle">1</text>
+<circle cx="89" cy="78" r="11" class="panel"/>
+<text x="89" y="82" class="small strong" text-anchor="middle">2</text>
+<circle cx="147" cy="139" r="11" class="panel"/>
+<text x="147" y="143" class="small strong" text-anchor="middle">3</text>
+<circle cx="204" cy="78" r="11" class="panel"/>
+<text x="204" y="82" class="small strong" text-anchor="middle">4</text>
+<circle cx="271" cy="78" r="11" class="panel"/>
+<text x="271" y="82" class="small strong" text-anchor="middle">5</text>
+<circle cx="318" cy="78" r="11" class="panel"/>
+<text x="318" y="82" class="small strong" text-anchor="middle">6</text>
+<text x="53" y="63" class="small orange" text-anchor="middle">A 2日</text>
+<text x="146" y="63" class="small orange" text-anchor="middle">B 4日</text>
+<text x="237" y="63" class="small orange" text-anchor="middle">D 2日</text>
+<text x="294" y="49" class="small orange" text-anchor="middle">E 1日</text>
+<text x="111" y="129" class="small blue" text-anchor="middle">C 2日</text>
+<text x="190" y="160" class="small" text-anchor="middle">点線 0日</text>
+<text x="10" y="24" class="strong orange" text-anchor="start">クリティカルパス　A → B → D → E</text>
+<text x="10" y="187" class="small" text-anchor="start">結合点4では B と C の完了を待つ</text>
+      </svg>
+      <p>実線の矢印が作業、円が結合点です。点線は前後関係だけを伝えるダミー作業で、所要時間は0日です。</p>
+    </figure>
+  <p><strong>アローダイアグラム</strong>（PERT図と呼ばれることもあります）は、作業を矢印で表し、どの作業が終われば次へ進めるかを示します。BとCは同時に始められますが、Dは両方が終わるまで始められません。そのため日数は全部を足すのでなく、A→B→D→Eが<strong>2＋4＋2＋1＝9日</strong>、A→C→D→Eが<strong>2＋2＋2＋1＝7日</strong>と、経路ごとに比べます。後者の点線も経由しますが、所要日数は0日なので合計には影響しません。</p>
+</section>
+
+<section id="critical-path">
+  <h2>クリティカルパスと余裕日数を計算する</h2>
+  <p>この例の<strong>クリティカルパス</strong>は、最短で終えようとしたときに全体の完了時点を決める9日の経路です。Bが1日長くなると、他の作業を変えない限り全体も1日延びます。一方、Cが2日長くなっても両経路が9日で並ぶため、全体の日数は変わりません。このときクリティカルパスは二つになります。Cが3日長くなると、Cを通る経路が10日となり、公開も1日延びます。</p>
+    <figure id="visual-recalculate" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>案内Cの遅れを変えて公開日を再計算</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-recalculate-title visual-recalculate-desc">
+        <title id="visual-recalculate-title">案内Cの遅れを変えて公開日を再計算</title>
+        <desc id="visual-recalculate-desc">遅れなし、B経由 9日／C経由 7日、全体 9日。Cが1日遅い、B経由 9日／C経由 8日、全体 9日。Cが2日遅い、B経由 9日／C経由 9日、全体 9日・経路は2本。Cが3日遅い、B経由 9日／C経由 10日、全体 10日</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">遅れなし</text>
+<text x="12" y="44" class="small" text-anchor="start">B経由 9日／C経由 7日</text>
+<text x="12" y="62" class="small" text-anchor="start">全体 9日</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">Cが1日遅い</text>
+<text x="177" y="44" class="small" text-anchor="start">B経由 9日／C経由 8日</text>
+<text x="177" y="62" class="small" text-anchor="start">全体 9日</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">Cが2日遅い</text>
+<text x="12" y="120" class="small" text-anchor="start">B経由 9日／C経由 9日</text>
+<text x="12" y="138" class="small" text-anchor="start">全体 9日・経路は2本</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">Cが3日遅い</text>
+<text x="177" y="120" class="small" text-anchor="start">B経由 9日／C経由 10日</text>
+<text x="177" y="138" class="small" text-anchor="start">全体 10日</text>
+      </svg>
+      <p>短縮するときも最長経路を計算し直します。最長経路が二つなら、片方にしかない作業を縮めても、もう一方が残ります。</p>
+    </figure>
+  <p>結合点の<strong>最早開始日</strong>は、開始側から日数を足して求めます。結合点4ではBの終わりが2＋4＝6、Cの終わりが2＋2＝4なので、大きい方の6を選びます。<strong>最遅開始日</strong>は終了側から、完了期限を守れるように逆算します。経過9日からEの1日とDの2日を引くと、結合点4は経過6日までに到達する必要があります。結合点3から4へは0日なので、結合点3も経過6日までに到達すれば間に合います。分岐する結合点を逆算するときは、全ての後続作業に間に合うよう、候補のうち早い時点を選びます。</p>
+    <figure id="visual-float" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>前に足して、後ろから引く</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 137" role="img" aria-labelledby="visual-float-title visual-float-desc">
+        <title id="visual-float-title">前に足して、後ろから引く</title>
+        <desc id="visual-float-desc">結合点3の最早は4、最遅は6で2日の余裕。結合点4は最早と最遅がともに6。</desc>
+        <rect x="2" y="3" width="326" height="130" rx="7" class="panel"/>
+<text x="14" y="25" class="strong blue" text-anchor="start">結合点3 から 結合点4 へ</text>
+<path d="M70 63H254m-6-5 6 5-6 5" class="wire" />
+<text x="70" y="52" class="small" text-anchor="middle">結合点3</text>
+<text x="254" y="52" class="small" text-anchor="middle">結合点4</text>
+<text x="70" y="85" class="small" text-anchor="middle">最早 4 ／ 最遅 6</text>
+<text x="254" y="85" class="small" text-anchor="middle">最早 6 ／ 最遅 6</text>
+<text x="165" y="119" class="strong orange" text-anchor="middle">余裕 ＝ 6 − 4 ＝ 2日</text>
+      </svg>
+      <p>ここでの数字は開始からの経過日数です。経過6日は6日目の終了、または7日目の開始に当たります。</p>
+    </figure>
+  <p>結合点3は最早4日、最遅6日なので、差の<strong>2日</strong>がこの分岐の余裕です。実際の計画で同じ担当者にBとCを割り当てれば、同時に作業できるという前提が崩れます。日程表を作るときは、依存関係と担当者の空きの両方を確認します。</p>
+</section>
+
+<section id="tracking">
+  <h2>ガントチャートで計画と実績を比べる</h2>
+  <p><strong>ガントチャート</strong>は、横軸に日付や期間を取り、作業の開始から終了までを横棒で表します。同じ計画でも、アローダイアグラムは前後関係、ガントチャートは「何日目にどの作業が動くか」を読み取りやすくします。実務のガントチャートには依存関係の矢印を併記することもあります。</p>
+    <figure id="visual-gantt" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ計画をガントチャートにする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 194" role="img" aria-labelledby="visual-gantt-title visual-gantt-desc">
+        <title id="visual-gantt-title">同じ計画をガントチャートにする</title>
+        <desc id="visual-gantt-desc">1〜2日目は要件、3〜6日目は実装、3〜4日目は案内、7〜8日目は受入れ、9日目は公開。9日目の終わりが公開完了の節目。</desc>
+        <rect x="2" y="3" width="326" height="187" rx="7" class="panel"/>
+<path d="M89 29v138" class="wire" />
+<text x="101.5" y="22" class="small" text-anchor="middle">1</text>
+<path d="M114 29v138" class="wire" />
+<text x="126.5" y="22" class="small" text-anchor="middle">2</text>
+<path d="M139 29v138" class="wire" />
+<text x="151.5" y="22" class="small" text-anchor="middle">3</text>
+<path d="M164 29v138" class="wire" />
+<text x="176.5" y="22" class="small" text-anchor="middle">4</text>
+<path d="M189 29v138" class="wire" />
+<text x="201.5" y="22" class="small" text-anchor="middle">5</text>
+<path d="M214 29v138" class="wire" />
+<text x="226.5" y="22" class="small" text-anchor="middle">6</text>
+<path d="M239 29v138" class="wire" />
+<text x="251.5" y="22" class="small" text-anchor="middle">7</text>
+<path d="M264 29v138" class="wire" />
+<text x="276.5" y="22" class="small" text-anchor="middle">8</text>
+<path d="M289 29v138" class="wire" />
+<text x="301.5" y="22" class="small" text-anchor="middle">9</text>
+<path d="M314 29v138" class="wire" />
+<text x="11" y="50" class="small" text-anchor="start">A 要件</text>
+<rect x="91" y="35" width="46" height="20" rx="4" class="blue-fill"/>
+<text x="11" y="77" class="small" text-anchor="start">B 実装</text>
+<rect x="141" y="62" width="96" height="20" rx="4" class="blue-fill"/>
+<text x="11" y="104" class="small" text-anchor="start">C 案内</text>
+<rect x="141" y="89" width="46" height="20" rx="4" class="blue-fill"/>
+<text x="11" y="131" class="small" text-anchor="start">D 受入れ</text>
+<rect x="241" y="116" width="46" height="20" rx="4" class="blue-fill"/>
+<text x="11" y="158" class="small" text-anchor="start">E 公開</text>
+<rect x="291" y="143" width="21" height="20" rx="4" class="blue-fill"/>
+<path d="M314 162l6 6-6 6-6-6z" class="orange-fill" />
+<text x="12" y="181" class="small" text-anchor="start">日数は作業日。◆は公開完了の節目</text>
+      </svg>
+      <p>横軸が作業日、横棒が実施期間です。◆のマイルストーンは完了を確かめる時点で、公開作業Eの横棒とは別です。</p>
+    </figure>
+  <p><strong>マイルストーン</strong>は、例えば「受入れ承認」や「公開完了」のような重要な節目です。「本番への反映を1日かけて行う」のは作業で、「反映を確認して完了した時点」が節目です。全体の主要な成果物や節目をまとめた日程を<strong>マスタスケジュール</strong>といいます。</p>
+    <figure id="visual-progress" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>6日目に計画と実績の差を読む</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 144" role="img" aria-labelledby="visual-progress-title visual-progress-desc">
+        <title id="visual-progress-title">6日目に計画と実績の差を読む</title>
+        <desc id="visual-progress-desc">実装の計画は4日分、6日目終了時の完了作業量は3日分。残り1日分のため受入れが8日目からになり、公開は10日目の見込み。</desc>
+        <rect x="2" y="3" width="326" height="137" rx="7" class="panel"/>
+<text x="12" y="25" class="strong blue" text-anchor="start">B 実装　6日目の終了時点</text>
+<text x="12" y="56" class="small" text-anchor="start">計画</text>
+<rect x="59" y="39" width="37" height="23" rx="4" class="blue-fill"/>
+<rect x="101" y="39" width="37" height="23" rx="4" class="blue-fill"/>
+<rect x="143" y="39" width="37" height="23" rx="4" class="blue-fill"/>
+<rect x="185" y="39" width="37" height="23" rx="4" class="blue-fill"/>
+<text x="241" y="56" class="small" text-anchor="start">4日分</text>
+<text x="12" y="91" class="small" text-anchor="start">実績</text>
+<rect x="59" y="74" width="37" height="23" rx="4" class="orange-fill"/>
+<rect x="101" y="74" width="37" height="23" rx="4" class="orange-fill"/>
+<rect x="143" y="74" width="37" height="23" rx="4" class="orange-fill"/>
+<rect x="185" y="74" width="37" height="23" rx="4" class="panel"/>
+<text x="241" y="91" class="small" text-anchor="start">3日分</text>
+<text x="12" y="126" class="small strong" text-anchor="start">7日目までかかる見込み → 公開は10日目</text>
+      </svg>
+      <p>この例は残り作業を同じペースで進め、作業順も変えない仮定です。着手日や報告の割合だけで判断せず、残作業と次の工程を確認します。</p>
+    </figure>
+  <p>進捗報告では「6日目終了時点で実装が1日分残っている」「7日目に終わる見込み」「そのままだと公開は10日目になる」「担当者の追加や公開範囲の見直しを判断してほしい」のように、基準日、残作業、影響、次の判断を分けます。この例の計画は実装が6日目まで、受入れが7〜8日目、公開が9日目です。</p>
+</section>
+
+<section id="precedence">
+  <h2>プレシデンスダイアグラムで開始と終了を区別する</h2>
+  <p><strong>プレシデンスダイアグラム法</strong>では、作業を四角で表し、作業同士の依存関係を矢印でつなぎます。記号の最初の文字は先行作業、二つ目は後続作業の条件です。Fは終了、Sは開始です。</p>
+    <figure id="visual-precedence" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>どの時点を待つかを4通りで考える</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-precedence-title visual-precedence-desc">
+        <title id="visual-precedence-title">どの時点を待つかを4通りで考える</title>
+        <desc id="visual-precedence-desc">FS　終了 → 開始、実装が終わってから、受入れを開始。SS　開始 → 開始、試行運用が始まってから、問合せの集計を開始。FF　終了 → 終了、試行運用が終わるまでは、集計も完了できない。SF　開始 → 終了、新しい受付が始まるまで、旧受付を終了できない</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">FS　終了 → 開始</text>
+<text x="12" y="44" class="small" text-anchor="start">実装が終わってから</text>
+<text x="12" y="62" class="small" text-anchor="start">受入れを開始</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">SS　開始 → 開始</text>
+<text x="177" y="44" class="small" text-anchor="start">試行運用が始まってから</text>
+<text x="177" y="62" class="small" text-anchor="start">問合せの集計を開始</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">FF　終了 → 終了</text>
+<text x="12" y="120" class="small" text-anchor="start">試行運用が終わるまでは</text>
+<text x="12" y="138" class="small" text-anchor="start">集計も完了できない</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">SF　開始 → 終了</text>
+<text x="177" y="120" class="small" text-anchor="start">新しい受付が始まるまで</text>
+<text x="177" y="138" class="small" text-anchor="start">旧受付を終了できない</text>
+      </svg>
+      <p>例えばSSは、後続作業が先行作業より前に始められない関係です。同時に始めなければいけない、という意味ではありません。</p>
+    </figure>
+  <p>例の「実装完了を待って受入れ開始」はFSです。一方、試行期間中に問い合わせの集計も始められるならSSです。終了が条件か開始が条件かで、重ねて進められる作業が変わります。</p>
+</section>
+<section id="quiz">
+  <h2>例題6問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　二つの経路から全体の日数を出す</h3>
+    <p>上の作業表で、作業を最短で進めた場合の完了までの日数はどれですか。</p>
+    <ol class="options"><li>7日</li><li>8日</li><li>9日</li><li>11日</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ウ　9日</strong></p><p>Aの後、BとCは同時に始められます。Dが待つのは時間が長いBの完了なので、2＋最大(4, 2)＋2＋1＝9日です。11日は並行作業を直列として足した値です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　案内の遅れが公開日に響くか</h3>
+    <p>上の計画からCだけが3日長くなり、所要日数が5日になりました。公開日は何日ずれますか。</p>
+    <ol class="options"><li>1日遅れる</li><li>ずれない</li><li>2日遅れる</li><li>3日遅れる</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ア　1日遅れる</strong></p><p>元のCには2日の余裕があります。延びたC経路は2＋5＋2＋1＝10日となり、B経路の9日を1日超えます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　逆算して最遅開始日を求める</h3>
+    <p>開始を経過0日とします。元の計画で結合点3を経過何日までに通れば9日で公開できますか。</p>
+    <ol class="options"><li>経過2日</li><li>経過4日</li><li>経過5日</li><li>経過6日</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>エ　経過6日</strong></p><p>終点からEの1日、Dの2日、ダミーの0日を引いて、9−1−2−0＝6日です。経過4日はAとCが最も早く終わる時点です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　棒と節目を選ぶ</h3>
+    <p>実装の予定期間と、公開完了の時点を同じ日程表に載せたいとき、適切な組合せはどれですか。</p>
+    <ol class="options"><li>WBSの枝と日数だけ</li><li>ガントチャートの横棒とマイルストーン</li><li>リスク一覧と憲章</li><li>担当者一覧と費用の円グラフ</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>イ　ガントチャートの横棒とマイルストーン</strong></p><p>ガントチャートの横棒が期間を示し、マイルストーンが時点を示します。WBSは作業を階層的に分ける図です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　計画と実績から公開を予測する</h3>
+    <p>6日目が終わった時点で、Bの実装は7日目の終了までかかると見込みました。Cは完了済みで、DとEの順番と期間はそのままです。公開はいつですか。</p>
+    <ol class="options"><li>8日目</li><li>9日目</li><li>10日目</li><li>11日目</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ウ　10日目</strong></p><p>B完了は7日目の終了です。Dの受入れに8・9日目を使い、その後のEを10日目に行います。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　新受付と旧受付の切替を表す</h3>
+    <p>新しい受付が始まる前に、旧受付を止めてはいけません。新受付を先行作業、旧受付を後続作業とすると、関係はどれですか。</p>
+    <ol class="options"><li>SF</li><li>SS</li><li>FF</li><li>FS</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ア　SF</strong></p><p>条件は新受付の開始（S）と旧受付の終了（F）なのでSFです。SSなら旧受付の開始が条件になるので、この切替の説明と合いません。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第8章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=34">IPA「ITパスポート試験シラバス Ver.6.5」プロジェクトマネジメント</a></li>
+      <li><a href="https://www.gao.gov/products/gao-16-89g">米国会計検査院（GAO）「Schedule Assessment Guide」</a></li>
+      <li><a href="https://www.pmi.org/learning/library/critical-path-scheduling-work-breakdown-6212">PMI「Follow the Yellow Brick Road (the Critical Path)」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch08-1-project-management.html">8-1 プロジェクトの計画とリスク管理</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch08"></script>
+</body>
+</html>
