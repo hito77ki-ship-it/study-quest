@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
+  <title id="title">第6章 システム戦略</title>
+  <desc id="description">図書館の本、予約画面と検収チェックのイラスト。</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#151539"/><stop offset="1" stop-color="#293f6a"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#b6c7ff" stroke-opacity=".14"/></pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h640v360H0z"/>
+  <path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <g font-family="system-ui, sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#d4ebff"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#171b38">第6章</text>
+    <text x="38" y="124" font-size="54" fill="#f3f7ff">システム戦略</text>
+    <text x="38" y="155" font-size="21" fill="#d4ebff">図書館の予約を、企画から検収まで</text>
+  </g>
+  <path d="M37 170h565" stroke="#a4b5ff" opacity=".48" stroke-width="2"/>
+  <g stroke="#b9dbff" stroke-width="5" fill="#233258" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M49 222q28-12 64 5 36-17 64-5v91q-26-11-64 7-37-18-64-7zm64 5v92"/>
+    <path d="M64 248q19-3 35 4m-35 15q19-3 35 4m30-19q17-7 34-4m-34 23q17-7 34-4" fill="none"/>
+    <rect x="252" y="214" width="139" height="91" rx="10"/>
+    <path d="M252 237h139m-70 68v15m-35 0h70" fill="none"/>
+    <path d="M274 253h20v18h-20zm36 0h20v18h-20zm36 0h20v18h-20z" fill="#374a86"/>
+    <path d="M312 259l7 6 12-13" fill="none" stroke="#cdff7a"/>
+    <rect x="483" y="216" width="102" height="106" rx="9"/>
+    <path d="M510 213v13h47v-13zm-5 35 6 6 10-12m-16 29 6 6 10-12m-16 28 6 6 10-12m11-39h33m-33 23h33m-33 23h33" fill="none"/>
+  </g>
+  <path d="M190 265h48l-9-8m9 8-9 8m176-8h60l-9-8m9 8-9 8" fill="none" stroke="#cdff7a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

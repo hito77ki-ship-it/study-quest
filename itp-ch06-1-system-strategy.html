@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch06-1-system-strategy.html">
+  <title>ITパスポート 6-1 システム戦略｜スタディクエスト</title>
+  <meta name="description" content="大学図書館の自習室予約を例に、E-R図・DFD・BPMN、BPRとBPM、クラウドの選び方を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 6-1 システム戦略">
+  <meta property="og:description" content="大学図書館の自習室予約を例に、E-R図・DFD・BPMN、BPRとBPM、クラウドの選び方を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch06-1-system-strategy.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 6-1 システム戦略",
+  "description": "大学図書館の自習室予約を例に、E-R図・DFD・BPMN、BPRとBPM、クラウドの選び方を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch06-1-system-strategy.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch06-1-system-strategy.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第6章 システム戦略</p>
+    <h1>ITパスポート 6-1 システム戦略</h1>
+    <p>大学図書館の自習室予約を例に、E-R図・DFD・BPMN、BPRとBPM、クラウドの選び方を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#strategy">情報システム戦略</a></li><li><a href="#process">E-R図・DFD・BPMN</a></li><li><a href="#improvement">業務改善</a></li><li><a href="#solutions">ソリューション</a></li><li><a href="#evaluation">活用促進・評価</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="strategy">
+  <h2>情報システム戦略は、大学の目的から考える</h2>
+  <p>大学図書館で「窓口には列があるのに、別の部屋には空席がある」という状況を考えます。大学の目的を「空いている席を公平に使えるようにする」と置きます。その目的を支える<strong>情報システム戦略</strong>の一例は、窓口とWebで共通の空席情報を使い、どちらから予約しても同じルールを適用することです。具体的な画面や製品は、その方針を決めた後で選びます。</p>
+    <figure id="visual-strategy" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>自習室の混雑から、情報システムの方針を決める</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-strategy-title visual-strategy-desc">
+        <title id="visual-strategy-title">自習室の混雑から、情報システムの方針を決める</title>
+        <desc id="visual-strategy-desc">大学の狙いは公平な利用。記録から行列と空席の併存を見つけ、窓口とWebで同じ予約枠を参照する方針を決める。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">経営・事業の目的</text>
+      <text x="66" y="44" class="" text-anchor="start">自習席を公平に使えるようにする</text>
+      <text x="66" y="62" class="small" text-anchor="start">予約手段による差を減らす</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M3 3v25h27M7 24l7-8 6 3 8-12M23 7h5v5" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">現状の観察</text>
+      <text x="66" y="127" class="" text-anchor="start">窓口に列があり、別の部屋は空席</text>
+      <text x="66" y="145" class="small" text-anchor="start">窓口ごとに空席情報が分かれている</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M2 7l8-4 11 4 9-4v21l-9 5-11-4-8 4V7zm8-4v22m11-18v22" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">情報システム戦略</text>
+      <text x="66" y="210" class="" text-anchor="start">窓口とWebで同じ空席を参照</text>
+      <text x="66" y="228" class="small" text-anchor="start">部門をまたぐ方針を決める</text>
+      </svg>
+      <p>最初に大学として実現したいことを決め、次に業務やデータをどうそろえるかを考えます。</p>
+    </figure>
+  <p><strong>CIO</strong>は情報戦略を担う責任者です。部署ごとに別々の台帳を作ると、ある窓口は速くなっても他の窓口と情報がずれます。<strong>EA（エンタープライズアーキテクチャ）</strong>では、業務、データ、アプリケーション、技術の関係を組織全体で整理し、目指す姿を考えます。図書館の例なら、予約ルール、席番号の定義、窓口画面とWeb画面、両者を支える共通基盤を対応づけます。</p>
+</section>
+
+<section id="process">
+  <h2>業務プロセスは、見たいものに合わせて描く</h2>
+  <p>現状の業務を調べるときは「誰が、何を受け取り、どの順で処理するか」を記録します。モデルは着目点を決めて現実を簡略化したものです。予約の設例を<strong>E-R図、DFD、BPMN</strong>の三つで見比べます。</p>
+    <figure id="visual-models" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ予約を、関係・データ・作業の3方向から描く</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 366" role="img" aria-labelledby="visual-models-title visual-models-desc">
+        <title id="visual-models-title">同じ予約を、関係・データ・作業の3方向から描く</title>
+        <desc id="visual-models-desc">E-R図は利用者1人と予約0件以上の関係。DFDは学生が予約申請を送り、受付処理が予約内容を予約台帳へ書く。BPMNの簡略例は開始、空きの確認、空き有無の分岐、予約登録または別枠案内。</desc>
+      <rect x="1" y="3" width="328" height="88" rx="8" class="panel"/>
+      <text x="12" y="24" class="strong blue" text-anchor="start">E-R図｜利用者と予約の関係</text>
+      <rect x="14" y="36" width="79" height="35" rx="8" class="blue-fill"/>
+      <text x="54" y="59" class="strong" text-anchor="middle">利用者</text>
+      <rect x="237" y="36" width="79" height="35" rx="8" class="blue-fill"/>
+      <text x="276" y="59" class="strong" text-anchor="middle">予約</text>
+      <path d="M93 54h144" class="wire"/>
+      <text x="109" y="47" class="small" text-anchor="start">1</text>
+      <text x="217" y="47" class="small" text-anchor="end">0..*</text>
+      <text x="165" y="81" class="small" text-anchor="middle">1人が0件以上の予約を持つ</text>
+      <rect x="1" y="103" width="328" height="91" rx="8" class="panel"/>
+      <text x="12" y="124" class="strong orange" text-anchor="start">DFD｜予約データの行き先</text>
+      <rect x="13" y="142" width="55" height="29" rx="8" class="panel"/>
+      <text x="40" y="162" class="small" text-anchor="middle">学生</text>
+      <rect x="126" y="140" width="78" height="34" rx="14" class="orange-fill"/>
+      <text x="165" y="162" class="small" text-anchor="middle">受付処理</text>
+      <path d="M257 145h57m-57 27h57" class="wire"/>
+      <text x="285" y="162" class="small" text-anchor="middle">予約台帳</text>
+      <path d="M68 156L124 156M119 152l5 4 -5 4" class="wire"/>
+      <path d="M205 156L253 156M248 152l5 4 -5 4" class="wire"/>
+      <text x="96" y="185" class="small" text-anchor="middle">申請</text>
+      <text x="232" y="185" class="small" text-anchor="middle">予約内容</text>
+      <rect x="1" y="206" width="328" height="157" rx="8" class="panel"/>
+      <text x="12" y="228" class="strong blue" text-anchor="start">BPMN｜作業の流れ（簡略図）</text>
+      <circle cx="24" cy="262" r="11" class="line blue"/>
+      <path d="M36 262L52 262M47 258l5 4 -5 4" class="wire"/>
+      <rect x="54" y="246" width="92" height="32" rx="8" class="blue-fill"/>
+      <text x="100" y="267" class="small" text-anchor="middle">空きの確認</text>
+      <path d="M147 262L164 262M159 258l5 4 -5 4" class="wire"/>
+      <path d="M180 245l16 17-16 17-16-17z" class="line orange"/>
+      <path d="M196 262L229 262M224 258l5 4 -5 4" class="wire"/>
+      <rect x="231" y="246" width="83" height="32" rx="8" class="panel"/>
+      <text x="272" y="267" class="small" text-anchor="middle">予約を登録</text>
+      <text x="215" y="250" class="small" text-anchor="middle">あり</text>
+      <path d="M180 279v46h48" class="wire"/>
+      <path d="M211 325L229 325M224 321l5 4 -5 4" class="wire"/>
+      <rect x="231" y="309" width="83" height="32" rx="8" class="panel"/>
+      <text x="272" y="330" class="small" text-anchor="middle">別の枠を案内</text>
+      <text x="186" y="308" class="small" text-anchor="start">なし</text>
+      <text x="14" y="349" class="small" text-anchor="start">ひし形で空きの有無を分ける</text>
+      </svg>
+      <p>線の意味を見ます。上は実体の関係、中央は移動するデータ、下は仕事の順序と条件分岐です。</p>
+    </figure>
+  <table>
+    <caption>図から答えられる質問</caption>
+    <thead><tr><th scope="col">表し方</th><th scope="col">自習室予約で知りたいこと</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">E-R図</th><td>一人の学生が複数の予約を持てるか。利用者と予約など、データとして扱うものの関係を示す。</td></tr>
+      <tr><th scope="row">DFD</th><td>申請データはどこに入り、何が台帳に記録されるか。処理・データの保存先・外部とのデータの流れを示す。</td></tr>
+      <tr><th scope="row">BPMN</th><td>空きの有無で担当者の作業がどう分かれるか。作業、イベント、分岐などを記号で表す。</td></tr>
+    </tbody>
+  </table>
+  <p>図のE-Rの例では、利用者がまだ一度も予約していない場合もあります。予約から見れば一人の利用者にひも付き、利用者から見れば0件以上です。<strong>1対多</strong>は全員が必ず複数の予約を持つという意味ではありません。利用者と部屋の組合せが多対多でも、「予約」を間に置くと、いつどの部屋を予約したかを記録できます。</p>
+</section>
+
+<section id="improvement">
+  <h2>抜本的な見直しと、日々の改善を分ける</h2>
+  <p>二つの窓口が空席を別々に登録し、担当者が手で突き合わせる仕事を考えます。受付を一本化し、役割やルールも含めて作り直すのは<strong>BPR</strong>の例です。運用を始めてから待ち時間を毎週測り、受付の案内や手順を継続して改善するのは<strong>BPM</strong>です。日報を決まった欄に転記するだけなら<strong>RPA</strong>で定型操作を自動化できます。</p>
+    <figure id="visual-bpr-bpm" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約窓口を見直す4つの仕事</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-bpr-bpm-title visual-bpr-bpm-desc">
+        <title id="visual-bpr-bpm-title">予約窓口を見直す4つの仕事</title>
+        <desc id="visual-bpr-bpm-desc">BPRは受付の仕組みを作り直す。BPMは運用を測って継続改善する。RPAは定型転記を自動化。プロセスマイニングはログから実際の経路を可視化。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M1 13h30L27 4H5l-4 9zm3 1v15h24V14M4 18c3 3 6 3 8 0 3 3 6 3 8 0 3 3 6 3 8 0M11 29v-7h8v7" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">BPR</text>
+      <text x="13" y="65" class="small" text-anchor="start">二重受付を一本化</text>
+      <text x="13" y="85" class="small" text-anchor="start">業務の流れを再設計</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M3 3v25h27M7 24l7-8 6 3 8-12M23 7h5v5" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">BPM</text>
+      <text x="179" y="65" class="small" text-anchor="start">待ち時間を毎週確認</text>
+      <text x="179" y="85" class="small" text-anchor="start">施策を試してまた測る</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">RPA</text>
+      <text x="13" y="170" class="small" text-anchor="start">同じ欄へ毎日転記</text>
+      <text x="13" y="190" class="small" text-anchor="start">決めた操作を自動化</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">ログ分析</text>
+      <text x="179" y="170" class="small" text-anchor="start">受付記録の時刻を追う</text>
+      <text x="179" y="190" class="small" text-anchor="start">実際に通った順を把握</text>
+      </svg>
+      <p>設問では、抜本的な再設計、継続改善、手順の自動実行、実績ログの分析のどれかを見分けます。</p>
+    </figure>
+  <p><strong>ワークフロー</strong>は申請、承認、通知など仕事の流れです。例外の予約を職員が承認する順番をシステムに設定できます。<strong>プロセスマイニング</strong>では、申請ID、処理名、時刻などのログから、実際に申請が通った経路や時間を調べます。例えば「承認→差し戻し→再申請」が多いことはログで分かりますが、差し戻された理由は記録や職員への確認で確かめます。</p>
+  <p>グループウェアで担当表と引き継ぎメモを共有したり、<strong>BYOD</strong>で職員の私物端末を業務に使ったりすることも考えられます。BYODを使う例では、接続できる範囲や紛失時の対応を決めます。座席センサーが空席の信号を別の機器へ自動で送るのは<strong>M2M</strong>の例です。</p>
+  <p>利用状況を別のサービスで生かす場合は、データの扱いも確認します。<strong>PDS</strong>は個人が自分のデータを管理・活用する仕組み、<strong>情報銀行</strong>は本人の関与のもとで第三者への提供を仲介する考え方です。<strong>データ取引市場</strong>はデータの提供者と利用者の取引をつなぎます。予約履歴の外部提供を検討する場合は、利用目的と提供条件を確認します。</p>
+</section>
+
+<section id="solutions">
+  <h2>ソリューションは、何を外部に任せるかで比べる</h2>
+  <p>課題の解決方法は、自分たちで開発する、製品を導入する、外部サービスを使うなど複数あります。既製の予約サービスで要件を満たせるなら、導入と保守を含めて比べます。外部に業務や運用を任せるのは<strong>アウトソーシング</strong>、必要な機器やソフトを組み合わせてシステムを構築するのは<strong>SI（システムインテグレーション）</strong>の例です。</p>
+    <figure id="visual-cloud" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約システムを、どこまで任せる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-cloud-title visual-cloud-desc">
+        <title id="visual-cloud-title">予約システムを、どこまで任せる？</title>
+        <desc id="visual-cloud-desc">オンプレミスは自組織で設備を運用。IaaSは仮想基盤、PaaSは実行環境、SaaSは完成したアプリを利用。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">オンプレミス</text>
+      <text x="13" y="65" class="small" text-anchor="start">大学内に機器を設置</text>
+      <text x="13" y="85" class="small" text-anchor="start">大学が機器も運用</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M7 25a6 6 0 0 1-1-12 10 10 0 0 1 18-2 7 7 0 0 1 1 14H7z" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">IaaS</text>
+      <text x="179" y="65" class="small" text-anchor="start">仮想サーバを借りる</text>
+      <text x="179" y="85" class="small" text-anchor="start">OSやアプリを管理</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M3 19h26v10H3V19zm5 0V9m16 10V9m-12 1a6 6 0 0 1 8 0m-11-3a10 10 0 0 1 14 0m-16 17h2m4 0h2m4 0h2" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">PaaS</text>
+      <text x="13" y="170" class="small" text-anchor="start">実行環境を利用する</text>
+      <text x="13" y="190" class="small" text-anchor="start">予約アプリを載せる</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">SaaS</text>
+      <text x="179" y="170" class="small" text-anchor="start">完成済みの予約を利用</text>
+      <text x="179" y="190" class="small" text-anchor="start">権限や設定を管理</text>
+      </svg>
+      <p>実際の分担は契約やサービスで変わります。提供される範囲を確認し、自分たちが運用する作業を整理します。</p>
+    </figure>
+  <p><strong>ホスティング</strong>では事業者のサーバなどを借り、<strong>ハウジング</strong>では利用者側が用意した機器を事業者の施設に置きます。クラウドは、どの層を使うかというIaaS・PaaS・SaaSと、誰向けに構成されるかというパブリック・プライベート・ハイブリッドなど、分類の軸が異なります。<strong>ASP</strong>はネットワーク経由でアプリケーションを提供する事業者やサービスを指す文脈で使われます。</p>
+    <figure id="visual-soa" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ空き枠照会を、窓口とWebで使う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 192" role="img" aria-labelledby="visual-soa-title visual-soa-desc">
+        <title id="visual-soa-title">同じ空き枠照会を、窓口とWebで使う</title>
+        <desc id="visual-soa-desc">窓口端末とWeb受付が空き枠照会サービスを呼ぶ。予約登録サービスは別の役割を持つ。</desc>
+      <rect x="1" y="3" width="328" height="185" rx="8" class="panel"/>
+      <g transform="translate(45 14)"><path d="M6 4h20v12H6V4zM10 8h12m-12 4h8M3 19h26v10H3V19zm3 5h5m4 0h3m4 0h3" class="line blue"/></g>
+      <text x="61" y="62" class="strong" text-anchor="middle">窓口端末</text>
+      <g transform="translate(252 14)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="268" y="62" class="strong" text-anchor="middle">Web受付</text>
+      <path d="M61 70v12h104m103-12v12H165" class="wire"/>
+      <path d="M165 82L165 105M161 100l4 5 4 -5" class="wire"/>
+      <rect x="16" y="107" width="298" height="30" rx="8" class="blue-fill"/>
+      <text x="165" y="127" class="strong" text-anchor="middle">共通の空き枠照会サービス</text>
+      <rect x="16" y="146" width="298" height="30" rx="8" class="orange-fill"/>
+      <text x="165" y="166" class="small" text-anchor="middle">予約登録サービスは別の機能</text>
+      </svg>
+      <p>サービスとして公開した機能を複数のシステムから再利用する、サービス指向の設計例です。</p>
+    </figure>
+  <p><strong>SOA（サービス指向アーキテクチャ）</strong>では、空き枠の照会や予約登録などの機能をサービスとして組み合わせます。窓口とWebが同じ照会サービスを使えば、空き枠のルールを統一しやすくなります。</p>
+</section>
+
+<section id="evaluation">
+  <h2>使えるように支援し、使われた結果を測る</h2>
+  <p>画面を公開しただけでは、窓口が空くか分かりません。職員が予約取消を処理できるように研修し、学生には操作の案内を出します。デジタル技術を理解して使う力が<strong>デジタルリテラシー</strong>です。端末や操作経験の差による<strong>デジタルディバイド</strong>に配慮し、窓口での支援も用意します。進み具合を示すなどゲームの要素を取り入れる<strong>ゲーミフィケーション</strong>は、案内や学習を補う方法の一つです。</p>
+    <figure id="visual-evaluation" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>導入前後を、同じ測り方で比べる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 163" role="img" aria-labelledby="visual-evaluation-title visual-evaluation-desc">
+        <title id="visual-evaluation-title">導入前後を、同じ測り方で比べる</title>
+        <desc id="visual-evaluation-desc">例示の待ち時間の中央値は導入前12分、導入後7分。横軸の目盛りは4分刻み。</desc>
+      <rect x="1" y="3" width="328" height="157" rx="8" class="panel"/>
+      <text x="14" y="25" class="strong" text-anchor="start">受付の待ち時間（中央値）</text>
+      <text x="14" y="56" class="small" text-anchor="start">導入前</text>
+      <rect x="76" y="43" width="192" height="15" rx="3" class="dot-orange"/>
+      <text x="277" y="56" class="strong orange" text-anchor="start">12分</text>
+      <text x="14" y="93" class="small" text-anchor="start">導入後</text>
+      <rect x="76" y="80" width="112" height="15" rx="3" class="dot-fast"/>
+      <text x="198" y="93" class="strong blue" text-anchor="start">7分</text>
+      <path d="M76 118h192m-192 0v6m64-6v6m64-6v6m64-6v6" class="wire"/>
+      <text x="76" y="144" class="small" text-anchor="middle">0分</text>
+      <text x="140" y="144" class="small" text-anchor="middle">4分</text>
+      <text x="204" y="144" class="small" text-anchor="middle">8分</text>
+      <text x="268" y="144" class="small" text-anchor="middle">12分</text>
+      </svg>
+      <p>例は同じ時間帯の利用者を各20人ずつ記録した想定です。曜日や来館者数、紙の予約の利用状況も合わせて確認します。</p>
+    </figure>
+  <p>導入後は待ち時間だけでなく、完了率、満足度、問い合わせ件数、運用費なども見ます。中央値の5分短縮を観測しても、時期や来館者数が違えば原因は特定できません。古い台帳を刷新するときは、移行すべき履歴、参照が必要な期間、使い終えたデータの処置を整理します。</p>
+</section>
+
+<section id="quiz">
+  <h2>解説つきの自作例題6問</h2>
+  <p>まず自分で選び、解答を開いて、判断に使った条件を確かめます。</p>
+    <section class="box">
+      <h3>第1問　大学の目的とITの方針</h3>
+      <p>自習席を公平に利用できるようにしたい大学が、情報システム戦略として考える内容はどれですか。</p>
+      <ol class="options"><li>窓口とWebで共通の空席情報と予約ルールを使う</li><li>購入する端末の型番だけを決める</li><li>選定済みの画面の色を変える</li><li>納品時に画面が開くかだけを確認する</li></ol>
+      <details><summary>第1問の解答と解説</summary><p><strong>ア　窓口とWebで共通の空席情報と予約ルールを使う</strong></p><p>情報システム戦略は大学の目的を支える方針です。空席情報の共通化は、受付経路による差を減らす目的に結び付きます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　同じ学生の複数予約を表す</h3>
+      <p>利用者1人が0件以上の予約を持ち、各予約は1人の利用者にひも付きます。何で表すと分かりやすいですか。</p>
+      <ol class="options"><li>BPMNの開始イベント</li><li>DFDのデータフロー</li><li>E-R図の1対多</li><li>RPAの操作記録</li></ol>
+      <details><summary>第2問の解答と解説</summary><p><strong>ウ　E-R図の1対多</strong></p><p>知りたいのは利用者と予約の関係です。利用者に対する予約の件数は0件以上で、予約側から見ると利用者は1人です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　データの行き先と作業の順序</h3>
+      <p>申請データが受付処理を経て台帳へ流れる図と、空きの有無で職員の作業が分岐する図を描きます。順に選んでください。</p>
+      <ol class="options"><li>E-R図、DFD</li><li>DFD、BPMN</li><li>BPMN、DFD</li><li>BPMN、E-R図</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>イ　DFD、BPMN</strong></p><p>申請のデータをどこへ渡すかはDFD、条件で仕事を分ける流れはBPMNが適します。E-R図はデータ同士の関係を表します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　受付を一から組み直す</h3>
+      <p>重複登録をなくすために受付を一本化し、部門ごとの役割と予約のルールも作り直します。どれに当たりますか。</p>
+      <ol class="options"><li>日報の転記をRPAで実行</li><li>ログを眺めるだけのプロセスマイニング</li><li>同じ手順を保ってBPMで小さく調整</li><li>業務の仕組みを再構築するBPR</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>エ　業務の仕組みを再構築するBPR</strong></p><p>受付の手順に加えて役割やルールまで見直すので、BPRの例です。RPAは既存の定型操作を自動化する場合に当たります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　予約アプリだけを使う</h3>
+      <p>外部事業者が提供する完成済みの予約アプリを利用し、大学側は利用者の登録と設定を行います。どの形態ですか。</p>
+      <ol class="options"><li>IaaS</li><li>SaaS</li><li>PaaS</li><li>ハウジング</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>イ　SaaS</strong></p><p>完成済みのアプリを利用するのでSaaSです。PaaSではアプリを載せる環境、IaaSでは仮想サーバなどの基盤を利用します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　待ち時間の中央値を比べる</h3>
+      <p>導入前は12分、導入後は7分でした。導入後は来館者数が少ない週でした。どこまで言えますか。</p>
+      <ol class="options"><li>観測した中央値は5分短い。効果の判断には混雑条件も確認する</li><li>誰もが5分短縮した</li><li>新システムが5分短縮させたことを確定できる</li><li>待ち時間は短くなっていない</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>ア　観測した中央値は5分短い。効果の判断には混雑条件も確認する</strong></p><p>12 − 7 ＝ 5分は集計値の差です。個人ごとの差や原因は、この二つの値だけでは分かりません。</p></details>
+    </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第6章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=26">IPA「ITパスポート試験シラバス Ver.6.5」システム戦略・業務プロセス</a></li>
+      <li><a href="https://www.omg.org/spec/BPMN/2.0.2/">OMG「Business Process Model and Notation 2.0.2」</a></li>
+      <li><a href="https://csrc.nist.gov/pubs/sp/800/145/final">NIST SP 800-145「クラウドコンピューティングの定義」</a></li>
+    </ul>
+    <p><a href="itp-ch05-2-ai-iot.html">前の章 5-2 AIの利活用とIoTシステム</a> ／ 次へ <a href="itp-ch06-2-system-planning.html">6-2 システム企画</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch06"></script>
+</body>
+</html>
