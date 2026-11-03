@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
+  <title id="title">第5章 ビジネスインダストリ</title>
+  <desc id="description">レジの販売記録と冷蔵庫のセンサー情報が端末につながるイラスト。</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#091733"/><stop offset="1" stop-color="#103c45"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#94ddff" stroke-opacity=".13"/>
+    </pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h640v360H0z"/>
+  <path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <path d="M38 161h563" stroke="#4ef4c9" stroke-width="2" opacity=".45"/>
+  <g font-family="system-ui, sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#c3ff60"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#071d2b">第5章</text>
+    <text x="38" y="122" font-size="47" fill="#f2ffff">ビジネスインダストリ</text>
+    <text x="38" y="151" font-size="20" fill="#bff3ed">レジ・通販・AI・IoTを図でつなぐ</text>
+  </g>
+  <path d="M212 254h62m92 0h76" fill="none" stroke="#69ffe0" stroke-width="4" stroke-dasharray="8 8"/>
+  <g transform="translate(63 188)" stroke="#85fff0" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M20 0h107v60H20z" fill="#123b50"/>
+    <path d="M31 11h85v34H31z" fill="#071d36"/>
+    <path d="M44 33V23m14 10v-10m10 10v-10m12 10v-10m12 10v-10m10 10v-10" stroke="#c3ff60"/>
+    <path d="M8 70h132v55H8z" fill="#1f5670"/>
+    <path d="M24 87h19m17 0h19m17 0h19m-91 18h19m17 0h19m17 0h19"/>
+  </g>
+  <g transform="translate(281 178)" stroke="#82fff1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="78" height="142" rx="14" fill="#12364a"/>
+    <path d="M10 27h58v88H10z" fill="#071d36"/>
+    <path d="M18 92l14-18 10 7 18-28M29 13h20m-20 114h20" stroke="#c3ff60" fill="none"/>
+  </g>
+  <g transform="translate(451 187)" stroke="#85fff0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="110" height="133" rx="9" fill="#184559"/>
+    <path d="M0 44h110M18 15v16m0 26v24" fill="none"/>
+    <path d="M74 71v38m-18-29 36 20m-36 0 36-20" stroke="#c3ff60"/>
+  </g>
+</svg>
