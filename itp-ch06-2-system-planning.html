@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch06-2-system-planning.html">
+  <title>ITパスポート 6-2 システム企画｜スタディクエスト</title>
+  <meta name="description" content="大学図書館の自習室予約を例に、システム化計画、業務・機能・非機能要件、RFI・RFP、検収を図と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 6-2 システム企画">
+  <meta property="og:description" content="大学図書館の自習室予約を例に、システム化計画、業務・機能・非機能要件、RFI・RFP、検収を図と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch06-2-system-planning.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 6-2 システム企画",
+  "description": "大学図書館の自習室予約を例に、システム化計画、業務・機能・非機能要件、RFI・RFP、検収を図と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch06-2-system-planning.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch06-2-system-planning.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第6章 システム戦略</p>
+    <h1>ITパスポート 6-2 システム企画</h1>
+    <p>大学図書館の自習室予約を例に、システム化計画、業務・機能・非機能要件、RFI・RFP、検収を図と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#planning">システム化計画</a></li><li><a href="#requirements">業務・機能・非機能要件</a></li><li><a href="#procurement">RFI・RFPと調達</a></li><li><a href="#acceptance">受入れ・検収</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="planning">
+  <h2>システム化計画は、対象・順序・費用・担当を決める</h2>
+  <p>前編の方針をもとに、まず大学図書館の自習席を対象にします。<strong>システム化構想</strong>では、空席が窓口ごとに分かれている問題と、予約情報を共有する方向を整理します。<strong>システム化計画</strong>では、対象フロア、着手順、概算費用、担当者、期待する効果とリスクを具体化します。例では1フロアで試し、二重予約が防げるか確かめてから対象を広げます。</p>
+    <figure id="visual-planning" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>「何を変えるか」から「いつ入れるか」まで</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-planning-title visual-planning-desc">
+        <title id="visual-planning-title">「何を変えるか」から「いつ入れるか」まで</title>
+        <desc id="visual-planning-desc">構想で目的と範囲を決め、計画で順序・予算・担当を具体化する。要件定義で満たす条件を合意する。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M2 7l8-4 11 4 9-4v21l-9 5-11-4-8 4V7zm8-4v22m11-18v22" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">システム化構想</text>
+      <text x="66" y="44" class="" text-anchor="start">予約と空き状況をまとめる</text>
+      <text x="66" y="62" class="small" text-anchor="start">対象は図書館の自習席</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">システム化計画</text>
+      <text x="66" y="127" class="" text-anchor="start">1フロアで試験運用を始める</text>
+      <text x="66" y="145" class="small" text-anchor="start">優先順・予算・担当を決める</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">要件定義</text>
+      <text x="66" y="210" class="" text-anchor="start">職員と利用者の条件を詰める</text>
+      <text x="66" y="228" class="small" text-anchor="start">画面や運用を具体的に合意</text>
+      </svg>
+      <p>上流で決めるものは段階によって異なります。例では、まず図書館1フロアを対象にし、試験導入から始めます。</p>
+    </figure>
+  <p>ソフトウェアの<strong>ライフサイクル</strong>は企画から開発、運用、保守、廃棄までを含みます。SLCPはそれらの作業を共通に捉える考え方です。受付開始直前に一斉切替すると混乱しやすいため、試行期間と、障害時に紙へ戻す判断を計画に含めます。</p>
+    <figure id="visual-lifecycle" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>公開後の仕事も、計画に入れる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-lifecycle-title visual-lifecycle-desc">
+        <title id="visual-lifecycle-title">公開後の仕事も、計画に入れる</title>
+        <desc id="visual-lifecycle-desc">運用は日常の監視と問い合わせ対応。保守は修正や機能改良。廃棄時はデータ移行と旧データの処置を確認する。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">運用</text>
+      <text x="66" y="44" class="" text-anchor="start">日々の予約状況を確認</text>
+      <text x="66" y="62" class="small" text-anchor="start">障害や問い合わせに対応</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">保守</text>
+      <text x="66" y="127" class="" text-anchor="start">予約の不具合を修正</text>
+      <text x="66" y="145" class="small" text-anchor="start">必要に応じて機能を改良</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">廃棄・移行</text>
+      <text x="66" y="210" class="" text-anchor="start">必要な履歴を次のシステムへ</text>
+      <text x="66" y="228" class="small" text-anchor="start">古いデータの処置を決める</text>
+      </svg>
+      <p>導入だけを見積もると、運用や廃棄の負担を見落とします。予約データをどう引き継ぐかも先に考えます。</p>
+    </figure>
+  <p>費用は初期費用に加え、利用料、保守、研修、移行などを同じ期間で比較します。次の架空例では案Aの初期費用が大きいものの、3年合計は案Bより3万円少なくなります。</p>
+    <figure id="visual-cost" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>導入時だけでなく、使う期間の費用を比べる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 174" role="img" aria-labelledby="visual-cost-title visual-cost-desc">
+        <title id="visual-cost-title">導入時だけでなく、使う期間の費用を比べる</title>
+        <desc id="visual-cost-desc">3年費用は案Aが導入10万円と年4万円の3年分で22万円。案Bは導入4万円と年7万円の3年分で25万円。</desc>
+      <rect x="1" y="3" width="328" height="168" rx="8" class="panel"/>
+      <text x="12" y="26" class="strong" text-anchor="start">3年の費用（万円）</text>
+      <text x="13" y="56" class="small" text-anchor="start">案A</text>
+      <rect x="59" y="43" width="72" height="17" rx="3" class="dot-fast"/>
+      <rect x="131" y="43" width="86.4" height="17" rx="3" class="dot-orange"/>
+      <text x="226" y="56" class="strong" text-anchor="start">22</text>
+      <text x="13" y="93" class="small" text-anchor="start">案B</text>
+      <rect x="59" y="80" width="28.8" height="17" rx="3" class="dot-fast"/>
+      <rect x="87.8" y="80" width="151.2" height="17" rx="3" class="dot-orange"/>
+      <text x="247" y="93" class="strong" text-anchor="start">25</text>
+      <path d="M59 115h180m-180 0v5m72-5v5m72-5v5m36-5v5" class="wire"/>
+      <text x="239" y="139" class="small" text-anchor="middle">25</text>
+      <text x="59" y="139" class="small" text-anchor="middle">0</text>
+      <text x="131" y="139" class="small" text-anchor="middle">10</text>
+      <text x="203" y="139" class="small" text-anchor="middle">20</text>
+      <rect x="13" y="150" width="12" height="10" rx="2" class="dot-fast"/>
+      <text x="32" y="159" class="small" text-anchor="start">導入時</text>
+      <rect x="101" y="150" width="12" height="10" rx="2" class="dot-orange"/>
+      <text x="120" y="159" class="small" text-anchor="start">運用3年分</text>
+      </svg>
+      <p>この例は税、割引率、追加の移行費を省いた単純比較です。必須要件を満たす案を、同じ期間の費用で比較します。</p>
+    </figure>
+</section>
+
+<section id="requirements">
+  <h2>要件定義は、希望を確認できる条件に変える</h2>
+  <p>利用者の「もっと予約を取りやすく」、職員の「重複予約をなくしたい」という希望を調べます。<strong>業務要件</strong>では、利用者、手順、担当、ルールを定義します。<strong>機能要件</strong>では、システムが何をできるようにするか、<strong>非機能要件</strong>では、性能、可用性、セキュリティ、運用性などの条件を具体化します。</p>
+    <figure id="visual-requirements" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ予約に必要な3種類の要件</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 228" role="img" aria-labelledby="visual-requirements-title visual-requirements-desc">
+        <title id="visual-requirements-title">同じ予約に必要な3種類の要件</title>
+        <desc id="visual-requirements-desc">業務要件は利用ルール。機能要件は予約できる操作。非機能要件は想定負荷での応答性能。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">業務要件</text>
+      <text x="66" y="44" class="" text-anchor="start">学生は1日1枠まで利用</text>
+      <text x="66" y="62" class="small" text-anchor="start">現場で守るルール</text>
+      <rect x="1" y="79" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="92" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 98)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line orange"/></g>
+      <text x="66" y="99" class="strong orange" text-anchor="start">機能要件</text>
+      <text x="66" y="120" class="" text-anchor="start">空席を選んで予約・取消</text>
+      <text x="66" y="138" class="small" text-anchor="start">画面でできること</text>
+      <rect x="1" y="155" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="168" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 174)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line blue"/></g>
+      <text x="66" y="175" class="strong blue" text-anchor="start">非機能要件</text>
+      <text x="66" y="196" class="" text-anchor="start">同時30人で応答の95%が2秒以内</text>
+      <text x="66" y="214" class="small" text-anchor="start">想定負荷で満たす性能</text>
+      </svg>
+      <p>場面・利用者・基準値をそろえると、開発側と受け入れ側が同じ条件で確認できます。</p>
+    </figure>
+  <p>例えば「混んでも速い」だけでは、受入れ時の判断がそろいません。「同時30人が予約操作をした場合、応答の95%が2秒以内」と書き、対象の操作、測定環境、試行回数を合意します。<strong>業務ルール</strong>の「1日1枠」に対し、<strong>機能</strong>では「同じ学生が同日の2枠目を申し込むと拒否して案内を表示する」と決められます。どの条件もこの設例の値です。</p>
+  <table>
+    <caption>聞いた要望を、確かめられる要件にする</caption>
+    <thead><tr><th scope="col">利用者の声</th><th scope="col">条件と確認方法</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">予約が取れたか知りたい</th><td>確定後に席番号と時間を表示する。登録された予約と一致するか照合。</td></tr>
+      <tr><th scope="row">他人の予約情報を守りたい</th><td>一般の学生は自分の予約だけ閲覧できる。別アカウントでアクセスを試す。</td></tr>
+      <tr><th scope="row">通信が切れても窓口を回したい</th><td>手作業へ切り替える責任者、重複防止、復旧後の照合手順を決める。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="procurement">
+  <h2>調達は、情報を集めてから提案を比較する</h2>
+  <p>どんなサービスがあるか分からない段階で、発注側が候補会社に提供範囲や導入実績を聞くのが<strong>RFI（情報提供依頼）</strong>です。方針や要求が具体化したら、発注側が<strong>RFP（提案依頼書）</strong>を作り、同じ条件に対する具体案を求めます。候補会社から戻る<strong>提案書</strong>には構成や実施方法、<strong>見積書</strong>には費用や条件が記されます。</p>
+    <figure id="visual-procurement" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>どの文書を、誰が、何のために出す？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 325" role="img" aria-labelledby="visual-procurement-title visual-procurement-desc">
+        <title id="visual-procurement-title">どの文書を、誰が、何のために出す？</title>
+        <desc id="visual-procurement-desc">発注側のRFIは情報収集、RFPは具体案の依頼。受注候補は提案書・見積書を返す。発注側は比較、契約、検収を行う。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">RFI｜図書館 → 候補会社</text>
+      <text x="66" y="44" class="" text-anchor="start">既存サービスや導入実績を質問</text>
+      <text x="66" y="62" class="small" text-anchor="start">市場の選択肢を調べる</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">RFP｜図書館 → 候補会社</text>
+      <text x="66" y="127" class="" text-anchor="start">条件を示して具体的な案を依頼</text>
+      <text x="66" y="145" class="small" text-anchor="start">同じ条件で提案を受け取る</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">提案書・見積書｜候補会社 → 図書館</text>
+      <text x="66" y="210" class="" text-anchor="start">作り方・体制と費用を提出</text>
+      <text x="66" y="228" class="small" text-anchor="start">要件や評価基準に沿って比較</text>
+      <path d="M33 239L33 250M29 245l4 5 4 -5" class="wire"/>
+      <rect x="1" y="252" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="265" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 271)"><path d="M5 17l7 7L28 7" class="line orange"/></g>
+      <text x="66" y="272" class="strong orange" text-anchor="start">契約・検収</text>
+      <text x="66" y="293" class="" text-anchor="start">合意した条件で納品を確かめる</text>
+      <text x="66" y="311" class="small" text-anchor="start">受け取った後に適合を判定</text>
+      </svg>
+      <p>調達の入口で手段を調べる段階と、共通条件で具体案を比べる段階を分けます。</p>
+    </figure>
+  <p><strong>RFQ（見積依頼）</strong>は、調達する対象や条件が定まっていて、金額などの提示を求める場面です。RFPでは解決方法や体制も比較したいという目的があります。調達方式によって進め方は変わりますが、この例では、提案を見る前に必須条件と評価の観点を決めます。</p>
+  <p>例えば「同じ席に二人が同時に申し込んでも、確定は一件」が必須なら、費用が安くても満たさない提案は選定対象から外します。必須を満たした案は同じ期間の費用、移行方法、問い合わせ対応、データを取り出せるかなどを比べます。<strong>グリーン調達</strong>では、機器の消費電力など環境面の条件も検討します。</p>
+</section>
+
+<section id="acceptance">
+  <h2>受入れ・検収で、契約した条件を実際に確かめる</h2>
+  <p>導入する案が決まったら、作業範囲、費用、納品物、検収条件などを契約で合意します。納品されたら、受入れの確認を行い、要求どおりかを<strong>検収</strong>で判定します。試験は「画面が開くか」だけでなく、同時予約、性能、権限、障害時の案内など約束した条件ごとに記録します。</p>
+    <figure id="visual-acceptance" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>納品を受けたら、約束した条件を試す</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-acceptance-title visual-acceptance-desc">
+        <title id="visual-acceptance-title">納品を受けたら、約束した条件を試す</title>
+        <desc id="visual-acceptance-desc">同時予約では一人だけ成功。応答性能は合意した条件で測定。権限は他の利用者の予約が見えないことを確認。結果を残し不一致なら修正後に再試験。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">予約</text>
+      <text x="13" y="65" class="small" text-anchor="start">同じ席に同時に申請</text>
+      <text x="13" y="85" class="small" text-anchor="start">成立は1人だけ</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">性能</text>
+      <text x="179" y="65" class="small" text-anchor="start">同時30人で測定</text>
+      <text x="179" y="85" class="small" text-anchor="start">95%が2秒以内</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M5 14h22v14H5V14zm4 0V9a7 7 0 0 1 14 0v5m-7 6v3" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">権限</text>
+      <text x="13" y="170" class="small" text-anchor="start">別の学生でログイン</text>
+      <text x="13" y="190" class="small" text-anchor="start">他人の予約は見えない</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M5 17l7 7L28 7" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">結果</text>
+      <text x="179" y="170" class="small" text-anchor="start">測定値と画面を保存</text>
+      <text x="179" y="190" class="small" text-anchor="start">不一致は再確認</text>
+      </svg>
+      <p>画面が開くことと、約束した条件を満たすことは別の確認項目です。結果を証拠と一緒に残します。</p>
+    </figure>
+  <p>同じ席への同時予約で両方が確定したら、条件を満たしていません。再現した操作、期待した結果、実際の結果を残し、合意した方法で修正と再試験を進めます。引き渡すのは画面だけでなく、職員向けの手順、問い合わせ窓口、必要なデータの出力方法も含めて考えます。</p>
+</section>
+
+<section id="quiz">
+  <h2>解説つきの自作例題6問</h2>
+  <p>まず自分で選び、解答を開いて、判断に使った条件を確かめます。</p>
+    <section class="box">
+      <h3>第1問　1フロアから順に導入する</h3>
+      <p>予約システムを最初に1フロアで導入し、費用・担当・次に広げる時期を整理します。主にどの段階ですか。</p>
+      <ol class="options"><li>納品後の検収</li><li>システム化計画</li><li>運用開始後の保守</li><li>RFIへの回答</li></ol>
+      <details><summary>第1問の解答と解説</summary><p><strong>イ　システム化計画</strong></p><p>対象、導入順、概算費用、体制を決めるのはシステム化計画です。検収では契約した条件が実際に満たされたかを確かめます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　使い続ける費用を比べる</h3>
+      <p>案Aは初期10万円と年4万円、案Bは初期4万円と年7万円です。他の条件が同じ場合、3年の合計はどうなりますか。</p>
+      <ol class="options"><li>案Aが22万円、案Bが25万円で案Aが3万円少ない</li><li>案Aが14万円、案Bが11万円で案Bが3万円少ない</li><li>案Aが22万円、案Bが25万円で案Bが3万円少ない</li><li>初期費用の差だけを比べればよい</li></ol>
+      <details><summary>第2問の解答と解説</summary><p><strong>ア　案Aが22万円、案Bが25万円で案Aが3万円少ない</strong></p><p>案Aは10＋4×3＝22万円、案Bは4＋7×3＝25万円です。運用期間をそろえると初期費用とは比較結果が変わります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　予約画面の速さを約束する</h3>
+      <p>「同時30人で予約操作を行い、応答の95%が2秒以内」という条件は、どの要件ですか。</p>
+      <ol class="options"><li>利用者の範囲を定める業務要件</li><li>予約を取り消す機能要件</li><li>応答時間を定める非機能要件</li><li>候補会社に送るRFI</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>ウ　応答時間を定める非機能要件</strong></p><p>予約できることは機能、どの条件でどの速さを求めるかは性能の非機能要件です。測定する環境もそろえます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　市場調査と提案依頼を区別する</h3>
+      <p>候補会社から既存サービスの情報を集めた後、共通条件を示して具体的な導入案の提出を求めます。依頼文書の順番はどれですか。</p>
+      <ol class="options"><li>RFP、RFI</li><li>見積書、提案書</li><li>提案書、RFQ</li><li>RFI、RFP</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>エ　RFI、RFP</strong></p><p>情報を集めるためのRFIを行い、その情報も使って具体案を求めるRFPを作ります。提案書は候補会社が発注側へ提出します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　必須の条件を外さない</h3>
+      <p>重複予約防止を必須としました。A社は最安ですが未対応、B社は対応しています。どう評価しますか。</p>
+      <ol class="options"><li>価格だけを見てA社を選ぶ</li><li>必須条件に沿って評価し、B社の費用や運用も確認する</li><li>両社を同点にする</li><li>契約後まで重複予約について聞かない</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>イ　必須条件に沿って評価し、B社の費用や運用も確認する</strong></p><p>必須条件と比較評価項目を分けます。必須に適合した案について、同じ条件で費用や運用を評価します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　納品された予約機能を確かめる</h3>
+      <p>契約では同じ席に同時申請しても確定は1件としました。受入れ試験で2件とも確定したときに行うのはどれですか。</p>
+      <ol class="options"><li>再現手順と期待・実際の結果を記録して修正と再試験を行う</li><li>ページが表示されたので合格とする</li><li>見積書の価格だけ確認する</li><li>検収記録に期待した結果だけを書く</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>ア　再現手順と期待・実際の結果を記録して修正と再試験を行う</strong></p><p>合意済みの条件に対する不一致を記録します。修正後も同じ手順で再試験すれば、条件を満たしたかを比較できます。</p></details>
+    </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第6章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=29">IPA「ITパスポート試験シラバス Ver.6.5」システム企画・調達</a></li>
+      <li><a href="https://www.ipa.go.jp/digital/kaihatsu/link/planning.html">IPA「企画」非機能要求グレードと要件定義</a></li>
+      <li><a href="https://www.digital.go.jp/procurement/introduction">デジタル庁「政府調達に参加を検討されている皆様へ」</a></li>
+      <li><a href="https://www.digital.go.jp/resources/standard_guidelines">デジタル庁「デジタル社会推進標準ガイドライン」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch06-1-system-strategy.html">6-1 システム戦略</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch06"></script>
+</body>
+</html>
