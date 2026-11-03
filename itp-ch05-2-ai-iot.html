@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch05-2-ai-iot.html">
+  <title>ITパスポート 5-2 AIの利活用とIoTシステム｜スタディクエスト</title>
+  <meta name="description" content="売り場のAIと冷蔵庫の遠隔監視を例に、教師あり学習・ハルシネーション・センサー・組込み制御を図と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 5-2 AIの利活用とIoTシステム">
+  <meta property="og:description" content="売り場のAIと冷蔵庫の遠隔監視を例に、教師あり学習・ハルシネーション・センサー・組込み制御を図と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch05-2-ai-iot.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 5-2 AIの利活用とIoTシステム",
+  "description": "売り場のAIと冷蔵庫の遠隔監視を例に、教師あり学習・ハルシネーション・センサー・組込み制御を図と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch05-2-ai-iot.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch05-2-ai-iot.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第5章 ビジネスインダストリ</p>
+    <h1>ITパスポート 5-2 AIの利活用とIoTシステム</h1>
+    <p>売り場のAIと冷蔵庫の遠隔監視を例に、教師あり学習・ハルシネーション・センサー・組込み制御を図と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#ai">AIの用途と学習</a></li><li><a href="#responsible">出力確認と公平性</a></li><li><a href="#iot">IoTと組込み制御</a></li><li><a href="#devices">AR・VR・MRとMaaS</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="ai">
+  <h2>AIの利活用　分類する、予測する、案内を作る</h2>
+  <p>学園祭の売り場で、写真から商品の種類を判別する、過去の販売記録から翌日の販売数を予測する、案内文のたたき台を作る。どれもAIの活用例ですが、担当させる仕事が違います。まず<strong>入力に何を渡し、出力から何を判断したいか</strong>を考えます。</p>
+    <figure id="visual-ai-tasks" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>同じ売り場で、AIに何を頼む？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-ai-tasks-title visual-ai-tasks-desc">
+        <title id="visual-ai-tasks-title">同じ売り場で、AIに何を頼む？</title>
+        <desc id="visual-ai-tasks-desc">画像認識は写真から判別、予測は将来の数値、生成は新しい文案、マルチモーダルは複数形式の情報を扱う。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M2 4h28v24H2V4zm3 21 8-11 6 7 4-5 4 9M24 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">認識</text>
+      <text x="13" y="65" class="small" text-anchor="start">写真 → 焼き菓子を分類</text>
+      <text x="13" y="85" class="small" text-anchor="start">何が写っているか</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M3 3v25h27M7 24l7-8 6 3 8-12M23 7h5v5" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">予測</text>
+      <text x="179" y="65" class="small" text-anchor="start">売上履歴 → 翌日の数</text>
+      <text x="179" y="85" class="small" text-anchor="start">どれだけ売れそうか</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">生成</text>
+      <text x="13" y="170" class="small" text-anchor="start">条件 → 店頭案内の文案</text>
+      <text x="13" y="190" class="small" text-anchor="start">何と書くか</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">マルチモーダル</text>
+      <text x="179" y="170" class="small" text-anchor="start">写真＋文 → 店の説明</text>
+      <text x="179" y="190" class="small" text-anchor="start">異なる種類の情報を扱う</text>
+      </svg>
+      <p>用途と入力・出力をセットで覚えます。写真と文章を扱う仕組みはマルチモーダルで、生成AIと重なることがあります。</p>
+    </figure>
+  <p><strong>特化型AI</strong>は画像分類や需要予測など、特定の課題を扱うシステムです。<strong>汎用AI</strong>は幅広い課題を横断して対応できる知能の考え方で、対話画面で多くの話題を扱えることだけで達成したとは言えません。<strong>生成AI</strong>は文章・画像などを生成します。<strong>マルチモーダルAI</strong>は文章や画像など異なる種類の情報を扱うので、写真と文章から説明文を生成する仕組みは両方の特徴を持てます。</p>
+  <h3 id="training">教師あり、教師なし、強化学習を見分ける</h3>
+  <p>同じ模擬店のデータでも、学習時に渡すものが違います。実際の売上など答えと組にして傾向を学ばせるのは<strong>教師あり学習</strong>。答えのラベルなしで似た注文をまとめるのは<strong>教師なし学習</strong>。行動の結果に応じた報酬を使い、将来まで考えて望ましい行動の選び方を学ぶのは<strong>強化学習</strong>です。</p>
+    <figure id="visual-learning" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>AIは、何を手がかりに学ぶ？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 228" role="img" aria-labelledby="visual-learning-title visual-learning-desc">
+        <title id="visual-learning-title">AIは、何を手がかりに学ぶ？</title>
+        <desc id="visual-learning-desc">教師あり学習は入力と正解の組、教師なし学習は正解ラベルなしのデータ、強化学習は行動の結果の報酬を手がかりにする。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M5 17l7 7L28 7" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">教師あり学習</text>
+      <text x="66" y="44" class="" text-anchor="start">注文と実際の受取時刻の組</text>
+      <text x="66" y="62" class="small" text-anchor="start">過去の正解つきで所要時間を学ぶ</text>
+      <rect x="1" y="79" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="92" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 98)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line orange"/></g>
+      <text x="66" y="99" class="strong orange" text-anchor="start">教師なし学習</text>
+      <text x="66" y="120" class="" text-anchor="start">来場者の注文の傾向だけ</text>
+      <text x="66" y="138" class="small" text-anchor="start">似た注文パターンにまとめる</text>
+      <rect x="1" y="155" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="168" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 174)"><path d="M2 5h4l3 16h17l4-12H8M12 27a2 2 0 1 0 .1 0M24 27a2 2 0 1 0 .1 0" class="line blue"/></g>
+      <text x="66" y="175" class="strong blue" text-anchor="start">強化学習</text>
+      <text x="66" y="196" class="" text-anchor="start">台車の行動ごとに報酬を与える</text>
+      <text x="66" y="214" class="small" text-anchor="start">衝突を避け、荷物を運ぶ行動を学ぶ</text>
+      </svg>
+      <p>「予測・分類・制御」という見た目だけで選ぶ前に、学習時に与える情報を見ます。強化学習の例は台車のシミュレーションです。</p>
+    </figure>
+  <p>翌日の販売数を予測するなら、その時点で知ることができる情報を入力にします。当日の閉店時点の売上を予測の入力に混ぜると、試しに出した成績が良くても本番で使えません。過去の日付で学習し、後の日付で試すなど、学習用と評価用を分けます。</p>
+</section>
+
+<section id="responsible">
+  <h2>人間中心のAI　出力をどこで確かめるか決める</h2>
+  <p>店の閉店時刻を、生成AIが本当らしい文章で誤って書くことがあります。こうした事実に反する出力は<strong>ハルシネーション</strong>の例です。公式の当日表や担当者の確認をもとに修正します。同じ依頼でも生成結果は変わり得るので、文面だけで判断せず根拠を開きます。</p>
+    <figure id="visual-ai-review" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>案内文を公開する前に、どこを確かめる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-ai-review-title visual-ai-review-desc">
+        <title id="visual-ai-review-title">案内文を公開する前に、どこを確かめる？</title>
+        <desc id="visual-ai-review-desc">生成AIの文案に閉店17時とあったが、公式の運営表は16時。担当者が原資料を開き、正しい時刻に直して公開する。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">① AIの出力</text>
+      <text x="66" y="44" class="" text-anchor="start">「17時まで営業」と文案を生成</text>
+      <text x="66" y="62" class="small" text-anchor="start">もっともらしく見える</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">② 一次資料</text>
+      <text x="66" y="127" class="" text-anchor="start">運営側の当日表は16時終了</text>
+      <text x="66" y="145" class="small" text-anchor="start">公開前に人が原本と照合</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">③ 担当者の判断</text>
+      <text x="66" y="210" class="" text-anchor="start">案内を16時終了に修正</text>
+      <text x="66" y="228" class="small" text-anchor="start">チェック担当が公開を承認</text>
+      </svg>
+      <p>HITLは、人が判断の流れに入り介入する考え方です。この例では担当者が確認し、修正や差し戻しを決めます。</p>
+    </figure>
+  <p><strong>XAI（説明可能なAI）</strong>は、予測にどんな要因が影響したかを理解しやすくする考え方です。たとえば雨天やイベント時刻が売上予測を押し下げたと示せても、それだけで原因と証明できるわけではありません。<strong>HITL（ヒューマンインザループ）</strong>では、例外を人が見直し、修正や取り消しをできるように運用へ組み込みます。</p>
+  <h3 id="fairness">平均だけで決めず、使う場面ごとに確かめる</h3>
+  <p>午前の記録に偏った学習データを使うと、午後の注文を扱う場面で成績が落ちる可能性があります。入力の偏りや評価の設計、モデルや運用ルールを調べます。例えば別に用意した検証データで「5分以内に受け取れるか」を予測し、実際に一致した件数を時間帯で比べます。</p>
+    <figure id="visual-bias" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>午前のデータだけで、午後まで当てられる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 191" role="img" aria-labelledby="visual-bias-title visual-bias-desc">
+        <title id="visual-bias-title">午前のデータだけで、午後まで当てられる？</title>
+        <desc id="visual-bias-desc">午前の検証は20件中18件が一致して90パーセント。午後の検証は20件中10件が一致して50パーセント。</desc>
+      <rect x="1" y="3" width="328" height="183" rx="8" class="panel"/>
+      <text x="16" y="30" class="strong" text-anchor="start">予測と実績が一致した件数</text>
+      <text x="16" y="60" class="small" text-anchor="start">午前　18 / 20件</text>
+      <text x="311" y="60" class="strong blue" text-anchor="end">90%</text>
+      <rect x="16" y="70" width="295" height="14" rx="3" class="dot-other"/>
+      <rect x="16" y="70" width="265.5" height="14" rx="3" class="dot-fast"/>
+      <text x="16" y="116" class="small" text-anchor="start">午後　10 / 20件</text>
+      <text x="311" y="116" class="strong orange" text-anchor="end">50%</text>
+      <rect x="16" y="126" width="295" height="14" rx="3" class="dot-other"/>
+      <rect x="16" y="126" width="147.5" height="14" rx="3" class="dot-orange"/>
+      <text x="16" y="166" class="small" text-anchor="start">枠全体が20件、塗った長さが一致した割合</text>
+      </svg>
+      <p>同じ20件ずつの仮の検証結果です。時間帯で正解率を分けると、まとめた70%では見えにくい弱点に気付けます。この差だけで原因は決められません。</p>
+    </figure>
+  <table>
+    <caption>人間中心の考え方を売り場の判断に置き換える</caption>
+    <thead><tr><th scope="col">観点</th><th scope="col">公開・利用前に確かめること</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">安全性・人間中心</th><td>アレルギー案内は食材表と照合し、担当者が確認できない場合は保留する。</td></tr>
+      <tr><th scope="row">公平性</th><td>時間帯や客層ごとに結果を見て、どの場面で誤りが増えるか確かめる。</td></tr>
+      <tr><th scope="row">透明性・説明責任</th><td>何にAIを使ったか、誰が確認し、誤りがあればどこへ連絡するかを示す。</td></tr>
+      <tr><th scope="row">プライバシー・権利</th><td>予約者の連絡先や第三者の著作物を、必要性や利用条件を確認せず入力しない。</td></tr>
+    </tbody>
+  </table>
+  <p>実在人物の声や映像らしく見せる<strong>ディープフェイク</strong>も、出所や内容を別の資料で確認します。「AIが答えた」ことと「公開内容に根拠があり、誰が責任を持つか説明できる」ことを分けます。</p>
+</section>
+
+<section id="iot">
+  <h2>IoTと組込みシステム　冷蔵庫を測る、知らせる、動かす</h2>
+  <p>離れた場所から冷蔵庫の状態を確認する例で考えます。<strong>IoT（モノのインターネット）</strong>は、身の回りの機器などをネットワークにつないでデータをやり取りし、監視や制御などに生かす考え方です。温度を取得するのは<strong>センサー</strong>。この店の例では、ゲートウェイを経由してクラウドに送り、範囲を外れたときに担当者へ知らせます。</p>
+    <figure id="visual-iot" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>冷蔵庫の温度が、手元の画面に届くまで</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 325" role="img" aria-labelledby="visual-iot-title visual-iot-desc">
+        <title id="visual-iot-title">冷蔵庫の温度が、手元の画面に届くまで</title>
+        <desc id="visual-iot-desc">センサーが温度を測り、ゲートウェイ経由でクラウドに送り、担当者のスマートフォンが通知する。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M5 3h22v26H5V3zm5 5h12v7H10V8zm4 14h4m-8 0h1m10 0h1" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">① センサー｜測る</text>
+      <text x="66" y="44" class="" text-anchor="start">冷蔵庫内の温度を取得</text>
+      <text x="66" y="62" class="small" text-anchor="start">例：14時10分、8℃</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M3 19h26v10H3V19zm5 0V9m16 10V9m-12 1a6 6 0 0 1 8 0m-11-3a10 10 0 0 1 14 0m-16 17h2m4 0h2m4 0h2" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">② ゲートウェイ｜中継する</text>
+      <text x="66" y="127" class="" text-anchor="start">機器のデータをネットへ送る</text>
+      <text x="66" y="145" class="small" text-anchor="start">冷蔵庫の横に置いた中継機</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M7 25a6 6 0 0 1-1-12 10 10 0 0 1 18-2 7 7 0 0 1 1 14H7z" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">③ クラウド｜記録する</text>
+      <text x="66" y="210" class="" text-anchor="start">時刻と温度を履歴に残す</text>
+      <text x="66" y="228" class="small" text-anchor="start">この設例では決めた範囲と比較</text>
+      <path d="M33 239L33 250M29 245l4 5 4 -5" class="wire"/>
+      <rect x="1" y="252" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="265" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 271)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line orange"/></g>
+      <text x="66" y="272" class="strong orange" text-anchor="start">④ 通知｜人に知らせる</text>
+      <text x="66" y="293" class="" text-anchor="start">担当者のスマホに警告</text>
+      <text x="66" y="311" class="small" text-anchor="start">扉が開いたままか現地で確認</text>
+      </svg>
+      <p>測定するセンサーと、機器を動かすアクチュエータを分けます。この図の通知は見張る機能で、冷蔵庫の制御とは別の流れです。</p>
+    </figure>
+  <p><strong>アクチュエータ</strong>は制御信号を物理的な動きに変える装置です。たとえば制御装置の信号で回るファンのモーターです。<strong>組込みシステム</strong>は家電や機械の中に組み込まれ、製品の機能を担います。炊飯器が測温し、ヒーターを調整する例なら、ネットに接続しなくても組込みシステムとして働けます。</p>
+    <figure id="visual-embedded" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>Wi-Fiが切れると、何が止まる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-embedded-title visual-embedded-desc">
+        <title id="visual-embedded-title">Wi-Fiが切れると、何が止まる？</title>
+        <desc id="visual-embedded-desc">庫内の組込み制御はセンサーとアクチュエータを使う。別のネット監視は通信断で更新されなくなる場合がある。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M5 3h22v26H5V3zm5 5h12v7H10V8zm4 14h4m-8 0h1m10 0h1" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">センサー</text>
+      <text x="13" y="65" class="small" text-anchor="start">庫内で温度を測る</text>
+      <text x="13" y="85" class="small" text-anchor="start">物理量をデータにする</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 16q-8-8 0-9 6 1 0 9 11-2 7 5-5 5-7-5-3 11-8 5-2-6 8-5" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">アクチュエータ</text>
+      <text x="179" y="65" class="small" text-anchor="start">制御に従いファンが回る</text>
+      <text x="179" y="85" class="small" text-anchor="start">信号を動作にする</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">組込み制御</text>
+      <text x="13" y="170" class="small" text-anchor="start">機器内で動作を決める</text>
+      <text x="13" y="190" class="small" text-anchor="start">通信が切れても制御</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line orange"/></g>
+      <text x="215" y="139" class="small strong orange" text-anchor="start">IoTの遠隔監視</text>
+      <text x="179" y="170" class="small" text-anchor="start">ネット越しに状況を共有</text>
+      <text x="179" y="190" class="small" text-anchor="start">通信断で更新が止まる</text>
+      </svg>
+      <p>図は庫内制御が単独で動く設計を仮定しています。通信が必要な機能と機器内で完結する機能を切り分け、スマホでは最後の受信時刻も見ます。</p>
+    </figure>
+  <p>クラウドへの通信が止まると、最後の温度がそのまま画面に残ることがあります。現地の表示と<strong>最終受信時刻</strong>を照合し、古い値が正常に見える設計を避けます。通知用のネットワークが止まっても現地で確認できるようにし、初期パスワードの見直しやソフト更新、必要な接続先の制限も検討します。</p>
+  <p><strong>スマートメーター</strong>は電力などの使用量を計測し、通信機能を持つ計量器です。<strong>HEMS</strong>は家庭のエネルギーの見える化や機器の制御を行う仕組みです。測定する機器と、複数の機器や使用量を管理する仕組みを区別します。腕時計型の<strong>ウェアラブル端末</strong>や音声で操作するスマートスピーカーも、ネット接続や処理を組み合わせる応用例です。</p>
+</section>
+
+<section id="devices">
+  <h2>身近な応用　会場案内と会場までの移動</h2>
+  <p>同じ会場の案内でも、いま見ている風景に案内を重ねる<strong>AR（拡張現実）</strong>と、作った仮想会場の中を体験する<strong>VR（仮想現実）</strong>では見えている世界が異なります。<strong>MR（複合現実）</strong>の例として、現実の机や床を認識し、仮想の看板をその場に置いたように見せる装置があります。</p>
+    <figure id="visual-xr" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>会場案内を見るとき、現実はどう見える？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-xr-title visual-xr-desc">
+        <title id="visual-xr-title">会場案内を見るとき、現実はどう見える？</title>
+        <desc id="visual-xr-desc">ARは見えている会場に情報を重ねる。VRは仮想会場を体験。MRは認識した床や壁に仮想の物を合わせる例。ドローンは上空から混雑を撮る。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">AR</text>
+      <text x="13" y="65" class="small" text-anchor="start">実景に矢印を重ねる</text>
+      <text x="13" y="85" class="small" text-anchor="start">目の前の会場が見える</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M2 11h28l-3 13h-8l-3-5-3 5H5l-3-13zm3 0 2-6m20 6-2-6M7 16h5m8 0h5" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">VR</text>
+      <text x="179" y="65" class="small" text-anchor="start">仮想の会場内を見回す</text>
+      <text x="179" y="85" class="small" text-anchor="start">会場に行く前に体験</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M2 11h28l-3 13h-8l-3-5-3 5H5l-3-13zm3 0 2-6m20 6-2-6M7 16h5m8 0h5" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">MR</text>
+      <text x="13" y="170" class="small" text-anchor="start">床に仮想の机を置く</text>
+      <text x="13" y="190" class="small" text-anchor="start">歩くと別の角度で見る</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M2 4h28v24H2V4zm3 21 8-11 6 7 4-5 4 9M24 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">ドローン</text>
+      <text x="179" y="170" class="small" text-anchor="start">上空から混雑を撮影</text>
+      <text x="179" y="190" class="small" text-anchor="start">撮影・点検などに利用</text>
+      </svg>
+      <p>ARとMRの境界は機器や用語の使い方によって重なることがあります。この比較では、現実空間に仮想物の位置を合わせる例をMRとして扱います。</p>
+    </figure>
+  <p><strong>コネクテッドカー</strong>は通信で外部とつながる車です。<strong>自動運転</strong>は、周囲の情報などに基づいて運転操作をシステムが担う仕組みで、どこまで担うかはレベルや走行条件で変わります。通信だけで自動運転とは判断できません。<strong>MaaS</strong>は車両の機能ではなく、電車やバスなど異なる移動サービスを組み合わせ、検索・予約・決済などをまとめて提供する考え方です。</p>
+    <figure id="visual-maas" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>会場に向かう車両と、移動サービスの違い</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 228" role="img" aria-labelledby="visual-maas-title visual-maas-desc">
+        <title id="visual-maas-title">会場に向かう車両と、移動サービスの違い</title>
+        <desc id="visual-maas-desc">コネクテッドカーは通信する車。自動運転は走行操作に関する機能。MaaSは鉄道やバスなどをまとめて検索・予約・決済するサービス。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M2 16l4-3 4-7h12l4 7 4 3v10H2V16zm4-3h20M7 21h3m12 0h3M5 26v3m22-3v3" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">コネクテッドカー</text>
+      <text x="66" y="44" class="" text-anchor="start">車がネットとつながる</text>
+      <text x="66" y="62" class="small" text-anchor="start">混雑や車両状態の情報を送受信</text>
+      <rect x="1" y="79" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="92" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 98)"><path d="M2 16l4-3 4-7h12l4 7 4 3v10H2V16zm4-3h20M7 21h3m12 0h3M5 26v3m22-3v3" class="line orange"/></g>
+      <text x="66" y="99" class="strong orange" text-anchor="start">自動運転</text>
+      <text x="66" y="120" class="" text-anchor="start">車が周囲を認識して走行を制御</text>
+      <text x="66" y="138" class="small" text-anchor="start">使える機能や条件は方式による</text>
+      <rect x="1" y="155" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="168" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 174)"><path d="M5 6a3 3 0 0 1 3-3h16a3 3 0 0 1 3 3v19H5V6zm0 9h22M9 20h2m10 0h2M8 25v4m16-4v4" class="line blue"/></g>
+      <text x="66" y="175" class="strong blue" text-anchor="start">MaaS</text>
+      <text x="66" y="196" class="" text-anchor="start">電車＋バスを一つの窓口で手配</text>
+      <text x="66" y="214" class="small" text-anchor="start">経路検索・予約・決済をつなげる</text>
+      </svg>
+      <p>車が通信すること、車が走行を制御すること、利用者が乗り継ぎをまとめて手配することは、それぞれ別の論点です。</p>
+    </figure>
+  <p><strong>CASE</strong>は自動車分野の動向を、つながる車（Connected）、自動運転（Autonomous）、共有・サービス（Shared &amp; Services）、電動化（Electric）の四つで捉える言葉です。スマホで会場行きの電車とバスをまとめて手配する事例はMaaS、車そのものの動向を四つに整理した話はCASEと、問われている対象を確認します。</p>
+</section>
+
+<section id="quiz">
+  <h2>解説つきの自作例題6問</h2>
+  <p>まず自分で選び、解答を開いて、判断に使った条件を確かめます。</p>
+    <section class="box">
+      <h3>第1問　正解つきの記録で時間を予測</h3>
+      <p>過去の注文内容に実際の受取所要時間を組み合わせ、初めての注文でも時間を見積もれるように学ばせます。どの学習方法ですか。</p>
+      <ol class="options"><li>教師なし学習</li><li>教師あり学習</li><li>強化学習</li><li>HITL</li></ol>
+      <details><summary>第1問の解答と解説</summary><p><strong>イ　教師あり学習</strong></p><p>注文情報に、学習で目標にする実績の時間が付いています。正解を付けずに似た注文にまとめるなら教師なし学習です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　閉店時刻を確かめる</h3>
+      <p>AIは17時までと回答し、主催者の当日表は16時までとしています。案内の担当者はどう判断しますか。</p>
+      <ol class="options"><li>AIの文章が読みやすいのでそのまま掲載</li><li>AIに同じ質問をして同じなら掲載</li><li>当日表の対象日・会場を照合し、必要に応じ主催者へ確認して修正</li><li>AIの利用を明記すれば内容は17時でよい</li></ol>
+      <details><summary>第2問の解答と解説</summary><p><strong>ウ　当日表の対象日・会場を照合し、必要に応じ主催者へ確認して修正</strong></p><p>一次資料が示す日時と会場を確認し、必要なら主催者に問い合わせます。AIの回答を再現できても、事実の裏付けにはなりません。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　全体の成績に隠れた違い</h3>
+      <p>20件ずつ検証し、午前は18件、午後は10件が正解でした。データから言えることはどれですか。</p>
+      <ol class="options"><li>全体が70%なので各時間帯も70%</li><li>午前90%と午後50%で差があり、原因の特定には追加確認が要る</li><li>午後の成績だけで午前データへの偏りが原因と確定</li><li>午後も正解が過半数なので同じ品質</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>イ　午前90%と午後50%で差があり、原因の特定には追加確認が要る</strong></p><p>午前は18 ÷ 20 ＝ 90%、午後は10 ÷ 20 ＝ 50%。全体は28 ÷ 40 ＝ 70%ですが時間帯の差を隠します。データの分布、評価方法、運用条件を追加で調べます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　冷蔵庫の中で実際に動くもの</h3>
+      <p>測った温度に応じて制御装置が信号を出し、ファンが回ります。制御信号を物理的な動作に変えるのはどれですか。</p>
+      <ol class="options"><li>温度センサー</li><li>ゲートウェイ</li><li>ファンのモーター</li><li>クラウドの記録</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>ウ　ファンのモーター</strong></p><p>ファンを回すモーターがアクチュエータです。センサーは測る側、ゲートウェイは通信を中継する側、クラウドはこの例では記録する側です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　通知が止まったときに何が分かるか</h3>
+      <p>冷却は庫内で完結する設計です。スマホに14時10分の温度が出たまま、15時を過ぎても更新されません。適切な確認はどれですか。</p>
+      <ol class="options"><li>スマホの値から現在もその温度と断定</li><li>冷蔵庫の電源が切れたと断定</li><li>組込み制御は必ずネットを使うので止まったと断定</li><li>最終受信時刻、現地の温度表示、通信状態を確かめる</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>エ　最終受信時刻、現地の温度表示、通信状態を確かめる</strong></p><p>最後のデータは現在の温度と限りません。遠隔監視の停止と、庫内で動く制御の故障は切り分けて調べます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　会場までの乗り継ぎをまとめる</h3>
+      <p>自宅から会場まで、鉄道とバスを組み合わせて検索し、同じ窓口で予約と決済をします。中心となる考え方はどれですか。</p>
+      <ol class="options"><li>MaaS</li><li>自動運転</li><li>AR</li><li>組込みシステム</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>ア　MaaS</strong></p><p>複数の移動手段の検索・予約・決済を一つにつないでいるのでMaaSです。自動運転は車両の走行操作に関する技術です。</p></details>
+    </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第5章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=22">IPA「ITパスポート試験シラバス Ver.6.5」AIの利活用</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=24">IPA「ITパスポート試験シラバス Ver.6.5」IoT・組込みシステム</a></li>
+      <li><a href="https://www.cas.go.jp/jp/seisaku/jinkouchinou/r02_dai01/sanko2.pdf">統合イノベーション戦略推進会議「人間中心のAI社会原則」</a></li>
+      <li><a href="https://www.ipa.go.jp/security/iot/iotguide.html">IPA「IoT開発におけるセキュリティ設計の手引き」</a></li>
+      <li><a href="https://www.mlit.go.jp/sogoseisaku/transport/sosei_transport_tk_000193.html">国土交通省「新モビリティサービスの推進」MaaSの定義</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch05-1-business-systems.html">5-1 ビジネスシステム・エンジニアリングシステム</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch05"></script>
+</body>
+</html>

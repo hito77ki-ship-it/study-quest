@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch05-1-business-systems.html">
+  <title>ITパスポート 5-1 ビジネスシステム・エンジニアリングシステム｜スタディクエスト</title>
+  <meta name="description" content="学園祭のレジ、工房、通販を例に、POS・RFID・CAD・MRP・EC・EDIを自作図解と解説つき例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 5-1 ビジネスシステム・エンジニアリングシステム">
+  <meta property="og:description" content="学園祭のレジ、工房、通販を例に、POS・RFID・CAD・MRP・EC・EDIを自作図解と解説つき例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch05-1-business-systems.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 5-1 ビジネスシステム・エンジニアリングシステム",
+  "description": "学園祭のレジ、工房、通販を例に、POS・RFID・CAD・MRP・EC・EDIを自作図解と解説つき例題で学びます。",
+  "url": "https://study-quest.net/itp-ch05-1-business-systems.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch05-1-business-systems.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第5章 ビジネスインダストリ</p>
+    <h1>ITパスポート 5-1 ビジネスシステム・エンジニアリングシステム</h1>
+    <p>学園祭のレジ、工房、通販を例に、POS・RFID・CAD・MRP・EC・EDIを自作図解と解説つき例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#business">レジ・配送・行政</a></li><li><a href="#manufacturing">設計・製造・資材</a></li><li><a href="#commerce">電子商取引</a></li><li><a href="#payment">決済と取引データ</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="business">
+  <h2>ビジネスシステム　レジを通った1個を追う</h2>
+  <p>学園祭の模擬店で焼き菓子が1個売れました。<strong>POS（販売時点情報管理）</strong>は、会計したときに商品、個数、時刻などを記録します。バーコードは商品を識別する手がかりで、たとえばJANシンボルに商品コードを表し、価格は店の商品マスターから照合します。売上記録は、連携先の在庫を減らしたり、翌日の仕入れを判断したりするのに使えます。</p>
+    <figure id="visual-pos" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>1個売れた後、レジのデータはどこへ？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 325" role="img" aria-labelledby="visual-pos-title visual-pos-desc">
+        <title id="visual-pos-title">1個売れた後、レジのデータはどこへ？</title>
+        <desc id="visual-pos-desc">商品コードを読み取り、POSが商品・数量・時刻を記録する。連携先の在庫が7個から6個に減り、担当者が発注点と照合する。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M5 3h22v26H5V3zm5 6v12m4-12v12m3-12v12m5-12v12M10 24h12" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">① バーコード</text>
+      <text x="66" y="44" class="" text-anchor="start">焼き菓子の商品を識別</text>
+      <text x="66" y="62" class="small" text-anchor="start">価格はこの店の商品マスターから取得</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M6 4h20v12H6V4zM10 8h12m-12 4h8M3 19h26v10H3V19zm3 5h5m4 0h3m4 0h3" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">② POS</text>
+      <text x="66" y="127" class="" text-anchor="start">13時05分、焼き菓子を1個販売</text>
+      <text x="66" y="145" class="small" text-anchor="start">売上明細を残す</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">③ 在庫管理</text>
+      <text x="66" y="210" class="" text-anchor="start">帳簿上の残数 7個 → 6個</text>
+      <text x="66" y="228" class="small" text-anchor="start">販売データを受けて残数を更新</text>
+      <path d="M33 239L33 250M29 245l4 5 4 -5" class="wire"/>
+      <rect x="1" y="252" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="265" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 271)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line orange"/></g>
+      <text x="66" y="272" class="strong orange" text-anchor="start">④ 補充の判断</text>
+      <text x="66" y="293" class="" text-anchor="start">残数6個、発注点も6個</text>
+      <text x="66" y="311" class="small" text-anchor="start">入荷予定と現物を見て発注する</text>
+      </svg>
+      <p>この店は、販売確定時に在庫を減らす設定です。POSが記録するのは売れた事実。6個で発注するかは別の業務ルールで、現物との差も棚卸しで確認します。</p>
+    </figure>
+  <p>セルフレジでも、販売記録を残せばPOSとして働きます。反対に、検品で箱のICタグを読み取る<strong>RFID</strong>は、商品の識別や履歴の取得に使う技術です。複数のタグを読める構成でも、金属や水、機器配置などで読み取り結果が変わるため、現場で実測します。<strong>トレーサビリティ</strong>は、例えば製造ロット「L07」を入荷・販売履歴と結び、どこへ移ったか追える状態です。タグを付けた後、記録をつなぐことで実現します。</p>
+    <figure id="visual-identify" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>レジ・入場口・配送地図で、何を読み取る？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-identify-title visual-identify-desc">
+        <title id="visual-identify-title">レジ・入場口・配送地図で、何を読み取る？</title>
+        <desc id="visual-identify-desc">バーコードは光で商品の識別コードを読む。RFIDは電波でタグと通信する。GPSは現在地を求め、GISは地図上で位置と情報を分析する。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M5 3h22v26H5V3zm5 6v12m4-12v12m3-12v12m5-12v12M10 24h12" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">バーコード</text>
+      <text x="13" y="65" class="small" text-anchor="start">商品の印を光で読む</text>
+      <text x="13" y="85" class="small" text-anchor="start">例：レジで1品を登録</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M3 3h15l12 12-15 15L3 18V3zm9 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">RFID</text>
+      <text x="179" y="65" class="small" text-anchor="start">電波でタグとやり取り</text>
+      <text x="179" y="85" class="small" text-anchor="start">例：箱を一括で検品</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M25 12c0 8-9 16-9 16S7 20 7 12a9 9 0 0 1 18 0zm-6 0a3 3 0 1 0-6 0 3 3 0 0 0 6 0z" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">GPS</text>
+      <text x="13" y="170" class="small" text-anchor="start">衛星信号から現在地へ</text>
+      <text x="13" y="190" class="small" text-anchor="start">例：配達車の現在地</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M2 7l8-4 11 4 9-4v21l-9 5-11-4-8 4V7zm8-4v22m11-18v22" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">GIS</text>
+      <text x="179" y="170" class="small" text-anchor="start">地図にデータを重ねる</text>
+      <text x="179" y="190" class="small" text-anchor="start">例：店と配達先を分析</text>
+      </svg>
+      <p>RFIDの一括読み取りは対応機器と環境が前提です。GPSの位置をGISの地図に重ねると、現在地だけでは分からない配送先との関係を見られます。</p>
+    </figure>
+  <p>配送担当は<strong>GPS</strong>で現在地を求め、<strong>GIS（地理情報システム）</strong>に現在地や配送先、道路情報を重ねて分析できます。交通全体を情報技術で支える考え方が<strong>ITS（高度道路交通システム）</strong>で、<strong>ETC</strong>はその中で通行料金の自動収受を担う例です。</p>
+    <figure id="visual-services" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>来場者が使う4つのシステム</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-services-title visual-services-desc">
+        <title id="visual-services-title">来場者が使う4つのシステム</title>
+        <desc id="visual-services-desc">ETCは通行料金の処理、交通系ICカードは改札での利用例、マイナポータルは行政サービス、CDNは配信の分散。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M2 16l4-3 4-7h12l4 7 4 3v10H2V16zm4-3h20M7 21h3m12 0h3M5 26v3m22-3v3" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">ETC</text>
+      <text x="13" y="65" class="small" text-anchor="start">料金所と車載器が通信</text>
+      <text x="13" y="85" class="small" text-anchor="start">通行料金を処理</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M3 6h26v20H3V6zm0 6h26M7 20h8m5 0h5" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">交通系IC</text>
+      <text x="179" y="65" class="small" text-anchor="start">改札にカードをかざす</text>
+      <text x="179" y="85" class="small" text-anchor="start">乗降や運賃精算に使う</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">マイナポータル</text>
+      <text x="13" y="170" class="small" text-anchor="start">行政のオンライン窓口</text>
+      <text x="13" y="190" class="small" text-anchor="start">対象手続や情報を確認</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M7 25a6 6 0 0 1-1-12 10 10 0 0 1 18-2 7 7 0 0 1 1 14H7z" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">CDN</text>
+      <text x="179" y="170" class="small" text-anchor="start">各拠点に画像を置く</text>
+      <text x="179" y="190" class="small" text-anchor="start">案内画像を分散配信</text>
+      </svg>
+      <p>それぞれのシステムは「何を処理するか」で覚えます。高速道路全体の交通を支えるITSの中に、料金収受を担うETCのような応用があります。</p>
+    </figure>
+  <table>
+    <caption>問題文で「何を扱うシステムか」を見分ける</caption>
+    <thead><tr><th scope="col">場面</th><th scope="col">役割・用語</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">模擬店の仕入れや請求を管理</th><td>販売管理や会計ソフトは業務別。医療機関の運用に合わせたソフトは業種別の例。営業の訪問や商談を追うSFAは営業支援。</td></tr>
+      <tr><th scope="row">案内ポスターを誌面にする</th><td>DTP。パソコンで文字や写真をレイアウトして印刷物を作る。</td></tr>
+      <tr><th scope="row">役所の手続をオンラインで確認</th><td>マイナポータルなどの行政サービス。電子申請は申請、電子入札は調達に関する入札をオンラインで行う。</td></tr>
+      <tr><th scope="row">会場の混雑と誘導を見直す</th><td>デジタルツインは実際の会場をデータに基づいて仮想空間に表す例。CPSは現実の計測、情報処理、現実への働きかけをつなぐ考え方。</td></tr>
+      <tr><th scope="row">電力の使い方を調整する</th><td>スマートグリッドでは、ICTを利用して電力の供給と需要を把握・調整する。</td></tr>
+    </tbody>
+  </table>
+  <p>同じ案内ページでも、アクセス集中時に複数の拠点から画像を配る仕組みは<strong>CDN</strong>です。問題文で「レジで販売記録」「配達車の現在地」「画像の配信」のどれを改善したいかに線を引くと、選択肢を絞れます。</p>
+</section>
+
+<section id="manufacturing">
+  <h2>エンジニアリングシステム　設計・加工・資材を分ける</h2>
+  <p>模擬店で使う星型を工房に頼みます。<strong>CAD</strong>で形や寸法を設計し、<strong>CAM</strong>で工具が通る経路など加工に使うデータを用意します。図面を描く工程、加工に使う指示を作る工程、実際に装置を動かす工程を見分けると理解しやすくなります。</p>
+    <figure id="visual-factory" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>クッキーの型を、画面から工房へ</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-factory-title visual-factory-desc">
+        <title id="visual-factory-title">クッキーの型を、画面から工房へ</title>
+        <desc id="visual-factory-desc">CADで形を描き、CAMで加工に必要なデータを作る。加工装置が実際の型を作り、検査する。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M2 23L23 2l7 7L9 30l-7-7zm7-7 4 4m1-9 3 3m2-8 4 4" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">CAD｜設計</text>
+      <text x="66" y="44" class="" text-anchor="start">画面で星型の寸法を決める</text>
+      <text x="66" y="62" class="small" text-anchor="start">幅・角の丸み・厚さを図面にする</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">CAM｜加工支援</text>
+      <text x="66" y="127" class="" text-anchor="start">工具が通る順番をデータ化</text>
+      <text x="66" y="145" class="small" text-anchor="start">形状をもとに加工機向けの指示を作る</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">FA｜工場の自動化</text>
+      <text x="66" y="210" class="" text-anchor="start">装置が加工し、測定器で確認</text>
+      <text x="66" y="228" class="small" text-anchor="start">工場の工程を自動化する取り組み</text>
+      </svg>
+      <p>CAD・CAM・FAを「図面」「加工のための指示」「工場の工程」と分けると、略語が似ていても役割を区別できます。</p>
+    </figure>
+  <p><strong>FA（ファクトリーオートメーション）</strong>は工場の工程を自動化する考え方です。星型の次に丸型を、設備や設定を切り替えて効率よく作れるなら、柔軟な生産システムである<strong>FMS</strong>の例です。設計、製造、生産管理などをコンピュータで統合する考え方は<strong>CIM</strong>。設計者と加工担当者が、設計が固まる前から並行して寸法や加工方法を検討するのは<strong>コンカレントエンジニアリング</strong>の例です。</p>
+  <h3 id="materials">MRPで「いくつ、いつまでに」を計算する</h3>
+  <p><strong>MRP（資材所要量計画）</strong>では、完成品の計画と部品の構成から必要量を求め、在庫、確定済みの入荷予定、調達にかかる日数を踏まえて手配を計画します。以下では同じ材料を別の注文に取り置いておらず、確定した入荷は期限までに使えると仮定します。</p>
+    <figure id="visual-mrp" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>クッキー40袋を作るため、何枚仕入れる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 233" role="img" aria-labelledby="visual-mrp-title visual-mrp-desc">
+        <title id="visual-mrp-title">クッキー40袋を作るため、何枚仕入れる？</title>
+        <desc id="visual-mrp-desc">1袋に3枚なので必要枚数120枚。在庫25枚と入荷予定20枚を引くと追加は75枚。金曜必要で調達に2日なら水曜に発注。</desc>
+      <rect x="1" y="3" width="328" height="49" rx="8" class="panel"/>
+      <g transform="translate(12 10)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line blue"/></g>
+      <text x="54" y="24" class="strong" text-anchor="start">総所要量　40袋 × 3枚 ＝ 120枚</text>
+      <text x="54" y="42" class="small" text-anchor="start">1袋にクッキーを3枚ずつ入れる</text>
+      <path d="M165 53L165 68M161 63l4 5 4 -5" class="wire"/>
+      <rect x="1" y="70" width="328" height="62" rx="8" class="panel"/>
+      <text x="14" y="93" class="small" text-anchor="start">使える分　在庫25枚 ＋ 入荷予定20枚</text>
+      <text x="14" y="119" class="strong blue" text-anchor="start">正味所要量　120 − 45 ＝ 75枚</text>
+      <rect x="1" y="145" width="328" height="84" rx="8" class="panel"/>
+      <g transform="translate(14 154)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line orange"/></g>
+      <text x="56" y="174" class="strong orange" text-anchor="start">調達に2日 → 水曜に発注</text>
+      <path d="M69 199h187" class="wire"/>
+      <path d="M79 199L253 199M248 195l5 4 -5 4" class="wire"/>
+      <text x="65" y="220" class="small" text-anchor="middle">水曜 発注</text>
+      <text x="261" y="220" class="small" text-anchor="middle">金曜 必要</text>
+      </svg>
+      <p>材料を手配する簡略例です。余分な在庫は持たず、入荷予定分は利用できるものとします。量が足りても、必要日より遅く届けば作れません。</p>
+    </figure>
+  <table>
+    <caption>「量を計算する」「タイミングをそろえる」「受注から作る」の違い</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">模擬店での判断</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">MRP</th><td>金曜の40袋から逆算し、不足75枚を水曜に手配する計画を立てる。</td></tr>
+      <tr><th scope="row">JIT・かんばん</th><td>必要な分を必要な時に流すのがJIT。例えば包装係が空になったトレーの補充札を返し、それを合図に前工程が作るのがかんばんの使い方。</td></tr>
+      <tr><th scope="row">BTO（受注生産）</th><td>名入り包装は、注文を受けてから指定の名前で作る。</td></tr>
+    </tbody>
+  </table>
+  <p>MRPとJITは、現場で併用され得ます。設問では「部品の必要量・手配日を計算した」か、「後工程の消費に合わせて必要な分を補充した」かを見ます。</p>
+</section>
+
+<section id="commerce">
+  <h2>e-ビジネス　誰が誰と取引し、どこで受け取る？</h2>
+  <p><strong>EC（電子商取引）</strong>では、ネットワークを利用して受注や売買を行います。店頭受取でも、オンラインで注文したならECの場面です。取引相手で分類するなら、模擬店を事業者と仮定して、容器の仕入れがB2B、来場者への販売がB2Cです。来場者同士が自分の中古品を売買すればC2Cです。</p>
+    <figure id="visual-commerce" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>同じ模擬店でも、注文と受け取りの形が違う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-commerce-title visual-commerce-desc">
+        <title id="visual-commerce-title">同じ模擬店でも、注文と受け取りの形が違う</title>
+        <desc id="visual-commerce-desc">B2Bは店から卸への注文、B2Cは店から個人への販売、C2Cは個人間取引。エスクローでは代金を第三者が預かる。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">B2B</text>
+      <text x="13" y="65" class="small" text-anchor="start">店 → 卸に容器を発注</text>
+      <text x="13" y="85" class="small" text-anchor="start">事業者どうし</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M1 13h30L27 4H5l-4 9zm3 1v15h24V14M4 18c3 3 6 3 8 0 3 3 6 3 8 0 3 3 6 3 8 0M11 29v-7h8v7" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">B2C</text>
+      <text x="179" y="65" class="small" text-anchor="start">店 → 来場者に販売</text>
+      <text x="179" y="85" class="small" text-anchor="start">事業者と個人</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">C2C</text>
+      <text x="13" y="170" class="small" text-anchor="start">個人 → 別の個人に売る</text>
+      <text x="13" y="190" class="small" text-anchor="start">個人どうし</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M5 14h22v14H5V14zm4 0V9a7 7 0 0 1 14 0v5m-7 6v3" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">エスクロー</text>
+      <text x="179" y="170" class="small" text-anchor="start">第三者が代金を預かる</text>
+      <text x="179" y="190" class="small" text-anchor="start">所定の条件後に売り手へ</text>
+      </svg>
+      <p>取引の分類は、サイトの運営者より売り手と買い手を見ます。個人間の取引でも、仲介サービスを使うことがあります。</p>
+    </figure>
+  <p>オンラインモールは複数の出店者が集まる売り場、電子オークションは入札で取引を進める仕組みです。<strong>ロングテール</strong>では、たとえば月に1〜2個しか売れない柄を多数扱い、合計で売上を作ります。売れ行きと一緒に在庫費用や配送費も見ます。<strong>フリーミアム</strong>は基本機能を無料にして追加機能などを有料にするモデルです。クラウドソーシングは外部の人に制作などを募り、クラウドファンディングは資金を募る点で区別します。</p>
+    <figure id="visual-omo" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>アプリとお店をつなぐ2つの場面</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-omo-title visual-omo-desc">
+        <title id="visual-omo-title">アプリとお店をつなぐ2つの場面</title>
+        <desc id="visual-omo-desc">O2Oの例はWebクーポンで店へ案内。OMOの例はアプリ予約と店頭での受取を同じ注文番号でつなぐ。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">O2O｜店に来てもらう</text>
+      <text x="66" y="44" class="" text-anchor="start">アプリでクーポンを見る</text>
+      <text x="66" y="62" class="small" text-anchor="start">案内を見て、当日は店頭へ</text>
+      <rect x="1" y="79" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="92" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 98)"><path d="M1 13h30L27 4H5l-4 9zm3 1v15h24V14M4 18c3 3 6 3 8 0 3 3 6 3 8 0 3 3 6 3 8 0M11 29v-7h8v7" class="line orange"/></g>
+      <text x="66" y="99" class="strong orange" text-anchor="start">OMO｜買い物をつなぐ</text>
+      <text x="66" y="120" class="" text-anchor="start">アプリで注文番号 B07 を発行</text>
+      <text x="66" y="138" class="small" text-anchor="start">店の画面も B07 で受取済みに更新</text>
+      </svg>
+      <p>アプリを使うだけでは見分けられません。着目点は、ネットから来店へ誘導するのか、予約・在庫・受取をチャネル間で一体に使うのかです。</p>
+    </figure>
+  <p>店の宣伝にネットを使う<strong>O2O</strong>の例は、クーポンを見た人が店へ来る流れです。<strong>OMO</strong>の例では、オンラインで注文を確定し、店舗でも同じ番号や在庫情報を使って対応します。施策が両方の要素を持つこともあるため、設問で問われる目的を見ます。</p>
+</section>
+
+<section id="payment">
+  <h2>電子取引・決済　注文データと資金を別々に追う</h2>
+  <p>仕入れ先に、商品コードと数量、納品日を決めた形式で送ります。このように企業間で取引データを取り交わす仕組みは<strong>EDI</strong>です。一方、代金を口座へ電子的に移すのは<strong>EFT</strong>の例です。電子文書に「支払」と書いてあっても、通知なのか資金移動なのかを区別します。</p>
+    <figure id="visual-edi" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>注文書が動く矢印、お金が動く矢印</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 200" role="img" aria-labelledby="visual-edi-title visual-edi-desc">
+        <title id="visual-edi-title">注文書が動く矢印、お金が動く矢印</title>
+        <desc id="visual-edi-desc">小売店が卸にEDIで発注データを送る。支払時にはEFTで資金を移す。EDIの支払通知と実際の送金は異なる。</desc>
+      <rect x="1" y="3" width="328" height="193" rx="8" class="panel"/>
+      <g transform="translate(43 21)"><path d="M1 13h30L27 4H5l-4 9zm3 1v15h24V14M4 18c3 3 6 3 8 0 3 3 6 3 8 0 3 3 6 3 8 0M11 29v-7h8v7" class="line blue"/></g>
+      <g transform="translate(252 21)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line blue"/></g>
+      <text x="59" y="69" class="strong" text-anchor="middle">模擬店</text>
+      <text x="268" y="69" class="strong" text-anchor="middle">仕入れ先</text>
+      <text x="165" y="101" class="strong blue" text-anchor="middle">EDI｜発注データ</text>
+      <path d="M44 115L286 115M281 111l5 4 -5 4" class="wire"/>
+      <text x="165" y="136" class="small" text-anchor="middle">商品コード・数量・納品日</text>
+      <text x="165" y="162" class="strong orange" text-anchor="middle">EFT｜資金の移動</text>
+      <path d="M44 177L286 177M281 173l5 4 -5 4" class="wire"/>
+      </svg>
+      <p>EDIは決めた形式で取引情報をやり取りします。振込の実行はEFTの例。振込予定を知らせる電子文書だけでは、資金が移ったことになりません。</p>
+    </figure>
+    <figure id="visual-money" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の学園祭</span></span><strong>スマホやカードで支払うとき、裏で何をする？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-money-title visual-money-desc">
+        <title id="visual-money-title">スマホやカードで支払うとき、裏で何をする？</title>
+        <desc id="visual-money-desc">キャッシュレス決済の例を示す。オンライン本人確認は人を確認する手続。CBDCは発行主体に注目するデジタル通貨の概念。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">QRコード決済</text>
+      <text x="13" y="65" class="small" text-anchor="start">コードを読み取る</text>
+      <text x="13" y="85" class="small" text-anchor="start">その後に支払処理が進む</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M3 6h26v20H3V6zm0 6h26M7 20h8m5 0h5" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">非接触IC決済</text>
+      <text x="179" y="65" class="small" text-anchor="start">カードやスマホをかざす</text>
+      <text x="179" y="85" class="small" text-anchor="start">近距離で決済情報を通信</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">eKYC</text>
+      <text x="13" y="170" class="small" text-anchor="start">口座開設で本人確認</text>
+      <text x="13" y="190" class="small" text-anchor="start">方法はサービス別</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M2 10 16 3l14 7H2zm4 4v11m7-11v11m6-11v11m7-11v11M2 28h28" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">CBDC</text>
+      <text x="179" y="170" class="small" text-anchor="start">中央銀行が発行する概念</text>
+      <text x="179" y="190" class="small" text-anchor="start">着目点は発行主体</text>
+      </svg>
+      <p>QRや非接触ICは支払いの操作方法です。電子マネー・銀行預金など資金の仕組みとは、別の観点で見分けます。</p>
+    </figure>
+  <p>金融とITを組み合わせたサービスは<strong>FinTech</strong>。複数口座の残高や取引をまとめて見る機能はアカウントアグリゲーションです。<strong>eKYC</strong>はオンラインで行う本人確認で、ログインした人が利用可能な機能を決める<strong>認可</strong>とは確認する対象が違います。<strong>AML・CFT</strong>は資金洗浄・テロ資金供与への対策で、本人確認に加えて取引の監視なども含みます。</p>
+  <p><strong>NFT</strong>はブロックチェーンなどで管理される、個別に識別できるトークンです。購入しても、画像などの著作権まで移るとは限りません。<strong>暗号資産</strong>、民間の電子マネー、<strong>CBDC（中央銀行デジタル通貨）</strong>は、誰が発行するか、何に対する権利かを見ます。CBDCは中央銀行の債務として発行される法定通貨建てのデジタル通貨を指す概念です。国内の発行状況や、特定の決済サービスの扱いは日本銀行や提供元で確認します。</p>
+  <p>注文に必要な情報だけを集め、カード番号や暗証番号などの入力先が正しいかを確かめます。注文履歴が見られる範囲を設計する考え方は、<a href="itp-authentication-authorization.html">認証と認可の違い</a>でも練習できます。</p>
+</section>
+
+<section id="quiz">
+  <h2>解説つきの自作例題6問</h2>
+  <p>まず自分で選び、解答を開いて、判断に使った条件を確かめます。</p>
+    <section class="box">
+      <h3>第1問　レジで1個売れたときの記録</h3>
+      <p>バーコードを読み取って会計を確定し、商品コード、売った数と時刻を記録した。中心となる仕組みはどれですか。</p>
+      <ol class="options"><li>GIS</li><li>POS</li><li>EDI</li><li>MRP</li></ol>
+      <details><summary>第1問の解答と解説</summary><p><strong>イ　POS</strong></p><p>販売時点の情報を記録するのでPOSです。バーコードは商品を読み取る手段です。補充数の計算や、仕入れ先への送信は記録の次に行う処理です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　配送車の位置を地図に重ねる</h3>
+      <p>配送車の現在地を取得し、店舗と道路のデータを地図上に重ねて分析します。順番として正しいものはどれですか。</p>
+      <ol class="options"><li>GISで位置を取得し、POSで分析</li><li>GPSで位置を取得し、RFIDで分析</li><li>GPSで位置を取得し、GISで分析</li><li>ETCで位置を取得し、CADで分析</li></ol>
+      <details><summary>第2問の解答と解説</summary><p><strong>ウ　GPSで位置を取得し、GISで分析</strong></p><p>衛星信号から位置を求めるのはGPS、地図に位置や他のデータを重ねるのはGISです。RFIDは物品のタグなどを読み取る技術です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　型を作る前に工具の経路を作る</h3>
+      <p>星型の寸法を設計済みです。加工機へ渡すため、どの工具がどこを通るかデータを作ります。該当するものはどれですか。</p>
+      <ol class="options"><li>CAM</li><li>DTP</li><li>POS</li><li>CADで図面を描く工程</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>ア　CAM</strong></p><p>加工のためのデータを用意するのはCAMの役割です。CADの設計データをCAMへ渡す流れを思い出します。DTPは印刷物のレイアウトです。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　金曜に足りる枚数を求める</h3>
+      <p>金曜に30袋作り、1袋に4枚使います。使える在庫は30枚、期限内の確定入荷は20枚。調達には2日かかります。図と同じ前提で何を手配しますか。</p>
+      <ol class="options"><li>金曜に70枚</li><li>水曜に90枚</li><li>水曜に50枚</li><li>水曜に70枚</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>エ　水曜に70枚</strong></p><p>総所要量は30 × 4 ＝ 120枚。使える50枚を引くと70枚です。金曜から2日戻した水曜に手配します。90枚は入荷予定の20枚を引いていません。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　アプリの注文番号で店舗受取</h3>
+      <p>ネットで予約した商品を、店員が同じ注文番号で渡し、店とアプリの両方で受取済みになります。特に注目する仕組みはどれですか。</p>
+      <ol class="options"><li>店に来てもらうだけのO2O施策</li><li>オンラインと店頭を一体化するOMO</li><li>取引代金を預かるエスクロー</li><li>個人間のC2C</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>イ　オンラインと店頭を一体化するOMO</strong></p><p>予約、受け渡し、履歴がオンラインと店頭で一体になっています。購入の取引分類は別にあり、事業者から個人への販売ならB2Cです。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　発注と振込を見分ける</h3>
+      <p>店は決めた形式で発注データを送り、後日、代金を仕入れ先の口座へ振り込みました。この二つの処理を順に選んでください。</p>
+      <ol class="options"><li>EDI、EFT</li><li>EFT、EDI</li><li>POS、eKYC</li><li>eKYC、EFT</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>ア　EDI、EFT</strong></p><p>注文内容を所定の形式で交換したのがEDI、資金を移動したのがEFTです。送金予定を電子的に通知するだけでは資金移動は発生しません。</p></details>
+    </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第5章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=22">IPA「ITパスポート試験シラバス Ver.6.5」ビジネスシステム・製造・電子商取引</a></li>
+      <li><a href="https://www.gs1jp.org/standard/barcode/">GS1 Japan「バーコード」</a></li>
+      <li><a href="https://www.digital.go.jp/policies/myna_portal">デジタル庁「マイナポータル」</a></li>
+      <li><a href="https://www.gs1jp.org/standard/epc/about_epc.html">GS1 Japan「EPC」電子タグでの識別</a></li>
+      <li><a href="https://www.gs1jp.org/standard/edi/ryutsu-bms.html">GS1 Japan「流通BMS」企業間取引データの例</a></li>
+      <li><a href="https://www.toyota.co.jp/jpn/company/history/75years/text/taking_on_the_automotive_business/chapter2/section4/item5.html">トヨタ自動車「ジャスト・イン・タイムの起源」</a></li>
+      <li><a href="https://www.boj.or.jp/about/education/oshiete/money/c28.htm">日本銀行「中央銀行デジタル通貨とは何ですか？」</a></li>
+    </ul>
+    <p><a href="itp-ch04-strategy.html">第4章の目次</a> ／ 次へ <a href="itp-ch05-2-ai-iot.html">5-2 AIの利活用とIoTシステム</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch05"></script>
+</body>
+</html>
