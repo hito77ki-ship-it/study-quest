@@ -31,7 +31,8 @@
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--sq-bg, #fff); color: var(--sq-text, #1a202c); font: 16px/1.85 system-ui, sans-serif; }
-    a { color: var(--sq-accent-strong, #35651a); text-underline-offset: 3px; }
+    html[data-theme="dark"] { --after-pass-link: var(--sq-accent-bright, #b6e27c); }
+    a { color: var(--after-pass-link, #35651a); text-underline-offset: 3px; }
     nav { position: sticky; top: 0; z-index: 20; background: var(--sq-surface, #fff); border-bottom: 1px solid var(--sq-border, #cbd5e1); }
     .nav-inner { max-width: 950px; margin: auto; min-height: 54px; padding: 8px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
     .nav-logo, .nav-cta { font-weight: 700; }
