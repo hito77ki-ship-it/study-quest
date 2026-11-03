@@ -81,11 +81,29 @@ html[data-theme="dark"] .itp-review .review-figure {
 .itp-review .review-roadmap li + li::before { content: ""; position: absolute; left: -1.2rem; top: 50%; width: .6rem; height: .6rem; border: solid var(--review-link); border-width: 2px 2px 0 0; transform: translateY(-50%) rotate(45deg); }
 .review-roadmap-when { display: inline-block; padding: .05rem .55rem; margin-bottom: .35rem; border-radius: 6px; background: var(--review-panel); color: var(--review-link); font-weight: 700; }
 .itp-review .review-roadmap p { margin: 0; font-size: .92rem; }
+.itp-review .review-part-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  padding: 0;
+  list-style: none;
+}
+.itp-review .review-part-card {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--review-line);
+  border-radius: 10px;
+  background: var(--review-panel);
+}
+.itp-review .review-part-card h3 a { display: flex; align-items: center; min-height: 44px; }
+.itp-review .review-part-card p { margin: .5rem 0 0; }
+.itp-review .review-topic-list li { scroll-margin-top: 4.5rem; }
 @media (max-width: 520px) {
   .itp-review main { padding: 20px 16px 42px; }
   .itp-review th, .itp-review td { padding: .35rem .4rem; }
   .itp-review .box { padding-inline: .8rem; }
   .itp-review .review-figure { padding: .65rem; }
   .itp-review .review-roadmap { grid-template-columns: 1fr; }
+  .itp-review .review-part-grid { grid-template-columns: 1fr; }
   .itp-review .review-roadmap li + li::before { left: 50%; top: -1.2rem; transform: translateX(-50%) rotate(135deg); }
 }

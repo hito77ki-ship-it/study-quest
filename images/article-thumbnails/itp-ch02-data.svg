@@ -8,7 +8,7 @@
     <text x="53" y="62" font-size="19" fill="#132b21">ITパスポート 第2章</text>
     <text x="38" y="167" font-size="32" fill="#f4fff5">業務分析・データ利活用</text>
     <text x="40" y="222" font-size="27" fill="#bce97d">グラフと集計</text>
-    <text x="40" y="282" font-size="23" fill="#d0e9e6">解説つき自作例題 8問</text>
+    <text x="40" y="282" font-size="23" fill="#d0e9e6">学習目次・図解・例題</text>
   </g>
   <rect x="416" y="113" width="167" height="181" rx="18" fill="#173a42" stroke="#478c88" stroke-width="2"/>
   <path d="M438 163v118h118 M458 266v-49h19v49 M491 266v-69h19v69 M524 266v-91h19v91 M450 203l40-20 39-28" stroke="#bce97d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>

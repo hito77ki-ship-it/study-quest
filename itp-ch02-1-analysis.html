@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch02-1-analysis.html">
+  <title>ITパスポート 2-1 業務分析と図表｜スタディクエスト</title>
+  <meta name="description" content="行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 2-1 業務分析と図表">
+  <meta property="og:description" content="行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch02-1-analysis.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 2-1 業務分析と図表",
+  "description": "行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。",
+  "url": "https://study-quest.net/itp-ch02-1-analysis.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch02-1-analysis.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-parts">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html">ITパスポート</a> › <a href="itp-ch02-data.html">第2章の目次</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第2章</p>
+    <h1>ITパスポート 2-1 業務分析と図表</h1>
+    <p>行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="process">
+    <h2>まず、行列ができる手順を確かめる</h2>
+    <p>「注文を受ける → 決済 → 商品を渡す」と手順を並べ、どこに待ち時間があるかを測ります。原因候補が散らばっているなら、<strong>親和図法</strong>で似た意見を「注文」「決済」「受け渡し」などにまとめます。選択肢が複数あれば、待ち時間の短縮、担当者の負担、費用といった評価軸を決め、同じ基準で比べます。</p>
+    <p>集計前に、予約IDが重複した行や終了時刻が空欄の行を確認します。再送で生じた重複は元記録と照合して整理します。終了時刻が不明な注文は「待ち時間0分」と置かず、算出できた件数と対象外の理由を残します。</p>
+  </section>
+<section id="problem-solving">
+  <h2>原因の候補を集めて、改善策を選ぶ</h2>
+  <p>観測された事実は「昼の待ち時間が長い」です。「レジが遅い」はまだ仮説です。注文・決済・受け渡しの各開始と終了を別々に記録して、どこに滞留があるかを絞ります。決済が終わるまで30秒でも、決済の開始を待つ時間が8分なら、会計ソフトの操作時間とレジ前の待ち時間は分けて改善します。</p>
+  <table>
+    <caption>問題解決の手法を、使う場面で選ぶ</caption>
+    <thead><tr><th scope="col">困っていること</th><th scope="col">使う手法と次の作業</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">原因候補が少ない</th><td>ブレーンストーミングで意見を広げる。評価を後回しにして「端末不足」「現金会計」「商品確認」などを出す。</td></tr>
+      <tr><th scope="row">意見がばらばら</th><td>親和図法で意味の近い記述を集め、決済・在庫・受け渡しなどに名前を付ける。</td></tr>
+      <tr><th scope="row">原因と結果の関係が曖昧</th><td>特性要因図で、結果「列が進まない」に人・方法・設備などの原因候補をつなぐ。各候補は観測して確かめる。</td></tr>
+      <tr><th scope="row">天候によって案の効果が変わる</th><td>デシジョンツリーで案と起こり得る結果を枝に分ける。確率が与えられたら期待値で比べられる。</td></tr>
+    </tbody>
+  </table>
+  <p>設例では、雨60%、晴れ40%と仮定します。屋根を借りたときの利益は晴れ10,000円・雨8,000円、借りないときは晴れ15,000円・雨3,000円とします。期待利益は借りる案が 0.4 × 10,000 ＋ 0.6 × 8,000 ＝ <strong>8,800円</strong>、借りない案が 0.4 × 15,000 ＋ 0.6 × 3,000 ＝ <strong>7,800円</strong>です。期待値は仮定に基づく比較値です。当日の利益を示す値ではないので、赤字を避けたい場合は悪い場合の結果も見ます。</p>
+</section>
+<section id="graphs">
+    <h2>何を比べるかでグラフが決まる</h2>
+    <table>
+      <caption>学園祭での図表の選び方</caption>
+      <thead><tr><th scope="col">知りたいこと</th><th scope="col">適した図表</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">時間帯ごとに注文がどう増減したか</th><td>折れ線グラフ。時系列の変化を追います。</td></tr>
+        <tr><th scope="row">どの遅延理由から対策するか</th><td>パレート図。件数順の棒と累積割合を見ます。</td></tr>
+        <tr><th scope="row">待ち時間は何分台に集中するか</th><td>ヒストグラム。時間を階級に分け、度数を示します。</td></tr>
+        <tr><th scope="row">注文数が多いと待ち時間が長い傾向か</th><td>散布図。観測単位ごとに二つの数値を1点にします。</td></tr>
+        <tr><th scope="row">二つの受付方法には、どんな得意・不得意があるか</th><td>レーダーチャート。同じ尺度で採点し、項目ごとの形を比べます。</td></tr>
+      </tbody>
+    </table>
+    <h3 id="pareto">パレート図　多い原因から順に、何割を占める？</h3>
+    <p>学園祭のドリンク店で遅延が50件あり、1件につき主な原因を一つ記録したとします。棒は各原因の件数を多い順に並べ、折れ線は左から足した件数が全体の何%かを示します。</p>
+    <figure class="review-figure">
+      <ul class="review-legend" aria-label="パレート図の凡例">
+        <li><span class="review-key review-key-bar" aria-hidden="true"></span>棒・件数（左軸）</li>
+        <li><span class="review-key review-key-line" aria-hidden="true"></span>折れ線・累積割合（右軸）</li>
+      </ul>
+      <svg viewBox="0 0 360 220" width="360" height="220" role="img" aria-labelledby="pareto-title pareto-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="pareto-title">遅延50件のパレート図</title>
+        <desc id="pareto-desc">決済24件、在庫確認12件、注文確認8件、受け渡し6件。左から足した累積割合は48%、72%、88%、100%。</desc>
+        <path class="review-grid" d="M39 28H320 M39 56H320 M39 84H320 M39 112H320 M39 140H320"/>
+        <path class="review-axis" d="M39 28V168H320V28"/>
+        <g text-anchor="end">
+          <text x="31" y="14">件</text><text x="31" y="32">50</text><text x="31" y="60">40</text><text x="31" y="88">30</text>
+          <text x="31" y="116">20</text><text x="31" y="144">10</text><text x="31" y="172">0</text>
+        </g>
+        <g>
+          <text x="327" y="14">%</text><text x="327" y="32">100</text><text x="327" y="60">80</text><text x="327" y="88">60</text>
+          <text x="327" y="116">40</text><text x="327" y="144">20</text><text x="327" y="172">0</text>
+        </g>
+        <g class="review-bars">
+          <rect x="53" y="100.8" width="38" height="67.2" rx="3"/>
+          <rect x="124" y="134.4" width="38" height="33.6" rx="3"/>
+          <rect x="195" y="145.6" width="38" height="22.4" rx="3"/>
+          <rect x="266" y="151.2" width="38" height="16.8" rx="3"/>
+        </g>
+        <g text-anchor="middle">
+          <text x="72" y="95">24</text><text x="143" y="129">12</text><text x="214" y="140">8</text><text x="285" y="146">6</text>
+          <text x="72" y="192">決済</text><text x="143" y="192">在庫確認</text><text x="214" y="192">注文確認</text><text x="285" y="192">受け渡し</text>
+        </g>
+        <polyline class="review-line" points="39,168 72,100.8 143,67.2 214,44.8 285,28"/>
+        <g class="review-points">
+          <circle cx="72" cy="100.8" r="4"/><circle cx="143" cy="67.2" r="4"/><circle cx="214" cy="44.8" r="4"/><circle cx="285" cy="28" r="4"/>
+        </g>
+        <g class="review-line-labels" text-anchor="middle">
+          <text x="67" y="80">48%</text><text x="143" y="55">72%</text><text x="214" y="32">88%</text><text x="285" y="17">100%</text>
+        </g>
+      </svg>
+      <figcaption>架空データ。決済と在庫確認を足すと36件。折れ線の2番目の点で、全体の<strong>72%</strong>を占めると読めます。</figcaption>
+    </figure>
+
+    <h3 id="radar">レーダーチャート　受付方法の得意・不得意を比べる</h3>
+    <p>Webで先に予約する案Aと、その場で注文する案Bを比べます。4項目をいずれも0〜5点で仮に採点し、<strong>外側ほど高い評価</strong>にそろえました。「受取の速さ」は短い時間で渡せるほど高得点とします。</p>
+    <figure class="review-figure">
+      <ul class="review-legend" aria-label="レーダーチャートの凡例">
+        <li><span class="review-key review-key-series-a" aria-hidden="true"></span>A Web予約（実線）</li>
+        <li><span class="review-key review-key-series-b" aria-hidden="true"></span>B 店頭注文（破線）</li>
+      </ul>
+      <svg viewBox="0 0 360 248" width="360" height="248" role="img" aria-labelledby="radar-title radar-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="radar-title">Web予約と店頭注文のレーダーチャート</title>
+        <desc id="radar-desc">上から時計回りに受取の速さ、注文操作、準備のしやすさ、通信への強さ。Aの点数は5、4、2、2。Bは2、3、4、5。各軸は同じ0から5点。</desc>
+        <path class="review-grid" d="M180 38 266 124 180 210 94 124Z M180 55.2 248.8 124 180 192.8 111.2 124Z M180 72.4 231.6 124 180 175.6 128.4 124Z M180 89.6 214.4 124 180 158.4 145.6 124Z M180 106.8 197.2 124 180 141.2 162.8 124Z"/>
+        <path class="review-axis" d="M180 38V210 M94 124H266"/>
+        <polygon class="review-series-a" points="180,38 248.8,124 180,158.4 145.6,124"/>
+        <polygon class="review-series-b" points="180,89.6 231.6,124 180,192.8 94,124"/>
+        <g text-anchor="middle">
+          <text x="180" y="21">受取の速さ</text><text x="180" y="234">準備のしやすさ</text>
+        </g>
+        <text x="274" y="128">注文操作</text><text x="87" y="128" text-anchor="end">通信への強さ</text>
+        <text x="187" y="119">0</text><text x="187" y="39">5</text>
+      </svg>
+      <figcaption>架空の評価。上の軸ではAの実線が外側なので、Aは受取の速さが高評価。左の軸ではBの破線が外側なので、Bは通信への強さが高評価です。</figcaption>
+      <details>
+        <summary>図の点数を表で見る</summary>
+        <table>
+          <caption>各項目の点数（0〜5点）</caption>
+          <thead><tr><th scope="col">項目</th><th scope="col">A Web予約</th><th scope="col">B 店頭注文</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">受取の速さ</th><td>5</td><td>2</td></tr>
+            <tr><th scope="row">注文操作</th><td>4</td><td>3</td></tr>
+            <tr><th scope="row">準備のしやすさ</th><td>2</td><td>4</td></tr>
+            <tr><th scope="row">通信への強さ</th><td>2</td><td>5</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </figure>
+    <p>どちらを選ぶかは、何を重視するかで変わります。休憩時間が短いなら受取の速さ、会場のWi-Fiが弱いなら通信への強さの軸を比べます。</p>
+    <h3 id="scatter">散布図　点が右上がりでも、原因は別に確かめる</h3>
+    <figure class="review-figure">
+      <svg viewBox="0 0 360 211" width="360" height="211" role="img" aria-labelledby="scatter-title scatter-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="scatter-title">時間帯別の注文数と平均待ち時間の散布図</title>
+        <desc id="scatter-desc">架空の6時間帯。注文数と平均待ち時間の組は、5件と2分、10件と4分、15件と3分、20件と7分、25件と6分、30件と9分。全体は右上がりだが上下のばらつきがある。</desc>
+        <path class="review-grid" d="M47 38H317 M47 63H317 M47 88H317 M47 113H317 M47 138H317 M92 163V38 M137 163V38 M182 163V38 M227 163V38 M272 163V38 M317 163V38"/>
+        <path class="review-axis" d="M47 38V163H317"/>
+        <g class="review-points">
+          <circle cx="92" cy="138" r="5"/><circle cx="137" cy="113" r="5"/><circle cx="182" cy="125.5" r="5"/>
+          <circle cx="227" cy="75.5" r="5"/><circle cx="272" cy="88" r="5"/><circle cx="317" cy="50.5" r="5"/>
+        </g>
+        <g text-anchor="end"><text x="39" y="167">0</text><text x="39" y="142">2</text><text x="39" y="117">4</text><text x="39" y="92">6</text><text x="39" y="67">8</text><text x="39" y="42">10</text></g>
+        <g text-anchor="middle"><text x="47" y="182">0</text><text x="137" y="182">10</text><text x="227" y="182">20</text><text x="317" y="182">30</text></g>
+        <text x="48" y="21">平均待ち時間（分）</text><text x="241" y="203">注文数（件）</text>
+      </svg>
+      <figcaption>1点は15分間の記録です。20件で7分だった時間帯より、25件で6分だった時間帯の方が短く、すべての点が同じ順に増えるわけではありません。担当者数や注文内容も調べます。</figcaption>
+    </figure>
+
+
+  </section>
+  <section id="quiz">
+    <h2>解説つきの自作例題4問</h2>
+    <section class="box">
+      <h3>第1問　何から直すと、遅延の大部分を対象にできる？</h3>
+      <p><a href="#pareto">上のパレート図</a>を見て、件数の多い理由から順に対策する場合を考えます。遅延の80%以上を対策の対象に入れるには、少なくとも何種類の理由を選べばよいですか。</p>
+      <ol class="options"><li>1種類</li><li>2種類</li><li>3種類</li><li>4種類</li></ol>
+      <details><summary>第1問の解答と計算</summary><p><strong>ウ（3種類）。</strong>右軸で折れ線を読みます。1種類で48%、2種類で72%、3種類で88%となり、3種類目で初めて80%以上になります。計算でも (24 ＋ 12 ＋ 8) ÷ 50 ＝ 88%です。4種類なら100%ですが、最低限必要なのは3種類。実際に減った遅延の件数は対策後に測ります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　混雑が原因だと言い切れる？</h3>
+      <p><a href="#scatter">上の散布図</a>は、15分ごとの注文数と平均待ち時間を比べています。この図から判断できることはどれですか。</p>
+      <ol class="options"><li>観測した時間帯では注文数が多いほど待ち時間も長い傾向がある</li><li>注文数が増えるとすべての注文の待ち時間が必ず増える</li><li>担当者の人数は待ち時間に影響しない</li><li>注文数が待ち時間を延ばす唯一の原因と確定した</li></ol>
+      <details><summary>第2問の解答と理由</summary><p><strong>ア。</strong>点が示すのは時間帯単位の組合せです。イの個々の注文の結果は分からず、ウとエの因果関係もこの図だけでは確かめられません。例えば、担当人数が少ない時間帯に注文が集中していた可能性があります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　期待値で屋根の案を選ぶ</h3>
+      <p>晴れの確率が60%、雨が40%に変わりました。屋根ありの利益は晴れ10,000円、雨8,000円。屋根なしは晴れ15,000円、雨3,000円。期待利益が高い案と金額はどれですか。</p>
+      <ol class="options"><li>屋根あり、9,200円</li><li>屋根あり、8,800円</li><li>屋根なし、10,200円</li><li>屋根なし、7,800円</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>ウ。</strong>屋根ありは6,000＋3,200＝9,200円。なしは9,000＋1,200＝10,200円。確率が変わると、同じ利益の仮定でも選ぶ案が変わります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　図のどの軸を比較するか</h3>
+      <p>通信が不安定な会場で、通信への強さを最優先します。前掲のレーダーチャートから、この項目で高い案はどれですか。</p>
+      <ol class="options"><li>Web予約で5点</li><li>Web予約で4点</li><li>店頭注文で5点</li><li>両方2点</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>ウ。</strong>「通信への強さ」の軸でBの破線が外側です。点数表ではBが5点、Aが2点。受取の速さの軸で高い案とは異なります。</p></details>
+    </section>
+<p><strong>復習メモ</strong>　「原因別に直す順番を決める」「待ち時間の分布を見る」「二つの数値の関係を見る」の三つに、それぞれ図を当てはめてみましょう。</p>
+    <details><summary>復習メモの答え</summary><p>パレート図、ヒストグラム、散布図の順です。</p></details>
+  </section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=9">IPA「ITパスポート試験シラバス Ver.6.5」業務分析・データ利活用</a></li><li><a href="https://www.stat.go.jp/naruhodo/12_ppdac/analysis.html">総務省統計局「4.分析」</a></li><li>総務省統計局のグラフ解説 <a href="https://www.stat.go.jp/naruhodo/9_graph/jyokyu/pareto.html">パレート図</a> ／ <a href="https://www.stat.go.jp/naruhodo/9_graph/jyokyu/redar.html">レーダーチャート</a></li></ul>
+    <p>前へ <a href="itp-ch01-2-accounting.html">1-2 会計・財務</a> ／ 次へ <a href="itp-ch02-2-data-use.html">2-2 データ利活用と統計</a> ／ <a href="itp-ch02-data.html">第2章の目次</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-parts"></script>
+</body>
+</html>
