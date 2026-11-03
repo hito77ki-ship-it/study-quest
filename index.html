@@ -515,16 +515,33 @@ nav.scrolled{
 .updates-inner{max-width:720px;margin:0 auto;}
 .updates-sub{font-size:14px;color:var(--ink3);margin:8px 0 48px;line-height:1.7;}
 .updates-list{display:flex;flex-direction:column;gap:0;}
-.update-item{padding:24px 0;border-bottom:1px solid var(--border);}
+.update-item{padding:12px 0;border-bottom:1px solid var(--border);}
 .update-item:first-child{border-top:1px solid var(--border);}
-.update-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.update-head,.update-meta{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
 .update-date{font-family:'Cinzel',serif;font-size:10px;color:var(--ink3);letter-spacing:.1em;}
 .update-badge{font-size:9px;font-weight:700;letter-spacing:.12em;padding:2px 8px;border-radius:100px;text-transform:uppercase;}
 .update-badge.feature{background:rgba(140,198,63,.1);color:#5DB52A;}
 .update-badge.improve{background:rgba(99,102,241,.1);color:#818CF8;}
 .update-badge.fix{background:rgba(245,158,11,.1);color:#F59E0B;}
-.update-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4;}
+.update-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.5;}
 .update-body,.update-desc{font-size:13px;color:var(--ink3);line-height:1.75;}
+.update-actions{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;}
+.update-toggle,.update-read{
+  display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 8px;
+  font:inherit;font-size:13px;font-weight:700;line-height:1.4;
+}
+.update-toggle{min-width:96px;border:0;background:none;color:var(--ink2);cursor:pointer;}
+.update-toggle::before{
+  content:"";width:6px;height:6px;border-right:2px solid;border-bottom:2px solid;
+  transform:rotate(-45deg);
+}
+.update-toggle[aria-expanded="true"]::before{transform:rotate(45deg);}
+.update-read,.update-desc a,.update-body a{color:var(--green);text-decoration:underline;text-underline-offset:3px;}
+.update-toggle:hover,.update-toggle:active{color:var(--green);}
+.update-toggle:focus-visible,.update-read:focus-visible{outline:2px solid var(--green);outline-offset:1px;}
+.update-actions + .update-desc,.update-actions + .update-body{
+  padding:8px 0 3px 12px;border-left:2px solid var(--border);color:var(--ink2);overflow-wrap:anywhere;
+}
 
 /* ─── CTA ─── */
 .cta{
@@ -2637,9 +2654,9 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.10.31</span></div><div class="update-title">IT系4記事の試験形式・採点・対策範囲を訂正しました</div><div class="update-desc">IT系4記事をIPAの一次資料で照合。<a href="ap.html">応用情報</a>の問題番号・選択数、<a href="fe.html">基本情報</a>の採点・科目合格、<a href="fe-vs-ap.html">FEとAPの比較</a>の形式・日程、<a href="itp-vs-fe.html">ITパスポートとの比較</a>の問数・対策範囲を本文・FAQ・図解で訂正しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.10.31</span></div><div class="update-title">税金・年金・保険の8記事を一次情報に合わせて修正しました</div><div class="update-desc"><a href="daigakusei-kojin-jigyo-fuyo.html">大学生の扶養基準</a>、<a href="daigakusei-zeikin-yougo.html">基礎控除・家事按分</a>、<a href="daigakusei-nenkin.html">学生納付特例と追納</a>、<a href="kakutei-shinkoku-okure-bassoku.html">申告遅延の加算税・刑事罰</a>、<a href="invoice-2wari-3wari-tokurei.html">インボイスの課税期間・1億円基準</a>、<a href="denshi-chobo-hozon-ho.html">電子帳簿保存の条件</a>、<a href="fp3-risk.html">死亡保険金の課税関係</a>、<a href="fp3-lifeplanning.html">国民年金の加入対象</a>を訂正。関連図解・FAQ・記事更新日もそろえました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.10.31</span></div><div class="update-title">試験制度・受検条件を一次情報で確認し、9記事を修正しました</div><div class="update-desc"><a href="fp3.html">FP3級の受検資格</a>、<a href="fp.html">FP2級の実技・CBT形式</a>、<a href="sharoshi.html">社労士の2026年度結果・合格基準</a>、<a href="sharoshi-vs-gyosei.html">行政書士との最低基準の比較</a>、<a href="sharoshi-vs-shindanshi.html">診断士との合格率比較</a>、<a href="takken.html">宅建</a>・<a href="gyosei.html">行政書士</a>の試験日、<a href="boki2.html">簿記2級の年度切替</a>・<a href="boki2-cbt-vs-paper.html">受験方式の難易度・予約条件・日程</a>を是正。本文・FAQ・対応図解と記事の更新日をそろえました。</div></div>
-      <div class="update-item"><span class="update-date">2026.10.03</span><span class="update-tag fix">修正</span><span class="update-text"><a href="fe-stack-queue.html">スタックとキュー</a>・<a href="itp-security-cia.html">CIA</a>の記事で、画面幅を狭めた際のサイドバーのはみ出しを補正しました。</span></div>
-      <div class="update-item"><span class="update-date">2026.10.03</span><span class="update-tag feature">新記事</span><span class="update-text"><a href="itp-security-cia.html">機密性・完全性・可用性の違い</a>を予約表の自作図解・確認2問で解説しました。</span></div>
-      <div class="update-item"><span class="update-date">2026.10.03</span><span class="update-tag feature">新記事</span><span class="update-text"><a href="fe-stack-queue.html">スタックとキューの違い</a>を自作操作列・図解・確認2問で解説しました。</span></div>
+      <div class="update-item"><div class="update-head"><span class="update-date">2026.10.03</span><span class="update-badge fix">修正</span></div><div class="update-title">基本情報・ITパスポートのスマホ表示を修正しました</div><div class="update-desc"><a href="fe-stack-queue.html">スタックとキュー</a>・<a href="itp-security-cia.html">CIA</a>の記事で、画面幅を狭めた際のサイドバーのはみ出しを補正しました。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-date">2026.10.03</span><span class="update-badge feature">新記事</span></div><div class="update-title">機密性・完全性・可用性の違い</div><div class="update-desc"><a href="itp-security-cia.html">機密性・完全性・可用性の違い</a>を予約表の自作図解・確認2問で解説しました。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-date">2026.10.03</span><span class="update-badge feature">新記事</span></div><div class="update-title">スタックとキューの違い</div><div class="update-desc"><a href="fe-stack-queue.html">スタックとキューの違い</a>を自作操作列・図解・確認2問で解説しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.10.02</span></div><div class="update-title">為替予約の期首洗替と期間別の損益を補足しました</div><div class="update-desc">決済時の6,000円だけでなく、期首の2,000円と前期・当期・累計の検算を確認できます。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.10.02</span></div><div class="update-title">ITパスポートのガイドを公式条件と学習計画へ整理しました</div><div class="update-desc">出題目安・評価点・合格基準を公式資料で確認し、必要時間や合格期間を保証しない計画の見直し方に改めました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.10.02</span></div><div class="update-title">財務諸表分析記事のヘッダーリンクを読みやすくしました</div><div class="update-desc">学習ガイドへのリンク色を共通テーマに連携しました。記事本文・図解・記事更新日は変更していません。</div></div>
@@ -2650,17 +2667,18 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新規</span><span class="update-date">2026.09.29</span></div>
         <div class="update-title">基本情報技術者・科目Bの変数トレースを追加しました</div>
+        <a class="update-read" href="fe-variable-trace.html">記事を読む</a>
         <div class="update-desc">疑似言語の値を紙に追う理由を、自作例・トレース表・30秒チェックで整理しました。</div>
       </div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.09.28</span></div><div class="update-title">社労士の学習方法比較と大学生向け進路記事を、条件で選べる表現へ整理しました</div><div class="update-desc">学習方法別の合格率・最短性・遅延を断定せず、質問・添削・法改正情報・費用・履修や就職活動との両立を確認する観点に改めました。</div></div>
-      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.25</span></div><div class="update-title">簿記の学習を、決算書を読む最初の手順につなぐ記事を追加しました</div><div class="update-desc">B/S・P/L・キャッシュ・フロー・注記を、身近な商売の例と自作図解で確認する順番に整理しました。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.25</span></div><div class="update-title">簿記の学習を、決算書を読む最初の手順につなぐ記事を追加しました</div><a class="update-read" href="boki-kessansho-analysis.html">記事を読む</a><div class="update-desc">B/S・P/L・キャッシュ・フロー・注記を、身近な商売の例と自作図解で確認する順番に整理しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.24</span></div><div class="update-title">ソニー決算書の記事を、会社の一次資料で確認できる内容に整理しました</div><div class="update-desc">確認済みの2期比較へ絞り、数値の近くに有価証券報告書を置き、増減理由を断定せず注記を読む手順に改めました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.24</span></div><div class="update-title">二級建築士の記事で、学習方法と合格率を結びつける表現を見直しました</div><div class="update-desc">学科・製図・総合の公式結果は段階別に示したまま、添削や質問の必要度で学習方法を選べる表現へ整理しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.24</span></div><div class="update-title">社会人向け資格ランキングのFP2級受検手数料を公式要綱に同期しました</div><div class="update-desc">日本FP協会実施分の学科・実技併願を11,700円（非課税）と明示し、公式試験要綱へのリンクと別途手数料の注意を追加しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.24</span></div><div class="update-title">基本情報技術者の記事2本に、年度・分母つきの公式統計を追加しました</div><div class="update-desc">資格ガイドと比較記事にIPA統計への出典を示し、令和7年度の受験者147,186人・合格者56,370人・合格率38.3%を確認できるようにしました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.09.19</span></div><div class="update-title">会計士の独学記事を、一次情報で確認できる学習判断へ整理しました</div><div class="update-desc">試験科目・資格登録・税理士登録の説明に公式リンクを追加し、根拠のない学習時間・講座比較・推薦表現を見直しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.09.23</span></div><div class="update-title">簿記2級の2記事に、読み終わりの理解チェックを追加しました</div><div class="update-desc">決算整理・財務諸表作成と商品売買・棚卸資産の記事で、本文の要点を2問ずつ確認できます。正解した問題だけを、この端末内に保存します。</div></div>
-      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.12</span></div><div class="update-title">簿記ネット試験の本人確認書類を、当日確認できる5点に整理しました</div><div class="update-desc">保険証の取扱い、原本・有効期限、予約情報、紙の統一試験とネット試験の案内の違いを、公式ページへのリンクとともに確認できるようにしました。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.12</span></div><div class="update-title">簿記ネット試験の本人確認書類を、当日確認できる5点に整理しました</div><a class="update-read" href="boki-net-id-check.html">記事を読む</a><div class="update-desc">保険証の取扱い、原本・有効期限、予約情報、紙の統一試験とネット試験の案内の違いを、公式ページへのリンクとともに確認できるようにしました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.11</span></div><div class="update-title">会計士を諦めた後の進路記事で、簿記1級の試験時間を明確化しました</div><div class="update-desc">商業簿記・会計学と、工業簿記・原価計算がそれぞれ90分であることを、日本商工会議所の案内に合わせて明記しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.09.11</span></div><div class="update-title">簿記2級の標準原価計算に、自作セルフチェックを追加しました</div><div class="update-desc">標準原価と実際原価の差を自分で計算し、有利・不利を答え合わせできる手順を追加。公式の出題区分表へのリンクも本文に示しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.09.10</span></div><div class="update-title">社会福祉士記事の合格実績と学習方法を選ぶ前の確認項目を整理しました</div><div class="update-desc">直近3回の受験者・合格者・合格率を厚生労働省の一次情報とともに示し、根拠のない学習方法別の費用・合格率表を削除しました。</div></div>
@@ -2668,8 +2686,8 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.10</span></div><div class="update-title">社会人向け資格ランキングの基本情報技術者の合格率を、IPAの年度統計へ更新しました</div><div class="update-desc">旧い20〜30%の範囲表記を令和7年度38.3%へ修正し、受験者数・合格者数を確認できる公式出典を本文に追加しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">修正</span><span class="update-date">2026.09.09</span></div><div class="update-title">社会人向け資格ランキングの受験料を、2026年度の公式情報へ更新しました</div><div class="update-desc">日商簿記2級と中小企業診断士第1次試験の受験料を見直し、読者が確認できる公式出典を本文に追加しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.09.09</span></div><div class="update-title">会計士断念後の進路記事を、確認先マップと関連記事導線へ整理しました</div><div class="update-desc">自己診断で進路を決める図解と固定期限を外し、試験制度・求人票・自分の記録を照合する手順へ統一しました。</div></div>
-      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.09</span></div><div class="update-title">公認会計士の短答式合格後に、論文式の手続を確認する記事を追加しました</div><div class="update-desc">同年合格・前年以前の合格や免除などの区分を決めつけず、公式案内・自分の通知書・固定予定を照合する手順を整理しました。</div></div>
-      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.09</span></div><div class="update-title">公認会計士受験と一般就活の予定を照合する判断シートを追加しました</div><div class="update-desc">並行すべきかを断定せず、公式試験日・応募締切・固定予定・未確認事項を同じ表で確認する手順を整理しました。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.09</span></div><div class="update-title">公認会計士の短答式合格後に、論文式の手続を確認する記事を追加しました</div><a class="update-read" href="cpa-tanto-gokaku-ronbun-tetsuzuki.html">記事を読む</a><div class="update-desc">同年合格・前年以前の合格や免除などの区分を決めつけず、公式案内・自分の通知書・固定予定を照合する手順を整理しました。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.09</span></div><div class="update-title">公認会計士受験と一般就活の予定を照合する判断シートを追加しました</div><a class="update-read" href="cpa-juken-shukatsu-heiko.html">記事を読む</a><div class="update-desc">並行すべきかを断定せず、公式試験日・応募締切・固定予定・未確認事項を同じ表で確認する手順を整理しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">改善</span><span class="update-date">2026.09.06</span></div><div class="update-title">会計士断念後の進路記事を、公式条件と記録で選べる内容へ整理しました</div><div class="update-desc">将来の後悔や就職上の評価を断定せず、簿記1級・税理士の公式条件、求人票、自分の記録を確認する4つの選択肢に更新しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">改善</span><span class="update-date">2026.09.06</span></div><div class="update-title">会計士断念後の就活記事を、受験経験を事実ベースで伝える手順へ整理しました</div><div class="update-desc">選考での有利・不利や学習時間を断定せず、求人票との照合、応募書類の整理、簿記2級の公式試験条件を確認できる内容に更新しました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">改善</span><span class="update-date">2026.09.06</span></div><div class="update-title">会計士断念後の簿記1級記事を、試験条件と演習記録から判断できる内容へ整理しました</div><div class="update-desc">学習時間の短縮・優位性を断定せず、日商簿記1級の科目・試験形式・日程と、4科目の演習記録を確認する手順に更新しました。</div></div>
@@ -2685,25 +2703,29 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item"><div class="update-head"><span class="update-badge fix">改善</span><span class="update-date">2026.09.05</span></div><div class="update-title">FP3級の相続・事業承継記事を、国税庁の一次情報に合わせて再構成しました</div><div class="update-desc">法定相続分、相続税の基礎控除、死亡保険金、贈与税を、条件と一次情報リンク付きで確認できるようにしました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">改善</span><span class="update-date">2026.09.05</span></div><div class="update-title">FP3級不動産記事を、国土交通省・国税庁の一次情報に合わせて再構成しました</div><div class="update-desc">建ぺい率、媒介契約、譲渡所得を、条件と一次情報リンク付きで確認できるようにしました。</div></div>
       <div class="update-item"><div class="update-head"><span class="update-badge fix">改善</span><span class="update-date">2026.09.05</span></div><div class="update-title">FP3級タックスプランニングを、国税庁の現行情報に合わせて再構成しました</div><div class="update-desc">所得10種類、所得控除・税額控除、損益通算、医療費控除、確定申告を、条件と一次情報リンク付きで確認できるようにしました。</div></div>
-      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.02</span></div><div class="update-title">簿記2級の商業簿記で落とす点を、演習結果から特定する記事を追加しました</div><div class="update-desc">直近3回の演習を設問別に記録し、仕訳・個別論点・決算整理のどこへ戻るかを1つに絞る手順です。</div></div>
+      <div class="update-item"><div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.09.02</span></div><div class="update-title">簿記2級の商業簿記で落とす点を、演習結果から特定する記事を追加しました</div><a class="update-read" href="boki2-shogyo-enshu.html">記事を読む</a><div class="update-desc">直近3回の演習を設問別に記録し、仕訳・個別論点・決算整理のどこへ戻るかを1つに絞る手順です。</div></div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.08.29</span></div>
         <div class="update-title">簿記2級で3級の内容を忘れた人向けに、戻る論点を1問で決める依存論点マップを追加しました</div>
+        <a class="update-read" href="boki2-3kyu-fukushu.html">記事を読む</a>
         <div class="update-desc">3級を最初から復習するのでなく、2級で止まった論点に対応する3級の例題だけを解く方法を整理しています。出題区分表と試験科目は日本商工会議所の一次情報で確認しました。</div>
       </div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.08.29</span></div>
         <div class="update-title">⌨️ Mac・iPadで簿記を学ぶ人向けに、ネット試験前の差分チェック記事を追加しました</div>
+        <a class="update-read" href="boki-net-test-mac-ipad.html">記事を読む</a>
         <div class="update-desc">端末購入を勧めず、画面・A4紙2枚・プルダウンと数字入力を一度だけ再現する手順を、日本商工会議所の公式案内に基づいて整理しています。</div>
       </div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.08.26</span></div>
         <div class="update-title">📝 簿記のノートを、本番の筆記条件から逆算する記事を追加しました</div>
+        <a class="update-read" href="boki-note-sekkei.html">記事を読む</a>
         <div class="update-desc">紙の統一試験とネット試験で使える筆記具・下書き用紙・答案の扱いを公式案内で確認し、ノートに残す内容を「答案の形」「誤答の理由」「自分の言葉」の3つに整理しました。</div>
       </div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新着</span><span class="update-date">2026.08.25</span></div>
         <div class="update-title">📍 簿記の勉強場所を、場所別メニュー表で整理しました</div>
+        <a class="update-read" href="boki-benkyo-basho.html">記事を読む</a>
         <div class="update-desc">自宅・カフェ・図書館・自習室・昼休み・通勤で、インプット、仕訳、総合問題、復習のどれを進めるかを整理しました。試験規定と普段の学習環境を混同しないよう、ネット試験と統一試験の一次情報も本文から確認できます。</div>
       </div>
       <div class="update-item">
@@ -2759,26 +2781,32 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.29</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">🧩 「簿記2級・連結会計は捨てるべきか」記事を公開しました</div>
+        <a class="update-read" href="boki2-renketsu-suteru.html">記事を読む</a>
         <div class="update-desc">連結会計だけ心が折れそうな人向けに、第2問の配点構造から逆算して「ここだけは死守する」「深追いしない」を切り分ける部分点戦略をまとめた記事を公開しました。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.29</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">⏭️ 「簿記3級を飛ばして2級から受けていい？」記事を公開しました</div>
+        <a class="update-read" href="boki3-tobashi-2kyu.html">記事を読む</a>
         <div class="update-desc">3級を飛ばして2級から受けるべきか迷っている人向けに、2級の試験中に3級知識がどこで顔を出すかを整理し、飛ばしていい人・やめておくべき人を判定するチェックリストをまとめた記事を公開しました。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.28</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">🌉 「仕訳はわかるのに過去問が解けない」記事を公開しました</div>
+        <a class="update-read" href="boki2-oyoryoku-kabe.html">記事を読む</a>
         <div class="update-desc">個別の仕訳・論点は理解できているのに、過去問（総合問題）になると時間内に解けない人向けに、原因3つと「橋渡し」演習ステップをまとめた記事を公開しました。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.27</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">✏️ 簿記「ケアレスミス撲滅」「挫折タイプ診断」の2記事を公開しました</div>
+        <a class="update-read" href="boki-careless-miss.html">ケアレスミス対策を読む</a>
+        <a class="update-read" href="boki-zasetsu-type.html">挫折タイプの記事を読む</a>
         <div class="update-desc">電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方と、勉強が続かない原因を4タイプに分けて診断する記事を公開しました。簿記3級・2級どちらの学習者にも役立つ内容です。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.24</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">🤖 新カテゴリ「AI活用・時短術」を開設しました</div>
+        <a class="update-read" href="ai-shiwake-kikikata.html">仕訳の質問例を読む</a>
         <div class="update-desc">Claude/ChatGPTを使って簿記の仕訳を理解するための「聞き方」のコツと、コピペで使えるプロンプト集をまとめた記事を公開しました。資格学習にAIを活用したい方向けの新シリーズです。</div>
       </div>
       <div class="update-item fi">
@@ -2789,6 +2817,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.07.24</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">🧭 簿記1級「不合格からの立て直し方」記事を公開しました</div>
+        <a class="update-read" href="boki1-akirameta-tatenaoshi.html">記事を読む</a>
         <div class="update-desc">簿記1級で不合格が続いて心が折れかけている方向けに、答案分析のチェックリストや、独学と予備校を切り替える判断基準まで具体的にまとめた記事を公開しました。</div>
       </div>
       <div class="update-item fi">
@@ -2859,11 +2888,13 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.10</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">⚖ 司法書士向けの記事と論点ロードマップを追加</div>
+        <a class="update-read" href="shihoshoshi-roniten.html">司法書士の論点一覧へ</a>
         <div class="update-desc">司法書士を目指す人向けに、最初の7日間・民法総則・物権・不動産登記法・会社法・科目別論点一覧の記事を追加しました。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.09</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">📘 簿記2級の論点解説記事を10本追加</div>
+        <a class="update-read" href="#cat-boki2">簿記2級の記事一覧へ</a>
         <div class="update-desc">決算整理・商品売買・純資産・法人税等・ソフトウェア・銀行勘定調整表・製造間接費・部門別計算・製造原価報告書・ネット試験対策の記事を追加しました。</div>
       </div>
       <div class="update-item fi">
@@ -2894,16 +2925,20 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.07</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">📉 簿記3級 記事をさらに1本追加（貸倒引当金）</div>
+        <a class="update-read" href="boki3-kashidaore.html">記事を読む</a>
         <div class="update-desc">「貸倒引当金の仕訳と計算」を公開。差額補充法の計算手順・貸倒損失との使い分け・2級向け当期回収パターンまで例題つきで解説しています。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.07</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">📒 簿記3級 解説記事を2本追加（現金・当座預金 / 現金過不足）</div>
+        <a class="update-read" href="boki3-genkin.html">現金・当座預金を読む</a>
+        <a class="update-read" href="boki3-kafusoku.html">現金過不足を読む</a>
         <div class="update-desc">「現金・当座預金の違いと仕訳」「流れで覚える現金過不足の仕訳」を公開。小切手の○×判定や雑損・雑益の判断を例題つきで解説しています。</div>
       </div>
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.07</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">✏️ 初心者向け連載「ゼロからの簿記」全5回を公開</div>
+        <a class="update-read" href="boki-zero-01.html">第1回を読む</a>
         <div class="update-desc">簿記がまったくわからない人向けに、取引・仕訳・財務諸表までを5回で学べる連載を追加しました。対話形式のチャットUIで読みやすく構成しています。</div>
       </div>
       <div class="update-item fi">
@@ -2939,6 +2974,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
       <div class="update-item fi">
         <div class="update-meta"><span class="update-date">2026.05.04</span><span class="update-badge feature">新機能</span></div>
         <div class="update-title">📘 日商簿記1級の「予備校 vs 独学」比較記事を追加</div>
+        <a class="update-read" href="boki1-yobikou.html">記事を読む</a>
         <div class="update-desc">予備校の強みと独学の強み、つまずきやすい点や補い方まで整理した簿記1級向けの記事を公開しました。</div>
       </div>
       <div class="update-item fi">
@@ -3004,6 +3040,52 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
     </div>
   </div>
 </section>
+
+<script>
+// Keep the existing update entries readable even before this script runs.
+document.querySelectorAll('#updates .updates-list > .update-item').forEach((item, index) => {
+  const title = item.querySelector('.update-title');
+  const description = item.querySelector(':scope > .update-desc, :scope > .update-body');
+  if (!title || !description) return;
+
+  title.id ||= `update-title-${index + 1}`;
+  description.id ||= `update-detail-${index + 1}`;
+
+  const actions = document.createElement('div');
+  actions.className = 'update-actions';
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'update-toggle';
+  toggle.textContent = '詳細を見る';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', description.id);
+  toggle.setAttribute('aria-describedby', title.id);
+  toggle.addEventListener('click', () => {
+    const open = description.hidden;
+    description.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? '閉じる' : '詳細を見る';
+  });
+  actions.append(toggle);
+
+  const articleLinks = item.querySelectorAll(':scope > .update-read');
+  if (articleLinks.length === 1) articleLinks[0].setAttribute('aria-describedby', title.id);
+  actions.append(...articleLinks);
+  if (!articleLinks.length && item.querySelector('.update-badge.feature')?.textContent.trim() === '新記事') {
+    const article = description.querySelector('a[href]');
+    if (article) {
+      const link = document.createElement('a');
+      link.className = 'update-read';
+      link.href = article.getAttribute('href');
+      link.textContent = '記事を読む';
+      link.setAttribute('aria-describedby', title.id);
+      actions.append(link);
+    }
+  }
+  description.before(actions);
+  description.hidden = true;
+});
+</script>
 
 <!-- SPONSORED -->
 <section style="padding:0 24px 60px;background:var(--surface);">
