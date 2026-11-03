@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch07-1-system-development.html">
+  <title>ITパスポート 7-1 システム開発技術｜スタディクエスト</title>
+  <meta name="description" content="図書館のグループ学習室を題材に、要件・設計・実装、単体から受入れまでのテスト、境界値と見積りを学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 7-1 システム開発技術">
+  <meta property="og:description" content="図書館のグループ学習室を題材に、要件・設計・実装、単体から受入れまでのテスト、境界値と見積りを学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch07-1-system-development.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 7-1 システム開発技術",
+  "description": "図書館のグループ学習室を題材に、要件・設計・実装、単体から受入れまでのテスト、境界値と見積りを学びます。",
+  "url": "https://study-quest.net/itp-ch07-1-system-development.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch07-1-system-development.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第7章 システム開発</p>
+    <h1>ITパスポート 7-1 システム開発技術</h1>
+    <p>図書館のグループ学習室を題材に、要件・設計・実装、単体から受入れまでのテスト、境界値と見積りを学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#development">要件から実装・導入へ</a></li><li><a href="#testing">テストの範囲と境界値</a></li><li><a href="#estimation">見積り</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="development">
+  <h2>要件を、動く予約機能に変える</h2>
+  <p>第6章の大学図書館に、グループ学習室を予約する機能を追加します。人数は1〜4人とします。<strong>システム要件定義</strong>では、全体で必要な機能や性能を整理し、機器・ソフトウェア・人の運用で何を担うかを考えます。<strong>ソフトウェア要件定義</strong>では、人数の制限や空室の表示など、ソフトウェアが満たす条件を具体化します。</p>
+    <figure id="visual-development" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>グループ学習室の予約を、使える機能にする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 325" role="img" aria-labelledby="visual-development-title visual-development-desc">
+        <title id="visual-development-title">グループ学習室の予約を、使える機能にする</title>
+        <desc id="visual-development-desc">人数の要件を決め、画面・処理・データを設計し、実装とテストを行う。試行導入後は現場で使って確かめる。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">要件</text>
+      <text x="66" y="44" class="" text-anchor="start">学習室は1組1〜4人で予約</text>
+      <text x="66" y="62" class="small" text-anchor="start">何を満たすかを決める</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M2 23L23 2l7 7L9 30l-7-7zm7-7 4 4m1-9 3 3m2-8 4 4" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">設計</text>
+      <text x="66" y="127" class="" text-anchor="start">人数欄と空室の取得方法を決定</text>
+      <text x="66" y="145" class="small" text-anchor="start">画面・処理・データを具体化</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">実装・テスト</text>
+      <text x="66" y="210" class="" text-anchor="start">人数の判定と予約保存を作る</text>
+      <text x="66" y="228" class="small" text-anchor="start">1〜4人で登録、範囲外で拒否</text>
+      <path d="M33 239L33 250M29 245l4 5 4 -5" class="wire"/>
+      <rect x="1" y="252" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="265" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 271)"><path d="M5 17l7 7L28 7" class="line orange"/></g>
+      <text x="66" y="272" class="strong orange" text-anchor="start">導入・受入れ</text>
+      <text x="66" y="293" class="" text-anchor="start">窓口職員が試し、切替を確認</text>
+      <text x="66" y="311" class="small" text-anchor="start">予約済みの情報を引き継ぐ</text>
+      </svg>
+      <p>第6章で合意した内容を、画面・処理・検証項目へ具体化します。実際の開発では、確認結果を受けて前の判断を見直すこともあります。</p>
+    </figure>
+  <p><strong>システム設計</strong>では、受付画面、認証、予約台帳をどう連携させるかを決めます。<strong>ソフトウェア設計</strong>では、例えば人数欄の見せ方や判定処理、画面と台帳で受け渡す項目を決めます。<strong>プログラミング</strong>ではその設計をコードにします。設計の粒度や工程名は組織によって変わるため、問題文では決めようとしている対象に着目します。</p>
+    <figure id="visual-review" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>開発中に、何を見て何を直す？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-review-title visual-review-desc">
+        <title id="visual-review-title">開発中に、何を見て何を直す？</title>
+        <desc id="visual-review-desc">共同レビューは関係者が要求や設計を確認、コードレビューはコードを確認、テストは実行結果を比較、デバッグは原因を特定して修正。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">共同レビュー</text>
+      <text x="13" y="65" class="small" text-anchor="start">職員と画面案を見る</text>
+      <text x="13" y="85" class="small" text-anchor="start">認識のずれを見つける</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">コードレビュー</text>
+      <text x="179" y="65" class="small" text-anchor="start">人数の判定式を読む</text>
+      <text x="179" y="85" class="small" text-anchor="start">誤りや読みにくさを探す</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M5 17l7 7L28 7" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">テスト</text>
+      <text x="13" y="170" class="small" text-anchor="start">5人で予約してみる</text>
+      <text x="13" y="190" class="small" text-anchor="start">拒否されるか確認する</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">デバッグ</text>
+      <text x="179" y="170" class="small" text-anchor="start">なぜ5人で確定したか</text>
+      <text x="179" y="190" class="small" text-anchor="start">原因の条件式を直す</text>
+      </svg>
+      <p>同じ不具合に関わる作業でも、資料を見る、コードを読む、動かす、原因を調べるという目的が違います。</p>
+    </figure>
+  <p>導入時は、既存予約の移行件数や席番号を照合し、職員への案内や切替手順を用意します。<strong>妥当性確認</strong>では意図した利用環境で目的を達成できるかを見ます。予約を入力できても、閉館時の取り消しを職員が扱えないなら、実際の用途を満たすかを見直します。導入後の<strong>保守</strong>では、不具合修正や環境変更への対応などを行います。</p>
+</section>
+
+<section id="testing">
+  <h2>テストは「どこまでつないで、何を確かめるか」で選ぶ</h2>
+  <p>人数判定を単独で動かすのが<strong>単体テスト</strong>、画面と予約台帳などの連携を試すのが<strong>結合テスト</strong>です。例えば画面が「4人」と送っても台帳に「1人」と保存される不具合は、判定処理の単体テストだけでは見つからないことがあります。<strong>システムテスト</strong>では、全体として機能や性能の要件を満たすかを確かめます。</p>
+    <figure id="visual-test-levels" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ予約機能を、範囲を広げながら試す</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 380" role="img" aria-labelledby="visual-test-levels-title visual-test-levels-desc">
+        <title id="visual-test-levels-title">同じ予約機能を、範囲を広げながら試す</title>
+        <desc id="visual-test-levels-desc">単体は人数判定、結合は画面と予約台帳の連携、システムは予約から入室まで全体、運用は職員の実際の手順、受入れは発注側が条件との適合を確認。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M5 17l7 7L28 7" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">単体テスト</text>
+      <text x="66" y="44" class="" text-anchor="start">人数判定だけを呼ぶ</text>
+      <text x="66" y="62" class="small" text-anchor="start">0人は拒否、1人は受付</text>
+      <rect x="1" y="79" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="92" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 98)"><path d="M3 8l13-6 13 6v17l-13 6-13-6V8zm0 0 13 6 13-6M16 14v17M9 5l13 6v6" class="line orange"/></g>
+      <text x="66" y="99" class="strong orange" text-anchor="start">結合テスト</text>
+      <text x="66" y="120" class="" text-anchor="start">画面と台帳をつないで試す</text>
+      <text x="66" y="138" class="small" text-anchor="start">選んだ人数が正しく記録される</text>
+      <rect x="1" y="155" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="168" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 174)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="66" y="175" class="strong blue" text-anchor="start">システムテスト</text>
+      <text x="66" y="196" class="" text-anchor="start">予約から入室まで通して試す</text>
+      <text x="66" y="214" class="small" text-anchor="start">全体が要件どおり動く</text>
+      <rect x="1" y="231" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="244" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 250)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line orange"/></g>
+      <text x="66" y="251" class="strong orange" text-anchor="start">運用テスト</text>
+      <text x="66" y="272" class="" text-anchor="start">開館前の確認や障害時を試す</text>
+      <text x="66" y="290" class="small" text-anchor="start">職員が手順どおりに動ける</text>
+      <rect x="1" y="307" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="320" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 326)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="327" class="strong blue" text-anchor="start">受入れテスト</text>
+      <text x="66" y="348" class="" text-anchor="start">発注側が合意した条件を確認</text>
+      <text x="66" y="366" class="small" text-anchor="start">引き受けられるか判断する</text>
+      </svg>
+      <p>見る範囲と目的を覚えます。単体が通っても、データの受け渡しや現場の手順に不具合が出ることがあります。</p>
+    </figure>
+  <p><strong>運用テスト</strong>では、職員の交替、通信障害時の切替、問い合わせ対応など、現場の運用手順を試します。<strong>受入れテスト</strong>では、発注側などが合意した条件を満たすか確かめ、受入れを判断します。同じシナリオを使うことがあっても、確認の目的が違います。</p>
+  <h3>テストの範囲と、テストデータの選び方を分ける</h3>
+  <p><strong>ブラックボックステスト</strong>では仕様と入出力に着目し、<strong>ホワイトボックステスト</strong>ではコードの分岐など内部の構造に着目します。人数判定の単体テストでも、入出力の仕様からデータを選ぶことができます。<strong>負荷テスト</strong>では想定した同時操作などで応答を調べ、<strong>回帰テスト</strong>では修正が以前の正常な動きに影響していないかを確認します。</p>
+    <figure id="visual-test-views" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>入力と出力を見るか、処理の枝を追うか</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-test-views-title visual-test-views-desc">
+        <title id="visual-test-views-title">入力と出力を見るか、処理の枝を追うか</title>
+        <desc id="visual-test-views-desc">ブラックボックスは仕様と入出力、ホワイトボックスは内部の構造、負荷は多くの同時操作、回帰は変更の悪影響を確認。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">外から確認</text>
+      <text x="13" y="65" class="small" text-anchor="start">仕様に従い0人を入力</text>
+      <text x="13" y="85" class="small" text-anchor="start">拒否が返るかを確認</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">内部を確認</text>
+      <text x="179" y="65" class="small" text-anchor="start">判定式の各分岐を選ぶ</text>
+      <text x="179" y="85" class="small" text-anchor="start">通った経路を確認</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M3 3v25h27M7 24l7-8 6 3 8-12M23 7h5v5" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">負荷を確認</text>
+      <text x="13" y="170" class="small" text-anchor="start">多数の学生が同時操作</text>
+      <text x="13" y="190" class="small" text-anchor="start">応答時間などを測る</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M5 17l7 7L28 7" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">回帰を確認</text>
+      <text x="179" y="170" class="small" text-anchor="start">人数の判定を修正後</text>
+      <text x="179" y="190" class="small" text-anchor="start">予約取消も動くか確認</text>
+      </svg>
+      <p>単体・結合は試す範囲の分類です。ブラックボックスとホワイトボックスはテストの設計で着目する情報の違いです。</p>
+    </figure>
+  <p><strong>同値分割</strong>では、同じ処理が期待される入力をグループに分けて代表を選びます。整数なら「0以下」「1〜4」「5以上」に分け、例えば0・2・5を使います。<strong>限界値分析（境界値分析）</strong>では結果が変わるところに注目します。次の図では0・1・4・5を試します。空欄や文字も送れる仕様なら、別の入力として試験に含めます。</p>
+    <figure id="visual-boundary" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>1〜4人が有効なら、どの数字を試す？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 171" role="img" aria-labelledby="visual-boundary-title visual-boundary-desc">
+        <title id="visual-boundary-title">1〜4人が有効なら、どの数字を試す？</title>
+        <desc id="visual-boundary-desc">境界値を調べる基本例は0・1・4・5人。0と5は拒否、1と4は受付。2と3も有効。</desc>
+      <rect x="1" y="3" width="328" height="166" rx="8" class="panel"/>
+      <text x="15" y="28" class="strong" text-anchor="start">入力人数</text>
+      <text x="310" y="28" class="small blue" text-anchor="end">有効な範囲は1〜4人</text>
+      <path d="M30 66h270" class="wire"/>
+      <rect x="84" y="58" width="162" height="16" rx="4" class="blue-fill"/>
+      <text x="30" y="100" class="strong" text-anchor="middle">0</text>
+      <text x="84" y="100" class="strong" text-anchor="middle">1</text>
+      <text x="138" y="100" class="strong" text-anchor="middle">2</text>
+      <text x="192" y="100" class="strong" text-anchor="middle">3</text>
+      <text x="246" y="100" class="strong" text-anchor="middle">4</text>
+      <text x="300" y="100" class="strong" text-anchor="middle">5</text>
+      <path d="M30 73v9" class="wire"/>
+      <path d="M84 73v9" class="wire"/>
+      <path d="M138 73v9" class="wire"/>
+      <path d="M192 73v9" class="wire"/>
+      <path d="M246 73v9" class="wire"/>
+      <path d="M300 73v9" class="wire"/>
+      <rect x="9" y="113" width="42" height="33" rx="5" class="orange-fill"/>
+      <rect x="63" y="113" width="42" height="33" rx="5" class="blue-fill"/>
+      <rect x="225" y="113" width="42" height="33" rx="5" class="blue-fill"/>
+      <rect x="279" y="113" width="42" height="33" rx="5" class="orange-fill"/>
+      <text x="30" y="135" class="small" text-anchor="middle">拒否</text>
+      <text x="84" y="135" class="small" text-anchor="middle">受付</text>
+      <text x="246" y="135" class="small" text-anchor="middle">受付</text>
+      <text x="300" y="135" class="small" text-anchor="middle">拒否</text>
+      <text x="165" y="158" class="small" text-anchor="middle">選んだ4点で切り替わりを確認</text>
+      </svg>
+      <p>有効・無効が切り替わる境界の内外を一組ずつ試します。ここでは人数の型は整数と仮定します。</p>
+    </figure>
+</section>
+
+<section id="estimation">
+  <h2>見積りは、何を手がかりにしたかを確認する</h2>
+  <p>人数欄を追加する見積りでは、画面変更に加えて、予約台帳や既存データ、テストも考えます。<strong>積算法</strong>では作業を小さく分け、それぞれの工数を足します。WBSは作業を分解して整理するために使えます。</p>
+    <figure id="visual-estimate" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>作業を分けて、見積りに漏れがないか見る</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 207" role="img" aria-labelledby="visual-estimate-title visual-estimate-desc">
+        <title id="visual-estimate-title">作業を分けて、見積りに漏れがないか見る</title>
+        <desc id="visual-estimate-desc">設計4人時、実装6人時、テスト4人時で合計14人時。1目盛りは2人時。</desc>
+      <rect x="1" y="3" width="328" height="201" rx="8" class="panel"/>
+      <text x="14" y="27" class="strong" text-anchor="start">積上げの例（人時）</text>
+      <text x="16" y="56" class="small" text-anchor="start">設計</text>
+      <rect x="78" y="43" width="100" height="14" rx="3" class="dot-fast"/>
+      <text x="187" y="56" class="strong" text-anchor="start">4</text>
+      <text x="16" y="91" class="small" text-anchor="start">実装</text>
+      <rect x="78" y="78" width="150" height="14" rx="3" class="dot-orange"/>
+      <text x="237" y="91" class="strong" text-anchor="start">6</text>
+      <text x="16" y="126" class="small" text-anchor="start">テスト</text>
+      <rect x="78" y="113" width="100" height="14" rx="3" class="dot-fast"/>
+      <text x="187" y="126" class="strong" text-anchor="start">4</text>
+      <path d="M78 145h150m-150 0v5m50-5v5m50-5v5m50-5v5" class="wire"/>
+      <text x="78" y="169" class="small" text-anchor="middle">0</text>
+      <text x="128" y="169" class="small" text-anchor="middle">2</text>
+      <text x="178" y="169" class="small" text-anchor="middle">4</text>
+      <text x="228" y="169" class="small" text-anchor="middle">6</text>
+      <text x="14" y="193" class="strong blue" text-anchor="start">合計 4 ＋ 6 ＋ 4 ＝ 14人時</text>
+      </svg>
+      <p>WBSなどで作業を分解し、個別の工数を見積もって足し上げる例です。14人時は作業量で、待ち時間を含む日程とは別に考えます。</p>
+    </figure>
+  <table>
+    <caption>見積り手法と、自習室予約で使う情報</caption>
+    <colgroup><col style="width: 30%"><col></colgroup>
+    <thead><tr><th scope="col">手法</th><th scope="col">手がかり</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ファンクションポイント法</th><td>入力、出力、照会、論理ファイルなどの機能を分類し、複雑さに応じた重みを付けてソフトウェア規模を見積もる。</td></tr>
+      <tr><th scope="row">類推見積法</th><td>以前の予約変更機能の実績を参照し、今回追加する連携や難しさの違いを補正する。</td></tr>
+      <tr><th scope="row">プログラムステップ法</th><td>見込まれるソースコードの行数などをもとに、規模や工数を推定する。</td></tr>
+      <tr><th scope="row">相対見積り</th><td>既知の作業を基準に、別の作業の大きさを相対的に表す。ポイントはチーム内の尺度として使う。</td></tr>
+    </tbody>
+  </table>
+  <p>規模、工数、暦上の日数は区別します。14人時の作業を2人が担当しても、設計が終わるまで実装を始められないなど、前後関係によって日程は変わります。</p>
+</section>
+
+<section id="quiz">
+  <h2>解説つきの自作例題6問</h2>
+  <p>まず自分で選び、解答を開いて、判断に使った条件を確かめます。</p>
+    <section class="box">
+      <h3>第1問　画面と台帳をどうつなぐか</h3>
+      <p>受付画面、認証、台帳をどのように分け、どの項目をやり取りするか検討します。主にどの工程ですか。</p>
+      <ol class="options"><li>保守</li><li>システム設計</li><li>運用テスト</li><li>受入れテスト</li></ol>
+      <details><summary>第1問の解答と解説</summary><p><strong>イ　システム設計</strong></p><p>構成要素とその連携の具体化はシステム設計です。運用テストは、できたものを現場の手順で使えるか確かめる段階です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　判定は合うのに、人数が台帳に入らない</h3>
+      <p>人数判定の単体テストは成功しました。画面で4人を選んだとき、台帳にも4人が記録されるかを重点的に確かめます。何のテストですか。</p>
+      <ol class="options"><li>人数判定だけの単体テスト</li><li>受入れテストだけ</li><li>画面と台帳の結合テスト</li><li>コードレビュー</li></ol>
+      <details><summary>第2問の解答と解説</summary><p><strong>ウ　画面と台帳の結合テスト</strong></p><p>二つの部分をつなぎ、送信値が台帳に渡るかを確かめるので結合テストです。画面の値と保存結果を突き合わせます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　受付と拒否の境目を選ぶ</h3>
+      <p>予約人数は整数で1〜4人だけ有効です。両端と、そのすぐ外側を一つずつ確認する組合せはどれですか。</p>
+      <ol class="options"><li>0・1・4・5</li><li>1・2・3・4</li><li>0・2・5・6</li><li>1・3・4・6</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>ア　0・1・4・5</strong></p><p>下限は0と1、上限は4と5で判定が切り替わります。すべて有効な1・2・3・4だけでは、範囲外が拒否されるか分かりません。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　上限の修正後に取消を確かめる</h3>
+      <p>人数の判定を直したあと、以前できていた予約取消と空席表示も同じように動くか確かめます。目的はどれですか。</p>
+      <ol class="options"><li>負荷テスト</li><li>コードレビュー</li><li>デバッグ</li><li>回帰テスト</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>エ　回帰テスト</strong></p><p>変更が既存の機能を壊していないか確認するので回帰テストです。人数上限の不具合そのものが直ったかも、別途、同じ入力で再確認します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　工数を足し上げる</h3>
+      <p>設計4人時、実装6人時、テスト4人時と見積もりました。記述のうち適切なものはどれですか。</p>
+      <ol class="options"><li>総工数は10人時</li><li>総工数は14人時。暦上の所要時間は作業の前後関係も見る</li><li>2人なら必ず7時間で終わる</li><li>人時はソースコードの行数を表す</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>イ　総工数は14人時。暦上の所要時間は作業の前後関係も見る</strong></p><p>4＋6＋4＝14人時です。実装が設計に依存するなど、同時に進められない作業もあるため、人数で割るだけでは日程は決まりません。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　利用者から見える機能で規模を見積もる</h3>
+      <p>入出力や照会などを分類し、複雑さの重みを使って規模を見積もる手法はどれですか。</p>
+      <ol class="options"><li>ファンクションポイント法</li><li>プログラムステップ法</li><li>境界値分析</li><li>コードレビュー</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>ア　ファンクションポイント法</strong></p><p>利用者に提供する機能を手がかりにするのがファンクションポイント法です。プログラムステップ法は行数などから考えます。</p></details>
+    </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第7章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=31">IPA「ITパスポート試験シラバス Ver.6.5」システム開発技術</a></li>
+      <li><a href="https://www.ipa.go.jp/archive/security/vuln/programming/cc/chapter2/cc2-2.html">IPA「セキュリティテスト」テスト工程とテスト方法</a></li>
+      <li><a href="https://www.ipa.go.jp/archive/digital/iot-en-ci/teiryou/ent01-c.html">IPA「見積もり手法」</a></li>
+    </ul>
+    <p><a href="itp-ch06-2-system-planning.html">前の章 6-2 システム企画</a> ／ 次へ <a href="itp-ch07-2-development-methods.html">7-2 ソフトウェア開発管理技術</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch07"></script>
+</body>
+</html>

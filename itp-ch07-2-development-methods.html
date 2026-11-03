@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch07-2-development-methods.html">
+  <title>ITパスポート 7-2 ソフトウェア開発管理技術｜スタディクエスト</title>
+  <meta name="description" content="図書館の予約機能を例に、クラスとオブジェクト、開発モデル、アジャイル・スクラム・XP、DevOpsとMLOpsを学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 7-2 ソフトウェア開発管理技術">
+  <meta property="og:description" content="図書館の予約機能を例に、クラスとオブジェクト、開発モデル、アジャイル・スクラム・XP、DevOpsとMLOpsを学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch07-2-development-methods.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 7-2 ソフトウェア開発管理技術",
+  "description": "図書館の予約機能を例に、クラスとオブジェクト、開発モデル、アジャイル・スクラム・XP、DevOpsとMLOpsを学びます。",
+  "url": "https://study-quest.net/itp-ch07-2-development-methods.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch07-2-development-methods.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第7章 システム開発</p>
+    <h1>ITパスポート 7-2 ソフトウェア開発管理技術</h1>
+    <p>図書館の予約機能を例に、クラスとオブジェクト、開発モデル、アジャイル・スクラム・XP、DevOpsとMLOpsを学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#modelling">オブジェクト指向とモデル化</a></li><li><a href="#models">開発モデルの選び方</a></li><li><a href="#agile">アジャイル・スクラム・XP</a></li><li><a href="#operations">DevOpsとMLOps</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="modelling">
+  <h2>予約を「データと操作を持つもの」として考える</h2>
+  <p>大学図書館にグループ学習室の予約を追加します。<strong>オブジェクト指向</strong>では、予約番号や人数などのデータと、予約・取消などの操作をまとめて考えます。共通の定義が<strong>クラス</strong>、その定義から作られた個々の予約が<strong>オブジェクト</strong>です。</p>
+    <figure id="visual-objects" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約のひな型と、実際に登録された予約</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 224" role="img" aria-labelledby="visual-objects-title visual-objects-desc">
+        <title id="visual-objects-title">予約のひな型と、実際に登録された予約</title>
+        <desc id="visual-objects-desc">予約クラスは番号、人数、取消操作を定義。R01は2人、R02は4人の別々の予約オブジェクト。</desc>
+      <rect x="66" y="5" width="198" height="76" rx="8" class="blue-fill"/>
+      <text x="165" y="29" class="strong blue" text-anchor="middle">予約クラス</text>
+      <text x="165" y="51" class="small" text-anchor="middle">データ｜番号・人数・状態</text>
+      <text x="165" y="69" class="small" text-anchor="middle">操作｜予約する・取り消す</text>
+      <path d="M165 82v24H82v18m83-18h83v18" class="wire"/>
+      <path d="M82 112L82 126M78 121l4 5 4 -5" class="wire"/>
+      <path d="M248 112L248 126M244 121l4 5 4 -5" class="wire"/>
+      <rect x="2" y="129" width="161" height="81" rx="8" class="panel"/>
+      <rect x="167" y="129" width="161" height="81" rx="8" class="panel"/>
+      <g transform="translate(15 142)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <g transform="translate(180 142)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line orange"/></g>
+      <text x="57" y="158" class="strong blue" text-anchor="start">予約 R01</text>
+      <text x="222" y="158" class="strong orange" text-anchor="start">予約 R02</text>
+      <text x="15" y="188" class="small" text-anchor="start">2人で予約済み</text>
+      <text x="180" y="188" class="small" text-anchor="start">4人で予約済み</text>
+      </svg>
+      <p>クラスは共通の定義、オブジェクトは実際に作られた一件です。R01を取り消しても、R02の状態は別に管理します。</p>
+    </figure>
+  <p><strong>カプセル化</strong>の例は、予約の状態を外から直接書き換えず、取消操作を通して状態を変える設計です。<strong>継承</strong>では、あるクラスの定義をもとに特性を引き継いだクラスを作れます。<strong>UML</strong>は設計を表す記法で、クラス図は構造、ユースケース図は利用者とシステムの利用目的の関係を表す例です。</p>
+  <p><strong>構造化手法</strong>では、予約処理を「空き確認」「登録」「通知」などへ分け、機能やデータの流れを整理します。<strong>データ中心アプローチ（DOA）</strong>では利用者・部屋・予約といったデータの関係から考え、<strong>プロセス中心アプローチ（POA）</strong>では申請から受付までの流れを起点に考えます。前章のE-R図とDFDも見返せます。 <a href="itp-ch06-1-system-strategy.html#visual-models">第6章の図を見比べる</a></p>
+</section>
+
+<section id="models">
+  <h2>開発モデルは、どこで不確かさを減らすかで見分ける</h2>
+  <p>予約ルールが明確で工程の成果物を順に確認するなら、<strong>ウォーターフォールモデル</strong>の考え方が使えます。職員が望む画面がまだ曖昧なら、<strong>プロトタイピング</strong>で先に試作を見せ、要望を具体化できます。<strong>スパイラルモデル</strong>では、同時予約などのリスクを見積もり、確認と開発を繰り返します。<strong>RAD</strong>はツールや部品の活用などで短期間の開発を目指します。</p>
+    <figure id="visual-models" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約画面を作るとき、何を優先する？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-models-title visual-models-desc">
+        <title id="visual-models-title">予約画面を作るとき、何を優先する？</title>
+        <desc id="visual-models-desc">ウォーターフォールは段階を順に進め、試作は早く要望を確認、スパイラルはリスクを評価して反復、RADは部品やツールで短期開発。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="49" y="34" class="small strong blue" text-anchor="start">ウォーターフォール</text>
+      <text x="13" y="65" class="small" text-anchor="start">設計から実装へ</text>
+      <text x="13" y="85" class="small" text-anchor="start">工程の順と成果物を管理</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line orange"/></g>
+      <text x="215" y="34" class="small strong orange" text-anchor="start">プロトタイピング</text>
+      <text x="179" y="65" class="small" text-anchor="start">試作画面を触ってもらう</text>
+      <text x="179" y="85" class="small" text-anchor="start">早めに要望を具体化</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M3 3v25h27M7 24l7-8 6 3 8-12M23 7h5v5" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">スパイラル</text>
+      <text x="13" y="170" class="small" text-anchor="start">同時予約のリスクを確認</text>
+      <text x="13" y="190" class="small" text-anchor="start">評価して次の周へ進む</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">RAD</text>
+      <text x="179" y="170" class="small" text-anchor="start">既製部品やツールを使う</text>
+      <text x="179" y="190" class="small" text-anchor="start">短期間の開発を目指す</text>
+      </svg>
+      <p>事例で何に困っているかを読み取ります。試作と反復のように、複数の考え方を組み合わせる場合もあります。</p>
+    </figure>
+  <p>設計資料が残っていない旧システムのコードや動きを調べ、仕様や構造を明らかにするのは<strong>リバースエンジニアリング</strong>の例です。新規機能をどう作るかに加え、引き継ぐものを理解する作業も必要になります。</p>
+</section>
+
+<section id="agile">
+  <h2>アジャイルでは、使える単位で反応を確かめる</h2>
+  <p>学習室の空き確認と予約を先に小さく作り、職員の反応を見ます。「キャンセルが電話に集中する」と分かったら、次に作る内容の優先順位を見直します。<strong>アジャイル開発</strong>では、価値を届けながら変化に適応し、開発の進め方も定期的に振り返ります。</p>
+    <figure id="visual-agile" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>使える部分を届けて、次の優先順位を決める</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-agile-title visual-agile-desc">
+        <title id="visual-agile-title">使える部分を届けて、次の優先順位を決める</title>
+        <desc id="visual-agile-desc">最初は空室確認と予約の機能を提供。職員の意見を受けて取消の優先度を上げ、次の開発で実装し再確認。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M9 2h14a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm3 5h8m-6 19h4" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">小さく作る</text>
+      <text x="66" y="44" class="" text-anchor="start">空室確認と予約を試行提供</text>
+      <text x="66" y="62" class="small" text-anchor="start">予約が台帳に入るところまで</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">反応を確かめる</text>
+      <text x="66" y="127" class="" text-anchor="start">職員が取消の負担を報告</text>
+      <text x="66" y="145" class="small" text-anchor="start">誤予約を直す操作が必要</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M5 17l7 7L28 7" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">次の開発へ</text>
+      <text x="66" y="210" class="" text-anchor="start">取消を優先して実装</text>
+      <text x="66" y="228" class="small" text-anchor="start">実際の手順で再確認</text>
+      </svg>
+      <p>この例では、取消がない段階は限定した試行利用です。使える単位で確かめながら、次に作る内容を見直します。</p>
+    </figure>
+  <h3>スクラムの役割とイベントを結び付ける</h3>
+  <p><strong>スクラム</strong>はアジャイルの考え方を実践できる枠組みです。<strong>プロダクトオーナー</strong>は価値を最大化する責任を持ち、プロダクトバックログの順序などを管理します。<strong>開発者</strong>は使える成果を作る作業を計画・実行します。<strong>スクラムマスター</strong>はスクラムが理解され実践されるよう、チームや組織を支援します。<strong>スプリント</strong>は1か月以内の固定長の期間です。</p>
+    <figure id="visual-scrum" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>2週間のスプリントで、何を確認する？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 325" role="img" aria-labelledby="visual-scrum-title visual-scrum-desc">
+        <title id="visual-scrum-title">2週間のスプリントで、何を確認する？</title>
+        <desc id="visual-scrum-desc">計画で目標と作業を決め、デイリースクラムで開発者が目標への進捗を点検。レビューでは関係者と成果を、レトロスペクティブではチームの仕事の進め方を確認。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">スプリントプランニング</text>
+      <text x="66" y="44" class="" text-anchor="start">取消を窓口でも使えるようにする</text>
+      <text x="66" y="62" class="small" text-anchor="start">目標と作業を決める</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M28 16a12 12 0 1 1-24 0 12 12 0 0 1 24 0zM16 8v8l6 4" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">デイリースクラム</text>
+      <text x="66" y="127" class="" text-anchor="start">開発者が目標への進捗を点検</text>
+      <text x="66" y="145" class="small" text-anchor="start">必要なら作業計画を調整</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M20 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM7 27v-4a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v4H7z" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">スプリントレビュー</text>
+      <text x="66" y="210" class="" text-anchor="start">職員と使える成果を確認</text>
+      <text x="66" y="228" class="small" text-anchor="start">得た意見を次の判断へ</text>
+      <path d="M33 239L33 250M29 245l4 5 4 -5" class="wire"/>
+      <rect x="1" y="252" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="265" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 271)"><path d="M5 17l7 7L28 7" class="line orange"/></g>
+      <text x="66" y="272" class="strong orange" text-anchor="start">レトロスペクティブ</text>
+      <text x="66" y="293" class="" text-anchor="start">検証の遅れをチームで振り返る</text>
+      <text x="66" y="311" class="small" text-anchor="start">次は事前にテストデータを準備</text>
+      </svg>
+      <p>2週間はこの設例の長さです。レビューは成果と今後の方向、レトロスペクティブはチームの働き方の改善に着目します。</p>
+    </figure>
+  <p><strong>プロダクトバックログ</strong>は製品を改善する作業の順序付きリストです。<strong>スプリントバックログ</strong>には、その期間の目標、選んだ作業、実行計画が入ります。<strong>インクリメント</strong>は完成の定義を満たす、使える成果の積み重ねです。</p>
+  <h3>XPは、コードを作る実践と結び付けて覚える</h3>
+  <p><strong>XP（エクストリームプログラミング）</strong>で扱う実践には、2人で協力してコードを書くペアプログラミングや、先にテストを書き、通るように実装するテスト駆動開発があります。変更をこまめに統合し自動テストで確かめる<strong>CI（継続的インテグレーション）</strong>も、問題を早く見つけるのに使えます。</p>
+    <figure id="visual-xp" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>人数の上限を試し、通るコードにする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 242" role="img" aria-labelledby="visual-xp-title visual-xp-desc">
+        <title id="visual-xp-title">人数の上限を試し、通るコードにする</title>
+        <desc id="visual-xp-desc">テスト駆動開発の小さな例。先に5人の拒否テストを書いて失敗を確認し、最小の変更で通し、振る舞いを保ってコードを整える。</desc>
+      <rect x="1" y="3" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="16" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 22)"><path d="M6 3h13l7 7v19H6V3zm13 0v7h7M10 15h12m-12 5h12m-12 5h9" class="line blue"/></g>
+      <text x="66" y="23" class="strong blue" text-anchor="start">テストを先に書く</text>
+      <text x="66" y="44" class="" text-anchor="start">5人は拒否されるはず</text>
+      <text x="66" y="62" class="small" text-anchor="start">まだ通らないことを確認</text>
+      <path d="M33 73L33 84M29 79l4 5 4 -5" class="wire"/>
+      <rect x="1" y="86" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="99" width="44" height="43" rx="10" class="orange-fill"/>
+      <g transform="translate(17 105)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line orange"/></g>
+      <text x="66" y="106" class="strong orange" text-anchor="start">動くコードを作る</text>
+      <text x="66" y="127" class="" text-anchor="start">上限を超えた入力を拒否</text>
+      <text x="66" y="145" class="small" text-anchor="start">関連テストも通す</text>
+      <path d="M33 156L33 167M29 162l4 5 4 -5" class="wire"/>
+      <rect x="1" y="169" width="328" height="69" rx="8" class="panel"/>
+      <rect x="11" y="182" width="44" height="43" rx="10" class="blue-fill"/>
+      <g transform="translate(17 188)"><path d="M5 17l7 7L28 7" class="line blue"/></g>
+      <text x="66" y="189" class="strong blue" text-anchor="start">コードを整理する</text>
+      <text x="66" y="210" class="" text-anchor="start">同じ結果のまま構造を改善</text>
+      <text x="66" y="228" class="small" text-anchor="start">テストをもう一度動かす</text>
+      </svg>
+      <p>テスト駆動開発はXPで用いられる実践の一つです。振る舞いを保って内部構造を改善する作業をリファクタリングと呼びます。</p>
+    </figure>
+</section>
+
+<section id="operations">
+  <h2>開発と運用をつなぎ、利用後の変化を調べる</h2>
+  <p><strong>DevOps</strong>では、開発担当と運用担当が協力し、変更の統合、テスト、配布、運用の観測をつなぎます。例えば取消機能を追加した後、失敗率が上がったと分かれば、ログを共有して改善します。<strong>MLOps</strong>では、空室を予測するモデルなどを対象に、学習データやモデルの版、評価、運用中の性能を管理します。実際の利用傾向が変わったら、原因を調べ、再学習や更新の必要性を判断します。</p>
+    <figure id="visual-devops" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>公開後も、開発側と運用側で確かめる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 210" role="img" aria-labelledby="visual-devops-title visual-devops-desc">
+        <title id="visual-devops-title">公開後も、開発側と運用側で確かめる</title>
+        <desc id="visual-devops-desc">DevOpsは変更から自動テスト・配布・運用監視までの協働。MLOpsでは学習データやモデル評価・性能の変化も管理する。</desc>
+      <rect x="1" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 13)"><path d="M3 24h26v6H3v-6zm3-5V3h21v16M12 8h10m-5 0v6l-4 3h8l-4-3" class="line blue"/></g>
+      <text x="49" y="34" class="strong blue" text-anchor="start">開発</text>
+      <text x="13" y="65" class="small" text-anchor="start">取消の機能を変更</text>
+      <text x="13" y="85" class="small" text-anchor="start">小さな差分を共有</text>
+      <rect x="167" y="3" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 13)"><path d="M5 17l7 7L28 7" class="line orange"/></g>
+      <text x="215" y="34" class="strong orange" text-anchor="start">CI・配布</text>
+      <text x="179" y="65" class="small" text-anchor="start">統合時に自動テスト</text>
+      <text x="179" y="85" class="small" text-anchor="start">配布手順を整える</text>
+      <rect x="1" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(13 118)"><path d="M3 3v25h27M7 24l7-8 6 3 8-12M23 7h5v5" class="line blue"/></g>
+      <text x="49" y="139" class="strong blue" text-anchor="start">運用</text>
+      <text x="13" y="170" class="small" text-anchor="start">失敗率と問い合わせ</text>
+      <text x="13" y="190" class="small" text-anchor="start">異常は開発側に共有</text>
+      <rect x="167" y="108" width="162" height="98" rx="8" class="panel"/>
+      <g transform="translate(179 118)"><path d="M7 25a6 6 0 0 1-1-12 10 10 0 0 1 18-2 7 7 0 0 1 1 14H7z" class="line orange"/></g>
+      <text x="215" y="139" class="strong orange" text-anchor="start">MLOps</text>
+      <text x="179" y="170" class="small" text-anchor="start">予測モデルの精度</text>
+      <text x="179" y="190" class="small" text-anchor="start">データや版も管理</text>
+      </svg>
+      <p>予約アプリと空室予測モデルを分けて考えると、モデルを扱う運用に何が増えるか整理できます。</p>
+    </figure>
+  <p><strong>共通フレーム</strong>はシステムのライフサイクルの作業を関係者が共通に理解するための整理です。<strong>CMMI</strong>は組織のプロセスの改善に使われるモデルです。どの手法を使うかという話と、組織の仕事の進め方をどう改善するかという話を区別します。</p>
+</section>
+
+<section id="quiz">
+  <h2>解説つきの自作例題6問</h2>
+  <p>まず自分で選び、解答を開いて、判断に使った条件を確かめます。</p>
+    <section class="box">
+      <h3>第1問　ひな型と実際の予約</h3>
+      <p>予約番号・人数・取消操作を定めたひな型と、そのひな型から登録された予約R01の組合せはどれですか。</p>
+      <ol class="options"><li>R01がクラス、ひな型がオブジェクト</li><li>ひな型もR01もクラス</li><li>ひな型がクラス、R01がオブジェクト</li><li>ひな型がユースケース、R01が継承</li></ol>
+      <details><summary>第1問の解答と解説</summary><p><strong>ウ　ひな型がクラス、R01がオブジェクト</strong></p><p>クラスは共通の定義、オブジェクトは具体的に作られた一件です。同じクラスから人数や予約番号が異なる予約を作れます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　試作を使って要望を確かめる</h3>
+      <p>職員の希望がまだ曖昧なので、まず操作できる画面案を見せ、どのボタンが必要かを確かめます。最も直接当てはまるのはどれですか。</p>
+      <ol class="options"><li>プロトタイピング</li><li>リバースエンジニアリング</li><li>運用テスト</li><li>ホワイトボックステスト</li></ol>
+      <details><summary>第2問の解答と解説</summary><p><strong>ア　プロトタイピング</strong></p><p>早い段階で試作品を使い、要望を具体化する例です。旧システムの仕組みを調べて構造を明らかにする作業はリバースエンジニアリングです。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　反応を次の開発に生かす</h3>
+      <p>予約機能を使った職員から、電話による取消が負担という声が出ました。アジャイルの進め方として適切なのはどれですか。</p>
+      <ol class="options"><li>最初の予定を守るため意見を保留する</li><li>完成品をすべて提供するまで反応を集めない</li><li>動作確認を省いて全変更を一度に入れる</li><li>使われ方を確認し、次に作る内容の優先順位を見直す</li></ol>
+      <details><summary>第3問の解答と解説</summary><p><strong>エ　使われ方を確認し、次に作る内容の優先順位を見直す</strong></p><p>動くものから学び、次の優先順位を見直します。例えば取消を先に作り、職員の手順に合うか再度確かめます。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　スクラムで振り返る内容</h3>
+      <p>完成した取消機能を職員と確認した後、チームは検証が遅れた原因と次回の改善策を話し合います。後者のイベントはどれですか。</p>
+      <ol class="options"><li>スプリントレビュー</li><li>スプリントレトロスペクティブ</li><li>スプリントプランニング</li><li>デイリースクラム</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>イ　スプリントレトロスペクティブ</strong></p><p>成果と次の方向を関係者と確認するのはレビューです。チームの仕事の進め方を点検し、次に改善する方法を考えるのはレトロスペクティブです。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　テストから実装を始める</h3>
+      <p>先に「5人を拒否する」テストを書き、失敗を確認してから必要なコードを実装します。何の例ですか。</p>
+      <ol class="options"><li>受入れテストのみ</li><li>類推見積法</li><li>テスト駆動開発</li><li>運用監視</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>ウ　テスト駆動開発</strong></p><p>先にテストで期待する振る舞いを表し、それが通るように実装します。通った後に振る舞いを保って内部を整理し、同じテストを実行します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　空室予測の精度を追う</h3>
+      <p>予約アプリに空室予測を追加しました。運用中に予測精度が落ちたため、学習データ、モデルの版、評価結果を調べます。特に関連するのはどれですか。</p>
+      <ol class="options"><li>MLOps</li><li>ホスティング</li><li>回帰テストだけ</li><li>クラスの継承</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>ア　MLOps</strong></p><p>モデルとデータを含めて運用するMLOpsの例です。原因や新しいモデルの評価を確かめてから、更新の要否を判断します。</p></details>
+    </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第7章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=33">IPA「ITパスポート試験シラバス Ver.6.5」開発プロセス・手法</a></li>
+      <li><a href="https://agilemanifesto.org/iso/ja/principles.html">アジャイル宣言の背後にある原則</a></li>
+      <li><a href="https://scrumguides.org/scrum-guide.html">Schwaber・Sutherland「スクラムガイド（2020年版）」</a></li>
+      <li><a href="https://agilealliance.org/glossary/xp/">Agile Alliance「Extreme Programming（XP）」</a></li>
+      <li><a href="https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning">Google Cloud「機械学習の継続的デリバリーと自動化」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch07-1-system-development.html">7-1 システム開発技術</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch07"></script>
+</body>
+</html>
