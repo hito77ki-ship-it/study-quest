@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch13-2-computer-components.html">
+  <title>ITパスポート 13-2 コンピュータ構成要素｜スタディクエスト</title>
+  <meta name="description" content="図書館の貸出機を例に、CPU、キャッシュ・RAM・SSD、接続規格、センサーとアクチュエータを学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 13-2 コンピュータ構成要素">
+  <meta property="og:description" content="図書館の貸出機を例に、CPU、キャッシュ・RAM・SSD、接続規格、センサーとアクチュエータを学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch13-2-computer-components.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 13-2 コンピュータ構成要素",
+  "description": "図書館の貸出機を例に、CPU、キャッシュ・RAM・SSD、接続規格、センサーとアクチュエータを学びます。",
+  "url": "https://study-quest.net/itp-ch13-2-computer-components.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch13-2-computer-components.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第13章 ハードウェアとコンピュータシステム</p>
+    <h1>ITパスポート 13-2 コンピュータ構成要素</h1>
+    <p>図書館の貸出機を例に、CPU、キャッシュ・RAM・SSD、接続規格、センサーとアクチュエータを学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#processor">CPUと五つの機能</a></li><li><a href="#memory">主記憶とキャッシュ</a></li><li><a href="#storage">補助記憶装置</a></li><li><a href="#interfaces">入出力と接続規格</a></li><li><a href="#iot">IoTデバイス</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="processor">
+<h2>CPUの役割と、速さを見る条件</h2>
+    <figure id="visual-five-functions" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>貸出機が本の情報を処理する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-five-functions-title visual-five-functions-desc">
+        <title id="visual-five-functions-title">貸出機が本の情報を処理する</title>
+        <desc id="visual-five-functions-desc">入力、バーコードで本の番号を受け取る。記憶、番号や実行中の処理を保持する。演算と制御、貸出可否を計算し、処理を指示。出力、確認画面に結果を出す</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">入力</text>
+<text x="50" y="41" class="small" text-anchor="start">バーコードで本の番号を受け取る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">記憶</text>
+<text x="50" y="101" class="small" text-anchor="start">番号や実行中の処理を保持する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">演算と制御</text>
+<text x="50" y="161" class="small" text-anchor="start">貸出可否を計算し、処理を指示</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">出力</text>
+<text x="50" y="221" class="small" text-anchor="start">確認画面に結果を出す</text>
+      </svg>
+      <p>五つの機能は入力・記憶・演算・制御・出力です。図は貸出での関係を簡略化しています。</p>
+    </figure>
+<p>CPUは命令を実行し、演算や機器の制御を担います。クロック周波数は1秒当たりのクロックの回数で、2GHzなら1秒に20億周期です。1周期当たりの仕事量、コア数、メモリ待ちやアプリの作りも関係するので、周波数だけで機種の速さは決まりません。</p>
+<p>マルチコアCPUは複数のコアを備え、同時に進められる処理を分担できます。GPUは描画など、多数の似た計算を並行して行う処理に向きます。描画以外の計算にGPUを使うことをGPGPUと呼びます。CPUの32ビット・64ビットは扱うデータ幅などに関わる区分で、処理が必ず2倍になるという意味ではありません。</p>
+</section><section id="memory">
+<h2>編集中の内容と、保存済みファイルを区別する</h2>
+    <figure id="visual-hierarchy" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>貸出アプリが使う三つの記憶場所</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 172" role="img" aria-labelledby="visual-hierarchy-title visual-hierarchy-desc">
+        <title id="visual-hierarchy-title">貸出アプリが使う三つの記憶場所</title>
+        <desc id="visual-hierarchy-desc">CPUに近い側からキャッシュ、主記憶、補助記憶。下に向かうほど一般に容量が増え、アクセスは遅くなる。</desc>
+        <rect x="78" y="5" width="174" height="47" rx="7" class="blue-fill"/>
+<text x="165" y="24" class="strong blue" text-anchor="middle">キャッシュ</text>
+<text x="165" y="42" class="small" text-anchor="middle">よく使うデータの一部</text>
+<rect x="47" y="62" width="236" height="47" rx="7" class="panel"/>
+<text x="165" y="81" class="strong blue" text-anchor="middle">主記憶（RAM）</text>
+<text x="165" y="99" class="small" text-anchor="middle">作業中のアプリやデータ</text>
+<rect x="10" y="119" width="310" height="47" rx="7" class="panel"/>
+<text x="165" y="138" class="strong blue" text-anchor="middle">補助記憶（SSD・HDD）</text>
+<text x="165" y="156" class="small" text-anchor="middle">ファイルを長く保存する</text>
+      </svg>
+      <p>上の層ほど一般に高速で容量が小さく、下の層ほど大容量です。アプリを開くと、必要な内容が補助記憶から主記憶へ読み込まれます。</p>
+    </figure>
+<p>主記憶によく使うDRAMは電荷を保持するためにリフレッシュが必要です。キャッシュなどに使うSRAMは通電中のリフレッシュが不要で、一般に高速です。どちらも通常、電源を切ると内容を失う揮発性メモリです。ROMは電源を切っても内容が残り、起動時のプログラムなどに使われます。フラッシュメモリは電源を切っても記憶を保ち、消去・書換えができます。</p>
+<p>SDRAMはクロックと同期して動くDRAMです。DDRはクロックの立上がりと立下がりを使う方式で、DDR4・DDR5などの世代があります。DIMMとSO-DIMMはメモリモジュールの形の区分で、SO-DIMMは小型です。交換するなら、形状と世代の両方を確認します。</p>
+</section><section id="storage">
+<h2>長く保存する媒体を、記録の仕組みと用途から選ぶ</h2>
+    <figure id="visual-storage" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>資料を保存するときに見る四つの媒体</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-storage-title visual-storage-desc">
+        <title id="visual-storage-title">資料を保存するときに見る四つの媒体</title>
+        <desc id="visual-storage-desc">HDD、回転する磁気ディスク、機械的な可動部がある。SSD、主にフラッシュメモリ、ディスクを回さない。光ディスク、レーザーで記録・読出し、読出し専用などに分かれる。SDカード、小型の記録媒体、カメラから取り出せる</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">HDD</text>
+<text x="12" y="44" class="small" text-anchor="start">回転する磁気ディスク</text>
+<text x="12" y="62" class="small" text-anchor="start">機械的な可動部がある</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">SSD</text>
+<text x="177" y="44" class="small" text-anchor="start">主にフラッシュメモリ</text>
+<text x="177" y="62" class="small" text-anchor="start">ディスクを回さない</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">光ディスク</text>
+<text x="12" y="120" class="small" text-anchor="start">レーザーで記録・読出し</text>
+<text x="12" y="138" class="small" text-anchor="start">読出し専用などに分かれる</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">SDカード</text>
+<text x="177" y="120" class="small" text-anchor="start">小型の記録媒体</text>
+<text x="177" y="138" class="small" text-anchor="start">カメラから取り出せる</text>
+      </svg>
+      <p>USBメモリやSDカードもフラッシュメモリを使う例です。容量と、取り外しやすさは別に考えます。</p>
+    </figure>
+<p>HDDでは一つのファイルが離れた場所に分かれると、読み取り位置の移動が増える場合があります。これが断片化です。光ディスクではCD-ROMなどの読出し専用、CD-RやDVD-Rなどの追記型、CD-RWやBD-REなどの書換え型を見分けます。</p>
+</section><section id="interfaces">
+<h2>差し込める形と、使える機能を別々に確認する</h2>
+    <figure id="visual-interfaces" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>貸出カウンターで機器をつなぐ</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-interfaces-title visual-interfaces-desc">
+        <title id="visual-interfaces-title">貸出カウンターで機器をつなぐ</title>
+        <desc id="visual-interfaces-desc">USB Type-C、差し込み口の形、転送・給電は仕様を確認。HDMI、映像と音声、案内画面へ有線で送る。Bluetooth、電波で短距離通信、ヘッドホンなどに使う。NFC、かざす距離で通信、利用証の読取りなど</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">USB Type-C</text>
+<text x="12" y="44" class="small" text-anchor="start">差し込み口の形</text>
+<text x="12" y="62" class="small" text-anchor="start">転送・給電は仕様を確認</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">HDMI</text>
+<text x="177" y="44" class="small" text-anchor="start">映像と音声</text>
+<text x="177" y="62" class="small" text-anchor="start">案内画面へ有線で送る</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">Bluetooth</text>
+<text x="12" y="120" class="small" text-anchor="start">電波で短距離通信</text>
+<text x="12" y="138" class="small" text-anchor="start">ヘッドホンなどに使う</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">NFC</text>
+<text x="177" y="120" class="small" text-anchor="start">かざす距離で通信</text>
+<text x="177" y="138" class="small" text-anchor="start">利用証の読取りなど</text>
+      </svg>
+      <p>同じ形のUSB端子でも、対応する転送速度や映像出力、USB PDによる給電が同じとは限りません。機器の両側とケーブルの仕様を見ます。</p>
+    </figure>
+<p>DisplayPortも映像・音声に使われます。アナログRGBは映像をアナログ信号で伝える例です。DVIにはデジタルやアナログに対応する種類があり、IEEE 1394は映像機器などに使われた有線規格です。IrDAは赤外線、Bluetoothは電波を使います。RFIDは無線でタグの情報を読む技術の総称で、通信距離は方式や機器によって異なります。</p>
+<p>シリアル伝送では同じ伝送路でビットを順に送り、パラレル伝送では複数の伝送路で並べて送ります。この区分だけで実際の速度の優劣は決まりません。デバイスドライバはOSが機器を制御するためのソフトウェアで、プラグアンドプレイでは接続した機器の検出や設定を自動化します。対応ドライバが必要な場合もあります。</p>
+</section><section id="iot">
+<h2>センサーで測り、アクチュエータで現実を動かす</h2>
+    <figure id="visual-sensor" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>自動返却機の投入口を開ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-sensor-title visual-sensor-desc">
+        <title id="visual-sensor-title">自動返却機の投入口を開ける</title>
+        <desc id="visual-sensor-desc">センサーで入力、利用者が近づいたことを検知。制御部で判断、運転中で、開けられる状態か確認。アクチュエータで出力、モーターで投入口を開く。状態を記録、機器の状態を管理画面へ送る</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">センサーで入力</text>
+<text x="50" y="41" class="small" text-anchor="start">利用者が近づいたことを検知</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">制御部で判断</text>
+<text x="50" y="101" class="small" text-anchor="start">運転中で、開けられる状態か確認</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">アクチュエータで出力</text>
+<text x="50" y="161" class="small" text-anchor="start">モーターで投入口を開く</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">状態を記録</text>
+<text x="50" y="221" class="small" text-anchor="start">機器の状態を管理画面へ送る</text>
+      </svg>
+      <p>IoTでは機器の観測値や状態をネットワークで共有できます。計測・判定・駆動を区別します。</p>
+    </figure>
+<p>光学センサーは光、加速度センサーは加速度、ジャイロセンサーは回転の速さ、圧力センサーは圧力を測ります。磁気センサーで磁界を捉えたり、超音波が戻る時間から距離を求めたりする例もあります。モーターや電磁弁は、制御信号を受けて物理的な動きを起こす部品です。</p>
+</section>
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　仕事を分ける</h3>
+    <p>CPUを変えずGPUを使う計算に向いている例はどれですか。</p>
+    <ol class="options"><li>画像の多数の画素に同じ種類の演算をする</li><li>紙をスキャンする</li><li>SSDに印刷する</li><li>タッチパネルの位置を読み取る</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ア　画像の多数の画素に同じ種類の演算をする</strong></p><p>画素ごとに行う似た演算は並行処理に向きます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　クロックの読み方</h3>
+    <p>同じ3GHzの二つのCPUについて、仕様から言えることはどれですか。</p>
+    <ol class="options"><li>同じ時間で必ず同じ仕事を終える</li><li>同じ周波数で動作する条件なら1秒当たりの周期数は同じ</li><li>コア数が同じ</li><li>キャッシュ容量が同じ</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>イ　同じ周波数で動作する条件なら1秒当たりの周期数は同じ</strong></p><p>GHzが示すのは周期数です。性能を比べるときは処理や構成も見ます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　停電前の保存</h3>
+    <p>自動保存がなく、変更がRAMだけにある状態で電源が落ちました。SSDに保存済みの旧版は壊れていないとします。どれが残りますか。</p>
+    <ol class="options"><li>RAMの変更だけ</li><li>旧版とRAMの変更</li><li>SSDに保存済みの旧版</li><li>どちらも必ず消える</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ウ　SSDに保存済みの旧版</strong></p><p>通常のRAMは揮発性です。SSDに書き込まれていた旧版が残ります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　記憶階層の順番</h3>
+    <p>CPUに近い側から並べたものはどれですか。</p>
+    <ol class="options"><li>SSD→主記憶→キャッシュ</li><li>主記憶→SSD→キャッシュ</li><li>キャッシュ→SSD→主記憶</li><li>キャッシュ→主記憶→SSD</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　キャッシュ→主記憶→SSD</strong></p><p>キャッシュにはよく使う内容の一部、主記憶には実行中のデータ、SSDには保存したファイルがあります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　書換えできる光ディスク</h3>
+    <p>教材を何度も書き換えて使う場合の候補はどれですか。</p>
+    <ol class="options"><li>CD-RW</li><li>CD-ROM</li><li>CD-R</li><li>DVD-R</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ア　CD-RW</strong></p><p>RWは書換え型です。Rは追記型、ROMは読出し専用です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　同じ形の端子</h3>
+    <p>USB Type-C端子で外部画面を使えるか確かめるには何を見ますか。</p>
+    <ol class="options"><li>端子の形だけ</li><li>PC・画面・ケーブルの映像対応</li><li>SSDの空き容量</li><li>Bluetoothの設定だけ</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>イ　PC・画面・ケーブルの映像対応</strong></p><p>同じ端子の形でも対応機能は異なります。必要な映像方式を、機器とケーブルそれぞれで確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　機器とOSの橋渡し</h3>
+    <p>新しいスキャナーの操作をOSから行うためのソフトウェアはどれですか。</p>
+    <ol class="options"><li>キャッシュ</li><li>センサー</li><li>デバイスドライバ</li><li>HDMIケーブル</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ウ　デバイスドライバ</strong></p><p>デバイスドライバがOSと機器の間で制御を仲立ちします。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　測る部品と動かす部品</h3>
+    <p>人の接近を検知して扉を開ける場合、モーターの役割はどれですか。</p>
+    <ol class="options"><li>光の計測</li><li>通信速度の計測</li><li>条件式の判定</li><li>制御信号に応じて扉を動かす</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　制御信号に応じて扉を動かす</strong></p><p>モーターはアクチュエータです。接近を検知する入力側がセンサーです。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第13章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=44">IPA「ITパスポート試験シラバス Ver.6.5」プロセッサとメモリ</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=45">IPA「ITパスポート試験シラバス Ver.6.5」接続とIoTデバイス</a></li>
+      <li><a href="https://www.intel.com/content/www/us/en/gaming/resources/cpu-clock-speed.html">Intel「CPU Clock Speed」</a></li>
+      <li><a href="https://www.usb.org/sites/default/files/usb_type-c_language_product_and_packaging_guidelines_20230320.pdf">USB-IF「USB Type-Cの機能と表記」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch13-1-hardware-io.html">13-1 ハードウェアと入出力装置</a> ／ 次へ <a href="itp-ch13-3-system-architecture.html">13-3 システム構成と信頼性</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch13"></script>
+</body>
+</html>
