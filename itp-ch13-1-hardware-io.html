@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch13-1-hardware-io.html">
+  <title>ITパスポート 13-1 ハードウェアと入出力装置｜スタディクエスト</title>
+  <meta name="description" content="図書館の貸出機を例に、コンピュータの種類、スキャナーとOCR、プリンターなどの入出力装置を学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 13-1 ハードウェアと入出力装置">
+  <meta property="og:description" content="図書館の貸出機を例に、コンピュータの種類、スキャナーとOCR、プリンターなどの入出力装置を学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch13-1-hardware-io.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 13-1 ハードウェアと入出力装置",
+  "description": "図書館の貸出機を例に、コンピュータの種類、スキャナーとOCR、プリンターなどの入出力装置を学びます。",
+  "url": "https://study-quest.net/itp-ch13-1-hardware-io.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch13-1-hardware-io.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第13章 ハードウェアとコンピュータシステム</p>
+    <h1>ITパスポート 13-1 ハードウェアと入出力装置</h1>
+    <p>図書館の貸出機を例に、コンピュータの種類、スキャナーとOCR、プリンターなどの入出力装置を学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#computer-types">コンピュータの種類</a></li><li><a href="#input">入力装置と文字の読取り</a></li><li><a href="#output">出力装置と印刷</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="computer-types">
+<h2>機器の名前から、任せる仕事を見分ける</h2>
+<p>図書館では、職員がPCで貸出を受け付け、利用者はスマートフォンで蔵書を検索します。館内の自動返却機は制御用のコンピュータで動きます。ハードウェアは、こうした機器本体や内部部品、周辺装置など、システムを物理的に構成するものです。</p>
+    <figure id="visual-devices" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ建物で違う仕事をする四つの機器</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-devices-title visual-devices-desc">
+        <title id="visual-devices-title">同じ建物で違う仕事をする四つの機器</title>
+        <desc id="visual-devices-desc">職員用PC、貸出と書類の作成、複数の仕事に使う。蔵書サーバ、検索の要求に応答、端末へサービスを提供。返却機の制御部、投入口やモーターを制御、機器の中に組み込む。利用者のスマホ、蔵書の検索と通知、携帯して使う</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">職員用PC</text>
+<text x="12" y="44" class="small" text-anchor="start">貸出と書類の作成</text>
+<text x="12" y="62" class="small" text-anchor="start">複数の仕事に使う</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">蔵書サーバ</text>
+<text x="177" y="44" class="small" text-anchor="start">検索の要求に応答</text>
+<text x="177" y="62" class="small" text-anchor="start">端末へサービスを提供</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">返却機の制御部</text>
+<text x="12" y="120" class="small" text-anchor="start">投入口やモーターを制御</text>
+<text x="12" y="138" class="small" text-anchor="start">機器の中に組み込む</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">利用者のスマホ</text>
+<text x="177" y="120" class="small" text-anchor="start">蔵書の検索と通知</text>
+<text x="177" y="138" class="small" text-anchor="start">携帯して使う</text>
+      </svg>
+      <p>端末の外見だけで決めず、誰のためにどんな処理を担当しているかを考えます。</p>
+    </figure>
+  <table>
+    <caption>コンピュータの分類に出てくる例</caption>
+    <thead><tr><th scope="col">分類</th><th scope="col">用途や構成の手掛かり</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">PC・ワークステーション</th><td>PCは個人のさまざまな作業、ワークステーションは設計や画像処理など専門用途の例。</td></tr>
+<tr><th scope="row">メインフレーム</th><td>組織の基幹業務で大量の取引などを処理する例。</td></tr>
+<tr><th scope="row">スーパーコンピュータ</th><td>気象のシミュレーションなど、大規模な科学技術計算を行う例。</td></tr>
+<tr><th scope="row">マイクロコンピュータ</th><td>マイクロプロセッサを使う小型のコンピュータ。機器の内部で制御に使う例がある。</td></tr>
+<tr><th scope="row">ブレード型サーバ</th><td>板状のサーバを共通の筐体に収め、電源などを共有する形。</td></tr>
+<tr><th scope="row">スマート・ウェアラブル端末</th><td>スマートフォンやタブレットは携帯してアプリを使う端末。腕時計型など身体に装着する機器はウェアラブル端末。</td></tr>
+    </tbody>
+  </table>
+</section><section id="input">
+<h2>紙の資料は、画像・文字・マークを分けて考える</h2>
+    <figure id="visual-input" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>図書館で紙の申込書をデータにする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-input-title visual-input-desc">
+        <title id="visual-input-title">図書館で紙の申込書をデータにする</title>
+        <desc id="visual-input-desc">イメージスキャナー、申込書の見た目を画像にする。OCR、画像中の氏名を文字データに変換。担当者が照合、読み違いがないか原本と比べる</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">イメージスキャナー</text>
+<text x="50" y="41" class="small" text-anchor="start">申込書の見た目を画像にする</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">OCR</text>
+<text x="50" y="101" class="small" text-anchor="start">画像中の氏名を文字データに変換</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">担当者が照合</text>
+<text x="50" y="161" class="small" text-anchor="start">読み違いがないか原本と比べる</text>
+      </svg>
+      <p>塗りつぶした選択欄を読む用途にはOMRがあります。文字を読むOCRと、マークの位置を読むOMRを区別します。</p>
+    </figure>
+<p>キーボードは文字など、マウスやペンタブレットは位置や動き、カメラは画像や動画を入力します。バーコードリーダーは本に付いたコードから識別番号を読み取ります。タッチパネル付きの画面は、指が触れた位置を入力し、表示で情報を出力します。</p>
+</section><section id="output">
+<h2>印刷の細かさ、速さ、方式を区別する</h2>
+    <figure id="visual-printers" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>掲示物と受付票で見る印刷の違い</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-printers-title visual-printers-desc">
+        <title id="visual-printers-title">掲示物と受付票で見る印刷の違い</title>
+        <desc id="visual-printers-desc">dpi、1インチ当たりのドット数、印刷の細かさの指標。ppm、1分当たりのページ数、印刷速度の指標。インクジェット、インクの粒を吹き付ける、写真やカラー印刷の例。レーザー、トナーで像を作り定着、まとまった文書の例</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">dpi</text>
+<text x="12" y="44" class="small" text-anchor="start">1インチ当たりのドット数</text>
+<text x="12" y="62" class="small" text-anchor="start">印刷の細かさの指標</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">ppm</text>
+<text x="177" y="44" class="small" text-anchor="start">1分当たりのページ数</text>
+<text x="177" y="62" class="small" text-anchor="start">印刷速度の指標</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">インクジェット</text>
+<text x="12" y="120" class="small" text-anchor="start">インクの粒を吹き付ける</text>
+<text x="12" y="138" class="small" text-anchor="start">写真やカラー印刷の例</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">レーザー</text>
+<text x="177" y="120" class="small" text-anchor="start">トナーで像を作り定着</text>
+<text x="177" y="138" class="small" text-anchor="start">まとまった文書の例</text>
+      </svg>
+      <p>24ppmで60ページを連続印刷できると仮定すると2分30秒です。最初の1枚の準備や両面印刷の条件は別に確認します。</p>
+    </figure>
+<p>ドットインパクト方式はピンでインクリボンを打つので、複写用紙に使われる例があります。感熱方式は熱で発色する専用紙を使い、レシートなどで見かけます。画面では液晶や有機ELがあり、縦横の画素数と画面の物理的な大きさは別の指標です。</p>
+    <figure id="visual-terminal" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>セルフ貸出機で情報が流れる順番</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-terminal-title visual-terminal-desc">
+        <title id="visual-terminal-title">セルフ貸出機で情報が流れる順番</title>
+        <desc id="visual-terminal-desc">入力、本のコードを読み取る。処理、貸出できるか照合する。出力、画面や受付票で結果を伝える</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">入力</text>
+<text x="50" y="41" class="small" text-anchor="start">本のコードを読み取る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">処理</text>
+<text x="50" y="101" class="small" text-anchor="start">貸出できるか照合する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">出力</text>
+<text x="50" y="161" class="small" text-anchor="start">画面や受付票で結果を伝える</text>
+      </svg>
+      <p>画面を押す操作は入力、画面に出る案内は出力です。同じ装置でも機能ごとに判断できます。</p>
+    </figure>
+</section>
+<section id="quiz">
+  <h2>例題6問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　天気を予測する計算</h3>
+    <p>多数の観測値を使って大規模な気象シミュレーションを行う機器の例はどれですか。</p>
+    <ol class="options"><li>スマートウォッチ</li><li>スーパーコンピュータ</li><li>バーコードリーダー</li><li>複写用プリンター</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　スーパーコンピュータ</strong></p><p>大規模な科学技術計算が手掛かりです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　筐体を共有する</h3>
+    <p>板状のサーバを共通の筐体に差し込み、電源などを共有する形はどれですか。</p>
+    <ol class="options"><li>ワークステーション</li><li>メインフレーム</li><li>ブレード型サーバ</li><li>ウェアラブル端末</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　ブレード型サーバ</strong></p><p>板状のサーバを複数まとめて収める構成が、ブレード型サーバの特徴です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　申込書を検索したい</h3>
+    <p>読み取った紙を、氏名の文字列で検索できるようにしたい。画像にした後に何を使いますか。</p>
+    <ol class="options"><li>OCR</li><li>OMR</li><li>プロジェクター</li><li>インクジェット</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　OCR</strong></p><p>OCRで画像中の文字を文字データにします。OMRは塗りつぶしなどのマークを読みます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　複写用紙に印刷する</h3>
+    <p>1回の印刷で下の紙にも文字を転写したい。打撃を利用する方式はどれですか。</p>
+    <ol class="options"><li>レーザー</li><li>インクジェット</li><li>感熱</li><li>ドットインパクト</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　ドットインパクト</strong></p><p>ピンでリボンと用紙を打つため、複写用紙に向きます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　連続印刷にかかる時間</h3>
+    <p>30ppmの速度が一定で、準備時間を除く場合、75ページを印刷するには何分かかりますか。</p>
+    <ol class="options"><li>2分</li><li>2分30秒</li><li>3分</li><li>4分</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　2分30秒</strong></p><p>75ページ÷30ページ/分＝2.5分です。0.5分は30秒です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　画面の二つの役割</h3>
+    <p>タッチ画面で本を選び、貸出結果を読む場合、それぞれの役割はどれですか。</p>
+    <ol class="options"><li>どちらも入力</li><li>どちらも出力</li><li>選択は入力、表示は出力</li><li>選択は出力、表示は入力</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　選択は入力、表示は出力</strong></p><p>利用者の指示が機器に入る操作と、機器から利用者に結果が出る操作を分けます。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第13章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=44">IPA「ITパスポート試験シラバス Ver.6.5」コンピュータの構成</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=45">IPA「ITパスポート試験シラバス Ver.6.5」入出力デバイス</a></li>
+    </ul>
+    <p>前の章 <a href="itp-ch12-2-programming.html">12-2 プログラミングと擬似言語</a> ／ 次へ <a href="itp-ch13-2-computer-components.html">13-2 コンピュータ構成要素</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch13"></script>
+</body>
+</html>
