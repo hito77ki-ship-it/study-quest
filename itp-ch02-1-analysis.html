@@ -53,7 +53,7 @@
     <p>行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="process">
     <h2>まず、行列ができる手順を確かめる</h2>
     <p>「注文を受ける → 決済 → 商品を渡す」と手順を並べ、どこに待ち時間があるかを測ります。原因候補が散らばっているなら、<strong>親和図法</strong>で似た意見を「注文」「決済」「受け渡し」などにまとめます。選択肢が複数あれば、待ち時間の短縮、担当者の負担、費用といった評価軸を決め、同じ基準で比べます。</p>
@@ -249,6 +249,56 @@
     </section>
 <p><strong>復習メモ</strong>　「原因別に直す順番を決める」「待ち時間の分布を見る」「二つの数値の関係を見る」の三つに、それぞれ図を当てはめてみましょう。</p>
     <details><summary>復習メモの答え</summary><p>パレート図、ヒストグラム、散布図の順です。</p></details>
+  </section>
+
+  <section id="textbook-coverage">
+    <h2>重み付き評価・在庫の発注・分析図の選び方</h2>
+    <p>受付機の案を比べるとき、基準の重要さが違えば点数をそのまま足せません。重みを決めてから採点し、基準を変えると結果が変わる場合はその条件も記録します。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>受付機を、同じ点数表と重みで比較</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">受付機を、同じ点数表と重みで比較</title>
+        <desc id="coverage-visual-desc">案A、使いやすさ90 × 0.7、費用60 × 0.3 → 81点。案B、使いやすさ70 × 0.7、費用90 × 0.3 → 76点</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">案A</text>
+<text x="12" y="44" class="small" text-anchor="start">使いやすさ90 × 0.7</text>
+<text x="12" y="62" class="small" text-anchor="start">費用60 × 0.3 → 81点</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">案B</text>
+<text x="177" y="44" class="small" text-anchor="start">使いやすさ70 × 0.7</text>
+<text x="177" y="62" class="small" text-anchor="start">費用90 × 0.3 → 76点</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">重み付け</th><td>使いやすさ70%、費用30%なら、各項目の点数に0.7、0.3を掛けて足す。採点基準を先にそろえる。</td></tr>
+<tr><th scope="row">ABC分析・管理図・系統図</th><td>ABC分析は金額などへの寄与で重点を決める。管理図は工程の測定値を時系列に並べ、管理限界などで変化を見る。系統図は目的を達成する手段を階層で広げる。</td></tr>
+<tr><th scope="row">連関図法・特性要因図</th><td>連関図は複雑に絡む原因と結果の関係を矢印で示す。特性要因図は調べたい結果に対する要因を魚の骨のように整理する。</td></tr>
+<tr><th scope="row">定量発注方式・定期発注方式</th><td>前者は在庫が決めた水準を下回るなどしたとき一定量を発注。後者は決めた周期で在庫・需要見込みから数量を算定する。</td></tr>
+<tr><th scope="row">確定モデル・確率モデル</th><td>需要を固定の値で置くのが確定モデルの例。需要に確率分布を持たせ、結果の幅を調べるのが確率モデルの例。</td></tr>
+<tr><th scope="row">箱ひげ図・ヒートマップ・バブルチャート</th><td>箱ひげ図は中央値や四分位数を軸に分布を比較。ヒートマップはセルの色で値を表す。バブルチャートは点の位置に加えて大きさでも量を示す。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>別の比較で、操作性を60%、費用を40%で評価します。端末Pは操作性80点、費用50点。端末Qは操作性65点、費用80点。どちらを選びますか。</p>
+      <details><summary>解答と考え方を開く</summary><p>Pは80×0.6＋50×0.4＝68点。Qは65×0.6＋80×0.4＝71点。総合点が高い<strong>Q</strong>です。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">構造化・半構造化・非構造化インタビュー</th><td>全員に同じ質問をする、質問の軸を決め追加で掘り下げる、対話の流れを中心に聞くという違い。</td></tr>
+<tr><th scope="row">ブレーンストーミング</th><td>発想段階では批判を控え、量を出し、自由に発言し、案を組み合わせる。採否の評価はあとで行う。</td></tr>
+<tr><th scope="row">モデル化・シミュレーション</th><td>行列などを調べたい要素に絞って表すのがモデル化。来場者数を変えて待ち時間を試算するのがシミュレーション。</td></tr>
+<tr><th scope="row">コンセプトマップ・マトリックス図</th><td>概念間のつながりを線で示す図と、二つの観点を行・列にして関係を確認する図。</td></tr>
+<tr><th scope="row">二軸グラフ・不適切なグラフ表現</th><td>件数と割合のような異なる単位を左右の軸で示すなら軸を明記する。棒グラフでは基準の省略で差が誇張されていないか確かめる。</td></tr>
+    </tbody>
+  </table><p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=11">IPA「ITパスポート試験シラバス Ver.6.5」</a></li></ul>
   </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>

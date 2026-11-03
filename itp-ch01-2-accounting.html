@@ -53,7 +53,7 @@
     <p>売上と総費用が交わる損益分岐点をグラフで読み、目標利益、財務諸表、利益率の計算を練習します。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#profit">損益分岐点の基本</a></li><li><a href="#statements">損益の図と財務諸表</a></li><li><a href="#quiz">例題5問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#profit">損益分岐点の基本</a></li><li><a href="#statements">損益の図と財務諸表</a></li><li><a href="#quiz">例題5問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="profit">
     <h2>1杯で残る金額から、費用を回収できる販売数を出す</h2>
     <p>ドリンクは1杯350円、材料とカップは1杯140円、出店料と器具代は合計12,600円とします。売れた数に比例して発生する140円が<strong>1杯当たり変動費</strong>、販売数にかかわらずかかる12,600円が<strong>固定費</strong>です。この例では、値引きや売れ残りの材料費を考えません。</p>
@@ -152,6 +152,73 @@
     </section>
 <p><strong>復習メモ</strong>　新しい出店先で固定費だけが上がると、損益分岐点はどちらに動きますか。</p>
     <details><summary>復習メモの答え</summary><p>価格と1杯当たり変動費が同じで差額が正なら、固定費を回収するために必要な杯数は増えます。</p></details>
+  </section>
+
+  <section id="textbook-coverage">
+    <h2>経常利益までの階段と、財務指標の分母</h2>
+    <p>学園祭カフェの売上が12万円、売上原価が5万円、販管費が4万円とします。営業外収益は0.6万円、営業外費用は0.2万円。特別損失が0.4万円、法人税等が0.8万円と仮定して利益を追います。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>費用を引く順番で、利益の名前が変わる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">費用を引く順番で、利益の名前が変わる</title>
+        <desc id="coverage-visual-desc">売上総利益　7万円、売上12万円 − 原価5万円。営業利益　3万円、粗利益7万円 − 販管費4万円。経常利益　3.4万円、営業利益3万円 ＋ 営業外の差0.4万円。当期純利益　2.2万円、特別損失0.4万円と法人税等0.8万円を引く</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">売上総利益　7万円</text>
+<text x="50" y="41" class="small" text-anchor="start">売上12万円 − 原価5万円</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">営業利益　3万円</text>
+<text x="50" y="101" class="small" text-anchor="start">粗利益7万円 − 販管費4万円</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">経常利益　3.4万円</text>
+<text x="50" y="161" class="small" text-anchor="start">営業利益3万円 ＋ 営業外の差0.4万円</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">当期純利益　2.2万円</text>
+<text x="50" y="221" class="small" text-anchor="start">特別損失0.4万円と法人税等0.8万円を引く</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">売上総利益・営業利益</th><td>12−5＝7万円が売上総利益。そこから販管費4万円を引いた3万円が営業利益。</td></tr>
+<tr><th scope="row">経常利益</th><td>営業利益3万円＋営業外収益0.6万円−営業外費用0.2万円＝3.4万円。</td></tr>
+<tr><th scope="row">税引前当期純利益・当期純利益</th><td>特別損失0.4万円を反映して税引前3万円。法人税等0.8万円を引いて当期純利益2.2万円。</td></tr>
+<tr><th scope="row">損益分岐点売上高</th><td>固定費÷限界利益率。例えば変動費率60%、固定費6万円なら限界利益率40%で6÷0.4＝15万円。</td></tr>
+<tr><th scope="row">営業・投資・財務のキャッシュフロー</th><td>商品の代金を回収するのは営業、設備を買うのは投資、資金を借りるのは財務の例。</td></tr>
+<tr><th scope="row">ROE・ROA・ROI</th><td>ROEは自己資本に対する利益、ROAは総資産に対する利益、ROIは投資額に対する成果を見る。設問が使う利益や期間を確認する。</td></tr>
+<tr><th scope="row">先入先出法・移動平均法</th><td>先入先出法は先に入れた単価から出庫原価へ。移動平均法は入庫するたびに、在庫金額を数量で割って平均単価を更新する。</td></tr>
+<tr><th scope="row">定額法・定率法</th><td>減価償却を定額で配分する考え方と、未償却残高を基に率を掛ける考え方。具体的な税務処理とは区別する。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>別の週は売上が18万円、変動費が9万円、固定費が5万円でした。変動費率と固定費が同じとき、赤字と黒字の境になる売上高はいくらですか。</p>
+      <details><summary>解答と考え方を開く</summary><p>変動費率は9÷18＝50%。売上1円当たり固定費を回収できる額は0.5円なので、5÷0.5＝<strong>10万円</strong>です。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">自己資本・他人資本</th><td>自己資本は事業主や株主に帰属する資金の側面。他人資本は借入金など返済義務を負う外部資金。</td></tr>
+<tr><th scope="row">売上高営業利益率・総資本回転率</th><td>前者は営業利益÷売上高で本業の利益率を見る。後者は売上高÷総資本で資本が売上に結び付く程度を見る。金額の時点や期間は設問に合わせる。</td></tr>
+<tr><th scope="row">損益分岐点比率</th><td>損益分岐点売上高を実際の売上高で割った割合。前提が同じとき、100%より低ければ売上は分岐点を上回る。</td></tr>
+<tr><th scope="row">棚卸資産と棚卸評価額</th><td>売る商品や材料などの在庫が棚卸資産。期末の数量と評価単価などから期末に残る在庫の金額を求める。</td></tr>
+<tr><th scope="row">特別利益・特別損失</th><td>臨時の利益や損失を反映して経常利益から税引前当期純利益へ進む。例題の図では特別利益を0と仮定。</td></tr>
+    </tbody>
+  </table><p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=10">IPA「ITパスポート試験シラバス Ver.6.5」</a></li></ul>
   </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>

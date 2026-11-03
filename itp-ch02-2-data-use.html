@@ -53,7 +53,7 @@
     <p>待ち時間や予約の記録を整え、平均・中央値、標本の偏り、分母、予測に使えるデータを区別します。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="statistics">
   <h2>集め方と分母をそろえて、数字を読み違えない</h2>
   <p>待ち時間の「分」は量的データ、決済方法の「現金・カード」は質的データです。注文時刻の並びは時系列で、同じ時刻に複数店舗を比べる記録は横断データの例です。集計表には、何を1件とするか、どの期間・店舗か、単位は何かも添えます。こうしたデータについての説明が<strong>メタデータ</strong>です。</p>
@@ -131,6 +131,69 @@
       <details><summary>第4問の解答と解説</summary><p><strong>ウ。</strong>前日までの予約数なら予測時点で取得できます。他の選択肢は予測の対象時点を過ぎてから判明する情報です。</p></details>
     </section>
 
+  </section>
+
+  <section id="textbook-coverage">
+    <h2>データの集め方と分析の使い分け</h2>
+    <p>大学祭の来場調査で、手元のログを使うか、来場者に新たに質問するかを考えます。同じ「データ」でも、集め方や形式が違うと比較の方法が変わります。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>先に「誰の声を集めるか」を決める</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">先に「誰の声を集めるか」を決める</title>
+        <desc id="coverage-visual-desc">母集団を決める、全ての来場者について知りたい。層を決める、午前と午後に分ける。各層から抽出、それぞれの時間帯で無作為に選ぶ</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">母集団を決める</text>
+<text x="50" y="41" class="small" text-anchor="start">全ての来場者について知りたい</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">層を決める</text>
+<text x="50" y="101" class="small" text-anchor="start">午前と午後に分ける</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">各層から抽出</text>
+<text x="50" y="161" class="small" text-anchor="start">それぞれの時間帯で無作為に選ぶ</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">一次データ・二次データ</th><td>今回の目的で新たに集めたアンケートは一次データ。以前に別の目的で集めた来場記録は二次データとして使う。</td></tr>
+<tr><th scope="row">量的データ・質的データ</th><td>待ち時間のような数値は量的、会場名のような分類は質的。数字でコード化した会場番号を平均しても意味は変わらない。</td></tr>
+<tr><th scope="row">構造化・非構造化</th><td>列の意味が決まった受付表は構造化、自由記述や写真は非構造化の例。</td></tr>
+<tr><th scope="row">クロスセクションデータ・時系列データ</th><td>同じ日の会場別件数は横断面、同じ会場の日別件数は時系列。毎年同時期に増える傾向は季節変動として考える。</td></tr>
+<tr><th scope="row">名寄せ・欠損値・外れ値</th><td>表記ゆれのある同じ店舗を統合するのが名寄せ。未入力を欠損として区別し、極端な値は誤記か実際の観測かを調べる。</td></tr>
+<tr><th scope="row">層別抽出・多段抽出</th><td>層別抽出はグループごとに標本を取る。多段抽出はまず会場などを選び、その中から来場者を選ぶ。</td></tr>
+<tr><th scope="row">仮説検定・有意水準</th><td>仮説とデータの整合を確かめる手続。有意水準は帰無仮説が正しいときに誤って棄却する確率の上限として決める。</td></tr>
+<tr><th scope="row">テキストマイニング・主成分分析・クラスター分析</th><td>自由記述から傾向を見つける、複数の数値を少数の軸へ要約する、似た観測をまとめるという目的の違いを押さえる。</td></tr>
+<tr><th scope="row">オープンデータ・パーソナルデータ・M2M</th><td>条件に沿って再利用できる公開データ、個人に関するデータ、機器間で自動交換するデータを用途ごとに区別する。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>夕方の来場者も含めたいので、午前・午後・夕方の各時間帯から来場者を無作為に選びました。層別抽出と多段抽出のどちらですか。</p>
+      <details><summary>解答と考え方を開く</summary><p><strong>層別抽出</strong>です。各時間帯を層にし、全ての層から選びます。最初に会場を一部選び、その会場内でさらに抽出する方法は多段抽出の例です。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">データサイエンス・データサイエンティスト</th><td>データから現場の問いに答える学際的な取組と、そのための収集・分析・評価を担う人。</td></tr>
+<tr><th scope="row">CSV・GISデータ・メタデータ</th><td>値を区切って並べるテキスト形式、位置と結び付く地理データ、作成時刻や単位などデータを説明する情報。</td></tr>
+<tr><th scope="row">全数調査・標本調査・単純無作為抽出</th><td>全員を対象にする、一部から全体を推定する、母集団から無作為に選ぶという違い。</td></tr>
+<tr><th scope="row">統計的バイアス・情報バイアス・認知バイアス</th><td>収集・推定の偏り、測定や記録の偏り、人の認識や判断の偏りをそれぞれ点検する。</td></tr>
+<tr><th scope="row">自然言語処理・画像処理・共起キーワード</th><td>文章を分かち書きする、写真の明るさや特徴を処理する、同じ文書などに一緒に現れやすい語を調べる例。</td></tr>
+<tr><th scope="row">分割表と相関係数行列</th><td>分割表は会場別・満足度別などの件数を交差集計。相関係数行列は複数の数値項目の組合せごとに相関の強さを並べる。</td></tr>
+    </tbody>
+  </table><p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=12">IPA「ITパスポート試験シラバス Ver.6.5」</a></li></ul>
   </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>

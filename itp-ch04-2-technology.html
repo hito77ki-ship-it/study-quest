@@ -53,7 +53,7 @@
     <p>予約システムを例に、技術を調べる段階、ロードマップ、PoC、現場での価値の確認までを図と例題で学びます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#technology">技術ロードマップ</a></li><li><a href="#execution">技術選定と試作</a></li><li><a href="#quiz">例題2問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#technology">技術ロードマップ</a></li><li><a href="#execution">技術選定と試作</a></li><li><a href="#quiz">例題2問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="technology">
     <h2>必要な機能から逆算して、技術開発を並べる</h2>
     <p>経営側が決めたのは「短い休憩時間で受け取れる店にする」という方向です。技術側では「枠の定員を超えない」「受付で予約を照合できる」という機能を先に挙げ、使える技術と店の人員を見比べます。<strong>技術ロードマップ</strong>には、必要になる機能と、それを実現する技術や検証を時間軸で並べます。</p>
@@ -132,6 +132,64 @@
     </section>
 <p><strong>復習メモ</strong>　自分が学園祭の古本店を担当するとしたら、最終目標の数字、途中で追う数字、最初に試す仕組みを一つずつ挙げてみましょう。</p>
     <details><summary>復習メモの回答例</summary><p>最終目標は販売冊数100冊。途中で追う数字は、Webで取り置きを申し込んだ人の割合。最初に試すのは、同じ本を2人が同時に取り置きしようとしても1人分だけ確定するか。数字の例は、対象となる目標に合わせて決めます。</p></details>
+  </section>
+
+  <section id="textbook-coverage">
+    <h2>試作を越えて事業にするまでの壁</h2>
+    <p>古本店の受取ロッカーを開発します。技術が動く、収支が成り立つ、競合の中で利用が続くという三つの問いには、それぞれ違う証拠が必要です。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>受取ロッカーが事業になるまで</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">受取ロッカーが事業になるまで</title>
+        <desc id="coverage-visual-desc">研究 → 開発、試作で鍵の制御を確かめる。開発 → 事業化、導入費と運用費を賄えるか試す。事業化 → 産業化、他店へ広げ、競合の中で続けられるか</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">研究 → 開発</text>
+<text x="50" y="41" class="small" text-anchor="start">試作で鍵の制御を確かめる</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">開発 → 事業化</text>
+<text x="50" y="101" class="small" text-anchor="start">導入費と運用費を賄えるか試す</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">事業化 → 産業化</text>
+<text x="50" y="161" class="small" text-anchor="start">他店へ広げ、競合の中で続けられるか</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">MOT（技術経営）</th><td>技術を顧客や社会の価値に結びつける経営。ロッカーの制御技術に加え、誰が使い、費用を回収できるかを考える。</td></tr>
+<tr><th scope="row">魔の川・死の谷・ダーウィンの海</th><td>教科書の分類では、研究から開発、開発から事業化、事業化から産業化の間にある障壁。名称の対応を設問の段階から読む。</td></tr>
+<tr><th scope="row">デルファイ法・ハッカソン</th><td>専門家への反復した質問と回答の集約で見通しを整理する方法と、短期間に参加者が共同で案や試作品を作る催し。</td></tr>
+<tr><th scope="row">イノベーションのジレンマ</th><td>既存顧客と収益を重視する合理的な判断が、新しい市場に向く技術への対応を遅らせることがある。</td></tr>
+<tr><th scope="row">バックキャスティング・ロードマップ</th><td>目指す将来から今必要な行動を逆算する。ロードマップには目標に至る工程や技術の順序を置く。</td></tr>
+<tr><th scope="row">ビジネスモデルキャンバス・リーンスタートアップ</th><td>価値提案や収益などを可視化する枠組みと、小さな製品や仮説の検証を反復する進め方。</td></tr>
+<tr><th scope="row">VC・CVC・APIエコノミー</th><td>VCは成長を見込む企業への投資、CVCは事業会社が関わるベンチャー投資。APIエコノミーでは提供機能をAPIで連携させ新しい価値を作る。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>受取ロッカーを一店舗で事業として導入しました。次は多店舗に広げたいのですが、競合が低価格で参入し、利用者を増やせません。教科書の分類では何の壁ですか。</p>
+      <details><summary>解答と考え方を開く</summary><p><strong>ダーウィンの海</strong>です。事業化は済んでおり、市場で競争しながら事業を広げる段階です。開発から事業化までの壁は死の谷です。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">デザイン思考・ペルソナ法</th><td>利用者を観察し課題を定義して案と試作品を検証する考え方。ペルソナは調査を基に利用者像を具体化し、何を必要とするか考える手掛かりにする。</td></tr>
+<tr><th scope="row">フィージビリティスタディ・フェルミ推定</th><td>案が技術や採算の面で実行できるかを調査することと、得られる情報を分解して桁を概算すること。</td></tr>
+<tr><th scope="row">特許戦略・特許ポートフォリオ</th><td>事業目標に合わせて出願や活用を決める方針と、どの技術をどの特許などで押さえるかを整理した構成。</td></tr>
+    </tbody>
+  </table><p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=21">IPA「ITパスポート試験シラバス Ver.6.5」</a></li></ul>
   </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>

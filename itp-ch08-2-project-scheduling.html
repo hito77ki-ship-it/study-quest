@@ -54,7 +54,7 @@
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
     <p class="note">サイトの8-2は教科書の8-1-3に対応します。計画やリスク管理は<a href="itp-ch08-1-project-management.html">8-1 計画とリスク管理</a>で復習できます。</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#dependencies">アローダイアグラム</a></li><li><a href="#critical-path">クリティカルパスと余裕</a></li><li><a href="#tracking">ガントチャートと進捗</a></li><li><a href="#precedence">プレシデンスダイアグラム</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#dependencies">アローダイアグラム</a></li><li><a href="#critical-path">クリティカルパスと余裕</a></li><li><a href="#tracking">ガントチャートと進捗</a></li><li><a href="#precedence">プレシデンスダイアグラム</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 
 <section id="dependencies">
   <h2>アローダイアグラムで「何の完了を待つか」を読む</h2>
@@ -293,6 +293,88 @@
     <details><summary>第6問の解答と解説</summary><p><strong>ア　SF</strong></p><p>条件は新受付の開始（S）と旧受付の終了（F）なのでSFです。SSなら旧受付の開始が条件になるので、この切替の説明と合いません。</p></details>
   </section>
 </section>
+
+  <section id="textbook-coverage">
+    <h2>短縮しても、別の経路が公開日を決める</h2>
+    <p>図書館の別の計画で、公開に必要な経路は二つあり、元の経路Aは12日、経路Bは10日です。Aだけ4日短縮できても、Bが待ち合わせの時点を決めます。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>最長の経路を、短縮の前後で比較</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">最長の経路を、短縮の前後で比較</title>
+        <desc id="coverage-visual-desc">短縮前、経路Aは12日、経路Bは10日。短縮後、経路Aは8日、経路Bは10日。公開まで、12日 → 10日、短縮できたのは2日。次の判断、さらに急ぐなら、現在の最長経路Bを見る</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">短縮前</text>
+<text x="12" y="44" class="small" text-anchor="start">経路Aは12日</text>
+<text x="12" y="62" class="small" text-anchor="start">経路Bは10日</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">短縮後</text>
+<text x="177" y="44" class="small" text-anchor="start">経路Aは8日</text>
+<text x="177" y="62" class="small" text-anchor="start">経路Bは10日</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">公開まで</text>
+<text x="12" y="120" class="small" text-anchor="start">12日 → 10日</text>
+<text x="12" y="138" class="small" text-anchor="start">短縮できたのは2日</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">次の判断</text>
+<text x="177" y="120" class="small" text-anchor="start">さらに急ぐなら</text>
+<text x="177" y="138" class="small" text-anchor="start">現在の最長経路Bを見る</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">クリティカルパスの切替</th><td>Aを8日に縮めると、残るBの10日が全体を決める。全体の短縮は12−10＝2日。変更のたびに全経路を比較する。</td></tr>
+<tr><th scope="row">マイルストーンチャート</th><td>計画上の重要な時点を一覧にする図。教科書では、ガントチャート上にマイルストーンを記したものもこう呼ぶ。</td></tr>
+<tr><th scope="row">進捗管理</th><td>計画日と実績・見込みを比べ、差が後続作業や節目にどう波及するかを確認する。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>別の計画では二つの独立した経路が14日と11日です。14日の経路だけを5日短縮できました。全体は何日短縮できますか。</p>
+      <details><summary>解答と考え方を開く</summary><p>経路は9日と11日になり、両方の終了を待つため全体は11日。14−11＝<strong>3日</strong>短縮できます。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">EVM・PV・EV・AC</th><td>EVMは計画、完了した仕事、実際の費用を比較する。PVは基準日までの計画分の予算、EVは実際に完了した分に割り当てた予算、ACは実際に掛かった費用。</td></tr>
+<tr><th scope="row">日程差異 SV・コスト差異 CV</th><td>SV＝EV−PV、CV＝EV−AC。SVは金額換算された進捗差であり、何日遅れたかは工程の依存関係を別に確かめる。</td></tr>
+    </tbody>
+  </table>    <figure id="visual-earned-value" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>図書館の端末設置をEVMで読む</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-earned-value-title visual-earned-value-desc">
+        <title id="visual-earned-value-title">図書館の端末設置をEVMで読む</title>
+        <desc id="visual-earned-value-desc">PV　8万円、4台完了する計画、予算は1台2万円。EV　6万円、3台分が完了、完了した作業の予算。AC　7万円、実際に7万円支出、会計記録から確認。差異、SV −2万円、CV −1万円</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">PV　8万円</text>
+<text x="12" y="44" class="small" text-anchor="start">4台完了する計画</text>
+<text x="12" y="62" class="small" text-anchor="start">予算は1台2万円</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">EV　6万円</text>
+<text x="177" y="44" class="small" text-anchor="start">3台分が完了</text>
+<text x="177" y="62" class="small" text-anchor="start">完了した作業の予算</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">AC　7万円</text>
+<text x="12" y="120" class="small" text-anchor="start">実際に7万円支出</text>
+<text x="12" y="138" class="small" text-anchor="start">会計記録から確認</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">差異</text>
+<text x="177" y="120" class="small" text-anchor="start">SV −2万円</text>
+<text x="177" y="138" class="small" text-anchor="start">CV −1万円</text>
+      </svg>
+      <p>台数・費用とも自作例です。SVとCVはいずれもマイナスですが、比べる相手が違います。</p>
+    </figure>
+    <section class="box">
+      <h3>EVMと完了時の費用を考える自作例題</h3>
+      <p>1台3万円で設定する計画で、基準日には5台の予定でした。実際は4台が完了し、14万円を使いました。日程差異とコスト差異はいくらですか。全体で12台を設定し、今後も同じ平均費用が続くと仮定すると、当初予算に対し完了時の費用はどれだけ増えますか。</p>
+      <details><summary>EVMの解答と計算を開く</summary><p>PVは15万円、EVは12万円、ACは14万円。SVは12−15＝<strong>−3万円</strong>、CVは12−14＝<strong>−2万円</strong>です。実績の平均は14÷4＝3.5万円なので、12台の完了時は42万円と見積もれます。当初予算は3×12＝36万円。差は<strong>6万円の増加</strong>です。今後の条件が変われば、残りの作業費を見直します。</p></details>
+    </section>
+    <p><a href="https://www.gao.gov/assets/d20195G.pdf">米国会計検査院「Cost Estimating and Assessment Guide」</a></p>
+<p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=34">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://www.gao.gov/products/gao-16-89g">米国会計検査院「Schedule Assessment Guide」</a></li></ul>
+  </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第8章に合わせています。</p>
@@ -301,7 +383,7 @@
       <li><a href="https://www.gao.gov/products/gao-16-89g">米国会計検査院（GAO）「Schedule Assessment Guide」</a></li>
       <li><a href="https://www.pmi.org/learning/library/critical-path-scheduling-work-breakdown-6212">PMI「Follow the Yellow Brick Road (the Critical Path)」</a></li>
     </ul>
-    <p>前へ <a href="itp-ch08-1-project-management.html">8-1 プロジェクトの計画とリスク管理</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+    <p>前へ <a href="itp-ch08-1-project-management.html">8-1 プロジェクトの計画とリスク管理</a> ／ 次の章 <a href="itp-ch09-1-service-management.html">9-1 サービスマネジメント</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
   </section>
 </article>
 </main>

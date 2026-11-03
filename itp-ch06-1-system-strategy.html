@@ -53,7 +53,7 @@
     <p>大学図書館の自習室予約を例に、E-R図・DFD・BPMN、BPRとBPM、クラウドの選び方を図解と例題で学びます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#strategy">情報システム戦略</a></li><li><a href="#process">E-R図・DFD・BPMN</a></li><li><a href="#improvement">業務改善</a></li><li><a href="#solutions">ソリューション</a></li><li><a href="#evaluation">活用促進・評価</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#strategy">情報システム戦略</a></li><li><a href="#process">E-R図・DFD・BPMN</a></li><li><a href="#improvement">業務改善</a></li><li><a href="#solutions">ソリューション</a></li><li><a href="#evaluation">活用促進・評価</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="strategy">
   <h2>情報システム戦略は、大学の目的から考える</h2>
   <p>大学図書館で「窓口には列があるのに、別の部屋には空席がある」という状況を考えます。大学の目的を「空いている席を公平に使えるようにする」と置きます。その目的を支える<strong>情報システム戦略</strong>の一例は、窓口とWebで共通の空席情報を使い、どちらから予約しても同じルールを適用することです。具体的な画面や製品は、その方針を決めた後で選びます。</p>
@@ -309,6 +309,64 @@
       <details><summary>第6問の解答と解説</summary><p><strong>ア　観測した中央値は5分短い。効果の判断には混雑条件も確認する</strong></p><p>12 − 7 ＝ 5分は集計値の差です。個人ごとの差や原因は、この二つの値だけでは分かりません。</p></details>
     </section>
 </section>
+
+  <section id="textbook-coverage">
+    <h2>全体最適と設置先を選ぶための補足</h2>
+    <p>図書館が分館にも予約を広げます。どの記録を正本とするか、学生との接点をどう作るか、機器をどこに置くかを先に整理します。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>正本・接点・機器の場所を分ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">正本・接点・機器の場所を分ける</title>
+        <desc id="coverage-visual-desc">SoR、予約台帳を保存、正しい記録を保つ。SoE、予約画面で案内、学生の接点を作る。ハウジング、自前の機器を外に置く、置く場所を借りる。ホスティング、事業者の機器を借りる、提供内容を確認する</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">SoR</text>
+<text x="12" y="44" class="small" text-anchor="start">予約台帳を保存</text>
+<text x="12" y="62" class="small" text-anchor="start">正しい記録を保つ</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">SoE</text>
+<text x="177" y="44" class="small" text-anchor="start">予約画面で案内</text>
+<text x="177" y="62" class="small" text-anchor="start">学生の接点を作る</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">ハウジング</text>
+<text x="12" y="120" class="small" text-anchor="start">自前の機器を外に置く</text>
+<text x="12" y="138" class="small" text-anchor="start">置く場所を借りる</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">ホスティング</text>
+<text x="177" y="120" class="small" text-anchor="start">事業者の機器を借りる</text>
+<text x="177" y="138" class="small" text-anchor="start">提供内容を確認する</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">全体最適化方針・計画・情報化投資計画</th><td>経営や運営の方針と合わせて目指す全体像を決める。計画では順序や対象を具体化し、投資計画では費用と期待する効果を見積もる。</td></tr>
+<tr><th scope="row">SoR・SoE</th><td>SoRは予約や貸出の正確な記録を担う仕組み。SoEは学生向けの予約案内など、利用者と接点を持つ仕組み。</td></tr>
+<tr><th scope="row">E-R図の実体と関連</th><td>学生、学習室、予約を実体として表し、ある学生が複数の予約を持つなどの関連を表す。データの受渡しはDFDで考える。</td></tr>
+<tr><th scope="row">エンタープライズサーチ</th><td>組織内の複数の文書や保管先を横断して探す。検索結果は閲覧権限の範囲に限定する。</td></tr>
+<tr><th scope="row">ハウジング・ホスティング・マルチクラウド</th><td>自分で用意した機器を事業者の施設に置く、事業者の機器等を借りる、複数のクラウドを利用する、という違い。</td></tr>
+<tr><th scope="row">シェアリングエコノミー・ライフログ・PDS</th><td>遊休資産などを共有する仕組み、日常の行動を記録したデータ、本人が自分のデータを管理し提供を制御する仕組み。</td></tr>
+<tr><th scope="row">レガシーシステム・利用実態の評価</th><td>古くなって維持や変更が難しいシステムのこと。移行の判断には、使用頻度、業務への影響、更新や保守の難しさを確かめる。</td></tr>
+<tr><th scope="row">サイバーセキュリティ経営ガイドライン</th><td>経営者がリスクを把握し、取引先や委託先も含めた対策を主導するための考え方を示す。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>図書館が所有する予備の予約サーバを遠方の事業者の機器室に持ち込み、電源と回線を借ります。ハウジングとホスティングのどちらですか。</p>
+      <details><summary>解答と考え方を開く</summary><p><strong>ハウジング</strong>です。持ち込む機器の所有者は図書館で、事業者は設置場所などを提供します。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ワークフローシステム・Web会議・チャット</th><td>申請を決められた順に回して承認の記録を残す仕組み、遠隔から会話する仕組み、短いメッセージをやり取りする仕組み。</td></tr>
+<tr><th scope="row">パブリック・プライベート・ハイブリッドクラウド</th><td>広く利用できるクラウド、特定組織向けのクラウド、それらなどを連携する構成。マルチクラウドは複数サービスの利用に着目する。</td></tr>
+<tr><th scope="row">費用対効果分析・情報システムの廃棄</th><td>効果を費用や代替案と比較する。利用を終えた機器は記録の移行、必要な保管、消去や回収を計画する。</td></tr>
+    </tbody>
+  </table><p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=27">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://www.meti.go.jp/policy/netsecurity/downloadfiles/guide3.0.pdf">経済産業省・IPA「サイバーセキュリティ経営ガイドライン」</a></li></ul>
+  </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第6章に合わせています。</p>
