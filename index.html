@@ -1820,6 +1820,27 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">情報セキュリティの3要素</div>
           <div style="font-size:10px;color:var(--ink3);">予約表の図解・確認2問</div>
         </a>
+        <a href="itp-ch01-business.html" class="lp-thumb-card">
+          <span class="lp-thumb-media lp-card-media" aria-hidden="true"><img src="images/article-thumbnails/itp-ch01-business.svg" alt="" width="640" height="360" loading="lazy" decoding="async"></span>
+          <div class="lp-card-body">
+            <div class="lp-card-title">第1章 企業活動</div>
+            <div class="lp-card-note">組織の分け方と損益分岐点</div>
+          </div>
+        </a>
+        <a href="itp-ch02-data.html" class="lp-thumb-card">
+          <span class="lp-thumb-media lp-card-media" aria-hidden="true"><img src="images/article-thumbnails/itp-ch02-data.svg" alt="" width="640" height="360" loading="lazy" decoding="async"></span>
+          <div class="lp-card-body">
+            <div class="lp-card-title">第2章 業務分析・データ利活用</div>
+            <div class="lp-card-note">グラフ選びとデータの読み方</div>
+          </div>
+        </a>
+        <a href="itp-ch03-law.html" class="lp-thumb-card">
+          <span class="lp-thumb-media lp-card-media" aria-hidden="true"><img src="images/article-thumbnails/itp-ch03-law.svg" alt="" width="640" height="360" loading="lazy" decoding="async"></span>
+          <div class="lp-card-body">
+            <div class="lp-card-title">第3章 法務</div>
+            <div class="lp-card-note">知的財産・個人情報・取適法</div>
+          </div>
+        </a>
         <a href="itp-authentication-authorization.html" class="lp-thumb-card">
           <span class="lp-thumb-media lp-card-media" aria-hidden="true"><img src="images/article-thumbnails/itp-authentication-authorization.svg" alt="" width="640" height="360" loading="lazy" decoding="async"></span>
           <div class="lp-card-body">
@@ -2630,6 +2651,14 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
     <div class="updates-list">
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新記事</span><span class="update-date">2026.11.03</span></div>
+        <div class="update-title">ITパスポート第1〜3章の復習記事を公開しました</div>
+        <a class="update-read" href="itp-ch01-business.html">第1章 企業活動を読む</a>
+        <a class="update-read" href="itp-ch02-data.html">第2章 業務分析・データ利活用を読む</a>
+        <a class="update-read" href="itp-ch03-law.html">第3章 法務を読む</a>
+        <div class="update-desc">同じ架空の学園祭を題材に、企業活動、業務分析とデータ利活用、法務を順に復習できます。各章に解説つきの自作例題3問と短い復習問題を用意しました。</div>
+      </div>
+      <div class="update-item">
+        <div class="update-head"><span class="update-badge feature">新記事</span><span class="update-date">2026.11.03</span></div>
         <div class="update-title">ITパスポートの認証と認可の違いを解説しました</div>
         <div class="update-desc"><a href="itp-authentication-authorization.html">認証と認可の違い</a>を学校のポータルや共有ファイルで整理し、解説つきの自作例題3問と短い復習問題を加えました。</div>
       </div>
@@ -3342,7 +3371,8 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   const SVG_COVERS = new Set([
     'boki-kessansho-analysis', 'boki-net-id-check', 'boki2-after-pass',
     'cpa-juken-shukatsu-heiko', 'cpa-tanto-gokaku-ronbun-tetsuzuki',
-    'fe-stack-queue', 'fe-variable-trace', 'itp-security-cia', 'itp-authentication-authorization'
+    'fe-stack-queue', 'fe-variable-trace', 'itp-security-cia', 'itp-authentication-authorization',
+    'itp-ch01-business', 'itp-ch02-data', 'itp-ch03-law'
   ]);
 
   function createArticleThumb(slug, title, className){

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch02-data.html">
+  <title>ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習｜スタディクエスト</title>
+  <meta name="description" content="模擬店の待ち時間を題材に、パレート図・散布図の選び方、平均と中央値、空欄のあるデータの集計を自作例題3問で復習します。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習">
+  <meta property="og:description" content="模擬店の待ち時間を題材に、パレート図・散布図の選び方、平均と中央値、空欄のあるデータの集計を自作例題3問で復習します。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch02-data.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習",
+  "description": "模擬店の待ち時間を題材に、パレート図・散布図の選び方、平均と中央値、空欄のあるデータの集計を自作例題3問で復習します。",
+  "url": "https://study-quest.net/itp-ch02-data.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch02-data.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html">ITパスポート</a> › 第2章</p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第2章</p>
+    <h1>ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習</h1>
+    <p>模擬店の注文が混み合いました。原因を考えるときは、集計したいものを先に決め、目的に合う図表を選びます。待ち時間と予約データを使って、集計から改善案まで考えます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#graphs">グラフの使い分け</a></li><li><a href="#quiz">自作例題3問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <section id="process">
+    <h2>まず、行列ができる手順を確かめる</h2>
+    <p>「注文を受ける → 決済 → 商品を渡す」と手順を並べ、どこに待ち時間があるかを測ります。原因候補が散らばっているなら、<strong>親和図法</strong>で似た意見を「注文」「決済」「受け渡し」などにまとめます。選択肢が複数あれば、待ち時間の短縮、担当者の負担、費用といった評価軸を決め、同じ基準で比べます。</p>
+    <p>集計前に、予約IDが重複した行や終了時刻が空欄の行を確認します。再送で生じた重複は元記録と照合して整理します。終了時刻が不明な注文は「待ち時間0分」と置かず、算出できた件数と対象外の理由を残します。</p>
+  </section>
+  <section id="graphs">
+    <h2>何を比べるかでグラフが決まる</h2>
+    <table>
+      <caption>学園祭での図表の選び方</caption>
+      <thead><tr><th scope="col">知りたいこと</th><th scope="col">適した図表</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">時間帯ごとに注文がどう増減したか</th><td>折れ線グラフ。時系列の変化を追います。</td></tr>
+        <tr><th scope="row">どの遅延理由から対策するか</th><td>パレート図。件数順の棒と累積割合を見ます。</td></tr>
+        <tr><th scope="row">待ち時間は何分台に集中するか</th><td>ヒストグラム。時間を階級に分け、度数を示します。</td></tr>
+        <tr><th scope="row">注文数が多いと待ち時間が長い傾向か</th><td>散布図。観測単位ごとに二つの数値を1点にします。</td></tr>
+      </tbody>
+    </table>
+    <p>待ち時間が2・3・4・5・26分なら、平均は <strong>40 ÷ 5 ＝ 8分</strong>、中央値は中央の<strong>4分</strong>です。平均は長く待った1件の影響を受けます。中央値と件数も添えると、何が起きたかを説明しやすくなります。</p>
+    <p>予約ログが大量に集まれば、時間帯ごとの混雑予測にも使えます。来年の学園祭で使う予測なら、予測時点で入手できる注文数や時間帯を入力候補にし、学習に使わなかった別の日のデータで予測と実測を比べます。</p>
+  </section>
+  <section id="quiz">
+    <h2>解説つきの自作例題3問</h2>
+    <section class="box">
+      <h3>第1問　何から直すと、遅延の大部分を対象にできる？</h3>
+      <p>遅延の主因を1件につき一つ記録したところ、決済24件、在庫確認12件、注文確認8件、受け渡し6件でした。上位2理由の累積割合と、それを読み取る図の組合せはどれですか。</p>
+      <ol class="options"><li>48%・パレート図</li><li>72%・ヒストグラム</li><li>72%・パレート図</li><li>36%・散布図</li></ol>
+      <details><summary>第1問の解答と計算</summary><p><strong>ウ。</strong>全50件のうち上位2理由は24 ＋ 12 ＝ 36件で、36 ÷ 50 ＝ 72%です。アは最多の理由だけ、イは数値の分布を示す図、エの36は件数です。72%は対策の対象になる割合です。対策後に実際に何件減ったかは別に測ります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第2問　混雑が原因だと言い切れる？</h3>
+      <p>15分ごとの注文数を横軸、同じ時間帯に受けた注文の平均待ち時間を縦軸にした散布図は右上がりでした。この図から判断できることはどれですか。</p>
+      <ol class="options"><li>観測した時間帯では注文数が多いほど待ち時間も長い傾向がある</li><li>注文数が増えるとすべての注文の待ち時間が必ず増える</li><li>担当者の人数は待ち時間に影響しない</li><li>注文数が待ち時間を延ばす唯一の原因と確定した</li></ol>
+      <details><summary>第2問の解答と理由</summary><p><strong>ア。</strong>点が示すのは時間帯単位の組合せです。イの個々の注文の結果は分からず、ウとエの因果関係もこの図だけでは確かめられません。例えば、担当人数が少ない時間帯に注文が集中していた可能性があります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第3問　空欄のある記録の平均</h3>
+      <p>4件の待ち時間が「3分、5分、空欄、7分」です。空欄は終了時刻が記録されていません。有効な記録の平均と件数はどれですか。</p>
+      <ol class="options"><li>3.75分・4件</li><li>5分・3件</li><li>5分・4件</li><li>7.5分・2件</li></ol>
+      <details><summary>第3問の解答と計算</summary><p><strong>イ。</strong>観測できた3件を使い、(3 ＋ 5 ＋ 7) ÷ 3 ＝ 5分です。アは空欄を0分とみなした値、ウは分母の表示が違い、エは有効な3件を2件で割っています。未記録1件も別に残します。</p></details>
+    </section>
+    <p><strong>復習メモ</strong>　「原因別に直す順番を決める」「待ち時間の分布を見る」「二つの数値の関係を見る」の三つに、それぞれ図を当てはめてみましょう。</p>
+    <details><summary>復習メモの答え</summary><p>パレート図、ヒストグラム、散布図の順です。</p></details>
+  </section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。章番号は学習用教材に合わせています。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=9">IPA「ITパスポート試験シラバス Ver.6.5」業務分析・データ利活用</a></li><li><a href="https://www.stat.go.jp/naruhodo/12_ppdac/analysis.html">総務省統計局「4.分析」</a></li><li><a href="https://www.stat.go.jp/naruhodo/9_graph/graph.html">総務省統計局「グラフの種類」</a></li></ul>
+    <p><a href="itp-ch01-business.html">第1章 企業活動</a> ／ 次は <a href="itp-ch03-law.html">第3章 法務</a>。</p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-chapters"></script>
+</body>
+</html>
