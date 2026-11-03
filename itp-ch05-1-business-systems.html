@@ -53,7 +53,7 @@
     <p>学園祭のレジ、工房、通販を例に、POS・RFID・CAD・MRP・EC・EDIを自作図解と解説つき例題で学びます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#business">レジ・配送・行政</a></li><li><a href="#manufacturing">設計・製造・資材</a></li><li><a href="#commerce">電子商取引</a></li><li><a href="#payment">決済と取引データ</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#business">レジ・配送・行政</a></li><li><a href="#manufacturing">設計・製造・資材</a></li><li><a href="#commerce">電子商取引</a></li><li><a href="#payment">決済と取引データ</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#public-systems">行政システムは、何を届けるかで分ける</a></li><li><a href="#banking-and-platforms">支払い・金融取引・データ連携</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="business">
   <h2>ビジネスシステム　レジを通った1個を追う</h2>
   <p>学園祭の模擬店で焼き菓子が1個売れました。<strong>POS（販売時点情報管理）</strong>は、会計したときに商品、個数、時刻などを記録します。バーコードは商品を識別する手がかりで、たとえばJANシンボルに商品コードを表し、価格は店の商品マスターから照合します。売上記録は、連携先の在庫を減らしたり、翌日の仕入れを判断したりするのに使えます。</p>
@@ -437,6 +437,99 @@
     <p class="note">2026年11月3日照合。</p>
     <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=23">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://www.digital.go.jp/policies/base_registry">デジタル庁「ベース・レジストリ」</a></li><li><a href="https://www.fsa.go.jp/menkyo/menkyoj/kasoutuka.pdf">金融庁「暗号資産を利用する際の注意点」</a></li><li><a href="https://www.boj.or.jp/paym/digital/index.htm">日本銀行「中央銀行デジタル通貨」</a></li></ul>
   </section>
+<section id="public-systems">
+  <h2>行政システムは、何を届けるかで分ける</h2>
+    <figure id="public-systems-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>行政システムは、何を届けるかで分ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="public-systems-visual-title public-systems-visual-desc">
+        <title id="public-systems-visual-title">行政システムは、何を届けるかで分ける</title>
+        <desc id="public-systems-visual-desc">住民へ知らせる、緊急情報を届ける → Jアラート。本人確認が必要、番号、カード、台帳網の役割を分ける。業務を載せる、行政システムを稼働するクラウド環境</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">住民へ知らせる</text>
+<text x="50" y="41" class="small" text-anchor="start">緊急情報を届ける → Jアラート</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">本人確認が必要</text>
+<text x="50" y="101" class="small" text-anchor="start">番号、カード、台帳網の役割を分ける</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">業務を載せる</text>
+<text x="50" y="161" class="small" text-anchor="start">行政システムを稼働するクラウド環境</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>行政システムは、何を届けるかで分けるの見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">行政分野におけるシステム</th><td>住民手続、災害情報の伝達、行政業務の処理など、行政を支援するシステムの総称。</td></tr>
+<tr><th scope="row">Jアラート</th><td>国から緊急情報を送り、自治体の防災行政無線などを通じ住民へ伝える全国瞬時警報システム。</td></tr>
+<tr><th scope="row">ガバメントクラウド</th><td>政府や自治体の情報システムなどで利用するため、デジタル庁が整備する共通のクラウド利用環境。</td></tr>
+<tr><th scope="row">デジタルガバメント</th><td>デジタルを使い、行政の手続や仕事を利用者目線で組み直す取組。</td></tr>
+<tr><th scope="row">住民基本台帳ネットワークシステム</th><td>自治体の住民基本台帳を基に、法律で定める事務で本人確認情報を利用できるようにする全国的な仕組み。</td></tr>
+<tr><th scope="row">マイナンバー</th><td>住民票を持つ人に指定される個人番号。利用できる範囲は法令で定められる。</td></tr>
+<tr><th scope="row">マイナンバーカード</th><td>申請で交付されるカード。券面での本人確認や電子証明書によるオンライン本人確認などに使える。</td></tr>
+<tr><th scope="row">マイナンバー法</th><td>個人番号を利用できる事務や、特定個人情報の取扱いなどを定める法律。</td></tr>
+<tr><th scope="row">電子自治体</th><td>自治体の申請・届出や内部事務をデジタルで扱う取組。行政のレベルを区別する。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>自治体の手続をオンライン化する。住民が電子証明書で本人確認し、行政側は共通のクラウド環境で受付を動かす。住民側と行政側はそれぞれ何を使う？</p>
+    <details><summary>解答と解説</summary><p>住民側の例はマイナンバーカードの電子証明書、行政側の例はガバメントクラウドです。番号そのものや、住民に緊急情報を届けるJアラートとは別の役割です。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://www.digital.go.jp/policies/mynumber">デジタル庁 マイナンバー制度</a>、<a href="https://www.digital.go.jp/policies/gov_cloud">デジタル庁 ガバメントクラウド</a>、<a href="https://www.j-lis.go.jp/juki-net/cms_14.html">J-LIS 住民基本台帳ネットワークシステム</a>、<a href="https://www.fdma.go.jp/about/organization/post-18.html">消防庁 Jアラート</a></p>
+</section>
+<section id="banking-and-platforms">
+  <h2>支払い・金融取引・データ連携</h2>
+    <figure id="banking-and-platforms-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>支払い・金融取引・データ連携</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="banking-and-platforms-visual-title banking-and-platforms-visual-desc">
+        <title id="banking-and-platforms-visual-title">支払い・金融取引・データ連携</title>
+        <desc id="banking-and-platforms-visual-desc">口座の操作、残高照会や振込をオンラインで行う。金融商品を取引、証券会社の画面で注文を出す。別サービスと連携、APIの条件に沿ってデータを渡す</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">口座の操作</text>
+<text x="50" y="41" class="small" text-anchor="start">残高照会や振込をオンラインで行う</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">金融商品を取引</text>
+<text x="50" y="101" class="small" text-anchor="start">証券会社の画面で注文を出す</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">別サービスと連携</text>
+<text x="50" y="161" class="small" text-anchor="start">APIの条件に沿ってデータを渡す</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>支払い・金融取引・データ連携の見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">キャッシュカード</th><td>銀行口座からATMで引き出すときなどに用いるカード。</td></tr>
+<tr><th scope="row">クレジットカード</th><td>カード会社との契約に基づき、商品の代金を後から支払う手段。</td></tr>
+<tr><th scope="row">eマーケットプレース</th><td>複数の売手・買手が電子的に取引できる市場。企業間の部品調達などに使われる。</td></tr>
+<tr><th scope="row">インターネットトレーディング</th><td>インターネットで株式などの金融商品の注文を行う取引。</td></tr>
+<tr><th scope="row">インターネットバンキング</th><td>銀行の残高照会や振込などをネット経由で利用する。</td></tr>
+<tr><th scope="row">AML・CFTソリューション</th><td>資金洗浄・テロ資金供与対策を支援する機能。本人確認や、不審な取引パターンの検知が例。</td></tr>
+<tr><th scope="row">オープンAPI</th><td>外部から利用できる接続仕様を用意する仕組み。銀行口座の情報を連携するときは、利用者の同意や接続条件も確かめる。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>利用者が許可した後、家計簿アプリが銀行と決めた接続仕様に従って残高情報を受け取る。株の注文か、オープンAPIによる連携か？</p>
+    <details><summary>解答と解説</summary><p>オープンAPIによる連携です。別のサービス間で必要なデータをやり取りしています。公開された仕様があっても、誰でも残高を見られるわけではありません。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://www.fsa.go.jp/policy/amlcftcpt/">金融庁 資金洗浄・テロ資金供与対策</a></p>
+</section>
+
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第5章に合わせています。</p>

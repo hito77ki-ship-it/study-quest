@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch11-2-information-theory.html">
+  <title>ITパスポート 11-2 情報に関する理論とAI｜スタディクエスト</title>
+  <meta name="description" content="図書館の放送と本の画像を題材に、情報量・デジタル化・文字コード・AIの学習方式を図解と自作例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 11-2 情報に関する理論とAI">
+  <meta property="og:description" content="図書館の放送と本の画像を題材に、情報量・デジタル化・文字コード・AIの学習方式を図解と自作例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch11-2-information-theory.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 11-2 情報に関する理論とAI",
+  "description": "図書館の放送と本の画像を題材に、情報量・デジタル化・文字コード・AIの学習方式を図解と自作例題で学びます。",
+  "url": "https://study-quest.net/itp-ch11-2-information-theory.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch11-2-information-theory.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第11章 基礎理論</p>
+    <h1>ITパスポート 11-2 情報に関する理論とAI</h1>
+    <p>図書館の放送と本の画像を題材に、情報量・デジタル化・文字コード・AIの学習方式を図解と自作例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#units">ビットとバイト</a></li><li><a href="#digitization">デジタル化</a></li><li><a href="#text-and-rules">文字と推論</a></li><li><a href="#ai">AIの技術</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="units">
+  <h2>何通りを表せるかと、何バイト使うかを区別する</h2>
+  <p>1ビットには0と1の2通り、nビットには2のn乗通りのビット列があります。1バイト＝8ビットなので2バイトなら16ビット、2の16乗＝65,536通りです。これは固定の16ビットで表せる組合せの数です。文字コードが実際にどの組合せを使うかは規格で決まります。</p>
+    <figure id="visual-bit-count" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>鍵の状態を何通りまで区別できる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-bit-count-title visual-bit-count-desc">
+        <title id="visual-bit-count-title">鍵の状態を何通りまで区別できる？</title>
+        <desc id="visual-bit-count-desc">1ビット、0、1、2通り。2ビット、00、01、10、11、4通り。8ビット、1バイト、256通り。16ビット、2バイト、65,536通り</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">1ビット</text>
+<text x="12" y="44" class="small" text-anchor="start">0、1</text>
+<text x="12" y="62" class="small" text-anchor="start">2通り</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">2ビット</text>
+<text x="177" y="44" class="small" text-anchor="start">00、01、10、11</text>
+<text x="177" y="62" class="small" text-anchor="start">4通り</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">8ビット</text>
+<text x="12" y="120" class="small" text-anchor="start">1バイト</text>
+<text x="12" y="138" class="small" text-anchor="start">256通り</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">16ビット</text>
+<text x="177" y="120" class="small" text-anchor="start">2バイト</text>
+<text x="177" y="138" class="small" text-anchor="start">65,536通り</text>
+      </svg>
+      <p>ビットを1つ増やすたび、元の全組合せに0または1を付けられるので、数が倍になります。</p>
+    </figure>
+  <p>k、M、G、Tなどは10の累乗の接頭語です。1 kBは1,000 B、1 KiBは1,024 B。通信のbpsは1秒当たりの<strong>ビット</strong>数です。8,000 bitの送信を4,000 bit/sで行う理想条件なら2秒です。接頭語・単位と、通信の追加情報を含むかを確認します。</p>
+</section>
+<section id="digitization">
+  <h2>音声のデジタル化は、時刻・段階・ビット列の順</h2>
+  <p>館内の放送を録音します。音の波形は連続的に変化します。デジタル化では、どの時刻で値を取るか、測った値をどの段階に寄せるか、その段階をどのビット列で記録するかを順に決めます。</p>
+    <figure id="visual-digital" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>音声をビット列に変える</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-digital-title visual-digital-desc">
+        <title id="visual-digital-title">音声をビット列に変える</title>
+        <desc id="visual-digital-desc">標本化（サンプリング）、等間隔の時刻で波形の値を測る。量子化、測った値を定めた段階に丸める。符号化、段階番号を2進数などで記録する</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">標本化（サンプリング）</text>
+<text x="50" y="41" class="small" text-anchor="start">等間隔の時刻で波形の値を測る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">量子化</text>
+<text x="50" y="101" class="small" text-anchor="start">測った値を定めた段階に丸める</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">符号化</text>
+<text x="50" y="161" class="small" text-anchor="start">段階番号を2進数などで記録する</text>
+      </svg>
+      <p>標本化周波数は1秒当たりの測定回数です。量子化ビット数をbとすると、最大で2のb乗段階を区別できます。</p>
+    </figure>
+  <p>例えば非圧縮PCMで、8,000回/秒、1回8ビット、1チャンネルを3秒記録すると、8,000×8×1×3＝192,000ビット、24,000バイトです。ヘッダなどは含めません。測定回数を増やすと時間方向の変化をより細かく拾え、段階数を増やすと振幅方向の丸めの幅を小さくできます。</p>
+  <p>画像では、画素ごとに明るさや色を数値にします。例えば白黒の写真を256段階の明るさで表せば、1画素は8ビットです。横100×縦60画素なら、非圧縮でヘッダを除いたデータは100×60×8＝48,000ビット（6,000バイト）。画素数と一つの画素に使うビット数を分けて計算します。</p>
+</section>
+<section id="text-and-rules">
+  <h2>文字コード・検索記号・論理的な推論</h2>
+  <p><strong>文字コード</strong>は文字を数値と対応づける仕組みです。Unicodeは文字にコードポイントを割り当て、UTF-8はそれをバイト列で表します。英字 A はUTF-8で1バイト、ひらがなの「あ」は3バイトです。JISコードやシフトJISのデータを受け取る場合は、読み書きの方式が合っているかを確かめます。</p>
+    <figure id="visual-encoding" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ文字も、何の値を見ているかで違う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-encoding-title visual-encoding-desc">
+        <title id="visual-encoding-title">同じ文字も、何の値を見ているかで違う</title>
+        <desc id="visual-encoding-desc">文字、A、画面で読むもの。コードポイント、U+0041、Unicode上の番号。UTF-8、16進数の41、記録するバイト。読取り、UTF-8として読む、正しくAに戻す</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">文字</text>
+<text x="12" y="44" class="small" text-anchor="start">A</text>
+<text x="12" y="62" class="small" text-anchor="start">画面で読むもの</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">コードポイント</text>
+<text x="177" y="44" class="small" text-anchor="start">U+0041</text>
+<text x="177" y="62" class="small" text-anchor="start">Unicode上の番号</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">UTF-8</text>
+<text x="12" y="120" class="small" text-anchor="start">16進数の41</text>
+<text x="12" y="138" class="small" text-anchor="start">記録するバイト</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">読取り</text>
+<text x="177" y="120" class="small" text-anchor="start">UTF-8として読む</text>
+<text x="177" y="138" class="small" text-anchor="start">正しくAに戻す</text>
+      </svg>
+      <p>Unicodeでの番号とファイルに入るバイトの長さを区別します。</p>
+    </figure>
+  <p>述語論理では「すべての予約は利用者と結びつく」のように、対象と条件を明示します。一般的な規則と個別の事実から結論を出すのが<strong>演繹推論</strong>、複数の観察例から傾向を推測するのが<strong>帰納推論</strong>です。ワイルドカードでは「貸出*.csv」の * が任意の文字列を表すことがあります。正規表現では * が直前の要素の0回以上の繰返しを表すため、検索機能の方式を確かめます。</p>
+</section>
+<section id="ai">
+  <h2>AIは、何を手がかりに学習するかで見分ける</h2>
+  <table>
+    <caption>本の返却を支援するAIの例</caption>
+    <thead><tr><th scope="col">方式</th><th scope="col">学習の手がかり</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">教師あり学習</th><td>本の写真と正しい分類名を一緒に与え、新しい写真の分類を学ぶ。</td></tr>
+<tr><th scope="row">教師なし学習</th><td>分類名を付けない利用記録から、似た行動のグループなどを見つける。</td></tr>
+<tr><th scope="row">強化学習</th><td>返却カートが試行を重ね、目的地へ到達するなどの報酬が大きくなる行動を学ぶ。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-neuron" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>ニューラルネットワークの一つの計算を追う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-neuron-title visual-neuron-desc">
+        <title id="visual-neuron-title">ニューラルネットワークの一つの計算を追う</title>
+        <desc id="visual-neuron-desc">入力と重み、写真の特徴を数値として受け取る。重み付き和、入力に重みを掛け、足し合わせる。活性化関数、結果を変換して次へ渡す</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">入力と重み</text>
+<text x="50" y="41" class="small" text-anchor="start">写真の特徴を数値として受け取る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">重み付き和</text>
+<text x="50" y="101" class="small" text-anchor="start">入力に重みを掛け、足し合わせる</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">活性化関数</text>
+<text x="50" y="161" class="small" text-anchor="start">結果を変換して次へ渡す</text>
+      </svg>
+      <p>ReLUの例では負の値は0、0以上はそのままです。層を重ねたニューラルネットワークを学習する方法がディープラーニングです。</p>
+    </figure>
+  <p><strong>特徴量</strong>は対象の特徴を表す数値です。画像に強みを持つCNNは局所的な特徴を抽出し、RNNは前の状態を使って系列を扱います。GANは生成側と識別側を競わせる構成、Transformerは注意機構を使って要素間の関係を扱う構成です。基盤モデルは広いデータで学習し、追加の調整などで複数の用途に適応させます。利用時の注意は<a href="itp-ch05-2-ai-iot.html#responsible">第5章のAI利活用</a>で確認できます。</p>
+</section>
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　識別子の組合せ</h3>
+    <p>固定長12ビットですべてのビット列を使えるとします。最大何種類のIDを作れますか。</p>
+    <ol class="options"><li>1,024</li><li>2,048</li><li>4,096</li><li>12,000</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ウ　4,096</strong></p><p>2の12乗＝4,096です。値0も一つの組合せです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　バイトとビット</h3>
+    <p>非圧縮PCMで毎秒6,000回、量子化8ビット、1チャンネルの2秒分を記録します。ヘッダなしで何バイトですか。</p>
+    <ol class="options"><li>12,000</li><li>6,000</li><li>24,000</li><li>96,000</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ア　12,000</strong></p><p>6,000×8×2＝96,000 bit。8で割って12,000 Bです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　測定の間隔</h3>
+    <p>音の大きさの段階数は同じまま、より短い間隔で波形を測ります。変わるものはどれですか。</p>
+    <ol class="options"><li>符号化の文字種</li><li>量子化段階数</li><li>チャンネル数</li><li>標本化周波数</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>エ　標本化周波数</strong></p><p>1秒当たりに測る回数が増えるので、標本化周波数が上がります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　文字の長さ</h3>
+    <p>UTF-8で「Aあ」を保存します。BOM・改行なしなら何バイトですか。</p>
+    <ol class="options"><li>2</li><li>4</li><li>3</li><li>6</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>イ　4</strong></p><p>Aは1バイト、あは3バイトなので4です。文字数とバイト数は一致しないことがあります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　ルールを適用する</h3>
+    <p>「すべての学習室の鍵は返却が必要」「この鍵は学習室のもの」から「この鍵は返却が必要」と結論づけます。どの推論ですか。</p>
+    <ol class="options"><li>帰納推論</li><li>確率的な標本抽出</li><li>演繹推論</li><li>強化学習</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ウ　演繹推論</strong></p><p>一般的な規則を個別の事実に当てはめています。観察を集めて一般化するのは帰納推論です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　ラベルがある写真</h3>
+    <p>分類名を付けた本の写真から、新しい写真の分類を学びます。方式はどれですか。</p>
+    <ol class="options"><li>教師あり学習</li><li>教師なし学習</li><li>強化学習</li><li>量子化</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ア　教師あり学習</strong></p><p>写真と正解の分類名の組を使っているので、教師あり学習です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　活性化関数を使う</h3>
+    <p>活性化関数がReLUで、重み付き和にバイアスを加えた値が−3です。出力はどれですか。</p>
+    <ol class="options"><li>−3</li><li>−1</li><li>3</li><li>0</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>エ　0</strong></p><p>ReLUは入力が負なら0、0以上なら入力をそのまま返します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　どのデータで評価するか</h3>
+    <p>図書館が本の画像を分類するモデルを作りました。未知の写真にも通用するか確かめる方法はどれですか。</p>
+    <ol class="options"><li>学習に使った写真だけを再分類</li><li>学習に使わなかった別の写真で評価</li><li>正答ラベルをモデルに入力してから評価</li><li>写真を使わず、保存容量だけを比べる</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>イ　学習に使わなかった別の写真で評価</strong></p><p>学習に含めなかったデータで評価すると、既知の例を覚えただけかどうかを確かめやすくなります。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第11章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=40">IPA「ITパスポート試験シラバス Ver.6.5」情報に関する理論</a></li>
+      <li><a href="https://www.unicode.org/faq/utf_bom.html">Unicode Consortium「UTF-8, UTF-16, UTF-32 &amp; BOM」</a></li>
+      <li><a href="https://www.bipm.org/en/publications/si-brochure">BIPM「SI Brochure」</a></li>
+      <li><a href="https://physics.nist.gov/cuu/Units/binary.html">NIST「Prefixes for binary multiples」</a></li>
+      <li><a href="https://developers.google.com/machine-learning/crash-course/neural-networks/activation-functions">Google「Activation functions」</a></li>
+      <li><a href="https://csrc.nist.gov/glossary/term/foundation_model">NIST「foundation model」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch11-1-discrete-mathematics.html">11-1 離散数学と応用数学</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch11"></script>
+</body>
+</html>

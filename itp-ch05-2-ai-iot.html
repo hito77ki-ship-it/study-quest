@@ -53,7 +53,7 @@
     <p>売り場のAIと冷蔵庫の遠隔監視を例に、教師あり学習・ハルシネーション・センサー・組込み制御を図と例題で学びます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#ai">AIの用途と学習</a></li><li><a href="#responsible">出力確認と公平性</a></li><li><a href="#iot">IoTと組込み制御</a></li><li><a href="#devices">AR・VR・MRとMaaS</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#ai">AIの用途と学習</a></li><li><a href="#responsible">出力確認と公平性</a></li><li><a href="#iot">IoTと組込み制御</a></li><li><a href="#devices">AR・VR・MRとMaaS</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#ai-principles">AIの原則を、使う前・使っている間・使った後で考える</a></li><li><a href="#augmented-and-automated">現実に重ねる表示と、自動で動く仕組み</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="ai">
   <h2>AIの利活用　分類する、予測する、案内を作る</h2>
   <p>学園祭の売り場で、写真から商品の種類を判別する、過去の販売記録から翌日の販売数を予測する、案内文のたたき台を作る。どれもAIの活用例ですが、担当させる仕事が違います。まず<strong>入力に何を渡し、出力から何を判断したいか</strong>を考えます。</p>
@@ -418,13 +418,114 @@
   </table><p class="note">2026年11月3日照合。</p>
     <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=25">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://csrc.nist.gov/glossary/term/foundation_model">NIST「foundation model」</a></li></ul>
   </section>
+<section id="ai-principles">
+  <h2>AIの原則を、使う前・使っている間・使った後で考える</h2>
+    <figure id="ai-principles-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>AIの原則を、使う前・使っている間・使った後で考える</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="ai-principles-visual-title ai-principles-visual-desc">
+        <title id="ai-principles-visual-title">AIの原則を、使う前・使っている間・使った後で考える</title>
+        <desc id="ai-principles-visual-desc">使う前に確認、学習資料、個人情報、用途を点検。利用中に確かめる、偏り・誤り、人が止められるか。問題が起きたら、記録を残し、担当者が説明する</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">使う前に確認</text>
+<text x="50" y="41" class="small" text-anchor="start">学習資料、個人情報、用途を点検</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">利用中に確かめる</text>
+<text x="50" y="101" class="small" text-anchor="start">偏り・誤り、人が止められるか</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">問題が起きたら</text>
+<text x="50" y="161" class="small" text-anchor="start">記録を残し、担当者が説明する</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>AIの原則を、使う前・使っている間・使った後で考えるの見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">人工知能</th><td>認識、予測、推論、生成など、人の知的な活動に関わる処理を機械で実現する技術の総称。</td></tr>
+<tr><th scope="row">AI利活用ガイドライン</th><td>総務省の研究会が2019年にまとめた、AI利用時の留意事項と原則。ここでは教科書の10原則を区別する。</td></tr>
+<tr><th scope="row">人工知能学会倫理指針</th><td>研究者・技術者などの社会に対する責任や法令の遵守などを示す学会の指針。</td></tr>
+<tr><th scope="row">人間中心のAI社会原則</th><td>日本でまとめられた、人間の尊厳、多様性と包摂、持続可能性などを土台とする原則。</td></tr>
+<tr><th scope="row">信頼できるAIのための倫理ガイドライン</th><td>欧州委員会が設置した専門家グループの文書。人の監督、透明性などの要件を示す。</td></tr>
+<tr><th scope="row">連携の原則</th><td>AIやネットワークがつながる際、関係者が連携できるよう互換性などを考える。</td></tr>
+<tr><th scope="row">適正利用の原則</th><td>能力と限界を理解し、用途や条件に沿って使う。予約案内に使うAIに本人確認の最終判断を任せるかは別途検討する。</td></tr>
+<tr><th scope="row">適正学習の原則</th><td>学習に用いるデータの質や取扱いに注意する。古い営業時間の記録をそのまま学ばせない。</td></tr>
+<tr><th scope="row">安全の原則</th><td>生命・身体・財産などへの危害を防ぐ。誤作動が起きたら利用を止められるようにする。</td></tr>
+<tr><th scope="row">セキュリティの原則</th><td>不正アクセスや改ざんなどからAIを守る。学習データの編集権限を絞る。</td></tr>
+<tr><th scope="row">プライバシーの原則</th><td>本人の情報の扱いに配慮する。案内の学習に必要のない来館者名を使わない。</td></tr>
+<tr><th scope="row">尊厳・自律の原則</th><td>人の意思決定を尊重する。利用者が提案を拒否し、職員に相談できる経路を用意する。</td></tr>
+<tr><th scope="row">公平性の原則</th><td>不当な差別や偏りを防ぐ。利用者の属性ごとに誤りの傾向を確かめる。</td></tr>
+<tr><th scope="row">透明性の原則</th><td>判断の記録や説明可能性に配慮する。どのデータや処理で結果を得たかを追えるようにする。</td></tr>
+<tr><th scope="row">アカウンタビリティの原則</th><td>関係者が役割に応じた説明責任を果たす。問い合わせを誰が受け、事故後に誰が説明するかを決める。</td></tr>
+<tr><th scope="row">AIアシスタント</th><td>質問への回答や操作などを補助するAI。誤り得るので、営業時間は公式案内で確かめる。</td></tr>
+<tr><th scope="row">トロッコ問題</th><td>被害を避ける選択が別の被害を招く場面を考える倫理の思考実験。技術の性能だけで結論は出ない。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>図書館の案内AIが開館時間を誤答した。参照したデータを追えるようにすることと、誰が利用者に説明するかを決めることは、それぞれどの原則？</p>
+    <details><summary>解答と解説</summary><p>参照したデータを追えるようにするのは透明性、説明する役割を決めるのはアカウンタビリティです。個人情報の公開は別途制限します。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://www.meti.go.jp/meti_lib/report/2021FY/000400.pdf">経産省 国内AIガイドラインの記載内容</a>、<a href="https://www.ai-gakkai.or.jp/ai-elsi/">人工知能学会 倫理指針</a>、<a href="https://www.shugiin.go.jp/internet/itdb_shitsumon.nsf/html/shitsumon/b198246.htm">政府答弁書 人間中心のAI社会原則の説明</a>、<a href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai">欧州委員会 信頼できるAIの倫理ガイドライン</a></p>
+</section>
+<section id="augmented-and-automated">
+  <h2>現実に重ねる表示と、自動で動く仕組み</h2>
+    <figure id="augmented-and-automated-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>現実に重ねる表示と、自動で動く仕組み</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="augmented-and-automated-visual-title augmented-and-automated-visual-desc">
+        <title id="augmented-and-automated-visual-title">現実に重ねる表示と、自動で動く仕組み</title>
+        <desc id="augmented-and-automated-visual-desc">眼鏡で案内を見る、現実の通路に矢印を重ねる。場所に結び付ける、実物の棚の上に仮想の箱を置く。車が移動する、異常時の対応を誰が担うかを見る</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">眼鏡で案内を見る</text>
+<text x="50" y="41" class="small" text-anchor="start">現実の通路に矢印を重ねる</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">場所に結び付ける</text>
+<text x="50" y="101" class="small" text-anchor="start">実物の棚の上に仮想の箱を置く</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">車が移動する</text>
+<text x="50" y="161" class="small" text-anchor="start">異常時の対応を誰が担うかを見る</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>現実に重ねる表示と、自動で動く仕組みの見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ロボット</th><td>センサー、制御、駆動部などを組み合わせ、物理的な作業を行う機械。書籍を運ぶ台車などが例。</td></tr>
+<tr><th scope="row">ロボティクス</th><td>ロボットの設計、制御、応用などを扱う技術分野。</td></tr>
+<tr><th scope="row">スマートシティ</th><td>データや技術を使って都市の課題を解き、暮らしや都市サービスを改善する取組。</td></tr>
+<tr><th scope="row">スマートグラス</th><td>視界での情報表示や撮影など、電子機能を持つ眼鏡型の機器。</td></tr>
+<tr><th scope="row">ARグラス</th><td>現実の視界に案内や記号を重ねる機器。会場で進行方向を表示する例。</td></tr>
+<tr><th scope="row">MRグラス</th><td>周囲の形や位置を認識し、仮想物体を現実空間の位置に結び付けて表示・操作する例がある。</td></tr>
+<tr><th scope="row">自動運転レベル</th><td>運転操作や異常時の対応を誰が担うかを段階で表す。レベル3は条件付きでシステムが運転し要請時は運転者が対応。レベル4は限定領域内でシステムが異常時対応も担う。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>決められたルートを走る車が、走行できる条件の範囲内で異常時にも自ら安全に停止する。条件付きで運転者に対応を求める段階と、どこが違う？</p>
+    <details><summary>解答と解説</summary><p>設定された範囲内でシステムが異常時の対応を担う点が、レベル4の説明に対応します。限定条件のない自動運転や、要請を受けた運転者が対応するレベル3とは区別します。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://www.mlit.go.jp/jidosha/content/001492311.pdf">国土交通省 自動運転のレベル分け</a></p>
+</section>
+
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第5章に合わせています。</p>
     <ul>
       <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=22">IPA「ITパスポート試験シラバス Ver.6.5」AIの利活用</a></li>
       <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=24">IPA「ITパスポート試験シラバス Ver.6.5」IoT・組込みシステム</a></li>
-      <li><a href="https://www.cas.go.jp/jp/seisaku/jinkouchinou/r02_dai01/sanko2.pdf">統合イノベーション戦略推進会議「人間中心のAI社会原則」</a></li>
+      <li><a href="https://www.shugiin.go.jp/internet/itdb_shitsumon.nsf/html/shitsumon/b198246.htm">政府答弁書「人間中心のAI社会原則」に関する説明</a></li>
       <li><a href="https://www.ipa.go.jp/security/iot/iotguide.html">IPA「IoT開発におけるセキュリティ設計の手引き」</a></li>
       <li><a href="https://www.mlit.go.jp/sogoseisaku/transport/sosei_transport_tk_000193.html">国土交通省「新モビリティサービスの推進」MaaSの定義</a></li>
     </ul>

@@ -53,7 +53,7 @@
     <p>行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#tree-and-share">ロジックツリーとモザイク図の使い分け</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="process">
     <h2>まず、行列ができる手順を確かめる</h2>
     <p>「注文を受ける → 決済 → 商品を渡す」と手順を並べ、どこに待ち時間があるかを測ります。原因候補が散らばっているなら、<strong>親和図法</strong>で似た意見を「注文」「決済」「受け渡し」などにまとめます。選択肢が複数あれば、待ち時間の短縮、担当者の負担、費用といった評価軸を決め、同じ基準で比べます。</p>
@@ -300,6 +300,41 @@
   </table><p class="note">2026年11月3日照合。</p>
     <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=11">IPA「ITパスポート試験シラバス Ver.6.5」</a></li></ul>
   </section>
+<section id="tree-and-share">
+  <h2>ロジックツリーとモザイク図の使い分け</h2>
+    <figure id="tree-and-share-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>ロジックツリーとモザイク図の使い分け</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 117" role="img" aria-labelledby="tree-and-share-visual-title tree-and-share-visual-desc">
+        <title id="tree-and-share-visual-title">ロジックツリーとモザイク図の使い分け</title>
+        <desc id="tree-and-share-visual-desc">原因を分ける、行列 → 到着が集中／会計に時間。人数と割合を比べる、幅は人数、高さはグループ内の割合</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">原因を分ける</text>
+<text x="50" y="41" class="small" text-anchor="start">行列 → 到着が集中／会計に時間</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">人数と割合を比べる</text>
+<text x="50" y="101" class="small" text-anchor="start">幅は人数、高さはグループ内の割合</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>ロジックツリーとモザイク図の使い分けの見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ロジックツリー</th><td>問題を枝分かれさせて考える図。行列を「処理が遅い」「一度に来る客が多い」などに分ける。</td></tr>
+<tr><th scope="row">モザイク図</th><td>カテゴリの組合せを長方形の面積で表す図。来場日で幅を分け、各日の支払方法の割合で高さを分ける。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>土曜に100人、日曜に50人が来場し、両日とも現金は50%だった。モザイク図で土曜の現金の面積は日曜の何倍？</p>
+    <details><summary>解答と解説</summary><p>2倍です。高さは同じ50%で、土曜の幅は日曜の2倍です。割合が同じでも人数は違います。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a></p>
+</section>
+
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。</p>

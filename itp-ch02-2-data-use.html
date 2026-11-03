@@ -53,7 +53,7 @@
     <p>待ち時間や予約の記録を整え、平均・中央値、標本の偏り、分母、予測に使えるデータを区別します。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#statistical-context">統計の公開元と時系列データの見方</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="statistics">
   <h2>集め方と分母をそろえて、数字を読み違えない</h2>
   <p>待ち時間の「分」は量的データ、決済方法の「現金・カード」は質的データです。注文時刻の並びは時系列で、同じ時刻に複数店舗を比べる記録は横断データの例です。集計表には、何を1件とするか、どの期間・店舗か、単位は何かも添えます。こうしたデータについての説明が<strong>メタデータ</strong>です。</p>
@@ -195,6 +195,49 @@
   </table><p class="note">2026年11月3日照合。</p>
     <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=12">IPA「ITパスポート試験シラバス Ver.6.5」</a></li></ul>
   </section>
+<section id="statistical-context">
+  <h2>統計の公開元と時系列データの見方</h2>
+    <figure id="statistical-context-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>統計の公開元と時系列データの見方</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="statistical-context-visual-title statistical-context-visual-desc">
+        <title id="statistical-context-visual-title">統計の公開元と時系列データの見方</title>
+        <desc id="statistical-context-visual-desc">記録を集める、月別売上と、その集め方を確認。毎年の繰返しを調整、年末商戦など季節の影響を推定。比較する、調整前と調整後で意味を分ける</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">記録を集める</text>
+<text x="50" y="41" class="small" text-anchor="start">月別売上と、その集め方を確認</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">毎年の繰返しを調整</text>
+<text x="50" y="101" class="small" text-anchor="start">年末商戦など季節の影響を推定</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">比較する</text>
+<text x="50" y="161" class="small" text-anchor="start">調整前と調整後で意味を分ける</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>統計の公開元と時系列データの見方の見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">政府統計</th><td>国の機関などが作成する統計。定義・対象・期間を確認してから地域の人口などを比較する。</td></tr>
+<tr><th scope="row">季節調整</th><td>毎年繰り返す季節的な動きを推定して取り除き、月ごとの基調を比較しやすくする。</td></tr>
+<tr><th scope="row">ビッグデータ</th><td>量が大きく、種類や発生の速さなども処理上の課題になるデータ。入館ログ・画像・位置情報の組合せが例。</td></tr>
+<tr><th scope="row">知のデジタル化</th><td>資料や人の知識を、検索・共有・再利用できる形にする。手順書を文字データ化し、作業別に検索できるようにする。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>12月は例年、年末商戦で売上が増える。11月と12月の基調を比べたいとき、元の売上と季節調整値のどちらを確認する？</p>
+    <details><summary>解答と解説</summary><p>季節調整値です。実際の売上額を答えるときは元の値を使います。用途で数字を分けましょう。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://www.e-stat.go.jp/">政府統計の総合窓口 e-Stat</a></p>
+</section>
+
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。</p>
