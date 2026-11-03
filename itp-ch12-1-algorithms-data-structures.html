@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch12-1-algorithms-data-structures.html">
+  <title>ITパスポート 12-1 アルゴリズムとデータ構造｜スタディクエスト</title>
+  <meta name="description" content="図書館の受付と本棚を例に、流れ図、配列・キュー・スタック、線形・二分探索、整列と併合を図解と自作例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 12-1 アルゴリズムとデータ構造">
+  <meta property="og:description" content="図書館の受付と本棚を例に、流れ図、配列・キュー・スタック、線形・二分探索、整列と併合を図解と自作例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch12-1-algorithms-data-structures.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 12-1 アルゴリズムとデータ構造",
+  "description": "図書館の受付と本棚を例に、流れ図、配列・キュー・スタック、線形・二分探索、整列と併合を図解と自作例題で学びます。",
+  "url": "https://study-quest.net/itp-ch12-1-algorithms-data-structures.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch12-1-algorithms-data-structures.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第12章 アルゴリズムとプログラミング</p>
+    <h1>ITパスポート 12-1 アルゴリズムとデータ構造</h1>
+    <p>図書館の受付と本棚を例に、流れ図、配列・キュー・スタック、線形・二分探索、整列と併合を図解と自作例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#flowchart">流れ図と変数</a></li><li><a href="#data-structures">データ構造</a></li><li><a href="#search">線形探索と二分探索</a></li><li><a href="#sorting">整列の手順</a></li><li><a href="#merge">整列済みデータの併合</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="flowchart">
+  <h2>流れ図は矢印をたどり、分岐では通った道だけを読む</h2>
+  <p>大学図書館が、予約した人と当日来た人を案内します。<strong>アルゴリズム</strong>は、何を受け取り、どの順で処理し、どんな結果を出すかを定めた手順です。同じ手順を流れ図や擬似言語などで表せます。</p>
+    <figure id="visual-checkin" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約の有無で処理を分ける流れ図</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 258" role="img" aria-labelledby="visual-checkin-title visual-checkin-desc">
+        <title id="visual-checkin-title">予約の有無で処理を分ける流れ図</title>
+        <desc id="visual-checkin-desc">開始して予約番号を読む。予約ありなら入室を記録する。予約なしなら空き枠を案内する。どちらも終了へ進む。</desc>
+        <rect x="105" y="4" width="120" height="28" rx="14" class="panel"/>
+<text x="165" y="23" class="small" text-anchor="middle">開始</text>
+<path d="M165 32v13m-4-4 4 4 4-4" class="wire" />
+<rect x="87" y="45" width="156" height="36" rx="7" class="blue-fill"/>
+<text x="165" y="68" class="strong blue" text-anchor="middle">予約番号を読む</text>
+<path d="M165 81v14m-4-4 4 4 4-4" class="wire" />
+<path d="M165 95l62 29-62 29-62-29z" class="orange-fill"/>
+<text x="165" y="129" class="small orange" text-anchor="middle">予約あり？</text>
+<path d="M103 124H79v54m-4-4 4 4 4-4M227 124h24v54m-4-4 4 4 4-4" class="wire" />
+<text x="62" y="145" class="small" text-anchor="middle">はい</text>
+<text x="268" y="145" class="small" text-anchor="middle">いいえ</text>
+<rect x="5" y="178" width="148" height="37" rx="7" class="blue-fill"/>
+<text x="79" y="201" class="small" text-anchor="middle">入室を記録</text>
+<rect x="177" y="178" width="148" height="37" rx="7" class="panel"/>
+<text x="251" y="201" class="small" text-anchor="middle">空き枠を案内</text>
+<path d="M79 215v11h86m86-11v11h-86v5m-4-4 4 4 4-4" class="wire" />
+<rect x="113" y="231" width="104" height="25" rx="13" class="panel"/>
+<text x="165" y="248" class="small" text-anchor="middle">終了</text>
+      </svg>
+      <p>ひし形の答えで矢印を一つ選びます。予約ありの人が、空き枠の案内まで進むわけではありません。</p>
+    </figure>
+  <p>端子は開始・終了、処理の箱は値の計算や更新、ひし形は条件による分岐を表します。番号を読んでから確認するのが<strong>順次</strong>、条件で案内を変えるのが<strong>選択</strong>、受付データが残る間だけ繰り返すのが<strong>反復</strong>です。反復では「いつ条件を調べるか」と「何が変わると終わるか」を先に確かめます。</p>
+  <p><strong>変数</strong>には処理中の値が入り、代入で値が更新されます。例えば <code>count ← count + 1</code> は更新前の値に1を足して戻します。予約の件数は整数、平均の待ち時間は実数、名前は文字列、予約の有無は論理型で表せます。</p>
+</section>
+<section id="data-structures">
+  <h2>取り出し方を先に決めると、データ構造を選べる</h2>
+    <figure id="visual-order" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>番号21、22、23を入れてから1件取り出す</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 188" role="img" aria-labelledby="visual-order-title visual-order-desc">
+        <title id="visual-order-title">番号21、22、23を入れてから1件取り出す</title>
+        <desc id="visual-order-desc">キューは先に入れた21を、スタックは最後に入れた23を取り出す。</desc>
+        <rect x="3" y="3" width="324" height="86" rx="7" class="panel"/>
+<text x="13" y="25" class="strong blue" text-anchor="start">キュー</text>
+<text x="124" y="25" class="small" text-anchor="start">古い番号から</text>
+<rect x="24" y="38" width="46" height="27" rx="7" class="blue-fill"/>
+<text x="47" y="57" class="strong blue" text-anchor="middle">21</text>
+<rect x="79" y="38" width="46" height="27" rx="7" class="panel"/>
+<text x="102" y="57" class="small" text-anchor="middle">22</text>
+<rect x="134" y="38" width="46" height="27" rx="7" class="panel"/>
+<text x="157" y="57" class="small" text-anchor="middle">23</text>
+<text x="181" y="57" class="strong blue" text-anchor="start">取り出すのは 21</text>
+<rect x="3" y="97" width="324" height="86" rx="7" class="panel"/>
+<text x="13" y="119" class="strong orange" text-anchor="start">スタック</text>
+<text x="124" y="119" class="small" text-anchor="start">新しい番号から</text>
+<rect x="24" y="132" width="46" height="27" rx="7" class="panel"/>
+<text x="47" y="151" class="small" text-anchor="middle">21</text>
+<rect x="79" y="132" width="46" height="27" rx="7" class="panel"/>
+<text x="102" y="151" class="small" text-anchor="middle">22</text>
+<rect x="134" y="132" width="46" height="27" rx="7" class="orange-fill"/>
+<text x="157" y="151" class="strong orange" text-anchor="middle">23</text>
+<text x="181" y="151" class="strong orange" text-anchor="start">取り出すのは 23</text>
+      </svg>
+      <p>受付の順番待ちにはキューを、最後の操作から取り消す履歴にはスタックを使う例があります。</p>
+    </figure>
+  <table>
+    <caption>同じ図書館でも、管理したい関係が違う</caption>
+    <thead><tr><th scope="col">構造</th><th scope="col">使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">配列</th><td>部屋ごとの残席を位置で扱う。行を階、列を部屋とすれば2次元配列で表せる。</td></tr>
+<tr><th scope="row">キュー（FIFO）</th><td>受付番号を到着順に処理する。先に入れたものから出す。</td></tr>
+<tr><th scope="row">スタック（LIFO）</th><td>履歴のうち最新の操作を取り消す。後から入れたものを先に出す。</td></tr>
+<tr><th scope="row">連結リスト</th><td>各要素が次の要素への参照を持つ。途中に案内を差し込むとき、前後のつながりを変更する。</td></tr>
+<tr><th scope="row">木構造</th><td>「図書館 → 2階 → 閲覧室」のような階層。起点は根、下に子を持たない点は葉。</td></tr>
+    </tbody>
+  </table>
+  <p>予約番号・部屋・人数をまとめた1件分はレコード、各項目はフィールドと呼べます。複数の記録をファイルにまとめて保存する場合もあります。木構造のうち、各点の子が最大二つのものは二分木です。</p>
+  <p>連結リストで「一般 → 予約」を「一般 → 優先 → 予約」にするなら、一般の次を優先に、優先の次を予約にします。配列と連結リストを見分けるときは、位置を指定するか、参照をたどるかを考えましょう。操作が混ざる問題は<a href="fe-stack-queue.html">基本情報のスタックとキュー</a>でも練習できます。</p>
+</section>
+<section id="search">
+  <h2>探し方は「整列済みか」を見て選ぶ</h2>
+  <p>返却された本を順不同で置いた棚では、先頭から一つずつ確かめる<strong>線形探索</strong>が使えます。番号の昇順に並ぶ一覧で中央の値を確認できるなら、中央と比較して候補を減らす<strong>二分探索（2分探索）</strong>が使えます。降順の場合は左右の判断が逆になります。</p>
+    <figure id="visual-binary" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>並んだ7冊から資料番号31を探す</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 224" role="img" aria-labelledby="visual-binary-title visual-binary-desc">
+        <title id="visual-binary-title">並んだ7冊から資料番号31を探す</title>
+        <desc id="visual-binary-desc">1回目は25。右へ絞り、2回目は42。左へ絞り、3回目は31で一致。</desc>
+        <text x="10" y="17" class="strong blue" text-anchor="start">1回目　31は25より大きい → 右へ</text>
+<rect x="8" y="24" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="28" y="43" class="small" text-anchor="middle">7</text>
+<rect x="53" y="24" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="73" y="43" class="small" text-anchor="middle">12</text>
+<rect x="98" y="24" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="118" y="43" class="small" text-anchor="middle">19</text>
+<rect x="143" y="24" width="40" height="28" rx="7" class="orange-fill"/>
+<text x="163" y="43" class="strong orange" text-anchor="middle">25</text>
+<rect x="188" y="24" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="208" y="43" class="small" text-anchor="middle">31</text>
+<rect x="233" y="24" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="253" y="43" class="small" text-anchor="middle">42</text>
+<rect x="278" y="24" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="298" y="43" class="small" text-anchor="middle">56</text>
+<text x="11" y="68" class="small" text-anchor="start">候補　1番〜7番。比較　4番</text>
+<text x="10" y="92" class="strong blue" text-anchor="start">2回目　31は42より小さい → 左へ</text>
+<rect x="8" y="99" width="40" height="28" rx="7" class="panel"/>
+<text x="28" y="118" class="small" text-anchor="middle">7</text>
+<rect x="53" y="99" width="40" height="28" rx="7" class="panel"/>
+<text x="73" y="118" class="small" text-anchor="middle">12</text>
+<rect x="98" y="99" width="40" height="28" rx="7" class="panel"/>
+<text x="118" y="118" class="small" text-anchor="middle">19</text>
+<rect x="143" y="99" width="40" height="28" rx="7" class="panel"/>
+<text x="163" y="118" class="small" text-anchor="middle">25</text>
+<rect x="188" y="99" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="208" y="118" class="small" text-anchor="middle">31</text>
+<rect x="233" y="99" width="40" height="28" rx="7" class="orange-fill"/>
+<text x="253" y="118" class="strong orange" text-anchor="middle">42</text>
+<rect x="278" y="99" width="40" height="28" rx="7" class="blue-fill"/>
+<text x="298" y="118" class="small" text-anchor="middle">56</text>
+<text x="11" y="143" class="small" text-anchor="start">候補　5番〜7番。比較　6番</text>
+<text x="10" y="167" class="strong blue" text-anchor="start">3回目　31に一致 → 終了</text>
+<rect x="8" y="174" width="40" height="28" rx="7" class="panel"/>
+<text x="28" y="193" class="small" text-anchor="middle">7</text>
+<rect x="53" y="174" width="40" height="28" rx="7" class="panel"/>
+<text x="73" y="193" class="small" text-anchor="middle">12</text>
+<rect x="98" y="174" width="40" height="28" rx="7" class="panel"/>
+<text x="118" y="193" class="small" text-anchor="middle">19</text>
+<rect x="143" y="174" width="40" height="28" rx="7" class="panel"/>
+<text x="163" y="193" class="small" text-anchor="middle">25</text>
+<rect x="188" y="174" width="40" height="28" rx="7" class="orange-fill"/>
+<text x="208" y="193" class="strong orange" text-anchor="middle">31</text>
+<rect x="233" y="174" width="40" height="28" rx="7" class="panel"/>
+<text x="253" y="193" class="small" text-anchor="middle">42</text>
+<rect x="278" y="174" width="40" height="28" rx="7" class="panel"/>
+<text x="298" y="193" class="small" text-anchor="middle">56</text>
+<text x="11" y="218" class="small" text-anchor="start">候補　5番〜5番。比較　5番</text>
+      </svg>
+      <p>枠の色は候補と比較位置を表します。各段の「候補」は比較する直前の範囲です。</p>
+    </figure>
+  <p>候補が7件の場合、線形探索で末尾まで調べると7回比較します。この図と同じ中央を取る二分探索では、最初に7件、次に最大3件、その次に最大1件となるので最大3回です。二分探索の前に整列が必要な場合は、並べ替えの手間も考えます。重複がある一覧で最初の一致を探す場合は、見つかった時点で終えるかも仕様で決めます。</p>
+</section>
+<section id="sorting">
+  <h2>整列は、何を比較してどこが確定するかを追う</h2>
+    <figure id="visual-sorting" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>昇順のバブルソートを左から1周する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-sorting-title visual-sorting-desc">
+        <title id="visual-sorting-title">昇順のバブルソートを左から1周する</title>
+        <desc id="visual-sorting-desc">[8, 3, 6, 2]、8と3を比較する。[3, 8, 6, 2]、続いて8と6を比較する。[3, 6, 8, 2]、最後に8と2を比較する。[3, 6, 2, 8]、この周で右端の8が確定</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">[8, 3, 6, 2]</text>
+<text x="50" y="41" class="small" text-anchor="start">8と3を比較する</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">[3, 8, 6, 2]</text>
+<text x="50" y="101" class="small" text-anchor="start">続いて8と6を比較する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">[3, 6, 8, 2]</text>
+<text x="50" y="161" class="small" text-anchor="start">最後に8と2を比較する</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">[3, 6, 2, 8]</text>
+<text x="50" y="221" class="small" text-anchor="start">この周で右端の8が確定</text>
+      </svg>
+      <p>左から右へ隣同士を比較し、左が大きければ入れ替える方式です。左側はまだ整列しきっていません。</p>
+    </figure>
+  <table>
+    <caption>整列の手掛かり</caption>
+    <thead><tr><th scope="col">手法</th><th scope="col">確かめる操作</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">バブルソート</th><td>隣り合う値を比較して交換する。この例の最初の1周では最大値が右端に移る。</td></tr>
+<tr><th scope="row">選択ソート</th><td>未整列部分の最小値を選び、未整列部分の先頭へ置く。この入力で最初の交換後は[2, 3, 6, 8]。</td></tr>
+<tr><th scope="row">クイックソート</th><td>基準値（ピボット）で分け、部分ごとに同じ考え方を適用する。例では基準6を除いて小さい側は3と2、大きい側は8。実装によって等しい値の扱いが異なる。</td></tr>
+<tr><th scope="row">マージソート</th><td>小さい単位に分割し、整列済みの部分を併合して戻す。先に整列した小さな列同士をつなぎ直す。</td></tr>
+    </tbody>
+  </table>
+</section>
+<section id="merge">
+  <h2>併合では、左右の先頭のうち小さい方を一つ出す</h2>
+    <figure id="visual-merge" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>別々に整列した二つの列をまとめる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 417" role="img" aria-labelledby="visual-merge-title visual-merge-desc">
+        <title id="visual-merge-title">別々に整列した二つの列をまとめる</title>
+        <desc id="visual-merge-desc">左 4・11・18　右 6・12・20、先頭の4と6を比べる。出力 4、次は11と6を比べて6を出す。出力 4・6、次は11と12を比べて11を出す。出力 4・6・11、18と12を比べて12を出す。出力 4・6・11・12、18と20を比べて18を出す。出力 4・6・11・12・18、左が空になったので20を出す。出力 4・6・11・12・18・20、両方の列を使い切って終了</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">左 4・11・18　右 6・12・20</text>
+<text x="50" y="41" class="small" text-anchor="start">先頭の4と6を比べる</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">出力 4</text>
+<text x="50" y="101" class="small" text-anchor="start">次は11と6を比べて6を出す</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">出力 4・6</text>
+<text x="50" y="161" class="small" text-anchor="start">次は11と12を比べて11を出す</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">出力 4・6・11</text>
+<text x="50" y="221" class="small" text-anchor="start">18と12を比べて12を出す</text>
+<path d="M25 233v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="243" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="252" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="272" class="strong blue" text-anchor="middle">5</text>
+<text x="50" y="262" class="strong blue" text-anchor="start">出力 4・6・11・12</text>
+<text x="50" y="281" class="small" text-anchor="start">18と20を比べて18を出す</text>
+<path d="M25 293v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="303" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="312" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="332" class="strong blue" text-anchor="middle">6</text>
+<text x="50" y="322" class="strong blue" text-anchor="start">出力 4・6・11・12・18</text>
+<text x="50" y="341" class="small" text-anchor="start">左が空になったので20を出す</text>
+<path d="M25 353v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="363" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="372" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="392" class="strong blue" text-anchor="middle">7</text>
+<text x="50" y="382" class="strong blue" text-anchor="start">出力 4・6・11・12・18・20</text>
+<text x="50" y="401" class="small" text-anchor="start">両方の列を使い切って終了</text>
+      </svg>
+      <p>両方の列が最初から昇順です。先頭を一つ出すたび、その列だけ次へ進めます。</p>
+    </figure>
+  <p>後ろの値はその列の先頭以上なので、全体の残りで最小の値は左右どちらかの先頭にあります。同じ値を残す設問なら、同値でも片方ずつ取り出します。マージソートではこの併合を繰り返して大きい列を作ります。</p>
+</section>
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　流れ図の分岐</h3>
+    <p>図の受付に、予約していない利用者が来ました。番号を確認した後の処理はどれですか。</p>
+    <ol class="options"><li>入室を記録する</li><li>入室を記録し、空き枠も案内する</li><li>空き枠を案内して終了する</li><li>予約ありになるまで番号を読む</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ウ　空き枠を案内して終了する</strong></p><p>「予約あり？」の答えがいいえなので、右側の経路を選びます。入室の記録は左の経路です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　代入の順番</h3>
+    <p><code>x ← 4</code>、<code>y ← x</code>、<code>x ← x + 3</code> を順に実行します。最後のxとyはどれですか。</p>
+    <ol class="options"><li>x＝7、y＝4</li><li>x＝7、y＝7</li><li>x＝4、y＝7</li><li>x＝4、y＝4</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ア　x＝7、y＝4</strong></p><p>yへ代入する時点のxは4です。その後の加算はxだけを更新するので、yは4のままです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　受付と取り消し</h3>
+    <p>受付番号21、22を入れ、1件取り出し、続けて23を入れました。次にキューとスタックから1件ずつ取り出すと、それぞれ何番ですか。</p>
+    <ol class="options"><li>キュー21、スタック22</li><li>キュー22、スタック22</li><li>キュー23、スタック21</li><li>キュー22、スタック23</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>エ　キュー22、スタック23</strong></p><p>キューからは最初に21が出るので、次は22です。スタックからは最初に22が出ます。その後23が積まれるので、次は23です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　データ構造の見分け</h3>
+    <p>分類の下に小分類があり、その下に本がある関係を表したい。最も自然なのはどれですか。</p>
+    <ol class="options"><li>キュー</li><li>木構造</li><li>スタック</li><li>受付番号の変数</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>イ　木構造</strong></p><p>分類から枝を分ける階層なので木構造が合います。キューとスタックは主に取り出す順番を表します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　二分探索の次の比較</h3>
+    <p>図の昇順の7件から42を探します。初回に25と比較した次に、候補の中央としてどの値を確認しますか。</p>
+    <ol class="options"><li>19</li><li>25</li><li>42</li><li>56</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ウ　42</strong></p><p>42は25より大きいので、残る候補は31・42・56。中央は42です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　未整列の探索</h3>
+    <p>値が順不同の5件から目的の番号を、並べ替えずに探します。説明が適切なのはどれですか。</p>
+    <ol class="options"><li>線形探索で先頭から確認できる</li><li>二分探索では中央を一度見れば必ず見つかる</li><li>二分探索では順不同でも常に片側を除外できる</li><li>線形探索には事前の昇順整列が必要</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ア　線形探索で先頭から確認できる</strong></p><p>線形探索は一つずつ照合するので順不同でも使えます。二分探索で片側を捨てられる根拠は、値が順に並んでいることです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　選択ソートの1回目</h3>
+    <p>{8, 3, 6, 2} を昇順に選択ソートします。未整列部分の最小値と先頭を交換した直後はどれですか。</p>
+    <ol class="options"><li>{3, 6, 2, 8}</li><li>{2, 3, 6, 8}</li><li>{3, 8, 6, 2}</li><li>{8, 3, 2, 6}</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>イ　{2, 3, 6, 8}</strong></p><p>全体の最小値2と先頭8を交換します。アは同じ入力を左からバブルソートで1周した結果です。この例で交換後に全体が昇順なのは元の中央2要素も昇順だったためです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　整列済みの列を併合</h3>
+    <p>左 {3, 7, 12} と右 {3, 5, 10} を昇順で併合します。同じ値も残すなら、最初の3件はどれですか。</p>
+    <ol class="options"><li>3、5、7</li><li>3、7、12</li><li>3、5、3</li><li>3、3、5</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　3、3、5</strong></p><p>同値の3を片方から出しても、もう片方の先頭に3が残ります。次にその3を出すと、残る左右の先頭7と5の小さい方は5です。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第12章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=42">IPA「ITパスポート試験シラバス Ver.6.5」アルゴリズムとプログラミング</a></li>
+      <li><a href="https://xlinux.nist.gov/dads/">NIST「Dictionary of Algorithms and Data Structures」</a></li>
+      <li><a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">Python公式チュートリアル「Data Structures」</a></li>
+    </ul>
+    <p>前の章 <a href="itp-ch11-2-information-theory.html">11-2 情報に関する理論とAI</a> ／ 次へ <a href="itp-ch12-2-programming.html">12-2 プログラミングと擬似言語</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch12"></script>
+</body>
+</html>
