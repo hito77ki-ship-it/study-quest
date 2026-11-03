@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="cover" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#081226"/>
+      <stop offset="1" stop-color="#0a674e"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#85edb8" stroke-opacity=".13"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="url(#cover)"/>
+  <rect width="640" height="360" fill="url(#grid)"/>
+  <path d="M640 18v342H327Z" fill="#081226" opacity=".28"/>
+  <rect x="12" y="12" width="616" height="336" rx="11" fill="none" stroke="#85edb8" stroke-width="2" opacity=".68"/>
+  <path d="M35 103h63" stroke="#85edb8" stroke-width="5" stroke-linecap="round"/>
+  <g font-family="system-ui, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-weight="900">
+    <text x="34" y="79" font-size="26" fill="#85edb8">ITパスポート</text>
+    <g font-size="58" stroke="#071327" stroke-width="10" stroke-linejoin="round" paint-order="stroke fill">
+      <text x="30" y="179" fill="#f8fcff">セキュリティ</text>
+      <text x="30" y="249" fill="#85edb8">3つの要素</text>
+    </g>
+    <text x="35" y="316" font-size="20" letter-spacing="2" fill="#f8fcff">STUDY QUEST</text>
+  </g>
+  <g transform="translate(403 86)" color="#85edb8" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 15c27 19 47 25 72 30v55c0 49-30 81-72 103-42-22-72-54-72-103V45c25-5 45-11 72-30Z" fill="#103d3d" stroke="currentColor"/>
+      <rect x="67" y="93" width="66" height="48" rx="10" fill="#c8ff45" stroke="#0a2528"/>
+      <path d="M82 93V81a18 18 0 0 1 36 0v12m-18 19v11" stroke="#0a2528"/>
+      <circle cx="100" cy="112" r="3" fill="#0a2528" stroke="none"/>
+  </g>
+</svg>

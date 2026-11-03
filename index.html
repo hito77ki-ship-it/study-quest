@@ -698,13 +698,34 @@ footer{background:#091505;padding:48px 24px 40px;}
   border-radius:10px !important;
   text-align:left !important;
 }
-.lp-thumb-card .lp-card-thumb{
+.lp-thumb-media{
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0a1625,#1c3825);
+}
+.lp-card-media{
   width:100%;
-  height:auto !important;
-  object-fit:cover;
-  object-position:center;
-  display:block;
+  aspect-ratio:16/9;
   border-bottom:1px solid var(--border);
+}
+.lp-thumb-media img{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.lp-thumb-fallback{
+  padding:8px;
+  color:#f8fcff;
+  font-size:clamp(12px,1.4vw,19px);
+  font-weight:800;
+  line-height:1.3;
+  text-align:center;
+  overflow-wrap:anywhere;
 }
 .lp-thumb-card .lp-card-body{
   padding:12px 14px 14px;
@@ -810,7 +831,8 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);transition:background .12s;}
 .lp-search-item:hover{background:var(--card-bg);filter:brightness(0.97);}
 .lp-search-item:last-child{border-bottom:none;}
-.lp-search-thumb{width:96px;height:54px;flex:0 0 auto;object-fit:contain;object-position:center;border:1px solid var(--border);border-radius:6px;background:var(--surface);}
+.lp-search-thumb{width:96px;height:54px;flex:0 0 auto;border:1px solid var(--border);border-radius:6px;}
+.lp-search-thumb .lp-thumb-fallback{font-size:9px;padding:3px;}
 .lp-search-content{min-width:0;display:flex;align-items:center;gap:10px;}
 .lp-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
 .lp-search-title{font-size:13px;font-weight:500;line-height:1.5;color:var(--ink);}
@@ -960,17 +982,6 @@ section{position:relative;}
   transform-origin:50% 100%;
   transition:transform .16s steps(2,end),box-shadow .16s steps(2,end),border-color .16s,background .16s;
 }
-#articles .lp-thumb-card::after{
-  content:'OPEN ↗';position:absolute;top:9px;right:9px;z-index:2;
-  padding:5px 6px;background:var(--green);color:#0A0D09;
-  font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;
-  transform:translateY(-7px) rotate(2deg);opacity:0;
-  transition:transform .14s steps(2,end),opacity .1s;
-}
-#articles .lp-thumb-card .lp-card-thumb{
-  transform:scale(1.001);
-  transition:transform .22s cubic-bezier(.2,.8,.2,1),filter .18s;
-}
 #articles .lp-thumb-card .lp-card-body{transition:transform .16s steps(2,end);}
 @media(hover:hover) and (pointer:fine){
   #articles .lp-thumb-card:hover{
@@ -979,8 +990,6 @@ section{position:relative;}
     box-shadow:9px 10px 0 rgba(200,255,69,.28),0 0 0 1px rgba(200,255,69,.26);
   }
   #articles .lp-thumb-card:nth-child(3n+2):hover{transform:translate(-3px,-7px) rotate(.65deg);}
-  #articles .lp-thumb-card:hover::after{opacity:1;transform:translateY(0) rotate(2deg);}
-  #articles .lp-thumb-card:hover .lp-card-thumb{transform:scale(1.075);filter:contrast(1.08) saturate(1.08);}
   #articles .lp-thumb-card:hover .lp-card-body{transform:translateX(4px);}
 }
 #articles .lp-thumb-card:focus-visible{
@@ -1026,7 +1035,7 @@ section{position:relative;}
 }
 #articles .progress-link:focus-visible{outline:2px solid var(--green);outline-offset:3px;}
 @media(prefers-reduced-motion:reduce){
-  #articles .lp-thumb-card,#articles .lp-thumb-card::after,#articles .lp-thumb-card .lp-card-thumb,#articles .lp-thumb-card .lp-card-body,#articles .articles-sidebar-box a,#articles .articles-sidebar-box a > span:last-child,#articles .progress-link,#articles .progress-link::before,.lp-search-btn,.lp-search-btn::before,.nav-updates,.nav-updates::after{transition:none !important;}
+  #articles .lp-thumb-card,#articles .lp-thumb-card .lp-card-body,#articles .articles-sidebar-box a,#articles .articles-sidebar-box a > span:last-child,#articles .progress-link,#articles .progress-link::before,.lp-search-btn,.lp-search-btn::before,.nav-updates,.nav-updates::after{transition:none !important;}
 }
 
 .jobs{background:transparent;}.jobs-cats{gap:44px;}.jobs-cat:nth-child(even){margin-left:11%;}.jobs-cat-label{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:var(--green);}
@@ -1072,10 +1081,6 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
     transform:translate(-2px,-3px) scale(.975) rotate(-.35deg);
     box-shadow:5px 6px 0 rgba(200,255,69,.22);
   }
-  #articles .lp-thumb-card.touch-pressed::after,
-  #articles .lp-thumb-card:active::after{opacity:1;transform:translateY(0) rotate(2deg);}
-  #articles .lp-thumb-card.touch-pressed .lp-card-thumb,
-  #articles .lp-thumb-card:active .lp-card-thumb{transform:scale(1.035);}
 
   #articles .articles-sidebar-box:first-child a[href^="#cat-"].touch-pressed,
   #articles .articles-sidebar-box:first-child a[href^="#cat-"]:active{
@@ -1727,7 +1732,9 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
           <div style="font-size:10px;color:var(--ink3);">償却原価法</div>
         </a>
         <a href="boki2-after-pass.html" class="lp-thumb-card">
-          <img class="lp-card-thumb" src="images/article-diagrams/boki2-after-pass.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+          <span class="lp-thumb-media lp-card-media" aria-hidden="true">
+            <img src="images/article-thumbnails/boki2-after-pass.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+          </span>
           <div class="lp-card-body">
             <div class="lp-card-title">簿記2級合格後は何をする？</div>
             <div class="lp-card-note">1級・FP・実務の自作例題と判断シート</div>
@@ -3320,23 +3327,42 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 </div>
 <script>
 (function(){
-  const CARD_THUMBNAILS = {
-    'boki-benkyo-basho': 'images/article-thumbnails/boki-benkyo-basho.jpg',
-    'boki-net-test-mac-ipad': 'images/article-thumbnails/boki-net-test-mac-ipad.jpg',
-    'boki-note-sekkei': 'images/article-thumbnails/boki-note-sekkei.jpg',
-    'boki2-3kyu-fukushu': 'images/article-thumbnails/boki2-3kyu-fukushu.jpg',
-    'boki2-shogyo-enshu': 'images/article-thumbnails/boki2-shogyo-enshu.jpg'
-  };
+  const SVG_COVERS = new Set([
+    'boki-kessansho-analysis', 'boki-net-id-check', 'boki2-after-pass',
+    'cpa-juken-shukatsu-heiko', 'cpa-tanto-gokaku-ronbun-tetsuzuki',
+    'fe-stack-queue', 'fe-variable-trace', 'itp-security-cia'
+  ]);
 
-  function articleThumbSrc(slug){
-    return CARD_THUMBNAILS[slug] || `images/article-diagrams/${slug}.svg`;
+  function createArticleThumb(slug, title, className){
+    const media = document.createElement('span');
+    media.className = `lp-thumb-media ${className}`;
+    media.setAttribute('aria-hidden', 'true');
+    const fallback = document.createElement('span');
+    fallback.className = 'lp-thumb-fallback';
+    fallback.textContent = title;
+    const image = document.createElement('img');
+    image.alt = '';
+    image.width = 640;
+    image.height = 360;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.addEventListener('error', () => image.remove(), {once:true});
+    image.src = `images/article-thumbnails/${slug}.${SVG_COVERS.has(slug) ? 'svg' : 'jpg'}`;
+    media.append(fallback, image);
+    return media;
   }
 
   function enhanceArticleThumbCards(){
     document.querySelectorAll('[id^="cat-"] a[href$=".html"]').forEach(a => {
       const href = a.getAttribute('href');
       const slug = href.replace(/\.html$/, '');
-      if(a.classList.contains('lp-thumb-card') || !slug || slug === 'app' || slug === 'app-guide') return;
+      if(!slug || slug === 'app' || slug === 'app-guide') return;
+      if(a.classList.contains('lp-thumb-card')){
+        const title = a.querySelector('.lp-card-title')?.textContent.trim();
+        const media = a.querySelector('.lp-card-media');
+        if(title && media) media.replaceWith(createArticleThumb(slug, title, 'lp-card-media'));
+        return;
+      }
 
       const leafDivs = [...a.querySelectorAll('div')]
         .filter(el => !el.querySelector('div'))
@@ -3354,28 +3380,6 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
         : (leafDivs.length >= 3 ? leafDivs[2] : (leafDivs[1] || ''));
       if(!title) return;
 
-      const image = document.createElement('img');
-      image.className = 'lp-card-thumb';
-      const primarySrc = articleThumbSrc(slug);
-      image.src = primarySrc;
-      image.addEventListener('error', () => {
-        if(image.dataset.sqThumbFallbackApplied) return;
-        const fallbackSrc = `images/article-thumbnails/${slug}.jpg`;
-        if(primarySrc === fallbackSrc) return;
-        image.dataset.sqThumbFallbackApplied = 'true';
-        const revision = ({
-          'boki2-3kyu-fukushu': '20260830',
-          'boki-net-test-mac-ipad': '20260830',
-          'boki-note-sekkei': '20260830'
-        })[slug];
-        image.src = `${fallbackSrc}${revision ? `?v=${revision}` : ''}`;
-      }, { once:true });
-      image.alt = `${title}を表すStudy Questの記事サムネイル`;
-      image.width = 640;
-      image.height = 360;
-      image.loading = 'lazy';
-      image.decoding = 'async';
-
       const body = document.createElement('div');
       body.className = 'lp-card-body';
       const titleEl = document.createElement('div');
@@ -3386,7 +3390,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       noteEl.textContent = note;
       body.append(titleEl, noteEl);
       a.classList.add('lp-thumb-card');
-      a.replaceChildren(image, body);
+      a.replaceChildren(createArticleThumb(slug, title, 'lp-card-media'), body);
       const grid = a.parentElement;
       if(grid){
         grid.classList.add('lp-thumb-grid');
@@ -3422,7 +3426,8 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       if(!href || seen.has(href)) return;
       seen.add(href);
       const divs = a.querySelectorAll('div');
-      const title = divs[1]?.textContent.trim() || a.textContent.trim();
+      const title = a.querySelector('.lp-card-title')?.textContent.trim()
+        || divs[1]?.textContent.trim() || a.textContent.trim();
       if(!title) return;
       /* 親カテゴリを特定 */
       let label = '記事';
@@ -3488,20 +3493,15 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       results.innerHTML = `<div class="lp-search-empty">${msg}</div>`;
       return;
     }
-    results.innerHTML = filtered.slice(0,12).map(x=>
-      `<a href="${x.href}" class="lp-search-item">
-        <img class="lp-search-thumb" src="${esc(articleThumbSrc(x.slug))}" data-sq-thumb-slug="${esc(x.slug)}" alt="${esc(x.title)}の記事サムネイル" width="640" height="360" loading="lazy" decoding="async">
+    const visible = filtered.slice(0,12);
+    results.innerHTML = visible.map(x=>
+      `<a href="${esc(x.href)}" class="lp-search-item">
         <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-title">${esc(x.title)}</span></span>
       </a>`
     ).join('');
-    results.querySelectorAll('.lp-search-thumb').forEach(image => {
-      image.addEventListener('error', () => {
-        if(image.dataset.sqThumbFallbackApplied) return;
-        image.dataset.sqThumbFallbackApplied = 'true';
-        const fallbackSrc = `images/article-thumbnails/${image.dataset.sqThumbSlug}.jpg`;
-        if(image.getAttribute('src') === fallbackSrc) return;
-        image.src = fallbackSrc;
-      }, { once:true });
+    results.querySelectorAll('.lp-search-item').forEach((result, i) => {
+      const {slug, title} = visible[i];
+      result.prepend(createArticleThumb(slug, title, 'lp-search-thumb'));
     });
   }
 
