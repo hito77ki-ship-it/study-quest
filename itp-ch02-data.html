@@ -6,10 +6,10 @@
   <link rel="icon" href="favicon.ico">
   <link rel="canonical" href="https://study-quest.net/itp-ch02-data.html">
   <title>ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習｜スタディクエスト</title>
-  <meta name="description" content="模擬店の待ち時間を題材に、パレート図とレーダーチャートの読み方、散布図、平均と中央値を、図解と自作例題3問で復習します。">
+  <meta name="description" content="パレート図とレーダーチャート、意思決定の期待値、標本の偏り、集計と予測を解説。図を読む自作例題を含む8問付き。">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習">
-  <meta property="og:description" content="模擬店の待ち時間を題材に、パレート図とレーダーチャートの読み方、散布図、平均と中央値を、図解と自作例題3問で復習します。">
+  <meta property="og:description" content="パレート図とレーダーチャート、意思決定の期待値、標本の偏り、集計と予測を解説。図を読む自作例題を含む8問付き。">
   <meta property="og:url" content="https://study-quest.net/itp-ch02-data.html">
   <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ITパスポート第2章 業務分析・データ利活用｜グラフ選びと集計を学園祭で復習",
-  "description": "模擬店の待ち時間を題材に、パレート図とレーダーチャートの読み方、散布図、平均と中央値を、図解と自作例題3問で復習します。",
+  "description": "パレート図とレーダーチャート、意思決定の期待値、標本の偏り、集計と予測を解説。図を読む自作例題を含む8問付き。",
   "url": "https://study-quest.net/itp-ch02-data.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-03",
@@ -40,7 +40,7 @@
   }
 }
   </script>
-  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-figures">
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-deep-review">
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -53,12 +53,28 @@
     <p>模擬店の注文が混み合いました。原因を考えるときは、集計したいものを先に決め、目的に合う図表を選びます。待ち時間と予約データを使って、集計から改善案まで考えます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#graphs">グラフの使い分け</a></li><li><a href="#quiz">自作例題3問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">グラフの選び方</a></li><li><a href="#statistics">標本と分母</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">自作例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
   <section id="process">
     <h2>まず、行列ができる手順を確かめる</h2>
     <p>「注文を受ける → 決済 → 商品を渡す」と手順を並べ、どこに待ち時間があるかを測ります。原因候補が散らばっているなら、<strong>親和図法</strong>で似た意見を「注文」「決済」「受け渡し」などにまとめます。選択肢が複数あれば、待ち時間の短縮、担当者の負担、費用といった評価軸を決め、同じ基準で比べます。</p>
     <p>集計前に、予約IDが重複した行や終了時刻が空欄の行を確認します。再送で生じた重複は元記録と照合して整理します。終了時刻が不明な注文は「待ち時間0分」と置かず、算出できた件数と対象外の理由を残します。</p>
   </section>
+<section id="problem-solving">
+  <h2>原因の候補を集めて、改善策を選ぶ</h2>
+  <p>観測された事実は「昼の待ち時間が長い」です。「レジが遅い」はまだ仮説です。注文・決済・受け渡しの各開始と終了を別々に記録して、どこに滞留があるかを絞ります。決済が終わるまで30秒でも、決済の開始を待つ時間が8分なら、会計ソフトの操作時間とレジ前の待ち時間は分けて改善します。</p>
+  <table>
+    <caption>問題解決の手法を、使う場面で選ぶ</caption>
+    <thead><tr><th scope="col">困っていること</th><th scope="col">使う手法と次の作業</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">原因候補が少ない</th><td>ブレーンストーミングで意見を広げる。評価を後回しにして「端末不足」「現金会計」「商品確認」などを出す。</td></tr>
+      <tr><th scope="row">意見がばらばら</th><td>親和図法で意味の近い記述を集め、決済・在庫・受け渡しなどに名前を付ける。</td></tr>
+      <tr><th scope="row">原因と結果の関係が曖昧</th><td>特性要因図で、結果「列が進まない」に人・方法・設備などの原因候補をつなぐ。各候補は観測して確かめる。</td></tr>
+      <tr><th scope="row">天候によって案の効果が変わる</th><td>デシジョンツリーで案と起こり得る結果を枝に分ける。確率が与えられたら期待値で比べられる。</td></tr>
+    </tbody>
+  </table>
+  <p>設例では、雨60%、晴れ40%と仮定します。屋根を借りたときの利益は晴れ10,000円・雨8,000円、借りないときは晴れ15,000円・雨3,000円とします。期待利益は借りる案が 0.4 × 10,000 ＋ 0.6 × 8,000 ＝ <strong>8,800円</strong>、借りない案が 0.4 × 15,000 ＋ 0.6 × 3,000 ＝ <strong>7,800円</strong>です。期待値は仮定に基づく比較値です。当日の利益を示す値ではないので、赤字を避けたい場合は悪い場合の結果も見ます。</p>
+</section>
+
   <section id="graphs">
     <h2>何を比べるかでグラフが決まる</h2>
     <table>
@@ -149,11 +165,51 @@
       </details>
     </figure>
     <p>どちらを選ぶかは、何を重視するかで変わります。休憩時間が短いなら受取の速さ、会場のWi-Fiが弱いなら通信への強さの軸を比べます。</p>
+    <h3 id="scatter">散布図　点が右上がりでも、原因は別に確かめる</h3>
+    <figure class="review-figure">
+      <svg viewBox="0 0 360 211" width="360" height="211" role="img" aria-labelledby="scatter-title scatter-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="scatter-title">時間帯別の注文数と平均待ち時間の散布図</title>
+        <desc id="scatter-desc">架空の6時間帯。注文数と平均待ち時間の組は、5件と2分、10件と4分、15件と3分、20件と7分、25件と6分、30件と9分。全体は右上がりだが上下のばらつきがある。</desc>
+        <path class="review-grid" d="M47 38H317 M47 63H317 M47 88H317 M47 113H317 M47 138H317 M92 163V38 M137 163V38 M182 163V38 M227 163V38 M272 163V38 M317 163V38"/>
+        <path class="review-axis" d="M47 38V163H317"/>
+        <g class="review-points">
+          <circle cx="92" cy="138" r="5"/><circle cx="137" cy="113" r="5"/><circle cx="182" cy="125.5" r="5"/>
+          <circle cx="227" cy="75.5" r="5"/><circle cx="272" cy="88" r="5"/><circle cx="317" cy="50.5" r="5"/>
+        </g>
+        <g text-anchor="end"><text x="39" y="167">0</text><text x="39" y="142">2</text><text x="39" y="117">4</text><text x="39" y="92">6</text><text x="39" y="67">8</text><text x="39" y="42">10</text></g>
+        <g text-anchor="middle"><text x="47" y="182">0</text><text x="137" y="182">10</text><text x="227" y="182">20</text><text x="317" y="182">30</text></g>
+        <text x="48" y="21">平均待ち時間（分）</text><text x="241" y="203">注文数（件）</text>
+      </svg>
+      <figcaption>1点は15分間の記録です。20件で7分だった時間帯より、25件で6分だった時間帯の方が短く、すべての点が同じ順に増えるわけではありません。担当者数や注文内容も調べます。</figcaption>
+    </figure>
     <p>待ち時間が2・3・4・5・26分なら、平均は <strong>40 ÷ 5 ＝ 8分</strong>、中央値は中央の<strong>4分</strong>です。平均は長く待った1件の影響を受けます。中央値と件数も添えると、何が起きたかを説明しやすくなります。</p>
     <p>予約ログが大量に集まれば、時間帯ごとの混雑予測にも使えます。来年の学園祭で使う予測なら、予測時点で入手できる注文数や時間帯を入力候補にし、学習に使わなかった別の日のデータで予測と実測を比べます。</p>
   </section>
+<section id="statistics">
+  <h2>集め方と分母をそろえて、数字を読み違えない</h2>
+  <p>待ち時間の「分」は量的データ、決済方法の「現金・カード」は質的データです。注文時刻の並びは時系列で、同じ時刻に複数店舗を比べる記録は横断データの例です。集計表には、何を1件とするか、どの期間・店舗か、単位は何かも添えます。こうしたデータについての説明が<strong>メタデータ</strong>です。</p>
+  <p>「全来場者の満足度」を知りたいのに、予約アプリ利用者だけにアンケートを送ると、現金で並んだ人の意見が入りません。人数を増やすだけでこの<strong>選択バイアス</strong>は解消しません。母集団を明確にし、予約の有無や時間帯で層に分けて各層から抽出するなど、集め方を見直します。無回答や測れなかった件数は別に残します。</p>
+  <p><strong>全体の率</strong>は各グループの率を単純平均せず、分子と分母を合計して出します。午前は20人中16人が5分以内（80%）、午後は80人中40人（50%）なら、全体は (16 ＋ 40) ÷ (20 ＋ 80) ＝ <strong>56%</strong>です。65%は時間帯を同じ重みで扱った平均で、来場者全体の割合とは異なります。</p>
+  <p>グラフでは、期間と軸の取り方も見ます。棒の基準が0以外だと差が大きく見えることがあります。ヒストグラムは階級幅を変えると形が変わり、散布図の右上がりだけでは原因を特定できません。待ち時間に外れ値があったら、まず入力誤りか現場で本当に起きた事例かを確認し、削る場合は理由を記録します。</p>
+</section>
+
+<section id="data-flow">
+  <h2>集めたデータを、現場で使える判断につなげる</h2>
+  <figure class="review-figure">
+    <figcaption><strong>学園祭の記録を使う3段階</strong></figcaption>
+    <ol class="review-roadmap" role="list">
+      <li><span class="review-roadmap-when">集める</span><h3>注文・在庫のログ</h3><p>予約ID、時間、品目、受け渡し結果を記録する。</p></li>
+      <li><span class="review-roadmap-when">整える</span><h3>比較できる形にする</h3><p>重複や欠損を確かめ、時刻・単位・店舗コードをそろえる。</p></li>
+      <li><span class="review-roadmap-when">使う</span><h3>次の打ち手を決める</h3><p>集計と予測を照らし合わせ、担当者の配置を試して結果を測る。</p></li>
+    </ol>
+  </figure>
+  <p>複数店舗・複数日の履歴を分析用に蓄えるのが<strong>データウェアハウス</strong>の役割です。時間帯別の混雑をダッシュボードにして人の判断を支えるのは<strong>BI</strong>、データの中から「この商品と一緒に買われやすい商品」などの傾向を探すのは<strong>データマイニング</strong>の例です。ログだけでなく自由記述のような非構造化データも使えますが、分類方法と情報の扱いを先に決めます。</p>
+  <p>翌年の混雑予測では、予測時点で分かる曜日・時間枠や事前予約数を使います。翌年の終了後にしか分からない総売上を入力にすると、予測時には再現できません。精度の確認には、学習に使ったデータから分けた日の記録を使い、外れた時間帯の事情を現場で確認します。</p>
+</section>
+
   <section id="quiz">
-    <h2>解説つきの自作例題3問</h2>
+    <h2>解説つきの自作例題8問</h2>
+    <p class="note">第1〜3問は基本、第4〜8問は計算や場面の判断です。答えを開く前に、条件や判断の手がかりを一つ説明してみましょう。</p>
     <section class="box">
       <h3>第1問　何から直すと、遅延の大部分を対象にできる？</h3>
       <p><a href="#pareto">上のパレート図</a>を見て、件数の多い理由から順に対策する場合を考えます。遅延の80%以上を対策の対象に入れるには、少なくとも何種類の理由を選べばよいですか。</p>
@@ -162,7 +218,7 @@
     </section>
     <section class="box">
       <h3>第2問　混雑が原因だと言い切れる？</h3>
-      <p>15分ごとの注文数を横軸、同じ時間帯に受けた注文の平均待ち時間を縦軸にした散布図は右上がりでした。この図から判断できることはどれですか。</p>
+      <p><a href="#scatter">上の散布図</a>は、15分ごとの注文数と平均待ち時間を比べています。この図から判断できることはどれですか。</p>
       <ol class="options"><li>観測した時間帯では注文数が多いほど待ち時間も長い傾向がある</li><li>注文数が増えるとすべての注文の待ち時間が必ず増える</li><li>担当者の人数は待ち時間に影響しない</li><li>注文数が待ち時間を延ばす唯一の原因と確定した</li></ol>
       <details><summary>第2問の解答と理由</summary><p><strong>ア。</strong>点が示すのは時間帯単位の組合せです。イの個々の注文の結果は分からず、ウとエの因果関係もこの図だけでは確かめられません。例えば、担当人数が少ない時間帯に注文が集中していた可能性があります。</p></details>
     </section>
@@ -171,6 +227,36 @@
       <p>4件の待ち時間が「3分、5分、空欄、7分」です。空欄は終了時刻が記録されていません。有効な記録の平均と件数はどれですか。</p>
       <ol class="options"><li>3.75分・4件</li><li>5分・3件</li><li>5分・4件</li><li>7.5分・2件</li></ol>
       <details><summary>第3問の解答と計算</summary><p><strong>イ。</strong>観測できた3件を使い、(3 ＋ 5 ＋ 7) ÷ 3 ＝ 5分です。アは空欄を0分とみなした値、ウは分母の表示が違い、エは有効な3件を2件で割っています。未記録1件も別に残します。</p></details>
+    </section>
+    <section class="box">
+      <h3>第4問　期待値で屋根の案を選ぶ</h3>
+      <p>晴れの確率が60%、雨が40%に変わりました。屋根ありの利益は晴れ10,000円、雨8,000円。屋根なしは晴れ15,000円、雨3,000円。期待利益が高い案と金額はどれですか。</p>
+      <ol class="options"><li>屋根あり、9,200円</li><li>屋根あり、8,800円</li><li>屋根なし、10,200円</li><li>屋根なし、7,800円</li></ol>
+      <details><summary>第4問の解答と解説</summary><p><strong>ウ。</strong>屋根ありは6,000＋3,200＝9,200円。なしは9,000＋1,200＝10,200円。確率が変わると、同じ利益の仮定でも選ぶ案が変わります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第5問　満足度の対象が偏っている</h3>
+      <p>来場者全体の満足度を測りたいのに、Web予約者だけにアンケートを送っています。まず見直すのはどれですか。</p>
+      <ol class="options"><li>Web予約者だけの回答数を増やす</li><li>店頭利用者にも回答機会を設けて抽出する</li><li>不満の回答を除外する</li><li>グラフの色を変える</li></ol>
+      <details><summary>第5問の解答と解説</summary><p><strong>イ。</strong>対象に店頭利用者が入るよう、集める範囲から見直します。Web予約者内だけで件数を増やしても対象の偏りは残ります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第6問　全体の割合の出し方</h3>
+      <p>午前20人のうち16人、午後80人のうち40人が5分以内に受け取れました。来場者全体の割合は何%ですか。</p>
+      <ol class="options"><li>50%</li><li>56%</li><li>65%</li><li>80%</li></ol>
+      <details><summary>第6問の解答と解説</summary><p><strong>イ。</strong>(16＋40)÷(20＋80)＝56%。65%は午前80%と午後50%を、人数の違いを無視して平均した数字です。</p></details>
+    </section>
+    <section class="box">
+      <h3>第7問　図のどの軸を比較するか</h3>
+      <p>通信が不安定な会場で、通信への強さを最優先します。前掲のレーダーチャートから、この項目で高い案はどれですか。</p>
+      <ol class="options"><li>Web予約で5点</li><li>Web予約で4点</li><li>店頭注文で5点</li><li>両方2点</li></ol>
+      <details><summary>第7問の解答と解説</summary><p><strong>ウ。</strong>「通信への強さ」の軸でBの破線が外側です。点数表ではBが5点、Aが2点。受取の速さの軸で高い案とは異なります。</p></details>
+    </section>
+    <section class="box">
+      <h3>第8問　予測時点で使えるデータ</h3>
+      <p>学園祭の前日に翌日の混雑を予測します。入力として使えるのはどれですか。</p>
+      <ol class="options"><li>開催終了後の総売上</li><li>開催終了後の平均待ち時間</li><li>前日までの予約数</li><li>翌日の当日注文の確定件数</li></ol>
+      <details><summary>第8問の解答と解説</summary><p><strong>ウ。</strong>前日までの予約数なら予測時点で取得できます。他の選択肢は予測の対象時点を過ぎてから判明する情報です。</p></details>
     </section>
     <p><strong>復習メモ</strong>　「原因別に直す順番を決める」「待ち時間の分布を見る」「二つの数値の関係を見る」の三つに、それぞれ図を当てはめてみましょう。</p>
     <details><summary>復習メモの答え</summary><p>パレート図、ヒストグラム、散布図の順です。</p></details>
