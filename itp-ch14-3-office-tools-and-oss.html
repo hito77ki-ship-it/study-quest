@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch14-3-office-tools-and-oss.html">
+  <title>ITパスポート 14-3 オフィスツール・表計算・OSS｜スタディクエスト</title>
+  <meta name="description" content="図書館の読書会を例に、オフィスツール、表計算の参照と関数、OSSのライセンスを学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 14-3 オフィスツール・表計算・OSS">
+  <meta property="og:description" content="図書館の読書会を例に、オフィスツール、表計算の参照と関数、OSSのライセンスを学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch14-3-office-tools-and-oss.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 14-3 オフィスツール・表計算・OSS",
+  "description": "図書館の読書会を例に、オフィスツール、表計算の参照と関数、OSSのライセンスを学びます。",
+  "url": "https://study-quest.net/itp-ch14-3-office-tools-and-oss.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch14-3-office-tools-and-oss.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第14章 ソフトウェア</p>
+    <h1>ITパスポート 14-3 オフィスツール・表計算・OSS</h1>
+    <p>図書館の読書会を例に、オフィスツール、表計算の参照と関数、OSSのライセンスを学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#office-tools">オフィスツールの役割</a></li><li><a href="#spreadsheet">セル参照と式のコピー</a></li><li><a href="#functions">集計・判定の関数</a></li><li><a href="#summaries">フィルターとピボット</a></li><li><a href="#oss">OSSとライセンス</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="office-tools">
+<h2>作りたいものからソフトを選ぶ</h2>
+    <figure id="visual-office" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>読書会の準備で使う四つの道具</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-office-title visual-office-desc">
+        <title id="visual-office-title">読書会の準備で使う四つの道具</title>
+        <desc id="visual-office-desc">文書作成ソフト、案内や申込書を整える、表・画像を埋め込める。表計算ソフト、参加人数や費用を集計、条件ごとに絞り込む。プレゼンソフト、当日の進行を見せる、スライドに図を配置。Webブラウザ、会場情報を閲覧する、検索サービスを使える</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">文書作成ソフト</text>
+<text x="12" y="44" class="small" text-anchor="start">案内や申込書を整える</text>
+<text x="12" y="62" class="small" text-anchor="start">表・画像を埋め込める</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">表計算ソフト</text>
+<text x="177" y="44" class="small" text-anchor="start">参加人数や費用を集計</text>
+<text x="177" y="62" class="small" text-anchor="start">条件ごとに絞り込む</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">プレゼンソフト</text>
+<text x="12" y="120" class="small" text-anchor="start">当日の進行を見せる</text>
+<text x="12" y="138" class="small" text-anchor="start">スライドに図を配置</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">Webブラウザ</text>
+<text x="177" y="120" class="small" text-anchor="start">会場情報を閲覧する</text>
+<text x="177" y="138" class="small" text-anchor="start">検索サービスを使える</text>
+      </svg>
+      <p>クリップボードはコピーや切取りの内容を一時的に受け渡します。貼り付け先に合わせ、書式や値の貼り付けを選べる場合があります。</p>
+    </figure>
+<p>検索条件の考え方では、ANDは両方を含め、ORはいずれかを含め、NOTは指定した条件を除きます。検索サービスによって入力記法が異なるので、サービスのヘルプで指定方法を確かめます。</p>
+</section><section id="spreadsheet">
+<h2>表の位置を読み、コピー後の参照を追う</h2>
+  <table>
+    <caption>読書会の資料費。F1には共通単価50円を入力</caption>
+    <thead><tr><th scope="col">行</th><th scope="col">A列 資料</th><th scope="col">B列 枚数</th><th scope="col">C列 資料費</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">2</th><td>案内</td><td>4</td><td>200円</td></tr>
+<tr><th scope="row">3</th><td>ワークシート</td><td>6</td><td>300円</td></tr>
+<tr><th scope="row">4</th><td>アンケート</td><td>2</td><td>100円</td></tr>
+    </tbody>
+  </table>
+<p>列と行の交点がセルです。B3はB列の3行目、B2:B4は縦に並んだ3セルを表します。別のシートを参照するときはシート名も指定できます。例えば <code>料金!F1</code> は「料金」シートのF1を指します。</p>
+    <figure id="visual-sheet-copy" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>下の行にコピーすると数量の行番号だけが動く</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 164" role="img" aria-labelledby="visual-sheet-copy-title visual-sheet-copy-desc">
+        <title id="visual-sheet-copy-title">下の行にコピーすると数量の行番号だけが動く</title>
+        <desc id="visual-sheet-copy-desc">C2の式はB2掛けるF1。C3にコピーするとB3掛けるF1。F1の列と行をドル記号で固定。</desc>
+        <text x="13" y="20" class="strong blue" text-anchor="start">数量と、共通の単価を参照</text>
+<rect x="7" y="31" width="316" height="56" rx="7" class="panel"/>
+<text x="17" y="51" class="strong blue" text-anchor="start">C2　=B2*$F$1</text>
+<text x="18" y="73" class="small" text-anchor="start">数量 B2</text>
+<text x="165" y="73" class="small orange" text-anchor="start">共通単価 F1</text>
+<rect x="7" y="101" width="316" height="56" rx="7" class="panel"/>
+<text x="17" y="121" class="strong blue" text-anchor="start">C3　=B3*$F$1</text>
+<text x="18" y="143" class="small" text-anchor="start">数量 B3</text>
+<text x="165" y="143" class="small orange" text-anchor="start">共通単価 F1</text>
+<path d="M165 88v12m-4-4 4 4 4-4" class="wire" />
+      </svg>
+      <p>$F$1のように列と行の前に「$」を付けると、コピー先でも同じセルを参照します。</p>
+    </figure>
+<p>C2に <code>=B2*$F$1</code> と入力し、C4までコピーすると、4×50＝200円、6×50＝300円、2×50＝100円です。ここで <code>B2</code> は相対参照、<code>$F$1</code> は列と行を固定した参照です。<code>$B2</code> は列だけ、<code>B$2</code> は行だけを固定します。実際の表計算ソフトでは、片方だけ固定する指定を複合参照と呼ぶこともあります。</p>
+<p>式は括弧を先に計算し、その後に乗除、加減の順で計算します。例えば <code>4+2*50</code> は104、<code>(4+2)*50</code> は300です。数量の合計を求めてから単価を掛ける場合は括弧を付けます。</p>
+</section><section id="functions">
+<h2>集計と判定を分け、式の答えを小さな表で確かめる</h2>
+    <figure id="visual-if" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>印刷枚数が5枚以上かを判定する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" role="img" aria-labelledby="visual-if-title visual-if-desc">
+        <title id="visual-if-title">印刷枚数が5枚以上かを判定する</title>
+        <desc id="visual-if-desc">B3は6枚、5以上なので真、「多め」と表示。B2は4枚、5未満なので偽、「通常」と表示</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">B3は6枚</text>
+<text x="12" y="44" class="small" text-anchor="start">5以上なので真</text>
+<text x="12" y="62" class="small" text-anchor="start">「多め」と表示</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">B2は4枚</text>
+<text x="177" y="44" class="small" text-anchor="start">5未満なので偽</text>
+<text x="177" y="62" class="small" text-anchor="start">「通常」と表示</text>
+      </svg>
+      <p>例では =IF(B3>=5,"多め","通常") と入力します。5枚ちょうども「多め」です。</p>
+    </figure>
+  <table>
+    <caption>よく使う集計と判定</caption>
+    <thead><tr><th scope="col">目的</th><th scope="col">試験で使う名前とこの表での例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">合計と平均</th><td>合計(B2:B4)は12、平均(B2:B4)は4。</td></tr>
+<tr><th scope="row">最大と最小</th><td>最大(B2:B4)は6、最小(B2:B4)は2。</td></tr>
+<tr><th scope="row">個数と条件付個数</th><td>試験の「個数」は空白以外を数える。「条件付個数」で5以上を数えると1。</td></tr>
+<tr><th scope="row">整数部と剰余</th><td>整数部は値以下で最大の整数。剰余は割った余り。例えば剰余(14,4)は2。</td></tr>
+    </tbody>
+  </table>
+<p>表計算ソフトで試すときは関数名や条件の書き方が異なります。例えばExcelで空白以外を数える関数は <code>COUNTA</code>、数値を数える関数は <code>COUNT</code> です。試験問題は問題文やIPAの表記に従います。</p>
+<p>条件が三つなら、例えば <code>=IF(B3&gt;=8,"特大",IF(B3&gt;=5,"多め","通常"))</code> のようにIFを入れ子にできます。上から境界を見て、8、5、4を一つずつ当てはめると、等号の漏れに気づけます。</p>
+</section><section id="summaries">
+<h2>表示する行と、分類して集計する表を分ける</h2>
+    <figure id="visual-summary" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>元の参加記録から何を知りたいか</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-summary-title visual-summary-desc">
+        <title id="visual-summary-title">元の参加記録から何を知りたいか</title>
+        <desc id="visual-summary-desc">並べ替え、参加者を申込順に並べる、対応する列も行ごと移動。フィルター、土曜の記録だけ表示、元の行は残る。ピボットテーブル、曜日と会場で人数を集計、集計した結果を作る。グラフ、曜日ごとの人数を比較、棒の高さで差を見る</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">並べ替え</text>
+<text x="12" y="44" class="small" text-anchor="start">参加者を申込順に並べる</text>
+<text x="12" y="62" class="small" text-anchor="start">対応する列も行ごと移動</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">フィルター</text>
+<text x="177" y="44" class="small" text-anchor="start">土曜の記録だけ表示</text>
+<text x="177" y="62" class="small" text-anchor="start">元の行は残る</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">ピボットテーブル</text>
+<text x="12" y="120" class="small" text-anchor="start">曜日と会場で人数を集計</text>
+<text x="12" y="138" class="small" text-anchor="start">集計した結果を作る</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">グラフ</text>
+<text x="177" y="120" class="small" text-anchor="start">曜日ごとの人数を比較</text>
+<text x="177" y="138" class="small" text-anchor="start">棒の高さで差を見る</text>
+      </svg>
+      <p>名前と人数の対応を保つため、並べ替えでは行全体を同じ並びで移します。</p>
+    </figure>
+<p>土曜の午前3人・午後5人、日曜の午前2人・午後6人なら、曜日別の合計はどちらも8人です。会場や時間帯も並べれば、合計が同じでも内訳が違うことを確認できます。</p>
+</section><section id="oss">
+<h2>ソースを読めることと、配布の条件を確かめる</h2>
+    <figure id="visual-oss" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>受付アプリに公開ソフトを使うときの確認</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-oss-title visual-oss-desc">
+        <title id="visual-oss-title">受付アプリに公開ソフトを使うときの確認</title>
+        <desc id="visual-oss-desc">使う部品を特定、配布元・版・ライセンスを確認。使い方を区別、そのまま使うか、変更して渡すか。配布の条件を確認、表示やソース提供などを確認</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">使う部品を特定</text>
+<text x="50" y="41" class="small" text-anchor="start">配布元・版・ライセンスを確認</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">使い方を区別</text>
+<text x="50" y="101" class="small" text-anchor="start">そのまま使うか、変更して渡すか</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">配布の条件を確認</text>
+<text x="50" y="161" class="small" text-anchor="start">表示やソース提供などを確認</text>
+      </svg>
+      <p>OSSは利用や改変、再配布を認める条件で提供されます。条件はライセンスごとに確認します。</p>
+    </figure>
+<p>オープンソースの定義では、ソースコードを入手でき、改変や再配布が許されることなどが求められます。販売も可能で、著作権は保持されます。無保証の条項がある場合、別契約でサポートを受けられるかとは区別します。</p>
+<p>GPLはコピーレフト型の例です。GPLの対象となる改変版を配布する場合は、GPLに沿った配布や、受領者が対応するソースコードを入手できるようにする条件などを確認します。GPLのプログラムを組織内だけで改変して使う場合、改変したソースを一般公開する義務はGPLからは生じません。</p>
+  <table>
+    <caption>どの分野にOSSの例があるか</caption>
+    <thead><tr><th scope="col">分野</th><th scope="col">例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">OSの構成要素</th><td>Linuxカーネル、Android Open Source Project</td></tr>
+<tr><th scope="row">Webサーバとデータベース</th><td>Apache HTTP Server、PostgreSQL</td></tr>
+<tr><th scope="row">デスクトップアプリ</th><td>Firefox、LibreOffice</td></tr>
+    </tbody>
+  </table>
+</section>
+<section id="quiz">
+  <h2>例題10問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　仕事に合う道具</h3>
+    <p>読書会の参加人数を会場別に集計したい。最も直接使えるのはどれですか。</p>
+    <ol class="options"><li>文書作成ソフト</li><li>表計算ソフト</li><li>画像閲覧ソフト</li><li>印刷ドライバ</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　表計算ソフト</strong></p><p>表計算ソフトで元の記録を表にし、会場別に数えたり合計したりできます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　数式を二行下にコピー</h3>
+    <p>C2の =B2*$F$1 をC4へコピーしたときの式はどれですか。</p>
+    <ol class="options"><li>=B2*$F$3</li><li>=B4*$F$3</li><li>=B4*$F$1</li><li>=B2*$F$1</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　=B4*$F$1</strong></p><p>数量の相対参照B2はB4へ移り、列と行を固定した$F$1は動きません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　行だけを固定</h3>
+    <p>式の中の B$2 を1列右・1行下へコピーすると、参照はどれになりますか。</p>
+    <ol class="options"><li>C$2</li><li>B$3</li><li>$C3</li><li>B$2</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　C$2</strong></p><p>列のBに$がないのでCへ移ります。行の2は$で固定されています。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　境界を含める</h3>
+    <p>枚数が5以上なら「多め」、そうでなければ「通常」です。ちょうど5枚の場合はどれですか。</p>
+    <ol class="options"><li>通常</li><li>空白</li><li>エラー</li><li>多め</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　多め</strong></p><p>「以上」は同じ値を含むので、条件が真のときの「多め」です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　関数の名前を読む</h3>
+    <p>IPAの表計算の記法で、値が4、文字列「欠席」、空白の3セルを「個数」で数えるといくつですか。</p>
+    <ol class="options"><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　2</strong></p><p>試験の「個数」は空白以外を数えます。4と「欠席」の2セルです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　曜日で集計する</h3>
+    <p>同じ曜日に複数の申込があり、曜日と会場の組合せごとの人数合計を表にしたい。どの機能が適していますか。</p>
+    <ol class="options"><li>拡張子の変更</li><li>クリップボードの消去</li><li>ピボットテーブル</li><li>プリンターの設定</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　ピボットテーブル</strong></p><p>曜日と会場を分類の項目、人数を合計する値に指定します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　OSSを見分ける</h3>
+    <p>コードが閲覧でき、配布条件で改変と再配布が認められるソフトを利用します。まず確かめるのはどれですか。</p>
+    <ol class="options"><li>配布元が示すライセンス</li><li>アイコンの色</li><li>ファイルの拡張子だけ</li><li>インストール先の文字数</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　配布元が示すライセンス</strong></p><p>ソースの閲覧だけで条件は分かりません。使う版や部品のライセンスを確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　GPLの改変版を配布する</h3>
+    <p>GPLの対象となる改変版を外部の参加者へ渡します。適切な確認はどれですか。</p>
+    <ol class="options"><li>常にライセンス表示を取り除く</li><li>配布先を一人に絞れば確認は不要</li><li>無償なので表示やソース提供の条件はない</li><li>GPLに沿ってソースの提供方法や表示の条件を確認する</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　GPLに沿ってソースの提供方法や表示の条件を確認する</strong></p><p>配布時の条件をライセンス本文で確認します。代金を取らない配布でも、条件の確認が必要です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　整数部の向き</h3>
+    <p>IPAの記法で整数部(−2.4)の結果はどれですか。</p>
+    <ol class="options"><li>−2</li><li>−3</li><li>2</li><li>3</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　−3</strong></p><p>元の値以下で最大の整数を求めます。−2は−2.4より大きく、−3が条件に合います。</p></details>
+  </section>
+  <section class="box">
+    <h3>第10問　表示だけを絞る</h3>
+    <p>名簿の元データは保持し、土曜の申込行だけを一時的に表示したい。どの操作ですか。</p>
+    <ol class="options"><li>土曜以外を削除する</li><li>列をすべて隠す</li><li>曜日でフィルターを掛ける</li><li>セルの参照を固定する</li></ol>
+    <details><summary>第10問の解答と解説</summary><p><strong>ウ　曜日でフィルターを掛ける</strong></p><p>フィルターは条件に合う行を表示します。対象外の行も元の表に残ります。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第14章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=49">IPA「ITパスポート試験シラバス Ver.6.5」オフィスツール</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=50">IPA「ITパスポート試験シラバス Ver.6.5」OSS</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/doe3um0000002djj-att/shiken_yougo_ver5_1.pdf">IPA「試験で使用する用語など」別紙3 表計算ソフト</a></li>
+      <li><a href="https://support.microsoft.com/en-us/excel/switch-between-relative-absolute-and-mixed-references">Microsoft Support「相対・絶対・複合参照」</a></li>
+      <li><a href="https://opensource.org/osd">Open Source Initiative「The Open Source Definition」</a></li>
+      <li><a href="https://www.gnu.org/licenses/gpl-faq.en.html">GNU Project「Frequently Asked Questions about the GNU Licenses」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch14-2-files-and-backups.html">14-2 ファイル管理とバックアップ</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch14"></script>
+</body>
+</html>
