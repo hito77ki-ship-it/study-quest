@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch10-1-system-audit.html">
+  <title>ITパスポート 10-1 システム監査と内部統制｜スタディクエスト</title>
+  <meta name="description" content="図書館の予約を題材に、監査の独立性、証拠と調書、ウォークスルー、内部統制とITガバナンスを学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 10-1 システム監査と内部統制">
+  <meta property="og:description" content="図書館の予約を題材に、監査の独立性、証拠と調書、ウォークスルー、内部統制とITガバナンスを学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch10-1-system-audit.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 10-1 システム監査と内部統制",
+  "description": "図書館の予約を題材に、監査の独立性、証拠と調書、ウォークスルー、内部統制とITガバナンスを学びます。",
+  "url": "https://study-quest.net/itp-ch10-1-system-audit.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch10-1-system-audit.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第10章 システム監査</p>
+    <h1>ITパスポート 10-1 システム監査と内部統制</h1>
+    <p>図書館の予約を題材に、監査の独立性、証拠と調書、ウォークスルー、内部統制とITガバナンスを学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#audit-role">監査の役割</a></li><li><a href="#audit-process">監査手続と証拠</a></li><li><a href="#internal-control">内部統制とITガバナンス</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="audit-role">
+  <h2>運用している人と、独立して確かめる人を分ける</h2>
+  <p>図書館の予約サービスが始まりました。窓口では予約の代理登録や取消を行い、学内IT部門ではシステムを保守します。<strong>システム監査</strong>では、その仕組みに関わるリスクを捉え、対策が適切に作られ運用されているかを、証拠に基づいて確かめます。例えば職員の異動後に権限が残っていないか、障害時の代替手順が使えるかを見ます。</p>
+    <figure id="visual-audit-role" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>同じ予約でも、見る立場が違う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-audit-role-title visual-audit-role-desc">
+        <title id="visual-audit-role-title">同じ予約でも、見る立場が違う</title>
+        <desc id="visual-audit-role-desc">業務担当、学生の予約を受け付ける、決めた手順を使う。運用担当、権限とログを管理する、仕組みを維持する。自己点検、担当部署が確認する、日常の見直しを行う。システム監査人、独立した立場で検証、証拠から判断を伝える</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">業務担当</text>
+<text x="12" y="44" class="small" text-anchor="start">学生の予約を受け付ける</text>
+<text x="12" y="62" class="small" text-anchor="start">決めた手順を使う</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">運用担当</text>
+<text x="177" y="44" class="small" text-anchor="start">権限とログを管理する</text>
+<text x="177" y="62" class="small" text-anchor="start">仕組みを維持する</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">自己点検</text>
+<text x="12" y="120" class="small" text-anchor="start">担当部署が確認する</text>
+<text x="12" y="138" class="small" text-anchor="start">日常の見直しを行う</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">システム監査人</text>
+<text x="177" y="120" class="small" text-anchor="start">独立した立場で検証</text>
+<text x="177" y="138" class="small" text-anchor="start">証拠から判断を伝える</text>
+      </svg>
+      <p>内部監査でも、監査対象の業務から独立した立場を保つことが重要です。監査人が自分で作った仕組みをそのまま評価する場面とは区別します。</p>
+    </figure>
+  <p>業務監査は手続や業務の有効性など、財務諸表監査は財務諸表の適正な表示、システム監査は情報システムに関わる統制などが主な対象です。システム監査の対象には、企画・開発・運用・保守なども含まれ得ます。個別監査の範囲は、目的とリスクに応じて定めます。</p>
+  <p><strong>システム監査基準</strong>は監査人の行為や監査手続の規範です。<strong>システム管理基準</strong>は情報システムを管理するための考え方を示し、監査で判断する尺度としても使えます。保証を目的とした監査では証拠を評価して結論を出し、助言を目的とする監査では合意した範囲で改善などを提案します。</p>
+</section>
+<section id="audit-process">
+  <h2>一件の予約を追い、結論を証拠で支える</h2>
+    <figure id="visual-audit-process" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>異動後の権限が残っていないか確かめる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-audit-process-title visual-audit-process-desc">
+        <title id="visual-audit-process-title">異動後の権限が残っていないか確かめる</title>
+        <desc id="visual-audit-process-desc">計画、対象期間と確認する権限を決める。証拠の入手・評価、異動の記録と権限台帳を照らす。調書と報告、確認手順と所見を分けて記録する。フォローアップ、改善後に権限の解除を確かめる</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">計画</text>
+<text x="50" y="41" class="small" text-anchor="start">対象期間と確認する権限を決める</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">証拠の入手・評価</text>
+<text x="50" y="101" class="small" text-anchor="start">異動の記録と権限台帳を照らす</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">調書と報告</text>
+<text x="50" y="161" class="small" text-anchor="start">確認手順と所見を分けて記録する</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">フォローアップ</text>
+<text x="50" y="221" class="small" text-anchor="start">改善後に権限の解除を確かめる</text>
+      </svg>
+      <p>監査報告書は所見や結論を関係者に伝えます。監査調書は、どんな手続で何を確認し、なぜそう判断したかを裏づける記録です。</p>
+    </figure>
+  <p><strong>監査証拠</strong>には、権限変更の履歴、作業記録、関係者の説明などがあります。監査人は証拠が判断に適しているかを評価します。例えば「削除しました」という説明だけでなく、異動記録の日付と削除ログを照合します。</p>
+  <table>
+    <caption>目的に合わせて監査技法を選ぶ</caption>
+    <thead><tr><th scope="col">方法</th><th scope="col">図書館での例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">インタビュー</th><td>担当者に、例外時の手順と実際の判断を聞く。</td></tr>
+<tr><th scope="row">閲覧・観察</th><td>権限表を読み、窓口で手順がどのように行われるかを見る。</td></tr>
+<tr><th scope="row">ウォークスルー法</th><td>予約1件を選び、申請、承認、記録、通知までの処理を資料と照合しながらたどる。</td></tr>
+<tr><th scope="row">テストデータ法</th><td>監査用の入力を処理し、期待どおりの結果が出るかを安全な条件で確かめる。</td></tr>
+<tr><th scope="row">コンピュータ支援監査技法（CAAT）</th><td>多数の記録をツールで抽出し、権限変更の遅れや例外を調べる。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-walkthrough" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>受付から通知まで、一件を追う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-walkthrough-title visual-walkthrough-desc">
+        <title id="visual-walkthrough-title">受付から通知まで、一件を追う</title>
+        <desc id="visual-walkthrough-desc">申請、受付記録の番号を一件選ぶ。承認、誰が、いつ承認したか確かめる。記録と通知、台帳と通知の内容が一致するか見る</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">申請</text>
+<text x="50" y="41" class="small" text-anchor="start">受付記録の番号を一件選ぶ</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">承認</text>
+<text x="50" y="101" class="small" text-anchor="start">誰が、いつ承認したか確かめる</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">記録と通知</text>
+<text x="50" y="161" class="small" text-anchor="start">台帳と通知の内容が一致するか見る</text>
+      </svg>
+      <p>一件を追うと手順を理解できます。運用の有効性を判断するときは、必要に応じて対象件数や期間を増やして確認します。</p>
+    </figure>
+</section>
+<section id="internal-control">
+  <h2>内部統制の目的と、それを支える六つの要素</h2>
+  <p><strong>内部統制</strong>は、組織の目的を達成するために日々の業務に組み込む仕組みです。例えば代理予約を承認制にし、誰が登録・取消したか記録します。経営者は整備・運用に責任を持ち、職員はそれぞれの業務で手続を実施します。</p>
+    <figure id="visual-purpose" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約サービスで見る内部統制の四つの目的</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-purpose-title visual-purpose-desc">
+        <title id="visual-purpose-title">予約サービスで見る内部統制の四つの目的</title>
+        <desc id="visual-purpose-desc">業務の有効性・効率性、予約の重複を減らす、仕事を進めやすくする。報告の信頼性、月次件数と台帳を照合、集計に誤りがないか。法令等の遵守、個人情報を適切に扱う、守るべきルールを確認。資産の保全、端末と記録を守る、持出しや消失に備える</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">業務の効率と効果</text>
+<text x="12" y="44" class="small" text-anchor="start">予約の重複を減らす</text>
+<text x="12" y="62" class="small" text-anchor="start">仕事を進めやすくする</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">報告の信頼性</text>
+<text x="177" y="44" class="small" text-anchor="start">月次件数と台帳を照合</text>
+<text x="177" y="62" class="small" text-anchor="start">集計に誤りがないか</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">法令等の遵守</text>
+<text x="12" y="120" class="small" text-anchor="start">個人情報を適切に扱う</text>
+<text x="12" y="138" class="small" text-anchor="start">守るべきルールを確認</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">資産の保全</text>
+<text x="177" y="120" class="small" text-anchor="start">端末と記録を守る</text>
+<text x="177" y="138" class="small" text-anchor="start">持出しや消失に備える</text>
+      </svg>
+      <p>金融庁の基準の基本的枠組みでは、2023年改訂で「財務報告の信頼性」から「報告の信頼性」に見直されました。古い問題では示された基準の時点を確認します。</p>
+    </figure>
+  <table>
+    <caption>六つの基本的要素を学習室予約に当てはめる</caption>
+    <thead><tr><th scope="col">要素</th><th scope="col">図書館での例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">統制環境</th><td>責任者と役割を決め、例外の隠蔽を許さない方針を示す。</td></tr>
+<tr><th scope="row">リスクの評価と対応</th><td>無断取消の可能性と影響を見積もり、対策を決める。</td></tr>
+<tr><th scope="row">統制活動</th><td>申請する人と承認する人を分ける。</td></tr>
+<tr><th scope="row">情報と伝達</th><td>取消記録を担当者と責任者に共有する。</td></tr>
+<tr><th scope="row">モニタリング</th><td>取消記録を定期点検し、統制が機能しているかを見る。</td></tr>
+<tr><th scope="row">ITへの対応</th><td>職員権限を管理し、ログが適切に保存されるようにする。</td></tr>
+    </tbody>
+  </table>
+  <p><strong>IT全般統制</strong>は、アクセス権管理や変更管理など複数の業務を支える共通の仕組みです。<strong>IT業務処理統制</strong>は、予約の人数が範囲内かなど、特定の業務で入力や処理が正しく行われるための仕組みです。<strong>ITガバナンス</strong>は、組織の目的に沿ってIT利用の方向を示し監督する取組です。<strong>ITマネジメント</strong>では、方針を実行し、結果を評価・報告します。不適切な運用が公になり、組織の信頼が損なわれる可能性はレピュテーションリスクです。</p>
+    <figure id="visual-it-control" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>どの範囲の仕組みを見ている？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-it-control-title visual-it-control-desc">
+        <title id="visual-it-control-title">どの範囲の仕組みを見ている？</title>
+        <desc id="visual-it-control-desc">IT全般統制、職員IDの付与・削除、複数業務を支える。IT業務処理統制、同じ枠の予約を拒否、特定業務の処理を守る。ITガバナンス、ITを使う方針と監督、組織の目的に沿うか。ITマネジメント、権限点検を実施・報告、方針を日々の業務に</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">IT全般統制</text>
+<text x="12" y="44" class="small" text-anchor="start">職員IDの付与・削除</text>
+<text x="12" y="62" class="small" text-anchor="start">複数業務を支える</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">IT業務処理統制</text>
+<text x="177" y="44" class="small" text-anchor="start">同じ枠の予約を拒否</text>
+<text x="177" y="62" class="small" text-anchor="start">特定業務の処理を守る</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">ITガバナンス</text>
+<text x="12" y="120" class="small" text-anchor="start">ITを使う方針と監督</text>
+<text x="12" y="138" class="small" text-anchor="start">組織の目的に沿うか</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">ITマネジメント</text>
+<text x="177" y="120" class="small" text-anchor="start">権限点検を実施・報告</text>
+<text x="177" y="138" class="small" text-anchor="start">方針を日々の業務に</text>
+      </svg>
+      <p>例えば予約の入力チェックが正しくても、管理者権限が不適切に配布されていれば、別の経路で操作される可能性があります。</p>
+    </figure>
+</section>
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　誰に点検を頼む？</h3>
+    <p>学習室予約の運用を客観的に評価してもらう相手は誰が適切ですか。</p>
+    <ol class="options"><li>仕組みの承認者本人</li><li>独立した監査担当者</li><li>設定を行った担当者本人</li><li>予約利用者の代表一人だけ</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　独立した監査担当者</strong></p><p>監査では、判断が監査対象の作業や利害に影響されないよう独立した立場を確保します。自己点検や利用者の意見も、別の目的では活用できます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　証拠を選ぶ</h3>
+    <p>異動した職員の権限が期限内に解除されたかを確かめたい。最も直接的な組合せはどれですか。</p>
+    <ol class="options"><li>画面の配色と申請書の紙質</li><li>今日の利用件数と来月の計画</li><li>異動記録と権限を削除した日時のログ</li><li>担当者の感想だけ</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　異動記録と権限を削除した日時のログ</strong></p><p>対象と期限が分かる異動記録を、実際の権限削除の記録と照合します。必要なら現在の権限も再確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　業務の流れを理解する</h3>
+    <p>取消申請を一件取り上げて、窓口の受付から台帳・通知までをたどります。使っている方法はどれですか。</p>
+    <ol class="options"><li>ウォークスルー法</li><li>負荷テスト</li><li>ハウジング</li><li>サービスレベル管理</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　ウォークスルー法</strong></p><p>処理の一連の流れを追跡します。負荷テストは大量の処理に耐えられるかを調べる試験です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　記録と報告の使い分け</h3>
+    <p>どの記録を何件照合し、どの例外を見つけたかを監査の手続とともに残すものはどれですか。</p>
+    <ol class="options"><li>予約カタログ</li><li>システム要件定義書</li><li>見積書</li><li>監査調書</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　監査調書</strong></p><p>監査調書は実施した手続や結果を記録し、結論の裏づけになります。関係者には監査報告書で所見や結論を伝えます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　承認と実行を分ける</h3>
+    <p>ある職員が代理取消を申請し、別の責任者だけが承認できるようにしました。内部統制の基本的要素では何の例ですか。</p>
+    <ol class="options"><li>情報と伝達だけ</li><li>統制活動</li><li>統制環境だけ</li><li>資産の保全という目的そのもの</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　統制活動</strong></p><p>権限を分ける具体的な手続は統制活動です。資産の保全はこの仕組みが支え得る目的です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　IT統制の対象を選ぶ</h3>
+    <p>複数の業務システムで共通の職員IDを使っています。異動時にその権限を一括で見直す手続はどれですか。</p>
+    <ol class="options"><li>特定の予約人数のチェック</li><li>デバッグ</li><li>IT全般統制</li><li>サービスカタログ</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　IT全般統制</strong></p><p>複数の業務を支えるアクセス管理なのでIT全般統制です。予約の人数の妥当性をチェックする処理は、その業務の処理統制です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　指摘のあとに行うこと</h3>
+    <p>監査報告のあと、図書館は異動翌日に権限を見直す手順を導入しました。監査側がその実施状況を再確認する活動はどれですか。</p>
+    <ol class="options"><li>見積り</li><li>プロジェクトの立ち上げ</li><li>データの正規化</li><li>フォローアップ</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>エ　フォローアップ</strong></p><p>改善策を知らせてもらうだけでなく、実際に運用されているかを証拠で確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　経営と運用の役割</h3>
+    <p>図書館の方針を決める会議で、利便性と個人情報保護を両立するIT利用の方向を定め、実施状況を監督します。中心になる概念は何ですか。</p>
+    <ol class="options"><li>ITガバナンス</li><li>テストデータ法</li><li>需要管理</li><li>ネットワーク設計</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>ア　ITガバナンス</strong></p><p>組織の目的に合わせて方向を示し監督するのはガバナンスです。運用担当が方針に沿って手続を実行し報告するのはマネジメントです。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第10章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=37">IPA「ITパスポート試験シラバス Ver.6.5」システム監査</a></li>
+      <li><a href="https://www.meti.go.jp/policy/netsecurity/sys-kansa/sys-kansa-2023r.pdf">経済産業省「システム監査基準」</a></li>
+      <li><a href="https://www.meti.go.jp/policy/netsecurity/sys-kansa/sys-kanri-2023.pdf">経済産業省「システム管理基準」</a></li>
+      <li><a href="https://www.fsa.go.jp/singi/singi_kigyou/kijun/20230407_naibutousei_kansa.pdf">企業会計審議会「財務報告に係る内部統制の評価及び監査に関する実施基準」</a></li>
+    </ul>
+    <p><a href="itp-ch09-2-facility-management.html">前の章 9-2 ファシリティマネジメント</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch09"></script>
+</body>
+</html>

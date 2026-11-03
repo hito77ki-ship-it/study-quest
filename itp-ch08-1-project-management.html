@@ -54,7 +54,7 @@
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
     <p class="note">サイトの8-1は教科書の8-1-1・8-1-2に対応します。日程の計算は<a href="itp-ch08-2-project-scheduling.html">8-2 日程と進捗管理</a>へ。</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#launch">立ち上げと関係者</a></li><li><a href="#scope">スコープ・WBS・変更管理</a></li><li><a href="#areas">管理の観点</a></li><li><a href="#risk">リスク対応</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#launch">立ち上げと関係者</a></li><li><a href="#scope">スコープ・WBS・変更管理</a></li><li><a href="#areas">管理の観点</a></li><li><a href="#risk">リスク対応</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 
 <section id="launch">
   <h2>プロジェクトを始めるときに決めること</h2>
@@ -308,6 +308,53 @@
     <details><summary>第6問の解答と解説</summary><p><strong>ウ　ステークホルダマネジメント</strong></p><p>注目点は関係者の期待と利害の調整です。決めた受付時間を誰にいつ知らせるかはコミュニケーションの観点です。</p></details>
   </section>
 </section>
+
+  <section id="textbook-coverage">
+    <h2>リスクの予備と、チームの配置を決める</h2>
+    <p>図書館の公開準備で、認証サービスの試験日が遅れる可能性を認識しました。遅れへの備えと、メンバーの働き方をそれぞれ計画します。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>「予備日を持つ」と「早めに試す」は目的が違う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">「予備日を持つ」と「早めに試す」は目的が違う</title>
+        <desc id="coverage-visual-desc">可能性、認証試験が遅れるかも、起きる条件を整理。軽減、早めに接続を確認、遅れる確率を下げる。能動的な受容、予備日を1日確保、起きた場合に使う。コロケーション、担当者が同室で試験、相談の待ち時間を減らす</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">可能性</text>
+<text x="12" y="44" class="small" text-anchor="start">認証試験が遅れるかも</text>
+<text x="12" y="62" class="small" text-anchor="start">起きる条件を整理</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">軽減</text>
+<text x="177" y="44" class="small" text-anchor="start">早めに接続を確認</text>
+<text x="177" y="62" class="small" text-anchor="start">遅れる確率を下げる</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">能動的な受容</text>
+<text x="12" y="120" class="small" text-anchor="start">予備日を1日確保</text>
+<text x="12" y="138" class="small" text-anchor="start">起きた場合に使う</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">コロケーション</text>
+<text x="177" y="120" class="small" text-anchor="start">担当者が同室で試験</text>
+<text x="177" y="138" class="small" text-anchor="start">相談の待ち時間を減らす</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">プロジェクトスコープ記述書</th><td>対象とする成果物、受入れ条件、対象外の事項などを記録する。学習室だけを今回の対象とし、会場予約を対象外と記す。</td></tr>
+<tr><th scope="row">コンティンジェンシー予備</th><td>特定したリスクに対応できるよう、予備の予算や日数を設ける。試験環境が遅れる可能性を考え、代替環境の利用費や予備日を用意する。</td></tr>
+<tr><th scope="row">能動的な受容・受動的な受容</th><td>備えを用意して受け入れる場合と、起きた時に対応を判断する場合。別の技術で発生確率を下げるなら軽減。</td></tr>
+<tr><th scope="row">コロケーション</th><td>同じ場所で働くことで意思疎通をしやすくする配置。例えば導入試験の日に開発者と窓口職員が同じ部屋で確認する。</td></tr>
+<tr><th scope="row">統合マネジメント</th><td>機能、日程、費用、品質などの影響を横断して調整する。追加機能だけ見て決めず、計画全体を更新する。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>試験環境が予定日に使えない可能性は残るものとして、代わりの時間枠を1日だけ確保しました。用意した1日は何と呼べますか。</p>
+      <details><summary>解答と考え方を開く</summary><p>特定したリスクに備える<strong>コンティンジェンシー予備</strong>です。備えを用意してリスクを受け入れる対応に当たります。</p></details>
+    </section>
+    <p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=34">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://www.pmi.org/learning/library/risk-management-assessing-positives-negatives-3834">PMI「Risks aren’t always negative」</a></li></ul>
+  </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第8章に合わせています。</p>

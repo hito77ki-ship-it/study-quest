@@ -53,7 +53,7 @@
     <p>イラスト、ロゴ、配合表、予約者の連絡先を例に、著作権・営業秘密・個人情報・不正アクセスを見分けます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#rights">知的財産の基本</a></li><li><a href="#rights-in-practice">著作権と営業秘密</a></li><li><a href="#security-laws">セキュリティ関連法</a></li><li><a href="#privacy-flow">個人データの流れ</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#rights">知的財産の基本</a></li><li><a href="#rights-in-practice">著作権と営業秘密</a></li><li><a href="#security-laws">セキュリティ関連法</a></li><li><a href="#privacy-flow">個人データの流れ</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="rights">
     <h2>同じ商品でも、着目する部分で権利が変わる</h2>
     <p>架空の模擬店が繰り返し使えるドリンク容器を作ります。「新しい液漏れ防止の仕組み」「容器の外観」「販売時に使うロゴ」「告知用に描いたイラスト」と分けて考えます。</p>
@@ -155,6 +155,54 @@
     </section>
 <p><strong>復習メモ</strong>　予約情報の閲覧を担当者に限る設定を考えます。法務で考えることと、システムで確認することを一つずつ挙げてみましょう。</p>
     <details><summary>復習メモの答え</summary><p>法務では個人データをどう安全に扱うか、システムでは誰にその予約の閲覧を許すかを考えます。後者は<a href="itp-authentication-authorization.html">認証と認可の記事</a>の認可につながります。</p></details>
+  </section>
+
+  <section id="textbook-coverage">
+    <h2>何を守るかを、仕組み・アクセス・個人情報に分ける</h2>
+    <p>学園祭の注文サービスを例に、知的財産の保護、無断利用の防止、個人情報の取扱いを別の問いとして考えます。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>同じ予約サービスで保護する対象を分ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">同じ予約サービスで保護する対象を分ける</title>
+        <desc id="coverage-visual-desc">特許、予約を処理する仕組み、技術的な構成を見る。著作権、画面のイラスト、創作された表現を見る。アクセス制御、他人のIDで無断操作、操作の権限を確かめる。個人情報、受付で録音した音声、本人を識別できるか</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">特許</text>
+<text x="12" y="44" class="small" text-anchor="start">予約を処理する仕組み</text>
+<text x="12" y="62" class="small" text-anchor="start">技術的な構成を見る</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">著作権</text>
+<text x="177" y="44" class="small" text-anchor="start">画面のイラスト</text>
+<text x="177" y="62" class="small" text-anchor="start">創作された表現を見る</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">アクセス制御</text>
+<text x="12" y="120" class="small" text-anchor="start">他人のIDで無断操作</text>
+<text x="12" y="138" class="small" text-anchor="start">操作の権限を確かめる</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">個人情報</text>
+<text x="177" y="120" class="small" text-anchor="start">受付で録音した音声</text>
+<text x="177" y="138" class="small" text-anchor="start">本人を識別できるか</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">特許とビジネス関連発明</th><td>商売のアイデアを技術で実現した仕組みは、要件を満たせば特許の対象になり得る。例えば予約の重複を防ぐ情報処理の仕組みを検討する場合は、技術的な構成と要件を確認する。</td></tr>
+<tr><th scope="row">著作権とソフトウェアライセンス</th><td>プログラムの創作的な表現には著作権が関わる。利用許諾契約は許される利用を示す。ボリュームライセンスは複数利用分をまとめる形、サイトライセンスは指定の組織・場所などを範囲とする形。契約条件を確認する。</td></tr>
+<tr><th scope="row">フリーソフトウェア・シェアウェア・サブスクリプション</th><td>無料利用、試用後の有料利用、期間ごとの契約という違い。無料でも配布・改変の可否は許諾条件で決まる。</td></tr>
+<tr><th scope="row">不正アクセス禁止法と不正指令電磁的記録に関する罪</th><td>他人の認証情報を無断で使いアクセス制御を通過するなどの不正アクセスと、悪意あるプログラムに関する犯罪は、何をしたかを区別して読む。</td></tr>
+<tr><th scope="row">個人情報と要配慮個人情報</th><td>本人を識別できる映像・音声も個人情報になり得る。病歴など、特に配慮が必要なものは要配慮個人情報に該当する場合がある。</td></tr>
+<tr><th scope="row">GDPR・消去権</th><td>GDPRはEUの個人データ保護規則。消去の請求が認められる条件と例外がある。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>受付では、名前を言わなくても誰の声か分かる通話記録と、来場者数を会場ごとに集計した表を保存しています。個人情報に当たり得るのはどちらですか。</p>
+      <details><summary>解答と考え方を開く</summary><p><strong>話者を識別できる通話記録</strong>です。氏名の欄の有無だけでは決まりません。集計表はこの例では個人を識別できないものとします。</p></details>
+    </section>
+    <p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=13">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://www.ppc.go.jp/personalinfo/faq/APPI_QA/">個人情報保護委員会「個人情報保護法ガイドラインに関するQ＆A」</a></li></ul>
   </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>

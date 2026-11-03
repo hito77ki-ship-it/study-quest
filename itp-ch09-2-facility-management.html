@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch09-2-facility-management.html">
+  <title>ITパスポート 9-2 ファシリティマネジメント｜スタディクエスト</title>
+  <meta name="description" content="図書館の機器室と停電を例に、UPS、自家発電装置、サージ防護、配線や空調の管理を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 9-2 ファシリティマネジメント">
+  <meta property="og:description" content="図書館の機器室と停電を例に、UPS、自家発電装置、サージ防護、配線や空調の管理を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch09-2-facility-management.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 9-2 ファシリティマネジメント",
+  "description": "図書館の機器室と停電を例に、UPS、自家発電装置、サージ防護、配線や空調の管理を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch09-2-facility-management.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch09-2-facility-management.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第9章 サービスマネジメント</p>
+    <h1>ITパスポート 9-2 ファシリティマネジメント</h1>
+    <p>図書館の機器室と停電を例に、UPS、自家発電装置、サージ防護、配線や空調の管理を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#facility">施設と設備</a></li><li><a href="#power">電源とサージ対策</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="facility">
+  <h2>予約を支える電気・部屋・配線を管理する</h2>
+  <p><strong>ファシリティマネジメント（FM）</strong>は、組織が使う施設と環境を総合的に計画・管理・活用する活動です。例えば図書館では、予約サーバの置き場、電力、空調、配線、機器の盗難防止、災害時の運用を一緒に考えます。サーバ本体が動作していても、機器室が高温になったりネットワーク機器が停止したりすれば、利用者は予約できません。</p>
+    <figure id="visual-room" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>機器室のどこに対策する？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-room-title visual-room-desc">
+        <title id="visual-room-title">機器室のどこに対策する？</title>
+        <desc id="visual-room-desc">入口、鍵と入退室記録、誰が入れるかを管理。機器棚、温度センサーと空調、熱がこもる場所を確認。机と端末、セキュリティワイヤー、端末の持ち出しを抑える。床と配線、外せる床パネル、下の配線を点検しやすい</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">入口</text>
+<text x="12" y="44" class="small" text-anchor="start">鍵と入退室記録</text>
+<text x="12" y="62" class="small" text-anchor="start">誰が入れるかを管理</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">機器棚</text>
+<text x="177" y="44" class="small" text-anchor="start">温度センサーと空調</text>
+<text x="177" y="62" class="small" text-anchor="start">熱がこもる場所を確認</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">机と端末</text>
+<text x="12" y="120" class="small" text-anchor="start">セキュリティワイヤー</text>
+<text x="12" y="138" class="small" text-anchor="start">端末の持ち出しを抑える</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">床と配線</text>
+<text x="177" y="120" class="small" text-anchor="start">外せる床パネル</text>
+<text x="177" y="138" class="small" text-anchor="start">下の配線を点検しやすい</text>
+      </svg>
+      <p>フリーアクセスフロアは床下に配線空間を確保する構造です。端末の固定や入退室管理は物理的な対策です。</p>
+    </figure>
+  <p>消火・漏水検知・耐震対策、温度と湿度の監視も、機器を置く場所を整える取組です。<strong>グリーンIT</strong>では、省電力機器や冷却の見直しでIT自体の環境負荷を減らすことや、ITを使って施設のエネルギーを管理することを考えます。</p>
+</section>
+<section id="power">
+  <h2>UPS・発電機・サージ防護を見分ける</h2>
+  <p><strong>無停電電源装置（UPS）</strong>は、停電や電圧低下などの際に、接続した機器へ一定時間給電します。設置条件に応じて、保存して安全に停止する時間を確保したり、発電機に切り替わるまで支えたりします。<strong>自家発電装置</strong>は発電で給電しますが、始動して安定した電力を使えるまで時間がかかることがあります。<strong>サージ防護</strong>は、落雷などによる瞬間的な過電圧から機器を守る対策です。</p>
+    <figure id="visual-power" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>停電直後と、その後で使う設備が違う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 165" role="img" aria-labelledby="visual-power-title visual-power-desc">
+        <title id="visual-power-title">停電直後と、その後で使う設備が違う</title>
+        <desc id="visual-power-desc">通常電源が止まるとUPSが給電する。発電機が始動し電力が安定すれば、切替設備で発電機から給電する。</desc>
+        <rect x="3" y="3" width="324" height="158" rx="7" class="panel"/>
+<text x="13" y="25" class="strong blue" text-anchor="start">電力をつなぐ時間のイメージ</text>
+<text x="91" y="54" class="small" text-anchor="middle">停電</text>
+<text x="209" y="54" class="small" text-anchor="middle">発電が安定</text>
+<path d="M91 59v61m118-61v61" class="wire" />
+<rect x="14" y="70" width="75" height="28" rx="7" class="panel"/>
+<rect x="92" y="70" width="115" height="28" rx="7" class="blue-fill"/>
+<rect x="211" y="70" width="104" height="28" rx="7" class="orange-fill"/>
+<text x="51" y="88" class="small" text-anchor="middle">通常電源</text>
+<text x="150" y="88" class="small blue" text-anchor="middle">UPSで給電</text>
+<text x="263" y="88" class="small orange" text-anchor="middle">発電機で給電</text>
+<path d="M15 121H315m-5-4 5 4-5 4" class="wire" />
+<text x="308" y="147" class="small" text-anchor="end">時間</text>
+      </svg>
+      <p>UPSと発電機を組み合わせる場合の模式図です。切替方法や運転可能時間は、機器構成と負荷で変わります。</p>
+    </figure>
+  <table>
+    <caption>何が起きるかで設備を選ぶ</caption>
+    <thead><tr><th scope="col">状況</th><th scope="col">選ぶ設備と確認点</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">停電の直後にサーバが落ちそう</th><td>UPS。機器の消費電力、必要な運転時間、対象コンセントを確かめる。</td></tr>
+<tr><th scope="row">停電が長引き、給電を続けたい</th><td>発電機と切替設備。燃料、負荷、切替までの給電を確かめる。</td></tr>
+<tr><th scope="row">落雷などで瞬間的な過電圧が心配</th><td>サージ防護。保護対象の回路と機器を確かめる。</td></tr>
+<tr><th scope="row">配線が通路に出てしまう</th><td>フリーアクセスフロアなど。経路、点検のしやすさ、漏水時の対応を確かめる。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-backup" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>電源があるだけで予約が続くか</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-backup-title visual-backup-desc">
+        <title id="visual-backup-title">電源があるだけで予約が続くか</title>
+        <desc id="visual-backup-desc">予約サーバ、台帳を保存する、UPSで保護する。ネットワーク、窓口との接続を保つ、給電の対象か確認する。窓口端末、学生の受付を続ける、代替端末と手順を準備。切替訓練、停電を想定して確認、復旧順と所要時間を記録</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">予約サーバ</text>
+<text x="12" y="44" class="small" text-anchor="start">台帳を保存する</text>
+<text x="12" y="62" class="small" text-anchor="start">UPSで保護する</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">ネットワーク</text>
+<text x="177" y="44" class="small" text-anchor="start">窓口との接続を保つ</text>
+<text x="177" y="62" class="small" text-anchor="start">給電の対象か確認する</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">窓口端末</text>
+<text x="12" y="120" class="small" text-anchor="start">学生の受付を続ける</text>
+<text x="12" y="138" class="small" text-anchor="start">代替端末と手順を準備</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">切替訓練</text>
+<text x="177" y="120" class="small" text-anchor="start">停電を想定して確認</text>
+<text x="177" y="138" class="small" text-anchor="start">復旧順と所要時間を記録</text>
+      </svg>
+      <p>サーバだけを保護しても、経路上の機器が落ちれば窓口から使えません。利用者が使う経路を端から端まで確認します。</p>
+    </figure>
+</section>
+<section id="quiz">
+  <h2>例題6問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　急な停電で保存時間を確保</h3>
+    <p>受付サーバの電力が突然止まりました。短時間給電して保存と停止を行うための機器はどれですか。</p>
+    <ol class="options"><li>サージ防護のみの電源タップ</li><li>セキュリティワイヤー</li><li>UPS</li><li>フリーアクセスフロア</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ウ　UPS</strong></p><p>UPSは蓄えた電力などで給電を維持します。サージ防護だけの電源タップには停電時の給電機能がありません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　切替に必要な時間を見積もる</h3>
+    <p>発電機が安定するまで2分、切替に1分と仮定します。この間の給電を担うUPSは何分以上の運転が最低限必要ですか。</p>
+    <ol class="options"><li>1分</li><li>2分</li><li>3分</li><li>4分</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　3分</strong></p><p>安定後に切り替えるので2＋1＝3分です。実際には負荷や電池の劣化、作業余裕も考えます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　一瞬の過電圧を抑える</h3>
+    <p>落雷に伴う瞬間的な過電圧から機器を守る対策はどれですか。</p>
+    <ol class="options"><li>サージ防護</li><li>電源の稼働率集計</li><li>入退室記録</li><li>機器棚の増設</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　サージ防護</strong></p><p>短時間に大きく上がる電圧を抑える設備です。電力を継続して供給する目的とは分けます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　サーバは動くのに窓口が使えない</h3>
+    <p>停電時にサーバはUPSで動きますが、窓口へのネットワーク機器は給電を失いました。最初に点検すべきことはどれですか。</p>
+    <ol class="options"><li>予約画面の色</li><li>職員の連絡先だけ</li><li>SQLの書き方</li><li>接続経路全体と給電対象</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　接続経路全体と給電対象</strong></p><p>利用には端末からサーバまでの通信が必要です。サーバだけでなくスイッチなど経路上の機器への給電を確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　配線を点検できるようにする</h3>
+    <p>受付机を移動するときに、床の下の配線を開けて引き直せるようにしたい。どの設備ですか。</p>
+    <ol class="options"><li>自家発電装置</li><li>フリーアクセスフロア</li><li>消火設備</li><li>サービスデスク</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　フリーアクセスフロア</strong></p><p>外せる床板の下に配線空間を設ける構造です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　日常の空調も計画する</h3>
+    <p>高温になる機器室の空調、電気代、設置場所をまとめて見直します。中心になる活動はどれですか。</p>
+    <ol class="options"><li>問題管理だけ</li><li>展開管理</li><li>ファシリティマネジメント</li><li>サービス要求管理</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　ファシリティマネジメント</strong></p><p>施設と環境を計画して管理します。個別の障害対応と合わせ、設置環境を改善して安定運用につなげます。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第9章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=36">IPA「ITパスポート試験シラバス Ver.6.5」ファシリティマネジメント</a></li>
+      <li><a href="https://www.jfma.or.jp/whatsFM/index.html">日本ファシリティマネジメント協会「FMとはどのようなものか」</a></li>
+      <li><a href="https://www.se.com/jp/ja/faqs/FA371040/">Schneider Electric「バックアップコンセント・サージ保護のみコンセントの役割」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch09-1-service-management.html">9-1 サービスマネジメント</a> ／ 次の章 <a href="itp-ch10-1-system-audit.html">10-1 システム監査と内部統制</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch09"></script>
+</body>
+</html>

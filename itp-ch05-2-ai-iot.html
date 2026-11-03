@@ -53,7 +53,7 @@
     <p>売り場のAIと冷蔵庫の遠隔監視を例に、教師あり学習・ハルシネーション・センサー・組込み制御を図と例題で学びます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#ai">AIの用途と学習</a></li><li><a href="#responsible">出力確認と公平性</a></li><li><a href="#iot">IoTと組込み制御</a></li><li><a href="#devices">AR・VR・MRとMaaS</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#ai">AIの用途と学習</a></li><li><a href="#responsible">出力確認と公平性</a></li><li><a href="#iot">IoTと組込み制御</a></li><li><a href="#devices">AR・VR・MRとMaaS</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="ai">
   <h2>AIの利活用　分類する、予測する、案内を作る</h2>
   <p>学園祭の売り場で、写真から商品の種類を判別する、過去の販売記録から翌日の販売数を予測する、案内文のたたき台を作る。どれもAIの活用例ですが、担当させる仕事が違います。まず<strong>入力に何を渡し、出力から何を判断したいか</strong>を考えます。</p>
@@ -359,6 +359,65 @@
       <details><summary>第6問の解答と解説</summary><p><strong>ア　MaaS</strong></p><p>複数の移動手段の検索・予約・決済を一つにつないでいるのでMaaSです。自動運転は車両の走行操作に関する技術です。</p></details>
     </section>
 </section>
+
+  <section id="textbook-coverage">
+    <h2>AIの学習と推論、IoTで求められる応答を分ける</h2>
+    <p>図書館の落とし物を写真で分類する場合と、機器を動かして制御する場合を比べます。どちらもデータを使いますが、何を学習し、どの判断を人が確認するかが違います。</p>
+    <figure id="coverage-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学習用の架空事例</span></span><strong>写真分類が学習を使う場面</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="coverage-visual-title coverage-visual-desc">
+        <title id="coverage-visual-title">写真分類が学習を使う場面</title>
+        <desc id="coverage-visual-desc">学習、分類済みの写真で特徴を学ぶ。推論、新しい写真から種類を推定する。確認、迷う写真は担当者が見直す</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">学習</text>
+<text x="50" y="41" class="small" text-anchor="start">分類済みの写真で特徴を学ぶ</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">推論</text>
+<text x="50" y="101" class="small" text-anchor="start">新しい写真から種類を推定する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">確認</text>
+<text x="50" y="161" class="small" text-anchor="start">迷う写真は担当者が見直す</text>
+      </svg>
+      <p>この図と例題はStudy Quest編集部の自作です。場面と数値は架空です。</p>
+    </figure>
+  <table>
+    <caption>用語を場面と結び付ける</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">画像認識・機械学習</th><td>既知の分類を付けた写真でモデルを学習し、未見の写真の種類を推定する。認証で画像を使っているだけでは、その記述から学習の有無は判断できない。</td></tr>
+<tr><th scope="row">ニューラルネットワーク・活性化関数</th><td>ノードは入力の重み付き和などを計算し、活性化関数で出力を変換する。非線形な関数を使うことで複雑な関係を表せる。</td></tr>
+<tr><th scope="row">生成AIを使う開発</th><td>テストケース案やコード案を作るなど、入力から新しい内容を生成する。決めたテストを順に実行する自動化とは別の働き。案は担当者が条件と安全性を確認する。</td></tr>
+<tr><th scope="row">アルゴリズムのバイアス・説明可能性</th><td>学習データや設計の偏りで特定の群に誤りが集中することがある。全体平均だけでなくグループ別に確認し、判断理由を説明できるかを考える。</td></tr>
+<tr><th scope="row">オプトアウト・利用条件</th><td>入力を学習利用から外す設定がある場合、何が対象かを提供元の規約で確認する。データの保存や外部提供の可否は別に確認する。</td></tr>
+<tr><th scope="row">マシンビジョン・スマート農業</th><td>カメラで部品の欠けを検出する仕組みや、温湿度を測って水やりを調整する活用。測定と判断と制御の順に追う。</td></tr>
+<tr><th scope="row">リアルタイム性・民生機器・産業機器</th><td>リアルタイム性は定められた時間までに応答すること。民生機器は一般利用者向け、産業機器は業務・産業用途向けで、用途ごとに求められる安全性や環境条件が異なる。</td></tr>
+    </tbody>
+  </table>
+    <section class="box">
+      <h3>補足の自作例題</h3>
+      <p>図書館が傘・手袋・本の写真を分類したいとします。新しい写真に対応するための「学習」と「推論」の例を一つずつ挙げてください。</p>
+      <details><summary>解答と考え方を開く</summary><p><strong>学習</strong>は既に種類を付けた写真でモデルを調整すること。<strong>推論</strong>は調整したモデルに未知の写真を入れて種類を推定することです。間違えやすい種類は別に評価します。</p></details>
+    </section>
+      <table>
+    <caption>もう一歩の復習</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">意味と使う場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">基盤モデル・ディープラーニング</th><td>広いデータで学習し、さまざまな用途に適応できるモデルが基盤モデル。ディープラーニングは多層のニューラルネットワークで学習する方法。</td></tr>
+<tr><th scope="row">LPWA・エッジコンピューティング</th><td>少ない電力で比較的長い距離を通信できる方式の総称と、データが生まれる機器や近くの装置で処理する考え方。</td></tr>
+<tr><th scope="row">ウェアラブル端末・アクティビティトラッカ</th><td>身に着ける端末のうち、歩数などの活動量を測って記録する機器がアクティビティトラッカ。測定値の意味と用途を区別する。</td></tr>
+<tr><th scope="row">スマートファクトリー・ワイヤレス給電</th><td>工場でデータを使って工程を管理・改善する取組と、ケーブルで直接つながず電力を伝える仕組み。</td></tr>
+    </tbody>
+  </table><p class="note">2026年11月3日照合。</p>
+    <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=25">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://csrc.nist.gov/glossary/term/foundation_model">NIST「foundation model」</a></li></ul>
+  </section>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第5章に合わせています。</p>
