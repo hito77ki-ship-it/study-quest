@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch12-2-programming.html">
+  <title>ITパスポート 12-2 プログラミングと擬似言語｜スタディクエスト</title>
+  <meta name="description" content="図書館の予約集計を例に、言語プロセッサとHTML・CSS・XML・JSON、擬似言語の条件分岐・ループを自作図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 12-2 プログラミングと擬似言語">
+  <meta property="og:description" content="図書館の予約集計を例に、言語プロセッサとHTML・CSS・XML・JSON、擬似言語の条件分岐・ループを自作図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch12-2-programming.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 12-2 プログラミングと擬似言語",
+  "description": "図書館の予約集計を例に、言語プロセッサとHTML・CSS・XML・JSON、擬似言語の条件分岐・ループを自作図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch12-2-programming.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch12-2-programming.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+  <style>.trace-code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem;background:var(--sq-surface-soft,#edf3f7);border:1px solid var(--sq-border,#ccd7de);border-radius:.65rem;color:var(--sq-text,#1a202c);font-size:.92rem;line-height:1.65}</style>
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第12章 アルゴリズムとプログラミング</p>
+    <h1>ITパスポート 12-2 プログラミングと擬似言語</h1>
+    <p>図書館の予約集計を例に、言語プロセッサとHTML・CSS・XML・JSON、擬似言語の条件分岐・ループを自作図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#build">仕様からテストへ</a></li><li><a href="#languages">プログラム言語と実行方式</a></li><li><a href="#markup">HTML・CSS・XML・JSON</a></li><li><a href="#pseudocode">擬似言語と変数トレース</a></li><li><a href="#loops">繰返し処理と配列</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="build">
+  <h2>仕様を入出力に分けてから、手順を書いて試す</h2>
+  <p>図書館が「4人以上で予約したグループの人数を合計したい」と依頼したとします。入力は各グループの人数の一覧、出力は条件に合う人数の合計です。「4人ちょうどを含むか」「合う予約がなければ何を返すか」を先に決めると、コードを書いた後の確認がしやすくなります。</p>
+    <figure id="visual-build" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>集計を作る前にテストの答えを決める</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-build-title visual-build-desc">
+        <title id="visual-build-title">集計を作る前にテストの答えを決める</title>
+        <desc id="visual-build-desc">仕様を決める、4人以上のグループの人数を足す。処理を組み立てる、0から始め、条件に合う行だけ加算。実装して試す、3人・4人・5人を別々に試す。ずれを調べる、4人が漏れたら条件式を確認する</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">仕様を決める</text>
+<text x="50" y="41" class="small" text-anchor="start">4人以上のグループの人数を足す</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">処理を組み立てる</text>
+<text x="50" y="101" class="small" text-anchor="start">0から始め、条件に合う行だけ加算</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">実装して試す</text>
+<text x="50" y="161" class="small" text-anchor="start">3人・4人・5人を別々に試す</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">ずれを調べる</text>
+<text x="50" y="221" class="small" text-anchor="start">4人が漏れたら条件式を確認する</text>
+      </svg>
+      <p>仕様上の答えは3人だけなら0、4人だけなら4、5人だけなら5です。</p>
+    </figure>
+  <p>人が言語で書いた命令の並びを<strong>ソースコード</strong>といいます。言語の書き方に反する<strong>構文エラー</strong>と、処理は動いても仕様と結果が違う不具合を分けます。後者を調べるときも、入力と値の変化を記録して原因を絞る作業は<strong>デバッグ</strong>です。仕様が4人以上なのに「4より大きい」と書くと、4人ちょうどが漏れます。</p>
+</section>
+<section id="languages">
+  <h2>プログラム言語と、コードを処理する仕組みを分ける</h2>
+    <figure id="visual-language" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>書いたコードをどう処理するか</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-language-title visual-language-desc">
+        <title id="visual-language-title">書いたコードをどう処理するか</title>
+        <desc id="visual-language-desc">コンパイラ、実行前にまとめて変換、機械語・中間表現など。インタプリタ、命令を解釈して実行、処理中に解釈を進める。アセンブラ、アセンブリ言語を変換、機械語を生成する。組合せもある、翻訳した中間表現を、別の仕組みで実行する</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">コンパイラ</text>
+<text x="12" y="44" class="small" text-anchor="start">実行前にまとめて変換</text>
+<text x="12" y="62" class="small" text-anchor="start">機械語・中間表現など</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">インタプリタ</text>
+<text x="177" y="44" class="small" text-anchor="start">命令を解釈して実行</text>
+<text x="177" y="62" class="small" text-anchor="start">処理中に解釈を進める</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">アセンブラ</text>
+<text x="12" y="120" class="small" text-anchor="start">アセンブリ言語を変換</text>
+<text x="12" y="138" class="small" text-anchor="start">機械語を生成する</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">組合せもある</text>
+<text x="177" y="120" class="small" text-anchor="start">翻訳した中間表現を</text>
+<text x="177" y="138" class="small" text-anchor="start">別の仕組みで実行する</text>
+      </svg>
+      <p>実行方法は言語そのものと一対一ではありません。問題文の変換と実行の順を見ます。</p>
+    </figure>
+  <p>CPUが解釈する命令を<strong>機械語</strong>といい、命令に記号を使うアセンブリ言語は低水準言語の一つです。C、Java、Python、JavaScriptなどの高水準言語は、人が目的や処理を記述しやすい形を提供します。例えばCは組込みなどにも使われ、Javaでは中間表現を仮想マシンで実行する構成が一般的です。Pythonは集計や自動化などにも使われ、JavaScriptはブラウザ上のページ操作に使えます。</p>
+  <p>例えばC++はネイティブアプリケーションなど、C#は.NET上の開発、Fortranは数値計算、Rは統計分析、COBOLは事務処理、PHPやRubyはWeb開発で使われることがあります。用途には重なりがあり、チームで保守できるか、必要な環境やライブラリがあるかでも選びます。</p>
+  <p><strong>コーディング標準</strong>は、名前の付け方や字下げなど、チームで読みやすく保つための取り決めです。<strong>ライブラリ</strong>は再利用できる機能をまとめたもの。例えば日付の処理を呼び出せます。<strong>API</strong>は機能を使うための接点や約束で、どんな入力を渡すか、何が返るかなどを定めます。Webを介して機能を使う窓口はWeb APIの一例です。</p>
+  <p>全体を進めるメインルーチンと、人数の集計などの仕事を分けたサブルーチンを考えると、処理を役割ごとに整理できます。機能をモジュールとして分ければ、例えば集計の修正箇所を絞れます。ローコードやノーコードでは画面操作などで機能を組み立てますが、入出力と境界値の確認は同じです。</p>
+</section>
+<section id="markup">
+  <h2>HTML、CSS、XML、JSONは、どこで使うかを見分ける</h2>
+    <figure id="visual-markup" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>予約の情報を画面に見せるまで</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-markup-title visual-markup-desc">
+        <title id="visual-markup-title">予約の情報を画面に見せるまで</title>
+        <desc id="visual-markup-desc">HTML、見出しや段落を示す、「予約状況」の見出し。CSS、見た目を指定する、見出しの色や余白。XML、タグでデータを構造化、部屋と人数にタグ。JSON、値を交換する形式、部屋と人数を項目に</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">HTML</text>
+<text x="12" y="44" class="small" text-anchor="start">見出しや段落を示す</text>
+<text x="12" y="62" class="small" text-anchor="start">「予約状況」の見出し</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">CSS</text>
+<text x="177" y="44" class="small" text-anchor="start">見た目を指定する</text>
+<text x="177" y="62" class="small" text-anchor="start">見出しの色や余白</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">XML</text>
+<text x="12" y="120" class="small" text-anchor="start">タグでデータを構造化</text>
+<text x="12" y="138" class="small" text-anchor="start">部屋と人数にタグ</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">JSON</text>
+<text x="177" y="120" class="small" text-anchor="start">値を交換する形式</text>
+<text x="177" y="138" class="small" text-anchor="start">部屋と人数を項目に</text>
+      </svg>
+      <p>画面表示の構造と、システム同士で受け渡すデータを分けると、選ぶ形式の理由が見えてきます。</p>
+    </figure>
+  <p>HTMLで <code>&lt;h2&gt;予約状況&lt;/h2&gt;</code> と書くと、文字列が見出しだと示せます。CSSでその見出しの余白や色を指定し、JavaScriptでボタンを押したときの処理を組めます。タグ名・要素の入れ子・閉じ方などは、各形式の規則を確認します。</p>
+  <p>他のシステムに予約情報を渡すなら、XMLでは <code>&lt;予約&gt;&lt;人数&gt;4&lt;/人数&gt;&lt;/予約&gt;</code> のようなタグを定義できます。JSONでは <code>{"部屋":"A","人数":4}</code> のように名前と値の組で表せます。JSONはデータ交換形式で、HTMLやXMLのように開始・終了タグで項目を囲みません。SGMLは文書の構造を記述するための規格で、XMLはそこから機能を絞って作られました。</p>
+</section>
+<section id="pseudocode">
+  <h2>擬似言語は、条件を調べた行と値を更新した行を区別する</h2>
+  <p>擬似言語は、手順に集中して読むための表し方です。試験では問題文に個別の注記があれば、そちらを使います。注釈は読み手への説明で、実行する命令とは区別します。以下の自作例では配列の要素番号は1から始まり、引数 <code>人数</code> の要素数は4とします。</p>
+<pre class="trace-code"><code>○整数型: 対象人数の合計(整数型の配列: 人数)
+  整数型: 合計, i
+  合計 ← 0
+  for (i を 1 から 4 まで 1 ずつ増やす)
+    if (人数[i] が 4 以上)
+      合計 ← 合計 + 人数[i]
+    endif
+  endfor
+  return 合計</code></pre>
+    <figure id="visual-trace" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>配列の位置と、更新前後の合計を追う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 216" role="img" aria-labelledby="visual-trace-title visual-trace-desc">
+        <title id="visual-trace-title">配列の位置と、更新前後の合計を追う</title>
+        <desc id="visual-trace-desc">1番は2人で合計0のまま。2番は5人で合計5。3番は0人で5のまま。4番は4人で合計9。</desc>
+        <rect x="3" y="3" width="324" height="210" rx="7" class="panel"/>
+<text x="43" y="30" class="small blue" text-anchor="middle">i</text>
+<text x="103" y="30" class="small blue" text-anchor="middle">人数</text>
+<text x="177" y="30" class="small blue" text-anchor="middle">4人以上？</text>
+<text x="266" y="30" class="small blue" text-anchor="middle">合計の変化</text>
+<rect x="9" y="40" width="312" height="33" rx="7" class="panel"/>
+<text x="43" y="62" class="small" text-anchor="middle">1</text>
+<text x="103" y="62" class="small" text-anchor="middle">2</text>
+<text x="177" y="62" class="small" text-anchor="middle">偽</text>
+<text x="266" y="62" class="small" text-anchor="middle">0 → 0</text>
+<rect x="9" y="80" width="312" height="33" rx="7" class="blue-fill"/>
+<text x="43" y="102" class="small" text-anchor="middle">2</text>
+<text x="103" y="102" class="small" text-anchor="middle">5</text>
+<text x="177" y="102" class="small" text-anchor="middle">真</text>
+<text x="266" y="102" class="strong blue" text-anchor="middle">0 → 5</text>
+<rect x="9" y="120" width="312" height="33" rx="7" class="panel"/>
+<text x="43" y="142" class="small" text-anchor="middle">3</text>
+<text x="103" y="142" class="small" text-anchor="middle">0</text>
+<text x="177" y="142" class="small" text-anchor="middle">偽</text>
+<text x="266" y="142" class="small" text-anchor="middle">5 → 5</text>
+<rect x="9" y="160" width="312" height="33" rx="7" class="blue-fill"/>
+<text x="43" y="182" class="small" text-anchor="middle">4</text>
+<text x="103" y="182" class="small" text-anchor="middle">4</text>
+<text x="177" y="182" class="small" text-anchor="middle">真</text>
+<text x="266" y="182" class="strong blue" text-anchor="middle">5 → 9</text>
+      </svg>
+      <p>4人ちょうどは「4以上」に含まれます。真の行だけ、合計が変わります。</p>
+    </figure>
+  <p><strong>引数</strong>は呼出し側から渡す値、<strong>戻り値</strong>は <code>return</code> で呼出し側へ返す結果です。この関数を <code>{2, 5, 0, 4}</code> で呼ぶと9を返します。戻り値を使う関数と、受付の記録など動作をまとめた手続を区別して読みます。</p>
+  <p><code>←</code> は代入、<code>＝</code> は等しいかの比較です。<code>mod</code> は割った余りを求めます。論理型の値は <code>true</code> または <code>false</code> です。IPAの記述形式では、二項演算の範囲で乗除・剰余、加減、比較、<code>and</code>、<code>or</code> の順に優先されます。式が長ければ、括弧のまとまりを先に見ます。</p>
+  <p><code>if</code>、<code>elseif</code>、<code>else</code> が一つにつながっているときは、上から条件を確認し、最初に当てはまった処理だけを行います。独立した二つの <code>if</code> では、両方の処理が実行されることがあります。</p>
+</section>
+<section id="loops">
+  <h2>ループは「最初の判定」と「最後の更新」を確かめる</h2>
+    <figure id="visual-loop" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>残りが0のとき、処理の最初に何をする？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-loop-title visual-loop-desc">
+        <title id="visual-loop-title">残りが0のとき、処理の最初に何をする？</title>
+        <desc id="visual-loop-desc">前判定の while、条件が偽なら、処理は0回。後判定の do … while、先に処理し、次に条件を確認。回数を制御する for、開始、終端、増やし方を読む</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">前判定の while</text>
+<text x="50" y="41" class="small" text-anchor="start">条件が偽なら、処理は0回</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">後判定の do … while</text>
+<text x="50" y="101" class="small" text-anchor="start">先に処理し、次に条件を確認</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">回数を制御する for</text>
+<text x="50" y="161" class="small" text-anchor="start">開始、終端、増やし方を読む</text>
+      </svg>
+      <p>後判定では最初の処理が1回走ります。処理の中身と条件式を分けて数えます。</p>
+    </figure>
+  <p>配列 <code>{{2, 5}, {0, 4}}</code> を「行＝階、列＝部屋」と決め、番号を1から始めるなら、<code>人数[2, 1]</code> は2行目の1列目で0です。配列を読む範囲は「1から最後まで」と決め、要素番号の開始位置が異なる設問では条件を書き直します。</p>
+  <p>実際に紙に書くなら「いま見ている要素番号」「条件の結果」「更新後の値」を同じ行に置きます。何度も値が更新される問題は<a href="fe-variable-trace.html">基本情報の変数トレース</a>で続けて練習できます。</p>
+</section>
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　仕様の境界を試す</h3>
+    <p>4人以上を集計する仕様です。4人が漏れる不具合を直接確かめる入力はどれですか。</p>
+    <ol class="options"><li>4人の1件</li><li>5人の1件</li><li>0人の1件</li><li>10人の1件</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ア　4人の1件</strong></p><p>比較条件を「4より大きい」と誤っても5人や10人は通ります。4人を使うと、本来は足すべき境界値が漏れるか確認できます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　言語プロセッサ</h3>
+    <p>人が書いたコードを実行前に一括して別の形に変換します。この方式の説明に最も近いのはどれですか。</p>
+    <ol class="options"><li>タグ付け</li><li>リンク先の読込み</li><li>コンパイル</li><li>コードの字下げ</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　コンパイル</strong></p><p>実行前にソースを翻訳するのはコンパイルの考え方です。インタプリタの典型例では解釈しながら実行します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　形式の役割</h3>
+    <p>予約ページで、見出しの色を変えたい。見出しの文字や予約データはそのままにする場合、主に変更するのはどれですか。</p>
+    <ol class="options"><li>JSONの人数</li><li>CSSの指定</li><li>XMLのタグ名</li><li>擬似言語の戻り値</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>イ　CSSの指定</strong></p><p>色は表示の指定なのでCSSが担当します。HTMLの見出しは構造、JSONやXMLの予約情報はデータです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　要素番号を追う</h3>
+    <p>要素番号が1から始まる二次元配列 <code>{{7, 8}, {3, 6}}</code> があります。<code>値[2, 1]</code> はいくつですか。</p>
+    <ol class="options"><li>7</li><li>8</li><li>6</li><li>3</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　3</strong></p><p>最初に2行目の {3, 6} を選び、次にその1列目を選ぶので3です。行と列を逆にすると別の値を読んでしまいます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　集計の途中を確かめる</h3>
+    <p>本文の <code>対象人数の合計</code> に {6, 1, 4, 2} を渡します。3番目を処理した直後の合計はどれですか。</p>
+    <ol class="options"><li>6</li><li>7</li><li>10</li><li>11</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ウ　10</strong></p><p>最初の6は足し、2番目の1は足しません。3番目の4は条件に含まれ、6＋4＝10です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　最初に当てはまる条件</h3>
+    <p>人数が7です。1つの <code>if</code> の中で、先に「5以上なら通常室」、続く <code>elseif</code> で「7以上なら大部屋」と判定します。どの処理が行われますか。</p>
+    <ol class="options"><li>通常室だけ</li><li>大部屋だけ</li><li>通常室と大部屋の両方</li><li>どちらも行わない</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ア　通常室だけ</strong></p><p>7は最初の「5以上」を満たすので、そこで分岐が決まります。大部屋を先に判定するなら、条件の順序を入れ替えます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　最初から条件が偽</h3>
+    <p>カウンタの初期値は0です。処理はカウンタを1増やすこと、継続条件は「カウンタが0未満」です。前判定と後判定で処理はそれぞれ何回ですか。</p>
+    <ol class="options"><li>前判定1回、後判定0回</li><li>前判定0回、後判定1回</li><li>両方0回</li><li>両方1回</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>イ　前判定0回、後判定1回</strong></p><p>前判定では初期値0の時点で偽です。後判定では先に1増やしてから判定し、1は0未満でないのでそこで止まります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　余りで処理を選ぶ</h3>
+    <p><code>(番号 mod 2 ＝ 0) and (番号 ≥ 4)</code> を満たす番号はどれですか。</p>
+    <ol class="options"><li>2</li><li>3</li><li>5</li><li>6</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　6</strong></p><p>2で割り切れて、かつ4以上の値です。2は割り切れますが4未満、5は4以上ですが余りが1です。6は両方を満たします。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第12章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=43">IPA「ITパスポート試験シラバス Ver.6.5」プログラム言語とその他の言語</a></li>
+      <li><a href="https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2025r07_ip_qs.pdf">IPA「令和7年度 ITパスポート試験公開問題」巻末の擬似言語の記述形式</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/ps6vr7000000i9in-att/ip_programming_sample.pdf">IPA「擬似言語のサンプル問題と出題趣旨」</a></li>
+      <li><a href="https://html.spec.whatwg.org/multipage/semantics.html">WHATWG「HTML Standard」</a></li>
+      <li><a href="https://www.w3.org/TR/css-syntax-3/">W3C「CSS Syntax Module Level 3」</a></li>
+      <li><a href="https://www.w3.org/TR/xml/">W3C「Extensible Markup Language (XML) 1.0」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc8259.html">IETF「RFC 8259」JSON</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch12-1-algorithms-data-structures.html">12-1 アルゴリズムとデータ構造</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch12"></script>
+</body>
+</html>
