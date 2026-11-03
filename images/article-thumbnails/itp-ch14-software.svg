@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">第14章 ソフトウェア</title>
+  <desc id="desc">OS・バックアップ・表計算を示すシリーズの表紙。</desc>
+  <defs><linearGradient id="back" x2="1" y2="1"><stop stop-color="#102936"/><stop offset="1" stop-color="#155044"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#a5f5dd" stroke-opacity=".14"/></pattern></defs>
+  <path fill="url(#back)" d="M0 0h640v360H0z"/><path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <g font-family="system-ui,sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#a5f5dd"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#112b35">第14章</text>
+    <text x="38" y="120" font-size="49" fill="#f3fff9">ソフトウェア</text>
+    <text x="38" y="157" font-size="23" fill="#b7f5e4">OS・バックアップ・表計算</text>
+  </g>
+  <path d="M38 179h564" stroke="#a5f5dd" stroke-opacity=".5"/>
+  <g fill="#153643" stroke="#a5f5dd" stroke-width="5" stroke-linejoin="round">
+    <path d="M68 222h68l19 19h88v73H68z"/>
+    <path d="M84 264h140m-140 23h100" fill="none"/>
+    <path d="M266 270h109m-19-14 19 14-19 14" fill="none" stroke="#ffe28e"/>
+    <rect x="404" y="213" width="169" height="105" rx="9"/>
+    <path d="M404 247h169m-169 34h169m-113-34v71m56-71v71" fill="none"/>
+    <rect x="463" y="250" width="50" height="28" fill="#ffe28e" stroke="none"/>
+  </g>
+</svg>
