@@ -40,7 +40,7 @@
   }
 }
   </script>
-  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-parts">
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -73,6 +73,43 @@
     </tbody>
   </table>
   <p>設例では、雨60%、晴れ40%と仮定します。屋根を借りたときの利益は晴れ10,000円・雨8,000円、借りないときは晴れ15,000円・雨3,000円とします。期待利益は借りる案が 0.4 × 10,000 ＋ 0.6 × 8,000 ＝ <strong>8,800円</strong>、借りない案が 0.4 × 15,000 ＋ 0.6 × 3,000 ＝ <strong>7,800円</strong>です。期待値は仮定に基づく比較値です。当日の利益を示す値ではないので、赤字を避けたい場合は悪い場合の結果も見ます。</p>
+  <figure class="review-figure term-visual" id="visual-tree">
+    <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学園祭の模擬店</span></span><strong>屋根を借りるか、判断の枝をたどる</strong></figcaption>
+    <svg viewBox="0 0 330 247" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="visual-tree-title visual-tree-desc">
+      <title id="visual-tree-title">屋根を借りるかの決定木</title>
+      <desc id="visual-tree-desc">晴れ40パーセント、雨60パーセント。屋根ありは晴れ1万円、雨8千円で期待利益8,800円。屋根なしは晴れ1万5千円、雨3千円で期待利益7,800円。</desc>
+            <rect x="92" y="3" width="146" height="35" rx="9" class="blue-fill"/>
+      <text x="165" y="26" text-anchor="middle" class="strong">雨に備えてどうする？</text>
+      <path d="M165 38v13H81v13m84-13h84v13" class="wire"/>
+      <path d="M77 59l4 5 4-5" class="wire"/>
+      <path d="M245 59l4 5 4-5" class="wire"/>
+      <rect x="1" y="69" width="160" height="174" rx="9" class="panel"/>
+      <text x="81" y="93" text-anchor="middle" class="strong blue">屋根を借りる</text>
+      <path d="M81 101v6H13v52m0-38h14m-14 38h14" class="wire"/>
+      <g transform="translate(24 108)"><path d="M21 16a5 5 0 1 1-10 0 5 5 0 0 1 10 0zM16 3v5m0 16v5M3 16h5m16 0h5M7 7l4 4m10 10 4 4m0-18-4 4M11 21l-4 4" class="line orange"/></g>
+      <text x="56" y="123" text-anchor="start" class="small">晴 40%</text>
+      <text x="153" y="140" text-anchor="end" class="strong">10,000円</text>
+      <g transform="translate(24 146)"><path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 0 1 5 12H6zm3 4-2 5m9-5-2 5m9-5-2 5" class="line blue"/></g>
+      <text x="56" y="161" text-anchor="start" class="small">雨 60%</text>
+      <text x="153" y="178" text-anchor="end" class="strong">8,000円</text>
+      <rect x="8" y="192" width="146" height="42" rx="9" class="blue-fill"/>
+      <text x="81" y="210" text-anchor="middle" class="small">期待利益</text>
+      <text x="81" y="228" text-anchor="middle" class="strong blue">8,800円</text>
+      <rect x="169" y="69" width="160" height="174" rx="9" class="panel"/>
+      <text x="249" y="93" text-anchor="middle" class="strong orange">屋根を借りない</text>
+      <path d="M249 101v6H181v52m0-38h14m-14 38h14" class="wire"/>
+      <g transform="translate(192 108)"><path d="M21 16a5 5 0 1 1-10 0 5 5 0 0 1 10 0zM16 3v5m0 16v5M3 16h5m16 0h5M7 7l4 4m10 10 4 4m0-18-4 4M11 21l-4 4" class="line orange"/></g>
+      <text x="224" y="123" text-anchor="start" class="small">晴 40%</text>
+      <text x="321" y="140" text-anchor="end" class="strong">15,000円</text>
+      <g transform="translate(192 146)"><path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 0 1 5 12H6zm3 4-2 5m9-5-2 5m9-5-2 5" class="line blue"/></g>
+      <text x="224" y="161" text-anchor="start" class="small">雨 60%</text>
+      <text x="321" y="178" text-anchor="end" class="strong">3,000円</text>
+      <rect x="176" y="192" width="146" height="42" rx="9" class="orange-fill"/>
+      <text x="249" y="210" text-anchor="middle" class="small">期待利益</text>
+      <text x="249" y="228" text-anchor="middle" class="strong orange">7,800円</text>
+    </svg>
+    <p>最初の枝は自分で選ぶ対策です。次の枝はどちらの対策でも起こり得る天気です。各案の晴れ・雨の利益に確率を掛け、二つを足して比べます。</p>
+  </figure>
 </section>
 <section id="graphs">
     <h2>何を比べるかでグラフが決まる</h2>

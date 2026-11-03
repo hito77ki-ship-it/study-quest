@@ -40,7 +40,7 @@
   }
 }
   </script>
-  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-parts">
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -88,6 +88,33 @@
   <p><strong>目標利益がある場合</strong>は固定費と目標利益を足して、1杯当たりの限界利益で割ります。5,000円を残すには (12,600 ＋ 5,000) ÷ 210 ＝ 約83.81杯。杯数は切り上げて84杯です。83杯では4,830円、84杯では5,040円となり、切り上げが必要なことを検算できます。損益分岐点を売上高で出すときは、固定費 ÷ (1 − 変動費率) です。この例の変動費率は140 ÷ 350 ＝ 40%なので、12,600 ÷ 0.6 ＝ 21,000円です。</p>
   <h3>粗利益・営業利益・現金を同じ数字で追う</h3>
   <p>架空の店の売上高が80,000円、売上原価が32,000円、販売費及び一般管理費が28,000円、支払利息が2,000円とします。粗利益（売上総利益）は48,000円、営業利益は20,000円です。ほかに営業外損益がなければ経常利益は18,000円です。営業利益率を聞かれたら20,000 ÷ 80,000 ＝ 25%と、分母は売上高にします。損益分岐点の「固定費／変動費」と、損益計算書の「売上原価／販管費」は分類の目的が異なります。</p>
+  <figure class="review-figure term-visual" id="visual-statements">
+    <figcaption><span class="term-visual-label">Study Questの自作図解 <span>学園祭の模擬店</span></span><strong>同じ売上を、3つの表で見る</strong></figcaption>
+    <svg viewBox="0 0 330 305" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="visual-statements-title visual-statements-desc">
+      <title id="visual-statements-title">後払いの売上と三つの財務諸表</title>
+      <desc id="visual-statements-desc">販売日に売上3,000円と原価1,200円を計上する。粗利益1,800円、売掛金3,000円増、在庫1,200円減、純資産1,800円増。この取引の現金収入は販売日に0円、翌週に3,000円。</desc>
+            <rect x="1" y="5" width="328" height="48" rx="9" class="blue-fill"/>
+      <g transform="translate(9 13)"><path d="M1 14h30l-4-9H5L1 14zm3 0v15h24V14M3 18c3 3 6 3 9 0 3 3 6 3 9 0 3 3 6 3 9 0M10 29v-7h8v7" class="line blue"/></g>
+      <text x="50" y="27" text-anchor="start" class="strong">販売日　商品を3,000円で引き渡す</text>
+      <text x="50" y="45" text-anchor="start" class="small">原価は1,200円。代金は翌週に受け取る</text>
+      <rect x="1" y="63" width="328" height="75" rx="9" class="panel"/>
+      <g transform="translate(12 84)"><path d="M7 2h13l6 6v21H7V2zM20 2v6h6M11 13h11m-11 5h11m-11 5h8" class="line blue"/></g>
+      <text x="54" y="84" text-anchor="start" class="strong blue">損益計算書（PL）</text>
+      <text x="54" y="105" text-anchor="start" class="small">売上 +3,000円 ／ 原価 1,200円</text>
+      <text x="54" y="124" text-anchor="start" class="small">粗利益 +1,800円</text>
+      <rect x="1" y="145" width="328" height="75" rx="9" class="panel"/>
+      <g transform="translate(12 166)"><path d="M7 2h13l6 6v21H7V2zM20 2v6h6M11 13h11m-11 5h11m-11 5h8" class="line orange"/></g>
+      <text x="54" y="166" text-anchor="start" class="strong orange">貸借対照表（BS）</text>
+      <text x="54" y="187" text-anchor="start" class="small">売掛金 +3,000円 ／ 在庫 −1,200円</text>
+      <text x="54" y="206" text-anchor="start" class="small">現金の増減なし ／ 純資産 +1,800円</text>
+      <rect x="1" y="227" width="328" height="75" rx="9" class="panel"/>
+      <g transform="translate(12 248)"><path d="M5 9h22v18H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h19v4m3 7h-7v6h7" class="line blue"/></g>
+      <text x="54" y="248" text-anchor="start" class="strong blue">キャッシュフロー計算書（CF）</text>
+      <text x="54" y="269" text-anchor="start" class="small">販売日 0円 → 翌週 +3,000円</text>
+      <text x="54" y="288" text-anchor="start" class="small">この取引に関する現金の動き</text>
+    </svg>
+    <p>在庫代は前週までに支払い済みで、税金や他の取引は考えない設例です。販売日に利益が生まれ、入金まで残るのは売掛金です。翌週に入金すると、売掛金が現金に変わります。</p>
+  </figure>
   <p>貸借対照表では<strong>資産＝負債＋純資産</strong>。例えば資産150,000円、負債90,000円なら純資産は60,000円で、この単純な例の自己資本比率は40%です。流動資産60,000円・流動負債40,000円なら流動比率は150%。前者は資金の構成、後者は短期の支払余力を見る指標です。</p>
   <p>現金で買った器具を資産に計上する場合、現金が減るのは購入時です。例えば36,000円の器具を3年、残存価額0円、定額法で使う設例なら、年12,000円を減価償却費にします。毎年12,000円の現金が出るという意味ではありません。<strong>利益を計算する表と、入出金を追う表</strong>を分ける理由です。</p>
 </section>

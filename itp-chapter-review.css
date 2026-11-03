@@ -107,3 +107,47 @@ html[data-theme="dark"] .itp-review .review-figure {
   .itp-review .review-part-grid { grid-template-columns: 1fr; }
   .itp-review .review-roadmap li + li::before { left: 50%; top: -1.2rem; transform: translateX(-50%) rotate(135deg); }
 }
+
+.itp-review .term-visual { scroll-margin-top: 4rem; }
+.term-visual-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .2rem .7rem;
+  color: var(--review-link);
+  font-size: .78rem;
+  font-weight: 750;
+}
+.term-visual-label span { color: var(--review-muted); font-weight: 500; }
+.itp-review .term-visual figcaption strong {
+  display: block;
+  margin-top: .15rem;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+.itp-review .term-visual svg {
+  width: min(100%, 490px);
+  font-size: 14px;
+  margin-block: .85rem;
+}
+.term-visual svg .small { font-size: 12px; }
+.term-visual svg .strong { font-weight: 750; }
+.term-visual svg text.blue { fill: var(--chart-a); }
+.term-visual svg text.orange { fill: var(--chart-b); }
+.term-visual svg .panel { fill: var(--sq-surface, var(--review-panel)); stroke: var(--review-line); }
+.term-visual svg .wire { fill: none; stroke: var(--review-muted); stroke-width: 1.25; }
+.term-visual svg .line { fill: none; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.term-visual svg .line.blue, .term-visual svg .blue-fill { stroke: var(--chart-a); }
+.term-visual svg .line.orange, .term-visual svg .orange-fill { stroke: var(--chart-b); }
+.term-visual svg .blue-fill { fill: var(--chart-a); fill-opacity: .09; }
+.term-visual svg .orange-fill { fill: var(--chart-b); fill-opacity: .11; }
+.term-visual svg .dot-fast { fill: var(--chart-a); }
+.term-visual svg .dot-orange { fill: var(--chart-b); }
+.term-visual svg .dot-other { fill: none; stroke: var(--review-muted); }
+.term-visual > p {
+  margin: 0;
+  padding-top: .65rem;
+  border-top: 1px solid var(--review-line);
+  color: var(--review-muted);
+  font-size: .9rem;
+}
