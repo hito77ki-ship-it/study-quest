@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch11-1-discrete-mathematics.html">
+  <title>ITパスポート 11-1 離散数学と応用数学｜スタディクエスト</title>
+  <meta name="description" content="図書館の鍵や空室を題材に、2進数・集合・論理演算・確率と統計・グラフ理論を図解と自作例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 11-1 離散数学と応用数学">
+  <meta property="og:description" content="図書館の鍵や空室を題材に、2進数・集合・論理演算・確率と統計・グラフ理論を図解と自作例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch11-1-discrete-mathematics.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 11-1 離散数学と応用数学",
+  "description": "図書館の鍵や空室を題材に、2進数・集合・論理演算・確率と統計・グラフ理論を図解と自作例題で学びます。",
+  "url": "https://study-quest.net/itp-ch11-1-discrete-mathematics.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch11-1-discrete-mathematics.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第11章 基礎理論</p>
+    <h1>ITパスポート 11-1 離散数学と応用数学</h1>
+    <p>図書館の鍵や空室を題材に、2進数・集合・論理演算・確率と統計・グラフ理論を図解と自作例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#numbers">進数と補数</a></li><li><a href="#logic">集合と論理演算</a></li><li><a href="#probability">確率と統計</a></li><li><a href="#models">数値計算とグラフ理論</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+
+<section id="numbers">
+  <h2>2進数・8進数・16進数を、位の重みで読む</h2>
+  <p>図書館の鍵に番号を付けます。10進数では位の重みが1、10、100と増えます。2進数では1、2、4、8と倍になり、各位は0か1です。<strong>基数</strong>は位が一つ上がると重みが何倍になるかを決める数です。連続する量をアナログ、決めた段階や値で表すものをデジタルと考えます。</p>
+    <figure id="visual-bits" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>13番の鍵を2進数にする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 124" role="img" aria-labelledby="visual-bits-title visual-bits-desc">
+        <title id="visual-bits-title">13番の鍵を2進数にする</title>
+        <desc id="visual-bits-desc">16、8、4、2、1の位に0、1、1、0、1を置く。1の位の重みを足すと13。</desc>
+        <rect x="4" y="7" width="61" height="74" rx="7" class="panel"/>
+<text x="34" y="30" class="small" text-anchor="middle">16の位</text>
+<text x="34" y="60" class="strong" text-anchor="middle">0</text>
+<rect x="69" y="7" width="61" height="74" rx="7" class="blue-fill"/>
+<text x="99" y="30" class="small" text-anchor="middle">8の位</text>
+<text x="99" y="60" class="strong blue" text-anchor="middle">1</text>
+<rect x="134" y="7" width="61" height="74" rx="7" class="blue-fill"/>
+<text x="164" y="30" class="small" text-anchor="middle">4の位</text>
+<text x="164" y="60" class="strong blue" text-anchor="middle">1</text>
+<rect x="199" y="7" width="61" height="74" rx="7" class="panel"/>
+<text x="229" y="30" class="small" text-anchor="middle">2の位</text>
+<text x="229" y="60" class="strong" text-anchor="middle">0</text>
+<rect x="264" y="7" width="61" height="74" rx="7" class="blue-fill"/>
+<text x="294" y="30" class="small" text-anchor="middle">1の位</text>
+<text x="294" y="60" class="strong blue" text-anchor="middle">1</text>
+<text x="165" y="111" class="strong orange" text-anchor="middle">8 ＋ 4 ＋ 1 ＝ 13</text>
+      </svg>
+      <p>数字が0の位は足しません。左端の0を外すと1101です。</p>
+    </figure>
+  <p>10進整数13を2で繰り返し割ると余りは1、0、1、1です。最後の余りから逆向きに読んで1101になります。小数点の右は1/2、1/4、1/8の位です。例えば2進数0.101は1/2＋1/8＝0.625。逆に0.625を2倍して整数部を順に取り出すと1、0、1です。10進数の小数が2進数で有限桁になるとは限りません。</p>
+  <p>2進数は整数部分の右から3桁ずつ区切ると8進数、4桁ずつなら16進数にできます。例えば10101110は8進数で010｜101｜110なので256、16進数で1010｜1110なのでAEです。16進数のA〜Fは10〜15。2進数の加算では1＋1＝10となり、左に繰り上がります。</p>
+  <p>4ビットの<strong>2の補数</strong>では左端の重みを−8と考えます。1101は−8＋4＋1＝−3。＋3の0011を反転した1100が1の補数、そこに1を足した1101が2の補数です。4ビットの符号なしは0〜15、2の補数での符号付きは−8〜7です。桁幅と表現方法を設問で確認します。</p>
+</section>
+<section id="logic">
+  <h2>条件検索を、集合と真理値表で確かめる</h2>
+  <p>「空きがあり電源もある部屋」を探すときは、二つの集合の共通部分を求めます。<strong>和集合</strong>は少なくとも一方、<strong>積集合</strong>は両方、<strong>補集合</strong>は決めた全体のうちその条件に入らないものです。</p>
+    <figure id="visual-sets" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>二つの条件に入る部屋をベン図で見る</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 145" role="img" aria-labelledby="visual-sets-title visual-sets-desc">
+        <title id="visual-sets-title">二つの条件に入る部屋をベン図で見る</title>
+        <desc id="visual-sets-desc">A室は空きだけ、B室は空きと電源の両方、C室は電源だけ、D室はどちらもなし。</desc>
+        <rect x="5" y="7" width="320" height="133" rx="7" class="panel"/>
+<circle cx="125" cy="73" r="58" class="blue-fill"/>
+<circle cx="205" cy="73" r="58" class="orange-fill"/>
+<text x="95" y="55" class="small blue" text-anchor="middle">空きあり</text>
+<text x="235" y="55" class="small orange" text-anchor="middle">電源あり</text>
+<text x="95" y="85" class="strong blue" text-anchor="middle">A室</text>
+<text x="165" y="85" class="strong" text-anchor="middle">B室</text>
+<text x="235" y="85" class="strong orange" text-anchor="middle">C室</text>
+<text x="294" y="109" class="small" text-anchor="middle">D室</text>
+      </svg>
+      <p>「空きあり AND 電源あり」は重なりにあるB室です。ORならA・B・C、XORなら片方だけに入るA・Cが該当します。</p>
+    </figure>
+  <table>
+    <caption>AとBの条件の結果を一行ずつ調べる</caption>
+    <thead><tr><th scope="col">A</th><th scope="col">B</th><th scope="col">AND</th><th scope="col">OR</th><th scope="col">XOR</th><th scope="col">NOT A</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">0</th><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><th scope="row">0</th><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><th scope="row">1</th><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><th scope="row">1</th><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    </tbody>
+  </table>
+  <p>「空きあり AND（電源あり OR モニターあり）」では、かっこの内側から考えます。NANDはANDの否定、NORはORの否定です。例えば「空きも電源もない」は NOT（空きあり OR 電源あり）で表せます。</p>
+</section>
+<section id="probability">
+  <h2>順番があるか、平均の周りにどれだけ散らばるか</h2>
+  <p>4人から案内役と受付役を選ぶなら、役割が違うので4×3＝12通りの<strong>順列</strong>です。役割を決めずに当番を2人選ぶ<strong>組合せ</strong>なら、同じ2人を逆順に数えた分を除いて6通りです。6組が等確率で特定の1人を含む組は3つなら、その人が選ばれる確率は3÷6＝1/2です。</p>
+    <figure id="visual-spread" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>平均待ち時間が同じ二つの窓口</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" role="img" aria-labelledby="visual-spread-title visual-spread-desc">
+        <title id="visual-spread-title">平均待ち時間が同じ二つの窓口</title>
+        <desc id="visual-spread-desc">窓口A、4分、5分、6分、平均5分、分散 2÷3。窓口B、2分、5分、8分、平均5分、分散 18÷3</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">窓口A</text>
+<text x="12" y="44" class="small" text-anchor="start">4分、5分、6分</text>
+<text x="12" y="62" class="small" text-anchor="start">平均5分、分散 2÷3</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">窓口B</text>
+<text x="177" y="44" class="small" text-anchor="start">2分、5分、8分</text>
+<text x="177" y="62" class="small" text-anchor="start">平均5分、分散 18÷3</text>
+      </svg>
+      <p>平均からの差を二乗し、この例では観測数3で割ります。標準偏差は分散の平方根なので、待ち時間と同じ「分」の単位で比べられます。</p>
+    </figure>
+  <p><strong>中央値</strong>は小さい順に並べた中央の値（偶数個なら中央2値の平均）、<strong>最頻値</strong>は最も多く出る値です。度数分布表とヒストグラムでは、どの区間に何件入るかを見ます。偏差値は平均との差を標準偏差で割った値を、通常は平均50・標準偏差10の尺度に直したものです。</p>
+  <p>相関係数は−1から1で、二つの数値の直線的な関係の向きと強さを表します。例えば来館者と貸出が一緒に増えても、試験期間など第三の要因が影響しているかもしれません。回帰分析では、説明変数を用いて目的変数との関係を表し、予測などに使います。既存の<a href="itp-ch02-2-data-use.html#textbook-coverage">統計とデータ利活用の復習</a>にもつながります。</p>
+</section>
+<section id="models">
+  <h2>ベクトル・行列・微分積分・グラフ理論の役割を分ける</h2>
+  <p>月曜と火曜の利用人数を、行は部屋、列は日付として記録します。A室が（3, 4）、B室が（2, 5）なら、列に沿って足すと月曜5人・火曜9人です。別館も同じ並びにすると、同じ位置の値を足して両館の記録をまとめられます。測定結果から数値で近似する数値計算と、例えば式 2x＋3x を 5x にまとめる数式処理も区別します。</p>
+  <table>
+    <caption>図書館で何を表したいか</caption>
+    <thead><tr><th scope="col">考え方</th><th scope="col">使い方</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ベクトル・行列</th><td>午前と午後の利用者数を（10, 15）と並べるのがベクトルの例。複数の部屋の行を重ねれば行列として扱える。</td></tr>
+<tr><th scope="row">微分・積分</th><td>入館者の累計がどれだけ速く増えるかは変化率。時間ごとの入館者数の時間当たりの増え方を積み上げて人数を求める考え方は積分。</td></tr>
+<tr><th scope="row">尺度と誤差</th><td>部屋名は分類、満足度の段階は順序、摂氏温度は差を、待ち時間は差と比を扱える。比較前に測定方法や丸めの影響を確認する。</td></tr>
+<tr><th scope="row">グラフ理論</th><td>場所を頂点（ノード）、通路を辺（エッジ）として表す。一方通行には向きがあり、所要時間を重みにできる。</td></tr>
+<tr><th scope="row">待ち行列と最適化</th><td>到着と処理の速さで待ちが生じる。職員数や予算などの制約の下で、待ち時間が短くなる案を比べる。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-route" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>階段と連絡通路の所要時間を比べる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 150" role="img" aria-labelledby="visual-route-title visual-route-desc">
+        <title id="visual-route-title">階段と連絡通路の所要時間を比べる</title>
+        <desc id="visual-route-desc">入口から受付への直通は7分。閲覧室を経由すると入口から3分、受付へ2分で合計5分。</desc>
+        <path d="M49 40H283M49 42L163 108 283 42" class="wire" />
+<text x="165" y="29" class="small" text-anchor="middle">7分</text>
+<text x="86" y="86" class="small" text-anchor="middle">3分</text>
+<text x="250" y="86" class="small" text-anchor="middle">2分</text>
+<rect x="8" y="30" width="69" height="25" rx="7" class="blue-fill"/>
+<text x="42" y="47" class="strong blue" text-anchor="middle">入口</text>
+<rect x="253" y="30" width="69" height="25" rx="7" class="orange-fill"/>
+<text x="287" y="47" class="strong orange" text-anchor="middle">受付</text>
+<rect x="124" y="101" width="83" height="27" rx="7" class="panel"/>
+<text x="165" y="119" class="strong" text-anchor="middle">閲覧室</text>
+      </svg>
+      <p>線の長さで決めず、辺に書いた時間の合計を比較します。ここでは閲覧室経由が5分です。</p>
+    </figure>
+</section>
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　鍵の番号を読む</h3>
+    <p>2進数10110の10進数での値はいくつですか。</p>
+    <ol class="options"><li>18</li><li>20</li><li>22</li><li>24</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ウ　22</strong></p><p>1が立つ16、4、2の位を足して22です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　入館者数を加算</h3>
+    <p>符号なしの2進数1011＋0110の結果はどれですか。</p>
+    <ol class="options"><li>10001</li><li>10011</li><li>1101</li><li>1111</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ア　10001</strong></p><p>右から計算します。2桁目で1＋1になって繰り上がり、その繰上りが上位にも伝わります。10進数でも11＋6＝17です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　状態コードを読む</h3>
+    <p>16進数2Dを8ビットの2進数にするとどれですか。</p>
+    <ol class="options"><li>00101110</li><li>11010010</li><li>01001101</li><li>00101101</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>エ　00101101</strong></p><p>2は0010、Dは13なので1101。順に連結すると00101101です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　符号付きの数</h3>
+    <p>4ビットの2の補数で1010が表す値はどれですか。</p>
+    <ol class="options"><li>−8</li><li>−6</li><li>−2</li><li>10</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>イ　−6</strong></p><p>左端は−8、1が立つ残りの位は2です。−8＋2＝−6。符号なしなら10になります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　検索条件を組み立てる</h3>
+    <p>「1階または2階で、電源あり」の部屋を探す式はどれですか。</p>
+    <ol class="options"><li>1階 AND 2階 AND 電源</li><li>1階 OR（2階 AND 電源）</li><li>（1階 OR 2階）AND 電源</li><li>NOT（1階 OR 2階）AND 電源</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ウ　（1階 OR 2階）AND 電源</strong></p><p>まず階のどちらかを満たすかを調べ、さらに電源ありを求めます。イでは電源なしの1階も通ります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　役割を区別する</h3>
+    <p>5人から案内役と点検役を1人ずつ選びます。同じ人は両方に選べない場合、何通りですか。</p>
+    <ol class="options"><li>20通り</li><li>10通り</li><li>5通り</li><li>25通り</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ア　20通り</strong></p><p>案内役は5通り、残る点検役は4通りなので5×4＝20です。役割を区別せず2人の組を選ぶなら10通りです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　分散と標準偏差</h3>
+    <p>待ち時間が3、5、7分です。3件全体について分散を求めるとどれですか。</p>
+    <ol class="options"><li>2分</li><li>2分²</li><li>8分²</li><li>8÷3分²</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>エ　8÷3分²</strong></p><p>平均は5分。偏差の二乗は4、0、4なので、分散は8÷3分²です。標準偏差はその平方根で、単位は分です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　通路の時間を比べる</h3>
+    <p>直通6分と、3分・2分の2区間を通る経路があります。待ち時間なしなら最短は何分ですか。</p>
+    <ol class="options"><li>3分</li><li>5分</li><li>6分</li><li>11分</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>イ　5分</strong></p><p>経由の合計は3＋2＝5分で、直通6分より短くなります。グラフでは各辺の重みを合計します。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第11章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=38">IPA「ITパスポート試験シラバス Ver.6.5」基礎理論</a></li>
+    </ul>
+    <p><a href="itp-ch10-1-system-audit.html">前の章 10-1 システム監査と内部統制</a> ／ 次へ <a href="itp-ch11-2-information-theory.html">11-2 情報に関する理論とAI</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261103-itp-ch11"></script>
+</body>
+</html>

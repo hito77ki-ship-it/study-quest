@@ -53,7 +53,7 @@
     <p>大学図書館の自習室予約を例に、E-R図・DFD・BPMN、BPRとBPM、クラウドの選び方を図解と例題で学びます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#strategy">情報システム戦略</a></li><li><a href="#process">E-R図・DFD・BPMN</a></li><li><a href="#improvement">業務改善</a></li><li><a href="#solutions">ソリューション</a></li><li><a href="#evaluation">活用促進・評価</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#strategy">情報システム戦略</a></li><li><a href="#process">E-R図・DFD・BPMN</a></li><li><a href="#improvement">業務改善</a></li><li><a href="#solutions">ソリューション</a></li><li><a href="#evaluation">活用促進・評価</a></li><li><a href="#quiz">例題6問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#model-and-delivery">データの対応関係とクラウドの使い方</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="strategy">
   <h2>情報システム戦略は、大学の目的から考える</h2>
   <p>大学図書館で「窓口には列があるのに、別の部屋には空席がある」という状況を考えます。大学の目的を「空いている席を公平に使えるようにする」と置きます。その目的を支える<strong>情報システム戦略</strong>の一例は、窓口とWebで共通の空席情報を使い、どちらから予約しても同じルールを適用することです。具体的な画面や製品は、その方針を決めた後で選びます。</p>
@@ -367,6 +367,48 @@
   </table><p class="note">2026年11月3日照合。</p>
     <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=27">IPA「ITパスポート試験シラバス Ver.6.5」</a></li><li><a href="https://www.meti.go.jp/policy/netsecurity/downloadfiles/guide3.0.pdf">経済産業省・IPA「サイバーセキュリティ経営ガイドライン」</a></li></ul>
   </section>
+<section id="model-and-delivery">
+  <h2>データの対応関係とクラウドの使い方</h2>
+    <figure id="model-and-delivery-visual" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の大学図書館</span></span><strong>データの対応関係とクラウドの使い方</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="model-and-delivery-visual-title model-and-delivery-visual-desc">
+        <title id="model-and-delivery-visual-title">データの対応関係とクラウドの使い方</title>
+        <desc id="model-and-delivery-visual-desc">データ同士を結ぶ、学生一人 ↔ 利用カード一枚。実現方法を考える、課題に合う製品と導入支援を選ぶ。使う資源を決める、必要に応じて計算資源を利用</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">データ同士を結ぶ</text>
+<text x="50" y="41" class="small" text-anchor="start">学生一人 ↔ 利用カード一枚</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">実現方法を考える</text>
+<text x="50" y="101" class="small" text-anchor="start">課題に合う製品と導入支援を選ぶ</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">使う資源を決める</text>
+<text x="50" y="161" class="small" text-anchor="start">必要に応じて計算資源を利用</text>
+      </svg>
+      <p>架空の場面を使った編集部の図解です。</p>
+    </figure>
+  <table>
+    <caption>データの対応関係とクラウドの使い方の見分け方</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な例で確かめる</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">1対1</th><td>左と右の両側から見て、相手が最大一つの関係。ここでは学生一人にカードが一枚、カード一枚は一人に割り当てると仮定する。</td></tr>
+<tr><th scope="row">ソリューションビジネス</th><td>顧客の課題に合わせ、分析・製品・導入・運用支援などを組み合わせて提供する事業。</td></tr>
+<tr><th scope="row">クラウドコンピューティング</th><td>ネットワーク経由で、共有された計算資源を必要に応じて利用できる形。特定の機器の場所を借りるだけの場合とは利用の性質が違う。</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><h3>解説つきの自作例題</h3><p>学生一人は予約を何件でも作れ、各予約は一人の学生に属する。学生と予約は1対1か、1対多か？</p>
+    <details><summary>解答と解説</summary><p>1対多です。予約側から学生を見ると一人でも、学生側には複数件が対応できます。両側から数えるのがポイントです。</p></details>
+  </div>
+  <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://csrc.nist.gov/pubs/sp/800/145/final">NIST クラウドコンピューティングの定義</a></p>
+</section>
+
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解と例題は編集部の自作です。章立ては<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第6章に合わせています。</p>
