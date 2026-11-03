@@ -40,7 +40,7 @@
   }
 }
   </script>
-  <link rel="stylesheet" href="itp-chapter-review.css">
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-figures">
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -102,11 +102,27 @@
   <section id="technology">
     <h2>必要な機能から逆算して、技術開発を並べる</h2>
     <p>経営側が決めたのは「短い休憩時間で受け取れる店にする」という方向です。技術側では「枠の定員を超えない」「受付で予約を照合できる」という機能を先に挙げ、使える技術と店の人員を見比べます。<strong>技術ロードマップ</strong>には、必要になる機能と、それを実現する技術や検証を時間軸で並べます。</p>
-    <ol>
-      <li><strong>3週間前　仕組みが成立するか確かめる。</strong> 架空の予約データを使い、最後の1枠に2台から同時に申し込んでも、確定が1件だけになるかを試します。技術の実現可能性を確かめる小規模な試行が<strong>PoC（概念実証）</strong>です。</li>
-      <li><strong>1週間前　現場での使い方を試す。</strong> 少人数で受取番号の照合を練習し、待ち時間や渡し間違いを測ります。Wi-Fiが不安定なら、予約番号を紙でも確認できる手順を用意します。</li>
-      <li><strong>当日　条件を満たした形で運用する。</strong> 枠の上限と受取方法を案内し、来場者数や受取結果を記録します。試作で要件を満たせなければ、枠数や受付方法を見直します。</li>
-    </ol>
+    <figure class="review-figure" aria-labelledby="roadmap-caption">
+      <figcaption id="roadmap-caption"><strong>学園祭の予約システム　技術ロードマップの例</strong></figcaption>
+      <ol class="review-roadmap" role="list">
+        <li>
+          <span class="review-roadmap-when">3週間前</span>
+          <h3>試作で確認</h3>
+          <p>最後の1枠に同時に申し込んでも、確定が1件だけになるかを試す。</p>
+        </li>
+        <li>
+          <span class="review-roadmap-when">1週間前</span>
+          <h3>現場で練習</h3>
+          <p>受取番号を照合し、待ち時間と渡し間違いを測る。紙での照合手順も用意する。</p>
+        </li>
+        <li>
+          <span class="review-roadmap-when">学園祭当日</span>
+          <h3>運用と記録</h3>
+          <p>枠の上限と受取方法を案内し、来場者数と受取結果を記録する。</p>
+        </li>
+      </ol>
+    </figure>
+    <p>3週間前のように、架空データで技術が成立するかを小さく試すのが<strong>PoC（概念実証）</strong>です。必要な条件を満たせないと分かった段階で、枠数や受付方法を見直します。</p>
   </section>
 
   <section id="quiz">
