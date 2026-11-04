@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">第15章 情報デザインと情報メディア</title>
+  <desc id="desc">伝わる画面と、音・画像・動画を示すシリーズの表紙。</desc>
+  <defs><linearGradient id="back" x2="1" y2="1"><stop stop-color="#102936"/><stop offset="1" stop-color="#155044"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#a5f5dd" stroke-opacity=".14"/></pattern></defs>
+  <path fill="url(#back)" d="M0 0h640v360H0z"/><path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <g font-family="system-ui,sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#a5f5dd"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#112b35">第15章</text>
+    <text x="38" y="120" font-size="40" fill="#f3fff9">情報デザインと情報メディア</text>
+    <text x="38" y="157" font-size="23" fill="#b7f5e4">伝わる画面と、音・画像・動画</text>
+  </g>
+  <path d="M38 179h564" stroke="#a5f5dd" stroke-opacity=".5"/>
+  <g fill="#153643" stroke="#a5f5dd" stroke-width="5" stroke-linejoin="round">
+    <rect x="76" y="209" width="167" height="111" rx="10"/>
+    <path d="M76 238h167m-145 23h122m-122 19h63m-63 19h85" fill="none"/>
+    <circle cx="95" cy="224" r="3.5" fill="#ffe28e" stroke="none"/>
+    <path d="M269 266h22l12-22 16 42 18-54 14 34h26" fill="none" stroke="#ffe28e"/>
+    <rect x="405" y="209" width="159" height="111" rx="10"/>
+    <path d="M470 239l41 25-41 25z" fill="#ffe28e" stroke="none"/>
+  </g>
+</svg>
