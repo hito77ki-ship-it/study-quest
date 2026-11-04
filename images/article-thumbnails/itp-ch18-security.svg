@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">第18章 情報セキュリティ</title>
+  <desc id="desc">名簿を守る、鍵とルールを示すシリーズの表紙。</desc>
+  <defs><linearGradient id="back" x2="1" y2="1"><stop stop-color="#102936"/><stop offset="1" stop-color="#155044"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#a5f5dd" stroke-opacity=".14"/></pattern></defs>
+  <path fill="url(#back)" d="M0 0h640v360H0z"/><path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <g font-family="system-ui,sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#a5f5dd"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#112b35">第18章</text>
+    <text x="38" y="120" font-size="56" fill="#f3fff9">情報セキュリティ</text>
+    <text x="38" y="157" font-size="23" fill="#b7f5e4">名簿を守る、鍵とルール</text>
+  </g>
+  <path d="M38 179h564" stroke="#a5f5dd" stroke-opacity=".5"/>
+  <g fill="#153643" stroke="#a5f5dd" stroke-width="5" stroke-linejoin="round">
+    <rect x="91" y="210" width="131" height="114" rx="9"/>
+    <path d="M91 239h131m-103 21h73m-73 20h62m-62 20h85" fill="none"/>
+    <path d="M232 266h68m-12-10 12 10-12 10" fill="none" stroke="#ffe28e"/>
+    <path d="M406 197c-34 16-56 23-83 25v40c0 36 43 65 83 77 40-12 83-41 83-77v-40c-27-2-49-9-83-25z"/>
+    <path d="M391 263v-9a15 15 0 0 1 30 0v9" fill="none" stroke="#ffe28e"/>
+    <rect x="382" y="263" width="48" height="36" rx="5" fill="#ffe28e" stroke="none"/>
+    <path d="M406 275v11" stroke="#153643" stroke-linecap="round"/>
+  </g>
+</svg>

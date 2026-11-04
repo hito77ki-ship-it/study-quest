@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch18-2-security-management.html">
+  <title>ITパスポート 18-2 情報セキュリティ管理｜スタディクエスト</title>
+  <meta name="description" content="文化祭の受付で扱う名簿を例に、リスク評価と対応、ISMS、ポリシー、SOC・CSIRTの役割を学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 18-2 情報セキュリティ管理">
+  <meta property="og:description" content="文化祭の受付で扱う名簿を例に、リスク評価と対応、ISMS、ポリシー、SOC・CSIRTの役割を学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch18-2-security-management.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 18-2 情報セキュリティ管理",
+  "description": "文化祭の受付で扱う名簿を例に、リスク評価と対応、ISMS、ポリシー、SOC・CSIRTの役割を学びます。",
+  "url": "https://study-quest.net/itp-ch18-2-security-management.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch18-2-security-management.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第18章 情報セキュリティ</p>
+    <h1>ITパスポート 18-2 情報セキュリティ管理</h1>
+    <p>文化祭の受付で扱う名簿を例に、リスク評価と対応、ISMS、ポリシー、SOC・CSIRTの役割を学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#risk">リスク評価と対応</a></li><li><a href="#isms">ISMSとポリシー</a></li><li><a href="#incident">事故対応と担当組織</a></li><li><a href="#quiz">例題9問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="risk"><h2>事故の候補を洗い出し、優先順位を決める</h2>
+<p>文化祭の受付で、氏名と連絡先を扱う担当者が対策を考えます。守るべき資産、弱点、事故の起こり方を整理するのが<strong>リスク特定</strong>です。発生可能性と影響の大きさを見積もるのが<strong>リスク分析</strong>、判断基準と照らして優先度や対応の要否を決めるのが<strong>リスク評価</strong>です。ここまでをリスクアセスメントと呼び、その結果を対策の選択に使います。</p>
+    <figure id="visual-risk" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>受付名簿の誤共有を4段階で判断する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-risk-title visual-risk-desc">
+        <title id="visual-risk-title">受付名簿の誤共有を4段階で判断する</title>
+        <desc id="visual-risk-desc">特定、公開リンクがあると名簿を読まれる。分析、起こりやすさ3・影響4と見積もる。評価、自作基準の9以上なので優先する。対応、限定共有に変更し、公開設定を確認</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">特定</text>
+<text x="50" y="41" class="small" text-anchor="start">公開リンクがあると名簿を読まれる</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">分析</text>
+<text x="50" y="101" class="small" text-anchor="start">起こりやすさ3・影響4と見積もる</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">評価</text>
+<text x="50" y="161" class="small" text-anchor="start">自作基準の9以上なので優先する</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">対応</text>
+<text x="50" y="221" class="small" text-anchor="start">限定共有に変更し、公開設定を確認</text>
+      </svg>
+      <p>1〜4で評価し、掛け算する架空の運用例です。3×4＝12なので、ここでは9以上の優先枠に入れます。評価の尺度と基準は組織が目的に合わせて決めます。</p>
+    </figure>
+    <figure id="visual-risk-treatment" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>同じリスクでも、何を変えるかで対応を区別</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-risk-treatment-title visual-risk-treatment-desc">
+        <title id="visual-risk-treatment-title">同じリスクでも、何を変えるかで対応を区別</title>
+        <desc id="visual-risk-treatment-desc">回避、連絡先を集める業務をやめる、リスクの原因をなくす。低減、共有範囲を狭める、起こる確率や被害を減らす。共有・移転、対象の費用に保険をかける、損失の一部を他者と分ける。保有・受容、残るリスクを受け入れる、基準に照らして判断</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">回避</text>
+<text x="12" y="44" class="small" text-anchor="start">連絡先を集める業務をやめる</text>
+<text x="12" y="62" class="small" text-anchor="start">リスクの原因をなくす</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">低減</text>
+<text x="177" y="44" class="small" text-anchor="start">共有範囲を狭める</text>
+<text x="177" y="62" class="small" text-anchor="start">起こる確率や被害を減らす</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">共有・移転</text>
+<text x="12" y="120" class="small" text-anchor="start">対象の費用に保険をかける</text>
+<text x="12" y="138" class="small" text-anchor="start">損失の一部を他者と分ける</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">保有・受容</text>
+<text x="177" y="120" class="small" text-anchor="start">残るリスクを受け入れる</text>
+<text x="177" y="138" class="small" text-anchor="start">基準に照らして判断</text>
+      </svg>
+      <p>移転や保険は事故そのものを消すものではありません。対策後も残るリスクは記録し、変更時に評価し直します。</p>
+    </figure>
+<p>リスク共有には、損失の負担を契約で移す方法や、集中を避けて分散する方法があります。担当者間で前提や判断結果を共有することをリスクコミュニケーションと呼びます。</p>
+</section><section id="isms"><h2>方針を、現場で守れるルールにする</h2>
+<p><strong>ISMS</strong>は、情報セキュリティを組織で計画し、実行し、見直し続けるための仕組みです。機密性・完全性・可用性に加え、必要に応じて真正性（確かに本人・本物か）、責任追跡性（誰の操作か追えるか）、否認防止（実施した事実を後で否定しにくくする）、信頼性（期待した動作を安定して行う）も考えます。</p>
+    <figure id="visual-policy" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>「情報を守る」を、受付担当の手順に落とす</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-policy-title visual-policy-desc">
+        <title id="visual-policy-title">「情報を守る」を、受付担当の手順に落とす</title>
+        <desc id="visual-policy-desc">基本方針、申込者の情報を適切に管理する。対策基準、名簿は担当者だけに共有する。実施手順、共有画面で担当者名と権限を確認</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">基本方針</text>
+<text x="50" y="41" class="small" text-anchor="start">申込者の情報を適切に管理する</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">対策基準</text>
+<text x="50" y="101" class="small" text-anchor="start">名簿は担当者だけに共有する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">実施手順</text>
+<text x="50" y="161" class="small" text-anchor="start">共有画面で担当者名と権限を確認</text>
+      </svg>
+      <p>基本方針は組織の方針、対策基準は守る条件、実施手順は作業のやり方です。ポリシーの文書構成は組織によって異なります。</p>
+    </figure>
+    <figure id="visual-pdca" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>当日を迎える前にPDCAを一周させる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-pdca-title visual-pdca-desc">
+        <title id="visual-pdca-title">当日を迎える前にPDCAを一周させる</title>
+        <desc id="visual-pdca-desc">Plan、漏えい経路を洗い出す、対策と担当を決める。Do、共有設定と当日手順を実施、担当者に操作を教える。Check、別アカウントでテスト、想定外の閲覧がないか。Act、見つかった問題を直す、次の手順書と教育へ反映</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">Plan</text>
+<text x="12" y="44" class="small" text-anchor="start">漏えい経路を洗い出す</text>
+<text x="12" y="62" class="small" text-anchor="start">対策と担当を決める</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">Do</text>
+<text x="177" y="44" class="small" text-anchor="start">共有設定と当日手順を実施</text>
+<text x="177" y="62" class="small" text-anchor="start">担当者に操作を教える</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">Check</text>
+<text x="12" y="120" class="small" text-anchor="start">別アカウントでテスト</text>
+<text x="12" y="138" class="small" text-anchor="start">想定外の閲覧がないか</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">Act</text>
+<text x="177" y="120" class="small" text-anchor="start">見つかった問題を直す</text>
+<text x="177" y="138" class="small" text-anchor="start">次の手順書と教育へ反映</text>
+      </svg>
+      <p>ISMS適合性評価制度は、定められた範囲の管理の仕組みを審査するものです。認証があっても個々の事故が起きないという意味ではありません。</p>
+    </figure>
+<p>個人情報の安全管理措置には、役割の明確化などの組織的措置、教育などの人的措置、書類の保管などの物理的措置、アクセス制御などの技術的措置があります。プライバシーポリシーは個人情報の取扱いに関する方針です。プライバシーマーク制度は個人情報を適切に取り扱う体制などを評価する制度です。サイバー保険は契約で定めた損失や対応費用に備えます。</p>
+</section><section id="incident"><h2>事故が起きたら誰に知らせ、何を残すか</h2>
+    <figure id="visual-incident" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>名簿が公開されていたと気づいた直後</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-incident-title visual-incident-desc">
+        <title id="visual-incident-title">名簿が公開されていたと気づいた直後</title>
+        <desc id="visual-incident-desc">連絡、担当窓口に時刻と事象を伝える。封じ込め、許可を得て公開範囲を制限する。調査・復旧、記録を保全し、閲覧範囲などを確認。見直し、共有ルールや連絡手順に反映</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">連絡</text>
+<text x="50" y="41" class="small" text-anchor="start">担当窓口に時刻と事象を伝える</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">封じ込め</text>
+<text x="50" y="101" class="small" text-anchor="start">許可を得て公開範囲を制限する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">調査・復旧</text>
+<text x="50" y="161" class="small" text-anchor="start">記録を保全し、閲覧範囲などを確認</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">見直し</text>
+<text x="50" y="221" class="small" text-anchor="start">共有ルールや連絡手順に反映</text>
+      </svg>
+      <p>架空の受付チームの例です。実際の対応は組織の手順に従い、必要な証拠を勝手に消さないようにします。事故前に役割と連絡先を決めて訓練します。</p>
+    </figure>
+  <table>
+    <caption>困ったときの相手と、評価制度を区別する</caption>
+    <thead><tr><th scope="col">名称</th><th scope="col">主にすること</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">情報セキュリティ委員会</th><td>方針や対策の決定・推進など。</td></tr>
+<tr><th scope="row">SOC</th><td>ログやアラートを監視し、異常を見つける。</td></tr>
+<tr><th scope="row">CSIRT</th><td>インシデント対応を調整する。</td></tr>
+<tr><th scope="row">JPCERT/CC・JVN</th><td>JPCERT/CCは調整や注意喚起などを行う。JVNは脆弱性対策情報の公開先。</td></tr>
+<tr><th scope="row">IPA・J-CSIP・J-CRAT</th><td>J-CSIPは攻撃情報の共有、J-CRATはサイバー攻撃被害の拡大防止を支援。不正アクセスなどの届出制度もある。</td></tr>
+<tr><th scope="row">ISMSクラウドセキュリティ認証</th><td>ISMSを土台に、クラウドサービスに関する管理策を対象とする認証。</td></tr>
+<tr><th scope="row">ISMAP</th><td>政府が調達するクラウドサービスのセキュリティを評価・登録する制度。</td></tr>
+    </tbody>
+  </table>
+<p>用語を制度の目的で比べます。<strong>SECURITY ACTION</strong>は中小企業などがセキュリティ対策への取組を自己宣言する制度です。システム管理基準は情報システムを適切に管理するための基準で、システム監査基準は監査人が監査を行うときの基準です。<strong>PCI DSS</strong>はカード会員データを保護するための業界基準です。</p>
+<p>ウイルスや不正アクセスに関する届出と、製品などの脆弱性情報に関する届出では対象が異なります。自社で不審な動作を見つけたときの報告先と、製品の脆弱性を見つけたときの連絡先を、手順書では分けておきます。</p>
+<p>SOCが見つけ、CSIRTが対応を調整するのは分担の一例です。小さな組織では同じ担当が担うこともあります。外部への届出や連絡は、発生した事象と適用される要件を担当者が確認して進めます。</p>
+</section>
+<section id="quiz">
+  <h2>例題9問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　何が起こり得るか列挙する</h3>
+    <p>受付の名簿について、誤共有・紛失・不正な変更という事故の候補を書き出しました。どの段階ですか。</p>
+    <ol class="options"><li>リスク保有</li><li>リスク特定</li><li>リスク移転</li><li>リスク評価</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　リスク特定</strong></p><p>特定では対象と事故の候補を洗い出します。分析で大きさを見積もり、評価で基準と照合します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　優先対応の基準と比べる</h3>
+    <p>可能性3、影響4で積を計算します。9以上を優先する架空の基準に従うとどれですか。</p>
+    <ol class="options"><li>7なので対象外</li><li>7なので優先</li><li>12なので優先</li><li>12なので対象外</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　12なので優先</strong></p><p>分析結果は3×4＝12。評価では優先の基準9以上を満たします。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　連絡先を集めない</h3>
+    <p>連絡先なしで受け付ける運用に切り替え、連絡先の漏えいリスクの原因をなくしました。何ですか。</p>
+    <ol class="options"><li>回避</li><li>移転</li><li>保有</li><li>低減</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　回避</strong></p><p>対象リスクを生む活動をやめたので回避です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　保険に加入</h3>
+    <p>事故時の一部費用を、契約条件内で保険会社に負担してもらいます。何の例ですか。</p>
+    <ol class="options"><li>保有</li><li>回避</li><li>検知</li><li>共有・移転</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　共有・移転</strong></p><p>損失の負担を他者と分ける例です。事故の防止策とは役割が異なります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　具体的なクリック手順</h3>
+    <p>共有画面を開き、担当者を選び、閲覧権限を付けると文書に書きました。どの文書に相当しますか。</p>
+    <ol class="options"><li>基本方針</li><li>実施手順</li><li>プライバシーマーク</li><li>サイバー保険証券</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　実施手順</strong></p><p>画面での具体的な操作を定めているので実施手順です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　第三者が使えないことを確かめる</h3>
+    <p>PDCAで共有設定を変更した後、許可のないテスト用アカウントで読めないことを確かめます。どれですか。</p>
+    <ol class="options"><li>Plan</li><li>Do</li><li>Check</li><li>Act</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　Check</strong></p><p>決めた対策が働くかの確認なのでCheckです。発見事項に対応し次の運用を改善するのはActです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　誰が変更したか追える</h3>
+    <p>受付表の変更者と時刻を確認できるようにします。着目する要素はどれですか。</p>
+    <ol class="options"><li>責任追跡性</li><li>可用性</li><li>機密性</li><li>分離レベル</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　責任追跡性</strong></p><p>操作の主体や経緯を追えることが責任追跡性です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　事故対応を調整</h3>
+    <p>監視で異常を見つけた後、関係者への連絡と復旧の分担を調整します。担当の例はどれですか。</p>
+    <ol class="options"><li>JVN</li><li>ISMAP</li><li>認証局</li><li>CSIRT</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　CSIRT</strong></p><p>CSIRTは事故対応の調整を担います。SOCの代表的な役割は監視と異常の検知です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　制度の対象を見分ける</h3>
+    <p>政府向けの調達候補となるクラウドサービスを評価・登録する制度はどれですか。</p>
+    <ol class="options"><li>プライバシーマーク</li><li>ISMAP</li><li>J-CSIP</li><li>JVN</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　ISMAP</strong></p><p>ISMAPは政府のクラウド調達でのセキュリティ水準確保を目的とする制度です。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第18章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=62">IPA「ITパスポート試験シラバス Ver.6.5」リスクマネジメント</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=63">IPA「ITパスポート試験シラバス Ver.6.5」情報セキュリティ管理</a></li>
+      <li><a href="https://www.iso.org/standard/27001">ISO「ISO/IEC 27001:2022」</a></li>
+      <li><a href="https://www.ipa.go.jp/security/guide/sme/about.html">IPA「中小企業の情報セキュリティ対策ガイドライン」</a></li>
+      <li><a href="https://www.jpcert.or.jp/about/">JPCERT/CC「JPCERT/CCとは」</a></li>
+      <li><a href="https://jvn.jp/">JVN「脆弱性対策情報」</a></li>
+      <li><a href="https://privacymark.jp/system/about/index.html">JIPDEC「プライバシーマークとは」</a></li>
+      <li><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/">個人情報保護委員会「ガイドライン（通則編）」</a></li>
+      <li><a href="https://www.ismap.go.jp/csm?id=kb_article_view&amp;sysparm_article=KB0010005">ISMAPポータル「制度案内」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch18-1-security-threats.html">18-1 脅威とサイバー攻撃</a> ／ 次へ <a href="itp-ch18-3-security-controls.html">18-3 前編 情報セキュリティ対策</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch18"></script>
+</body>
+</html>

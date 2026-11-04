@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch18-1-security-threats.html">
+  <title>ITパスポート 18-1 脅威とサイバー攻撃｜スタディクエスト</title>
+  <meta name="description" content="文化祭の受付名簿を例に、機密性・完全性・可用性、マルウェア、フィッシング、Web攻撃を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 18-1 脅威とサイバー攻撃">
+  <meta property="og:description" content="文化祭の受付名簿を例に、機密性・完全性・可用性、マルウェア、フィッシング、Web攻撃を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch18-1-security-threats.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 18-1 脅威とサイバー攻撃",
+  "description": "文化祭の受付名簿を例に、機密性・完全性・可用性、マルウェア、フィッシング、Web攻撃を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch18-1-security-threats.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch18-1-security-threats.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第18章 情報セキュリティ</p>
+    <h1>ITパスポート 18-1 脅威とサイバー攻撃</h1>
+    <p>文化祭の受付名簿を例に、機密性・完全性・可用性、マルウェア、フィッシング、Web攻撃を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#threats">情報資産・脅威・脆弱性</a></li><li><a href="#malware">マルウェア</a></li><li><a href="#attacks">サイバー攻撃</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="threats"><h2>受付名簿のどこが弱く、何が起こり得るか</h2>
+<p>架空の文化祭で、申込者の連絡先、受付名簿、案内サイトを扱います。データ、端末、運営に必要なサービスは<strong>情報資産</strong>です。誰かに見られないようにする<strong>機密性</strong>、勝手に変えられないようにする<strong>完全性</strong>、必要なときに使える<strong>可用性</strong>の3つを、守りたいものから考えます。</p>
+    <figure id="visual-threat" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>紙の受付名簿を置きっぱなしにすると？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-threat-title visual-threat-desc">
+        <title id="visual-threat-title">紙の受付名簿を置きっぱなしにすると？</title>
+        <desc id="visual-threat-desc">資産、申込者の連絡先が載った紙の名簿。脆弱性、離席時も誰でも取れる場所にある。脅威、通りがかった人が写真を撮る。影響、許可のない人に連絡先が漏れる</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">資産</text>
+<text x="50" y="41" class="small" text-anchor="start">申込者の連絡先が載った紙の名簿</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">脆弱性</text>
+<text x="50" y="101" class="small" text-anchor="start">離席時も誰でも取れる場所にある</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">脅威</text>
+<text x="50" y="161" class="small" text-anchor="start">通りがかった人が写真を撮る</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">影響</text>
+<text x="50" y="221" class="small" text-anchor="start">許可のない人に連絡先が漏れる</text>
+      </svg>
+      <p>弱点は置きっぱなしの運用、脅威は情報を持ち出される可能性です。実際に漏えいが起きれば、対応が必要なインシデントです。</p>
+    </figure>
+  <table>
+    <caption>同じ名簿でも被害の形が違う</caption>
+    <thead><tr><th scope="col">脅威の種類</th><th scope="col">文化祭での例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">人的</th><td>誤送信、盗み見、紛失、意図的な持出し。</td></tr>
+<tr><th scope="row">技術的</th><td>マルウェア感染、ソフトの欠陥を突く攻撃。</td></tr>
+<tr><th scope="row">物理的</th><td>浸水、停電、機器の破壊や妨害。</td></tr>
+    </tbody>
+  </table>
+<p>セキュリティホールは攻撃に悪用され得る弱点です。ソフトの不具合に限らず、引継ぎ不足や過剰な権限など、運用にも脆弱性はあります。<strong>シャドーIT</strong>は組織の承認を得ずに個人用のクラウドなどを業務へ持ち込むことです。安全な製品でも、管理者が共有先や退職後の権限を把握できないと問題が起こり得ます。</p>
+    <figure id="visual-fraud" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>内部不正の3要因を受付業務で考える</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-fraud-title visual-fraud-desc">
+        <title id="visual-fraud-title">内部不正の3要因を受付業務で考える</title>
+        <desc id="visual-fraud-desc">機会、誰でも名簿を持ち出せる、権限を絞り履歴を確認。動機、ノルマや金銭的な圧力、相談できる窓口を作る。正当化、今回だけならよいと思う、ルールと目的を共有。見方、行為が起きる条件を考える、個人を決めつけない</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">機会</text>
+<text x="12" y="44" class="small" text-anchor="start">誰でも名簿を持ち出せる</text>
+<text x="12" y="62" class="small" text-anchor="start">権限を絞り履歴を確認</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">動機</text>
+<text x="177" y="44" class="small" text-anchor="start">ノルマや金銭的な圧力</text>
+<text x="177" y="62" class="small" text-anchor="start">相談できる窓口を作る</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">正当化</text>
+<text x="12" y="120" class="small" text-anchor="start">今回だけならよいと思う</text>
+<text x="12" y="138" class="small" text-anchor="start">ルールと目的を共有</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">見方</text>
+<text x="177" y="120" class="small" text-anchor="start">行為が起きる条件を考える</text>
+<text x="177" y="138" class="small" text-anchor="start">個人を決めつけない</text>
+      </svg>
+      <p>不正のトライアングルは、機会・動機・正当化から、不正を起こしにくい環境を考える枠組みです。</p>
+    </figure>
+</section><section id="malware"><h2>感染の広がり方と、感染後にすることを分ける</h2>
+  <table>
+    <caption>種類ごとに、広がり方か被害かに注目する</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">見分ける手掛かり</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ウイルス・マクロウイルス</th><td>別のファイルなどに感染する。文書のマクロを使うものもある。</td></tr>
+<tr><th scope="row">ワーム</th><td>宿主ファイルに寄生せず自己増殖し、ネットワークなどで広がる。</td></tr>
+<tr><th scope="row">トロイの木馬</th><td>便利なアプリなどを装い、実行すると別の処理を行う。</td></tr>
+<tr><th scope="row">ボット・RAT</th><td>外部から操作を受ける。多数のボットはボットネットを構成することがある。RATは遠隔操作に使われる。</td></tr>
+<tr><th scope="row">スパイウェア・キーロガー</th><td>利用者情報をひそかに集める。キー入力を記録するものがキーロガー。</td></tr>
+<tr><th scope="row">ランサムウェア</th><td>データを暗号化するなどして使えなくし、金銭などを要求する。</td></tr>
+<tr><th scope="row">ファイルレスマルウェア</th><td>メモリーや正規ツールなどを使い、典型的な実行ファイルだけでは見つけにくい。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-ransom" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>注文表が開けず、公開すると脅されたら</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-ransom-title visual-ransom-desc">
+        <title id="visual-ransom-title">注文表が開けず、公開すると脅されたら</title>
+        <desc id="visual-ransom-desc">窃取、攻撃者が名簿を持ち出す場合がある。業務停止、注文表が暗号化され、受付で読めない。二重脅迫、復旧に加え、公開しない条件も突きつける。対処、連絡手順に沿って隔離と報告を進める</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">窃取</text>
+<text x="50" y="41" class="small" text-anchor="start">攻撃者が名簿を持ち出す場合がある</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">業務停止</text>
+<text x="50" y="101" class="small" text-anchor="start">注文表が暗号化され、受付で読めない</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">二重脅迫</text>
+<text x="50" y="161" class="small" text-anchor="start">復旧に加え、公開しない条件も突きつける</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">対処</text>
+<text x="50" y="221" class="small" text-anchor="start">連絡手順に沿って隔離と報告を進める</text>
+      </svg>
+      <p>バックアップは復旧に役立ちます。持ち出された名簿への対応は別に必要です。状況の記録を残し、担当者の手順に従います。</p>
+    </figure>
+<p>バックドアは通常の確認を迂回できる入口、ルートキットは侵入や活動を隠すために使われることがある道具です。ポートスキャンやフットプリンティングは、公開されている入口や情報を調べる段階です。ファイル交換ソフト自体が全てマルウェアというわけではありませんが、未確認のファイルや公開範囲の設定がリスクになります。</p>
+</section><section id="attacks"><h2>何をだまし、どこを狙う攻撃か</h2>
+    <figure id="visual-inbox" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>連絡を急がせる文面を見たら</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-inbox-title visual-inbox-desc">
+        <title id="visual-inbox-title">連絡を急がせる文面を見たら</title>
+        <desc id="visual-inbox-desc">フィッシング、偽の案内へ誘導する、公式の入口から確認。スミッシング、SMSから偽の案内へ、メッセージを直接使わない。BEC、振込先の変更を装う、既知の番号で別経路確認。やり取り型攻撃、会話を続けて信用させる、急な添付や依頼を再確認</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">フィッシング</text>
+<text x="12" y="44" class="small" text-anchor="start">偽の案内へ誘導する</text>
+<text x="12" y="62" class="small" text-anchor="start">公式の入口から確認</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">スミッシング</text>
+<text x="177" y="44" class="small" text-anchor="start">SMSから偽の案内へ</text>
+<text x="177" y="62" class="small" text-anchor="start">メッセージを直接使わない</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">BEC</text>
+<text x="12" y="120" class="small" text-anchor="start">振込先の変更を装う</text>
+<text x="12" y="138" class="small" text-anchor="start">既知の番号で別経路確認</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">やり取り型攻撃</text>
+<text x="177" y="120" class="small" text-anchor="start">会話を続けて信用させる</text>
+<text x="177" y="138" class="small" text-anchor="start">急な添付や依頼を再確認</text>
+      </svg>
+      <p>社内担当者を名乗る電話や、後ろから画面を見る行為も人を狙います。心理や行動を利用する手口をソーシャルエンジニアリングと呼びます。</p>
+    </figure>
+<p>標的型攻撃では特定の組織や人を狙います。水飲み場型攻撃は標的がよく訪れるサイトなどを悪用し、APTは特定の目標への持続的な攻撃を指します。スパムは迷惑な大量送信、メールボムは大量メールなどによる妨害、ワンクリック詐欺はクリックだけで契約したかのように装って請求する手口です。ダークウェブには窃取情報の流通などの悪用例があります。</p>
+  <table>
+    <caption>Web攻撃は、どこで意図しないことが起きるか</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">見分けるポイント</th><th scope="col">主な守り</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">XSS</th><td>他の利用者のブラウザでスクリプトを実行させる</td><td>出力先に応じたエスケープなど</td></tr>
+<tr><th scope="row">CSRF</th><td>ログイン中の利用者の権限で望まない操作を送らせる</td><td>CSRFトークンなど</td></tr>
+<tr><th scope="row">SQLインジェクション</th><td>入力をDBへの命令として扱わせる</td><td>プレースホルダーに値を束縛</td></tr>
+<tr><th scope="row">クリックジャッキング</th><td>画面の重なりで別の操作をクリックさせる</td><td>フレームへの埋込みを制限</td></tr>
+<tr><th scope="row">ディレクトリトラバーサル</th><td>意図した場所の外にあるファイルを読ませる</td><td>アクセス可能なパスを限定</td></tr>
+<tr><th scope="row">ドライブバイダウンロード</th><td>サイトを閲覧した端末へ不正な処理を仕掛ける</td><td>OS・ブラウザの更新など</td></tr>
+<tr><th scope="row">バッファオーバーフロー</th><td>想定した領域を越えて書き込ませる</td><td>境界の検査や修正の適用</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-password-attacks" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>パスワード攻撃は「候補の作り方」を見る</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-password-attacks-title visual-password-attacks-desc">
+        <title id="visual-password-attacks-title">パスワード攻撃は「候補の作り方」を見る</title>
+        <desc id="visual-password-attacks-desc">辞書攻撃、よく使う語などを試す、ありがちな候補から選ぶ。総当たり攻撃、組合せを順に試す、対象範囲の全候補を探す。リスト攻撃、流出したIDとパスワード、サイト間の使い回しを狙う。対策の例、使い回しを避ける、試行制限や多要素も検討</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">辞書攻撃</text>
+<text x="12" y="44" class="small" text-anchor="start">よく使う語などを試す</text>
+<text x="12" y="62" class="small" text-anchor="start">ありがちな候補から選ぶ</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">総当たり攻撃</text>
+<text x="177" y="44" class="small" text-anchor="start">組合せを順に試す</text>
+<text x="177" y="62" class="small" text-anchor="start">対象範囲の全候補を探す</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">リスト攻撃</text>
+<text x="12" y="120" class="small" text-anchor="start">流出したIDとパスワード</text>
+<text x="12" y="138" class="small" text-anchor="start">サイト間の使い回しを狙う</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">対策の例</text>
+<text x="177" y="120" class="small" text-anchor="start">使い回しを避ける</text>
+<text x="177" y="138" class="small" text-anchor="start">試行制限や多要素も検討</text>
+      </svg>
+      <p>パスワードリスト攻撃は、別のサービスから流出した組合せを利用します。</p>
+    </figure>
+  <table>
+    <caption>通信の途中やサービスを狙う攻撃</caption>
+    <thead><tr><th scope="col">攻撃</th><th scope="col">何が起きるか</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">中間者・MITB</th><td>前者は通信相手の間に入り盗聴や改ざんを狙う。後者は端末のブラウザ内で表示や送信内容を改ざんする。</td></tr>
+<tr><th scope="row">IPスプーフィング・DNSキャッシュポイズニング</th><td>前者は送信元IPを偽る。後者は名前解決の一時記憶に偽情報を混ぜる。</td></tr>
+<tr><th scope="row">セッションハイジャック・リプレイ</th><td>前者は他人のセッションを乗っ取る。後者は過去の通信などを再送する。</td></tr>
+<tr><th scope="row">第三者中継・踏み台</th><td>前者はメールサーバが無関係な第三者の配送を許してしまう。後者は侵害した機器を別の攻撃の中継などに使う。</td></tr>
+<tr><th scope="row">DoS・DDoS</th><td>負荷をかけてサービス利用を妨げる。DDoSでは多数の発信元などに分散する。</td></tr>
+<tr><th scope="row">ゼロデイ・クリプトジャッキング</th><td>前者は修正が利用できる前などに脆弱性を突く。後者は他人の計算資源を無断で暗号資産の採掘に使う。</td></tr>
+<tr><th scope="row">プロンプトインジェクション・敵対的サンプル</th><td>前者は入力や参照文書の指示で生成AIの意図した動作を崩す。後者は誤認識を誘うよう調整した入力。</td></tr>
+    </tbody>
+  </table>
+<p>クラッキングは不正にシステムへ侵入したり破壊したりする行為を指します。なりすましは相手や利用者を偽る行為です。ソフトの正規機能でも、権限や使い方によって攻撃に悪用され得ます。</p>
+</section>
+<section id="quiz">
+  <h2>例題10問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　名簿を持ち出せる状態</h3>
+    <p>受付の紙の名簿が離席時も通路から取れます。この場面の脆弱性はどれですか。</p>
+    <ol class="options"><li>名簿の連絡先</li><li>誰でも取れる置き場所</li><li>撮影による漏えい</li><li>受付停止</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　誰でも取れる置き場所</strong></p><p>脆弱性は脅威を受けやすくする弱点です。連絡先は資産、漏えいは被害です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　案内が開かない</h3>
+    <p>案内サイトが過負荷で開けません。最も直接的に損なわれたのはどれですか。</p>
+    <ol class="options"><li>真正性</li><li>完全性</li><li>可用性</li><li>機密性</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　可用性</strong></p><p>必要なときに使えないので、可用性が失われています。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　振込先が急に変わる</h3>
+    <p>業者の担当を名乗るメールで、今日だけ別口座へ振込を求められました。まず何をしますか。</p>
+    <ol class="options"><li>登録済みの電話番号で確認</li><li>メールに書かれた番号だけに電話</li><li>急いで振り込む</li><li>添付の指示だけで登録</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　登録済みの電話番号で確認</strong></p><p>BECを想定し、メールと独立した既知の連絡先で変更を確かめます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　自動で広がる</h3>
+    <p>別のファイルに寄生せずネットワークで自己増殖します。何の特徴ですか。</p>
+    <ol class="options"><li>スパム</li><li>バックドア</li><li>キーロガー</li><li>ワーム</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　ワーム</strong></p><p>自己増殖して伝播するという特徴がワームに該当します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　別サービスから流出</h3>
+    <p>他サービスで流出したIDとパスワードの組が試されました。どの攻撃ですか。</p>
+    <ol class="options"><li>総当たり攻撃</li><li>パスワードリスト攻撃</li><li>中間者攻撃</li><li>メールボム</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　パスワードリスト攻撃</strong></p><p>漏えい済みの組合せを再利用する点が、リスト攻撃の手掛かりです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　表示を見るだけで実行</h3>
+    <p>掲示板に投稿された内容で、閲覧者のブラウザが意図せずスクリプトを動かします。何ですか。</p>
+    <ol class="options"><li>CSRF</li><li>DDoS</li><li>XSS</li><li>SQLインジェクション</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　XSS</strong></p><p>閲覧者のブラウザでスクリプトが実行されるのがXSSです。DBへの命令に混ぜるのはSQLインジェクションです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　ログイン状態を悪用</h3>
+    <p>受付係が別サイトを開いたら、ログイン中の受付サイトに変更要求を送らされました。どれですか。</p>
+    <ol class="options"><li>CSRF</li><li>ワーム</li><li>DNSキャッシュポイズニング</li><li>BEC</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　CSRF</strong></p><p>ログイン状態などを悪用して、利用者が意図しない要求を送らせるのがCSRFです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　復元しても別の被害</h3>
+    <p>注文表を暗号化し、盗んだ名簿も公開すると脅されました。何を想定しますか。</p>
+    <ol class="options"><li>水飲み場型攻撃</li><li>ワンクリック詐欺</li><li>辞書攻撃</li><li>二重脅迫</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　二重脅迫</strong></p><p>使えなくする被害と、盗んだデータを公開するという脅しが重なっています。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　多数の端末から集中</h3>
+    <p>多数の侵害端末から案内サイトへ要求が集中しています。狙いがサービス妨害ならどれですか。</p>
+    <ol class="options"><li>MITB</li><li>DDoS</li><li>セキュアブート</li><li>ポートスキャン</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　DDoS</strong></p><p>分散した発信元から負荷をかけて利用を妨げるのがDDoSです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第10問　データベースの命令</h3>
+    <p>申込フォームへの入力がDBへの命令として解釈されます。どの対策が直接的ですか。</p>
+    <ol class="options"><li>ファイル名を長くする</li><li>受付端末を施錠する</li><li>プレースホルダーに値を渡す</li><li>バックアップの頻度だけ増やす</li></ol>
+    <details><summary>第10問の解答と解説</summary><p><strong>ウ　プレースホルダーに値を渡す</strong></p><p>SQLの構造と入力値を分け、入力が命令として扱われるのを防ぎます。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第18章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=61">IPA「ITパスポート試験シラバス Ver.6.5」情報セキュリティ</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=62">IPA「ITパスポート試験シラバス Ver.6.5」攻撃手法</a></li>
+      <li><a href="https://www.ipa.go.jp/security/vuln/websecurity/index.html">IPA「安全なウェブサイトの作り方」</a></li>
+      <li><a href="https://www.ipa.go.jp/security/bec/index.html">IPA「ビジネスメール詐欺対策」</a></li>
+      <li><a href="https://www.ipa.go.jp/security/10threats/10threats2026.html">IPA「情報セキュリティ10大脅威 2026」</a></li>
+    </ul>
+    <p>前の章 <a href="itp-ch17-3-internet-and-mobile.html">17-3 ネットワーク応用</a> ／ 次へ <a href="itp-ch18-2-security-management.html">18-2 情報セキュリティ管理</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch18"></script>
+</body>
+</html>
