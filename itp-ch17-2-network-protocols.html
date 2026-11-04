@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch17-2-network-protocols.html">
+  <title>ITパスポート 17-2 通信プロトコル｜スタディクエスト</title>
+  <meta name="description" content="文化祭の案内ページやメールを題材に、OSIとTCP/IP、TCPとUDP、HTTP・SMTP・DHCPの役割を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 17-2 通信プロトコル">
+  <meta property="og:description" content="文化祭の案内ページやメールを題材に、OSIとTCP/IP、TCPとUDP、HTTP・SMTP・DHCPの役割を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch17-2-network-protocols.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 17-2 通信プロトコル",
+  "description": "文化祭の案内ページやメールを題材に、OSIとTCP/IP、TCPとUDP、HTTP・SMTP・DHCPの役割を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch17-2-network-protocols.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch17-2-network-protocols.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第17章 ネットワーク</p>
+    <h1>ITパスポート 17-2 通信プロトコル</h1>
+    <p>文化祭の案内ページやメールを題材に、OSIとTCP/IP、TCPとUDP、HTTP・SMTP・DHCPの役割を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#layers">OSIとTCP/IPの層</a></li><li><a href="#transport">IP・TCP・UDPとポート</a></li><li><a href="#services">Web・メール・端末設定</a></li><li><a href="#quiz">例題9問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="layers"><h2>ネットワークの仕事を7層と4層で整理する</h2>
+<p>文化祭の案内サイトを開くスマホと、ページを返すサーバは別の機器です。それでも通信できるのは、データの形式や送る順序などを共通の<strong>通信プロトコル</strong>で決めているからです。通信の仕事を層に分けると、今困っているのが接続、宛先、届き方、サービスのどこかを考えられます。</p>
+    <figure id="visual-layers" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>OSIの7層とTCP/IPの4層を並べる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 239" role="img" aria-labelledby="visual-layers-title visual-layers-desc">
+        <title id="visual-layers-title">OSIの7層とTCP/IPの4層を並べる</title>
+        <desc id="visual-layers-desc">OSIの上位3層はTCP/IPのアプリケーション層に概ね対応。下位2層はネットワークインタフェース層に概ね対応する。</desc>
+        <text x="8" y="15" class="strong blue" text-anchor="start">OSI基本参照モデル</text>
+<text x="182" y="15" class="strong orange" text-anchor="start">TCP/IP階層モデル</text>
+<rect x="4" y="25" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="42" class="small" text-anchor="start">7 アプリケーション</text>
+<rect x="4" y="55" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="72" class="small" text-anchor="start">6 プレゼンテーション</text>
+<rect x="4" y="85" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="102" class="small" text-anchor="start">5 セション</text>
+<rect x="4" y="115" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="132" class="small" text-anchor="start">4 トランスポート</text>
+<rect x="4" y="145" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="162" class="small" text-anchor="start">3 ネットワーク</text>
+<rect x="4" y="175" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="192" class="small" text-anchor="start">2 データリンク</text>
+<rect x="4" y="205" width="150" height="26" rx="4" class="blue-fill"/>
+<text x="11" y="222" class="small" text-anchor="start">1 物理</text>
+<path d="M155 68.0h20" class="wire" />
+<rect x="176" y="25" width="150" height="86" rx="4" class="orange-fill"/>
+<text x="187" y="72.0" class="small" text-anchor="start">アプリケーション</text>
+<path d="M155 128.0h20" class="wire" />
+<rect x="176" y="115" width="150" height="26" rx="4" class="orange-fill"/>
+<text x="187" y="132.0" class="small" text-anchor="start">トランスポート</text>
+<path d="M155 158.0h20" class="wire" />
+<rect x="176" y="145" width="150" height="26" rx="4" class="orange-fill"/>
+<text x="187" y="162.0" class="small" text-anchor="start">インターネット</text>
+<path d="M155 203.0h20" class="wire" />
+<rect x="176" y="175" width="150" height="56" rx="4" class="orange-fill"/>
+<text x="187" y="207.0" class="small" text-anchor="start">ネットワークIF</text>
+      </svg>
+      <p>おおまかな役割を比べた図です。TCP/IPの実装で、OSIの全ての層がそれぞれ独立して動くという意味ではありません。</p>
+    </figure>
+  <table>
+    <caption>下から上へ、どんな仕事をするか</caption>
+    <thead><tr><th scope="col">OSIの層</th><th scope="col">イメージ</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">1 物理層</th><td>電気・光・電波でビットを運ぶ。</td></tr>
+<tr><th scope="row">2 データリンク層</th><td>同じリンクでフレームを渡す。例はイーサネット。</td></tr>
+<tr><th scope="row">3 ネットワーク層</th><td>異なるネットワークを越えて宛先へ届ける。例はIP。</td></tr>
+<tr><th scope="row">4 トランスポート層</th><td>端末上の通信先を区別し、方式に応じて届き方を制御。例はTCP・UDP。</td></tr>
+<tr><th scope="row">5 セション層</th><td>やり取りを始めたり、終えたりするための対話を管理する。</td></tr>
+<tr><th scope="row">6 プレゼンテーション層</th><td>データの表現形式を扱う。文字や値を双方で解釈できる形にする。</td></tr>
+<tr><th scope="row">7 アプリケーション層</th><td>Webなどアプリケーションに必要な通信機能を提供する。</td></tr>
+    </tbody>
+  </table>
+<p>TCP/IP階層モデルでは、ネットワークインタフェース層・インターネット層・トランスポート層・アプリケーション層の4層に整理します。イーサネットは近くの区間、IPは宛先までの配送、TCPやUDPは機器上の通信先、HTTPなどはサービス固有のやり取りを担います。</p>
+</section><section id="transport"><h2>IP・TCP・UDP・ポート番号を区別する</h2>
+    <figure id="visual-envelope" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>案内ページの要求が入れ子になる例</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-envelope-title visual-envelope-desc">
+        <title id="visual-envelope-title">案内ページの要求が入れ子になる例</title>
+        <desc id="visual-envelope-desc">アプリケーション層、HTTPで案内ページを要求。トランスポート層、TCPでポート番号などを付けて運ぶ。インターネット層、IPで送り先のアドレスを付ける。ネットワークIF層、次の機器へフレームを送る</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">アプリケーション層</text>
+<text x="50" y="41" class="small" text-anchor="start">HTTPで案内ページを要求</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">トランスポート層</text>
+<text x="50" y="101" class="small" text-anchor="start">TCPでポート番号などを付けて運ぶ</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">インターネット層</text>
+<text x="50" y="161" class="small" text-anchor="start">IPで送り先のアドレスを付ける</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">ネットワークIF層</text>
+<text x="50" y="221" class="small" text-anchor="start">次の機器へフレームを送る</text>
+      </svg>
+      <p>HTTP/1.1をTCPで送る場合の例です。各層が配送に使う情報を加えます。受信側では下の層から順に処理します。</p>
+    </figure>
+    <figure id="visual-addresses" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>宛先の「何」を区別する番号か</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-addresses-title visual-addresses-desc">
+        <title id="visual-addresses-title">宛先の「何」を区別する番号か</title>
+        <desc id="visual-addresses-desc">宛先MAC、同じリンク上の次の機器、例｜校内のルーター。宛先IP、ネットワーク上の宛先、例｜校外の案内サーバ。宛先ポート番号、その機器の通信の入口、例｜HTTPSで通常443。URLのパス、サービス内の場所、例｜/guide/</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">宛先MAC</text>
+<text x="12" y="44" class="small" text-anchor="start">同じリンク上の次の機器</text>
+<text x="12" y="62" class="small" text-anchor="start">例｜校内のルーター</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">宛先IP</text>
+<text x="177" y="44" class="small" text-anchor="start">ネットワーク上の宛先</text>
+<text x="177" y="62" class="small" text-anchor="start">例｜校外の案内サーバ</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">宛先ポート番号</text>
+<text x="12" y="120" class="small" text-anchor="start">その機器の通信の入口</text>
+<text x="12" y="138" class="small" text-anchor="start">例｜HTTPSで通常443</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">URLのパス</text>
+<text x="177" y="120" class="small" text-anchor="start">サービス内の場所</text>
+<text x="177" y="138" class="small" text-anchor="start">例｜/guide/</text>
+      </svg>
+      <p>IPアドレスとポート番号は役割が違います。同じサーバの別ポートで、別のサービスが動く場合があります。</p>
+    </figure>
+<p><strong>TCP</strong>はデータを順序どおりに渡す仕組みを備え、届かなかった部分を再送できます。<strong>UDP</strong>自体には再送や順序保証がありません。少し欠けても早く次の音声を再生したいアプリなどが利用します。必要に応じ、アプリや上位のプロトコルが信頼性を補うこともあります。HTTP/3ではQUICを使うので、Web通信が全てTCPというわけではありません。</p>
+<p>IPは宛先のネットワークへパケットを届けるための仕組みです。各ルーターが次の転送先を判断します。TCPの再送のような処理をIP単独に期待するのは適切ではありません。</p>
+</section><section id="services"><h2>Web、メール、端末設定のプロトコルを選ぶ</h2>
+  <table>
+    <caption>したいことから名前を選ぶ</caption>
+    <thead><tr><th scope="col">したいこと</th><th scope="col">プロトコル</th><th scope="col">役割</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">案内ページを取得</th><td>HTTP・HTTPS</td><td>要求と応答。HTTPSはTLSで通信を保護する。</td></tr>
+<tr><th scope="row">メールを送る・サーバ間で運ぶ</th><td>SMTP</td><td>送信や配送。</td></tr>
+<tr><th scope="row">メールを端末で取得</th><td>POP3</td><td>メールサーバから端末側に取得。設定によってサーバに残すこともある。</td></tr>
+<tr><th scope="row">複数端末からメールを管理</th><td>IMAP</td><td>サーバ上のメールやフォルダーの状態を参照・操作。</td></tr>
+<tr><th scope="row">ファイルを送受信</th><td>FTP</td><td>ファイル転送。通常のFTPは暗号化を前提としない。</td></tr>
+<tr><th scope="row">離れた端末を操作</th><td>Telnet・SSH</td><td>遠隔操作。SSHは通信を暗号化できる。</td></tr>
+<tr><th scope="row">端末にIPなどを配る</th><td>DHCP</td><td>IPアドレスなど接続設定を自動配布。</td></tr>
+<tr><th scope="row">時計をそろえる</th><td>NTP</td><td>ネットワーク越しに時刻を合わせる。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-mail" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>文化祭の連絡メールを、送る側と読む側に分ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-mail-title visual-mail-desc">
+        <title id="visual-mail-title">文化祭の連絡メールを、送る側と読む側に分ける</title>
+        <desc id="visual-mail-desc">送信側、送信アプリからメールを送る。配送、SMTPで相手側のメールサーバへ。受信側、IMAPでサーバ上のメールを読む</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">送信側</text>
+<text x="50" y="41" class="small" text-anchor="start">送信アプリからメールを送る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">配送</text>
+<text x="50" y="101" class="small" text-anchor="start">SMTPで相手側のメールサーバへ</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">受信側</text>
+<text x="50" y="161" class="small" text-anchor="start">IMAPでサーバ上のメールを読む</text>
+      </svg>
+      <p>PCで既読にした状態をスマホでも扱いたい場面では、サーバ上の状態を共有するIMAPが向きます。</p>
+    </figure>
+    <figure id="visual-connection" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>接続設定と、名前で探す処理を区別する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-connection-title visual-connection-desc">
+        <title id="visual-connection-title">接続設定と、名前で探す処理を区別する</title>
+        <desc id="visual-connection-desc">DHCP、スマホへIPなどを配る、ネットにつなぐ準備。DNS、名前に対応する情報を返す、案内サイトの宛先を探す。NTP、時計のずれを直す、時刻を合わせる。HTTPS、ページを安全にやり取り、TLSで通信を保護</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">DHCP</text>
+<text x="12" y="44" class="small" text-anchor="start">スマホへIPなどを配る</text>
+<text x="12" y="62" class="small" text-anchor="start">ネットにつなぐ準備</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">DNS</text>
+<text x="177" y="44" class="small" text-anchor="start">名前に対応する情報を返す</text>
+<text x="177" y="62" class="small" text-anchor="start">案内サイトの宛先を探す</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">NTP</text>
+<text x="12" y="120" class="small" text-anchor="start">時計のずれを直す</text>
+<text x="12" y="138" class="small" text-anchor="start">時刻を合わせる</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">HTTPS</text>
+<text x="177" y="120" class="small" text-anchor="start">ページを安全にやり取り</text>
+<text x="177" y="138" class="small" text-anchor="start">TLSで通信を保護</text>
+      </svg>
+      <p>つながる準備、行き先を探す、実際にサービスを使う、という順に思い浮かべます。HTTPSは通信を保護する仕組みで、掲載内容まで正しいと判断できるわけではありません。</p>
+    </figure>
+<p>IoTでは、必要なデータ量や電力に合わせてプロトコルを選びます。例えばセンサーが値を発行し、必要な端末だけが受け取る構成では、仲介役が配信するMQTTの発行・購読モデルが候補になります。</p>
+</section>
+<section id="quiz">
+  <h2>例題9問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　同じ形式でやり取り</h3>
+    <p>異なる製品の受付PCとサーバが、同じ形式・手順でデータをやり取りします。その約束は何ですか。</p>
+    <ol class="options"><li>プロトコル</li><li>MACアドレス</li><li>通信距離</li><li>帯域</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ア　プロトコル</strong></p><p>通信プロトコルは送受信側が共有する取り決めです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　OSIで経路を選ぶ</h3>
+    <p>別のネットワークへの配送を担当するOSIの層はどれですか。</p>
+    <ol class="options"><li>データリンク層</li><li>ネットワーク層</li><li>セション層</li><li>プレゼンテーション層</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>イ　ネットワーク層</strong></p><p>異なるネットワークを越えて届けるのがネットワーク層です。同じリンクでフレームを渡すのはデータリンク層です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　サービスの入口を区別</h3>
+    <p>同じIPアドレスのサーバで、別々のサービスの通信先を区別したいときに用いる番号はどれですか。</p>
+    <ol class="options"><li>SSID</li><li>伝送効率</li><li>ポート番号</li><li>SIM番号</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ウ　ポート番号</strong></p><p>ポート番号は一つの機器の中で通信先を区別するのに使います。IPアドレスは宛先機器側の識別に使います。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　順番に届ける</h3>
+    <p>案内データを順序どおりに届け、欠けた部分をプロトコルが再送する方式はどれですか。</p>
+    <ol class="options"><li>UDP単独</li><li>IP単独</li><li>イーサネット単独</li><li>TCP</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　TCP</strong></p><p>TCPは順序を扱い、損失を検知して再送します。UDP単独はその処理を備えていません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　端末がIPを受け取る</h3>
+    <p>来場者の端末にIPアドレスなどの接続設定を自動配布したいときに使うのはどれですか。</p>
+    <ol class="options"><li>DHCP</li><li>SMTP</li><li>IMAP</li><li>NTP</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>ア　DHCP</strong></p><p>DHCPは接続設定の配布を行います。DNSは接続先の名前に対応する情報を探す仕組みです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　既読を別端末でも見る</h3>
+    <p>PCで付けた既読状態を、同じメールボックスを開くスマホでも利用したい。用途に合うのはどれですか。</p>
+    <ol class="options"><li>FTP</li><li>IMAP</li><li>SMTP</li><li>Telnet</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>イ　IMAP</strong></p><p>IMAPはサーバ上のメールや状態を扱えます。SMTPは配送側のプロトコルです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　時計の時刻を合わせる</h3>
+    <p>受付端末の時計をネットワーク経由で時刻サーバに合わせます。使うのはどれですか。</p>
+    <ol class="options"><li>HTTP</li><li>POP3</li><li>NTP</li><li>DHCP</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ウ　NTP</strong></p><p>NTPは時刻の同期に使います。DHCPで時刻サーバの情報を配る構成があっても、時刻の同期そのものとは別の仕事です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　通信を暗号化する</h3>
+    <p>Webで受付情報を送るとき、TLSで通信を保護する方式はどれですか。</p>
+    <ol class="options"><li>平文のFTP</li><li>HTTPのみ</li><li>POP3のみ</li><li>HTTPS</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　HTTPS</strong></p><p>HTTPSではTLSを使って通信を保護します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　HTTPがTCPを使う例の下の層</h3>
+    <p>図のHTTP/1.1の例で、TCPの下にあり、IPアドレスを使うTCP/IPの層はどれですか。</p>
+    <ol class="options"><li>インターネット層</li><li>アプリケーション層</li><li>トランスポート層</li><li>プレゼンテーション層</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>ア　インターネット層</strong></p><p>TCPはトランスポート層、IPはその下のインターネット層にあります。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第17章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=59">IPA「ITパスポート試験シラバス Ver.6.5」通信プロトコル</a></li>
+      <li><a href="https://www.itu.int/rec/T-REC-X.200-199407-I/en">ITU-T「X.200 OSI Basic Reference Model」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc1122.html">RFC 1122「Requirements for Internet Hosts」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9293.html">RFC 9293「TCP」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc768.html">RFC 768「UDP」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110「HTTP Semantics」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9114.html">RFC 9114「HTTP/3」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc2131.html">RFC 2131「DHCP」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc5321.html">RFC 5321「SMTP」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc1939.html">RFC 1939「POP3」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9051.html">RFC 9051「IMAP」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc5905.html">RFC 5905「NTPv4」</a></li>
+      <li><a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html">OASIS「MQTT Version 5.0」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch17-1-network-fundamentals.html">17-1 ネットワーク方式</a> ／ 次へ <a href="itp-ch17-3-internet-and-mobile.html">17-3 ネットワーク応用</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch17"></script>
+</body>
+</html>
