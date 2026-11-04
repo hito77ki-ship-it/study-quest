@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch18-3-security-controls.html">
+  <title>ITパスポート 18-3 前編 情報セキュリティ対策｜スタディクエスト</title>
+  <meta name="description" content="文化祭の受付端末を例に、人的・物理的・技術的対策、WAF・EDRなどの違い、バックアップと初動を学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 18-3 前編 情報セキュリティ対策">
+  <meta property="og:description" content="文化祭の受付端末を例に、人的・物理的・技術的対策、WAF・EDRなどの違い、バックアップと初動を学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch18-3-security-controls.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 18-3 前編 情報セキュリティ対策",
+  "description": "文化祭の受付端末を例に、人的・物理的・技術的対策、WAF・EDRなどの違い、バックアップと初動を学びます。",
+  "url": "https://study-quest.net/itp-ch18-3-security-controls.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch18-3-security-controls.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第18章 情報セキュリティ</p>
+    <h1>ITパスポート 18-3 前編 情報セキュリティ対策</h1>
+    <p>文化祭の受付端末を例に、人的・物理的・技術的対策、WAF・EDRなどの違い、バックアップと初動を学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#controls">人的・物理的・技術的対策</a></li><li><a href="#network">ネットワークと端末の対策</a></li><li><a href="#recovery">隔離・調査・バックアップ</a></li><li><a href="#quiz">例題9問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="controls"><h2>人・場所・機器に対策を分けて置く</h2>
+    <figure id="visual-layers" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>名簿を守る対策は、一つの場所に集中させない</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-layers-title visual-layers-desc">
+        <title id="visual-layers-title">名簿を守る対策は、一つの場所に集中させない</title>
+        <desc id="visual-layers-desc">人的対策、添付や送信先を二人で確認、教育と手順で誤送信を減らす。物理的対策、紙の名簿は施錠して保管、入退室や持出しを管理。技術的対策、編集権限は担当者に限定、ソフトと設定で制御。事後の確認、試しに別の役割で閲覧、対策が働くかを確かめる</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">人的対策</text>
+<text x="12" y="44" class="small" text-anchor="start">添付や送信先を二人で確認</text>
+<text x="12" y="62" class="small" text-anchor="start">教育と手順で誤送信を減らす</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">物理的対策</text>
+<text x="177" y="44" class="small" text-anchor="start">紙の名簿は施錠して保管</text>
+<text x="177" y="62" class="small" text-anchor="start">入退室や持出しを管理</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">技術的対策</text>
+<text x="12" y="120" class="small" text-anchor="start">編集権限は担当者に限定</text>
+<text x="12" y="138" class="small" text-anchor="start">ソフトと設定で制御</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">事後の確認</text>
+<text x="177" y="120" class="small" text-anchor="start">試しに別の役割で閲覧</text>
+<text x="177" y="138" class="small" text-anchor="start">対策が働くかを確かめる</text>
+      </svg>
+      <p>一つの対策で漏えい、改ざん、停止を全て防ぐのは難しいため、複数の対策を組み合わせます。</p>
+    </figure>
+<p>人的対策には教育や確認手順、物理的対策には施錠、監視カメラ、セキュリティケーブルなどがあります。入退室管理ではICカードなどを使い、<strong>アンチパスバック</strong>では退室記録のないカードで再入室できないようにするなど、カードの使い回しを防ぎます。<strong>インターロック</strong>は二つの扉が同時に開かないようにする仕組みです。クリアデスクは紙の資料を机に残さず、クリアスクリーンは離席時に画面をロックするなどの対策です。</p>
+<p>アクセス制御では、受付係は名簿を読めるが、設定を変更できるのは管理者だけ、というように権限を分けます。業務に必要な最小限に絞るのが<strong>最小権限</strong>です。貸与端末を<strong>MDM</strong>で管理し、画面ロックや更新のルールを適用できます。遠隔消去などが可能かは製品と設定によります。</p>
+</section><section id="network"><h2>公開サーバ、通信、端末をそれぞれ守る</h2>
+    <figure id="visual-dmz" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>外から見える案内サイトと、校内の名簿を分ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-dmz-title visual-dmz-desc">
+        <title id="visual-dmz-title">外から見える案内サイトと、校内の名簿を分ける</title>
+        <desc id="visual-dmz-desc">インターネット、来場者は案内ページだけを見る。公開領域（DMZ）、案内用のWebサーバを置く。内部ネットワーク、名簿は許可された端末で扱う</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">インターネット</text>
+<text x="50" y="41" class="small" text-anchor="start">来場者は案内ページだけを見る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">公開領域（DMZ）</text>
+<text x="50" y="101" class="small" text-anchor="start">案内用のWebサーバを置く</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">内部ネットワーク</text>
+<text x="50" y="161" class="small" text-anchor="start">名簿は許可された端末で扱う</text>
+      </svg>
+      <p>上から下へ自由に入れるという図ではありません。公開領域を分け、ファイアウォールのルールで必要な通信だけを許します。</p>
+    </figure>
+  <table>
+    <caption>警告するのか、止めるのか、記録を分析するのか</caption>
+    <thead><tr><th scope="col">対策</th><th scope="col">どこを見て何をするか</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ファイアウォール</th><td>ネットワーク間や端末で、ルールに合う通信を通す。</td></tr>
+<tr><th scope="row">WAF</th><td>WebアプリへのHTTP要求などを検査し、不正な入力を遮断する。アプリ自体の修正も必要。</td></tr>
+<tr><th scope="row">IDS・IPS</th><td>IDSは侵入の兆候を検知し通知。IPSは不正と判断した通信を遮断できる。</td></tr>
+<tr><th scope="row">EDR</th><td>端末で起きた振る舞いを記録し、異常の検知・調査・対応に使う。</td></tr>
+<tr><th scope="row">DLP</th><td>機密データの外部送信などを検知し、設定に従って制御する。</td></tr>
+<tr><th scope="row">SIEM</th><td>複数の機器やサービスのログを集め、関連付けて分析する。</td></tr>
+<tr><th scope="row">検疫ネットワーク</th><td>接続する端末の状態を確認し、基準を満たさない端末の接続を制限する。</td></tr>
+    </tbody>
+  </table>
+<p>VPNは共有の回線などの上に仮想的な専用網を作ります。インターネットVPNは公衆インターネットを利用し、暗号化などで通信を保護する構成が一般的です。IP-VPNは通信事業者の閉域IP網を使うサービスの例です。閉域網でも暗号化の有無は別に確認します。Webの通信保護に使う<strong>TLS</strong>は旧来のSSLを置き換えた技術です。</p>
+    <figure id="visual-device" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>端末・ログ・流出の対策を、調べたいものから選ぶ</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-device-title visual-device-desc">
+        <title id="visual-device-title">端末・ログ・流出の対策を、調べたいものから選ぶ</title>
+        <desc id="visual-device-desc">EDR、受付PCの動作が怪しい、端末内の経緯を調べる。SIEM、複数機器に異常ログ、時刻などで関連付ける。DLP、名簿を外部へ送信、情報の持出しを制御。MDM、貸与端末の設定がばらばら、設定をまとめて適用</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">EDR</text>
+<text x="12" y="44" class="small" text-anchor="start">受付PCの動作が怪しい</text>
+<text x="12" y="62" class="small" text-anchor="start">端末内の経緯を調べる</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">SIEM</text>
+<text x="177" y="44" class="small" text-anchor="start">複数機器に異常ログ</text>
+<text x="177" y="62" class="small" text-anchor="start">時刻などで関連付ける</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">DLP</text>
+<text x="12" y="120" class="small" text-anchor="start">名簿を外部へ送信</text>
+<text x="12" y="138" class="small" text-anchor="start">情報の持出しを制御</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">MDM</text>
+<text x="177" y="120" class="small" text-anchor="start">貸与端末の設定がばらばら</text>
+<text x="177" y="138" class="small" text-anchor="start">設定をまとめて適用</text>
+      </svg>
+      <p>道具を導入しただけで対応が完了するわけではありません。誰が記録を見て連絡するかも決めておきます。</p>
+    </figure>
+<p>URLフィルタリングはURLなどを基準に閲覧を制限し、コンテンツフィルタリングは内容などから制限します。ペアレンタルコントロールは子どもの利用時間や閲覧などを保護者が管理する仕組みです。Wi-Fiでは対応機器に応じてWPA2やWPA3を設定し、家庭用などでは事前共有鍵（PSK）を使う方式があります。SSIDの非表示やMACアドレスによる許可設定だけでは、暗号化や認証の代わりになりません。</p>
+</section><section id="recovery"><h2>感染を広げず、戻せることを確かめる</h2>
+    <figure id="visual-backup" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>受付名簿を例に、3-2-1を数える</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-backup-title visual-backup-desc">
+        <title id="visual-backup-title">受付名簿を例に、3-2-1を数える</title>
+        <desc id="visual-backup-desc">3つのコピー、運用中の1つと、バックアップ2つ。2種類の媒体、例｜PC内蔵SSDと外付けHDD。1つは別の場所、例｜別拠点に保管した外付けHDD。復元を試す、練習用のデータで開けるか確認</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">3つのコピー</text>
+<text x="50" y="41" class="small" text-anchor="start">運用中の1つと、バックアップ2つ</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">2種類の媒体</text>
+<text x="50" y="101" class="small" text-anchor="start">例｜PC内蔵SSDと外付けHDD</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">1つは別の場所</text>
+<text x="50" y="161" class="small" text-anchor="start">例｜別拠点に保管した外付けHDD</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">復元を試す</text>
+<text x="50" y="221" class="small" text-anchor="start">練習用のデータで開けるか確認</text>
+      </svg>
+      <p>機器故障や災害に備えるための考え方です。ランサムウェア対策では、同時に書き換えられないようオフライン保管や変更できないバックアップなども検討します。</p>
+    </figure>
+<p>バックアップを一定期間書き換えられなくするのが<strong>イミュータブルバックアップ</strong>です。<strong>WORM</strong>は一度書いたデータを繰り返し読める仕組みです。バックアップ先を本番と同じ権限で常に操作できる設計では、同時に被害を受ける場合があります。</p>
+<p>端末の更新とマルウェア対策ソフトは被害を抑えるために使います。感染が疑われるときは、組織の手順に沿って端末をネットワークから隔離し、担当者へ連絡します。状況の調査前にログやファイルを消去しないことも大切です。<strong>デジタルフォレンジックス</strong>は証拠を保全して調べること、<strong>ペネトレーションテスト</strong>は許可された範囲で攻撃を模擬して弱点を確かめることです。</p>
+<p>設計段階から攻撃への備えを組み込むのが<strong>セキュリティバイデザイン</strong>、プライバシーを組み込むのが<strong>プライバシーバイデザイン</strong>です。受付フォームなら、公開前に入力と権限をテストし、集める項目を必要最小限にします。IoT機器も、更新方法や初期設定、接続先を設計時から確認します。</p>
+  <table>
+    <caption>ほかの用語も、守る対象から区別する</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">役割の例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">セキュアブート・TPM</th><td>セキュアブートは起動時に信頼できるソフトかを確認。TPMは鍵の保護などを支援する。</td></tr>
+<tr><th scope="row">セキュアイレース</th><td>ストレージが備える消去機能などで残存データを読めない状態にする。媒体や機器に合う手順を選ぶ。</td></tr>
+<tr><th scope="row">耐タンパ性</th><td>ICカードなどへの物理的・論理的な解析や改変を難しくする。</td></tr>
+<tr><th scope="row">電子透かし</th><td>画像などに識別情報を埋め込み、出所の確認などに使う。</td></tr>
+<tr><th scope="row">ブロックチェーン</th><td>ブロックをハッシュなどで連結して、記録の改ざんを困難にする。</td></tr>
+<tr><th scope="row">コールバック</th><td>登録済みの連絡先へかけ直し、接続や連絡の相手を確認する方式の例。</td></tr>
+    </tbody>
+  </table>
+</section>
+<section id="quiz">
+  <h2>例題9問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　事前に人が確かめる</h3>
+    <p>名簿の添付送信前に別の担当者と送信先を確認します。どの種類の対策ですか。</p>
+    <ol class="options"><li>物理的</li><li>人的</li><li>暗号鍵交換</li><li>伝送制御</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　人的</strong></p><p>確認手順や教育に関する取組なので人的対策です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　カードの使い回し</h3>
+    <p>退室の記録がないカードでは再入室できないようにします。何ですか。</p>
+    <ol class="options"><li>WAF</li><li>SIEM</li><li>アンチパスバック</li><li>暗号化</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　アンチパスバック</strong></p><p>入退室の順番を管理し、同じカードの使い回しを抑える対策です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　公開サーバを分ける</h3>
+    <p>外部から見せるWebサーバと、名簿を扱う内部を分けます。公開サーバを置く領域の例はどれですか。</p>
+    <ol class="options"><li>DMZ</li><li>TPM</li><li>DNSキャッシュ</li><li>プロキシのパスワード</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　DMZ</strong></p><p>DMZは外部公開サーバを内部ネットワークと分けて配置するための領域です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　Webアプリの入力を調べる</h3>
+    <p>受付サイトへ送られた不正なHTTP要求をWebアプリ向けのルールで検査します。何を使いますか。</p>
+    <ol class="options"><li>MDM</li><li>EDR</li><li>遠隔バックアップ</li><li>WAF</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　WAF</strong></p><p>WAFはWebアプリへの要求などを調べます。アプリ側で原因となる脆弱性を修正することも必要です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　検知した通信を止める</h3>
+    <p>不正と判断した通信を検知し、その場で遮断することが目的です。どれですか。</p>
+    <ol class="options"><li>IDSの通知のみ</li><li>IPS</li><li>WORM</li><li>ICカード</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　IPS</strong></p><p>IPSは不正な通信の検知に加え、遮断できる仕組みです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　ログを関連付ける</h3>
+    <p>受付サーバ、端末、ファイアウォールの記録を一か所で関連付けて異常を調べます。何ですか。</p>
+    <ol class="options"><li>PSK</li><li>TPM</li><li>SIEM</li><li>VPN</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　SIEM</strong></p><p>複数のログを集めて分析するのがSIEMです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　バックアップの数</h3>
+    <p>本番の1つと、別媒体にある控え1つだけです。3-2-1のうち、まず足りていないと分かるのはどれですか。</p>
+    <ol class="options"><li>3つのコピー</li><li>2種類の媒体</li><li>複製を全て本番へ移すこと</li><li>バックアップを作らないこと</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　3つのコピー</strong></p><p>元データを含めて2つです。3つにするためにバックアップをもう一つ作り、別の場所にも置く必要があります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　調査に使える記録を残す</h3>
+    <p>受付PCのログを保全し、事故の経緯を調べます。何の例ですか。</p>
+    <ol class="options"><li>電子透かし</li><li>ペアレンタルコントロール</li><li>IP-VPN</li><li>デジタルフォレンジックス</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　デジタルフォレンジックス</strong></p><p>事故の調査に使える証拠を保全し、分析する取組です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　端末の設定をまとめる</h3>
+    <p>貸与スマホの画面ロックや利用設定をまとめて管理します。何ですか。</p>
+    <ol class="options"><li>VPN</li><li>MDM</li><li>IDS</li><li>WORM</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　MDM</strong></p><p>組織のモバイル端末を管理する仕組みがMDMです。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第18章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=63">IPA「ITパスポート試験シラバス Ver.6.5」情報セキュリティ対策</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=64">IPA「ITパスポート試験シラバス Ver.6.5」実装技術とバックアップ</a></li>
+      <li><a href="https://www.ipa.go.jp/security/guide/sme/about.html">IPA「中小企業の情報セキュリティ対策ガイドライン」</a></li>
+      <li><a href="https://www.ipa.go.jp/security/10threats/ps6vr70000009r2f-att/kaisetsu_2023.pdf">IPA「情報セキュリティ10大脅威 2023 解説」バックアップ運用</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc8446.html">RFC 8446「TLS 1.3」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch18-2-security-management.html">18-2 情報セキュリティ管理</a> ／ 次へ <a href="itp-ch18-3-cryptography-and-authentication.html">18-3 後編 暗号と認証</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch18"></script>
+</body>
+</html>

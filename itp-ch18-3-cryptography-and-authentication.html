@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch18-3-cryptography-and-authentication.html">
+  <title>ITパスポート 18-3 後編 暗号と認証｜スタディクエスト</title>
+  <meta name="description" content="文化祭の引継ぎを例に、共通鍵と公開鍵、デジタル署名と証明書、多要素・生体認証を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 18-3 後編 暗号と認証">
+  <meta property="og:description" content="文化祭の引継ぎを例に、共通鍵と公開鍵、デジタル署名と証明書、多要素・生体認証を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch18-3-cryptography-and-authentication.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 18-3 後編 暗号と認証",
+  "description": "文化祭の引継ぎを例に、共通鍵と公開鍵、デジタル署名と証明書、多要素・生体認証を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch18-3-cryptography-and-authentication.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch18-3-cryptography-and-authentication.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第18章 情報セキュリティ</p>
+    <h1>ITパスポート 18-3 後編 暗号と認証</h1>
+    <p>文化祭の引継ぎを例に、共通鍵と公開鍵、デジタル署名と証明書、多要素・生体認証を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#encryption">暗号化と鍵</a></li><li><a href="#signature">署名と証明書</a></li><li><a href="#login">利用者認証と生体認証</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="encryption"><h2>読む人を限るには、どの鍵で何をする？</h2>
+<p>文化祭の担当者が、受付の引継ぎファイルを送るとします。読める形のデータを<strong>平文</strong>と呼び、鍵を使って読めない形に変えるのが<strong>暗号化</strong>、戻すのが<strong>復号</strong>です。暗号の強さは鍵の長さだけで決まるわけではなく、方式・実装・鍵の保管にも左右されます。</p>
+    <figure id="visual-symmetric" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>共通鍵暗号｜送る人と受け取る人が同じ鍵を使う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-symmetric-title visual-symmetric-desc">
+        <title id="visual-symmetric-title">共通鍵暗号｜送る人と受け取る人が同じ鍵を使う</title>
+        <desc id="visual-symmetric-desc">鍵の共有、引継ぎ担当どうしが鍵を安全に共有。暗号化、送信側が同じ鍵でファイルを暗号化。復号、受信側が同じ鍵で平文に戻す</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">鍵の共有</text>
+<text x="50" y="41" class="small" text-anchor="start">引継ぎ担当どうしが鍵を安全に共有</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">暗号化</text>
+<text x="50" y="101" class="small" text-anchor="start">送信側が同じ鍵でファイルを暗号化</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">復号</text>
+<text x="50" y="161" class="small" text-anchor="start">受信側が同じ鍵で平文に戻す</text>
+      </svg>
+      <p>共通鍵暗号は大量のデータに使いやすい一方、鍵を安全に共有する必要があります。AESは共通鍵暗号の例です。</p>
+    </figure>
+    <figure id="visual-public-key" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>公開鍵暗号｜受け取る人の公開鍵で暗号化する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-public-key-title visual-public-key-desc">
+        <title id="visual-public-key-title">公開鍵暗号｜受け取る人の公開鍵で暗号化する</title>
+        <desc id="visual-public-key-desc">公開鍵を取得、送信側が受信者の公開鍵を確認。公開鍵で暗号化、送信側は受信者の公開鍵を使う。秘密鍵で復号、受信側は自分の秘密鍵を使う</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">公開鍵を取得</text>
+<text x="50" y="41" class="small" text-anchor="start">送信側が受信者の公開鍵を確認</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">公開鍵で暗号化</text>
+<text x="50" y="101" class="small" text-anchor="start">送信側は受信者の公開鍵を使う</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">秘密鍵で復号</text>
+<text x="50" y="161" class="small" text-anchor="start">受信側は自分の秘密鍵を使う</text>
+      </svg>
+      <p>受信者は秘密鍵を配りません。この図は公開鍵暗号で機密性を守る例で、次のデジタル署名では鍵を使う人と目的が変わります。</p>
+    </figure>
+<p>公開鍵の技術を使って共通鍵を安全に共有したり導出したりし、本文を共通鍵暗号で保護する組合せが<strong>ハイブリッド暗号方式</strong>です。例えばTLS 1.3では、証明書による認証を行う接続で、公開鍵技術による鍵共有と、導出した鍵による対称暗号を組み合わせます。ディスク暗号化は主に保存媒体を、ファイル暗号化は対象のファイルを守ります。</p>
+</section><section id="signature"><h2>変更されていないか、誰の鍵かを確かめる</h2>
+    <figure id="visual-signature" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>担当者が公開する案内PDFに署名する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-signature-title visual-signature-desc">
+        <title id="visual-signature-title">担当者が公開する案内PDFに署名する</title>
+        <desc id="visual-signature-desc">署名する側、担当者が自分の秘密鍵で署名。公開する、PDFと署名を配る。確認する側、担当者の公開鍵で署名を検証</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">署名する側</text>
+<text x="50" y="41" class="small" text-anchor="start">担当者が自分の秘密鍵で署名</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">公開する</text>
+<text x="50" y="101" class="small" text-anchor="start">PDFと署名を配る</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">確認する側</text>
+<text x="50" y="161" class="small" text-anchor="start">担当者の公開鍵で署名を検証</text>
+      </svg>
+      <p>署名の検証で、署名後に文書が変わっていないことと、対応する秘密鍵で署名されたことを確かめます。署名だけで本文は隠れません。</p>
+    </figure>
+<p><strong>ハッシュ関数</strong>は、データを一定長の要約値に変換します。暗号学的ハッシュでは、要約値から元のデータを求めることや、同じ要約値になる異なるデータを見つけることが困難になるよう設計します。署名方式ではハッシュを利用するものがあり、単にハッシュ値を公開することと、秘密鍵で署名することでは証明できる内容が異なります。</p>
+  <table>
+    <caption>何を確かめたいかで選ぶ</caption>
+    <thead><tr><th scope="col">目的</th><th scope="col">仕組み</th><th scope="col">見分ける点</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">内容を読める相手を絞る</th><td>暗号化</td><td>公開鍵暗号の例では受信者の鍵を使う。</td></tr>
+<tr><th scope="row">署名した鍵と改ざんの有無を確かめる</th><td>デジタル署名</td><td>署名者の秘密鍵で作り、公開鍵で検証。</td></tr>
+<tr><th scope="row">その時刻までに存在したことを確かめる</th><td>タイムスタンプ</td><td>信頼できる時刻認証で、後のデータとの一致も検証できる。</td></tr>
+<tr><th scope="row">公開鍵と相手の対応を確かめる</th><td>デジタル証明書</td><td>認証局の署名と証明書の有効性などを検証。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-certificate" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>ブラウザで案内サイトの証明書を確かめる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-certificate-title visual-certificate-desc">
+        <title id="visual-certificate-title">ブラウザで案内サイトの証明書を確かめる</title>
+        <desc id="visual-certificate-desc">サーバ証明書、名前と公開鍵の対応を示す。証明書の連鎖、発行元の証明書などを順に確認。信頼の基点、端末などが信頼するルートを使う。利用条件の確認、ホスト名や有効期間なども見る</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">サーバ証明書</text>
+<text x="50" y="41" class="small" text-anchor="start">名前と公開鍵の対応を示す</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">証明書の連鎖</text>
+<text x="50" y="101" class="small" text-anchor="start">発行元の証明書などを順に確認</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">信頼の基点</text>
+<text x="50" y="161" class="small" text-anchor="start">端末などが信頼するルートを使う</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">利用条件の確認</text>
+<text x="50" y="221" class="small" text-anchor="start">ホスト名や有効期間なども見る</text>
+      </svg>
+      <p>公開鍵基盤（PKI）は証明書の発行・検証などの仕組みです。HTTPSの証明書で、サイトに載った情報の正しさまでは確認できません。</p>
+    </figure>
+<p>認証局（CA）が証明書を発行します。<strong>CRL</strong>は有効期間内でも失効した証明書を確認するための一覧です。サーバ証明書は通信先のサーバの確認に、クライアント証明書は接続する端末や利用者などの確認に使われます。</p>
+</section><section id="login"><h2>認証の要素を分け、生体認証の誤りを数える</h2>
+    <figure id="visual-factors" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>受付係としてログインするための手掛かり</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-factors-title visual-factors-desc">
+        <title id="visual-factors-title">受付係としてログインするための手掛かり</title>
+        <desc id="visual-factors-desc">知識、覚えているパスワード、PINも同じ種類。所持、手元のセキュリティキー、登録済みのカードなど。生体、指紋・顔・静脈など、本人の身体的な特徴。多要素、異なる種類を組み合わせる、例｜パスワードと鍵</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">知識</text>
+<text x="12" y="44" class="small" text-anchor="start">覚えているパスワード</text>
+<text x="12" y="62" class="small" text-anchor="start">PINも同じ種類</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">所持</text>
+<text x="177" y="44" class="small" text-anchor="start">手元のセキュリティキー</text>
+<text x="177" y="62" class="small" text-anchor="start">登録済みのカードなど</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">生体</text>
+<text x="12" y="120" class="small" text-anchor="start">指紋・顔・静脈など</text>
+<text x="12" y="138" class="small" text-anchor="start">本人の身体的な特徴</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">多要素</text>
+<text x="177" y="120" class="small" text-anchor="start">異なる種類を組み合わせる</text>
+<text x="177" y="138" class="small" text-anchor="start">例｜パスワードと鍵</text>
+      </svg>
+      <p>パスワードとPINを続けて入れても、どちらも知識なので、それだけでは多要素認証になりません。</p>
+    </figure>
+<p>認証は誰であるかなどを確かめ、認可は認証後などに許された操作を判断します。受付係としてログインできても、管理者だけが持つ名簿の削除権限まで付くわけではありません。詳しくは<a href="itp-authentication-authorization.html">「認証と認可の違い」</a>で扱っています。</p>
+  <table>
+    <caption>利用者を確認する方法を区別する</caption>
+    <thead><tr><th scope="col">方法</th><th scope="col">使われ方</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">ワンタイムパスワード・SMS認証</th><td>一回限りのコードなどで確認する。短時間でも偽サイトに渡さない。</td></tr>
+<tr><th scope="row">パスキー</th><td>サイトとひも付いた公開鍵方式で確認する。端末側でPINや生体を使うことがある。</td></tr>
+<tr><th scope="row">シングルサインオン</th><td>一度の認証で、連携した複数のサービスに入れるようにする。</td></tr>
+<tr><th scope="row">リスクベース認証</th><td>普段と違う端末など、状況に応じて追加確認を求める。</td></tr>
+<tr><th scope="row">ニーモニック・パターン認証</th><td>覚えやすい手掛かりや、画面上の操作パターンなどを使う。</td></tr>
+<tr><th scope="row">CAPTCHA</th><td>自動操作と人の操作を区別するために使う。特定の本人かは別途確認する。</td></tr>
+<tr><th scope="row">EMV 3-Dセキュア</th><td>オンラインのカード決済時に、カード利用者の確認を支援する仕組み。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-biometrics" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>同じ失敗でも、誰が試したかで分母が変わる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-biometrics-title visual-biometrics-desc">
+        <title id="visual-biometrics-title">同じ失敗でも、誰が試したかで分母が変わる</title>
+        <desc id="visual-biometrics-desc">本物の試行200回中4回が拒否され、別人の試行500回中1回が受け入れられた。</desc>
+        <rect x="3" y="4" width="324" height="54" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">本物の試行</text>
+<text x="12" y="43" class="small" text-anchor="start">200回のうち、誤って拒否した4回</text>
+<rect x="3" y="64" width="324" height="54" rx="7" class="panel"/>
+<text x="12" y="83" class="strong orange" text-anchor="start">別人の試行</text>
+<text x="12" y="103" class="small" text-anchor="start">500回のうち、誤って受け入れた1回</text>
+<text x="12" y="141" class="strong blue" text-anchor="start">本人拒否率 2% ／ 他人受入率 0.2%</text>
+      </svg>
+      <p>本人拒否率は4÷200、他人受入率は1÷500。架空の測定値です。二つを合算して全700回で割ると、各指標の意味が変わります。</p>
+    </figure>
+<p>生体認証では指紋、顔、声紋、静脈、虹彩、網膜などの特徴を使います。虹彩は目の色の付いた部分の模様、網膜は目の奥の構造に着目します。一般に照合基準を厳しくすると、他人受入れは減る方向ですが、本人拒否は増える方向に動きます。どちらの誤りを避けたいかと、代替の確認手順を考えます。</p>
+</section>
+<section id="quiz">
+  <h2>例題10問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　同じ鍵で戻す</h3>
+    <p>受け取った名簿を、送信側が暗号化に用いた鍵と同じ鍵で復号します。何ですか。</p>
+    <ol class="options"><li>公開鍵暗号</li><li>共通鍵暗号</li><li>ハッシュ関数</li><li>タイムスタンプ</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　共通鍵暗号</strong></p><p>暗号化と復号で同じ秘密の鍵を使うため、共通鍵暗号です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　受信者だけが読める</h3>
+    <p>公開鍵暗号の例で、担当Bだけが読めるよう暗号化します。どの鍵で暗号化しますか。</p>
+    <ol class="options"><li>送信者の公開鍵</li><li>送信者の秘密鍵</li><li>Bの公開鍵</li><li>Bの秘密鍵</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　Bの公開鍵</strong></p><p>Bの公開鍵で暗号化し、対応する秘密鍵を持つBが復号します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　署名を検証する</h3>
+    <p>担当Aが自分の秘密鍵でPDFに署名しました。受け取った側はどの鍵で検証しますか。</p>
+    <ol class="options"><li>Aの公開鍵</li><li>Aの秘密鍵</li><li>受信者の秘密鍵</li><li>共通鍵</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　Aの公開鍵</strong></p><p>対応するAの公開鍵で署名を検証します。公開鍵が本当にAのものかも確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　何時までに存在したか</h3>
+    <p>書類が受付締切までに存在したことを後から確かめたいとき、何を使いますか。</p>
+    <ol class="options"><li>WAF</li><li>MDM</li><li>ファイル圧縮</li><li>タイムスタンプ</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　タイムスタンプ</strong></p><p>信頼できる時刻認証を使い、その時点で対象データが存在したことを示す用途です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　まだ有効期限内だが失効</h3>
+    <p>有効期限内でも失効した証明書を一覧で確認するものはどれですか。</p>
+    <ol class="options"><li>SSID</li><li>CRL</li><li>CSVの名簿</li><li>PSK</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　CRL</strong></p><p>CRLは失効した証明書の一覧です。有効期限だけでは失効を判定できません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　異なる種類を選ぶ</h3>
+    <p>知識と所持を組み合わせるものはどれですか。</p>
+    <ol class="options"><li>パスワードとPIN</li><li>顔と指紋</li><li>パスワードと登録済みのセキュリティキー</li><li>二種類のパスワード</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　パスワードと登録済みのセキュリティキー</strong></p><p>パスワードは知識、物理セキュリティキーは所持です。二つの異なる種類を使います。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　不審な端末だけ追加確認</h3>
+    <p>初めての端末からログインした場合だけ追加確認を求めます。どの考え方ですか。</p>
+    <ol class="options"><li>リスクベース認証</li><li>単なる認可</li><li>WORM</li><li>デジタルフォレンジックス</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　リスクベース認証</strong></p><p>端末や状況からリスクを見積もり、確認を強める方法です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　試行数を分けて計算</h3>
+    <p>本人の200回で4回を誤拒否、別人の500回で1回を誤受入れしました。本人拒否率と他人受入率はいくつですか。</p>
+    <ol class="options"><li>0.2%と2%</li><li>0.8%と0.5%</li><li>4%と1%</li><li>2%と0.2%</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　2%と0.2%</strong></p><p>本人拒否率は4÷200×100＝2%。他人受入率は1÷500×100＝0.2%です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　照合を厳しくする</h3>
+    <p>ほかの条件は同じで生体認証の照合基準を厳しくすると、一般にどうなりますか。</p>
+    <ol class="options"><li>どちらの誤りも必ず減る</li><li>本人拒否が増え、他人受入れが減る方向</li><li>本人拒否が減り、他人受入れが増える方向</li><li>両方とも必ず0になる</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　本人拒否が増え、他人受入れが減る方向</strong></p><p>一致とみなす条件を厳しくすると他人を通しにくい反面、本人も拒否されやすくなります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第10問　ログインと権限</h3>
+    <p>受付係と確認できた後、名簿を閲覧できるが削除はできないようにします。削除可否の判断は何ですか。</p>
+    <ol class="options"><li>暗号化</li><li>ハッシュ</li><li>認可</li><li>時刻認証</li></ol>
+    <details><summary>第10問の解答と解説</summary><p><strong>ウ　認可</strong></p><p>本人確認は認証、許される操作かの判断は認可です。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第18章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=64">IPA「ITパスポート試験シラバス Ver.6.5」暗号技術と認証</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=65">IPA「ITパスポート試験シラバス Ver.6.5」利用者認証と公開鍵基盤</a></li>
+      <li><a href="https://csrc.nist.gov/pubs/fips/197/final">NIST「AES」</a></li>
+      <li><a href="https://csrc.nist.gov/pubs/fips/186-5/final">NIST「Digital Signature Standard」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc8446.html">RFC 8446「TLS 1.3」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc5280.html">RFC 5280「PKI Certificate and CRL Profile」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc3161.html">RFC 3161「Time-Stamp Protocol」</a></li>
+      <li><a href="https://pages.nist.gov/800-63-4/sp800-63b.html">NIST「Digital Identity Guidelines」</a></li>
+      <li><a href="https://fidoalliance.org/passkeys/">FIDO Alliance「Passkeys」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch18-3-security-controls.html">18-3 前編 情報セキュリティ対策</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch18"></script>
+</body>
+</html>
