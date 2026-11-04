@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch17-3-internet-and-mobile.html">
+  <title>ITパスポート 17-3 ネットワーク応用｜スタディクエスト</title>
+  <meta name="description" content="文化祭の案内サイトと帰り道の通話を例に、DNSとIP、Web・メール、固定回線とモバイル通信を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 17-3 ネットワーク応用">
+  <meta property="og:description" content="文化祭の案内サイトと帰り道の通話を例に、DNSとIP、Web・メール、固定回線とモバイル通信を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch17-3-internet-and-mobile.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 17-3 ネットワーク応用",
+  "description": "文化祭の案内サイトと帰り道の通話を例に、DNSとIP、Web・メール、固定回線とモバイル通信を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch17-3-internet-and-mobile.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch17-3-internet-and-mobile.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第17章 ネットワーク</p>
+    <h1>ITパスポート 17-3 ネットワーク応用</h1>
+    <p>文化祭の案内サイトと帰り道の通話を例に、DNSとIP、Web・メール、固定回線とモバイル通信を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#internet">URL・DNS・IPアドレス</a></li><li><a href="#web-mail">Webとメール</a></li><li><a href="#line">固定回線と通信サービス</a></li><li><a href="#mobile">モバイル通信</a></li><li><a href="#quiz">例題11問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="internet"><h2>URLを開くと、名前から通信先を探す</h2>
+    <figure id="visual-browser" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>Wi-Fiにつないで、文化祭の案内を開く</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-browser-title visual-browser-desc">
+        <title id="visual-browser-title">Wi-Fiにつないで、文化祭の案内を開く</title>
+        <desc id="visual-browser-desc">端末の設定、DHCPでIPアドレスなどを受け取る。名前を調べる、DNSで案内サイトの名前を調べる。宛先へつなぐ、IPでネットワークを越えて通信する。案内を受け取る、HTTPSの要求にサーバが応答する</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">端末の設定</text>
+<text x="50" y="41" class="small" text-anchor="start">DHCPでIPアドレスなどを受け取る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">名前を調べる</text>
+<text x="50" y="101" class="small" text-anchor="start">DNSで案内サイトの名前を調べる</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">宛先へつなぐ</text>
+<text x="50" y="161" class="small" text-anchor="start">IPでネットワークを越えて通信する</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">案内を受け取る</text>
+<text x="50" y="221" class="small" text-anchor="start">HTTPSの要求にサーバが応答する</text>
+      </svg>
+      <p>初めてつなぎ、キャッシュなどがない場合の簡略図です。DHCPは接続設定、DNSは名前に対応する情報を調べる仕組みです。</p>
+    </figure>
+<p>たとえば <code>https://school.example/guide/?day=2</code> では、<code>https</code>がスキーム、<code>school.example</code>がホスト名、<code>/guide/</code>がパス、<code>day=2</code>がクエリです。<strong>URL</strong>は情報の場所などを表し、<strong>ドメイン名</strong>は名前空間の中の名前です。ドメイン名は右から階層をたどり、例えば<code>www.example.jp</code>では<code>jp</code>がトップレベルです。ルートまで含めて完全に指定した名前をFQDNと呼びます。</p>
+<p><strong>DNS</strong>は名前を手掛かりにIPアドレスなどの情報を調べる分散型の仕組みです。同じ名前に複数のIPが返ることもあり、単純な1対1の名簿とは限りません。<strong>IPv4</strong>は32ビット、<strong>IPv6</strong>は128ビットでアドレスを表します。IPv4のプライベートアドレスは家庭や学校などの内部に使い、インターネットではそのままの宛先として使いません。グローバルIPアドレスは公開インターネットで使えるアドレスです。</p>
+    <figure id="visual-napt" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>複数の端末が、一つの外側のIPを使う例</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-napt-title visual-napt-desc">
+        <title id="visual-napt-title">複数の端末が、一つの外側のIPを使う例</title>
+        <desc id="visual-napt-desc">内側の192.168.20.10と192.168.20.11を、ルーターが外側のIPと別々のポートに対応付ける。</desc>
+        <rect x="3" y="4" width="324" height="94" rx="7" class="panel"/>
+<text x="12" y="24" class="strong blue" text-anchor="start">学校のLAN</text>
+<rect x="13" y="36" width="134" height="23" rx="4" class="blue-fill"/>
+<rect x="13" y="64" width="134" height="23" rx="4" class="blue-fill"/>
+<text x="21" y="52" class="small" text-anchor="start">PC　192.168.20.10</text>
+<text x="21" y="80" class="small" text-anchor="start">携帯　192.168.20.11</text>
+<path d="M148 47h16l13 13m-29 15h16l13-15" class="wire" />
+<rect x="177" y="36" width="140" height="51" rx="4" class="orange-fill"/>
+<text x="188" y="55" class="strong orange" text-anchor="start">ルーターがNAPT</text>
+<text x="188" y="74" class="small" text-anchor="start">IPとポートを対応付け</text>
+<path d="M246 88v23m-4-5 4 5 4-5" class="wire" />
+<rect x="136" y="114" width="190" height="31" rx="7" class="panel"/>
+<text x="146" y="134" class="small" text-anchor="start">外側の例　203.0.113.12</text>
+      </svg>
+      <p>203.0.113.12は文書用の例示アドレスです。図はNAPTの考え方を示します。NATはアドレス変換、NAPTはアドレスに加えポート番号も変換します。</p>
+    </figure>
+<p>同じLANかどうかは、IPv4アドレスのネットワーク部分を比較して判断します。たとえば /24 は先頭24ビットがネットワーク部分という意味で、サブネットマスクは255.255.255.0です。192.168.20.10/24と192.168.20.25/24のネットワークはともに192.168.20.0/24です。192.168.21.25/24は別のネットワークです。</p>
+</section><section id="web-mail"><h2>Webやメールで、どこに何が残るかを考える</h2>
+    <figure id="visual-web-state" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>似ているけれど、残しているものが違う</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-web-state-title visual-web-state-desc">
+        <title id="visual-web-state-title">似ているけれど、残しているものが違う</title>
+        <desc id="visual-web-state-desc">Cookie、選んだ言語の目印を保存、次の要求でサーバへ渡せる。キャッシュ、取得した画像などを保存、条件を満たせば再利用。RSS、更新情報の配信データ、リーダーで新着を確認。オンラインストレージ、共有するファイルを保存、閲覧や編集権限を分ける</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">Cookie</text>
+<text x="12" y="44" class="small" text-anchor="start">選んだ言語の目印を保存</text>
+<text x="12" y="62" class="small" text-anchor="start">次の要求でサーバへ渡せる</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">キャッシュ</text>
+<text x="177" y="44" class="small" text-anchor="start">取得した画像などを保存</text>
+<text x="177" y="62" class="small" text-anchor="start">条件を満たせば再利用</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">RSS</text>
+<text x="12" y="120" class="small" text-anchor="start">更新情報の配信データ</text>
+<text x="12" y="138" class="small" text-anchor="start">リーダーで新着を確認</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">オンラインストレージ</text>
+<text x="177" y="120" class="small" text-anchor="start">共有するファイルを保存</text>
+<text x="177" y="138" class="small" text-anchor="start">閲覧や編集権限を分ける</text>
+      </svg>
+      <p>案内画像が古いままならキャッシュ、選んだ言語を次回も使いたいならCookieなど、残す対象から判断します。</p>
+    </figure>
+<p>Webでは、ブラウザがURLを指定して要求し、WebサーバがHTMLなどを返します。<strong>ハイパーリンク</strong>は別の情報へ移動する参照です。<strong>CGI</strong>はWebサーバが外部プログラムを呼び出す仕組みの一つで、案内フォームの入力に応じて内容を変えるといった使い方があります。SNSは情報を共有したり交流したりするサービスです。</p>
+  <table>
+    <caption>来場者へのメールで、宛先と形式を確認する</caption>
+    <thead><tr><th scope="col">場面</th><th scope="col">使う項目・方法</th><th scope="col">判断の理由</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">担当者を主な宛先にする</th><td>To</td><td>返答や対応を求める宛先。</td></tr>
+<tr><th scope="row">担当以外にも情報を共有</th><td>Cc</td><td>一般に他の受信者にも宛先が見える。</td></tr>
+<tr><th scope="row">一般参加者に一斉案内</th><td>Bcc</td><td>受信者同士にアドレスを見せない用途に使う。</td></tr>
+<tr><th scope="row">登録メンバー全員へ配布</th><td>メーリングリスト</td><td>専用アドレス宛ての投稿を登録者へ配る。</td></tr>
+<tr><th scope="row">画像やPDFを添付</th><td>MIME</td><td>本文の形式や添付ファイルの種類を表せる。</td></tr>
+    </tbody>
+  </table>
+<p>同報メールは同じ内容を複数の人に送る方法です。受信したメールはサーバのメールボックスなどに置かれます。テキストメールは主に文字、HTMLメールは書式や画像を含められます。Bccは宛先の扱いを変えるもので、本文の機密性を保つ機能とは別です。実際に一斉送信するときは、送信アプリで少人数のテストを行い、宛先表示を確認します。</p>
+</section><section id="line"><h2>固定回線と携帯回線の、どちらを使う？</h2>
+  <table>
+    <caption>回線がどこまで届くかで見分ける</caption>
+    <thead><tr><th scope="col">方式・役割</th><th scope="col">仕組みと例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">FTTH・ONU</th><td>建物まで光ファイバーを引く。ONUは光回線と宅内側の機器をつなぐ。</td></tr>
+<tr><th scope="row">CATVインターネット</th><td>ケーブルテレビの設備を活用して接続する。</td></tr>
+<tr><th scope="row">ADSL・ISDN</th><td>電話回線を用いる方式の例。ADSLは上り・下りが非対称、ISDNはデジタル通信網。</td></tr>
+<tr><th scope="row">回線事業者・ISP</th><td>回線事業者は通信回線を提供し、ISPはインターネットへの接続を提供する。同じ会社が両方を扱う場合もある。</td></tr>
+<tr><th scope="row">IP電話・VoIP</th><td>音声をデータ化し、IPネットワーク上で運ぶ。</td></tr>
+    </tbody>
+  </table>
+    <figure id="visual-packets" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>回線を共有して、分けたデータを送る</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-packets-title visual-packets-desc">
+        <title id="visual-packets-title">回線を共有して、分けたデータを送る</title>
+        <desc id="visual-packets-desc">写真を分ける、送るデータを小さな単位に分ける。回線を共有する、ほかの通信のパケットと順に通す。宛先に届ける、各パケットを必要な方向へ転送</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">写真を分ける</text>
+<text x="50" y="41" class="small" text-anchor="start">送るデータを小さな単位に分ける</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">回線を共有する</text>
+<text x="50" y="101" class="small" text-anchor="start">ほかの通信のパケットと順に通す</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">宛先に届ける</text>
+<text x="50" y="161" class="small" text-anchor="start">各パケットを必要な方向へ転送</text>
+      </svg>
+      <p>パケット交換の概念図です。回線交換は、通信の間、経路上の通信資源をその接続に割り当てる方式です。</p>
+    </figure>
+<p>料金の設問では、何に対して支払うかを見ます。従量制は利用量などに応じて費用が変わり、定額制は条件内で一定です。例えば固定費を無視し、従量制を0.5円/MB、定額制を1,000円と仮定すれば、2,000 MBで同額です。これは仕組みを比べる架空の条件です。</p>
+</section><section id="mobile"><h2>移動するスマホの通信を、基地局と契約で分けて考える</h2>
+    <figure id="visual-handover" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>校門から駅まで移動しながら通話する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-handover-title visual-handover-desc">
+        <title id="visual-handover-title">校門から駅まで移動しながら通話する</title>
+        <desc id="visual-handover-desc">校門の近く、スマホは基地局Aに接続。駅に向かって移動、基地局Bのエリアに近づく。接続先を切り替える、通話を継続できるようBへ引き継ぐ</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">校門の近く</text>
+<text x="50" y="41" class="small" text-anchor="start">スマホは基地局Aに接続</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">駅に向かって移動</text>
+<text x="50" y="101" class="small" text-anchor="start">基地局Bのエリアに近づく</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">接続先を切り替える</text>
+<text x="50" y="161" class="small" text-anchor="start">通話を継続できるようBへ引き継ぐ</text>
+      </svg>
+      <p>移動中に接続する基地局を切り替えるのがハンドオーバーです。通信が実際に継続できるかは電波や設備の条件にもよります。</p>
+    </figure>
+    <figure id="visual-mobile" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>旅行・契約変更・接続で起きることを区別する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-mobile-title visual-mobile-desc">
+        <title id="visual-mobile-title">旅行・契約変更・接続で起きることを区別する</title>
+        <desc id="visual-mobile-desc">ローミング、旅行先の他社網を利用、事業者間の取り決めが必要。テザリング、スマホの回線をPCと共有、スマホが接続を中継。MNP、携帯会社を変えても、電話番号を持ち運ぶ。eSIM、対応端末で契約を設定、プロファイルを入れて使う</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">ローミング</text>
+<text x="12" y="44" class="small" text-anchor="start">旅行先の他社網を利用</text>
+<text x="12" y="62" class="small" text-anchor="start">事業者間の取り決めが必要</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">テザリング</text>
+<text x="177" y="44" class="small" text-anchor="start">スマホの回線をPCと共有</text>
+<text x="177" y="62" class="small" text-anchor="start">スマホが接続を中継</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">MNP</text>
+<text x="12" y="120" class="small" text-anchor="start">携帯会社を変えても</text>
+<text x="12" y="138" class="small" text-anchor="start">電話番号を持ち運ぶ</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">eSIM</text>
+<text x="177" y="120" class="small" text-anchor="start">対応端末で契約を設定</text>
+<text x="177" y="138" class="small" text-anchor="start">プロファイルを入れて使う</text>
+      </svg>
+      <p>ハンドオーバーは接続先の基地局の切替えです。ローミングは契約先とは別の事業者網を使うこと、MNPは契約を移すときの番号の引継ぎです。</p>
+    </figure>
+<p>SIMカードは契約者の識別などに必要な情報を持つICカードです。eSIMは対応端末へ契約情報のプロファイルを遠隔で設定でき、物理カードの差替えを減らせます。<strong>MNO</strong>は自らの移動通信網でサービスを提供する事業者、<strong>MVNO</strong>は他事業者の移動通信網を借りてサービスを提供する事業者です。</p>
+  <table>
+    <caption>電波を使う仕組みと、サービスの使い道</caption>
+    <thead><tr><th scope="col">用語</th><th scope="col">身近な場面</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">LTE・5G</th><td>携帯回線で通信する規格。5Gでは高速大容量・低遅延・多数接続が用途ごとの特徴になる。</td></tr>
+<tr><th scope="row">プラチナバンド</th><td>携帯で使う比較的低い周波数帯の通称。障害物の回り込みや屋内への届きやすさに関わる。</td></tr>
+<tr><th scope="row">MIMO</th><td>複数の送受信アンテナを使い、通信品質や速度の改善を図る。</td></tr>
+<tr><th scope="row">キャリアアグリゲーション</th><td>複数の周波数ブロックを束ね、通信容量を広げる。</td></tr>
+<tr><th scope="row">テレマティクス</th><td>車両などの情報を通信で集め、位置案内や運行管理に活用する。</td></tr>
+    </tbody>
+  </table>
+<p>無線LANの<strong>AP</strong>はWi-Fi端末をネットワークにつなぎ、携帯の<strong>基地局</strong>は携帯回線につなぎます。WiMAXは無線で広域アクセスを提供する方式の一つです。利用者が多いときの体感速度は、規格名だけでなく、電波の状態や回線の混雑などにも左右されます。</p>
+</section>
+<section id="quiz">
+  <h2>例題11問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　つながる準備と名前の検索</h3>
+    <p>Wi-Fi接続後にIP設定は受け取れましたが、案内サイトのホスト名に対応するIPを確認できません。どの仕組みを調べますか。</p>
+    <ol class="options"><li>DHCP</li><li>DNS</li><li>SMTP</li><li>MNP</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　DNS</strong></p><p>名前からIPアドレスなどの情報を調べるのはDNSです。DHCPは端末の接続設定を配布します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　同じサブネットを選ぶ</h3>
+    <p>受付PCが192.168.20.10/24です。下の候補も全て/24とした場合、同じサブネットなのはどれですか。</p>
+    <ol class="options"><li>192.168.21.10</li><li>192.169.20.10</li><li>192.168.20.25</li><li>192.168.2.10</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　192.168.20.25</strong></p><p>/24では最初の24ビットがネットワーク部です。先頭3組が192.168.20で一致する192.168.20.25が該当します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　一つの外側IPを共用</h3>
+    <p>2台の受付端末が、外側では同じIPv4アドレスを使い、ポート番号の違いで通信を区別します。何の例ですか。</p>
+    <ol class="options"><li>MIME</li><li>NTP</li><li>FTTH</li><li>NAPT</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>エ　NAPT</strong></p><p>NAPTは、内部と外部のIPアドレスに加えてポート番号も対応付けて変換します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　URLのどの部分が名前？</h3>
+    <p>https://school.example/guide/?day=2 で、DNSの検索に使うホスト名はどれですか。</p>
+    <ol class="options"><li>school.example</li><li>https</li><li>/guide/</li><li>day=2</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>ア　school.example</strong></p><p>スキームはhttps、ホスト名はschool.example、パスは/guide/、クエリはday=2です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　参加者のアドレスを守る</h3>
+    <p>参加者同士にはメールアドレスを見せず、同じ案内を送る用途に使う欄はどれですか。</p>
+    <ol class="options"><li>Cc</li><li>Bcc</li><li>件名</li><li>Reply-To</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　Bcc</strong></p><p>Bccは受信者同士に宛先アドレスを見せない一斉送信に使えます。Ccでは他の受信者に宛先が見えるのが一般的です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　前に読んだ画像を再利用</h3>
+    <p>同じ案内画像を取得し直さず、以前受け取ったデータを条件に応じて再利用します。何を使う例ですか。</p>
+    <ol class="options"><li>RSS</li><li>SIM</li><li>キャッシュ</li><li>Cookie</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　キャッシュ</strong></p><p>キャッシュは画像などの取得結果を再利用するための仕組みです。Cookieは利用状態の識別などに使います。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　回線を分け合う</h3>
+    <p>各来場者の写真データを小さな単位に分け、同じ回線を複数の通信で使います。どの説明に当たりますか。</p>
+    <ol class="options"><li>回線交換だけ</li><li>MNP</li><li>ハンドオーバー</li><li>パケット交換</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>エ　パケット交換</strong></p><p>各通信を小さな単位に分けて回線を共有する考え方です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　移動中に基地局を切り替える</h3>
+    <p>通話しながら校門から駅へ移動し、接続先の基地局が切り替わります。どれですか。</p>
+    <ol class="options"><li>ハンドオーバー</li><li>MNP</li><li>MIMO</li><li>テザリング</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>ア　ハンドオーバー</strong></p><p>移動中の接続先の基地局の切替えがハンドオーバーです。電話番号を持ち運ぶMNPとは別の場面です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　スマホでPCをつなぐ</h3>
+    <p>外でノートPCを使うとき、スマホの携帯回線をPCと共有します。何を使いますか。</p>
+    <ol class="options"><li>PoE</li><li>テザリング</li><li>NATを無効化</li><li>RSS</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　テザリング</strong></p><p>スマホなどを中継役にして、PCなどを携帯回線につなぐのがテザリングです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第10問　複数の周波数を束ねる</h3>
+    <p>一つの周波数ブロックだけでなく、複数を束ねて通信容量を増やす技術はどれですか。</p>
+    <ol class="options"><li>MNP</li><li>MIMO</li><li>キャリアアグリゲーション</li><li>ローミング</li></ol>
+    <details><summary>第10問の解答と解説</summary><p><strong>ウ　キャリアアグリゲーション</strong></p><p>キャリアアグリゲーションは複数の周波数ブロックを束ねます。MIMOは複数のアンテナに着目する仕組みです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第11問　料金を比べる</h3>
+    <p>架空のプランで従量制が0.5円/MB、定額制が1,000円とします。2,400 MB使ったとき、差はいくらですか。</p>
+    <ol class="options"><li>従量制のほうが200円安い</li><li>同額</li><li>定額制のほうが1,400円安い</li><li>定額制のほうが200円安い</li></ol>
+    <details><summary>第11問の解答と解説</summary><p><strong>エ　定額制のほうが200円安い</strong></p><p>従量制は2,400×0.5＝1,200円。定額制は1,000円なので差は200円です。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第17章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=59">IPA「ITパスポート試験シラバス Ver.6.5」ネットワーク応用</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=60">IPA「ITパスポート試験シラバス Ver.6.5」インターネット・通信サービス</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc1034.html">RFC 1034「DNS」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc1918.html">RFC 1918「Private IPv4 Addresses」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc8200.html">RFC 8200「IPv6」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc3022.html">RFC 3022「Traditional NAT」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc4632.html">RFC 4632「CIDR」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc5737.html">RFC 5737「IPv4 Example Addresses」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc6265.html">RFC 6265「HTTP State Management Mechanism」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc5322.html">RFC 5322「Internet Message Format」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9111.html">RFC 9111「HTTP Caching」</a></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc2045.html">RFC 2045「MIME」</a></li>
+      <li><a href="https://www.docomo.ne.jp/support/uimcard/esim/">NTTドコモ「eSIMについて」</a></li>
+      <li><a href="https://www.docomo.ne.jp/area/connect/network/">NTTドコモ「電波がつながる仕組み」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch17-2-network-protocols.html">17-2 通信プロトコル</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch17"></script>
+</body>
+</html>

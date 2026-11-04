@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch17-1-network-fundamentals.html">
+  <title>ITパスポート 17-1 ネットワーク方式｜スタディクエスト</title>
+  <meta name="description" content="文化祭の校内LANを題材に、スイッチとルーター、Wi-Fi、IoT、伝送時間の計算を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 17-1 ネットワーク方式">
+  <meta property="og:description" content="文化祭の校内LANを題材に、スイッチとルーター、Wi-Fi、IoT、伝送時間の計算を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch17-1-network-fundamentals.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 17-1 ネットワーク方式",
+  "description": "文化祭の校内LANを題材に、スイッチとルーター、Wi-Fi、IoT、伝送時間の計算を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch17-1-network-fundamentals.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch17-1-network-fundamentals.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第17章 ネットワーク</p>
+    <h1>ITパスポート 17-1 ネットワーク方式</h1>
+    <p>文化祭の校内LANを題材に、スイッチとルーター、Wi-Fi、IoT、伝送時間の計算を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#lan-wan">LANとWAN</a></li><li><a href="#equipment">接続装置とWi-Fi</a></li><li><a href="#iot">IoTの通信方式</a></li><li><a href="#speed">伝送時間の計算</a></li><li><a href="#quiz">例題9問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="lan-wan"><h2>校内のLANから、校外のネットワークへ</h2>
+<p>文化祭の受付では、パソコンとプリンターが校内で通信し、案内サイトには来場者の自宅からもアクセスします。同じ校舎や敷地などの限られた範囲を結ぶのが<strong>LAN</strong>、離れた拠点のネットワークなどを広い範囲で結ぶのが<strong>WAN</strong>です。インターネットは、世界中のネットワークが相互につながったものです。</p>
+    <figure id="visual-topology" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>受付PCと来場者のスマホは、どこでつながる？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 191" role="img" aria-labelledby="visual-topology-title visual-topology-desc">
+        <title id="visual-topology-title">受付PCと来場者のスマホは、どこでつながる？</title>
+        <desc id="visual-topology-desc">受付PCはスイッチへ、スマホは無線APを経てスイッチへ。校外へはルーターを通る。</desc>
+        <rect x="3" y="4" width="324" height="133" rx="7" class="panel"/>
+<text x="14" y="24" class="strong blue" text-anchor="start">校舎のLAN</text>
+<rect x="13" y="39" width="89" height="32" rx="7" class="blue-fill"/>
+<rect x="120" y="39" width="86" height="32" rx="7" class="blue-fill"/>
+<rect x="224" y="39" width="92" height="32" rx="7" class="orange-fill"/>
+<text x="57" y="60" class="small" text-anchor="middle">受付PC</text>
+<text x="163" y="60" class="small" text-anchor="middle">スイッチ</text>
+<text x="270" y="60" class="small" text-anchor="middle">ルーター</text>
+<path d="M103 55h16m88 0h16m-60 17v13m107-13v73" class="wire" />
+<rect x="120" y="86" width="86" height="32" rx="7" class="blue-fill"/>
+<text x="163" y="106" class="small" text-anchor="middle">無線AP</text>
+<path d="M104 102h15" class="wire" stroke-dasharray="3 3"/>
+<rect x="13" y="86" width="89" height="32" rx="7" class="panel"/>
+<text x="57" y="106" class="small" text-anchor="middle">スマホ</text>
+<rect x="196" y="149" width="121" height="35" rx="7" class="orange-fill"/>
+<text x="256" y="171" class="small" text-anchor="middle">校外のネットワーク</text>
+      </svg>
+      <p>実際の家庭用機器では、無線AP・スイッチ・ルーターが同じ箱に入っていることがあります。問題では機器の名前と役割を分けて見ます。</p>
+    </figure>
+<p>校内だけに公開する連絡ページは<strong>イントラネット</strong>の例です。ネットワークを外部の協力会社などにも限定して開く仕組みは<strong>エクストラネット</strong>と呼びます。一般の来場者向けWebとは、利用できる範囲が異なります。</p>
+    <figure id="visual-layout" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>配線の形を思い浮かべる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-layout-title visual-layout-desc">
+        <title id="visual-layout-title">配線の形を思い浮かべる</title>
+        <desc id="visual-layout-desc">スター型、中央の機器に各端末を接続、教室の配線が中央に集まる。バス型、複数の端末で幹線を共有、一本の道に沿って接続。リング型、端末などを輪になるよう接続、輪をたどって隣とつながる。VLAN、配線のまま論理的に分離、受付用と来場者用を分ける</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">スター型</text>
+<text x="12" y="44" class="small" text-anchor="start">中央の機器に各端末を接続</text>
+<text x="12" y="62" class="small" text-anchor="start">教室の配線が中央に集まる</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">バス型</text>
+<text x="177" y="44" class="small" text-anchor="start">複数の端末で幹線を共有</text>
+<text x="177" y="62" class="small" text-anchor="start">一本の道に沿って接続</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">リング型</text>
+<text x="12" y="120" class="small" text-anchor="start">端末などを輪になるよう接続</text>
+<text x="12" y="138" class="small" text-anchor="start">輪をたどって隣とつながる</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">VLAN</text>
+<text x="177" y="120" class="small" text-anchor="start">配線のまま論理的に分離</text>
+<text x="177" y="138" class="small" text-anchor="start">受付用と来場者用を分ける</text>
+      </svg>
+      <p>上の3つは接続形態の例です。VLANは物理配線の形とは別にLANを分けます。別VLAN間の通信には、ルーターなどの経路と許可が必要です。</p>
+    </figure>
+</section><section id="equipment"><h2>接続装置は、どの宛先を見て何をする？</h2>
+<p>有線LANでは<strong>イーサネット</strong>を使うのが一般的です。端末の<strong>NIC</strong>（ネットワークインタフェースカードなど）やLANポートに、より対線（ツイストペア）のLANケーブルなどを接続します。光ファイバーでは光で信号を伝えます。<strong>PoE</strong>に対応した機器なら、LANケーブルを通じてアクセスポイントなどに電力も送れます。</p>
+  <table>
+    <caption>ネットワーク機器の役割を見分ける</caption>
+    <thead><tr><th scope="col">装置</th><th scope="col">仕事</th><th scope="col">文化祭での例</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">リピータ・リピータハブ</th><td>信号を再生し、ハブでは他ポートへも送る</td><td>宛先で振り分けずに伝える</td></tr>
+<tr><th scope="row">ブリッジ・L2スイッチ</th><td>宛先MACアドレスを使ってフレームを転送</td><td>受付PCから同じLANのプリンターへ</td></tr>
+<tr><th scope="row">ルーター・L3スイッチ</th><td>宛先IPアドレスを使い別ネットワークへ転送</td><td>校内の端末から外部サイトへ</td></tr>
+<tr><th scope="row">無線アクセスポイント（AP）</th><td>無線端末をLANに接続する</td><td>来場者のスマホをWi-Fiにつなぐ</td></tr>
+    </tbody>
+  </table>
+<p><strong>MACアドレス</strong>は同じリンク上でデータを運ぶ際に使う識別子で、端末がランダム化して使う場合もあります。<strong>IPアドレス</strong>はネットワークをまたぐ配送にも使います。同じLANにない宛先への経路が別に設定されていなければ、端末は<strong>デフォルトゲートウェイ</strong>へ渡します。<strong>プロキシ</strong>は端末に代わってWebなどに接続する中継役です。<strong>SDN</strong>では通信の制御をソフトウェアで行い、構成や転送方針を変更しやすくします。</p>
+    <figure id="visual-wifi" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>どんなつなぎ方が必要か選ぶ</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-wifi-title visual-wifi-desc">
+        <title id="visual-wifi-title">どんなつなぎ方が必要か選ぶ</title>
+        <desc id="visual-wifi-desc">無線APを利用、スマホで会場のWi-Fiへ、SSIDで接続先を選ぶ。Wi-Fi Direct、対応端末とプリンターを接続、既設の無線APを通さない。メッシュWi-Fi、離れた教室にも電波を届ける、複数の機器で範囲を補う。WPS、対応機器の接続を設定、機器のボタンなどを使う</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">無線APを利用</text>
+<text x="12" y="44" class="small" text-anchor="start">スマホで会場のWi-Fiへ</text>
+<text x="12" y="62" class="small" text-anchor="start">SSIDで接続先を選ぶ</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">Wi-Fi Direct</text>
+<text x="177" y="44" class="small" text-anchor="start">対応端末とプリンターを接続</text>
+<text x="177" y="62" class="small" text-anchor="start">既設の無線APを通さない</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">メッシュWi-Fi</text>
+<text x="12" y="120" class="small" text-anchor="start">離れた教室にも電波を届ける</text>
+<text x="12" y="138" class="small" text-anchor="start">複数の機器で範囲を補う</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">WPS</text>
+<text x="177" y="120" class="small" text-anchor="start">対応機器の接続を設定</text>
+<text x="177" y="138" class="small" text-anchor="start">機器のボタンなどを使う</text>
+      </svg>
+      <p>SSID（教材でESSIDと呼ぶこともある）は無線ネットワークの名前です。パスワードとは役割が異なり、同じSSIDを複数のAPで使う構成もあります。</p>
+    </figure>
+<p>無線LANの主な規格はIEEE 802.11系列です。2.4 GHz帯はほかの機器と干渉することがあり、5 GHz帯や6 GHz帯も機器や利用条件に応じて使い分けます。Wi-Fi 4・5・6は世代を表し、Wi-Fi 6EはWi-Fi 6の利用を6 GHz帯にも広げたものです。アドホックモードは無線APを介さず端末間で通信する形態です。</p>
+</section><section id="iot"><h2>校門の混雑を、少ない電力で知らせる</h2>
+    <figure id="visual-iot" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>センサーの値は、どこで判断する？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-iot-title visual-iot-desc">
+        <title id="visual-iot-title">センサーの値は、どこで判断する？</title>
+        <desc id="visual-iot-desc">IoTデバイス、校門のセンサーで通過数を測る。近くで受信・処理、受信機で短時間ごとの通過数を計算。遠くへ送る、要約だけをIoTサーバに送る。サーバでまとめる、各門の結果を一覧にする</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">IoTデバイス</text>
+<text x="50" y="41" class="small" text-anchor="start">校門のセンサーで通過数を測る</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">近くで受信・処理</text>
+<text x="50" y="101" class="small" text-anchor="start">受信機で短時間ごとの通過数を計算</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">遠くへ送る</text>
+<text x="50" y="161" class="small" text-anchor="start">要約だけをIoTサーバに送る</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">サーバでまとめる</text>
+<text x="50" y="221" class="small" text-anchor="start">各門の結果を一覧にする</text>
+      </svg>
+      <p>機器に近い場所で先に集計するのがエッジコンピューティングです。上り回線に送る量を減らせます。</p>
+    </figure>
+  <table>
+    <caption>距離・データ量・電池で選ぶ</caption>
+    <thead><tr><th scope="col">条件</th><th scope="col">候補</th><th scope="col">判断の理由</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">受付のすぐ近くへ短い識別信号</th><td>BLEビーコン</td><td>近距離で小さな情報を発信する。</td></tr>
+<tr><th scope="row">離れた設備から少量の観測値</th><td>LPWA</td><td>広い範囲を低消費電力で結ぶ用途に向く。</td></tr>
+<tr><th scope="row">届きにくいセンサーを順に中継</th><td>マルチホップ</td><td>複数の機器を経由して届ける。</td></tr>
+<tr><th scope="row">校内の機器をまとめて接続</th><td>IoTエリアネットワーク</td><td>設置場所の近くでデータを受ける。</td></tr>
+    </tbody>
+  </table>
+<p>BLE（Bluetooth Low Energy）は低消費電力の近距離通信に、LPWA（Low Power Wide Area）は遠距離・少量のデータに使われます。ビーコンは識別用などの信号を発信する機器です。環境の光や振動などから電力を得るエネルギーハーベスティングは、通信方式とは別に電源を工夫する方法です。</p>
+</section><section id="speed"><h2>写真を送る時間を、ビットにそろえて求める</h2>
+    <figure id="visual-speed" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>36 MBの写真を送ると何秒？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-speed-title visual-speed-desc">
+        <title id="visual-speed-title">36 MBの写真を送ると何秒？</title>
+        <desc id="visual-speed-desc">サイズをビットに直す、36 MB × 8 ＝ 288 Mb。実際にデータを送れる速度、60 Mbps × 80% ＝ 48 Mbps。データ量 ÷ 実効速度、288 Mb ÷ 48 Mbps ＝ 6秒</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">サイズをビットに直す</text>
+<text x="50" y="41" class="small" text-anchor="start">36 MB × 8 ＝ 288 Mb</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">実際にデータを送れる速度</text>
+<text x="50" y="101" class="small" text-anchor="start">60 Mbps × 80% ＝ 48 Mbps</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">データ量 ÷ 実効速度</text>
+<text x="50" y="161" class="small" text-anchor="start">288 Mb ÷ 48 Mbps ＝ 6秒</text>
+      </svg>
+      <p>1 B＝8 bit、MBとMbのMは10の6乗とします。効率と速度が一定で、接続準備などの時間は除く自作例です。</p>
+    </figure>
+<p>小文字の<strong>b</strong>はビット、大文字の<strong>B</strong>はバイト、<strong>bps</strong>は1秒当たりのビット数です。来場者が一斉に写真を送ると、処理や回線の待ちが増える<strong>輻輳</strong>が起きる場合があります。Wi-Fiの表示速度だけで、インターネット越しの転送が同じ速度になるとは判断できません。</p>
+</section>
+<section id="quiz">
+  <h2>例題9問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　校舎と離れた会場を結ぶ</h3>
+    <p>二つの校舎にそれぞれLANがあり、数km離れた屋外会場にもLANがあります。これらを広域回線で結ぶネットワークはどれですか。</p>
+    <ol class="options"><li>NIC</li><li>WAN</li><li>SSID</li><li>PoE</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　WAN</strong></p><p>限られた範囲の各LANを、離れた拠点まで結ぶのでWANです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　同じ箱でネットワークを分ける</h3>
+    <p>配線を付け替えず、同じスイッチ上で受付用と来場者用を別の論理LANにします。何を使いますか。</p>
+    <ol class="options"><li>PoE</li><li>リピータ</li><li>VLAN</li><li>BLE</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　VLAN</strong></p><p>物理配線と独立して論理的なLANを分ける機能がVLANです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　宛先MACを見て転送</h3>
+    <p>受付PCが同じLANのプリンターへ送ったフレームを、宛先MACアドレスを見て転送する装置はどれですか。</p>
+    <ol class="options"><li>L2スイッチ</li><li>リピータハブ</li><li>無線端末のSSID</li><li>電源タップ</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　L2スイッチ</strong></p><p>L2スイッチはMACアドレスを使って転送します。リピータハブは宛先MACで振り分けません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　校外への出口</h3>
+    <p>校内LANの端末から別ネットワークへ送るとき、個別の経路が設定されていません。最初にどこへ渡しますか。</p>
+    <ol class="options"><li>校内のプリンター</li><li>同じSSIDの端末</li><li>最寄りのビーコン</li><li>デフォルトゲートウェイ</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　デフォルトゲートウェイ</strong></p><p>行き先に対応する個別経路がなければ、通常は既定経路のデフォルトゲートウェイへ渡します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　天井のAPに給電</h3>
+    <p>電源の差込口がない天井に、対応するLANケーブルと給電機器でAPを設置します。利用する技術はどれですか。</p>
+    <ol class="options"><li>WPS</li><li>PoE</li><li>NAPT</li><li>LPWA</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　PoE</strong></p><p>PoEならLANケーブルで通信と給電ができます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　直接印刷する</h3>
+    <p>既設の無線APがない教室で、対応するスマホからプリンターにWi-Fiで直接送ります。どれが適切ですか。</p>
+    <ol class="options"><li>メッシュWi-Fi</li><li>FTTH</li><li>Wi-Fi Direct</li><li>VLAN</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　Wi-Fi Direct</strong></p><p>Wi-Fi Directは対応機器同士を既設の無線APなしで接続します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　電池で遠方から送る</h3>
+    <p>屋外設備の温度を、離れた受信地点へ毎時数バイト送ります。電池交換を減らしたい場合の候補はどれですか。</p>
+    <ol class="options"><li>LPWA</li><li>HDMI</li><li>近接用のビーコンだけ</li><li>PoEでの無線送信</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　LPWA</strong></p><p>距離が長く、少量の通信で低消費電力が必要という条件からLPWAが候補です。実際の利用には通信範囲なども確認します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　現場で混雑を判定</h3>
+    <p>中央サーバに全ての観測値を送る前に、校門の近くで混雑の有無を判断します。何の例ですか。</p>
+    <ol class="options"><li>メーリングリスト</li><li>回線交換</li><li>名前解決</li><li>エッジコンピューティング</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　エッジコンピューティング</strong></p><p>センサーや利用現場に近い機器でデータを処理します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　画像の送信時間</h3>
+    <p>24 MBを伝送速度40 Mbps、効率60%の回線で送ります。その他の時間は無視し、1 B＝8 bitです。何秒ですか。</p>
+    <ol class="options"><li>0.6秒</li><li>8秒</li><li>4.8秒</li><li>32秒</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　8秒</strong></p><p>24×8＝192 Mb、実効速度は40×0.6＝24 Mbpsなので、192÷24＝8秒です。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第17章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=58">IPA「ITパスポート試験シラバス Ver.6.5」ネットワーク方式</a></li>
+      <li><a href="https://www.cisco.com/site/us/en/learn/topics/small-business/networking-basics.html">Cisco「Networking basics」</a></li>
+      <li><a href="https://www.bluetooth.com/learn-about-bluetooth/tech-overview/">Bluetooth SIG「Technology Overview」</a></li>
+      <li><a href="https://www.intel.com/content/www/us/en/support/articles/000099711/wireless.html">Intel「Wi-Fi 6とWi-Fi 6Eの6 GHz帯の違い」</a></li>
+      <li><a href="https://www.cisco.com/site/us/en/learn/topics/networking/what-is-power-over-ethernet.html">Cisco「Power over Ethernet」</a></li>
+    </ul>
+    <p>前の章 <a href="itp-ch16-2-transaction-processing.html">16-2 トランザクション処理</a> ／ 次へ <a href="itp-ch17-2-network-protocols.html">17-2 通信プロトコル</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch17"></script>
+</body>
+</html>
