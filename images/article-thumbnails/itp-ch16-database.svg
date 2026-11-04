@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">第16章 データベース</title>
+  <desc id="desc">注文をつなぎ、在庫を守るを示すシリーズの表紙。</desc>
+  <defs><linearGradient id="back" x2="1" y2="1"><stop stop-color="#102936"/><stop offset="1" stop-color="#155044"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#a5f5dd" stroke-opacity=".14"/></pattern></defs>
+  <path fill="url(#back)" d="M0 0h640v360H0z"/><path fill="url(#grid)" d="M0 0h640v360H0z"/>
+  <g font-family="system-ui,sans-serif" font-weight="800">
+    <rect x="38" y="29" width="112" height="37" rx="8" fill="#a5f5dd"/>
+    <text x="94" y="55" font-size="23" text-anchor="middle" fill="#112b35">第16章</text>
+    <text x="38" y="120" font-size="56" fill="#f3fff9">データベース</text>
+    <text x="38" y="157" font-size="23" fill="#b7f5e4">注文をつなぎ、在庫を守る</text>
+  </g>
+  <path d="M38 179h564" stroke="#a5f5dd" stroke-opacity=".5"/>
+  <g fill="#153643" stroke="#a5f5dd" stroke-width="5" stroke-linejoin="round">
+    <rect x="64" y="203" width="183" height="123" rx="9"/>
+    <path d="M64 236h183M64 265h183M64 295h183M132 236v90" fill="none"/>
+    <path d="M255 264h97m-16-13 16 13-16 13" fill="none" stroke="#ffe28e"/>
+    <path d="M376 229c0-17 39-29 92-29s92 12 92 29v66c0 17-39 29-92 29s-92-12-92-29z"/>
+    <path d="M376 229c0 16 39 29 92 29s92-13 92-29m-184 33c0 16 39 29 92 29s92-13 92-29" fill="none"/>
+  </g>
+  <circle cx="551" cy="305" r="30" fill="#ffe28e"/>
+  <path d="m536 305 10 10 20-22" stroke="#153643" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
