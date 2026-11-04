@@ -11655,7 +11655,7 @@ function getWeekStart(){
   const day=d.getDay(); const diff=day===0?-6:1-day; // 月曜始まり
   d.setDate(d.getDate()+diff); return toLocalDateStr(d);
 }
-function getMonthStr(){ return new Date().toISOString().slice(0,7); }
+function getMonthStr(){ return getTodayStr().slice(0,7); }
 
 function isStudyType(s){ return s.type==='study'||s.type==='exam'; }
 function getTodayMins(){
@@ -22535,6 +22535,14 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+
+  {
+    id: 'v20261104_report_local_month',
+    date: '2026-11-04',
+    type: 'fix',
+    title: 'レポートの月初の集計を修正しました',
+    desc: '月が替わった直後も、端末の日付を基準に今月の学習時間を表示します。'
+  },
 
   {
     id: 'v20261031_guest_record_timer_fixes',
