@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch15-1-information-design.html">
+  <title>ITパスポート 15-1 情報デザイン｜スタディクエスト</title>
+  <meta name="description" content="図書館のイベント予約を題材に、情報の並べ方、GUI、Webのアクセシビリティ、人間中心設計を図と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 15-1 情報デザイン">
+  <meta property="og:description" content="図書館のイベント予約を題材に、情報の並べ方、GUI、Webのアクセシビリティ、人間中心設計を図と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch15-1-information-design.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 15-1 情報デザイン",
+  "description": "図書館のイベント予約を題材に、情報の並べ方、GUI、Webのアクセシビリティ、人間中心設計を図と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch15-1-information-design.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch15-1-information-design.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第15章 情報デザインと情報メディア</p>
+    <h1>ITパスポート 15-1 情報デザイン</h1>
+    <p>図書館のイベント予約を題材に、情報の並べ方、GUI、Webのアクセシビリティ、人間中心設計を図と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#design">情報の並べ方</a></li><li><a href="#interface">画面と帳票の設計</a></li><li><a href="#web">Webの表示とアクセシビリティ</a></li><li><a href="#human-centred">人間中心設計</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="design">
+<h2>見つけたい情報に合わせて並べる</h2>
+<p>架空の市立図書館が、工作や読み聞かせのイベントを開きます。告知を見た親子が「何時に、どこで、まだ予約できるか」をすぐ見つけられるように、情報を選び、組み立て、表現するのが情報デザインです。</p>
+    <figure id="visual-poster" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>日時・会場・空きを1組にする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 149" role="img" aria-labelledby="visual-poster-title visual-poster-desc">
+        <title id="visual-poster-title">日時・会場・空きを1組にする</title>
+        <desc id="visual-poster-desc">同じ情報を、イベントごとのまとまりにし、時刻順に並べている。満席を文字でも示している。</desc>
+        <text x="6" y="18" class="strong orange" text-anchor="start">整理前</text>
+<text x="174" y="18" class="strong blue" text-anchor="start">整理後</text>
+<rect x="4" y="26" width="153" height="118" rx="7" class="panel"/>
+<rect x="170" y="26" width="156" height="118" rx="7" class="panel"/>
+<text x="14" y="48" class="small" text-anchor="start">紙工作　14:00　満席</text>
+<text x="23" y="70" class="small" text-anchor="start">工作室　おはなし</text>
+<text x="14" y="91" class="small" text-anchor="start">10:00　おはなし室</text>
+<text x="36" y="120" class="small" text-anchor="start">空きあり　おはなし</text>
+<rect x="178" y="32" width="140" height="48" rx="7" class="blue-fill"/>
+<text x="184" y="50" class="strong blue" text-anchor="start">10:00 おはなし</text>
+<text x="184" y="68" class="small" text-anchor="start">おはなし室｜空きあり</text>
+<rect x="178" y="86" width="140" height="48" rx="7" class="panel"/>
+<text x="184" y="104" class="strong blue" text-anchor="start">14:00 紙工作</text>
+<text x="184" y="122" class="small" text-anchor="start">工作室｜満席</text>
+      </svg>
+      <p>近接で1件の情報をまとめ、整列と反復で比較しやすくします。対比で時刻を目立たせ、満席は文字で伝えます。</p>
+    </figure>
+  <table>
+    <caption>同じイベント一覧でも探し方によって順序は変わる</caption>
+    <thead><tr><th scope="col">LATCHの軸</th><th scope="col">図書館での使い方</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Location｜場所</th><td>会場マップに催しを置く。</td></tr>
+<tr><th scope="row">Alphabet｜文字順</th><td>題名から五十音順で探す。</td></tr>
+<tr><th scope="row">Time｜時間</th><td>開始時刻の順に並べる。</td></tr>
+<tr><th scope="row">Category｜分類</th><td>工作、読み聞かせに分ける。</td></tr>
+<tr><th scope="row">Hierarchy｜階層・順位</th><td>定員が多い順に並べる。</td></tr>
+    </tbody>
+  </table>
+<p>扉の「押す」や、予約ボタンの輪郭と「予約へ」という文言は、できる行動を知らせるシグニファイアです。ピクトグラムは会場や設備を伝える絵記号です。空き枠の推移を軸と棒で見せる図はインフォグラフィックスの例です。</p>
+</section>
+<section id="interface">
+<h2>受付フォームの部品を役割で選ぶ</h2>
+<p>ヒューマンインタフェースは人とシステムの接点です。画面上の部品をタップして操作するGUI、声で質問したり答えを聞いたりするVUI、手の動きを使うジェスチャーインタフェースがあります。タップで選択、スワイプで移動、ピンチで拡大縮小、長押しで追加操作というように、一つのタッチ画面でも動作はさまざまです。</p>
+    <figure id="visual-controls" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>選ぶ数と操作の結果で部品を見分ける</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-controls-title visual-controls-desc">
+        <title id="visual-controls-title">選ぶ数と操作の結果で部品を見分ける</title>
+        <desc id="visual-controls-desc">ラジオボタン、参加回を一つ選ぶ、○ 10時　○ 14時。チェックボックス、必要な配慮を選ぶ、□ 字幕　□ 大きな文字。プルダウン、会場の候補を開く、工作室、集会室など。コマンドボタン、入力を確認する、「内容を確認」へ進む</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">ラジオボタン</text>
+<text x="12" y="44" class="small" text-anchor="start">参加回を一つ選ぶ</text>
+<text x="12" y="62" class="small" text-anchor="start">○ 10時　○ 14時</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">チェックボックス</text>
+<text x="177" y="44" class="small" text-anchor="start">必要な配慮を選ぶ</text>
+<text x="177" y="62" class="small" text-anchor="start">□ 字幕　□ 大きな文字</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">プルダウン</text>
+<text x="12" y="120" class="small" text-anchor="start">会場の候補を開く</text>
+<text x="12" y="138" class="small" text-anchor="start">工作室、集会室など</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">コマンドボタン</text>
+<text x="177" y="120" class="small" text-anchor="start">入力を確認する</text>
+<text x="177" y="138" class="small" text-anchor="start">「内容を確認」へ進む</text>
+      </svg>
+      <p>同じ枠で一つを選ぶのか、複数を独立して選べるのか、押すと処理が進むのかを見ます。</p>
+    </figure>
+<p>ウィンドウは作業の表示領域、アイコンは機能などを示す絵、サムネイルは内容を見分ける縮小表示です。リストボックスは候補を一覧表示し、設定によって複数選択にも使えます。メニューバーは操作の分類を並べ、プルダウンやポップアップは選択肢を必要に応じて開きます。ホバー時に出るツールチップだけに頼ると、タッチ操作では説明を見つけづらいことがあります。</p>
+<p>画面設計では、日時を選ぶ→必要事項を入力→確認の順に進め、入力エラーの場所と直し方を近くに出します。帳票設計では、受付番号・日時・会場など係員が使う項目をそろえ、参加者向けの控えと受付用一覧にはそれぞれ必要な項目を載せます。</p>
+</section>
+<section id="web">
+<h2>スマホの表示と、色を見分けにくい場面を考える</h2>
+    <figure id="visual-responsive" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>同じ予約内容を、画面幅に合わせて配置</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-responsive-title visual-responsive-desc">
+        <title id="visual-responsive-title">同じ予約内容を、画面幅に合わせて配置</title>
+        <desc id="visual-responsive-desc">スマホでは予約枠の下に詳細を置き、広い画面では右に置く。</desc>
+        <rect x="5" y="6" width="95" height="141" rx="7" class="panel"/>
+<rect x="111" y="18" width="214" height="112" rx="7" class="panel"/>
+<text x="15" y="26" class="strong blue" text-anchor="start">スマホ</text>
+<text x="121" y="40" class="strong blue" text-anchor="start">横幅の広い画面</text>
+<rect x="12" y="35" width="80" height="30" rx="7" class="blue-fill"/>
+<text x="19" y="54" class="small" text-anchor="start">予約枠</text>
+<rect x="12" y="71" width="80" height="30" rx="7" class="blue-fill"/>
+<text x="19" y="90" class="small" text-anchor="start">詳細</text>
+<rect x="120" y="52" width="92" height="30" rx="7" class="blue-fill"/>
+<text x="127" y="71" class="small" text-anchor="start">予約枠</text>
+<rect x="220" y="52" width="97" height="30" rx="7" class="blue-fill"/>
+<text x="227" y="71" class="small" text-anchor="start">詳細</text>
+<text x="15" y="123" class="small" text-anchor="start">縦に並べる</text>
+<text x="121" y="109" class="small" text-anchor="start">横に並べる</text>
+      </svg>
+      <p>モバイルファーストで小さい画面を出発点にし、レスポンシブWebデザインで配置を調整する例です。</p>
+    </figure>
+<p>CSSは色や余白、文字サイズ、レイアウトなどを指定します。共通のスタイルを使うとページ間で書式をそろえやすくなります。画面幅に応じたCSSを使うと同じページの配置を調整できます。旧予約ページから新しいURLへ転送するリダイレクトは、アクセス先を変える仕組みです。</p>
+<p>ユニバーサルデザインは、できるだけ多くの人が利用できるようにする考え方です。アクセシビリティでは、キーボードだけで予約できるか、読み上げで入力欄や図の意味が分かるか、色を区別しにくい状況でも満席を判断できるかを確かめます。例えば意味のある会場図には要点を説明する代替テキストや本文を添え、装飾だけの画像は読み上げを省けるようにします。</p>
+</section>
+<section id="human-centred">
+<h2>使う人と場面を調べ、試して直す</h2>
+    <figure id="visual-hcd" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>図書館の予約を使う人と一緒に改善する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-hcd-title visual-hcd-desc">
+        <title id="visual-hcd-title">図書館の予約を使う人と一緒に改善する</title>
+        <desc id="visual-hcd-desc">利用状況を調べる、親子が移動中にスマホで空きを探す。要求を整理する、日時・空き・会場を短い操作で確認。画面案を作る、イベントごとにカードを作って並べる。利用者と評価する、予約してもらい、迷った箇所を直す</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">利用状況を調べる</text>
+<text x="50" y="41" class="small" text-anchor="start">親子が移動中にスマホで空きを探す</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">要求を整理する</text>
+<text x="50" y="101" class="small" text-anchor="start">日時・空き・会場を短い操作で確認</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">画面案を作る</text>
+<text x="50" y="161" class="small" text-anchor="start">イベントごとにカードを作って並べる</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">利用者と評価する</text>
+<text x="50" y="221" class="small" text-anchor="start">予約してもらい、迷った箇所を直す</text>
+      </svg>
+      <p>評価で分かったことを次の画面案へ戻します。この流れを開発中に繰り返すのが人間中心設計の考え方です。</p>
+    </figure>
+<p>ユーザビリティは、ある人が目的を達成するときの使いやすさです。UXは予約前の期待、操作中の安心感、当日の受付までを含む体験です。構造化シナリオ法では、例えば「安心して参加できる」という価値から、「家族の空き時間に合わせて選ぶ」活動と、「満席を除いて時間枠を選択する」操作へ具体化します。</p>
+    <figure id="visual-evaluation" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>試作で見たいことを行動に置き換える</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-evaluation-title visual-evaluation-desc">
+        <title id="visual-evaluation-title">試作で見たいことを行動に置き換える</title>
+        <desc id="visual-evaluation-desc">探せたか、空きのある枠を選ぶ、誤って満席を選んだか。進めたか、氏名を入れ予約を確認、戻る回数と迷った箇所。操作できたか、キーボードで完了する、フォーカスが見えたか。伝わったか、確認画面から会場へ行く、必要情報が読めたか</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">探せたか</text>
+<text x="12" y="44" class="small" text-anchor="start">空きのある枠を選ぶ</text>
+<text x="12" y="62" class="small" text-anchor="start">誤って満席を選んだか</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">進めたか</text>
+<text x="177" y="44" class="small" text-anchor="start">氏名を入れ予約を確認</text>
+<text x="177" y="62" class="small" text-anchor="start">戻る回数と迷った箇所</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">操作できたか</text>
+<text x="12" y="120" class="small" text-anchor="start">キーボードで完了する</text>
+<text x="12" y="138" class="small" text-anchor="start">フォーカスが見えたか</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">伝わったか</text>
+<text x="177" y="120" class="small" text-anchor="start">確認画面から会場へ行く</text>
+<text x="177" y="138" class="small" text-anchor="start">必要情報が読めたか</text>
+      </svg>
+      <p>架空の評価計画です。実際の使いやすさは、対象の利用者と利用条件を決めて確かめます。</p>
+    </figure>
+</section>
+
+<section id="quiz">
+  <h2>例題8問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　近くに置く</h3>
+    <p>イベント名の直下に会場と時刻を並べ、次のイベントとは間を空けました。まとまりを作る原則はどれですか。</p>
+    <ol class="options"><li>反復</li><li>近接</li><li>対比</li><li>整列</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　近接</strong></p><p>関連項目を近づけ、別のイベントとの間を空ける近接です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　時刻の順に探す</h3>
+    <p>開始の早い順にイベントを見られる一覧にします。LATCHのどの軸ですか。</p>
+    <ol class="options"><li>Location</li><li>Category</li><li>Alphabet</li><li>Time</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>エ　Time</strong></p><p>判断に使う並びは開始時刻なのでTimeです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　押せる手掛かり</h3>
+    <p>押す場所が分からない扉に「押す」と表示しました。表示の役割はどれですか。</p>
+    <ol class="options"><li>シグニファイア</li><li>スタイルシート</li><li>リダイレクト</li><li>帳票</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　シグニファイア</strong></p><p>表示が「ここで何をすればよいか」を伝えています。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　同時に二つを選ぶ</h3>
+    <p>字幕と大きな文字をそれぞれ独立に選ぶ部品はどれですか。</p>
+    <ol class="options"><li>一組のラジオボタン</li><li>実行ボタン</li><li>チェックボックス</li><li>ツールチップ</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>ウ　チェックボックス</strong></p><p>両方を必要とする人も片方だけの人も選べるよう、各項目を独立してオンにします。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　満席を伝える</h3>
+    <p>赤い枠だけで満席を示していました。改善する案はどれですか。</p>
+    <ol class="options"><li>赤の彩度を上げるだけ</li><li>枠の横に「満席」と書く</li><li>ホバーでだけ説明する</li><li>赤い背景画像に置き換える</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　枠の横に「満席」と書く</strong></p><p>満席という意味を文字でも伝えると、色を見分けづらい場面にも対応できます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　画面幅に合わせる</h3>
+    <p>同じページを狭い幅では1列、広い幅では2列で表示します。どの設計ですか。</p>
+    <ol class="options"><li>音声インタフェース</li><li>リダイレクト</li><li>レスポンシブWebデザイン</li><li>インフォグラフィックス</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　レスポンシブWebデザイン</strong></p><p>画面の幅に応じてレイアウトが変わります。URLの転送はこの変更に必要ありません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　控えを設計する</h3>
+    <p>受付係が予約を照合する一覧に、必要な情報を配置します。適切なのはどれですか。</p>
+    <ol class="options"><li>照合に使う予約番号・氏名・時間を近づける</li><li>予約番号を毎行違う位置にする</li><li>広告画像を優先する</li><li>全項目を色だけで区別する</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　照合に使う予約番号・氏名・時間を近づける</strong></p><p>照合に使う情報を揃った位置にまとめると、行を追って確かめやすくなります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　試作から改善する</h3>
+    <p>試作で利用者が満席の枠を何度も選びました。人間中心設計に沿う対応はどれですか。</p>
+    <ol class="options"><li>利用者には説明せず正式版を公開する</li><li>担当者だけで好きな色を決めて終了する</li><li>評価した画面をそのまま採用する</li><li>迷った理由を調べ、表示を直して再評価する</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　迷った理由を調べ、表示を直して再評価する</strong></p><p>利用者の行動を見て要求と設計に反映し、修正した案を再評価します。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第15章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=52">IPA「ITパスポート試験シラバス Ver.6.5」情報デザイン・インタフェース設計</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=53">IPA「ITパスポート試験シラバス Ver.6.5」画面・帳票・Web・人間中心設計</a></li>
+      <li><a href="https://jnd.org/signifiers-not-affordances/">Don Norman「Signifiers, not affordances」</a></li>
+      <li><a href="https://html.spec.whatwg.org/multipage/forms.html">WHATWG HTML標準「Forms」</a></li>
+      <li><a href="https://www.w3.org/TR/mediaqueries-4/">W3C「Media Queries Level 4」</a></li>
+      <li><a href="https://www.w3.org/TR/WCAG22/">W3C「Web Content Accessibility Guidelines 2.2」</a></li>
+      <li><a href="https://www.w3.org/WAI/tutorials/images/">W3C WAI「Images Tutorial」</a></li>
+      <li><a href="https://www.iso.org/standard/77520.html">ISO 9241-210:2019 人間中心設計</a></li>
+    </ul>
+    <p>前の章 <a href="itp-ch14-3-office-tools-and-oss.html">14-3 オフィスツール・表計算・OSS</a> ／ 次へ <a href="itp-ch15-2-information-media.html">15-2 情報メディア</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch15"></script>
+</body>
+</html>

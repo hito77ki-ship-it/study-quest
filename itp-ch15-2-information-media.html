@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch15-2-information-media.html">
+  <title>ITパスポート 15-2 情報メディア｜スタディクエスト</title>
+  <meta name="description" content="図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 15-2 情報メディア">
+  <meta property="og:description" content="図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch15-2-information-media.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 15-2 情報メディア",
+  "description": "図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch15-2-information-media.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch15-2-information-media.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第15章 情報デザインと情報メディア</p>
+    <h1>ITパスポート 15-2 情報メディア</h1>
+    <p>図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#media">動画とストリーミング</a></li><li><a href="#audio">音声のデジタル化</a></li><li><a href="#images">画像データと形式</a></li><li><a href="#compression">圧縮と伸長</a></li><li><a href="#graphics">色と画像の品質</a></li><li><a href="#applications">VR・AR・MRなどの応用</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="media">
+<h2>案内を音・画像・動画で届ける</h2>
+<p>図書館のイベント案内には、時間と会場の文字、部屋の写真、音声ガイド、工作の動画を載せられます。種類の異なる情報をデジタルで組み合わせて扱うのがマルチメディアです。リンクで会場図や動画へ移動できる構成はハイパーメディアの例です。印刷用の案内は、ページの構成を保って渡しやすいPDFも使えます。</p>
+    <figure id="visual-video" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>工作動画を見られる状態にする</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-video-title visual-video-desc">
+        <title id="visual-video-title">工作動画を見られる状態にする</title>
+        <desc id="visual-video-desc">素材を撮る、連続する画像と音声を用意する。エンコードする、例では映像をH.264で符号化する。コンテナに収める、MP4に映像や音声を入れる。配信して再生する、受信したデータをデコードして表示</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">素材を撮る</text>
+<text x="50" y="41" class="small" text-anchor="start">連続する画像と音声を用意する</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">エンコードする</text>
+<text x="50" y="101" class="small" text-anchor="start">例では映像をH.264で符号化する</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">コンテナに収める</text>
+<text x="50" y="161" class="small" text-anchor="start">MP4に映像や音声を入れる</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">配信して再生する</text>
+<text x="50" y="221" class="small" text-anchor="start">受信したデータをデコードして表示</text>
+      </svg>
+      <p>H.264は映像の符号化方式で、MP4は複数のデータを収める形式です。ストリーミングでは受信しながら再生できます。</p>
+    </figure>
+<p>動画の一枚をフレーム、毎秒の枚数をフレームレート（fps）と呼びます。30fpsで10秒なら、一定フレームレートの仮定で300枚です。H.265も映像の符号化方式で、AVIもコンテナの例です。MPEGは映像や音声などの国際規格の策定に関わるグループの名前で、その規格群も指します。DRMはコンテンツの利用や複製を制御する技術の総称で、CPRMは記録媒体に関する複製制御の例です。</p>
+</section>
+<section id="audio">
+<h2>音を測る頻度と、一回の値に使うビット数を分ける</h2>
+    <figure id="visual-sampling" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>拍手の音をデジタルで記録する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 125" role="img" aria-labelledby="visual-sampling-title visual-sampling-desc">
+        <title id="visual-sampling-title">拍手の音をデジタルで記録する</title>
+        <desc id="visual-sampling-desc">連続した波から一定間隔で値を取り、段階値に置き換え、ビットで表す。</desc>
+        <text x="6" y="15" class="strong blue" text-anchor="start">一定の間隔で波の高さを測る</text>
+<path d="M13 84H320 M13 33v66" class="wire" />
+<path d="M15 61.0 L16 58.8 L17 56.7 L18 54.6 L19 52.6 L20 50.7 L21 48.8 L22 47.0 L23 45.4 L24 43.9 L25 42.5 L26 41.2 L27 40.1 L28 39.1 L29 38.3 L30 37.7 L31 37.2 L32 36.9 L33 36.7 L34 36.8 L35 37.0 L36 37.3 L37 37.9 L38 38.5 L39 39.4 L40 40.3 L41 41.5 L42 42.7 L43 44.1 L44 45.5 L45 47.1 L46 48.7 L47 50.4 L48 52.2 L49 54.0 L50 55.9 L51 57.8 L52 59.7 L53 61.6 L54 63.4 L55 65.3 L56 67.1 L57 68.8 L58 70.5 L59 72.1 L60 73.6 L61 75.0 L62 76.3 L63 77.5 L64 78.5 L65 79.5 L66 80.3 L67 80.9 L68 81.4 L69 81.8 L70 82.0 L71 82.1 L72 82.0 L73 81.8 L74 81.5 L75 81.0 L76 80.3 L77 79.6 L78 78.7 L79 77.7 L80 76.6 L81 75.4 L82 74.1 L83 72.7 L84 71.2 L85 69.7 L86 68.2 L87 66.6 L88 64.9 L89 63.3 L90 61.7 L91 60.0 L92 58.4 L93 56.8 L94 55.3 L95 53.8 L96 52.3 L97 51.0 L98 49.7 L99 48.5 L100 47.4 L101 46.4 L102 45.5 L103 44.7 L104 44.1 L105 43.5 L106 43.1 L107 42.8 L108 42.7 L109 42.6 L110 42.7 L111 43.0 L112 43.3 L113 43.8 L114 44.4 L115 45.1 L116 45.9 L117 46.8 L118 47.8 L119 48.8 L120 50.0 L121 51.2 L122 52.5 L123 53.8 L124 55.2 L125 56.6 L126 58.0 L127 59.4 L128 60.9 L129 62.3 L130 63.7 L131 65.1 L132 66.4 L133 67.7 L134 68.9 L135 70.1 L136 71.2 L137 72.2 L138 73.1 L139 74.0 L140 74.7 L141 75.3 L142 75.9 L143 76.3 L144 76.6 L145 76.9 L146 77.0 L147 76.9 L148 76.8 L149 76.6 L150 76.3 L151 75.8 L152 75.3 L153 74.7 L154 73.9 L155 73.1 L156 72.2 L157 71.3 L158 70.3 L159 69.2 L160 68.1 L161 66.9 L162 65.7 L163 64.5 L164 63.2 L165 62.0 L166 60.7 L167 59.5 L168 58.3 L169 57.1 L170 56.0 L171 54.9 L172 53.8 L173 52.8 L174 51.9 L175 51.0 L176 50.2 L177 49.5 L178 48.9 L179 48.4 L180 47.9 L181 47.6 L182 47.3 L183 47.2 L184 47.1 L185 47.2 L186 47.3 L187 47.5 L188 47.8 L189 48.2 L190 48.7 L191 49.3 L192 50.0 L193 50.7 L194 51.5 L195 52.3 L196 53.2 L197 54.2 L198 55.2 L199 56.2 L200 57.2 L201 58.3 L202 59.4 L203 60.5 L204 61.5 L205 62.6 L206 63.7 L207 64.7 L208 65.7 L209 66.6 L210 67.5 L211 68.4 L212 69.2 L213 69.9 L214 70.6 L215 71.1 L216 71.7 L217 72.1 L218 72.5 L219 72.7 L220 72.9 L221 73.0 L222 73.1 L223 73.0 L224 72.9 L225 72.7 L226 72.4 L227 72.0 L228 71.5 L229 71.0 L230 70.4 L231 69.8 L232 69.1 L233 68.3 L234 67.5 L235 66.7 L236 65.8 L237 64.9 L238 64.0 L239 63.1 L240 62.1 L241 61.2 L242 60.2 L243 59.3 L244 58.4 L245 57.5 L246 56.7 L247 55.9 L248 55.1 L249 54.4 L250 53.7 L251 53.1 L252 52.5 L253 52.0 L254 51.6 L255 51.2 L256 50.9 L257 50.7 L258 50.6 L259 50.5 L260 50.5 L261 50.6 L262 50.7 L263 50.9 L264 51.2 L265 51.6 L266 52.0 L267 52.4 L268 53.0 L269 53.5 L270 54.2 L271 54.8 L272 55.5 L273 56.3 L274 57.0 L275 57.8 L276 58.6 L277 59.5 L278 60.3 L279 61.1 L280 61.9 L281 62.7 L282 63.5 L283 64.2 L284 65.0 L285 65.7 L286 66.3 L287 66.9 L288 67.5 L289 68.0 L290 68.5 L291 68.9 L292 69.3 L293 69.6 L294 69.8 L295 70.0 L296 70.1 L297 70.1 L298 70.1 L299 70.0 L300 69.9 L301 69.7 L302 69.4 L303 69.1 L304 68.7 L305 68.3 L306 67.8 L307 67.3 L308 66.8 L309 66.2 L310 65.6 L311 64.9 L312 64.2 L313 63.5 L314 62.8 L315 62.1 L316 61.4 L317 60.7 L318 60.0 L319 59.3" class="wire" style="stroke:var(--chart-a);stroke-width:2"/>
+<path d="M39 84V39.4" class="wire" stroke-dasharray="2 3"/>
+<circle cx="39" cy="39.4" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M78 84V78.7" class="wire" stroke-dasharray="2 3"/>
+<circle cx="78" cy="78.7" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M117 84V46.8" class="wire" stroke-dasharray="2 3"/>
+<circle cx="117" cy="46.8" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M156 84V72.2" class="wire" stroke-dasharray="2 3"/>
+<circle cx="156" cy="72.2" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M195 84V52.3" class="wire" stroke-dasharray="2 3"/>
+<circle cx="195" cy="52.3" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M234 84V67.5" class="wire" stroke-dasharray="2 3"/>
+<circle cx="234" cy="67.5" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M273 84V56.3" class="wire" stroke-dasharray="2 3"/>
+<circle cx="273" cy="56.3" r="3.5" style="fill:var(--chart-a)"/>
+<path d="M312 84V64.2" class="wire" stroke-dasharray="2 3"/>
+<circle cx="312" cy="64.2" r="3.5" style="fill:var(--chart-a)"/>
+<text x="318" y="99" class="small" text-anchor="end">時間 →</text>
+<text x="6" y="119" class="strong orange" text-anchor="start">標本化 → 量子化 → 符号化</text>
+      </svg>
+      <p>点は標本化のイメージです。次に高さを決められた段階に丸め、各値をビット列にします。</p>
+    </figure>
+<p>PCMでは、一定の時間間隔で波形を測る標本化、測った値を段階値にする量子化、段階値をビット列にする符号化を行います。標本化周波数は1秒に測る回数、量子化ビット数は一回の値を表すビット数です。例えば16bitなら2¹⁶＝65,536段階を表せます。</p>
+<p>無圧縮PCMのデータ量は、標本化周波数×量子化ビット数×チャンネル数×秒数です。16,000Hz・16bit・モノラルで5秒なら、16,000×16×1×5÷8＝160,000バイトです。ファイルのヘッダーなどはこの計算に含めません。</p>
+<p>WAVはPCMを格納する用途でよく使うファイル形式です。MP3やAACは非可逆圧縮で使われる音声の符号化方式です。MIDIは演奏の音程・長さ・強さなどを扱う仕組みで、マイクで録った波形とは中身が違います。</p>
+</section>
+<section id="images">
+<h2>写真と図を、何を保持したいかで選ぶ</h2>
+    <figure id="visual-raster-vector" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>会場マップの斜め線を拡大する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 159" role="img" aria-labelledby="visual-raster-vector-title visual-raster-vector-desc">
+        <title id="visual-raster-vector-title">会場マップの斜め線を拡大する</title>
+        <desc id="visual-raster-vector-desc">左は四角い画素の集まり。右は二つの端点を指定した斜め線。</desc>
+        <text x="8" y="16" class="strong blue" text-anchor="start">ラスター｜画素の並び</text>
+<text x="171" y="16" class="strong orange" text-anchor="start">ベクター｜図形の指定</text>
+<rect x="16" y="26" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="34" y="26" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="52" y="26" width="18" height="18" rx="0" class="panel"/>
+<rect x="70" y="26" width="18" height="18" rx="0" class="panel"/>
+<rect x="88" y="26" width="18" height="18" rx="0" class="panel"/>
+<rect x="106" y="26" width="18" height="18" rx="0" class="panel"/>
+<rect x="16" y="44" width="18" height="18" rx="0" class="panel"/>
+<rect x="34" y="44" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="52" y="44" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="70" y="44" width="18" height="18" rx="0" class="panel"/>
+<rect x="88" y="44" width="18" height="18" rx="0" class="panel"/>
+<rect x="106" y="44" width="18" height="18" rx="0" class="panel"/>
+<rect x="16" y="62" width="18" height="18" rx="0" class="panel"/>
+<rect x="34" y="62" width="18" height="18" rx="0" class="panel"/>
+<rect x="52" y="62" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="70" y="62" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="88" y="62" width="18" height="18" rx="0" class="panel"/>
+<rect x="106" y="62" width="18" height="18" rx="0" class="panel"/>
+<rect x="16" y="80" width="18" height="18" rx="0" class="panel"/>
+<rect x="34" y="80" width="18" height="18" rx="0" class="panel"/>
+<rect x="52" y="80" width="18" height="18" rx="0" class="panel"/>
+<rect x="70" y="80" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="88" y="80" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="106" y="80" width="18" height="18" rx="0" class="panel"/>
+<rect x="16" y="98" width="18" height="18" rx="0" class="panel"/>
+<rect x="34" y="98" width="18" height="18" rx="0" class="panel"/>
+<rect x="52" y="98" width="18" height="18" rx="0" class="panel"/>
+<rect x="70" y="98" width="18" height="18" rx="0" class="panel"/>
+<rect x="88" y="98" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="106" y="98" width="18" height="18" rx="0" class="panel"/>
+<rect x="16" y="116" width="18" height="18" rx="0" class="panel"/>
+<rect x="34" y="116" width="18" height="18" rx="0" class="panel"/>
+<rect x="52" y="116" width="18" height="18" rx="0" class="panel"/>
+<rect x="70" y="116" width="18" height="18" rx="0" class="panel"/>
+<rect x="88" y="116" width="18" height="18" rx="0" class="panel"/>
+<rect x="106" y="116" width="18" height="18" rx="0" class="blue-fill"/>
+<rect x="178" y="26" width="128" height="108" rx="7" class="panel"/>
+<path d="M193 42L291 119" class="wire" style="stroke:var(--chart-a);stroke-width:7;stroke-linecap:round"/>
+<text x="9" y="153" class="small" text-anchor="start">拡大すると格子が見える</text>
+<text x="172" y="153" class="small" text-anchor="start">線の端点や太さを保持</text>
+      </svg>
+      <p>ラスターでは画素を編集し、ベクターでは点や線を動かします。ベクターも画面に描くときは表示する画素に変換されます。</p>
+    </figure>
+  <table>
+    <caption>図書館の素材から形式を選ぶ</caption>
+    <thead><tr><th scope="col">目的</th><th scope="col">形式と選ぶ理由</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">会場の写真</th><td>一般的なJPEGは非可逆圧縮で容量を抑えやすい。再編集が必要なら元データも保管する。</td></tr>
+<tr><th scope="row">文字入り画面や透過素材</th><td>PNGは可逆圧縮で、透過にも対応する。</td></tr>
+<tr><th scope="row">線や文字が中心の地図</th><td>SVGなら座標と形で表現でき、拡大したときも輪郭を描き直せる。</td></tr>
+<tr><th scope="row">色数を抑えた短いアニメ</th><td>GIFは1フレームの色表に最大256色。動きを持たせることもできる。</td></tr>
+    </tbody>
+  </table>
+<p>BMPやTIFFはラスター画像を扱う形式の例です。圧縮方法は形式や保存設定によります。EPSは印刷などに使われる形式で、ベクターに加えラスター画像も含められます。写真を画素で加工するペイント系と、地図の矢印や線を形として配置するドロー系の違いも押さえます。</p>
+</section>
+<section id="compression">
+<h2>元と同じデータに戻せるかで圧縮方式を見分ける</h2>
+    <figure id="visual-compression" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>配布物をまとめる場合と写真を軽くする場合</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" role="img" aria-labelledby="visual-compression-title visual-compression-desc">
+        <title id="visual-compression-title">配布物をまとめる場合と写真を軽くする場合</title>
+        <desc id="visual-compression-desc">可逆圧縮、同じ内容に戻せる、申込者用の文書をZIPに。非可逆圧縮、一部の情報を落とす、会場写真の配信用に</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">可逆圧縮</text>
+<text x="12" y="44" class="small" text-anchor="start">同じ内容に戻せる</text>
+<text x="12" y="62" class="small" text-anchor="start">申込者用の文書をZIPに</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">非可逆圧縮</text>
+<text x="177" y="44" class="small" text-anchor="start">一部の情報を落とす</text>
+<text x="177" y="62" class="small" text-anchor="start">会場写真の配信用に</text>
+      </svg>
+      <p>圧縮したものを開けることと、圧縮前のデータに完全一致することは別です。</p>
+    </figure>
+<p>ランレングス法は同じ記号の連続を「記号と回数」で表します。例えば <code>AAABB</code> は <code>A×3、B×2</code> と表せます。この表記は考え方を示す例で、短いデータが常に小さくなるとは限りません。ハフマン法では出現頻度を基に、よく現れる記号に短いビット列を割り当てるよう符号を作ります。</p>
+<p>元のファイルが800KB、圧縮後が200KBなら、圧縮後÷元の大きさは25%、減少した割合は75%です。「圧縮率」とだけ書かれているときは、問題文がどちらの式を指定しているかを確かめます。</p>
+</section>
+<section id="graphics">
+<h2>色、画素数、階調を混同しない</h2>
+    <figure id="visual-colour" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>予約案内を画面と紙で同じように見せたい</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 113" role="img" aria-labelledby="visual-colour-title visual-colour-desc">
+        <title id="visual-colour-title">予約案内を画面と紙で同じように見せたい</title>
+        <desc id="visual-colour-desc">RGBは赤・緑・青の光を加える。CMYはシアン・マゼンタ・黄のインクを使い、CMYKは黒を加える。</desc>
+        <rect x="4" y="5" width="157" height="104" rx="7" class="panel"/>
+<rect x="169" y="5" width="157" height="104" rx="7" class="panel"/>
+<text x="12" y="24" class="strong blue" text-anchor="start">画面｜RGB</text>
+<text x="177" y="24" class="strong orange" text-anchor="start">印刷｜CMYとK</text>
+<rect x="12" y="36" width="40" height="30" rx="5" style="fill:#ec4e56"/>
+<text x="32" y="56" text-anchor="middle" style="fill:#190a0b;font-weight:700">R</text>
+<rect x="59" y="36" width="40" height="30" rx="5" style="fill:#64dc78"/>
+<text x="79" y="56" text-anchor="middle" style="fill:#0a210e;font-weight:700">G</text>
+<rect x="106" y="36" width="40" height="30" rx="5" style="fill:#74b9ff"/>
+<text x="126" y="56" text-anchor="middle" style="fill:#0b1726;font-weight:700">B</text>
+<rect x="177" y="36" width="40" height="30" rx="5" style="fill:#66e3ee"/>
+<text x="197" y="56" text-anchor="middle" style="fill:#092428;font-weight:700">C</text>
+<rect x="224" y="36" width="40" height="30" rx="5" style="fill:#f282c2"/>
+<text x="244" y="56" text-anchor="middle" style="fill:#300c24;font-weight:700">M</text>
+<rect x="271" y="36" width="40" height="30" rx="5" style="fill:#ffe170"/>
+<text x="291" y="56" text-anchor="middle" style="fill:#332709;font-weight:700">Y</text>
+<text x="12" y="84" class="strong blue" text-anchor="start">光を足す</text>
+<text x="177" y="84" class="strong orange" text-anchor="start">インクで光を吸収</text>
+<text x="12" y="101" class="small" text-anchor="start">全成分最大で白</text>
+<text x="177" y="101" class="small" text-anchor="start">Kは黒のインク</text>
+      </svg>
+      <p>画面と紙では色の作り方が異なります。用紙やプリンターの設定によって色の見え方も変わります。</p>
+    </figure>
+<p>RGBは光を足す加法混色、CMYは反射する光を減らす減法混色として捉えられます。色相は赤や青など色の種類、明度は明るさ、彩度は鮮やかさです。画素は画像を構成する点で、階調は明暗や各色成分を何段階で表せるかです。各色8bitのRGBでは、成分ごとに256段階、組合せは256³＝16,777,216通りです。</p>
+<p>1200×800ピクセルの画像を横4インチで配置すると、横は1200÷4＝300ppiです。ppiは1インチ当たりの画素数で、dpiは主にプリンターなどの1インチ当たりのドット数を表します。ピクセル数が同じ画像でも、配置する大きさを変えるとppiが変わります。</p>
+</section>
+<section id="applications">
+<h2>会場で体験してもらう方法を選ぶ</h2>
+    <figure id="visual-xr" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の市立図書館</span></span><strong>会場案内の何を体験してもらうか</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-xr-title visual-xr-desc">
+        <title id="visual-xr-title">会場案内の何を体験してもらうか</title>
+        <desc id="visual-xr-desc">VR｜仮想現実、仮想の図書館を歩く、視界に仮想空間を表示。AR｜拡張現実、実際の床に矢印を重ねる、カメラ画像に案内を追加。MR｜複合現実、仮想の展示台を置く、現実の位置に合わせ操作。投影マッピング、壁に動く図を投影、実物の形に映像を合わせる</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">VR｜仮想現実</text>
+<text x="12" y="44" class="small" text-anchor="start">仮想の図書館を歩く</text>
+<text x="12" y="62" class="small" text-anchor="start">視界に仮想空間を表示</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">AR｜拡張現実</text>
+<text x="177" y="44" class="small" text-anchor="start">実際の床に矢印を重ねる</text>
+<text x="177" y="62" class="small" text-anchor="start">カメラ画像に案内を追加</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">MR｜複合現実</text>
+<text x="12" y="120" class="small" text-anchor="start">仮想の展示台を置く</text>
+<text x="12" y="138" class="small" text-anchor="start">現実の位置に合わせ操作</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">投影マッピング</text>
+<text x="177" y="120" class="small" text-anchor="start">壁に動く図を投影</text>
+<text x="177" y="138" class="small" text-anchor="start">実物の形に映像を合わせる</text>
+      </svg>
+      <p>CGで作る映像や3Dモデルは、ゲームやコンピュータシミュレーションにも使えます。例えば会場の混雑を仮想の人の動きで再現し、通路の幅を変えたときの差を試せます。XRはVR・AR・MRなどをまとめて呼ぶ言い方です。</p>
+    </figure>
+<p>メタバースは利用者がアバターなどを通じて活動・交流できる仮想空間の例です。4Kや8Kは映像の画素数の規模を指します。放送の例では4Kは3840×2160、8Kは7680×4320です。画素数が増えると伝えられる細部は増えますが、配信のデータ量は符号化の条件にも左右されます。</p>
+</section>
+
+<section id="quiz">
+  <h2>例題10問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　音の大きさを測る回数</h3>
+    <p>波形を一定の時間間隔で測る工程はどれですか。</p>
+    <ol class="options"><li>伸長</li><li>標本化</li><li>量子化</li><li>デコード</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>イ　標本化</strong></p><p>標本化は測る時点を決める工程です。測った値を一定の段階に丸めるのは量子化です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　無圧縮音声の容量</h3>
+    <p>16,000Hz、16bit、モノラルで5秒のPCMは、ヘッダーなしで何バイトですか。</p>
+    <ol class="options"><li>16,000</li><li>80,000</li><li>160,000</li><li>1,280,000</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>ウ　160,000</strong></p><p>16,000×16×1×5＝1,280,000ビットです。8で割って160,000バイトです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　地図の線を編集する</h3>
+    <p>拡大した後も矢印の端点を個別に動かしたいとき、適した表現はどれですか。</p>
+    <ol class="options"><li>線を図形として保持するベクター</li><li>画素を一列ずつ保存するラスター</li><li>演奏のMIDI</li><li>音声のPCM</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　線を図形として保持するベクター</strong></p><p>ベクターなら端点などの指定を変更して線を描画できます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　透明な案内アイコン</h3>
+    <p>画素の値を元に戻せて、透過も使える画像形式はどれですか。</p>
+    <ol class="options"><li>一般的なJPEG</li><li>MP3</li><li>MP4</li><li>PNG</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　PNG</strong></p><p>PNGは可逆圧縮で透過にも対応します。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　動画の入れ物と中身</h3>
+    <p>工作動画の映像をH.264で符号化し、音声と一緒にMP4に入れました。適切な説明はどれですか。</p>
+    <ol class="options"><li>両方とも動画のフレーム数</li><li>H.264は符号化方式、MP4はコンテナ</li><li>H.264はコンテナ、MP4は映像の符号化方式</li><li>MP4には映像を格納できない</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　H.264は符号化方式、MP4はコンテナ</strong></p><p>符号化方式は映像をどう記録するか、コンテナは映像や音声をどう格納するかを定めます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　減った分を計算する</h3>
+    <p>800KBの写真を200KBにしました。元から何%減りましたか。</p>
+    <ol class="options"><li>20%</li><li>25%</li><li>75%</li><li>80%</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　75%</strong></p><p>600KB減っています。600÷800＝0.75なので75%減です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　配布原稿を保管する</h3>
+    <p>参加者用の文書をまとめ、開いたときに元のデータへ戻したい場合の選択はどれですか。</p>
+    <ol class="options"><li>可逆圧縮を使う</li><li>画素を減らす</li><li>音声をAACで符号化する</li><li>非可逆圧縮で一部を省く</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>ア　可逆圧縮を使う</strong></p><p>可逆圧縮なら伸長後に圧縮前と同じデータに戻せます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　画素の密度を求める</h3>
+    <p>横1200ピクセルの画像を横4インチで配置します。画素の密度はいくつですか。</p>
+    <ol class="options"><li>1200ppi</li><li>4800ppi</li><li>400ppi</li><li>300ppi</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>エ　300ppi</strong></p><p>横幅1インチに入る画素数は1200÷4＝300です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　画面の色を作る</h3>
+    <p>RGBの赤・緑・青の光をすべて最大で重ねると、基本モデルでは何色ですか。</p>
+    <ol class="options"><li>黒</li><li>白</li><li>黄</li><li>マゼンタ</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　白</strong></p><p>光の加法混色では、赤・緑・青の光を最大で重ねると白になります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第10問　床に矢印を出す</h3>
+    <p>スマホのカメラで実際の通路を映し、その映像に矢印を重ねます。該当するのはどれですか。</p>
+    <ol class="options"><li>MIDI</li><li>VR</li><li>AR</li><li>ランレングス法</li></ol>
+    <details><summary>第10問の解答と解説</summary><p><strong>ウ　AR</strong></p><p>現実に見えている場面に案内情報を重ねる拡張現実です。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第15章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=54">IPA「ITパスポート試験シラバス Ver.6.5」マルチメディア技術</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=55">IPA「ITパスポート試験シラバス Ver.6.5」グラフィックス処理と応用</a></li>
+      <li><a href="https://datatracker.ietf.org/doc/html/rfc2586">RFC 2586「Audio/L16」音声データの表現</a></li>
+      <li><a href="https://www.w3.org/TR/png-3/">W3C「Portable Network Graphics」</a></li>
+      <li><a href="https://www.w3.org/TR/SVG2/">W3C「Scalable Vector Graphics 2」</a></li>
+      <li><a href="https://jpeg.org/jpeg/">JPEG委員会「JPEG 1」</a></li>
+      <li><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">CompuServe「GIF89a仕様」</a></li>
+      <li><a href="https://www.mpeg.org/standards/MPEG-4/14/">MPEG「MP4 File Format」</a></li>
+      <li><a href="https://www.itu.int/rec/R-REC-BT.2020">ITU-R勧告 BT.2020 超高精細テレビジョン</a></li>
+      <li><a href="https://www.itu.int/rec/T-REC-H.264">ITU-T勧告 H.264</a></li>
+      <li><a href="https://developer.apple.com/streaming/">Apple「HTTP Live Streaming」</a></li>
+      <li><a href="https://www.w3.org/TR/webxr/">W3C「WebXR Device API」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch15-1-information-design.html">15-1 情報デザイン</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch15"></script>
+</body>
+</html>
