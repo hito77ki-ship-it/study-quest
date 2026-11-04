@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://study-quest.net/itp-ch16-2-transaction-processing.html">
+  <title>ITパスポート 16-2 トランザクション処理｜スタディクエスト</title>
+  <meta name="description" content="文化祭の最後の1個を題材に、コミット、排他制御、ACID、デッドロック、障害回復を図解と例題で学びます。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ITパスポート 16-2 トランザクション処理">
+  <meta property="og:description" content="文化祭の最後の1個を題材に、コミット、排他制御、ACID、デッドロック、障害回復を図解と例題で学びます。">
+  <meta property="og:url" content="https://study-quest.net/itp-ch16-2-transaction-processing.html">
+  <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ITパスポート 16-2 トランザクション処理",
+  "description": "文化祭の最後の1個を題材に、コミット、排他制御、ACID、デッドロック、障害回復を図解と例題で学びます。",
+  "url": "https://study-quest.net/itp-ch16-2-transaction-processing.html",
+  "image": "https://study-quest.net/images/study-quest-it-category.jpg",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Organization",
+    "name": "スタディクエスト編集部",
+    "url": "https://study-quest.net/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "スタディクエスト",
+    "url": "https://study-quest.net/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://study-quest.net/itp-ch16-2-transaction-processing.html"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+</head>
+<body class="itp-review">
+<nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
+<main class="container">
+<article>
+  <header>
+    <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
+    <p class="label">STUDY QUEST　/　ITパスポート　/　第16章 データベース</p>
+    <h1>ITパスポート 16-2 トランザクション処理</h1>
+    <p>文化祭の最後の1個を題材に、コミット、排他制御、ACID、デッドロック、障害回復を図解と例題で学びます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+  </header>
+  <nav aria-label="目次"><ul><li><a href="#transaction">コミットとACID</a></li><li><a href="#concurrency">排他制御・デッドロック・2相コミットメント</a></li><li><a href="#recovery">ログと障害回復</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+<section id="transaction"><h2>在庫を減らす処理と、注文を残す処理をひとまとめにする</h2>
+<p>文化祭の模擬店で、残り1個のレモネードが売れました。在庫を1減らしても、注文が記録されなければ受付で引き渡せません。この2つを一つの処理単位にまとめるのが<strong>トランザクション</strong>です。注文確定前の状態は在庫1、注文なしとします。</p>
+    <figure id="visual-commit" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>1件の注文が確定するまで</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-commit-title visual-commit-desc">
+        <title id="visual-commit-title">1件の注文が確定するまで</title>
+        <desc id="visual-commit-desc">開始、在庫は1、注文はまだない。在庫を更新、在庫を1から0にする。注文を記録、注文O103を追加する。コミット、在庫0と注文O103をまとめて確定</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">開始</text>
+<text x="50" y="41" class="small" text-anchor="start">在庫は1、注文はまだない</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">在庫を更新</text>
+<text x="50" y="101" class="small" text-anchor="start">在庫を1から0にする</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">注文を記録</text>
+<text x="50" y="161" class="small" text-anchor="start">注文O103を追加する</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">コミット</text>
+<text x="50" y="221" class="small" text-anchor="start">在庫0と注文O103をまとめて確定</text>
+      </svg>
+      <p>途中で注文の登録に失敗したら、処理をロールバックし、在庫1・注文なしの状態を保ちます。</p>
+    </figure>
+<p><strong>コミット</strong>は処理の変更を確定すること、<strong>ロールバック</strong>は未確定の変更を取り消すことです。例えば注文番号の重複で記録に失敗したとき、在庫だけ減らして処理を終えると帳尻が合いません。両方を同じトランザクションに含めます。</p>
+    <figure id="visual-acid" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>ACIDを「何が壊れたか」で区別する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 152" role="img" aria-labelledby="visual-acid-title visual-acid-desc">
+        <title id="visual-acid-title">ACIDを「何が壊れたか」で区別する</title>
+        <desc id="visual-acid-desc">原子性｜A、注文と在庫を一単位に、途中だけ残さない。一貫性｜C、在庫は0以上と決める、処理後も制約を満たす。独立性｜I、窓口Aと窓口Bの注文、同時処理の干渉を抑える。耐久性｜D、確定した注文を守る、障害後も確定結果を保つ</desc>
+        <rect x="2" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="23" class="strong blue" text-anchor="start">原子性｜A</text>
+<text x="12" y="44" class="small" text-anchor="start">注文と在庫を一単位に</text>
+<text x="12" y="62" class="small" text-anchor="start">途中だけ残さない</text>
+<rect x="167" y="3" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="23" class="strong orange" text-anchor="start">一貫性｜C</text>
+<text x="177" y="44" class="small" text-anchor="start">在庫は0以上と決める</text>
+<text x="177" y="62" class="small" text-anchor="start">処理後も制約を満たす</text>
+<rect x="2" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="12" y="99" class="strong blue" text-anchor="start">独立性｜I</text>
+<text x="12" y="120" class="small" text-anchor="start">窓口Aと窓口Bの注文</text>
+<text x="12" y="138" class="small" text-anchor="start">同時処理の干渉を抑える</text>
+<rect x="167" y="79" width="161" height="70" rx="7" class="panel"/>
+<text x="177" y="99" class="strong orange" text-anchor="start">耐久性｜D</text>
+<text x="177" y="120" class="small" text-anchor="start">確定した注文を守る</text>
+<text x="177" y="138" class="small" text-anchor="start">障害後も確定結果を保つ</text>
+      </svg>
+      <p>Atomicity・Consistency・Isolation・Durabilityの頭文字です。一貫性は守るべきルール、独立性は同時に走る処理の見え方や影響に注目します。</p>
+    </figure>
+<p>一貫性には、在庫が負にならない制約や、明細の商品IDが商品表を参照する制約などが関わります。アプリ側のルールも適切に実装する必要があります。独立性をどこまで強く保つかは、分離レベルなどの設計に関わります。</p>
+</section><section id="concurrency"><h2>最後の1個に二つの注文が入ったら</h2>
+    <figure id="visual-lock" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>同じ在庫を更新するときは、最新の値を確かめてから売る</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-lock-title visual-lock-desc">
+        <title id="visual-lock-title">同じ在庫を更新するときは、最新の値を確かめてから売る</title>
+        <desc id="visual-lock-desc">窓口Aが先にロック、在庫1を確認し、Aが注文を処理する。窓口Bは待機、Aが更新中の在庫行をBは変更できない。Aが確定してロックを解放、在庫0、Aの注文1件。Bは在庫を確認し直す、在庫0なので、売り切れを伝える</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">窓口Aが先にロック</text>
+<text x="50" y="41" class="small" text-anchor="start">在庫1を確認し、Aが注文を処理する</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">窓口Bは待機</text>
+<text x="50" y="101" class="small" text-anchor="start">Aが更新中の在庫行をBは変更できない</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">Aが確定してロックを解放</text>
+<text x="50" y="161" class="small" text-anchor="start">在庫0、Aの注文1件</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">Bは在庫を確認し直す</text>
+<text x="50" y="221" class="small" text-anchor="start">在庫0なので、売り切れを伝える</text>
+      </svg>
+      <p>ロックを使う実装の一例です。待つ前に見た「在庫1」をそのまま使うと、順番を待っても二重販売の原因になります。</p>
+    </figure>
+<p>このように複数の処理が同じデータを扱うときに整合性を保つ仕組みが<strong>同時実行制御</strong>です。ロックで両立しない操作を制限するのが<strong>排他制御</strong>で、ロックを解放することをアンロックと呼びます。典型的な説明では、共有ロックは別の共有読取りと両立し、排他ロックは競合するロックを待たせます。実際に読取りが待つかは製品やロックの種類によります。</p>
+    <figure id="visual-deadlock" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>2つの商品を逆順にロックすると？</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 146" role="img" aria-labelledby="visual-deadlock-title visual-deadlock-desc">
+        <title id="visual-deadlock-title">2つの商品を逆順にロックすると？</title>
+        <desc id="visual-deadlock-desc">AはP01を保持してP02を待ち、BはP02を保持してP01を待つ。相互に待ち続ける。</desc>
+        <rect x="4" y="5" width="154" height="47" rx="7" class="panel"/>
+<rect x="172" y="5" width="154" height="47" rx="7" class="panel"/>
+<text x="81" y="24" class="strong blue" text-anchor="middle">受付A</text>
+<text x="249" y="24" class="strong orange" text-anchor="middle">受付B</text>
+<text x="81" y="43" class="small" text-anchor="middle">P01をロック中</text>
+<text x="249" y="43" class="small" text-anchor="middle">P02をロック中</text>
+<path d="M37 62h252m-7-4 7 4-7 4" class="wire" />
+<path d="M290 112H38m7-4-7 4 7 4" class="wire" />
+<text x="165" y="81" class="small" text-anchor="middle">AはBが持つP02を待つ</text>
+<text x="165" y="103" class="small" text-anchor="middle">BはAが持つP01を待つ</text>
+<text x="165" y="137" class="strong orange" text-anchor="middle">待ちが輪になるとデッドロック</text>
+      </svg>
+      <p>両窓口で「商品IDの小さい順」にロックすれば、この逆順による待ちの輪を避けられます。</p>
+    </figure>
+<p>AがP01を、BがP02を先にロックし、次に互いのロックを待つと、どちらも先へ進めません。この待ちの輪が<strong>デッドロック</strong>です。対策は、ロックする順序を統一することです。検出時にDBMSが一方を取り消す場合は、失敗した処理を初めからやり直す設計も使われます。片方だけが待っている状態なら、先行処理の終了で進めることがあります。</p>
+    <figure id="visual-two-phase" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>別々のDBでも「注文と在庫を両方確定」をそろえる</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-two-phase-title visual-two-phase-desc">
+        <title id="visual-two-phase-title">別々のDBでも「注文と在庫を両方確定」をそろえる</title>
+        <desc id="visual-two-phase-desc">第1段階｜準備を確認、注文DBと在庫DBが確定できるか応答。第2段階｜結果を指示、全員が準備できれば確定を指示。準備できない場合、取り消す方針を参加側に伝える</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">第1段階｜準備を確認</text>
+<text x="50" y="41" class="small" text-anchor="start">注文DBと在庫DBが確定できるか応答</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">第2段階｜結果を指示</text>
+<text x="50" y="101" class="small" text-anchor="start">全員が準備できれば確定を指示</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">準備できない場合</text>
+<text x="50" y="161" class="small" text-anchor="start">取り消す方針を参加側に伝える</text>
+      </svg>
+      <p>2相コミットメントでは調整役が全体の確定方針を決めます。準備・確定の2段階を使い、どちらかだけを独断で確定しないようにします。</p>
+    </figure>
+<p>2相コミットメントは複数のDBなどにまたがる確定の調整です。調整役が故障すると、準備済みの参加側が結果を待つ場合もあります。</p>
+</section><section id="recovery"><h2>ログとバックアップで、どの状態に戻すか決める</h2>
+<p><strong>ログ（ジャーナル）</strong>は、データベースの変更を記録するものです。試験で「更新前ログ」「更新後ログ」と示されたら、どの状態を取り消し、どの状態を再現するかを時間順に考えます。ログに残す情報や回復手順はDBMSによって異なります。</p>
+    <figure id="visual-undo" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>ロールバック｜途中の処理を取り消す</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="visual-undo-title visual-undo-desc">
+        <title id="visual-undo-title">ロールバック｜途中の処理を取り消す</title>
+        <desc id="visual-undo-desc">開始時、レモネードの在庫は1。在庫を減らした直後、在庫は一時的に0、注文は未確定。注文登録に失敗、処理を取り消して在庫1に戻る</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">開始時</text>
+<text x="50" y="41" class="small" text-anchor="start">レモネードの在庫は1</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">在庫を減らした直後</text>
+<text x="50" y="101" class="small" text-anchor="start">在庫は一時的に0、注文は未確定</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">注文登録に失敗</text>
+<text x="50" y="161" class="small" text-anchor="start">処理を取り消して在庫1に戻る</text>
+      </svg>
+      <p>更新前ログを使うモデルなら「1」が取り消し時に戻す値です。この注文は確定していません。</p>
+    </figure>
+    <figure id="visual-redo" class="review-figure term-visual">
+      <figcaption><span class="term-visual-label">Study Questの自作図解 <span>架空の文化祭</span></span><strong>ロールフォワード｜確定済みの変更を再現する</strong></figcaption>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 237" role="img" aria-labelledby="visual-redo-title visual-redo-desc">
+        <title id="visual-redo-title">ロールフォワード｜確定済みの変更を再現する</title>
+        <desc id="visual-redo-desc">10:00のバックアップ、在庫は5個。10:05に2個販売して確定、ログで在庫3個の状態を再現。10:10に1個販売して確定、ログで在庫2個の状態を再現。10:12に障害、バックアップと必要なログから在庫2へ</desc>
+        <rect x="2" y="3" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="12" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="32" class="strong blue" text-anchor="middle">1</text>
+<text x="50" y="22" class="strong blue" text-anchor="start">10:00のバックアップ</text>
+<text x="50" y="41" class="small" text-anchor="start">在庫は5個</text>
+<path d="M25 53v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="63" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="72" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="92" class="strong blue" text-anchor="middle">2</text>
+<text x="50" y="82" class="strong blue" text-anchor="start">10:05に2個販売して確定</text>
+<text x="50" y="101" class="small" text-anchor="start">ログで在庫3個の状態を再現</text>
+<path d="M25 113v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="123" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="132" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="152" class="strong blue" text-anchor="middle">3</text>
+<text x="50" y="142" class="strong blue" text-anchor="start">10:10に1個販売して確定</text>
+<text x="50" y="161" class="small" text-anchor="start">ログで在庫2個の状態を再現</text>
+<path d="M25 173v8m-4 -4 4 4 4 -4" class="wire" />
+<rect x="2" y="183" width="326" height="49" rx="7" class="panel"/>
+<rect x="11" y="192" width="28" height="29" rx="7" class="blue-fill"/>
+<text x="25" y="212" class="strong blue" text-anchor="middle">4</text>
+<text x="50" y="202" class="strong blue" text-anchor="start">10:12に障害</text>
+<text x="50" y="221" class="small" text-anchor="start">バックアップと必要なログから在庫2へ</text>
+      </svg>
+      <p>更新後ログを使う考え方です。次の販売が未確定なら、その販売分は確定結果として残しません。</p>
+    </figure>
+<p><strong>チェックポイント</strong>は、変更をディスクへ反映する処理と連携し、回復でログをどこから確認するかの目印になるものです。たとえばPostgreSQLのWALでは、再起動時に関連するチェックポイントの情報を使って、そこから必要なログを再生します。チェックポイントだけで、故障したディスクを復元するためのバックアップが手に入るわけではありません。</p>
+  <table>
+    <caption>設問の条件で回復方法を選ぶ</caption>
+    <thead><tr><th scope="col">状況</th><th scope="col">考えること</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">1件の注文が未確定のまま失敗</th><td>その処理の変更を取り消す。</td></tr>
+<tr><th scope="row">保存装置が故障し、予備機に復元</th><td>バックアップを戻し、揃っているログで必要な時点まで進める。</td></tr>
+<tr><th scope="row">ログが途中から失われた</th><td>失われた区間を越えて直前まで復元できるとは判断できない。</td></tr>
+    </tbody>
+  </table>
+</section>
+<section id="quiz">
+  <h2>例題10問と解説</h2>
+  <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
+  <section class="box">
+    <h3>第1問　注文を残せなかった</h3>
+    <p>在庫1から1個減らした後、注文の登録に失敗しました。両方を同じトランザクションに入れていた場合の結果はどれですか。</p>
+    <ol class="options"><li>在庫0、注文なし</li><li>在庫1、注文1件</li><li>在庫1、注文なし</li><li>在庫0、注文1件</li></ol>
+    <details><summary>第1問の解答と解説</summary><p><strong>ウ　在庫1、注文なし</strong></p><p>注文が失敗したので処理をロールバックします。在庫の変更も取り消され、元の1個に戻ります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第2問　結果を確定する</h3>
+    <p>在庫を減らし、注文番号も保存できました。両方の変更を確定する操作はどれですか。</p>
+    <ol class="options"><li>射影</li><li>コミット</li><li>ロールバック</li><li>選択</li></ol>
+    <details><summary>第2問の解答と解説</summary><p><strong>イ　コミット</strong></p><p>コミットでトランザクションの結果を確定します。ロールバックは未確定の変更を取り消す操作です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第3問　故障しても注文が残る</h3>
+    <p>確定した注文を、障害後も保持できるようにするACIDの特性はどれですか。</p>
+    <ol class="options"><li>耐久性</li><li>独立性</li><li>原子性</li><li>一貫性</li></ol>
+    <details><summary>第3問の解答と解説</summary><p><strong>ア　耐久性</strong></p><p>コミット済みの結果が失われない性質が耐久性です。原子性は一連の処理が部分的に残らないことです。</p></details>
+  </section>
+  <section class="box">
+    <h3>第4問　在庫を負にしない</h3>
+    <p>在庫が0以上であるという制約を、処理の前後で満たします。この説明が指す特性はどれですか。</p>
+    <ol class="options"><li>耐久性</li><li>独立性</li><li>原子性</li><li>一貫性</li></ol>
+    <details><summary>第4問の解答と解説</summary><p><strong>エ　一貫性</strong></p><p>在庫が0以上というルールを満たすことに着目するので一貫性です。</p></details>
+  </section>
+  <section class="box">
+    <h3>第5問　待った後の在庫</h3>
+    <p>在庫は最初1個。窓口Aがその1個を販売して確定しました。窓口Bがロックの解放を待っていたとき、Bの次の操作はどれですか。</p>
+    <ol class="options"><li>最初に読んだ1を使って販売する</li><li>最新の在庫を確認して0なら販売しない</li><li>他の商品の在庫を減らす</li><li>Aの確定済み注文を取り消す</li></ol>
+    <details><summary>第5問の解答と解説</summary><p><strong>イ　最新の在庫を確認して0なら販売しない</strong></p><p>ロックの解放後は最新の値で判定します。Aの販売で残りは0なので、Bは売り切れを伝えます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第6問　互いに待つ</h3>
+    <p>AはP01をロックしてP02を待ち、BはP02をロックしてP01を待っています。何が起きていますか。</p>
+    <ol class="options"><li>一方だけが待っている</li><li>ロールフォワード</li><li>デッドロック</li><li>レプリケーション</li></ol>
+    <details><summary>第6問の解答と解説</summary><p><strong>ウ　デッドロック</strong></p><p>相手の処理が終わらなければどちらも先に進めません。両者が同じ順で資源をロックすれば、この待ちの輪を防げます。</p></details>
+  </section>
+  <section class="box">
+    <h3>第7問　二つのDBを同じ結果にする</h3>
+    <p>注文DBは準備できましたが、在庫DBは準備できませんでした。2相コミットメントの調整役はどうしますか。</p>
+    <ol class="options"><li>注文DBだけ先に確定</li><li>両方に確定を指示</li><li>どちらかを無作為に確定</li><li>全体を取り消す方針を伝える</li></ol>
+    <details><summary>第7問の解答と解説</summary><p><strong>エ　全体を取り消す方針を伝える</strong></p><p>確定を指示するのは参加側がそろって準備できた場合です。一部だけ先に確定させません。</p></details>
+  </section>
+  <section class="box">
+    <h3>第8問　バックアップの後の販売</h3>
+    <p>在庫5個のバックアップを戻しました。その後に2個と1個の販売が確定しており、ログも揃っています。障害前までの回復方法と個数はどれですか。</p>
+    <ol class="options"><li>ロールフォワード、2個</li><li>ロールフォワード、5個</li><li>ロールバック、2個</li><li>ロールバック、8個</li></ol>
+    <details><summary>第8問の解答と解説</summary><p><strong>ア　ロールフォワード、2個</strong></p><p>確定済みのログを順に適用します。5−2−1＝2個になります。</p></details>
+  </section>
+  <section class="box">
+    <h3>第9問　ログの始点を見つける</h3>
+    <p>再起動後に、変更ログをどこから処理するかの手掛かりになるものはどれですか。</p>
+    <ol class="options"><li>主キー</li><li>チェックポイント</li><li>E-R図</li><li>ビュー</li></ol>
+    <details><summary>第9問の解答と解説</summary><p><strong>イ　チェックポイント</strong></p><p>チェックポイントは回復で必要なログを見つける目印になります。保存装置全体のバックアップとは役割が違います。</p></details>
+  </section>
+  <section class="box">
+    <h3>第10問　更新前と更新後</h3>
+    <p>注文が未確定で、在庫が8から6に変わった後に処理が失敗しました。更新前後の値をログに記録するモデルでは、取り消しに使うのはどれですか。</p>
+    <ol class="options"><li>更新後の6</li><li>更新後の6をさらに2減らした4</li><li>更新前の8</li><li>新しく採番した注文ID</li></ol>
+    <details><summary>第10問の解答と解説</summary><p><strong>ウ　更新前の8</strong></p><p>未確定の変更を取り消すので、処理前の8に戻します。確定済みの変更を再現する場合は更新後の情報を使います。</p></details>
+  </section>
+</section>
+  <section class="review-sources" id="sources">
+    <h2>一次資料</h2>
+    <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第16章に合わせています。</p>
+    <ul>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=57">IPA「ITパスポート試験シラバス Ver.6.5」トランザクション処理</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL公式文書「Transactions」</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/explicit-locking.html">PostgreSQL公式文書「Explicit Locking」</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/two-phase.html">PostgreSQL公式文書「Two-Phase Transactions」</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/wal-intro.html">PostgreSQL公式文書「Write-Ahead Logging」</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/wal-configuration.html">PostgreSQL公式文書「WAL Configuration」</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/continuous-archiving.html">PostgreSQL公式文書「Point-in-Time Recovery」</a></li>
+    </ul>
+    <p>前へ <a href="itp-ch16-1-database.html">16-1 データベース</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
+  </section>
+</article>
+</main>
+<footer class="review-site-footer"><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a></footer>
+<script src="article-widgets.js?v=20261104-itp-ch16"></script>
+</body>
+</html>
