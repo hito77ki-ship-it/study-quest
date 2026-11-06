@@ -49,6 +49,9 @@ jobs:
           TZ: Asia/Tokyo
         run: node scripts/tests/guest-input-and-material-regressions.mjs
 
+      - name: Check production monitor failure reporting
+        run: node scripts/tests/media-audit-exit-status.mjs
+
       - name: Run deterministic content-quality checks
         run: node scripts/audits/run-content-quality-gate.mjs --strict --no-write
 

@@ -352,7 +352,7 @@ ${formatList(imageFailures.map((image) => `${image.page}: ${image.url}（HTTP=${
 
 HTTPエラー、canonical欠落、JSON-LD構文エラー、画像取得失敗は本番事故として優先確認する。タイトルやOGPの内容変更は自動で行わず、差分と確認結果を報告する。
 `;
-  return { name: `${today()}-production-monitor.md`, content: report };
+  return { name: `${today()}-production-monitor.md`, content: report, failureCount: failures.length + imageFailures.length };
 }
 
 function extractDate(html, pattern) {
@@ -449,6 +449,11 @@ async function main() {
       await fs.writeFile(outputPath, report.content, 'utf8');
     }
     console.log(`${opts.write ? 'Wrote' : 'Generated'}: ${outputPath}`);
+  }
+  const productionFailures = reports.reduce((sum, report) => sum + (report.failureCount || 0), 0);
+  if (productionFailures > 0) {
+    console.error(`Production audit found ${productionFailures} page/image issue(s); see the report.`);
+    process.exitCode = 1;
   }
 }
 
