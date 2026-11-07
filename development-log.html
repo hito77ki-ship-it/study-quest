@@ -11,19 +11,19 @@
 <main id="main"><div class="hero"><p class="eyebrow">FIELD NOTES / SINCE 2026</p><h1>小さく直して、<br>理由まで残す。</h1><p class="lead">Study Quest 開発・運営日誌。<br>学習に使う人の目線から、何に気づき、どう判断し、どう確かめたかを記録します。</p><p class="updated">日誌をまとめた日：2026.11.07 ／ 一覧更新：<time datetime="2026-11-07">2026.11.07</time></p></div>
 <ol class="process" aria-label="改善を記録する流れ"><li><span>01</span>気づく</li><li><span>02</span>決める</li><li><span>03</span>直す</li><li><span>04</span>確かめる</li></ol>
 <div class="layout"><aside><p class="eyebrow">記録を選ぶ</p><nav aria-label="日誌の目次"><ol><li><a href="#20261107-article-feedback"><time datetime="2026-11-07">2026.11.07</time>読者の「ここが分からない」を、記事と一緒に受け取る</a></li><li><a href="#20261107-public-diary"><time datetime="2026-11-07">2026.11.07</time>何を直したかだけでなく、判断と確認の過程を残す</a></li><li><a href="#20261106-monitor-result"><time datetime="2026-11-06">2026.11.06</time>監視の「成功」を、結果の中身と一致させる</a></li><li><a href="#20261104-month-boundary"><time datetime="2026-11-04">2026.11.04</time>月が変わったのに、「今月」が前月を集計していた</a></li><li><a href="#20261030-guest-recovery"><time datetime="2026-10-30">2026.10.30</time>再読み込みの後も、学習の続きに戻れるように</a></li></ol></nav><a class="about-link" href="#about-log">この日誌の書き方 ↓</a></aside><div class="entries"><article class="log-entry" id="20261107-article-feedback">
-  <div class="entry-meta"><time datetime="2026-11-07">2026.11.07</time><span>サイト・お問い合わせ</span><span class="verified">受付窓口を整備・受信を検証</span></div>
+  <div class="entry-meta"><time datetime="2026-11-07">2026.11.07</time><span>サイト・お問い合わせ</span><span class="verified">公開・受信確認済み</span></div>
   <h2>読者の「ここが分からない」を、記事と一緒に受け取る</h2><p class="entry-summary">記事末尾に誤りの報告と図解・説明の追加要望の入口を設け、記事名・URLを自動入力。送信先の項目対応も見直し、実際の回答保存まで確かめました。</p>
   <details><summary>経緯・確認結果を読む<span aria-hidden="true">＋</span></summary><div class="entry-body">
     <h3>きっかけ</h3><p>本人から、公開コメントだけでなく修正や説明追加の声を届けられる場所を設け、受信確認もしてほしいという依頼がありました。コメントでは参考URLを投稿できず、一般の問い合わせでは記事の場所を毎回入力する必要がありました。</p>
     <div class="comparison"><div><span class="small-label">BEFORE / 修正前</span><p>記事と問い合わせがつながっていない。さらに送信先の回答欄IDが実フォームと一致せず、テストでは必須項目が空欄と判定された一方、従来の画面は受信を確認できない送信でも成功表示を出す仕組みだった。</p></div><div><span class="small-label">AFTER / 修正後</span><p>各Articleページに2つの入口を追加。記事名・正規URL・種別を引き継ぎ、正しい回答欄へ送信する。受付可否はGoogleフォームの実際の結果で確かめられるようにした。</p></div></div>
 
     <h3>本人の依頼・運営方針</h3><p>2つのボタンの設置、記事名とURLの自動入力、受信の確認、公開後の開発日誌・私的運営日誌への記録を依頼。届いた問い合わせの定期確認も追加で依頼しました。</p>
-    <h3>AIが担当した作業</h3><p>Codexが既存導線とGoogleフォームの項目対応を照合し、受付導線・フォーム送信を実装。識別用の問い合わせを送信し、回答の保存先と内容を照合しました。</p>
-    <h3>確かめたこと</h3><ul><li>Articleとして登録された260ページに共通の受付処理とスタイルの読み込みを追加。本文や記事の更新日を変更していないことを差分で確認。</li><li>誤り報告と説明追加のテスト各1件で、Googleの「回答を記録しました」と保存先の2行を照合。記事名・URL・種別・本文、参考URLが保持され、任意の返信用メールは空欄でも受け付けられた。</li><li>公開前の隔離版でPCと390px幅の表示、ライト・ダーク、2つの入口からの自動入力を確認。</li><li>回答保存先を直接確認する毎朝9時の定期タスクを設定。受信だけで本文を変更せず、指摘の根拠を確かめて担当へ引き継ぐ運用を記録。</li></ul>
-    <p class="limits"><strong>確認の範囲</strong>画面の操作は公開前の隔離版で行い、送信先のGoogleフォームと回答保存先は実サービスで確認しました。この記録だけで本番ページへの配信完了を意味しません。テストは識別できる架空の問い合わせです。過去に誰かの問い合わせが失われたと断定するものではありません。</p>
+    <h3>AIが担当した作業</h3><p>Codexが既存導線とGoogleフォームの項目対応を照合し、受付導線・フォーム送信を実装。識別用の問い合わせを送信し、回答の保存先と内容を照合しました。 CI確認・PR作成とマージ、公開版の照合、公開版からの追加送信確認も行いました。</p>
+    <h3>確かめたこと</h3><ul><li>Articleとして登録された260ページに共通の受付処理とスタイルの読み込みを追加。本文や記事の更新日を変更していないことを差分で確認。</li><li>誤り報告と説明追加のテスト各1件で、Googleの「回答を記録しました」と保存先の2行を照合。記事名・URL・種別・本文、参考URLが保持され、任意の返信用メールは空欄でも受け付けられた。</li><li>公開版のPC1120pxと390px幅で2つの入口、自動入力、ライト・ダークを確認。390pxではボタン幅350px・高さ約48pxで、横にはみ出さなかった。</li><li>公開版の390px幅からも1件を送信し、Googleの受付表示と保存先の3行目で記事名・URL・種別・本文を照合。隔離版の2件と区別して確認した。</li><li>PR #280のCIで品質・リンク・広告の公開停止項目0件。Pagesの成功と、本番のHTML・CSS・JS等15ファイルが対象版と一致することを確認。</li><li>回答保存先を直接確認する毎朝9時の定期タスクを設定。受信だけで本文を変更せず、指摘の根拠を確かめて担当へ引き継ぐ運用を記録。</li></ul>
+    <p class="limits"><strong>確認の範囲</strong>画面の実操作は代表記事のPC・390px幅と資格一覧で確認しました。260ページすべての画面を個別操作したという記録ではありません。送信は隔離版の2件と公開版の1件で、すべて識別できる架空のテストです。メール通知の到着は未確認ですが、定期確認は実際の回答保存先を直接確認する形にしています。過去の読者の問い合わせが失われた件数を確認したわけではありません。</p>
     <h3>振り返り</h3><p>入口があることと、内容が届くことは別です。成功らしい表示だけで終わらず、実際に保存された項目と照らし合わせることで、報告を受け止められる状態かを確かめました。</p>
-    <p class="verification-date">上記のローカル確認日：<time datetime="2026-11-07">2026.11.07</time>。当日の検証記録をもとに記載しています。</p>
-    <div class="evidence-links"><a href="boki2.html#sq-article-feedback">記事の末尾で受付入口を見る<span aria-hidden="true"> ↗</span></a><a href="contact.html">お問い合わせ窓口を開く<span aria-hidden="true"> ↗</span></a></div>
+    <p class="verification-date">上記の公開確認日：<time datetime="2026-11-07">2026.11.07</time>。当日の検証記録をもとに記載しています。</p>
+    <div class="evidence-links"><a href="https://github.com/hito77ki-ship-it/study-quest/pull/280">受付導線と送信処理の差分を見る（PR #280）<span aria-hidden="true"> ↗</span></a><a href="boki2.html#sq-article-feedback">記事の末尾で受付入口を見る<span aria-hidden="true"> ↗</span></a><a href="contact.html">お問い合わせ窓口を開く<span aria-hidden="true"> ↗</span></a></div>
   </div></details>
 </article>
 <article class="log-entry" id="20261107-public-diary">
