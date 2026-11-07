@@ -8,9 +8,25 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Study Quest 開発・運営日誌","url":"https://study-quest.net/development-log.html","dateCreated":"2026-11-07","dateModified":"2026-11-07","inLanguage":"ja","description":"改善の理由、役割分担、検証結果と根拠を残す公開日誌。"}</script>
 </head><body><a class="skip" href="#main">本文へ移動</a>
 <header><a class="logo" href="index.html"><span aria-hidden="true">⚔</span> STUDY QUEST</a><nav aria-label="ページ上部"><a href="index.html#updates">更新情報</a><button id="diary-theme" type="button">テーマ：自動</button></nav></header>
-<main id="main"><div class="hero"><p class="eyebrow">FIELD NOTES / SINCE 2026</p><h1>小さく直して、<br>理由まで残す。</h1><p class="lead">Study Quest 開発・運営日誌。<br>学習に使う人の目線から、何に気づき、どう判断し、どう確かめたかを記録します。</p><p class="updated">日誌公開：2026.11.07 ／ 一覧更新：<time datetime="2026-11-07">2026.11.07</time></p></div>
+<main id="main"><div class="hero"><p class="eyebrow">FIELD NOTES / SINCE 2026</p><h1>小さく直して、<br>理由まで残す。</h1><p class="lead">Study Quest 開発・運営日誌。<br>学習に使う人の目線から、何に気づき、どう判断し、どう確かめたかを記録します。</p><p class="updated">日誌をまとめた日：2026.11.07 ／ 一覧更新：<time datetime="2026-11-07">2026.11.07</time></p></div>
 <ol class="process" aria-label="改善を記録する流れ"><li><span>01</span>気づく</li><li><span>02</span>決める</li><li><span>03</span>直す</li><li><span>04</span>確かめる</li></ol>
-<div class="layout"><aside><p class="eyebrow">記録を選ぶ</p><nav aria-label="日誌の目次"><ol><li><a href="#20261106-monitor-result"><time datetime="2026-11-06">2026.11.06</time>監視の「成功」を、結果の中身と一致させる</a></li><li><a href="#20261104-month-boundary"><time datetime="2026-11-04">2026.11.04</time>月が変わったのに、「今月」が前月を集計していた</a></li><li><a href="#20261030-guest-recovery"><time datetime="2026-10-30">2026.10.30</time>再読み込みの後も、学習の続きに戻れるように</a></li></ol></nav><a class="about-link" href="#about-log">この日誌の書き方 ↓</a></aside><div class="entries"><article class="log-entry" id="20261106-monitor-result">
+<div class="layout"><aside><p class="eyebrow">記録を選ぶ</p><nav aria-label="日誌の目次"><ol><li><a href="#20261107-public-diary"><time datetime="2026-11-07">2026.11.07</time>何を直したかだけでなく、判断と確認の過程を残す</a></li><li><a href="#20261106-monitor-result"><time datetime="2026-11-06">2026.11.06</time>監視の「成功」を、結果の中身と一致させる</a></li><li><a href="#20261104-month-boundary"><time datetime="2026-11-04">2026.11.04</time>月が変わったのに、「今月」が前月を集計していた</a></li><li><a href="#20261030-guest-recovery"><time datetime="2026-10-30">2026.10.30</time>再読み込みの後も、学習の続きに戻れるように</a></li></ol></nav><a class="about-link" href="#about-log">この日誌の書き方 ↓</a></aside><div class="entries"><article class="log-entry" id="20261107-public-diary">
+  <div class="entry-meta"><time datetime="2026-11-07">2026.11.07</time><span>運営・点検</span><span class="verified">日誌を整備・ローカル検証済み</span></div>
+  <h2>何を直したかだけでなく、判断と確認の過程を残す</h2><p class="entry-summary">本人の依頼を受け、修正の経緯を読める日誌を整備。本人とAIの役割、検証できたこと・できていないことを分けて記録します。</p>
+  <details><summary>経緯・確認結果を読む<span aria-hidden="true">＋</span></summary><div class="entry-body">
+    <h3>きっかけ</h3><p>修正の記録が更新情報・PR・私的な運営日誌に分かれていたため、一連の改善を振り返れる場所を作りました。初回は、公開確認の記録が残るゲスト復帰、月初の集計、監視処理の3案件から整理しました。</p>
+    <div class="comparison"><div><span class="small-label">BEFORE / 修正前</span><p>どのような問題に気づき、なぜ直したかを、複数の記録を行き来して確かめる必要があった。</p></div><div><span class="small-label">AFTER / 修正後</span><p>日付・見出し・概要を一覧で示し、詳しい経緯、変更前後、役割、検証結果、確認の範囲と実差分へのリンクを開いて読めるようにした。</p></div></div>
+
+    <h3>本人の依頼・運営方針</h3><p>修正の過程を日記のように残し、今後の振り返り・自己PRやフィードバックにつなげたいと依頼しました。</p>
+    <h3>AIが担当した作業</h3><p>Codexが既存記録の照合、日誌の画面と生成処理の実装、追記手順の整備、検証、PR作成・マージ、配信失敗の調査を担当しました。</p>
+    <h3>確かめたこと</h3><ul><li>ローカルのPC・390px幅で日誌の詳細開閉、テーマ切替、目次と問い合わせへのリンクを確認。</li><li>過去3案件のPRと当時の公開検証を照合し、今回再検証したという記述にしなかった。</li><li>初回のCIとビルドは成功した一方、配信はタイムアウトした。配信の成功と画面の検証を分けて履歴へ残した。</li></ul>
+    <p class="limits"><strong>確認の範囲</strong>この項目の操作結果はローカルの確認です。公開先での確認を意味しません。配信失敗と再実行の経過は別の運営履歴で追跡し、私的なCSVやアクセス解析をそのままWebへ掲載する処理は作っていません。</p>
+    <h3>振り返り</h3><p>作成・コード検証・配信・公開先での確認は、それぞれ別の段階です。何を終えたかと、まだ何を確かめていないかを分けて残すことも、運営の記録になります。</p>
+    <p class="verification-date">上記のローカル確認日：<time datetime="2026-11-07">2026.11.07</time>。当日の検証記録をもとに記載しています。</p>
+    <div class="evidence-links"><a href="https://github.com/hito77ki-ship-it/study-quest/pull/278">日誌の初回実装を見る（PR #278）<span aria-hidden="true"> ↗</span></a></div>
+  </div></details>
+</article>
+<article class="log-entry" id="20261106-monitor-result">
   <div class="entry-meta"><time datetime="2026-11-06">2026.11.06</time><span>運営・点検</span><span class="verified">修正・公開確認済み</span></div>
   <h2>監視の「成功」を、結果の中身と一致させる</h2><p class="entry-summary">ページの取得に失敗しても、監視処理が成功で終わってしまう。異常を見逃さないよう、終了状態まで確認しました。</p>
   <details><summary>経緯・確認結果を読む<span aria-hidden="true">＋</span></summary><div class="entry-body">

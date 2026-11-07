@@ -12,6 +12,7 @@ for (const entry of source.entries) {
   if (!/^[a-z0-9-]+$/.test(entry.id) || ids.has(entry.id)) throw new Error('Duplicate or unsafe entry ID');
   ids.add(entry.id);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.date) || entry.date > source.updated) throw new Error('Invalid entry date');
+  if (entry.verification_scope && !['local', 'production'].includes(entry.verification_scope)) throw new Error('Invalid verification scope');
   for (const key of ['title','summary','category','status','context','before','after','owner_role','ai_role','limits','reflection','verified_date']) {
     if (typeof entry[key] !== 'string' || !entry[key].trim()) throw new Error(`Missing ${entry.id}.${key}`);
   }
@@ -34,7 +35,7 @@ ${entry.comparison ? `<figure class="record-example"><figcaption>${escape(entry.
     <h3>確かめたこと</h3><ul>${entry.checks.map((check) => `<li>${escape(check)}</li>`).join('')}</ul>
     <p class="limits"><strong>確認の範囲</strong>${escape(entry.limits)}</p>
     <h3>振り返り</h3><p>${escape(entry.reflection)}</p>
-    <p class="verification-date">上記の公開確認日：<time datetime="${escape(entry.verified_date)}">${date(entry.verified_date)}</time>。当日の検証記録をもとに記載しています。</p>
+    <p class="verification-date">上記の${entry.verification_scope === 'local' ? 'ローカル' : '公開'}確認日：<time datetime="${escape(entry.verified_date)}">${date(entry.verified_date)}</time>。当日の検証記録をもとに記載しています。</p>
     <div class="evidence-links">${entry.links.map((link) => `<a href="${escape(link.url)}">${escape(link.label)}<span aria-hidden="true"> ↗</span></a>`).join('')}</div>
   </div></details>
 </article>`).join('\n');
@@ -50,7 +51,7 @@ const output = `<!DOCTYPE html>
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:'Study Quest 開発・運営日誌',url:'https://study-quest.net/development-log.html',dateCreated:'2026-11-07',dateModified:source.updated,inLanguage:'ja',description:'改善の理由、役割分担、検証結果と根拠を残す公開日誌。'})}</script>
 </head><body><a class="skip" href="#main">本文へ移動</a>
 <header><a class="logo" href="index.html"><span aria-hidden="true">⚔</span> STUDY QUEST</a><nav aria-label="ページ上部"><a href="index.html#updates">更新情報</a><button id="diary-theme" type="button">テーマ：自動</button></nav></header>
-<main id="main"><div class="hero"><p class="eyebrow">FIELD NOTES / SINCE 2026</p><h1>小さく直して、<br>理由まで残す。</h1><p class="lead">Study Quest 開発・運営日誌。<br>学習に使う人の目線から、何に気づき、どう判断し、どう確かめたかを記録します。</p><p class="updated">日誌公開：2026.11.07 ／ 一覧更新：<time datetime="${source.updated}">${date(source.updated)}</time></p></div>
+<main id="main"><div class="hero"><p class="eyebrow">FIELD NOTES / SINCE 2026</p><h1>小さく直して、<br>理由まで残す。</h1><p class="lead">Study Quest 開発・運営日誌。<br>学習に使う人の目線から、何に気づき、どう判断し、どう確かめたかを記録します。</p><p class="updated">日誌をまとめた日：2026.11.07 ／ 一覧更新：<time datetime="${source.updated}">${date(source.updated)}</time></p></div>
 <ol class="process" aria-label="改善を記録する流れ"><li><span>01</span>気づく</li><li><span>02</span>決める</li><li><span>03</span>直す</li><li><span>04</span>確かめる</li></ol>
 <div class="layout"><aside><p class="eyebrow">記録を選ぶ</p><nav aria-label="日誌の目次"><ol>${source.entries.map((entry) => `<li><a href="#${escape(entry.id)}"><time datetime="${entry.date}">${date(entry.date)}</time>${escape(entry.title)}</a></li>`).join('')}</ol></nav><a class="about-link" href="#about-log">この日誌の書き方 ↓</a></aside><div class="entries">${entries}</div></div>
 <section class="about" id="about-log"><p class="eyebrow">HOW WE KEEP NOTES</p><h2>作業の結果と、役割を分けて残します。</h2><p>このサイトは、運営者からの依頼・判断と、CodexなどのAIによる調査・実装支援を組み合わせて改善しています。この日誌も、作業記録と公開された差分をもとにAIが整理しています。本人がすべてを手作業で実装したという記録ではありません。</p><p>修正や公開があったときは、目的、変更内容、本人とAIの役割、確認結果、未確認の点、関連するページやPRを追記します。日付は日本時間。過去の改善は実施日を残し、日誌にまとめた日と区別します。変化のない定期点検は私的な運営日誌に記録します。</p><p>振り返りは記録から整理した内容です。本人の発言や感想を創作して引用しません。非公開の利用状況や個人情報は掲載しません。</p></section>
