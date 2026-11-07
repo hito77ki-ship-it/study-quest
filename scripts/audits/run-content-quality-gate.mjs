@@ -292,6 +292,13 @@ async function main() {
 
   for (const file of articleFiles) {
     const source = html.get(file);
+    const sharedWidgets = /<script\b[^>]*\bsrc=["']article-widgets\.js(?:\?[^"']*)?["'][^>]*>/i.test(source);
+    for (const [tag, attribute, asset] of [['script', 'src', 'article-feedback.js'], ['link', 'href', 'article-feedback.css']]) {
+      const references = [...source.matchAll(new RegExp(`<${tag}\\b[^>]*\\b${attribute}=["']${asset.replace('.', '\\.')}\\?[^"']+["'][^>]*>`, 'gi'))];
+      if (sharedWidgets ? references.length !== 0 : references.length !== 1) structural.push(`${file}: 記事の改善受付 ${asset} の共通・直接読み込みが欠落または重複`);
+      if (sharedWidgets && !sharedCss.includes(asset + '?')) structural.push(`${file}: 共通ウィジェットに記事の改善受付 ${asset} の読み込みがない`);
+      if (!allFiles.has(asset)) structural.push(`${file}: 記事の改善受付 ${asset} の実体がない`);
+    }
     const h1s = h1Count(source);
     if (h1s !== 1) structural.push(`${file}: h1 が ${h1s}件`);
     if (!/<title[^>]*>\s*[^<]+<\/title>/i.test(source)) structural.push(`${file}: title がない`);
