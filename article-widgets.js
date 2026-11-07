@@ -5156,6 +5156,14 @@ function enhanceFAQAccordions(){
 }
 
 document.addEventListener('DOMContentLoaded', async function(){
+  // Keep the article's private feedback entry independent of analytics and authentication.
+  const feedbackStyle = document.createElement('link');
+  feedbackStyle.rel = 'stylesheet';
+  feedbackStyle.href = 'article-feedback.css?v=20261107';
+  document.head.appendChild(feedbackStyle);
+  const feedbackScript = document.createElement('script');
+  feedbackScript.src = 'article-feedback.js?v=20261107';
+  document.head.appendChild(feedbackScript);
   injectGA();
   injectStyles();
   injectArticleInteractionSystem();
