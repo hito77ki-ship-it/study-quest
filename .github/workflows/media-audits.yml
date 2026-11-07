@@ -52,6 +52,9 @@ jobs:
       - name: Check production monitor failure reporting
         run: node scripts/tests/media-audit-exit-status.mjs
 
+      - name: Check public development diary is in sync
+        run: node scripts/build-development-log.mjs --check
+
       - name: Run deterministic content-quality checks
         run: node scripts/audits/run-content-quality-gate.mjs --strict --no-write
 

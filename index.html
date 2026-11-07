@@ -2809,8 +2809,15 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
   <div class="updates-inner">
     <div class="sec-label">UPDATES</div>
     <h2 class="sec-title" style="margin-bottom:0;">更新情報</h2>
-    <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年11月4日）</p>
+    <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年11月7日）</p>
     <div class="updates-list">
+      <!-- 公開用の開発・運営日誌。本文は development-log.json から生成する。 -->
+      <div class="update-item">
+        <div class="update-head"><span class="update-badge feature">新機能</span><span class="update-date">2026.11.07</span></div>
+        <div class="update-title">改善の理由と確認結果を残す「開発・運営日誌」を公開しました</div>
+        <a class="update-read" href="development-log.html">開発・運営日誌を読む</a>
+        <div class="update-desc">ゲスト復帰、月初の集計、監視処理の改善を記録。本人の依頼・運営方針とAIが担当した作業を分け、経緯・確認結果・振り返りを読めるようにしました。</div>
+      </div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge feature">新記事</span><span class="update-date">2026.11.04</span></div>
         <div class="update-title">ITパスポート 第1〜18章の総復習模擬問題36問を公開しました</div>
@@ -3536,6 +3543,7 @@ document.querySelectorAll('#updates .updates-list > .update-item').forEach((item
     <div class="footer-links">
       <a href="app-guide.html">アプリについて</a>
       <a href="about.html">運営者情報</a>
+      <a href="development-log.html">開発・運営日誌</a>
       <a href="terms.html">利用規約</a>
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="tokusho.html">特定商取引法</a>
