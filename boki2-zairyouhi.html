@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の材料費｜直接・間接・材料副費の違いと自作例題", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "直接材料費・間接材料費と材料副費の分類軸を整理。原価計算基準をもとに例外条件を補い、先入先出法・総平均法・予定副費・材料消費価格差異の自作例と解答を掲載。", "url": "https://study-quest.net/boki2-zairyouhi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の材料費｜直接・間接・材料副費の違いと自作例題", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "直接材料費・間接材料費と材料副費の分類軸を整理。原価計算基準をもとに例外条件を補い、先入先出法・総平均法・予定副費・材料消費価格差異の自作例と解答を掲載。", "url": "https://study-quest.net/boki2-zairyouhi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-09", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -61,10 +61,11 @@ details summary{transition:background 100ms ease-out}details summary:active{back
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
 </style>
+<link rel="stylesheet" href="article-practice-visuals.css?v=20261109">
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>簿記2級の材料費｜直接・間接・材料副費の違いと自作例題</h1><p class="meta">著者：若葉／スタディクエスト編集部</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月9日</p><h1>簿記2級の材料費｜直接・間接・材料副費の違いと自作例題</h1><p class="meta">著者：若葉／スタディクエスト編集部</p>
 <p class="lead">直接材料費・間接材料費は製品との関係による区分、材料副費は材料の購入原価に含める付随費用の話です。同じ分類の三択ではありません。既存の自作計算例を活かしながら、材料の用途、問題の指示、計算方法と例外を確認します。</p>
 <div class="sq-facts-contents"><a href="#classify">直接・間接</a><a href="#quantity">消費額の計算</a><a href="#extra">材料副費</a><a href="#variance">価格差異</a><a href="#sources">一次資料</a></div>
 <h2 id="classify">直接材料費と間接材料費は、使い道と分類で判断する</h2>
@@ -75,6 +76,17 @@ details summary{transition:background 100ms ease-out}details summary:active{back
 <h2 id="quantity">材料消費額＝消費数量×消費単価</h2>
 <p>購入した材料が未使用なら、その全額がすぐに製品の原価になるわけではありません。出入記録がある材料では、実際の消費量と消費単価を区別します。ただし、記録を行わない工場消耗品等を原価計算期間の買入額で計算する扱いも原価計算基準11にあります。すべての材料に同じ計算方法を当てはめないでください。</p>
 <figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-zairyouhi-map-mobile.svg?v=20261102"><img src="images/boki2-zairyouhi-map.svg?v=20261102" alt="材料の用途・分類と購入原価を分け、消費額と期末在庫の検算を行う手順" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。条件・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+
+<figure class="sq-study-scene" id="material-scene">
+  <img src="images/bookkeeping-material-movement.png" width="2172" height="724" loading="lazy" alt="左は材料の納品、中央は棚から作業台への払出し、右は残っている材料の棚卸しをする場面">
+  <figcaption>本人提供教材のAI生成イラスト。左から「受入→払出し→棚卸し」の3場面です。絵の木材の本数を数値条件には使いません。以下の自作例では材料をkgで管理する、と仮定します。</figcaption>
+</figure>
+<ol class="sq-study-trace" aria-label="材料の現物と数量記録を結ぶ">
+  <li><strong>左：届いた材料を受け入れる</strong>次の例では10kgと20kg、合計30kgを記録します。購入時の単価は100円と130円で異なります。</li>
+  <li><strong>中央：製造に使う分を払い出す</strong>作業台へ渡した24kgが消費量です。どの単価で金額に直すかは、先入先出法・総平均法等の指定で変わります。</li>
+  <li><strong>右：残量を確かめる</strong>減耗なしの仮定では30−24＝6kgが残ります。残量の6kgと、その評価額の780円または720円を区別します。</li>
+</ol>
+<p>この絵が示すのは材料の動きです。直接材料費か間接材料費かは、上の用途・費目の条件に戻って判断します。材料が棚に置かれているという見た目だけでは決まりません。</p>
 <h3>既存の自作例を検算：先入先出法と総平均法</h3>
 <p>期首在庫0、4月1日に10kgを単価100円、4月8日に20kgを単価130円で購入し、4月15日に24kg消費した架空例です。副費・税金・減耗はなく、期中の取引はこれだけとします。</p>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">方法</th><th scope="col">消費額</th><th scope="col">月末在庫額</th></tr></thead><tbody><tr><td>先入先出法</td><td>10×100＋14×130＝2,820円</td><td>6×130＝780円</td></tr><tr><td>総平均法</td><td>平均単価3,600÷30＝120円<br>24×120＝2,880円</td><td>6×120＝720円</td></tr></tbody></table></div><section class="sq-facts-exercise"><h3>検算：両方法で一致する合計は？</h3><p>方法によって消費額が60円違います。計算ミスでしょうか。消費量・残量と金額の合計から確認してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>どちらも消費24kg＋残6kg＝購入30kgです。金額も2,820＋780＝3,600円、2,880＋720＝3,600円で購入総額に一致します。単価の計算方法が違えば内訳は変わりますが、今回の前提で合計は変わりません。</p></div></details></section>
@@ -87,7 +99,7 @@ details summary{transition:background 100ms ease-out}details summary:active{back
 <p>原価差異はすべて無条件に売上原価へ送るわけではありません。原価計算基準47には材料受入価格差異や比較的多額の差異などの別の扱いもあります。受入・消費・副費配賦のどの差異かを分け、試験問題の指定に従います。</p>
 <h2>復習用の4欄メモ</h2><p>「材料の用途と費目」「購入原価に含める項目」「消費単価の方法」「差異の種類」を別々に書きます。上の計算例は既存記事の固有材料を検算して残し、新たに分類条件と副費配賦の判断を補いました。すべての材料や差異処理を一つの暗記表で済ませず、問題の条件を表の横へ記録しておきましょう。</p>
 
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。制度・基準の説明と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記・原価計算の出題区分表（材料費計算）</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">企業会計審議会「原価計算基準」8〜11・45〜47（ASBJ掲載）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>直接材料費と間接材料費は名前や金額で決まりますか？</summary><p>用途、製品との関連、主要材料・買入部品・補助材料等の費目分類と問題の指示を確認します。ネジという名称や金額、使用数量の記録だけでは一律に決めません。</p></details><details class="sq-facts-answer"><summary>材料副費はすべて必ず材料の購入原価に含めますか？</summary><p>購入原価への算入が基本ですが、原価計算基準11は必要な場合に引取費用以外の一部を算入しない扱い等も定めます。問題の指示と費用の種類を確認します。</p></details><details class="sq-facts-answer"><summary>不利な材料消費価格差異を売上原価へ振り替えると？</summary><p>売上原価へ振り替える指定なら、不利な借方差異は売上原価を増やします。有利な貸方差異は減らします。差異の種類による例外も確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kobetsu-genka.html">個別原価計算</a></li><li><a href="boki2-roumuhi.html">労務費</a></li><li><a href="boki2-keihi.html">経費</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモに残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月9日。制度・基準の説明と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記・原価計算の出題区分表（材料費計算）</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">企業会計審議会「原価計算基準」8〜11・45〜47（ASBJ掲載）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>直接材料費と間接材料費は名前や金額で決まりますか？</summary><p>用途、製品との関連、主要材料・買入部品・補助材料等の費目分類と問題の指示を確認します。ネジという名称や金額、使用数量の記録だけでは一律に決めません。</p></details><details class="sq-facts-answer"><summary>材料副費はすべて必ず材料の購入原価に含めますか？</summary><p>購入原価への算入が基本ですが、原価計算基準11は必要な場合に引取費用以外の一部を算入しない扱い等も定めます。問題の指示と費用の種類を確認します。</p></details><details class="sq-facts-answer"><summary>不利な材料消費価格差異を売上原価へ振り替えると？</summary><p>売上原価へ振り替える指定なら、不利な借方差異は売上原価を増やします。有利な貸方差異は減らします。差異の種類による例外も確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kobetsu-genka.html">個別原価計算</a></li><li><a href="boki2-roumuhi.html">労務費</a></li><li><a href="boki2-keihi.html">経費</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモに残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js?v=20261102-boki-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
