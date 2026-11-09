@@ -40,6 +40,10 @@
         {
           "label": "TOEFL：自作のメール練習",
           "url": "toefl.html#email-practice"
+        },
+        {
+          "label": "変更の差分を見る（PR #284）",
+          "url": "https://github.com/hito77ki-ship-it/study-quest/pull/284"
         }
       ]
     },
