@@ -16556,12 +16556,12 @@ function renderQuestLogStats(){
   const month = getTodayStr().slice(0,7);
 
   const isStudy = s => s.type==='study'||s.type==='exam';
-  const todayM  = sessions.filter(s=>isStudy(s)&&s.date===today).reduce((a,s)=>a+s.amount,0);
-  const weekM   = sessions.filter(s=>isStudy(s)&&s.date>=weekStart).reduce((a,s)=>a+s.amount,0);
-  const monthM  = sessions.filter(s=>isStudy(s)&&s.date&&s.date.startsWith(month)).reduce((a,s)=>a+s.amount,0);
+  const todayM  = sessions.filter(s=>isStudy(s)&&s.date===today).reduce((a,s)=>a+sAmount(s),0);
+  const weekM   = sessions.filter(s=>isStudy(s)&&s.date>=weekStart).reduce((a,s)=>a+sAmount(s),0);
+  const monthM  = sessions.filter(s=>isStudy(s)&&s.date&&s.date.startsWith(month)).reduce((a,s)=>a+sAmount(s),0);
   const totalM  = studyMins(sessions);
 
-  const fmt = m => m<60 ? m+'分' : Math.floor(m/60)+'h'+(m%60?m%60+'m':'');
+  const fmt = m => m<60 ? Math.round(m)+'分' : Math.floor(m/60)+'h'+(Math.round(m%60)?Math.round(m%60)+'m':'');
   const el = id => document.getElementById(id);
   if(el('qlToday'))  el('qlToday').textContent  = fmt(todayM);
   if(el('qlWeek'))   el('qlWeek').textContent   = fmt(weekM);
@@ -22535,6 +22535,14 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+
+  {
+    id: 'v20261109_quest_log_seconds',
+    date: '2026-11-09',
+    type: 'fix',
+    title: 'PCの記録画面の小集計を修正しました',
+    desc: '「タイマー／記録」の本日・今週・今月にも、1分未満のタイマー記録を合計して反映します。表示はスマホと同じ整数分に丸めます。保存済みの記録はそのままです。'
+  },
 
   {
     id: 'v20261104_report_local_month',
