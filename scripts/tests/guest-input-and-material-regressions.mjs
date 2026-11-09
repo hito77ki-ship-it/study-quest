@@ -92,6 +92,29 @@ const material = context(['toFiniteNumber','sAmount','fmtSecs','renderMaterials'
 material.inputs.set('materialCategoryList',{innerHTML:''});material.box.renderMaterials();
 assert.match(material.inputs.get('materialCategoryList').innerHTML,/⏱ 3分11秒/);
 
+class QuestStatsDate extends Date {
+  constructor(...args){super(...(args.length?args:['2026-11-09T00:00:00Z']));}
+}
+const questStats = context(['toFiniteNumber','sAmount','studyMins','toLocalDateStr','renderQuestLogStats'],{
+  Date:QuestStatsDate,getTodayStr:()=> '2026-11-09',
+  sessions:[
+    {date:'2026-11-09',type:'study',amount:0,amountSecs:37},
+    ...[21,10,57,41].map(amountSecs=>({date:'2026-11-06',type:'study',amount:0,amountSecs})),
+    {date:'2026-11-01',type:'calc',amount:999},
+    {date:'2026-10-30',type:'exam',amount:120},
+  ],
+});
+for(const id of ['qlToday','qlWeek','qlMonth','qlTotal']) questStats.inputs.set(id,{});
+questStats.box.renderQuestLogStats();
+assert.equal(questStats.inputs.get('qlToday').textContent,'1分','37 seconds rounds to one minute');
+assert.equal(questStats.inputs.get('qlWeek').textContent,'1分','Previous week must not enter this Monday total');
+assert.equal(questStats.inputs.get('qlMonth').textContent,'3分','Sum 166 seconds before rounding, not each legacy amount');
+assert.equal(questStats.inputs.get('qlTotal').textContent,'2h','Existing whole-hour total stays compatible');
+questStats.box.sessions.push({date:'2026-11-09',type:'exam',amount:2});
+questStats.box.renderQuestLogStats();
+assert.equal(questStats.inputs.get('qlToday').textContent,'3分','Legacy minute records remain included');
+assert.equal(questStats.inputs.get('qlMonth').textContent,'5分');
+
 for(const [done,goal,expected] of [[3,1,'残り: 0h57m'],[60,2,'残り: 1h'],[59.6,2,'達成済み: 1h'],[120,1,'✅ 達成！']]){
   const weekly = context(['renderWeeklyGoal'],{
     getWeekStart:()=> '2026-10-26',getWeekSunday:()=> '2026-11-01',isThisWeekGoalSet:()=>true,
@@ -154,4 +177,4 @@ assert.equal(recovery.box.timerSeconds,25,'A second reload must not count paused
 assert.equal(recovery.box.sessionExpLabel({importPast:true}),'引き継ぎ');
 assert.equal(recovery.box.sessionExpLabel({exp:4}),'+4 EXP');
 assert.ok(!recovery.box.sessionExpLabel({}).includes('undefined'));
-console.log('PASS: duration and score validation, material seconds, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery and imported record labels');
+console.log('PASS: duration and score validation, material seconds, quest period totals with sub-minute and legacy records, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery and imported record labels');
