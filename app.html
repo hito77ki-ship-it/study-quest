@@ -9739,6 +9739,8 @@ async function addQuest(){
   const smins1=levelStudyMins(sessions),lv1=computeLevel(smins1);
   char.level=lv1;
   await saveAll();renderAll();
+  renderQuickMaterialSelect();
+  renderMobileQuestMaterials();
   if(lv1>lv0){showLevelUp(lv1,smins1); checkClassChange(lv0,lv1,smins1);}
   if(currentUser) syncToCloud().catch(()=>{});
   checkWeeklyGoalMilestones().catch(()=>{});
@@ -22535,6 +22537,14 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+
+  {
+    id: 'v20261111_manual_material_refresh',
+    date: '2026-11-11',
+    type: 'fix',
+    title: '手動記録後の教材の累計時間を更新します',
+    desc: '「タイマー／記録」で教材を選んで手動入力した直後も、教材カードの累計学習時間を更新します。再読み込みせずに今回の記録を確認できます。'
+  },
 
   {
     id: 'v20261109_quest_log_seconds',

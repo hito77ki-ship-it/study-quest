@@ -70,19 +70,39 @@ score.input('sscore_p1',6);await score.box.addScoreRecord();assert.equal(scoreWr
 
 let studyWrites = 0;
 const subjects = [{key:'s',name:'商業簿記'}];
-const study = context(['readStudyDuration','addQuest'],{
+const study = context(['readStudyDuration','addQuest','toFiniteNumber','sAmount','fmtSecs','renderQuickMaterialSelect','renderMobileQuestMaterials','getMaterialRank'],{
   char:{lastLoginDate:'2026-10-31',totalEXP:0},sessions:[],currentType:'study',
   timerStartedAt:null,currentUser:null,levelStudyMins:()=>0,computeLevel:()=>1,
   getTodayStr:()=> '2026-10-31',getReportSubjects:()=>subjects,allSelectedSubjects:()=>subjects,
   saveAll:async()=>{studyWrites++;},renderAll:()=>{},getTodayGoalMinsFor:()=>0,
   recoverHp:()=>{},autoPostToTimeline:()=>{},showSessionShareBanner:()=>{},checkWeeklyGoalMilestones:async()=>{},
+  window:{innerWidth:1280},loadMaterials:()=>{},
+  materials:[{id:'material-test',name:'教材テスト',subjectKey:'s'}],
+  escHtml:value=>value,getTodayMins:()=>0,getThisWeekGoalHours:()=>0,CAT_COLORS:['#3498db'],
 });
+study.inputs.set('quickMaterialSelect',{style:{}});
+study.inputs.set('quickMaterialList',{innerHTML:''});
+study.inputs.set('mobileQuestMatList',{innerHTML:''});
+const oldStudyRecord={date:'2026-10-31',subject:'s',type:'study',amount:1,amountSecs:71,material_id:'material-test'};
+study.box.sessions.push(oldStudyRecord);
 for(const [id,value] of Object.entries({questSubject:'s',questNote:'教材テスト',questDate:'2026-10-31',questAmountHour:-1,questAmountMin:61,timerMaterial:'material-test'})) study.input(id,value);
+study.box.renderQuickMaterialSelect();
+assert.match(study.inputs.get('quickMaterialList').innerHTML,/⏱1分11秒/);
 assert.equal(await study.box.addQuest(),false);assert.equal(studyWrites,0);
+assert.match(study.inputs.get('quickMaterialList').innerHTML,/⏱1分11秒/,'Rejected input must not change material totals');
 study.input('questAmountHour',0);study.input('questAmountMin',2);
 assert.equal(await study.box.addQuest(),true);assert.equal(studyWrites,1);
-assert.equal(study.box.sessions[0].material_id,'material-test');
-assert.equal(study.box.sessions[0].amount,2);
+assert.equal(study.box.sessions[1].material_id,'material-test');
+assert.equal(study.box.sessions[1].amount,2);
+assert.match(study.inputs.get('quickMaterialList').innerHTML,/⏱3分11秒/,'Manual save must refresh the PC material card without reloading');
+study.box.window.innerWidth=390;
+study.box.renderMobileQuestMaterials();
+assert.match(study.inputs.get('mobileQuestMatList').innerHTML,/⏱ 3分11秒/);
+study.input('questAmountMin',1);
+assert.equal(await study.box.addQuest(),true);assert.equal(studyWrites,2);
+assert.match(study.inputs.get('mobileQuestMatList').innerHTML,/⏱ 4分11秒/,'Manual save must refresh the mobile material card too');
+assert.equal(study.box.sessions.length,3,'Each valid save adds exactly one record');
+assert.equal(study.box.sessions[0],oldStudyRecord,'Existing second-precision record must be retained');
 
 const material = context(['toFiniteNumber','sAmount','fmtSecs','renderMaterials'],{
   loadMaterials:()=>{},materials:[{id:'a',name:'教材A',subjectKey:'s'}],
