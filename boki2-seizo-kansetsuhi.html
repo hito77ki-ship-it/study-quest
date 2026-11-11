@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の製造間接費｜予定配賦と差異の符号を2例で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "予定配賦105,000円・不利差異7,000円と、予算差異3,500円・操業度差異10,000円を検算。借方は常にプラス、差異だけで節約や責任が分かるという説明を訂正。", "url": "https://study-quest.net/boki2-seizo-kansetsuhi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の製造間接費｜予定配賦と差異の符号を2例で検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "予定配賦105,000円・不利差異7,000円と、予算差異3,500円・操業度差異10,000円を検算。借方は常にプラス、差異だけで節約や責任が分かるという説明を訂正。", "url": "https://study-quest.net/boki2-seizo-kansetsuhi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-11", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -200,19 +200,50 @@ details summary:active{background:var(--light);}
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
 </style>
+<style>
+/* 場面と記入シート：数値条件は画像外の本文で示す */
+#labor-scene,#labor-time-sheet,#overhead-data,#overhead-data-sheet{scroll-margin-top:110px}
+.sq-work-figure{margin:24px 0}.sq-work-figure img{display:block;width:100%;height:auto;border-radius:12px}
+.sq-work-figure figcaption{margin-top:10px;font-size:13px;color:var(--sq-muted,#64748B)}
+.sq-work-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:16px 0;padding:0}
+.sq-work-labels li,.sq-data-step{padding:14px;border:1px solid var(--sq-border,#CBD5E1);border-radius:10px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C)}
+.sq-work-labels strong,.sq-data-step strong{display:block;color:var(--sq-text,#1A202C)}
+.sq-plan-scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.sq-plan-scenes .sq-work-figure{margin:16px 0}
+.sq-work-sheet{border:1px solid var(--sq-border,#CBD5E1);border-radius:10px;padding:16px;margin:20px 0;background:var(--sq-surface-soft,#F7FAFC)}
+.sq-work-sheet h4{font-size:15px;margin:0 0 12px}.sq-work-sheet ol{margin-bottom:0}.sq-work-sheet li{margin-bottom:14px}
+.sq-data-step{margin:12px 0}.sq-work-blank{display:inline-block;min-width:5em;border-bottom:1px solid currentColor}
+@media(max-width:600px){.sq-work-labels,.sq-plan-scenes{grid-template-columns:1fr}.sq-work-labels li,.sq-data-step{font-size:14px}.sq-work-sheet{padding:12px}.sq-plan-scenes{gap:0}}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月3日</p><h1>簿記2級の製造間接費｜予定配賦と差異の符号を2例で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>製造間接費は製品へ直接追跡しにくい工場原価を集め、適切な基準で配賦するものです。ここでは<strong>実際原価計算で予定配賦を採用する例</strong>として、実際発生・予定配賦・差異を分けます。全ての原価計算が同じ式になるわけではありません。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月11日</p><h1>簿記2級の製造間接費｜予定配賦と差異の符号を2例で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>製造間接費は製品へ直接追跡しにくい工場原価を集め、適切な基準で配賦するものです。ここでは<strong>実際原価計算で予定配賦を採用する例</strong>として、実際発生・予定配賦・差異を分けます。全ての原価計算が同じ式になるわけではありません。</p>
 <div class="sq-facts-note"><strong>符号と、費用の調整方向を混ぜない</strong><p>「実際−配賦」と「配賦−実際」では符号が逆になります。本記事は差異の額と有利・不利を明記します。「借方は常にプラス」「不利差異なら必ず完成品へ加算」という一般化はしません。</p></div>
 <h2>予定配賦率と実際操業度</h2>
 <p>同じ期間・同じ単位の予算と基準操業度を対応させます。実際原価計算のこの予定配賦例では、予定配賦率に実際操業度を掛けます。標準原価計算で標準時間を使う計算とは区別します。直接・間接の判断も製品への追跡条件によります。</p>
-<section class="sq-facts-exercise"><h3>自作例1：元の105,000円と7,000円を検算</h3><p>同じ月の予算120,000円、基準400時間、実際350時間、実際発生112,000円。他の費用なし。予定配賦額、差異の有利不利、差異を取り出す仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>率は120,000÷400＝300円/時間。配賦は300×350＝<strong>105,000円</strong>。借方：仕掛品105,000／貸方：製造間接費105,000です。</p><p>実際112,000−配賦105,000＝<strong>7,000円の不利差異</strong>。実際発生を借方に記録した製造間接費勘定には借方7,000円が残ります。借方：製造間接費配賦差異7,000／貸方：製造間接費7,000で取り出します。一般の全ての勘定について「借方＝増加」と説明する例ではありません。</p></div></details></section>
+
+<section id="overhead-data"><h3>同じ工房でも、計画の資料と実績の資料は役割が違う</h3>
+<div class="sq-plan-scenes">
+<figure class="sq-work-figure"><img src="images/boki2-overhead-plan-scene.webp" width="1536" height="1024" loading="lazy" alt="家具工房で費用の見積りと稼働計画を確認する架空の男女"><figcaption><strong>事前の計画：</strong>対象期間の費用予算と配賦基準の予定量を対応させ、予定配賦率を決めます。</figcaption></figure>
+<figure class="sq-work-figure"><img src="images/boki2-overhead-actual-scene.webp" width="1536" height="1024" loading="lazy" alt="家具工房で帳簿と費用の資料を照合する架空の男女"><figcaption><strong>実績の照合：</strong>作業記録から実際時間を、費用資料・帳簿から実際発生額を確認し、予定配賦額と比べます。</figcaption></figure>
+</div>
+<p>提供教材のAI生成イラストによる架空場面です。紙面の線や電卓の形から金額・時間は読み取りません。計算条件は次の自作例で指定します。</p>
+<p>ここでの順序は<strong>資料が計算で担う役割</strong>を示します。実際発生額を「今月届いた請求書の合計」や「現金で払った額」と同一視しません。減価償却費や未払の調整なども含め、対象期間の製造間接費を集計する条件を確かめます。</p>
+</section>
+<section class="sq-facts-exercise"><h3>自作例1：元の105,000円と7,000円を検算</h3><p>同じ月の予算120,000円、基準400時間、実際350時間、実際発生112,000円。他の費用なし。予定配賦額、差異の有利不利、差異を取り出す仕訳は？</p>
+<div class="sq-work-sheet" id="overhead-data-sheet"><h4>ノートに写して埋める資料整理シート</h4>
+<p>上の4つの数値を混ぜず、次の3段階へ置きます。画面への入力・保存用ではありません。</p>
+<div class="sq-data-step"><strong>1．事前の予算・基準資料 → 率を決める</strong>同じ月の予算（　　）円 ÷ 基準（　　）時間 ＝ 予定配賦率（　　）円／時間。</div>
+<div class="sq-data-step"><strong>2．当月の作業時間記録 → 製品へ配賦する</strong>予定配賦率（　　）円／時間 × 実際（　　）時間 ＝ 予定配賦額（　　）円。</div>
+<div class="sq-data-step"><strong>3．当月の費用資料・帳簿 → 差異を確かめる</strong>実際発生（　　）円 − 予定配賦（　　）円 ＝ 差異（　　）円、（有利／不利）。</div>
+<p>確認：400時間と350時間は、それぞれどの段階で使いますか？ 112,000円を予定配賦率の分子へ入れていませんか？</p>
+</div>
+<details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p><strong>記入例：</strong>1は120,000円・400時間・300円／時間。2は300円／時間・350時間・105,000円。3は112,000円・105,000円・7,000円・不利です。</p><p>率は120,000÷400＝300円/時間。配賦は300×350＝<strong>105,000円</strong>。借方：仕掛品105,000／貸方：製造間接費105,000です。</p><p>実際112,000−配賦105,000＝<strong>7,000円の不利差異</strong>。実際発生を借方に記録した製造間接費勘定には借方7,000円が残ります。借方：製造間接費配賦差異7,000／貸方：製造間接費7,000で取り出します。一般の全ての勘定について「借方＝増加」と説明する例ではありません。</p><p>400時間は予定配賦率を決める分母、350時間は配賦額を求める実際の基準量です。ここで300×400とすると、実際350時間への配賦額になりません。また112,000÷350は実際配賦率を求める別の計算で、この例で事前に設定した予定配賦率ではありません。</p></div></details></section>
 <figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-overhead-checked-mobile.svg?v=20261103"><img src="images/boki2-overhead-checked.svg?v=20261103" alt="簿記2級の製造間接費｜予定配賦と差異の符号を2例で検算の条件付き自作例の図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
 <h2>変動予算による2分解の条件</h2>
 <section class="sq-facts-exercise"><h3>自作例2：予算差異と操業度差異</h3><p>元の記事の別例です。基準400時間に対する変動費予算60,000円、固定費80,000円。実際350時間、実際発生136,000円。この範囲で変動費は時間比例、固定費は一定という仮定です。配賦差異を2分解してください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>変動費率150円/時間、固定費率200円/時間、予定配賦率350円/時間。配賦122,500円、実際時間に対応した予算は150×350＋80,000＝132,500円です。</p><p>実際−予算＝<strong>3,500円の不利な予算差異</strong>。予算−配賦＝200×（400−350）＝<strong>10,000円の不利な操業度差異</strong>。合計13,500円は実際136,000−配賦122,500と一致します。「配賦−実際」の表記なら−13,500円ですが、有利不利は変わりません。</p><p>この計算だけから無駄遣いや責任者の失敗は確定しません。価格や消費、設備利用等の資料が必要です。標準原価の能率差異等を含む別の分解へ、無条件にこの2分類だけを当てはめません。</p></div></details></section>
 <h2>差異の処理先を確かめる</h2><p>原価計算基準47は、実際原価計算の差異は材料受入価格差異を除き原則として当年度の売上原価へ賦課し、一定の場合は在庫等へ配賦する取扱いも定めています。売上原価処理の指定なら不利差異を加算し、有利差異を減算します。製造原価報告書への加算や在庫への配賦を省略した式にまとめません。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：2026年度と2027年度の確定出題区分</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準33・45・47：予定配賦・差異・会計処理</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>製造間接費は必ず予定配賦しますか？</summary><p>実際配賦と予定配賦等を区別します。本記事は実際原価計算で予定配賦を採用した架空例です。標準原価計算の標準時間を使う式と混ぜません。</p></details><details class="sq-facts-answer"><summary>借方はいつもプラスですか？</summary><p>勘定の性質と取引によって異なります。本記事の製造間接費勘定では実際発生を借方、予定配賦を貸方に記録し、その残高から差異を判定します。</p></details><details class="sq-facts-answer"><summary>不利差異なら無駄遣いが原因ですか？</summary><p>差異だけでは原因や担当者の責任は確定しません。価格・消費・操業等の条件と資料を照合します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-seizo-genka-hokokusho.html">差異の処理先と売上原価</a></li><li><a href="boki2-hyojun-genka.html">標準原価計算との区別</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月11日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：2026年度は2022年度版を適用。工業簿記は2027年度も変更なし</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準33・45・47：予定配賦・差異・会計処理</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>製造間接費は必ず予定配賦しますか？</summary><p>実際配賦と予定配賦等を区別します。本記事は実際原価計算で予定配賦を採用した架空例です。標準原価計算の標準時間を使う式と混ぜません。</p></details><details class="sq-facts-answer"><summary>借方はいつもプラスですか？</summary><p>勘定の性質と取引によって異なります。本記事の製造間接費勘定では実際発生を借方、予定配賦を貸方に記録し、その残高から差異を判定します。</p></details><details class="sq-facts-answer"><summary>不利差異なら無駄遣いが原因ですか？</summary><p>差異だけでは原因や担当者の責任は確定しません。価格・消費・操業等の条件と資料を照合します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-seizo-genka-hokokusho.html">差異の処理先と売上原価</a></li><li><a href="boki2-hyojun-genka.html">標準原価計算との区別</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kogyo.html">工業簿記</a><a href="boki2-bumonbetsu.html">部門別計算</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>

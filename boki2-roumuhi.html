@@ -10,10 +10,10 @@
   <link rel="canonical" href="https://study-quest.net/boki2-roumuhi.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>簿記2級の労務費｜直接作業・要支払額・賃率差異を自作例で確認｜スタディクエスト</title>
-<meta name="description" content="元の8時間・12,000円の分類例と520,000円の未払調整を保持。手取額と総額、予定と実際の賃率の時間基準を分け、3問で勘定残高まで検算。">
+<meta name="description" content="家具工房の組立・共用機械の点検・清掃を作業時間票へつなぎ、8時間・12,000円を分類。給与の未払調整と賃率差異も自作3問で検算します。">
 <meta name="keywords" content="労務費とは 簿記2級,直接労務費 間接労務費,賃率差異 簿記2級,予定賃率">
 <meta property="og:title" content="簿記2級の労務費｜直接作業・要支払額・賃率差異を自作例で確認">
-<meta property="og:description" content="元の8時間・12,000円の分類例と520,000円の未払調整を保持。手取額と総額、予定と実際の賃率の時間基準を分け、3問で勘定残高まで検算。">
+<meta property="og:description" content="家具工房の組立・共用機械の点検・清掃を作業時間票へつなぎ、8時間・12,000円を分類。給与の未払調整と賃率差異も自作3問で検算します。">
 <meta property="og:url" content="https://study-quest.net/boki2-roumuhi.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の労務費｜直接作業・要支払額・賃率差異を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "元の8時間・12,000円の分類例と520,000円の未払調整を保持。手取額と総額、予定と実際の賃率の時間基準を分け、3問で勘定残高まで検算。", "url": "https://study-quest.net/boki2-roumuhi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "簿記2級の労務費｜直接作業・要支払額・賃率差異を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "家具工房の組立・共用機械の点検・清掃を作業時間票へつなぎ、8時間・12,000円を分類。給与の未払調整と賃率差異も自作3問で検算します。", "url": "https://study-quest.net/boki2-roumuhi.html", "datePublished": "2026-05-09", "dateModified": "2026-11-11", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -61,13 +61,54 @@ details summary:active{background:var(--light);}
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
 </style>
+<style>
+/* 場面と記入シート：数値条件は画像外の本文で示す */
+#labor-scene,#labor-time-sheet,#overhead-data,#overhead-data-sheet{scroll-margin-top:110px}
+.sq-work-figure{margin:24px 0}.sq-work-figure img{display:block;width:100%;height:auto;border-radius:12px}
+.sq-work-figure figcaption{margin-top:10px;font-size:13px;color:var(--sq-muted,#64748B)}
+.sq-work-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:16px 0;padding:0}
+.sq-work-labels li,.sq-data-step{padding:14px;border:1px solid var(--sq-border,#CBD5E1);border-radius:10px;background:var(--sq-surface-soft,#F7FAFC);color:var(--sq-text,#1A202C)}
+.sq-work-labels strong,.sq-data-step strong{display:block;color:var(--sq-text,#1A202C)}
+.sq-plan-scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.sq-plan-scenes .sq-work-figure{margin:16px 0}
+.sq-work-sheet{border:1px solid var(--sq-border,#CBD5E1);border-radius:10px;padding:16px;margin:20px 0;background:var(--sq-surface-soft,#F7FAFC)}
+.sq-work-sheet h4{font-size:15px;margin:0 0 12px}.sq-work-sheet ol{margin-bottom:0}.sq-work-sheet li{margin-bottom:14px}
+.sq-data-step{margin:12px 0}.sq-work-blank{display:inline-block;min-width:5em;border-bottom:1px solid currentColor}
+@media(max-width:600px){.sq-work-labels,.sq-plan-scenes{grid-template-columns:1fr}.sq-work-labels li,.sq-data-step{font-size:14px}.sq-work-sheet{padding:12px}.sq-plan-scenes{gap:0}}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>簿記2級の労務費｜直接作業・要支払額・賃率差異を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>労務費は労働用役の消費に基づく原価です。原価計算基準では賃金・給料・賞与・福利費等を挙げています。直接工かどうかだけで分類せず、<strong>何の作業か、どの期間の要支払額か、どの賃率と時間を使うか</strong>を確認します。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月11日</p><h1>簿記2級の労務費｜直接作業・要支払額・賃率差異を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>労務費は労働用役の消費に基づく原価です。原価計算基準では賃金・給料・賞与・福利費等を挙げています。直接工かどうかだけで分類せず、<strong>何の作業か、どの期間の要支払額か、どの賃率と時間を使うか</strong>を確認します。</p>
 <h2>直接工にも、直接作業と間接作業がある</h2>
 <p>正常な直接作業を製品や製造指図書へ追跡できる賃金は直接労務費として扱います。一方、間接作業賃金・手待賃金や間接工の賃金等は間接労務費です。異常な状態の費用や工場外の人件費まで、無条件に製品原価へ入れる説明ではありません。</p>
-<section class="sq-facts-exercise"><h3>自作例1：元の8時間・12,000円を作業別に分ける</h3><p>ある直接工の正常な就業8時間、賃率1,500円。特定の製品への直接加工5時間、工場共通の清掃・通常の手待ち・検査等の間接作業3時間。他の時間や割増なし。賃金12,000円の振替は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>直接労務費は5×1,500＝<strong>7,500円</strong>、間接労務費は3×1,500＝<strong>4,500円</strong>。合計12,000円です。</p><p>借方：仕掛品7,500・製造間接費4,500／貸方：賃金12,000。直接工という肩書を理由に全額12,000円を仕掛品へ入れると、直接費が4,500円過大になります。検査でも特定製品への追跡等の条件が違えば、問題の分類指定を確かめます。</p></div></details></section>
+
+<figure id="labor-scene" class="sq-work-figure">
+  <img src="images/boki2-labor-work-scenes.webp" width="2172" height="724" loading="lazy" alt="左から本棚の組立、共用機械の点検、工房の床清掃を描いた3つの架空場面">
+  <figcaption>提供教材のAI生成イラスト。左から組立・共用機械の点検・共通の床清掃です。作業の種類を表す絵で、一人の一日の実録ではありません。時間・賃率は次の自作例の条件を使います。<a href="images/boki2-labor-work-scenes.webp">絵を大きく見る</a></figcaption>
+</figure>
+<ol class="sq-work-labels" aria-label="作業を分類するための確認">
+  <li><strong>左：本棚の組立</strong>どの製品・製造指図書の作業か、時間を追跡できるかを確認。</li>
+  <li><strong>中央：共用機械の点検</strong>工房共通の維持作業なら、特定の本棚だけの費用にしない。</li>
+  <li><strong>右：共通の床清掃</strong>見た目が製造作業でなくても、工場の正常な作業なら労務費の分類を確認。</li>
+</ol>
+<section class="sq-facts-exercise" id="labor-time-sheet">
+<h3>自作例1：作業時間票から8時間・12,000円を分ける</h3>
+<p>編集部の架空例です。直接工Aの正常な就業8時間、賃率1,500円。本棚の製造指図書へ追跡できる組立5時間、工房共通の機械点検2時間、共通の床清掃1時間。他の時間・割増なし。点検と清掃は特定製品に直接追跡しない間接作業とします。Aが3種類の作業をしたと仮定し、絵の人物別に計算するものではありません。</p>
+<div class="sq-work-sheet"><h4>ノートに写して埋める作業時間票</h4>
+<p>各行を「時間 → 分類する理由 → 直接／間接 → 金額 → 振替先」の順に記入します。この欄は画面への入力・保存用ではありません。</p>
+<ol>
+<li>本棚の組立：5時間／製造指図書へ追跡できる → 分類 <span class="sq-work-blank">（　　）</span>、金額（　　）円、振替先（　　）。</li>
+<li>共用機械の点検：2時間／工房共通 → 分類 <span class="sq-work-blank">（　　）</span>、金額（　　）円、振替先（　　）。</li>
+<li>共通の床清掃：1時間／工房共通 → 分類 <span class="sq-work-blank">（　　）</span>、金額（　　）円、振替先（　　）。</li>
+</ol><p>検算：時間合計（　　）時間、賃金合計（　　）円。借方の合計と貸方の賃金は一致しますか？</p></div>
+<details class="sq-facts-answer"><summary>記入例・仕訳・判断理由を見る</summary><div>
+<ol><li>組立：直接労務費。5×1,500＝<strong>7,500円 → 仕掛品</strong>。本棚の製造指図書へ追跡できる条件だからです。</li>
+<li>点検：間接労務費。2×1,500＝<strong>3,000円 → 製造間接費</strong>。この例では工房共通の作業です。</li>
+<li>清掃：間接労務費。1×1,500＝<strong>1,500円 → 製造間接費</strong>。この例では工房共通の作業です。</li></ol>
+<p>時間は5＋2＋1＝8時間、賃金は7,500＋3,000＋1,500＝<strong>12,000円</strong>。間接労務費は合計4,500円です。</p>
+<p>借方：仕掛品7,500・製造間接費4,500／貸方：賃金12,000。直接工という肩書を理由に全額12,000円を仕掛品へ入れると、直接費が4,500円過大になります。</p>
+<p>「点検・検査・清掃なら必ず間接」と名称だけで決めません。特定製品への追跡や分類指定が異なる問題では、その条件を確認します。手待ち時間が与えられた場合も作業時間票で別に整理し、この8時間へ勝手に加えません。</p>
+</div></details></section>
 <h2>支払額を、当月の要支払額に直す</h2>
 <p>当月支払額に前月分の未払が含まれ、当月分の一部がまだ未払なら、前月未払を除いて当月未払を加えます。総額と手取額も分けます。前月・当月という月次の境界を、前年度・当年度と読み替えないでください。</p>
 <section class="sq-facts-exercise"><h3>自作例2：給与振込460,000円なのに、当月労務費は520,000円？</h3><p>この例では全額が工場の労務費です。当月の給与手取振込460,000円、給与控除40,000円、支払総額500,000円。その総額に含む前月末未払40,000円、当月末未払60,000円。立替・前払・他の調整なし。当月労務費は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>まず460,000＋40,000＝支払総額500,000円。前月未払40,000円は前月の費用なので除き、当月未払60,000円を加えます。500,000−40,000＋60,000＝<strong>520,000円</strong>です。元の記事の520,000円の計算を、総額という前提付きで残しています。</p><p>手取からそのまま460,000−40,000＋60,000＝480,000円とすると、給与控除40,000円分が抜けます。労務費520,000円は、未払・控除のある期間では銀行振込額と一致しません。控除40,000円は問題の仮定であり、実際の税率等を示すものではありません。</p></div></details></section>
@@ -76,7 +117,7 @@ details summary:active{background:var(--light);}
 <p>原価計算基準12は直接賃金を作業時間等と賃率で計算する方法を示し、予定平均賃率も認めています。予定賃率を使う実際原価計算でも差異は生じます。作業時間の標準と実際の差を扱う計算とは区別します。</p>
 <section class="sq-facts-exercise"><h3>自作例3：予定振替120,000円と、実際128,000円</h3><p>別の単純例です。直接作業の実際時間80時間、予定賃率1,500円、実際賃率1,600円。全額を予定賃率で仕掛品へ振替済み。他の賃金なし。賃率差異の額・有利不利と、賃金勘定の残高は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>予定振替は80×1,500＝120,000円、実際発生は80×1,600＝128,000円。差は<strong>8,000円の不利差異</strong>です。共通に実際時間80時間を使い、（1,600−1,500）×80で検算できます。</p><p>実際発生128,000円を借方に、予定振替120,000円を貸方に記録した賃金勘定は、借方残高8,000円。借方：賃率差異8,000／貸方：賃金8,000で差異を取り出せば賃金勘定はゼロです。</p><p>その後の差異を常に仕掛品や製品へ全額足すとは限りません。原価計算基準47と問題の指示で売上原価への処理や在庫への配賦等を確認します。この例は差異を取り出すところまでです。</p></div></details></section>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">資料</th><th scope="col">確認すること</th></tr></thead><tbody><tr><td>作業時間票</td><td>直接作業・間接作業・手待ち等の内訳</td></tr><tr><td>給与資料</td><td>手取か総額か、控除や対象期間</td></tr><tr><td>未払資料</td><td>前月末と当月末を正しく区別したか</td></tr><tr><td>予定賃率と実際賃率</td><td>同じ時間基準で比較したか</td></tr></tbody></table></div>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/class2/exam" target="_blank" rel="noopener">日商2級：試験科目・90分・5題以内・70%以上</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：受験年度の出題区分。下位級の内容も含む</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準8・10・12・45・47：労務費の分類・計算・差異の処理</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>直接工の賃金は全て直接労務費ですか？</summary><p>正常な直接作業を製品に追跡できる賃金と、間接作業・手待ち等の賃金を分けます。直接工という肩書だけで全額を仕掛品へ振り替えません。</p></details><details class="sq-facts-answer"><summary>銀行に振り込んだ手取額を労務費にしますか？</summary><p>手取額と総額は異なります。給与控除等を考慮し、前月・当月の未払を調整してその期間の要支払額を求める条件を確認します。</p></details><details class="sq-facts-answer"><summary>予定賃率と実際賃率の差に何時間を掛けますか？</summary><p>本記事の賃率差異例は同じ実際作業時間80時間を共通に使います。標準時間との差による作業時間差異を混ぜません。差異の処理先は問題の指示と原価計算基準47を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-seizo-genka-hokokusho.html">製造原価報告書と売上原価</a></li><li><a href="boki2-hyojun-genka.html">標準原価と差異の時間基準</a></li><li><a href="boki2-keihi.html">経費と製造間接費の区別</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月11日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/bookkeeping/class2/exam" target="_blank" rel="noopener">日商2級：試験科目・90分・5題以内・70%以上</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日商：2026年度は2022年度版を適用。工業簿記は2027年度も変更なし</a></li><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準8・10・12・32・45・47：労務費の分類・計算・差異の処理</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>直接工の賃金は全て直接労務費ですか？</summary><p>正常な直接作業を製品に追跡できる賃金と、間接作業・手待ち等の賃金を分けます。直接工という肩書だけで全額を仕掛品へ振り替えません。</p></details><details class="sq-facts-answer"><summary>銀行に振り込んだ手取額を労務費にしますか？</summary><p>手取額と総額は異なります。給与控除等を考慮し、前月・当月の未払を調整してその期間の要支払額を求める条件を確認します。</p></details><details class="sq-facts-answer"><summary>予定賃率と実際賃率の差に何時間を掛けますか？</summary><p>本記事の賃率差異例は同じ実際作業時間80時間を共通に使います。標準時間との差による作業時間差異を混ぜません。差異の処理先は問題の指示と原価計算基準47を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-seizo-genka-hokokusho.html">製造原価報告書と売上原価</a></li><li><a href="boki2-hyojun-genka.html">標準原価と差異の時間基準</a></li><li><a href="boki2-keihi.html">経費と製造間接費の区別</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
 
 <script src="article-widgets.js?v=20261102-boki-ninth-five"></script>
