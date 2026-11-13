@@ -68,6 +68,25 @@ for(const points of [-1,7,1.5]){
 }
 score.input('sscore_p1',6);await score.box.addScoreRecord();assert.equal(scoreWrites,4);
 
+const scoreLimits = context(['updateScoreTotal'],{
+  EXAM_PRESETS:{custom:{subjects:[]}},currentScoreTemplate:'custom',
+  allSelectedSubjects:()=>[{key:'s',maxH:100}],
+});
+const pointField=scoreLimits.input('sscore_s',150,{max:'100',removeAttribute(name){delete this[name];}});
+const maxField=scoreLimits.input('smax_s',200);
+scoreLimits.inputs.set('scoreTotalVal',{});
+scoreLimits.box.updateScoreTotal();
+assert.equal(pointField.max,'200','A custom maximum must update the native score limit');
+assert.equal(scoreLimits.inputs.get('scoreTotalVal').textContent,'150 / 200');
+maxField.value='80';scoreLimits.box.updateScoreTotal();
+assert.equal(pointField.max,'80','Lowering the maximum must update the native limit too');
+assert.equal(pointField.value,'150','Changing a limit must not silently rewrite the entered score');
+for(const invalid of ['', '0', '-1']){
+  maxField.value=invalid;scoreLimits.box.updateScoreTotal();
+  assert.equal(pointField.max,undefined,'An invalid maximum must not leave a stale native limit');
+  assert.equal(pointField.value,'150');
+}
+
 let studyWrites = 0;
 const subjects = [{key:'s',name:'商業簿記'}];
 const study = context(['readStudyDuration','addQuest','toFiniteNumber','sAmount','fmtSecs','renderQuickMaterialSelect','renderMobileQuestMaterials','getMaterialRank'],{
@@ -197,4 +216,4 @@ assert.equal(recovery.box.timerSeconds,25,'A second reload must not count paused
 assert.equal(recovery.box.sessionExpLabel({importPast:true}),'引き継ぎ');
 assert.equal(recovery.box.sessionExpLabel({exp:4}),'+4 EXP');
 assert.ok(!recovery.box.sessionExpLabel({}).includes('undefined'));
-console.log('PASS: duration and score validation, material seconds, quest period totals with sub-minute and legacy records, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery and imported record labels');
+console.log('PASS: duration and score validation, custom score native limits, material seconds, quest period totals with sub-minute and legacy records, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery and imported record labels');

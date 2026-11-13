@@ -10983,7 +10983,7 @@ function buildScoreSubjInputs(){
           placeholder="点数" oninput="updateScoreTotal()">
         <span>/</span>
         <input type="number" min="1" id="smax_${s.key}"
-          value="${s.max}" ${tmpl && tmpl.subjects.length ? 'readonly style="background:transparent;color:var(--muted)"' : ''}>
+          value="${s.max}" oninput="updateScoreTotal()" ${tmpl && tmpl.subjects.length ? 'readonly style="background:transparent;color:var(--muted)"' : ''}>
       </div>`;
     grid.appendChild(item);
   });
@@ -11020,8 +11020,15 @@ function updateScoreTotal(){
 
   let total = 0, maxTotal = 0;
   subjects.forEach(s=>{
-    const sv = parseFloat(document.getElementById('sscore_'+s.key)?.value) || 0;
-    const mv = parseFloat(document.getElementById('smax_'+s.key)?.value) || s.max || 0;
+    const scoreInput = document.getElementById('sscore_'+s.key);
+    const maxInput = document.getElementById('smax_'+s.key);
+    const maximum = Number(maxInput?.value);
+    if(scoreInput){
+      if(Number.isFinite(maximum) && maximum > 0) scoreInput.max = String(maximum);
+      else scoreInput.removeAttribute('max');
+    }
+    const sv = parseFloat(scoreInput?.value) || 0;
+    const mv = parseFloat(maxInput?.value) || s.max || 0;
     total += sv; maxTotal += mv;
   });
 
@@ -22537,6 +22544,14 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20261113_custom_score_max',
+    date: '2026-11-13',
+    type: 'fix',
+    title: 'カスタム満点に点数欄の上限を合わせます',
+    desc: 'SCOREでカスタムの満点を変更したとき、点数欄の増減操作の上限も更新します。200点満点なら100点を超えて入力できます。保存済みの記録はそのままです。'
+  },
+
 
   {
     id: 'v20261111_manual_material_refresh',
