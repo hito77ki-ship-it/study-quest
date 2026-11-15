@@ -1,0 +1,15 @@
+/* 教材の架空場面を、本文の条件と区別して読む */
+.sq-teaching-scene{margin:28px 0;padding:20px;border:1px solid var(--sq-border,#cbd5e1);border-radius:12px;background:var(--sq-surface,#fff);color:var(--sq-text,#1a202c);overflow-wrap:anywhere;scroll-margin-top:100px}
+.sq-teaching-scene h3{margin:0 0 16px;color:var(--sq-text,#1a202c);font-size:18px}
+.sq-teaching-scene figure{margin:0 0 18px}
+.sq-teaching-scene img{display:block;width:100%;height:auto;border-radius:8px;background:#fff}
+.sq-teaching-scene .sq-scene-square{max-width:540px;margin-inline:auto}
+.sq-teaching-scene figcaption{font-size:13px;line-height:1.8;margin-top:10px;color:var(--sq-soft,#64748b)}
+.sq-teaching-scene p,.sq-teaching-scene li{font-size:16px;line-height:1.9;color:var(--sq-text,#1a202c)}
+.sq-teaching-scene ol{padding-left:22px;margin:0 0 16px}.sq-teaching-scene li{margin-bottom:10px}
+.sq-teaching-scene a{text-decoration:underline;text-underline-offset:3px}.sq-teaching-scene p:last-child{margin-bottom:0}
+.sq-scene-triptych{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.sq-scene-triptych figure{min-width:0}
+.sq-scene-crop{aspect-ratio:1;overflow:hidden;border-radius:8px}.sq-teaching-scene .sq-scene-crop img{width:100%;height:100%;object-fit:cover}.sq-scene-left{object-position:0% 50%}.sq-scene-center{object-position:50% 50%}.sq-scene-right{object-position:100% 50%}
+.sq-facts-exercise[id]{scroll-margin-top:100px}
+@media(max-width:600px){.sq-scene-triptych{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.sq-teaching-scene{padding:14px}}
