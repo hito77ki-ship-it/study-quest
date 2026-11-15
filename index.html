@@ -520,6 +520,22 @@ nav.scrolled{
 .itp-part-link{display:flex;flex-direction:column;padding:10px 12px;border:1px solid var(--border);border-radius:8px;color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
 .itp-part-link span{font-size:.8rem;color:var(--ink3);text-decoration:none;}
 .updates-list{display:flex;flex-direction:column;gap:0;}
+#updates-heading{scroll-margin-top:96px;}
+.update-item[hidden],.updates-pagination[hidden],.updates-pagination button[hidden]{display:none !important;}
+.updates-pagination{padding-top:24px;overflow-anchor:none;}
+.updates-count{font-size:13px;color:var(--ink3);margin:0 0 12px;}
+.updates-controls{display:flex;flex-wrap:wrap;gap:12px;}
+.updates-controls button{
+  min-height:44px;padding:10px 16px;border:1px solid var(--border);border-radius:6px;
+  background:var(--surface);color:var(--ink);font:inherit;font-size:14px;font-weight:700;
+  cursor:pointer;transition:transform .12s ease,box-shadow .12s ease;
+}
+.updates-controls button:hover{border-color:var(--green);box-shadow:2px 2px 0 var(--green);transform:translate(-1px,-1px);}
+.updates-controls button:active{transform:translate(0,0);box-shadow:none;}
+.updates-controls button:focus-visible,#updates-heading:focus-visible{outline:2px solid var(--green);outline-offset:4px;}
+@media(prefers-reduced-motion:reduce){
+  .updates-controls button{transition:none;}
+}
 .update-item{padding:12px 0;border-bottom:1px solid var(--border);}
 .update-item:first-child{border-top:1px solid var(--border);}
 .update-head,.update-meta{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
@@ -2808,9 +2824,15 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
 <section class="updates" id="updates">
   <div class="updates-inner">
     <div class="sec-label">UPDATES</div>
-    <h2 class="sec-title" style="margin-bottom:0;">更新情報</h2>
-    <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年11月11日）</p>
-    <div class="updates-list">
+    <h2 class="sec-title" id="updates-heading" tabindex="-1" style="margin-bottom:0;">更新情報</h2>
+    <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年11月15日）</p>
+    <div class="updates-list" id="updates-list">
+      <div class="update-item">
+        <div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.11.15</span></div>
+        <div class="update-title">更新情報を最新5件から、必要な分ずつ読めるようにしました</div>
+        <a class="update-read" href="development-log.html#20261115-updates-pagination">改善の理由と確認範囲を読む</a>
+        <div class="update-desc">「さらに5件表示」で過去の更新を追加し、「表示を減らす」で最新5件と更新情報の見出しへ戻れます。各更新の詳細と記事リンクはそのまま読めます。</div>
+      </div>
       <div class="update-item">
         <div class="update-head"><span class="update-badge improve">改善</span><span class="update-date">2026.11.11</span></div>
         <div class="update-title">労務費の作業時間票と、製造間接費の資料整理シートを追加しました</div>
@@ -3497,6 +3519,68 @@ document.querySelectorAll('#updates .updates-list > .update-item').forEach((item
   description.before(actions);
   description.hidden = true;
 });
+
+// Enhance the complete history without removing entries or requiring storage.
+(() => {
+  const list = document.getElementById('updates-list');
+  const heading = document.getElementById('updates-heading');
+  if (!list || !heading) return;
+  const items = Array.from(list.children).filter(item => item.classList.contains('update-item'));
+  const pageSize = 5;
+  if (items.length <= pageSize) return;
+
+  const controls = document.createElement('div');
+  controls.className = 'updates-pagination';
+  const count = document.createElement('p');
+  count.className = 'updates-count';
+  count.setAttribute('role', 'status');
+  count.setAttribute('aria-live', 'polite');
+  count.setAttribute('aria-atomic', 'true');
+  const buttons = document.createElement('div');
+  buttons.className = 'updates-controls';
+  const more = document.createElement('button');
+  more.type = 'button';
+  more.textContent = 'さらに5件表示';
+  more.setAttribute('aria-controls', list.id);
+  const less = document.createElement('button');
+  less.type = 'button';
+  less.textContent = '表示を減らす';
+  less.setAttribute('aria-controls', list.id);
+  buttons.append(more, less);
+  controls.append(count, buttons);
+  list.after(controls);
+
+  let visibleCount = pageSize;
+  const render = () => {
+    items.forEach((item, index) => { item.hidden = index >= visibleCount; });
+    count.textContent = `全${items.length}件中${visibleCount}件を表示`;
+    more.hidden = visibleCount >= items.length;
+    more.setAttribute('aria-expanded', String(visibleCount > pageSize));
+    less.hidden = visibleCount <= pageSize;
+  };
+  more.addEventListener('click', event => {
+    const firstNewIndex = visibleCount;
+    visibleCount = Math.min(visibleCount + pageSize, items.length);
+    render();
+    if (event.detail === 0) {
+      const title = items[firstNewIndex].querySelector('.update-title');
+      if (title) {
+        title.tabIndex = -1;
+        title.focus({ preventScroll: true });
+      }
+    } else if (more.hidden) {
+      less.focus({ preventScroll: true });
+    }
+  });
+  less.addEventListener('click', () => {
+    visibleCount = pageSize;
+    render();
+    heading.focus({ preventScroll: true });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    heading.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
+  });
+  render();
+})();
 </script>
 
 <!-- SPONSORED -->
