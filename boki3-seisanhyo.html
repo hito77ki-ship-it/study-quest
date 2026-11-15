@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "精算表の書き方｜8桁の自作例題・解答と利益の検算【簿記3級】", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "精算表の書き方を、期首残高・決算整理事項のある自作例題で確認。8列の解答、商品振替と減価償却、利益・損失の記入方向、貸倒引当金の扱い、合計が合っても誤る理由を解説します。", "url": "https://study-quest.net/boki3-seisanhyo.html", "datePublished": "2026-05-07", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "精算表の書き方｜8桁の自作例題・解答と利益の検算【簿記3級】", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "精算表の書き方を、期首残高・決算整理事項のある自作例題で確認。8列の解答、商品振替と減価償却、利益・損失の記入方向、貸倒引当金の扱い、合計が合っても誤る理由を解説します。", "url": "https://study-quest.net/boki3-seisanhyo.html", "datePublished": "2026-05-07", "dateModified": "2026-11-15", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト"}}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--bg:#FFFFFF;--light:#F7FAFC;}
@@ -154,14 +154,39 @@ details summary:active{background:var(--light);}
 .sq-audited-article .sq-audit-answer h3{color:var(--sq-text,#1a202c)!important;}
 .sq-audit-answer-body p:last-child{margin-bottom:0;}
 .sq-audit-sheet{padding:18px;border-left:3px solid var(--sq-accent,#8cc63f);background:var(--sq-surface-soft,#f8fafc);margin:24px 0;}
+
+/* 本人提供の教材の場面と、本文の条件を結ぶ */
+.sq-teaching-scene{margin:28px 0;padding:20px;border:1px solid var(--sq-border,#cbd5e1);border-radius:12px;background:var(--sq-surface,#fff);color:var(--sq-text,#1a202c);overflow-wrap:anywhere;scroll-margin-top:90px}
+.sq-teaching-scene h3{margin:0 0 16px;color:var(--sq-text,#1a202c);font-size:18px}
+.sq-teaching-scene figure{margin:0 0 18px}
+.sq-teaching-scene img{display:block;width:100%;height:auto;border-radius:8px;background:#fff}
+.sq-teaching-scene figcaption{font-size:13px;line-height:1.8;margin-top:10px;color:var(--sq-soft,#64748b)}
+.sq-teaching-scene p,.sq-teaching-scene li{font-size:16px;line-height:1.9;color:var(--sq-text,#1a202c)}
+.sq-teaching-scene ol{padding-left:22px;margin:0 0 16px}
+.sq-teaching-scene li{margin-bottom:10px}
+.sq-teaching-scene a{text-decoration:underline;text-underline-offset:3px}
+.sq-teaching-scene p:last-child{margin-bottom:0}
+@media(max-width:480px){.sq-teaching-scene{padding:14px}.sq-teaching-scene figcaption{font-size:13px}}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
 <div class="container sq-audited-article">
-<div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 精算表</div><p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月2日</p><h1>精算表の書き方｜8桁の自作例題・解答と利益の検算【簿記3級】</h1><p class="meta">著者：若葉 ／ 内容・自作例題：Study Quest編集部</p>
+<div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記</a> &gt; 精算表</div><p class="meta">日商簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月15日</p><h1>精算表の書き方｜8桁の自作例題・解答と利益の検算【簿記3級】</h1><p class="meta">著者：若葉 ／ 内容・自作例題：Study Quest編集部</p>
 <p class="lead">精算表は、決算整理前の残高に修正を加え、損益計算書（P/L）と貸借対照表（B/S）の数字を整理する作業表です。覚える順番は<strong>仕訳 → 修正記入 → 振り分け → 検算</strong>。以下では同じ自作例を最後まで使い、どの金額がどの欄へ進むかを確認します。</p>
 <h2>1．8桁は「借方・貸方が4組」という意味</h2>
+<section class="sq-teaching-scene" id="teaching-scene" aria-labelledby="scene-heading">
+<h3 id="scene-heading">場面で見る：帳簿と精算表を行き来して確かめる</h3>
+<figure><img src="images/teaching-scenes/boki3-worksheet-transfer.jpg" alt="右の人が開いた帳簿を指し、左の人が大きな作業表へ残高を写している架空の文具店の事務場面" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>本人提供の簿記指導教材から掲載した、AI生成の架空場面です。帳簿から作業表へ数字を集める動きを表します。絵のマス目は正確な8桁の様式ではなく、金額・欄の配置は本文の表で確認します。</figcaption></figure>
+<ol class="sq-scene-steps">
+<li><strong>右の帳簿で整理前残高を確認する</strong>：各勘定の残高を、精算表の残高試算表欄へ集めます。</li>
+<li><strong>決算整理事項を仕訳にして修正する</strong>：商品振替や減価償却は、先に仕訳を作ってから修正記入欄へ反映します。</li>
+<li><strong>整理後残高をP/LかB/Sへ振り分ける</strong>：すべてを左から右へ順番に写すのではなく、科目の性質で行き先を分けます。</li>
+</ol>
+<p>下の自作例の<strong>現金200千円</strong>には修正がないため、B/Sの借方へ200千円を写します。一方、仕入500千円はそのままP/Lへ写せません。<a href="#worked-example">商品振替と減価償却の例題</a>で、修正してから振り分ける違いを確かめましょう。</p>
+<p class="sq-audit-source">8桁の欄の構成は<a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所の3級サンプル問題・第3問サンプル2の答案用紙</a>を再確認（2026年11月15日）。公式の問題や答案用紙を画像として掲載したものではありません。</p>
+</section>
+
 <p>残高試算表、修正記入、P/L、B/Sに、それぞれ借方と貸方があります。「試算表からP/L、その後B/Sへ全部を順番に写す」という意味ではありません。決算整理後の各残高を、その科目の性質に応じてP/LかB/Sへ振り分けます。</p><picture><source media="(max-width:600px)" srcset="images/boki3-seisanhyo-map-mobile.svg?v=20261102"><img src="images/boki3-seisanhyo-map.svg?v=20261102" alt="残高試算表と修正記入からP/LかB/Sへ振り分け、利益と損失の左右を確認する流れ" width="760" height="330" loading="lazy" style="display:block;width:100%;height:auto;margin:24px 0"></picture><p class="sq-audit-source">出典：<a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所「3級サンプル問題」第3問・サンプル2の問題と答案用紙</a>。公式の答案用紙は空欄を埋める様式であり、以下の数値例・解答は編集部作です。（2026年11月2日確認）</p>
 <h2 id="worked-example">2．自作例題：商品振替と減価償却を整理する</h2>
 <p><strong>編集部の自作例です。公式問題の転載ではありません。</strong>単位はすべて千円。期首の商品は100、期中の仕入は500、期末商品は200とします。備品の当期減価償却額は50と与えられたものとし、税金・消費税・配当・ほかの決算整理は考慮しません。</p><div class="sq-audit-table sq-table-scroll" tabindex="0" role="region" aria-label="決算整理前の残高（千円）"><table><caption>決算整理前の残高（千円）</caption><thead><tr><th scope="col">勘定科目</th><th scope="col">残高試算表・借方</th><th scope="col">残高試算表・貸方</th></tr></thead><tbody><tr><th scope="row">現金</th><td>200</td><td>—</td></tr><tr><th scope="row">売掛金</th><td>300</td><td>—</td></tr><tr><th scope="row">繰越商品</th><td>100</td><td>—</td></tr><tr><th scope="row">備品</th><td>400</td><td>—</td></tr><tr><th scope="row">備品減価償却累計額</th><td>—</td><td>100</td></tr><tr><th scope="row">買掛金</th><td>—</td><td>150</td></tr><tr><th scope="row">資本金</th><td>—</td><td>450</td></tr><tr><th scope="row">売上</th><td>—</td><td>800</td></tr><tr><th scope="row">仕入</th><td>500</td><td>—</td></tr><tr><th scope="row">合計</th><td>1,500</td><td>1,500</td></tr></tbody></table></div>
