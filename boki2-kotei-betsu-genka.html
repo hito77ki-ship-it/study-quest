@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "工程別総合原価計算｜前工程費と二つの仕掛品残高を自作例で検算", "image": "https://study-quest.net/screenshots/ogp/boki2-kotei-betsu-genka.png", "description": "累加法の前工程費を確認。既存600個の計算例を残し、第1工程仕掛品150,000円・第2工程仕掛品250,000円・完成品1,500,000円の行き先を自作2問で検算。", "url": "https://study-quest.net/boki2-kotei-betsu-genka.html", "datePublished": "2026-07-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "工程別総合原価計算｜前工程費と二つの仕掛品残高を自作例で検算", "image": "https://study-quest.net/screenshots/ogp/boki2-kotei-betsu-genka.png", "description": "累加法の前工程費を確認。既存600個の計算例を残し、第1工程仕掛品150,000円・第2工程仕掛品250,000円・完成品1,500,000円の行き先を自作2問で検算。", "url": "https://study-quest.net/boki2-kotei-betsu-genka.html", "datePublished": "2026-07-09", "dateModified": "2026-11-15", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 
 <style>
@@ -59,6 +59,19 @@ details summary:active{background:var(--light);}
 .nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
+
+/* 本人提供の教材の場面と、本文の条件を結ぶ */
+.sq-teaching-scene{margin:28px 0;padding:20px;border:1px solid var(--sq-border,#cbd5e1);border-radius:12px;background:var(--sq-surface,#fff);color:var(--sq-text,#1a202c);overflow-wrap:anywhere;scroll-margin-top:90px}
+.sq-teaching-scene h3{margin:0 0 16px;color:var(--sq-text,#1a202c);font-size:18px}
+.sq-teaching-scene figure{margin:0 0 18px}
+.sq-teaching-scene img{display:block;width:100%;height:auto;border-radius:8px;background:#fff}
+.sq-teaching-scene figcaption{font-size:13px;line-height:1.8;margin-top:10px;color:var(--sq-soft,#64748b)}
+.sq-teaching-scene p,.sq-teaching-scene li{font-size:16px;line-height:1.9;color:var(--sq-text,#1a202c)}
+.sq-teaching-scene ol{padding-left:22px;margin:0 0 16px}
+.sq-teaching-scene li{margin-bottom:10px}
+.sq-teaching-scene a{text-decoration:underline;text-underline-offset:3px}
+.sq-teaching-scene p:last-child{margin-bottom:0}
+@media(max-width:480px){.sq-teaching-scene{padding:14px}.sq-teaching-scene figcaption{font-size:13px}}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "前工程費にも当工程の加工進捗度を掛けますか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の通常の受入例では、前工程を終えた品物を受け入れているため、前工程費に当工程の加工進捗度を掛けません。当工程で追加する材料や加工費は別の投入条件で計算します。"}}, {"@type": "Question", "name": "第1工程の費用をすべて次工程へ移しますか？", "acceptedAnswer": {"@type": "Answer", "text": "次工程へ振り替えた完成品原価を移します。第1工程の月末仕掛品原価は第1工程に残るため、費用総額を丸ごと移すわけではありません。"}}, {"@type": "Question", "name": "合計額が一致すれば配分も正しいですか？", "acceptedAnswer": {"@type": "Answer", "text": "合計一致は検算の一つです。完成品と仕掛品の配分を取り違えても合計が一致する場合があるため、数量・投入点・進捗度・単価も照合します。"}}]}
@@ -81,9 +94,21 @@ details summary:active{background:var(--light);}
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年7月9日 | 更新日：2026年11月2日</p><h1>工程別総合原価計算｜前工程費と二つの仕掛品残高を自作例で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p class="lead">工程別総合原価計算は、連続する工程ごとに原価を集計する方法です。累加法では、前工程から<strong>振り替えられた完成品原価</strong>を次工程の前工程費に加えます。前工程に残る仕掛品まで引き継ぐわけではありません。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年7月9日 | 更新日：2026年11月15日</p><h1>工程別総合原価計算｜前工程費と二つの仕掛品残高を自作例で検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p class="lead">工程別総合原価計算は、連続する工程ごとに原価を集計する方法です。累加法では、前工程から<strong>振り替えられた完成品原価</strong>を次工程の前工程費に加えます。前工程に残る仕掛品まで引き継ぐわけではありません。</p>
 <div class="sq-facts-note"><strong>まず数量と原価の行き先を分ける</strong><p>原価計算基準25の工程別計算を基に、月初仕掛品・仕損・減損のない架空例を解きます。前工程費と、当工程で発生した加工費は別々に計算します。合計一致は検算の一つであり、誤った配分同士でも合計だけは一致することがあります。</p></div>
 <h2 id="flow">累加法と前工程費の流れ</h2>
+<section class="sq-teaching-scene" id="teaching-scene" aria-labelledby="scene-heading">
+<h3 id="scene-heading">場面で見る：研磨から仕上げへ、何を引き継ぐ？</h3>
+<figure><img src="images/teaching-scenes/boki2-process-workshop.jpg" alt="左の人が木製トレーを研磨し、中央に研磨済みの品を置き、右の人が仕上げをする架空の工房" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>本人提供の簿記指導教材から掲載した、AI生成の架空の工房です。左を第1工程の研磨、右を第2工程の仕上げとする説明用の仮定です。絵に描かれた枚数は、下の例題の数量や進捗度を表しません。</figcaption></figure>
+<ol class="sq-scene-steps">
+<li><strong>左で研磨中の品</strong>：第1工程でまだ作業中なら、第1工程の月末仕掛品として残します。</li>
+<li><strong>研磨を終えて右へ渡す品</strong>：第2工程へ実際に振り替えた品の原価が、第2工程の前工程費になります。</li>
+<li><strong>右で仕上げ中の品</strong>：前工程費と第2工程で加えた加工費を区別し、第2工程の完成品と月末仕掛品へ配分します。</li>
+</ol>
+<p>たとえば下の例題1では、研磨に対応する第1工程の<strong>600,000円を600個とともに引き継ぎます</strong>。第2工程の加工費660,000円とは別の原価です。第1工程にも未完成品が残る場合は、<a href="#two-endings">例題2の二つの仕掛品残高</a>を見比べてください。</p>
+<p class="sq-audit-source">追加した図の読み方は、<a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">原価計算基準25の工程間振替</a>と照合しました（2026年11月15日）。工程名と場面の対応は編集部の自作説明です。</p>
+</section>
+
 <ol><li>第1工程で完成品と月末仕掛品の原価を分けます。</li><li>次工程へ実際に振り替えた完成品原価を、第2工程の前工程費として受け入れます。</li><li>第2工程では、受入数量に対応する前工程費と、当工程の材料費・加工費を分けて集計します。</li><li>第2工程の完成品と月末仕掛品へ配分し、各工程の数量・金額を検算します。</li></ol>
 <p>通常の例では、第2工程に入った品物はすでに前工程を終えています。そのため、前工程費に<strong>第2工程の加工進捗度を掛けません</strong>。一方、第2工程で新たに加える材料は、その材料の投入点を別に読みます。「材料はすべて進捗度を見ない」という一般則にはしません。</p>
 <section class="sq-facts-exercise"><h3>例題1：元の600個の例を、二つの換算量で検算する</h3><p>第1工程の材料費400,000円・加工費200,000円で600個が完成し、全数を第2工程へ振り替えました。第2工程の当月加工費660,000円、完成500個、月末100個・加工進捗度50%。両工程とも月初仕掛品0、仕損・減損なし。第2工程に追加材料はなく、平均法とします。完成品と月末仕掛品の原価は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>第1工程の振替額は400,000＋200,000＝<strong>600,000円</strong>。第2工程の前工程費単価は600,000÷600＝1,000円です。完成品500,000円、月末仕掛品100,000円へ分けます。</p><p>第2工程の加工費換算量は500＋100×50%＝550個。単価は660,000÷550＝1,200円。完成品600,000円、月末仕掛品60,000円です。</p><p>完成品は500,000＋600,000＝<strong>1,100,000円</strong>、月末仕掛品は100,000＋60,000＝<strong>160,000円</strong>。合計1,260,000円は、前工程費600,000＋当工程加工費660,000円と一致します。元記事の正しい数値に、月初・投入・損失の条件を補いました。</p></div></details></section>
@@ -94,7 +119,7 @@ details summary:active{background:var(--light);}
 <p>日商の2026年度適用表では、全原価要素の工程別総合原価計算は2級で累加法、非累加法と加工費工程別総合原価計算は1級の欄です。2027年度の工業簿記・原価計算の区分は変更なしと案内されています。上位級は下位級の内容も含みます。</p>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">問題にある条件</th><th scope="col">この例から変える箇所</th></tr></thead><tbody><tr><td>月初仕掛品がある</td><td>平均法・先入先出法と月初原価・進捗度を確認する</td></tr><tr><td>仕損・減損がある</td><td>発生点、負担対象、評価額の指定を確認する</td></tr><tr><td>途中で材料を追加する</td><td>前工程費とは別に、その材料の投入状況を読む</td></tr><tr><td>工程間に半製品在庫がある</td><td>完成量と次工程への実際の振替量を区別する</td></tr></tbody></table></div>
 <p>解き直すときは「前工程のどの残高を渡したか」「当工程でどの換算量を使ったか」を一行ずつ記録すると、計算の取り違えを追いやすくなります。これは編集部の学習提案です。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">企業会計審議会 原価計算基準25・26：工程別計算と加工費法</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記の級別範囲と2027年度の変更有無</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>前工程費にも当工程の加工進捗度を掛けますか？</summary><p>本記事の通常の受入例では、前工程を終えた品物を受け入れているため、前工程費に当工程の加工進捗度を掛けません。当工程で追加する材料や加工費は別の投入条件で計算します。</p></details><details class="sq-facts-answer"><summary>第1工程の費用をすべて次工程へ移しますか？</summary><p>次工程へ振り替えた完成品原価を移します。第1工程の月末仕掛品原価は第1工程に残るため、費用総額を丸ごと移すわけではありません。</p></details><details class="sq-facts-answer"><summary>合計額が一致すれば配分も正しいですか？</summary><p>合計一致は検算の一つです。完成品と仕掛品の配分を取り違えても合計が一致する場合があるため、数量・投入点・進捗度・単価も照合します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-sogo-genka.html">平均法・先入先出法の条件</a></li><li><a href="boki2-kogyo-enshu.html">換算量と演習の記録</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>既存本文の主要記述照合：2026年11月2日。追加した場面と工程間振替は2026年11月15日に再確認しました。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.asb-j.jp/jp/accounting_standards_system/details.html?topics_id=156" target="_blank" rel="noopener">企業会計審議会 原価計算基準25・26：工程別計算と加工費法</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記の級別範囲と2027年度の変更有無</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>前工程費にも当工程の加工進捗度を掛けますか？</summary><p>本記事の通常の受入例では、前工程を終えた品物を受け入れているため、前工程費に当工程の加工進捗度を掛けません。当工程で追加する材料や加工費は別の投入条件で計算します。</p></details><details class="sq-facts-answer"><summary>第1工程の費用をすべて次工程へ移しますか？</summary><p>次工程へ振り替えた完成品原価を移します。第1工程の月末仕掛品原価は第1工程に残るため、費用総額を丸ごと移すわけではありません。</p></details><details class="sq-facts-answer"><summary>合計額が一致すれば配分も正しいですか？</summary><p>合計一致は検算の一つです。完成品と仕掛品の配分を取り違えても合計が一致する場合があるため、数量・投入点・進捗度・単価も照合します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-sogo-genka.html">平均法・先入先出法の条件</a></li><li><a href="boki2-kogyo-enshu.html">換算量と演習の記録</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js?v=20261102-boki-seventh-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
