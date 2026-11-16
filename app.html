@@ -12981,12 +12981,12 @@ function renderMonthChart(){
   const months=[];
   for(let i=5;i>=0;i--){
     const d=new Date(); d.setDate(1); d.setMonth(d.getMonth()-i);
-    months.push({label:(d.getMonth()+1)+'月', ym:d.toISOString().slice(0,7)});
+    months.push({label:(d.getMonth()+1)+'月', ym:toLocalDateStr(d).slice(0,7)});
   }
   const subjs=getReportSubjects();
   const datasets=subjs.map(s=>({
     label:s.name,
-    data:months.map(m=>+(sessions.filter(x=>isStudyType(x)&&x.date&&x.date.startsWith(m.ym)&&x.subject===s.key).reduce((a,x)=>a+x.amount,0)/60).toFixed(1)),
+    data:months.map(m=>sessions.filter(x=>isStudyType(x)&&x.date&&x.date.startsWith(m.ym)&&x.subject===s.key).reduce((a,x)=>a+sAmount(x),0)/60),
     backgroundColor:s.color,borderWidth:0,borderRadius:2,borderSkipped:false
   })).filter(ds=>ds.data.some(v=>v>0));
   if(rptChartInstances.month){rptChartInstances.month.destroy();}
@@ -12998,7 +12998,7 @@ function renderMonthChart(){
       plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false,
         backgroundColor:'rgba(15,8,32,.95)',titleColor:'#c9a84c',bodyColor:'#aaa',
         borderColor:'rgba(201,168,76,.3)',borderWidth:1,
-        callbacks:{label:ctx=>{const h=Math.floor(ctx.raw);const m=Math.round((ctx.raw-h)*60);return ctx.dataset.label+': '+(h?h+'h':'')+(m?m+'m':'0m');}}}},
+        callbacks:{label:ctx=>ctx.dataset.label+': '+fmtSecs(ctx.raw*3600)}}},
       scales:{
         x:{stacked:true,grid:{display:false},ticks:{font:{size:10},color:'#999'}},
         y:{stacked:true,grid:{color:'rgba(255,255,255,.05)'},ticks:{font:{size:9},color:'#bbb',callback:v=>v+'h'},beginAtZero:true}
@@ -13052,7 +13052,7 @@ function auditTimeblock(){
     const start = new Date(s.startedAt);
     if(isNaN(start.getTime())){ issues.push({id:s.date+s.subject,issue:'無効なstartedAt',s}); return; }
     const startMins = start.getHours()*60 + Math.floor(start.getMinutes()/SLOT_MIN)*SLOT_MIN;
-    const expected  = Math.ceil((s.amount||0)/SLOT_MIN);
+    const expected  = Math.ceil(sAmount(s)/SLOT_MIN);
     const capped    = Math.min(expected, Math.ceil((1440-startMins)/SLOT_MIN));
     if(expected !== capped){
       issues.push({date:s.date,subject:s.subject,amount:s.amount,
@@ -13097,7 +13097,7 @@ function renderTimeBlock(dateStr){
     // → 実測セッションと被りにくい時間帯に配置
     const base = new Date(s.date + 'T23:00:00');
     if(isNaN(base.getTime())) return {...s, _estimated:true};
-    const startedAt = new Date(base.getTime() - (s.amount||0)*60000).toISOString();
+    const startedAt = new Date(base.getTime() - sAmount(s)*60000).toISOString();
     const endedAt   = base.toISOString();
     return {...s, startedAt, endedAt, _estimated:true};
   });
@@ -13120,12 +13120,12 @@ function renderTimeBlock(dateStr){
 
   // 合計時間・科目集計（全件）
   let totalMin = 0;
-  daySessions.forEach(s=>{ totalMin += s.amount||0; });
-  if(total) total.textContent = Math.floor(totalMin/60)+'h '+Math.round(totalMin%60)+'m';
+  daySessions.forEach(s=>{ totalMin += sAmount(s); });
+  if(total) total.textContent = fmtSecs(totalMin*60);
 
   const subMap = {};
   daySessions.forEach(s=>{
-    const min = s.amount||0;
+    const min = sAmount(s);
     if(!subMap[s.subject]) subMap[s.subject]=0;
     subMap[s.subject]+=min;
   });
@@ -13136,7 +13136,7 @@ function renderTimeBlock(dateStr){
       <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${tbColor(sub)};flex-shrink:0;"></span>
         <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${tbName(sub)}</span>
-        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--muted);">${Math.floor(min/60)?Math.floor(min/60)+'h ':''} ${Math.round(min%60)}m</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--muted);">${fmtSecs(min*60)}</span>
       </div>`).join('');
   }
 
@@ -13160,7 +13160,7 @@ function renderTimeBlock(dateStr){
     if(isNaN(start.getTime())) return;
     const startMins = start.getHours() * 60 + Math.floor(start.getMinutes() / SLOT_MIN) * SLOT_MIN;
     const numSlots  = Math.min(
-      Math.ceil((s.amount || 0) / SLOT_MIN),
+      Math.ceil(sAmount(s) / SLOT_MIN),
       Math.ceil((1440 - startMins) / SLOT_MIN)
     );
     for(let i = 0; i < numSlots; i++){
@@ -13180,7 +13180,7 @@ function renderTimeBlock(dateStr){
   estimated.forEach(s => {
     if(estCursor >= 1440) return;
     const numSlots = Math.min(
-      Math.ceil((s.amount || 0) / SLOT_MIN),
+      Math.ceil(sAmount(s) / SLOT_MIN),
       Math.ceil((1440 - estCursor) / SLOT_MIN)
     );
     for(let i = 0; i < numSlots; i++){
@@ -15790,7 +15790,7 @@ function renderHeatmap(){
   // 日付ごとの学習分数マップ
   const dayMap = {};
   sessions.filter(s => isStudyType(s) && s.date).forEach(s => {
-    dayMap[s.date] = (dayMap[s.date]||0) + s.amount;
+    dayMap[s.date] = (dayMap[s.date]||0) + sAmount(s);
   });
 
   // 今日の曜日（0=日〜6=土）から開始日を計算（53週前の日曜日）
@@ -15867,8 +15867,7 @@ function renderHeatmap(){
       if(isFuture) cell.style.border = '1px solid var(--border)';
       if(!isFuture){
         const m = d.getMonth()+1, day = d.getDate();
-        const h = Math.floor(mins/60), min = mins%60;
-        const timeStr = mins ? `${h?h+'h':''}${min?min+'m':''}` : '0m';
+        const timeStr = fmtSecs(mins*60);
         cell.setAttribute('data-tip', `${m}/${day}  ${timeStr}`);
       }
       col.appendChild(cell);
@@ -15882,14 +15881,14 @@ function renderHeatmap(){
 
   // 総学習時間ラベル
   const totalMins = Object.values(dayMap).reduce((a,b)=>a+b,0);
-  if(totalLabel) totalLabel.textContent = `合計 ${Math.floor(totalMins/60)}h ${totalMins%60}m`;
+  if(totalLabel) totalLabel.textContent = `合計 ${fmtSecs(totalMins*60)}`;
 
   // ── 月間サマリー（直近12ヶ月）──
   if(summaryEl){
     const monthSummary = {};
     sessions.filter(s=>isStudyType(s)&&s.date).forEach(s=>{
       const ym = s.date.slice(0,7);
-      monthSummary[ym] = (monthSummary[ym]||0) + s.amount;
+      monthSummary[ym] = (monthSummary[ym]||0) + sAmount(s);
     });
     const months = [];
     for(let i=11; i>=0; i--){
@@ -22544,6 +22543,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20261116_report_seconds',
+    date: '2026-11-16',
+    type: 'fix',
+    title: 'レポートにも秒単位の記録を反映します',
+    desc: '「草」「月別推移」「時間割」で、タイマーの秒を含めて学習時間を集計します。1分未満の記録も時間割に表示し、月別推移の早朝の月ずれも修正しました。'
+  },
   {
     id: 'v20261113_custom_score_max',
     date: '2026-11-13',
