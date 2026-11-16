@@ -216,4 +216,51 @@ assert.equal(recovery.box.timerSeconds,25,'A second reload must not count paused
 assert.equal(recovery.box.sessionExpLabel({importPast:true}),'引き継ぎ');
 assert.equal(recovery.box.sessionExpLabel({exp:4}),'+4 EXP');
 assert.ok(!recovery.box.sessionExpLabel({}).includes('undefined'));
-console.log('PASS: duration and score validation, custom score native limits, material seconds, quest period totals with sub-minute and legacy records, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery and imported record labels');
+// Report views must agree with the saved second-precision and legacy records.
+const reportTimezone = process.env.TZ;
+process.env.TZ = 'Asia/Tokyo';
+class ReportDate extends Date {
+  constructor(...args){super(...(args.length?args:['2026-11-15T21:00:00Z']));}
+}
+const reportSessions = [
+  {date:'2026-11-16',type:'study',subject:'s',amount:1,amountSecs:71,startedAt:'2026-11-16T00:00:00Z'},
+  {date:'2026-11-16',type:'study',subject:'s',amount:0,amountSecs:47,startedAt:'2026-11-16T01:15:00Z'},
+  {date:'2026-11-16',type:'exam',subject:'s',amount:2},
+  {date:'2026-11-16',type:'study',subject:'s',amount:10,amountSecs:0,startedAt:'2026-11-16T03:00:00Z'},
+  {date:'2026-11-16',type:'calc',subject:'s',amount:999},
+];
+const reportSnapshot = JSON.stringify(reportSessions);
+function reportElement(){
+  return {style:{},children:[],attributes:{},textContent:'',innerHTML:'',
+    appendChild(child){this.children.push(child);},setAttribute(key,value){this.attributes[key]=value;}};
+}
+const reportElements = new Map();
+const chartConfigs = [];
+const reports = context(['toFiniteNumber','sAmount','fmtSecs','toLocalDateStr','renderHeatmap','renderMonthChart','renderTimeBlock'],{
+  Date:ReportDate,sessions:reportSessions,tbCurrentDate:null,
+  document:{getElementById:id=>reportElements.get(id),createElement:reportElement},
+  isStudyType:s=>s.type==='study'||s.type==='exam',
+  getReportSubjects:()=>[{key:'s',name:'商業簿記',color:'#123456'}],
+  tbColor:()=> '#123456',tbName:()=> '商業簿記',rptChartInstances:{},
+  Chart:class {constructor(_canvas,config){chartConfigs.push(config);} destroy(){}},
+});
+for(const id of ['heatmapWrap','heatmapMonthSummary','heatmapTotalLabel','rptMonthChart','tbDateLabel','tbNoData','tbGrid','tbHourLabels','tbSubjectList','tbTotalTime','tbScrollWrap']) reportElements.set(id,reportElement());
+reports.box.renderHeatmap();
+assert.equal(reportElements.get('heatmapTotalLabel').textContent,'合計 3分58秒','Heatmap must sum seconds before formatting and retain legacy minutes');
+const descendants = element => [element,...element.children.flatMap(descendants)];
+assert.ok(descendants(reportElements.get('heatmapWrap')).some(el=>el.attributes['data-tip']==='11/16  3分58秒'),'Daily heatmap tooltip must use the same total');
+reports.box.renderMonthChart();
+const monthChart = chartConfigs.at(-1);
+assert.equal(monthChart.data.labels.at(-1),'11月');
+assert.ok(Math.abs(monthChart.data.datasets[0].data.at(-1)-238/3600)<1e-12,'Early JST morning must stay in November, without rounding away short sessions');
+assert.equal(monthChart.options.plugins.tooltip.callbacks.label({raw:238/3600,dataset:{label:'商業簿記'}}),'商業簿記: 3分58秒');
+reports.box.renderTimeBlock('2026-11-16');
+assert.equal(reportElements.get('tbTotalTime').textContent,'3分58秒');
+assert.match(reportElements.get('tbSubjectList').innerHTML,/3分58秒/);
+const paintedCells = descendants(reportElements.get('tbGrid')).filter(el=>el.title);
+assert.ok(paintedCells.some(el=>el.title.includes('10:15〜10:20')),'A 47-second record must occupy its five-minute display slot');
+assert.ok(paintedCells.some(el=>el.title.includes('21:00〜21:05')&&el.title.includes('推定')),'Legacy records without a start time remain visible');
+assert.ok(!paintedCells.some(el=>el.title.includes('12:00〜12:05')),'Explicit zero seconds must not use a stale minute value');
+assert.equal(JSON.stringify(reportSessions),reportSnapshot,'Report rendering must not rewrite saved records');
+if(reportTimezone===undefined) delete process.env.TZ; else process.env.TZ=reportTimezone;
+console.log('PASS: duration and score validation, custom score native limits, material seconds, quest period totals with sub-minute and legacy records, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery, imported record labels, and second-precision heatmap/monthly chart/timeblocks');
