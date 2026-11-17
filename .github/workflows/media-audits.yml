@@ -44,6 +44,14 @@ jobs:
       - name: Check whitespace in the pull request diff
         run: git diff --check "origin/${{ github.base_ref }}...HEAD"
 
+      - name: Install isolated forum test dependency
+        run: npm ci --prefix scripts/tests/forum --ignore-scripts
+
+      - name: Check forum limits and access control
+        run: |
+          node scripts/tests/forum/database.mjs
+          node --experimental-strip-types scripts/tests/forum/handler.mjs
+
       - name: Check guest input and record regressions
         env:
           TZ: Asia/Tokyo
