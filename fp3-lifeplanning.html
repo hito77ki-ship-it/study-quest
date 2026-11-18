@@ -10,10 +10,10 @@
 <link rel="canonical" href="https://study-quest.net/fp3-lifeplanning.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FP3級 ライフプランニングと資金計画｜6つの係数を例題で解説｜スタディクエスト</title>
-<meta name="description" content="FP3級のライフプランニングと資金計画を解説。社会保険、年金保険料、6つの係数の使い分けと計算例、教育資金、住宅ローンを整理します。">
+<meta name="description" content="FP3級の6つの係数を、2年後に同じ金額を用意する一括・積立と、毎年の取り崩しで練習。年ごとの残高で答えを確かめ、令和8年度の国民年金保険料と生年月日別の老齢基礎年金額も確認できます。">
 <meta name="keywords" content="FP3級 ライフプランニング,6つの係数,FP3級 年金,FP3級 資金計画">
 <meta property="og:title" content="FP3級 ライフプランニングと資金計画｜6つの係数を例題で解説">
-<meta property="og:description" content="社会保険・年金・6つの係数を計算例つきで整理。">
+<meta property="og:description" content="同じ目標額を今日1回で用意する場合と、各年末に分けて入れる場合を比べます。令和8年度の老齢基礎年金は生年月日別に確認できます。">
 <meta property="og:url" content="https://study-quest.net/fp3-lifeplanning.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/fp3-lifeplanning.png">
@@ -25,12 +25,12 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"FP3級 ライフプランニングと資金計画｜6つの係数を例題で解説",
-  "image": "https://study-quest.net/screenshots/ogp/fp3-lifeplanning.png","description":"社会保険、年金保険料、6つの係数の使い分けと計算例、教育資金、住宅ローンを整理します。","url":"https://study-quest.net/fp3-lifeplanning.html","datePublished":"2026-05-09","dateModified":"2026-10-31","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
+  "image": "https://study-quest.net/screenshots/ogp/fp3-lifeplanning.png","description":"一括・年末積立・取り崩しを年ごとの残高で検算し、6つの係数を選ぶ練習です。令和8年度の国民年金保険料と、生年月日による老齢基礎年金の満額の違いも確認できます。","url":"https://study-quest.net/fp3-lifeplanning.html","datePublished":"2026-05-09","dateModified":"2026-11-19","author":{"@type":"Person","name":"若葉","url":"https://study-quest.net/about.html"},"publisher":{"@type":"Organization","name":"スタディクエスト","url":"https://study-quest.net/","logo":{"@type":"ImageObject","url":"https://study-quest.net/icons/icon.svg"}}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"6つの係数とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"将来価値と現在価値を換算するための係数です。終価係数・現価係数（一括の金額）、年金終価係数・減債基金係数（積立に関する係数）、年金現価係数・資本回収係数（取り崩し・年金受取に関する係数）の3ペア6種類があります。"}},
-{"@type":"Question","name":"2026年度の国民年金保険料はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"2026年度の国民年金保険料は月額17,920円です。老齢基礎年金の満額は月額70,608円（年847,300円）です。"}},
+{"@type":"Question","name":"2026年度の国民年金保険料と老齢基礎年金の満額はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"2026年度に第1号被保険者などが納める国民年金の定額保険料は月額17,920円です。老齢基礎年金の満額は、1956年4月1日以前生まれなら月額70,408円（年額844,900円）、1956年4月2日以後生まれなら月額70,608円（年額847,300円）です。"}},
 {"@type":"Question","name":"減債基金係数はどんな場面で使いますか？","acceptedAnswer":{"@type":"Answer","text":"「将来の目標金額を貯めるために、毎年いくら積み立てればよいか」を求める場面で使います。目標金額×減債基金係数＝毎年の積立額、という計算式になります。"}}
 ]}
 </script>
@@ -56,22 +56,38 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<style>
+#cashflow-timeline{scroll-margin-top:88px;color:var(--sq-text,#1a202c)}
+#cashflow-timeline table{width:100%;min-width:0;table-layout:fixed}
+#cashflow-timeline caption{text-align:left;font-weight:700;margin-bottom:6px;color:var(--sq-text,#1a202c)}
+#cashflow-timeline th,#cashflow-timeline td{padding:8px 6px;vertical-align:top}
+#cashflow-timeline thead th{background:var(--sq-surface-soft,#f5f8f2);color:var(--sq-text,#1a202c);border-bottom:2px solid var(--sq-border,#cbd5e1)}
+#cashflow-timeline tbody th{background:transparent;color:var(--sq-text,#1a202c);border-bottom:1px solid var(--sq-border,#cbd5e1);text-align:left}
+#cashflow-timeline .cf-amount{white-space:nowrap;font-variant-numeric:tabular-nums}
+#cashflow-timeline details{border-top:1px solid var(--sq-border,#cbd5e1);padding:3px 0}
+#cashflow-timeline summary{padding:10px 0;min-height:44px;cursor:pointer;font-weight:700;color:var(--sq-text,#1a202c)}
+#cashflow-timeline summary:focus-visible,.container a.cf-link:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+#cashflow-timeline .cf-sources{margin-top:18px}
+.container a.cf-link{color:#315d17;text-decoration:underline;text-underline-offset:.16em}
+html[data-theme="dark"] .container a.cf-link{color:#b6e27c}
+@media(prefers-color-scheme:dark){html:not([data-theme]) .container a.cf-link{color:#b6e27c}}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
 <div class="container">
   <div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="fp3.html">FP3級</a> &gt; ライフプランニング</div>
-  <p class="meta">FP3級 | 公開：2026年5月9日 | 更新日：2026年10月31日</p>
+  <p class="meta">FP3級 | 公開：2026年5月9日 | 更新日：2026年11月19日</p>
   <h1>FP3級 ライフプランニングと資金計画｜<br>6つの係数を例題で使ってみる</h1>
   <p class="meta">著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
 
   <div class="point-card">
     <div class="pc-label">この記事でわかること（5秒まとめ）</div>
     <ul style="margin:0 0 0 16px;font-size:14px;color:#1A202C;line-height:1.9;">
-      <li><strong>6つの係数</strong>は「現在→将来」か「将来→現在」かの方向で3ペアに分けると覚えやすい</li>
-      <li>2026年度の<strong>国民年金保険料は月額17,920円</strong>、老齢基礎年金満額は月額70,608円</li>
-      <li>年金は<strong>3階建て構造</strong>——国民年金→厚生年金→企業年金の順に積み上がる</li>
-      <li>係数の使い分けは<strong>実際に計算</strong>すると一気に定着する</li>
+      <li><strong>6つの係数</strong>は、今日の一括額・各年末の入出金額・満期額のうち、何が既知で何を求めるかで選ぶ</li>
+      <li>2026年度に納める<strong>国民年金の定額保険料は月額17,920円</strong>。受け取る老齢基礎年金の満額は、1956年4月1日以前生まれで月額70,408円、1956年4月2日以後生まれで月額70,608円</li>
+      <li><strong>公的年金は2階建て</strong>。国民年金が基礎で、厚生年金の加入者には2階部分が加わる。企業年金やiDeCoは加入者の私的年金</li>
+      <li>同じ満期額でも、いつ何回入金するかで1回分の金額が変わる</li>
     </ul>
   </div>
 
@@ -82,7 +98,7 @@ details summary:active{background:var(--light);}
     </div>
     <p style="font-size:14px;color:#1A202C;line-height:1.9;margin-bottom:12px;">こんにちは、若葉です！<br>
     6つの係数、名前だけ見ると「終価係数？現価係数？減債基金係数？」と混乱必至なんですが、実際に数字を当てはめて計算してみると、驚くほどすんなり頭に入ります。今日は名前の暗記より先に、使う場面と計算例から入ってみましょう！</p>
-    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;">この記事で整理した内容から、次の学習で確認することを1つ選び、記録に残してみてください。</p>
+    <p style="font-size:14px;color:#1A202C;line-height:1.9;margin:0;"><a class="cf-link" href="#cashflow-timeline">2年後の18万810円を、今日1回と毎年末の2回で用意する練習へ</a></p>
   </div>
 
   <div class="sq-chat">
@@ -97,7 +113,7 @@ details summary:active{background:var(--light);}
       <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">3ペアに分けると整理できます。①終価係数⇔現価係数（一括のお金を将来⇔現在に換算）、②年金終価係数⇔減債基金係数（積立に関する係数）、③年金現価係数⇔資本回収係数（受け取り・取り崩しに関する係数）。ペアの片方は「将来にする」係数、もう片方は「現在に戻す」係数と考えると方向がわかりやすいです。</div>
+        <div class="sq-chat-bubble">3ペアに分けると整理できます。①終価係数⇔現価係数（一括のお金を将来⇔現在に換算）、②年金終価係数⇔減債基金係数（積立に関する係数）、③年金現価係数⇔資本回収係数（受け取り・取り崩しに関する係数）。まず、求めたいのが「今日まとめて用意する額」「各年末の1回分」「満期の合計」のどれかを確かめましょう。</div>
       </div>
     </div>
     <div class="sq-chat-row question">
@@ -111,47 +127,92 @@ details summary:active{background:var(--light);}
       <div class="sq-chat-avatar research"><img src="images/icon-wakaba.png" alt="若葉" class="chat-icon" width="300" height="300" loading="lazy"></div>
       <div>
         <div class="sq-chat-name">若葉（IT資格学習中）</div>
-        <div class="sq-chat-bubble">「10年後に300万円貯めたい。毎年いくら積み立てればいい？」という場面で使います。目標金額×減債基金係数＝毎年の積立額、という式です。「将来の目標から、今年いくら積むべきかを逆算する」係数と覚えると使い道がイメージしやすいですよ。</div>
+        <div class="sq-chat-bubble">「10年後に300万円貯めたい。毎年いくら積み立てればいい？」という場面で使います。目標金額×減債基金係数＝毎年の積立額、という式です。年末に積み立てるなら、求めているのは各年末に入れる同じ額です。今日一括で入れる額とは異なります。</div>
       </div>
     </div>
   </div>
 
   <h2>❓ 6つの係数——3ペアで整理する</h2>
-  <p>6つの係数は「現在のお金を将来にする」か「将来のお金を現在に換算する」かの方向で整理すると覚えやすくなります。</p>
+  <p>下の表では積立・受取を各年末に行うとします。「分かっている額」から「求める額」へ、矢印をたどってください。</p>
 
   <img src="images/article-diagrams/fp3-lifeplanning.svg" alt="FP3級ライフプランニングと資金計画の学習ガイド" style="max-width:100%; height:auto; display:block; margin:20px auto;" width="640" height="360" loading="lazy">
 
   <table>
-    <tr><th>係数</th><th>使う場面</th><th>方向</th></tr>
-    <tr><td>終価係数</td><td>今のお金が将来いくらになるか</td><td>現在→将来</td></tr>
-    <tr><td>現価係数</td><td>将来必要な額を今いくら用意すればよいか</td><td>将来→現在</td></tr>
-    <tr><td>年金終価係数</td><td>毎年積み立てたら将来いくらになるか</td><td>現在（積立）→将来</td></tr>
-    <tr><td>減債基金係数</td><td>将来の目標額のため毎年いくら積み立てるか</td><td>将来（目標）→現在（積立額）</td></tr>
-    <tr><td>年金現価係数</td><td>毎年一定額を受け取るには今いくら必要か</td><td>将来（受取）→現在（元本）</td></tr>
-    <tr><td>資本回収係数</td><td>今ある元本から毎年いくら受け取れるか</td><td>現在（元本）→将来（受取）</td></tr>
+    <tr><th scope="col">係数</th><th scope="col">使う場面</th><th scope="col">既知の額 → 求める額</th></tr>
+    <tr><td>終価係数</td><td>今のお金が将来いくらになるか</td><td>今日の元本 → 満期の合計額</td></tr>
+    <tr><td>現価係数</td><td>将来必要な額を今いくら用意すればよいか</td><td>満期の目標額 → 今日の元本</td></tr>
+    <tr><td>年金終価係数</td><td>毎年積み立てたら将来いくらになるか</td><td>各年末の積立額 → 満期の合計額</td></tr>
+    <tr><td>減債基金係数</td><td>将来の目標額のため毎年いくら積み立てるか</td><td>満期の目標額 → 各年末の積立額</td></tr>
+    <tr><td>年金現価係数</td><td>毎年一定額を受け取るには今いくら必要か</td><td>各年末の受取額 → 今日の元本</td></tr>
+    <tr><td>資本回収係数</td><td>今ある元本から毎年いくら受け取れるか</td><td>今日の元本 → 各年末の受取額</td></tr>
   </table>
 
   <h2>📝 減債基金係数を例題で使ってみる</h2>
   <div class="mondai">
     <div class="m-label">例題</div>
-    <p>10年後に300万円を貯めたい。年利2%で複利運用する場合、毎年の積立額はいくら必要か（10年・年利2%の減債基金係数を0.0913とする）。</p>
+    <p>10年後に300万円を貯めたい。年利2%の複利で各年末に同額を入れる場合、1回の積立額はいくら必要か（10年・年利2%の減債基金係数を0.0913とする）。</p>
   </div>
   <div class="formula">
     毎年の積立額 ＝ 目標金額 × 減債基金係数<br>
     ＝ 300万円 × 0.0913 ＝ <strong>約27.4万円/年</strong>
   </div>
-  <p>このように、「将来の目標額」から「毎年いくら積み立てるべきか」を逆算するのが減債基金係数の役割です。試験では係数表が与えられるので、係数の意味と掛け算の向きさえ間違えなければ得点できます。</p>
+  <p>このように、「将来の目標額」から「毎年いくら積み立てるべきか」を逆算するのが減債基金係数の役割です。この例題では、与えられた利率と期間に対応する係数を使い、答えの単位が「万円／年」になっているかを確認します。</p>
 
-  <h2>💰 年金は3階建て構造</h2>
+  <section id="cashflow-timeline" aria-labelledby="cashflow-timeline-title">
+    <h2 id="cashflow-timeline-title">同じ180,810円を、今日1回と年末2回で準備する</h2>
+    <p>備品の代金<span class="cf-amount">180,810円</span>を2年目の年末に支払います。目標は支払い直前の残高です。AとBは別々の案として、どの時点にいくら入れればよいか考えてください。</p>
+    <p>計算用に年利5％の複利を仮定します。各年末に、年初からあった残高に利息を付け、その後で入出金します。税金・手数料は含めず、途中で丸めません。</p>
+    <table>
+      <caption>入金する額（残高とは別）</caption>
+      <thead><tr><th scope="col">時点</th><th scope="col">A　今日だけ</th><th scope="col">B　各年末</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">今日</th><td>いくら？</td><td>0円</td></tr>
+        <tr><th scope="row">1年目末</th><td>0円</td><td>いくら？</td></tr>
+        <tr><th scope="row">2年目末</th><td>0円</td><td>1年目末と同額</td></tr>
+      </tbody>
+    </table>
+    <p>AとBのそれぞれについて、満期の目標額から入金額を求める<strong>係数の名前</strong>と<strong>1回分の金額</strong>を答えてください。</p>
+    <details>
+      <summary>ヒントを読む</summary>
+      <p>1円を入れたとき、利息は何回付くでしょうか。今日の1円には2回、1年目末の1円には1回、2年目末に入れたばかりの1円にはまだ付きません。</p>
+    </details>
+    <details>
+      <summary>AとBの答えを確かめる</summary>
+      <p><strong>Aは現価係数。</strong>今日の1円は2年後に1.05 × 1.05＝1.1025円になります。目標から逆にたどると、180,810 ÷ 1.1025＝<strong class="cf-amount">164,000円</strong>を今日1回入れます。逆向きに確かめるときに使う1.1025が終価係数です。</p>
+      <p><strong>Bは減債基金係数。</strong>各年末に1円ずつ入れると、満期には1.05＋1＝2.05円です。180,810 ÷ 2.05＝<strong class="cf-amount">88,200円</strong>を各年末に入れます。各回の積立額から満期残高を求める2.05が年金終価係数です。</p>
+      <table>
+        <caption>入金後の残高で検算（2年目末は支払い直前）</caption>
+        <thead><tr><th scope="col">時点</th><th scope="col">Aの残高</th><th scope="col">Bの残高</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">今日</th><td class="cf-amount">164,000円</td><td class="cf-amount">0円</td></tr>
+          <tr><th scope="row">1年目末</th><td class="cf-amount">172,200円</td><td class="cf-amount">88,200円</td></tr>
+          <tr><th scope="row">2年目末</th><td class="cf-amount">180,810円</td><td class="cf-amount">180,810円</td></tr>
+        </tbody>
+      </table>
+      <p>Bの内訳は、最初の88,200円が1年分の利息で92,610円になり、最後に88,200円を加えて180,810円です。最後の入金にはまだ利息が付きません。</p>
+      <details>
+        <summary>もう一問　年末に受け取るなら？</summary>
+        <p>Cは今日<span class="cf-amount">164,000円</span>の残高から始めます。追加の入金はせず、毎年末の利息が付いた直後に同じ金額を受け取ります。2年目末の残高をちょうど0円にするには、どの係数を使い、毎回いくら受け取りますか。</p>
+        <details>
+          <summary>Cの答えを確かめる</summary>
+          <p>元本から一定の受取額を求めるので<strong>資本回収係数</strong>です。2年目末の価値にそろえると、164,000 × 1.1025 ÷ 2.05＝<strong class="cf-amount">88,200円</strong>。Bと同じ金額が、今度は出金になります。1年目末は164,000 × 1.05 − 88,200＝<span class="cf-amount">84,000円</span>。2年目末は84,000 × 1.05 − 88,200＝0円です。</p>
+          <p>逆に、毎年末に88,200円ずつ受け取るための今日の元本を求めるのが<strong>年金現価係数</strong>です。1回目と2回目の受取額を今日の価値に戻して足すと、88,200 ÷ 1.05 ＋ 88,200 ÷ 1.05² ＝ 84,000 ＋ 80,000 ＝ <span class="cf-amount">164,000円</span>になります。</p>
+        </details>
+      </details>
+    </details>
+    <p class="cf-sources">この2年のケースは編集部の自作です。日本FP協会の3級実技では、<a class="cf-link" href="https://www.jafp.or.jp/exam/mohan/files/j3_202505_q.pdf#page=4">2025年公表分の問4</a>で目標からの積立額、<a class="cf-link" href="https://www.jafp.or.jp/exam/mohan/files/j3_202605_q.pdf#page=4">2026年公表分の問4</a>で元本からの取崩額を扱っています。年末の積立・受取と現在の金額の区別は、<a class="cf-link" href="https://www.jafp.or.jp/exam/mohan/files/j2_202405_q.pdf#page=24">2級実技・2024年5月の第8問</a>でも確認できます。</p>
+  </section>
+
+  <h2>💰 公的年金の2階建てと、私的年金の上乗せ</h2>
   <table>
     <tr><th>階層</th><th>制度</th><th>加入対象</th></tr>
-    <tr><td>1階</td><td>国民年金（基礎年金）</td><td>日本国内に住所がある20歳以上60歳未満の人など（国籍不問）</td></tr>
-    <tr><td>2階</td><td>厚生年金</td><td>会社員・公務員等</td></tr>
-    <tr><td>3階</td><td>企業年金・iDeCo等</td><td>制度がある企業の従業員、任意加入者</td></tr>
+    <tr><td>公的年金の1階</td><td>国民年金（基礎年金）</td><td>日本国内に住所がある20歳以上60歳未満の人など（国籍不問）</td></tr>
+    <tr><td>公的年金の2階</td><td>厚生年金</td><td>会社員・公務員等</td></tr>
+    <tr><td>私的年金の上乗せ</td><td>企業年金・iDeCo等</td><td>勤務先の企業年金の加入者、iDeCoへの加入を選んだ人など</td></tr>
   </table>
-<p style="font-size:12px;color:var(--sq-soft,#718096);">出典：<a href="https://www.nenkin.go.jp/tokusetsu/20kanyu.html" target="_blank" rel="noopener">日本年金機構「国民年金の加入と保険料」</a>（2026年10月31日確認）</p>
-  <div class="tip-box"><strong>2026年度の数字：</strong>国民年金保険料は<strong>月額17,920円</strong>、昭和31年4月2日以後生まれの方の老齢基礎年金の満額は<strong>月額70,608円（年847,300円）</strong>です。公的年金の仕組みは、基礎年金に厚生年金が上乗せされる形として整理できます。</div>
-  <p style="font-size:12px;color:#718096;">出典：<a href="https://www.mhlw.go.jp/stf/newpage_71570.html" target="_blank" rel="noopener">厚生労働省「制度変更（令和8年4月）」</a>、<a href="https://www.nenkin.go.jp/service/pamphlet/kyufu.files/LK03.pdf" target="_blank" rel="noopener">日本年金機構「老齢年金の年金額」</a>（2026年9月4日確認）</p>
+<p style="font-size:12px;color:var(--sq-soft,#718096);">出典：<a href="https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html" target="_blank" rel="noopener">厚生労働省「公的年金制度の体系」</a>（2026年11月19日確認）</p>
+  <div class="tip-box"><strong>2026年度に納める額と受け取る額</strong><br>第1号被保険者や任意加入被保険者が納める国民年金の定額保険料は月額17,920円です。老齢基礎年金の満額は、生年月日で次のように分かれます。<br>1956（昭和31）年4月1日以前生まれは<strong>月額70,408円（年額844,900円）</strong>です。<br>1956（昭和31）年4月2日以後生まれは<strong>月額70,608円（年額847,300円）</strong>です。<br>実際の受給額は保険料の納付済期間や免除期間などで変わります。</div>
+  <p style="font-size:12px;color:#718096;">出典：日本年金機構 <a href="https://www.nenkin.go.jp/service/kokunen/hokenryo/hokenryo.html" target="_blank" rel="noopener">国民年金保険料</a>、<a href="https://www.nenkin.go.jp/oshirase/taisetu/kojin/2026/202604/0401.html" target="_blank" rel="noopener">令和8年4月分からの年金額</a>、<a href="https://www.nenkin.go.jp/service/pamphlet/kyufu.files/LK03.pdf#page=6" target="_blank" rel="noopener">令和8年度版 老齢年金ガイド（冊子5ページ）</a>（2026年11月19日確認）</p>
 
   <h2>🏠 住宅ローン・教育資金を整理する</h2>
   <table>
@@ -167,15 +228,15 @@ details summary:active{background:var(--light);}
   <div class="matome">
     <h3>📋 まとめ：ライフプランニング・資金計画 早見表</h3>
     <div class="matome-row"><span class="trigger">6つの係数</span><span class="result">終価・現価／年金終価・減債基金／年金現価・資本回収の3ペア</span></div>
-    <div class="matome-row"><span class="trigger">国民年金保険料（2026年度）</span><span class="result">月額17,920円</span></div>
-    <div class="matome-row"><span class="trigger">老齢基礎年金満額（2026年度）</span><span class="result">月額70,608円（年847,300円）</span></div>
-    <div class="matome-row"><span class="trigger">年金の構造</span><span class="result">国民年金（1階）→厚生年金（2階）→企業年金等（3階）</span></div>
+    <div class="matome-row"><span class="trigger">国民年金の定額保険料（2026年度）</span><span class="result">月額17,920円</span></div>
+    <div class="matome-row"><span class="trigger">老齢基礎年金満額（2026年度）</span><span class="result">1956年4月1日以前生まれは月額70,408円（年額844,900円）<br>1956年4月2日以後生まれは月額70,608円（年額847,300円）</span></div>
+    <div class="matome-row"><span class="trigger">年金の構造</span><span class="result">公的年金は国民年金と厚生年金の2階建て。企業年金・iDeCo等は私的な上乗せ</span></div>
   </div>
 </div>
 <section style="max-width:800px;margin:0 auto;padding:0 24px 48px;">
   <h2 style="font-size:20px;font-weight:700;margin:48px 0 16px;padding-left:12px;border-left:3px solid #8CC63F;color:#1A202C;">よくある質問</h2>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">6つの係数とは何ですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">将来価値と現在価値を換算するための係数です。終価係数・現価係数（一括の金額）、年金終価係数・減債基金係数（積立に関する係数）、年金現価係数・資本回収係数（取り崩し・年金受取に関する係数）の3ペア6種類があります。</div></details>
-  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">2026年度の国民年金保険料はいくらですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">2026年度の国民年金保険料は月額17,920円です。老齢基礎年金の満額は月額70,608円（年847,300円）です。</div></details>
+  <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">2026年度の国民年金保険料と老齢基礎年金の満額はいくらですか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">2026年度に第1号被保険者などが納める国民年金の定額保険料は月額17,920円です。老齢基礎年金の満額は、1956年4月1日以前生まれなら月額70,408円（年額844,900円）、1956年4月2日以後生まれなら月額70,608円（年額847,300円）です。</div></details>
   <details style="border:1px solid #E2E8F0;border-radius:10px;margin-bottom:8px;overflow:hidden;"><summary style="padding:14px 16px;cursor:pointer;font-size:14px;font-weight:700;color:#1A202C;list-style:none;display:flex;justify-content:space-between;align-items:center;">減債基金係数はどんな場面で使いますか？<span style="color:#8CC63F;font-size:18px;flex-shrink:0;margin-left:8px;">＋</span></summary><div style="padding:0 16px 14px;font-size:13px;color:#374151;line-height:1.8;">「将来の目標金額を貯めるために、毎年いくら積み立てればよいか」を求める場面で使います。目標金額×減債基金係数＝毎年の積立額、という計算式になります。</div></details>
 </section>
 <section style="background:#F7FAFC;padding:48px 24px;"><div style="max-width:800px;margin:0 auto;"><h2 style="font-size:15px;font-weight:700;color:#1A202C;margin-bottom:20px;padding-left:12px;border-left:3px solid #8CC63F;">関連記事</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
