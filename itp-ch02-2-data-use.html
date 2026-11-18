@@ -6,10 +6,10 @@
   <link rel="icon" href="favicon.ico">
   <link rel="canonical" href="https://study-quest.net/itp-ch02-2-data-use.html">
   <title>ITパスポート 2-2 データ利活用と統計｜スタディクエスト</title>
-  <meta name="description" content="待ち時間や予約の記録を整え、平均・中央値、標本の偏り、分母、予測に使えるデータを区別します。">
+  <meta name="description" content="待ち時間や予約の架空例で、平均・中央値、標本の偏り、分母を確認します。家計調査の実際の公表値を使い、名目と実質の違いを見出しの四択で読み解きます。">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ITパスポート 2-2 データ利活用と統計">
-  <meta property="og:description" content="待ち時間や予約の記録を整え、平均・中央値、標本の偏り、分母、予測に使えるデータを区別します。">
+  <meta property="og:description" content="待ち時間や予約の架空例で、平均・中央値、標本の偏り、分母を確認します。家計調査の実際の公表値を使い、名目と実質の違いを見出しの四択で読み解きます。">
   <meta property="og:url" content="https://study-quest.net/itp-ch02-2-data-use.html">
   <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,11 +19,11 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ITパスポート 2-2 データ利活用と統計",
-  "description": "待ち時間や予約の記録を整え、平均・中央値、標本の偏り、分母、予測に使えるデータを区別します。",
+  "description": "待ち時間や予約の架空例で、平均・中央値、標本の偏り、分母を確認します。家計調査の実際の公表値を使い、名目と実質の違いを見出しの四択で読み解きます。",
   "url": "https://study-quest.net/itp-ch02-2-data-use.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-03",
-  "dateModified": "2026-11-03",
+  "dateModified": "2026-11-18",
   "author": {
     "@type": "Organization",
     "name": "スタディクエスト編集部",
@@ -41,6 +41,17 @@
 }
   </script>
   <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+  <style>
+    #household-survey { scroll-margin-top: 100px; }
+    .survey-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; padding: 1px; background: var(--review-line); margin: 1rem 0 .5rem; }
+    .survey-values > div { padding: .65rem .9rem; background: var(--review-panel); }
+    .survey-values dt { font-size: .9rem; }
+    .survey-values dd { margin: .1rem 0 0; font-size: 1.2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+    @media (max-width: 540px) {
+      .survey-values { grid-template-columns: 1fr; }
+      .survey-values > div { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+    }
+  </style>
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -50,10 +61,10 @@
     <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html">ITパスポート</a> › <a href="itp-ch02-data.html">第2章の目次</a></p>
     <p class="label">STUDY QUEST　/　ITパスポート　/　第2章</p>
     <h1>ITパスポート 2-2 データ利活用と統計</h1>
-    <p>待ち時間や予約の記録を整え、平均・中央値、標本の偏り、分母、予測に使えるデータを区別します。</p>
-    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+    <p>待ち時間や予約の架空例で、平均・中央値、標本の偏り、分母を確認します。家計調査の実際の公表値を使い、名目と実質の違いを見出しの四択で読み解きます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月18日</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#statistical-context">統計の公開元と時系列データの見方</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#statistical-context">統計の公開元と時系列データの見方</a></li><li><a href="#household-survey">家計調査の数字から見出しを選ぶ</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="statistics">
   <h2>集め方と分母をそろえて、数字を読み違えない</h2>
   <p>待ち時間の「分」は量的データ、決済方法の「現金・カード」は質的データです。注文時刻の並びは時系列で、同じ時刻に複数店舗を比べる記録は横断データの例です。集計表には、何を1件とするか、どの期間・店舗か、単位は何かも添えます。こうしたデータについての説明が<strong>メタデータ</strong>です。</p>
@@ -238,9 +249,37 @@
   <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a>、<a href="https://www.e-stat.go.jp/">政府統計の総合窓口 e-Stat</a></p>
 </section>
 
+<section id="household-survey" aria-labelledby="survey-title">
+  <h2 id="survey-title">家計調査を読む｜食料への支出は増えた？</h2>
+  <p>12月の家計の記事に「食料への支出は増えた」と書いてよいでしょうか。総務省統計局の家計調査で確かめてみましょう。下の数字は<strong>2024年12月の二人以上の世帯</strong>について、2025年2月7日に公表された当時の値です。</p>
+  <dl class="survey-values" aria-label="二人以上の世帯の食料への支出">
+    <div><dt>1世帯当たりの食料費</dt><dd>113,566円</dd></div>
+    <div><dt>前年同月比・名目</dt><dd>＋5.1%</dd></div>
+    <div><dt>前年同月比・実質</dt><dd>−1.2%</dd></div>
+  </dl>
+  <p class="note">原表の「食料」の行から金額と増減率を抜き出しました。<a href="https://www.stat.go.jp/info/headline/pdf/202502.pdf#page=5">総務省統計局「統計ヘッドライン」2025年2月号・5ページ（PDF）</a></p>
+  <div class="box">
+    <h3>この表に合う見出しを一つ選ぶ</h3>
+    <p>見出しを開くと、根拠にできる列と、書くには足りない情報を確かめられます。</p>
+    <details><summary>A　11月より食料への支出が5.1%増えた</summary>
+      <p>比較する月が違います。「前年同月」は2023年12月です。2024年11月からの変化を調べるには、比較相手を11月にそろえた数字が必要です。</p>
+    </details>
+    <details><summary>B　買った食料の重さが1.2%減った</summary>
+      <p>キログラム数は表にありません。「実質」は食料に対応する消費者物価指数で物価変動を取り除いた支出の動きです。購入量を知りたいときは、品目と単位を決め、購入数量の表を調べます。</p>
+    </details>
+    <details><summary>C　二人以上の世帯の食料費、前年同月より名目で増え、実質で減った</summary>
+      <p><strong>この見出しが表と一致します。</strong> 1世帯当たりの金額で見ると前年同月より5.1%増えました。物価変動を取り除くと1.2%減です。同じ「食料」の行でも、答えたい問いによって読む列が変わります。</p>
+    </details>
+    <details><summary>D　二人以上の世帯は、どの家も食料に113,566円使った</summary>
+      <p>113,566円は1世帯当たりの平均です。仮に2世帯が100,000円と127,132円を使えば、平均は113,566円でも、実際にその金額を使った世帯はありません。各世帯のばらつきは、この行だけでは分かりません。</p>
+    </details>
+  </div>
+  <p class="note">増減率の定義は<a href="https://www.stat.go.jp/data/kakei/kaisetsu.html">総務省統計局「家計調査　用語の解説」</a>で確認できます。見出しの四択は、この公表値を使った編集部の自作問題です。</p>
+</section>
+
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
-    <p class="note">2026年11月3日確認。</p>
+    <p class="note">以下は2026年11月3日確認。家計調査の公表値と用語の定義は2026年11月18日に確認し、実習に出典を記載しました。</p>
     <ul><li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=9">IPA「ITパスポート試験シラバス Ver.6.5」業務分析・データ利活用</a></li><li><a href="https://www.stat.go.jp/naruhodo/12_ppdac/analysis.html">総務省統計局「4.分析」</a></li><li>総務省統計局のグラフ解説 <a href="https://www.stat.go.jp/naruhodo/9_graph/jyokyu/pareto.html">パレート図</a> ／ <a href="https://www.stat.go.jp/naruhodo/9_graph/jyokyu/redar.html">レーダーチャート</a></li></ul>
     <p>前へ <a href="itp-ch02-1-analysis.html">2-1 業務分析と図表</a> ／ 次へ <a href="itp-ch03-1-rights-privacy.html">3-1 知的財産と情報保護</a> ／ <a href="itp-ch02-data.html">第2章の目次</a></p>
   </section>
