@@ -954,6 +954,9 @@ html[data-theme="dark"]{
 html[data-theme="light"]{
   background:#FFFFFF !important;
 }
+html[data-theme="light"] section.sq-facts-sources > ul > li > a[href]{
+  --green2:#3B7A16;
+}
 html[data-theme="light"] body{
   background:#FFFFFF !important;
   color:var(--sq-text) !important;
