@@ -3490,6 +3490,7 @@ function buildSearchModal(){
   const filters= modal.querySelector('.sq-search-filters');
   const results= modal.querySelector('.sq-search-results');
   let selectedLabel = 'all';
+  let searchedThisOpening = false;
   function renderFilters(){
     const labels = getSearchCategoryLabels();
     filters.innerHTML = [
@@ -3503,10 +3504,9 @@ function buildSearchModal(){
     setTimeout(()=>input.focus(),40);
     input.value='';
     selectedLabel='all';
+    searchedThisOpening = false;
     renderFilters();
-    const index = ensureArticleSearchIndex(true);
     render('');
-    if(!SEARCH_INDEX_STATE.ready) index.then(()=>render(input.value));
   }
   function closeModal(){ modal.classList.remove('open'); }
 
@@ -3531,7 +3531,16 @@ function buildSearchModal(){
 
   btn.addEventListener('click', openModal);
   modal.querySelector('.sq-search-overlay').addEventListener('click', closeModal);
-  input.addEventListener('input', ()=>render(input.value));
+  input.addEventListener('input', ()=>{
+    if(!searchedThisOpening && normalizeSearchText(input.value)){
+      searchedThisOpening = true;
+      const index = ensureArticleSearchIndex(true);
+      if(!SEARCH_INDEX_STATE.ready) index.then(()=>{
+        if(modal.classList.contains('open')) render(input.value);
+      });
+    }
+    render(input.value);
+  });
   input.addEventListener('keydown', event => {
     if(event.key !== 'Enter' || event.isComposing) return;
     event.preventDefault();

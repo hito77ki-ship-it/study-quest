@@ -130,3 +130,55 @@ test('an offline placeholder or another canonical page is not indexed as the req
   assert.equal(search.extractSearchArticleData('https://study-quest.net/other.html', 'bank.html'),null);
   assert.match(search.extractSearchArticleData('https://study-quest.net/bank.html', 'bank.html').text,/銀行明細/);
 });
+
+test('the modal lists titles without fetching until a nonblank search, and retries only missing bodies after reopening', async () => {
+  let failMOS = true;
+  const reads = [];
+  const search = articleSearch(async file => {
+    reads.push(file);
+    if(file === 'mos.html' && failMOS) return {ok:false};
+    return {ok:true, text:async () => file === 'mos.html' ? '備品の発送表' : 'Excelで注文を分析'};
+  });
+  function control(){
+    const listeners = new Map();
+    return {
+      addEventListener: (name, listener) => listeners.set(name,listener),
+      dispatch: (name, event={}) => listeners.get(name)(event),
+      focus() {}
+    };
+  }
+  const button=control(), input=control(), filters=control(), overlay=control(), results={};
+  const classes=new Set();
+  const dialog={
+    classList:{add:name=>classes.add(name), remove:name=>classes.delete(name), contains:name=>classes.has(name)},
+    querySelector:selector=>({'.sq-search-input':input,'.sq-search-filters':filters,'.sq-search-results':results,'.sq-search-overlay':overlay})[selector]
+  };
+  search.document={
+    ...control(), body:{appendChild(){}},
+    querySelector:()=>({querySelector:()=>null,appendChild(){}}),
+    createElement:tag=>tag==='button' ? button : dialog
+  };
+  Object.assign(search, {setTimeout() {}, _escHtml:value=>value, searchCardHTML:item=>item.f});
+  const modalStart=widget.indexOf('function buildSearchModal(){');
+  const modalEnd=widget.indexOf('function buildSearchResultsPage(){',modalStart);
+  vm.runInContext(widget.slice(modalStart,modalEnd)+'\nbuildSearchModal()',search);
+  function type(value){ input.value=value;input.dispatch('input'); }
+
+  button.dispatch('click');
+  assert.match(results.innerHTML,/mos\.html/);
+  type('　 ');overlay.dispatch('click');button.dispatch('click');
+  assert.deepEqual(reads,[]);
+  type('Ｅｘｃｅｌ');type('Ｅｘｃｅｌで');
+  assert.match(results.innerHTML,/検索しています/);
+  await search.ensureArticleSearchIndex();
+  assert.match(results.innerHTML,/stats\.html/);
+  assert.deepEqual(reads,['mos.html','stats.html']);
+
+  failMOS = false;
+  overlay.dispatch('click');button.dispatch('click');
+  assert.equal(reads.length,2);
+  type('発送表');
+  await search.ensureArticleSearchIndex();
+  assert.equal(results.innerHTML,'mos.html');
+  assert.deepEqual(reads,['mos.html','stats.html','mos.html']);
+});
