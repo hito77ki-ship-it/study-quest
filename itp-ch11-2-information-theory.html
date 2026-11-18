@@ -23,7 +23,7 @@
   "url": "https://study-quest.net/itp-ch11-2-information-theory.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-03",
-  "dateModified": "2026-11-03",
+  "dateModified": "2026-11-19",
   "author": {
     "@type": "Organization",
     "name": "スタディクエスト編集部",
@@ -41,6 +41,15 @@
 }
   </script>
   <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+  <style>
+    #library-chime { margin: 1.5rem 0; padding: 1rem; border: 1px solid var(--review-line); border-radius: 8px; scroll-margin-top: 4.5rem; }
+    #library-chime .chime-players { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .8rem; }
+    #library-chime .chime-players strong { display: block; margin-bottom: .3rem; }
+    #library-chime audio { display: block; width: 100%; }
+    #library-chime th:first-child { width: 35%; }
+    #library-chime td { white-space: nowrap; }
+    @media (max-width: 420px) { #library-chime td, #library-chime th { padding: .4rem .25rem; } }
+  </style>
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -51,9 +60,9 @@
     <p class="label">STUDY QUEST　/　ITパスポート　/　第11章 基礎理論</p>
     <h1>ITパスポート 11-2 情報に関する理論とAI</h1>
     <p>図書館の放送と本の画像を題材に、情報量・デジタル化・文字コード・AIの学習方式を図解と自作例題で学びます。</p>
-    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月19日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#units">ビットとバイト</a></li><li><a href="#digitization">デジタル化</a></li><li><a href="#text-and-rules">文字と推論</a></li><li><a href="#ai">AIの技術</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#units">ビットとバイト</a></li><li><a href="#digitization">デジタル化</a></li><li><a href="#library-chime">3秒チャイムの納品チェック</a></li><li><a href="#text-and-rules">文字と推論</a></li><li><a href="#ai">AIの技術</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 
 <section id="units">
   <h2>何通りを表せるかと、何バイト使うかを区別する</h2>
@@ -113,6 +122,33 @@
       <p>標本化周波数は1秒当たりの測定回数です。量子化ビット数をbとすると、最大で2のb乗段階を区別できます。</p>
     </figure>
   <p>例えば非圧縮PCMで、8,000回/秒、1回8ビット、1チャンネルを3秒記録すると、8,000×8×1×3＝192,000ビット、24,000バイトです。ヘッダなどは含めません。測定回数を増やすと時間方向の変化をより細かく拾え、段階数を増やすと振幅方向の丸めの幅を小さくできます。</p>
+  <section id="library-chime" aria-labelledby="chime-heading">
+    <h3 id="chime-heading">図書館の3秒チャイムを納品チェックする</h3>
+    <p>図書館から「元のチャイムAと同じ速さで二つの音が鳴り、長さは3秒、標本化周波数は16 kHz」という注文が届きました。担当者が用意した<strong>BとCのどちらを納品しますか。</strong> 3本とも編集部が合成した、モノラル・8ビットの非圧縮PCM音声です。</p>
+    <div class="chime-players">
+      <div><strong id="chime-a-label">A　元のチャイム</strong><audio controls preload="none" aria-labelledby="chime-a-label" src="audio/library-chime-a.wav">音声の記録表で比べられます。</audio></div>
+      <div><strong id="chime-b-label">B　納品候補</strong><audio controls preload="none" aria-labelledby="chime-b-label" src="audio/library-chime-b.wav">音声の記録表で比べられます。</audio></div>
+      <div><strong id="chime-c-label">C　納品候補</strong><audio controls preload="none" aria-labelledby="chime-c-label" src="audio/library-chime-c.wav">音声の記録表で比べられます。</audio></div>
+    </div>
+    <p>1本ずつ再生して、2音目が鳴るタイミングを比べてみてください。音を出さずに解くときは、下の記録表を使います。</p>
+    <details id="chime-record"><summary>音声の記録表で比べる</summary>
+      <table>
+        <caption>ファイルを作ったときの記録</caption>
+        <thead><tr><th scope="col">記録項目</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">標本数</th><td>24,000</td><td>24,000</td><td>48,000</td></tr>
+          <tr><th scope="row">再生の指定</th><td>8 kHz</td><td>16 kHz</td><td>16 kHz</td></tr>
+          <tr><th scope="row">2音目の開始位置</th><td>10,800</td><td>10,800</td><td>21,600</td></tr>
+        </tbody>
+      </table>
+      <p>8 kHzなら1秒に8,000標本、16 kHzなら16,000標本を読みます。各列で「標本数 ÷ 1秒に読む標本数」を計算すると、再生時間が分かります。2音目の開始位置は、最初の標本を0番として合成時に決めた値です。これも同じように割ると、2音目が何秒後に始まるか確かめられます。</p>
+    </details>
+    <details id="chime-answer"><summary>納品するファイルと判定理由を確認する</summary>
+      <p><strong>納品するのはCです。</strong> 48,000 ÷ 16,000＝3秒。2音目も21,600 ÷ 16,000＝1.35秒後で、Aの10,800 ÷ 8,000＝1.35秒後と一致します。Cは元と同じ二音を同じ時刻に配置して、初めから16 kHzで作ったファイルです。</p>
+      <p>BはAの24,000標本をそのまま使い、再生の指定だけを変えています。24,000 ÷ 16,000＝1.5秒で終わり、2音目は0.675秒後。1秒に読む量が倍になり、元の倍速で鳴ります。</p>
+      <p>この3本は1標本が1バイトです。音データはA・Bが各24,000バイト、Cが48,000バイト。今回の各ファイルには44バイトのヘッダが付き、実際のサイズは順に24,044・24,044・48,044バイトです。</p>
+    </details>
+  </section>
   <p>画像では、画素ごとに明るさや色を数値にします。例えば白黒の写真を256段階の明るさで表せば、1画素は8ビットです。横100×縦60画素なら、非圧縮でヘッダを除いたデータは100×60×8＝48,000ビット（6,000バイト）。画素数と一つの画素に使うビット数を分けて計算します。</p>
 </section>
 <section id="text-and-rules">
@@ -245,6 +281,7 @@
       <li><a href="https://developers.google.com/machine-learning/crash-course/neural-networks/activation-functions">Google「Activation functions」</a></li>
       <li><a href="https://csrc.nist.gov/glossary/term/foundation_model">NIST「foundation model」</a></li>
     </ul>
+    <p>音声実習の形式は2026年11月19日に確認。周波数・量子化ビット数・チャンネル数の意味は<a href="https://learn.microsoft.com/en-us/windows/win32/api/mmreg/ns-mmreg-waveformatex">Microsoft LearnのWAVEFORMATEX解説</a>、線形PCMと圧縮の関係は<a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000016.shtml">米国議会図書館のPCM解説</a>を参照しました。</p>
     <p>前へ <a href="itp-ch11-1-discrete-mathematics.html">11-1 離散数学と応用数学</a> ／ 次の章 <a href="itp-ch12-1-algorithms-data-structures.html">12-1 アルゴリズムとデータ構造</a> ／ <a href="itp.html#chapter-reviews">復習シリーズの一覧</a></p>
   </section>
 </article>
