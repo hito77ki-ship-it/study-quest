@@ -844,7 +844,10 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-modal.open{display:block;}
 .lp-search-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);}
 .lp-search-box{position:absolute;top:80px;left:50%;transform:translateX(-50%);width:min(580px,92vw);background:var(--card-bg);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--border);}
-.lp-search-input{width:100%;padding:16px 20px;font-size:15px;border:none;outline:none;border-bottom:1px solid var(--border);background:transparent;color:var(--ink);font-family:'M PLUS 1',sans-serif;}
+.lp-search-form{display:flex;align-items:center;gap:6px;padding:6px 10px;border-bottom:1px solid var(--border);}
+.lp-search-submit{min-height:44px;padding:6px 12px;flex:none;border:1px solid currentColor;border-radius:8px;background:var(--card-bg);color:var(--ink);font:inherit;font-size:13px;font-weight:700;cursor:pointer;}
+.lp-search-form :focus-visible{outline:2px solid currentColor;outline-offset:-2px;}
+.lp-search-input{min-width:0;flex:1;width:100%;padding:10px 8px;font-size:16px;border:none;background:transparent;color:var(--ink);font-family:'M PLUS 1',sans-serif;}
 .lp-search-input::placeholder{color:var(--ink3);}
 .lp-search-filters{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface);scrollbar-width:none;}
 .lp-search-filters::-webkit-scrollbar{display:none;}
@@ -858,11 +861,13 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-thumb{width:96px;height:54px;flex:0 0 auto;border:1px solid var(--border);border-radius:6px;}
 .lp-search-thumb .lp-thumb-fallback{font-size:9px;padding:3px;}
 .lp-search-content{min-width:0;display:flex;align-items:center;gap:10px;}
-.lp-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
-.lp-search-title{font-size:13px;font-weight:500;line-height:1.5;color:var(--ink);}
+.lp-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:var(--ink);padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
+.lp-search-copy{min-width:0;overflow-wrap:anywhere;}
+.lp-search-note{display:block;font-size:12px;color:var(--ink2);line-height:1.5;}
+.lp-search-title{display:block;font-size:13px;font-weight:500;line-height:1.5;color:var(--ink);}
 .lp-search-empty{padding:24px;text-align:center;color:var(--ink3);font-size:13px;}
 .lp-search-hint{padding:8px 20px 12px;font-size:11px;color:var(--ink3);text-align:right;border-top:1px solid var(--border);}
-@media(max-width:480px){.lp-search-item{padding:9px 12px;gap:8px;}.lp-search-thumb{width:80px;height:45px;}.lp-search-content{gap:7px;}.lp-search-title{font-size:12px;}}
+@media(max-width:480px){.lp-search-form{align-items:stretch;flex-direction:column;} .lp-search-input{min-height:44px;} .lp-search-item{padding:9px 12px;gap:8px;}.lp-search-thumb{width:80px;height:45px;}.lp-search-content{flex:1;flex-direction:column;align-items:flex-start;gap:3px;}.lp-search-title{font-size:12px;}}
 details summary{transition:background 100ms ease-out;}
 details summary:active{background:var(--light);}
 @media(prefers-reduced-motion:reduce){
@@ -2168,7 +2173,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
         <a href="hoikushi.html" style="display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid #EC4899;border-radius:0 10px 10px 0;padding:14px;text-align:center;transition:border-color .2s;color:inherit;">
           <div style="font-size:22px;margin-bottom:6px;">🧸</div>
           <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;">保育士試験</div>
-          <div style="font-size:10px;color:var(--ink3);">9科目独学合格法</div>
+          <div style="font-size:10px;color:var(--ink3);">筆記9科目・語り直し練習</div>
         </a>
       </div>
     </div>
@@ -2810,7 +2815,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
         <button class="faq-q" onclick="toggleFaq(this)">
           勉強法や解説記事も読めますか？<span class="faq-arrow">+</span>
         </button>
-        <div class="faq-a">はい。簿記・司法書士・FPなどの資格別ガイドや論点解説を公開しています。記事検索はタイトルだけでなく本文にも対応しているので、気になる言葉から探せます。</div>
+        <div class="faq-a">はい。簿記・司法書士・FPなどの資格別ガイドや論点解説を公開しています。記事検索に言葉を入れると、タイトル・紹介文・カテゴリから候補を表示します。「全カテゴリの本文も検索」を押すと、同じ言葉を本文からも探せます。</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -2831,6 +2836,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
     <h2 class="sec-title" id="updates-heading" tabindex="-1" style="margin-bottom:0;">更新情報</h2>
     <p class="updates-sub">Study Quest の最近のアップデート（最終更新：2026年11月19日）</p>
     <div class="updates-list" id="updates-list">
+<div class="update-item"><div class="update-meta"><span class="update-tag tag-improve">改善</span><span class="update-date">2026.11.19</span></div><div class="update-title">記事名がわからないときも、トップから本文を探せます</div><div class="update-desc">「製図」と入れるとカードの紹介文から候補が見つかります。「おむすびころりん」のような本文中の言葉は、「全カテゴリの本文も検索」でそのまま探せます。<br><a href="search.html">記事本文から探す</a></div></div>
 <div class="update-item"><div class="update-meta"><span class="update-tag tag-improve">改善</span><span class="update-date">2026.11.19</span></div><div class="update-title">保育士の言語実技　お話の最後の声は、どう聞こえた？</div><div class="update-desc">「おむすびころりん」の一場面を語り、聞き手にどう届いたかを確かめて、一文だけ言い直します。実技の2分野を選ぶ時期も、受験申請時と訂正しました。<br><a href="hoikushi.html#story-retell">一場面を語ってみる</a></div></div>
 <div class="update-item"><div class="update-meta"><span class="update-tag tag-improve">改善</span><span class="update-date">2026.11.19</span></div><div class="update-title">二級建築士の図面照合　北側から見ると窓はどちら？</div><div class="update-desc">平面図と立面図を見比べ、窓の変更を反映します。A4ワークシートの方眼には変更前と変更後を自分で作図できます。<br><a href="kenchiku.html#north-elevation">北側立面図を選ぶ</a></div></div>
       <div class="update-item"><div class="update-meta"><span class="update-tag tag-improve">改善</span><span class="update-date">2026.11.19</span></div><div class="update-title">閉店集計から消えた商品を探す</div><div class="update-desc">商品台帳と確定明細から報告表を作ります。同じ台帳をSQLiteで開き、数え方を変えた結果も確かめられます。<br><a href="itp-ch16-1-database.html#catalog-rollcall">文化祭の閉店集計に取り組む</a></div></div>
@@ -3856,10 +3862,13 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 <div id="lp-search-modal" class="lp-search-modal">
   <div class="lp-search-overlay"></div>
   <div class="lp-search-box">
-    <input class="lp-search-input" type="text" autocomplete="off" placeholder="記事タイトルで検索... 例：試算表、伝票">
+    <form class="lp-search-form" action="search.html" method="get" role="search">
+      <input class="lp-search-input" type="text" name="q" required autocomplete="off" enterkeyhint="search" aria-label="記事の検索語" placeholder="検索語を入力　例：試算表、伝票">
+      <button class="lp-search-submit" type="submit">全カテゴリの本文も検索</button>
+    </form>
     <div class="lp-search-filters"></div>
     <div class="lp-search-results"></div>
-    <div class="lp-search-hint">カテゴリ絞り込み対応　　Esc で閉じる　　/ キーで開く</div>
+    <div class="lp-search-hint">候補はタイトル・紹介文・カテゴリから表示　　Esc で閉じる</div>
   </div>
 </div>
 <script>
@@ -3974,8 +3983,9 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
         if(el.id && CAT_LABELS[el.id]){ label = CAT_LABELS[el.id]; break; }
         el = el.parentElement;
       }
+      const note = a.querySelector('.lp-card-note, :scope > .lp-card-title + span')?.textContent.trim() || '';
       const slug = href.replace(/\.html$/, '');
-      idx.push({href, title, label, slug: a.dataset.thumbSlug || slug});
+      idx.push({href, title, note, label, slug: a.dataset.thumbSlug || slug});
     });
     return idx;
   }
@@ -3983,6 +3993,8 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   const modal   = document.getElementById('lp-search-modal');
   const openBtn = document.getElementById('lp-search-open');
   const input   = modal.querySelector('.lp-search-input');
+  const form = modal.querySelector('.lp-search-form');
+  const submitButton = form.querySelector('button[type=submit]');
   const filters = modal.querySelector('.lp-search-filters');
   const results = modal.querySelector('.lp-search-results');
   const returnStateKey = 'studyQuestArticleSearch';
@@ -4006,6 +4018,14 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       `<button type="button" class="lp-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
       ...categoryLabels().map(label => `<button type="button" class="lp-search-chip${selectedLabel===label?' active':''}" data-label="${esc(label)}">${esc(label)}</button>`)
     ].join('');
+  }
+
+  function rememberReturn(href, focus){
+    const selection = {
+      query:input.value, label:selectedLabel, href, focus,
+      resultsTop:results.scrollTop, filtersLeft:filters.scrollLeft
+    };
+    history.replaceState({...history.state, [returnStateKey]:selection}, '');
   }
 
   function clearReturnState(){
@@ -4037,26 +4057,33 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   }
 
   function normalizeSearchText(text){
-    return text.normalize('NFKC').toLowerCase().trim();
+    return (text || '').normalize('NFKC').toLowerCase().trim();
   }
 
   function render(q){
     const query = normalizeSearchText(q);
     const scoped = selectedLabel === 'all' ? index : index.filter(x=>x.label === selectedLabel);
-    const filtered = query === ''
-      ? scoped
-      : scoped.filter(x=>normalizeSearchText(x.title).includes(query)||normalizeSearchText(x.label).includes(query));
+    const primary = [];
+    const fromNotes = [];
+    for (const item of scoped) {
+      if (!query || normalizeSearchText(item.title).includes(query) || normalizeSearchText(item.label).includes(query)) {
+        primary.push(item);
+      } else if (normalizeSearchText(item.note).includes(query)) {
+        fromNotes.push(item);
+      }
+    }
+    const filtered = primary.concat(fromNotes);
     if(!filtered.length){
       const msg = selectedLabel === 'all'
-        ? `「${esc(q)}」に一致する記事はありませんでした`
-        : `「${esc(selectedLabel)}」内に一致する記事はありませんでした`;
+        ? `タイトル・紹介文・カテゴリに「${esc(q)}」を含む候補はありません。`
+        : `「${esc(selectedLabel)}」の候補には「${esc(q)}」に一致するタイトル・紹介文・カテゴリがありません。`;
       results.innerHTML = `<div class="lp-search-empty">${msg}</div>`;
       return;
     }
     const visible = filtered.slice(0,12);
     results.innerHTML = visible.map(x=>
       `<a href="${esc(x.href)}" class="lp-search-item">
-        <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-title">${esc(x.title)}</span></span>
+        <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-copy"><span class="lp-search-title">${esc(x.title)}</span>${query && normalizeSearchText(x.note).includes(query) ? `<span class="lp-search-note">${esc(x.note)}</span>` : ''}</span></span>
       </a>`
     ).join('');
     results.querySelectorAll('.lp-search-item').forEach((result, i) => {
@@ -4070,11 +4097,36 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     const link = event.target.closest('a.lp-search-item');
     if (!link || event.defaultPrevented || event.button !== 0 ||
         event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-    const selection = {
-      query:input.value, label:selectedLabel, href:link.getAttribute('href'),
-      resultsTop:results.scrollTop, filtersLeft:filters.scrollLeft
-    };
-    history.replaceState({...history.state, [returnStateKey]:selection}, '');
+    rememberReturn(link.getAttribute('href'), 'result');
+  });
+  // An IME may end composition just before the same Enter implicitly submits.
+  // Cancel the submit, leaving the native candidate-confirmation key untouched.
+  let composing = false;
+  let confirmingComposition = false;
+  function guardCompositionSubmit(){
+    confirmingComposition = true;
+    setTimeout(()=>{ confirmingComposition = false; }, 0);
+  }
+  input.addEventListener('compositionstart', ()=>{ composing = true; });
+  input.addEventListener('compositionend', ()=>{
+    composing = false;
+    guardCompositionSubmit();
+  });
+  input.addEventListener('keydown', event=>{
+    if(event.key === 'Enter' && (event.isComposing || event.keyCode === 229)) guardCompositionSubmit();
+  });
+  submitButton.addEventListener('click', event=>{
+    if(event.detail > 0) {
+      confirmingComposition = false;
+      submitButton.focus({preventScroll:true});
+    }
+  });
+  form.addEventListener('submit', event=>{
+    if(composing || confirmingComposition || !input.value.trim()) {
+      event.preventDefault();
+      return;
+    }
+    rememberReturn(null, document.activeElement === submitButton ? 'submit' : 'input');
   });
   modal.querySelector('.lp-search-overlay').addEventListener('click', close);
   input.addEventListener('input', ()=>{
@@ -4090,7 +4142,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     render(input.value);
   });
   document.addEventListener('keydown', e=>{
-    if(e.key==='Escape'){ close(); return; }
+    if(e.key==='Escape' && !composing && !e.isComposing && e.keyCode !== 229){ close(); return; }
     if(e.key==='/' && !modal.classList.contains('open') && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){
       e.preventDefault(); open();
     }
@@ -4104,7 +4156,8 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     results.scrollTop = selection.resultsTop;
     const link = Array.from(results.querySelectorAll('a.lp-search-item'))
       .find(item=>item.getAttribute('href') === selection.href);
-    (link || input).focus({preventScroll:true});
+    const returnFocus = selection.focus === 'submit' ? submitButton : (link || input);
+    returnFocus.focus({preventScroll:true});
   } else {
     clearReturnState();
   }
