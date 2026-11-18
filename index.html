@@ -125,7 +125,10 @@ nav.scrolled{
 .nav-cta:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 4px 18px rgba(140,198,63,.4);}
 .nav-updates{font-size:12px;color:var(--ink3);letter-spacing:.04em;padding:6px 12px;border-radius:100px;border:1px solid var(--border);transition:color .2s,border-color .2s;}
 .nav-updates:hover{color:var(--green);border-color:rgba(140,198,63,.4);}
+.hero .hero-updates{display:none}
+.hero-updates:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(max-width:400px){
+  .hero .hero-updates{display:flex;width:fit-content;max-width:100%;min-height:44px;margin:0 0 8px}
   nav{padding:0 12px;}
   .nav-updates{display:none;}
   .nav-inner{gap:6px;}
@@ -1188,6 +1191,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
     <h1>資格の「次の一歩」を、<br><span>自分で決められる。</span></h1>
     <p class="hero-sub">資格選び、勉強時間、独学の進め方を、迷ったところから整理します。<br>まずは今の自分に合う記事を探してください。</p>
     <a href="#articles" class="btn-hero">資格・勉強法の記事を探す <span aria-hidden="true">↓</span></a>
+    <a href="#updates-heading" class="hero-secondary hero-updates">最近の更新情報 <span aria-hidden="true">↓</span></a>
     <a href="app-guide.html" class="hero-secondary">学習記録アプリについて <span aria-hidden="true">→</span></a>
     <ul class="hero-meta" aria-label="このサイトで探せること">
       <li>資格別ガイド</li>
@@ -3988,12 +3992,16 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   }
   function close(){ modal.classList.remove('open'); }
 
+  function normalizeSearchText(text){
+    return text.normalize('NFKC').toLowerCase().trim();
+  }
+
   function render(q){
-    const query = q.trim();
+    const query = normalizeSearchText(q);
     const scoped = selectedLabel === 'all' ? index : index.filter(x=>x.label === selectedLabel);
     const filtered = query === ''
       ? scoped
-      : scoped.filter(x=>x.title.includes(query)||x.label.includes(query));
+      : scoped.filter(x=>normalizeSearchText(x.title).includes(query)||normalizeSearchText(x.label).includes(query));
     if(!filtered.length){
       const msg = selectedLabel === 'all'
         ? `「${esc(q)}」に一致する記事はありませんでした`
