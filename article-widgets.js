@@ -933,6 +933,7 @@ html[data-theme="dark"]{
   --sq-accent:#8CC63F;
   --sq-accent-bright:#B6E27C;
   --sq-highlight-text:#C8F08D;
+  --sq-link:var(--sq-highlight-text);
   --sq-highlight-bg:rgba(140,198,63,.18);
   --sq-marker-bg:rgba(140,198,63,.20);
   --sq-marker-shadow:rgba(140,198,63,.30);
