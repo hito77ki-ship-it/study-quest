@@ -853,7 +853,8 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-filters::-webkit-scrollbar{display:none;}
 .lp-search-chip{border:1px solid var(--border);background:var(--card-bg);color:var(--ink3);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:'M PLUS 1',sans-serif;white-space:nowrap;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
 .lp-search-chip:hover{border-color:rgba(140,198,63,.45);color:var(--green);}
-.lp-search-chip.active{background:rgba(140,198,63,.16);border-color:rgba(140,198,63,.45);color:var(--green);}
+.lp-search-chip.active{background:rgba(140,198,63,.16);border-color:rgba(140,198,63,.45);color:var(--green);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.lp-search-chip:focus-visible{outline:2px solid currentColor;outline-offset:-3px;}
 .lp-search-results{max-height:380px;overflow-y:auto;}
 .lp-search-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);transition:background .12s;}
 .lp-search-item:hover{background:var(--card-bg);filter:brightness(0.97);}
@@ -3866,7 +3867,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       <input class="lp-search-input" type="text" name="q" required autocomplete="off" enterkeyhint="search" aria-label="記事の検索語" placeholder="検索語を入力　例：試算表、伝票">
       <button class="lp-search-submit" type="submit">全カテゴリの本文も検索</button>
     </form>
-    <div class="lp-search-filters"></div>
+    <div class="lp-search-filters" role="group" aria-label="候補のカテゴリ"></div>
     <div class="lp-search-results"></div>
     <div class="lp-search-hint">候補はタイトル・紹介文・カテゴリから表示　　Esc で閉じる</div>
   </div>
@@ -4014,10 +4015,16 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   }
 
   function renderFilters(){
-    filters.innerHTML = [
-      `<button type="button" class="lp-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
-      ...categoryLabels().map(label => `<button type="button" class="lp-search-chip${selectedLabel===label?' active':''}" data-label="${esc(label)}">${esc(label)}</button>`)
-    ].join('');
+    if(!filters.childElementCount){
+      filters.innerHTML = ['all', ...categoryLabels()].map(label =>
+        `<button type="button" class="lp-search-chip" data-label="${esc(label)}">${label === 'all' ? 'すべて' : esc(label)}</button>`
+      ).join('');
+    }
+    for(const chip of filters.children){
+      const selected = chip.dataset.label === selectedLabel;
+      chip.classList.toggle('active', selected);
+      chip.setAttribute('aria-pressed', String(selected));
+    }
   }
 
   function rememberReturn(href, focus){
@@ -4046,6 +4053,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   function open(){
     clearReturnState();
     showSearch('', 'all');
+    filters.scrollLeft = 0;
     input.focus();
   }
   function close(){
