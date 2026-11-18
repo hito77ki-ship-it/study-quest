@@ -7,9 +7,9 @@
 <link rel="canonical" href="https://study-quest.net/univ-ai-report-hack.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>大学の録音・AI活用とレポート｜許可・文字起こし・根拠を確認する｜スタディクエスト</title>
-<meta name="description" content="Whisper APIを無料とした説明とNottaの長さ制限を訂正。授業のルール、音声の誤認識、一次資料と自分の考察を分ける自作例・確認シートを掲載します。">
+<meta name="description" content="大学の授業で録音やAIを使うときに確認するルールと根拠を解説。約27秒の模擬講義と集計票を使って、人数と原因を取り違えたAIの一文を自分で直せます。">
 <meta property="og:title" content="大学の録音・AI活用とレポート｜許可・文字起こし・根拠を確認する">
-<meta property="og:description" content="Whisper APIを無料とした説明とNottaの長さ制限を訂正。授業のルール、音声の誤認識、一次資料と自分の考察を分ける自作例・確認シートを掲載します。">
+<meta property="og:description" content="大学の授業で録音やAIを使うときに確認するルールと根拠を解説。約27秒の模擬講義と集計票を使って、人数と原因を取り違えたAIの一文を自分で直せます。">
 <meta property="og:url" content="https://study-quest.net/univ-ai-report-hack.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "大学の録音・AI活用とレポート｜許可・文字起こし・根拠を確認する", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "Whisper APIを無料とした説明とNottaの長さ制限を訂正。授業のルール、音声の誤認識、一次資料と自分の考察を分ける自作例・確認シートを掲載します。", "url": "https://study-quest.net/univ-ai-report-hack.html", "datePublished": "2026-06-30", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "大学の録音・AI活用とレポート｜許可・文字起こし・根拠を確認する", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "大学の授業で録音やAIを使うときに確認するルールと根拠を解説。約27秒の模擬講義と集計票を使って、人数と原因を取り違えたAIの一文を自分で直せます。", "url": "https://study-quest.net/univ-ai-report-hack.html", "datePublished": "2026-06-30", "dateModified": "2026-11-19", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -109,7 +109,8 @@ details summary:active{background:var(--light);}
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shikaku-list.html">大学生のAI活用</a></div><p class="meta">大学生のAI活用 | 公開：2026年6月30日 | 更新日：2026年11月3日</p><h1>大学の録音・AI活用とレポート｜許可・文字起こし・根拠を確認する</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>録音や生成AIをレポートの補助に使う前に、大学・授業・課題ごとのルールを確認します。録音できること、外部サービスへ送れること、AIを使った成果物を提出できることは別の条件です。ここでは成績や単位修得を保証せず、使用が認められる範囲で根拠をたどれるメモを作る手順を示します。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shikaku-list.html">大学生のAI活用</a></div><p class="meta">大学生のAI活用 | 公開：2026年6月30日 | 更新日：2026年11月19日</p><h1>大学の録音・AI活用とレポート｜許可・文字起こし・根拠を確認する</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>録音や生成AIをレポートの補助に使う前に、大学・授業・課題ごとのルールを確認します。録音できること、外部サービスへ送れること、AIを使った成果物を提出できることは別の条件です。ここでは成績や単位修得を保証せず、使用が認められる範囲で根拠をたどれるメモを作る手順を示します。</p>
+<p><a href="#report-source-check">模擬講義と集計票で、AIの一文を直す実習へ</a></p>
 <h2>録音・撮影・外部送信・提出を別に確認する</h2>
 <p>文部科学省の2023年の大学・高専向け資料は、各校が教育の実態に合わせて取扱いを検討する考え方を示しています。この資料が、個別授業での録音・AI利用を一律に許可しているわけではありません。担当教員の指示、シラバス、大学の現行方針を先に読みます。</p>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">段階</th><th scope="col">確認する内容</th><th scope="col">条件が不明な場合</th></tr></thead><tbody><tr><td>録音・撮影</td><td>授業で認める対象・目的・保存方法</td><td>担当教員等へ確認し、許可を推測しない</td></tr><tr><td>文字起こし</td><td>音声を端末内で処理するか外部へ送るか</td><td>録音の許可をそのまま外部送信の許可にしない</td></tr><tr><td>AI補助</td><td>使える作業、入力できる資料、個人情報等</td><td>大学の方針と課題の指示を照合する</td></tr><tr><td>提出</td><td>自作部分、引用、AI利用の申告方法</td><td>自分の言葉に直しただけで利用可と決めない</td></tr></tbody></table></div>
@@ -122,12 +123,57 @@ details summary:active{background:var(--light);}
 <section class="sq-facts-exercise"><h3>自作例1：月間枠と一回上限</h3><p>架空の人は90分の授業2回を文字起こししたいと考えています。Nottaフリーの月120分という表示だけで「2回とも全文を扱える」と判断できますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>判断できません。90×2＝180分で、月120分を60分超えます。さらに確認したフリーには1回3分の制限があるため、月の残量が十分な場合でも90分全体を扱えるという結論にはなりません。実際の授業で使うには、その前に録音と外部送信の許可も必要です。</p></div></details></section>
 <h2>文字起こしは、原音との照合が必要な下書き</h2>
 <p>数字、否定、専門用語、話者は誤認識によって意味が変わります。きれいな文章に整っていることと、授業で実際に述べられたことは別です。録音の時刻をメモと対応させ、確認できない箇所は「不明」と残します。</p>
-<section class="sq-facts-exercise"><h3>自作例2：不明な数値を埋めない</h3><p>架空のメモは「対象は［30か50か不明］件。これは相関で、因果を示すものではない」です。AI案は「50件の調査で原因だと分かった」でした。どこを確かめますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>件数を50と確定した箇所と、相関を因果に変えた箇所です。原音や提示資料で数値を確認できるまで件数は不明とし、「因果を示すものではない」という条件を落としません。滑らかな表現を根拠の代わりにしない確認例です。</p></div></details></section>
+<section class="sq-facts-exercise" aria-labelledby="report-source-check">
+  <h3 id="report-source-check" style="scroll-margin-top:7rem">自作例2　講義と集計票で、AIの一文を直す</h3>
+  <p>編集部が作った架空の講義と調査です。次のAI案を、資料を一つ読むたびに書き直してください。人数と「増やした」という言葉の両方に注目します。</p>
+  <p><strong>AI案</strong>「50人分の回答を分析した結果、演習に多く参加したことが、期末課題の期限内提出を増やしたと分かった。」</p>
+
+  <h4>まず、資料Aのミニ講義を確かめる</h4>
+  <p>音声を聞くか、同じ内容の文字稿を読んでください。まだ資料Bは開かず、どの人数が確かで、どの人数が不明かを分け、自分の訂正文に「資料A」と添えます。</p>
+  <audio controls preload="none" aria-label="資料A　架空のミニ講義" style="display:block;width:100%;max-width:28rem" src="audio/report-source-check.m4a">下の文字稿で講義を読めます。</audio>
+  <details class="sq-facts-answer" id="report-source-transcript">
+    <summary>資料Aを文字で読む</summary>
+    <p>アンケートは、50人から1枚ずつ集まりました。未記入の欄があったため、すべての回答を集計に使ったわけではありません。全4回の演習によく参加した人のほうが、期末課題を期限内に提出した割合が高くなっていました。これは観察調査です。演習への参加が提出につながったかどうかは、この調査だけでは分かりません。</p>
+  </details>
+  <p>文字稿をOpen JTalkで読み上げました。音声モデルはHTS Voice「Mei」（mei_normal）、© 2009–2013 名古屋工業大学・MMDAgent Project Team。<a href="https://mmdagent.wordpress.com/2013/12/13/license-terms-of-for-the-all-files-other-than-the-3-d-model-mei/" style="color:inherit;text-decoration:underline">モデルと合成音声の利用条件</a>は<a href="https://creativecommons.org/licenses/by/3.0/" style="color:inherit;text-decoration:underline">CC BY 3.0</a>です。</p>
+  <details class="sq-facts-answer" id="report-source-answer-a">
+    <summary>資料Aだけの訂正例を読む</summary>
+    <p>「50人から回答を集めた。分析した人数は不明だが、分析対象では、演習への参加回数が多い群で、少ない群より期限内提出の割合が高かった。参加の効果までは判断できない（資料A）。」</p>
+    <p>50人は回収した人数です。講義で集計に使わなかった回答にも触れているため、50人をそのまま分析対象にはできません。</p>
+  </details>
+
+  <h4>次に、資料Bで訂正文を更新する</h4>
+  <p>集計票を開き、分析人数と各群の期限内提出率を計算してください。どの数字を追記できるでしょう。原因についての判断も変わるでしょうか。</p>
+  <details class="sq-facts-answer" id="report-source-table">
+    <summary>資料Bの集計票を開く</summary>
+    <p>回答は1人1枚で50枚。このうち参加回数と提出状況のどちらか、または両方が未記入の20枚を除外しました。両方が空欄でも1枚と数えています。</p>
+    <div class="sq-facts-table">
+      <table>
+        <caption>資料B　必要な2項目がそろった回答</caption>
+        <thead><tr><th scope="col">全4回の参加回数</th><th scope="col">人数</th><th scope="col">うち期限内に提出</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">多い群<br>3～4回</th><td>18人</td><td>14人</td></tr>
+          <tr><th scope="row">少ない群<br>0～2回</th><td>12人</td><td>6人</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <details class="sq-facts-answer" id="report-source-answer-b">
+    <summary>訂正例と自己採点を見る</summary>
+    <p>「回収した50人分のうち、必要な項目がそろった30人を分析した。期限内に提出した割合は、参加3～4回の群が18人中14人（約77.8％）、0～2回の群が12人中6人（50％）だった（資料B）。この観察調査から、参加が提出を増やしたかどうかは分からない（資料A）。」</p>
+    <ul>
+      <li><strong>人数</strong>　回収50人と分析30人を書き分けたか。50－20＝30人と、18＋12＝30人が一致します。</li>
+      <li><strong>割合</strong>　提出した人数を、それぞれの群の人数で割ったか。14÷18は約77.8％、6÷12は50％です。</li>
+      <li><strong>根拠</strong>　数値の出所を資料Bと示し、結論を観察した30人の範囲に収めたか。集計票を加えても、演習に多く参加すれば提出が増えるとは断定できません。</li>
+    </ul>
+  </details>
+  <p>文部科学省は、生成AIの出力を確認し、裏付けを取る必要性を説明しています。講義・数値・AI案はこの練習のための自作です。<a href="https://www.mext.go.jp/content/20230714-mxt_senmon01-000030762_1.pdf#page=4" style="color:inherit;text-decoration:underline">文部科学省「大学・高専における生成AIの教学面の取扱いについて」別紙3ページ</a></p>
+</section>
 <h2>資料・引用・自分の考察を対応させる</h2>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">記録欄</th><th scope="col">架空の記入例</th></tr></thead><tbody><tr><td>確認できた授業メモ</td><td>相関があっても因果とは限らない。録音時刻は自分の許可済み記録と対応</td></tr><tr><td>一次資料</td><td>著者、資料名、発行年、該当ページ。未確認なら未確認</td></tr><tr><td>自分の問い</td><td>ほかの条件を変えても関係が残るか</td></tr><tr><td>自分の考察</td><td>別の要因の可能性を検討する。引用部分と分ける</td></tr><tr><td>AIの利用記録</td><td>使ったサービス・日付・補助した箇所・出力をどう照合したか</td></tr></tbody></table></div>
 <p>AIに渡す場合の自作指示例は「許可された次のメモだけから、確認済みの記述と不明点を分けてください。書かれていない数値や出典を補わないでください」です。この指示で誤りを防ぎ切れるわけではなく、出力を人が照合します。資料が実在するかだけでなく、主張を支えるページの内容も読みます。</p>
 <h2>提出前は課題の指示に戻る</h2><p>課題の問いに自分で答えているか、引用と考察が分かれているか、実際に読んだ出典か、AI利用の明示が必要かを確認します。授業の録音があれば理解が深まる、AIで整えれば優秀な成績になる、という実績は確認できないため掲載しません。ツールの導入より、根拠を説明できる形で学ぶことを目標にします。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.mext.go.jp/content/20230714-mxt_senmon01-000030762_1.pdf" target="_blank" rel="noopener">文部科学省：大学・高専における生成AIの教学面の取扱い。別紙の利活用・評価・技術的限界等</a></li><li><a href="https://www.notta.ai/pricing" target="_blank" rel="noopener">Notta：フリーの月間時間と1回上限</a></li><li><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener">OpenAI：文字起こしAPIの料金</a></li><li><a href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener">OpenAI：whisper-1等の廃止予定</a></li><li><a href="https://support.google.com/docs/answer/4492226?hl=ja" target="_blank" rel="noopener">Google：ドキュメントの音声入力とマイク</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>Whisper APIは無料ですか？</summary><p>OpenAIの文字起こしAPIには料金表があります。旧記事の無料という説明を訂正しました。利用時は料金とモデルの提供状況を確認します。</p></details><details class="sq-facts-answer"><summary>録音の許可があれば外部AIへ送信できますか？</summary><p>同じ条件とは限りません。外部送信できる資料や情報と課題での利用可否を別に確認します。</p></details><details class="sq-facts-answer"><summary>AIの文章を自分の言葉に直せば提出できますか？</summary><p>書き直しだけでは判断できません。大学・授業・課題の指示に従い、自分の考察、引用、必要なAI利用の明示を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="univ-boki-units.html">授業と資格の評価条件を分ける</a></li><li><a href="univ-qualification-strategy.html">学んだことと自分の担当を説明する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>文部科学省通知の別紙3ページは2026年11月19日に再確認しました。ほかの資料の確認は2026年11月3日です。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.mext.go.jp/content/20230714-mxt_senmon01-000030762_1.pdf" target="_blank" rel="noopener">文部科学省：大学・高専における生成AIの教学面の取扱い。別紙の利活用・評価・技術的限界等</a></li><li><a href="https://www.notta.ai/pricing" target="_blank" rel="noopener">Notta：フリーの月間時間と1回上限</a></li><li><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener">OpenAI：文字起こしAPIの料金</a></li><li><a href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener">OpenAI：whisper-1等の廃止予定</a></li><li><a href="https://support.google.com/docs/answer/4492226?hl=ja" target="_blank" rel="noopener">Google：ドキュメントの音声入力とマイク</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>Whisper APIは無料ですか？</summary><p>OpenAIの文字起こしAPIには料金表があります。旧記事の無料という説明を訂正しました。利用時は料金とモデルの提供状況を確認します。</p></details><details class="sq-facts-answer"><summary>録音の許可があれば外部AIへ送信できますか？</summary><p>同じ条件とは限りません。外部送信できる資料や情報と課題での利用可否を別に確認します。</p></details><details class="sq-facts-answer"><summary>AIの文章を自分の言葉に直せば提出できますか？</summary><p>書き直しだけでは判断できません。大学・授業・課題の指示に従い、自分の考察、引用、必要なAI利用の明示を確認します。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="univ-boki-units.html">授業と資格の評価条件を分ける</a></li><li><a href="univ-qualification-strategy.html">学んだことと自分の担当を説明する</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="univ-qualification-strategy.html">資格戦略</a><a href="boki3-sanpou.html">簿記3級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js?v=20261103-remaining120-study-life"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
