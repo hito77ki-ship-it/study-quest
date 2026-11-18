@@ -2213,6 +2213,7 @@ html[data-theme="dark"] .sq-article-hero{box-shadow:0 16px 34px rgba(0,0,0,.22);
 @media(max-width:480px){
   .sq-art-auth-bar{flex-wrap:wrap;}
   .sq-anon-login{flex:1 1 100%;justify-content:flex-end;min-width:0;}
+  .sq-comment-login-prompt .sq-anon-login{max-width:100%;}
   .sq-anon-nickname{width:auto;min-width:0;flex:1 1 0;}
 }
 /* ── 読了プログレスバー ── */
