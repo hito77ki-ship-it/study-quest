@@ -23,7 +23,7 @@
   "url": "https://study-quest.net/itp-ch11-1-discrete-mathematics.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-03",
-  "dateModified": "2026-11-03",
+  "dateModified": "2026-11-19",
   "author": {
     "@type": "Organization",
     "name": "スタディクエスト編集部",
@@ -51,7 +51,7 @@
     <p class="label">STUDY QUEST　/　ITパスポート　/　第11章 基礎理論</p>
     <h1>ITパスポート 11-1 離散数学と応用数学</h1>
     <p>図書館の鍵や空室を題材に、2進数・集合・論理演算・確率と統計・グラフ理論を図解と自作例題で学びます。</p>
-    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月19日 · 学習用の架空事例</p>
   </header>
   <nav aria-label="目次"><ul><li><a href="#numbers">進数と補数</a></li><li><a href="#logic">集合と論理演算</a></li><li><a href="#probability">確率と統計</a></li><li><a href="#models">数値計算とグラフ理論</a></li><li><a href="#quiz">例題8問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 
@@ -117,6 +117,21 @@
     </tbody>
   </table>
   <p>「空きあり AND（電源あり OR モニターあり）」では、かっこの内側から考えます。NANDはANDの否定、NORはORの否定です。例えば「空きも電源もない」は NOT（空きあり OR 電源あり）で表せます。</p>
+  <section id="unfinished-list" class="box">
+    <h3>未完了一覧から消えた原稿を探す</h3>
+    <p>図書館だよりの編集部では、本文と写真を両方確認したら校了です。ところが、未完了一覧を開くと「新刊紹介」しか出てきません。次の4本のうち、本当はどれを載せるべきでしょう。</p>
+    <ul>
+      <li><strong>読書会</strong>　本文も写真も確認済み</li>
+      <li><strong>本棚案内</strong>　本文は確認済み、写真は未確認</li>
+      <li><strong>司書便り</strong>　本文は未確認、写真は確認済み</li>
+      <li><strong>新刊紹介</strong>　本文も写真も未確認</li>
+    </ul>
+    <p>担当者が設定した条件は「本文が未確認 <b>AND</b> 写真が未確認」です。この条件では漏れる原稿を1本選び、どちらの確認が残っているかを答えてください。</p>
+    <details><summary>未完了一覧と、漏れた理由を確かめる</summary>
+      <p><strong>未完了は「本棚案内」「司書便り」「新刊紹介」の3本です。</strong>反例は「本棚案内」なら写真が未確認、「司書便り」なら本文が未確認。どちらも作業は残っていますが、担当者の条件では片方の項目が偽になり、一覧から落ちます。</p>
+      <p>校了の条件全体を否定すると <strong>NOT（本文確認済み AND 写真確認済み）</strong>。未確認を使って同じ条件を書くと「本文が未確認 <b>OR</b> 写真が未確認」です。「読書会」は担当者の条件でも修正後の条件でも一覧に出ず、「新刊紹介」はどちらでも出るため、この2本だけの点検では漏れに気づけません。</p>
+    </details>
+  </section>
 </section>
 <section id="probability">
   <h2>順番があるか、平均の周りにどれだけ散らばるか</h2>
@@ -229,7 +244,7 @@
     <h2>一次資料</h2>
     <p class="note">2026年11月3日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第11章に合わせています。</p>
     <ul>
-      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=38">IPA「ITパスポート試験シラバス Ver.6.5」基礎理論</a></li>
+      <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=39">IPA「ITパスポート試験シラバス Ver.6.5」33．離散数学・論理演算</a>（紙面35ページ、2026年11月19日確認）。図書館だよりの原稿と確認状況は、この演習のために編集部が作成しました。</li>
     </ul>
     <p><a href="itp-ch10-1-system-audit.html">前の章 10-1 システム監査と内部統制</a> ／ 次へ <a href="itp-ch11-2-information-theory.html">11-2 情報に関する理論とAI</a></p>
   </section>
