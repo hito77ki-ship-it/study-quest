@@ -6,10 +6,10 @@
   <link rel="icon" href="favicon.ico">
   <link rel="canonical" href="https://study-quest.net/itp-ch16-1-database.html">
   <title>ITパスポート 16-1 データベース｜スタディクエスト</title>
-  <meta name="description" content="文化祭の注文表を題材に、DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と例題で学びます。">
+  <meta name="description" content="文化祭の商品台帳とレジ明細から、全商品の閉店報告を作ります。DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と10問で学び、同じ台帳をSQLiteでも試せます。">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ITパスポート 16-1 データベース">
-  <meta property="og:description" content="文化祭の注文表を題材に、DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と例題で学びます。">
+  <meta property="og:description" content="文化祭の商品台帳とレジ明細から、全商品の閉店報告を作ります。DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と10問で学び、同じ台帳をSQLiteでも試せます。">
   <meta property="og:url" content="https://study-quest.net/itp-ch16-1-database.html">
   <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,11 +19,11 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ITパスポート 16-1 データベース",
-  "description": "文化祭の注文表を題材に、DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と例題で学びます。",
+  "description": "文化祭の商品台帳とレジ明細から、全商品の閉店報告を作ります。DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と10問で学び、同じ台帳をSQLiteでも試せます。",
   "url": "https://study-quest.net/itp-ch16-1-database.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-04",
-  "dateModified": "2026-11-04",
+  "dateModified": "2026-11-19",
   "author": {
     "@type": "Organization",
     "name": "スタディクエスト編集部",
@@ -41,6 +41,15 @@
 }
   </script>
   <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+<style>
+#catalog-rollcall {scroll-margin-top: 6rem}
+#catalog-rollcall .catalog-slips {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));align-items:start;gap:0 1rem}
+#catalog-rollcall pre {white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid var(--review-line);background:var(--review-panel);padding:.8rem;border-radius:6px}
+#catalog-rollcall details {margin:.75rem 0}
+#catalog-rollcall summary {text-decoration:underline;text-underline-offset:.18em}
+#catalog-rollcall a:focus-visible, #catalog-rollcall summary:focus-visible {outline:2px solid currentColor;outline-offset:2px}
+</style>
+
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -50,10 +59,10 @@
     <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
     <p class="label">STUDY QUEST　/　ITパスポート　/　第16章 データベース</p>
     <h1>ITパスポート 16-1 データベース</h1>
-    <p>文化祭の注文表を題材に、DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と例題で学びます。</p>
-    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+    <p>文化祭の商品台帳とレジ明細から、全商品の閉店報告を作ります。DBMS、主キー・外部キー、正規化、選択・射影・結合を図解と10問で学び、同じ台帳をSQLiteでも試せます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月19日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#models">DBMSとデータモデル</a></li><li><a href="#design">主キー・外部キー・正規化</a></li><li><a href="#operations">選択・射影・結合</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#models">DBMSとデータモデル</a></li><li><a href="#design">主キー・外部キー・正規化</a></li><li><a href="#operations">選択・射影・結合</a></li><li><a href="#catalog-rollcall">閉店報告を作る</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="models"><h2>模擬店の注文台帳で、DBMSの役割をつかむ</h2>
 <p>文化祭でレモネードとクッキーを売るとします。注文番号、商品、数量をためて検索できるようにしたデータの集まりが<strong>データベース</strong>です。その台帳を、受付係と在庫係が安全に使えるように管理するソフトウェアが<strong>DBMS</strong>です。</p>
     <figure id="visual-dbms" class="review-figure term-visual">
@@ -258,6 +267,43 @@ ORDER BY d.qty DESC, d.order_id;</code></pre></div>
   </table>
 <p>同じ形の二つの集合なら、<strong>和</strong>は少なくとも一方、<strong>差</strong>は片方だけ、<strong>積（共通部分）</strong>は両方にある行を返します。例えば午前が {P01, P02}、午後が {P02, P03} なら、和は {P01, P02, P03}、午前から午後を引いた差は {P01}、積は {P02} です。</p>
 </section>
+<section id="catalog-rollcall" aria-labelledby="catalog-heading">
+  <h2 id="catalog-heading">文化祭の閉店集計で、商品が一つ消えた理由を探そう</h2>
+  <p>模擬店の担当から「売れなかった商品も含めて、全商品の明細件数と販売個数を報告して」と頼まれました。今の集計表にはレモネードとクッキーだけが載っています。どの資料から表を作り直せばよいでしょうか。</p>
+  <p class="note">編集部の架空例です。この時間帯の取扱商品と確定した販売明細は下の表がすべてです。取消・未入力の伝票はありません。</p>
+  <div class="catalog-slips">
+    <table><caption>資料A　売場の商品台帳</caption><thead><tr><th scope="col">商品ID</th><th scope="col">商品名</th></tr></thead>
+      <tbody><tr><th scope="row">P01</th><td>レモネード</td></tr><tr><th scope="row">P02</th><td>クッキー</td></tr><tr><th scope="row">P04</th><td>ポストカード</td></tr></tbody>
+    </table>
+    <table><caption>資料B　レジの確定明細</caption><thead><tr><th scope="col">注文ID／行</th><th scope="col">商品ID</th><th scope="col">数量</th></tr></thead>
+      <tbody><tr><th scope="row">O101／1</th><td>P01</td><td>2</td></tr><tr><th scope="row">O102／1</th><td>P02</td><td>3</td></tr><tr><th scope="row">O102／2</th><td>P01</td><td>1</td></tr></tbody>
+    </table>
+  </div>
+  <p><strong>あなたが閉店担当なら</strong>、紙に「商品名｜明細件数｜販売個数」の3列を書き、報告表を完成させてください。レジの明細を商品別に足すだけでは、なぜ1商品が消えるのでしょうか。</p>
+  <details id="catalog-solution"><summary>自分の報告表と照合する</summary>
+    <table><caption>商品台帳を起点にした閉店報告</caption><thead><tr><th scope="col">商品名</th><th scope="col">明細件数</th><th scope="col">販売個数</th></tr></thead>
+      <tbody><tr><th scope="row">レモネード</th><td>2件</td><td>3個</td></tr><tr><th scope="row">クッキー</th><td>1件</td><td>3個</td></tr><tr><th scope="row">ポストカード</th><td>0件</td><td>0個</td></tr></tbody>
+    </table>
+    <p>レモネードは2行の明細に分かれ、2＋1＝3個。クッキーは1行で3個です。P04は明細を何行たどっても登場しません。先に商品台帳の3商品を並べ、それぞれに一致する明細を付けると、ポストカードにも報告欄が残ります。</p>
+    <p><strong>検算</strong>　明細は2＋1＋0＝3件、販売数は3＋3＋0＝6個で、資料Bと一致します。注文自体はO101とO102の2件です。元の集計もこの二つの合計は合うので、最後に<strong>報告に商品台帳の全商品があるか</strong>も確認します。</p>
+    <p>「0個」と書ける根拠は、対象時間の確定明細がそろっていること。未回収の伝票があると分かったら、P04の販売数は確定できません。</p>
+  </details>
+  <p><a href="downloads/festival-catalog.sqlite3" download>文化祭の台帳をダウンロード（SQLite）</a>。商品・注文・注文明細の3表入りです。上の2表だけでも解けます。SQLiteがある環境では、保存したファイルを開いて下のSQLを試せます。</p>
+  <details id="catalog-sql"><summary>SQLiteで手順と、数え方の違いを確かめる</summary>
+    <p>SQLiteのコマンドラインを使う場合は、保存先で <code>sqlite3 -readonly festival-catalog.sqlite3</code> を実行し、次の問い合わせを貼り付けます。この記事の前の節にある「数量2以上」のSQLも、同じファイルで実行できます。</p>
+    <pre><code>SELECT p.product_id, p.name,
+       COUNT(d.line_no) AS lines,
+       COALESCE(SUM(d.qty), 0) AS units
+FROM products AS p
+LEFT JOIN order_lines AS d
+  ON d.product_id = p.product_id
+GROUP BY p.product_id, p.name
+ORDER BY p.product_id;</code></pre>
+    <p><code>LEFT JOIN</code> は左側の商品を残します。対応する明細のないP04では右側の欄が <code>NULL</code> になるので、実明細では必ず埋まる行番号を数える <code>COUNT(d.line_no)</code> は0です。数量の合計はこの場合 <code>NULL</code> になるため、<code>COALESCE</code> で報告用の0にします。</p>
+    <p><strong>試して違いを確かめる</strong>　上の問い合わせの <code>COUNT(d.line_no)</code> だけを <code>COUNT(*)</code> に変えて再実行してください。するとP04の明細件数が1になります。後者は、商品を残すためにできた行まで数えるためです。どちらの問い合わせも台帳の内容は変更しません。</p>
+  </details>
+</section>
+
 <section id="quiz">
   <h2>例題10問と解説</h2>
   <p>Study Quest編集部の自作問題です。先に答えを考えてから、各問の「解答と解説」を開いてください。</p>
@@ -325,7 +371,11 @@ ORDER BY d.qty DESC, d.order_id;</code></pre></div>
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第16章に合わせています。</p>
+    <p class="note">閉店集計の実習は2026年11月19日に、同シラバスのデータ操作とSQLiteの仕様を照合しました。SQLは実際の結果を確かめたい人向けの発展例です。</p>
     <ul>
+      <li><a href="https://www.sqlite.org/lang_select.html">SQLite公式文書「SELECT」左外部結合</a></li>
+      <li><a href="https://www.sqlite.org/lang_aggfunc.html">SQLite公式文書「Built-in Aggregate Functions」件数と合計</a></li>
+      <li><a href="https://www.sqlite.org/lang_corefunc.html">SQLite公式文書「Built-In Scalar SQL Functions」coalesce</a></li>
       <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=56">IPA「ITパスポート試験シラバス Ver.6.5」データベース方式・設計</a></li>
       <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=57">IPA「ITパスポート試験シラバス Ver.6.5」データ操作</a></li>
       <li><a href="https://support.microsoft.com/en-us/access/database-design-basics">Microsoft「Database design basics」</a></li>
