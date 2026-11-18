@@ -10,10 +10,10 @@
   <link rel="canonical" href="https://study-quest.net/boki3-shisanhyo.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>試算表3種類の違い｜合計・残高と一致しても残る誤りを検算｜スタディクエスト</title>
-<meta name="description" content="既存の824,000円・610,000円の表を独立検算。合計試算表・残高試算表・合計残高試算表の区別と、借貸一致の限界を自作例で確認します。">
+<meta name="description" content="3種類の試算表を同じ元帳から作って比較。さらに、同じ1,800円の差が出た二つの帳簿から、売上票と仕訳番号を手がかりに直す行を探します。">
 <meta name="keywords" content="合計試算表 残高試算表 違い,合計残高試算表 書き方,試算表 合計欄 残高欄,日商簿記3級 試算表">
 <meta property="og:title" content="試算表3種類の違い｜合計・残高と一致しても残る誤りを検算">
-<meta property="og:description" content="既存の824,000円・610,000円の表を独立検算。合計試算表・残高試算表・合計残高試算表の区別と、借貸一致の限界を自作例で確認します。">
+<meta property="og:description" content="3種類の試算表を同じ元帳から作って比較。さらに、同じ1,800円の差が出た二つの帳簿から、売上票と仕訳番号を手がかりに直す行を探します。">
 <meta property="og:url" content="https://study-quest.net/boki3-shisanhyo.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204"
      crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "試算表3種類の違い｜合計・残高と一致しても残る誤りを検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "既存の824,000円・610,000円の表を独立検算。合計試算表・残高試算表・合計残高試算表の区別と、借貸一致の限界を自作例で確認します。", "url": "https://study-quest.net/boki3-shisanhyo.html", "datePublished": "2026-05-07", "dateModified": "2026-11-16", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "試算表3種類の違い｜合計・残高と一致しても残る誤りを検算", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "3種類の試算表を同じ元帳から作って比較。さらに、同じ1,800円の差が出た二つの帳簿から、売上票と仕訳番号を手がかりに直す行を探します。", "url": "https://study-quest.net/boki3-shisanhyo.html", "datePublished": "2026-05-07", "dateModified": "2026-11-18", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -172,6 +172,39 @@ details summary:active{background:var(--light);}
 .sq-transfer-pair{display:grid;grid-template-columns:1fr 1fr;margin:0}.sq-transfer-pair>div{padding:12px 8px;text-align:center}.sq-transfer-pair>div+div{border-left:1px solid var(--sq-border,#CBD5E1)}.sq-transfer-pair dt{font-size:13px}.sq-transfer-pair dd{margin:4px 0 0;font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
 .sq-transfer-steps{list-style:none;padding:0;margin:0;counter-reset:transfer}.sq-transfer-steps>li{counter-increment:transfer;border-top:1px solid var(--sq-border,#CBD5E1);padding:18px 0}.sq-transfer-steps h3{font-size:16px;margin:0 0 8px}.sq-transfer-steps h3::before{content:counter(transfer) ' / ';color:var(--sq-muted,#64748B)}.sq-transfer-steps p{font-size:14px;margin:8px 0}.sq-transfer-steps .sq-transfer-pair{border:1px solid var(--sq-border,#CBD5E1);border-radius:8px}.sq-transfer-steps .sq-transfer-pair dd{font-size:17px}.sq-transfer-steps .sq-transfer-blank{font-size:13px;font-weight:400}.sq-transfer-label{font-size:13px;font-weight:700;margin:12px 0 4px}
 @media(max-width:600px){.sq-transfer-diagram{padding:14px}.sq-transfer-pair>div{padding:10px 4px}.sq-transfer-pair dd{font-size:18px}.sq-transfer-steps .sq-transfer-pair dd{font-size:16px}}
+
+.ledger-mystery {
+  margin: 36px 0;
+  color: var(--sq-text, #1a202c);
+}
+.ledger-mystery .ledger-totals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 18px 0 12px;
+  padding: 12px 0;
+  border-block: 2px solid var(--sq-text, #1a202c);
+  text-align: center;
+}
+.ledger-totals > div + div { border-left: 1px solid var(--sq-border, #cbd5e1); }
+.ledger-totals dt { font-size: .82rem; }
+.ledger-totals dd { margin: 2px 0 0; font-variant-numeric: tabular-nums; font-weight: 700; font-size: clamp(1rem, 3vw, 1.4rem); }
+.ledger-cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 18px; align-items: start; }
+.ledger-case { min-width: 0; border: 1px solid var(--sq-border, #cbd5e1); border-top: 4px solid var(--sq-accent, #8cc63f); border-radius: 3px 3px 10px 10px; padding: 16px; background: var(--sq-surface, #fff); }
+.ledger-case h3 { margin: 0 0 12px; color: var(--sq-text, #1a202c); }
+.ledger-case h4 { font-size: 1rem; margin: 18px 0 8px; }
+.ledger-case details { margin: 6px 0; border: 1px solid var(--sq-border, #cbd5e1); border-radius: 6px; }
+.ledger-case summary { cursor: pointer; padding: 11px 12px; line-height: 1.5; min-height: 44px; font-size: .92rem; font-weight: 700; }
+.ledger-case summary:focus-visible { outline: 3px solid var(--sq-text, #1a202c); outline-offset: 2px; }
+.ledger-case details > p, .ledger-case details > dl { margin: 0; padding: 2px 12px 12px; }
+.ledger-case .ledger-evidence { background: var(--sq-surface-soft, #f7fafc); }
+.ledger-slip dt { margin-top: 8px; font-size: .8rem; color: var(--sq-muted, #475569); }
+.ledger-slip dd { padding: 3px 0 6px; margin: 0; border-bottom: 1px dotted var(--sq-border, #cbd5e1); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.ledger-case .ledger-hint { border: 0; background: transparent; }
+.ledger-case .ledger-hint summary { font-size: .85rem; }
+@media (max-width: 600px) {
+  .ledger-mystery .ledger-totals { padding: 8px 0; }
+  .ledger-case { padding: 14px; }
+}
 </style>
 </head>
 <body>
@@ -181,8 +214,9 @@ details summary:active{background:var(--light);}
     <a class="nav-cta" href="app.html">無料で始める</a>
   </div>
 </nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月16日</p><h1>試算表3種類の違い｜合計・残高と一致しても残る誤りを検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>試算表は総勘定元帳の金額を一覧にして、借方と貸方の合計等を確認する作業表です。合計欄と残高欄では書く数値が違います。合計が一致しても、すべての取引内容が正しいと保証されるわけではありません。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki.html">簿記3級</a></div><p class="meta">簿記3級 | 公開：2026年5月7日 | 更新日：2026年11月18日</p><h1>試算表3種類の違い｜合計・残高と一致しても残る誤りを検算</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>試算表は総勘定元帳の金額を一覧にして、借方と貸方の合計等を確認する作業表です。合計欄と残高欄では書く数値が違います。合計が一致しても、すべての取引内容が正しいと保証されるわけではありません。</p>
 <div class="sq-facts-note">旧説明の「合計が合えば正解」「欄を間違えれば必ず0点」「特定手順でミスゼロ」といった断定を訂正しました。以下の既存データは編集部の架空例として再計算しました。採点方法の保証ではありません。</div>
+<p><a class="sq-transfer-practice-link" href="#ledger-detective">同じ1,800円の差から、誤った転記を探す演習へ ↓</a></p>
 <h2>同じ科目でも合計と残高は違う</h2>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">表</th><th scope="col">記入する数値</th></tr></thead><tbody><tr><td>合計試算表</td><td>科目ごとの借方合計・貸方合計</td></tr><tr><td>残高試算表</td><td>借貸差額を残る側に記入</td></tr><tr><td>合計残高試算表</td><td>合計欄と差引残高欄の両方</td></tr></tbody></table></div>
 <section aria-labelledby="ledger-to-trial-balance">
@@ -204,8 +238,55 @@ details summary:active{background:var(--light);}
 <div class="sq-facts-table"><table><thead><tr><th scope="col">科目</th><th scope="col">借方合計</th><th scope="col">貸方合計</th><th scope="col">差引残高</th></tr></thead><tbody><tr><td>現金</td><td>272,000</td><td>144,000</td><td>借方128,000</td></tr><tr><td>売掛金</td><td>100,000</td><td>40,000</td><td>借方60,000</td></tr><tr><td>備品</td><td>200,000</td><td>0</td><td>借方200,000</td></tr><tr><td>買掛金</td><td>30,000</td><td>80,000</td><td>貸方50,000</td></tr><tr><td>借入金</td><td>0</td><td>200,000</td><td>貸方200,000</td></tr><tr><td>資本金</td><td>0</td><td>60,000</td><td>貸方60,000</td></tr><tr><td>売上</td><td>0</td><td>300,000</td><td>貸方300,000</td></tr><tr><td>仕入</td><td>162,000</td><td>0</td><td>借方162,000</td></tr><tr><td>給料</td><td>60,000</td><td>0</td><td>借方60,000</td></tr></tbody></table></div>
 <h2>一致していても、取引や科目が抜ける</h2>
 <section class="sq-facts-exercise"><h3>自作例2：給料4,000円を仕入へ誤記したら</h3><p>上表とは別の誤りの例です。本来は給料4,000／現金4,000の取引を、仕入4,000／現金4,000と記録しました。貸借一致で発見できますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>どちらも借方4,000円・貸方4,000円で一致します。仕入過大・給料過少の科目誤りは、合計比較だけでは分かりません。同様に取引を借貸両方とも漏らしたり、丸ごと二重記帳したりしても一致し得ます。</p></div></details></section>
+<section class="ledger-mystery" aria-labelledby="ledger-detective">
+  <h2 id="ledger-detective">帳簿を調べる演習｜同じ1,800円の差をどう直す？</h2>
+  <p>二つの店で、合計試算表にまったく同じ差が出ました。売上票と仕訳帳は正しく、誤りは各店の元帳に一つずつあります。どの記入を直せばよいでしょうか。</p>
+  <dl class="ledger-totals" aria-label="両店に共通する訂正前の合計試算表">
+    <div><dt>借方合計</dt><dd>6,400円</dd></div>
+    <div><dt>貸方合計</dt><dd>4,600円</dd></div>
+    <div><dt>借方が多い額</dt><dd>1,800円</dd></div>
+  </dl>
+  <p>編集部の自作例です。各店とも当日の現金売上だけを扱い、前日からの繰越と消費税は考えません。店ごとに資料を開き、正しいと思う直し方を選んでください。</p>
+  <div class="ledger-cases">
+    <section class="ledger-case" aria-labelledby="ledger-shop-a">
+      <h3 id="ledger-shop-a">A店の帳簿</h3>
+      <details class="ledger-evidence"><summary>A店の売上票・仕訳帳を開く</summary>
+        <dl class="ledger-slip"><dt>売上票 A01</dt><dd>商品を現金で販売　6,400円</dd><dt>仕訳帳 A01</dt><dd>借方 現金 6,400円<br>貸方 売上 6,400円</dd></dl>
+      </details>
+      <details class="ledger-evidence"><summary>A店の総勘定元帳を開く</summary>
+        <dl class="ledger-slip"><dt>現金勘定・借方</dt><dd>A01　6,400円</dd><dt>売上勘定・貸方</dt><dd>A01　4,600円</dd></dl>
+      </details>
+      <h4>A店の売上元帳をどう直す？</h4>
+      <details class="ledger-hint"><summary>A店のヒント</summary><p>元帳には売上票と同じ番号がいくつありますか。その番号の金額を読み比べてください。</p></details>
+      <details><summary>A01を6,400円に直す</summary>
+        <p><strong>金額の転記誤りです。</strong> A01の売上票も仕訳帳も6,400円。売上元帳の同じ番号にある4,600円を6,400円に直せば、借方・貸方とも6,400円になります。</p>
+      </details>
+      <details><summary>別の売上を1,800円追加する</summary>
+        <p>4,600＋1,800で合計はそろいますが、A店に2件目の売上票はありません。A01の転記額が売上票と食い違ったままです。</p>
+      </details>
+    </section>
+    <section class="ledger-case" aria-labelledby="ledger-shop-b">
+      <h3 id="ledger-shop-b">B店の帳簿</h3>
+      <details class="ledger-evidence"><summary>B店の売上票・仕訳帳を開く</summary>
+        <dl class="ledger-slip"><dt>売上票 B01・B02</dt><dd>B01　商品を現金で販売　4,600円<br>B02　商品を現金で販売　1,800円</dd><dt>仕訳帳 B01</dt><dd>借方 現金 4,600円<br>貸方 売上 4,600円</dd><dt>仕訳帳 B02</dt><dd>借方 現金 1,800円<br>貸方 売上 1,800円</dd></dl>
+      </details>
+      <details class="ledger-evidence"><summary>B店の総勘定元帳を開く</summary>
+        <dl class="ledger-slip"><dt>現金勘定・借方</dt><dd>B01　4,600円<br>B02　1,800円</dd><dt>売上勘定・貸方</dt><dd>B01　4,600円</dd></dl>
+      </details>
+      <h4>B店の売上元帳をどう直す？</h4>
+      <details class="ledger-hint"><summary>B店のヒント</summary><p>仕訳帳の番号を一つずつ、現金元帳と売上元帳の両方で探しましょう。</p></details>
+      <details><summary>B01を6,400円に直す</summary>
+        <p>合計はそろいますが、B01の売上票は4,600円です。B02の売上をB01の金額に含めると、どちらの売上票とも正しく照合できません。</p>
+      </details>
+      <details><summary>B02の売上1,800円を転記する</summary>
+        <p><strong>貸方への転記漏れです。</strong> B02は仕訳帳と現金元帳にあります。売上元帳の貸方にB02の1,800円を記入すれば、借方・貸方とも4,600＋1,800＝6,400円。仕訳帳にもう一度入力する必要はありません。</p>
+      </details>
+    </section>
+  </div>
+  <details class="sq-facts-answer"><summary>両店の解答を見比べる</summary><p>訂正後は両店とも借方・貸方が6,400円でそろいます。A店はすでにあるA01の金額を訂正し、B店は記入のないB02を補いました。合計だけでは二つを見分けられません。まず仕訳番号で行の抜けを探し、対応した行どうしで金額を比べます。</p></details>
+</section>
 <h2>転記と決算整理の関係</h2><p>仕訳帳の借方は対応する元帳の借方へ、貸方は貸方へ移します。複数科目の仕訳なら必要な元帳も複数です。「仕訳は常に2科目だけ」とはしません。日付・相手科目・金額・参照番号も対応させます。</p><p>決算整理前残高試算表に、減価償却・在庫・期間配分等の整理を反映すると決算整理後の残高へつながります。精算表は整理から財務諸表への対応を見る作業表です。実務の帳簿締切や作成手順が全社で一つに固定されるとの説明は避け、設問の求める時点を確認します。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>既存の主要記述の確認：2026年11月3日。今回追加した転記図と2026年度の出題範囲の確認：2026年11月16日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>試算表が一致すれば取引はすべて正しいですか？</summary><p>いいえ。取引全体の漏れ・重複や科目違いなど、一致したまま残る誤りもあります。元の資料との照合が必要です。</p></details><details class="sq-facts-answer"><summary>現金272,000円と144,000円は残高試算表にも書きますか？</summary><p>例1の残高試算表には差引128,000円を借方へ書きます。272,000円と144,000円は合計欄の数字です。</p></details><details class="sq-facts-answer"><summary>試算表と精算表は同じですか？</summary><p>試算表は勘定の合計・残高等の一覧、精算表は決算整理から財務諸表への対応を確認する作業表です。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-seisanhyo.html">精算表で決算整理から財務諸表へつなぐ</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>既存の主要記述の確認：2026年11月3日。転記図の確認は2026年11月16日。11月18日追加の2店の演習は、2026年度適用の区分表「第一 簿記の基本原理」の主要簿・証ひょうと「第三 決算」の試算表の作成に沿った編集部の自作です。店名・取引・金額は架空です。</p><ul><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf" target="_blank" rel="noopener">日本商工会議所：2026年度に適用する出題区分表</a></li><li><a href="https://www.nichizeiren.or.jp/wp-content/uploads/doc/cpta/business/tyushoushien/indicator/%E3%80%8C%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E3%81%AE%E4%BC%9A%E8%A8%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%8C%87%E9%87%9D%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%882025%E5%B9%B4%EF%BC%89%EF%BC%99%E6%9C%8819%E6%97%A5%E6%94%B9%E6%AD%A3%EF%BC%89%E3%80%8D(%E6%9C%AC%E6%96%87)[PDF588KB].pdf" target="_blank" rel="noopener">中小会計指針（2025年9月19日修正）：該当する会計処理</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/sample/sample_3" target="_blank" rel="noopener">日本商工会議所：3級サンプル問題の入口（問題の転載はしていません）</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>試算表が一致すれば取引はすべて正しいですか？</summary><p>いいえ。取引全体の漏れ・重複や科目違いなど、一致したまま残る誤りもあります。元の資料との照合が必要です。</p></details><details class="sq-facts-answer"><summary>現金272,000円と144,000円は残高試算表にも書きますか？</summary><p>例1の残高試算表には差引128,000円を借方へ書きます。272,000円と144,000円は合計欄の数字です。</p></details><details class="sq-facts-answer"><summary>試算表と精算表は同じですか？</summary><p>試算表は勘定の合計・残高等の一覧、精算表は決算整理から財務諸表への対応を確認する作業表です。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki3-progress.html">簿記3級の記事の読了チェック</a></li><li><a href="boki3-seisanhyo.html">精算表で決算整理から財務諸表へつなぐ</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <a href="index.html">記事トップ</a>
   <a href="app.html">アプリを使う</a>
