@@ -6,10 +6,10 @@
   <link rel="icon" href="favicon.ico">
   <link rel="canonical" href="https://study-quest.net/itp-ch15-2-information-media.html">
   <title>ITパスポート 15-2 情報メディア｜スタディクエスト</title>
-  <meta name="description" content="図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。">
+  <meta name="description" content="8×8のしま模様を90度回すと、圧縮した画像の容量は変わる？　白黒の並びと実際のBMPを比べます。音声・画像・動画・VRとARも図と10問で学べます。">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ITパスポート 15-2 情報メディア">
-  <meta property="og:description" content="図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。">
+  <meta property="og:description" content="8×8のしま模様を90度回すと、圧縮した画像の容量は変わる？　白黒の並びと実際のBMPを比べます。音声・画像・動画・VRとARも図と10問で学べます。">
   <meta property="og:url" content="https://study-quest.net/itp-ch15-2-information-media.html">
   <meta property="og:image" content="https://study-quest.net/images/study-quest-it-category.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,11 +19,11 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ITパスポート 15-2 情報メディア",
-  "description": "図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。",
+  "description": "8×8のしま模様を90度回すと、圧縮した画像の容量は変わる？　白黒の並びと実際のBMPを比べます。音声・画像・動画・VRとARも図と10問で学べます。",
   "url": "https://study-quest.net/itp-ch15-2-information-media.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-04",
-  "dateModified": "2026-11-04",
+  "dateModified": "2026-11-19",
   "author": {
     "@type": "Organization",
     "name": "スタディクエスト編集部",
@@ -41,6 +41,18 @@
 }
   </script>
   <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+  <style>
+    #stripe-bitmap { scroll-margin-top: 5rem; }
+    .stripe-pair { display: flex; justify-content: center; align-items: start; gap: clamp(.5rem, 7vw, 3rem); margin: 1.1rem auto; }
+    .stripe-pair figure { width: min(42%, 11rem); margin: 0; text-align: center; }
+    .stripe-grid { display: block; position: relative; width: min(100%, 8rem); aspect-ratio: 1; margin: 0 auto; border: 1px solid #737373; box-sizing: content-box; }
+    .stripe-grid img { display: block; width: 100%; height: 100%; image-rendering: pixelated; }
+    .stripe-grid::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to right, transparent calc(100% - 1px), #858585 0), linear-gradient(to bottom, transparent calc(100% - 1px), #858585 0); background-size: 12.5% 12.5%; }
+    .stripe-pair figcaption { padding-top: .35rem; font-weight: 700; }
+    #stripe-bitmap details { border-top: 1px solid var(--review-line); }
+    #stripe-bitmap .stripe-files { margin-bottom: .2em; }
+    #stripe-bitmap .stripe-downloads { margin-top: 0; }
+  </style>
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -50,10 +62,10 @@
     <p class="note"><a href="index.html">ホーム</a> › <a href="itp.html#chapter-reviews">ITパスポート復習シリーズ</a></p>
     <p class="label">STUDY QUEST　/　ITパスポート　/　第15章 情報デザインと情報メディア</p>
     <h1>ITパスポート 15-2 情報メディア</h1>
-    <p>図書館の写真や音声・動画を題材に、PCM、画像形式、圧縮、色、VRとARを図と例題で学びます。</p>
-    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月4日 · 学習用の架空事例</p>
+    <p>8×8のしま模様を90度回すと、圧縮した画像の容量は変わる？　白黒の並びと実際のBMPを比べます。音声・画像・動画・VRとARも図と10問で学べます。</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月4日 · 更新日 2026年11月19日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#media">動画とストリーミング</a></li><li><a href="#audio">音声のデジタル化</a></li><li><a href="#images">画像データと形式</a></li><li><a href="#compression">圧縮と伸長</a></li><li><a href="#graphics">色と画像の品質</a></li><li><a href="#applications">VR・AR・MRなどの応用</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#media">動画とストリーミング</a></li><li><a href="#audio">音声のデジタル化</a></li><li><a href="#images">画像データと形式</a></li><li><a href="#compression">圧縮と伸長</a></li><li><a href="#stripe-bitmap">しま模様で圧縮を試す</a></li><li><a href="#graphics">色と画像の品質</a></li><li><a href="#applications">VR・AR・MRなどの応用</a></li><li><a href="#quiz">例題10問</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="media">
 <h2>案内を音・画像・動画で届ける</h2>
 <p>図書館のイベント案内には、時間と会場の文字、部屋の写真、音声ガイド、工作の動画を載せられます。種類の異なる情報をデジタルで組み合わせて扱うのがマルチメディアです。リンクで会場図や動画へ移動できる構成はハイパーメディアの例です。印刷用の案内は、ページの構成を保って渡しやすいPDFも使えます。</p>
@@ -209,6 +221,34 @@
     </figure>
 <p>ランレングス法は同じ記号の連続を「記号と回数」で表します。例えば <code>AAABB</code> は <code>A×3、B×2</code> と表せます。この表記は考え方を示す例で、短いデータが常に小さくなるとは限りません。ハフマン法では出現頻度を基に、よく現れる記号に短いビット列を割り当てるよう符号を作ります。</p>
 <p>元のファイルが800KB、圧縮後が200KBなら、圧縮後÷元の大きさは25%、減少した割合は75%です。「圧縮率」とだけ書かれているときは、問題文がどちらの式を指定しているかを確かめます。</p>
+<section id="stripe-bitmap" class="box" aria-labelledby="stripe-title">
+  <h3 id="stripe-title">しま模様を90度回すと、圧縮した画像の容量は変わる？</h3>
+  <p>図書館の棚に貼る8×8マスの札です。Aを左に90度回したのがB。どちらも黒32マス、白32マスです。上の1行を左から指でたどり、同じ色が続くところを一組として数えてください。次の行は新しく数え始めます。</p>
+  <div class="stripe-pair">
+    <figure><span class="stripe-grid"><img src="images/learning/stripe-bitmap/stripe-a-preview.png" width="8" height="8" loading="lazy" alt="上から黒2行、白2行、黒2行、白2行。同じ行はすべて同色。"></span><figcaption>A　元の札</figcaption></figure>
+    <figure><span class="stripe-grid"><img src="images/learning/stripe-bitmap/stripe-b-preview.png" width="8" height="8" loading="lazy" alt="どの行も左から黒2マス、白2マス、黒2マス、白2マス。"></span><figcaption>B　左に90度回転</figcaption></figure>
+  </div>
+  <p><strong>問：</strong>AとBはそれぞれ、8行で何組になりますか。「連続する個数・色番号」を一組2バイトで保存すると、どちらのファイルが小さくなるでしょう。</p>
+  <details id="stripe-hint"><summary>ヒント：1行の区切り方</summary>
+    <p>紙に最上段の8マスを書き、色が変わるところだけに縦線を引きます。最上段はいくつの区間に分かれましたか。残り7行も同じように数えます。</p>
+  </details>
+  <details id="stripe-answer"><summary>答えと、実ファイルの容量を確かめる</summary>
+    <p><strong>Aは8組で96バイト、Bは32組で144バイトです。</strong>Aの最上段は「黒8個」で一組。Bの最上段は「黒2個・白2個・黒2個・白2個」で四組。どちらも同じ組数の行が8行続きます。例えばBの一組ずつを順に塗り直すと、元の8マスが戻ります。</p>
+    <p>このBMPは、白黒の色番号を1画素につき1バイトで扱います。圧縮前のAは、ヘッダーと色表の62バイトに、8×8＝64バイトを足して<strong>126バイト</strong>。同じ設定でBを無圧縮保存しても126バイトです。</p>
+    <ul>
+      <li>Aの圧縮版は 62 ＋ 8組 × 2 ＋ 16 ＋ 2 ＝ <strong>96バイト</strong>。</li>
+      <li>Bの圧縮版は 62 ＋ 32組 × 2 ＋ 16 ＋ 2 ＝ <strong>144バイト</strong>。</li>
+    </ul>
+    <p>最後に足した16バイトは8行分の行末印（各2バイト）、2バイトは画像全体の終端です。この2枚はBMPのRLE8で、同じ色の連続をすべて二つの数で記録しました。両方とも元の画素に戻せますが、Bでは短い連続を何度も記録するため、無圧縮より18バイト大きくなりました。</p>
+  </details>
+  <p class="stripe-files">画像ファイルを保存して「サイズ」のバイト数を確認できます。上の見本は表示用のPNGです。計算には下のBMPを使います。</p>
+  <ul class="stripe-downloads">
+    <li><a href="downloads/stripe-bitmap/stripe-a-raw.bmp" download>Aの無圧縮BMP</a></li>
+    <li><a href="downloads/stripe-bitmap/stripe-a-rle8.bmp" download>Aの圧縮BMP（RLE8）</a></li>
+    <li><a href="downloads/stripe-bitmap/stripe-b-rle8.bmp" download>Bの圧縮BMP（RLE8）</a></li>
+  </ul>
+</section>
+
 </section>
 <section id="graphics">
 <h2>色、画素数、階調を混同しない</h2>
@@ -339,7 +379,9 @@
   <section class="review-sources" id="sources">
     <h2>一次資料</h2>
     <p class="note">2026年11月4日確認。図解・数値・例題は編集部の自作です。章の範囲は<a href="https://book.impress.co.jp/books/1125101101">インプレス『徹底攻略ITパスポート教科書＋模擬問題 令和8年度』</a>の第15章に合わせています。</p>
+    <p class="note">しま模様の実習では、2026年11月19日にIPAシラバスの「情報の圧縮と伸長」とMicrosoftのRLE8の仕様を確認しました。</p>
     <ul>
+      <li><a href="https://learn.microsoft.com/en-us/windows/win32/gdi/bitmap-compression">Microsoft「Bitmap Compression」RLE8の連続と終端</a></li>
       <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=54">IPA「ITパスポート試験シラバス Ver.6.5」マルチメディア技術</a></li>
       <li><a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=55">IPA「ITパスポート試験シラバス Ver.6.5」グラフィックス処理と応用</a></li>
       <li><a href="https://datatracker.ietf.org/doc/html/rfc2586">RFC 2586「Audio/L16」音声データの表現</a></li>
