@@ -10,10 +10,10 @@
   <link rel="canonical" href="https://study-quest.net/kenchiku.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>二級建築士の独学準備｜受験資格・学科と製図・法令集を確認する｜スタディクエスト</title>
-<meta name="description" content="二級建築士の受験資格と免許登録を区別。2026年の試験日・時間・法令集の条件、2025年の段階別結果を確認し、製図の時間配分と結果待ち期間の自作例を掲載します。">
+<meta name="description" content="二級建築士の受験資格、令和8年の試験日・法令集・合格通知書を確認。自作の平面図と立面図を見比べて、建物の北側から見た窓と扉の位置を確かめられます。">
 <meta name="keywords" content="二級建築士,独学,勉強法,合格,学科,製図,勉強時間,難易度,合格率">
 <meta property="og:title" content="二級建築士の独学準備｜受験資格・学科と製図・法令集を確認する">
-<meta property="og:description" content="二級建築士の受験資格と免許登録を区別。2026年の試験日・時間・法令集の条件、2025年の段階別結果を確認し、製図の時間配分と結果待ち期間の自作例を掲載します。">
+<meta property="og:description" content="二級建築士の受験資格、令和8年の試験日・法令集・合格通知書を確認。自作の平面図と立面図を見比べて、建物の北側から見た窓と扉の位置を確かめられます。">
 <meta property="og:url" content="https://study-quest.net/kenchiku.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp/kenchiku.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://study-quest.net/screenshots/ogp/kenchiku.png">
@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "二級建築士の独学準備｜受験資格・学科と製図・法令集を確認する", "image": "https://study-quest.net/screenshots/ogp/kenchiku.png", "description": "二級建築士の受験資格と免許登録を区別。2026年の試験日・時間・法令集の条件、2025年の段階別結果を確認し、製図の時間配分と結果待ち期間の自作例を掲載します。", "url": "https://study-quest.net/kenchiku.html", "datePublished": "2026-04-30", "dateModified": "2026-11-03", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "二級建築士の独学準備｜受験資格・学科と製図・法令集を確認する", "image": "https://study-quest.net/screenshots/ogp/kenchiku.png", "description": "二級建築士の受験資格、令和8年の試験日・法令集・合格通知書を確認。自作の平面図と立面図を見比べて、建物の北側から見た窓と扉の位置を確かめられます。", "url": "https://study-quest.net/kenchiku.html", "datePublished": "2026-04-30", "dateModified": "2026-11-19", "author": {"@type": "Person", "name": "若葉", "url": "https://study-quest.net/about.html"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 
 <style>
@@ -86,31 +86,155 @@ details summary:active{background:var(--light);}
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
 </style>
+<style>
+/* 北立面の図面照合 */
+#north-elevation {
+  --north-paper: #f7f8f4;
+  --north-ink: #253747;
+  --north-accent: #355820;
+  --north-wash: #e6ede0;
+  --north-guide: #50606b;
+  scroll-margin-top: 88px;
+}
+html[data-theme="dark"] #north-elevation {
+  --north-paper: #141f2a;
+  --north-ink: #eef1ed;
+  --north-accent: #cfeba9;
+  --north-wash: #26382d;
+  --north-guide: #bac8ce;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) #north-elevation {
+    --north-paper: #141f2a;
+    --north-ink: #eef1ed;
+    --north-accent: #cfeba9;
+    --north-wash: #26382d;
+    --north-guide: #bac8ce;
+  }
+}
+#north-elevation .nd-plan, #north-elevation .nd-options figure {
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  color: var(--north-ink);
+  background: var(--north-paper);
+  border: 1px solid var(--north-guide);
+  border-radius: 8px;
+}
+#north-elevation .nd-plan { max-width: 450px; margin: 1rem auto; }
+#north-elevation .nd-options { display: grid; gap: 10px; margin: 1rem 0; }
+@media (min-width: 700px) {
+  #north-elevation .nd-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+#north-elevation figure figcaption {
+  margin: 0 0 2px; padding: 2px 5px; text-align: left;
+  font-size: 1rem; line-height: 1.5; font-weight: 700; color: var(--north-ink);
+}
+#north-elevation .north-diagram { display: block; width: 100%; height: auto; max-width: 430px; margin: 0 auto; }
+#north-elevation .north-diagram text {
+  font-family: inherit; font-size: 17px; font-weight: 650;
+  fill: var(--north-ink); stroke: none;
+}
+#north-elevation .north-diagram text:not([text-anchor]) { text-anchor: middle; }
+#north-elevation .north-diagram .nd-number, #north-elevation .north-diagram .nd-small { font-size: 15px; }
+#north-elevation .nd-sight path, #north-elevation .nd-compass path {
+  fill: none; stroke: var(--north-accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+}
+#north-elevation .nd-sight circle { fill: var(--north-accent); }
+#north-elevation .nd-floor { fill: var(--north-wash); stroke: none; }
+#north-elevation .nd-face { fill: var(--north-wash); stroke: var(--north-ink); stroke-width: 2.5; }
+#north-elevation .nd-wall, #north-elevation .nd-window path, #north-elevation .nd-door path {
+  fill: none; stroke: var(--north-ink); stroke-width: 2.4;
+}
+#north-elevation .nd-wall { stroke-width: 3.4; }
+#north-elevation .nd-window rect, #north-elevation .nd-door rect {
+  fill: var(--north-paper); stroke: var(--north-ink); stroke-width: 2.5;
+}
+#north-elevation .nd-door .nd-swing { stroke-dasharray: 4 3; stroke-width: 1.5; }
+#north-elevation .nd-guide, #north-elevation .nd-scale path { fill: none; stroke: var(--north-guide); stroke-width: 1.5; }
+#north-elevation .nd-guide { stroke-dasharray: 3 3; }
+#north-elevation .nd-source a, .north-intro a { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
+#result-notice,#result-notice-heading{scroll-margin-top:100px}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shikaku-list.html">二級建築士</a></div><p class="meta">二級建築士 | 公開：2026年4月30日 | 更新日：2026年11月3日</p><h1>二級建築士の独学準備｜受験資格・学科と製図・法令集を確認する</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>二級建築士は、学科と設計製図の試験に合格したうえで免許登録の手続が必要な資格です。「2020年の改正で実務経験が不要になり、誰でも受験できる」「免許には必ず同じ年数の実務が必要」という一律の説明は改めました。まず自分の受験資格区分と、免許を申請する都道府県の登録条件を別々に確認します。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="shikaku-list.html">二級建築士</a></div><p class="meta">二級建築士 | 公開：2026年4月30日 | 更新日：2026年11月19日</p><h1>二級建築士の独学準備｜受験資格・学科と製図・法令集を確認する</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>二級建築士を目指すときは、まず自分の学歴・履修科目・実務経験がどの受験資格区分に当たるかを確認しましょう。学科と設計製図に合格した後は、免許を申請する都道府県で登録の手続きが必要です。</p>
+<p class="north-intro"><a href="#north-elevation">平面図から、窓と扉の位置が合う北側立面図を選ぶ</a></p>
 <h2>受験資格は、学校・指定科目・実務の区分で確認する</h2>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">公式の受験資格区分</th><th scope="col">試験時の実務経験と確認先</th></tr></thead><tbody><tr><td>指定科目を修めて所定の学校等を卒業</td><td>最短0年。入学年度・学校・指定科目等による条件を確認</td></tr><tr><td>建築設備士</td><td>0年。資格を証する書類を確認</td></tr><tr><td>建築に関する学歴なし</td><td>建築実務7年以上。対象実務と証明方法を確認</td></tr><tr><td>都道府県知事が特に認める者</td><td>所定の年数以上。外国大学等は認定の手続も確認</td></tr></tbody></table></div>
 <p>「最短0年」は、学歴を問わずすべての人が実務0年で受けられる意味ではありません。学校の入学年や履修内容、実務を行った時期でも確認条件が分かれます。免許登録の実務経験等は指定登録機関に確認し、受験資格の表からそのまま登録可否を決めないようにします。試験合格だけでは、二級建築士の免許を受けたことにもなりません。</p>
 <h2>2026年は学科・製図とも実施済み</h2>
-<p>令和8年の二級建築士は学科7月5日、設計製図9月13日で、いずれも11月3日の確認時点では終了しています。設計製図の合格発表は12月3日予定です。受験手数料は18,500円・非課税で、別途ネット決済手数料がかかります。この日程・金額を次年の確定情報には流用しません。</p>
+<p>令和8年の二級建築士は学科7月5日、設計製図9月13日で、いずれも11月3日の確認時点では終了しています。設計製図の合格発表は12月3日予定です。受験手数料は18,500円・非課税で、別途ネット決済手数料がかかります。次年度に受験する方は、その年の案内で日程・手数料を確認してください。<a href="#result-notice">令和8年の発表後に通知書を保存する手順を見る</a></p>
 <p>学科は建築計画・建築法規を3時間、建築構造・建築施工を3時間で解く時間割です。間の休憩や法令集チェック・説明の時間を解答時間に足しません。設計製図は11時から16時の5時間です。二級と木造の試験日を同じ表の別列から取り違えないことも確認点です。</p>
 <figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/article-diagrams/kenchiku-mobile.svg?v=20261103"><img src="images/article-diagrams/kenchiku.svg?v=20261103" alt="二級建築士の準備を分ける" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
-<section class="sq-facts-exercise"><h3>自作例1：合格発表から製図までは何日？</h3><p>令和8年の日付を使う日数計算です。学科合格発表の予定日は8月24日、製図日は9月13日でした。この間は「約2ヶ月」ですか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>8月24日から9月13日までは20日です。学科試験日7月5日から9月13日までは70日ですが、試験日と合格発表日は別です。旧記事の「学科合格発表後に約2ヶ月」は改めました。次年は公表された日程を使って再計算し、結果が出てからだけで製図対策を組めるとは決めつけません。</p></div></details></section>
+<section class="sq-facts-exercise"><h3>自作例1：合格発表から製図までは何日？</h3><p>令和8年の日付を使う日数計算です。学科合格発表の予定日は8月24日、製図日は9月13日でした。この間は「約2ヶ月」ですか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>8月24日から9月13日までは20日です。学科試験日7月5日から9月13日までは70日ですが、試験日と合格発表日は別です。次年は公表された日程を使って再計算し、結果が出てからだけで製図対策を組めるとは決めつけません。</p></div></details></section>
 <h2>2025年の結果は、段階別の分母を保つ</h2>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">令和7年の区分</th><th scope="col">実受験者数</th><th scope="col">合格者数</th><th scope="col">公表合格率</th></tr></thead><tbody><tr><td>学科</td><td>16,383人</td><td>6,698人</td><td>40.9％</td></tr><tr><td>設計製図</td><td>10,006人</td><td>4,645人</td><td>46.4％</td></tr><tr><td>総合</td><td>20,597人</td><td>4,645人</td><td>22.6％</td></tr></tbody></table></div>
-<p>この既存の2025年実績は公式と一致したため維持しました。学科・製図・総合は分母が異なり、40.9％×46.4％がそのまま総合合格率になるわけではありません。また独学・通学ごとの比較ではないため、独学者の合格確率や添削の効果には置き換えません。2026年の学科合格者が公表されていても、製図発表前に2026年の総合結果を作ることはできません。</p>
+<p>令和7年の総合合格率は、合格者4,645人を総合の実受験者20,597人で割った22.6％です。学科・製図・総合は分母が異なり、40.9％×46.4％がそのまま総合合格率になるわけではありません。また独学・通学ごとの比較ではないため、独学者の合格確率や添削の効果には置き換えません。2026年の学科合格者が公表されていても、製図発表前に2026年の総合結果を作ることはできません。</p>
 <h2>法令集は「自由な書込み」ではない</h2>
 <p>公式条件では、使用できる法令集は原則2冊までで、学科II・設計製図の解答時に限られます。条文の順序の入替や関連条文の挿入は認められず、許される書込み等も見出し・関連条文の指示、改正年月日、アンダーラインや所定記号等に限られます。市販品に付属するものなら何でも認められる、とせず、インデックス等も当年の公式資料と現物を照合します。</p>
-<p>法文のコピーやホームページから印刷したものは認められません。「30秒で引けばほぼ満点」といった得点保証も外しました。普段のノートと、本番で持ち込める法令集は役割を分けます。過年度のマーキング例や教材の説明だけで、今年の持込み条件を確認したことにはしません。</p>
+<p>法文のコピーやホームページから印刷したものは認められません。普段のノートと、本番で持ち込める法令集は役割を分けます。過年度のマーキング例や教材の説明だけで、今年の持込み条件を確認したことにはしません。</p>
 <h2>製図は時間と課題条件を別に点検する</h2>
 <section class="sq-facts-exercise"><h3>自作例2：5時間の作業配分</h3><p>架空の練習計画を、条件整理35分・エスキス70分・作図165分・確認30分とします。合計は5時間に収まりますか？作図が190分になった場合は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>35＋70＋165＋30＝300分で5時間です。作図190分なら325分となり25分超過します。これは編集部の仮定で、公式推奨配分や合格に必要な速度ではありません。時間だけを縮める前に、課題条件の落とし・図面間の不一致・描き直しを分けて記録します。</p></div></details></section>
-<p>「採点基準は非公開」という旧説明も訂正しました。センターは合格発表日に採点のポイント、採点結果の区分、合格基準、標準解答例等を公表する案内を出しています。ただし個々の答案の全採点過程まで分かる意味ではなく、未公表の細目を「一つのミスで必ず失格」と作りません。</p>
+<p>センターは合格発表日に採点のポイント、採点結果の区分、合格基準、標準解答例等を公表する案内を出しています。ただし個々の答案の全採点過程まで分かる意味ではなく、未公表の細目を「一つのミスで必ず失格」と作りません。</p>
+<section id="north-elevation" aria-labelledby="north-elevation-heading">
+  <h2 id="north-elevation-heading">北側から見たら、窓と扉はどちらに並ぶ？</h2>
+  <p>小さな展示室の平面図と、北側の壁を正面から描いた立面図を照合します。次の図は編集部の自作です。位置は図に記した寸法で読みます。</p>
+  <figure class="nd-plan"><figcaption>平面図　北壁の外に立って、南を向く</figcaption>
+  <svg id="north-plan" class="north-diagram" role="img" width="360" height="245" viewBox="0 0 360 245" aria-labelledby="north-plan-title" aria-describedby="north-plan-desc" data-window-center="80" data-door-center="280" xmlns="http://www.w3.org/2000/svg"><title id="north-plan-title">平面図　上が北、左が西、右が東</title><desc id="north-plan-desc">北側の屋外に見る人が立ち、矢印は下の南に向かう。北壁は西端から東端まで6m。窓の中心は西端から1m、扉の中心は同じ西端から5m。</desc>
+  <g class="nd-sight">
+    <circle cx="180" cy="22" r="6"/><path d="M180 33v48m-7-9 7 9 7-9"/>
+  </g>
+  <text x="168" y="28" text-anchor="end">見る人</text><text x="194" y="57" text-anchor="start">南を向く</text>
+  <g class="nd-compass"><text x="312" y="26">北</text><path d="M312 68V36m-5 8 5-8 5 8"/></g>
+  <path class="nd-floor" d="M30 106H330V168H30Z"/>
+  <path class="nd-wall" d="M30 168V106H55m50 0h152.5m45 0H330v62H30"/>
+  <g class="nd-window"><path d="M55 103h50v6H55Z"/><path d="M80 103v6"/></g>
+  <g class="nd-door"><path d="M302.5 106v45"/><path class="nd-swing" d="M257.5 106a45 45 0 0 0 45 45"/></g>
+  <text x="80" y="94">窓</text><text x="280" y="94">扉</text><text x="180" y="145" class="nd-small">室内</text>
+  <path class="nd-guide" d="M80 169v17m200-17v17"/>
+<g class="nd-scale"><path d="M30 189H330 M30 186v8 M80 186v8 M130 186v8 M180 186v8 M230 186v8 M280 186v8 M330 186v8"/><text x="30" y="212" class="nd-number">0</text><text x="80" y="212" class="nd-number">1</text><text x="130" y="212" class="nd-number">2</text><text x="180" y="212" class="nd-number">3</text><text x="230" y="212" class="nd-number">4</text><text x="280" y="212" class="nd-number">5</text><text x="330" y="212" class="nd-number">6</text></g><text x="180" y="233" class="nd-small">北壁の西端からの距離（m）</text></svg>
+  </figure>
+  <p>平面図は上が北、左が西。北壁の幅は6mで、西端から測ると窓の中心は1m、扉の中心は5mです。図の矢印の位置に自分が立ったつもりで、北側の壁を見てください。</p>
+  <p><strong>問1</strong>　平面図と一致する北側立面図はA・Bのどちらでしょう。候補の目盛りは、どちらも<strong>見ている人の左端から</strong>の距離です。紙か手元のメモに、選んだ候補と窓・扉の位置を書いてみましょう。</p>
+  <div class="nd-options">
+    <figure><figcaption>候補A</figcaption><svg id="north-option-a" class="north-diagram" role="img" width="360" height="180" viewBox="0 0 360 180" aria-labelledby="north-option-a-title" aria-describedby="north-option-a-desc" data-window-center="80" data-door-center="280" xmlns="http://www.w3.org/2000/svg"><title id="north-option-a-title">立面図の候補A</title><desc id="north-option-a-desc">紙面の左端を0m、右端を6mとする。窓の中心は左端から1m、扉の中心は左端から5m。</desc>
+    <path class="nd-face" d="M30 39H330V107H30Z"/>
+    <g class="nd-window"><rect class="nd-pane" x="55" y="60" width="50" height="28"/><path d="M80 60v28"/></g>
+    <g class="nd-door"><rect x="257.5" y="53" width="45" height="54"/><path d="M290 85h4"/></g>
+    <path class="nd-guide" d="M80 89v33m200 -14v14"/>
+    <text x="80" y="28">窓</text><text x="280" y="28">扉</text>
+    <g class="nd-scale"><path d="M30 124H330 M30 121v8 M80 121v8 M130 121v8 M180 121v8 M230 121v8 M280 121v8 M330 121v8"/><text x="30" y="147" class="nd-number">0</text><text x="80" y="147" class="nd-number">1</text><text x="130" y="147" class="nd-number">2</text><text x="180" y="147" class="nd-number">3</text><text x="230" y="147" class="nd-number">4</text><text x="280" y="147" class="nd-number">5</text><text x="330" y="147" class="nd-number">6</text></g><text x="180" y="168" class="nd-small">立面図の左端からの距離（m）</text></svg></figure>
+    <figure><figcaption>候補B</figcaption><svg id="north-option-b" class="north-diagram" role="img" width="360" height="180" viewBox="0 0 360 180" aria-labelledby="north-option-b-title" aria-describedby="north-option-b-desc" data-window-center="280" data-door-center="80" xmlns="http://www.w3.org/2000/svg"><title id="north-option-b-title">立面図の候補B</title><desc id="north-option-b-desc">紙面の左端を0m、右端を6mとする。窓の中心は左端から5m、扉の中心は左端から1m。</desc>
+    <path class="nd-face" d="M30 39H330V107H30Z"/>
+    <g class="nd-window"><rect class="nd-pane" x="255" y="60" width="50" height="28"/><path d="M280 60v28"/></g>
+    <g class="nd-door"><rect x="57.5" y="53" width="45" height="54"/><path d="M90 85h4"/></g>
+    <path class="nd-guide" d="M280 89v33m-200 -14v14"/>
+    <text x="280" y="28">窓</text><text x="80" y="28">扉</text>
+    <g class="nd-scale"><path d="M30 124H330 M30 121v8 M80 121v8 M130 121v8 M180 121v8 M230 121v8 M280 121v8 M330 121v8"/><text x="30" y="147" class="nd-number">0</text><text x="80" y="147" class="nd-number">1</text><text x="130" y="147" class="nd-number">2</text><text x="180" y="147" class="nd-number">3</text><text x="230" y="147" class="nd-number">4</text><text x="280" y="147" class="nd-number">5</text><text x="330" y="147" class="nd-number">6</text></g><text x="180" y="168" class="nd-small">立面図の左端からの距離（m）</text></svg></figure>
+  </div>
+  <details class="sq-facts-answer" id="north-choice"><summary>候補と、窓・扉の位置を照合する</summary><div>
+    <p><strong>候補B。</strong> 北側に立って南を向くと、左手が東、右手が西です。平面図で西寄りにある窓は、立面図では右寄りになります。扉はその反対です。</p>
+    <p>立面図の左端は北壁の東端。窓までは6−1＝<strong>5m</strong>、扉までは6−5＝<strong>1m</strong>です。候補Aは、立つ向きを変えても平面図の左右をそのまま使った並びです。</p>
+  </div></details>
+  <p><strong>問2　変更メモ</strong>　「窓の中心を、西端から2mに変更します。扉は動かしません。」選んだ候補に鉛筆を入れるつもりで、窓を左右どちらに何m動かすか、どの目盛りに直すかを答えてください。</p>
+  <details class="sq-facts-answer" id="north-change"><summary>変更後の窓の位置を照合する</summary><div>
+    <p>窓だけを<strong>左へ1m</strong>動かします。変更後の窓は東端から6−2＝<strong>4m</strong>。候補Bの左から5mの窓を4mの目盛りへ移し、扉の中心は左から1mに残します。</p>
+  </div></details>
+  <p class="nd-source">建築技術教育普及センターは<a href="https://www.jaeic.or.jp/shiken/2k/2k-seizu.html">令和8年の設計製図の課題公表</a>で平面図と立面図を要求図書に挙げています。北側という向き・寸法・変更メモはこの練習の設定です。図は開口の位置を比べる模式図です。</p>
+</section>
 <h2>独学を選ぶ前の確認シート</h2>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">点検するもの</th><th scope="col">記録すること</th><th scope="col">次の行動</th></tr></thead><tbody><tr><td>受験資格</td><td>学校・入学年・指定科目・対象実務</td><td>不足書類と問合せ先を確認</td></tr><tr><td>学科</td><td>誤った選択肢と条文・構造等の根拠</td><td>解けなかった論点に戻る</td></tr><tr><td>製図</td><td>課題条件と図面の対応・所要時間</td><td>自分で判定できない点は添削・質問の必要を検討</td></tr><tr><td>持込み</td><td>法令集と道具の当年条件</td><td>禁止事項を現物と照合</td></tr><tr><td>合格後</td><td>免許申請先・登録要件</td><td>試験合格と登録完了を区別</td></tr></tbody></table></div>
 <p>学科合格者の免除制度は、令和2年以降の合格について、引き続く4回のうち2回、合格年の製図を欠席する場合は3回という条件があります。申請が必要で、過去の受験回数や合格年による確認もあります。単に「4年間いつでも何度でも免除」とはしません。固定の必要学習時間や合格期間も今回の根拠では確認できないため、実際の演習記録から計画を見直します。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月3日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.jaeic.or.jp/shiken/2k/" target="_blank" rel="noopener">建築技術教育普及センター：令和8年の日程・料金・免許登録</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/exam-qualifi-2kmk/" target="_blank" rel="noopener">同：受験資格の区分</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/about-exam.html" target="_blank" rel="noopener">同：時間割・学科免除</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/2k-data.html" target="_blank" rel="noopener">同：2025年の段階別結果</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/notes-on-the-day.html" target="_blank" rel="noopener">同：持込みの注意</a></li><li><a href="https://www.jaeic.or.jp/.assets/horeishu-2kmk-2026.pdf" target="_blank" rel="noopener">同：法令集の条件</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/successful-applicant.html" target="_blank" rel="noopener">同：発表日と公表資料</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>実務経験0年なら誰でも受験できますか？</summary><p>いいえ。指定科目を修めた学校等の卒業者や建築設備士など、受験資格区分があります。建築の学歴がない場合の実務7年以上等も別に確認します。</p></details><details class="sq-facts-answer"><summary>製図の採点のポイントは非公開ですか？</summary><p>公式は採点のポイント・区分・基準や標準解答例を合格発表日に公表する案内です。個々の答案の全過程が公開される意味ではありません。</p></details><details class="sq-facts-answer"><summary>学科合格後は自動で免許を取得できますか？</summary><p>製図の合格と、都道府県の免許登録手続が別に必要です。学科免除も合格年・受験回数・申請等の条件があります。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="denki.html">第二種電気工事士の準備</a></li><li><a href="dokugaku-shikaku.html">独学の準備条件を比べる</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="result-notice" aria-labelledby="result-notice-heading">
+  <h3 id="result-notice-heading">令和8年の製図試験を受けた方へ　発表後に保存するもの</h3>
+  <p>設計製図の合格発表は<strong>2026年12月3日予定</strong>です。センターのウェブサイトで合格者の受験番号を確認できます。自分の判定結果は、発表日以降にマイページで確認します。</p>
+  <p><strong>製図に合格したら、合格通知書をダウンロードして保存・印刷してください。</strong>免許登録に必要です。通知書は郵送されません。令和8年試験のダウンロード期限は<strong>令和9年2月末（2027年2月末）</strong>です。</p>
+  <p><a href="https://www.jaeic.or.jp/shiken/2k/successful-applicant.html">建築技術教育普及センター「合格者の発表等」で日付と受け取り方を確認する</a>（2026年11月19日確認）</p>
+</section>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>受験資格・日程・試験条件は2026年11月3日に確認。製図の要求図書と合格発表・通知書の案内は2026年11月19日に照合しました。</p><ul><li><a href="https://www.jaeic.or.jp/shiken/2k/" target="_blank" rel="noopener">建築技術教育普及センター：令和8年の日程・料金・免許登録</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/exam-qualifi-2kmk/" target="_blank" rel="noopener">同：受験資格の区分</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/about-exam.html" target="_blank" rel="noopener">同：時間割・学科免除</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/2k-data.html" target="_blank" rel="noopener">同：2025年の段階別結果</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/notes-on-the-day.html" target="_blank" rel="noopener">同：持込みの注意</a></li><li><a href="https://www.jaeic.or.jp/.assets/horeishu-2kmk-2026.pdf" target="_blank" rel="noopener">同：法令集の条件</a></li><li><a href="https://www.jaeic.or.jp/shiken/2k/successful-applicant.html" target="_blank" rel="noopener">同：発表日と公表資料</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>実務経験0年なら誰でも受験できますか？</summary><p>いいえ。指定科目を修めた学校等の卒業者や建築設備士など、受験資格区分があります。建築の学歴がない場合の実務7年以上等も別に確認します。</p></details><details class="sq-facts-answer"><summary>製図の採点のポイントは非公開ですか？</summary><p>公式は採点のポイント・区分・基準や標準解答例を合格発表日に公表する案内です。個々の答案の全過程が公開される意味ではありません。</p></details><details class="sq-facts-answer"><summary>学科合格後は自動で免許を取得できますか？</summary><p>製図の合格と、都道府県の免許登録手続が別に必要です。学科免除も合格年・受験回数・申請等の条件があります。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="denki.html">第二種電気工事士の準備</a></li><li><a href="dokugaku-shikaku.html">独学の準備条件を比べる</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><a href="index.html">トップ</a><a href="shikaku-list.html">資格一覧</a><a href="about.html">運営者情報</a>
     <a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><a href="contact.html">お問い合わせ</a><p>&copy; 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js?v=20261103-remaining120-regulated-professions"></script>
