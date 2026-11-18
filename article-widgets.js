@@ -3310,16 +3310,22 @@ function buildReadButton(){
 const SEARCH_INDEX_STATE = {entries:null, promise:null, ready:false};
 
 function normalizeSearchText(text){
-  return String(text || '').toLowerCase().replace(/\s+/g,' ').trim();
+  return String(text || '').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
 }
 
 function createSearchExcerpt(text, query){
-  const source = String(text || '').replace(/\s+/g,' ').trim();
-  if(!query) return '';
-  const index = source.toLowerCase().indexOf(query.toLowerCase());
+  let source = String(text || '').replace(/\s+/g,' ').trim();
+  let term = String(query || '').trim();
+  if(!term) return '';
+  let index = source.toLowerCase().indexOf(term.toLowerCase());
+  if(index < 0){
+    source = source.normalize('NFKC').replace(/\s+/g,' ').trim();
+    term = normalizeSearchText(term);
+    index = source.toLowerCase().indexOf(term);
+  }
   if(index < 0) return source.slice(0,70);
   const start = Math.max(0, index - 28);
-  const end = Math.min(source.length, index + query.length + 46);
+  const end = Math.min(source.length, index + term.length + 46);
   return `${start ? '...' : ''}${source.slice(start,end)}${end < source.length ? '...' : ''}`;
 }
 
@@ -3354,8 +3360,11 @@ function findSearchModifiedDate(value){
   return '';
 }
 
-function extractSearchArticleData(html){
+function extractSearchArticleData(html, file){
   const doc = new DOMParser().parseFromString(html, 'text/html');
+  const canonical = doc.querySelector('link[rel~="canonical"]')?.getAttribute('href');
+  const expected = new URL(file, 'https://study-quest.net/');
+  if(!canonical || new URL(canonical, expected).href !== expected.href) return null;
   const description = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || '').replace(/\s+/g,' ').trim();
   let modified = '';
   doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
@@ -3377,38 +3386,35 @@ function formatSearchModifiedDate(value){
   return `最終更新 ${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
 }
 
-function ensureArticleSearchIndex(){
-  if(SEARCH_INDEX_STATE.ready && SEARCH_INDEX_STATE.entries) return Promise.resolve(SEARCH_INDEX_STATE.entries);
+function ensureArticleSearchIndex(retryMissing = false){
   if(SEARCH_INDEX_STATE.promise) return SEARCH_INDEX_STATE.promise;
-  if(SEARCH_INDEX_STATE.entries) return Promise.resolve(SEARCH_INDEX_STATE.entries);
-
-  SEARCH_INDEX_STATE.entries = createSearchBaseEntries();
-  SEARCH_INDEX_STATE.promise = Promise.all(SEARCH_INDEX_STATE.entries.map(async item => {
-    const cacheKey = `sq_article_search_v2_${item.f}`;
-    try{
-      let data = null;
-      const cached = sessionStorage.getItem(cacheKey);
-      if(cached){
-        try {
-          const parsed = JSON.parse(cached);
-          if(parsed && typeof parsed.text === 'string') data = parsed;
-        } catch {}
+  if(!SEARCH_INDEX_STATE.entries) SEARCH_INDEX_STATE.entries = createSearchBaseEntries();
+  if(SEARCH_INDEX_STATE.ready && !retryMissing) return Promise.resolve(SEARCH_INDEX_STATE.entries);
+  const unread = SEARCH_INDEX_STATE.entries.filter(item=>!item.loaded);
+  if(!unread.length) return Promise.resolve(SEARCH_INDEX_STATE.entries);
+  SEARCH_INDEX_STATE.ready = false;
+  const pending = unread.values();
+  async function readArticles(){
+    for(const item of pending){
+      try{
+        const response = await fetch(item.f);
+        if(!response.ok) continue;
+        const data = extractSearchArticleData(await response.text(), item.f);
+        if(!data) continue;
+        item.description = data.description || '';
+        item.modified = data.modified || '';
+        item.text = `${item.label} ${item.title} ${data.text}`;
+        item.normalized = normalizeSearchText(item.text);
+        item.loaded = true;
+      }catch{
+        // The title remains searchable if this article could not be read.
       }
-      if(!data){
-        data = extractSearchArticleData(await (await fetch(item.f, {cache:'force-cache'})).text());
-        try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch {}
-      }
-      item.description = data.description || '';
-      item.modified = data.modified || '';
-      item.text = `${item.label} ${item.title} ${data.text}`;
-      item.normalized = normalizeSearchText(item.text);
-      item.loaded = true;
-    }catch{
-      item.loaded = false;
     }
-    return item;
-  })).then(() => {
+  }
+  const parallelReads = Math.min(6, unread.length);
+  SEARCH_INDEX_STATE.promise = Promise.all(Array.from({length:parallelReads}, readArticles)).then(() => {
     SEARCH_INDEX_STATE.ready = true;
+    SEARCH_INDEX_STATE.promise = null;
     return SEARCH_INDEX_STATE.entries;
   });
   return SEARCH_INDEX_STATE.promise;
@@ -3436,7 +3442,15 @@ function getSearchEntries(rawQuery, label='all'){
     const bTitle = normalizeSearchText(`${b.label} ${b.title}`).includes(query) ? 1 : 0;
     return bTitle - aTitle;
   });
-  return {query, entries:sorted, loading:!!(SEARCH_INDEX_STATE.entries && !SEARCH_INDEX_STATE.ready)};
+  const loading = !!SEARCH_INDEX_STATE.promise && !SEARCH_INDEX_STATE.ready;
+  const incomplete = SEARCH_INDEX_STATE.ready && scoped.some(item=>!item.loaded);
+  return {query, entries:sorted, loading, incomplete};
+}
+
+function searchCoverageNotice(loading, incomplete){
+  if(loading) return '記事の本文を検索しています…';
+  if(incomplete) return '一部の記事の本文を読み込めませんでした。再検索で読み直せます。';
+  return '';
 }
 
 function searchCardHTML(item, rawQuery, extraClass=''){
@@ -3490,13 +3504,19 @@ function buildSearchModal(){
     input.value='';
     selectedLabel='all';
     renderFilters();
+    const index = ensureArticleSearchIndex(true);
     render('');
-    ensureArticleSearchIndex().then(()=>render(input.value));
+    if(!SEARCH_INDEX_STATE.ready) index.then(()=>render(input.value));
   }
   function closeModal(){ modal.classList.remove('open'); }
 
   function render(q){
-    const {entries, loading} = getSearchEntries(q, selectedLabel);
+    const {entries, loading, incomplete} = getSearchEntries(q, selectedLabel);
+    const notice = searchCoverageNotice(loading, incomplete);
+    if(!entries.length && notice){
+      results.innerHTML = `<div class="sq-search-state" role="status">${notice}</div>`;
+      return;
+    }
     if(!entries.length && selectedLabel !== 'all'){
       results.innerHTML=`<div class="sq-search-empty">「${_escHtml(selectedLabel)}」内に一致する記事はありませんでした</div>`;
       return;
@@ -3505,10 +3525,8 @@ function buildSearchModal(){
       results.innerHTML=`<div class="sq-search-empty">「${_escHtml(q)}」に一致する記事はありませんでした</div>`;
       return;
     }
-    const loadingMarkup = loading
-      ? '<div class="sq-search-state">本文を読み込みながら検索しています...</div>'
-      : '';
-    results.innerHTML = loadingMarkup + entries.slice(0,10).map(item => searchCardHTML(item, q)).join('');
+    const noticeMarkup = notice ? `<div class="sq-search-state">${notice}</div>` : '';
+    results.innerHTML = noticeMarkup + entries.slice(0,10).map(item => searchCardHTML(item, q)).join('');
   }
 
   btn.addEventListener('click', openModal);
@@ -3547,7 +3565,7 @@ function buildSearchResultsPage(){
   const params = new URLSearchParams(location.search);
   let selectedLabel = params.get('category') || 'all';
   if(selectedLabel !== 'all' && !getSearchCategoryLabels().includes(selectedLabel)) selectedLabel = 'all';
-  const initialQuery = params.get('q') || '';
+  let submittedQuery = (params.get('q') || '').trim();
 
   page.innerHTML = `
     <div class="sq-search-page-inner">
@@ -3578,12 +3596,12 @@ function buildSearchResultsPage(){
   const lead = page.querySelector('.sq-search-page-lead');
   const status = page.querySelector('.sq-search-page-status');
   const list = page.querySelector('.sq-search-page-list');
-  input.value = initialQuery;
+  input.value = submittedQuery;
 
   function updateURL(){
     const next = new URLSearchParams();
-    const query = input.value.trim();
-    if(query) next.set('q', query);
+    submittedQuery = input.value.trim();
+    if(submittedQuery) next.set('q', submittedQuery);
     if(selectedLabel !== 'all') next.set('category', selectedLabel);
     const suffix = next.toString();
     history.replaceState(null, '', `search.html${suffix ? `?${suffix}` : ''}`);
@@ -3598,8 +3616,9 @@ function buildSearchResultsPage(){
   }
 
   function render(){
-    const rawQuery = input.value.trim();
-    const {entries, loading} = getSearchEntries(rawQuery, selectedLabel);
+    const rawQuery = submittedQuery;
+    const {entries, loading, incomplete} = getSearchEntries(rawQuery, selectedLabel);
+    const notice = searchCoverageNotice(loading, incomplete);
     const scopeName = selectedLabel === 'all' ? '' : `「${selectedLabel}」の`;
 
     title.textContent = rawQuery ? `「${rawQuery}」の検索結果` : (scopeName ? `${scopeName}記事` : '記事を検索');
@@ -3614,29 +3633,35 @@ function buildSearchResultsPage(){
     }
 
     if(!entries.length){
+      if(notice){
+        status.textContent = notice;
+        list.replaceChildren();
+        return;
+      }
       status.textContent = '検索結果 0件';
       list.innerHTML = `<div class="sq-search-page-empty"><p>${rawQuery ? `「${_escHtml(rawQuery)}」に一致する記事は見つかりませんでした。` : `「${_escHtml(selectedLabel)}」に記事はありませんでした。`}</p><p>資格名を短くするか、関連する論点で試してみてください。</p></div>`;
       return;
     }
 
-    status.textContent = `検索結果 ${entries.length}件${loading ? '（本文の一致を追加中）' : ''}`;
+    status.textContent = `検索結果 ${entries.length}件${notice ? '　' + notice : ''}`;
     list.innerHTML = entries.map(item => searchCardHTML(item, rawQuery, 'sq-search-page-item')).join('');
     list.querySelectorAll('.sq-search-item').forEach(link => {
       link.addEventListener('click', () => _gaEvent('search_result_click', {query:rawQuery, category:selectedLabel, to:link.getAttribute('href'), from:'search.html'}));
     });
   }
 
-  renderFilters();
-  render();
-  if(initialQuery || selectedLabel !== 'all'){
-    ensureArticleSearchIndex().then(render);
+  function refresh(retryMissing = false){
+    const index = (submittedQuery || selectedLabel !== 'all') ? ensureArticleSearchIndex(retryMissing) : null;
+    render();
+    if(index && !SEARCH_INDEX_STATE.ready) index.then(render);
   }
+  renderFilters();
+  refresh();
 
   form.addEventListener('submit', event => {
     event.preventDefault();
     updateURL();
-    render();
-    if(input.value.trim() || selectedLabel !== 'all') ensureArticleSearchIndex().then(render);
+    refresh(true);
     _gaEvent('search_results_submit', {query:input.value.trim(), category:selectedLabel, from:'search.html'});
   });
   filters.addEventListener('click', event => {
@@ -3645,16 +3670,14 @@ function buildSearchResultsPage(){
     selectedLabel = chip.dataset.label || 'all';
     renderFilters();
     updateURL();
-    render();
-    if(input.value.trim() || selectedLabel !== 'all') ensureArticleSearchIndex().then(render);
+    refresh();
   });
   list.addEventListener('click', event => {
     const suggestion = event.target.closest('[data-sq-search-query]');
     if(!suggestion) return;
     input.value = suggestion.dataset.sqSearchQuery || '';
     updateURL();
-    render();
-    ensureArticleSearchIndex().then(render);
+    refresh(true);
     input.focus();
   });
 }
