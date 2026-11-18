@@ -27,7 +27,7 @@
   </div></details>
 </article>
 <article class="log-entry" id="20261118-home-mobile-updates-search">
-  <div class="entry-meta"><time datetime="2026-11-18">2026.11.18</time><span>トップページ・記事の探し方</span><span class="verified">公開前のスマホ幅とPC幅で確認</span></div>
+  <div class="entry-meta"><time datetime="2026-11-18">2026.11.18</time><span>トップページ・記事の探し方</span><span class="verified">本番の小さい画面とPCで入口・記事検索を確認</span></div>
   <h2>スマホから最近の更新へ進み、資格名の表記を変えても記事を探せるようにしました</h2><p class="entry-summary">トップの「最近の更新情報」から新しい教材へ移動できます。記事検索では「MOS」「mos」「ＭＯＳ」で同じ記事が見つかります。</p>
   <details><summary>経緯・確認結果を読む<span aria-hidden="true">＋</span></summary><div class="entry-body">
     <h3>きっかけ</h3><p>新しく公開した教材をトップページから探す途中で、小さい画面の更新情報への入口と、英字の資格名を入力したときの検索結果を点検しました。</p>
@@ -35,11 +35,11 @@
 
     <h3>本人の依頼・運営方針</h3><p>本人から、教材の品質を高めて読者が使える形で届けるよう依頼がありました。</p>
     <h3>AIが担当した作業</h3><p>Codexが公開中のトップから教材への道順と記事検索を調べ、小さい画面向けのリンクと文字の照合方法を変更しました。</p>
-    <h3>確かめたこと</h3><ul><li>公開前の320px・390px幅で冒頭リンクをEnterで開き、固定ヘッダーの下で更新情報の見出しにフォーカスが移ることを確認しました。PCでは既存のヘッダーリンクを使用できます。</li><li>表示5件から「さらに5件表示」で10件に増やし、「表示を減らす」で5件に戻って見出しに戻る動作を確認しました。</li><li>MOSの表記3通り、日本語検索、カテゴリでの絞り込み、該当なしの表示とEscによる終了を確認しました。</li></ul>
-    <p class="limits"><strong>確認の範囲</strong>公開前の画面幅を変えたChromeで確認しました。スマートフォン実機での操作は未確認です。</p>
+    <h3>確かめたこと</h3><ul><li>公開前の320px・390px幅で冒頭リンクをEnterで開き、固定ヘッダーの下で更新情報の見出しにフォーカスが移ることを確認しました。PCでは既存のヘッダーリンクを使用できます。</li><li>表示5件から「さらに5件表示」で10件に増やし、「表示を減らす」で5件に戻って見出しに戻る動作を確認しました。</li><li>MOSの表記3通り、日本語検索、カテゴリでの絞り込み、該当なしの表示とEscによる終了を確認しました。</li><li>2026年11月18日 23:54（日本時間）、PR #323 の配信版 c3101f0b と本番HTMLが一致。320・390・400pxで冒頭リンクから見出しにフォーカスが移り、固定ヘッダーの下で読めました。401・1280pxでは従来のヘッダーから移動しました。5件→10件→5件、3教材への移動、390pxでJavaScript無効でも見出しへ届くことを本番で確認しました。</li><li>本番の記事検索で「MOS」「mos」「ＭＯＳ」「ｍｏｓ」は同じMOS記事を表示。「英検準２級」、カテゴリによる対象切替、該当なし、Escで閉じる操作を確認しました。</li></ul>
+    <p class="limits"><strong>確認の範囲</strong>Chromeで画面幅を変えて検証しました。スマートフォン実機での操作と、閲覧数への影響は未確認です。</p>
     <h3>振り返り</h3><p>最近追加された教材は、題名を知らなくても開ける入口が役立ちます。資格名を知っているときは、ふだんの入力方法のまま記事を探せます。</p>
-    <p class="verification-date">上記のローカル確認日：<time datetime="2026-11-18">2026.11.18</time>。当日の検証記録をもとに記載しています。</p>
-    <div class="evidence-links"><a href="index.html">トップページ<span aria-hidden="true"> ↗</span></a><a href="index.html#updates-heading">最近の更新情報<span aria-hidden="true"> ↗</span></a></div>
+    <p class="verification-date">上記の公開確認日：<time datetime="2026-11-18">2026.11.18</time>。当日の検証記録をもとに記載しています。</p>
+    <div class="evidence-links"><a href="index.html">トップページ<span aria-hidden="true"> ↗</span></a><a href="index.html#updates-heading">最近の更新情報<span aria-hidden="true"> ↗</span></a><a href="https://github.com/hito77ki-ship-it/study-quest/pull/323">トップの入口と検索を変更したPR #323<span aria-hidden="true"> ↗</span></a></div>
   </div></details>
 </article>
 <article class="log-entry" id="20261118-household-survey-reading">
