@@ -32,7 +32,7 @@
   "description": "中小企業診断士の1次・2次試験、科目免除と学習計画を一次情報で確認。令和8年度1次統計、令和7年度2次結果、令和8年度の改正と日程を区別して解説します。",
   "url": "https://study-quest.net/shindanshi.html",
   "datePublished": "2026-04-29",
-  "dateModified": "2026-10-31",
+  "dateModified": "2026-11-19",
   "author": {
     "@type": "Person",
     "name": "若葉",
@@ -92,6 +92,23 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<style>
+#empty-shelf{scroll-margin-top:86px}
+#empty-shelf .shelf-records{margin:1.25rem 0;border:1px solid var(--sq-border,#cbd5e1);border-radius:12px;overflow:hidden}
+#empty-shelf .shelf-records section{padding:.9rem 1rem;background:var(--sq-surface,#fff);color:var(--sq-text,#1a202c)}
+#empty-shelf .shelf-records section+section{border-top:1px solid var(--sq-border,#cbd5e1)}
+#empty-shelf .shelf-records h3{font-size:1rem;margin:0 0 .35rem;color:inherit}
+#empty-shelf .shelf-records p{margin:0;color:inherit}
+#empty-shelf textarea{display:block;box-sizing:border-box;width:100%;padding:.65rem .8rem;margin:.35rem 0;border:1px solid var(--sq-muted,#64748b);border-radius:6px;background:var(--sq-surface,#fff);color:var(--sq-text,#1a202c);font:inherit;font-size:1rem;line-height:1.6;resize:vertical}
+#empty-shelf textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+#empty-shelf #shelf-draft-note{font-size:.85rem;margin:0}
+#empty-shelf details{margin:1rem 0 1.35rem;padding:.3rem .9rem;border:1px solid var(--sq-border,#cbd5e1);border-radius:8px}
+#empty-shelf summary{cursor:pointer;padding:.65rem 0;font-weight:700}
+#empty-shelf summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+#empty-shelf a,.shelf-jump a{text-decoration:underline;text-underline-offset:.18em;color:#285b17}
+html[data-theme=dark] #empty-shelf a,html[data-theme=dark] .shelf-jump a{color:#bcdf92}
+#empty-shelf .shelf-source{font-size:.9rem}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
@@ -99,7 +116,8 @@ details summary:active{background:var(--light);}
   <div class="breadcrumb"><a href="index.html">ホーム</a>
     <a href="shikaku-list.html">資格一覧</a> &rsaquo; 中小企業診断士の勉強法</div>
   <h1>中小企業診断士 独学合格ガイド【2026年版】勉強時間・テキスト選び</h1>
-  <p class="meta">更新日：2026年10月31日｜著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
+  <p class="meta">更新日：2026年11月19日｜著者：若葉（関西の大学3回生・ITパスポート・基本情報技術者学習中／簿記1級は中断中）</p>
+  <p class="shelf-jump"><a href="#empty-shelf">文具店の3枚の記録から、店長への助言を書く</a></p>
 
   <div style="background:linear-gradient(135deg,#F0FFF4,#EBF5FB);border:1.5px solid #9AE6B4;border-radius:14px;padding:20px 22px;margin:20px 0 28px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
@@ -176,11 +194,29 @@ details summary:active{background:var(--light);}
     <p style="font-size:14px;color:#1A202C;margin:0;">記述式の2次試験では、解答後に与件文・設問・自分の答案を見比べて、どの言葉を根拠にしたかを記録してみましょう。指定字数、書けなかった設問、時間を使った箇所も残しておくと、次の演習で確認する点を決めやすくなります。</p>
   </div>
 
-  <h2>与件文と設問を照合する練習案</h2>
-  <p>以下は解答を見直すための編集部の考え方です。公式に公表されていない採点基準の内訳を示すものではありません。</p>
-  <p>友達から相談を受けている場面を想像してください。「頑張れば大丈夫だよ」という一般論だけを返すのと、「さっき言ってた『上司からの評価が気になる』って部分、具体的にはどう思う？」と相手が話した言葉を拾って返すのとでは、後者の方が「ちゃんと話を聞いてくれている」と伝わりますよね。</p>
-  <p>これを接客業のクレーム対応で例えると、もっとイメージしやすくなります。「ご迷惑をおかけして申し訳ございません」という定型文だけを繰り返すより、お客様が言った具体的な内容（「レジで10分も待たされた」）を拾って「お待たせしてしまい大変申し訳ございませんでした」と返す方が、誠実さが伝わりますよね。</p>
-  <p>答案を振り返るときも、設問の要求、与件文から拾った情報、自分の知識で補った部分を分けて書いてみる提案です。特定の書き方だけで高得点が保証されるわけではありません。</p>
+<section id="empty-shelf" aria-labelledby="empty-shelf-heading">
+  <h2 id="empty-shelf-heading">午後の販売が0枚。文具店の店長にどう助言する？</h2>
+  <p>「紺色の文庫カバーは、午後には人気がないのかな」。14時、店長がレジを見て言いました。次の3枚は編集部が作った架空の記録です。すべて同じ日・同じ商品を指し、保管場所は売場の棚と倉庫の2か所だけです。</p>
+  <div class="shelf-records">
+    <section><h3>販売記録　レジで売れた枚数</h3><p>開店〜12時は<strong>7枚</strong>、12時〜14時は<strong>0枚</strong>。売場と倉庫を合わせた開店時の帳簿在庫は12枚。14時まで入荷・返品・ほかの入出庫の記録はありません。</p></section>
+    <section><h3>売場点検　14時に数えた枚数</h3><p>棚は<strong>0枚</strong>。倉庫には、すぐに売場へ出せる同じ紺色のカバーが<strong>5枚</strong>ありました。</p></section>
+    <section><h3>接客メモ　商品について尋ねた人</h3><p>12時20分と13時40分に、別々のお客さまが紺色の文庫カバーを探していると話しました。予約・取り置き・購入の確約はありません。</p></section>
+  </div>
+  <p><strong>店長への助言を2文で書いてみましょう。</strong>販売記録と売場点検の数字を使い、まず何をするかを1文で。もう1文で、接客メモから分かることと、まだ分からないことを書きます。</p>
+  <label for="shelf-draft"><b>店長への助言（下書き・任意）</b></label>
+  <textarea id="shelf-draft" rows="4" autocomplete="off" aria-describedby="shelf-draft-note"></textarea>
+  <p id="shelf-draft-note">残したい下書きは、ページを閉じる前に手元に控えてください。</p>
+  <details id="shelf-answer"><summary>助言例と、3枚の記録を使った理由を見る</summary>
+    <p><strong>助言の一例</strong>　正午から14時までの販売は0枚ですが、棚が空で倉庫に5枚あるので、まず売場に補充しましょう。紺色を探した方は2人いましたが、買ったはずの枚数は分からないので、補充後も販売数と問い合わせを分けて記録しましょう。</p>
+    <p><b>根拠と提案</b>　帳簿は12−7＝5枚、実物は棚0＋倉庫5＝5枚。店の中に商品があるので、棚に戻すという提案をその場で試せます。</p>
+    <p><b>未確定の点</b>　販売0枚は、その時間にレジを通った枚数です。棚がいつから空だったかは記録されていません。問い合わせた2人が各1枚買うとは限らず、何も言わずに帰った人の希望も記録からは読めません。次の発注数までこの3枚で決めることはできません。</p>
+  </details>
+  <p><strong>条件を一つ変えます。</strong>売場点検の「倉庫5枚」だけが「倉庫0枚」だったら、最初の助言をどう直しますか。</p>
+  <details id="shelf-recount"><summary>倉庫も空だった場合の確かめ方を見る</summary>
+    <p>帳簿は同じ5枚ですが、数えた実物は棚0＋倉庫0＝0枚。<strong>現物は帳簿より5枚少なく</strong>、倉庫からは補充できません。まず商品コードと置き場所を確かめて数え直し、入出庫や販売の記録と突き合わせます。差の原因も、追加で仕入れる枚数も、まだ特定できません。</p>
+  </details>
+  <p class="shelf-source">資料の背景は、中小機構J-Net21の<a href="https://j-net21.smrj.go.jp/startup/manual/list9/9-1-3.html">「小売業の仕入ポイント」</a>の販売データ・顧客要求伝票・販売員情報の説明と、<a href="https://www.jf-cmca.jp/attach/test/r08/r08_1ji_annai.pdf#page=21">令和8年度第1次試験案内（冊子17ページ）</a>の「商品補充・物流」「流通情報システム」で確認できます。店舗の記録、問い、助言例は編集部の自作です。</p>
+</section>
 
   <h2>2次試験の答案確認シート</h2>
   <p>演習後に、事例ごとに次の項目を記録します。外部の添削や学習会を検討する場合は、利用目的・費用・日程を各提供元で確認してから判断してください。</p>
