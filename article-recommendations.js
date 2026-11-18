@@ -41,9 +41,9 @@ const CATALOG = [
   {id:'mos.html', label:'MOS', title:'MOS（Microsoft Office Specialist）の独学合格ガイド', topics:['it','career'], note:'仕事で使うOfficeスキルを固める'},
   {id:'denki.html', label:'電気工事士', title:'電気工事士2種の独学合格ガイド', topics:['it','career'], note:'技術系資格の別ルートを比べる'},
   {id:'toeic.html', label:'TOEIC', title:'TOEIC L&Rの独学スコアアップ戦略', topics:['english'], note:'目標スコアから学習を逆算する'},
-  {id:'eiken.html', label:'英検2級', title:'英検2級の独学合格ガイド', topics:['english'], note:'英検の対策順をつかむ'},
+  {id:'eiken.html', label:'英検の級別案内', title:'英検の級一覧・CSE・受験方式', topics:['english'], note:'受験する級と方式を確認する', thumbnail:'images/article-diagrams/eiken.svg?v=20261119'},
   {id:'toeic-vs-eiken.html', label:'資格比較', title:'TOEIC vs 英検 どっちを取るべき？', topics:['english','career'], note:'目的に合う英語資格を選ぶ'},
-  {id:'eiken1.html', label:'英検準1級', title:'英検準1級の独学合格ガイド', topics:['english'], note:'英検2級の次の目標を考える'},
+  {id:'eiken1.html', label:'英検1級', title:'英検1級の要約・論述・スピーチ', topics:['english'], note:'1級の英作文とスピーチの形式を確認する'},
   {id:'toefl.html', label:'TOEFL', title:'TOEFL iBTの独学スコアアップ戦略', topics:['english','career'], note:'留学・海外進学向けの英語資格を比べる'},
   {id:'ielts.html', label:'IELTS', title:'IELTSの独学スコアアップ戦略', topics:['english','career'], note:'海外進学・移住に向けた英語資格を比べる'},
   {id:'fp.html', label:'FP2級', title:'FP2級・3級の独学合格ガイド', topics:['finance'], note:'FP学習の入口を整理する'},
@@ -188,7 +188,7 @@ function render(state){
       <div class="sq-for-you__grid">
         ${selected.map(article => `
           <a class="sq-for-you__card" href="${esc(article.id)}" data-recommendation-id="${esc(article.id)}">
-            <img src="images/article-diagrams/${esc(article.id.replace(/\.html$/, ''))}.svg" data-sq-thumb-fallback="images/article-thumbnails/${esc(article.id.replace(/\.html$/, ''))}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <img src="${esc(article.thumbnail || `images/article-diagrams/${article.id.replace(/\.html$/, '')}.svg`)}" data-sq-thumb-fallback="images/article-thumbnails/${esc(article.id.replace(/\.html$/, ''))}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
             <span class="sq-for-you__body">
               <span class="sq-for-you__label">${esc(article.label)}</span>
               <span class="sq-for-you__title">${esc(article.title)}</span>
