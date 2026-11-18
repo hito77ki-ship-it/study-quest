@@ -3832,7 +3832,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 <div id="lp-search-modal" class="lp-search-modal">
   <div class="lp-search-overlay"></div>
   <div class="lp-search-box">
-    <input class="lp-search-input" type="text" placeholder="記事タイトルで検索... 例：試算表、伝票">
+    <input class="lp-search-input" type="text" autocomplete="off" placeholder="記事タイトルで検索... 例：試算表、伝票">
     <div class="lp-search-filters"></div>
     <div class="lp-search-results"></div>
     <div class="lp-search-hint">カテゴリ絞り込み対応　　Esc で閉じる　　/ キーで開く</div>
@@ -3961,6 +3961,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   const input   = modal.querySelector('.lp-search-input');
   const filters = modal.querySelector('.lp-search-filters');
   const results = modal.querySelector('.lp-search-results');
+  const returnStateKey = 'studyQuestArticleSearch';
   let index = null;
   let selectedLabel = 'all';
   const esc = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -3983,16 +3984,33 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     ].join('');
   }
 
-  function open(){
+  function clearReturnState(){
+    if (!history.state?.[returnStateKey]) return;
+    const state = {...history.state};
+    delete state[returnStateKey];
+    history.replaceState(state, '');
+  }
+
+  function showSearch(query, label){
     if(!index) index = buildIndex();
     modal.classList.add('open');
-    setTimeout(()=>input.focus(), 40);
-    input.value = '';
-    selectedLabel = 'all';
+    input.value = query;
+    selectedLabel = label;
     renderFilters();
-    render('');
+    render(query);
   }
-  function close(){ modal.classList.remove('open'); }
+  function open(){
+    clearReturnState();
+    showSearch('', 'all');
+    input.focus();
+  }
+  function close(){
+    if (!modal.classList.contains('open')) return;
+    modal.classList.remove('open');
+    input.value = '';
+    clearReturnState();
+    openBtn.focus({preventScroll:true});
+  }
 
   function normalizeSearchText(text){
     return text.normalize('NFKC').toLowerCase().trim();
@@ -4024,11 +4042,25 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   }
 
   openBtn.addEventListener('click', open);
+  results.addEventListener('click', event=>{
+    const link = event.target.closest('a.lp-search-item');
+    if (!link || event.defaultPrevented || event.button !== 0 ||
+        event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    const selection = {
+      query:input.value, label:selectedLabel, href:link.getAttribute('href'),
+      resultsTop:results.scrollTop, filtersLeft:filters.scrollLeft
+    };
+    history.replaceState({...history.state, [returnStateKey]:selection}, '');
+  });
   modal.querySelector('.lp-search-overlay').addEventListener('click', close);
-  input.addEventListener('input', ()=>render(input.value));
+  input.addEventListener('input', ()=>{
+    clearReturnState();
+    render(input.value);
+  });
   filters.addEventListener('click', e=>{
     const chip = e.target.closest('.lp-search-chip');
     if(!chip) return;
+    clearReturnState();
     selectedLabel = chip.dataset.label || 'all';
     renderFilters();
     render(input.value);
@@ -4039,6 +4071,19 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       e.preventDefault(); open();
     }
   });
+
+  // A back/forward cache hit reuses the open dialog and its existing DOM.
+  const selection = history.state?.[returnStateKey];
+  if (selection && performance.getEntriesByType('navigation')[0]?.type === 'back_forward') {
+    showSearch(selection.query, selection.label);
+    filters.scrollLeft = selection.filtersLeft;
+    results.scrollTop = selection.resultsTop;
+    const link = Array.from(results.querySelectorAll('a.lp-search-item'))
+      .find(item=>item.getAttribute('href') === selection.href);
+    (link || input).focus({preventScroll:true});
+  } else {
+    clearReturnState();
+  }
 })();
 </script>
 <script>
