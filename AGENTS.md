@@ -219,6 +219,8 @@ Study QuestのLP・記事導線は、単なる装飾ではなくプロダクト�
 
 ## 7. 記事を公開・更新するときのチェックリスト
 
+記事の検索対象（名簿・本文・説明・更新日）を更新したら、生成用の依存を初回に `npm ci --prefix scripts/article-search-index --ignore-scripts --no-audit --no-fund` で準備し、`node scripts/build-article-search-index.mjs` を実行する。生成した `article-search-index.json` と `article-widgets.js` の版を記事と同じPRへ含める。CIは `node scripts/build-article-search-index.mjs --check` で本文との同期を確認する。
+
 新規記事を公開する場合：
 
 1. `index.html` の該当カテゴリに記事カードを追加

@@ -8,17 +8,20 @@ const start = widget.indexOf('const SEARCH_INDEX_STATE =');
 const end = widget.indexOf('function searchCardHTML(', start);
 assert.ok(start >= 0 && end > start, 'The shared article search index must be present.');
 
-function articleSearch(fetch, articles = {
+const revision = widget.match(/const SEARCH_DATA_REVISION = '([0-9a-f]{64})';/)[1];
+const indexURL = 'article-search-index.json?v=' + revision;
+
+function articleSearch(fetchArticle, articles = {
   'mos.html': {label:'MOS', title:'MOSの準備'},
   'stats.html': {label:'ITパスポート', title:'注文の集計'}
-}){
+}, fetchIndex = async () => ({ok:false})){
   const context = vm.createContext({
     ARTICLES: articles,
-    fetch
+    fetch: file => file === indexURL ? fetchIndex(file) : fetchArticle(file)
   });
   vm.runInContext(widget.slice(start, end), context);
   // The fixture bodies are already plain text. These tests cover indexing and lookup.
-  vm.runInContext('extractSearchArticleData = text => ({text});', context);
+  vm.runInContext("extractSearchArticleData = text => ({text, description:'', modified:''});", context);
   return context;
 }
 
@@ -133,12 +136,13 @@ test('an offline placeholder or another canonical page is not indexed as the req
 
 test('the modal lists titles without fetching until a nonblank search, and retries only missing bodies after reopening', async () => {
   let failMOS = true;
+  let indexRequests = 0;
   const reads = [];
   const search = articleSearch(async file => {
     reads.push(file);
     if(file === 'mos.html' && failMOS) return {ok:false};
     return {ok:true, text:async () => file === 'mos.html' ? '備品の発送表' : 'Excelで注文を分析'};
-  });
+  }, undefined, async ()=>{ indexRequests++; return {ok:false}; });
   function control(){
     const listeners = new Map();
     return {
@@ -168,6 +172,7 @@ test('the modal lists titles without fetching until a nonblank search, and retri
   assert.match(results.innerHTML,/mos\.html/);
   type('　 ');overlay.dispatch('click');button.dispatch('click');
   assert.deepEqual(reads,[]);
+  assert.equal(indexRequests,0);
   type('Ｅｘｃｅｌ');type('Ｅｘｃｅｌで');
   assert.match(results.innerHTML,/検索しています/);
   await search.ensureArticleSearchIndex();
@@ -177,8 +182,132 @@ test('the modal lists titles without fetching until a nonblank search, and retri
   failMOS = false;
   overlay.dispatch('click');button.dispatch('click');
   assert.equal(reads.length,2);
+  assert.equal(indexRequests,1);
   type('発送表');
   await search.ensureArticleSearchIndex();
   assert.equal(results.innerHTML,'mos.html');
   assert.deepEqual(reads,['mos.html','stats.html','mos.html']);
+});
+
+function record(text, modified='2026-11-19'){
+  return {text, description:'記事の内容', modified};
+}
+
+function bundle(articles, header={}){
+  return {ok:true, json:async ()=>({schema:1, revision, articles, ...header})};
+}
+
+test('one shared index request supplies all bodies, original metadata and excerpts in roster order', async () => {
+  const calls = [];
+  let release;
+  const gate = new Promise(resolve=>{release=resolve;});
+  const search = articleSearch(file=>{ calls.push(file); return {ok:false}; }, undefined, async url=>{
+    calls.push(url);
+    await gate;
+    return bundle({
+      'stats.html': record('分析した注文とＥｘｃｅｌ', ''),
+      'mos.html': record('注文の発送表をExcelで照合'),
+      'other.html': record('名簿外の語'),
+    });
+  });
+  assert.equal(search.getSearchEntries('MOS').entries[0].f,'mos.html');
+  assert.deepEqual(calls,[]);
+  const first = search.ensureArticleSearchIndex();
+  assert.equal(search.ensureArticleSearchIndex(true),first);
+  assert.equal(search.getSearchEntries('発送表').loading,true);
+  release();
+  await first;
+  const found=search.getSearchEntries('ｅｘｃｅｌ');
+  assert.deepEqual(Array.from(found.entries,item=>item.f),['mos.html','stats.html']);
+  assert.equal(found.incomplete,false);
+  assert.equal(found.entries[0].description,'記事の内容');
+  assert.equal(search.formatSearchModifiedDate(found.entries[0].modified),'最終更新 2026年11月19日');
+  assert.equal(found.entries[1].modified,'');
+  assert.match(search.createSearchExcerpt(found.entries[0].text,'発送表'),/発送表をExcelで照合/);
+  assert.equal(search.getSearchEntries('名簿外の語').entries.length,0);
+  await search.ensureArticleSearchIndex(true);
+  assert.deepEqual(calls,[indexURL]);
+});
+
+test('missing and malformed individual records use only their canonical HTML fallback', async () => {
+  const bad = {
+    'empty.html': record('　 '),
+    'number.html': {...record('索引のみの語'), description:3},
+    'no-description.html': {text:'索引のみの語',modified:''},
+    'invalid-date.html': record('索引のみの語','2026-02-30'),
+    'wrong-text.html': {...record('索引のみの語'),text:[]},
+    'too-long.html': record('長'.repeat(12001)),
+  };
+  const files = ['valid.html','missing.html',...Object.keys(bad)];
+  const articles = Object.fromEntries(files.map(f=>[f,{label:'演習', title:f}]));
+  const calls = [];
+  const search = articleSearch(async f=>{
+    calls.push(f);
+    return {ok:true,text:async()=> '正規HTMLからの語'};
+  }, articles, async url=>{
+    calls.push(url);
+    return bundle({'valid.html':record('有効な索引の語'), ...bad});
+  });
+  await search.ensureArticleSearchIndex();
+  assert.deepEqual(calls,[indexURL,...files.slice(1)]);
+  assert.deepEqual(Array.from(search.getSearchEntries('有効な索引の語').entries,item=>item.f),['valid.html']);
+  assert.equal(search.getSearchEntries('正規HTMLからの語').entries.length,files.length-1);
+  assert.equal(search.getSearchEntries('索引のみの語').entries.length,0);
+  assert.equal(search.getSearchEntries('その他').incomplete,false);
+});
+
+test('wrong revision, schema or shape, unreadable JSON and failed HTTP retain the individual fallback', async () => {
+  const stale={'mos.html':record('古い索引の語')};
+  const wrongRevision = revision === 'a'.repeat(64) ? 'b'.repeat(64) : 'a'.repeat(64);
+  for(const response of [
+    bundle(stale,{revision:wrongRevision}), bundle(stale,{schema:2}),
+    bundle([]), bundle(null), {ok:true,json:async()=>{ throw new SyntaxError('HTML offline response'); }},
+    {ok:false},
+  ]){
+    const calls=[];
+    const search=articleSearch(async file=>{ calls.push(file);return {ok:true,text:async()=>'原本の語'}; },
+      undefined, async ()=>response);
+    await search.ensureArticleSearchIndex();
+    assert.deepEqual(calls,['mos.html','stats.html']);
+    assert.equal(search.getSearchEntries('古い索引の語').entries.length,0);
+    assert.equal(search.getSearchEntries('原本の語').entries.length,2);
+  }
+});
+
+test('retry can recover the published index after an offline visit without overwriting cached HTML', async () => {
+  const calls=[];
+  let online=false;
+  const search=articleSearch(async file=>{
+    calls.push(file);
+    return file==='mos.html' ? {ok:true,text:async()=>'保存した原本の語'} : {ok:false};
+  },undefined,async url=>{
+    calls.push(url);
+    if(!online) throw Error('offline');
+    return bundle({'mos.html':record('読み直さない索引の語'),'stats.html':record('復帰後の語')});
+  });
+  await search.ensureArticleSearchIndex();
+  assert.equal(search.getSearchEntries('復帰後の語').incomplete,true);
+  online=true;
+  await search.ensureArticleSearchIndex(true);
+  assert.deepEqual(calls,[indexURL,'mos.html','stats.html',indexURL]);
+  assert.equal(search.getSearchEntries('保存した原本の語').entries[0].f,'mos.html');
+  assert.equal(search.getSearchEntries('読み直さない索引の語').entries.length,0);
+  assert.equal(search.getSearchEntries('復帰後の語').entries[0].f,'stats.html');
+  assert.equal(search.getSearchEntries('復帰後の語').incomplete,false);
+});
+
+test('retry after a partial index only reads the still missing HTML', async () => {
+  const calls=[];
+  let online=false;
+  const search=articleSearch(async file=>{
+    calls.push(file);
+    return {ok:online,text:async()=>'復帰した原本の語'};
+  },undefined,async url=>{calls.push(url);return bundle({'mos.html':record('索引の語')});});
+  await search.ensureArticleSearchIndex();
+  assert.equal(search.getSearchEntries('復帰した原本の語').incomplete,true);
+  online=true;
+  await search.ensureArticleSearchIndex(true);
+  assert.deepEqual(calls,[indexURL,'stats.html','stats.html']);
+  assert.equal(search.getSearchEntries('復帰した原本の語').incomplete,false);
+  assert.equal(search.getSearchEntries('復帰した原本の語').entries[0].f,'stats.html');
 });

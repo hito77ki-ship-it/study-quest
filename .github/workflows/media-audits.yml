@@ -55,6 +55,12 @@ jobs:
       - name: Check public development diary is in sync
         run: node scripts/build-development-log.mjs --check
 
+      - name: Check article search data and search behavior
+        run: |
+          npm ci --prefix scripts/article-search-index --ignore-scripts --no-audit --no-fund
+          node scripts/build-article-search-index.mjs --check
+          node --test scripts/tests/home-search-regression.mjs scripts/tests/article-search-regression.mjs
+
       - name: Run deterministic content-quality checks
         run: node scripts/audits/run-content-quality-gate.mjs --strict --no-write
 
