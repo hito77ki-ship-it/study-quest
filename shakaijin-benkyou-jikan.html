@@ -96,6 +96,12 @@ details summary:active{background:var(--light);}
 .sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+@media print {
+  body > nav { display: none; }
+  .sq-facts-exercise .sq-facts-answer::details-content,
+  #weekly-plan-figure::details-content { content-visibility: visible; }
+  #weekly-plan-figure { break-inside: avoid; }
+}
 </style>
 </head>
 <body>
@@ -110,12 +116,14 @@ details summary:active{background:var(--light);}
 <p>出勤・退勤だけでなく、移動、家事、介護・育児など外せない予定と休息を先に置きます。通勤中も全員が学習できるとは限りません。使える状態の枠だけを数え、机・紙・音声など必要な環境を書き添えます。既に疲れて実施できなかった時間を、翌週の確実な枠として足さないようにします。</p>
 <div class="sq-facts-table"><table><thead><tr><th scope="col">曜日</th><th scope="col">編集部の架空の予定</th><th scope="col">想定する作業</th></tr></thead><tbody><tr><td>月</td><td>30分</td><td>前週の誤答一問と根拠確認</td></tr><tr><td>火</td><td>35分</td><td>新しい用語と例題</td></tr><tr><td>水</td><td>20分</td><td>用語を自分の言葉で説明</td></tr><tr><td>木</td><td>40分</td><td>条件を変えた計算練習</td></tr><tr><td>金</td><td>5〜15分</td><td>次回の問題・必要な道具の準備</td></tr><tr><td>土</td><td>90〜120分</td><td>時間を測る演習と採点</td></tr><tr><td>日</td><td>60〜90分</td><td>誤答分析と次週の予定調整</td></tr></tbody></table></div>
 <p>この表は社会人の平均・必要時間・成功者の実績ではありません。実施しにくい曜日を他の日に置き換え、使えなかった枠もそのまま記録します。予定表の空欄を全部学習で埋めることを目標にはしません。</p>
-<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/article-diagrams/shakaijin-benkyou-jikan-mobile.svg?v=20261103"><img src="images/article-diagrams/shakaijin-benkyou-jikan.svg?v=20261103" alt="週間の枠と演習時間を検算する" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
 <section class="sq-facts-exercise"><h3>自作例1：週間の合計を検算</h3><p>上の表の最小・最大の時間はそれぞれ何分ですか。最低時間どおりに予定した週で、土曜90分が使えなくなったら残りは？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>最小は30＋35＋20＋40＋5＋90＋60＝280分（4時間40分）。最大は30＋35＋20＋40＋15＋120＋90＝350分（5時間50分）です。最低の予定から土曜を除くと190分（3時間10分）。使えなくなった90分を自動的に翌日に上乗せせず、翌週へ送る作業と今週扱う作業を分けます。</p></div></details></section>
 <h2>短い枠と長い枠に、別の終わり方を用意する</h2>
 <p>短い枠には「間違えた選択肢の根拠を一つ確かめる」など終点が明確な作業を置けます。長い枠には本番時間を意識した演習や、解答を見直す作業を置けます。どちらが常に優れるという比較ではなく、実施したい課題から必要な枠を決めます。</p>
 <p>例えば日商簿記3級の公式試験時間は60分、2級は90分です。演習の時間と採点・解き直しの時間を同じ枠に詰めるなら、その分も予定します。20分しかない日に90分演習を途中で止めた記録は、本番どおりの通し演習の結果とは分けて残します。</p>
 <section class="sq-facts-exercise"><h3>自作例2：演習と見直しを同じ枠に入れる</h3><p>架空の人は簿記2級の90分演習に加えて、採点15分と解き直し25分を予定しています。休日120分で全部できますか？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>必要な予定は90＋15＋25＝130分で、120分を10分超えます。解き直しの一部を別の枠へ置くなど、実施する内容を決め直します。この130分は例の作業予定で、すべての受験者に必要な復習時間ではありません。</p></div></details></section>
+<details id="weekly-plan-figure" class="sq-facts-answer"><summary>2問の答えを図で見る</summary>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/article-diagrams/shakaijin-benkyou-jikan-mobile.svg?v=20261103"><img src="images/article-diagrams/shakaijin-benkyou-jikan.svg?v=20261103" alt="週間予定は最小280分・最大350分。最小の予定で土曜90分を除くと190分。演習90分・採点15分・解き直し25分の合計130分は、休日の120分枠を10分超える。" width="760" height="560"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
+</details>
 <h2>予定の達成率だけで勉強の質を評価しない</h2>
 <p>時間の実績は、次週の計画が実行可能かを考える材料です。一方、理解は「条件を変えた問題を解けたか」「理由を説明できたか」で別に確認します。机に向かった280分が、そのまま280分の理解の増加になるわけではありません。</p>
 <p>Lallyらの習慣研究は同じ状況での行動と自動性を扱っていますが、資格勉強の最適な時刻・連続時間を全員に指定するものではありません。ここで示した週間表は研究で検証された配分ではなく、予定と実績を比べるための自作の型です。</p>
