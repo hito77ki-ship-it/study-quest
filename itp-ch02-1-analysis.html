@@ -23,7 +23,7 @@
   "url": "https://study-quest.net/itp-ch02-1-analysis.html",
   "image": "https://study-quest.net/images/study-quest-it-category.jpg",
   "datePublished": "2026-11-03",
-  "dateModified": "2026-11-03",
+  "dateModified": "2026-11-19",
   "author": {
     "@type": "Organization",
     "name": "スタディクエスト編集部",
@@ -41,6 +41,18 @@
 }
   </script>
   <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
+  <style>
+    #counter-mix { scroll-margin-top:4.5rem; }
+    #counter-mix .counter-counts td { font-variant-numeric:tabular-nums; white-space:nowrap; }
+    #counter-mix .counter-share { margin:1rem 0; max-width:32rem; }
+    #counter-mix .counter-share figcaption { font-weight:700; }
+    #counter-mix .counter-share p { margin:.7rem 0 .25rem; }
+    #counter-mix .counter-bar { display:grid; height:.85rem; border:1px solid var(--review-link); }
+    #counter-mix .counter-a { grid-template-columns:1fr 4fr; }
+    #counter-mix .counter-b { grid-template-columns:4fr 1fr; }
+    #counter-mix .counter-bar span:first-child { background:var(--review-link); }
+    #counter-mix .counter-bar span:last-child { border-inline-start:1px solid var(--review-link); background:repeating-linear-gradient(135deg,transparent 0 4px,var(--review-link) 4px 5px); }
+  </style>
 </head>
 <body class="itp-review">
 <nav class="review-site-nav" aria-label="サイト"><div class="nav-inner"><a class="nav-logo" href="index.html">Study Quest</a><a class="nav-cta" href="app.html">学習を記録する</a></div></nav>
@@ -51,9 +63,9 @@
     <p class="label">STUDY QUEST　/　ITパスポート　/　第2章</p>
     <h1>ITパスポート 2-1 業務分析と図表</h1>
     <p>行列の原因を整理し、案を期待値で比べます。パレート図、レーダーチャート、散布図を実際に読んで練習します。</p>
-    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月3日 · 学習用の架空事例</p>
+    <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月19日 · 学習用の架空事例</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#tree-and-share">ロジックツリーとモザイク図の使い分け</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#process">業務の見直し</a></li><li><a href="#problem-solving">問題解決と意思決定</a></li><li><a href="#graphs">図表の使い分け</a></li><li><a href="#pareto">パレート図</a></li><li><a href="#radar">レーダーチャート</a></li><li><a href="#scatter">散布図</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#tree-and-share">ロジックツリーとモザイク図の使い分け</a></li><li><a href="#counter-mix">窓口A・Bの5分以内の割合を比べる</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="process">
     <h2>まず、行列ができる手順を確かめる</h2>
     <p>「注文を受ける → 決済 → 商品を渡す」と手順を並べ、どこに待ち時間があるかを測ります。原因候補が散らばっているなら、<strong>親和図法</strong>で似た意見を「注文」「決済」「受け渡し」などにまとめます。選択肢が複数あれば、待ち時間の短縮、担当者の負担、費用といった評価軸を決め、同じ基準で比べます。</p>
@@ -333,6 +345,39 @@
     <details><summary>解答と解説</summary><p>2倍です。高さは同じ50%で、土曜の幅は日曜の2倍です。割合が同じでも人数は違います。</p></details>
   </div>
   <p class="note">確認資料　<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf">IPA試験シラバス</a></p>
+</section>
+
+<section id="counter-mix" aria-labelledby="counter-mix-heading">
+  <h2 id="counter-mix-heading">窓口AとB、5分以内に渡せた割合が高いのは？</h2>
+  <p>市民まつりで、来場者は予約品を受け取る窓口をA・Bから選びました。閉場後、受付から5分以内に渡せた人数をまとめます。編集部が作った架空の1日分で、1人1回、記録漏れはありません。</p>
+  <table class="counter-counts">
+    <caption>受け渡し記録（5分以内に渡せた人数／利用者数）</caption>
+    <thead><tr><th scope="col">時間帯</th><th scope="col">窓口A</th><th scope="col">窓口B</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">午前</th><td>9人／10人</td><td>32人／40人</td></tr>
+      <tr><th scope="row">午後</th><td>24人／40人</td><td>5人／10人</td></tr>
+    </tbody>
+  </table>
+  <p>報告書の下書きは「Bの方が5分以内に渡せた割合が高かった。次回はすべてBにする」。全体で比べたときと、午前・午後を別々に比べたときで、高いのは同じ窓口でしょうか。下書きのどこまでを市民向けに伝えられるか、一文に直してみましょう。</p>
+  <details id="counter-observed"><summary>当日の実績を、全体と時間帯別で照合する</summary>
+    <p><strong>当日の全体ではB。</strong> Aは（9＋24）÷（10＋40）＝33／50＝66%。Bは（32＋5）÷（40＋10）＝37／50＝74%で、5分以内に受け取れた人も4人多くいました。</p>
+    <p><strong>午前も午後も、時間帯別ではA。</strong> 午前はAが90%、Bが80%。午後はAが60%、Bが50%です。どちらの時間帯もAが10ポイント上回ります。</p>
+    <figure class="counter-share">
+      <figcaption>各窓口の50人が来た時間帯（左が午前、右が午後）</figcaption>
+      <p><b>A</b>　午前10人・午後40人</p>
+      <div class="counter-bar counter-a" aria-hidden="true"><span></span><span></span></div>
+      <p><b>B</b>　午前40人・午後10人</p>
+      <div class="counter-bar counter-b" aria-hidden="true"><span></span><span></span></div>
+    </figure>
+    <p>Bの利用者の8割は、両窓口とも達成率が高い午前に来ています。Aは逆に8割が午後です。全体では、この人数の違いが各時間帯の割合の重みになります。</p>
+  </details>
+  <p>もし両窓口に午前と午後、同じ人数ずつ来たらどうでしょう。今回の時間帯別の割合を使って計算し、全体の実績と同じ数字になるかを確かめましょう。</p>
+  <details id="counter-report"><summary>午前と午後を半々にして、報告の一文を見直す</summary>
+    <p>次回の比較を考えるため、各窓口に午前50人・午後50人が来て、今回と同じ時間帯別の割合で渡せたと仮定します。Aは（50×0.90＋50×0.60）÷100＝<strong>75%</strong>、Bは（50×0.80＋50×0.50）÷100＝<strong>65%</strong>です。</p>
+    <p><strong>報告の一例</strong>　この日の5分以内の受け渡しは全体でBが74%、Aが66%でしたが、午前も午後もAの割合が高く、利用者が集中した時間帯が違いました。</p>
+    <p>半々での75%と65%は、今回の率に同じ重みを付けた仮の比較です。来場者が窓口を選んでおり、方式を切り替えたときの効果は分かりません。次回に方式を試すなら、同じ時間帯に担当人数や予約品の条件もそろえて記録します。</p>
+  </details>
+  <p class="note">全体と各グループで比較の向きが逆になる現象は、シンプソンのパラドックスと呼ばれます。用語と解釈は<a href="https://ftp.cs.ucla.edu/pub/stat_ser/r414.pdf#page=1">Pearlの論文（冒頭の定義）</a>、クロス集計表・モザイク図の位置付けは<a href="https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf#page=10">IPAの試験シラバス Ver.6.5（PDFの10ページ）</a>を参照しました。</p>
 </section>
 
   <section class="review-sources" id="sources">
