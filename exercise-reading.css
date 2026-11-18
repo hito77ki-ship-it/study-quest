@@ -1,0 +1,31 @@
+/* Source notes and references in the five exercises. */
+:is(.dispatch-practice, .picture-speaking, .fold-practice) a {
+  color: #386323;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+:is(.dispatch-practice, .picture-speaking, .fold-practice) a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.ledger-slip dt,
+html .picture-speaking > p.meta,
+#household-survey .note {
+  color: var(--sq-soft, #4a5568);
+}
+
+@media screen {
+  html[data-theme="dark"] :is(.dispatch-practice, .picture-speaking, .fold-practice) a {
+    color: var(--sq-accent-bright, #b6e27c);
+  }
+}
+
+@media print {
+  .ledger-slip dt,
+  html .picture-speaking > p.meta,
+  #household-survey .note {
+    color: #334155;
+  }
+}
