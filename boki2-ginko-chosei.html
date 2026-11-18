@@ -136,6 +136,9 @@ details summary:active{background:var(--light);}
 .nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
+@media print {
+  body > nav { display: none; }
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "未渡小切手なら、商品の取得や備品の取得も取り消しますか？", "acceptedAnswer": {"@type": "Answer", "text": "受取済みの取得取引そのものは取り消しません。当座預金を戻し、まだ払っていない買掛金や未払金を確認します。元の仕訳を必ず丸ごと逆にする説明は訂正しました。"}}, {"@type": "Question", "name": "調整後残高が一致すれば、全部正しいといえますか？", "acceptedAnswer": {"@type": "Answer", "text": "一致は必要な検算ですが、分類や相手科目まで正しい保証にはなりません。各差の反映先、会社の修正仕訳と残る資産・債務、重複や漏れも確認します。"}}, {"@type": "Question", "name": "2027年度は銀行勘定調整表が範囲からなくなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "公表済みの2027年度確定区分表でも2級に残っています。紙の手形・小切手をめぐる改定とは分け、本文の小切手例は2026年度向けとして扱っています。"}}]}
