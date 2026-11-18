@@ -2262,9 +2262,10 @@ html[data-theme="dark"] .sq-article-hero{box-shadow:0 16px 34px rgba(0,0,0,.22);
 .sq-search-filters::-webkit-scrollbar{height:4px;}
 .sq-search-filters::-webkit-scrollbar-thumb{background:var(--sq-border-strong);border-radius:4px;}
 .sq-search-filters::-webkit-scrollbar-track{background:transparent;}
-.sq-search-chip{border:1px solid var(--sq-border);background:var(--sq-surface);color:var(--sq-muted);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:inherit;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
+.sq-search-chip{border:1px solid var(--sq-border);background:var(--sq-surface);color:var(--sq-text);border-radius:100px;padding:6px 11px;font-size:11px;font-weight:700;font-family:inherit;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
 .sq-search-chip:hover{color:var(--sq-text);border-color:var(--sq-border-strong);}
-.sq-search-chip.active{background:rgba(140,198,63,.18);border-color:rgba(140,198,63,.45);color:#276749;}
+.sq-search-chip.active{background:rgba(140,198,63,.18);border-color:rgba(140,198,63,.45);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.sq-search-chip:focus-visible{outline:2px solid currentColor;outline-offset:-3px;}
 .sq-search-results{max-height:min(460px,calc(100vh - 168px));overflow-y:auto;}
 .sq-search-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-bottom:1px solid var(--sq-border);text-decoration:none;color:var(--sq-text);transition:background .12s;}
 .sq-search-item:hover{background:var(--sq-surface-soft);text-decoration:none;}
@@ -2275,7 +2276,7 @@ html[data-theme="dark"] .sq-article-hero{box-shadow:0 16px 34px rgba(0,0,0,.22);
 .sq-search-item--current{border-left:3px solid #8CC63F;background:rgba(140,198,63,.06);}
 .sq-search-content{min-width:0;flex:1;}
 .sq-search-meta{display:flex;align-items:center;gap:7px;min-width:0;margin-bottom:3px;}
-.sq-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:#276749;padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
+.sq-search-label{font-size:10px;font-weight:700;background:rgba(140,198,63,.18);color:var(--sq-text);padding:2px 8px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
 .sq-search-date{font-size:10px;color:var(--sq-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .sq-search-title{font-size:13px;font-weight:700;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
 .sq-search-snippet{font-size:11px;color:var(--sq-muted);line-height:1.55;margin-top:3px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
@@ -3471,6 +3472,19 @@ function getSearchCategoryLabels(){
   });
 }
 
+function renderSearchCategoryFilters(filters, selectedLabel){
+  if(!filters.childElementCount){
+    filters.innerHTML = ['all', ...getSearchCategoryLabels()].map(label =>
+      `<button type="button" class="sq-search-chip" data-label="${_escHtml(label)}">${label === 'all' ? 'すべて' : _escHtml(label)}</button>`
+    ).join('');
+  }
+  for(const chip of filters.children){
+    const selected = chip.dataset.label === selectedLabel;
+    chip.classList.toggle('active', selected);
+    chip.setAttribute('aria-pressed', String(selected));
+  }
+}
+
 function getSearchEntries(rawQuery, label='all'){
   const query = normalizeSearchText(rawQuery);
   const entries = SEARCH_INDEX_STATE.entries || createSearchBaseEntries();
@@ -3523,7 +3537,7 @@ function buildSearchModal(){
   const modal = document.createElement('div');
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
-  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters-wrap"><div class="sq-search-filters"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
+  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters-wrap"><div class="sq-search-filters" role="group" aria-label="記事のカテゴリ"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
@@ -3531,13 +3545,6 @@ function buildSearchModal(){
   const results= modal.querySelector('.sq-search-results');
   let selectedLabel = 'all';
   let searchedThisOpening = false;
-  function renderFilters(){
-    const labels = getSearchCategoryLabels();
-    filters.innerHTML = [
-      `<button type="button" class="sq-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
-      ...labels.map(label => `<button type="button" class="sq-search-chip${selectedLabel===label?' active':''}" data-label="${_escHtml(label)}">${_escHtml(label)}</button>`)
-    ].join('');
-  }
 
   function openModal(){
     modal.classList.add('open');
@@ -3545,7 +3552,8 @@ function buildSearchModal(){
     input.value='';
     selectedLabel='all';
     searchedThisOpening = false;
-    renderFilters();
+    renderSearchCategoryFilters(filters, selectedLabel);
+    filters.scrollLeft = 0;
     render('');
   }
   function closeModal(){ modal.classList.remove('open'); }
@@ -3595,7 +3603,7 @@ function buildSearchModal(){
     const chip = e.target.closest('.sq-search-chip');
     if(!chip) return;
     selectedLabel = chip.dataset.label || 'all';
-    renderFilters();
+    renderSearchCategoryFilters(filters, selectedLabel);
     render(input.value);
   });
   document.addEventListener('keydown', e=>{
@@ -3630,7 +3638,7 @@ function buildSearchResultsPage(){
         </form>
         <p class="sq-search-page-note">タイトルだけでなく、記事本文・要約からも探せます。</p>
       </header>
-      <div class="sq-search-page-filters-wrap"><div class="sq-search-page-filters" aria-label="カテゴリで絞り込む"></div></div>
+      <div class="sq-search-page-filters-wrap"><div class="sq-search-page-filters" role="group" aria-label="記事のカテゴリ"></div></div>
       <section class="sq-search-page-results" aria-live="polite">
         <p class="sq-search-page-status"></p>
         <div class="sq-search-page-list"></div>
@@ -3656,13 +3664,6 @@ function buildSearchResultsPage(){
     history.replaceState(null, '', `search.html${suffix ? `?${suffix}` : ''}`);
   }
 
-  function renderFilters(){
-    const labels = getSearchCategoryLabels();
-    filters.innerHTML = [
-      `<button type="button" class="sq-search-chip${selectedLabel==='all'?' active':''}" data-label="all">すべて</button>`,
-      ...labels.map(label => `<button type="button" class="sq-search-chip${selectedLabel===label?' active':''}" data-label="${_escHtml(label)}">${_escHtml(label)}</button>`)
-    ].join('');
-  }
 
   function render(){
     const rawQuery = submittedQuery;
@@ -3704,7 +3705,7 @@ function buildSearchResultsPage(){
     render();
     if(index && !SEARCH_INDEX_STATE.ready) index.then(render);
   }
-  renderFilters();
+  renderSearchCategoryFilters(filters, selectedLabel);
   refresh();
 
   form.addEventListener('submit', event => {
@@ -3717,7 +3718,7 @@ function buildSearchResultsPage(){
     const chip = event.target.closest('.sq-search-chip');
     if(!chip) return;
     selectedLabel = chip.dataset.label || 'all';
-    renderFilters();
+    renderSearchCategoryFilters(filters, selectedLabel);
     updateURL();
     refresh();
   });

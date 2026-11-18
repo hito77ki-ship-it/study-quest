@@ -152,6 +152,7 @@ test('the modal lists titles without fetching until a nonblank search, and retri
     };
   }
   const button=control(), input=control(), filters=control(), overlay=control(), results={};
+  filters.children=[];
   const classes=new Set();
   const dialog={
     classList:{add:name=>classes.add(name), remove:name=>classes.delete(name), contains:name=>classes.has(name)},
@@ -310,4 +311,28 @@ test('retry after a partial index only reads the still missing HTML', async () =
   assert.deepEqual(calls,[indexURL,'stats.html','stats.html']);
   assert.equal(search.getSearchEntries('復帰した原本の語').incomplete,false);
   assert.equal(search.getSearchEntries('復帰した原本の語').entries[0].f,'stats.html');
+});
+
+test('category changes update the existing toggle buttons in place', () => {
+  const search=articleSearch();
+  const chips=['all','MOS','ITパスポート'].map(label=>{
+    const classes=new Set();
+    return {
+      dataset:{label}, classes, attributes:{},
+      classList:{toggle(name,selected){ if(selected) classes.add(name); else classes.delete(name); }},
+      setAttribute(name,value){ this.attributes[name]=value; }
+    };
+  });
+  const filters={
+    children:chips, childElementCount:chips.length, scrollLeft:83,
+    set innerHTML(_){ throw new Error('Existing category controls were replaced'); }
+  };
+  for(const label of ['all','MOS','ITパスポート','all']){
+    search.renderSearchCategoryFilters(filters,label);
+    for(const button of chips){
+      assert.equal(button.attributes['aria-pressed'],String(button.dataset.label===label));
+      assert.equal(button.classes.has('active'),button.dataset.label===label);
+    }
+    assert.equal(filters.scrollLeft,83);
+  }
 });
