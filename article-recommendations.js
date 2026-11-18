@@ -23,7 +23,7 @@ const TOPICS = [
 const CATALOG = [
   {id:'boki.html', label:'簿記', title:'日商簿記3級・2級の独学勉強法と合格スケジュール', topics:['accounting'], note:'簿記をゼロから進める全体像'},
   {id:'boki2.html', label:'簿記2級', title:'簿記2級の勉強時間・独学合格ロードマップ', topics:['accounting'], note:'次の試験までの学習順を決める'},
-  {id:'boki2-next-exam.html', label:'簿記2級', title:'簿記2級の試験日程と最速3ヶ月合格ロードマップ', topics:['accounting','continuity'], note:'受験日から逆算して計画を作る'},
+  {id:'boki2-next-exam.html', label:'簿記2級', title:'簿記2級の試験日程と12週間の計画例', topics:['accounting','continuity'], note:'受験日から逆算して計画を作る'},
   {id:'boki-careless-miss.html', label:'簿記3級・2級', title:'電卓の打ち間違い・桁ミスをなくす「ミス記録ノート」の作り方', topics:['accounting','continuity'], note:'失点を次の改善へ変える'},
   {id:'takken.html', label:'宅建', title:'宅建士の独学合格ガイド・スケジュール', topics:['legal'], note:'宅建の学習全体をつかむ'},
   {id:'gyosei.html', label:'行政書士', title:'行政書士試験の独学合格ガイド', topics:['legal'], note:'行政書士を目指す前の全体設計'},
@@ -55,8 +55,8 @@ const CATALOG = [
   {id:'shikaku-zasetsu-riyu.html', label:'挫折・再開', title:'資格勉強を途中でやめる人のよくある理由｜立て直し方', topics:['continuity'], note:'一度止まった後の戻り方を考える'},
   {id:'shakaijin-benkyou-jikan.html', label:'勉強時間', title:'社会人が勉強時間を確保する方法7選', topics:['continuity','career'], note:'生活の中に勉強時間を作る'},
   {id:'boki-zasetsu-type.html', label:'簿記3級・2級', title:'勉強が続かない挫折する人の4タイプ診断', topics:['accounting','continuity'], note:'自分に合う立て直し方を見つける'},
-  {id:'hatarakinagara-shikaku.html', label:'社会人向け', title:'働きながら取れる資格ランキング10選', topics:['career','continuity'], note:'仕事と両立しやすい選択肢を探す'},
-  {id:'shukatsu-shikaku.html', label:'大学生向け', title:'就活で強い資格ランキング10選', topics:['career'], note:'就活に結び付く資格を整理する'},
+  {id:'hatarakinagara-shikaku.html', label:'社会人向け', title:'働きながら学ぶ資格10候補｜仕事と勤務予定から選ぶ', topics:['career','continuity'], note:'仕事と両立しやすい選択肢を探す'},
+  {id:'shukatsu-shikaku.html', label:'大学生向け', title:'就活の資格選び｜応募条件・提出期限を確認する', topics:['career'], note:'就活に結び付く資格を整理する'},
   {id:'osusume-shikaku.html', label:'まとめ', title:'社会人におすすめの資格ランキング2026', topics:['career'], note:'目的別に候補を比べる'},
   {id:'shikaku-20dai.html', label:'まとめ', title:'20代におすすめの資格ランキング2026', topics:['career'], note:'20代のキャリアに合う資格を選ぶ'}
 ];
