@@ -10,9 +10,9 @@
 <link rel="canonical" href="https://study-quest.net/boki2-ginko-chosei.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認｜スタディクエスト</title>
-<meta name="description" content="未渡小切手を取引全体の取消しとする説明を訂正。会社と銀行の調整、500,000円の既存例、取得済み備品と未払金、手数料の誤記を検算。2027年度の範囲も区別。">
+<meta name="description" content="会社の帳簿と銀行明細を突き合わせ、同じ残高104,000円で照合を終えてよいか確かめます。時間外預入や未記帳の処理、未渡小切手・手数料の仕訳も自作例で検算できます。">
 <meta property="og:title" content="銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認">
-<meta property="og:description" content="未渡小切手を取引全体の取消しとする説明を訂正。会社と銀行の調整、500,000円の既存例、取得済み備品と未払金、手数料の誤記を検算。2027年度の範囲も区別。">
+<meta property="og:description" content="会社の帳簿と銀行明細を突き合わせ、同じ残高104,000円で照合を終えてよいか確かめます。時間外預入や未記帳の処理、未渡小切手・手数料の仕訳も自作例で検算できます。">
 <meta property="og:url" content="https://study-quest.net/boki2-ginko-chosei.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "未渡小切手を取引全体の取消しとする説明を訂正。会社と銀行の調整、500,000円の既存例、取得済み備品と未払金、手数料の誤記を検算。2027年度の範囲も区別。", "url": "https://study-quest.net/boki2-ginko-chosei.html", "datePublished": "2026-05-09", "dateModified": "2026-11-15", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "会社の帳簿と銀行明細を突き合わせ、同じ残高104,000円で照合を終えてよいか確かめます。時間外預入や未記帳の処理、未渡小切手・手数料の仕訳も自作例で検算できます。", "url": "https://study-quest.net/boki2-ginko-chosei.html", "datePublished": "2026-05-09", "dateModified": "2026-11-19", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/"}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -156,11 +156,21 @@ details summary:active{background:var(--light);}
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
 </style>
 <link rel="stylesheet" href="teaching-scenes.css?v=20261115">
+<style>
+  #june-bank-check { scroll-margin-top: 6rem; }
+  #june-bank-check caption { text-align: left; font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+  #june-bank-check .sq-facts-table { margin: 1.1rem 0; }
+  #june-bank-check .sq-facts-table th:first-child { width: 23%; }
+  #june-bank-check .sq-facts-table th:last-child { width: 29%; }
+  #june-bank-check tbody th { vertical-align: top; }
+  #june-bank-check .bank-amount { white-space: nowrap; font-variant-numeric: tabular-nums; }
+</style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月15日</p><h1>銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>銀行勘定調整表は、会社の預金帳簿残高と銀行の残高の差を、未処理・時間差・誤記等に分けて説明する表です。<strong>残高を合わせる計算と、会社が行う修正仕訳は別</strong>に確認します。両側の金額が一致しただけで、すべての分類や仕訳が正しいとは限りません。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月19日</p><h1>銀行勘定調整表｜未渡小切手・未記帳・誤記の修正を自作例で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>銀行勘定調整表は、会社の預金帳簿残高と銀行の残高の差を、未処理・時間差・誤記等に分けて説明する表です。<strong>残高を合わせる計算と、会社が行う修正仕訳は別</strong>に確認します。両側の金額が一致しただけで、すべての分類や仕訳が正しいとは限りません。</p>
 <div class="sq-facts-note"><strong>受験年度と、この例の範囲</strong><p>2027年度の確定区分表でも、銀行勘定調整表は2級の範囲に残っています。一方、紙の手形・小切手をめぐる改定があるため、以下の小切手の例は2026年度向けの学習例として区別します。2027年度以降の学習では、その年度の公式案内・問題と教材を照合してください。例題は編集部の架空例です。</p></div>
+<p><a href="#june-bank-check">会社と銀行の6月末の明細を照合してみる ↓</a></p>
 <h2>「どちらの記録を直すか」と「会社の仕訳」を分ける</h2>
 <section class="sq-teaching-scene" id="teaching-scene" aria-labelledby="scene-heading"><h3 id="scene-heading">場面で見る：二つの記録の、どこが違う？</h3><figure class="sq-scene-square"><img src="images/teaching-scenes/boki2-bank-records.jpg" alt="銀行役と会社役の二人が、それぞれ罫線入りの記録を持って見比べる架空の場面" width="1254" height="1254" loading="lazy" decoding="async"><figcaption>本人提供の簿記指導教材から掲載した、AI生成の架空場面です。左を銀行、右を会社とする説明用の仮定です。絵の罫線には残高や取引内容は書かれていません。</figcaption></figure><ol><li><strong>同じ預金口座・同じ日付で比べる</strong>：銀行の残高と会社の当座預金残高を、別の口座や別の日の数字と混ぜずに並べます。</li><li><strong>差の原因を一件ずつ確認する</strong>：会社が未記帳・誤記なら会社側を訂正。会社で正しく記帳済みの時間差なら、会社で二重に仕訳しません。</li><li><strong>調整表と会社の仕訳を分ける</strong>：銀行側の調整は、比較できる残高を表の上で求めるものです。会社が銀行の実際の帳簿を書き換える操作ではありません。</li></ol><p>下の<a href="#scene-example-3">例題3の調整後残高500,000円</a>へ進み、会社で記帳する手数料などと、銀行側だけで調整する時間差を区別してください。未渡小切手は<a href="#scene-example-1">例題1</a>のように、支払相手と元の取引も確かめます。</p></section>
 
@@ -178,10 +188,50 @@ details summary:active{background:var(--light);}
 <figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-ginko-chosei-map-mobile.svg?v=20261102"><img src="images/boki2-ginko-chosei-map.svg?v=20261102" alt="銀行540,000円と会社470,000円を500,000円へ調整し、取得済み備品の未渡小切手は未払金を残す自作図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
 <h2>記帳漏れと、すでに記帳した金額の誤りを分ける</h2>
 <section class="sq-facts-exercise" id="scene-example-4"><h3>例題4：手数料を9,500円と誤記した場合</h3><p>実際の銀行手数料は5,900円ですが、会社は借方 支払手数料9,500／貸方 当座預金9,500と記帳済みでした。この差だけを直す仕訳は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>会社は費用を3,600円多く、預金を3,600円少なく記帳しています。借方 <strong>当座預金3,600</strong>／貸方 <strong>支払手数料3,600</strong>です。</p><p>未記帳としてさらに5,900円の手数料を費用にすると二重計上になります。差の原因を読み、誤記額と正しい額の差だけを直します。</p></div></details></section>
+<section class="sq-facts-exercise" id="june-bank-check" aria-labelledby="june-check-title">
+  <h2 id="june-check-title">6月末の残高がどちらも104,000円。照合を終えてよい？</h2>
+  <p>架空の会社の経理を引き継ぎました。6月29日の締めには、会社と銀行の同じ当座預金口座が120,000円で一致し、未解決の項目もありません。下の2枚がその後の全記録です。手数料はありません。</p>
+  <p><strong>6月30日の帳簿を締めるには、会社でどの仕訳が必要でしょうか。</strong>同じ取引に印を付け、会社と銀行の両側から6月末の調整後残高を計算してください。ハル商店には売掛金8,000円があり、請求番号はR47です。</p>
+  <div class="sq-facts-table">
+    <table>
+      <caption>資料1　会社の当座預金帳（6月30日締め）</caption>
+      <thead><tr><th scope="col">日付<br>番号</th><th scope="col">会社の摘要</th><th scope="col">入出金</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">6/30<br>P21</th><td>仕入先への振込</td><td>出金<br><span class="bank-amount">24,000円</span></td></tr>
+        <tr><th scope="row">6/30<br>M18</th><td>当社の手元現金を営業終了後に夜間金庫へ預入</td><td>入金<br><span class="bank-amount">8,000円</span></td></tr>
+      </tbody>
+    </table>
+    <p>6月30日の会社帳簿残高　<strong>104,000円</strong></p>
+  </div>
+  <div class="sq-facts-table">
+    <table>
+      <caption>資料2　銀行の入出金明細（6月30日締め）</caption>
+      <thead><tr><th scope="col">日付<br>番号</th><th scope="col">銀行の摘要</th><th scope="col">入出金</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">6/30<br>P21</th><td>仕入先への振込</td><td>出金<br><span class="bank-amount">24,000円</span></td></tr>
+        <tr><th scope="row">6/30<br>R47</th><td>ハル商店から振込（請求R47の支払い）</td><td>入金<br><span class="bank-amount">8,000円</span></td></tr>
+      </tbody>
+    </table>
+    <p>6月30日の銀行残高　<strong>104,000円</strong></p>
+    <p><strong>締め後の照合用明細</strong>　7月1日、M18「夜間金庫」入金8,000円。翌営業日の記録なので、6月30日の銀行残高には含まれていません。</p>
+  </div>
+  <details class="sq-facts-answer"><summary>ヒント　金額を隠して照合する</summary>
+    <p>会社の2行を、日付・番号とお金の出どころで銀行の明細に対応させます。6月中に見つかった番号と、7月になって見つかった番号を書き分けてみましょう。</p>
+  </details>
+  <details class="sq-facts-answer"><summary>照合結果・会社の仕訳・6月末残高を確かめる</summary>
+    <p>P21は双方にある同じ支払いです。会社のM18は自社の現金、銀行のR47は得意先からの振込。同じ8,000円でも別の入金です。M18に対応する銀行の記録は7月1日にあります。</p>
+    <p><strong>会社が6月に追加するのはR47の1本です。</strong> 借方 当座預金8,000円 ／ 貸方 売掛金8,000円。これでハル商店への売掛金が消えます。M18は会社がすでに記帳しているため、もう一度預入の仕訳をする必要はありません。</p>
+    <ul>
+      <li><strong>会社側</strong>　帳簿104,000円 ＋ R47の未記帳入金8,000円 ＝ 112,000円。</li>
+      <li><strong>銀行側</strong>　6月末明細104,000円 ＋ M18の時間外預入8,000円 ＝ 112,000円。こちらは調整表上の計算です。</li>
+    </ul>
+  </details>
+  <p class="meta">会社・取引・番号・金額は編集部の設定です。営業時間外に預かった現金を翌営業日に口座へ入金するサービスの一例は、<a href="https://www.kanagawabank.co.jp/kojin/convenient/night_safe/">神奈川銀行の夜間金庫サービス</a>で確認できます。</p>
+</section>
 <h2>一致した後にも確認する3項目</h2>
 <ol><li>各差を会社・銀行のどちらの計算へ反映したか、重複や漏れはないか。</li><li>会社の修正仕訳が、元の記帳と実際に残る債権・債務・資産に合うか。</li><li>一致させるためだけの根拠のない金額を足していないか。</li></ol>
 <p>過去の出題頻度や「最多失点」といった裏付けのない順位づけは削除しました。この確認手順は編集部の学習案であり、実際の銀行記録の訂正や、すべての預金実務の例外を網羅するものではありません。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>既存本文の主要記述照合：2026年11月2日。追加した場面と説明は2026年11月15日に一次資料と再照合しました。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.fsa.go.jp/common/law/kaiji/zaiki.pdf" target="_blank" rel="noopener">金融庁：財務諸表等規則ガイドライン（2026年3月）15−1・PDF20ページ</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：2026年度適用区分・2027年度確定区分と改定説明</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027kubunhyo_fixed.pdf" target="_blank" rel="noopener">日本商工会議所：2027年度商業簿記出題区分表1ページ・銀行勘定調整表</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>未渡小切手なら、商品の取得や備品の取得も取り消しますか？</summary><p>受取済みの取得取引そのものは取り消しません。当座預金を戻し、まだ払っていない買掛金や未払金を確認します。元の仕訳を必ず丸ごと逆にする説明は訂正しました。</p></details><details class="sq-facts-answer"><summary>調整後残高が一致すれば、全部正しいといえますか？</summary><p>一致は必要な検算ですが、分類や相手科目まで正しい保証にはなりません。各差の反映先、会社の修正仕訳と残る資産・債務、重複や漏れも確認します。</p></details><details class="sq-facts-answer"><summary>2027年度は銀行勘定調整表が範囲からなくなりますか？</summary><p>公表済みの2027年度確定区分表でも2級に残っています。紙の手形・小切手をめぐる改定とは分け、本文の小切手例は2026年度向けとして扱っています。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kotei-shisan.html">固定資産の取得と売却</a></li><li><a href="boki2-3kyu-fukushu.html">当座預金等の基礎を自作問題で確認</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>既存本文の主要記述照合：2026年11月2日。追加した場面と説明は2026年11月15日に一次資料と再照合しました。6月末の明細を照合する演習は2026年11月19日に出題区分・使用科目と夜間金庫の資料を確認しました。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://www.fsa.go.jp/common/law/kaiji/zaiki.pdf" target="_blank" rel="noopener">金融庁：財務諸表等規則ガイドライン（2026年3月）15−1・PDF20ページ</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：2026年度適用区分・2027年度確定区分と改定説明</a></li><li><a href="https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027kubunhyo_fixed.pdf" target="_blank" rel="noopener">日本商工会議所：2027年度商業簿記出題区分表1ページ・銀行勘定調整表</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>未渡小切手なら、商品の取得や備品の取得も取り消しますか？</summary><p>受取済みの取得取引そのものは取り消しません。当座預金を戻し、まだ払っていない買掛金や未払金を確認します。元の仕訳を必ず丸ごと逆にする説明は訂正しました。</p></details><details class="sq-facts-answer"><summary>調整後残高が一致すれば、全部正しいといえますか？</summary><p>一致は必要な検算ですが、分類や相手科目まで正しい保証にはなりません。各差の反映先、会社の修正仕訳と残る資産・債務、重複や漏れも確認します。</p></details><details class="sq-facts-answer"><summary>2027年度は銀行勘定調整表が範囲からなくなりますか？</summary><p>公表済みの2027年度確定区分表でも2級に残っています。紙の手形・小切手をめぐる改定とは分け、本文の小切手例は2026年度向けとして扱っています。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-kotei-shisan.html">固定資産の取得と売却</a></li><li><a href="boki2-3kyu-fukushu.html">当座預金等の基礎を自作問題で確認</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer>
   <div><a href="index.html">ホーム</a><a href="boki2.html">簿記2級</a><a href="boki2-kessan.html">決算整理</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div>
   <p>&copy; 2026 スタディクエスト</p>
