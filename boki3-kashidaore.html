@@ -139,7 +139,7 @@ details summary:active{background:var(--light);}
 .sq-facts-sources h2{margin:0 0 16px}.sq-facts-sources a{text-decoration:underline}.sq-facts-contents{display:flex;gap:8px 18px;flex-wrap:wrap;margin:20px 0;font-size:14px}
 @media(max-width:600px){.sq-facts-table table{font-size:12px}.sq-facts-table th,.sq-facts-table td{padding:8px 6px}.sq-facts-note,.sq-facts-exercise,.sq-facts-sources{padding:16px}.sq-facts-figure img{aspect-ratio:390/660}}
 
-.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
+.sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container :is(h2,h3)[id]{scroll-margin-top:100px}
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
 </style>
@@ -167,7 +167,7 @@ details summary:active{background:var(--light);}
 <p>精算表へ記入するときも、1,200円という期末残高と700円という当期の追加を取り違えないようにします。貸倒れや債権の訂正を先に反映してから見積もるという問題なら、その指示の順序も確認してください。</p>
 
 <h2>貸倒れと期末繰入を一続きで追う追加例</h2>
-<section class="sq-facts-exercise"><h3>自作例4：前期の引当金から貸倒れを処理した後</h3><p>期首の貸倒引当金は貸方1,200円。前期末の売掛金1,000円が当期に貸倒れ、引当金で処理しました。当期末の指定対象債権は50,000円、見積率2%、差額補充法。期末の繰入額は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>貸倒処理：貸倒引当金1,000／売掛金1,000。引当金残高は200円です。当期末必要残高50,000×2%＝1,000円なので、追加は1,000−200＝800円。貸倒引当金繰入800／貸倒引当金800とします。</p><p>期首1,200−使用1,000＋繰入800＝期末1,000円で一致。期首残高1,200円をそのまま必要額から引くと、期中の使用を無視して戻入200円と誤ってしまいます。</p></div></details></section>
+<section class="sq-facts-exercise"><h3 id="allowance-after-writeoff">自作例4：前期の引当金から貸倒れを処理した後</h3><p>期首の貸倒引当金は貸方1,200円。前期末の売掛金1,000円が当期に貸倒れ、引当金で処理しました。当期末の指定対象債権は50,000円、見積率2%、差額補充法。期末の繰入額は？</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>貸倒処理：貸倒引当金1,000／売掛金1,000。引当金残高は200円です。当期末必要残高50,000×2%＝1,000円なので、追加は1,000−200＝800円。貸倒引当金繰入800／貸倒引当金800とします。</p><p>期首1,200−使用1,000＋繰入800＝期末1,000円で一致。期首残高1,200円をそのまま必要額から引くと、期中の使用を無視して戻入200円と誤ってしまいます。</p></div></details></section>
 <h2>費用・残高・表示額を別々に読む</h2><p>例4では、当期のこの設例の引当金繰入費用は800円、期末引当金は1,000円、対象債権の純額は49,000円です。貸倒れ1,000円は前期末の引当金でまかなっているので、同じ1,000円を当期貸倒損失へ重ねません。これらの数値を同じ欄へ入れると、仕訳と財務諸表のつながりが失われます。</p>
 <p>対象債権50,000円は、貸倒れ・回収・訂正等を反映した後の残高という仮定です。決算整理前の債権を与えて訂正後に率を掛ける問題なら、対象残高を先に直します。引当率2%は本文の仮定であり、すべての会社に共通する実務の率や、税法上の一律の限度率ではありません。</p>
 <h2>回収不能の見積りと実際の回収を区別する</h2><p>引当金を設定しても、相手への請求権がその場で全額なくなるわけではありません。また、貸倒処理をした後に現金が回収された場合も、前期以前に処理したか、当期費用を当期に戻すかで本文例3の記録が変わります。発生期・処理期・回収期を3つの日付欄に分けると、単に「引当金があるから使う」という誤りを点検できます。</p>
