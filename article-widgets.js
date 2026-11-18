@@ -67,7 +67,7 @@ const ARTICLES = {
   'shihoshoshi-kaishaho.html': {label:"司法書士", title:"司法書士の会社法｜取締役の任期・代表・決議要件を自作例で整理", thumb:'images/shihoshoshi-kaishaho-map.svg?v=20261102', dialogue:false},
   'mansion.html':        {label:"マンション管理士", title:"マンション管理士の独学準備｜2026年の法令・科目・条件の照合例", thumb:"images/article-diagrams/mansion.svg?v=20261103", dialogue:false, hero:false},
   'toeic.html':          {label:'TOEIC',            title:'TOEIC L&Rの独学スコアアップ戦略', thumb:'images/study-quest-english-category.webp'},
-  'eiken.html':          {label:"英検の級別案内", title:"英検の級別案内｜8つの級・CSE・従来型とS-CBTを確認", thumb:"images/article-diagrams/eiken.svg?v=20261103", dialogue:false, hero:false},
+  'eiken.html':          {label:"英検の級別案内", title:"英検の級別案内｜8つの級・CSE・従来型とS-CBTを確認", thumbnail:"images/article-diagrams/eiken.svg?v=20261119", thumb:"images/article-thumbnails/eiken.jpg", dialogue:false, hero:false},
   'itp.html':            {label:'ITパスポート',      title:'ITパスポートの独学計画・合格基準と見直し方', thumb:'images/study-quest-it-category.webp'},
   'fe.html':             {label:'基本情報',          title:'基本情報技術者試験の独学合格ガイド', thumb:'images/fe-map.svg'},
   'fe-variable-trace.html': {label:'基本情報',       title:'基本情報の科目B｜変数トレースを紙に書く理由'},
