@@ -80,6 +80,10 @@ details summary:active{background:var(--light);}
 .nav-cta:active,.app-cta a:active{transform:none;opacity:.75;}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
+
+@media print {
+  body > nav { display: none; }
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自宅やMac版Officeで受験できますか？", "acceptedAnswer": {"@type": "Answer", "text": "確認したMOS案内は会場のPCを使う実技試験で、Mac版試験は実施していません。旧在宅受験の説明を訂正しました。"}}, {"@type": "Question", "name": "MOSは全科目700点で合格ですか？", "acceptedAnswer": {"@type": "Answer", "text": "全科目固定ではありません。公式FAQは科目等により合格点が異なると案内しています。合格率も非公表です。"}}, {"@type": "Question", "name": "一般を取ってからExpertを受ける必要がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "一般合格はExpert受験の必須条件ではありません。範囲と自分が操作できる内容から準備を決めます。"}}]}
