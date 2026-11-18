@@ -62,10 +62,17 @@ self.addEventListener('fetch', event => {
   // POST等はスルー
   if (event.request.method !== 'GET') return;
 
+  // Readers request a specific revision. Keep one offline copy across updates.
+  // The search client checks its revision before displaying any of its text.
+  if (url.pathname === '/article-search-index.json') {
+    event.respondWith(networkFirst(event, url.origin + url.pathname));
+    return;
+  }
+
   // HTML / 記事カードJS → Network First（常に最新を優先、失敗時はキャッシュ）
   // 記事一覧は共通JSで描画するため、古いキャッシュを先に返さない。
   if (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('/article-widgets.js') || url.pathname.endsWith('/article-recommendations.js')) {
-    event.respondWith(networkFirst(event.request));
+    event.respondWith(networkFirst(event));
     return;
   }
 
@@ -74,16 +81,19 @@ self.addEventListener('fetch', event => {
 });
 
 // Network First: ネット優先、失敗時キャッシュにフォールバック
-async function networkFirst(request) {
+async function networkFirst(event, cacheKey = event.request) {
   try {
-    const response = await fetch(request);
+    const response = await fetch(event.request);
     if (response.ok) {
-      const cache = await caches.open(STATIC_CACHE);
-      cache.put(request, response.clone());
+      const copy = response.clone();
+      // Keep the write alive without holding up the reader's response.
+      event.waitUntil(caches.open(STATIC_CACHE).then(cache => cache.put(cacheKey, copy)).catch(() => {}));
     }
     return response;
   } catch {
-    const cached = await caches.match(request);
+    // A previously installed worker may still have the exact revision URL.
+    const cached = await caches.match(event.request) ||
+      (cacheKey !== event.request && await caches.match(cacheKey));
     return cached || offlineFallback();
   }
 }

@@ -3311,7 +3311,8 @@ function buildReadButton(){
 }
 
 /* ── 記事検索インデックス（モーダルと結果ページで共用） ── */
-const SEARCH_INDEX_STATE = {entries:null, promise:null, ready:false};
+const SEARCH_INDEX_STATE = {entries:null, promise:null, ready:false, receivedIndex:false};
+const SEARCH_DATA_REVISION = 'a52a5209b77ab40871317fcee25eb532933a8e0a5974942f6432f714a2237f11';
 
 function normalizeSearchText(text){
   return String(text || '').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
@@ -3390,6 +3391,61 @@ function formatSearchModifiedDate(value){
   return `最終更新 ${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
 }
 
+function applySearchArticleData(item, data){
+  item.description = data.description;
+  item.modified = data.modified;
+  item.text = `${item.label} ${item.title} ${data.text}`;
+  item.normalized = normalizeSearchText(item.text);
+  item.loaded = true;
+}
+
+function validSearchIndexRecord(record){
+  if(!record || typeof record.description !== 'string' || typeof record.modified !== 'string' ||
+      typeof record.text !== 'string' || !record.text.trim() || record.text.length > 12000) return false;
+  if(record.modified === '') return true;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(record.modified)) return false;
+  const date = new Date(record.modified + 'T00:00:00Z');
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0,10) === record.modified;
+}
+
+async function readPublishedSearchIndex(unread){
+  try{
+    const response = await fetch('article-search-index.json?v=' + SEARCH_DATA_REVISION);
+    if(!response.ok) return;
+    const data = await response.json();
+    if(data?.schema !== 1 || data.revision !== SEARCH_DATA_REVISION ||
+        !data.articles || typeof data.articles !== 'object' || Array.isArray(data.articles)) return;
+    for(const item of unread){
+      if(!Object.hasOwn(data.articles, item.f)) continue;
+      const record = data.articles[item.f];
+      if(validSearchIndexRecord(record)) applySearchArticleData(item, record);
+    }
+    SEARCH_INDEX_STATE.receivedIndex = true;
+  }catch{
+    // A cached article can still supply its own search data when the index is unavailable.
+  }
+}
+
+async function readUnreadSearchArticles(unread){
+  if(!SEARCH_INDEX_STATE.receivedIndex) await readPublishedSearchIndex(unread);
+  const missing = unread.filter(item=>!item.loaded);
+  const pending = missing.values();
+  async function readArticles(){
+    for(const item of pending){
+      try{
+        const response = await fetch(item.f);
+        if(!response.ok) continue;
+        const data = extractSearchArticleData(await response.text(), item.f);
+        if(data && data.text.trim()) applySearchArticleData(item, data);
+      }catch{
+        // The title remains searchable if this article could not be read.
+      }
+    }
+  }
+  const parallelReads = Math.min(6, missing.length);
+  await Promise.all(Array.from({length:parallelReads}, readArticles));
+}
+
 function ensureArticleSearchIndex(retryMissing = false){
   if(SEARCH_INDEX_STATE.promise) return SEARCH_INDEX_STATE.promise;
   if(!SEARCH_INDEX_STATE.entries) SEARCH_INDEX_STATE.entries = createSearchBaseEntries();
@@ -3397,30 +3453,10 @@ function ensureArticleSearchIndex(retryMissing = false){
   const unread = SEARCH_INDEX_STATE.entries.filter(item=>!item.loaded);
   if(!unread.length) return Promise.resolve(SEARCH_INDEX_STATE.entries);
   SEARCH_INDEX_STATE.ready = false;
-  const pending = unread.values();
-  async function readArticles(){
-    for(const item of pending){
-      try{
-        const response = await fetch(item.f);
-        if(!response.ok) continue;
-        const data = extractSearchArticleData(await response.text(), item.f);
-        if(!data) continue;
-        item.description = data.description || '';
-        item.modified = data.modified || '';
-        item.text = `${item.label} ${item.title} ${data.text}`;
-        item.normalized = normalizeSearchText(item.text);
-        item.loaded = true;
-      }catch{
-        // The title remains searchable if this article could not be read.
-      }
-    }
-  }
-  const parallelReads = Math.min(6, unread.length);
-  SEARCH_INDEX_STATE.promise = Promise.all(Array.from({length:parallelReads}, readArticles)).then(() => {
+  SEARCH_INDEX_STATE.promise = readUnreadSearchArticles(unread).then(() => {
     SEARCH_INDEX_STATE.ready = true;
-    SEARCH_INDEX_STATE.promise = null;
     return SEARCH_INDEX_STATE.entries;
-  });
+  }).finally(()=>{ SEARCH_INDEX_STATE.promise = null; });
   return SEARCH_INDEX_STATE.promise;
 }
 
