@@ -42,7 +42,7 @@
   </script>
   <link rel="stylesheet" href="itp-chapter-review.css?v=20261103-itp-term-visuals">
   <style>
-    #household-survey, #rice-quantity { scroll-margin-top: 100px; }
+    #household-survey, #rice-quantity, #festival-orders { scroll-margin-top: 100px; }
     .survey-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; padding: 1px; background: var(--review-line); margin: 1rem 0 .5rem; }
     .survey-values > div { padding: .65rem .9rem; background: var(--review-panel); }
     .survey-values dt { font-size: .9rem; }
@@ -65,7 +65,7 @@
     <p>待ち時間や予約の架空例で、平均・中央値、標本の偏り、分母を確認します。家計調査の見出しを選び、12月の米の支出額と購入量を2年分の原表で比べます。</p>
     <p class="note">スタディクエスト編集部 · 公開日 2026年11月3日 · 更新日 2026年11月19日</p>
   </header>
-  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#statistical-context">統計の公開元と時系列データの見方</a></li><li><a href="#household-survey">家計調査の数字から見出しを選ぶ</a></li><li><a href="#rice-quantity">米の支出額と購入量を比べる</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
+  <nav aria-label="目次"><ul><li><a href="#statistics">集計と標本</a></li><li><a href="#data-flow">データを業務に使う</a></li><li><a href="#festival-orders">注文ログの7行を集計する</a></li><li><a href="#quiz">例題4問</a></li><li><a href="#textbook-coverage">教科書の補足・例題</a></li><li><a href="#statistical-context">統計の公開元と時系列データの見方</a></li><li><a href="#household-survey">家計調査の数字から見出しを選ぶ</a></li><li><a href="#rice-quantity">米の支出額と購入量を比べる</a></li><li><a href="#sources">一次資料</a></li></ul></nav>
 <section id="statistics">
   <h2>集め方と分母をそろえて、数字を読み違えない</h2>
   <p>待ち時間の「分」は量的データ、決済方法の「現金・カード」は質的データです。注文時刻の並びは時系列で、同じ時刻に複数店舗を比べる記録は横断データの例です。集計表には、何を1件とするか、どの期間・店舗か、単位は何かも添えます。こうしたデータについての説明が<strong>メタデータ</strong>です。</p>
@@ -114,7 +114,29 @@
   </figure>
   <p>複数店舗・複数日の履歴を分析用に蓄えるのが<strong>データウェアハウス</strong>の役割です。時間帯別の混雑をダッシュボードにして人の判断を支えるのは<strong>BI</strong>、データの中から「この商品と一緒に買われやすい商品」などの傾向を探すのは<strong>データマイニング</strong>の例です。ログだけでなく自由記述のような非構造化データも使えますが、分類方法と情報の扱いを先に決めます。</p>
   <p>翌年の混雑予測では、予測時点で分かる曜日・時間枠や事前予約数を使います。翌年の終了後にしか分からない総売上を入力にすると、予測時には再現できません。精度の確認には、学習に使ったデータから分けた日の記録を使い、外れた時間帯の事情を現場で確認します。</p>
-  <p>予約ログが大量に集まれば、時間帯ごとの混雑予測にも使えます。来年の学園祭で使う予測なら、予測時点で入手できる注文数や時間帯を入力候補にし、学習に使わなかった別の日のデータで予測と実測を比べます。</p>
+  <div class="box" id="festival-orders" aria-labelledby="festival-title">
+    <h3 id="festival-title">注文ログの7行から、5分以内に渡せた割合を出す</h3>
+    <p>模擬店が閉店後に出力した、編集部作成の架空の記録です。受付番号は1注文につき一つ。同じ番号・同じ内容の行は、同じ注文が再び出力されたものです。</p>
+    <table>
+      <caption>注文ごとの最終状態と、受付・受け渡しの時刻</caption>
+      <thead><tr><th scope="col">受付番号</th><th scope="col">受付時刻</th><th scope="col">受渡時刻</th><th scope="col">状態</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A01</th><td>10:00</td><td>10:04</td><td>完了</td></tr>
+        <tr><th scope="row">A02</th><td>10:02</td><td>10:09</td><td>完了</td></tr>
+        <tr><th scope="row">A02</th><td>10:02</td><td>10:09</td><td>完了</td></tr>
+        <tr><th scope="row">A03</th><td>10:02</td><td>10:07</td><td>完了</td></tr>
+        <tr><th scope="row">A04</th><td>10:04</td><td>未記録</td><td>完了</td></tr>
+        <tr><th scope="row">A05</th><td>10:05</td><td>対象外</td><td>取消</td></tr>
+        <tr><th scope="row">A06</th><td>10:00</td><td>10:04</td><td>完了</td></tr>
+      </tbody>
+    </table>
+    <p><a href="downloads/festival-orders.csv" download>注文ログ7行をダウンロード（CSV）</a>。表の「未記録」と「対象外」は、CSVでは元の空欄のままです。</p>
+    <p><strong>時刻を確かめられる完了注文のうち、5分以内に渡せた割合は？</strong> 数えた受付番号を書き出してみましょう。完了したすべての注文についても、同じ割合と言えるでしょうか。</p>
+    <details><summary>数えた注文と、分母が変わる理由を確かめる</summary>
+      <p>両方の時刻が分かる完了注文は、A01（4分）、A02（7分）、A03（5分）、A06（4分）の4件です。A02は1回だけ数え、時刻が同じA01とA06は別々に数えます。5分ちょうどのA03も含むので、<strong>3件 ÷ 4件 ＝ 75%</strong>です。</p>
+      <p>A05は取消です。完了5件には、受渡時刻のないA04も入ります。A04が5分を超えていれば3件 ÷ 5件 ＝ 60%、5分以内なら4件 ÷ 5件 ＝ 80%。空欄を0分とみなす根拠はなく、完了全件の割合はこのログだけでは一つに決まりません。</p>
+    </details>
+  </div>
 </section>
   <section id="quiz">
     <h2>解説つきの自作例題4問</h2>
