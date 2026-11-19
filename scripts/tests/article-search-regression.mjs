@@ -146,32 +146,55 @@ test('the modal lists titles without fetching until a nonblank search, and retri
   function control(){
     const listeners = new Map();
     return {
+      attributes: {},
+      setAttribute(name, value) { this.attributes[name] = String(value); },
       addEventListener: (name, listener) => listeners.set(name,listener),
       dispatch: (name, event={}) => listeners.get(name)(event),
-      focus() {}
+      focus() { search.document.activeElement = this; },
+      tabIndex: 0,
+      getClientRects: () => [{width:48, height:44}],
+      isConnected: true
     };
   }
-  const button=control(), input=control(), filters=control(), overlay=control(), results={};
+  const button=control(), input=control(), filters=control(), overlay=control(), closeButton=control(), results={};
   filters.children=[];
-  const classes=new Set();
   const dialog={
-    classList:{add:name=>classes.add(name), remove:name=>classes.delete(name), contains:name=>classes.has(name)},
-    querySelector:selector=>({'.sq-search-input':input,'.sq-search-filters':filters,'.sq-search-results':results,'.sq-search-overlay':overlay})[selector]
+    ...control(),
+    open: false,
+    showModal(){ assert.equal(this.open, false); this.open = true; },
+    close(){ this.open = false; },
+    querySelectorAll:()=>[input, closeButton, filters],
+    querySelector:selector=>({'.sq-search-input':input,'.sq-search-filters':filters,'.sq-search-results':results,'.sq-search-overlay':overlay,'.sq-search-close':closeButton})[selector]
   };
   search.document={
     ...control(), body:{appendChild(){}},
     querySelector:()=>({querySelector:()=>null,appendChild(){}}),
     createElement:tag=>tag==='button' ? button : dialog
   };
-  Object.assign(search, {setTimeout() {}, _escHtml:value=>value, searchCardHTML:item=>item.f});
+  Object.assign(search, {setTimeout, clearTimeout, _escHtml:value=>value, searchCardHTML:item=>item.f});
   const modalStart=widget.indexOf('function buildSearchModal(){');
   const modalEnd=widget.indexOf('function buildSearchResultsPage(){',modalStart);
   vm.runInContext(widget.slice(modalStart,modalEnd)+'\nbuildSearchModal()',search);
   function type(value){ input.value=value;input.dispatch('input'); }
 
   button.dispatch('click');
+  assert.equal(dialog.open, true);
+  assert.equal(search.document.activeElement, input);
+  dialog.dispatch('keydown', {key:'Tab', shiftKey:true, preventDefault(){}});
+  assert.equal(search.document.activeElement, filters);
+  dialog.dispatch('keydown', {key:'Tab', shiftKey:false, preventDefault(){}});
+  assert.equal(search.document.activeElement, input);
+  dialog.dispatch('keydown', {key:'Tab', shiftKey:false, preventDefault(){}});
+  assert.equal(search.document.activeElement, closeButton);
+  input.dispatch('compositionstart');
+  dialog.dispatch('cancel', {preventDefault(){}});
+  assert.equal(dialog.open, true);
+  input.dispatch('compositionend');
   assert.match(results.innerHTML,/mos\.html/);
-  type('　 ');overlay.dispatch('click');button.dispatch('click');
+  type('　 ');closeButton.dispatch('click');
+  assert.equal(dialog.open, false);
+  assert.equal(search.document.activeElement, button);
+  button.dispatch('click');
   assert.deepEqual(reads,[]);
   assert.equal(indexRequests,0);
   type('Ｅｘｃｅｌ');type('Ｅｘｃｅｌで');
