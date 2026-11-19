@@ -3316,7 +3316,7 @@ function buildReadButton(){
 
 /* ── 記事検索インデックス（モーダルと結果ページで共用） ── */
 const SEARCH_INDEX_STATE = {entries:null, promise:null, ready:false, receivedIndex:false};
-const SEARCH_DATA_REVISION = '2a5a29eab491026001ee9cef1d7b04b72eaeaa7442e77b36b336b4f93c6ff625';
+const SEARCH_DATA_REVISION = 'e8da89e4f4fe308c5c215f204cf2c910d7c87d88d2988b3890d0d8f565945126';
 
 function normalizeSearchText(text){
   return String(text || '').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
