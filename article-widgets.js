@@ -2250,11 +2250,14 @@ html[data-theme="dark"] .sq-article-hero{box-shadow:0 16px 34px rgba(0,0,0,.22);
 .sq-search-btn:hover{color:var(--sq-text);background:var(--sq-surface-soft);}
 .sq-search-btn:active{transform:scale(.92);}
 .sq-search-btn svg{flex-shrink:0;}
-.sq-search-modal{display:none;position:fixed;inset:0;z-index:9999;}
-.sq-search-modal.open{display:block;}
+.sq-search-modal{position:fixed;inset:0;width:100%;height:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;color:var(--sq-text);overflow:hidden;}
+.sq-search-modal::backdrop{background:transparent;}
 .sq-search-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);}
-.sq-search-box{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:min(560px,90vw);background:var(--sq-surface);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--sq-border-strong);}
-.sq-search-input{width:100%;padding:16px 20px;font-size:15px;border:none;outline:none;border-bottom:1px solid var(--sq-border);background:transparent;color:var(--sq-text);font-family:inherit;}
+.sq-search-box{position:absolute;top:min(72px,9vh);left:50%;transform:translateX(-50%);width:min(560px,90vw);max-height:calc(100% - min(72px,9vh) - 8px);display:flex;flex-direction:column;background:var(--sq-surface);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--sq-border-strong);}
+.sq-search-bar{display:flex;flex:none;align-items:center;border-bottom:1px solid var(--sq-border);}
+.sq-search-input{min-width:0;flex:1;padding:16px 14px;font-size:16px;border:none;outline:none;background:transparent;color:var(--sq-text);font-family:inherit;}
+.sq-search-close{flex:none;min-width:44px;min-height:44px;margin-right:6px;padding:0 10px;color:var(--sq-text);background:var(--sq-surface-soft);border:1px solid var(--sq-border-strong);border-radius:8px;font:inherit;font-size:14px;cursor:pointer;}
+.sq-search-input:focus-visible,.sq-search-close:focus-visible{outline:2px solid currentColor;outline-offset:-3px;}
 .sq-search-input::placeholder{color:var(--sq-muted);}
 .sq-search-filters-wrap{position:relative;}
 .sq-search-filters-wrap::after{content:'';position:absolute;top:0;right:0;bottom:1px;width:36px;pointer-events:none;background:linear-gradient(to right,transparent,var(--sq-surface-soft) 70%);}
@@ -2266,7 +2269,7 @@ html[data-theme="dark"] .sq-article-hero{box-shadow:0 16px 34px rgba(0,0,0,.22);
 .sq-search-chip:hover{color:var(--sq-text);border-color:var(--sq-border-strong);}
 .sq-search-chip.active{background:rgba(140,198,63,.18);border-color:rgba(140,198,63,.45);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 .sq-search-chip:focus-visible{outline:2px solid currentColor;outline-offset:-3px;}
-.sq-search-results{max-height:min(460px,calc(100vh - 168px));overflow-y:auto;}
+.sq-search-results{min-height:0;max-height:min(460px,calc(100vh - 168px));overflow-y:auto;overscroll-behavior:contain;}
 .sq-search-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-bottom:1px solid var(--sq-border);text-decoration:none;color:var(--sq-text);transition:background .12s;}
 .sq-search-item:hover{background:var(--sq-surface-soft);text-decoration:none;}
 .sq-search-item:focus-visible{outline:2px solid var(--sq-accent-bright);outline-offset:-2px;}
@@ -3527,17 +3530,21 @@ function buildSearchModal(){
   if(!navInner) return;
 
   const btn = document.createElement('button');
+  btn.type = 'button';
   btn.className = 'sq-search-btn';
   btn.title = '記事を検索（/ キー）';
+  btn.setAttribute('aria-haspopup', 'dialog');
+  btn.setAttribute('aria-controls', 'sq-search-modal');
   btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span style="font-size:12px">検索</span>';
   const cta = navInner.querySelector('.nav-cta');
   if(cta && cta.parentElement) cta.parentElement.insertBefore(btn, cta);
   else navInner.appendChild(btn);
 
-  const modal = document.createElement('div');
+  const modal = document.createElement('dialog');
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
-  modal.innerHTML = '<div class="sq-search-overlay"></div><div class="sq-search-box"><input class="sq-search-input" type="text" placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><div class="sq-search-filters-wrap"><div class="sq-search-filters" role="group" aria-label="記事のカテゴリ"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
+  modal.setAttribute('aria-label', '記事を検索');
+  modal.innerHTML = '<div class="sq-search-overlay" aria-hidden="true"></div><div class="sq-search-box"><div class="sq-search-bar"><input class="sq-search-input" type="text" aria-label="検索語" autofocus placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><button class="sq-search-close" type="button">閉じる</button></div><div class="sq-search-filters-wrap"><div class="sq-search-filters" role="group" aria-label="記事のカテゴリ"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
@@ -3545,18 +3552,36 @@ function buildSearchModal(){
   const results= modal.querySelector('.sq-search-results');
   let selectedLabel = 'all';
   let searchedThisOpening = false;
+  let returnFocus = btn;
+  let composing = false;
+  let finishingComposition = false;
+  let compositionTimer;
 
-  function openModal(){
-    modal.classList.add('open');
-    setTimeout(()=>input.focus(),40);
+  function guardCompositionTurn(){
+    finishingComposition = true;
+    clearTimeout(compositionTimer);
+    compositionTimer = setTimeout(() => { finishingComposition = false; }, 0);
+  }
+
+  function openModal(origin){
+    if(modal.open) return;
+    returnFocus = origin && origin !== document.body ? origin : btn;
     input.value='';
     selectedLabel='all';
     searchedThisOpening = false;
+    composing = false;
+    finishingComposition = false;
     renderSearchCategoryFilters(filters, selectedLabel);
     filters.scrollLeft = 0;
     render('');
+    modal.showModal();
+    input.focus();
   }
-  function closeModal(){ modal.classList.remove('open'); }
+  function closeModal(){
+    if(!modal.open) return;
+    modal.close();
+    (returnFocus.isConnected ? returnFocus : btn).focus({preventScroll:true});
+  }
 
   function render(q){
     const {entries, loading, incomplete} = getSearchEntries(q, selectedLabel);
@@ -3577,20 +3602,48 @@ function buildSearchModal(){
     results.innerHTML = noticeMarkup + entries.slice(0,10).map(item => searchCardHTML(item, q)).join('');
   }
 
-  btn.addEventListener('click', openModal);
+  btn.addEventListener('click', () => openModal(btn));
+  modal.querySelector('.sq-search-close').addEventListener('click', closeModal);
   modal.querySelector('.sq-search-overlay').addEventListener('click', closeModal);
+  input.addEventListener('compositionstart', () => { composing = true; });
+  input.addEventListener('compositionend', () => {
+    composing = false;
+    guardCompositionTurn();
+  });
+  modal.addEventListener('cancel', event => {
+    event.preventDefault();
+    if(!composing && !finishingComposition) closeModal();
+  });
+  modal.addEventListener('keydown', event => {
+    if(event.key === 'Escape'){
+      // Let the IME consume Escape. A dialog close request arrives as a separate cancel event.
+      if(composing || event.isComposing || event.keyCode === 229) guardCompositionTurn();
+      return;
+    }
+    if(event.key !== 'Tab' || composing || event.isComposing || event.altKey || event.ctrlKey || event.metaKey) return;
+    const controls = Array.from(modal.querySelectorAll('button, input, a[href]'))
+      .filter(control => !control.disabled && control.tabIndex >= 0 && control.getClientRects().length);
+    if (!controls.length) return;
+    // Some browsers skip buttons on Tab. Keep each search action reachable in DOM order.
+    const current = controls.indexOf(document.activeElement);
+    let next = current + (event.shiftKey ? -1 : 1);
+    if (next < 0) next = controls.length - 1;
+    if (next >= controls.length) next = 0;
+    event.preventDefault();
+    controls[next].focus();
+  });
   input.addEventListener('input', ()=>{
     if(!searchedThisOpening && normalizeSearchText(input.value)){
       searchedThisOpening = true;
       const index = ensureArticleSearchIndex(true);
       if(!SEARCH_INDEX_STATE.ready) index.then(()=>{
-        if(modal.classList.contains('open')) render(input.value);
+        if(modal.open) render(input.value);
       });
     }
     render(input.value);
   });
   input.addEventListener('keydown', event => {
-    if(event.key !== 'Enter' || event.isComposing) return;
+    if(event.key !== 'Enter' || event.isComposing || composing || finishingComposition || event.keyCode === 229) return;
     event.preventDefault();
     const params = new URLSearchParams();
     const query = input.value.trim();
@@ -3607,9 +3660,10 @@ function buildSearchModal(){
     render(input.value);
   });
   document.addEventListener('keydown', e=>{
-    if(e.key==='Escape'){ closeModal(); return; }
-    if(e.key==='/' && !modal.classList.contains('open') && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){
-      e.preventDefault(); openModal();
+    if(e.key==='/' && !modal.open && !e.defaultPrevented && !e.isComposing && !e.altKey && !e.ctrlKey && !e.metaKey &&
+        !e.target.isContentEditable && !['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)){
+      e.preventDefault();
+      openModal(document.activeElement);
     }
   });
 }

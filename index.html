@@ -840,10 +840,16 @@ footer{background:#091505;padding:48px 24px 40px;}
 /* 検索 */
 .lp-search-btn{background:none;border:1px solid var(--border);border-radius:100px;cursor:pointer;padding:6px 14px;color:var(--ink3);font-size:12px;font-family:'M PLUS 1',sans-serif;display:flex;align-items:center;gap:6px;transition:border-color .2s,color .2s;}
 .lp-search-btn:hover{border-color:rgba(140,198,63,.5);color:var(--green);}
-.lp-search-modal{display:none;position:fixed;inset:0;z-index:9999;}
-.lp-search-modal.open{display:block;}
-.lp-search-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);}
-.lp-search-box{position:absolute;top:80px;left:50%;transform:translateX(-50%);width:min(580px,92vw);background:var(--card-bg);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--border);}
+.lp-search-modal{position:fixed;inset:0;width:100%;height:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:min(80px,8vh) 4vw max(8px,env(safe-area-inset-bottom));border:0;background:transparent;color:var(--ink);overflow:hidden;}
+.lp-search-modal[open]{display:flex;justify-content:center;align-items:flex-start;}
+.lp-search-modal::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(3px);}
+.lp-search-overlay{position:absolute;inset:0;}
+.lp-search-box{position:relative;display:flex;flex-direction:column;width:min(580px,100%);max-height:100%;background:var(--card-bg);border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--border);}
+.lp-search-heading{display:flex;flex:none;align-items:center;justify-content:space-between;padding:2px 10px 2px 16px;border-bottom:1px solid var(--border);}
+.lp-search-heading h2{margin:0;font-size:16px;color:var(--ink);}
+.lp-search-close{min-height:44px;min-width:44px;padding:0 10px;background:transparent;color:var(--ink);border:0;border-radius:6px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;}
+.lp-search-close:focus-visible{outline:2px solid currentColor;outline-offset:-3px;}
+.lp-search-form,.lp-search-filters,.lp-search-hint{flex-shrink:0;}
 .lp-search-form{display:flex;align-items:center;gap:6px;padding:6px 10px;border-bottom:1px solid var(--border);}
 .lp-search-submit{min-height:44px;padding:6px 12px;flex:none;border:1px solid currentColor;border-radius:8px;background:var(--card-bg);color:var(--ink);font:inherit;font-size:13px;font-weight:700;cursor:pointer;}
 .lp-search-form :focus-visible{outline:2px solid currentColor;outline-offset:-2px;}
@@ -855,7 +861,7 @@ footer{background:#091505;padding:48px 24px 40px;}
 .lp-search-chip:hover{border-color:rgba(140,198,63,.45);color:var(--green);}
 .lp-search-chip.active{background:rgba(140,198,63,.16);border-color:rgba(140,198,63,.45);color:var(--green);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 .lp-search-chip:focus-visible{outline:2px solid currentColor;outline-offset:-3px;}
-.lp-search-results{max-height:380px;overflow-y:auto;}
+.lp-search-results{min-height:0;max-height:380px;overflow-y:auto;overscroll-behavior:contain;}
 .lp-search-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);transition:background .12s;}
 .lp-search-item:hover{background:var(--card-bg);filter:brightness(0.97);}
 .lp-search-item:last-child{border-bottom:none;}
@@ -1180,7 +1186,7 @@ footer{background:#080B09;border-top:1px solid var(--border);padding:42px max(24
         <span class="icon-light">🌙</span>
         <span class="icon-dark">☀️</span>
       </button>
-      <button class="lp-search-btn" id="lp-search-open" aria-label="記事を検索">
+      <button class="lp-search-btn" id="lp-search-open" aria-label="記事を検索" aria-haspopup="dialog" aria-controls="lp-search-modal">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         記事検索
       </button>
@@ -3866,18 +3872,22 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 </script>
 
 <!-- 検索モーダル -->
-<div id="lp-search-modal" class="lp-search-modal">
-  <div class="lp-search-overlay"></div>
+<dialog id="lp-search-modal" class="lp-search-modal" aria-labelledby="lp-search-title">
+  <div class="lp-search-overlay" aria-hidden="true"></div>
   <div class="lp-search-box">
+    <div class="lp-search-heading">
+      <h2 id="lp-search-title">記事検索</h2>
+      <button type="button" class="lp-search-close">閉じる</button>
+    </div>
     <form class="lp-search-form" action="search.html" method="get" role="search">
-      <input class="lp-search-input" type="text" name="q" required autocomplete="off" enterkeyhint="search" aria-label="記事の検索語" placeholder="検索語を入力　例：試算表、伝票">
+      <input class="lp-search-input" type="text" name="q" required autofocus autocomplete="off" enterkeyhint="search" aria-label="記事の検索語" placeholder="検索語を入力　例：試算表、伝票">
       <button class="lp-search-submit" type="submit">全カテゴリの本文も検索</button>
     </form>
     <div class="lp-search-filters" role="group" aria-label="候補のカテゴリ"></div>
     <div class="lp-search-results"></div>
     <div class="lp-search-hint">候補はタイトル・紹介文・カテゴリから表示　　Esc で閉じる</div>
   </div>
-</div>
+</dialog>
 <script>
 (function(){
   const SVG_COVERS = new Set([
@@ -4001,12 +4011,14 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   const openBtn = document.getElementById('lp-search-open');
   const input   = modal.querySelector('.lp-search-input');
   const form = modal.querySelector('.lp-search-form');
+  const closeButton = modal.querySelector('.lp-search-close');
   const submitButton = form.querySelector('button[type=submit]');
   const filters = modal.querySelector('.lp-search-filters');
   const results = modal.querySelector('.lp-search-results');
   const returnStateKey = 'studyQuestArticleSearch';
   let index = null;
   let selectedLabel = 'all';
+  let opener = openBtn;
   const esc = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
   function categoryLabels(){
@@ -4033,9 +4045,20 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     }
   }
 
+  // Save the shortcut's starting point even when Back rebuilds the document.
+  function openerSelector(element){
+    if (element.id) return '#' + CSS.escape(element.id);
+    const steps = [];
+    for (let node=element; node && node !== document.body; node=node.parentElement) {
+      const siblings = Array.from(node.parentElement.children);
+      steps.unshift(node.localName + ':nth-child(' + (siblings.indexOf(node) + 1) + ')');
+    }
+    return ['body', ...steps].join(' > ');
+  }
+
   function rememberReturn(href, focus){
     const selection = {
-      query:input.value, label:selectedLabel, href, focus,
+      query:input.value, label:selectedLabel, href, focus, openerSelector:openerSelector(opener),
       resultsTop:results.scrollTop, filtersLeft:filters.scrollLeft
     };
     history.replaceState({...history.state, [returnStateKey]:selection}, '');
@@ -4050,24 +4073,25 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
 
   function showSearch(query, label){
     if(!index) index = buildIndex();
-    modal.classList.add('open');
     input.value = query;
     selectedLabel = label;
     renderFilters();
     render(query);
+    if (!modal.open) modal.showModal();
   }
-  function open(){
+  function open(event){
+    opener = event?.currentTarget === openBtn ? openBtn : document.activeElement;
     clearReturnState();
     showSearch('', 'all');
     filters.scrollLeft = 0;
     input.focus();
   }
   function close(){
-    if (!modal.classList.contains('open')) return;
-    modal.classList.remove('open');
+    if (!modal.open) return;
+    modal.close();
     input.value = '';
     clearReturnState();
-    openBtn.focus({preventScroll:true});
+    if (opener.isConnected) opener.focus({preventScroll:true});
   }
 
   function normalizeSearchText(text){
@@ -4143,6 +4167,24 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     rememberReturn(null, document.activeElement === submitButton ? 'submit' : 'input');
   });
   modal.querySelector('.lp-search-overlay').addEventListener('click', close);
+  closeButton.addEventListener('click', close);
+  modal.addEventListener('keydown', event=>{
+    if (event.key !== 'Tab' || composing || event.isComposing || event.altKey || event.ctrlKey || event.metaKey) return;
+    const controls = Array.from(modal.querySelectorAll('button, input, a[href]'))
+      .filter(control => !control.disabled && control.tabIndex >= 0 && control.getClientRects().length);
+    if (!controls.length) return;
+    // Some browsers skip buttons on Tab. Keep each search action reachable in DOM order.
+    const current = controls.indexOf(document.activeElement);
+    let next = current + (event.shiftKey ? -1 : 1);
+    if (next < 0) next = controls.length - 1;
+    if (next >= controls.length) next = 0;
+    event.preventDefault();
+    controls[next].focus();
+  });
+  modal.addEventListener('cancel', event=>{
+    event.preventDefault();
+    if (!composing && !confirmingComposition) close();
+  });
   input.addEventListener('input', ()=>{
     clearReturnState();
     render(input.value);
@@ -4156,8 +4198,9 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
     render(input.value);
   });
   document.addEventListener('keydown', e=>{
-    if(e.key==='Escape' && !composing && !e.isComposing && e.keyCode !== 229){ close(); return; }
-    if(e.key==='/' && !modal.classList.contains('open') && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){
+    if(e.key==='Escape' && modal.open && (e.isComposing || e.keyCode === 229)) guardCompositionSubmit();
+    if(e.key==='/' && !modal.open && !e.ctrlKey && !e.metaKey && !e.altKey &&
+        !e.target.isContentEditable && e.target.tagName!=='INPUT' && e.target.tagName!=='TEXTAREA'){
       e.preventDefault(); open();
     }
   });
@@ -4165,6 +4208,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   // A back/forward cache hit reuses the open dialog and its existing DOM.
   const selection = history.state?.[returnStateKey];
   if (selection && performance.getEntriesByType('navigation')[0]?.type === 'back_forward') {
+    opener = selection.openerSelector ? document.querySelector(selection.openerSelector) || openBtn : openBtn;
     showSearch(selection.query, selection.label);
     filters.scrollLeft = selection.filtersLeft;
     results.scrollTop = selection.resultsTop;
