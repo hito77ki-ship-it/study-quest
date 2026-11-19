@@ -3322,7 +3322,7 @@ function normalizeSearchText(text){
   return String(text || '').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
 }
 
-function createSearchExcerpt(text, query){
+function createSearchExcerpt(text, query, heading = ''){
   let source = String(text || '').replace(/\s+/g,' ').trim();
   let term = String(query || '').trim();
   if(!term) return '';
@@ -3332,7 +3332,25 @@ function createSearchExcerpt(text, query){
     term = normalizeSearchText(term);
     index = source.toLowerCase().indexOf(term);
   }
-  if(index < 0) return source.slice(0,70);
+  if(index < 0){
+    const terms = [...new Set(term.split(' '))];
+    const labelAndTitle = normalizeSearchText(heading);
+    const bodyTerms = terms.filter(word => !labelAndTitle.includes(word));
+    const visible = source.toLowerCase();
+    // Show the evidence for terms missing from the displayed label and title.
+    const hits = (bodyTerms.length ? bodyTerms : terms).map(word => {
+      const at = visible.indexOf(word);
+      return {start:at, end:at + word.length};
+    }).filter(hit => hit.start >= 0).slice(0,2).sort((a,b) => a.start - b.start);
+    if(!hits.length) return source.slice(0,70);
+    const first = hits[0], last = hits[hits.length - 1];
+    const left = Math.max(0, first.start - 12);
+    const right = Math.min(source.length, Math.max(first.end, last.end) + 18);
+    const excerpt = last.start - first.end > 35
+      ? source.slice(left, first.end + 12) + ' … ' + source.slice(last.start - 10, right)
+      : source.slice(left, right);
+    return (left ? '…' : '') + excerpt + (right < source.length ? '…' : '');
+  }
   const start = Math.max(0, index - 28);
   const end = Math.min(source.length, index + term.length + 46);
   return `${start ? '...' : ''}${source.slice(start,end)}${end < source.length ? '...' : ''}`;
@@ -3492,13 +3510,16 @@ function getSearchEntries(rawQuery, label='all'){
   const query = normalizeSearchText(rawQuery);
   const entries = SEARCH_INDEX_STATE.entries || createSearchBaseEntries();
   const scoped = label === 'all' ? entries : entries.filter(item => item.label === label);
-  const filtered = query === '' ? scoped : scoped.filter(item => item.normalized.includes(query));
-  const sorted = filtered.slice().sort((a,b) => {
-    if(query === '') return 0;
-    const aTitle = normalizeSearchText(`${a.label} ${a.title}`).includes(query) ? 1 : 0;
-    const bTitle = normalizeSearchText(`${b.label} ${b.title}`).includes(query) ? 1 : 0;
-    return bTitle - aTitle;
-  });
+  const terms = query ? query.split(' ') : [];
+  const phraseTitle = [], phraseBody = [], separatedTitle = [], separatedBody = [];
+  for(const item of scoped){
+    const heading = normalizeSearchText(`${item.label} ${item.title}`);
+    if(!query || heading.includes(query)) phraseTitle.push(item);
+    else if(item.normalized.includes(query)) phraseBody.push(item);
+    else if(terms.length > 1 && terms.every(word => heading.includes(word))) separatedTitle.push(item);
+    else if(terms.length > 1 && terms.every(word => item.normalized.includes(word))) separatedBody.push(item);
+  }
+  const sorted = phraseTitle.concat(phraseBody, separatedTitle, separatedBody);
   const loading = !!SEARCH_INDEX_STATE.promise && !SEARCH_INDEX_STATE.ready;
   const incomplete = SEARCH_INDEX_STATE.ready && scoped.some(item=>!item.loaded);
   return {query, entries:sorted, loading, incomplete};
@@ -3511,7 +3532,7 @@ function searchCoverageNotice(loading, incomplete){
 }
 
 function searchCardHTML(item, rawQuery, extraClass=''){
-  const snippet = rawQuery ? createSearchExcerpt(item.text, rawQuery) : '';
+  const snippet = rawQuery ? createSearchExcerpt(item.text, rawQuery, `${item.label} ${item.title}`) : '';
   const detail = snippet || item.description;
   const modified = formatSearchModifiedDate(item.modified);
   return `<a href="${item.f}" class="sq-search-item${item.f===PAGE?' sq-search-item--current':''}${extraClass ? ` ${extraClass}` : ''}">
@@ -3544,7 +3565,7 @@ function buildSearchModal(){
   modal.id = 'sq-search-modal';
   modal.className = 'sq-search-modal';
   modal.setAttribute('aria-label', '記事を検索');
-  modal.innerHTML = '<div class="sq-search-overlay" aria-hidden="true"></div><div class="sq-search-box"><div class="sq-search-bar"><input class="sq-search-input" type="text" aria-label="検索語" autofocus placeholder="記事本文も検索... 例：抵当権、仕訳、相続"><button class="sq-search-close" type="button">閉じる</button></div><div class="sq-search-filters-wrap"><div class="sq-search-filters" role="group" aria-label="記事のカテゴリ"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
+  modal.innerHTML = '<div class="sq-search-overlay" aria-hidden="true"></div><div class="sq-search-box"><div class="sq-search-bar"><input class="sq-search-input" type="text" aria-label="検索語" autofocus placeholder="本文も検索　例：FP3級 係数"><button class="sq-search-close" type="button">閉じる</button></div><div class="sq-search-filters-wrap"><div class="sq-search-filters" role="group" aria-label="記事のカテゴリ"></div></div><div class="sq-search-results"></div><div class="sq-search-hint">Enter で検索結果ページへ　　カテゴリ絞り込み・本文検索対応　　Esc で閉じる</div></div>';
   document.body.appendChild(modal);
 
   const input  = modal.querySelector('.sq-search-input');
@@ -3687,7 +3708,7 @@ function buildSearchResultsPage(){
         <p class="sq-search-page-lead"></p>
         <form class="sq-search-page-form" role="search">
           <label class="sq-visually-hidden" for="sq-search-page-input">記事を検索</label>
-          <input id="sq-search-page-input" class="sq-search-page-input" type="search" autocomplete="off" placeholder="資格名・試験名・論点を入力 例：簿記2級、抵当権、相続">
+          <input id="sq-search-page-input" class="sq-search-page-input" type="search" autocomplete="off" placeholder="資格名・論点を入力　例：FP3級 係数">
           <button class="sq-search-page-submit" type="submit">検索する</button>
         </form>
         <p class="sq-search-page-note">タイトルだけでなく、記事本文・要約からも探せます。</p>
@@ -3731,7 +3752,7 @@ function buildSearchResultsPage(){
       : '資格名や知りたい論点を入力すると、該当する記事を詳しく紹介します。';
 
     if(!rawQuery && selectedLabel === 'all'){
-      status.textContent = 'たとえば「簿記2級」「宅建」「英検」「仕訳」などで探せます。';
+      status.textContent = '「FP3級 係数」のように、空白で区切って両方の言葉を含む記事を探せます。';
       list.innerHTML = `<div class="sq-search-page-empty"><p>探したい言葉を入力してください。</p><div class="sq-search-page-suggestions">${['簿記2級','宅建','英検','勉強時間','仕訳'].map(query => `<button type="button" data-sq-search-query="${_escHtml(query)}">${_escHtml(query)}</button>`).join('')}</div></div>`;
       return;
     }
@@ -3743,7 +3764,7 @@ function buildSearchResultsPage(){
         return;
       }
       status.textContent = '検索結果 0件';
-      list.innerHTML = `<div class="sq-search-page-empty"><p>${rawQuery ? `「${_escHtml(rawQuery)}」に一致する記事は見つかりませんでした。` : `「${_escHtml(selectedLabel)}」に記事はありませんでした。`}</p><p>資格名を短くするか、関連する論点で試してみてください。</p></div>`;
+      list.innerHTML = `<div class="sq-search-page-empty"><p>${rawQuery ? `「${_escHtml(rawQuery)}」に一致する記事は見つかりませんでした。` : `「${_escHtml(selectedLabel)}」に記事はありませんでした。`}</p><p>言葉を一つに絞るか、別の言い方で探してみてください。</p></div>`;
       return;
     }
 

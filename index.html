@@ -3887,7 +3887,7 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
       <button type="button" class="lp-search-close">閉じる</button>
     </div>
     <form class="lp-search-form" action="search.html" method="get" role="search">
-      <input class="lp-search-input" type="text" name="q" required autofocus autocomplete="off" enterkeyhint="search" aria-label="記事の検索語" placeholder="検索語を入力　例：試算表、伝票">
+      <input class="lp-search-input" type="text" name="q" required autofocus autocomplete="off" enterkeyhint="search" aria-label="記事の検索語" placeholder="検索語を入力　例：FP3級 係数">
       <button class="lp-search-submit" type="submit">全カテゴリの本文も検索</button>
     </form>
     <div class="lp-search-filters" role="group" aria-label="候補のカテゴリ"></div>
@@ -4102,33 +4102,36 @@ document.querySelectorAll('.fi').forEach(el => io.observe(el));
   }
 
   function normalizeSearchText(text){
-    return (text || '').normalize('NFKC').toLowerCase().trim();
+    return (text || '').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
   }
 
   function render(q){
     const query = normalizeSearchText(q);
+    const terms = query ? query.split(' ') : [];
     const scoped = selectedLabel === 'all' ? index : index.filter(x=>x.label === selectedLabel);
-    const primary = [];
-    const fromNotes = [];
+    const primary = [], fromNotes = [], separatedPrimary = [], separatedNotes = [];
     for (const item of scoped) {
-      if (!query || normalizeSearchText(item.title).includes(query) || normalizeSearchText(item.label).includes(query)) {
-        primary.push(item);
-      } else if (normalizeSearchText(item.note).includes(query)) {
-        fromNotes.push(item);
-      }
+      const title = normalizeSearchText(item.title);
+      const label = normalizeSearchText(item.label);
+      const note = normalizeSearchText(item.note);
+      const inHeading = term => title.includes(term) || label.includes(term);
+      if (!query || inHeading(query)) primary.push(item);
+      else if (note.includes(query)) fromNotes.push(item);
+      else if (terms.length > 1 && terms.every(inHeading)) separatedPrimary.push(item);
+      else if (terms.length > 1 && terms.every(term => inHeading(term) || note.includes(term))) separatedNotes.push(item);
     }
-    const filtered = primary.concat(fromNotes);
+    const filtered = primary.concat(fromNotes, separatedPrimary, separatedNotes);
     if(!filtered.length){
       const msg = selectedLabel === 'all'
         ? `タイトル・紹介文・カテゴリに「${esc(q)}」を含む候補はありません。`
         : `「${esc(selectedLabel)}」の候補には「${esc(q)}」に一致するタイトル・紹介文・カテゴリがありません。`;
-      results.innerHTML = `<div class="lp-search-empty">${msg}</div>`;
+      results.innerHTML = `<div class="lp-search-empty">${msg} 本文まで探すには「全カテゴリの本文も検索」を押してください。</div>`;
       return;
     }
     const visible = filtered.slice(0,12);
     results.innerHTML = visible.map(x=>
       `<a href="${esc(x.href)}" class="lp-search-item">
-        <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-copy"><span class="lp-search-title">${esc(x.title)}</span>${query && normalizeSearchText(x.note).includes(query) ? `<span class="lp-search-note">${esc(x.note)}</span>` : ''}</span></span>
+        <span class="lp-search-content"><span class="lp-search-label">${esc(x.label)}</span><span class="lp-search-copy"><span class="lp-search-title">${esc(x.title)}</span>${terms.some(term => normalizeSearchText(x.note).includes(term)) ? `<span class="lp-search-note">${esc(x.note)}</span>` : ''}</span></span>
       </a>`
     ).join('');
     results.querySelectorAll('.lp-search-item').forEach((result, i) => {

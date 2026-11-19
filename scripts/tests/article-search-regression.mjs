@@ -359,3 +359,38 @@ test('category changes update the existing toggle buttons in place', () => {
     assert.equal(filters.scrollLeft,83);
   }
 });
+
+test('multiword results preserve contiguous title/body priority and require every term within one article', async () => {
+  const articles = {
+    'body.html': {label:'FP',title:'FP3級の準備'},
+    'heading.html': {label:'FP3級',title:'資金計画と係数'},
+    'phrase-body.html': {label:'FP',title:'実習'},
+    'phrase-title.html': {label:'FP',title:'FP3級 係数'},
+    'partial.html': {label:'FP',title:'FP3級の試験日'},
+  };
+  const search=articleSearch(undefined,articles,async ()=>bundle({
+    'body.html':record('手元のお金で積立に使う係数を選ぶ'),
+    'heading.html':record('積立の例'),
+    'phrase-body.html':record('学習メモ：FP3級 係数'),
+    'phrase-title.html':record('確認問題'),
+    'partial.html':record('受験案内'),
+  }));
+  const files = (q, cat) => Array.from(search.getSearchEntries(q,cat).entries,item=>item.f);
+  assert.deepEqual(files('FP3級 係数'),['phrase-title.html','heading.html']);
+  await search.ensureArticleSearchIndex();
+  assert.deepEqual(files('ｆｐ３級　　係数'),['phrase-title.html','phrase-body.html','heading.html','body.html']);
+  assert.deepEqual(files('係数 FP3級','FP3級'),['heading.html']);
+  assert.deepEqual(files('係数 手数料'),[]);
+});
+
+test('a split-term excerpt shows the matching body text, including distant matches', () => {
+  const search=articleSearch();
+  const gap='あ'.repeat(100);
+  const text='FP3級 入門 '+gap+'実習で使う係数を選ぶ。'+gap+'積立の金額を確かめる。';
+  const excerpt=search.createSearchExcerpt(text,'ＦＰ３級　係数','FP3級 入門');
+  assert.match(excerpt,/実習で使う係数を選ぶ/);
+  assert.doesNotMatch(excerpt,/あ{70}/);
+  const multiple=search.createSearchExcerpt(text,'積立 係数');
+  assert.match(multiple,/係数.*….*積立/);
+  assert.doesNotMatch(multiple,/あ{70}/);
+});
