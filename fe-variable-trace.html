@@ -37,6 +37,10 @@ html[data-theme="dark"] .trace-main a{color:var(--sq-accent-bright,#B6E27C)}
 #trace-order-check caption{text-align:left;font-weight:700;}
 #trace-order-check tbody th{background:var(--sq-surface-soft,#f7fafc);color:var(--sq-text,#1a202c);border-bottom:1px solid var(--sq-border,#e2e8f0);}
 #trace-order-check td{font-variant-numeric:tabular-nums;}
+@media print{
+  .trace-worksheet-guide{break-inside:avoid;}
+  .trace-worksheet-guide a::after{content:"study-quest.net/" attr(href);display:block;font:10pt/1.4 monospace;overflow-wrap:anywhere;}
+}
 </style>
 </head>
 <body>
@@ -66,6 +70,7 @@ endfor</pre>
   <section id="trace-order-check" aria-labelledby="trace-order-title">
     <h2 id="trace-order-title">紙で解く：足してから増やすと、最後の合計は？</h2>
     <p>今度は、足す値 <code>step</code> も毎回変わる自作問題です。紙に「実行した行」「<code>total</code>」「<code>step</code>」の3列を作り、最初に二つの初期値を書いてください。</p>
+    <p class="trace-worksheet-guide"><a href="downloads/fe-variable-trace-worksheet.pdf" type="application/pdf">問題と解答を開く（PDF・A4 2枚）</a><br>1枚目の7行に値を記入し、2枚目の解答表で最初にずれた行を探します。問題だけ印刷するときは、1ページ目を選んでください。</p>
     <pre class="trace-code" aria-label="3回の繰返しの疑似言語"><code>total ← 4
 step  ← 2
 次の2行を3回繰り返す
