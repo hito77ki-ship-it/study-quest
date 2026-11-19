@@ -10,10 +10,10 @@
   <link rel="canonical" href="https://study-quest.net/boki2-cvp.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認｜スタディクエスト</title>
-<meta name="description" content="既存のCVP計算を検算し、図解の交点位置を修正。150個と250個、整数なら251個、赤字時の安全余裕率−50％、貢献利益0円の4つの自作例で前提も確認。">
+<meta name="description" content="250個の販売計画で目標利益に届くかを、1個の貢献利益と目標との差額から判断。損益分岐点を示す図と4つの自作例で、赤字時の安全余裕率や貢献利益が0円の場合も確かめます。">
 <meta name="keywords" content="CVP分析とは 簿記2級,損益分岐点売上高,安全余裕率,貢献利益率,目標利益 売上高">
 <meta property="og:title" content="CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認">
-<meta property="og:description" content="既存のCVP計算を検算し、図解の交点位置を修正。150個と250個、整数なら251個、赤字時の安全余裕率−50％、貢献利益0円の4つの自作例で前提も確認。">
+<meta property="og:description" content="250個の販売計画で目標利益に届くかを、1個の貢献利益と目標との差額から判断。損益分岐点を示す図と4つの自作例で、赤字時の安全余裕率や貢献利益が0円の場合も確かめます。">
 <meta property="og:url" content="https://study-quest.net/boki2-cvp.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://study-quest.net/screenshots/ogp_logo.png">
@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8524998392329204" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "既存のCVP計算を検算し、図解の交点位置を修正。150個と250個、整数なら251個、赤字時の安全余裕率−50％、貢献利益0円の4つの自作例で前提も確認。", "url": "https://study-quest.net/boki2-cvp.html", "datePublished": "2026-05-09", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認", "image": "https://study-quest.net/screenshots/ogp_logo.png", "description": "250個の販売計画で目標利益に届くかを、1個の貢献利益と目標との差額から判断。損益分岐点を示す図と4つの自作例で、赤字時の安全余裕率や貢献利益が0円の場合も確かめます。", "url": "https://study-quest.net/boki2-cvp.html", "datePublished": "2026-05-09", "dateModified": "2026-11-19", "author": {"@type": "Person", "name": "若葉"}, "publisher": {"@type": "Organization", "name": "スタディクエスト", "url": "https://study-quest.net/", "logo": {"@type": "ImageObject", "url": "https://study-quest.net/icons/icon.svg"}}}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--green:#8CC63F;--green2:#6AAF2B;--text:#1A202C;--muted:#718096;--border:#E2E8F0;--light:#F7FAFC}
@@ -44,7 +44,7 @@ details summary:active{background:var(--light);}
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "損益分岐点に達すれば黒字ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の条件では、損益分岐点は営業利益が0になる点です。単価2,000円・単位変動費1,200円・固定費120,000円なら150個で利益0、それを超える販売から黒字です。"}}, {"@type": "Question", "name": "目標利益の必要数量に小数が出たら四捨五入しますか？", "acceptedAnswer": {"@type": "Answer", "text": "1個未満を販売できず目標以上の利益が必要なら、条件を満たす最小整数へ切り上げます。本例の250.625個は251個で、250個では未達です。"}}, {"@type": "Question", "name": "安全余裕率がマイナス50％なら、50％売上が下がっても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "違います。すでに損益分岐点を下回る状態です。単価や費用の前提を固定して読む指標で、資金繰りや事業全体の安全を保証するものでもありません。"}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "損益分岐点に達すれば黒字ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事の条件では、損益分岐点は営業利益が0になる点です。単価2,000円・単位変動費1,200円・固定費120,000円なら150個で利益0、それを超える販売から黒字です。"}}, {"@type": "Question", "name": "目標利益の必要数量に小数が出たら四捨五入しますか？", "acceptedAnswer": {"@type": "Answer", "text": "製品を1個単位で売り、目標以上の利益が必要なら、条件を満たす最小の整数に切り上げます。本例は250.375個。250個では目標の80,300円に300円足りず、251個なら500円上回ります。"}}, {"@type": "Question", "name": "安全余裕率がマイナス50％なら、50％売上が下がっても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "違います。すでに損益分岐点を下回る状態です。単価や費用の前提を固定して読む指標で、資金繰りや事業全体の安全を保証するものでもありません。"}}]}
 </script>
 <style>/* 一次情報と自作例題：本文と同じテーマ変数で表示 */
 .sq-facts-note,.sq-facts-exercise,.sq-facts-sources{background:var(--sq-surface,#fff);color:var(--sq-text,#1A202C);border:1px solid var(--sq-border,#CBD5E1);border-radius:12px;padding:20px;margin:24px 0;overflow-wrap:anywhere}
@@ -60,11 +60,15 @@ details summary:active{background:var(--light);}
 .sq-facts-table table{width:100%;border-collapse:collapse;font-size:13px}.sq-facts-table th{text-align:left;padding:10px;background:var(--sq-accent,#8CC63F);color:var(--sq-cta-text-strong,#10200A)}.sq-facts-table td{padding:10px;border-bottom:1px solid var(--sq-border,#CBD5E1);vertical-align:top;color:var(--sq-text,#1A202C)}.sq-facts-table tr:nth-child(even) td{background:var(--sq-surface-soft,#F7FAFC)}.sq-facts-contents a{scroll-margin-top:100px}.container h2[id]{scroll-margin-top:100px}
 
 .container .sq-facts-table table{width:100%;min-width:0;table-layout:fixed}.container .sq-facts-table .sq-table-scroll{margin:0;overflow-x:visible}
+#cvp-rounding-check{scroll-margin-top:90px}
+#cvp-rounding-check h3{color:var(--sq-text,#1A202C)}
+.cvp-plan-link{color:var(--sq-text,#1A202C);text-decoration:underline;text-underline-offset:.18em}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner"><a class="nav-logo" href="index.html">⚔ スタディクエスト</a><a class="nav-cta" href="app.html">無料で始める</a></div></nav>
-<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月2日</p><h1>CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>CVP分析は、原価・営業量・利益の関係から、損益分岐点や目標利益に必要な売上を求めます。既存記事の基本計算は検算して残し、<strong>計算が成り立つ条件、整数個での端数処理、安全余裕率がマイナスのケース</strong>を補いました。旧図解でずれていた損益分岐点の印も、売上線と総費用線の交点へ直しました。</p>
+<main class="container"><div class="breadcrumb"><a href="index.html">TOP</a> &gt; <a href="boki2.html">簿記2級</a></div><p class="meta">簿記2級 | 公開：2026年5月9日 | 更新日：2026年11月19日</p><h1>CVP分析｜損益分岐点・目標利益・安全余裕率を条件付き例題で確認</h1><p class="meta">著者：若葉／スタディクエスト編集部</p><p>CVP分析は、原価・営業量・利益の関係から、損益分岐点や目標利益に必要な売上を求めます。既存記事の基本計算は検算して残し、<strong>計算が成り立つ条件、整数個での端数処理、安全余裕率がマイナスのケース</strong>を補いました。旧図解でずれていた損益分岐点の印も、売上線と総費用線の交点へ直しました。</p>
+<p><a class="cvp-plan-link" href="#cvp-rounding-check">250個の販売計画を検算する</a></p>
 <div class="sq-facts-note"><strong>自作例で固定する条件</strong><p>製品は1種類、販売単価・単位変動費は一定、固定費は分析する範囲で一定とします。税金・在庫による固定費調整・能力制約等は扱いません。ここでの利益は営業利益です。費用構造が変われば、同じ式の数値を使い続けることはできません。</p></div>
 <h2>利益の式から、求めたい売上を逆算する</h2>
 <p>中小企業基盤整備機構のJ-Net21は、費用を変動費・固定費に分け、損益が0となる売上規模を損益分岐点として説明しています。以下の公式は、本記事の条件のもとで「売上−変動費−固定費＝利益」から導きます。</p>
@@ -73,9 +77,22 @@ details summary:active{background:var(--light);}
 <h2>自作例1：150個の境目と、250個の目標</h2>
 <p>既存の自作例と同じ、販売単価2,000円、単位変動費1,200円、固定費120,000円、目標利益80,000円です。</p>
 <section class="sq-facts-exercise"><h3>例題1：数量と売上高の両方で検算</h3><p>損益分岐点と目標利益80,000円に必要な販売数量・売上高を求めてください。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>1個の貢献利益は2,000−1,200＝<strong>800円</strong>、貢献利益率800÷2,000＝<strong>40％</strong>。</p><p>損益分岐点は120,000÷800＝<strong>150個</strong>、売上300,000円。300,000−180,000−120,000＝0です。</p><p>目標利益は(120,000＋80,000)÷800＝<strong>250個</strong>、売上500,000円。500,000−300,000−120,000＝80,000円で検算できます。150個は利益0であり、黒字はそれを超える販売からです。</p></div></details></section>
-<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-cvp-map-mobile.svg?v=20261102"><img src="images/boki2-cvp-map.svg?v=20261102" alt="単価2,000円、単位変動費1,200円、固定費120,000円で売上線と総費用線が150個・300,000円で交わる図解" width="760" height="560" loading="lazy"></picture><figcaption>編集部作成。仮定・計算過程・一次資料は本文で確認できます。</figcaption></figure>
-<h2>端数は、目標を満たす方向に処理する</h2>
-<section class="sq-facts-exercise"><h3>例題2：目標利益80,500円なら250個でよい？</h3><p>単価・変動費・固定費は同じまま、目標利益を80,500円に変えます。1個未満は販売できない条件です。</p><details class="sq-facts-answer"><summary>解答・考え方を見る</summary><div><p>(120,000＋80,500)÷800＝250.625個なので、必要な最小整数は<strong>251個</strong>です。</p><p>250個では800×250−120,000＝80,000円で未達。251個なら<strong>80,800円</strong>となり目標を満たします。数量を四捨五入するのではなく、条件を満たす最小整数へ切り上げます。売上高は251×2,000＝502,000円です。</p></div></details></section>
+<figure class="sq-facts-figure"><picture><source media="(max-width:600px)" srcset="images/boki2-cvp-map-mobile.svg?v=20261102"><img src="images/boki2-cvp-map.svg?v=20261102" alt="単価2,000円、単位変動費1,200円、固定費120,000円で売上線と総費用線が150個・300,000円で交わる図解" width="760" height="560" loading="lazy"></picture><figcaption>例題1の図。売上高と総費用は150個で一致し、250個のときの差が当初の目標利益80,000円になります。</figcaption></figure>
+<h2>目標利益が変わったときの販売計画</h2>
+<section class="sq-facts-exercise" id="cvp-rounding-check">
+<h3>例題2：250個の計画で足りる？</h3>
+<p>例題1の製品を250個売る計画です。営業利益の目標が80,000円から<strong>80,300円</strong>に上がりました。製品は1個単位でしか売れません。</p>
+<p>販売単価は1個2,000円、変動費は1個1,200円、固定費は120,000円です。この自作例では、販売数量を変えてもこの三つの条件は変わりません。</p>
+<ol>
+<li>250個売ると営業利益はいくらですか。新しい目標をいくら上回るか、または下回るかを求めてください。</li>
+<li>目標以上の利益を出すために、最低何個を販売する計画にしますか。</li>
+</ol>
+<details class="sq-facts-answer"><summary>販売計画と目標との差を確かめる</summary>
+<p><strong>250個では300円不足します。</strong> 1個売るごとに残る貢献利益は2,000−1,200＝800円。250個での営業利益は800×250−120,000＝80,000円です。当初の目標にはちょうど届きますが、新しい目標は80,300円です。</p>
+<p><strong>最低251個を販売します。</strong> （120,000＋80,300）÷800＝250.375個。四捨五入すると250個になり、先ほどの300円不足が残ります。もう1個売ると利益が800円増えて80,800円となり、目標を500円上回ります。</p>
+<p>売上高からも検算できます。251個の売上は502,000円、変動費は301,200円。502,000−301,200−120,000＝80,800円です。</p>
+</details>
+</section>
 <h2>安全余裕率の分母と、マイナスの意味</h2>
 <p>既存の別例は、実際売上高1,500,000円・変動費900,000円・固定費450,000円です。貢献利益600,000円、貢献利益率40％、営業利益150,000円、損益分岐点売上高1,125,000円となります。</p>
 <p>安全余裕率は(1,500,000−1,125,000)÷1,500,000＝<strong>25％</strong>。この費用構造のまま売上が25％下がると利益0になる、という計算です。借入返済や資金繰りも含めた事業全体の安全を保証する割合ではありません。</p>
@@ -85,7 +102,7 @@ details summary:active{background:var(--light);}
 <h2>答案と一緒に残す確認欄</h2>
 <ol><li>求めるものは売上高・数量・割合のどれか。</li><li>変動費に製造費だけでなく変動販売費等も含めたか。</li><li>分母は売上高・貢献利益率・1個の貢献利益のどれか。</li><li>目標利益を足し、整数制約・0以下の分母を確認したか。</li><li>答えの売上・数量を元の利益式に戻し、目標を満たすか。</li></ol>
 <p>この確認欄は編集部の学習案です。多品種の販売構成や段階的に増える固定費、税引後目標利益などは、本例と別の条件を置いて考えます。</p>
-<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>最終確認：2026年11月2日。公式の基準・制度と、編集部の架空例・学習提案を分けています。</p><ul><li><a href="https://j-net21.smrj.go.jp/solution/qa/accounting/Q0240.html" target="_blank" rel="noopener">中小企業基盤整備機構 J-Net21：損益分岐点・目標利益・安全余裕率</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記区分表2ページ・原価・営業量・利益関係の分析</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>損益分岐点に達すれば黒字ですか？</summary><p>本記事の条件では、損益分岐点は営業利益が0になる点です。単価2,000円・単位変動費1,200円・固定費120,000円なら150個で利益0、それを超える販売から黒字です。</p></details><details class="sq-facts-answer"><summary>目標利益の必要数量に小数が出たら四捨五入しますか？</summary><p>1個未満を販売できず目標以上の利益が必要なら、条件を満たす最小整数へ切り上げます。本例の250.625個は251個で、250個では未達です。</p></details><details class="sq-facts-answer"><summary>安全余裕率がマイナス50％なら、50％売上が下がっても大丈夫ですか？</summary><p>違います。すでに損益分岐点を下回る状態です。単価や費用の前提を固定して読む指標で、資金繰りや事業全体の安全を保証するものでもありません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-chokusetsu-genka.html">直接原価と在庫の固定費</a></li><li><a href="boki2-seizo-kansetsuhi.html">製造間接費と予算</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
+<section id="sources" class="sq-facts-sources"><h2>確認した一次資料</h2><p>目標販売数量の式と日商の出題区分は2026年11月19日に再確認しました。販売数量、単価、費用、目標利益は編集部の自作例の条件です。</p><ul><li><a href="https://j-net21.smrj.go.jp/solution/qa/accounting/Q0240.html" target="_blank" rel="noopener">中小企業基盤整備機構 J-Net21：損益分岐点・目標利益・安全余裕率</a></li><li><a href="https://www.kentei.ne.jp/bookkeeping/exam-list" target="_blank" rel="noopener">日本商工会議所：工業簿記区分表2ページ・原価・営業量・利益関係の分析</a></li></ul></section><section class="sq-facts-faq"><h2>よくある質問</h2><details class="sq-facts-answer"><summary>損益分岐点に達すれば黒字ですか？</summary><p>本記事の条件では、損益分岐点は営業利益が0になる点です。単価2,000円・単位変動費1,200円・固定費120,000円なら150個で利益0、それを超える販売から黒字です。</p></details><details class="sq-facts-answer"><summary>目標利益の必要数量に小数が出たら四捨五入しますか？</summary><p>製品を1個単位で売り、目標以上の利益が必要なら、条件を満たす最小の整数に切り上げます。本例は250.375個。250個では目標の80,300円に300円足りず、251個なら500円上回ります。</p></details><details class="sq-facts-answer"><summary>安全余裕率がマイナス50％なら、50％売上が下がっても大丈夫ですか？</summary><p>違います。すでに損益分岐点を下回る状態です。単価や費用の前提を固定して読む指標で、資金繰りや事業全体の安全を保証するものでもありません。</p></details></section><section><h2>次に確認する記事</h2><ul><li><a href="boki2-chokusetsu-genka.html">直接原価と在庫の固定費</a></li><li><a href="boki2-seizo-kansetsuhi.html">製造間接費と予算</a></li><li><a href="boki2.html">簿記2級の学習ガイド</a></li></ul></section><div class="sq-facts-note"><strong>今日確認したことを記録する</strong><p>使った条件と、次に確かめる論点を学習メモへ残せます。</p><a href="app.html">Study Questで学習を記録する →</a></div></main>
 <footer><div><a href="index.html">ホーム</a><a href="shikaku-list.html">資格一覧</a><a href="boki2.html">簿記2級</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></div><p>&copy; 2026 スタディクエスト</p></footer>
 <script src="article-widgets.js?v=20261102-boki-fourth-five"></script>
 <script src="article-recommendations.js?v=20260813-diagram-thumb-v2"></script>
