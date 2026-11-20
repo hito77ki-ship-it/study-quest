@@ -9,14 +9,14 @@
 
   <text x="380" y="38" text-anchor="middle" font-size="16" font-weight="700" fill="#1A202C">学生納付特例から追納までの流れ</text>
 
-  <!-- Box1: 20歳〜学生納付特例で一時的に0円 -->
+  <!-- Box1: 学生納付特例の承認 -->
   <rect x="24" y="90" width="220" height="170" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-  <text x="134" y="128" text-anchor="middle" font-size="17" font-weight="700" fill="#1E40AF">20歳〜</text>
+  <text x="134" y="128" text-anchor="middle" font-size="17" font-weight="700" fill="#1E40AF">在学中に申請</text>
   <text x="134" y="160" text-anchor="middle" font-size="13" fill="#2563EB">
-    <tspan x="134" dy="0">学生納付特例で</tspan>
-    <tspan x="134" dy="20">保険料の支払いが</tspan>
+    <tspan x="134" dy="0">承認された月は</tspan>
+    <tspan x="134" dy="20">保険料の</tspan>
   </text>
-  <text x="134" y="216" text-anchor="middle" font-size="22" font-weight="700" fill="#1E40AF">一時的に0円</text>
+  <text x="134" y="216" text-anchor="middle" font-size="22" font-weight="700" fill="#1E40AF">納付を猶予</text>
 
   <path d="M 250 175 L 286 175" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow2)"/>
 
@@ -37,16 +37,16 @@
 
   <path d="M 518 175 L 554 175" stroke="#A0AEC0" stroke-width="3" marker-end="url(#arrow2)"/>
 
-  <!-- Box3: 追納成功で満額復活 -->
+  <!-- Box3: 追納した期間分を年金額に反映 -->
   <rect x="560" y="90" width="176" height="170" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
   <text x="648" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">
-    <tspan x="648" dy="0">追納成功で</tspan>
+    <tspan x="648" dy="0">希望して追納</tspan>
   </text>
   <text x="648" y="158" text-anchor="middle" font-size="13" fill="#059669">
-    <tspan x="648" dy="0">将来の老齢基礎</tspan>
-    <tspan x="648" dy="20">年金が</tspan>
+    <tspan x="648" dy="0">老齢基礎年金の</tspan>
+    <tspan x="648" dy="20">額に</tspan>
   </text>
-  <text x="648" y="216" text-anchor="middle" font-size="20" font-weight="700" fill="#065F46">対象期間分を反映</text>
+  <text x="648" y="216" text-anchor="middle" font-size="20" font-weight="700" fill="#065F46">納めた月を反映</text>
 
   <rect x="24" y="300" width="712" height="90" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
   <text x="380" y="332" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A202C">追納期限を過ぎた対象期間は、将来の年金額に</text>
