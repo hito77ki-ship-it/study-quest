@@ -123,6 +123,33 @@ assert.match(study.inputs.get('mobileQuestMatList').innerHTML,/⏱ 4分11秒/,'M
 assert.equal(study.box.sessions.length,3,'Each valid save adds exactly one record');
 assert.equal(study.box.sessions[0],oldStudyRecord,'Existing second-precision record must be retained');
 
+// The TODAY strip sums the EXP saved in today's quest log, separately from minutes.
+const todayStrip = context(['toFiniteNumber','sAmount','isStudyType','getTodayMins','renderMobileQuestMaterials'],{
+  window:{innerWidth:390}, loadMaterials:()=>{}, materials:[],
+  getTodayStr:()=> '2026-11-20', getThisWeekGoalHours:()=>0, sessions:[
+    {date:'2026-11-20', type:'study', amount:1, amountSecs:63, exp:2},
+    {date:'2026-11-19', type:'study', amount:10, exp:10},
+  ],
+});
+for(const id of ['mobileQuestMatList','questTodayStrip','questTodayMinsDisp','questTodayExpDisp']){
+  todayStrip.inputs.set(id,{style:{}});
+}
+todayStrip.box.renderMobileQuestMaterials();
+assert.equal(todayStrip.inputs.get('questTodayMinsDisp').textContent,'1m');
+assert.equal(todayStrip.inputs.get('questTodayExpDisp').textContent,'+2 EXP');
+todayStrip.box.sessions.push({date:'2026-11-20',type:'study',amount:1,exp:1});
+todayStrip.box.renderMobileQuestMaterials();
+assert.equal(todayStrip.inputs.get('questTodayMinsDisp').textContent,'2m');
+assert.equal(todayStrip.inputs.get('questTodayExpDisp').textContent,'+3 EXP');
+todayStrip.box.sessions.push(
+  {date:'2026-11-20',type:'exam',amount:10,exp:'4'},
+  {date:'2026-11-20',type:'study',amount:5,exp:0},
+  {date:'2026-11-20',type:'study',amount:5},
+  {date:'2026-11-20',type:'study',amount:5,importPast:true,exp:99},
+);
+todayStrip.box.renderMobileQuestMaterials();
+assert.equal(todayStrip.inputs.get('questTodayExpDisp').textContent,'+7 EXP');
+
 const material = context(['toFiniteNumber','sAmount','fmtSecs','renderMaterials'],{
   loadMaterials:()=>{},materials:[{id:'a',name:'教材A',subjectKey:'s'}],
   sessions:[{material_id:'a',type:'study',amount:1,amountSecs:71},{material_id:'a',type:'study',amount:2},{material_id:'b',type:'study',amount:99}],
