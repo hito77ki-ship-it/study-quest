@@ -21619,16 +21619,20 @@ function renderMobileQuestMaterials(){
 
   // 今日の進捗ストリップ更新
   const strip = document.getElementById('questTodayStrip');
+  const todayStr = getTodayStr();
   const todayTotal = getTodayMins();
+  const todayExp = sessions
+    .filter(s => s.date === todayStr && !s.importPast)
+    .reduce((sum, s) => sum + toFiniteNumber(s.exp), 0);
   if(strip){
-    if(todayTotal > 0 || materials.length > 0){
+    if(todayTotal > 0 || todayExp > 0 || materials.length > 0){
       strip.style.display = '';
       const th = Math.floor(todayTotal/60), tm = Math.round(todayTotal%60);
       const dispStr = th > 0 ? `${th}h${tm>0?tm+'m':''}` : `${tm}m`;
       const minsEl = document.getElementById('questTodayMinsDisp');
       if(minsEl) minsEl.textContent = dispStr;
       const expEl = document.getElementById('questTodayExpDisp');
-      if(expEl) expEl.textContent = `+${Math.floor(todayTotal)} EXP`;
+      if(expEl) expEl.textContent = `+${todayExp} EXP`;
       const goalHours = getThisWeekGoalHours ? getThisWeekGoalHours() : 0;
       const goalMins = goalHours > 0 ? Math.round(goalHours / 7 * 60) : 120;
       const goalEl = document.getElementById('questTodayGoalDisp');
@@ -21662,7 +21666,6 @@ function renderMobileQuestMaterials(){
 
   // 各教材の累計時間・今日の時間
   const materialMins = {}, materialTodayMins = {};
-  const todayStr = getTodayStr();
   materials.forEach(m => {
     materialMins[m.id] = sessions.filter(s => s.material_id === m.id).reduce((a,s) => a + sAmount(s), 0);
     materialTodayMins[m.id] = sessions.filter(s => s.material_id === m.id && s.date === todayStr).reduce((a,s) => a + sAmount(s), 0);
@@ -22531,6 +22534,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20261120_mobile_material_today_exp',
+    date: '2026-11-20',
+    type: 'fix',
+    title: '教材一覧の本日EXPをクエスト記録とそろえました',
+    desc: 'スマホの「記録」から開く教材一覧に、その日に保存した各クエストの獲得EXPの合計を表示します。'
+  },
   {
     id: 'v20261120_timer_note_material',
     date: '2026-11-20',
