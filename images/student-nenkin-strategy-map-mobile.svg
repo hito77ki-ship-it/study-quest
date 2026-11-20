@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" width="360" height="900" role="img" aria-labelledby="svgtitle svgdesc">
   <title id="svgtitle">学生納付特例から追納までの流れ（モバイル版）</title>
-  <desc id="svgdesc">20歳から学生納付特例で年金保険料の支払いが一時的に0円になり、追納できる対象は追納承認月の前10年以内の期間（対象期間の翌年度から3年度目以降は加算）、追納に成功すると将来の老齢基礎年金が対象期間分を反映するという流れを示す図解</desc>
+  <desc id="svgdesc">学生納付特例の申請が承認されると保険料の納付が猶予され、追納できる対象は追納承認月の前10年以内の期間（対象期間の翌年度から3年度目以降は加算）、追納した月の分が老齢基礎年金額に反映されるという流れを示す図解</desc>
   <defs><style>text{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}</style></defs>
   <rect width="360" height="900" rx="16" fill="#FAFBFC"/>
 
@@ -8,10 +8,10 @@
   <text x="180" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#1A202C">追納までの流れ</text>
 
   <rect x="16" y="66" width="328" height="184" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-  <text x="180" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">20歳〜</text>
-  <text x="180" y="126" text-anchor="middle" font-size="12" fill="#2563EB">学生納付特例で保険料の</text>
-  <text x="180" y="146" text-anchor="middle" font-size="12" fill="#2563EB">支払いが</text>
-  <text x="180" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#1E40AF">一時的に0円</text>
+  <text x="180" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1E40AF">在学中に申請</text>
+  <text x="180" y="126" text-anchor="middle" font-size="12" fill="#2563EB">承認された月は</text>
+  <text x="180" y="146" text-anchor="middle" font-size="12" fill="#2563EB">保険料の</text>
+  <text x="180" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#1E40AF">納付を猶予</text>
 
   <text x="180" y="278" text-anchor="middle" font-size="18" fill="#94A3B8">↓</text>
 
@@ -29,9 +29,9 @@
   <text x="180" y="530" text-anchor="middle" font-size="18" fill="#94A3B8">↓</text>
 
   <rect x="16" y="544" width="328" height="184" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
-  <text x="180" y="580" text-anchor="middle" font-size="13.5" font-weight="700" fill="#065F46">追納成功で</text>
-  <text x="180" y="608" text-anchor="middle" font-size="12" fill="#059669">将来の老齢基礎年金が</text>
-  <text x="180" y="662" text-anchor="middle" font-size="18" font-weight="700" fill="#065F46">対象期間分を反映</text>
+  <text x="180" y="580" text-anchor="middle" font-size="13.5" font-weight="700" fill="#065F46">希望して追納</text>
+  <text x="180" y="608" text-anchor="middle" font-size="12" fill="#059669">老齢基礎年金の額に</text>
+  <text x="180" y="662" text-anchor="middle" font-size="18" font-weight="700" fill="#065F46">納めた月を反映</text>
 
   <rect x="16" y="758" width="328" height="110" rx="12" fill="rgba(255,255,255,.9)" stroke="#E2E8F0" stroke-width="1.5"/>
   <text x="180" y="790" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A202C">追納期限を過ぎた対象期間は、将来の</text>
