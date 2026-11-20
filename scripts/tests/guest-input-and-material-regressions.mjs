@@ -180,10 +180,48 @@ const calendar = context(['toLocalDateStr','getTodayStr','initMrecUI'],{
   Date:MidnightDate,materials:[],timerRunning:false,timerSeconds:0,
   switchMrecTab:()=>{},updateMrecDisplay:()=>{},syncMrecButtons:()=>{},
 });
-calendar.inputs.set('mrecDate',{value:''});calendar.box.initMrecUI(null);
+calendar.inputs.set('mrecDate',{value:''});calendar.box.initMrecUI();
 const localToday = new MidnightDate().getFullYear()+'-'+String(new MidnightDate().getMonth()+1).padStart(2,'0')+'-'+String(new MidnightDate().getDate()).padStart(2,'0');
 assert.equal(calendar.inputs.get('mrecDate').value,localToday);
 if(process.env.TZ==='Asia/Tokyo') assert.equal(localToday,'2026-10-31');
+
+// Returning to the record screen at phone width must reopen the same stopwatch draft.
+const phoneTimer = context(['switchTab','initMrecUI','switchMrecTab'], {
+  window:{innerWidth:390}, timerRunning:true, timerSeconds:25, currentMrecTab:'manual',
+  materials:[{id:'book', name:'教材A'}], allSelectedSubjects:()=>[],
+  renderQuestLogStats:()=>{}, renderSessions:()=>{}, renderDeclCard:()=>{}, renderDuelCard:()=>{},
+  checkNoMaterialBanner:()=>{}, renderTimerExamMini:()=>{}, unsubscribeTlRealtime:()=>{},
+  updateMrecDisplay:()=>{}, syncMrecButtons:()=>{}, saveBgTimerState:()=>{},
+});
+phoneTimer.box.document.querySelectorAll=()=>[];
+phoneTimer.input('timerMaterial','book');
+phoneTimer.input('timerNote','PCで記入したメモ');
+phoneTimer.input('mrecNoteSW','古い入力');
+phoneTimer.inputs.set('mrecMatName',{});
+function editStopwatchNote(id,value){
+  const element=phoneTimer.inputs.get(id);
+  element.value=value;
+  const tag=html.match(new RegExp('<(?:input|textarea) [^>]*id="' + id + '"[^>]*>'))[0];
+  const handler=tag.match(/oninput="([^"]+)"/)[1];
+  vm.runInContext('(function(){' + handler + '})',phoneTimer.box).call(element);
+}
+for(const running of [true,false]){
+  phoneTimer.box.timerRunning=running;
+  phoneTimer.box.switchTab('quest');
+  assert.equal(phoneTimer.box.currentMrecTab,'stopwatch');
+  assert.equal(phoneTimer.inputs.get('mrecMatName').textContent,'教材A');
+  assert.equal(phoneTimer.inputs.get('mrecNoteSW').value,'PCで記入したメモ');
+}
+editStopwatchNote('mrecNoteSW','スマホの変更');
+assert.equal(phoneTimer.inputs.get('timerNote').value,'スマホの変更');
+editStopwatchNote('mrecNoteSW','');
+assert.equal(phoneTimer.inputs.get('timerNote').value,'');
+editStopwatchNote('timerNote','PCからの変更');
+assert.equal(phoneTimer.inputs.get('mrecNoteSW').value,'PCからの変更');
+phoneTimer.inputs.get('timerMaterial').value='';
+phoneTimer.box.switchTab('quest');
+assert.equal(phoneTimer.inputs.get('mrecMatName').textContent,'教材未選択');
+
 const recoveryMath = context(['getRecoveredTimerSeconds']);
 assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:25,running:false,savedAt:1000},61000),25);
 assert.equal(recoveryMath.box.getRecoveredTimerSeconds({seconds:25,running:true,savedAt:1000},11000),35);

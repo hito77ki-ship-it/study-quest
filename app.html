@@ -5174,7 +5174,7 @@ details summary:active{background:var(--light);}
         <button class="mrec-nav-back" onclick="exitMobileTimerMode()">←</button>
         <div class="mrec-mat-info">
           <div class="mrec-mat-cover" id="mrecMatCover"><span>📖</span></div>
-          <div class="mrec-mat-name" id="mrecMatName">教材を選択中</div>
+          <div class="mrec-mat-name" id="mrecMatName">教材未選択</div>
         </div>
         <div class="mrec-exam-mini" id="mrecExamMini"></div>
       </div>
@@ -5261,8 +5261,8 @@ details summary:active{background:var(--light);}
             placeholder="メモ（任意）" maxlength="100"></textarea>
         </div>
         <div class="mrec-btn-area">
-          <button class="mrec-action-btn" id="mrecStartSW" onclick="mrecToggle()">▶ スタート</button>
-          <button class="mrec-action-btn stop" id="mrecStopSW" onclick="mrecFinish()" style="display:none;">✓ 記録して終了</button>
+          <button class="mrec-action-btn" id="mrecStartSW" onclick="toggleTimer()">▶ スタート</button>
+          <button class="mrec-action-btn stop" id="mrecStopSW" onclick="finishTimer()" style="display:none;">✓ 記録して終了</button>
         </div>
       </div>
 
@@ -5365,7 +5365,7 @@ details summary:active{background:var(--light);}
         </div>
       </div>
       <!-- メモ -->
-      <input class="timer-session-note" id="timerNote" type="text" placeholder="今日の学習内容（任意）..." maxlength="100" aria-label="今日の学習内容">
+      <input class="timer-session-note" id="timerNote" type="text" placeholder="今日の学習内容（任意）..." maxlength="100" aria-label="今日の学習内容" oninput="document.getElementById('mrecNoteSW').value=this.value;saveBgTimerState()">
       <!-- ボタン -->
       <div class="timer-btns" style="margin-top:12px;">
         <button class="timer-start-btn" id="timerStartBtn" onclick="toggleTimer()">▶ 攻撃開始</button>
@@ -9891,12 +9891,13 @@ function switchTab(tab){
   if(tab==='score')   renderScoreTab();
   if(tab==='quest')    { renderQuestLogStats&&renderQuestLogStats(); renderSessions&&renderSessions(allSelectedSubjects()); renderDeclCard&&renderDeclCard(); renderDuelCard&&renderDuelCard(); checkNoMaterialBanner(); renderTimerExamMini&&renderTimerExamMini();
     // モバイル：タイマー未実行なら教材グリッド表示
-    if(window.innerWidth <= 600 && !timerRunning){
+    if(window.innerWidth <= 600 && !timerRunning && timerSeconds === 0){
       document.getElementById('panel-quest')?.classList.remove('show-timer');
       _unlockScreenScroll();
       renderMobileQuestMaterials();
-    } else if(window.innerWidth <= 600 && timerRunning){
+    } else if(window.innerWidth <= 600){
       document.getElementById('panel-quest')?.classList.add('show-timer');
+      initMrecUI();
     }
   }
   if(tab==='timeline') requestAnimationFrame(()=>{ loadTimeline(); subscribeTlRealtime(); });
@@ -9953,8 +9954,7 @@ function openQuickLogPanel(){
   switchTab('quest');
   loadMaterials && loadMaterials();
   document.getElementById('panel-quest')?.classList.add('show-timer');
-  const mat = (materials || [])[0];
-  initMrecUI(mat?.id || '');
+  initMrecUI();
   switchMrecTab('manual');
   setTimeout(()=>{
     const input = document.getElementById('mrecQuickText');
@@ -10715,6 +10715,8 @@ async function finishTimer(){
   if(sel)sel.disabled=false;
   const noteEl=document.getElementById('timerNote');
   if(noteEl)noteEl.value='';
+  const mobileNote=document.getElementById('mrecNoteSW');
+  if(mobileNote)mobileNote.value='';
   // 宣言カードの達成率を更新
   const declData = loadDecl();
   if(declData && declData.date===getTodayStr()) updateDeclDisplay(declData);
@@ -14607,6 +14609,7 @@ function resumeLastSubject(){
     if(panel) panel.classList.add('show-timer');
     // タイマー即開始
     if(!timerRunning) startTimer();
+    initMrecUI();
   });
 }
 
@@ -21587,7 +21590,7 @@ function quickSelectMaterial(materialId){
   const sel = document.getElementById('timerMaterial');
   if(sel){ sel.value = materialId; updateTimerMaterial(); }
   document.getElementById('panel-quest')?.classList.add('show-timer');
-  initMrecUI(materialId);
+  initMrecUI();
   window.scrollTo(0, 0);
   if(window.innerWidth <= 600) _lockScreenScroll();
 }
@@ -21714,18 +21717,19 @@ function mobileStartRecord(materialId){
 ───────────────────────────────────────────── */
 let currentMrecTab = 'manual';
 
-function initMrecUI(materialId){
+function initMrecUI(){
   // 教材情報をヘッダーに反映
+  const materialId = document.getElementById('timerMaterial')?.value;
   const m = materials.find(x => x.id === materialId);
   const nameEl = document.getElementById('mrecMatName');
   const coverEl = document.getElementById('mrecMatCover');
 
-  if(m){
-    if(nameEl) nameEl.textContent = m.name;
-    if(coverEl) coverEl.innerHTML = m.cover
-      ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`
-      : `<span>📖</span>`;
-  }
+  if(nameEl) nameEl.textContent = m?.name || '教材未選択';
+  if(coverEl) coverEl.innerHTML = m?.cover
+    ? `<img src="${m.cover}" alt="" style="width:100%;height:100%;object-fit:cover;">`
+    : '<span>📖</span>';
+  const mobileNote = document.getElementById('mrecNoteSW');
+  if(mobileNote) mobileNote.value = document.getElementById('timerNote')?.value || '';
 
   // 試験残日数をヘッダーに表示
   const examMini = document.getElementById('mrecExamMini');
@@ -21780,22 +21784,6 @@ function switchMrecTab(tab){
     const pane = document.getElementById('mrecPane-'+t);
     if(pane) pane.style.display = t===tab ? 'flex' : 'none';
   });
-}
-
-function mrecToggle(){
-  // メモを timerNote に同期してから toggleTimer
-  const noteEl = document.getElementById('mrecNoteSW');
-  const timerNoteEl = document.getElementById('timerNote');
-  if(noteEl && timerNoteEl) timerNoteEl.value = noteEl.value;
-  toggleTimer();
-}
-
-function mrecFinish(){
-  // メモを timerNote に同期してから finishTimer
-  const noteEl = document.getElementById('mrecNoteSW');
-  const timerNoteEl = document.getElementById('timerNote');
-  if(noteEl && timerNoteEl) timerNoteEl.value = noteEl.value;
-  finishTimer();
 }
 
 function normalizeStudyText(text){
@@ -22543,6 +22531,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20261120_timer_note_material',
+    date: '2026-11-20',
+    type: 'fix',
+    title: '画面幅を変えても、タイマーのメモと教材名を引き継ぎます',
+    desc: 'PC幅で教材を選びメモを書いてから、スマホ幅で「記録」を開いても、同じ教材名とメモを表示します。メモを入れ直さずに一時停止・保存できます。'
+  },
   {
     id: 'v20261116_report_seconds',
     date: '2026-11-16',
