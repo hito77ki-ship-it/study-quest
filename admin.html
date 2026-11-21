@@ -446,6 +446,7 @@ details summary:active{background:var(--light);}
 }
 @media(prefers-reduced-transparency:reduce){nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;}}
 </style>
+<link rel="stylesheet" href="forum-admin.css">
 </head>
 <body>
 
@@ -526,6 +527,7 @@ details summary:active{background:var(--light);}
     <button class="admin-nav-btn" onclick="switchSection('export', this)">📤 エクスポート</button>
     <button class="admin-nav-btn" onclick="switchSection('reactions', this)">👍 記事リアクション</button>
     <button class="admin-nav-btn" onclick="switchSection('comments', this)">🗨 記事コメント</button>
+    <button class="admin-nav-btn" onclick="switchSection('forum', this);loadForumModeration()">学習掲示板</button>
     <button class="admin-nav-btn" onclick="switchSection('reports', this)">
       🚩 通報
       <span class="admin-nav-badge" id="reportsBadge" style="display:none;">0</span>
@@ -767,6 +769,14 @@ details summary:active{background:var(--light);}
         </div>
       </div>
 
+      <section class="admin-section forum-moderation" id="section-forum">
+        <h2>学習掲示板の確認</h2>
+        <p>確認待ちの投稿は公開されていません。公開後は投稿番号が付きます。1,000件に達したスレッドには追加できません。</p>
+        <button type="button" onclick="loadForumModeration()">一覧を更新</button>
+        <p id="forum-admin-status" role="status"></p>
+        <h3>確認待ち <span id="forum-pending-count"></span></h3><div id="forum-pending"></div>
+        <h3>運営への連絡</h3><div id="forum-reports"></div>
+      </section>
     </div><!-- /mainContent -->
   </main>
 </div>
@@ -1696,5 +1706,7 @@ function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 </script>
+<script src="forum-config.js"></script>
+<script src="forum-admin.js"></script>
 </body>
 </html>
