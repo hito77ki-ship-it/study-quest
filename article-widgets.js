@@ -50,7 +50,7 @@ const ARTICLES = {
   'boki1-sogo-vs-kobetsu-shokyaku.html': {label:"簿記1級", title:"総合償却と個別償却｜平均年数・端数処理をそろえる自作例", thumb:"images/boki1-sogo-vs-kobetsu-shokyaku-map.svg?v=20261102", dialogue:false},
   'boki1-taishoku-kanbenho-vs-gensokuho.html': {label:"簿記1級", title:"退職給付の簡便法と原則法｜債務・年金資産・費用の自作検算", thumb:"images/boki1-taishoku-kanbenho-vs-gensokuho-map.svg?v=20261102", dialogue:false},
   'boki1-kawase-yoyaku-furiate-vs-dokuritsu.html': {label:'簿記1級', title:"為替予約の振当処理と独立処理｜期間配分と期別損益の自作例", thumb:'images/boki1-kawase-yoyaku-furiate-vs-dokuritsu-map.svg?v=20261102', dialogue:false},
-  'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法・独学ロードマップ', thumb:'images/study-quest-cpa-tax-category.webp'},
+  'cpa.html':            {label:'公認会計士',        title:'公認会計士試験の勉強法｜科目と最終合格率の読み方', thumb:'images/study-quest-cpa-tax-category.webp'},
   'cpa-juken-shukatsu-heiko.html': {label:'公認会計士', title:'公認会計士受験と一般就活を並行するか｜予定を照合する判断シート', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
   'cpa-tanto-gokaku-ronbun-tetsuzuki.html': {label:'公認会計士', title:'公認会計士の短答式に合格した後、論文式に向けて確認すること｜通知書・当年案内・予定のチェックリスト', thumbnail:'images/study-quest-cpa-tax-category.webp', hero:false, dialogue:false, reflection:false},
   'fp.html':             {label:"FP2級", title:"FP2級の独学準備｜受検資格・実技の違いと比較計算の自作例", thumb:"images/article-diagrams/fp.svg?v=20261103", dialogue:false, hero:false},
@@ -3316,7 +3316,7 @@ function buildReadButton(){
 
 /* ── 記事検索インデックス（モーダルと結果ページで共用） ── */
 const SEARCH_INDEX_STATE = {entries:null, promise:null, ready:false, receivedIndex:false};
-const SEARCH_DATA_REVISION = '825006e8228f4390155190317ab62c844b0d1694ce64d152a147b23e2d35d2fa';
+const SEARCH_DATA_REVISION = 'c8213172f2e3d68d5c482bcf2711542c52eeb7f6348842e5c32c2f938c81d4a7';
 
 function normalizeSearchText(text){
   return String(text || '').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
