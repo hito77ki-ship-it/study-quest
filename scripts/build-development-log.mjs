@@ -59,10 +59,34 @@ const output = `<!DOCTYPE html>
 </main><footer><a href="index.html">Study Quest トップ</a><a href="app.html">学習記録アプリ</a><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><span>© 2026 Study Quest</span></footer></body></html>
 `;
 const destination = path.join(root, 'development-log.html');
+const sitemapPath = path.join(root, 'sitemap.xml');
+const sitemap = fs.readFileSync(sitemapPath, 'utf8');
+const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const updates = home.match(/<p\b[^>]*class=["']updates-sub["'][^>]*>([\s\S]*?)<\/p>/i)?.[1];
+const homeDate = updates?.match(/最終更新[：:]\s*(\d{4})年(\d{1,2})月(\d{1,2})日/);
+if (!homeDate) throw new Error('Cannot read the date in the homepage updates section');
+const minimumDates = new Map([
+  ['https://study-quest.net/', [homeDate[1], homeDate[2].padStart(2, '0'), homeDate[3].padStart(2, '0')].join('-')],
+  ['https://study-quest.net/development-log.html', source.updated],
+]);
+const seen = new Set();
+const syncedSitemap = sitemap.replace(/<url>[\s\S]*?<\/url>/g, entry => {
+  const url = entry.match(/<loc>\s*([^<\s]+)\s*<\/loc>/)?.[1];
+  if (!minimumDates.has(url)) return entry;
+  const dateTag = /(<lastmod>\s*)(\d{4}-\d{2}-\d{2})(\s*<\/lastmod>)/;
+  if (seen.has(url) || !dateTag.test(entry)) throw new Error(`Check sitemap entry for ${url}`);
+  seen.add(url);
+  // Other substantive changes to the page can postdate its latest news entry.
+  const minimum = minimumDates.get(url);
+  return entry.replace(dateTag, (tag, start, current, end) => current < minimum ? start + minimum + end : tag);
+});
+if (seen.size !== minimumDates.size) throw new Error('Homepage or public diary missing from sitemap.xml');
 if (process.argv.includes('--check')) {
   if (fs.readFileSync(destination, 'utf8') !== output) throw new Error('development-log.html is out of sync; run node scripts/build-development-log.mjs');
+  if (sitemap !== syncedSitemap) throw new Error('sitemap.xml predates the homepage updates or public diary; run node scripts/build-development-log.mjs');
   console.log(`PASS public diary: ${source.entries.length} dated entries, roles and evidence, generated HTML in sync`);
 } else {
   fs.writeFileSync(destination, output);
+  if (sitemap !== syncedSitemap) fs.writeFileSync(sitemapPath, syncedSitemap);
   console.log(`Built development-log.html (${source.entries.length} entries)`);
 }
