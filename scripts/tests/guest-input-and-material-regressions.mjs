@@ -301,8 +301,10 @@ function reportElement(){
 }
 const reportElements = new Map();
 const chartConfigs = [];
-const reports = context(['toFiniteNumber','sAmount','fmtSecs','toLocalDateStr','renderHeatmap','renderMonthChart','renderTimeBlock'],{
-  Date:ReportDate,sessions:reportSessions,tbCurrentDate:null,
+const reports = context(['toFiniteNumber','sAmount','fmtSecs','toLocalDateStr','renderHeatmap','renderMonthChart','renderTimeBlock',
+  'getPeriodChartDays','getLast7DaysData','getWeekMinsForDate','renderWeekBar'],{
+  Date:ReportDate,sessions:reportSessions,tbCurrentDate:null,window:{innerWidth:1280},
+  rptSelectedDay:'2026-11-16',rptDayBySubject:true,getSubjectChartColor:()=> '#123456',
   document:{getElementById:id=>reportElements.get(id),createElement:reportElement},
   isStudyType:s=>s.type==='study'||s.type==='exam',
   getReportSubjects:()=>[{key:'s',name:'商業簿記',color:'#123456'}],
@@ -327,5 +329,30 @@ assert.ok(paintedCells.some(el=>el.title.includes('10:15〜10:20')),'A 47-second
 assert.ok(paintedCells.some(el=>el.title.includes('21:00〜21:05')&&el.title.includes('推定')),'Legacy records without a start time remain visible');
 assert.ok(!paintedCells.some(el=>el.title.includes('12:00〜12:05')),'Explicit zero seconds must not use a stale minute value');
 assert.equal(JSON.stringify(reportSessions),reportSnapshot,'Report rendering must not rewrite saved records');
+// A nonzero bar and its total must survive threshold rounding in every period.
+for(const id of ['rptWeekChart','rptChartEmpty','rptBarLegend']) reportElements.set(id,reportElement());
+for(const seconds of [0,1,12,17,18,59,60,3661]){
+  reports.box.sessions=[{date:'2026-11-16',type:'study',subject:'s',amount:0,amountSecs:seconds}];
+  for(const period of ['day','week','month','year']){
+    reports.box.rptPeriod=period;
+    reports.box.renderWeekBar();
+    const chart=chartConfigs.at(-1);
+    const dataset=chart.data.datasets[0];
+    assert.equal(reportElements.get('rptChartEmpty').style.display,period==='day'&&seconds===0?'flex':'none');
+    assert.equal(Math.round(Math.max(...dataset.data)*3600),seconds);
+    if(!seconds) continue;
+    assert.equal(dataset.label,'商業簿記');
+    const dataIndex=dataset.data.findIndex(value=>value>0);
+    const tooltip=chart.options.plugins.tooltip.callbacks;
+    assert.ok(tooltip.label({raw:dataset.data[dataIndex],dataset,dataIndex}).includes(reports.box.fmtSecs(seconds)));
+    if(period!=='day') assert.equal(tooltip.footer([{dataIndex}]),'合計：'+reports.box.fmtSecs(seconds));
+    assert.ok(chart.options.scales.y.max>=seconds/3600);
+  }
+}
+reports.box.sessions=[{date:'2026-11-16',type:'study',subject:'s',amount:2}];
+reports.box.rptPeriod='day';
+reports.box.renderWeekBar();
+assert.equal(Math.round(chartConfigs.at(-1).data.datasets[0].data[0]*3600),120,'Legacy minutes stay visible in the period bar');
+console.log('PASS: period report bars and tooltips retain second-precision and legacy records');
 if(reportTimezone===undefined) delete process.env.TZ; else process.env.TZ=reportTimezone;
 console.log('PASS: duration and score validation, custom score native limits, material seconds, quest period totals with sub-minute and legacy records, weekly remaining time, mobile end button, local date, paused/sub-minute timer recovery, imported record labels, and second-precision heatmap/monthly chart/timeblocks');
