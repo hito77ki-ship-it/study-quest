@@ -11321,6 +11321,12 @@ function renderScoreTab(){
   renderScoreRecordList();
 }
 
+function scoreComparisonGroup(record){
+  if(record.template!=='funda') return '合計点';
+  return EXAM_PRESETS.funda.subjects.filter(subject=>record.scores[subject.key])
+    .map(subject=>`${subject.name}（${record.scores[subject.key].max}点満点）`).join('＋');
+}
+
 function renderScoreSummary(){
   const con=document.getElementById('scoreSummarySection');
   if(!scoreRecords.length){
@@ -11333,7 +11339,7 @@ function renderScoreSummary(){
   const totalMax=Object.values(latest.scores).reduce((a,v)=>a+v.max,0);
   const totalRate=totalMax>0?Math.round(totalScore/totalMax*100):0;
   let trendHtml='';
-  if(prev){
+  if(prev && scoreComparisonGroup(prev)===scoreComparisonGroup(latest)){
     const prevTotal=Object.values(prev.scores).reduce((a,v)=>a+v.score,0);
     const diff=totalScore-prevTotal;
     trendHtml=`<div class="score-summary-item"><span class="score-summary-label">前回比</span><span class="score-trend ${diff>=0?'up':'down'}">${diff>=0?'+':''}${diff}点</span></div>`;
@@ -11381,11 +11387,18 @@ async function renderScoreCharts(){
   };
 
   // Total score line
-  const totalData=scoreRecords.map(r=>Object.values(r.scores).reduce((a,v)=>a+v.score,0));
+  const groups=scoreRecords.map(scoreComparisonGroup);
+  const totals=scoreRecords.map(r=>Object.values(r.scores).reduce((a,v)=>a+v.score,0));
+  const totalDatasets=[...new Set(groups)].map(group=>({
+    label:group,
+    data:totals.map((value,index)=>groups[index]===group ? value : null),
+    borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',pointBackgroundColor:'#c9a84c',
+    pointRadius:5,tension:.3,fill:true,
+  }));
   const ctxTotal=document.getElementById('chartTotal').getContext('2d');
   scoreChartInstances.total=new Chart(ctxTotal,{
     type:'line',
-    data:{labels,datasets:[{label:'合計点',data:totalData,borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',pointBackgroundColor:'#c9a84c',pointRadius:5,tension:.3,fill:true}]},
+    data:{labels,datasets:totalDatasets},
     options:{responsive:true,plugins:{legend:{labels:{color:'rgba(216,208,192,0.8)',font:{family:'Share Tech Mono',size:10}}}},scales:{x:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'rgba(106,106,144,0.9)',font:{family:'Share Tech Mono',size:10}}},y:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'rgba(106,106,144,0.9)',font:{family:'Share Tech Mono',size:10}},beginAtZero:true}}}
   });
 
