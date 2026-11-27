@@ -5551,7 +5551,7 @@ details summary:active{background:var(--light);}
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('toeic')">TOEIC</button>
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('takken')">宅建</button>
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('funda')">基本情報</button>
-            <button class="score-tmpl-btn" onclick="applyScoreTemplate('itpass')">ITPスポ</button>
+            <button class="score-tmpl-btn" onclick="applyScoreTemplate('itpass')">ITパスポート</button>
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('fp2')">FP2級</button>
             <button class="score-tmpl-btn" onclick="applyScoreTemplate('gyosei')">行政書士</button>
             <button class="score-tmpl-btn active" onclick="applyScoreTemplate('custom')">カスタム</button>
@@ -22527,6 +22527,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20261127_score_it_passport_label',
+    date: '2026-11-27',
+    type: 'fix',
+    title: '試験スコアのテンプレートに「ITパスポート」と表示します',
+    desc: '試験スコアの追加画面で、ITパスポートのボタン名を訂正しました。ボタンを選ぶと、ストラテジ系・マネジメント系・テクノロジ系の入力欄が開きます。'
+  },
   {
     id: 'v20261123_report_short_sessions',
     date: '2026-11-23',
