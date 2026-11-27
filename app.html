@@ -5492,7 +5492,7 @@ details summary:active{background:var(--light);}
       <div class="chart-tabs">
         <button class="chart-tab-btn active" onclick="switchChartTab('total')">合計点</button>
         <button class="chart-tab-btn" onclick="switchChartTab('subject')">科目別</button>
-        <button class="chart-tab-btn" onclick="switchChartTab('rate')">正答率</button>
+        <button class="chart-tab-btn" onclick="switchChartTab('rate')">得点率</button>
         <button class="chart-tab-btn" onclick="switchChartTab('radar')">レーダー</button>
       </div>
       <div class="chart-panel active" id="chart-total">
@@ -10919,8 +10919,8 @@ const EXAM_PRESETS = {
   funda: {
     name: '基本情報技術者',
     subjects: [
-      {key:'funda_am', name:'午前（科目A）', max:100},
-      {key:'funda_pm', name:'午後（科目B）', max:100},
+      {key:'funda_am', name:'科目A', max:1000, color:'#4db8ff'},
+      {key:'funda_pm', name:'科目B', max:1000, color:'#c97cff'},
     ]
   },
   itpass: {
@@ -11207,7 +11207,7 @@ function renderScoreBossCard(record, prev){
   const totalMax   = Object.values(record.scores).reduce((a,v)=>a+v.max,0);
   const rate = totalMax>0 ? Math.round(totalScore/totalMax*100) : 0;
 
-  // ボスへのダメージ計算（正答率→ダメージ換算）
+  // ボスへのダメージ計算（得点率→ダメージ換算）
   const dmg = Math.round(rate * 8.5);
 
   // 前回比
@@ -11272,7 +11272,7 @@ ${SQ_URL}`;
     </div>
     <div class="score-boss-log">
       <div>📜 <b>${escHtml(record.name)}</b>（${record.date}）</div>
-      <div>💥 与ダメージ：<span class="dmg">${dmg} DMG</span>（正答率 ${rate}%）</div>
+      <div>💥 与ダメージ：<span class="dmg">${dmg} DMG</span>（得点率 ${rate}%）</div>
       ${subjLogs}
       ${trendLog}
     </div>
@@ -11321,6 +11321,12 @@ function renderScoreTab(){
   renderScoreRecordList();
 }
 
+function scoreComparisonGroup(record){
+  if(record.template!=='funda') return '合計点';
+  return EXAM_PRESETS.funda.subjects.filter(subject=>record.scores[subject.key])
+    .map(subject=>`${subject.name}（${record.scores[subject.key].max}点満点）`).join('＋');
+}
+
 function renderScoreSummary(){
   const con=document.getElementById('scoreSummarySection');
   if(!scoreRecords.length){
@@ -11333,7 +11339,7 @@ function renderScoreSummary(){
   const totalMax=Object.values(latest.scores).reduce((a,v)=>a+v.max,0);
   const totalRate=totalMax>0?Math.round(totalScore/totalMax*100):0;
   let trendHtml='';
-  if(prev){
+  if(prev && scoreComparisonGroup(prev)===scoreComparisonGroup(latest)){
     const prevTotal=Object.values(prev.scores).reduce((a,v)=>a+v.score,0);
     const diff=totalScore-prevTotal;
     trendHtml=`<div class="score-summary-item"><span class="score-summary-label">前回比</span><span class="score-trend ${diff>=0?'up':'down'}">${diff>=0?'+':''}${diff}点</span></div>`;
@@ -11342,7 +11348,7 @@ function renderScoreSummary(){
   <div class="score-summary-row">
     <div class="score-summary-item"><span class="score-summary-label">最新試験</span><span class="score-summary-val" style="font-size:13px;color:var(--text)">${latest.name}</span></div>
     <div class="score-summary-item"><span class="score-summary-label">合計点</span><span class="score-summary-val">${totalScore}<span style="font-size:11px;color:var(--muted)">/${totalMax}</span></span></div>
-    <div class="score-summary-item"><span class="score-summary-label">正答率</span><span class="score-summary-val" style="color:${totalRate>=60?'#7cff6e':totalRate>=40?'#ff9e4d':'#ff6e6e'}">${totalRate}%</span></div>
+    <div class="score-summary-item"><span class="score-summary-label">得点率</span><span class="score-summary-val" style="color:${totalRate>=60?'#7cff6e':totalRate>=40?'#ff9e4d':'#ff6e6e'}">${totalRate}%</span></div>
     <div class="score-summary-item"><span class="score-summary-label">記録数</span><span class="score-summary-val" style="font-size:16px">${scoreRecords.length}回</span></div>
     ${trendHtml}
   </div>`;
@@ -11352,7 +11358,23 @@ async function renderScoreCharts(){
   await loadChartJs();
   applyChartDarkDefaults();
   const labels=scoreRecords.map(r=>r.date.slice(5)); // MM-DD
-  const subjs=allSelectedSubjects();
+  const subjs=allSelectedSubjects().map(s=>({
+    ...s, scores:scoreRecords.map(r=>r.scores[s.key]),
+  }));
+  // Each FE scale gets its own series so a past 100-point result is never plotted as a 1,000-point result.
+  for(const subject of EXAM_PRESETS.funda.subjects){
+    const scores=scoreRecords.map(r=>r.template==='funda' ? r.scores[subject.key] : null);
+    const maxima=new Set(scores.filter(Boolean).map(sc=>sc.max));
+    for(const max of maxima){
+      const sample=scores.find(sc=>sc && sc.max===max);
+      subjs.push({
+        name:`${sample.name || subject.name}（${max}点満点）`,
+        color:subject.color,
+        scores:scores.map(sc=>sc && sc.max===max ? sc : null),
+        isFe:true,
+      });
+    }
+  }
 
   // Destroy old charts
   Object.values(scoreChartInstances).forEach(ch=>{try{ch.destroy();}catch{}});
@@ -11365,18 +11387,25 @@ async function renderScoreCharts(){
   };
 
   // Total score line
-  const totalData=scoreRecords.map(r=>Object.values(r.scores).reduce((a,v)=>a+v.score,0));
+  const groups=scoreRecords.map(scoreComparisonGroup);
+  const totals=scoreRecords.map(r=>Object.values(r.scores).reduce((a,v)=>a+v.score,0));
+  const totalDatasets=[...new Set(groups)].map(group=>({
+    label:group,
+    data:totals.map((value,index)=>groups[index]===group ? value : null),
+    borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',pointBackgroundColor:'#c9a84c',
+    pointRadius:5,tension:.3,fill:true,
+  }));
   const ctxTotal=document.getElementById('chartTotal').getContext('2d');
   scoreChartInstances.total=new Chart(ctxTotal,{
     type:'line',
-    data:{labels,datasets:[{label:'合計点',data:totalData,borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',pointBackgroundColor:'#c9a84c',pointRadius:5,tension:.3,fill:true}]},
+    data:{labels,datasets:totalDatasets},
     options:{responsive:true,plugins:{legend:{labels:{color:'rgba(216,208,192,0.8)',font:{family:'Share Tech Mono',size:10}}}},scales:{x:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'rgba(106,106,144,0.9)',font:{family:'Share Tech Mono',size:10}}},y:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'rgba(106,106,144,0.9)',font:{family:'Share Tech Mono',size:10}},beginAtZero:true}}}
   });
 
   // Subject lines
   const subjDatasets=subjs.map(s=>({
     label:s.name,
-    data:scoreRecords.map(r=>r.scores[s.key]?r.scores[s.key].score:null),
+    data:s.scores.map(sc=>sc ? sc.score : null),
     borderColor:s.color,backgroundColor:s.color+'22',
     pointBackgroundColor:s.color,pointRadius:4,tension:.3,spanGaps:true
   }));
@@ -11387,10 +11416,10 @@ async function renderScoreCharts(){
     options:{responsive:true,plugins:{legend:{labels:{color:'rgba(216,208,192,0.8)',font:{family:'Share Tech Mono',size:9},boxWidth:12}}},scales:{x:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'rgba(106,106,144,0.9)',font:{family:'Share Tech Mono',size:10}}},y:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'rgba(106,106,144,0.9)',font:{family:'Share Tech Mono',size:10}},beginAtZero:true}}}
   });
 
-  // Rate line (正答率)
+  // Rate line (得点率)
   const rateDatasets=subjs.map(s=>({
     label:s.name,
-    data:scoreRecords.map(r=>{const sc=r.scores[s.key];return sc&&sc.max>0?Math.round(sc.score/sc.max*100):null;}),
+    data:s.scores.map(sc=>sc && sc.max>0 ? Math.round(sc.score/sc.max*100) : null),
     borderColor:s.color,backgroundColor:s.color+'11',
     pointBackgroundColor:s.color,pointRadius:4,tension:.3,spanGaps:true
   }));
@@ -11403,10 +11432,14 @@ async function renderScoreCharts(){
 
   // Radar: 最新2回比較
   const radarRecords=scoreRecords.slice(-2);
-  const radarLabels=subjs.map(s=>s.name.slice(0,4));
+  const radarLabels=subjs.map(s=>s.isFe ? s.name : s.name.slice(0,4));
   const radarDatasets=radarRecords.map((r,i)=>({
     label:r.name,
-    data:subjs.map(s=>{const sc=r.scores[s.key];return sc&&sc.max>0?Math.round(sc.score/sc.max*100):0;}),
+    data:subjs.map(s=>{
+      const sc=s.scores[scoreRecords.length-radarRecords.length+i];
+      if(sc && sc.max>0) return Math.round(sc.score/sc.max*100);
+      return s.isFe ? null : 0;
+    }),
     borderColor:i===0?'rgba(77,184,255,0.8)':'rgba(201,168,76,0.8)',
     backgroundColor:i===0?'rgba(77,184,255,0.1)':'rgba(201,168,76,0.1)',
     pointBackgroundColor:i===0?'#4db8ff':'#c9a84c',pointRadius:4,
@@ -11424,14 +11457,16 @@ function renderScoreRecordList(){
   if(!scoreRecords.length){list.innerHTML='<div class="no-score-data">記録なし</div>';return;}
   list.innerHTML='';
   [...scoreRecords].reverse().forEach(r=>{
-    const subjs=allSelectedSubjects();
+    const isFe=r.template==='funda';
+    const subjs=isFe ? EXAM_PRESETS.funda.subjects : allSelectedSubjects();
     const totalScore=Object.values(r.scores).reduce((a,v)=>a+v.score,0);
     const totalMax=Object.values(r.scores).reduce((a,v)=>a+v.max,0);
     const rate=totalMax>0?Math.round(totalScore/totalMax*100):0;
     const chips=subjs.filter(s=>r.scores[s.key]).map(s=>{
       const sc=r.scores[s.key];
+      const label=isFe ? (sc.name || s.name) : s.name.slice(0,2);
       const pct=Math.round(sc.score/sc.max*100);
-      return `<span class="score-chip" style="color:${s.color};border-color:${s.color}44">${s.name.slice(0,2)} ${sc.score}/${sc.max}(${pct}%)</span>`;
+      return `<span class="score-chip" style="color:${s.color};border-color:${s.color}44">${escHtml(label)} ${Number(sc.score)}/${Number(sc.max)}(${pct}%)</span>`;
     }).join('');
     const item=document.createElement('div');item.className='score-record-item';
     item.innerHTML=`<div style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;">
@@ -17024,7 +17059,7 @@ const HELP_CONTENT = {
         },
         {
           n:'⑤', title:'模試・答練はSCOREで管理する',
-          desc:'模試や答練が終わったら「SCORE」で点数や科目別の結果を記録します。合計点の推移や科目別の正答率を見ながら、次に補強する分野を決められます。',
+          desc:'模試や答練が終わったら「SCORE」で点数や科目別の結果を記録します。合計点の推移や科目別の得点率を見ながら、次に補強する分野を決められます。',
           tip:'模試・答練の学習時間はタイマー／記録から残せます'
         },
         {
@@ -17074,7 +17109,7 @@ const HELP_CONTENT = {
         },
         {
           q: '答練・模試の結果はどこに記録しますか？',
-          a: '「SCORE」タブで点数を記録できます。\n\n試験名・日付・科目別の点数（点数/満点）を入力すると、合計点の推移グラフや科目別の正答率チャートが自動生成されます。'
+          a: '「SCORE」タブで点数を記録できます。\n\n試験名・日付・科目別の点数（点数/満点）を入力すると、合計点の推移グラフや科目別の得点率チャートが自動生成されます。'
         },
         {
           q: 'ブラウザを閉じてもタイマーは続きますか？',
@@ -17122,7 +17157,7 @@ const HELP_CONTENT = {
         { icon:'fa-solid fa-stopwatch',     name:'タイマー／記録', desc:'学習タイマー（ポモドーロ対応）・教材選択・秒単位で正確に記録・クエストログの表示・削除' },
         { icon:'fa-solid fa-medal',         name:'TITLES',     desc:'累計時間・連続日数・得点などで解放される称号バッジ' },
         { icon:'fa-solid fa-ranking-star',  name:'RANKING',    desc:'フォロー中ユーザーとのレベル・学習時間ランキング（累計・週間）' },
-        { icon:'fa-solid fa-chart-bar',     name:'SCORE',      desc:'模試得点の入力・合計点推移グラフ・科目別正答率・レーダーチャート' },
+        { icon:'fa-solid fa-chart-bar',     name:'SCORE',      desc:'模試得点の入力・合計点推移グラフ・科目別得点率・レーダーチャート' },
         { icon:'fa-solid fa-chart-line',    name:'レポート',   desc:'Day/Week/Month/Year の学習時間グラフ・科目別円グラフ・週間目標・学習計画（試験日逆算）・合格ペース診断' },
         { icon:'fa-solid fa-users',         name:'タイムライン', desc:'一言投稿・学習宣言・同ジョブ／人気フィルター・リアクション・返信スレッド' },
         { icon:'fa-solid fa-envelope',      name:'DM',         desc:'相互フォロー中のユーザーとダイレクトメッセージ' },
@@ -22527,6 +22562,13 @@ const NEWS_READ_KEY = 'sq2_news_read';
 
 // ── アップデートログ（新しい順） ──
 const NEWS_ITEMS = [
+  {
+    id: 'v20261127_fe_score_scale',
+    date: '2026-11-27',
+    type: 'fix',
+    title: '基本情報技術者試験の科目A・科目Bを各1,000点満点で記録できます',
+    desc: 'SCOREの「基本情報」で、結果通知の科目評価点を入力できます。記録一覧には科目ごとの点数と保存時の満点を表示します。'
+  },
   {
     id: 'v20261127_score_it_passport_label',
     date: '2026-11-27',
